@@ -1,0 +1,157 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_map.c
+Auto-merging sys/netinet6/nd6_rtr.c
+Auto-merging sys/kern/subr_witness.c
+Auto-merging libexec/rc/rc.d/ldconfig
+CONFLICT (content): Merge conflict in libexec/rc/rc.d/ldconfig
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc libexec/rc/rc.d/ldconfig
+index bbc18313e156,81f6951ea839..000000000000
+--- a/libexec/rc/rc.d/ldconfig
++++ b/libexec/rc/rc.d/ldconfig
+@@@ -83,6 -85,22 +85,25 @@@ ldconfig_start(
+  			${ldconfig} -soft ${_ins} ${_LDC}
+  			;;
+  		esac
+++<<<<<<< HEAD
+++=======
++ 
++ 		# Legacy aout support for i386 only
++ 		case ${machine_arch} in
++ 		i386)
++ 			# Default the a.out ldconfig path.
++ 			: ${ldconfig_paths_aout=${ldconfig_paths}}
++ 			_LDC=""
++ 			for i in /usr/lib/aout ${ldconfig_paths_aout} /etc/ld.so.conf; do
++ 				if [ -r "${i}" ]; then
++ 					_LDC="${_LDC} ${i}"
++ 				fi
++ 			done
++ 			check_startmsgs && echo 'a.out ldconfig path:' ${_LDC}
++ 			${ldconfig} -aout ${_ins} ${_LDC}
++ 			;;
++ 		esac
+++>>>>>>> freebsd/current/master
+  	fi
+  }
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   libexec/getty/main.c
+	modified:   libexec/getty/subr.c
+	modified:   libexec/save-entropy/save-entropy.sh
+	modified:   sbin/bectl/bectl.c
+	modified:   share/man/man4/tcp.4
+	modified:   share/man/man4/tty.4
+	modified:   sys/amd64/vmm/amd/amdvi_hw.c
+	modified:   sys/arm/samsung/exynos/chrome_kb.c
+	modified:   sys/arm/samsung/exynos/exynos_uart.c
+	modified:   sys/arm/versatile/pl050.c
+	modified:   sys/arm/xilinx/uart_dev_cdnc.c
+	modified:   sys/dev/cxgbe/tom/t4_listen.c
+	modified:   sys/dev/gpio/gpiokeys.c
+	modified:   sys/dev/ofw/ofw_bus_subr.h
+	modified:   sys/dev/quicc/quicc_bfe_fdt.c
+	modified:   sys/dev/rp/rp_isa.c
+	modified:   sys/dev/rp/rp_pci.c
+	modified:   sys/dev/usb/input/uep.c
+	modified:   sys/dev/usb/input/ukbd.c
+	modified:   sys/dev/usb/input/ums.c
+	modified:   sys/fs/devfs/devfs_devs.c
+	modified:   sys/fs/devfs/devfs_int.h
+	modified:   sys/fs/devfs/devfs_vnops.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/kern/kern_conf.c
+	modified:   sys/kern/kern_lock.c
+	modified:   sys/kern/subr_lock.c
+	modified:   sys/kern/subr_smp.c
+	modified:   sys/kern/subr_witness.c
+	modified:   sys/kern/tty.c
+	modified:   sys/netinet/ip_carp.c
+	modified:   sys/netinet/sctp_usrreq.c
+	modified:   sys/netinet/tcp_input.c
+	modified:   sys/netinet/tcp_stacks/rack.c
+	modified:   sys/netinet/tcp_stacks/tcp_rack.h
+	modified:   sys/netinet/tcp_syncache.c
+	modified:   sys/netinet/tcp_syncache.h
+	modified:   sys/netinet/tcp_var.h
+	modified:   sys/netinet/toecore.c
+	modified:   sys/netinet/toecore.h
+	modified:   sys/netinet6/dest6.c
+	modified:   sys/netinet6/frag6.c
+	modified:   sys/netinet6/icmp6.c
+	modified:   sys/netinet6/ip6_input.c
+	modified:   sys/netinet6/ip6_mroute.c
+	modified:   sys/netinet6/mld6.c
+	modified:   sys/netinet6/nd6_nbr.c
+	modified:   sys/netinet6/nd6_rtr.c
+	modified:   sys/netinet6/route6.c
+	modified:   sys/netinet6/sctp6_usrreq.c
+	modified:   sys/netinet6/udp6_usrreq.c
+	modified:   sys/netipsec/xform_ah.c
+	modified:   sys/netipsec/xform_esp.c
+	modified:   sys/powerpc/psim/uart_iobus.c
+	modified:   sys/sys/lockmgr.h
+	modified:   sys/sys/smp.h
+	modified:   sys/sys/vnode.h
+	modified:   sys/vm/swap_pager.c
+	modified:   sys/vm/vm_fault.c
+	modified:   sys/vm/vm_map.c
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vm_object.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   libexec/rc/rc.d/ldconfig
+
+HEAD is now at 6631bac3b909 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 6631bac3b909 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
