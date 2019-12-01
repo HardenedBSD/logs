@@ -1,0 +1,857 @@
+==== BEGIN: hardened/11-stable/master ====
+current branch: hardened/11-stable/master
+mergeable branch: freebsd/11-stable/master
+==== change branch ====
+Switched to branch 'hardened/11-stable/master'
+Your branch is up to date with 'origin/hardened/11-stable/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+* hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/11-stable/master branch ====
+Auto-merging sys/x86/x86/identcpu.c
+Auto-merging sys/x86/include/specialreg.h
+Auto-merging sys/vm/vm_map.c
+Auto-merging sys/sys/sysctl.h
+Auto-merging sys/kern/kern_mib.c
+Auto-merging sys/kern/kern_exec.c
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging sys/amd64/amd64/machdep.c
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Removing contrib/tcsh/README.imake
+Removing contrib/tcsh/README
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/11-stable/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 08f9b8d2447e,bd0d1400de29..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -1515,6 -1491,12 +1515,15 @@@ as a set-user-ID root program
+  Set to not build the
+  .Bx 4.4
+  legacy docs.
+++<<<<<<< HEAD
+++=======
++ .It Va WITH_SHARED_TOOLCHAIN
++ Set to build the toolchain binaries as dynamically linked executables.
++ The set includes
++ .Xr cc 1 ,
++ .Xr make 1
++ and necessary utilities like assembler, linker and library archive manager.
+++>>>>>>> freebsd/11-stable/master
+  .It Va WITH_SORT_THREADS
+  Set to enable threads in
+  .Xr sort 1 .
+On branch hardened/11-stable/master
+Your branch is up to date with 'origin/hardened/11-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   UPDATING
+	modified:   cddl/contrib/opensolaris/cmd/zfs/zfs.8
+	modified:   contrib/file/AUTHORS
+	modified:   contrib/file/COPYING
+	modified:   contrib/file/ChangeLog
+	modified:   contrib/file/NEWS
+	modified:   contrib/file/README
+	modified:   contrib/file/config.h.in
+	modified:   contrib/file/configure
+	modified:   contrib/file/configure.ac
+	modified:   contrib/file/doc/file.man
+	modified:   contrib/file/doc/libmagic.man
+	modified:   contrib/file/doc/magic.man
+	modified:   contrib/file/magic/Header
+	modified:   contrib/file/magic/Magdir/acorn
+	modified:   contrib/file/magic/Magdir/adventure
+	modified:   contrib/file/magic/Magdir/algol68
+	modified:   contrib/file/magic/Magdir/amigaos
+	modified:   contrib/file/magic/Magdir/android
+	modified:   contrib/file/magic/Magdir/animation
+	modified:   contrib/file/magic/Magdir/apple
+	modified:   contrib/file/magic/Magdir/archive
+	modified:   contrib/file/magic/Magdir/audio
+	modified:   contrib/file/magic/Magdir/basis
+	modified:   contrib/file/magic/Magdir/ber
+	modified:   contrib/file/magic/Magdir/bioinformatics
+	new file:   contrib/file/magic/Magdir/biosig
+	modified:   contrib/file/magic/Magdir/blcr
+	modified:   contrib/file/magic/Magdir/blender
+	modified:   contrib/file/magic/Magdir/c-lang
+	modified:   contrib/file/magic/Magdir/cad
+	modified:   contrib/file/magic/Magdir/cafebabe
+	new file:   contrib/file/magic/Magdir/clojure
+	modified:   contrib/file/magic/Magdir/coff
+	modified:   contrib/file/magic/Magdir/commands
+	modified:   contrib/file/magic/Magdir/compress
+	modified:   contrib/file/magic/Magdir/console
+	modified:   contrib/file/magic/Magdir/coverage
+	modified:   contrib/file/magic/Magdir/ctf
+	modified:   contrib/file/magic/Magdir/cups
+	modified:   contrib/file/magic/Magdir/database
+	modified:   contrib/file/magic/Magdir/dataone
+	modified:   contrib/file/magic/Magdir/dbpf
+	modified:   contrib/file/magic/Magdir/dolby
+	modified:   contrib/file/magic/Magdir/dyadic
+	modified:   contrib/file/magic/Magdir/ebml
+	new file:   contrib/file/magic/Magdir/edid
+	modified:   contrib/file/magic/Magdir/elf
+	modified:   contrib/file/magic/Magdir/erlang
+	new file:   contrib/file/magic/Magdir/espressif
+	modified:   contrib/file/magic/Magdir/esri
+	modified:   contrib/file/magic/Magdir/filesystems
+	modified:   contrib/file/magic/Magdir/finger
+	modified:   contrib/file/magic/Magdir/flash
+	modified:   contrib/file/magic/Magdir/fonts
+	modified:   contrib/file/magic/Magdir/fsav
+	modified:   contrib/file/magic/Magdir/games
+	modified:   contrib/file/magic/Magdir/geo
+	new file:   contrib/file/magic/Magdir/glibc
+	modified:   contrib/file/magic/Magdir/gnome
+	modified:   contrib/file/magic/Magdir/gnu
+	modified:   contrib/file/magic/Magdir/graphviz
+	modified:   contrib/file/magic/Magdir/guile
+	new file:   contrib/file/magic/Magdir/hardware
+	modified:   contrib/file/magic/Magdir/hitachi-sh
+	modified:   contrib/file/magic/Magdir/hp
+	modified:   contrib/file/magic/Magdir/ibm6000
+	modified:   contrib/file/magic/Magdir/images
+	modified:   contrib/file/magic/Magdir/intel
+	modified:   contrib/file/magic/Magdir/isz
+	modified:   contrib/file/magic/Magdir/java
+	modified:   contrib/file/magic/Magdir/jpeg
+	modified:   contrib/file/magic/Magdir/keepass
+	modified:   contrib/file/magic/Magdir/kerberos
+	new file:   contrib/file/magic/Magdir/kicad
+	modified:   contrib/file/magic/Magdir/kml
+	modified:   contrib/file/magic/Magdir/linux
+	modified:   contrib/file/magic/Magdir/lisp
+	modified:   contrib/file/magic/Magdir/llvm
+	modified:   contrib/file/magic/Magdir/lua
+	modified:   contrib/file/magic/Magdir/m4
+	modified:   contrib/file/magic/Magdir/macintosh
+	modified:   contrib/file/magic/Magdir/mail.news
+	modified:   contrib/file/magic/Magdir/map
+	modified:   contrib/file/magic/Magdir/marc21
+	modified:   contrib/file/magic/Magdir/matroska
+	modified:   contrib/file/magic/Magdir/mercurial
+	modified:   contrib/file/magic/Magdir/metastore
+	modified:   contrib/file/magic/Magdir/microfocus
+	modified:   contrib/file/magic/Magdir/misctools
+	modified:   contrib/file/magic/Magdir/modem
+	modified:   contrib/file/magic/Magdir/mozilla
+	modified:   contrib/file/magic/Magdir/msdos
+	modified:   contrib/file/magic/Magdir/msooxml
+	modified:   contrib/file/magic/Magdir/msvc
+	modified:   contrib/file/magic/Magdir/neko
+	modified:   contrib/file/magic/Magdir/netbsd
+	modified:   contrib/file/magic/Magdir/nitpicker
+	new file:   contrib/file/magic/Magdir/numpy
+	modified:   contrib/file/magic/Magdir/ole2compounddocs
+	modified:   contrib/file/magic/Magdir/palm
+	modified:   contrib/file/magic/Magdir/parrot
+	modified:   contrib/file/magic/Magdir/pbf
+	modified:   contrib/file/magic/Magdir/pc98
+	modified:   contrib/file/magic/Magdir/pgp
+	modified:   contrib/file/magic/Magdir/polyml
+	modified:   contrib/file/magic/Magdir/printer
+	modified:   contrib/file/magic/Magdir/psl
+	modified:   contrib/file/magic/Magdir/pwsafe
+	modified:   contrib/file/magic/Magdir/python
+	modified:   contrib/file/magic/Magdir/qt
+	modified:   contrib/file/magic/Magdir/revision
+	modified:   contrib/file/magic/Magdir/riff
+	new file:   contrib/file/magic/Magdir/rpmsg
+	modified:   contrib/file/magic/Magdir/ruby
+	modified:   contrib/file/magic/Magdir/scientific
+	modified:   contrib/file/magic/Magdir/selinux
+	modified:   contrib/file/magic/Magdir/sendmail
+	modified:   contrib/file/magic/Magdir/sequent
+	modified:   contrib/file/magic/Magdir/sgml
+	modified:   contrib/file/magic/Magdir/sniffer
+	modified:   contrib/file/magic/Magdir/sql
+	modified:   contrib/file/magic/Magdir/sun
+	modified:   contrib/file/magic/Magdir/sysex
+	modified:   contrib/file/magic/Magdir/tcl
+	modified:   contrib/file/magic/Magdir/terminfo
+	modified:   contrib/file/magic/Magdir/tex
+	modified:   contrib/file/magic/Magdir/tplink
+	modified:   contrib/file/magic/Magdir/unicode
+	modified:   contrib/file/magic/Magdir/varied.script
+	modified:   contrib/file/magic/Magdir/virtual
+	modified:   contrib/file/magic/Magdir/warc
+	modified:   contrib/file/magic/Magdir/webassembly
+	modified:   contrib/file/magic/Magdir/windows
+	modified:   contrib/file/magic/Magdir/wordprocessors
+	modified:   contrib/file/magic/Magdir/wsdl
+	modified:   contrib/file/magic/Magdir/xwindows
+	modified:   contrib/file/magic/Magdir/yara
+	modified:   contrib/file/magic/Magdir/zip
+	modified:   contrib/file/magic/Makefile.am
+	modified:   contrib/file/magic/Makefile.in
+	modified:   contrib/file/src/Makefile.am
+	modified:   contrib/file/src/Makefile.in
+	modified:   contrib/file/src/apprentice.c
+	modified:   contrib/file/src/apptype.c
+	modified:   contrib/file/src/ascmagic.c
+	modified:   contrib/file/src/asprintf.c
+	modified:   contrib/file/src/buffer.c
+	modified:   contrib/file/src/cdf.c
+	modified:   contrib/file/src/cdf.h
+	modified:   contrib/file/src/cdf_time.c
+	modified:   contrib/file/src/compress.c
+	modified:   contrib/file/src/der.c
+	modified:   contrib/file/src/dprintf.c
+	modified:   contrib/file/src/elfclass.h
+	modified:   contrib/file/src/encoding.c
+	modified:   contrib/file/src/file.c
+	modified:   contrib/file/src/file.h
+	modified:   contrib/file/src/fmtcheck.c
+	modified:   contrib/file/src/fsmagic.c
+	modified:   contrib/file/src/funcs.c
+	modified:   contrib/file/src/getopt_long.c
+	new file:   contrib/file/src/is_json.c
+	modified:   contrib/file/src/is_tar.c
+	modified:   contrib/file/src/magic.c
+	modified:   contrib/file/src/magic.h.in
+	modified:   contrib/file/src/mygetopt.h
+	modified:   contrib/file/src/print.c
+	modified:   contrib/file/src/readcdf.c
+	modified:   contrib/file/src/readelf.c
+	modified:   contrib/file/src/readelf.h
+	modified:   contrib/file/src/seccomp.c
+	modified:   contrib/file/src/softmagic.c
+	modified:   contrib/file/src/vasprintf.c
+	new file:   contrib/file/tests/CVE-2014-1943.result
+	new file:   contrib/file/tests/CVE-2014-1943.testfile
+	modified:   contrib/file/tests/Makefile.am
+	modified:   contrib/file/tests/Makefile.in
+	new file:   contrib/file/tests/fit-map-data.result
+	new file:   contrib/file/tests/fit-map-data.testfile
+	new file:   contrib/file/tests/issue359xlsx.result
+	new file:   contrib/file/tests/issue359xlsx.testfile
+	new file:   contrib/file/tests/json1.result
+	new file:   contrib/file/tests/json1.testfile
+	new file:   contrib/file/tests/json2.result
+	new file:   contrib/file/tests/json2.testfile
+	new file:   contrib/file/tests/json3.result
+	new file:   contrib/file/tests/json3.testfile
+	new file:   contrib/file/tests/regex-eol.magic
+	new file:   contrib/file/tests/regex-eol.result
+	new file:   contrib/file/tests/regex-eol.testfile
+	new file:   contrib/file/tests/zstd-3-skippable-frames.result
+	new file:   contrib/file/tests/zstd-dictionary-0.result
+	new file:   contrib/file/tests/zstd-dictionary-1.result
+	new file:   contrib/file/tests/zstd-dictionary-2.result
+	new file:   contrib/file/tests/zstd-skippable-frame-0.result
+	new file:   contrib/file/tests/zstd-skippable-frame-4.result
+	new file:   contrib/file/tests/zstd-skippable-frame-8.result
+	new file:   contrib/file/tests/zstd-skippable-frame-C.result
+	new file:   contrib/file/tests/zstd-v0.2-FF.result
+	new file:   contrib/file/tests/zstd-v0.2-FF.testfile
+	new file:   contrib/file/tests/zstd-v0.3-FF.result
+	new file:   contrib/file/tests/zstd-v0.3-FF.testfile
+	new file:   contrib/file/tests/zstd-v0.4-FF.result
+	new file:   contrib/file/tests/zstd-v0.4-FF.testfile
+	new file:   contrib/file/tests/zstd-v0.5-FF.result
+	new file:   contrib/file/tests/zstd-v0.5-FF.testfile
+	new file:   contrib/file/tests/zstd-v0.6-FF.result
+	new file:   contrib/file/tests/zstd-v0.6-FF.testfile
+	new file:   contrib/file/tests/zstd-v0.7-00.result
+	new file:   contrib/file/tests/zstd-v0.7-21.result
+	new file:   contrib/file/tests/zstd-v0.7-21.testfile
+	new file:   contrib/file/tests/zstd-v0.7-22.result
+	new file:   contrib/file/tests/zstd-v0.7-22.testfile
+	new file:   contrib/file/tests/zstd-v0.8-00.result
+	new file:   contrib/file/tests/zstd-v0.8-01.result
+	new file:   contrib/file/tests/zstd-v0.8-01.testfile
+	new file:   contrib/file/tests/zstd-v0.8-02.result
+	new file:   contrib/file/tests/zstd-v0.8-02.testfile
+	new file:   contrib/file/tests/zstd-v0.8-03.result
+	new file:   contrib/file/tests/zstd-v0.8-03.testfile
+	new file:   contrib/file/tests/zstd-v0.8-16.result
+	new file:   contrib/file/tests/zstd-v0.8-16.testfile
+	new file:   contrib/file/tests/zstd-v0.8-20.result
+	new file:   contrib/file/tests/zstd-v0.8-20.testfile
+	new file:   contrib/file/tests/zstd-v0.8-21.result
+	new file:   contrib/file/tests/zstd-v0.8-21.testfile
+	new file:   contrib/file/tests/zstd-v0.8-22.result
+	new file:   contrib/file/tests/zstd-v0.8-22.testfile
+	new file:   contrib/file/tests/zstd-v0.8-23.result
+	new file:   contrib/file/tests/zstd-v0.8-23.testfile
+	new file:   contrib/file/tests/zstd-v0.8-F4.result
+	new file:   contrib/file/tests/zstd-v0.8-F4.testfile
+	new file:   contrib/file/tests/zstd-v0.8-FF.result
+	new file:   contrib/file/tests/zstd-v0.8-FF.testfile
+	modified:   contrib/ipfilter/man/ippool.8
+	modified:   contrib/libc++/include/cmath
+	modified:   contrib/libc++/include/random
+	modified:   contrib/llvm/lib/Transforms/InstCombine/InstCombineCompares.cpp
+	modified:   contrib/netbsd-tests/usr.bin/grep/t_grep.sh
+	modified:   contrib/tcsh/Fixes
+	modified:   contrib/tcsh/Imakefile
+	modified:   contrib/tcsh/MAKEDIFFS
+	modified:   contrib/tcsh/MAKESHAR
+	modified:   contrib/tcsh/Makefile.in
+	modified:   contrib/tcsh/Makefile.std
+	modified:   contrib/tcsh/Makefile.vms
+	modified:   contrib/tcsh/Ported
+	deleted:    contrib/tcsh/README
+	deleted:    contrib/tcsh/README.imake
+	new file:   contrib/tcsh/README.md
+	modified:   contrib/tcsh/complete.tcsh
+	modified:   contrib/tcsh/config_f.h
+	modified:   contrib/tcsh/configure
+	modified:   contrib/tcsh/dotlock.c
+	modified:   contrib/tcsh/ed.chared.c
+	modified:   contrib/tcsh/ed.decls.h
+	modified:   contrib/tcsh/ed.defns.c
+	modified:   contrib/tcsh/ed.h
+	modified:   contrib/tcsh/ed.init.c
+	modified:   contrib/tcsh/ed.inputl.c
+	modified:   contrib/tcsh/ed.refresh.c
+	modified:   contrib/tcsh/ed.screen.c
+	modified:   contrib/tcsh/ed.term.c
+	modified:   contrib/tcsh/ed.term.h
+	modified:   contrib/tcsh/ed.xmap.c
+	modified:   contrib/tcsh/eight-bit.me
+	modified:   contrib/tcsh/gethost.c
+	modified:   contrib/tcsh/glob.3
+	modified:   contrib/tcsh/glob.c
+	modified:   contrib/tcsh/glob.h
+	modified:   contrib/tcsh/host.defs
+	modified:   contrib/tcsh/imake.config
+	modified:   contrib/tcsh/ma.setp.c
+	modified:   contrib/tcsh/mi.termios.c
+	modified:   contrib/tcsh/mi.varargs.h
+	modified:   contrib/tcsh/nls/C/set1
+	modified:   contrib/tcsh/nls/C/set10
+	modified:   contrib/tcsh/nls/C/set11
+	modified:   contrib/tcsh/nls/C/set12
+	modified:   contrib/tcsh/nls/C/set13
+	modified:   contrib/tcsh/nls/C/set14
+	modified:   contrib/tcsh/nls/C/set15
+	modified:   contrib/tcsh/nls/C/set16
+	modified:   contrib/tcsh/nls/C/set17
+	modified:   contrib/tcsh/nls/C/set18
+	modified:   contrib/tcsh/nls/C/set19
+	modified:   contrib/tcsh/nls/C/set2
+	modified:   contrib/tcsh/nls/C/set20
+	modified:   contrib/tcsh/nls/C/set21
+	modified:   contrib/tcsh/nls/C/set22
+	modified:   contrib/tcsh/nls/C/set23
+	modified:   contrib/tcsh/nls/C/set24
+	modified:   contrib/tcsh/nls/C/set25
+	modified:   contrib/tcsh/nls/C/set26
+	modified:   contrib/tcsh/nls/C/set27
+	modified:   contrib/tcsh/nls/C/set29
+	modified:   contrib/tcsh/nls/C/set3
+	modified:   contrib/tcsh/nls/C/set30
+	modified:   contrib/tcsh/nls/C/set31
+	modified:   contrib/tcsh/nls/C/set4
+	modified:   contrib/tcsh/nls/C/set5
+	modified:   contrib/tcsh/nls/C/set6
+	modified:   contrib/tcsh/nls/C/set7
+	modified:   contrib/tcsh/nls/C/set8
+	modified:   contrib/tcsh/nls/C/set9
+	modified:   contrib/tcsh/nls/Makefile.in
+	modified:   contrib/tcsh/nls/catgen
+	modified:   contrib/tcsh/nls/et/set1
+	modified:   contrib/tcsh/nls/et/set10
+	modified:   contrib/tcsh/nls/et/set11
+	modified:   contrib/tcsh/nls/et/set12
+	modified:   contrib/tcsh/nls/et/set13
+	modified:   contrib/tcsh/nls/et/set14
+	modified:   contrib/tcsh/nls/et/set15
+	modified:   contrib/tcsh/nls/et/set16
+	modified:   contrib/tcsh/nls/et/set17
+	modified:   contrib/tcsh/nls/et/set18
+	modified:   contrib/tcsh/nls/et/set19
+	modified:   contrib/tcsh/nls/et/set2
+	modified:   contrib/tcsh/nls/et/set20
+	modified:   contrib/tcsh/nls/et/set21
+	modified:   contrib/tcsh/nls/et/set22
+	modified:   contrib/tcsh/nls/et/set23
+	modified:   contrib/tcsh/nls/et/set24
+	modified:   contrib/tcsh/nls/et/set25
+	modified:   contrib/tcsh/nls/et/set26
+	modified:   contrib/tcsh/nls/et/set27
+	modified:   contrib/tcsh/nls/et/set29
+	modified:   contrib/tcsh/nls/et/set3
+	modified:   contrib/tcsh/nls/et/set30
+	modified:   contrib/tcsh/nls/et/set31
+	modified:   contrib/tcsh/nls/et/set4
+	modified:   contrib/tcsh/nls/et/set5
+	modified:   contrib/tcsh/nls/et/set6
+	modified:   contrib/tcsh/nls/et/set7
+	modified:   contrib/tcsh/nls/et/set8
+	modified:   contrib/tcsh/nls/et/set9
+	modified:   contrib/tcsh/nls/finnish/set1
+	modified:   contrib/tcsh/nls/finnish/set10
+	modified:   contrib/tcsh/nls/finnish/set11
+	modified:   contrib/tcsh/nls/finnish/set12
+	modified:   contrib/tcsh/nls/finnish/set13
+	modified:   contrib/tcsh/nls/finnish/set14
+	modified:   contrib/tcsh/nls/finnish/set15
+	modified:   contrib/tcsh/nls/finnish/set16
+	modified:   contrib/tcsh/nls/finnish/set17
+	modified:   contrib/tcsh/nls/finnish/set18
+	modified:   contrib/tcsh/nls/finnish/set19
+	modified:   contrib/tcsh/nls/finnish/set2
+	modified:   contrib/tcsh/nls/finnish/set20
+	modified:   contrib/tcsh/nls/finnish/set21
+	modified:   contrib/tcsh/nls/finnish/set22
+	modified:   contrib/tcsh/nls/finnish/set23
+	modified:   contrib/tcsh/nls/finnish/set24
+	modified:   contrib/tcsh/nls/finnish/set25
+	modified:   contrib/tcsh/nls/finnish/set26
+	modified:   contrib/tcsh/nls/finnish/set27
+	modified:   contrib/tcsh/nls/finnish/set29
+	modified:   contrib/tcsh/nls/finnish/set3
+	modified:   contrib/tcsh/nls/finnish/set30
+	modified:   contrib/tcsh/nls/finnish/set31
+	modified:   contrib/tcsh/nls/finnish/set4
+	modified:   contrib/tcsh/nls/finnish/set5
+	modified:   contrib/tcsh/nls/finnish/set6
+	modified:   contrib/tcsh/nls/finnish/set7
+	modified:   contrib/tcsh/nls/finnish/set8
+	modified:   contrib/tcsh/nls/finnish/set9
+	modified:   contrib/tcsh/nls/french/set1
+	modified:   contrib/tcsh/nls/french/set10
+	modified:   contrib/tcsh/nls/french/set11
+	modified:   contrib/tcsh/nls/french/set12
+	modified:   contrib/tcsh/nls/french/set13
+	modified:   contrib/tcsh/nls/french/set14
+	modified:   contrib/tcsh/nls/french/set15
+	modified:   contrib/tcsh/nls/french/set16
+	modified:   contrib/tcsh/nls/french/set17
+	modified:   contrib/tcsh/nls/french/set18
+	modified:   contrib/tcsh/nls/french/set19
+	modified:   contrib/tcsh/nls/french/set2
+	modified:   contrib/tcsh/nls/french/set20
+	modified:   contrib/tcsh/nls/french/set21
+	modified:   contrib/tcsh/nls/french/set22
+	modified:   contrib/tcsh/nls/french/set23
+	modified:   contrib/tcsh/nls/french/set24
+	modified:   contrib/tcsh/nls/french/set25
+	modified:   contrib/tcsh/nls/french/set26
+	modified:   contrib/tcsh/nls/french/set27
+	modified:   contrib/tcsh/nls/french/set29
+	modified:   contrib/tcsh/nls/french/set3
+	modified:   contrib/tcsh/nls/french/set30
+	modified:   contrib/tcsh/nls/french/set31
+	modified:   contrib/tcsh/nls/french/set4
+	modified:   contrib/tcsh/nls/french/set5
+	modified:   contrib/tcsh/nls/french/set6
+	modified:   contrib/tcsh/nls/french/set7
+	modified:   contrib/tcsh/nls/french/set8
+	modified:   contrib/tcsh/nls/french/set9
+	modified:   contrib/tcsh/nls/german/set1
+	modified:   contrib/tcsh/nls/german/set10
+	modified:   contrib/tcsh/nls/german/set11
+	modified:   contrib/tcsh/nls/german/set12
+	modified:   contrib/tcsh/nls/german/set13
+	modified:   contrib/tcsh/nls/german/set14
+	modified:   contrib/tcsh/nls/german/set15
+	modified:   contrib/tcsh/nls/german/set16
+	modified:   contrib/tcsh/nls/german/set17
+	modified:   contrib/tcsh/nls/german/set18
+	modified:   contrib/tcsh/nls/german/set19
+	modified:   contrib/tcsh/nls/german/set2
+	modified:   contrib/tcsh/nls/german/set20
+	modified:   contrib/tcsh/nls/german/set21
+	modified:   contrib/tcsh/nls/german/set22
+	modified:   contrib/tcsh/nls/german/set23
+	modified:   contrib/tcsh/nls/german/set24
+	modified:   contrib/tcsh/nls/german/set25
+	modified:   contrib/tcsh/nls/german/set26
+	modified:   contrib/tcsh/nls/german/set27
+	modified:   contrib/tcsh/nls/german/set29
+	modified:   contrib/tcsh/nls/german/set3
+	modified:   contrib/tcsh/nls/german/set30
+	modified:   contrib/tcsh/nls/german/set31
+	modified:   contrib/tcsh/nls/german/set4
+	modified:   contrib/tcsh/nls/german/set5
+	modified:   contrib/tcsh/nls/german/set6
+	modified:   contrib/tcsh/nls/german/set7
+	modified:   contrib/tcsh/nls/german/set8
+	modified:   contrib/tcsh/nls/german/set9
+	modified:   contrib/tcsh/nls/greek/set1
+	modified:   contrib/tcsh/nls/greek/set10
+	modified:   contrib/tcsh/nls/greek/set11
+	modified:   contrib/tcsh/nls/greek/set12
+	modified:   contrib/tcsh/nls/greek/set13
+	modified:   contrib/tcsh/nls/greek/set14
+	modified:   contrib/tcsh/nls/greek/set15
+	modified:   contrib/tcsh/nls/greek/set16
+	modified:   contrib/tcsh/nls/greek/set17
+	modified:   contrib/tcsh/nls/greek/set18
+	modified:   contrib/tcsh/nls/greek/set19
+	modified:   contrib/tcsh/nls/greek/set2
+	modified:   contrib/tcsh/nls/greek/set20
+	modified:   contrib/tcsh/nls/greek/set21
+	modified:   contrib/tcsh/nls/greek/set22
+	modified:   contrib/tcsh/nls/greek/set23
+	modified:   contrib/tcsh/nls/greek/set24
+	modified:   contrib/tcsh/nls/greek/set25
+	modified:   contrib/tcsh/nls/greek/set26
+	modified:   contrib/tcsh/nls/greek/set27
+	modified:   contrib/tcsh/nls/greek/set29
+	modified:   contrib/tcsh/nls/greek/set3
+	modified:   contrib/tcsh/nls/greek/set30
+	modified:   contrib/tcsh/nls/greek/set31
+	modified:   contrib/tcsh/nls/greek/set4
+	modified:   contrib/tcsh/nls/greek/set5
+	modified:   contrib/tcsh/nls/greek/set6
+	modified:   contrib/tcsh/nls/greek/set7
+	modified:   contrib/tcsh/nls/greek/set8
+	modified:   contrib/tcsh/nls/greek/set9
+	modified:   contrib/tcsh/nls/italian/set1
+	modified:   contrib/tcsh/nls/italian/set10
+	modified:   contrib/tcsh/nls/italian/set11
+	modified:   contrib/tcsh/nls/italian/set12
+	modified:   contrib/tcsh/nls/italian/set13
+	modified:   contrib/tcsh/nls/italian/set14
+	modified:   contrib/tcsh/nls/italian/set15
+	modified:   contrib/tcsh/nls/italian/set16
+	modified:   contrib/tcsh/nls/italian/set17
+	modified:   contrib/tcsh/nls/italian/set18
+	modified:   contrib/tcsh/nls/italian/set19
+	modified:   contrib/tcsh/nls/italian/set2
+	modified:   contrib/tcsh/nls/italian/set20
+	modified:   contrib/tcsh/nls/italian/set21
+	modified:   contrib/tcsh/nls/italian/set22
+	modified:   contrib/tcsh/nls/italian/set23
+	modified:   contrib/tcsh/nls/italian/set24
+	modified:   contrib/tcsh/nls/italian/set25
+	modified:   contrib/tcsh/nls/italian/set26
+	modified:   contrib/tcsh/nls/italian/set27
+	modified:   contrib/tcsh/nls/italian/set29
+	modified:   contrib/tcsh/nls/italian/set3
+	modified:   contrib/tcsh/nls/italian/set30
+	modified:   contrib/tcsh/nls/italian/set31
+	modified:   contrib/tcsh/nls/italian/set4
+	modified:   contrib/tcsh/nls/italian/set5
+	modified:   contrib/tcsh/nls/italian/set6
+	modified:   contrib/tcsh/nls/italian/set7
+	modified:   contrib/tcsh/nls/italian/set8
+	modified:   contrib/tcsh/nls/italian/set9
+	modified:   contrib/tcsh/nls/ja/set1
+	modified:   contrib/tcsh/nls/ja/set10
+	modified:   contrib/tcsh/nls/ja/set11
+	modified:   contrib/tcsh/nls/ja/set12
+	modified:   contrib/tcsh/nls/ja/set13
+	modified:   contrib/tcsh/nls/ja/set15
+	modified:   contrib/tcsh/nls/ja/set16
+	modified:   contrib/tcsh/nls/ja/set17
+	modified:   contrib/tcsh/nls/ja/set18
+	modified:   contrib/tcsh/nls/ja/set2
+	modified:   contrib/tcsh/nls/ja/set21
+	modified:   contrib/tcsh/nls/ja/set24
+	modified:   contrib/tcsh/nls/ja/set29
+	modified:   contrib/tcsh/nls/ja/set3
+	modified:   contrib/tcsh/nls/ja/set30
+	modified:   contrib/tcsh/nls/ja/set4
+	modified:   contrib/tcsh/nls/ja/set5
+	modified:   contrib/tcsh/nls/ja/set6
+	modified:   contrib/tcsh/nls/ja/set7
+	modified:   contrib/tcsh/nls/ja/set8
+	modified:   contrib/tcsh/nls/russian/set1
+	modified:   contrib/tcsh/nls/russian/set10
+	modified:   contrib/tcsh/nls/russian/set11
+	modified:   contrib/tcsh/nls/russian/set12
+	modified:   contrib/tcsh/nls/russian/set13
+	modified:   contrib/tcsh/nls/russian/set14
+	modified:   contrib/tcsh/nls/russian/set15
+	modified:   contrib/tcsh/nls/russian/set16
+	modified:   contrib/tcsh/nls/russian/set17
+	modified:   contrib/tcsh/nls/russian/set18
+	modified:   contrib/tcsh/nls/russian/set19
+	modified:   contrib/tcsh/nls/russian/set2
+	modified:   contrib/tcsh/nls/russian/set20
+	modified:   contrib/tcsh/nls/russian/set21
+	modified:   contrib/tcsh/nls/russian/set22
+	modified:   contrib/tcsh/nls/russian/set23
+	modified:   contrib/tcsh/nls/russian/set24
+	modified:   contrib/tcsh/nls/russian/set25
+	modified:   contrib/tcsh/nls/russian/set26
+	modified:   contrib/tcsh/nls/russian/set27
+	modified:   contrib/tcsh/nls/russian/set29
+	modified:   contrib/tcsh/nls/russian/set3
+	modified:   contrib/tcsh/nls/russian/set30
+	modified:   contrib/tcsh/nls/russian/set31
+	modified:   contrib/tcsh/nls/russian/set4
+	modified:   contrib/tcsh/nls/russian/set5
+	modified:   contrib/tcsh/nls/russian/set6
+	modified:   contrib/tcsh/nls/russian/set7
+	modified:   contrib/tcsh/nls/russian/set8
+	modified:   contrib/tcsh/nls/russian/set9
+	modified:   contrib/tcsh/nls/spanish/set1
+	modified:   contrib/tcsh/nls/spanish/set10
+	modified:   contrib/tcsh/nls/spanish/set11
+	modified:   contrib/tcsh/nls/spanish/set12
+	modified:   contrib/tcsh/nls/spanish/set13
+	modified:   contrib/tcsh/nls/spanish/set14
+	modified:   contrib/tcsh/nls/spanish/set15
+	modified:   contrib/tcsh/nls/spanish/set16
+	modified:   contrib/tcsh/nls/spanish/set17
+	modified:   contrib/tcsh/nls/spanish/set18
+	modified:   contrib/tcsh/nls/spanish/set19
+	modified:   contrib/tcsh/nls/spanish/set2
+	modified:   contrib/tcsh/nls/spanish/set20
+	modified:   contrib/tcsh/nls/spanish/set21
+	modified:   contrib/tcsh/nls/spanish/set22
+	modified:   contrib/tcsh/nls/spanish/set23
+	modified:   contrib/tcsh/nls/spanish/set24
+	modified:   contrib/tcsh/nls/spanish/set25
+	modified:   contrib/tcsh/nls/spanish/set26
+	modified:   contrib/tcsh/nls/spanish/set27
+	modified:   contrib/tcsh/nls/spanish/set29
+	modified:   contrib/tcsh/nls/spanish/set3
+	modified:   contrib/tcsh/nls/spanish/set30
+	modified:   contrib/tcsh/nls/spanish/set31
+	modified:   contrib/tcsh/nls/spanish/set4
+	modified:   contrib/tcsh/nls/spanish/set5
+	modified:   contrib/tcsh/nls/spanish/set6
+	modified:   contrib/tcsh/nls/spanish/set7
+	modified:   contrib/tcsh/nls/spanish/set8
+	modified:   contrib/tcsh/nls/spanish/set9
+	modified:   contrib/tcsh/nls/ukrainian/set1
+	modified:   contrib/tcsh/nls/ukrainian/set10
+	modified:   contrib/tcsh/nls/ukrainian/set11
+	modified:   contrib/tcsh/nls/ukrainian/set12
+	modified:   contrib/tcsh/nls/ukrainian/set13
+	modified:   contrib/tcsh/nls/ukrainian/set14
+	modified:   contrib/tcsh/nls/ukrainian/set15
+	modified:   contrib/tcsh/nls/ukrainian/set16
+	modified:   contrib/tcsh/nls/ukrainian/set17
+	modified:   contrib/tcsh/nls/ukrainian/set18
+	modified:   contrib/tcsh/nls/ukrainian/set19
+	modified:   contrib/tcsh/nls/ukrainian/set2
+	modified:   contrib/tcsh/nls/ukrainian/set20
+	modified:   contrib/tcsh/nls/ukrainian/set21
+	modified:   contrib/tcsh/nls/ukrainian/set22
+	modified:   contrib/tcsh/nls/ukrainian/set23
+	modified:   contrib/tcsh/nls/ukrainian/set24
+	modified:   contrib/tcsh/nls/ukrainian/set25
+	modified:   contrib/tcsh/nls/ukrainian/set26
+	modified:   contrib/tcsh/nls/ukrainian/set27
+	modified:   contrib/tcsh/nls/ukrainian/set29
+	modified:   contrib/tcsh/nls/ukrainian/set3
+	modified:   contrib/tcsh/nls/ukrainian/set30
+	modified:   contrib/tcsh/nls/ukrainian/set31
+	modified:   contrib/tcsh/nls/ukrainian/set4
+	modified:   contrib/tcsh/nls/ukrainian/set5
+	modified:   contrib/tcsh/nls/ukrainian/set6
+	modified:   contrib/tcsh/nls/ukrainian/set7
+	modified:   contrib/tcsh/nls/ukrainian/set8
+	modified:   contrib/tcsh/nls/ukrainian/set9
+	modified:   contrib/tcsh/patchlevel.h
+	modified:   contrib/tcsh/pathnames.h
+	modified:   contrib/tcsh/sh.c
+	modified:   contrib/tcsh/sh.char.c
+	modified:   contrib/tcsh/sh.char.h
+	modified:   contrib/tcsh/sh.decls.h
+	modified:   contrib/tcsh/sh.dir.c
+	modified:   contrib/tcsh/sh.dir.h
+	modified:   contrib/tcsh/sh.dol.c
+	modified:   contrib/tcsh/sh.err.c
+	modified:   contrib/tcsh/sh.exec.c
+	modified:   contrib/tcsh/sh.exp.c
+	modified:   contrib/tcsh/sh.file.c
+	modified:   contrib/tcsh/sh.func.c
+	modified:   contrib/tcsh/sh.glob.c
+	modified:   contrib/tcsh/sh.h
+	modified:   contrib/tcsh/sh.hist.c
+	modified:   contrib/tcsh/sh.init.c
+	modified:   contrib/tcsh/sh.lex.c
+	modified:   contrib/tcsh/sh.misc.c
+	modified:   contrib/tcsh/sh.parse.c
+	modified:   contrib/tcsh/sh.print.c
+	modified:   contrib/tcsh/sh.proc.c
+	modified:   contrib/tcsh/sh.proc.h
+	modified:   contrib/tcsh/sh.sem.c
+	modified:   contrib/tcsh/sh.set.c
+	modified:   contrib/tcsh/sh.time.c
+	modified:   contrib/tcsh/sh.types.h
+	modified:   contrib/tcsh/snames.h
+	modified:   contrib/tcsh/tc.alloc.c
+	modified:   contrib/tcsh/tc.bind.c
+	modified:   contrib/tcsh/tc.const.c
+	modified:   contrib/tcsh/tc.decls.h
+	modified:   contrib/tcsh/tc.disc.c
+	modified:   contrib/tcsh/tc.func.c
+	modified:   contrib/tcsh/tc.h
+	modified:   contrib/tcsh/tc.nls.c
+	modified:   contrib/tcsh/tc.nls.h
+	modified:   contrib/tcsh/tc.os.c
+	modified:   contrib/tcsh/tc.os.h
+	modified:   contrib/tcsh/tc.printf.c
+	modified:   contrib/tcsh/tc.prompt.c
+	modified:   contrib/tcsh/tc.sched.c
+	modified:   contrib/tcsh/tc.sig.c
+	modified:   contrib/tcsh/tc.sig.h
+	modified:   contrib/tcsh/tc.str.c
+	modified:   contrib/tcsh/tc.vers.c
+	modified:   contrib/tcsh/tc.wait.h
+	modified:   contrib/tcsh/tc.who.c
+	modified:   contrib/tcsh/tcsh.man
+	modified:   contrib/tcsh/tcsh.man.new
+	modified:   contrib/tcsh/tcsh.man2html
+	modified:   contrib/tcsh/termcap.vms
+	modified:   contrib/tcsh/tw.color.c
+	modified:   contrib/tcsh/tw.comp.c
+	modified:   contrib/tcsh/tw.decls.h
+	modified:   contrib/tcsh/tw.h
+	modified:   contrib/tcsh/tw.help.c
+	modified:   contrib/tcsh/tw.init.c
+	modified:   contrib/tcsh/tw.parse.c
+	modified:   contrib/tcsh/tw.spell.c
+	modified:   contrib/tcsh/vms.termcap.c
+	modified:   etc/ntp/leap-seconds
+	modified:   lib/clang/libclang/Makefile
+	modified:   lib/clang/libllvm/Makefile
+	modified:   lib/libc/gen/isnan.c
+	modified:   lib/libc/secure/stack_protector.c
+	modified:   lib/libmagic/Makefile
+	modified:   lib/libmagic/config.h
+	modified:   lib/msun/src/k_sincosl.h
+	modified:   lib/msun/src/math.h
+	modified:   lib/msun/src/s_isnan.c
+	modified:   release/doc/share/xml/errata.xml
+	modified:   release/doc/share/xml/security.xml
+	modified:   sbin/camcontrol/camcontrol.c
+	modified:   sbin/ipf/Makefile
+	modified:   share/man/man4/cxgbe.4
+	modified:   share/man/man4/ntb_hw_plx.4
+	modified:   share/man/man5/passwd.5
+	modified:   share/man/man9/Makefile
+	modified:   share/man/man9/sleep.9
+	modified:   share/man/man9/sleepqueue.9
+	modified:   sys/amd64/amd64/exception.S
+	modified:   sys/amd64/amd64/machdep.c
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/amd64/include/pmap.h
+	modified:   sys/cam/ctl/ctl_frontend_cam_sim.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/spa.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/zmod/zmod_subr.c
+	modified:   sys/compat/linuxkpi/common/include/linux/device.h
+	modified:   sys/compat/linuxkpi/common/include/linux/sysfs.h
+	modified:   sys/conf/makeLINT.mk
+	modified:   sys/contrib/rdma/krping/krping.c
+	modified:   sys/dev/aacraid/aacraid.c
+	modified:   sys/dev/aacraid/aacraid_cam.c
+	modified:   sys/dev/aacraid/aacraid_reg.h
+	modified:   sys/dev/aacraid/aacraid_var.h
+	modified:   sys/dev/cfi/cfi_dev.c
+	modified:   sys/dev/cpuctl/cpuctl.c
+	modified:   sys/dev/cxgbe/common/t4_hw.c
+	modified:   sys/dev/cxgbe/common/t4_regs_values.h
+	modified:   sys/dev/cxgbe/iw_cxgbe/cm.c
+	modified:   sys/dev/cxgbe/iw_cxgbe/iw_cxgbe.h
+	modified:   sys/dev/cxgbe/iw_cxgbe/qp.c
+	modified:   sys/dev/cxgbe/t4_iov.c
+	modified:   sys/dev/cxgbe/t4_main.c
+	modified:   sys/dev/cxgbe/t4_netmap.c
+	modified:   sys/dev/cxgbe/t4_sge.c
+	modified:   sys/dev/cxgbe/t4_vf.c
+	modified:   sys/dev/cxgbe/tom/t4_cpl_io.c
+	modified:   sys/dev/cxgbe/tom/t4_ddp.c
+	modified:   sys/dev/cxgbe/tom/t4_listen.c
+	modified:   sys/dev/cxgbe/tom/t4_tom.c
+	modified:   sys/dev/cxgbe/tom/t4_tom.h
+	modified:   sys/dev/e1000/if_em.c
+	modified:   sys/dev/hwpmc/hwpmc_core.c
+	modified:   sys/dev/ioat/ioat.c
+	modified:   sys/dev/ioat/ioat.h
+	modified:   sys/dev/ioat/ioat_test.c
+	modified:   sys/dev/ioat/ioat_test.h
+	modified:   sys/dev/ntb/ntb.c
+	modified:   sys/dev/ntb/ntb.h
+	modified:   sys/dev/ntb/ntb_hw/ntb_hw_intel.c
+	modified:   sys/dev/ntb/ntb_hw/ntb_hw_plx.c
+	modified:   sys/dev/nvme/nvme_ctrlr.c
+	modified:   sys/dev/nvme/nvme_private.h
+	modified:   sys/dev/nvme/nvme_qpair.c
+	modified:   sys/dev/usb/controller/xhci.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/kern/imgact_elf.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/kern/kern_mib.c
+	modified:   sys/kern/kern_synch.c
+	modified:   sys/kern/subr_gtaskqueue.c
+	modified:   sys/kern/subr_sleepqueue.c
+	modified:   sys/kern/subr_taskqueue.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/net/if_vlan.c
+	modified:   sys/net/vnet.h
+	modified:   sys/ofed/include/rdma/ib_verbs.h
+	modified:   sys/sys/param.h
+	modified:   sys/sys/queue.h
+	modified:   sys/sys/sleepqueue.h
+	modified:   sys/sys/sysctl.h
+	modified:   sys/sys/systm.h
+	modified:   sys/vm/vm_map.c
+	modified:   sys/x86/include/specialreg.h
+	modified:   sys/x86/include/x86_var.h
+	modified:   sys/x86/x86/cpu_machdep.c
+	modified:   sys/x86/x86/identcpu.c
+	modified:   targets/pseudo/userland/Makefile.depend
+	new file:   tools/build/options/WITHOUT_SHARED_TOOLCHAIN
+	modified:   tools/build/options/WITH_SHARED_TOOLCHAIN
+	modified:   tools/tools/ioat/ioatcontrol.8
+	modified:   tools/tools/ioat/ioatcontrol.c
+	modified:   usr.bin/grep/file.c
+	modified:   usr.bin/grep/grep.1
+	modified:   usr.bin/grep/grep.c
+	modified:   usr.bin/grep/grep.h
+	modified:   usr.bin/grep/tests/grep_freebsd_test.sh
+	modified:   usr.bin/grep/util.c
+	modified:   usr.bin/netstat/mroute.c
+	modified:   usr.sbin/cpucontrol/cpucontrol.c
+	modified:   usr.sbin/ntp/config.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+
+HEAD is now at 1ed795aaba94 Merge branch 'freebsd/11-stable/master' into hardened/11-stable/master
+==== merge failed and clean up after ====
+On branch hardened/11-stable/master
+Your branch is up to date with 'origin/hardened/11-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 1ed795aaba94 Merge branch 'freebsd/11-stable/master' into hardened/11-stable/master
+==== END: hardened/11-stable/master ====
