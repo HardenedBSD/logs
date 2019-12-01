@@ -1,0 +1,117 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 21 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 6631bac3b909..f9400ce5e360
+Fast-forward
+ libexec/getty/main.c                 |   5 +-
+ libexec/getty/subr.c                 |   6 +-
+ libexec/rc/rc.d/ldconfig             |   6 +-
+ libexec/save-entropy/save-entropy.sh |  65 ++++++++++++----
+ sbin/bectl/bectl.c                   |  24 +++---
+ share/man/man4/tty.4                 |  13 +++-
+ sys/amd64/vmm/amd/amdvi_hw.c         |  16 ++--
+ sys/dev/ofw/ofw_bus_subr.h           |   3 +-
+ sys/dev/usb/input/uep.c              |   1 -
+ sys/dev/usb/input/ukbd.c             |   1 -
+ sys/dev/usb/input/ums.c              |   1 -
+ sys/fs/devfs/devfs_devs.c            |   3 +
+ sys/fs/devfs/devfs_int.h             |   2 +
+ sys/fs/devfs/devfs_vnops.c           |  11 ++-
+ sys/fs/tmpfs/tmpfs_vnops.c           |   8 +-
+ sys/kern/kern_conf.c                 |  20 +++--
+ sys/kern/kern_lock.c                 |   8 +-
+ sys/kern/subr_lock.c                 |  26 ++++++-
+ sys/kern/subr_smp.c                  |  60 +++++++++++++++
+ sys/kern/subr_witness.c              |   1 +
+ sys/kern/tty.c                       |  67 ++++++++++++++++
+ sys/netinet/ip_carp.c                |  14 ++--
+ sys/netinet/sctp_usrreq.c            |   5 +-
+ sys/netinet/tcp_input.c              |  22 +++---
+ sys/netinet6/dest6.c                 |  24 +++---
+ sys/netinet6/frag6.c                 |  12 +--
+ sys/netinet6/icmp6.c                 | 143 +++++++++++++++++++++--------------
+ sys/netinet6/ip6_input.c             |  24 +++---
+ sys/netinet6/ip6_mroute.c            |  10 ++-
+ sys/netinet6/mld6.c                  |  20 +++--
+ sys/netinet6/nd6_nbr.c               |  20 +++--
+ sys/netinet6/nd6_rtr.c               |  20 +++--
+ sys/netinet6/route6.c                |  12 +--
+ sys/netinet6/sctp6_usrreq.c          |  15 +++-
+ sys/netinet6/udp6_usrreq.c           |  12 +--
+ sys/netipsec/xform_ah.c              |  14 ++--
+ sys/netipsec/xform_esp.c             |  14 ++--
+ sys/sys/lockmgr.h                    |   2 +-
+ sys/sys/smp.h                        |   2 +
+ sys/sys/vnode.h                      |   4 +-
+ 40 files changed, 512 insertions(+), 224 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_map.c
+Merge made by the 'recursive' strategy.
+ share/man/man4/tcp.4                 |  11 ++-
+ sys/arm/samsung/exynos/chrome_kb.c   |   1 -
+ sys/arm/samsung/exynos/exynos_uart.c |   1 -
+ sys/arm/versatile/pl050.c            |   3 +-
+ sys/arm/xilinx/uart_dev_cdnc.c       |   1 -
+ sys/dev/cxgbe/tom/t4_listen.c        |  25 ++++++-
+ sys/dev/gpio/gpiobus.c               | 114 +++++++++++++++++++++++++++-
+ sys/dev/gpio/gpiobusvar.h            |  19 ++++-
+ sys/dev/gpio/gpiokeys.c              |   1 -
+ sys/dev/gpio/ofw_gpiobus.c           |  78 --------------------
+ sys/dev/quicc/quicc_bfe_fdt.c        |   1 -
+ sys/dev/rp/rp_isa.c                  |   3 +-
+ sys/dev/rp/rp_pci.c                  |   3 +-
+ sys/netinet/cc/cc_dctcp.c            |  16 ++--
+ sys/netinet/tcp_input.c              |  27 ++++---
+ sys/netinet/tcp_output.c             |   8 +-
+ sys/netinet/tcp_stacks/rack.c        |  72 +++++++++---------
+ sys/netinet/tcp_stacks/tcp_rack.h    |   2 +-
+ sys/netinet/tcp_syncache.c           |   4 +-
+ sys/netinet/tcp_syncache.h           |   2 +-
+ sys/netinet/tcp_usrreq.c             |  24 ++++--
+ sys/netinet/tcp_var.h                |  62 +++++++++-------
+ sys/netinet/toecore.c                |   4 +-
+ sys/netinet/toecore.h                |   2 +-
+ sys/powerpc/powerpc/machdep.c        |  44 +++++++++++
+ sys/powerpc/psim/uart_iobus.c        |   1 -
+ sys/vm/swap_pager.c                  |  10 ++-
+ sys/vm/vm_fault.c                    |   9 ++-
+ sys/vm/vm_map.c                      | 139 ++++++++++++++++++-----------------
+ sys/vm/vm_object.c                   |  86 +++++++++++++---------
+ sys/vm/vm_object.h                   |   6 +-
+ 31 files changed, 475 insertions(+), 304 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   f9400ce5e360..a5daa3918693  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
