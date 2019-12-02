@@ -1,0 +1,61 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/conf/files
+Removing sys/cddl/boot/zfs/lz4.c
+Merge made by the 'recursive' strategy.
+ cddl/lib/libzpool/Makefile                         |   8 +-
+ stand/efi/boot1/Makefile                           |   1 +
+ stand/i386/gptzfsboot/Makefile                     |   1 +
+ stand/i386/zfsboot/Makefile                        |   1 +
+ stand/libsa/Makefile                               |   5 +
+ stand/libsa/zfs/Makefile.inc                       |   2 +
+ sys/cddl/boot/zfs/lz4.c                            | 329 ---------------------
+ sys/cddl/boot/zfs/zfssubr.c                        |   3 +-
+ .../{uts/common/fs/zfs => common/lz4}/lz4.c        |  90 +++---
+ sys/cddl/contrib/opensolaris/common/lz4/lz4.h      |  50 ++++
+ .../contrib/opensolaris/uts/common/Makefile.files  |   1 -
+ sys/conf/files                                     |   2 +-
+ sys/conf/kern.pre.mk                               |   1 +
+ sys/modules/zfs/Makefile                           |   3 +
+ 14 files changed, 129 insertions(+), 368 deletions(-)
+ delete mode 100644 sys/cddl/boot/zfs/lz4.c
+ rename sys/cddl/contrib/opensolaris/{uts/common/fs/zfs => common/lz4}/lz4.c (94%)
+ create mode 100644 sys/cddl/contrib/opensolaris/common/lz4/lz4.h
+To github.com:HardenedBSD/hardenedBSD.git
+   132e9d779f8b..c4a82115e4c6  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
