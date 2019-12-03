@@ -1,0 +1,93 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/x86/mp_x86.c
+Auto-merging sys/conf/files
+Merge made by the 'recursive' strategy.
+ contrib/ipfilter/man/ipf.5          |   2 +-
+ lib/libstats/Makefile               |   4 +-
+ share/man/man3/stats.3              |   8 +-
+ share/man/man4/tcp.4                |  18 ++-
+ stand/efi/libefi/efipart.c          |  17 +++
+ sys/amd64/sgx/sgx.c                 |  20 +--
+ sys/arm/nvidia/drm2/tegra_bo.c      |   1 +
+ sys/cam/scsi/scsi_cd.c              |   3 +-
+ sys/compat/cloudabi/cloudabi_vdso.c |   5 +-
+ sys/compat/linux/linux_vdso.c       |   5 +-
+ sys/conf/files                      |   1 +
+ sys/dev/gpio/gpiobus.c              |  14 +-
+ sys/dev/md/md.c                     |  18 +--
+ sys/kern/kern_sharedpage.c          |   5 +-
+ sys/kern/sched_ule.c                |   5 +-
+ sys/kern/subr_vmem.c                |   4 +-
+ sys/netinet/cc/cc.h                 |   7 +-
+ sys/netinet/tcp.h                   |  15 ++
+ sys/netinet/tcp_input.c             |  50 +++++++
+ sys/netinet/tcp_log_buf.c           |   5 +-
+ sys/netinet/tcp_output.c            |  32 ++++-
+ sys/netinet/tcp_stats.c             | 274 ++++++++++++++++++++++++++++++++++++
+ sys/netinet/tcp_subr.c              |  15 ++
+ sys/netinet/tcp_usrreq.c            |  91 ++++++++++++
+ sys/netinet/tcp_var.h               |  18 ++-
+ sys/sys/bitset.h                    |   5 +-
+ sys/sys/param.h                     |   2 +-
+ sys/sys/stats.h                     |   3 +
+ sys/vm/uma_core.c                   | 121 ++++++++++------
+ sys/vm/uma_int.h                    |  32 ++---
+ sys/vm/vm_glue.c                    |   1 +
+ sys/vm/vm_page.c                    |   2 +-
+ sys/x86/iommu/intel_utils.c         |   2 +-
+ sys/x86/x86/mp_x86.c                |  18 +--
+ usr.sbin/bhyve/audio.c              |  28 ++--
+ usr.sbin/bhyve/hda_codec.c          |  44 +++---
+ usr.sbin/bhyve/net_backends.c       |  20 +--
+ usr.sbin/bhyve/pci_ahci.c           |  44 +++---
+ usr.sbin/bhyve/pci_e82545.c         |  14 +-
+ usr.sbin/bhyve/pci_hda.c            |  68 ++++-----
+ usr.sbin/bhyve/pci_nvme.c           |  16 +--
+ usr.sbin/bhyve/pci_virtio_block.c   |   4 +-
+ usr.sbin/bhyve/pci_virtio_console.c |   4 +-
+ usr.sbin/bhyve/pci_virtio_net.c     |   2 +-
+ usr.sbin/bhyve/pci_virtio_rnd.c     |   4 +-
+ usr.sbin/bhyve/pci_virtio_scsi.c    |  18 +--
+ usr.sbin/bhyve/pci_xhci.c           |   4 +-
+ usr.sbin/bhyve/rfb.c                |  14 +-
+ 48 files changed, 845 insertions(+), 262 deletions(-)
+ create mode 100644 sys/netinet/tcp_stats.c
+To github.com:HardenedBSD/hardenedBSD.git
+   c9b611893f05..bd131ef4d6fa  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
