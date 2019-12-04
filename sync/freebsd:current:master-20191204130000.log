@@ -1,0 +1,190 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is behind 'freebsd/master' by 4 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 575f514c41f6..a476ba06d501
+Fast-forward
+ UPDATING                                           |  2 +-
+ lib/libc/stdlib/reallocf.c                         |  3 +--
+ lib/libc/sys/compat-ino64.h                        |  1 -
+ lib/libc/sys/fstat.c                               |  1 -
+ lib/libc/sys/fstatat.c                             |  1 -
+ lib/libc/sys/fstatfs.c                             |  1 -
+ lib/libc/sys/getdirentries.c                       |  1 -
+ lib/libc/sys/getfsstat.c                           |  1 -
+ lib/libc/sys/lstat.c                               |  3 +--
+ lib/libc/sys/stat.c                                |  3 +--
+ lib/libc/sys/statfs.c                              |  1 -
+ libexec/rc/rc.d/devmatch                           |  2 +-
+ libexec/talkd/extern.h                             |  2 +-
+ sbin/devd/devd.8                                   |  3 +--
+ sbin/devd/devd.cc                                  |  3 +--
+ sbin/devd/devd.conf.5                              |  3 +--
+ sbin/devd/devd.h                                   |  3 +--
+ sbin/devd/devd.hh                                  |  3 +--
+ sbin/devd/parse.y                                  |  3 +--
+ sbin/devd/token.l                                  |  3 +--
+ share/man/man4/cardbus.4                           |  3 +--
+ share/man/man4/devctl.4                            |  3 +--
+ share/man/man4/exca.4                              |  3 +--
+ share/man/man4/iic.4                               |  5 ++---
+ share/man/man4/mmc.4                               |  3 +--
+ share/man/man4/mmcsd.4                             |  3 +--
+ share/man/man4/ow.4                                |  3 +--
+ share/man/man4/ow_temp.4                           |  3 +--
+ share/man/man4/owc.4                               |  3 +--
+ share/man/man4/pccard.4                            |  3 +--
+ share/man/man4/pccbb.4                             |  3 +--
+ share/man/man4/pcib.4                              |  3 +--
+ share/man/man4/pcic.4                              |  3 +--
+ share/man/man4/ufm.4                               |  3 +--
+ share/man/man5/os-release.5                        |  3 ++-
+ share/man/man9/bus_activate_resource.9             |  2 +-
+ stand/common/paths.h                               |  3 +--
+ stand/common/zfs_cmd.c                             |  2 +-
+ stand/efi/libefi/efipart.c                         | 23 +++++++++++-----------
+ stand/liblua/float.h                               |  2 +-
+ stand/liblua/locale.h                              |  2 +-
+ stand/liblua/math.h                                |  2 +-
+ stand/libsa/uuid_from_string.c                     |  3 +--
+ stand/libsa/uuid_to_string.c                       |  3 +--
+ sys/amd64/include/_bus.h                           |  3 +--
+ sys/arm/allwinner/a10_ahci.c                       |  5 ++---
+ sys/arm/conf/genboardid.awk                        |  2 +-
+ sys/arm/include/_bus.h                             |  2 +-
+ sys/arm/include/atags.h                            |  2 +-
+ sys/arm/include/board.h                            |  2 +-
+ sys/arm/xilinx/uart_dev_cdnc.c                     |  7 +++----
+ sys/arm64/include/_bus.h                           |  3 +--
+ sys/cam/mmc/mmc_da.c                               |  7 +++----
+ sys/dev/cardbus/cardbus.c                          |  3 +--
+ sys/dev/cardbus/cardbus_cis.c                      |  6 +++---
+ sys/dev/cardbus/cardbus_device.c                   |  3 +--
+ sys/dev/cardbus/cardbusvar.h                       |  5 ++---
+ sys/dev/exca/exca.c                                |  2 +-
+ sys/dev/exca/excareg.h                             |  2 +-
+ sys/dev/exca/excavar.h                             |  2 +-
+ sys/dev/fdc/fdc_isa.c                              |  3 +--
+ sys/dev/fdc/fdc_pccard.c                           |  3 +--
+ sys/dev/fdc/fdcvar.h                               |  3 +--
+ sys/dev/flash/at45d.c                              |  9 ++++-----
+ sys/dev/flash/mx25l.c                              |  2 +-
+ sys/dev/flash/n25q.c                               |  3 +--
+ sys/dev/iicbus/icee.c                              |  2 +-
+ sys/dev/mii/axphy.c                                |  3 +--
+ sys/dev/mmc/bridge.h                               |  2 +-
+ sys/dev/mmc/mmc.c                                  |  2 +-
+ sys/dev/mmc/mmc_private.h                          |  2 +-
+ sys/dev/mmc/mmc_subr.c                             |  2 +-
+ sys/dev/mmc/mmc_subr.h                             |  2 +-
+ sys/dev/mmc/mmcbr_if.m                             |  3 +--
+ sys/dev/mmc/mmcbrvar.h                             |  2 +-
+ sys/dev/mmc/mmcbus_if.m                            |  3 +--
+ sys/dev/mmc/mmcreg.h                               |  2 +-
+ sys/dev/mmc/mmcsd.c                                |  2 +-
+ sys/dev/mmc/mmcvar.h                               |  2 +-
+ sys/dev/ow/ow.c                                    |  3 +--
+ sys/dev/ow/ow.h                                    |  3 +--
+ sys/dev/ow/ow_temp.c                               |  3 +--
+ sys/dev/ow/owc_gpiobus.c                           |  3 +--
+ sys/dev/ow/owll.h                                  |  3 +--
+ sys/dev/ow/owll_if.m                               |  3 +--
+ sys/dev/ow/own.h                                   |  3 +--
+ sys/dev/ow/own_if.m                                |  3 +--
+ sys/dev/pccard/card_if.m                           |  3 +--
+ sys/dev/pccard/pccard_device.c                     |  3 +--
+ sys/dev/pccard/pccardvarp.h                        |  3 +--
+ sys/dev/pccard/power_if.m                          |  3 +--
+ sys/dev/pccbb/pccbb.c                              |  5 ++---
+ sys/dev/pccbb/pccbb_isa.c                          |  3 +--
+ sys/dev/pccbb/pccbb_pci.c                          |  5 ++---
+ sys/dev/pccbb/pccbbdevid.h                         |  2 +-
+ sys/dev/pccbb/pccbbvar.h                           |  5 ++---
+ sys/dev/puc/puc_pci.c                              |  2 +-
+ sys/dev/sdhci/sdhci_if.m                           |  3 +--
+ sys/dev/spibus/spi.h                               |  3 +--
+ sys/dev/spibus/spibus.c                            |  3 +--
+ sys/dev/spibus/spibus_if.m                         |  3 +--
+ sys/dev/spibus/spibusvar.h                         |  3 +--
+ sys/dev/uart/uart_bus_acpi.c                       |  2 +-
+ sys/dev/uart/uart_bus_isa.c                        |  7 +++----
+ sys/dev/uart/uart_bus_pccard.c                     |  2 +-
+ sys/dev/uart/uart_bus_pci.c                        |  5 ++---
+ sys/dev/uart/uart_bus_puc.c                        |  2 +-
+ sys/dev/usb/controller/generic_ohci.c              |  2 +-
+ sys/dev/usb/misc/ufm.c                             |  3 +--
+ sys/dev/usb/serial/ufoma.c                         |  5 ++---
+ sys/dev/usb/serial/umodem.c                        |  3 +--
+ sys/dev/usb/ufm_ioctl.h                            |  3 +--
+ sys/dev/wi/if_wivar.h                              |  2 +-
+ sys/i386/include/_bus.h                            |  3 +--
+ sys/mips/cavium/uart_cpu_octeonusart.c             |  3 +--
+ sys/mips/include/_bus.h                            |  3 +--
+ sys/mips/include/elf.h                             |  2 +-
+ sys/mips/mips/ptrace_machdep.c                     |  3 +--
+ sys/powerpc/include/_bus.h                         |  3 +--
+ sys/riscv/include/_bus.h                           |  3 +--
+ sys/sparc64/include/_bus.h                         |  3 +--
+ tools/tools/git/git-svn-rebase                     |  2 +-
+ tools/tools/nanobsd/dhcpd/common                   |  2 +-
+ tools/tools/nanobsd/dhcpd/os-base                  |  2 +-
+ tools/tools/nanobsd/embedded/beaglebone.cfg        |  2 +-
+ tools/tools/nanobsd/embedded/common                |  2 +-
+ tools/tools/nanobsd/embedded/i386.cfg              |  2 +-
+ tools/tools/nanobsd/embedded/pandaboard.cfg        |  2 +-
+ .../nanobsd/embedded/qemu-amd64-uefi-bios.cfg      |  2 +-
+ tools/tools/nanobsd/embedded/qemu-amd64-uefi.cfg   |  2 +-
+ tools/tools/nanobsd/embedded/qemu-amd64.cfg        |  2 +-
+ tools/tools/nanobsd/embedded/qemu-armv7.cfg        |  2 +-
+ tools/tools/nanobsd/embedded/qemu-i386.cfg         |  2 +-
+ tools/tools/nanobsd/embedded/qemu-mips.cfg         |  2 +-
+ tools/tools/nanobsd/embedded/qemu-mips64.cfg       |  2 +-
+ tools/tools/nanobsd/embedded/qemu-powerpc.cfg      |  2 +-
+ tools/tools/nanobsd/embedded/qemu-powerpc64.cfg    |  2 +-
+ tools/tools/nanobsd/embedded/qemu-sparc64.cfg      |  2 +-
+ tools/tools/nanobsd/embedded/rpi.cfg               |  2 +-
+ tools/tools/nanobsd/embedded/rpi2.cfg              |  2 +-
+ tools/tools/nanobsd/embedded/rpi3.cfg              |  2 +-
+ tools/tools/nanobsd/legacy.sh                      |  6 +++---
+ tools/tools/nanobsd/mtree-dedup.awk                |  2 +-
+ usr.sbin/dumpcis/dumpcis.8                         |  1 -
+ usr.sbin/dumpcis/main.c                            |  2 +-
+ usr.sbin/ntp/doc/ntp.conf.5                        |  2 +-
+ 146 files changed, 170 insertions(+), 255 deletions(-)
+==== merge branches ====
+==== merge freebsd/master branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   575f514c41f6..a476ba06d501  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
