@@ -1,0 +1,137 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/arm/arm/machdep.c
+Auto-merging stand/lua/Makefile
+Auto-merging stand/loader.mk
+Auto-merging stand/defs.mk
+CONFLICT (content): Merge conflict in stand/defs.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc stand/defs.mk
+index 29ff86e7807c,6ae9069664ac..000000000000
+--- a/stand/defs.mk
++++ b/stand/defs.mk
+@@@ -41,8 -40,9 +41,14 @@@ BOOTOBJ=	${OBJTOP}/stan
+  # BINDIR is where we install
+  BINDIR?=	/boot
+  
+++<<<<<<< HEAD
+ +MK_SAFESTACK=	no
+ +MK_CFI=		no
+++=======
++ # LUAPATH is where we search for and install lua scripts.
++ LUAPATH?=	/boot/lua
++ FLUASRC?=	${SRCTOP}/libexec/flua
+++>>>>>>> freebsd/12-stable/master
+  
+  LIBSA=		${BOOTOBJ}/libsa/libsa.a
+  .if ${MACHINE} == "i386"
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   etc/mtree/BSD.tests.dist
+	modified:   lib/csu/common/crtend.c
+	modified:   libexec/Makefile
+	new file:   libexec/flua/Makefile
+	new file:   libexec/flua/linit_flua.c
+	new file:   libexec/flua/luaconf.h
+	renamed:    stand/liblua/lfs.c -> libexec/flua/modules/lfs.c
+	renamed:    stand/liblua/lfs.h -> libexec/flua/modules/lfs.h
+	new file:   libexec/flua/modules/lposix.c
+	new file:   libexec/flua/modules/lposix.h
+	modified:   sbin/mdmfs/mdmfs.8
+	modified:   sbin/mdmfs/mdmfs.c
+	modified:   share/man/man4/imcsmb.4
+	modified:   share/man/man4/jedec_dimm.4
+	new file:   share/mk/src.lua.mk
+	modified:   stand/common/interp_lua.c
+	modified:   stand/liblua/Makefile
+	modified:   stand/liblua/luaconf.h
+	modified:   stand/liblua/lutils.c
+	modified:   stand/libsa/nfs.c
+	modified:   stand/loader.mk
+	modified:   stand/lua/Makefile
+	modified:   sys/arm/arm/machdep.c
+	modified:   sys/arm64/arm64/busdma_bounce.c
+	modified:   sys/compat/linux/linux_event.c
+	modified:   sys/compat/linux/linux_event.h
+	modified:   sys/conf/files.arm64
+	modified:   sys/dev/imcsmb/imcsmb.c
+	modified:   sys/dev/imcsmb/imcsmb_pci.c
+	modified:   sys/dev/imcsmb/imcsmb_reg.h
+	modified:   sys/dev/imcsmb/imcsmb_var.h
+	modified:   sys/dev/jedec_dimm/jedec_dimm.c
+	modified:   sys/dev/jedec_dimm/jedec_dimm.h
+	modified:   sys/dev/pci/pci.c
+	modified:   sys/dev/snp/snp.c
+	modified:   sys/sys/buf.h
+	modified:   usr.bin/patch/Makefile
+	modified:   usr.bin/patch/patch.1
+	modified:   usr.bin/patch/patch.c
+	modified:   usr.bin/patch/pch.c
+	modified:   usr.bin/patch/pch.h
+	new file:   usr.bin/patch/tests/Makefile
+	new file:   usr.bin/patch/tests/PR74127-cline.diff
+	new file:   usr.bin/patch/tests/PR74127-good.diff
+	new file:   usr.bin/patch/tests/PR74127-repro.diff
+	new file:   usr.bin/patch/tests/PR74127.in
+	new file:   usr.bin/patch/tests/unified_patch_test.sh
+	modified:   usr.bin/patch/util.c
+	modified:   usr.bin/tip/tip/tip.c
+	modified:   usr.sbin/rpc.lockd/lockd.c
+	modified:   usr.sbin/rpc.lockd/rpc.lockd.8
+	modified:   usr.sbin/rpc.statd/rpc.statd.8
+	modified:   usr.sbin/rpc.statd/statd.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   stand/defs.mk
+
+HEAD is now at f80da7867cef Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at f80da7867cef Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
