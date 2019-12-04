@@ -1,0 +1,363 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/x86/cpu_machdep.c
+Auto-merging sys/sys/sysent.h
+Auto-merging sys/sys/imgact_elf.h
+Auto-merging sys/sys/imgact.h
+Auto-merging sys/sparc64/sparc64/machdep.c
+Auto-merging sys/riscv/riscv/machdep.c
+Auto-merging sys/powerpc/powerpc/exec_machdep.c
+Auto-merging sys/powerpc/powerpc/elf64_machdep.c
+Auto-merging sys/mips/mips/pm_machdep.c
+Auto-merging sys/mips/mips/freebsd32_machdep.c
+Auto-merging sys/kern/kern_exec.c
+Auto-merging sys/kern/imgact_elf.c
+CONFLICT (modify/delete): sys/kern/imgact_aout.c deleted in HEAD and modified in freebsd/current/master. Version freebsd/current/master of sys/kern/imgact_aout.c left in tree.
+Auto-merging sys/i386/linux/linux_sysvec.c
+CONFLICT (content): Merge conflict in sys/i386/linux/linux_sysvec.c
+Auto-merging sys/i386/i386/machdep.c
+Auto-merging sys/i386/cloudabi32/cloudabi32_sysvec.c
+Auto-merging sys/compat/freebsd32/freebsd32_misc.c
+Auto-merging sys/compat/cloudabi64/cloudabi64_module.c
+CONFLICT (content): Merge conflict in sys/compat/cloudabi64/cloudabi64_module.c
+Auto-merging sys/arm64/linux/linux_sysvec.c
+CONFLICT (content): Merge conflict in sys/arm64/linux/linux_sysvec.c
+Auto-merging sys/arm64/arm64/machdep.c
+Auto-merging sys/arm/arm/machdep.c
+Auto-merging sys/amd64/linux32/linux32_sysvec.c
+CONFLICT (content): Merge conflict in sys/amd64/linux32/linux32_sysvec.c
+Auto-merging sys/amd64/linux/linux_sysvec.c
+CONFLICT (content): Merge conflict in sys/amd64/linux/linux_sysvec.c
+Auto-merging sys/amd64/ia32/ia32_signal.c
+Auto-merging sys/amd64/cloudabi64/cloudabi64_sysvec.c
+Auto-merging sys/amd64/amd64/machdep.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/amd64/linux/linux_sysvec.c
+index e1e44da9e92c,efdd6f36d2b2..000000000000
+--- a/sys/amd64/linux/linux_sysvec.c
++++ b/sys/amd64/linux/linux_sysvec.c
+@@@ -313,16 -311,14 +314,22 @@@ linux_copyout_strings(struct image_para
+  		execpath_len = 0;
+  
+  	p = imgp->proc;
+++<<<<<<< HEAD
+ +	arginfo = (struct ps_strings *)p->p_psstrings;
+ +	destp =	(caddr_t)arginfo - SPARE_USRSPACE -
+ +	    roundup(sizeof(canary), sizeof(char *)) -
+ +	    roundup(execpath_len, sizeof(char *)) -
+ +	    roundup(ARG_MAX - imgp->args->stringspace, sizeof(char *));
+++=======
++ 	arginfo = (struct ps_strings *)p->p_sysent->sv_psstrings;
++ 	destp = (uintptr_t)arginfo;
+++>>>>>>> freebsd/current/master
+  
+  	if (execpath_len != 0) {
+- 		imgp->execpathp = (uintptr_t)arginfo - execpath_len;
+- 		error = copyout(imgp->execpath, (void *)imgp->execpathp,
+- 		    execpath_len);
++ 		destp -= execpath_len;
++ 		destp = rounddown2(destp, sizeof(void *));
++ 		imgp->execpathp = destp;
++ 		error = copyout(imgp->execpath, (void *)destp, execpath_len);
+  		if (error != 0)
+  			return (error);
+  	}
+diff --cc sys/amd64/linux32/linux32_sysvec.c
+index 9e8e638a38f7,a08372b66add..000000000000
+--- a/sys/amd64/linux32/linux32_sysvec.c
++++ b/sys/amd64/linux32/linux32_sysvec.c
+@@@ -738,16 -738,14 +740,22 @@@ linux_copyout_strings(struct image_para
+  	else
+  		execpath_len = 0;
+  
+++<<<<<<< HEAD
+ +	arginfo = (struct linux32_ps_strings *)imgp->proc->p_psstrings;
+ +	destp =	(caddr_t)arginfo - SPARE_USRSPACE -
+ +	    roundup(sizeof(canary), sizeof(char *)) -
+ +	    roundup(execpath_len, sizeof(char *)) -
+ +	    roundup(ARG_MAX - imgp->args->stringspace, sizeof(char *));
+++=======
++ 	arginfo = (struct linux32_ps_strings *)LINUX32_PS_STRINGS;
++ 	destp = (uintptr_t)arginfo;
+++>>>>>>> freebsd/current/master
+  
+  	if (execpath_len != 0) {
+- 		imgp->execpathp = (uintptr_t)arginfo - execpath_len;
+- 		error = copyout(imgp->execpath, (void *)imgp->execpathp,
+- 		    execpath_len);
++ 		destp -= execpath_len;
++ 		destp = rounddown2(destp, sizeof(void *));
++ 		imgp->execpathp = destp;
++ 		error = copyout(imgp->execpath, (void *)destp, execpath_len);
+  		if (error != 0)
+  			return (error);
+  	}
+diff --cc sys/arm64/linux/linux_sysvec.c
+index 9ce1769f7ee2,9e322c9a35b8..000000000000
+--- a/sys/arm64/linux/linux_sysvec.c
++++ b/sys/arm64/linux/linux_sysvec.c
+@@@ -233,16 -231,14 +234,22 @@@ linux_copyout_strings(struct image_para
+  		execpath_len = 0;
+  
+  	p = imgp->proc;
+++<<<<<<< HEAD
+ +	arginfo = (struct ps_strings *)p->p_psstrings;
+ +	destp = (caddr_t)arginfo - SPARE_USRSPACE -
+ +	    roundup(sizeof(canary), sizeof(char *)) -
+ +	    roundup(execpath_len, sizeof(char *)) -
+ +	    roundup(ARG_MAX - imgp->args->stringspace, sizeof(char *));
+++=======
++ 	arginfo = (struct ps_strings *)p->p_sysent->sv_psstrings;
++ 	destp = (uintptr_t)arginfo;
+++>>>>>>> freebsd/current/master
+  
+  	if (execpath_len != 0) {
+- 		imgp->execpathp = (uintptr_t)arginfo - execpath_len;
+- 		error = copyout(imgp->execpath, (void *)imgp->execpathp,
+- 		    execpath_len);
++ 		destp -= execpath_len;
++ 		destp = rounddown2(destp, sizeof(void *));
++ 		imgp->execpathp = destp;
++ 		error = copyout(imgp->execpath, (void *)destp, execpath_len);
+  		if (error != 0)
+  			return (error);
+  	}
+diff --cc sys/compat/cloudabi64/cloudabi64_module.c
+index 1abc47407b0a,ed0c85b4aba5..000000000000
+--- a/sys/compat/cloudabi64/cloudabi64_module.c
++++ b/sys/compat/cloudabi64/cloudabi64_module.c
+@@@ -55,8 -55,8 +55,13 @@@ cloudabi64_copyout_strings(struct image
+  	/* Copy out program arguments. */
+  	args = imgp->args;
+  	len = exec_args_get_begin_envv(args) - args->begin_argv;
+++<<<<<<< HEAD
+ +	begin = rounddown2(imgp->proc->p_usrstack - len, sizeof(register_t));
+ +	*stack_base = (register_t *)begin;
+++=======
++ 	begin = rounddown2(imgp->sysent->sv_usrstack - len, sizeof(register_t));
++ 	*stack_base = begin;
+++>>>>>>> freebsd/current/master
+  	return (copyout(args->begin_argv, (void *)begin, len));
+  }
+  
+diff --cc sys/i386/linux/linux_sysvec.c
+index 7103ab78eddf,e067e1f82123..000000000000
+--- a/sys/i386/linux/linux_sysvec.c
++++ b/sys/i386/linux/linux_sysvec.c
+@@@ -286,15 -290,13 +292,21 @@@ linux_copyout_strings(struct image_para
+  		execpath_len = strlen(imgp->execpath) + 1;
+  	else
+  		execpath_len = 0;
+++<<<<<<< HEAD
+ +	arginfo = (struct ps_strings *)p->p_psstrings;
+ +	destp = (caddr_t)arginfo - SPARE_USRSPACE - linux_szplatform -
+ +	    roundup(sizeof(canary), sizeof(char *)) -
+ +	    roundup(execpath_len, sizeof(char *)) -
+ +	    roundup(ARG_MAX - imgp->args->stringspace, sizeof(char *));
+++=======
++ 	arginfo = (struct ps_strings *)p->p_sysent->sv_psstrings;
++ 	destp = (uintptr_t)arginfo;
+++>>>>>>> freebsd/current/master
+  
+  	/* Install LINUX_PLATFORM. */
+- 	error = copyout(linux_kplatform, ((caddr_t)arginfo - linux_szplatform),
+- 	    linux_szplatform);
++ 	destp -= linux_szplatform;
++ 	destp = rounddown2(destp, sizeof(void *));
++ 	error = copyout(linux_kplatform, (void *)destp, linux_szplatform);
+  	if (error != 0)
+  		return (error);
+  
+* Unmerged path sys/kern/imgact_aout.c
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	new file:   secure/caroot/trusted/Entrust_Root_Certification_Authority_-_G4.pem
+	modified:   share/man/man4/man4.aarch64/rk_gpio.4
+	modified:   share/man/man4/man4.aarch64/rk_grf.4
+	modified:   share/man/man4/man4.aarch64/rk_pinctrl.4
+	modified:   share/man/man4/man4.arm/aw_gpio.4
+	modified:   share/man/man4/man4.arm/aw_mmc.4
+	modified:   share/man/man4/man4.arm/aw_rtc.4
+	modified:   share/man/man4/man4.arm/aw_spi.4
+	modified:   stand/efi/libefi/efi_console.c
+	modified:   stand/lua/core.lua
+	modified:   sys/amd64/amd64/machdep.c
+	modified:   sys/amd64/cloudabi32/cloudabi32_sysvec.c
+	modified:   sys/amd64/cloudabi64/cloudabi64_sysvec.c
+	modified:   sys/amd64/ia32/ia32_signal.c
+	modified:   sys/arm/allwinner/a10/a10_padconf.c
+	modified:   sys/arm/allwinner/a10_fb.c
+	modified:   sys/arm/allwinner/a10_hdmi.c
+	modified:   sys/arm/allwinner/a10_hdmiaudio.c
+	modified:   sys/arm/allwinner/a13/a13_padconf.c
+	modified:   sys/arm/allwinner/a20/a20_padconf.c
+	modified:   sys/arm/allwinner/a31/a31_padconf.c
+	modified:   sys/arm/allwinner/a31/a31_r_padconf.c
+	modified:   sys/arm/allwinner/a31/a31s_padconf.c
+	modified:   sys/arm/allwinner/a33/a33_padconf.c
+	modified:   sys/arm/allwinner/a64/a64_padconf.c
+	modified:   sys/arm/allwinner/a64/a64_r_padconf.c
+	modified:   sys/arm/allwinner/a83t/a83t_padconf.c
+	modified:   sys/arm/allwinner/a83t/a83t_r_padconf.c
+	modified:   sys/arm/allwinner/allwinner_pinctrl.h
+	modified:   sys/arm/allwinner/aw_ccu.c
+	modified:   sys/arm/allwinner/aw_gmacclk.c
+	modified:   sys/arm/allwinner/aw_machdep.h
+	modified:   sys/arm/allwinner/aw_mp.h
+	modified:   sys/arm/allwinner/aw_nmi.c
+	modified:   sys/arm/allwinner/aw_reset.c
+	modified:   sys/arm/allwinner/aw_rsb.c
+	modified:   sys/arm/allwinner/aw_sid.c
+	modified:   sys/arm/allwinner/aw_sid.h
+	modified:   sys/arm/allwinner/aw_thermal.c
+	modified:   sys/arm/allwinner/aw_ts.c
+	modified:   sys/arm/allwinner/aw_usbphy.c
+	modified:   sys/arm/allwinner/axp209.c
+	modified:   sys/arm/allwinner/axp209reg.h
+	modified:   sys/arm/allwinner/axp81x.c
+	modified:   sys/arm/allwinner/clkng/aw_clk.h
+	modified:   sys/arm/allwinner/clkng/aw_clk_nkmp.c
+	modified:   sys/arm/allwinner/clkng/aw_clk_nm.c
+	modified:   sys/arm/allwinner/clkng/aw_clk_nm.h
+	modified:   sys/arm/allwinner/clkng/aw_clk_prediv_mux.c
+	modified:   sys/arm/allwinner/clkng/aw_clk_prediv_mux.h
+	modified:   sys/arm/allwinner/h3/h3_padconf.c
+	modified:   sys/arm/allwinner/h3/h3_r_padconf.c
+	modified:   sys/arm/allwinner/if_awg.c
+	modified:   sys/arm/allwinner/if_awgreg.h
+	modified:   sys/arm/arm/machdep.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2836_mp.h
+	modified:   sys/arm/cloudabi32/cloudabi32_sysvec.c
+	modified:   sys/arm64/arm64/elf32_machdep.c
+	modified:   sys/arm64/arm64/machdep.c
+	modified:   sys/arm64/cloudabi32/cloudabi32_sysvec.c
+	modified:   sys/arm64/cloudabi64/cloudabi64_sysvec.c
+	modified:   sys/arm64/rockchip/clk/rk3328_cru.c
+	modified:   sys/arm64/rockchip/clk/rk3399_cru.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_armclk.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_armclk.h
+	modified:   sys/arm64/rockchip/clk/rk_clk_composite.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_composite.h
+	modified:   sys/arm64/rockchip/clk/rk_clk_gate.h
+	modified:   sys/arm64/rockchip/clk/rk_clk_pll.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_pll.h
+	modified:   sys/arm64/rockchip/clk/rk_cru.c
+	modified:   sys/arm64/rockchip/clk/rk_cru.h
+	modified:   sys/arm64/rockchip/if_dwc_rk.c
+	modified:   sys/arm64/rockchip/rk805.c
+	modified:   sys/arm64/rockchip/rk805reg.h
+	modified:   sys/arm64/rockchip/rk_gpio.c
+	modified:   sys/arm64/rockchip/rk_grf.c
+	modified:   sys/arm64/rockchip/rk_pinctrl.c
+	modified:   sys/compat/cloudabi32/cloudabi32_module.c
+	modified:   sys/compat/cloudabi32/cloudabi32_util.h
+	modified:   sys/compat/cloudabi64/cloudabi64_util.h
+	modified:   sys/compat/freebsd32/freebsd32_misc.c
+	modified:   sys/compat/freebsd32/freebsd32_util.h
+	modified:   sys/compat/ia32/ia32_signal.h
+	modified:   sys/dev/cpufreq/cpufreq_dt.c
+	modified:   sys/dev/gpio/gpioregulator.c
+	modified:   sys/dev/hdmi/dwc_hdmi.h
+	modified:   sys/dev/iicbus/sy8106a.c
+	modified:   sys/dev/mmc/host/dwmmc_altera.c
+	modified:   sys/dev/mmc/host/dwmmc_rockchip.c
+	modified:   sys/dev/mmc/host/dwmmc_samsung.c
+	modified:   sys/dev/pwm/ofw_pwm.c
+	modified:   sys/dev/pwm/ofw_pwm.h
+	modified:   sys/dev/pwm/pwmbus.c
+	modified:   sys/dev/pwm/pwmc.c
+	modified:   sys/dev/pwm/pwmc.h
+	modified:   sys/dev/uart/uart_dev_snps.c
+	modified:   sys/dev/usb/controller/generic_usb_if.m
+	modified:   sys/i386/cloudabi32/cloudabi32_sysvec.c
+	modified:   sys/i386/i386/machdep.c
+	modified:   sys/kern/imgact_elf.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/kern/vfs_bio.c
+	modified:   sys/kern/vfs_cluster.c
+	modified:   sys/mips/ingenic/jz4780_lcd.c
+	modified:   sys/mips/ingenic/jz4780_lcd.h
+	modified:   sys/mips/ingenic/jz4780_smb.c
+	modified:   sys/mips/ingenic/jz4780_smb.h
+	modified:   sys/mips/mips/freebsd32_machdep.c
+	modified:   sys/mips/mips/pm_machdep.c
+	modified:   sys/powerpc/booke/locore.S
+	modified:   sys/powerpc/booke/pmap.c
+	modified:   sys/powerpc/include/reg.h
+	modified:   sys/powerpc/powerpc/elf64_machdep.c
+	modified:   sys/powerpc/powerpc/exec_machdep.c
+	modified:   sys/riscv/riscv/machdep.c
+	modified:   sys/sparc64/sparc64/db_trace.c
+	modified:   sys/sparc64/sparc64/machdep.c
+	modified:   sys/sys/bitstring.h
+	modified:   sys/sys/buf.h
+	modified:   sys/sys/imgact.h
+	modified:   sys/sys/imgact_elf.h
+	modified:   sys/sys/sysent.h
+	modified:   sys/ufs/ffs/ffs_alloc.c
+	modified:   sys/ufs/ffs/ffs_inode.c
+	modified:   sys/ufs/ffs/ffs_softdep.c
+	modified:   sys/ufs/ffs/ffs_vnops.c
+	modified:   sys/x86/x86/cpu_machdep.c
+	modified:   usr.sbin/mergemaster/mergemaster.sh
+	modified:   usr.sbin/pwm/pwm.c
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	both modified:   sys/amd64/linux/linux_sysvec.c
+	both modified:   sys/amd64/linux32/linux32_sysvec.c
+	both modified:   sys/arm64/linux/linux_sysvec.c
+	both modified:   sys/compat/cloudabi64/cloudabi64_module.c
+	both modified:   sys/i386/linux/linux_sysvec.c
+	deleted by us:   sys/kern/imgact_aout.c
+
+HEAD is now at def4bfd201ba Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at def4bfd201ba Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
