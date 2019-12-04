@@ -1,0 +1,112 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is behind 'freebsd/stable/12' by 16 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating c1825b5b650c..e6f396c87c88
+Fast-forward
+ etc/mtree/BSD.tests.dist                     |   2 +
+ lib/csu/common/crtend.c                      |  10 +-
+ libexec/Makefile                             |   1 +
+ libexec/flua/Makefile                        |  38 ++
+ libexec/flua/linit_flua.c                    |  73 +++
+ libexec/flua/luaconf.h                       | 795 +++++++++++++++++++++++++++
+ {stand/liblua => libexec/flua/modules}/lfs.c |  82 +++
+ {stand/liblua => libexec/flua/modules}/lfs.h |   0
+ libexec/flua/modules/lposix.c                |  63 +++
+ libexec/flua/modules/lposix.h                |  11 +
+ sbin/mdmfs/mdmfs.8                           |   8 +-
+ sbin/mdmfs/mdmfs.c                           |  32 +-
+ share/man/man4/imcsmb.4                      |   1 -
+ share/man/man4/jedec_dimm.4                  |   1 -
+ share/mk/src.lua.mk                          |  45 ++
+ stand/common/interp_lua.c                    |   4 +-
+ stand/defs.mk                                |   4 +
+ stand/liblua/Makefile                        |   7 +-
+ stand/liblua/luaconf.h                       |   2 +-
+ stand/liblua/lutils.c                        |   2 +
+ stand/libsa/nfs.c                            |   7 +-
+ stand/loader.mk                              |   1 +
+ stand/lua/Makefile                           |   2 +-
+ sys/arm/arm/machdep.c                        |   4 +-
+ sys/arm64/arm64/busdma_bounce.c              |   2 +-
+ sys/compat/linux/linux_event.c               |  93 ++--
+ sys/compat/linux/linux_event.h               |   4 +-
+ sys/conf/files.arm64                         |   6 +-
+ sys/dev/imcsmb/imcsmb.c                      |   1 -
+ sys/dev/imcsmb/imcsmb_pci.c                  |   1 -
+ sys/dev/imcsmb/imcsmb_reg.h                  |   1 -
+ sys/dev/imcsmb/imcsmb_var.h                  |   1 -
+ sys/dev/jedec_dimm/jedec_dimm.c              |   1 -
+ sys/dev/jedec_dimm/jedec_dimm.h              |   1 -
+ sys/dev/pci/pci.c                            |  11 +-
+ sys/dev/snp/snp.c                            |   2 +-
+ sys/sys/buf.h                                |   2 +-
+ usr.bin/patch/Makefile                       |   5 +
+ usr.bin/patch/patch.1                        |   8 +-
+ usr.bin/patch/patch.c                        | 142 ++++-
+ usr.bin/patch/pch.c                          |  27 +-
+ usr.bin/patch/pch.h                          |   2 +
+ usr.bin/patch/tests/Makefile                 |  12 +
+ usr.bin/patch/tests/PR74127-cline.diff       |   4 +
+ usr.bin/patch/tests/PR74127-good.diff        |   4 +
+ usr.bin/patch/tests/PR74127-repro.diff       |   4 +
+ usr.bin/patch/tests/PR74127.in               |  14 +
+ usr.bin/patch/tests/unified_patch_test.sh    | 152 +++++
+ usr.bin/patch/util.c                         |   4 +-
+ usr.bin/tip/tip/tip.c                        |  23 +-
+ usr.sbin/rpc.lockd/lockd.c                   |  10 +-
+ usr.sbin/rpc.lockd/rpc.lockd.8               |  14 +-
+ usr.sbin/rpc.statd/rpc.statd.8               |  14 +-
+ usr.sbin/rpc.statd/statd.c                   |  14 +-
+ 54 files changed, 1676 insertions(+), 98 deletions(-)
+ create mode 100644 libexec/flua/Makefile
+ create mode 100644 libexec/flua/linit_flua.c
+ create mode 100644 libexec/flua/luaconf.h
+ rename {stand/liblua => libexec/flua/modules}/lfs.c (84%)
+ rename {stand/liblua => libexec/flua/modules}/lfs.h (100%)
+ create mode 100644 libexec/flua/modules/lposix.c
+ create mode 100644 libexec/flua/modules/lposix.h
+ create mode 100644 share/mk/src.lua.mk
+ create mode 100644 usr.bin/patch/tests/Makefile
+ create mode 100644 usr.bin/patch/tests/PR74127-cline.diff
+ create mode 100644 usr.bin/patch/tests/PR74127-good.diff
+ create mode 100644 usr.bin/patch/tests/PR74127-repro.diff
+ create mode 100644 usr.bin/patch/tests/PR74127.in
+ create mode 100755 usr.bin/patch/tests/unified_patch_test.sh
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   c1825b5b650c..e6f396c87c88  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
