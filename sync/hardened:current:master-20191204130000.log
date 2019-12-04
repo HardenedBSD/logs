@@ -1,0 +1,332 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 21 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating def4bfd201ba..b41d881d62bb
+Fast-forward
+ .../Entrust_Root_Certification_Authority_-_G4.pem  | 137 +++++++++++++++++++++
+ share/man/man4/man4.aarch64/rk_gpio.4              |   1 -
+ share/man/man4/man4.aarch64/rk_grf.4               |   1 -
+ share/man/man4/man4.aarch64/rk_pinctrl.4           |   1 -
+ share/man/man4/man4.arm/aw_gpio.4                  |   1 -
+ share/man/man4/man4.arm/aw_mmc.4                   |   1 -
+ share/man/man4/man4.arm/aw_rtc.4                   |   1 -
+ share/man/man4/man4.arm/aw_spi.4                   |   1 -
+ stand/efi/libefi/efi_console.c                     |   7 +-
+ stand/lua/core.lua                                 |   2 +-
+ sys/amd64/amd64/machdep.c                          |   2 +-
+ sys/amd64/cloudabi32/cloudabi32_sysvec.c           |  12 +-
+ sys/amd64/cloudabi64/cloudabi64_sysvec.c           |   7 +-
+ sys/amd64/ia32/ia32_signal.c                       |   2 +-
+ sys/amd64/linux/linux_sysvec.c                     |  69 ++++++-----
+ sys/amd64/linux32/linux32_sysvec.c                 |  68 +++++-----
+ sys/arm/allwinner/a10/a10_padconf.c                |   1 -
+ sys/arm/allwinner/a10_fb.c                         |   1 -
+ sys/arm/allwinner/a10_hdmi.c                       |   1 -
+ sys/arm/allwinner/a10_hdmiaudio.c                  |   1 -
+ sys/arm/allwinner/a13/a13_padconf.c                |   1 -
+ sys/arm/allwinner/a20/a20_padconf.c                |   1 -
+ sys/arm/allwinner/a31/a31_padconf.c                |   1 -
+ sys/arm/allwinner/a31/a31_r_padconf.c              |   1 -
+ sys/arm/allwinner/a31/a31s_padconf.c               |   1 -
+ sys/arm/allwinner/a33/a33_padconf.c                |   1 -
+ sys/arm/allwinner/a64/a64_padconf.c                |   1 -
+ sys/arm/allwinner/a64/a64_r_padconf.c              |   1 -
+ sys/arm/allwinner/a83t/a83t_padconf.c              |   1 -
+ sys/arm/allwinner/a83t/a83t_r_padconf.c            |   1 -
+ sys/arm/allwinner/allwinner_pinctrl.h              |   1 -
+ sys/arm/allwinner/aw_ccu.c                         |   1 -
+ sys/arm/allwinner/aw_gmacclk.c                     |   1 -
+ sys/arm/allwinner/aw_machdep.h                     |   1 -
+ sys/arm/allwinner/aw_mp.h                          |   1 -
+ sys/arm/allwinner/aw_nmi.c                         |   1 -
+ sys/arm/allwinner/aw_reset.c                       |   1 -
+ sys/arm/allwinner/aw_rsb.c                         |   1 -
+ sys/arm/allwinner/aw_sid.c                         |   1 -
+ sys/arm/allwinner/aw_sid.h                         |   1 -
+ sys/arm/allwinner/aw_thermal.c                     |   1 -
+ sys/arm/allwinner/aw_ts.c                          |   1 -
+ sys/arm/allwinner/aw_usbphy.c                      |   1 -
+ sys/arm/allwinner/axp209.c                         |   1 -
+ sys/arm/allwinner/axp209reg.h                      |   1 -
+ sys/arm/allwinner/axp81x.c                         |   1 -
+ sys/arm/allwinner/clkng/aw_clk.h                   |   1 -
+ sys/arm/allwinner/clkng/aw_clk_nkmp.c              |   1 -
+ sys/arm/allwinner/clkng/aw_clk_nm.c                |   1 -
+ sys/arm/allwinner/clkng/aw_clk_nm.h                |   1 -
+ sys/arm/allwinner/clkng/aw_clk_prediv_mux.c        |   1 -
+ sys/arm/allwinner/clkng/aw_clk_prediv_mux.h        |   1 -
+ sys/arm/allwinner/h3/h3_padconf.c                  |   1 -
+ sys/arm/allwinner/h3/h3_r_padconf.c                |   1 -
+ sys/arm/allwinner/if_awg.c                         |   1 -
+ sys/arm/allwinner/if_awgreg.h                      |   1 -
+ sys/arm/arm/machdep.c                              |   2 +-
+ sys/arm/broadcom/bcm2835/bcm2836_mp.h              |   1 -
+ sys/arm/cloudabi32/cloudabi32_sysvec.c             |   2 +-
+ sys/arm64/arm64/elf32_machdep.c                    |   2 +-
+ sys/arm64/arm64/machdep.c                          |   2 +-
+ sys/arm64/cloudabi32/cloudabi32_sysvec.c           |   2 +-
+ sys/arm64/cloudabi64/cloudabi64_sysvec.c           |   2 +-
+ sys/arm64/linux/linux_sysvec.c                     |  65 +++++-----
+ sys/arm64/rockchip/clk/rk3328_cru.c                |   1 -
+ sys/arm64/rockchip/clk/rk3399_cru.c                |  17 ++-
+ sys/arm64/rockchip/clk/rk_clk_armclk.c             |   1 -
+ sys/arm64/rockchip/clk/rk_clk_armclk.h             |   1 -
+ sys/arm64/rockchip/clk/rk_clk_composite.c          |   1 -
+ sys/arm64/rockchip/clk/rk_clk_composite.h          |   1 -
+ sys/arm64/rockchip/clk/rk_clk_gate.h               |   1 -
+ sys/arm64/rockchip/clk/rk_clk_pll.c                |  14 ---
+ sys/arm64/rockchip/clk/rk_clk_pll.h                |   3 -
+ sys/arm64/rockchip/clk/rk_cru.c                    |   1 -
+ sys/arm64/rockchip/clk/rk_cru.h                    |   1 -
+ sys/arm64/rockchip/if_dwc_rk.c                     |   1 -
+ sys/arm64/rockchip/rk805.c                         |   1 -
+ sys/arm64/rockchip/rk805reg.h                      |   1 -
+ sys/arm64/rockchip/rk_gpio.c                       |   1 -
+ sys/arm64/rockchip/rk_grf.c                        |   1 -
+ sys/arm64/rockchip/rk_pinctrl.c                    |   1 -
+ sys/compat/cloudabi32/cloudabi32_module.c          |  22 ++--
+ sys/compat/cloudabi32/cloudabi32_util.h            |   4 +-
+ sys/compat/cloudabi64/cloudabi64_module.c          |  22 ++--
+ sys/compat/cloudabi64/cloudabi64_util.h            |   4 +-
+ sys/compat/freebsd32/freebsd32_misc.c              |  32 ++---
+ sys/compat/freebsd32/freebsd32_util.h              |   2 +-
+ sys/compat/ia32/ia32_signal.h                      |   2 +-
+ sys/dev/cpufreq/cpufreq_dt.c                       |   8 +-
+ sys/dev/gpio/gpioregulator.c                       |   1 -
+ sys/dev/hdmi/dwc_hdmi.h                            |   1 -
+ sys/dev/iicbus/sy8106a.c                           |   1 -
+ sys/dev/mmc/host/dwmmc_altera.c                    |   1 -
+ sys/dev/mmc/host/dwmmc_rockchip.c                  |   1 -
+ sys/dev/mmc/host/dwmmc_samsung.c                   |   1 -
+ sys/dev/pci/hostb_pci.c                            |   3 +-
+ sys/dev/pci/pci_user.c                             |   3 +-
+ sys/dev/pci/pcireg.h                               |   3 +-
+ sys/dev/pci/pcivar.h                               |   3 +-
+ sys/dev/pwm/ofw_pwm.c                              |   1 -
+ sys/dev/pwm/ofw_pwm.h                              |   1 -
+ sys/dev/pwm/pwmbus.c                               |   1 -
+ sys/dev/pwm/pwmc.c                                 |   1 -
+ sys/dev/pwm/pwmc.h                                 |   1 -
+ sys/dev/uart/uart_dev_snps.c                       |   1 -
+ sys/dev/usb/controller/generic_usb_if.m            |   1 -
+ sys/i386/cloudabi32/cloudabi32_sysvec.c            |  12 +-
+ sys/i386/i386/machdep.c                            |   2 +-
+ sys/i386/linux/linux_sysvec.c                      | 104 +++++++++-------
+ sys/kern/imgact_elf.c                              |  10 +-
+ sys/kern/kern_exec.c                               |  36 +++---
+ sys/kern/vfs_bio.c                                 |  33 +++--
+ sys/kern/vfs_cluster.c                             |   2 +-
+ sys/mips/ingenic/jz4780_lcd.c                      |   1 -
+ sys/mips/ingenic/jz4780_lcd.h                      |   1 -
+ sys/mips/ingenic/jz4780_smb.c                      |   1 -
+ sys/mips/ingenic/jz4780_smb.h                      |   1 -
+ sys/mips/mips/freebsd32_machdep.c                  |   6 +-
+ sys/mips/mips/pm_machdep.c                         |   2 +-
+ sys/powerpc/booke/locore.S                         |   7 +-
+ sys/powerpc/booke/pmap.c                           |   4 +-
+ sys/powerpc/include/reg.h                          |   2 +-
+ sys/powerpc/powerpc/elf64_machdep.c                |   4 +-
+ sys/powerpc/powerpc/exec_machdep.c                 |   4 +-
+ sys/riscv/riscv/machdep.c                          |   2 +-
+ sys/sparc64/sparc64/db_trace.c                     |   2 +-
+ sys/sparc64/sparc64/machdep.c                      |   4 +-
+ sys/sys/bitstring.h                                | 114 ++++++++++-------
+ sys/sys/buf.h                                      |  15 +--
+ sys/sys/imgact.h                                   |   4 +-
+ sys/sys/imgact_elf.h                               |   6 +-
+ sys/sys/sysent.h                                   |  12 +-
+ sys/ufs/ffs/ffs_alloc.c                            |  11 +-
+ sys/ufs/ffs/ffs_inode.c                            |  30 +----
+ sys/ufs/ffs/ffs_softdep.c                          |  32 ++---
+ sys/ufs/ffs/ffs_vnops.c                            |   2 +-
+ sys/x86/x86/cpu_machdep.c                          |   1 +
+ usr.sbin/mergemaster/mergemaster.sh                |   1 +
+ usr.sbin/pwm/pwm.c                                 |   1 -
+ 139 files changed, 584 insertions(+), 485 deletions(-)
+ create mode 100644 secure/caroot/trusted/Entrust_Root_Certification_Authority_-_G4.pem
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tools/tools/nanobsd/embedded/qemu-powerpc64.cfg
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |  2 +-
+ lib/libc/stdlib/reallocf.c                         |  3 +--
+ lib/libc/sys/compat-ino64.h                        |  1 -
+ lib/libc/sys/fstat.c                               |  1 -
+ lib/libc/sys/fstatat.c                             |  1 -
+ lib/libc/sys/fstatfs.c                             |  1 -
+ lib/libc/sys/getdirentries.c                       |  1 -
+ lib/libc/sys/getfsstat.c                           |  1 -
+ lib/libc/sys/lstat.c                               |  3 +--
+ lib/libc/sys/stat.c                                |  3 +--
+ lib/libc/sys/statfs.c                              |  1 -
+ libexec/rc/rc.d/devmatch                           |  2 +-
+ libexec/talkd/extern.h                             |  2 +-
+ sbin/devd/devd.8                                   |  3 +--
+ sbin/devd/devd.cc                                  |  3 +--
+ sbin/devd/devd.conf.5                              |  3 +--
+ sbin/devd/devd.h                                   |  3 +--
+ sbin/devd/devd.hh                                  |  3 +--
+ sbin/devd/parse.y                                  |  3 +--
+ sbin/devd/token.l                                  |  3 +--
+ share/man/man4/cardbus.4                           |  3 +--
+ share/man/man4/devctl.4                            |  3 +--
+ share/man/man4/exca.4                              |  3 +--
+ share/man/man4/iic.4                               |  5 ++---
+ share/man/man4/mmc.4                               |  3 +--
+ share/man/man4/mmcsd.4                             |  3 +--
+ share/man/man4/ow.4                                |  3 +--
+ share/man/man4/ow_temp.4                           |  3 +--
+ share/man/man4/owc.4                               |  3 +--
+ share/man/man4/pccard.4                            |  3 +--
+ share/man/man4/pccbb.4                             |  3 +--
+ share/man/man4/pcib.4                              |  3 +--
+ share/man/man4/pcic.4                              |  3 +--
+ share/man/man4/ufm.4                               |  3 +--
+ share/man/man5/os-release.5                        |  3 ++-
+ share/man/man9/bus_activate_resource.9             |  2 +-
+ stand/common/paths.h                               |  3 +--
+ stand/common/zfs_cmd.c                             |  2 +-
+ stand/efi/libefi/efipart.c                         | 23 +++++++++++-----------
+ stand/liblua/float.h                               |  2 +-
+ stand/liblua/locale.h                              |  2 +-
+ stand/liblua/math.h                                |  2 +-
+ stand/libsa/uuid_from_string.c                     |  3 +--
+ stand/libsa/uuid_to_string.c                       |  3 +--
+ sys/amd64/include/_bus.h                           |  3 +--
+ sys/arm/allwinner/a10_ahci.c                       |  5 ++---
+ sys/arm/conf/genboardid.awk                        |  2 +-
+ sys/arm/include/_bus.h                             |  2 +-
+ sys/arm/include/atags.h                            |  2 +-
+ sys/arm/include/board.h                            |  2 +-
+ sys/arm/xilinx/uart_dev_cdnc.c                     |  7 +++----
+ sys/arm64/include/_bus.h                           |  3 +--
+ sys/cam/mmc/mmc_da.c                               |  7 +++----
+ sys/dev/cardbus/cardbus.c                          |  3 +--
+ sys/dev/cardbus/cardbus_cis.c                      |  6 +++---
+ sys/dev/cardbus/cardbus_device.c                   |  3 +--
+ sys/dev/cardbus/cardbusvar.h                       |  5 ++---
+ sys/dev/exca/exca.c                                |  2 +-
+ sys/dev/exca/excareg.h                             |  2 +-
+ sys/dev/exca/excavar.h                             |  2 +-
+ sys/dev/fdc/fdc_isa.c                              |  3 +--
+ sys/dev/fdc/fdc_pccard.c                           |  3 +--
+ sys/dev/fdc/fdcvar.h                               |  3 +--
+ sys/dev/flash/at45d.c                              |  9 ++++-----
+ sys/dev/flash/mx25l.c                              |  2 +-
+ sys/dev/flash/n25q.c                               |  3 +--
+ sys/dev/iicbus/icee.c                              |  2 +-
+ sys/dev/mii/axphy.c                                |  3 +--
+ sys/dev/mmc/bridge.h                               |  2 +-
+ sys/dev/mmc/mmc.c                                  |  2 +-
+ sys/dev/mmc/mmc_private.h                          |  2 +-
+ sys/dev/mmc/mmc_subr.c                             |  2 +-
+ sys/dev/mmc/mmc_subr.h                             |  2 +-
+ sys/dev/mmc/mmcbr_if.m                             |  3 +--
+ sys/dev/mmc/mmcbrvar.h                             |  2 +-
+ sys/dev/mmc/mmcbus_if.m                            |  3 +--
+ sys/dev/mmc/mmcreg.h                               |  2 +-
+ sys/dev/mmc/mmcsd.c                                |  2 +-
+ sys/dev/mmc/mmcvar.h                               |  2 +-
+ sys/dev/ow/ow.c                                    |  3 +--
+ sys/dev/ow/ow.h                                    |  3 +--
+ sys/dev/ow/ow_temp.c                               |  3 +--
+ sys/dev/ow/owc_gpiobus.c                           |  3 +--
+ sys/dev/ow/owll.h                                  |  3 +--
+ sys/dev/ow/owll_if.m                               |  3 +--
+ sys/dev/ow/own.h                                   |  3 +--
+ sys/dev/ow/own_if.m                                |  3 +--
+ sys/dev/pccard/card_if.m                           |  3 +--
+ sys/dev/pccard/pccard_device.c                     |  3 +--
+ sys/dev/pccard/pccardvarp.h                        |  3 +--
+ sys/dev/pccard/power_if.m                          |  3 +--
+ sys/dev/pccbb/pccbb.c                              |  5 ++---
+ sys/dev/pccbb/pccbb_isa.c                          |  3 +--
+ sys/dev/pccbb/pccbb_pci.c                          |  5 ++---
+ sys/dev/pccbb/pccbbdevid.h                         |  2 +-
+ sys/dev/pccbb/pccbbvar.h                           |  5 ++---
+ sys/dev/puc/puc_pci.c                              |  2 +-
+ sys/dev/sdhci/sdhci_if.m                           |  3 +--
+ sys/dev/spibus/spi.h                               |  3 +--
+ sys/dev/spibus/spibus.c                            |  3 +--
+ sys/dev/spibus/spibus_if.m                         |  3 +--
+ sys/dev/spibus/spibusvar.h                         |  3 +--
+ sys/dev/uart/uart_bus_acpi.c                       |  2 +-
+ sys/dev/uart/uart_bus_isa.c                        |  7 +++----
+ sys/dev/uart/uart_bus_pccard.c                     |  2 +-
+ sys/dev/uart/uart_bus_pci.c                        |  5 ++---
+ sys/dev/uart/uart_bus_puc.c                        |  2 +-
+ sys/dev/usb/controller/generic_ohci.c              |  2 +-
+ sys/dev/usb/misc/ufm.c                             |  3 +--
+ sys/dev/usb/serial/ufoma.c                         |  5 ++---
+ sys/dev/usb/serial/umodem.c                        |  3 +--
+ sys/dev/usb/ufm_ioctl.h                            |  3 +--
+ sys/dev/wi/if_wivar.h                              |  2 +-
+ sys/i386/include/_bus.h                            |  3 +--
+ sys/mips/cavium/uart_cpu_octeonusart.c             |  3 +--
+ sys/mips/include/_bus.h                            |  3 +--
+ sys/mips/include/elf.h                             |  2 +-
+ sys/mips/mips/ptrace_machdep.c                     |  3 +--
+ sys/powerpc/include/_bus.h                         |  3 +--
+ sys/riscv/include/_bus.h                           |  3 +--
+ sys/sparc64/include/_bus.h                         |  3 +--
+ tools/tools/git/git-svn-rebase                     |  2 +-
+ tools/tools/nanobsd/dhcpd/common                   |  2 +-
+ tools/tools/nanobsd/dhcpd/os-base                  |  2 +-
+ tools/tools/nanobsd/embedded/beaglebone.cfg        |  2 +-
+ tools/tools/nanobsd/embedded/common                |  2 +-
+ tools/tools/nanobsd/embedded/i386.cfg              |  2 +-
+ tools/tools/nanobsd/embedded/pandaboard.cfg        |  2 +-
+ .../nanobsd/embedded/qemu-amd64-uefi-bios.cfg      |  2 +-
+ tools/tools/nanobsd/embedded/qemu-amd64-uefi.cfg   |  2 +-
+ tools/tools/nanobsd/embedded/qemu-amd64.cfg        |  2 +-
+ tools/tools/nanobsd/embedded/qemu-armv7.cfg        |  2 +-
+ tools/tools/nanobsd/embedded/qemu-i386.cfg         |  2 +-
+ tools/tools/nanobsd/embedded/qemu-mips.cfg         |  2 +-
+ tools/tools/nanobsd/embedded/qemu-mips64.cfg       |  2 +-
+ tools/tools/nanobsd/embedded/qemu-powerpc.cfg      |  2 +-
+ tools/tools/nanobsd/embedded/qemu-powerpc64.cfg    |  2 +-
+ tools/tools/nanobsd/embedded/qemu-sparc64.cfg      |  2 +-
+ tools/tools/nanobsd/embedded/rpi.cfg               |  2 +-
+ tools/tools/nanobsd/embedded/rpi2.cfg              |  2 +-
+ tools/tools/nanobsd/embedded/rpi3.cfg              |  2 +-
+ tools/tools/nanobsd/legacy.sh                      |  6 +++---
+ tools/tools/nanobsd/mtree-dedup.awk                |  2 +-
+ usr.sbin/dumpcis/dumpcis.8                         |  1 -
+ usr.sbin/dumpcis/main.c                            |  2 +-
+ usr.sbin/ntp/doc/ntp.conf.5                        |  2 +-
+ 146 files changed, 170 insertions(+), 255 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   b41d881d62bb..6ef82d20aa0b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
