@@ -1,0 +1,145 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is behind 'freebsd/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 2e26edd00c82..7d0572ff8ffc
+Fast-forward
+ UPDATING                                           |  10 ++
+ contrib/elftoolchain/.cirrus.yml                   |  22 +++
+ contrib/elftoolchain/README.rst                    |  10 +-
+ contrib/elftoolchain/addr2line/addr2line.c         |   2 +-
+ contrib/elftoolchain/common/elfdefinitions.h       |  44 +++++-
+ contrib/elftoolchain/common/native-elf-format      |   4 +-
+ contrib/elftoolchain/elfcopy/ascii.c               |   2 +-
+ contrib/elftoolchain/elfcopy/binary.c              |   2 +-
+ contrib/elftoolchain/elfcopy/elfcopy.h             |   2 +-
+ contrib/elftoolchain/elfcopy/main.c                |   2 +-
+ contrib/elftoolchain/elfcopy/sections.c            |   2 +-
+ contrib/elftoolchain/elfdump/elfdump.c             |   2 +-
+ contrib/elftoolchain/libdwarf/dwarf.h              |   2 +-
+ contrib/elftoolchain/libdwarf/dwarf_dump.c         |   4 +-
+ contrib/elftoolchain/libdwarf/libdwarf_attr.c      |   2 +-
+ contrib/elftoolchain/libdwarf/libdwarf_reloc.c     |   2 +-
+ contrib/elftoolchain/libelf/_libelf.h              |   6 +-
+ contrib/elftoolchain/libelf/_libelf_config.h       |   8 +-
+ contrib/elftoolchain/libelf/elf.3                  |  54 ++++---
+ contrib/elftoolchain/libelf/elf_data.c             |  18 ++-
+ contrib/elftoolchain/libelf/elf_end.c              |   6 +-
+ contrib/elftoolchain/libelf/elf_flagdata.3         |  14 +-
+ contrib/elftoolchain/libelf/elf_getdata.3          |  11 +-
+ contrib/elftoolchain/libelf/elf_getident.c         |   4 +-
+ contrib/elftoolchain/libelf/elf_next.3             |   7 +-
+ contrib/elftoolchain/libelf/elf_next.c             |  16 +-
+ contrib/elftoolchain/libelf/elf_open.3             |  12 +-
+ contrib/elftoolchain/libelf/elf_rand.c             |  13 +-
+ contrib/elftoolchain/libelf/elf_rawfile.c          |   6 +-
+ contrib/elftoolchain/libelf/elf_scn.c              |   7 +-
+ contrib/elftoolchain/libelf/elf_update.3           |   8 +-
+ contrib/elftoolchain/libelf/elf_update.c           |  47 ++++--
+ contrib/elftoolchain/libelf/gelf.3                 |  11 +-
+ contrib/elftoolchain/libelf/gelf_cap.c             |  11 +-
+ contrib/elftoolchain/libelf/gelf_dyn.c             |  10 +-
+ contrib/elftoolchain/libelf/gelf_getcap.3          |  10 +-
+ contrib/elftoolchain/libelf/gelf_getdyn.3          |  11 +-
+ contrib/elftoolchain/libelf/gelf_getmove.3         |  10 +-
+ contrib/elftoolchain/libelf/gelf_getrel.3          |  10 +-
+ contrib/elftoolchain/libelf/gelf_getrela.3         |  10 +-
+ contrib/elftoolchain/libelf/gelf_getsym.3          |  10 +-
+ contrib/elftoolchain/libelf/gelf_getsyminfo.3      |  10 +-
+ contrib/elftoolchain/libelf/gelf_getsymshndx.3     |  12 +-
+ contrib/elftoolchain/libelf/gelf_move.c            |  10 +-
+ contrib/elftoolchain/libelf/gelf_newehdr.3         |   8 +-
+ contrib/elftoolchain/libelf/gelf_newphdr.3         |   8 +-
+ contrib/elftoolchain/libelf/gelf_rel.c             |  12 +-
+ contrib/elftoolchain/libelf/gelf_rela.c            |  12 +-
+ contrib/elftoolchain/libelf/gelf_sym.c             |  10 +-
+ contrib/elftoolchain/libelf/gelf_syminfo.c         |  10 +-
+ contrib/elftoolchain/libelf/gelf_symshndx.c        |  10 +-
+ contrib/elftoolchain/libelf/libelf_allocate.c      |  35 ++---
+ contrib/elftoolchain/libelf/libelf_ar.c            |  43 +++++-
+ contrib/elftoolchain/libelf/libelf_convert.m4      |  15 +-
+ contrib/elftoolchain/libelf/libelf_data.c          |  10 +-
+ contrib/elftoolchain/libelf/libelf_ehdr.c          |  16 +-
+ contrib/elftoolchain/libelf/libelf_extended.c      |  12 +-
+ contrib/elftoolchain/libelf/libelf_memory.c        |   6 +-
+ contrib/elftoolchain/libelf/libelf_msize.m4        |  15 +-
+ contrib/elftoolchain/libelf/libelf_phdr.c          |  17 ++-
+ contrib/elftoolchain/libelf/libelf_xlate.c         |   7 +-
+ contrib/elftoolchain/libelf/os.Linux.mk            |  31 ++++
+ .../elftoolchain/libelftc/elftc_bfd_find_target.3  |   4 +-
+ contrib/elftoolchain/libelftc/elftc_string_table.c |   2 +-
+ .../libelftc/elftc_string_table_create.3           |   4 +-
+ contrib/elftoolchain/libelftc/libelftc.h           |   2 +-
+ contrib/elftoolchain/libelftc/libelftc_bfdtarget.c |   2 +-
+ .../elftoolchain/libelftc/make-toolchain-version   |  61 ++++----
+ contrib/elftoolchain/nm/nm.c                       |   5 +-
+ contrib/elftoolchain/readelf/readelf.1             |   4 +-
+ contrib/elftoolchain/readelf/readelf.c             |  15 +-
+ lib/libelftc/elftc_version.c                       |   2 +-
+ release/arm/RPI-B.conf                             |   6 +-
+ release/arm64/RPI3.conf                            |   8 +-
+ sys/conf/files                                     |   2 +
+ sys/dev/mlx5/device.h                              |  24 ++-
+ sys/dev/mlx5/driver.h                              |   3 +-
+ sys/dev/mlx5/mlx5_core/mlx5_cmd.c                  |   8 +
+ sys/dev/mlx5/mlx5_core/mlx5_fw.c                   |   6 +
+ sys/dev/mlx5/mlx5_core/mlx5_main.c                 |   2 +
+ sys/dev/mlx5/mlx5_core/mlx5_tls.c                  | 120 +++++++++++++++
+ sys/dev/mlx5/mlx5_en/en.h                          |  11 ++
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c                |   5 +-
+ sys/dev/mlx5/mlx5_ifc.h                            | 167 ++++++++++++++++++++-
+ sys/dev/mlx5/tls.h                                 |  39 +++++
+ sys/fs/nullfs/null_subr.c                          |   2 +
+ sys/geom/geom.h                                    |   9 +-
+ sys/geom/geom_int.h                                |  12 --
+ sys/geom/geom_subr.c                               |   2 +-
+ sys/geom/mirror/g_mirror_ctl.c                     |   2 +-
+ sys/geom/part/g_part.c                             |   2 +-
+ sys/geom/part/g_part_mbr.c                         |   2 +-
+ sys/geom/part/g_part_vtoc8.c                       |   2 +-
+ sys/kern/kern_sx.c                                 |   6 +
+ sys/kern/vfs_subr.c                                |   8 +-
+ sys/modules/mlx5/Makefile                          |   1 +
+ sys/netinet6/udp6_usrreq.c                         |   3 +-
+ 97 files changed, 974 insertions(+), 332 deletions(-)
+ create mode 100644 contrib/elftoolchain/.cirrus.yml
+ create mode 100644 contrib/elftoolchain/libelf/os.Linux.mk
+ create mode 100644 sys/dev/mlx5/mlx5_core/mlx5_tls.c
+ create mode 100644 sys/dev/mlx5/tls.h
+==== merge branches ====
+==== merge freebsd/master branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   2e26edd00c82..7d0572ff8ffc  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
