@@ -1,0 +1,66 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/files
+Merge made by the 'recursive' strategy.
+ sys/arm/mv/a37x0_spi.c                 | 494 +++++++++++++++++++
+ sys/arm64/conf/GENERIC                 |   1 +
+ sys/conf/files                         |   2 +
+ sys/conf/files.arm64                   |   1 +
+ sys/dev/mlx5/device.h                  |   1 +
+ sys/dev/mlx5/mlx5_en/en.h              |  30 +-
+ sys/dev/mlx5/mlx5_en/en_hw_tls.h       | 104 ++++
+ sys/dev/mlx5/mlx5_en/en_rl.h           |   1 +
+ sys/dev/mlx5/mlx5_en/mlx5_en_ethtool.c |  20 +
+ sys/dev/mlx5/mlx5_en/mlx5_en_hw_tls.c  | 834 +++++++++++++++++++++++++++++++++
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c    |  75 ++-
+ sys/dev/mlx5/mlx5_en/mlx5_en_rl.c      |  17 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_tx.c      | 372 ++++++++++++---
+ sys/dev/mlx5/qp.h                      |   7 +-
+ sys/geom/geom_disk.c                   |  36 +-
+ sys/kern/subr_epoch.c                  |  17 +-
+ sys/modules/mlx5en/Makefile            |   4 +-
+ sys/netinet/ip_carp.c                  |   9 +-
+ sys/netinet/ip_carp.h                  |   4 +-
+ sys/netinet6/ip6_input.c               |  27 +-
+ 20 files changed, 1917 insertions(+), 139 deletions(-)
+ create mode 100644 sys/arm/mv/a37x0_spi.c
+ create mode 100644 sys/dev/mlx5/mlx5_en/en_hw_tls.h
+ create mode 100644 sys/dev/mlx5/mlx5_en/mlx5_en_hw_tls.c
+To github.com:HardenedBSD/hardenedBSD.git
+   c7012a386152..c0802d0ad348  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
