@@ -1,0 +1,64 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/x86/cpu_machdep.c
+Auto-merging sys/amd64/amd64/machdep.c
+Merge made by the 'recursive' strategy.
+ etc/mtree/BSD.tests.dist                   |   2 +
+ sys/amd64/amd64/machdep.c                  |   7 +
+ sys/arm/arm/mp_machdep.c                   |   2 -
+ sys/arm/arm/unwind.c                       |  13 +-
+ sys/arm/include/machdep.h                  |  20 ++
+ sys/cam/scsi/scsi_enc_ses.c                |  34 ++-
+ sys/fs/nfs/nfsproto.h                      |  45 ++++
+ sys/geom/geom_dev.c                        |  45 ++--
+ sys/geom/geom_subr.c                       |   3 +
+ sys/geom/multipath/g_multipath.c           |  25 ++
+ sys/x86/x86/cpu_machdep.c                  |  35 +++
+ tests/sys/geom/class/Makefile              |   1 +
+ tests/sys/geom/class/multipath/Makefile    |  13 ++
+ tests/sys/geom/class/multipath/conf.sh     | 107 +++++++++
+ tests/sys/geom/class/multipath/failloop.sh |  77 ++++++
+ tests/sys/geom/class/multipath/misc.sh     | 363 +++++++++++++++++++++++++++++
+ 16 files changed, 754 insertions(+), 38 deletions(-)
+ create mode 100644 tests/sys/geom/class/multipath/Makefile
+ create mode 100755 tests/sys/geom/class/multipath/conf.sh
+ create mode 100755 tests/sys/geom/class/multipath/failloop.sh
+ create mode 100755 tests/sys/geom/class/multipath/misc.sh
+To github.com:HardenedBSD/hardenedBSD.git
+   b6def2235157..2fd02f32e5ff  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
