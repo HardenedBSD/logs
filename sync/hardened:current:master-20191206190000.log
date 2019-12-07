@@ -1,0 +1,73 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_map.c
+Auto-merging sys/conf/files
+Merge made by the 'recursive' strategy.
+ lib/libbe/be.c                                     |   5 +-
+ lib/libbe/be_access.c                              |   2 +
+ lib/libbe/be_info.c                                |   2 +
+ sys/amd64/linux/Makefile                           |  16 +-
+ sys/amd64/linux32/Makefile                         |  16 +-
+ sys/arm/mv/a37x0_spi.c                             |   6 +-
+ sys/arm64/linux/Makefile                           |  16 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |   2 +-
+ sys/compat/cloudabi32/Makefile                     |  21 +-
+ sys/compat/cloudabi64/Makefile                     |  21 +-
+ sys/compat/freebsd32/Makefile                      |  21 +-
+ sys/conf/files                                     |   1 +
+ sys/dev/aacraid/aacraid.c                          |  48 +---
+ sys/dev/aacraid/aacraid_cam.c                      |  21 --
+ sys/dev/aacraid/aacraid_linux.c                    |   6 -
+ sys/dev/aacraid/aacraid_var.h                      |  27 ---
+ sys/dev/gpio/gpiobus.c                             |  20 ++
+ sys/dev/gpio/gpiomdio.c                            | 243 +++++++++++++++++++++
+ sys/dev/nvme/nvme_qpair.c                          |  25 ++-
+ sys/fs/nfs/nfs.h                                   |   8 +
+ sys/i386/linux/Makefile                            |  16 +-
+ sys/kern/Makefile                                  |  18 +-
+ sys/kern/subr_devstat.c                            |   7 +-
+ sys/netinet/ip_carp.c                              |   3 -
+ sys/sys/exec.h                                     |   1 -
+ sys/tools/makesyscalls.lua                         |  53 ++++-
+ sys/vm/vm_map.c                                    |   4 +-
+ usr.bin/tail/tail.c                                |  13 +-
+ 28 files changed, 460 insertions(+), 182 deletions(-)
+ create mode 100644 sys/dev/gpio/gpiomdio.c
+To github.com:HardenedBSD/hardenedBSD.git
+   c0802d0ad348..ff012ccd2990  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
