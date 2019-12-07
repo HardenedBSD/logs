@@ -1,0 +1,109 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/edbrowse/files/patch-src_html-tidy.c
+Auto-merging security/gnupg/Makefile
+Auto-merging emulators/qemu/Makefile
+Merge made by the 'recursive' strategy.
+ comms/flrig/Makefile                               |   8 +-
+ databases/mysql57-client/Makefile                  |   2 +-
+ .../mysql57-client/files/patch-cmake_ssl.cmake     |  30 +-
+ databases/pgbarman/Makefile                        |   3 +-
+ databases/pgbarman/distinfo                        |   6 +-
+ databases/pgbarman/files/patch-barman_config.py    |   4 +-
+ databases/pgbarman/files/patch-doc_barman.5        |   8 +-
+ databases/pgbarman/files/patch-setup.py            |   8 +-
+ devel/Makefile                                     |   3 +
+ devel/intel-graphics-compiler/Makefile             |  53 +++
+ devel/intel-graphics-compiler/distinfo             |   5 +
+ devel/intel-graphics-compiler/files/patch-alloca   |  34 ++
+ devel/intel-graphics-compiler/files/patch-limits   |  16 +
+ .../files/patch-process-name                       |  16 +
+ devel/intel-graphics-compiler/files/patch-unix     | 309 +++++++++++++++++
+ devel/intel-graphics-compiler/pkg-descr            |   5 +
+ devel/intel-graphics-compiler/pkg-plist            | 104 ++++++
+ devel/opencl-clang/Makefile                        |  42 +++
+ devel/opencl-clang/distinfo                        |   7 +
+ devel/opencl-clang/pkg-descr                       |   5 +
+ devel/protobuf-java/Makefile                       |   2 +-
+ devel/protobuf-java/distinfo                       |   6 +-
+ devel/spirv-llvm-translator/Makefile               |  40 +++
+ devel/spirv-llvm-translator/distinfo               |   3 +
+ devel/spirv-llvm-translator/pkg-descr              |   4 +
+ editors/tea/Makefile                               |   2 +-
+ editors/tea/distinfo                               |   6 +-
+ emulators/qemu/Makefile                            |   7 +-
+ games/assaultcube/Makefile                         |   3 +-
+ graphics/R-cran-visNetwork/Makefile                |   2 +-
+ graphics/R-cran-visNetwork/distinfo                |   6 +-
+ lang/Makefile                                      |   1 +
+ lang/compute-runtime/Makefile                      |  40 +++
+ lang/compute-runtime/distinfo                      |   3 +
+ lang/compute-runtime/files/patch-backtrace         |  37 ++
+ lang/compute-runtime/files/patch-clang9            |  76 ++++
+ lang/compute-runtime/files/patch-clock_gettime     |  24 ++
+ lang/compute-runtime/files/patch-i386              |  18 +
+ lang/compute-runtime/files/patch-includes          |  23 ++
+ lang/compute-runtime/files/patch-mmap              |  31 ++
+ lang/compute-runtime/files/patch-rtld              |  18 +
+ lang/compute-runtime/files/patch-unix              |  26 ++
+ lang/compute-runtime/files/patch-userptr           |  61 ++++
+ lang/compute-runtime/pkg-descr                     |   5 +
+ math/R-cran-RcppArmadillo/Makefile                 |   2 +-
+ math/R-cran-RcppArmadillo/distinfo                 |   6 +-
+ math/sc-im/Makefile                                |   2 +-
+ net/wireguard/Makefile                             |   2 +-
+ net/wireguard/distinfo                             |   6 +-
+ security/gnupg/Makefile                            |   2 +-
+ security/gnupg/distinfo                            |   6 +-
+ security/vault/Makefile                            |  73 ++--
+ security/vault/distinfo                            | 146 +++++---
+ sysutils/eksctl/Makefile                           |   7 +-
+ sysutils/eksctl/distinfo                           |  12 +-
+ sysutils/istio/Makefile                            | 198 ++++++++++-
+ sysutils/istio/distinfo                            | 386 ++++++++++++++++++++-
+ sysutils/istio/pkg-plist                           |  16 +-
+ www/edbrowse/Makefile                              |   6 +-
+ www/edbrowse/files/patch-src_html-tidy.c           |  11 -
+ x11/xrestop/distinfo                               |   6 +-
+ 61 files changed, 1825 insertions(+), 174 deletions(-)
+ create mode 100644 devel/intel-graphics-compiler/Makefile
+ create mode 100644 devel/intel-graphics-compiler/distinfo
+ create mode 100644 devel/intel-graphics-compiler/files/patch-alloca
+ create mode 100644 devel/intel-graphics-compiler/files/patch-limits
+ create mode 100644 devel/intel-graphics-compiler/files/patch-process-name
+ create mode 100644 devel/intel-graphics-compiler/files/patch-unix
+ create mode 100644 devel/intel-graphics-compiler/pkg-descr
+ create mode 100644 devel/intel-graphics-compiler/pkg-plist
+ create mode 100644 devel/opencl-clang/Makefile
+ create mode 100644 devel/opencl-clang/distinfo
+ create mode 100644 devel/opencl-clang/pkg-descr
+ create mode 100644 devel/spirv-llvm-translator/Makefile
+ create mode 100644 devel/spirv-llvm-translator/distinfo
+ create mode 100644 devel/spirv-llvm-translator/pkg-descr
+ create mode 100644 lang/compute-runtime/Makefile
+ create mode 100644 lang/compute-runtime/distinfo
+ create mode 100644 lang/compute-runtime/files/patch-backtrace
+ create mode 100644 lang/compute-runtime/files/patch-clang9
+ create mode 100644 lang/compute-runtime/files/patch-clock_gettime
+ create mode 100644 lang/compute-runtime/files/patch-i386
+ create mode 100644 lang/compute-runtime/files/patch-includes
+ create mode 100644 lang/compute-runtime/files/patch-mmap
+ create mode 100644 lang/compute-runtime/files/patch-rtld
+ create mode 100644 lang/compute-runtime/files/patch-unix
+ create mode 100644 lang/compute-runtime/files/patch-userptr
+ create mode 100644 lang/compute-runtime/pkg-descr
+ delete mode 100644 www/edbrowse/files/patch-src_html-tidy.c
+To github.com:HardenedBSD/hardenedbsd-ports.git
+   761ef913541d..ff5a66e2ee97  master -> master
+==== END: master ====
