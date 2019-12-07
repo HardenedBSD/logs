@@ -1,0 +1,64 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_map.h
+Auto-merging sys/vm/vm_map.c
+Auto-merging sys/conf/options.arm64
+Auto-merging sys/arm64/arm64/machdep.c
+Merge made by the 'recursive' strategy.
+ lib/libc/sys/clock_gettime.2      |  10 +-
+ lib/libc/sys/lio_listio.2         |   7 +-
+ sbin/mount_fusefs/mount_fusefs.8  |  16 +--
+ sys/arm64/arm64/locore.S          |  90 +++++++++++++-
+ sys/arm64/arm64/machdep.c         |  23 ++--
+ sys/arm64/arm64/machdep_boot.c    | 254 ++++++++++++++++++++++++++++++++++++++
+ sys/arm64/include/machdep.h       |   4 +
+ sys/conf/Makefile.arm64           |  15 +++
+ sys/conf/files.arm64              |   1 +
+ sys/conf/options.arm64            |   1 +
+ sys/kern/vfs_subr.c               |  25 ++--
+ sys/modules/gpio/Makefile         |   2 +-
+ sys/modules/gpio/gpioths/Makefile |  19 +++
+ sys/vm/vm_glue.c                  |  10 +-
+ sys/vm/vm_map.c                   | 217 ++++++++++++++++++++------------
+ sys/vm/vm_map.h                   |  38 +++---
+ 16 files changed, 601 insertions(+), 131 deletions(-)
+ create mode 100644 sys/arm64/arm64/machdep_boot.c
+ create mode 100644 sys/modules/gpio/gpioths/Makefile
+To github.com:HardenedBSD/hardenedBSD.git
+   2276b68fad4f..c8f20fb22974  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
