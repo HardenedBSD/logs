@@ -1,0 +1,94 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_map.h
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/kern_shutdown.c
+Merge made by the 'recursive' strategy.
+ lib/libprocstat/libprocstat.c                      |  28 +--
+ share/man/man9/vgone.9                             |   4 +-
+ sys/cam/ctl/ctl_backend_block.c                    |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ctldir.c     |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |   6 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_znode.c      |   3 +-
+ sys/dev/beri/virtio/virtio_block.c                 |   2 +-
+ sys/dev/gpio/gpioths.c                             | 170 +++++++---------
+ sys/dev/md/md.c                                    |   2 +-
+ sys/dev/xen/blkback/blkback.c                      |   2 +-
+ sys/fs/autofs/autofs_vnops.c                       |   6 +-
+ sys/fs/cd9660/cd9660_vnops.c                       |   2 +-
+ sys/fs/devfs/devfs_vnops.c                         |  10 +-
+ sys/fs/ext2fs/ext2_lookup.c                        |   2 +-
+ sys/fs/fdescfs/fdesc_vnops.c                       |   2 +-
+ sys/fs/fuse/fuse_io.c                              |   2 +-
+ sys/fs/nfsclient/nfs_clport.c                      |   8 +-
+ sys/fs/nfsclient/nfs_clvnops.c                     |  10 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |   6 +-
+ sys/fs/nfsserver/nfs_nfsdserv.c                    |   2 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c                   |  14 +-
+ sys/fs/nullfs/null_subr.c                          |   2 +-
+ sys/fs/nullfs/null_vfsops.c                        |   4 +-
+ sys/fs/nullfs/null_vnops.c                         |   2 +-
+ sys/fs/pseudofs/pseudofs_vnops.c                   |   8 +-
+ sys/fs/smbfs/smbfs_io.c                            |   2 +-
+ sys/fs/smbfs/smbfs_vnops.c                         |   4 +-
+ sys/fs/tmpfs/tmpfs_subr.c                          |   6 +-
+ sys/fs/tmpfs/tmpfs_vnops.c                         |   2 +-
+ sys/fs/unionfs/union_subr.c                        |   6 +-
+ sys/kern/kern_lockf.c                              |  12 +-
+ sys/kern/kern_shutdown.c                           |   2 +-
+ sys/kern/tty.c                                     |   4 +-
+ sys/kern/vfs_cache.c                               |  12 +-
+ sys/kern/vfs_default.c                             |   4 +-
+ sys/kern/vfs_lookup.c                              |   8 +-
+ sys/kern/vfs_subr.c                                | 216 ++++++++++-----------
+ sys/kern/vfs_syscalls.c                            |   4 +-
+ sys/kern/vfs_vnops.c                               |   8 +-
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/vnode.h                                    |  10 +-
+ sys/ufs/ffs/ffs_inode.c                            |   4 +-
+ sys/ufs/ffs/ffs_rawread.c                          |   2 +-
+ sys/ufs/ffs/ffs_softdep.c                          |   4 +-
+ sys/ufs/ufs/ufs_inode.c                            |   2 +-
+ sys/ufs/ufs/ufs_lookup.c                           |   2 +-
+ sys/vm/swap_pager.c                                |   2 +-
+ sys/vm/vm_map.h                                    |  41 ++++
+ sys/vm/vnode_pager.c                               |   8 +-
+ 49 files changed, 345 insertions(+), 323 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   66990bbbd471..f9125ce0a8bd  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
