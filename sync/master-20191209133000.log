@@ -1,0 +1,144 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging news/nn/Makefile
+Removing net-mgmt/nagios-plugins/files/patch-plugins_sslutils.c
+Removing net-mgmt/nagios-plugins/files/patch-plugins_common.h
+Removing net-mgmt/nagios-plugins/files/patch-plugins_check__procs.c
+Removing net-mgmt/nagios-plugins/files/patch-plugins_check__nagios.c
+Removing net-mgmt/nagios-plugins/files/patch-plugins_check__http.c
+Removing net-mgmt/nagios-plugins/files/patch-plugins-scripts_check__mailq.pl
+Removing net-mgmt/nagios-plugins/files/patch-plugins-check_ntp_time.c
+Removing multimedia/svt-hevc/files/patch-Source_Lib_Codec_EbThreads.h
+Auto-merging multimedia/ffmpeg/Makefile
+Auto-merging games/tome4/Makefile
+CONFLICT (content): Merge conflict in games/tome4/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc games/tome4/Makefile
+index d5e614761621,a68d1c308f53..000000000000
+--- a/games/tome4/Makefile
++++ b/games/tome4/Makefile
+@@@ -20,9 -20,7 +20,13 @@@ BUILD_DEPENDS=	premake4:devel/premake
+  LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+  		libpng.so:graphics/png
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		gl gmake openal:al sdl tar:bzip2 xorg
+++=======
++ USES=		compiler:c++11-lang gl gmake openal:al sdl tar:bzip2 xorg
+++>>>>>>> freebsd/master
+  USE_SDL=	image2 sdl2 ttf2
+  USE_GL=		gl glu
+  USE_CSTD=	gnu89
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/creduce/Makefile
+	modified:   devel/git-lfs/Makefile
+	modified:   devel/git-lfs/distinfo
+	modified:   devel/osc/Makefile
+	modified:   devel/osc/distinfo
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-bind-min-override-ttl
+	modified:   dns/bind9-devel/files/patch-configure
+	modified:   dns/dnscrypt-proxy2/Makefile
+	modified:   dns/dnscrypt-proxy2/distinfo
+	modified:   games/avp/Makefile
+	modified:   graphics/vapoursynth-fmtconv/Makefile
+	modified:   graphics/vapoursynth-fmtconv/distinfo
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   lang/perl5-devel/files/patch-Configure
+	modified:   lang/perl5-devel/files/patch-perl.c
+	modified:   lang/perl5-devel/files/patch-t_porting_customized.dat
+	modified:   lang/perl5-devel/pkg-plist
+	modified:   lang/perl5-devel/version.mk
+	modified:   multimedia/ffmpeg/Makefile
+	modified:   multimedia/ffmpeg/distinfo
+	modified:   multimedia/gstreamer1-plugins-svt-hevc/Makefile
+	modified:   multimedia/gstreamer1-plugins-svt-hevc/distinfo
+	modified:   multimedia/svt-hevc/Makefile
+	modified:   multimedia/svt-hevc/distinfo
+	deleted:    multimedia/svt-hevc/files/patch-Source_Lib_Codec_EbThreads.h
+	modified:   net-mgmt/nagios-plugins/Makefile
+	modified:   net-mgmt/nagios-plugins/distinfo
+	modified:   net-mgmt/nagios-plugins/files/patch-configure
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins-check_ntp_time.c
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins-scripts_check__mailq.pl
+	modified:   net-mgmt/nagios-plugins/files/patch-plugins-scripts_check__ntp.pl
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins_check__http.c
+	new file:   net-mgmt/nagios-plugins/files/patch-plugins_check__load.c
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins_check__nagios.c
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins_check__procs.c
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins_common.h
+	deleted:    net-mgmt/nagios-plugins/files/patch-plugins_sslutils.c
+	modified:   net-mgmt/nagios-plugins/pkg-plist
+	modified:   net/Makefile
+	new file:   net/py-pyenet/Makefile
+	new file:   net/py-pyenet/distinfo
+	new file:   net/py-pyenet/files/patch-README.rst
+	new file:   net/py-pyenet/pkg-descr
+	modified:   news/nn/Makefile
+	modified:   news/nn/pkg-descr
+	modified:   ports-mgmt/create-rb-port/Makefile
+	modified:   science/simbody/Makefile
+	modified:   science/simbody/distinfo
+	modified:   science/simbody/pkg-plist
+	modified:   security/dsvpn/Makefile
+	modified:   security/dsvpn/distinfo
+	modified:   security/onionscan/Makefile
+	modified:   security/onionscan/distinfo
+	modified:   security/sqlmap/Makefile
+	modified:   security/sqlmap/distinfo
+	modified:   sysutils/Makefile
+	modified:   sysutils/bareos-server/Makefile
+	modified:   sysutils/munin-common/distinfo
+	modified:   sysutils/munin-common/files/patch-Makefile
+	modified:   sysutils/munin-common/munin.mk
+	modified:   sysutils/munin-node/Makefile
+	modified:   sysutils/munin-node/pkg-plist
+	new file:   sysutils/virt-what/Makefile
+	new file:   sysutils/virt-what/distinfo
+	new file:   sysutils/virt-what/pkg-descr
+	new file:   www/firefox/files/patch-bug1602358
+	modified:   x11-wm/piewm/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   games/tome4/Makefile
+
+
+It took 3.39 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 404869ed3369 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.17 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 404869ed3369 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
