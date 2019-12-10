@@ -1,0 +1,110 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/cryptopp/files/patch-sse-simd.cpp
+Removing security/cryptopp/files/patch-cpu.h
+Auto-merging net-p2p/amule/Makefile
+Removing graphics/osg-devel/files/patch-src_osgPlugins_osgjs_Base64.cpp
+Removing graphics/osg-devel/files/patch-src_osgPlugins_osgjs_Base64
+Removing graphics/osg-devel/files/patch-src_osgPlugins_ogr_CMakeLists.txt
+Removing graphics/osg-devel/files/patch-src_osgPlugins_nvtt_CMakeLists.txt
+Removing graphics/osg-devel/files/patch-src_osgPlugins_gdal_CMakeLists.txt
+Removing graphics/osg-devel/files/patch-src_osgPlugins_ffmpeg_CMakeLists.txt
+Removing graphics/osg-devel/files/patch-src_osgDB_ConvertBase64.cpp
+Removing graphics/osg-devel/files/patch-src-OpenThreads-pthreads-PThread.cpp
+Removing graphics/osg-devel/files/patch-src-OpenThreads-CMakeLists.txt
+Removing graphics/osg-devel/files/patch-include_osgViewer_View
+Removing graphics/osg-devel/files/patch-ffmpeg3
+Removing graphics/osg-devel/files/patch-CMakeModules-FindGTA.cmake
+Removing graphics/osg-devel/files/patch-CMakeLists.txt
+Removing graphics/osg-devel/distinfo
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ archivers/urbackup-client/Makefile                 |   1 +
+ archivers/urbackup-server/Makefile                 |   1 +
+ astro/mkgmap/Makefile                              |   2 +-
+ astro/mkgmap/distinfo                              |   6 +-
+ audio/clementine-player/Makefile                   |   2 +-
+ audio/picard/Makefile                              |   2 +-
+ audio/picard/distinfo                              |   6 +-
+ devel/xeus/Makefile                                |   1 +
+ emulators/yuzu/Makefile                            |   6 +-
+ emulators/yuzu/distinfo                            |  10 +-
+ graphics/Makefile                                  |   2 +-
+ graphics/osg-devel/distinfo                        |   3 -
+ graphics/osg-devel/files/patch-CMakeLists.txt      |  20 ---
+ .../files/patch-CMakeModules-FindGTA.cmake         |  25 ----
+ graphics/osg-devel/files/patch-ffmpeg3             | 157 ---------------------
+ .../osg-devel/files/patch-include_osgViewer_View   |  11 --
+ .../files/patch-src-OpenThreads-CMakeLists.txt     |   8 --
+ .../patch-src-OpenThreads-pthreads-PThread.cpp     |  37 -----
+ .../files/patch-src_osgDB_ConvertBase64.cpp        |  11 --
+ .../patch-src_osgPlugins_ffmpeg_CMakeLists.txt     |  28 ----
+ .../files/patch-src_osgPlugins_gdal_CMakeLists.txt |   8 --
+ .../files/patch-src_osgPlugins_nvtt_CMakeLists.txt |   8 --
+ .../files/patch-src_osgPlugins_ogr_CMakeLists.txt  |   8 --
+ .../files/patch-src_osgPlugins_osgjs_Base64        |  11 --
+ .../files/patch-src_osgPlugins_osgjs_Base64.cpp    |  19 ---
+ graphics/{osg-devel => osg}/Makefile               | 122 ++++++++--------
+ graphics/osg/distinfo                              |   3 +
+ .../osg/files/patch-CMakeModules-FindGTA.cmake     |  27 ++++
+ .../files/patch-CMakeModules_FindGStreamer.cmake   |   0
+ .../patch-src_OpenThreads_pthreads_CMakeLists.txt  |  18 +++
+ .../patch-src_OpenThreads_pthreads_PThread.cpp     |  24 ++++
+ .../osg/files/patch-src_osgViewer_CMakeLists.txt   |  11 ++
+ graphics/{osg-devel => osg}/pkg-descr              |   0
+ graphics/{osg-devel => osg}/pkg-plist              |  44 +++---
+ lang/rust-nightly/Makefile                         |   2 +-
+ lang/rust-nightly/distinfo                         |   6 +-
+ multimedia/kvazaar/Makefile                        |   2 +-
+ net-p2p/amule-devel/Makefile                       |   2 +-
+ net-p2p/amule/Makefile                             |   2 +-
+ net/ceph13/Makefile                                |   2 +-
+ net/ceph14/Makefile                                |   1 +
+ security/cryptopp/Makefile                         |   9 +-
+ security/cryptopp/distinfo                         |   6 +-
+ security/cryptopp/files/patch-GNUmakefile          |  29 ++--
+ security/cryptopp/files/patch-cpu.h                |  17 ---
+ security/cryptopp/files/patch-sse-simd.cpp         |  13 --
+ security/cryptopp/pkg-plist                        |  26 +++-
+ sysutils/rubygem-bolt/Makefile                     |   2 +-
+ sysutils/rubygem-bolt/distinfo                     |   6 +-
+ 50 files changed, 254 insertions(+), 514 deletions(-)
+ delete mode 100644 graphics/osg-devel/distinfo
+ delete mode 100644 graphics/osg-devel/files/patch-CMakeLists.txt
+ delete mode 100644 graphics/osg-devel/files/patch-CMakeModules-FindGTA.cmake
+ delete mode 100644 graphics/osg-devel/files/patch-ffmpeg3
+ delete mode 100644 graphics/osg-devel/files/patch-include_osgViewer_View
+ delete mode 100644 graphics/osg-devel/files/patch-src-OpenThreads-CMakeLists.txt
+ delete mode 100644 graphics/osg-devel/files/patch-src-OpenThreads-pthreads-PThread.cpp
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgDB_ConvertBase64.cpp
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgPlugins_ffmpeg_CMakeLists.txt
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgPlugins_gdal_CMakeLists.txt
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgPlugins_nvtt_CMakeLists.txt
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgPlugins_ogr_CMakeLists.txt
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgPlugins_osgjs_Base64
+ delete mode 100644 graphics/osg-devel/files/patch-src_osgPlugins_osgjs_Base64.cpp
+ rename graphics/{osg-devel => osg}/Makefile (55%)
+ create mode 100644 graphics/osg/distinfo
+ create mode 100644 graphics/osg/files/patch-CMakeModules-FindGTA.cmake
+ rename graphics/{osg-devel => osg}/files/patch-CMakeModules_FindGStreamer.cmake (100%)
+ create mode 100644 graphics/osg/files/patch-src_OpenThreads_pthreads_CMakeLists.txt
+ create mode 100644 graphics/osg/files/patch-src_OpenThreads_pthreads_PThread.cpp
+ create mode 100644 graphics/osg/files/patch-src_osgViewer_CMakeLists.txt
+ rename graphics/{osg-devel => osg}/pkg-descr (100%)
+ rename graphics/{osg-devel => osg}/pkg-plist (96%)
+ delete mode 100644 security/cryptopp/files/patch-cpu.h
+ delete mode 100644 security/cryptopp/files/patch-sse-simd.cpp
+To github.com:HardenedBSD/hardenedbsd-ports.git
+   124ae4e650e6..5095bfbf1306  master -> master
+==== END: master ====
