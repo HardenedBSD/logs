@@ -1,0 +1,161 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Removing contrib/expat/README
+Removing contrib/expat/MANIFEST
+Merge made by the 'recursive' strategy.
+ contrib/expat/AUTHORS                       |    10 +
+ contrib/expat/COPYING                       |     2 +-
+ contrib/expat/Changes                       |   499 +-
+ contrib/expat/FREEBSD-Xlist                 |     3 +
+ contrib/expat/MANIFEST                      |   141 -
+ contrib/expat/Makefile.am                   |   154 +
+ contrib/expat/Makefile.in                   |  1136 ++-
+ contrib/expat/README                        |   139 -
+ contrib/expat/README.md                     |   188 +
+ contrib/expat/configure.ac                  |   330 +-
+ contrib/expat/doc/Makefile.am               |    59 +
+ contrib/expat/doc/Makefile.in               |   596 ++
+ contrib/expat/doc/reference.html            |    24 +-
+ contrib/expat/doc/xmlwf.1                   |    13 +-
+ contrib/expat/doc/xmlwf.xml                 |    18 +-
+ contrib/expat/examples/Makefile.am          |    39 +
+ contrib/expat/examples/Makefile.in          |   655 ++
+ contrib/expat/examples/elements.c           |    65 +-
+ contrib/expat/examples/outline.c            |    88 +-
+ contrib/expat/expat_config.h.in             |    51 +-
+ contrib/expat/fix-xmltest-log.sh            |    48 +
+ contrib/expat/lib/Makefile.am               |    75 +
+ contrib/expat/lib/Makefile.in               |   803 ++
+ contrib/expat/lib/ascii.h                   |    32 +-
+ contrib/expat/lib/asciitab.h                |    94 +-
+ contrib/expat/lib/expat.h                   |   330 +-
+ contrib/expat/lib/expat_external.h          |   115 +-
+ contrib/expat/lib/iasciitab.h               |    94 +-
+ contrib/expat/lib/internal.h                |    76 +-
+ contrib/expat/lib/latin1tab.h               |    94 +-
+ contrib/expat/lib/loadlibrary.c             |   143 +
+ contrib/expat/lib/nametab.h                 |   274 +-
+ contrib/expat/lib/siphash.h                 |   398 +
+ contrib/expat/lib/utf8tab.h                 |    95 +-
+ contrib/expat/lib/xmlparse.c                |  6205 +++++++------
+ contrib/expat/lib/xmlrole.c                 |   819 +-
+ contrib/expat/lib/xmlrole.h                 |    45 +-
+ contrib/expat/lib/xmltok.c                  |  1471 ++-
+ contrib/expat/lib/xmltok.h                  |   249 +-
+ contrib/expat/lib/xmltok_impl.c             |  1115 +--
+ contrib/expat/lib/xmltok_impl.h             |   103 +-
+ contrib/expat/lib/xmltok_ns.c               |   117 +-
+ contrib/expat/run.sh.in                     |    12 +
+ contrib/expat/test-driver-wrapper.sh        |    43 +
+ contrib/expat/tests/Makefile.am             |    66 +
+ contrib/expat/tests/Makefile.in             |  1249 +++
+ contrib/expat/tests/benchmark/Makefile.am   |    40 +
+ contrib/expat/tests/benchmark/Makefile.in   |   646 ++
+ contrib/expat/tests/benchmark/benchmark.c   |   133 +-
+ contrib/expat/tests/benchmark/benchmark.sln |    25 +
+ contrib/expat/tests/chardata.c              |   179 +-
+ contrib/expat/tests/chardata.h              |    54 +-
+ contrib/expat/tests/memcheck.c              |   190 +
+ contrib/expat/tests/memcheck.h              |    57 +
+ contrib/expat/tests/minicheck.c             |   308 +-
+ contrib/expat/tests/minicheck.h             |   104 +-
+ contrib/expat/tests/runtests.c              | 12457 +++++++++++++++++++++++---
+ contrib/expat/tests/runtests.sln            |    24 +
+ contrib/expat/tests/runtestspp.cpp          |    40 +-
+ contrib/expat/tests/structdata.c            |   155 +
+ contrib/expat/tests/structdata.h            |    70 +
+ contrib/expat/tests/udiffer.py              |    62 +
+ contrib/expat/tests/xmltest.log.expected    |    10 +
+ contrib/expat/tests/xmltest.sh              |    26 +-
+ contrib/expat/xmlwf/Makefile.am             |    59 +
+ contrib/expat/xmlwf/Makefile.in             |   776 ++
+ contrib/expat/xmlwf/codepage.c              |    86 +-
+ contrib/expat/xmlwf/codepage.h              |    32 +-
+ contrib/expat/xmlwf/ct.c                    |    58 +-
+ contrib/expat/xmlwf/filemap.h               |    48 +-
+ contrib/expat/xmlwf/readfilemap.c           |   117 +-
+ contrib/expat/xmlwf/unixfilemap.c           |    68 +-
+ contrib/expat/xmlwf/win32filemap.c          |    72 +-
+ contrib/expat/xmlwf/xmlfile.c               |   202 +-
+ contrib/expat/xmlwf/xmlfile.h               |    43 +-
+ contrib/expat/xmlwf/xmlmime.c               |    70 +-
+ contrib/expat/xmlwf/xmlmime.h               |    32 +
+ contrib/expat/xmlwf/xmltchar.h              |   104 +-
+ contrib/expat/xmlwf/xmlurl.h                |    32 +
+ contrib/expat/xmlwf/xmlwf.c                 |   685 +-
+ contrib/expat/xmlwf/xmlwf_helpgen.py        |    69 +
+ contrib/expat/xmlwf/xmlwf_helpgen.sh        |    35 +
+ contrib/expat/xmlwf/xmlwin32url.cxx         |    32 +
+ lib/libexpat/expat_config.h                 |    63 +-
+ lib/libexpat/libbsdxml.3                    |     4 +-
+ 85 files changed, 27450 insertions(+), 8192 deletions(-)
+ create mode 100644 contrib/expat/AUTHORS
+ delete mode 100644 contrib/expat/MANIFEST
+ create mode 100644 contrib/expat/Makefile.am
+ delete mode 100644 contrib/expat/README
+ create mode 100644 contrib/expat/README.md
+ create mode 100644 contrib/expat/doc/Makefile.am
+ create mode 100644 contrib/expat/doc/Makefile.in
+ create mode 100644 contrib/expat/examples/Makefile.am
+ create mode 100644 contrib/expat/examples/Makefile.in
+ create mode 100755 contrib/expat/fix-xmltest-log.sh
+ create mode 100644 contrib/expat/lib/Makefile.am
+ create mode 100644 contrib/expat/lib/Makefile.in
+ create mode 100644 contrib/expat/lib/loadlibrary.c
+ create mode 100644 contrib/expat/lib/siphash.h
+ create mode 100644 contrib/expat/run.sh.in
+ create mode 100755 contrib/expat/test-driver-wrapper.sh
+ create mode 100644 contrib/expat/tests/Makefile.am
+ create mode 100644 contrib/expat/tests/Makefile.in
+ create mode 100644 contrib/expat/tests/benchmark/Makefile.am
+ create mode 100644 contrib/expat/tests/benchmark/Makefile.in
+ create mode 100644 contrib/expat/tests/benchmark/benchmark.sln
+ create mode 100644 contrib/expat/tests/memcheck.c
+ create mode 100644 contrib/expat/tests/memcheck.h
+ create mode 100644 contrib/expat/tests/runtests.sln
+ create mode 100644 contrib/expat/tests/structdata.c
+ create mode 100644 contrib/expat/tests/structdata.h
+ create mode 100755 contrib/expat/tests/udiffer.py
+ create mode 100644 contrib/expat/tests/xmltest.log.expected
+ create mode 100644 contrib/expat/xmlwf/Makefile.am
+ create mode 100644 contrib/expat/xmlwf/Makefile.in
+ create mode 100755 contrib/expat/xmlwf/xmlwf_helpgen.py
+ create mode 100755 contrib/expat/xmlwf/xmlwf_helpgen.sh
+To github.com:HardenedBSD/hardenedBSD.git
+   140a1faf050a..62b9cfd740f9  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
