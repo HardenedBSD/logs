@@ -1,0 +1,109 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/x86/cpu_machdep.c
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/arm64/arm64/pmap.c
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging share/mk/src.opts.mk
+Auto-merging lib/clang/libllvm/Makefile
+Merge made by the 'recursive' strategy.
+ lib/clang/libllvm/Makefile                   |   2 +
+ libexec/rtld-elf/riscv/reloc.c               |   2 +-
+ sbin/fsck_ffs/setup.c                        |  15 ++-
+ share/man/man4/cxgbe.4                       |  12 +-
+ share/man/man9/timeout.9                     |  23 ++--
+ share/mk/src.opts.mk                         |   9 +-
+ share/vt/fonts/INDEX.fonts                   |   6 +
+ share/vt/keymaps/INDEX.keymaps               | 159 ++++++++++++++++++++-------
+ share/vt/keymaps/hu.102.kbd                  |   2 +-
+ share/vt/keymaps/us.kbd                      |   2 +-
+ sys/amd64/amd64/pmap.c                       |   6 +-
+ sys/amd64/include/pmap.h                     |   4 +-
+ sys/arm/include/pmap.h                       |   2 +-
+ sys/arm64/arm64/pmap.c                       |   6 +-
+ sys/arm64/include/pmap.h                     |   2 +-
+ sys/cam/ata/ata_da.c                         |   2 +-
+ sys/cam/cam_xpt.c                            |   2 +-
+ sys/cam/scsi/scsi_cd.c                       |   2 +-
+ sys/cam/scsi/scsi_da.c                       |   4 +-
+ sys/dev/aic7xxx/aic_osm_lib.h                |   2 +-
+ sys/dev/cxgbe/t4_main.c                      |  13 +--
+ sys/dev/ichiic/ig4_acpi.c                    |   2 -
+ sys/dev/ichiic/ig4_pci.c                     |   2 -
+ sys/dev/isp/isp_freebsd.c                    |   8 +-
+ sys/dev/kbdmux/kbdmux.c                      |   2 +-
+ sys/dev/mpt/mpt_cam.c                        |   2 +-
+ sys/dev/mpt/mpt_raid.c                       |   2 +-
+ sys/dev/ocs_fc/ocs_os.c                      |   2 +-
+ sys/dev/ow/owc_gpiobus.c                     |   2 +-
+ sys/dev/ppbus/lpt.c                          |   2 +-
+ sys/dev/sbni/if_sbni.c                       |   2 +-
+ sys/dev/smc/if_smc.c                         |   2 +-
+ sys/dev/syscons/syscons.c                    |   4 +-
+ sys/dev/uart/uart_core.c                     |   4 +-
+ sys/dev/virtio/balloon/virtio_balloon.c      |   2 +-
+ sys/i386/i386/pmap.c                         |   2 +-
+ sys/i386/include/pmap.h                      |   2 +-
+ sys/kern/kern_timeout.c                      |  16 ++-
+ sys/mips/include/pmap.h                      |   2 +-
+ sys/mips/mips/pmap.c                         |   4 +-
+ sys/netgraph/netflow/ng_netflow.h            |   2 +-
+ sys/netinet/tcp_timer.c                      |   2 +-
+ sys/powerpc/aim/mmu_oea.c                    |   2 +-
+ sys/powerpc/aim/mmu_oea64.c                  |   7 +-
+ sys/powerpc/include/pmap.h                   |   2 +-
+ sys/riscv/include/pmap.h                     |   2 +-
+ sys/riscv/riscv/pmap.c                       |   8 +-
+ sys/sparc64/include/pmap.h                   |   2 +-
+ sys/sys/_callout.h                           |   4 +-
+ sys/vm/memguard.c                            |   4 +-
+ sys/vm/swap_pager.c                          |   2 +-
+ sys/vm/vm_mmap.c                             |   4 +-
+ sys/vm/vm_object.c                           |   6 +-
+ sys/vm/vm_page.c                             |  90 +++++++--------
+ sys/vm/vm_page.h                             |  33 +++---
+ sys/vm/vm_pageout.c                          |  46 ++++----
+ sys/vm/vm_swapout.c                          | 121 ++++++++++----------
+ sys/x86/x86/cpu_machdep.c                    |   3 +-
+ usr.bin/sed/compile.c                        |  54 ++++++++-
+ usr.bin/sed/tests/regress.multitest.out/8.22 |   3 +-
+ usr.bin/sed/tests/sed2_test.sh               |  20 ++++
+ 61 files changed, 468 insertions(+), 290 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   23817c1f2c2a..b73c97330b2c  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
