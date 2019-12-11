@@ -1,0 +1,105 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 699c290011d1..62645cfb2b48
+Fast-forward
+ MOVED                                  |  1 +
+ math/spot/Makefile                     |  2 +-
+ math/spot/distinfo                     |  6 ++---
+ net-im/Makefile                        |  1 -
+ net-im/pidgin-privacy-please/Makefile  | 40 ----------------------------------
+ net-im/pidgin-privacy-please/distinfo  |  3 ---
+ net-im/pidgin-privacy-please/pkg-descr | 12 ----------
+ net-im/pidgin-privacy-please/pkg-plist |  4 ----
+ 8 files changed, 5 insertions(+), 64 deletions(-)
+ delete mode 100644 net-im/pidgin-privacy-please/Makefile
+ delete mode 100644 net-im/pidgin-privacy-please/distinfo
+ delete mode 100644 net-im/pidgin-privacy-please/pkg-descr
+ delete mode 100644 net-im/pidgin-privacy-please/pkg-plist
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing graphics/cimg/files/patch-CImg.h
+Auto-merging graphics/cimg/Makefile
+CONFLICT (content): Merge conflict in graphics/cimg/Makefile
+Auto-merging devel/git/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc graphics/cimg/Makefile
+index bf55905018c9,d2a4c11cddbd..000000000000
+--- a/graphics/cimg/Makefile
++++ b/graphics/cimg/Makefile
+@@@ -23,18 -23,6 +23,21 @@@ USE_GITHUB=	ye
+  GH_ACCOUNT=	dtschump
+  GH_PROJECT=	CImg
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=	compiler:c11 xorg
+ +
+ +.if !defined(WITHOUT_LAPACK)
+ +. if defined(WITH_ATLAS)
+ +USES+=		blaslapack:atlas
+ +. else
+ +USES+=		blaslapack
+ +. endif
+ +.endif
+ +
+++=======
+++>>>>>>> freebsd/master
+  BUILD_WRKSRC=	${WRKSRC}/examples
+  
+  OPTIONS_DEFINE=	DOCS EXAMPLES
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/git/Makefile
+	modified:   devel/git/distinfo
+	modified:   devel/git/pkg-plist
+	modified:   graphics/cimg/distinfo
+	deleted:    graphics/cimg/files/patch-CImg.h
+	modified:   ports-mgmt/Makefile
+	new file:   ports-mgmt/portgrep/Makefile
+	new file:   ports-mgmt/portgrep/distinfo
+	new file:   ports-mgmt/portgrep/pkg-descr
+	modified:   science/pagmo2/Makefile
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/android-file-transfer/Makefile
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/gitlab-ce/files/patch-Gemfile
+	modified:   www/gitlab-ce/files/patch-config_gitlab.yml.example
+	modified:   www/gitlab-ce/files/patch-config_initializers_1__settings.rb
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   graphics/cimg/Makefile
+
+
+It took 3.50 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 62645cfb2b48 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.25 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 62645cfb2b48 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
