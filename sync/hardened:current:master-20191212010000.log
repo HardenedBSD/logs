@@ -1,0 +1,65 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging share/mk/src.opts.mk
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                                |   3 +-
+ ObsoleteFiles.inc                            |  20 +--
+ contrib/libunwind/src/UnwindLevel1-gcc-ext.c |   4 +
+ include/signal.h                             |   3 +
+ lib/libc/gen/Makefile.inc                    |   5 +-
+ lib/libc/gen/Symbol.map                      |   6 +
+ lib/libc/gen/sigsetops.3                     |  55 +++++++-
+ lib/libc/gen/sigsetops.c                     |  31 +++++
+ lib/libc/tests/gen/Makefile                  |   1 +
+ lib/libc/tests/gen/sigsetops_test.c          | 191 +++++++++++++++++++++++++++
+ lib/libpmc/Makefile                          |   3 +-
+ share/mk/src.opts.mk                         |   5 +-
+ stand/liblua/luaconf.h                       |   6 +-
+ sys/kern/sched_ule.c                         |  16 ++-
+ sys/sys/param.h                              |   2 +-
+ usr.bin/showmount/showmount.8                |   8 +-
+ usr.bin/showmount/showmount.c                |  11 +-
+ usr.sbin/ntp/Makefile.inc                    |   2 +
+ usr.sbin/ntp/scripts/mkver                   |   4 +-
+ 19 files changed, 342 insertions(+), 34 deletions(-)
+ create mode 100644 lib/libc/tests/gen/sigsetops_test.c
+To github.com:HardenedBSD/hardenedBSD.git
+   cbd2f5147b45..4c7bfe2d486f  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
