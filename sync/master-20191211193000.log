@@ -1,0 +1,116 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing graphics/vapoursynth-fmtconv/files/patch-src_conc_Interlocked.hpp
+Auto-merging emulators/qemu-cheri/Makefile
+Merge made by the 'recursive' strategy.
+ chinese/Makefile                                   |  1 +
+ chinese/p5-Lingua-ZH-Romanize-Pinyin/Makefile      | 22 ++++++
+ chinese/p5-Lingua-ZH-Romanize-Pinyin/distinfo      |  3 +
+ chinese/p5-Lingua-ZH-Romanize-Pinyin/files/LICENSE | 11 +++
+ chinese/p5-Lingua-ZH-Romanize-Pinyin/pkg-descr     |  4 ++
+ chinese/p5-Lingua-ZH-Romanize-Pinyin/pkg-plist     |  8 +++
+ devel/llvm-cheri/Makefile                          |  1 +
+ devel/llvm-cheri/Makefile.snapshot                 |  4 +-
+ devel/llvm-cheri/distinfo                          |  6 +-
+ devel/llvm-cheri/pkg-plist                         | 79 ++++++++++++++++------
+ emulators/javatari/Makefile                        |  4 +-
+ emulators/qemu-cheri/Makefile                      |  7 +-
+ emulators/qemu-cheri/Makefile.snapshot             |  5 +-
+ emulators/qemu-cheri/distinfo                      |  8 ++-
+ .../qemu-cheri/files/gen-Makefile.snapshot.sh      |  8 ++-
+ games/adom/Makefile                                |  6 +-
+ games/anki/Makefile                                |  1 +
+ games/anki/pkg-message                             | 15 ++++
+ .../files/patch-Inventor_nodes_SoMarkerSet.i       | 11 +++
+ .../files/patch-Inventor_sensors_SoSensor.i        | 11 +++
+ graphics/vapoursynth-fmtconv/Makefile              |  9 ++-
+ graphics/vapoursynth-fmtconv/distinfo              |  6 +-
+ .../files/patch-src_conc_Interlocked.hpp           | 63 -----------------
+ japanese/Makefile                                  |  1 +
+ japanese/p5-Lingua-JA-Romanize-Japanese/Makefile   | 23 +++++++
+ japanese/p5-Lingua-JA-Romanize-Japanese/distinfo   |  3 +
+ .../files/patch-lib_Lingua_JA_Romanize_DictJA.pm   | 24 +++++++
+ japanese/p5-Lingua-JA-Romanize-Japanese/pkg-descr  |  3 +
+ .../p5-Lingua-JA-Romanize-Japanese/pkg-message     | 10 +++
+ japanese/p5-Lingua-JA-Romanize-Japanese/pkg-plist  | 15 ++++
+ korean/Makefile                                    |  2 +
+ korean/ibus-hangul/Makefile                        |  1 +
+ korean/ibus-hangul/pkg-plist                       | 14 ++--
+ korean/p5-Lingua-KO-Hangul-Util/Makefile           | 22 ++++++
+ korean/p5-Lingua-KO-Hangul-Util/distinfo           |  3 +
+ korean/p5-Lingua-KO-Hangul-Util/pkg-descr          |  3 +
+ korean/p5-Lingua-KO-Romanize-Hangul/Makefile       | 22 ++++++
+ korean/p5-Lingua-KO-Romanize-Hangul/distinfo       |  3 +
+ korean/p5-Lingua-KO-Romanize-Hangul/pkg-descr      |  3 +
+ net-mgmt/check_nwc_health/Makefile                 |  2 +-
+ net-mgmt/check_nwc_health/distinfo                 |  6 +-
+ net-mgmt/netbox/Makefile                           |  2 +-
+ net-mgmt/netbox/distinfo                           |  6 +-
+ net-mgmt/netbox/files/patch-netbox_users_views.py  | 16 +++++
+ net-mgmt/py-ciscoconfparse/Makefile                |  2 +-
+ net-mgmt/py-ciscoconfparse/distinfo                |  6 +-
+ net-p2p/bitcoin/Makefile                           |  2 +-
+ net-p2p/bitcoin/distinfo                           |  4 +-
+ net/haproxy/Makefile                               |  2 +-
+ net/haproxy/distinfo                               |  6 +-
+ net/haproxy/pkg-plist                              |  2 +
+ net/haproxy21/Makefile                             |  2 +-
+ net/haproxy21/distinfo                             |  6 +-
+ net/haproxy21/pkg-plist                            |  2 +
+ net/libproxy/Makefile                              |  1 +
+ security/nss/Makefile                              |  4 +-
+ security/nss/files/patch-bug1602386                | 49 ++++++++++++++
+ security/sops/Makefile                             |  5 +-
+ security/sops/distinfo                             | 10 +--
+ security/zeek/Makefile                             |  2 +-
+ security/zeek/distinfo                             |  6 +-
+ security/zeek/pkg-plist                            |  8 ++-
+ sysutils/minikube/Makefile                         |  6 +-
+ sysutils/minikube/distinfo                         | 10 +--
+ textproc/Makefile                                  |  1 +
+ textproc/p5-Unicode-Tussle/Makefile                | 33 +++++++++
+ textproc/p5-Unicode-Tussle/distinfo                |  3 +
+ textproc/p5-Unicode-Tussle/pkg-descr               |  4 ++
+ textproc/p5-Unicode-Tussle/pkg-plist               | 43 ++++++++++++
+ 69 files changed, 528 insertions(+), 168 deletions(-)
+ create mode 100644 chinese/p5-Lingua-ZH-Romanize-Pinyin/Makefile
+ create mode 100644 chinese/p5-Lingua-ZH-Romanize-Pinyin/distinfo
+ create mode 100644 chinese/p5-Lingua-ZH-Romanize-Pinyin/files/LICENSE
+ create mode 100644 chinese/p5-Lingua-ZH-Romanize-Pinyin/pkg-descr
+ create mode 100644 chinese/p5-Lingua-ZH-Romanize-Pinyin/pkg-plist
+ create mode 100644 games/anki/pkg-message
+ create mode 100644 graphics/py-pivy-devel/files/patch-Inventor_nodes_SoMarkerSet.i
+ create mode 100644 graphics/py-pivy-devel/files/patch-Inventor_sensors_SoSensor.i
+ delete mode 100644 graphics/vapoursynth-fmtconv/files/patch-src_conc_Interlocked.hpp
+ create mode 100644 japanese/p5-Lingua-JA-Romanize-Japanese/Makefile
+ create mode 100644 japanese/p5-Lingua-JA-Romanize-Japanese/distinfo
+ create mode 100644 japanese/p5-Lingua-JA-Romanize-Japanese/files/patch-lib_Lingua_JA_Romanize_DictJA.pm
+ create mode 100644 japanese/p5-Lingua-JA-Romanize-Japanese/pkg-descr
+ create mode 100644 japanese/p5-Lingua-JA-Romanize-Japanese/pkg-message
+ create mode 100644 japanese/p5-Lingua-JA-Romanize-Japanese/pkg-plist
+ create mode 100644 korean/p5-Lingua-KO-Hangul-Util/Makefile
+ create mode 100644 korean/p5-Lingua-KO-Hangul-Util/distinfo
+ create mode 100644 korean/p5-Lingua-KO-Hangul-Util/pkg-descr
+ create mode 100644 korean/p5-Lingua-KO-Romanize-Hangul/Makefile
+ create mode 100644 korean/p5-Lingua-KO-Romanize-Hangul/distinfo
+ create mode 100644 korean/p5-Lingua-KO-Romanize-Hangul/pkg-descr
+ create mode 100644 net-mgmt/netbox/files/patch-netbox_users_views.py
+ create mode 100644 security/nss/files/patch-bug1602386
+ create mode 100644 textproc/p5-Unicode-Tussle/Makefile
+ create mode 100644 textproc/p5-Unicode-Tussle/distinfo
+ create mode 100644 textproc/p5-Unicode-Tussle/pkg-descr
+ create mode 100644 textproc/p5-Unicode-Tussle/pkg-plist
+To github.com:HardenedBSD/hardenedbsd-ports.git
+   f04ef07cf471..9df753555984  master -> master
+==== END: master ====
