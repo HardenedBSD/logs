@@ -1,0 +1,110 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/vfs_syscalls.c
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |    5 +
+ .../pmu-events/arch/powerpc/power8/cache.json      |   60 +-
+ .../arch/powerpc/power8/floating-point.json        |    6 +-
+ .../pmu-events/arch/powerpc/power8/frontend.json   |  158 +--
+ .../pmu-events/arch/powerpc/power8/marked.json     |  266 ++--
+ .../pmu-events/arch/powerpc/power8/memory.json     |   72 +-
+ .../pmu-events/arch/powerpc/power8/other.json      | 1356 ++++++++++----------
+ .../pmu-events/arch/powerpc/power8/pipeline.json   |  118 +-
+ lib/libpmc/pmu-events/arch/powerpc/power8/pmc.json |   48 +-
+ .../arch/powerpc/power8/translation.json           |   60 +-
+ .../pmu-events/arch/powerpc/power9/cache.json      |   42 +-
+ .../arch/powerpc/power9/floating-point.json        |   12 +-
+ .../pmu-events/arch/powerpc/power9/frontend.json   |  144 +--
+ .../pmu-events/arch/powerpc/power9/marked.json     |  252 ++--
+ .../pmu-events/arch/powerpc/power9/memory.json     |   50 +-
+ .../pmu-events/arch/powerpc/power9/other.json      |  934 +++++++-------
+ .../pmu-events/arch/powerpc/power9/pipeline.json   |  212 +--
+ lib/libpmc/pmu-events/arch/powerpc/power9/pmc.json |   46 +-
+ .../arch/powerpc/power9/translation.json           |   90 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z10/basic.json  |    2 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z10/crypto.json |    2 +-
+ .../pmu-events/arch/s390/cf_z10/extended.json      |    2 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z13/basic.json  |    2 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z13/crypto.json |    2 +-
+ .../pmu-events/arch/s390/cf_z13/extended.json      |    2 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z14/basic.json  |    2 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z14/crypto.json |    2 +-
+ .../pmu-events/arch/s390/cf_z14/extended.json      |    2 +-
+ lib/libpmc/pmu-events/arch/s390/cf_z196/basic.json |    2 +-
+ .../pmu-events/arch/s390/cf_z196/crypto.json       |    2 +-
+ .../pmu-events/arch/s390/cf_z196/extended.json     |    2 +-
+ .../pmu-events/arch/s390/cf_zec12/basic.json       |    2 +-
+ .../pmu-events/arch/s390/cf_zec12/crypto.json      |    2 +-
+ .../pmu-events/arch/s390/cf_zec12/extended.json    |    2 +-
+ lib/libpmc/pmu-events/arch/x86/amdfam17h/core.json |    6 +-
+ .../pmu-events/arch/x86/amdfam17h/memory.json      |    2 +-
+ lib/libpmc/pmu-events/jsmn.h                       |    1 +
+ libexec/rtld-elf/map_object.c                      |    6 +-
+ sys/arm64/arm64/locore.S                           |   19 +-
+ sys/arm64/include/armreg.h                         |    5 +-
+ sys/contrib/ipfilter/netinet/fil.c                 |    4 +-
+ sys/contrib/ipfilter/netinet/ip_fil.h              |    2 +-
+ sys/contrib/ipfilter/netinet/ip_fil_freebsd.c      |    6 +-
+ sys/dev/cxgbe/t4_netmap.c                          |   15 +-
+ sys/fs/nfs/nfs.h                                   |    2 +
+ sys/fs/nfs/nfs_commonport.c                        |  143 ++-
+ sys/fs/nfs/nfs_commonsubs.c                        |   81 +-
+ sys/fs/nfs/nfs_var.h                               |   60 +-
+ sys/fs/nfs/nfsclstate.h                            |    5 +-
+ sys/fs/nfs/nfsport.h                               |   81 +-
+ sys/fs/nfs/nfsproto.h                              |    2 +-
+ sys/fs/nfsclient/nfs_clrpcops.c                    |  934 +++++++++++++-
+ sys/fs/nfsclient/nfs_clstate.c                     |   12 +-
+ sys/fs/nfsclient/nfs_clvfsops.c                    |    2 +-
+ sys/fs/nfsclient/nfs_clvnops.c                     |  667 ++++++++++
+ sys/fs/nfsclient/nfsmount.h                        |    8 +
+ sys/fs/nfsserver/nfs_nfsdkrpc.c                    |    2 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |  727 +++++++++--
+ sys/fs/nfsserver/nfs_nfsdserv.c                    | 1010 ++++++++++++++-
+ sys/fs/nfsserver/nfs_nfsdsocket.c                  |   79 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c                   |   36 +-
+ sys/fs/nfsserver/nfs_nfsdsubs.c                    |    4 +-
+ sys/kern/vfs_bio.c                                 |    6 +-
+ sys/kern/vfs_syscalls.c                            |   27 +-
+ sys/sys/param.h                                    |    2 +-
+ sys/sys/syscallsubr.h                              |    1 +
+ sys/vm/vm_page.h                                   |   79 +-
+ 67 files changed, 5732 insertions(+), 2265 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   6ebde9bb73ad..d993895b464b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
