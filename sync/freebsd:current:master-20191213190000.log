@@ -1,0 +1,140 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is behind 'freebsd/master' by 22 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 698c7e1887bf..0f7b14322b00
+Fast-forward
+ ObsoleteFiles.inc                                  |   3 +
+ lib/libc/powerpc64/arith.h                         |   3 +
+ share/man/man9/Makefile                            |  53 ++-
+ share/man/man9/bus_delayed_attach_children.9       |  55 +++
+ share/man/man9/{timeout.9 => callout.9}            | 197 ++++-----
+ share/man/man9/style.9                             |  33 +-
+ stand/libsa/zfs/zfsimpl.c                          |   6 +-
+ sys/amd64/include/vmm.h                            |   6 +
+ sys/amd64/vmm/amd/svm.c                            |   5 +
+ sys/amd64/vmm/intel/vmcs.c                         |   2 +
+ sys/amd64/vmm/intel/vmx.c                          |  63 ++-
+ sys/amd64/vmm/intel/vmx.h                          |   1 +
+ sys/arm/broadcom/bcm2835/bcm2835_bsc.c             |   4 +-
+ sys/arm/freescale/imx/imx_i2c.c                    |   3 +-
+ sys/arm/freescale/imx/imx_spi.c                    |   4 +-
+ sys/arm/mv/a37x0_spi.c                             |   4 +-
+ sys/arm/mv/mv_spi.c                                |   4 +-
+ sys/arm/ti/ti_i2c.c                                |   2 +-
+ sys/cddl/compat/opensolaris/sys/systm.h            |   3 -
+ .../opensolaris/uts/common/fs/zfs/sys/zio.h        |   3 +
+ .../contrib/opensolaris/uts/common/fs/zfs/zio.c    |  12 +
+ sys/compat/linux/linux_misc.c                      |   5 +-
+ sys/compat/linux/linux_signal.c                    |  12 +-
+ sys/contrib/dev/acpica/changes.txt                 |  21 +
+ sys/contrib/dev/acpica/common/dmtables.c           |   3 +-
+ sys/contrib/dev/acpica/compiler/aslcompile.c       |  39 +-
+ sys/contrib/dev/acpica/compiler/asldefine.h        |  10 +-
+ sys/contrib/dev/acpica/compiler/aslerror.c         |  45 +-
+ sys/contrib/dev/acpica/compiler/aslfiles.c         |  24 +-
+ sys/contrib/dev/acpica/compiler/aslload.c          |  15 +-
+ sys/contrib/dev/acpica/compiler/aslmessages.c      |   4 +-
+ sys/contrib/dev/acpica/compiler/aslmessages.h      |   2 +
+ sys/contrib/dev/acpica/compiler/aslmethod.c        |   4 +-
+ sys/contrib/dev/acpica/compiler/asloptions.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/aslstartup.c       |   4 -
+ sys/contrib/dev/acpica/compiler/asltransform.c     | 204 ++++++++-
+ sys/contrib/dev/acpica/compiler/aslutils.c         |   5 -
+ sys/contrib/dev/acpica/compiler/aslxref.c          |  31 +-
+ sys/contrib/dev/acpica/compiler/dtcompile.c        |  29 +-
+ sys/contrib/dev/acpica/compiler/dtcompiler.h       |   1 -
+ sys/contrib/dev/acpica/compiler/dttable2.c         |   1 +
+ .../dev/acpica/components/debugger/dbinput.c       |   2 +-
+ .../dev/acpica/components/debugger/dbnames.c       |   1 -
+ .../dev/acpica/components/dispatcher/dsfield.c     |   2 +-
+ .../dev/acpica/components/dispatcher/dsopcode.c    |   1 +
+ .../dev/acpica/components/dispatcher/dswload.c     |  22 +
+ .../dev/acpica/components/executer/exfield.c       |  10 +-
+ .../dev/acpica/components/hardware/hwxfsleep.c     |   2 +-
+ sys/contrib/dev/acpica/include/acobject.h          |   1 +
+ sys/contrib/dev/acpica/include/acpixf.h            |   2 +-
+ sys/contrib/dev/acpica/include/platform/acenv.h    |  15 +
+ sys/dev/cxgbe/crypto/t4_kern_tls.c                 |  39 +-
+ sys/dev/cxgbe/t4_sched.c                           |   2 +-
+ sys/dev/cxgbe/t4_sge.c                             | 208 +++++-----
+ sys/dev/cxgbe/tom/t4_connect.c                     |   3 +
+ sys/dev/cxgbe/tom/t4_listen.c                      |  25 +-
+ sys/dev/glxiic/glxiic.c                            |   3 +-
+ sys/dev/ichsmb/ichsmb.c                            |   7 +-
+ sys/dev/nvme/nvme_ctrlr.c                          |  12 +-
+ sys/dev/nvme/nvme_private.h                        |   8 +-
+ sys/dev/nvme/nvme_qpair.c                          |  10 +-
+ sys/dev/ow/owc_gpiobus.c                           |   4 +-
+ sys/dev/pci/pcireg.h                               |   7 +
+ sys/dev/smartpqi/smartpqi_defines.h                |   4 +-
+ sys/dev/smartpqi/smartpqi_main.c                   |  12 +-
+ sys/dev/smartpqi/smartpqi_misc.c                   |  13 +-
+ sys/fs/nfsclient/nfs_clrpcops.c                    |   4 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |   2 +-
+ sys/fs/nfsserver/nfs_nfsdserv.c                    |   2 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c                   |   6 +-
+ sys/kern/kern_fail.c                               |  24 +-
+ sys/kern/kern_intr.c                               |   1 -
+ sys/kern/kern_prot.c                               |  11 +-
+ sys/kern/kern_sig.c                                |  35 +-
+ sys/kern/kern_timeout.c                            | 178 +-------
+ sys/kern/subr_bus.c                                |  16 +
+ sys/modules/i2c/ads111x/Makefile                   |   5 +-
+ sys/netgraph/ng_base.c                             |   2 +-
+ sys/sys/bus.h                                      |   1 +
+ sys/sys/cdefs.h                                    |   3 +-
+ sys/sys/fail.h                                     |  12 +-
+ sys/sys/interrupt.h                                |   1 -
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/syscallsubr.h                              |   2 +
+ sys/sys/systm.h                                    |   9 -
+ sys/vm/uma_core.c                                  |   4 +-
+ usr.sbin/bhyve/bhyve.8                             |   7 +-
+ usr.sbin/bhyve/bhyverun.c                          |  13 +
+ usr.sbin/bhyve/gdb.c                               | 461 ++++++++++++++++++---
+ usr.sbin/bhyve/gdb.h                               |   1 +
+ usr.sbin/pciconf/cap.c                             |  36 +-
+ usr.sbin/pciconf/pciconf.8                         |   3 +
+ usr.sbin/pciconf/pciconf.c                         |   4 +-
+ usr.sbin/pciconf/pciconf.h                         |   2 +-
+ 94 files changed, 1459 insertions(+), 730 deletions(-)
+ create mode 100644 share/man/man9/bus_delayed_attach_children.9
+ rename share/man/man9/{timeout.9 => callout.9} (89%)
+==== merge branches ====
+==== merge freebsd/master branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   698c7e1887bf..0f7b14322b00  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
