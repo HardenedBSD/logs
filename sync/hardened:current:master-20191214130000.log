@@ -1,0 +1,122 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/nc/Makefile
+CONFLICT (content): Merge conflict in usr.bin/nc/Makefile
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.bin/nc/Makefile
+index 8fa9946794a5,b518cfdc67ce..000000000000
+--- a/usr.bin/nc/Makefile
++++ b/usr.bin/nc/Makefile
+@@@ -8,7 -10,10 +10,14 @@@ SRCS=	netcat.c atomicio.c socks.
+  CFLAGS+=-DIPSEC
+  LIBADD=	ipsec
+  
+++<<<<<<< HEAD
+ +CFI_OVERRIDE=-fno-sanitize=cfi-icall
+++=======
++ .if ${MK_STATS} != "no" && !defined(RESCUE)
++ LIBADD+=	sbuf stats
++ CFLAGS+=	-DWITH_STATS
++ .endif
+++>>>>>>> freebsd/current/master
+  
+  WARNS?=	2
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/netcat/nc.1
+	modified:   contrib/netcat/netcat.c
+	modified:   include/stdlib.h
+	modified:   lib/libc/stdlib/Makefile.inc
+	modified:   lib/libc/stdlib/Symbol.map
+	modified:   lib/libc/stdlib/rand.3
+	modified:   lib/libc/stdlib/rand.c
+	modified:   lib/libxo/xo_config.h
+	modified:   sys/amd64/linux/linux_dummy.c
+	modified:   sys/amd64/linux/linux_proto.h
+	modified:   sys/amd64/linux/linux_sysent.c
+	modified:   sys/amd64/linux/linux_systrace_args.c
+	modified:   sys/amd64/linux/syscalls.master
+	modified:   sys/amd64/linux32/linux32_dummy.c
+	modified:   sys/amd64/linux32/linux32_proto.h
+	modified:   sys/amd64/linux32/linux32_sysent.c
+	modified:   sys/amd64/linux32/linux32_systrace_args.c
+	modified:   sys/amd64/linux32/syscalls.master
+	modified:   sys/arm/linux/linux_proto.h
+	modified:   sys/arm/linux/linux_sysent.c
+	modified:   sys/arm/linux/linux_systrace_args.c
+	modified:   sys/arm/linux/syscalls.master
+	modified:   sys/arm64/linux/linux_dummy.c
+	modified:   sys/arm64/linux/linux_proto.h
+	modified:   sys/arm64/linux/linux_sysent.c
+	modified:   sys/arm64/linux/linux_systrace_args.c
+	modified:   sys/arm64/linux/syscalls.master
+	new file:   sys/arm64/rockchip/rk_pcie.c
+	new file:   sys/arm64/rockchip/rk_pcie_phy.c
+	modified:   sys/compat/linux/linux_file.c
+	modified:   sys/compat/linux/linux_file.h
+	modified:   sys/conf/files.arm64
+	modified:   sys/i386/linux/linux_dummy.c
+	modified:   sys/i386/linux/linux_proto.h
+	modified:   sys/i386/linux/linux_sysent.c
+	modified:   sys/i386/linux/linux_systrace_args.c
+	modified:   sys/i386/linux/syscalls.master
+	modified:   usr.sbin/sesutil/sesutil.8
+	modified:   usr.sbin/sesutil/sesutil.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/nc/Makefile
+
+HEAD is now at ace9f6231f16 HBSD: Bump __HardenedBSD_version in documentation
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at ace9f6231f16 HBSD: Bump __HardenedBSD_version in documentation
+==== END: hardened/current/master ====
