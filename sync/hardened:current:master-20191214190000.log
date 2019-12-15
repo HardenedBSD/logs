@@ -1,0 +1,93 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 9 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating ace9f6231f16..71cc7b921b33
+Fast-forward
+ ObsoleteFiles.inc                         |    2 +
+ contrib/netcat/nc.1                       |   10 +-
+ contrib/netcat/netcat.c                   |  104 ++-
+ include/stdlib.h                          |    7 +-
+ lib/libc/stdlib/Makefile.inc              |    2 +-
+ lib/libc/stdlib/Symbol.map                |    1 -
+ lib/libc/stdlib/rand.3                    |   12 +-
+ lib/libc/stdlib/rand.c                    |   25 +-
+ lib/libxo/xo_config.h                     |    2 +-
+ sys/amd64/linux/linux_dummy.c             |    1 -
+ sys/amd64/linux/linux_proto.h             |    5 +-
+ sys/amd64/linux/linux_sysent.c            |    2 +-
+ sys/amd64/linux/linux_systrace_args.c     |   26 +-
+ sys/amd64/linux/syscalls.master           |    3 +-
+ sys/amd64/linux32/linux32_dummy.c         |    1 -
+ sys/amd64/linux32/linux32_proto.h         |    5 +-
+ sys/amd64/linux32/linux32_sysent.c        |    2 +-
+ sys/amd64/linux32/linux32_systrace_args.c |   26 +-
+ sys/amd64/linux32/syscalls.master         |    3 +-
+ sys/arm/linux/linux_proto.h               |    5 +-
+ sys/arm/linux/linux_sysent.c              |    2 +-
+ sys/arm/linux/linux_systrace_args.c       |   26 +-
+ sys/arm/linux/syscalls.master             |    7 +-
+ sys/arm64/linux/linux_dummy.c             |    1 -
+ sys/arm64/linux/linux_proto.h             |    5 +-
+ sys/arm64/linux/linux_sysent.c            |    2 +-
+ sys/arm64/linux/linux_systrace_args.c     |   26 +-
+ sys/arm64/linux/syscalls.master           |    7 +-
+ sys/arm64/rockchip/rk_pcie.c              | 1411 +++++++++++++++++++++++++++++
+ sys/arm64/rockchip/rk_pcie_phy.c          |  369 ++++++++
+ sys/compat/linux/linux_file.c             |   16 +
+ sys/compat/linux/linux_file.h             |    7 +
+ sys/conf/files.arm64                      |    2 +
+ sys/i386/linux/linux_dummy.c              |    1 -
+ sys/i386/linux/linux_proto.h              |    5 +-
+ sys/i386/linux/linux_sysent.c             |    2 +-
+ sys/i386/linux/linux_systrace_args.c      |   26 +-
+ sys/i386/linux/syscalls.master            |    3 +-
+ usr.bin/nc/Makefile                       |    7 +
+ usr.sbin/sesutil/sesutil.8                |   11 +-
+ usr.sbin/sesutil/sesutil.c                |  386 +++++++-
+ 41 files changed, 2488 insertions(+), 78 deletions(-)
+ create mode 100644 sys/arm64/rockchip/rk_pcie.c
+ create mode 100644 sys/arm64/rockchip/rk_pcie_phy.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ include/stdlib.h                                   |   2 +-
+ sbin/mount_nfs/mount_nfs.8                         |  27 +++---
+ .../linuxkpi/common/include/linux/compiler.h       |   1 -
+ sys/kern/subr_blist.c                              | 101 +++++++--------------
+ sys/sys/cdefs.h                                    |   8 ++
+ 5 files changed, 60 insertions(+), 79 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   71cc7b921b33..673405600738  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
