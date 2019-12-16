@@ -1,0 +1,101 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing textproc/py-genshi/files/patch-setup.py
+Auto-merging sysutils/pftop/Makefile
+CONFLICT (content): Merge conflict in sysutils/pftop/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc sysutils/pftop/Makefile
+index 83e93725a2c3,7f38f1a53af1..000000000000
+--- a/sysutils/pftop/Makefile
++++ b/sysutils/pftop/Makefile
+@@@ -10,11 -9,10 +9,14 @@@ CATEGORIES=	sysutils ne
+  MAINTAINER=	araujo@FreeBSD.org
+  COMMENT=	Utility for real-time display of statistics for pf
+  
+- BROKEN=		unfetchable
+- 
+  LICENSE=	BSD2CLAUSE
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+++=======
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	araujobsd
+++>>>>>>> freebsd/master
+  
+  OPTIONS_DEFINE=	ALTQ
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/zam-plugins-lv2/Makefile
+	modified:   audio/zam-plugins-lv2/distinfo
+	modified:   math/darknet/Makefile
+	modified:   math/darknet/distinfo
+	modified:   math/libRmath/Makefile
+	modified:   math/libRmath/distinfo
+	modified:   misc/Makefile
+	modified:   misc/mxnet/Makefile
+	new file:   misc/py-gluoncv/Makefile
+	new file:   misc/py-gluoncv/distinfo
+	new file:   misc/py-gluoncv/pkg-descr
+	modified:   net/grpcurl/Makefile
+	modified:   net/grpcurl/distinfo
+	modified:   shells/ksh93-devel/Makefile
+	modified:   shells/ksh93-devel/distinfo
+	modified:   sysutils/cfengine-devel/Makefile
+	modified:   sysutils/cfengine-devel/distinfo
+	modified:   sysutils/cfengine-masterfiles-devel/Makefile
+	modified:   sysutils/cfengine-masterfiles-devel/distinfo
+	modified:   sysutils/doctl/Makefile
+	modified:   sysutils/doctl/distinfo
+	modified:   sysutils/pftop/distinfo
+	modified:   sysutils/pftop/pkg-descr
+	modified:   textproc/py-genshi/Makefile
+	modified:   textproc/py-genshi/distinfo
+	deleted:    textproc/py-genshi/files/patch-setup.py
+	modified:   www/Makefile
+	new file:   www/pomerium/Makefile
+	new file:   www/pomerium/distinfo
+	new file:   www/pomerium/files/pomerium.in
+	new file:   www/pomerium/pkg-descr
+	new file:   www/pomerium/pkg-message
+	new file:   www/pomerium/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sysutils/pftop/Makefile
+
+
+It took 3.44 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ed6fae2c24e5 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ed6fae2c24e5 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
