@@ -1,0 +1,85 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/dev/kbd/kbd.c
+Merge made by the 'recursive' strategy.
+ sys/arm/samsung/exynos/chrome_kb.c                 |   2 -
+ sys/arm/versatile/pl050.c                          |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ctldir.c     |   3 +
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |   3 +
+ sys/dev/adb/adb_kbd.c                              |  36 +++--
+ sys/dev/atkbdc/atkbd.c                             |  36 +++--
+ sys/dev/gpio/gpiokeys.c                            |   4 +-
+ sys/dev/hyperv/input/hv_kbd.c                      |  38 +++---
+ sys/dev/kbd/kbd.c                                  |  49 ++++---
+ sys/dev/kbd/kbdreg.h                               | 151 ++++++++++-----------
+ sys/dev/kbdmux/kbdmux.c                            |   2 -
+ sys/dev/uart/uart_kbd_sun.c                        |  37 +++--
+ sys/dev/usb/input/ukbd.c                           |   4 +-
+ sys/dev/vkbd/vkbd.c                                |   2 -
+ sys/fs/autofs/autofs_vnops.c                       |   1 +
+ sys/fs/cd9660/cd9660_vnops.c                       |   2 +
+ sys/fs/deadfs/dead_vnops.c                         |   1 +
+ sys/fs/devfs/devfs_vnops.c                         |   2 +
+ sys/fs/ext2fs/ext2_vnops.c                         |   2 +
+ sys/fs/fdescfs/fdesc_vnops.c                       |   1 +
+ sys/fs/fifofs/fifo_vnops.c                         |   1 +
+ sys/fs/fuse/fuse_vnops.c                           |   2 +
+ sys/fs/msdosfs/msdosfs_vnops.c                     |   1 +
+ sys/fs/nfsclient/nfs_clvnops.c                     |   4 +
+ sys/fs/nullfs/null_vnops.c                         |   1 +
+ sys/fs/pseudofs/pseudofs_vnops.c                   |   1 +
+ sys/fs/smbfs/smbfs_vnops.c                         |   1 +
+ sys/fs/tmpfs/tmpfs_fifoops.c                       |   1 +
+ sys/fs/tmpfs/tmpfs_vnops.c                         |   2 +
+ sys/fs/udf/udf_vnops.c                             |   2 +
+ sys/fs/unionfs/union_vnops.c                       |   1 +
+ sys/kern/kern_mutex.c                              |  32 ++---
+ sys/kern/uipc_mqueue.c                             |   1 +
+ sys/kern/vfs_default.c                             |   1 +
+ sys/kern/vfs_lookup.c                              |   5 +
+ sys/kern/vfs_subr.c                                |   5 +
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/sched.h                                    |   1 -
+ sys/sys/vnode.h                                    |   8 ++
+ sys/tools/vnode_if.awk                             |  61 +++++++--
+ sys/ufs/ffs/ffs_vnops.c                            |   4 +
+ sys/ufs/ufs/ufs_vnops.c                            |   2 +
+ 42 files changed, 294 insertions(+), 223 deletions(-)
+To github.com:HardenedBSD/hardenedBSD.git
+   54de8eb0baab..05f3bf5f29e2  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
