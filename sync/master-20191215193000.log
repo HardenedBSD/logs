@@ -1,0 +1,118 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net-mgmt/arpwatch/files/patch-util.h
+Removing net-mgmt/arpwatch/files/patch-util.c
+Removing net-mgmt/arpwatch/files/patch-report.c
+Removing net-mgmt/arpwatch/files/patch-dns.c
+Removing net-mgmt/arpwatch/files/patch-db.c
+Removing net-mgmt/arpwatch/files/patch-configure
+Removing net-mgmt/arpwatch/files/patch-arpwatch.8
+Removing net-mgmt/arpwatch/files/patch-arpsnmp.8
+Removing net-mgmt/arpwatch/files/patch-Makefile.in
+Auto-merging math/R/Makefile
+Removing mail/mutt/files/patch-doc_Muttrc
+Auto-merging mail/mutt/Makefile
+Auto-merging editors/emacs-devel/Makefile
+Merge made by the 'recursive' strategy.
+ databases/geoserver-mysql-plugin/Makefile          |   4 +-
+ databases/geoserver-mysql-plugin/distinfo          |   6 +-
+ editors/emacs-devel/Makefile                       |   4 +-
+ editors/emacs-devel/distinfo                       |   6 +-
+ editors/emacs-devel/pkg-plist                      |  60 +-
+ graphics/geoserver/Makefile                        |  21 +-
+ graphics/geoserver/distinfo                        |   6 +-
+ graphics/geoserver/pkg-plist                       | 741 +++++++++++----------
+ lang/kotlin/Makefile                               |   2 +-
+ lang/kotlin/distinfo                               |   6 +-
+ mail/mutt/Makefile                                 |  77 ++-
+ mail/mutt/distinfo                                 |  10 +-
+ mail/mutt/files/extra-patch-doc-ref                |   6 +-
+ mail/mutt/files/extra-patch-forcebase64            |  16 +-
+ mail/mutt/files/extra-patch-ifdef                  |  38 +-
+ mail/mutt/files/extra-patch-maildir-mtime          |  14 +-
+ mail/mutt/files/extra-patch-reverse_reply          |  28 +-
+ mail/mutt/files/extra-patch-smartdate              |  10 +-
+ mail/mutt/files/patch-Makefile.in                  |  14 +-
+ mail/mutt/files/patch-browser.c                    |  16 +-
+ mail/mutt/files/patch-contrib_Makefile.in          |   4 +-
+ mail/mutt/files/patch-date-conditional             |  12 +-
+ mail/mutt/files/patch-dgc-deepif                   |   6 +-
+ mail/mutt/files/patch-doc_Makefile.in              |  10 +-
+ mail/mutt/files/patch-doc_Muttrc                   |  10 -
+ mail/mutt/files/patch-doc_manual.xml.head          |   2 +-
+ mail/mutt/files/patch-muttlib.c                    |   4 +-
+ mail/mutt/files/patch-smime-sender                 |  18 +-
+ mail/mutt/files/patch-threadcomplete               |   8 +-
+ mail/mutt/pkg-plist                                |   1 +
+ math/R/Makefile                                    | 133 ++--
+ math/R/distinfo                                    |   6 +-
+ math/R/pkg-plist                                   |   9 +-
+ misc/Makefile                                      |   2 +
+ misc/mxnet/Makefile                                |  57 ++
+ misc/mxnet/distinfo                                |  11 +
+ misc/mxnet/files/patch-3rdparty_tvm_CMakeLists.txt |  19 +
+ misc/mxnet/files/patch-CMakeLists.txt              |  27 +
+ .../patch-src_operator_numpy_np__einsum__op-inl.h  |  44 ++
+ misc/mxnet/pkg-descr                               |  13 +
+ misc/mxnet/pkg-plist                               | 125 ++++
+ misc/py-mxnet/Makefile                             |  45 ++
+ misc/py-mxnet/distinfo                             |   3 +
+ misc/py-mxnet/pkg-descr                            |  13 +
+ net-im/mikutter/Makefile                           |   2 +-
+ net-im/mikutter/distinfo                           |   6 +-
+ net-mgmt/arpwatch/Makefile                         |  53 +-
+ net-mgmt/arpwatch/distinfo                         |   5 +-
+ net-mgmt/arpwatch/files/patch-Makefile.in          |  38 --
+ net-mgmt/arpwatch/files/patch-arpsnmp.8            |  34 -
+ net-mgmt/arpwatch/files/patch-arpsnmp.c            |  43 +-
+ net-mgmt/arpwatch/files/patch-arpwatch.8           |  59 --
+ net-mgmt/arpwatch/files/patch-arpwatch.c           |  70 +-
+ net-mgmt/arpwatch/files/patch-configure            |  20 -
+ net-mgmt/arpwatch/files/patch-db.c                 |  20 -
+ net-mgmt/arpwatch/files/patch-dns.c                |  33 -
+ net-mgmt/arpwatch/files/patch-report.c             |  76 ---
+ net-mgmt/arpwatch/files/patch-util.c               |  15 -
+ net-mgmt/arpwatch/files/patch-util.h               |  12 -
+ net-mgmt/arpwatch/files/pkg-message.in             |  16 +-
+ net-mgmt/arpwatch/pkg-descr                        |   2 +-
+ net-mgmt/arpwatch/pkg-plist                        |   3 +-
+ sysutils/istio/Makefile                            |   4 +-
+ sysutils/istio/distinfo                            |  10 +-
+ sysutils/kubectl/Makefile                          |   7 +
+ sysutils/kubectl/distinfo                          |   4 +-
+ sysutils/yadm/Makefile                             |   3 +-
+ 67 files changed, 1139 insertions(+), 1063 deletions(-)
+ delete mode 100644 mail/mutt/files/patch-doc_Muttrc
+ create mode 100644 misc/mxnet/Makefile
+ create mode 100644 misc/mxnet/distinfo
+ create mode 100644 misc/mxnet/files/patch-3rdparty_tvm_CMakeLists.txt
+ create mode 100644 misc/mxnet/files/patch-CMakeLists.txt
+ create mode 100644 misc/mxnet/files/patch-src_operator_numpy_np__einsum__op-inl.h
+ create mode 100644 misc/mxnet/pkg-descr
+ create mode 100644 misc/mxnet/pkg-plist
+ create mode 100644 misc/py-mxnet/Makefile
+ create mode 100644 misc/py-mxnet/distinfo
+ create mode 100644 misc/py-mxnet/pkg-descr
+ delete mode 100644 net-mgmt/arpwatch/files/patch-Makefile.in
+ delete mode 100644 net-mgmt/arpwatch/files/patch-arpsnmp.8
+ delete mode 100644 net-mgmt/arpwatch/files/patch-arpwatch.8
+ delete mode 100644 net-mgmt/arpwatch/files/patch-configure
+ delete mode 100644 net-mgmt/arpwatch/files/patch-db.c
+ delete mode 100644 net-mgmt/arpwatch/files/patch-dns.c
+ delete mode 100644 net-mgmt/arpwatch/files/patch-report.c
+ delete mode 100644 net-mgmt/arpwatch/files/patch-util.c
+ delete mode 100644 net-mgmt/arpwatch/files/patch-util.h
+To github.com:HardenedBSD/hardenedbsd-ports.git
+   6ef28362cbe2..ed6fae2c24e5  master -> master
+==== END: master ====
