@@ -1,0 +1,102 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is behind 'freebsd/master' by 33 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 5fa79c6768be..fa97dd2a7626
+Fast-forward
+ UPDATING                           |  11 +---
+ lib/libvmmapi/vmmapi.c             |   6 +-
+ lib/libxo/Makefile                 | 113 +-----------------------------------
+ lib/libxo/encoder/csv/Makefile     |  19 +++++--
+ lib/libxo/libxo/Makefile           | 114 +++++++++++++++++++++++++++++++++++++
+ lib/libxo/{ => libxo}/xo_config.h  |   2 +-
+ lib/libxo/tests/Makefile           |   2 +-
+ lib/libxo/tests/encoder/Makefile   |   2 +-
+ sbin/geom/Makefile                 |   2 +-
+ share/man/man4/linux.4             |  14 ++++-
+ stand/efi/libefi/efi_console.c     |  12 ++--
+ stand/i386/common/edd.h            |   3 +
+ stand/i386/libi386/biosdisk.c      |  65 +++++++++++++--------
+ sys/amd64/linux/linux_sysvec.c     |   6 +-
+ sys/amd64/linux32/linux32_sysvec.c |   6 +-
+ sys/arm/arm/machdep.c              |   7 ++-
+ sys/arm64/arm64/machdep.c          |   7 ++-
+ sys/arm64/linux/linux_sysvec.c     |   3 +-
+ sys/arm64/rockchip/rk_gpio.c       |   2 +-
+ sys/arm64/rockchip/rk_pinctrl.c    |   4 +-
+ sys/cam/ata/ata_da.c               |  10 ----
+ sys/cam/cam_iosched.c              | 100 +++++++++++++++++++++++++++-----
+ sys/cam/scsi/scsi_da.c             |  12 +---
+ sys/compat/linux/linux_ioctl.c     |   4 ++
+ sys/compat/linux/linux_ioctl.h     |   1 +
+ sys/compat/linux/linux_mib.c       |   4 ++
+ sys/compat/linux/linux_mib.h       |   2 +
+ sys/compat/linux/linux_util.c      |   8 ++-
+ sys/compat/linux/linux_util.h      |   2 +-
+ sys/conf/files                     |   1 -
+ sys/dev/ata/chipsets/ata-promise.c |   2 +-
+ sys/dev/exca/exca.c                |   7 +++
+ sys/dev/exca/excavar.h             |  13 +++++
+ sys/dev/kbd/kbdreg.h               |  13 +++--
+ sys/dev/pccbb/pccbb.c              |  50 ++++++++--------
+ sys/dev/pccbb/pccbb_pci.c          |  45 +++++++--------
+ sys/dev/pccbb/pccbbvar.h           |   3 +-
+ sys/geom/geom.h                    |   1 +
+ sys/geom/geom_io.c                 |  36 ++++++++++++
+ sys/i386/i386/machdep.c            |   7 ++-
+ sys/i386/linux/linux_sysvec.c      |   6 +-
+ sys/mips/conf/TL-WDR4300           |   7 +++
+ sys/mips/include/atomic.h          |   8 ++-
+ sys/mips/mips/machdep.c            |   7 ++-
+ sys/modules/cbb/Makefile           |   4 +-
+ sys/net/route.c                    |  24 ++++----
+ sys/net/route.h                    |  13 +++--
+ sys/powerpc/powerpc/machdep.c      |   4 +-
+ sys/riscv/riscv/machdep.c          |   7 ++-
+ sys/sys/bio.h                      |   4 ++
+ sys/sys/syslimits.h                |   6 +-
+ sys/ufs/ffs/ffs_softdep.c          |  18 +++++-
+ usr.bin/diff3/diff3.c              |  44 ++++----------
+ usr.bin/netstat/route.c            |  12 ++--
+ usr.bin/xo/Makefile                |   2 +-
+ usr.sbin/ppp/Makefile              |   8 ---
+ 56 files changed, 541 insertions(+), 354 deletions(-)
+ create mode 100644 lib/libxo/libxo/Makefile
+ rename lib/libxo/{ => libxo}/xo_config.h (99%)
+==== merge branches ====
+==== merge freebsd/master branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   5fa79c6768be..fa97dd2a7626  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
