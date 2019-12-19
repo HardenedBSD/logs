@@ -1,0 +1,170 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging multimedia/ffmpeg/Makefile
+Auto-merging dns/bind911/Makefile
+Auto-merging devel/powerpc64-gcc/Makefile
+CONFLICT (content): Merge conflict in devel/powerpc64-gcc/Makefile
+Removing devel/googlemock/pkg-plist
+Removing devel/googlemock/pkg-descr
+Removing devel/googlemock/distinfo
+Removing devel/googlemock/Makefile
+Auto-merging devel/binutils/Makefile
+Removing devel/RStudio/files/patch-boost-1.72
+Removing comms/conserver-com/files/patch-configure
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/powerpc64-gcc/Makefile
+index 10e18f30e316,1dc811533121..000000000000
+--- a/devel/powerpc64-gcc/Makefile
++++ b/devel/powerpc64-gcc/Makefile
+@@@ -19,7 -19,7 +19,11 @@@ LIB_DEPENDS=	libgmp.so:math/gmp 
+  BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
+  RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ CONFLICTS=	${TARGETARCH}-gcc6
+++>>>>>>> freebsd/master
+  
+  USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
+  PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   biology/bedtools/Makefile
+	modified:   biology/bedtools/distinfo
+	modified:   comms/conserver-com/Makefile
+	modified:   comms/conserver-com/distinfo
+	deleted:    comms/conserver-com/files/patch-configure
+	modified:   databases/redis-devel/Makefile
+	modified:   databases/redis-devel/distinfo
+	modified:   devel/Makefile
+	modified:   devel/RStudio/Makefile
+	modified:   devel/RStudio/distinfo
+	deleted:    devel/RStudio/files/patch-boost-1.72
+	modified:   devel/android-tools-adb/Makefile
+	modified:   devel/binutils/Makefile
+	new file:   devel/binutils/pkg-plist-powerpc
+	new file:   devel/freebsd-gcc9/Makefile
+	new file:   devel/freebsd-gcc9/distinfo
+	new file:   devel/freebsd-gcc9/files/patch-freebsd-format-extensions
+	new file:   devel/freebsd-gcc9/files/patch-freebsd-libdir
+	new file:   devel/freebsd-gcc9/files/patch-gcc-configure
+	new file:   devel/freebsd-gcc9/files/patch-gcc-freebsd-mips
+	new file:   devel/freebsd-gcc9/files/xtoolchain.mk.in
+	new file:   devel/freebsd-gcc9/pkg-descr
+	new file:   devel/freebsd-gcc9/pkg-plist
+	new file:   devel/freebsd-gcc9/pkg-plist.aarch64
+	new file:   devel/freebsd-gcc9/pkg-plist.amd64
+	new file:   devel/freebsd-gcc9/pkg-plist.arm
+	new file:   devel/freebsd-gcc9/pkg-plist.i386
+	new file:   devel/freebsd-gcc9/pkg-plist.mips
+	new file:   devel/freebsd-gcc9/pkg-plist.powerpc
+	new file:   devel/freebsd-gcc9/pkg-plist.powerpc64
+	new file:   devel/freebsd-gcc9/pkg-plist.riscv
+	new file:   devel/freebsd-gcc9/pkg-plist.sparc64
+	deleted:    devel/googlemock/Makefile
+	deleted:    devel/googlemock/distinfo
+	deleted:    devel/googlemock/pkg-descr
+	deleted:    devel/googlemock/pkg-plist
+	modified:   devel/googletest/Makefile
+	modified:   devel/googletest/pkg-descr
+	modified:   devel/googletest/pkg-plist
+	modified:   devel/llvm-devel/Makefile
+	modified:   devel/llvm-devel/Makefile.COMMANDS
+	modified:   devel/llvm-devel/Makefile.snapshot
+	modified:   devel/llvm-devel/distinfo
+	modified:   devel/llvm-devel/files/xtoolchain.mk.in
+	modified:   devel/llvm-devel/pkg-plist
+	modified:   devel/protobuf/Makefile
+	modified:   devel/samurai/Makefile
+	modified:   devel/samurai/distinfo
+	modified:   dns/bind911/Makefile
+	modified:   dns/bind911/distinfo
+	modified:   dns/bind911/files/extrapatch-bind-min-override-ttl
+	modified:   dns/bind911/files/patch-configure
+	modified:   dns/bind914/Makefile
+	modified:   dns/bind914/distinfo
+	modified:   dns/bind914/files/extrapatch-bind-min-override-ttl
+	modified:   dns/bind914/files/patch-configure
+	modified:   emulators/citra-qt5/Makefile
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   finance/gnucash/Makefile
+	modified:   games/freeciv/Makefile
+	modified:   games/freeciv/distinfo
+	modified:   games/rlvm/Makefile
+	modified:   graphics/drm-devel-kmod/Makefile
+	modified:   graphics/drm-devel-kmod/distinfo
+	modified:   graphics/opencv/Makefile
+	new file:   graphics/opencv/files/patch-cmake_OpenCVDetectMediaSDK.cmake
+	new file:   graphics/opencv/files/patch-modules_videoio_src_cap__mfx__reader.cpp
+	new file:   graphics/opencv/files/patch-modules_videoio_src_cap__mfx__writer.cpp
+	modified:   lang/go-devel/Makefile
+	modified:   lang/go-devel/distinfo
+	modified:   lang/rust-nightly/Makefile
+	modified:   lang/rust-nightly/distinfo
+	modified:   misc/netron/Makefile
+	modified:   misc/netron/distinfo
+	modified:   misc/netron/pkg-plist
+	modified:   multimedia/aom/Makefile
+	modified:   multimedia/aom/distinfo
+	modified:   multimedia/aom/files/patch-CMakeLists.txt
+	modified:   multimedia/emby-server/Makefile
+	modified:   multimedia/emby-server/distinfo
+	modified:   multimedia/emby-server/files/emby-server.in
+	modified:   multimedia/emby-server/pkg-plist
+	modified:   multimedia/ffmpeg/Makefile
+	modified:   multimedia/gstreamer1-plugins-msdk/Makefile
+	modified:   multimedia/intel-media-sdk/Makefile
+	modified:   multimedia/intel-media-sdk/pkg-descr
+	modified:   multimedia/librav1e/Makefile
+	modified:   multimedia/rav1e/Makefile
+	modified:   multimedia/rav1e/distinfo
+	modified:   multimedia/vlc/Makefile
+	modified:   security/certificate-transparency/Makefile
+	modified:   x11/squeekboard/Makefile
+	modified:   x11/squeekboard/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/powerpc64-gcc/Makefile
+
+
+It took 3.45 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at b532e0329256 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.21 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at b532e0329256 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
