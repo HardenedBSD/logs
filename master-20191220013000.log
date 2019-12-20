@@ -1,0 +1,141 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/httptunnel/pkg-install
+Removing www/httptunnel/pkg-deinstall
+Auto-merging www/httptunnel/Makefile
+Removing sysutils/graid5/files/pkg-deinstall.in
+Removing shells/psh/files/pkg-install.in
+Removing shells/psh/files/pkg-deinstall.in
+Removing shells/heirloom-sh/pkg-install
+Removing shells/heirloom-sh/pkg-deinstall
+Auto-merging shells/heirloom-sh/Makefile
+Removing net-p2p/py-libtorrent-rasterbar/files/patch-setup.py
+Removing net-p2p/py-libtorrent-rasterbar/files/patch-boost-1.69
+Removing net-p2p/libtorrent-rasterbar/files/patch-include_libtorrent_tommath.h
+Removing net-p2p/libtorrent-rasterbar/files/patch-boost-1.70
+Removing net-p2p/libtorrent-rasterbar/files/patch-boost-1.69
+Removing net-p2p/libtorrent-rasterbar/files/patch-bindings_python_compile__flags.in
+Removing net-p2p/libtorrent-rasterbar/files/patch-CMakeLists.txt
+Removing net-mgmt/p5-jmx4perl/files/pkg-install.in
+Removing net-mgmt/p5-jmx4perl/files/pkg-deinstall.in
+Auto-merging Mk/bsd.ssp.mk
+CONFLICT (content): Merge conflict in Mk/bsd.ssp.mk
+Auto-merging Mk/bsd.port.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc Mk/bsd.ssp.mk
+index dd4b1e39a693,dade3e490b58..000000000000
+--- a/Mk/bsd.ssp.mk
++++ b/Mk/bsd.ssp.mk
+@@@ -4,9 -4,9 +4,15 @@@
+  SSP_Include_MAINTAINER=	portmgr@FreeBSD.org
+  
+  .if !defined(SSP_UNSAFE) && \
+++<<<<<<< HEAD
+ +    (${MACHINE} != "mips")
+ +# Overridable as a user may want to use -fstack-protector
+ +SSP_CFLAGS?=	-fstack-protector-all
+++=======
++     (! ${ARCH:Mmips*})
++ # Overridable as a user may want to use -fstack-protector-all
++ SSP_CFLAGS?=	-fstack-protector-strong
+++>>>>>>> freebsd/master
+  CFLAGS+=	${SSP_CFLAGS}
+  LDFLAGS+=	${SSP_CFLAGS}
+  .endif
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/bsd.octave.mk
+	modified:   Mk/bsd.port.mk
+	modified:   comms/pear-Horde_ActiveSync/Makefile
+	modified:   comms/pear-Horde_ActiveSync/distinfo
+	modified:   databases/phppgadmin/Makefile
+	modified:   databases/phppgadmin/distinfo
+	modified:   devel/pear-Horde_Core/Makefile
+	modified:   devel/pear-Horde_Core/distinfo
+	modified:   devel/pecl-grpc/Makefile
+	modified:   devel/pecl-grpc/distinfo
+	modified:   devel/py-oci/Makefile
+	modified:   devel/py-oci/distinfo
+	modified:   devel/py-oci/pkg-descr
+	modified:   mail/milter-regex/Makefile
+	modified:   mail/milter-regex/distinfo
+	modified:   multimedia/cmrtlib/Makefile
+	modified:   multimedia/intel-media-sdk/Makefile
+	modified:   multimedia/libva-intel-media-driver/Makefile
+	new file:   multimedia/libva-intel-media-driver/files/patch-userptr
+	modified:   net-mgmt/p5-jmx4perl/Makefile
+	deleted:    net-mgmt/p5-jmx4perl/files/pkg-deinstall.in
+	deleted:    net-mgmt/p5-jmx4perl/files/pkg-install.in
+	modified:   net-mgmt/p5-jmx4perl/pkg-plist
+	modified:   net-p2p/deluge/Makefile
+	modified:   net-p2p/libtorrent-rasterbar/Makefile
+	modified:   net-p2p/libtorrent-rasterbar/distinfo
+	deleted:    net-p2p/libtorrent-rasterbar/files/patch-CMakeLists.txt
+	deleted:    net-p2p/libtorrent-rasterbar/files/patch-bindings_python_compile__flags.in
+	deleted:    net-p2p/libtorrent-rasterbar/files/patch-boost-1.69
+	deleted:    net-p2p/libtorrent-rasterbar/files/patch-boost-1.70
+	modified:   net-p2p/libtorrent-rasterbar/files/patch-boost-1.72
+	deleted:    net-p2p/libtorrent-rasterbar/files/patch-include_libtorrent_tommath.h
+	new file:   net-p2p/libtorrent-rasterbar/files/patch-test_test_ssl.cpp
+	modified:   net-p2p/libtorrent-rasterbar/pkg-plist
+	modified:   net-p2p/py-libtorrent-rasterbar/Makefile
+	modified:   net-p2p/py-libtorrent-rasterbar/distinfo
+	deleted:    net-p2p/py-libtorrent-rasterbar/files/patch-boost-1.69
+	deleted:    net-p2p/py-libtorrent-rasterbar/files/patch-setup.py
+	modified:   net-p2p/qbittorrent/Makefile
+	modified:   net-p2p/qbittorrent/distinfo
+	modified:   shells/heirloom-sh/Makefile
+	deleted:    shells/heirloom-sh/pkg-deinstall
+	deleted:    shells/heirloom-sh/pkg-install
+	modified:   shells/psh/Makefile
+	deleted:    shells/psh/files/pkg-deinstall.in
+	deleted:    shells/psh/files/pkg-install.in
+	modified:   shells/psh/pkg-plist
+	modified:   sysutils/Makefile
+	new file:   sysutils/cpuid2cpuflags/Makefile
+	new file:   sysutils/cpuid2cpuflags/distinfo
+	new file:   sysutils/cpuid2cpuflags/pkg-descr
+	deleted:    sysutils/graid5/files/pkg-deinstall.in
+	modified:   www/httptunnel/Makefile
+	deleted:    www/httptunnel/pkg-deinstall
+	deleted:    www/httptunnel/pkg-install
+	modified:   www/pycarddav/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   Mk/bsd.ssp.mk
+
+
+It took 3.25 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e08be1bf7913 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.07 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e08be1bf7913 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
