@@ -1,0 +1,115 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating b777167a2f96..c399907ada18
+Fast-forward
+ Mk/Uses/grantlee.mk                                |  2 +-
+ deskutils/akregator/Makefile                       |  1 +
+ deskutils/grantlee-editor/Makefile                 |  1 +
+ deskutils/grantleetheme/Makefile                   |  1 +
+ deskutils/kaddressbook/Makefile                    |  1 +
+ deskutils/kdepim-addons/Makefile                   |  1 +
+ deskutils/kdepim-apps-libs/Makefile                |  1 +
+ deskutils/knotes/Makefile                          |  1 +
+ devel/grantlee5/Makefile                           |  3 +-
+ devel/grantlee5/distinfo                           |  6 +-
+ devel/grantlee5/files/patch-CMakeLists.txt         | 14 -----
+ devel/grantlee5/files/patch-git_1b4f22-fix-qt5.13  | 30 ----------
+ .../files/patch-templates_lib_CMakeLists.txt       | 14 -----
+ .../files/patch-textdocument_lib_CMakeLists.txt    | 14 -----
+ devel/grantlee5/pkg-plist                          | 64 +++++++++++-----------
+ devel/kdevelop/Makefile                            |  2 +-
+ finance/skrooge/Makefile                           |  1 +
+ math/rocs/Makefile                                 |  1 +
+ net/akonadi-contacts/Makefile                      |  1 +
+ net/kcalutils/Makefile                             |  1 +
+ net/kpimtextedit/Makefile                          |  1 +
+ net/messagelib/Makefile                            |  1 +
+ net/pimcommon/Makefile                             |  1 +
+ sysutils/khelpcenter/Makefile                      |  1 +
+ 24 files changed, 53 insertions(+), 111 deletions(-)
+ delete mode 100644 devel/grantlee5/files/patch-CMakeLists.txt
+ delete mode 100644 devel/grantlee5/files/patch-git_1b4f22-fix-qt5.13
+ delete mode 100644 devel/grantlee5/files/patch-templates_lib_CMakeLists.txt
+ delete mode 100644 devel/grantlee5/files/patch-textdocument_lib_CMakeLists.txt
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/Makefile
+Removing devel/libpasori/files/patch-lptest_Makefile
+Removing devel/libpasori/files/patch-lpdump_Makefile
+Removing devel/libpasori/files/patch-lib_Makefile
+Merge made by the 'recursive' strategy.
+ audio/mixxx/Makefile                               |   3 +-
+ audio/mixxx/distinfo                               |   6 +-
+ comms/birda/files/patch-lib-Makefile               |  17 +-
+ comms/hcidump/files/patch-parser-Makefile          |  11 +-
+ .../oracle8-client/files/patch-freebsd-Makefile    |  18 +-
+ devel/libpasori/files/Makefile.lib.usb20           |   2 +-
+ devel/libpasori/files/Makefile.lpdump              |   2 +-
+ devel/libpasori/files/Makefile.lptest              |   2 +-
+ devel/libpasori/files/patch-lib_Makefile           |  11 --
+ devel/libpasori/files/patch-lpdump_Makefile        |  11 --
+ devel/libpasori/files/patch-lptest_Makefile        |  11 --
+ devel/libxalloc/files/Makefile.lib                 |   4 +-
+ devel/llvm-devel/Makefile                          |   2 +-
+ devel/llvm-devel/pkg-plist                         |   4 +-
+ devel/sope4/Makefile                               |   2 +-
+ devel/sope4/distinfo                               |   6 +-
+ graphics/squish/files/BSDmakefile                  |   2 +-
+ japanese/ming/Makefile                             |   1 -
+ lang/python-doc-html/distinfo                      |  18 +-
+ lang/python38/Makefile                             |   1 -
+ lang/python38/Makefile.version                     |   2 +-
+ lang/python38/distinfo                             |   6 +-
+ lang/python38/pkg-plist                            |   4 +
+ mail/faces/files/Makefile.compface                 |   2 +-
+ mail/libdkim/files/Makefile                        |   2 +-
+ math/linpack/files/Makefile.lib                    |   2 +-
+ net-im/py-matrix-synapse/Makefile                  |   9 +-
+ net-im/py-matrix-synapse/distinfo                  |   6 +-
+ net-im/py-matrix-synapse/files/pkg-message.in      |  12 ++
+ security/Makefile                                  |   1 +
+ security/fbopenssl/files/BSDMakefile               |   3 +-
+ security/ipv6toolkit/files/BSDMakefile.in          |   1 -
+ security/ipv6toolkit/files/Makefile.in             |   1 -
+ security/libssh/Makefile                           |   2 +-
+ security/libssh/distinfo                           |   6 +-
+ security/libssh/pkg-plist                          |   2 +-
+ security/openssh-askpass/files/Makefile.in         |   1 -
+ security/palisade/Makefile                         |  38 ++++
+ security/palisade/distinfo                         |  11 ++
+ security/palisade/files/patch-CMakeLists.txt       |  59 ++++++
+ ...tch-third-party_google-benchmark_CMakeLists.txt |  11 ++
+ ...hird-party_google-benchmark_test_CMakeLists.txt |  10 +
+ security/palisade/pkg-descr                        |  11 ++
+ security/palisade/pkg-plist                        | 220 +++++++++++++++++++++
+ security/vuxml/vuln.xml                            |  37 ++++
+ sysutils/pefs-kmod/Makefile                        |   3 +-
+ www/nift/Makefile                                  |   2 +-
+ www/nift/distinfo                                  |   6 +-
+ www/sogo4/Makefile                                 |   3 +-
+ www/sogo4/distinfo                                 |   6 +-
+ www/sogo4/pkg-plist                                |   4 +-
+ x11/gpctool/files/BSDmakefile                      |   3 +-
+ 52 files changed, 505 insertions(+), 115 deletions(-)
+ delete mode 100644 devel/libpasori/files/patch-lib_Makefile
+ delete mode 100644 devel/libpasori/files/patch-lpdump_Makefile
+ delete mode 100644 devel/libpasori/files/patch-lptest_Makefile
+ create mode 100644 security/palisade/Makefile
+ create mode 100644 security/palisade/distinfo
+ create mode 100644 security/palisade/files/patch-CMakeLists.txt
+ create mode 100644 security/palisade/files/patch-third-party_google-benchmark_CMakeLists.txt
+ create mode 100644 security/palisade/files/patch-third-party_google-benchmark_test_CMakeLists.txt
+ create mode 100644 security/palisade/pkg-descr
+ create mode 100644 security/palisade/pkg-plist
+To github.com:HardenedBSD/hardenedbsd-ports.git
+   c399907ada18..d2b872e279be  master -> master
+==== END: master ====
