@@ -1,0 +1,339 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is behind 'freebsd/master' by 9 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Updating 572922905d45..ab7c715e8496
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ contrib/libpcap/CHANGES                            |  126 +-
+ contrib/libpcap/CMakeLists.txt                     |  386 ++-
+ contrib/libpcap/{CONTRIBUTING => CONTRIBUTING.md}  |    2 +-
+ contrib/libpcap/CREDITS                            |   28 +-
+ contrib/libpcap/{INSTALL.txt => INSTALL.md}        |   29 +-
+ contrib/libpcap/Makefile.in                        |   47 +-
+ contrib/libpcap/README.Win32                       |   46 -
+ contrib/libpcap/{README => README.md}              |   14 +-
+ contrib/libpcap/VERSION                            |    2 +-
+ contrib/libpcap/aclocal.m4                         |   99 +-
+ contrib/libpcap/bpf_filter.c                       |   21 +-
+ contrib/libpcap/cmake/Modules/FindPacket.cmake     |   13 +-
+ .../libpcap/cmake/Modules/FindPthreads-w32.cmake   |  152 --
+ contrib/libpcap/cmakeconfig.h.in                   |   23 +-
+ contrib/libpcap/config.guess                       |  685 ++---
+ contrib/libpcap/config.h.in                        |   18 +-
+ contrib/libpcap/config.sub                         | 1681 ++++++------
+ contrib/libpcap/configure                          | 1476 +++++++++--
+ contrib/libpcap/configure.ac                       |  286 +-
+ contrib/libpcap/diag-control.h                     |    8 +-
+ contrib/libpcap/doc/DLT_ALLOCATE_HOWTO.md          |   29 +
+ contrib/libpcap/doc/README.Win32.md                |    3 +
+ contrib/libpcap/{ => doc}/README.aix               |    0
+ contrib/libpcap/{ => doc}/README.dag               |    4 +-
+ contrib/libpcap/{ => doc}/README.hpux              |    0
+ .../libpcap/{README.linux => doc/README.linux.md}  |    4 +-
+ contrib/libpcap/{ => doc}/README.macos             |    0
+ contrib/libpcap/{ => doc}/README.septel            |    0
+ contrib/libpcap/{ => doc}/README.sita              |    0
+ contrib/libpcap/{ => doc}/README.tru64             |    0
+ contrib/libpcap/fmtutils.c                         |   99 +-
+ contrib/libpcap/fmtutils.h                         |    5 +
+ contrib/libpcap/ftmacros.h                         |   18 +-
+ contrib/libpcap/gencode.c                          | 1948 +++++++++-----
+ contrib/libpcap/gencode.h                          |   55 +-
+ contrib/libpcap/grammar.y                          |  312 +--
+ contrib/libpcap/missing/asprintf.c                 |  101 +
+ contrib/libpcap/missing/snprintf.c                 |   12 +-
+ contrib/libpcap/missing/strlcat.c                  |   61 +
+ contrib/libpcap/missing/strlcpy.c                  |   56 +
+ contrib/libpcap/missing/win_asprintf.c             |   51 +
+ contrib/libpcap/missing/win_snprintf.c             |   12 +
+ contrib/libpcap/msdos/readme.dos                   |    2 +-
+ contrib/libpcap/nametoaddr.c                       |   32 +-
+ contrib/libpcap/optimize.c                         |  318 ++-
+ contrib/libpcap/pcap-bpf.c                         |  104 +-
+ contrib/libpcap/pcap-bt-linux.c                    |   15 +-
+ contrib/libpcap/pcap-bt-monitor-linux.c            |    3 +-
+ contrib/libpcap/pcap-common.c                      |   85 +-
+ contrib/libpcap/pcap-common.h                      |    8 +-
+ contrib/libpcap/pcap-dag.c                         |   71 +-
+ contrib/libpcap/pcap-dlpi.c                        |   14 +-
+ contrib/libpcap/pcap-dos.c                         |    4 +-
+ contrib/libpcap/pcap-filter.manmisc.in             |   30 +-
+ contrib/libpcap/pcap-int.h                         |   36 +-
+ contrib/libpcap/pcap-libdlpi.c                     |    2 +-
+ contrib/libpcap/pcap-linktype.manmisc.in           |    4 +-
+ contrib/libpcap/pcap-linux.c                       |  809 ++++--
+ contrib/libpcap/pcap-netfilter-linux.c             |    4 +-
+ contrib/libpcap/pcap-netmap.c                      |    2 +-
+ contrib/libpcap/pcap-new.c                         |   85 +-
+ contrib/libpcap/pcap-npf.c                         |  238 +-
+ contrib/libpcap/pcap-null.c                        |    6 +-
+ contrib/libpcap/pcap-rpcap.c                       |  629 ++---
+ contrib/libpcap/pcap-rpcap.h                       |    4 +-
+ contrib/libpcap/pcap-savefile.manfile.in           |    2 +-
+ contrib/libpcap/pcap-septel.c                      |   11 +-
+ contrib/libpcap/pcap-sita.c                        |    2 +-
+ contrib/libpcap/pcap-sita.html                     |    2 +-
+ contrib/libpcap/pcap-snf.c                         |    4 +-
+ contrib/libpcap/pcap-tc.c                          |   23 +-
+ contrib/libpcap/pcap-tstamp.manmisc.in             |   19 +-
+ contrib/libpcap/pcap-usb-linux.c                   |  273 +-
+ contrib/libpcap/pcap.3pcap.in                      |   51 +-
+ contrib/libpcap/pcap.c                             |  407 ++-
+ contrib/libpcap/pcap/bpf.h                         |   11 -
+ contrib/libpcap/pcap/compiler-tests.h              |    2 +-
+ contrib/libpcap/pcap/dlt.h                         |   63 +-
+ contrib/libpcap/pcap/funcattrs.h                   |   14 +-
+ contrib/libpcap/pcap/nflog.h                       |   18 +-
+ contrib/libpcap/pcap/pcap-inttypes.h               |   11 +
+ contrib/libpcap/pcap/pcap.h                        |   52 +-
+ contrib/libpcap/pcap/sll.h                         |   40 +-
+ contrib/libpcap/pcap/socket.h                      |   93 +
+ contrib/libpcap/pcap_activate.3pcap                |   10 +-
+ contrib/libpcap/pcap_breakloop.3pcap               |   23 +-
+ contrib/libpcap/pcap_can_set_rfmon.3pcap           |    8 +-
+ contrib/libpcap/pcap_compile.3pcap.in              |   23 +-
+ contrib/libpcap/pcap_create.3pcap                  |    4 +-
+ contrib/libpcap/pcap_datalink.3pcap.in             |    6 +-
+ contrib/libpcap/pcap_datalink_name_to_val.3pcap    |    6 +-
+ contrib/libpcap/pcap_datalink_val_to_name.3pcap    |   16 +-
+ contrib/libpcap/pcap_dump.3pcap                    |    9 +-
+ contrib/libpcap/pcap_dump_file.3pcap               |    2 +-
+ contrib/libpcap/pcap_dump_flush.3pcap              |   10 +-
+ contrib/libpcap/pcap_dump_ftell.3pcap              |   15 +-
+ contrib/libpcap/pcap_dump_open.3pcap.in            |   35 +-
+ contrib/libpcap/pcap_file.3pcap                    |   16 +-
+ contrib/libpcap/pcap_fileno.3pcap                  |   21 +-
+ contrib/libpcap/pcap_findalldevs.3pcap             |   37 +-
+ contrib/libpcap/pcap_freecode.3pcap                |    6 +-
+ .../libpcap/pcap_get_required_select_timeout.3pcap |   36 +-
+ contrib/libpcap/pcap_get_selectable_fd.3pcap       |   42 +-
+ contrib/libpcap/pcap_get_tstamp_precision.3pcap.in |    4 +
+ contrib/libpcap/pcap_geterr.3pcap                  |    2 +-
+ contrib/libpcap/pcap_inject.3pcap                  |   22 +-
+ contrib/libpcap/pcap_is_swapped.3pcap              |    6 +-
+ contrib/libpcap/pcap_list_datalinks.3pcap.in       |   14 +-
+ contrib/libpcap/pcap_list_tstamp_types.3pcap.in    |   23 +-
+ contrib/libpcap/pcap_lookupdev.3pcap               |   13 +-
+ contrib/libpcap/pcap_lookupnet.3pcap               |    9 +-
+ contrib/libpcap/pcap_loop.3pcap                    |   39 +-
+ contrib/libpcap/pcap_major_version.3pcap           |    2 +-
+ contrib/libpcap/pcap_next_ex.3pcap                 |   28 +-
+ contrib/libpcap/pcap_offline_filter.3pcap          |    4 +-
+ contrib/libpcap/pcap_open_dead.3pcap.in            |   11 +-
+ contrib/libpcap/pcap_open_live.3pcap               |    4 +-
+ contrib/libpcap/pcap_open_offline.3pcap.in         |   11 +-
+ contrib/libpcap/pcap_set_datalink.3pcap            |   16 +-
+ ...mode.3pcap => pcap_set_immediate_mode.3pcap.in} |   52 +-
+ ...rotocol.3pcap => pcap_set_protocol_linux.3pcap} |   19 +-
+ contrib/libpcap/pcap_set_timeout.3pcap             |    4 +-
+ contrib/libpcap/pcap_set_tstamp_precision.3pcap.in |   13 +-
+ contrib/libpcap/pcap_set_tstamp_type.3pcap.in      |   21 +-
+ contrib/libpcap/pcap_setdirection.3pcap            |   15 +-
+ contrib/libpcap/pcap_setfilter.3pcap               |   17 +-
+ contrib/libpcap/pcap_setnonblock.3pcap             |   22 +-
+ contrib/libpcap/pcap_snapshot.3pcap                |    8 +-
+ contrib/libpcap/pcap_stats.3pcap                   |   17 +-
+ contrib/libpcap/pcap_strerror.3pcap                |    2 +-
+ contrib/libpcap/pcap_tstamp_type_name_to_val.3pcap |    5 +-
+ contrib/libpcap/pcap_tstamp_type_val_to_name.3pcap |    5 +-
+ contrib/libpcap/portability.h                      |   91 +-
+ contrib/libpcap/rpcap-protocol.h                   |  161 +-
+ contrib/libpcap/rpcapd/CMakeLists.txt              |  163 ++
+ contrib/libpcap/rpcapd/Makefile.in                 |  141 +
+ contrib/libpcap/rpcapd/config_params.h             |   56 +
+ contrib/libpcap/rpcapd/daemon.c                    | 2747 ++++++++++++++++++++
+ contrib/libpcap/rpcapd/daemon.h                    |   46 +
+ contrib/libpcap/rpcapd/fileconf.c                  |  557 ++++
+ contrib/libpcap/rpcapd/fileconf.h                  |   39 +
+ contrib/libpcap/rpcapd/log.c                       |  260 ++
+ contrib/libpcap/rpcapd/log.h                       |   34 +
+ contrib/libpcap/rpcapd/org.tcpdump.rpcapd.plist    |   30 +
+ contrib/libpcap/rpcapd/rpcapd-config.manfile.in    |   78 +
+ contrib/libpcap/rpcapd/rpcapd.c                    | 1359 ++++++++++
+ contrib/libpcap/rpcapd/rpcapd.h                    |   44 +
+ contrib/libpcap/rpcapd/rpcapd.inetd.conf           |    1 +
+ contrib/libpcap/rpcapd/rpcapd.manadmin.in          |  233 ++
+ contrib/libpcap/rpcapd/rpcapd.rc                   |   39 +
+ contrib/libpcap/rpcapd/rpcapd.socket               |    9 +
+ contrib/libpcap/rpcapd/rpcapd.xinetd.conf          |    8 +
+ contrib/libpcap/rpcapd/rpcapd@.service             |    6 +
+ contrib/libpcap/rpcapd/win32-svc.c                 |  169 ++
+ contrib/libpcap/rpcapd/win32-svc.h                 |   33 +
+ contrib/libpcap/savefile.c                         |   49 +-
+ contrib/libpcap/scanner.l                          |   37 +-
+ contrib/libpcap/sf-pcap.c                          |  169 +-
+ contrib/libpcap/sf-pcap.h                          |    2 +-
+ contrib/libpcap/sf-pcapng.c                        |  200 +-
+ contrib/libpcap/sf-pcapng.h                        |    2 +-
+ contrib/libpcap/sockutils.c                        |  330 ++-
+ contrib/libpcap/sockutils.h                        |   78 +-
+ contrib/libpcap/testprogs/CMakeLists.txt           |   40 +
+ contrib/libpcap/testprogs/Makefile.in              |  144 +
+ contrib/libpcap/testprogs/can_set_rfmon_test.c     |   96 +
+ contrib/libpcap/testprogs/capturetest.c            |  299 +++
+ contrib/libpcap/testprogs/filtertest.c             |  359 +++
+ contrib/libpcap/testprogs/findalldevstest.c        |  311 +++
+ contrib/libpcap/testprogs/opentest.c               |  236 ++
+ contrib/libpcap/testprogs/reactivatetest.c         |   88 +
+ contrib/libpcap/testprogs/selpolltest.c            |  443 ++++
+ contrib/libpcap/testprogs/threadsignaltest.c       |  393 +++
+ contrib/libpcap/testprogs/unix.h                   |   58 +
+ contrib/libpcap/testprogs/valgrindtest.c           |  427 +++
+ contrib/tcpdump/CHANGES                            |   33 +
+ contrib/tcpdump/CONTRIBUTING                       |    2 +-
+ contrib/tcpdump/INSTALL.txt                        |    2 +-
+ contrib/tcpdump/Makefile-devel-adds                |    4 +-
+ contrib/tcpdump/Makefile.in                        |    6 +-
+ contrib/tcpdump/VERSION                            |    2 +-
+ contrib/tcpdump/addrtoname.c                       |    7 +-
+ contrib/tcpdump/config.guess                       |  685 ++---
+ contrib/tcpdump/config.h.in                        |   11 +-
+ contrib/tcpdump/config.sub                         | 1681 ++++++------
+ contrib/tcpdump/configure                          |  108 +-
+ contrib/tcpdump/configure.ac                       | 1003 +++++++
+ contrib/tcpdump/netdissect.h                       |    2 +-
+ contrib/tcpdump/print-802_11.c                     |   15 +-
+ contrib/tcpdump/print-aoe.c                        |    2 +
+ contrib/tcpdump/print-babel.c                      |    4 +-
+ contrib/tcpdump/print-bfd.c                        |  215 +-
+ contrib/tcpdump/print-bgp.c                        |   49 +-
+ contrib/tcpdump/print-bootp.c                      |    7 +-
+ contrib/tcpdump/print-dccp.c                       |   53 +-
+ contrib/tcpdump/print-decnet.c                     |   33 -
+ contrib/tcpdump/print-domain.c                     |    7 +
+ contrib/tcpdump/print-dvmrp.c                      |   26 +-
+ contrib/tcpdump/print-eigrp.c                      |    2 +
+ contrib/tcpdump/print-esp.c                        |   91 +-
+ contrib/tcpdump/print-fr.c                         |    9 +
+ contrib/tcpdump/print-hncp.c                       |   14 +-
+ contrib/tcpdump/print-icmp.c                       |   14 +-
+ contrib/tcpdump/print-icmp6.c                      |   31 +-
+ contrib/tcpdump/print-ipnet.c                      |   44 +-
+ contrib/tcpdump/print-isakmp.c                     |    1 +
+ contrib/tcpdump/print-juniper.c                    |    5 +
+ contrib/tcpdump/print-l2tp.c                       |  214 +-
+ contrib/tcpdump/print-ldp.c                        |   28 +-
+ contrib/tcpdump/print-lmp.c                        |   59 +-
+ contrib/tcpdump/print-nfs.c                        |    4 +-
+ contrib/tcpdump/print-openflow.c                   |    8 +-
+ contrib/tcpdump/print-ospf.c                       |    4 +-
+ contrib/tcpdump/print-ospf6.c                      |    3 +-
+ contrib/tcpdump/print-ppi.c                        |    4 +
+ contrib/tcpdump/print-rsvp.c                       |    2 +
+ contrib/tcpdump/print-rx.c                         |    8 +-
+ contrib/tcpdump/print-sflow.c                      |   10 +
+ contrib/tcpdump/print-sl.c                         |   34 +-
+ contrib/tcpdump/print-sll.c                        |   11 +
+ contrib/tcpdump/print-smb.c                        |   13 +-
+ contrib/tcpdump/print-tcp.c                        |   14 +-
+ contrib/tcpdump/print-vrrp.c                       |    8 +-
+ contrib/tcpdump/print-vtp.c                        |    2 +-
+ contrib/tcpdump/print-wb.c                         |    2 +-
+ contrib/tcpdump/signature.c                        |    4 +-
+ contrib/tcpdump/smbutil.c                          |   42 +-
+ contrib/tcpdump/tcpdump.1.in                       |    8 +-
+ contrib/tcpdump/tcpdump.c                          |   45 +-
+ contrib/tcpdump/util-print.c                       |   20 +-
+ lib/libpcap/Makefile                               |    3 +-
+ lib/libpcap/config.h                               |    7 +-
+ sys/amd64/amd64/pmap.c                             |    5 +-
+ sys/net/dlt.h                                      |   18 +-
+ sys/vm/vm_page.c                                   |   11 +-
+ 235 files changed, 20724 insertions(+), 6348 deletions(-)
+ rename contrib/libpcap/{CONTRIBUTING => CONTRIBUTING.md} (93%)
+ rename contrib/libpcap/{INSTALL.txt => INSTALL.md} (94%)
+ delete mode 100644 contrib/libpcap/README.Win32
+ rename contrib/libpcap/{README => README.md} (88%)
+ delete mode 100644 contrib/libpcap/cmake/Modules/FindPthreads-w32.cmake
+ create mode 100644 contrib/libpcap/doc/DLT_ALLOCATE_HOWTO.md
+ create mode 100644 contrib/libpcap/doc/README.Win32.md
+ rename contrib/libpcap/{ => doc}/README.aix (100%)
+ rename contrib/libpcap/{ => doc}/README.dag (97%)
+ rename contrib/libpcap/{ => doc}/README.hpux (100%)
+ rename contrib/libpcap/{README.linux => doc/README.linux.md} (98%)
+ rename contrib/libpcap/{ => doc}/README.macos (100%)
+ rename contrib/libpcap/{ => doc}/README.septel (100%)
+ rename contrib/libpcap/{ => doc}/README.sita (100%)
+ rename contrib/libpcap/{ => doc}/README.tru64 (100%)
+ create mode 100644 contrib/libpcap/missing/asprintf.c
+ create mode 100644 contrib/libpcap/missing/strlcat.c
+ create mode 100644 contrib/libpcap/missing/strlcpy.c
+ create mode 100644 contrib/libpcap/missing/win_asprintf.c
+ create mode 100644 contrib/libpcap/pcap/socket.h
+ rename contrib/libpcap/{pcap_set_immediate_mode.3pcap => pcap_set_immediate_mode.3pcap.in} (54%)
+ rename contrib/libpcap/{pcap_set_protocol.3pcap => pcap_set_protocol_linux.3pcap} (84%)
+ create mode 100644 contrib/libpcap/rpcapd/CMakeLists.txt
+ create mode 100644 contrib/libpcap/rpcapd/Makefile.in
+ create mode 100644 contrib/libpcap/rpcapd/config_params.h
+ create mode 100644 contrib/libpcap/rpcapd/daemon.c
+ create mode 100644 contrib/libpcap/rpcapd/daemon.h
+ create mode 100644 contrib/libpcap/rpcapd/fileconf.c
+ create mode 100644 contrib/libpcap/rpcapd/fileconf.h
+ create mode 100644 contrib/libpcap/rpcapd/log.c
+ create mode 100644 contrib/libpcap/rpcapd/log.h
+ create mode 100644 contrib/libpcap/rpcapd/org.tcpdump.rpcapd.plist
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd-config.manfile.in
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.c
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.h
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.inetd.conf
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.manadmin.in
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.rc
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.socket
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd.xinetd.conf
+ create mode 100644 contrib/libpcap/rpcapd/rpcapd@.service
+ create mode 100644 contrib/libpcap/rpcapd/win32-svc.c
+ create mode 100644 contrib/libpcap/rpcapd/win32-svc.h
+ create mode 100644 contrib/libpcap/testprogs/CMakeLists.txt
+ create mode 100644 contrib/libpcap/testprogs/Makefile.in
+ create mode 100644 contrib/libpcap/testprogs/can_set_rfmon_test.c
+ create mode 100644 contrib/libpcap/testprogs/capturetest.c
+ create mode 100644 contrib/libpcap/testprogs/filtertest.c
+ create mode 100644 contrib/libpcap/testprogs/findalldevstest.c
+ create mode 100644 contrib/libpcap/testprogs/opentest.c
+ create mode 100644 contrib/libpcap/testprogs/reactivatetest.c
+ create mode 100644 contrib/libpcap/testprogs/selpolltest.c
+ create mode 100644 contrib/libpcap/testprogs/threadsignaltest.c
+ create mode 100644 contrib/libpcap/testprogs/unix.h
+ create mode 100644 contrib/libpcap/testprogs/valgrindtest.c
+ create mode 100644 contrib/tcpdump/configure.ac
+==== merge branches ====
+==== merge freebsd/master branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   572922905d45..ab7c715e8496  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
