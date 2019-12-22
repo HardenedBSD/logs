@@ -1,0 +1,172 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing print/pdftk/files/patch-pdftk__Makefile.Base
+Auto-merging print/pdftk/Makefile
+CONFLICT (content): Merge conflict in print/pdftk/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc print/pdftk/Makefile
+index 42a2d9b399d5,8a2bf0ff4fdc..000000000000
+--- a/print/pdftk/Makefile
++++ b/print/pdftk/Makefile
+@@@ -12,45 -12,42 +12,81 @@@ MAINTAINER=	tobik@FreeBSD.or
+  COMMENT=	Simple tool for doing everyday things with PDF documents
+  
+  LICENSE=	GPLv2
+++<<<<<<< HEAD
+ +
+ +# Get GCC version suffix without the dot in USE_GCC
+ +CSUFF=		${_USE_GCC:S/.//}
+ +
+ +USE_GCC=	6	# Only GCC 6 provides Java (GCJ and libgcj).
+ +USES=		iconv gmake zip
+ +
+ +USE_HARDENING=	pie:off
+ +
+ +# gcj/libgcj don't exist on some platforms
+ +ONLY_FOR_ARCHS=		i386 amd64
+ +ONLY_FOR_ARCHS_REASON=	GNU gcj does not exist on this platform
+ +
+ +PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-dist
+ +WRKSRC=		${PATCH_WRKSRC}/${PORTNAME}
+ +
+ +MAKEFILE=	Makefile.FreeBSD
+ +MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} GCPP=cpp${CSUFF} \
+ +		OBJCOPY=${OBJCOPY}
+ +
+ +PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+ +
+ +pre-configure:
+ +	@if [ ! -e ${LOCALBASE}/bin/gcj${CSUFF} ]; then \
+ +		${ECHO_MSG} ""; \
+ +		${ECHO_MSG} "Cannot find gcj${CSUFF}"; \
+ +		${ECHO_MSG} "Please rebuild ${_GCC_PORT} with java support"; \
+ +		${ECHO_MSG} ""; \
+ +		exit 1; \
+ +	fi
+ +
+ +post-patch:
+ +	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g; \
+ +		s|VERSUFF=|VERSUFF=${CSUFF}|g; s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib ${LDFLAGS} -w|g; \
+ +		s|LDLIBS= -lgcj|LDLIBS= -lgcj -pthread ${ICONV_LIB} -lz -L${LOCALBASE}/lib ${LDFLAGS} -w|g" \
+ +		${WRKSRC}/${MAKEFILE}
+++=======
++ LICENSE_FILE=	${WRKSRC}/LICENSE
++ 
++ BUILD_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3
++ RUN_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3
++ 
++ USE_ANT=	yes
++ USE_GITLAB=	yes
++ GL_ACCOUNT=	pdftk-java
++ GL_COMMIT=	c98f90e623376942b5a0e9c77345e11710e50509
++ USE_JAVA=	yes
++ ALL_TARGET=	jar
++ NO_ARCH=	yes
++ SUB_FILES=	pdftk
++ SUB_LIST=	CLASSPATH="${_CLASSPATH:ts:}" \
++ 		JAVA="${JAVA}"
++ PLIST_FILES=	${JAVAJARDIR}/${_BCPROV_JAR:T} \
++ 		${JAVAJARDIR}/pdftk.jar \
++ 		bin/pdftk \
++ 		man/man1/pdftk.1.gz
++ 
++ _BCPROV_JAR=	org/bouncycastle/bcprov-jdk15on/1.51/bcprov-jdk15on-1.51.jar
++ _CLASSPATH=	${JAVAJARDIR}/${_BCPROV_JAR:T} ${JAVAJARDIR}/commons-lang3.jar \
++ 		${JAVAJARDIR}/pdftk.jar
++ 
++ post-extract:
++ 	@${MKDIR} ${WRKSRC}/lib
++ 	@${LN} -sf ${JAVAJARDIR}/commons-lang3.jar ${WRKSRC}/lib
++ 	@${LN} -sf ${DISTDIR}/${_BCPROV_JAR} ${WRKSRC}/lib
+++>>>>>>> freebsd/master
+  
+  do-install:
+- 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+- 	${INSTALL_MAN} ${WRKSRC}/../${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
++ 	${INSTALL_SCRIPT} ${WRKDIR}/pdftk \
++ 		${STAGEDIR}${PREFIX}/bin
++ 	${INSTALL_DATA} ${WRKSRC}/build/jar/pdftk.jar \
++ 		${DISTDIR}/${_BCPROV_JAR} \
++ 		${STAGEDIR}${JAVAJARDIR}
++ 	${INSTALL_MAN} ${WRKSRC}/pdftk.1 \
++ 		${STAGEDIR}${PREFIX}/man/man1
+  
+  .include <bsd.port.mk>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   UPDATING
+	modified:   deskutils/Makefile
+	new file:   deskutils/ktimetracker/Makefile
+	new file:   deskutils/ktimetracker/distinfo
+	new file:   deskutils/ktimetracker/pkg-descr
+	new file:   deskutils/ktimetracker/pkg-plist
+	modified:   deskutils/mate-utils/Makefile
+	modified:   deskutils/mate-utils/pkg-descr
+	modified:   deskutils/xfce4-tumbler/Makefile
+	modified:   deskutils/xfce4-tumbler/distinfo
+	modified:   deskutils/xfce4-tumbler/pkg-plist
+	modified:   emulators/Makefile
+	new file:   emulators/ukncbtl/Makefile
+	new file:   emulators/ukncbtl/distinfo
+	new file:   emulators/ukncbtl/pkg-descr
+	modified:   graphics/Makefile
+	new file:   graphics/pinta/Makefile
+	new file:   graphics/pinta/distinfo
+	new file:   graphics/pinta/pkg-descr
+	new file:   graphics/pinta/pkg-plist
+	modified:   misc/openhab2-addons/Makefile
+	modified:   misc/openhab2-addons/distinfo
+	modified:   misc/openhab2/Makefile
+	modified:   misc/openhab2/distinfo
+	modified:   misc/openhab2/files/pkg-message.in
+	modified:   misc/openhab2/files/update.freebsd.in
+	modified:   misc/openhab2/pkg-plist
+	modified:   ports-mgmt/portscout/Makefile
+	modified:   ports-mgmt/portscout/distinfo
+	modified:   print/pdftk/distinfo
+	deleted:    print/pdftk/files/patch-pdftk__Makefile.Base
+	new file:   print/pdftk/files/pdftk.in
+	modified:   print/pdftk/pkg-descr
+	modified:   sysutils/catfish/Makefile
+	modified:   sysutils/catfish/distinfo
+	modified:   sysutils/catfish/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   print/pdftk/Makefile
+
+
+It took 3.03 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 7cc8b531fe6a Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.02 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 7cc8b531fe6a Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
