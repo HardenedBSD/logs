@@ -1,0 +1,146 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/dev/netmap/netmap_freebsd.c
+Auto-merging sys/conf/files
+Auto-merging etc/mtree/BSD.usr.dist
+Auto-merging ObsoleteFiles.inc
+Merge made by the 'recursive' strategy.
+ ObsoleteFiles.inc                                  | 236 ++++++++++
+ UPDATING                                           |   6 +
+ .../clang/include/clang/CodeGen/CGFunctionInfo.h   |  10 +-
+ .../llvm-project/clang/lib/Basic/Targets/ARM.cpp   |   5 +-
+ contrib/llvm-project/clang/lib/CodeGen/CGExpr.cpp  |   5 +
+ .../clang/lib/CodeGen/MicrosoftCXXABI.cpp          |  20 +-
+ .../clang/lib/Driver/ToolChains/Arch/ARM.cpp       |   2 +-
+ .../clang/lib/Driver/ToolChains/Linux.cpp          |  13 +-
+ contrib/llvm-project/clang/lib/Sema/SemaDecl.cpp   |   7 +-
+ contrib/llvm-project/clang/lib/Sema/SemaType.cpp   |   9 +-
+ .../compiler-rt/lib/profile/InstrProfilingUtil.c   |   9 +-
+ .../llvm-project/libcxx/include/__bit_reference    |   6 +-
+ contrib/llvm-project/libcxx/include/__hash_table   |   6 +-
+ contrib/llvm-project/libcxx/include/__tree         |   5 +-
+ contrib/llvm-project/libcxx/include/ext/hash_map   |   5 +-
+ contrib/llvm-project/libcxx/include/random         |   2 +
+ contrib/llvm-project/libcxx/include/valarray       |  26 +-
+ contrib/llvm-project/lld/COFF/Driver.cpp           |   8 +-
+ contrib/llvm-project/lld/ELF/Symbols.h             |  24 +-
+ contrib/llvm-project/lld/docs/ReleaseNotes.rst     |   2 +-
+ .../ScriptInterpreter/Python/PythonReadline.cpp    |  88 ++++
+ .../ScriptInterpreter/Python/PythonReadline.h      |  26 ++
+ .../Python/ScriptInterpreterPython.cpp             |  17 +
+ contrib/llvm-project/lldb/source/Symbol/Symtab.cpp |  10 +-
+ .../llvm/include/llvm/CodeGen/MachineFunction.h    |   4 +
+ .../llvm/include/llvm/CodeGen/MachineInstr.h       |  52 ++-
+ .../llvm/include/llvm/CodeGen/StackProtector.h     |   3 +-
+ .../include/llvm/Demangle/MicrosoftDemangleNodes.h |   2 +
+ .../llvm/include/llvm/Transforms/Scalar/GVN.h      |   2 +
+ .../llvm/lib/CodeGen/AsmPrinter/CodeViewDebug.cpp  |  34 +-
+ .../llvm/lib/CodeGen/AsmPrinter/CodeViewDebug.h    |   3 +-
+ .../llvm/lib/CodeGen/GlobalISel/IRTranslator.cpp   |   8 +-
+ .../llvm/lib/CodeGen/MachineFunction.cpp           |   9 +-
+ .../llvm-project/llvm/lib/CodeGen/MachineInstr.cpp | 142 +++---
+ .../llvm/lib/CodeGen/SelectionDAG/DAGCombiner.cpp  |   2 +-
+ .../llvm/lib/CodeGen/SelectionDAG/FastISel.cpp     |   7 +-
+ .../CodeGen/SelectionDAG/ScheduleDAGSDNodes.cpp    |   8 +-
+ .../llvm/lib/CodeGen/StackProtector.cpp            |  74 ++-
+ .../llvm-project/llvm/lib/Object/ELFObjectFile.cpp |   2 +-
+ .../llvm/lib/Support/ARMTargetParser.cpp           |   2 +
+ .../AArch64/MCTargetDesc/AArch64InstPrinter.cpp    |   3 +-
+ .../llvm/lib/Target/AMDGPU/GCNHazardRecognizer.cpp |   1 +
+ contrib/llvm-project/llvm/lib/Target/ARM/ARM.td    |  12 +-
+ .../llvm/lib/Target/ARM/ARMPredicates.td           |   2 +-
+ .../llvm/lib/Target/ARM/ARMSubtarget.h             |   4 +-
+ .../llvm/lib/Target/ARM/AsmParser/ARMAsmParser.cpp |   4 +-
+ .../Target/ARM/MCTargetDesc/ARMTargetStreamer.cpp  |   4 +-
+ .../lib/Target/Mips/AsmParser/MipsAsmParser.cpp    | 363 ++++++++-------
+ .../llvm/lib/Target/PowerPC/P9InstrResources.td    |  42 +-
+ .../llvm/lib/Target/PowerPC/PPCInstr64Bit.td       |  44 +-
+ .../llvm/lib/Target/PowerPC/PPCInstrInfo.td        | 110 +++--
+ .../llvm/lib/Target/RISCV/RISCVRegisterInfo.h      |   6 +
+ .../Target/WebAssembly/WebAssemblyInstrFloat.td    |   7 -
+ .../llvm/lib/Target/X86/X86FrameLowering.cpp       |  44 +-
+ .../llvm/lib/Target/X86/X86FrameLowering.h         |   2 +
+ .../llvm/lib/Target/X86/X86InstrInfo.cpp           |   4 +
+ .../llvm/lib/Target/X86/X86MachineFunctionInfo.h   |   8 +
+ .../llvm/lib/Target/X86/X86RegisterInfo.cpp        |  19 +-
+ .../Instrumentation/AddressSanitizer.cpp           |   4 +-
+ .../Transforms/Instrumentation/InstrProfiling.cpp  |  40 +-
+ .../llvm/lib/Transforms/Scalar/GVN.cpp             |  40 +-
+ .../llvm/lib/Transforms/Scalar/MemCpyOptimizer.cpp |   8 +-
+ .../llvm/lib/Transforms/Scalar/SROA.cpp            |   8 +
+ .../llvm/tools/llvm-objcopy/ELF/ELFObjcopy.cpp     |   6 +
+ .../llvm/tools/llvm-objcopy/ObjcopyOpts.td         |   3 +-
+ .../llvm/tools/llvm-objcopy/StripOpts.td           |   3 +-
+ contrib/llvm-project/llvm/tools/opt/opt.cpp        |   1 -
+ etc/mtree/BSD.debug.dist                           |   2 +-
+ etc/mtree/BSD.usr.dist                             |   2 +-
+ lib/clang/freebsd_cc_version.h                     |   2 +-
+ lib/clang/headers/Makefile                         |   3 +-
+ lib/clang/include/VCSVersion.inc                   |  14 +-
+ lib/clang/include/clang/Basic/Version.inc          |   6 +-
+ lib/clang/include/clang/Config/config.h            |   2 +-
+ lib/clang/include/lld/Common/Version.inc           |   4 +-
+ lib/clang/include/llvm/Config/config.h             |   4 +-
+ lib/clang/include/llvm/Config/llvm-config.h        |   4 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |   4 +-
+ lib/libclang_rt/Makefile.inc                       |   2 +-
+ sys/compat/linuxkpi/common/src/linux_compat.c      |   5 +-
+ sys/conf/files                                     |   1 +
+ sys/dev/drm2/ttm/ttm_bo_vm.c                       |   2 +
+ sys/dev/netmap/netmap_freebsd.c                    |   5 +-
+ sys/dev/vmgenc/vmgenc_acpi.c                       | 240 ++++++++++
+ sys/dev/vmgenc/vmgenc_acpi.h                       |  47 ++
+ sys/dev/xen/gntdev/gntdev.c                        |  13 +-
+ sys/dev/xen/privcmd/privcmd.c                      |  14 +-
+ sys/vm/device_pager.c                              |  10 +-
+ sys/vm/sg_pager.c                                  |   7 +-
+ sys/vm/vm_fault.c                                  |  12 +-
+ sys/vm/vm_kern.c                                   |   1 +
+ sys/vm/vm_object.c                                 |   8 -
+ sys/vm/vm_page.c                                   | 101 +++--
+ sys/vm/vm_page.h                                   |  22 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           | 501 ++++++++++-----------
+ 95 files changed, 1913 insertions(+), 818 deletions(-)
+ create mode 100644 contrib/llvm-project/lldb/source/Plugins/ScriptInterpreter/Python/PythonReadline.cpp
+ create mode 100644 contrib/llvm-project/lldb/source/Plugins/ScriptInterpreter/Python/PythonReadline.h
+ create mode 100644 sys/dev/vmgenc/vmgenc_acpi.c
+ create mode 100644 sys/dev/vmgenc/vmgenc_acpi.h
+To github.com:HardenedBSD/hardenedBSD.git
+   72b30bb74298..7b66129b20b3  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
