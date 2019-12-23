@@ -1,0 +1,95 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is behind 'freebsd/stable/12' by 13 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+  hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 0a920efac165..badc7dda2b97
+Fast-forward
+ libexec/rc/rc.d/ntpd                         |  34 ++-
+ share/man/man4/Makefile                      |   3 +
+ share/man/man4/ads111x.4                     |   2 +-
+ share/man/man4/gpioths.4                     | 152 ++++++++++
+ share/man/man4/uslcom.4                      |   7 +-
+ share/man/man7/arch.7                        |   4 +-
+ share/man/man9/Makefile                      |   1 +
+ share/man/man9/bus_delayed_attach_children.9 |  55 ++++
+ stand/efi/libefi/efi_console.c               |  12 +-
+ sys/arm/broadcom/bcm2835/bcm2835_bsc.c       |   4 +-
+ sys/arm/freescale/imx/imx_i2c.c              |   3 +-
+ sys/arm/freescale/imx/imx_spi.c              |   4 +-
+ sys/arm/samsung/exynos/chrome_kb.c           |   1 -
+ sys/arm/samsung/exynos/exynos_uart.c         |   1 -
+ sys/arm/ti/ti_i2c.c                          |   2 +-
+ sys/arm/versatile/pl050.c                    |   5 +-
+ sys/arm/xilinx/uart_dev_cdnc.c               |   1 -
+ sys/dev/glxiic/glxiic.c                      |   3 +-
+ sys/dev/gpio/gpiobus.c                       |  20 ++
+ sys/dev/gpio/gpiokeys.c                      |   1 -
+ sys/dev/gpio/gpioths.c                       | 406 ++++++++++++++-------------
+ sys/dev/ichsmb/ichsmb.c                      |   7 +-
+ sys/dev/iicbus/ads111x.c                     |   2 +
+ sys/dev/iicbus/ds13rtc.c                     |   3 +-
+ sys/dev/iicbus/iic_recover_bus.c             |   3 +-
+ sys/dev/iicbus/iic_recover_bus.h             |   3 +-
+ sys/dev/iicbus/iicbus.c                      |   5 +-
+ sys/dev/iicbus/isl12xx.c                     |   4 +-
+ sys/dev/iicbus/nxprtc.c                      |   3 +-
+ sys/dev/iicbus/rtc8583.c                     |   4 +-
+ sys/dev/ow/owc_gpiobus.c                     | 195 ++++++-------
+ sys/dev/quicc/quicc_bfe_fdt.c                |   1 -
+ sys/dev/rp/rp_isa.c                          |   3 +-
+ sys/dev/rp/rp_pci.c                          |   3 +-
+ sys/dev/usb/input/uep.c                      |   1 -
+ sys/dev/usb/input/ukbd.c                     |   1 -
+ sys/dev/usb/input/ums.c                      |   1 -
+ sys/dev/usb/serial/uslcom.c                  |   6 +-
+ sys/kern/subr_bus.c                          |  16 ++
+ sys/kern/tty.c                               |   1 +
+ sys/kern/tty_pts.c                           |   1 +
+ sys/modules/gpio/Makefile                    |   2 +-
+ sys/modules/gpio/gpioths/Makefile            |  19 ++
+ sys/modules/i2c/ads111x/Makefile             |   5 +-
+ sys/powerpc/psim/uart_iobus.c                |   1 -
+ sys/sys/bus.h                                |   1 +
+ usr.bin/uniq/uniq.1                          |  24 +-
+ usr.bin/uniq/uniq.c                          |  44 ++-
+ 48 files changed, 714 insertions(+), 366 deletions(-)
+ create mode 100644 share/man/man4/gpioths.4
+ create mode 100644 share/man/man9/bus_delayed_attach_children.9
+ create mode 100644 sys/modules/gpio/gpioths/Makefile
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Already up to date.
+To github.com:HardenedBSD/hardenedBSD.git
+   0a920efac165..badc7dda2b97  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
