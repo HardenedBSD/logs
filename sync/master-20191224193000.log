@@ -1,0 +1,96 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/asterisk16/files/patch-cdr_cdr__pgsql.c
+Removing net/asterisk13/files/patch-cdr_cdr__pgsql.c
+Auto-merging net/asterisk13/Makefile
+CONFLICT (content): Merge conflict in net/asterisk13/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/asterisk13/Makefile
+index addf8924cf11,74a9c2b8652a..000000000000
+--- a/net/asterisk13/Makefile
++++ b/net/asterisk13/Makefile
+@@@ -24,9 -24,7 +24,13 @@@ ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 
+  
+  EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		bison cpe gmake gnome iconv libedit localbase \
+++=======
++ USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
+++>>>>>>> freebsd/master
+  		shebangfix sqlite ssl ncurses
+  USE_CSTD=	gnu89
+  USE_GNOME=	libxml2
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/py-rednose/Makefile
+	modified:   devel/py-rednose/distinfo
+	modified:   devel/py-rednose/pkg-descr
+	modified:   emulators/ukncbtl/Makefile
+	modified:   mail/sendmail/Makefile
+	modified:   mail/sendmail/files/patch-tls.c
+	modified:   misc/biosfont-demos/Makefile
+	modified:   misc/biosfont-demos/distinfo
+	modified:   net/asterisk13/distinfo
+	deleted:    net/asterisk13/files/patch-cdr_cdr__pgsql.c
+	modified:   net/asterisk13/pkg-plist
+	modified:   net/asterisk16/Makefile
+	modified:   net/asterisk16/distinfo
+	deleted:    net/asterisk16/files/patch-cdr_cdr__pgsql.c
+	modified:   net/asterisk16/pkg-plist
+	modified:   net/libmateweather/Makefile
+	modified:   net/libmateweather/distinfo
+	modified:   net/libmateweather/pkg-plist
+	modified:   security/aws-vault/Makefile
+	modified:   security/aws-vault/distinfo
+	modified:   sysutils/biosfont/Makefile
+	modified:   sysutils/biosfont/distinfo
+	modified:   sysutils/mate-power-manager/Makefile
+	modified:   sysutils/mate-power-manager/distinfo
+	modified:   sysutils/mate-power-manager/pkg-plist
+	modified:   sysutils/mate-settings-daemon/Makefile
+	modified:   sysutils/mate-settings-daemon/distinfo
+	modified:   sysutils/mate-settings-daemon/pkg-plist
+	modified:   www/p5-Template-Toolkit/Makefile
+	modified:   www/p5-Template-Toolkit/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/asterisk13/Makefile
+
+
+It took 3.34 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e1638426b953 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.21 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e1638426b953 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
