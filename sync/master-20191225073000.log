@@ -1,0 +1,154 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/asterisk16/files/patch-cdr_cdr__pgsql.c
+Removing net/asterisk13/files/patch-cdr_cdr__pgsql.c
+Auto-merging net/asterisk13/Makefile
+CONFLICT (content): Merge conflict in net/asterisk13/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Removing deskutils/nextcloudclient/files/patch-fix_remote_wipe_keychain_storage
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/asterisk13/Makefile
+index addf8924cf11,582ad575847e..000000000000
+--- a/net/asterisk13/Makefile
++++ b/net/asterisk13/Makefile
+@@@ -24,9 -24,7 +24,13 @@@ ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 
+  
+  EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		bison cpe gmake gnome iconv libedit localbase \
+++=======
++ USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
+++>>>>>>> freebsd/master
+  		shebangfix sqlite ssl ncurses
+  USE_CSTD=	gnu89
+  USE_GNOME=	libxml2
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/qmidictl/Makefile
+	modified:   audio/qmidictl/distinfo
+	modified:   databases/redis/Makefile
+	modified:   databases/redis/pkg-descr
+	modified:   deskutils/nextcloudclient/Makefile
+	modified:   deskutils/nextcloudclient/distinfo
+	deleted:    deskutils/nextcloudclient/files/patch-fix_remote_wipe_keychain_storage
+	modified:   deskutils/nextcloudclient/pkg-plist
+	modified:   devel/ghq/Makefile
+	modified:   devel/ghq/distinfo
+	modified:   devel/mutagen/Makefile
+	modified:   devel/mutagen/distinfo
+	modified:   devel/py-rednose/Makefile
+	modified:   devel/py-rednose/distinfo
+	modified:   devel/py-rednose/pkg-descr
+	modified:   emulators/ukncbtl/Makefile
+	modified:   graphics/gmic/Makefile
+	modified:   graphics/gmic/distinfo
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   mail/sendmail/Makefile
+	modified:   mail/sendmail/files/patch-tls.c
+	modified:   math/alglib/Makefile
+	modified:   math/alglib/distinfo
+	modified:   math/cadabra2/Makefile
+	modified:   math/cadabra2/distinfo
+	new file:   math/cadabra2/files/patch-client__server_CMakeLists.txt
+	modified:   math/cadabra2/files/patch-cmake_version.cmake
+	new file:   math/cadabra2/files/patch-core_CMakeLists.txt
+	modified:   math/cadabra2/files/patch-frontend_gtkmm_CMakeLists.txt
+	modified:   math/cadabra2/pkg-plist
+	modified:   math/mkl-dnn/Makefile
+	modified:   math/primme/Makefile
+	modified:   math/primme/distinfo
+	modified:   math/py-gym/Makefile
+	modified:   math/py-primme/Makefile
+	modified:   math/py-primme/distinfo
+	modified:   math/xtensor/Makefile
+	modified:   math/xtensor/distinfo
+	modified:   misc/biosfont-demos/Makefile
+	modified:   misc/biosfont-demos/distinfo
+	modified:   misc/py-gluonnlp/Makefile
+	modified:   misc/py-gluonnlp/distinfo
+	modified:   misc/snakemake/Makefile
+	modified:   misc/snakemake/distinfo
+	modified:   multimedia/zart/Makefile
+	modified:   multimedia/zart/distinfo
+	modified:   net/asterisk13/distinfo
+	deleted:    net/asterisk13/files/patch-cdr_cdr__pgsql.c
+	modified:   net/asterisk13/pkg-plist
+	modified:   net/asterisk16/Makefile
+	modified:   net/asterisk16/distinfo
+	deleted:    net/asterisk16/files/patch-cdr_cdr__pgsql.c
+	modified:   net/asterisk16/pkg-plist
+	modified:   net/libmateweather/Makefile
+	modified:   net/libmateweather/distinfo
+	modified:   net/libmateweather/pkg-plist
+	modified:   security/aws-vault/Makefile
+	modified:   security/aws-vault/distinfo
+	modified:   security/softether5/Makefile
+	modified:   sysutils/biosfont/Makefile
+	modified:   sysutils/biosfont/distinfo
+	modified:   sysutils/mate-power-manager/Makefile
+	modified:   sysutils/mate-power-manager/distinfo
+	modified:   sysutils/mate-power-manager/pkg-plist
+	modified:   sysutils/mate-settings-daemon/Makefile
+	modified:   sysutils/mate-settings-daemon/distinfo
+	modified:   sysutils/mate-settings-daemon/pkg-plist
+	modified:   sysutils/mate-system-monitor/Makefile
+	modified:   sysutils/mate-system-monitor/distinfo
+	modified:   sysutils/mate-system-monitor/pkg-plist
+	modified:   sysutils/mcelog/Makefile
+	modified:   sysutils/mcelog/distinfo
+	modified:   sysutils/tty-clock/Makefile
+	modified:   textproc/py-parso/Makefile
+	modified:   textproc/py-parso/distinfo
+	modified:   www/p5-Dancer2/Makefile
+	modified:   www/p5-Dancer2/distinfo
+	modified:   www/p5-Template-Toolkit/Makefile
+	modified:   www/p5-Template-Toolkit/distinfo
+	modified:   www/py-django-constance/Makefile
+	modified:   www/py-django-constance/distinfo
+	modified:   x11-fm/caja/Makefile
+	modified:   x11-fm/caja/distinfo
+	modified:   x11-wm/marco/Makefile
+	modified:   x11-wm/marco/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/asterisk13/Makefile
+
+
+It took 3.35 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e1638426b953 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.24 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e1638426b953 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
