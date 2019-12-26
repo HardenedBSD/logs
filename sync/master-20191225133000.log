@@ -1,0 +1,168 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/suricata/Makefile
+Removing multimedia/libva-intel-media-driver/pkg-message
+Removing multimedia/libva-intel-media-driver/files/patch-libva-2.5-compat
+Auto-merging graphics/cimg/Makefile
+Auto-merging games/tome4/Makefile
+Removing deskutils/nextcloudclient/files/patch-fix_remote_wipe_keychain_storage
+Removing audio/wavpack/files/patch-fix-memory-leaks
+Removing audio/wavpack/files/patch-CVE-2018-7254
+Removing audio/wavpack/files/patch-CVE-2018-7253
+Removing audio/wavpack/files/patch-CVE-2018-6767
+Removing audio/wavpack/files/patch-CVE-2018-10538_10539_10540
+Removing audio/wavpack/files/patch-CVE-2018-10536_10537
+Merge made by the 'recursive' strategy.
+ Mk/Uses/go.mk                                      |   12 +-
+ UPDATING                                           |    7 +
+ audio/libopenmpt/Makefile                          |    2 +-
+ audio/libopenmpt/distinfo                          |    6 +-
+ audio/musicpd/Makefile                             |    2 +-
+ audio/musicpd/distinfo                             |    6 +-
+ audio/wavpack/Makefile                             |    3 +-
+ audio/wavpack/distinfo                             |    6 +-
+ audio/wavpack/files/patch-CVE-2018-10536_10537     |   63 -
+ .../wavpack/files/patch-CVE-2018-10538_10539_10540 |   75 -
+ audio/wavpack/files/patch-CVE-2018-6767            |  115 --
+ audio/wavpack/files/patch-CVE-2018-7253            |   35 -
+ audio/wavpack/files/patch-CVE-2018-7254            |   69 -
+ audio/wavpack/files/patch-fix-memory-leaks         |   36 -
+ audio/wavpack/pkg-plist                            |    2 +-
+ cad/astk-serveur/Makefile                          |    3 +-
+ deskutils/nextcloudclient/Makefile                 |    4 +-
+ deskutils/nextcloudclient/distinfo                 |    6 +-
+ .../files/patch-fix_remote_wipe_keychain_storage   |   85 -
+ deskutils/nextcloudclient/pkg-plist                |    3 +-
+ devel/pydbus-common/Makefile                       |    2 +-
+ emulators/i386-wine/Makefile.inc                   |    2 +-
+ french/aster/Makefile                              |    3 +-
+ french/homard/Makefile                             |    9 +-
+ games/tome4/Makefile                               |    1 +
+ graphics/cimg/Makefile                             |    2 +-
+ graphics/cimg/distinfo                             |    6 +-
+ graphics/libplacebo/Makefile                       |    2 +-
+ graphics/libplacebo/distinfo                       |    6 +-
+ graphics/waifu2x-ncnn-vulkan/Makefile              |    1 +
+ mail/mpop/Makefile                                 |    2 +-
+ mail/mpop/distinfo                                 |    6 +-
+ multimedia/libva-intel-media-driver/Makefile       |    4 +-
+ .../files/patch-libva-2.5-compat                   |   48 -
+ multimedia/libva-intel-media-driver/pkg-message    |   13 -
+ multimedia/libva/Makefile                          |    2 +-
+ multimedia/libva/distinfo                          |    6 +-
+ multimedia/libva/pkg-plist                         |   10 +-
+ security/softether5/Makefile                       |    8 +-
+ security/suricata/Makefile                         |    7 +-
+ security/suricata/distinfo                         |    6 +-
+ security/suricata/pkg-plist                        |    6 +-
+ security/vuxml/vuln.xml                            |   87 +
+ sysutils/mate-system-monitor/Makefile              |    3 +-
+ sysutils/mate-system-monitor/distinfo              |    6 +-
+ sysutils/mate-system-monitor/pkg-plist             |   16 +
+ textproc/ibus-typing-booster/Makefile              |    4 +-
+ textproc/ibus-typing-booster/distinfo              |    6 +-
+ x11-fm/caja/Makefile                               |    2 +-
+ x11-fm/caja/distinfo                               |    6 +-
+ x11-themes/mate-icon-theme/Makefile                |    2 +-
+ x11-themes/mate-icon-theme/distinfo                |    6 +-
+ x11-themes/mate-icon-theme/pkg-plist               |   12 +-
+ x11-wm/marco/Makefile                              |    2 +-
+ x11-wm/marco/distinfo                              |    6 +-
+ x11-wm/qtile/Makefile                              |    2 +-
+ x11-wm/qtile/distinfo                              |    6 +-
+ x11-wm/qtile/pkg-plist                             |    2 +-
+ x11/mate-applets/Makefile                          |    3 +-
+ x11/mate-applets/distinfo                          |    6 +-
+ x11/mate-applets/files/patch-configure             |   10 -
+ x11/mate-applets/files/patch-configure.ac          |   10 -
+ x11/mate-applets/pkg-plist                         | 1740 ++++++++++----------
+ x11/mate-base/Makefile                             |    2 +-
+ x11/mate-desktop/Makefile                          |    2 +-
+ x11/mate-desktop/distinfo                          |    6 +-
+ x11/mate-desktop/pkg-plist                         |    1 +
+ x11/mate-menus/Makefile                            |    2 +-
+ x11/mate-menus/distinfo                            |    6 +-
+ x11/mate-menus/pkg-plist                           |    1 +
+ x11/mate-panel/Makefile                            |    2 +-
+ x11/mate-panel/distinfo                            |    6 +-
+ x11/mate-panel/pkg-plist                           |    7 +
+ x11/mate-screensaver/Makefile                      |    3 +-
+ x11/mate-screensaver/distinfo                      |    6 +-
+ x11/mate-screensaver/pkg-plist                     |    1 +
+ x11/mate-session-manager/Makefile                  |    2 +-
+ x11/mate-session-manager/distinfo                  |    6 +-
+ x11/mate-session-manager/pkg-plist                 |    1 +
+ x11/mate/Makefile                                  |    2 +-
+ x11/plasma5-plasma-desktop/Makefile                |    5 +-
+ x11/slick-greeter/Makefile                         |    3 +-
+ x11/slick-greeter/distinfo                         |    6 +-
+ x11/slick-greeter/pkg-plist                        |    1 +
+ 84 files changed, 1171 insertions(+), 1529 deletions(-)
+ delete mode 100644 audio/wavpack/files/patch-CVE-2018-10536_10537
+ delete mode 100644 audio/wavpack/files/patch-CVE-2018-10538_10539_10540
+ delete mode 100644 audio/wavpack/files/patch-CVE-2018-6767
+ delete mode 100644 audio/wavpack/files/patch-CVE-2018-7253
+ delete mode 100644 audio/wavpack/files/patch-CVE-2018-7254
+ delete mode 100644 audio/wavpack/files/patch-fix-memory-leaks
+ delete mode 100644 deskutils/nextcloudclient/files/patch-fix_remote_wipe_keychain_storage
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-libva-2.5-compat
+ delete mode 100644 multimedia/libva-intel-media-driver/pkg-message
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   afa7f1f1be7c..1f3fbaa41ee5  master -> master
+error: atomic push failed for ref refs/heads/master. status: 5
+
+To github.com:HardenedBSD/hardenedbsd-ports.git
+ ! [rejected]                  branches/2014Q1 (atomic push failed)
+ ! [rejected]                  branches/2014Q2 (atomic push failed)
+ ! [rejected]                  branches/2014Q3 (atomic push failed)
+ ! [rejected]                  branches/2014Q4 (atomic push failed)
+ ! [rejected]                  branches/2015Q1 (atomic push failed)
+ ! [rejected]                  branches/2015Q2 (atomic push failed)
+ ! [rejected]                  branches/2015Q3 (atomic push failed)
+ ! [rejected]                  branches/2015Q4 (atomic push failed)
+ ! [rejected]                  branches/2016Q1 (atomic push failed)
+ ! [rejected]                  branches/2016Q2 (atomic push failed)
+ ! [rejected]                  branches/2016Q3 (atomic push failed)
+ ! [rejected]                  branches/2016Q4 (atomic push failed)
+ ! [rejected]                  branches/RELEASE_8_4_0 (atomic push failed)
+ ! [rejected]                  branches/RELENG_2_1_0 (atomic push failed)
+ ! [rejected]                  branches/RELENG_2_2 (atomic push failed)
+ ! [rejected]                  branches/RELENG_9_1_0 (atomic push failed)
+ ! [rejected]                  branches/RELENG_9_2_0 (atomic push failed)
+ ! [rejected]                  experimental/cross-dso-cfi (atomic push failed)
+ ! [rejected]                  experimental/tbb (atomic push failed)
+ ! [rejected]                  hardening/golang/pie (atomic push failed)
+ ! [rejected]                  hbsdcontrol_support (atomic push failed)
+ ! [rejected]                  master -> master (fetch first)
+ ! [rejected]                  projects/flavors (atomic push failed)
+ ! [rejected]                  projects/rework-dependency-registration (atomic push failed)
+ ! [rejected]                  projects/targets-when-needed (atomic push failed)
+ ! [rejected]                  svn_head (atomic push failed)
+error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.38 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1f3fbaa41ee5 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
