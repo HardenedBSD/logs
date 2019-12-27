@@ -1,0 +1,56 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/powerpc/powerpc/elf64_machdep.c
+Auto-merging sys/powerpc/powerpc/elf32_machdep.c
+Auto-merging sys/kern/imgact_elf.c
+Merge made by the 'recursive' strategy.
+ lib/libusb/Makefile                 |   1 +
+ lib/libusb/libusb20.3               |  14 ++++-
+ lib/libusb/libusb20.c               |  26 ++++++++++
+ lib/libusb/libusb20.h               |   7 +++
+ lib/libusb/libusb20_int.h           |   3 ++
+ lib/libusb/libusb20_ugen20.c        |  24 +++++++++
+ sys/dev/usb/usb_bus.h               |  11 +---
+ sys/dev/usb/usb_device.h            |  13 ++++-
+ sys/dev/usb/usb_generic.c           |   5 +-
+ sys/dev/usb/usb_transfer.c          |   4 +-
+ sys/geom/uzip/g_uzip.c              |  60 +++++++++++----------
+ sys/kern/imgact_elf.c               | 101 ------------------------------------
+ sys/powerpc/include/elf.h           |  28 ++++++++++
+ sys/powerpc/ofw/ofw_machdep.c       |   5 ++
+ sys/powerpc/powerpc/elf32_machdep.c |   6 ++-
+ sys/powerpc/powerpc/elf64_machdep.c |   8 ++-
+ sys/powerpc/powerpc/elf_common.c    |  89 +++++++++++++++++++++++++++++++
+ sys/sys/param.h                     |   2 +-
+ sys/vm/vm_page.c                    |   8 ---
+ usr.sbin/usbconfig/dump.c           |  29 +++++++++++
+ usr.sbin/usbconfig/dump.h           |   1 +
+ usr.sbin/usbconfig/usbconfig.8      |   6 ++-
+ usr.sbin/usbconfig/usbconfig.c      |  17 +++++-
+ 23 files changed, 308 insertions(+), 160 deletions(-)
+ create mode 100644 sys/powerpc/powerpc/elf_common.c
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    8a60940898bf..90fa4153d787  hardened/current/master -> hardened/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   90fa4153d78..5bf7c58fed8  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
