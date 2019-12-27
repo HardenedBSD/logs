@@ -1,0 +1,223 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-toolkits/libgnomeprintuimm/pkg-plist
+Removing x11-toolkits/libgnomeprintuimm/pkg-descr
+Removing x11-toolkits/libgnomeprintuimm/distinfo
+Removing x11-toolkits/libgnomeprintuimm/Makefile
+Removing x11-toolkits/libgnomeprintui/pkg-plist
+Removing x11-toolkits/libgnomeprintui/pkg-descr
+Removing x11-toolkits/libgnomeprintui/distinfo
+Removing x11-toolkits/libgnomeprintui/Makefile
+Removing print/libgnomeprintmm/pkg-plist
+Removing print/libgnomeprintmm/pkg-descr
+Removing print/libgnomeprintmm/distinfo
+Removing print/libgnomeprintmm/Makefile
+Removing print/libgnomeprint/pkg-plist
+Removing print/libgnomeprint/pkg-descr
+Removing print/libgnomeprint/files/patch-libgnomeprint_grammar.y
+Removing print/libgnomeprint/files/patch-libgnomeprint_gnome-rfont.c
+Removing print/libgnomeprint/files/patch-libgnomeprint_gnome-font-face.c
+Removing print/libgnomeprint/files/patch-gnome-print-cups-transport.c
+Removing print/libgnomeprint/distinfo
+Removing print/libgnomeprint/Makefile
+Removing print/libgnomeprint-reference/pkg-descr
+Removing print/libgnomeprint-reference/Makefile
+Removing print/libgnomecups/pkg-plist
+Removing print/libgnomecups/pkg-descr
+Removing print/libgnomecups/files/patch-libgnomecups_gnome-cups-init.h
+Removing print/libgnomecups/files/patch-libgnomecups_gnome-cups-i18n.c
+Removing print/libgnomecups/files/patch-25_browsed_ppds
+Removing print/libgnomecups/files/patch-23_replace-set-printer-attrs
+Removing print/libgnomecups/files/patch-22_ignore-ipp-not-found
+Removing print/libgnomecups/files/patch-21_fix-islocal
+Removing print/libgnomecups/files/patch-20_parse-dot-cups-lpoptions
+Removing print/libgnomecups/distinfo
+Removing print/libgnomecups/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   6 +
+ Mk/Scripts/qa.sh                                   |   2 -
+ Mk/Uses/gnome.mk                                   |   8 +-
+ UPDATING                                           |   8 +
+ cad/linuxcnc-devel/Makefile                        |   4 +-
+ cad/linuxcnc-devel/files/patch-src_configure.in    |  31 +++-
+ devel/libversion/Makefile                          |   2 +-
+ devel/libversion/distinfo                          |   6 +-
+ emulators/i386-wine/Makefile.inc                   |   2 +-
+ graphics/gpaint/Makefile                           |   7 +-
+ graphics/gpaint/files/patch-configure              |  75 +++++++++
+ math/gretl/Makefile                                |  21 ++-
+ math/gretl/distinfo                                |   6 +-
+ math/gretl/pkg-plist                               |  15 +-
+ misc/xfce4-weather-plugin/Makefile                 |   1 +
+ .../files/patch-panel-plugin_weather.c             |  33 ++++
+ .../files/patch-panel-plugin_weather.h             |  10 ++
+ multimedia/smplayer/Makefile                       |   9 +-
+ multimedia/smplayer/distinfo                       |   6 +-
+ net-mgmt/arpwatch/Makefile                         |   2 +-
+ net-mgmt/arpwatch/files/patch-massagevendor.py.in  |  40 +++++
+ print/Makefile                                     |   4 -
+ print/libgnomecups/Makefile                        |  25 ---
+ print/libgnomecups/distinfo                        |   2 -
+ .../files/patch-20_parse-dot-cups-lpoptions        |  14 --
+ print/libgnomecups/files/patch-21_fix-islocal      |  17 --
+ .../files/patch-22_ignore-ipp-not-found            |  12 --
+ .../files/patch-23_replace-set-printer-attrs       |  36 -----
+ print/libgnomecups/files/patch-25_browsed_ppds     |  50 ------
+ .../files/patch-libgnomecups_gnome-cups-i18n.c     |   9 --
+ .../files/patch-libgnomecups_gnome-cups-init.h     |  12 --
+ print/libgnomecups/pkg-descr                       |   3 -
+ print/libgnomecups/pkg-plist                       |  57 -------
+ print/libgnomeprint-reference/Makefile             |   8 -
+ print/libgnomeprint-reference/pkg-descr            |   3 -
+ print/libgnomeprint/Makefile                       |  58 -------
+ print/libgnomeprint/distinfo                       |   2 -
+ .../files/patch-gnome-print-cups-transport.c       |  21 ---
+ .../files/patch-libgnomeprint_gnome-font-face.c    |  12 --
+ .../files/patch-libgnomeprint_gnome-rfont.c        |  14 --
+ .../files/patch-libgnomeprint_grammar.y            |  37 -----
+ print/libgnomeprint/pkg-descr                      |   3 -
+ print/libgnomeprint/pkg-plist                      | 180 ---------------------
+ print/libgnomeprintmm/Makefile                     |  32 ----
+ print/libgnomeprintmm/distinfo                     |   2 -
+ print/libgnomeprintmm/pkg-descr                    |   2 -
+ print/libgnomeprintmm/pkg-plist                    |  23 ---
+ security/py-acme/distinfo                          |   6 +-
+ security/py-acme/files/patch-setup.py              |  14 +-
+ security/py-acme/version.mk                        |   2 +-
+ security/py-certbot-apache/Makefile                |   4 +-
+ security/py-certbot-apache/distinfo                |   6 +-
+ security/py-certbot-dns-cloudflare/distinfo        |   6 +-
+ security/py-certbot-dns-cloudxns/distinfo          |   6 +-
+ security/py-certbot-dns-digitalocean/distinfo      |   6 +-
+ security/py-certbot-dns-dnsimple/distinfo          |   6 +-
+ security/py-certbot-dns-dnsmadeeasy/distinfo       |   6 +-
+ security/py-certbot-dns-gehirn/distinfo            |   6 +-
+ security/py-certbot-dns-google/distinfo            |   6 +-
+ security/py-certbot-dns-linode/distinfo            |   6 +-
+ security/py-certbot-dns-luadns/distinfo            |   6 +-
+ security/py-certbot-dns-nsone/distinfo             |   6 +-
+ security/py-certbot-dns-ovh/distinfo               |   6 +-
+ security/py-certbot-dns-rfc2136/distinfo           |   6 +-
+ security/py-certbot-dns-route53/distinfo           |   6 +-
+ security/py-certbot-dns-sakuracloud/distinfo       |   6 +-
+ security/py-certbot-nginx/Makefile                 |   2 +-
+ security/py-certbot-nginx/distinfo                 |   6 +-
+ security/py-certbot/distinfo                       |   6 +-
+ sysutils/dsbmd/Makefile                            |   4 +-
+ sysutils/dsbmd/distinfo                            |   6 +-
+ sysutils/xfce4-kbdleds-plugin/Makefile             |   6 +-
+ sysutils/xfce4-kbdleds-plugin/distinfo             |   6 +-
+ textproc/libfo/Makefile                            |  12 +-
+ textproc/libfo/distinfo                            |   5 +-
+ textproc/libfo/pkg-plist                           |  10 +-
+ textproc/xmlroff/Makefile                          |  10 +-
+ textproc/xmlroff/distinfo                          |   5 +-
+ textproc/xmlroff/pkg-plist                         |   4 +-
+ www/p5-Mojolicious/Makefile                        |   2 +-
+ www/p5-Mojolicious/distinfo                        |   6 +-
+ x11-toolkits/Makefile                              |   2 -
+ x11-toolkits/gnome-sharp20/Makefile                |   4 +-
+ x11-toolkits/libgnomeprintui/Makefile              |  31 ----
+ x11-toolkits/libgnomeprintui/distinfo              |   2 -
+ x11-toolkits/libgnomeprintui/pkg-descr             |   4 -
+ x11-toolkits/libgnomeprintui/pkg-plist             | 122 --------------
+ x11-toolkits/libgnomeprintuimm/Makefile            |  34 ----
+ x11-toolkits/libgnomeprintuimm/distinfo            |   2 -
+ x11-toolkits/libgnomeprintuimm/pkg-descr           |   1 -
+ x11-toolkits/libgnomeprintuimm/pkg-plist           |  24 ---
+ 91 files changed, 351 insertions(+), 1013 deletions(-)
+ create mode 100644 graphics/gpaint/files/patch-configure
+ create mode 100644 misc/xfce4-weather-plugin/files/patch-panel-plugin_weather.c
+ create mode 100644 misc/xfce4-weather-plugin/files/patch-panel-plugin_weather.h
+ create mode 100644 net-mgmt/arpwatch/files/patch-massagevendor.py.in
+ delete mode 100644 print/libgnomecups/Makefile
+ delete mode 100644 print/libgnomecups/distinfo
+ delete mode 100644 print/libgnomecups/files/patch-20_parse-dot-cups-lpoptions
+ delete mode 100644 print/libgnomecups/files/patch-21_fix-islocal
+ delete mode 100644 print/libgnomecups/files/patch-22_ignore-ipp-not-found
+ delete mode 100644 print/libgnomecups/files/patch-23_replace-set-printer-attrs
+ delete mode 100644 print/libgnomecups/files/patch-25_browsed_ppds
+ delete mode 100644 print/libgnomecups/files/patch-libgnomecups_gnome-cups-i18n.c
+ delete mode 100644 print/libgnomecups/files/patch-libgnomecups_gnome-cups-init.h
+ delete mode 100644 print/libgnomecups/pkg-descr
+ delete mode 100644 print/libgnomecups/pkg-plist
+ delete mode 100644 print/libgnomeprint-reference/Makefile
+ delete mode 100644 print/libgnomeprint-reference/pkg-descr
+ delete mode 100644 print/libgnomeprint/Makefile
+ delete mode 100644 print/libgnomeprint/distinfo
+ delete mode 100644 print/libgnomeprint/files/patch-gnome-print-cups-transport.c
+ delete mode 100644 print/libgnomeprint/files/patch-libgnomeprint_gnome-font-face.c
+ delete mode 100644 print/libgnomeprint/files/patch-libgnomeprint_gnome-rfont.c
+ delete mode 100644 print/libgnomeprint/files/patch-libgnomeprint_grammar.y
+ delete mode 100644 print/libgnomeprint/pkg-descr
+ delete mode 100644 print/libgnomeprint/pkg-plist
+ delete mode 100644 print/libgnomeprintmm/Makefile
+ delete mode 100644 print/libgnomeprintmm/distinfo
+ delete mode 100644 print/libgnomeprintmm/pkg-descr
+ delete mode 100644 print/libgnomeprintmm/pkg-plist
+ delete mode 100644 x11-toolkits/libgnomeprintui/Makefile
+ delete mode 100644 x11-toolkits/libgnomeprintui/distinfo
+ delete mode 100644 x11-toolkits/libgnomeprintui/pkg-descr
+ delete mode 100644 x11-toolkits/libgnomeprintui/pkg-plist
+ delete mode 100644 x11-toolkits/libgnomeprintuimm/Makefile
+ delete mode 100644 x11-toolkits/libgnomeprintuimm/distinfo
+ delete mode 100644 x11-toolkits/libgnomeprintuimm/pkg-descr
+ delete mode 100644 x11-toolkits/libgnomeprintuimm/pkg-plist
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   7f47e3344075..d1b32c2b18e7  master -> master
+error: atomic push failed for ref refs/heads/master. status: 2
+
+To github.com:HardenedBSD/hardenedbsd-ports.git
+ ! [rejected]                  branches/2014Q1 (atomic push failed)
+ ! [rejected]                  branches/2014Q2 (atomic push failed)
+ ! [rejected]                  branches/2014Q3 (atomic push failed)
+ ! [rejected]                  branches/2014Q4 (atomic push failed)
+ ! [rejected]                  branches/2015Q1 (atomic push failed)
+ ! [rejected]                  branches/2015Q2 (atomic push failed)
+ ! [rejected]                  branches/2015Q3 (atomic push failed)
+ ! [rejected]                  branches/2015Q4 (atomic push failed)
+ ! [rejected]                  branches/2016Q1 (atomic push failed)
+ ! [rejected]                  branches/2016Q2 (atomic push failed)
+ ! [rejected]                  branches/2016Q3 (atomic push failed)
+ ! [rejected]                  branches/2016Q4 (atomic push failed)
+ ! [rejected]                  branches/RELEASE_8_4_0 (atomic push failed)
+ ! [rejected]                  branches/RELENG_2_1_0 (atomic push failed)
+ ! [rejected]                  branches/RELENG_2_2 (atomic push failed)
+ ! [rejected]                  branches/RELENG_9_1_0 (atomic push failed)
+ ! [rejected]                  branches/RELENG_9_2_0 (atomic push failed)
+ ! [rejected]                  experimental/cross-dso-cfi (atomic push failed)
+ ! [rejected]                  experimental/tbb (atomic push failed)
+ ! [rejected]                  hardening/golang/pie (atomic push failed)
+ ! [rejected]                  hbsdcontrol_support (atomic push failed)
+ ! [rejected]                  master -> master (non-fast-forward)
+ ! [rejected]                  projects/flavors (atomic push failed)
+ ! [rejected]                  projects/rework-dependency-registration (atomic push failed)
+ ! [rejected]                  projects/targets-when-needed (atomic push failed)
+ ! [rejected]                  svn_head (atomic push failed)
+error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.46 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at d1b32c2b18e7 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
