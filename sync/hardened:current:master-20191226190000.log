@@ -1,0 +1,77 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/powerpc/powerpc/elf32_machdep.c
+Auto-merging sys/kern/init_main.c
+Auto-merging sys/dev/random/fortuna.c
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |   3 +
+ .../llvm-project/clang/lib/AST/ExprConstant.cpp    |   7 ++
+ .../llvm-project/compiler-rt/lib/builtins/atomic.c |  15 ++-
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.cpp    |   7 +-
+ lib/libcompiler_rt/Makefile.inc                    |   8 ++
+ sbin/mount_nfs/mount_nfs.c                         |  16 ++-
+ share/man/man9/random.9                            |  47 ++-------
+ sys/compat/ndis/subr_ntoskrnl.c                    |   4 +-
+ sys/dev/oce/oce_mbox.c                             |   1 -
+ sys/dev/pci/pci_pci.c                              |  15 +--
+ sys/dev/pci/pcib_private.h                         |   5 +
+ sys/dev/random/fortuna.c                           |  27 ++---
+ sys/dev/random/other_algorithm.c                   |  37 ++-----
+ sys/dev/random/random_harvestq.c                   |  25 +----
+ sys/dev/random/random_infra.c                      | 112 +--------------------
+ sys/dev/random/randomdev.c                         |  65 +++++-------
+ sys/dev/random/randomdev.h                         |  22 ++--
+ sys/fs/nfs/nfsv4_errstr.h                          |  92 ++++++++---------
+ sys/kern/init_main.c                               |  20 ----
+ sys/kern/subr_bus.c                                |   4 +-
+ sys/kern/subr_stats.c                              |  10 +-
+ sys/libkern/random.c                               |  25 +++--
+ sys/powerpc/powerpc/elf32_machdep.c                |   3 +-
+ sys/sys/libkern.h                                  |   1 -
+ sys/sys/random.h                                   |  26 +++++
+ sys/sys/systm.h                                    |   2 +-
+ usr.sbin/cron/cron/do_command.c                    |  10 +-
+ 27 files changed, 234 insertions(+), 375 deletions(-)
+remote: From github.com:HardenedBSD/hardenedBSD        
+remote:    6ff7ca23f84e..f8d8af695e8c  freebsd/current/master -> github/freebsd/current/master        
+remote: Everything up-to-date        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b0cd6c57bdd9..0724f11e75fd  hardened/current/master -> hardened/current/master
+To github.com:HardenedBSD/hardenedBSD.git
+   b0cd6c57bdd9..0724f11e75fd  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
