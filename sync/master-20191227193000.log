@@ -15,3 +15,122 @@ Already up to date.
 Everything up-to-date
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox-esr/Makefile
+Auto-merging sysutils/screen/Makefile
+Removing multimedia/libva-utils/files/patch-vendor_intel_sfcsample_VDecAccelVA.cpp
+Auto-merging math/R/Makefile
+Auto-merging mail/thunderbird/Makefile
+Removing base/gcc/pkg-plist.powerpc
+Removing base/gcc/pkg-plist.mips
+Removing base/gcc/pkg-plist.i386
+Removing base/gcc/pkg-plist.amd64
+Removing base/gcc/pkg-plist
+Merge made by the 'recursive' strategy.
+ Mk/bsd.options.desc.mk                             |   1 +
+ audio/audacity/Makefile                            |   1 +
+ base/gcc/pkg-plist                                 | 426 --------------------
+ base/gcc/pkg-plist.amd64                           |   3 -
+ base/gcc/pkg-plist.i386                            |  68 ----
+ base/gcc/pkg-plist.mips                            |   7 -
+ base/gcc/pkg-plist.powerpc                         |  20 -
+ base/{gcc => gcc6}/Makefile                        |  31 +-
+ base/{gcc => gcc6}/distinfo                        |   7 +-
+ base/{gcc => gcc6}/files/patch-configure           |   0
+ base/{gcc => gcc6}/pkg-descr                       |   0
+ base/gcc6/pkg-plist                                |  29 ++
+ benchmarks/netperf/Makefile                        |   1 -
+ cad/astk-serveur/pkg-plist                         |   2 +-
+ comms/cubicsdr/Makefile                            |   2 +-
+ deskutils/anydesk/Makefile                         |   9 +-
+ deskutils/anydesk/distinfo                         |  10 +-
+ deskutils/anydesk/pkg-message                      |   8 +-
+ devel/cvs/Makefile                                 |  10 +-
+ devel/cvsbook/Makefile                             |   1 -
+ devel/freebsd-gcc6/Makefile                        |   2 +-
+ devel/freebsd-gcc6/pkg-plist                       | 397 -------------------
+ devel/freebsd-gcc6/pkg-plist.common                | 397 +++++++++++++++++++
+ dns/amass/Makefile                                 |   4 +-
+ dns/amass/distinfo                                 |   6 +-
+ editors/texstudio/Makefile                         |   3 +-
+ editors/texstudio/distinfo                         |   6 +-
+ editors/texstudio/pkg-plist                        |   8 +
+ emulators/citra-qt5/Makefile                       |   2 +-
+ emulators/citra/Makefile                           |   6 +-
+ emulators/citra/distinfo                           |   2 +
+ emulators/yuzu-qt5/Makefile                        |   2 +-
+ emulators/yuzu/Makefile                            |  10 +-
+ emulators/yuzu/distinfo                            |   8 +-
+ graphics/electricsheep/Makefile                    |   2 +-
+ graphics/jasper/Makefile                           |   6 +-
+ lang/erlang-wx/Makefile                            |   1 +
+ lang/intel-compute-runtime/Makefile                |   6 +-
+ lang/intel-compute-runtime/distinfo                |   8 +-
+ .../files/patch-gmmlib-adapter                     |   8 +-
+ lang/php-mode.el/Makefile                          |   2 +-
+ lang/php-mode.el/distinfo                          |   6 +-
+ mail/thunderbird/Makefile                          |   2 +-
+ mail/thunderbird/files/patch-cubeb-sndio           | 113 ++++++
+ math/R/Makefile                                    |   1 -
+ multimedia/gstreamer1-plugins-msdk/Makefile        |   3 -
+ multimedia/intel-media-sdk/Makefile                |   6 +-
+ multimedia/intel-media-sdk/distinfo                |   8 +-
+ multimedia/intel-media-sdk/pkg-plist               |   4 +-
+ multimedia/libva-utils/Makefile                    |  34 +-
+ multimedia/libva-utils/distinfo                    |   8 +
+ .../patch-vendor_intel_sfcsample_VDecAccelVA.cpp   |  12 -
+ net-mgmt/check_ssl_cert/Makefile                   |   2 +-
+ net-mgmt/check_ssl_cert/distinfo                   |   6 +-
+ net/mpich/Makefile                                 |   4 +-
+ security/palisade/Makefile                         |  15 +-
+ security/palisade/distinfo                         |   6 +-
+ security/palisade/files/patch-CMakeLists.txt       |  50 +--
+ security/palisade/pkg-plist                        | 432 +++++++++++----------
+ sysutils/screen/Makefile                           |   1 -
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox-esr/files/patch-cubeb-sndio            | 113 ++++++
+ www/firefox/Makefile                               |   2 +-
+ www/firefox/files/patch-cubeb-sndio                | 113 ++++++
+ www/py-wsgidav/Makefile                            |   6 +-
+ www/py-wsgidav/distinfo                            |   6 +-
+ x11-fonts/exo/Makefile                             |   9 +-
+ x11-fonts/exo/distinfo                             |   6 +-
+ x11-toolkits/wxgtk31/Makefile                      |   3 +-
+ x11-toolkits/wxgtk31/distinfo                      |   6 +-
+ x11-toolkits/wxgtk31/pkg-plist                     |  68 ++--
+ x11/polybar/Makefile                               |   2 +-
+ x11/polybar/distinfo                               |   6 +-
+ x11/polybar/files/patch-lib_xpp_CMakeLists.txt     |   2 +-
+ 74 files changed, 1199 insertions(+), 1380 deletions(-)
+ delete mode 100644 base/gcc/pkg-plist
+ delete mode 100644 base/gcc/pkg-plist.amd64
+ delete mode 100644 base/gcc/pkg-plist.i386
+ delete mode 100644 base/gcc/pkg-plist.mips
+ delete mode 100644 base/gcc/pkg-plist.powerpc
+ rename base/{gcc => gcc6}/Makefile (77%)
+ rename base/{gcc => gcc6}/distinfo (68%)
+ rename base/{gcc => gcc6}/files/patch-configure (100%)
+ rename base/{gcc => gcc6}/pkg-descr (100%)
+ create mode 100644 base/gcc6/pkg-plist
+ create mode 100644 devel/freebsd-gcc6/pkg-plist.common
+ create mode 100644 mail/thunderbird/files/patch-cubeb-sndio
+ delete mode 100644 multimedia/libva-utils/files/patch-vendor_intel_sfcsample_VDecAccelVA.cpp
+ create mode 100644 www/firefox-esr/files/patch-cubeb-sndio
+ create mode 100644 www/firefox/files/patch-cubeb-sndio
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   a22a7c4a9780..1497d8fddd0e  master -> master
+To github.com:HardenedBSD/hardenedbsd-ports.git
+   a22a7c4a9780..1497d8fddd0e  master -> master
+==== END: master ====
