@@ -1,0 +1,77 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/10-stable/master
+  freebsd/10.3-releng/master
+  freebsd/11-stable/master
+  freebsd/11.0-releng/master
+  freebsd/11.1-releng/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.0-releng/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/10-stable/master
+  hardened/10-stable/master-libressl
+  hardened/10.3-releng/master
+  hardened/11-stable/master
+  hardened/11-stable/master-libressl
+  hardened/11.0-releng/master
+  hardened/11.1-releng/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.0-releng/master
+  hardened/12.1-releng/master
+  hardened/current/intel-smap
+  hardened/current/log
+* hardened/current/master
+  hardened/current/segvguard-ng
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/elf_common.h
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging sys/conf/kmod.mk
+Auto-merging share/mk/src.opts.mk
+Auto-merging libexec/rtld-elf/rtld.c
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |   6 ++
+ contrib/llvm-project/clang/lib/Basic/Targets/PPC.h |  21 ++++-
+ .../llvm/lib/Target/PowerPC/PPCTargetMachine.cpp   |  14 +++
+ lib/msun/bsdsrc/b_exp.c                            |   8 +-
+ lib/msun/bsdsrc/b_log.c                            |   8 +-
+ lib/msun/bsdsrc/b_tgamma.c                         |   8 +-
+ libexec/rtld-elf/rtld.c                            |  24 +++++
+ share/man/man7/arch.7                              |   8 +-
+ share/mk/src.opts.mk                               |   7 +-
+ sys/conf/Makefile.powerpc                          |   4 +-
+ sys/conf/kmod.mk                                   |   3 +-
+ sys/contrib/ncsw/Peripherals/BM/bm.h               |   2 +-
+ sys/contrib/ncsw/Peripherals/QM/qm.c               |   2 +-
+ sys/dev/gpio/gpioths.c                             |   4 +-
+ sys/geom/vinum/geom_vinum.h                        |   1 +
+ sys/geom/vinum/geom_vinum_events.c                 |  20 +++-
+ sys/geom/vinum/geom_vinum_plex.c                   |  12 ++-
+ sys/geom/vinum/geom_vinum_raid5.c                  |   4 +
+ sys/geom/vinum/geom_vinum_var.h                    |   2 +
+ sys/geom/vinum/geom_vinum_volume.c                 |   2 +
+ sys/kern/imgact_elf.c                              | 101 +++++++++++++++++++++
+ sys/net/route.c                                    |  17 ++--
+ sys/sys/elf_common.h                               |  13 ---
+ sys/sys/param.h                                    |   3 +-
+ sys/vm/vm_page.c                                   |   4 +-
+ 25 files changed, 234 insertions(+), 64 deletions(-)
+remote: From github.com:HardenedBSD/hardenedBSD        
+remote:    f8d8af695e8c..cf45168e07aa  freebsd/current/master -> github/freebsd/current/master        
+remote: Everything up-to-date        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   0724f11e75fd..1019800d1a9e  hardened/current/master -> hardened/current/master
+To github.com:HardenedBSD/hardenedBSD.git
+   0724f11e75fd..1019800d1a9e  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
