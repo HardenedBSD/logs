@@ -1,0 +1,155 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/ktr_class.h
+Auto-merging sys/sys/elf_common.h
+Removing sys/modules/geom/geom_sched/gsched_rr/Makefile
+Removing sys/modules/geom/geom_sched/gsched_delay/Makefile
+Removing sys/modules/geom/geom_sched/gs_sched/Makefile
+Removing sys/modules/geom/geom_sched/Makefile.inc
+Removing sys/modules/geom/geom_sched/Makefile
+Removing sys/geom/sched/gs_scheduler.h
+Removing sys/geom/sched/gs_rr.c
+Removing sys/geom/sched/gs_delay.c
+Removing sys/geom/sched/g_sched.h
+Removing sys/geom/sched/g_sched.c
+Removing sys/geom/sched/README
+Removing lib/geom/sched/gsched.8
+Removing lib/geom/sched/geom_sched.c
+Removing lib/geom/sched/Makefile.depend
+Removing lib/geom/sched/Makefile
+Merge made by the 'recursive' strategy.
+ .../opensolaris/lib/libdtrace/common/dt_link.c     |   78 +-
+ lib/geom/Makefile.classes                          |    1 -
+ lib/geom/sched/Makefile                            |    9 -
+ lib/geom/sched/Makefile.depend                     |   19 -
+ lib/geom/sched/geom_sched.c                        |  128 --
+ lib/geom/sched/gsched.8                            |  162 --
+ sys/conf/Makefile.arm                              |   51 +-
+ sys/conf/Makefile.arm64                            |   46 +-
+ sys/conf/ldscript.arm                              |    2 +-
+ sys/conf/ldscript.arm64                            |    2 +-
+ sys/geom/geom.h                                    |   13 -
+ sys/geom/geom_io.c                                 |   77 -
+ sys/geom/sched/README                              |  142 --
+ sys/geom/sched/g_sched.c                           | 1729 --------------------
+ sys/geom/sched/g_sched.h                           |  111 --
+ sys/geom/sched/gs_delay.c                          |  264 ---
+ sys/geom/sched/gs_rr.c                             |  701 --------
+ sys/geom/sched/gs_scheduler.h                      |  239 ---
+ sys/geom/shsec/g_shsec.c                           |   22 +-
+ sys/geom/virstor/g_virstor.c                       |   54 +-
+ sys/modules/geom/Makefile                          |    1 -
+ sys/modules/geom/geom_sched/Makefile               |    5 -
+ sys/modules/geom/geom_sched/Makefile.inc           |    9 -
+ sys/modules/geom/geom_sched/gs_sched/Makefile      |    6 -
+ sys/modules/geom/geom_sched/gsched_delay/Makefile  |    7 -
+ sys/modules/geom/geom_sched/gsched_rr/Makefile     |    7 -
+ sys/sys/bio.h                                      |    7 +-
+ sys/sys/elf_common.h                               |    4 +
+ sys/sys/ktr_class.h                                |    2 +-
+ sys/sys/param.h                                    |    2 +-
+ sys/vm/vm_page.c                                   |    2 +-
+ usr.sbin/powerd/powerd.c                           |    4 +-
+ 32 files changed, 179 insertions(+), 3727 deletions(-)
+ delete mode 100644 lib/geom/sched/Makefile
+ delete mode 100644 lib/geom/sched/Makefile.depend
+ delete mode 100644 lib/geom/sched/geom_sched.c
+ delete mode 100644 lib/geom/sched/gsched.8
+ delete mode 100644 sys/geom/sched/README
+ delete mode 100644 sys/geom/sched/g_sched.c
+ delete mode 100644 sys/geom/sched/g_sched.h
+ delete mode 100644 sys/geom/sched/gs_delay.c
+ delete mode 100644 sys/geom/sched/gs_rr.c
+ delete mode 100644 sys/geom/sched/gs_scheduler.h
+ delete mode 100644 sys/modules/geom/geom_sched/Makefile
+ delete mode 100644 sys/modules/geom/geom_sched/Makefile.inc
+ delete mode 100644 sys/modules/geom/geom_sched/gs_sched/Makefile
+ delete mode 100644 sys/modules/geom/geom_sched/gsched_delay/Makefile
+ delete mode 100644 sys/modules/geom/geom_sched/gsched_rr/Makefile
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    fd080e156a07..a7a40226a0ad  hardened/current/master -> hardened/current/master        
+remote:    c3e456c742f1..2ade50c4604d  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/103/head -> refs/pull/103/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/merge -> refs/pull/14/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/merge -> refs/pull/15/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/166/head -> refs/pull/166/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/166/merge -> refs/pull/166/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/184/head -> refs/pull/184/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/184/merge -> refs/pull/184/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/226/head -> refs/pull/226/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/226/merge -> refs/pull/226/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/254/head -> refs/pull/254/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/254/merge -> refs/pull/254/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/261/head -> refs/pull/261/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/261/merge -> refs/pull/261/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/262/head -> refs/pull/262/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/262/merge -> refs/pull/262/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/264/head -> refs/pull/264/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/264/merge -> refs/pull/264/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/281/head -> refs/pull/281/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/281/merge -> refs/pull/281/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/284/head -> refs/pull/284/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/291/head -> refs/pull/291/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/291/merge -> refs/pull/291/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/297/head -> refs/pull/297/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/297/merge -> refs/pull/297/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/301/head -> refs/pull/301/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/301/merge -> refs/pull/301/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/314/head -> refs/pull/314/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/314/merge -> refs/pull/314/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/315/head -> refs/pull/315/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/315/merge -> refs/pull/315/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/318/head -> refs/pull/318/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/318/merge -> refs/pull/318/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/319/head -> refs/pull/319/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/319/merge -> refs/pull/319/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/324/head -> refs/pull/324/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/324/merge -> refs/pull/324/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/327/head -> refs/pull/327/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/333/head -> refs/pull/333/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/333/merge -> refs/pull/333/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/334/head -> refs/pull/334/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/334/merge -> refs/pull/334/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/335/head -> refs/pull/335/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/335/merge -> refs/pull/335/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/341/head -> refs/pull/341/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/341/merge -> refs/pull/341/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/352/head -> refs/pull/352/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/352/merge -> refs/pull/352/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/358/head -> refs/pull/358/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/358/merge -> refs/pull/358/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/359/head -> refs/pull/359/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/361/head -> refs/pull/361/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/362/head -> refs/pull/362/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/363/head -> refs/pull/363/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/363/merge -> refs/pull/363/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/382/head -> refs/pull/382/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/384/head -> refs/pull/384/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/46/head -> refs/pull/46/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/46/merge -> refs/pull/46/merge (deny updating a hidden ref)
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedBSD.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   fd080e156a0..a7a40226a0a  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
