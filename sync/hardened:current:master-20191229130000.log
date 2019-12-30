@@ -1,0 +1,109 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/compat/linprocfs/linprocfs.c
+Merge made by the 'recursive' strategy.
+ lib/geom/nop/geom_nop.c           |  3 +-
+ lib/geom/nop/gnop.8               | 12 +++++--
+ lib/libc/gen/sysctlbyname.c       | 17 ++-------
+ sys/amd64/linux/linux_dummy.c     |  1 -
+ sys/amd64/linux32/linux32_dummy.c |  1 -
+ sys/arm64/linux/linux_dummy.c     |  1 -
+ sys/compat/linprocfs/linprocfs.c  |  6 ++--
+ sys/compat/linux/linux_ioctl.c    | 10 ++++++
+ sys/compat/linux/linux_ioctl.h    |  3 +-
+ sys/compat/linux/linux_misc.c     | 64 +++++++++++++++++++++++++++++++++
+ sys/compat/linux/linux_misc.h     |  3 ++
+ sys/compat/linux/linux_stats.c    |  9 +++++
+ sys/geom/mountver/g_mountver.c    | 68 +++++++++++++++++++++++++++--------
+ sys/geom/nop/g_nop.c              | 74 +++++++++++++++++++++++++++++----------
+ sys/i386/linux/linux_dummy.c      |  1 -
+ sys/vm/vm_page.c                  |  1 +
+ usr.bin/vmstat/vmstat.c           | 38 ++++++++------------
+ 17 files changed, 229 insertions(+), 83 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    dd66125f469b..fd080e156a07  hardened/current/master -> hardened/current/master
+remote:    636fed0b9ea9..c3e456c742f1  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/103/head -> refs/pull/103/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/merge -> refs/pull/14/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/merge -> refs/pull/15/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/166/head -> refs/pull/166/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/166/merge -> refs/pull/166/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/184/head -> refs/pull/184/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/184/merge -> refs/pull/184/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/226/head -> refs/pull/226/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/226/merge -> refs/pull/226/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/254/head -> refs/pull/254/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/254/merge -> refs/pull/254/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/261/head -> refs/pull/261/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/261/merge -> refs/pull/261/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/262/head -> refs/pull/262/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/262/merge -> refs/pull/262/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/264/head -> refs/pull/264/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/264/merge -> refs/pull/264/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/281/head -> refs/pull/281/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/281/merge -> refs/pull/281/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/284/head -> refs/pull/284/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/291/head -> refs/pull/291/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/291/merge -> refs/pull/291/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/297/head -> refs/pull/297/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/297/merge -> refs/pull/297/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/301/head -> refs/pull/301/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/301/merge -> refs/pull/301/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/314/head -> refs/pull/314/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/314/merge -> refs/pull/314/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/315/head -> refs/pull/315/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/315/merge -> refs/pull/315/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/318/head -> refs/pull/318/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/318/merge -> refs/pull/318/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/319/head -> refs/pull/319/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/319/merge -> refs/pull/319/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/324/head -> refs/pull/324/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/324/merge -> refs/pull/324/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/327/head -> refs/pull/327/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/333/head -> refs/pull/333/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/333/merge -> refs/pull/333/merge (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/334/head -> refs/pull/334/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/334/merge -> refs/pull/334/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/335/head -> refs/pull/335/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/335/merge -> refs/pull/335/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/341/head -> refs/pull/341/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/341/merge -> refs/pull/341/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/352/head -> refs/pull/352/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/352/merge -> refs/pull/352/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/358/head -> refs/pull/358/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/358/merge -> refs/pull/358/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/359/head -> refs/pull/359/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/361/head -> refs/pull/361/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/362/head -> refs/pull/362/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/363/head -> refs/pull/363/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/363/merge -> refs/pull/363/merge (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/382/head -> refs/pull/382/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/384/head -> refs/pull/384/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/46/head -> refs/pull/46/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/46/merge -> refs/pull/46/merge (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedBSD.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   dd66125f469..fd080e156a0  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
