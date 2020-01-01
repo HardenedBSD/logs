@@ -1,0 +1,111 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+Everything up-to-date
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net-mgmt/softflowd/Makefile
+CONFLICT (content): Merge conflict in net-mgmt/softflowd/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net-mgmt/softflowd/Makefile
+index 34b76051450d,227ce8deef21..000000000000
+--- a/net-mgmt/softflowd/Makefile
++++ b/net-mgmt/softflowd/Makefile
+@@@ -19,10 -20,7 +20,13 @@@ GH_PROJECT=	softflow
+  GNU_CONFIGURE=	yes
+  USE_RC_SUBR=	${PORTNAME}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	cfi safestack
+ +
+ +PLIST_FILES=	sbin/softflowd sbin/softflowctl \
+++=======
++ PLIST_FILES=	bin/softflowd bin/softflowctl \
+++>>>>>>> freebsd/master
+  		man/man8/softflowd.8.gz \
+  		man/man8/softflowctl.8.gz
+  PORTDOCS=	README
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/rhvoice/Makefile
+	modified:   audio/rhvoice/distinfo
+	new file:   audio/rhvoice/files/patch-site__scons_RHVoicePackaging_windows.py
+	new file:   audio/rhvoice/files/patch-src_sd__module_io.cpp
+	modified:   audio/rhvoice/pkg-plist
+	modified:   devel/lazygit/Makefile
+	modified:   devel/lazygit/distinfo
+	modified:   devel/libmowgli2/Makefile
+	modified:   devel/libmowgli2/pkg-descr
+	modified:   devel/py-pydantic/Makefile
+	modified:   devel/py-pydantic/distinfo
+	modified:   misc/mnn/Makefile
+	modified:   net-mgmt/softflowd/distinfo
+	modified:   net-mgmt/softflowd/files/softflowd.in
+	modified:   net/pear-Net_SMTP/Makefile
+	modified:   net/pear-Net_SMTP/distinfo
+	modified:   net/pear-Net_Whois/Makefile
+	modified:   net/pear-Net_Whois/distinfo
+	modified:   net/xrdp/Makefile
+	modified:   net/xrdp/distinfo
+	modified:   security/py-trezor/Makefile
+	modified:   security/py-trezor/distinfo
+	modified:   sysutils/fdupes/Makefile
+	modified:   sysutils/fdupes/distinfo
+	modified:   www/pecl-yaf/Makefile
+	modified:   www/pecl-yaf/distinfo
+	modified:   www/pecl-yar/Makefile
+	modified:   www/pecl-yar/distinfo
+	modified:   x11-drivers/xorgxrdp/Makefile
+	modified:   x11-drivers/xorgxrdp/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net-mgmt/softflowd/Makefile
+
+
+It took 3.30 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 0c311a8fe67e Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.09 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 0c311a8fe67e Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
