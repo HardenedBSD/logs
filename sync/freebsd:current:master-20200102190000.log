@@ -1,0 +1,105 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 28e70b4566c..cf3b0bdee1d
+Fast-forward
+ Makefile.inc1                                      |   2 +
+ lib/libbe/be.c                                     | 254 ++++++++++++--
+ lib/libbe/be.h                                     |   1 +
+ lib/libbe/be_error.c                               |   3 +
+ lib/libcapsicum/Makefile                           |   1 +
+ lib/libcapsicum/capsicum_helpers.3                 |  15 +-
+ lib/libcapsicum/capsicum_helpers.h                 |  30 +-
+ libexec/rtld-elf/rtld.c                            |  33 +-
+ sbin/bectl/tests/bectl_test.sh                     |  45 +++
+ share/man/man4/Makefile                            |   3 +
+ share/man/man4/iic_gpiomux.4                       |  88 +++++
+ share/man/man4/iicmux.4                            | 148 ++++++++
+ share/man/man4/ltc430x.4                           | 112 ++++++
+ sys/amd64/include/vmm.h                            |   2 +-
+ sys/amd64/vmm/io/vioapic.c                         |   2 +-
+ sys/amd64/vmm/vmm.c                                |  58 ++-
+ sys/amd64/vmm/vmm_dev.c                            |   8 +-
+ sys/arm/allwinner/aw_spi.c                         |   2 +-
+ sys/arm/conf/NOTES                                 |   4 +
+ sys/arm64/conf/NOTES                               |   4 +
+ sys/arm64/rockchip/rk_spi.c                        |   2 +-
+ .../compat/opensolaris/kern/opensolaris_atomic.c   |   3 +-
+ sys/cddl/compat/opensolaris/sys/atomic.h           |   6 +-
+ sys/compat/linuxkpi/common/include/linux/mm.h      |   8 -
+ sys/conf/NOTES                                     |   5 +
+ sys/conf/files                                     |   6 +-
+ sys/conf/files.mips                                |   1 +
+ sys/conf/files.powerpc                             |   1 +
+ sys/dev/cfe/cfe_api.h                              |   1 +
+ sys/dev/flash/cqspi.c                              |   1 +
+ sys/dev/iicbus/iiconf.c                            |  13 +-
+ sys/dev/iicbus/iiconf.h                            |  19 +
+ sys/dev/iicbus/mux/iic_gpiomux.c                   | 249 +++++++++++++
+ sys/dev/iicbus/mux/iicmux.c                        | 387 +++++++++++++++++++++
+ sys/dev/iicbus/mux/iicmux.h                        |  78 +++++
+ sys/dev/iicbus/mux/iicmux_if.m                     |  49 +++
+ sys/dev/iicbus/mux/ltc430x.c                       | 221 ++++++++++++
+ sys/dev/ixl/if_ixl.c                               |  28 +-
+ sys/dev/ixl/ixl.h                                  |   1 +
+ sys/geom/eli/g_eli.c                               |   3 +-
+ sys/kern/kern_thread.c                             |  43 +++
+ sys/kern/kern_umtx.c                               | 156 +++------
+ sys/kern/subr_atomic64.c                           | 140 ++++++++
+ sys/mips/include/atomic.h                          |   4 +
+ sys/modules/i2c/Makefile                           |   1 +
+ sys/modules/i2c/mux/Makefile                       |  11 +
+ sys/modules/i2c/mux/iic_gpiomux/Makefile           |  20 ++
+ sys/modules/i2c/mux/iicmux/Makefile                |  19 +
+ sys/modules/i2c/mux/ltc430x/Makefile               |  20 ++
+ sys/modules/rockchip/Makefile                      |   3 +-
+ sys/modules/rockchip/rk_spi/Makefile               |  15 +
+ sys/powerpc/include/atomic.h                       |   4 +
+ sys/sys/_atomic64e.h                               |  80 +++++
+ sys/sys/proc.h                                     |   1 +
+ sys/vm/vm_pageout.c                                |   8 +-
+ 55 files changed, 2235 insertions(+), 187 deletions(-)
+ create mode 100644 share/man/man4/iic_gpiomux.4
+ create mode 100644 share/man/man4/iicmux.4
+ create mode 100644 share/man/man4/ltc430x.4
+ create mode 100644 sys/dev/iicbus/mux/iic_gpiomux.c
+ create mode 100644 sys/dev/iicbus/mux/iicmux.c
+ create mode 100644 sys/dev/iicbus/mux/iicmux.h
+ create mode 100644 sys/dev/iicbus/mux/iicmux_if.m
+ create mode 100644 sys/dev/iicbus/mux/ltc430x.c
+ create mode 100644 sys/kern/subr_atomic64.c
+ create mode 100644 sys/modules/i2c/mux/Makefile
+ create mode 100644 sys/modules/i2c/mux/iic_gpiomux/Makefile
+ create mode 100644 sys/modules/i2c/mux/iicmux/Makefile
+ create mode 100644 sys/modules/i2c/mux/ltc430x/Makefile
+ create mode 100644 sys/modules/rockchip/rk_spi/Makefile
+ create mode 100644 sys/sys/_atomic64e.h
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    28e70b4566c2..cf3b0bdee1d2  freebsd/current/master -> freebsd/current/master        
+remote:    02b628542ad2..8ee8a7f075dc  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   28e70b4566c..cf3b0bdee1d  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
