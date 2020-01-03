@@ -14,3 +14,111 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/sudo/Makefile
+Removing graphics/ossim/files/patch-src-init-ossimInit.cpp
+Removing graphics/ossim/files/patch-src-imaging-ossimImageGeometry.cpp
+Removing graphics/ossim/files/patch-src-base-ossimPolyArea2d.cpp
+Removing graphics/ossim/files/patch-include-ossim-base-ossimPolyArea2d.h
+Removing databases/pgmodeler/files/patch-pgmodeler.pro
+Removing databases/pgmodeler/files/patch-main-cli_main-cli.pro
+Removing databases/mysql56-server/files/patch-PR225888.diff
+Merge made by the 'recursive' strategy.
+ Mk/Uses/qt-dist.mk                                 |    3 +-
+ accessibility/caribou/Makefile                     |    2 +-
+ accessibility/orca/Makefile                        |   16 +-
+ base/binutils/Makefile                             |    4 +
+ base/binutils/files/freebsd-binutils.mk            |    4 +
+ base/binutils/pkg-plist                            |    1 +
+ base/gcc6/Makefile                                 |    5 +
+ base/gcc6/files/freebsd-gcc.mk                     |    8 +
+ base/gcc6/files/patch-configure                    |   19 +-
+ base/gcc6/pkg-plist                                |    1 +
+ cad/openvsp/Makefile                               |    2 +-
+ cad/openvsp/distinfo                               |    6 +-
+ comms/cqrlog/Makefile                              |   10 +-
+ comms/cqrlog/distinfo                              |    6 +-
+ comms/cqrlog/files/patch-src_cqrlog.lpi            |   19 +-
+ comms/cqrlog/files/patch-src_dData.pas             |   80 +-
+ comms/cqrlog/pkg-plist                             |   47 +-
+ databases/mysql56-client/Makefile                  |    1 -
+ ...ake_build_configurations_compiler_options.cmake |   14 +-
+ databases/mysql56-server/Makefile                  |    2 +-
+ databases/mysql56-server/distinfo                  |    6 +-
+ .../mysql56-server/files/patch-CMakeLists.txt      |   19 +-
+ databases/mysql56-server/files/patch-PR225888.diff |  302 -----
+ .../files/patch-libmysql_CMakeLists.txt            |   23 +-
+ databases/pgmodeler/Makefile                       |   12 +-
+ databases/pgmodeler/distinfo                       |    6 +-
+ .../pgmodeler/files/patch-main-cli_main-cli.pro    |   11 -
+ databases/pgmodeler/files/patch-pgmodeler.pro      |   18 -
+ databases/pgmodeler/pkg-plist                      |   46 +-
+ devel/py-intbitset/Makefile                        |    7 +-
+ devel/py-intbitset/distinfo                        |    6 +-
+ editors/gedit-plugins/Makefile                     |    4 +-
+ emulators/mgba/Makefile                            |    5 +-
+ emulators/mgba/distinfo                            |    6 +-
+ emulators/mgba/pkg-plist                           |    2 +-
+ french/aster/Makefile                              |    8 +-
+ french/aster/files/patch-as_setup.py               |   11 +-
+ french/aster/files/patch-products__data.py         |   10 +-
+ .../files/post-patch-bibc__utilitai__mempid.c      |   14 +
+ .../files/post-patch-bibfor__jeveux__jedebu.F90    |   18 +
+ games/eboard/Makefile                              |    4 +-
+ games/eboard/files/patch-configure                 |   61 +-
+ graphics/ossim/Makefile                            |    3 +-
+ graphics/ossim/distinfo                            |    6 +-
+ .../patch-include-ossim-base-ossimPolyArea2d.h     |  207 ---
+ .../ossim/files/patch-src-base-ossimPolyArea2d.cpp | 1336 --------------------
+ .../files/patch-src-imaging-ossimImageGeometry.cpp |   13 -
+ graphics/ossim/files/patch-src-init-ossimInit.cpp  |  157 ---
+ graphics/ossim/pkg-plist                           |    6 +
+ math/wxmaxima/Makefile                             |    2 +-
+ math/wxmaxima/distinfo                             |    6 +-
+ math/wxmaxima/pkg-plist                            |   65 +-
+ security/sudo/Makefile                             |    2 +-
+ security/sudo/distinfo                             |    6 +-
+ sysutils/beats/Makefile                            |    2 +-
+ sysutils/beats/distinfo                            |    6 +-
+ sysutils/logstash6/Makefile                        |    2 +-
+ sysutils/logstash6/distinfo                        |    6 +-
+ textproc/elasticsearch6/Makefile                   |    6 +-
+ textproc/elasticsearch6/distinfo                   |    6 +-
+ textproc/kibana6/Makefile                          |    2 +-
+ textproc/kibana6/distinfo                          |    6 +-
+ textproc/py-ocrmypdf/Makefile                      |    4 +-
+ textproc/py-ocrmypdf/distinfo                      |    6 +-
+ www/p5-Reddit-Client/Makefile                      |    2 +-
+ www/p5-Reddit-Client/distinfo                      |    6 +-
+ x11-toolkits/wlroots/Makefile                      |    4 +
+ x11-toolkits/wlroots/distinfo                      |    2 +
+ 68 files changed, 434 insertions(+), 2284 deletions(-)
+ create mode 100644 base/binutils/files/freebsd-binutils.mk
+ create mode 100644 base/gcc6/files/freebsd-gcc.mk
+ delete mode 100644 databases/mysql56-server/files/patch-PR225888.diff
+ delete mode 100644 databases/pgmodeler/files/patch-main-cli_main-cli.pro
+ delete mode 100644 databases/pgmodeler/files/patch-pgmodeler.pro
+ create mode 100644 french/aster/files/post-patch-bibc__utilitai__mempid.c
+ create mode 100644 french/aster/files/post-patch-bibfor__jeveux__jedebu.F90
+ delete mode 100644 graphics/ossim/files/patch-include-ossim-base-ossimPolyArea2d.h
+ delete mode 100644 graphics/ossim/files/patch-src-base-ossimPolyArea2d.cpp
+ delete mode 100644 graphics/ossim/files/patch-src-imaging-ossimImageGeometry.cpp
+ delete mode 100644 graphics/ossim/files/patch-src-init-ossimInit.cpp
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    161900da471f..5c133635abe5  master -> master        
+remote:    ccf41a8289e0..161900da471f  github/master -> github/master
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   161900da471f..5c133635abe5  master -> master
+==== END: master ====
