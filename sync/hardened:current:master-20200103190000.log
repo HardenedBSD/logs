@@ -1,0 +1,211 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_map.c
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_shutdown.c
+Auto-merging sys/kern/kern_proc.c
+Auto-merging sys/kern/kern_linker.c
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/kern/kern_exec.c
+Auto-merging sys/kern/imgact_elf.c
+CONFLICT (content): Merge conflict in sys/kern/imgact_elf.c
+CONFLICT (modify/delete): sys/kern/imgact_aout.c deleted in HEAD and modified in freebsd/current/master. Version freebsd/current/master of sys/kern/imgact_aout.c left in tree.
+CONFLICT (modify/delete): sys/i386/linux/imgact_linux.c deleted in HEAD and modified in freebsd/current/master. Version freebsd/current/master of sys/i386/linux/imgact_linux.c left in tree.
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/kern/imgact_elf.c
+index 03ccf2c472d,103f49d7d24..00000000000
+--- a/sys/kern/imgact_elf.c
++++ b/sys/kern/imgact_elf.c
+@@@ -1268,7 -1272,14 +1268,18 @@@ __CONCAT(exec_, __elfN(imgact))(struct 
+  	imgp->entry_addr = entry;
+  
+  	if (interp != NULL) {
+++<<<<<<< HEAD
+ +		VOP_UNLOCK(imgp->vp, 0);
+++=======
++ 		VOP_UNLOCK(imgp->vp);
++ 		if ((map->flags & MAP_ASLR) != 0) {
++ 			/* Assume that interpeter fits into 1/4 of AS */
++ 			maxv1 = maxv / 2 + addr / 2;
++ 			MPASS(maxv1 >= addr);	/* No overflow */
++ 			addr = __CONCAT(rnd_, __elfN(base))(map, addr,
++ 			    maxv1, PAGE_SIZE);
++ 		}
+++>>>>>>> freebsd/current/master
+  		error = __elfN(load_interp)(imgp, brand_info, interp, &addr,
+  		    &imgp->entry_addr);
+  		vn_lock(imgp->vp, LK_SHARED | LK_RETRY);
+* Unmerged path sys/i386/linux/imgact_linux.c
+* Unmerged path sys/kern/imgact_aout.c
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   cddl/contrib/opensolaris/lib/libzpool/common/sys/zfs_context.h
+	modified:   contrib/llvm-project/lld/ELF/Arch/RISCV.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/RISCV/RISCVFrameLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/RISCV/RISCVInstrInfoD.td
+	modified:   lib/csu/mips/crt.h
+	modified:   share/man/man5/src.conf.5
+	modified:   share/mk/src.opts.mk
+	modified:   sys/cam/ctl/ctl_backend_block.c
+	modified:   sys/cddl/compat/opensolaris/kern/opensolaris_kobj.c
+	modified:   sys/cddl/compat/opensolaris/kern/opensolaris_lookup.c
+	modified:   sys/cddl/compat/opensolaris/kern/opensolaris_vfs.c
+	modified:   sys/cddl/compat/opensolaris/sys/vnode.h
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev_file.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_ctldir.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_dir.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_replay.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_sa.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_vfsops.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_vnops.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_znode.c
+	modified:   sys/compat/cloudabi/cloudabi_file.c
+	modified:   sys/compat/linux/linux_misc.c
+	modified:   sys/compat/linuxkpi/common/src/linux_compat.c
+	modified:   sys/compat/ndis/subr_ndis.c
+	modified:   sys/dev/beri/virtio/virtio_block.c
+	modified:   sys/dev/md/md.c
+	modified:   sys/dev/veriexec/verified_exec.c
+	modified:   sys/dev/xen/blkback/blkback.c
+	modified:   sys/fs/autofs/autofs_vnops.c
+	modified:   sys/fs/cd9660/cd9660_vfsops.c
+	modified:   sys/fs/cd9660/cd9660_vnops.c
+	modified:   sys/fs/devfs/devfs_devs.c
+	modified:   sys/fs/devfs/devfs_vfsops.c
+	modified:   sys/fs/devfs/devfs_vnops.c
+	modified:   sys/fs/ext2fs/ext2_vfsops.c
+	modified:   sys/fs/ext2fs/ext2_vnops.c
+	modified:   sys/fs/fdescfs/fdesc_vfsops.c
+	modified:   sys/fs/fdescfs/fdesc_vnops.c
+	modified:   sys/fs/fifofs/fifo_vnops.c
+	modified:   sys/fs/fuse/fuse_vfsops.c
+	modified:   sys/fs/msdosfs/msdosfs_vfsops.c
+	modified:   sys/fs/msdosfs/msdosfs_vnops.c
+	modified:   sys/fs/nfs/nfs_commonsubs.c
+	modified:   sys/fs/nfs/nfsport.h
+	modified:   sys/fs/nfsclient/nfs_clport.c
+	modified:   sys/fs/nfsclient/nfs_clvfsops.c
+	modified:   sys/fs/nfsclient/nfs_clvnops.c
+	modified:   sys/fs/nfsserver/nfs_nfsdport.c
+	modified:   sys/fs/nfsserver/nfs_nfsdserv.c
+	modified:   sys/fs/nfsserver/nfs_nfsdsocket.c
+	modified:   sys/fs/nfsserver/nfs_nfsdstate.c
+	modified:   sys/fs/nullfs/null_vfsops.c
+	modified:   sys/fs/nullfs/null_vnops.c
+	modified:   sys/fs/pseudofs/pseudofs_vncache.c
+	modified:   sys/fs/pseudofs/pseudofs_vnops.c
+	modified:   sys/fs/smbfs/smbfs_vfsops.c
+	modified:   sys/fs/smbfs/smbfs_vnops.c
+	modified:   sys/fs/tmpfs/tmpfs_vfsops.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/fs/udf/udf_vfsops.c
+	modified:   sys/fs/unionfs/union_subr.c
+	modified:   sys/fs/unionfs/union_vfsops.c
+	modified:   sys/fs/unionfs/union_vnops.c
+	modified:   sys/kern/kern_acct.c
+	modified:   sys/kern/kern_alq.c
+	modified:   sys/kern/kern_ctf.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/kern/kern_jail.c
+	modified:   sys/kern/kern_ktrace.c
+	modified:   sys/kern/kern_linker.c
+	modified:   sys/kern/kern_proc.c
+	modified:   sys/kern/kern_sendfile.c
+	modified:   sys/kern/kern_shutdown.c
+	modified:   sys/kern/kern_sig.c
+	modified:   sys/kern/link_elf.c
+	modified:   sys/kern/link_elf_obj.c
+	modified:   sys/kern/subr_atomic64.c
+	modified:   sys/kern/uipc_mqueue.c
+	modified:   sys/kern/uipc_usrreq.c
+	modified:   sys/kern/vfs_acl.c
+	modified:   sys/kern/vfs_aio.c
+	modified:   sys/kern/vfs_bio.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/kern/vfs_default.c
+	modified:   sys/kern/vfs_extattr.c
+	modified:   sys/kern/vfs_lookup.c
+	modified:   sys/kern/vfs_mount.c
+	modified:   sys/kern/vfs_mountroot.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/kern/vfs_syscalls.c
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/kern/vnode_if.src
+	modified:   sys/nfs/nfs_lock.c
+	modified:   sys/nlm/nlm_advlock.c
+	modified:   sys/nlm/nlm_prot_impl.c
+	modified:   sys/security/audit/audit_arg.c
+	modified:   sys/security/audit/audit_syscalls.c
+	modified:   sys/security/audit/audit_worker.c
+	modified:   sys/security/mac/mac_process.c
+	modified:   sys/security/mac/mac_syscalls.c
+	modified:   sys/security/mac_veriexec/mac_veriexec.c
+	modified:   sys/security/mac_veriexec_parser/mac_veriexec_parser.c
+	modified:   sys/sys/param.h
+	modified:   sys/sys/vnode.h
+	modified:   sys/ufs/ffs/ffs_alloc.c
+	modified:   sys/ufs/ffs/ffs_inode.c
+	modified:   sys/ufs/ffs/ffs_rawread.c
+	modified:   sys/ufs/ffs/ffs_snapshot.c
+	modified:   sys/ufs/ffs/ffs_softdep.c
+	modified:   sys/ufs/ffs/ffs_suspend.c
+	modified:   sys/ufs/ffs/ffs_vfsops.c
+	modified:   sys/ufs/ufs/ufs_extattr.c
+	modified:   sys/ufs/ufs/ufs_lookup.c
+	modified:   sys/ufs/ufs/ufs_quota.c
+	modified:   sys/ufs/ufs/ufs_vnops.c
+	modified:   sys/vm/swap_pager.c
+	modified:   sys/vm/vm_map.c
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vnode_pager.c
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by us:   sys/i386/linux/imgact_linux.c
+	deleted by us:   sys/kern/imgact_aout.c
+	both modified:   sys/kern/imgact_elf.c
+
+HEAD is now at 23f85162ea2 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 23f85162ea2 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
