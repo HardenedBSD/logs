@@ -1,0 +1,129 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_mmap.c
+CONFLICT (content): Merge conflict in sys/vm/vm_mmap.c
+Auto-merging sys/compat/linux/linux_mmap.c
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/src.opts.mk
+index e93a95b0889,e537428df59..00000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -198,11 -196,12 +198,17 @@@ __DEFAULT_NO_OPTIONS = 
+      AMD \
+      BEARSSL \
+      BSD_GREP \
+ -    CLANG_EXTRAS \
+ +    BSD_GREP_FASTMATCH \
+ +    DEVD_PIE \
+      DTRACE_TESTS \
+      EXPERIMENTAL \
+++<<<<<<< HEAD
+ +    FREEBSD_UPDATE \
+++=======
++     GCC \
++     GCC_BOOTSTRAP \
++     GNUCXX \
+++>>>>>>> freebsd/current/master
+      GNU_GREP_COMPAT \
+      GPL_DTC \
+      HESIOD \
+diff --cc sys/vm/vm_mmap.c
+index d300d9d7e6f,58dd1bb1573..00000000000
+--- a/sys/vm/vm_mmap.c
++++ b/sys/vm/vm_mmap.c
+@@@ -432,17 -406,12 +444,26 @@@ kern_mmap_fpcheck(struct thread *td, ui
+  			error = EINVAL;
+  			goto done;
+  		}
+++<<<<<<< HEAD
+ +
+ +#ifdef PAX_NOEXEC
+ +		pax_pageexec(td->td_proc, (vm_prot_t *)&prot, &cap_maxprot);
+ +		pax_mprotect(td->td_proc, (vm_prot_t *)&prot, &cap_maxprot);
+ +		pax_pageexec(td->td_proc, (vm_prot_t *)&prot, &max_prot);
+ +		pax_mprotect(td->td_proc, (vm_prot_t *)&prot, &max_prot);
+ +#endif
+ +#ifdef PAX_ASLR
+ +		KASSERT((flags & MAP_FIXED) == MAP_FIXED || pax_aslr_done == 1,
+ +		    ("%s: ASLR reqiured ...", __func__));
+ +#endif
+++=======
++ 		if (check_fp_fn != NULL) {
++ 			error = check_fp_fn(fp, prot, max_prot & cap_maxprot,
++ 			    flags);
++ 			if (error != 0)
++ 				goto done;
++ 		}
+++>>>>>>> freebsd/current/master
+  		/* This relies on VM_PROT_* matching PROT_*. */
+  		error = fo_mmap(fp, &vms->vm_map, &addr, size, prot,
+  		    max_prot & cap_maxprot, flags, pos, td);
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   UPDATING
+	modified:   contrib/libarchive/libarchive/archive_cryptor.c
+	modified:   contrib/libarchive/libarchive/archive_cryptor_private.h
+	modified:   contrib/libarchive/libarchive/archive_digest.c
+	modified:   contrib/libarchive/libarchive/archive_digest_private.h
+	modified:   contrib/libarchive/libarchive/archive_hmac.c
+	modified:   contrib/libarchive/libarchive/archive_hmac_private.h
+	modified:   contrib/libarchive/libarchive/archive_write.c
+	modified:   share/man/man5/src.conf.5
+	modified:   share/man/man7/arch.7
+	modified:   sys/compat/cloudabi/cloudabi_fd.c
+	modified:   sys/compat/linux/linux_mmap.c
+	modified:   sys/kern/uipc_shm.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/sys/syscallsubr.h
+	modified:   sys/sys/vnode.h
+	modified:   sys/ufs/ffs/ffs_snapshot.c
+	modified:   tools/build/options/WITHOUT_GCC_BOOTSTRAP
+	modified:   tools/build/options/WITHOUT_GNUCXX
+	modified:   tools/build/options/WITH_GCC
+	modified:   tools/build/options/WITH_GCC_BOOTSTRAP
+	modified:   tools/build/options/WITH_GNUCXX
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/mk/src.opts.mk
+	both modified:   sys/vm/vm_mmap.c
+
+HEAD is now at bae49c515c2 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at bae49c515c2 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
