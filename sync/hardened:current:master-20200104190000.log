@@ -1,0 +1,208 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 27 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 23f85162ea2..a0465dc4a9a
+Fast-forward
+ Makefile                                           |  18 +-
+ Makefile.inc1                                      |   1 -
+ .../lib/libzpool/common/sys/zfs_context.h          |   2 +-
+ contrib/llvm-project/lld/ELF/Arch/RISCV.cpp        |   5 +-
+ .../Target/RISCV/MCTargetDesc/RISCVAsmBackend.cpp  |  10 +-
+ .../llvm/lib/Target/RISCV/RISCVFrameLowering.cpp   |  40 -
+ .../llvm/lib/Target/RISCV/RISCVISelLowering.cpp    |   5 +-
+ .../llvm/lib/Target/RISCV/RISCVInstrInfoD.td       |   3 +
+ lib/csu/mips/crt.h                                 |  11 +-
+ lib/libmemstat/memstat_uma.c                       |  15 +-
+ share/man/man5/src.conf.5                          |  10 +-
+ share/mk/bsd.compat.mk                             |   3 +-
+ share/mk/src.opts.mk                               |   5 +
+ sys/cam/ctl/ctl_backend_block.c                    |  14 +-
+ .../compat/opensolaris/kern/opensolaris_kobj.c     |   6 +-
+ .../compat/opensolaris/kern/opensolaris_lookup.c   |   2 +-
+ sys/cddl/compat/opensolaris/kern/opensolaris_vfs.c |   4 +-
+ sys/cddl/compat/opensolaris/sys/vnode.h            |   4 +-
+ .../opensolaris/uts/common/fs/zfs/vdev_file.c      |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ctldir.c     |   4 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_dir.c        |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_replay.c     |  22 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/zfs_sa.c |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vfsops.c     |   6 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |  48 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_znode.c      |   2 +-
+ sys/compat/cloudabi/cloudabi_file.c                |   8 +-
+ sys/compat/linux/linux_misc.c                      |   6 +-
+ sys/compat/linuxkpi/common/src/linux_compat.c      |   2 +-
+ sys/compat/ndis/subr_ndis.c                        |   2 +-
+ sys/dev/beri/virtio/virtio_block.c                 |   8 +-
+ sys/dev/md/md.c                                    |  25 +-
+ sys/dev/veriexec/verified_exec.c                   |   4 +-
+ sys/dev/xen/blkback/blkback.c                      |   8 +-
+ sys/fs/autofs/autofs_vnops.c                       |   2 +-
+ sys/fs/cd9660/cd9660_vfsops.c                      |   2 +-
+ sys/fs/cd9660/cd9660_vnops.c                       |   6 +-
+ sys/fs/devfs/devfs_devs.c                          |   2 +-
+ sys/fs/devfs/devfs_vfsops.c                        |   2 +-
+ sys/fs/devfs/devfs_vnops.c                         |  18 +-
+ sys/fs/ext2fs/ext2_vfsops.c                        |  16 +-
+ sys/fs/ext2fs/ext2_vnops.c                         |  14 +-
+ sys/fs/fdescfs/fdesc_vfsops.c                      |   2 +-
+ sys/fs/fdescfs/fdesc_vnops.c                       |   8 +-
+ sys/fs/fifofs/fifo_vnops.c                         |   4 +-
+ sys/fs/fuse/fuse_vfsops.c                          |   2 +-
+ sys/fs/msdosfs/msdosfs_vfsops.c                    |  14 +-
+ sys/fs/msdosfs/msdosfs_vnops.c                     |  34 +-
+ sys/fs/nfs/nfs_commonsubs.c                        |   4 +-
+ sys/fs/nfs/nfsport.h                               |   2 +-
+ sys/fs/nfsclient/nfs_clport.c                      |   2 +-
+ sys/fs/nfsclient/nfs_clvfsops.c                    |   4 +-
+ sys/fs/nfsclient/nfs_clvnops.c                     |  34 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |  37 +-
+ sys/fs/nfsserver/nfs_nfsdserv.c                    |  32 +-
+ sys/fs/nfsserver/nfs_nfsdsocket.c                  |  10 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c                   |  32 +-
+ sys/fs/nullfs/null_vfsops.c                        |   6 +-
+ sys/fs/nullfs/null_vnops.c                         |  10 +-
+ sys/fs/pseudofs/pseudofs_vncache.c                 |   2 +-
+ sys/fs/pseudofs/pseudofs_vnops.c                   |  22 +-
+ sys/fs/smbfs/smbfs_vfsops.c                        |   2 +-
+ sys/fs/smbfs/smbfs_vnops.c                         |   4 +-
+ sys/fs/tmpfs/tmpfs_vfsops.c                        |   2 +-
+ sys/fs/tmpfs/tmpfs_vnops.c                         |  30 +-
+ sys/fs/udf/udf_vfsops.c                            |   2 +-
+ sys/fs/unionfs/union_subr.c                        |   8 +-
+ sys/fs/unionfs/union_vfsops.c                      |   6 +-
+ sys/fs/unionfs/union_vnops.c                       |  66 +-
+ sys/kern/imgact_elf.c                              |  19 +-
+ sys/kern/kern_acct.c                               |   4 +-
+ sys/kern/kern_alq.c                                |   4 +-
+ sys/kern/kern_ctf.c                                |   2 +-
+ sys/kern/kern_descrip.c                            |   4 +-
+ sys/kern/kern_exec.c                               |  14 +-
+ sys/kern/kern_jail.c                               |   6 +-
+ sys/kern/kern_ktrace.c                             |   4 +-
+ sys/kern/kern_linker.c                             |   6 +-
+ sys/kern/kern_mbuf.c                               |   2 +-
+ sys/kern/kern_proc.c                               |   2 +-
+ sys/kern/kern_sendfile.c                           |   8 +-
+ sys/kern/kern_shutdown.c                           |   8 +-
+ sys/kern/kern_sig.c                                |   8 +-
+ sys/kern/link_elf.c                                |   4 +-
+ sys/kern/link_elf_obj.c                            |   4 +-
+ sys/kern/subr_atomic64.c                           |  14 +-
+ sys/kern/uipc_mqueue.c                             |   4 +-
+ sys/kern/uipc_usrreq.c                             |   2 +-
+ sys/kern/vfs_acl.c                                 |   6 +-
+ sys/kern/vfs_aio.c                                 |   2 +-
+ sys/kern/vfs_bio.c                                 |   2 +-
+ sys/kern/vfs_cache.c                               |   4 +-
+ sys/kern/vfs_default.c                             |  32 +-
+ sys/kern/vfs_extattr.c                             |  12 +-
+ sys/kern/vfs_lookup.c                              |  26 +-
+ sys/kern/vfs_mount.c                               |  20 +-
+ sys/kern/vfs_mountroot.c                           |   8 +-
+ sys/kern/vfs_subr.c                                |  39 +-
+ sys/kern/vfs_syscalls.c                            |  44 +-
+ sys/kern/vfs_vnops.c                               |  50 +-
+ sys/kern/vnode_if.src                              |   1 -
+ sys/nfs/nfs_lock.c                                 |   2 +-
+ sys/nlm/nlm_advlock.c                              |   2 +-
+ sys/nlm/nlm_prot_impl.c                            |   2 +-
+ sys/powerpc/conf/QORIQ64                           |   1 -
+ sys/security/audit/audit_arg.c                     |   4 +-
+ sys/security/audit/audit_syscalls.c                |   4 +-
+ sys/security/audit/audit_worker.c                  |   4 +-
+ sys/security/mac/mac_process.c                     |   4 +-
+ sys/security/mac/mac_syscalls.c                    |   4 +-
+ sys/security/mac_veriexec/mac_veriexec.c           |   2 +-
+ .../mac_veriexec_parser/mac_veriexec_parser.c      |   4 +-
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/vnode.h                                    |  13 +
+ sys/ufs/ffs/ffs_alloc.c                            |   4 +-
+ sys/ufs/ffs/ffs_inode.c                            |   2 +-
+ sys/ufs/ffs/ffs_rawread.c                          |   2 +-
+ sys/ufs/ffs/ffs_snapshot.c                         |  26 +-
+ sys/ufs/ffs/ffs_softdep.c                          |   8 +-
+ sys/ufs/ffs/ffs_suspend.c                          |   2 +-
+ sys/ufs/ffs/ffs_vfsops.c                           |  16 +-
+ sys/ufs/ufs/ufs_extattr.c                          |  36 +-
+ sys/ufs/ufs/ufs_lookup.c                           |   4 +-
+ sys/ufs/ufs/ufs_quota.c                            |  18 +-
+ sys/ufs/ufs/ufs_vnops.c                            |  42 +-
+ sys/vm/swap_pager.c                                |   6 +-
+ sys/vm/uma.h                                       |   1 -
+ sys/vm/uma_core.c                                  | 881 ++++++++++++---------
+ sys/vm/uma_int.h                                   |  92 ++-
+ sys/vm/vm_map.c                                    |   2 +-
+ sys/vm/vm_object.c                                 |   2 +-
+ sys/vm/vnode_pager.c                               |   2 +-
+ 132 files changed, 1259 insertions(+), 1052 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/conf/options
+Auto-merging sys/arm64/arm64/pmap.c
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging share/mk/src.libnames.mk
+Auto-merging lib/Makefile
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                            |   2 +-
+ ObsoleteFiles.inc                        |   7 ++
+ gnu/lib/Makefile                         |   1 -
+ lib/Makefile                             |   6 +-
+ lib/libc/secure/stack_protector.c        |   8 +-
+ lib/libssp/Makefile                      |  20 +++++
+ lib/libssp/Symbol.map                    |  26 ++++++
+ lib/libssp/Versions.def                  |   4 +
+ lib/libssp/fortify_stubs.c               | 134 +++++++++++++++++++++++++++++
+ lib/libssp_nonshared/Makefile            |  11 +++
+ lib/libssp_nonshared/libssp_nonshared.c  |  17 ++++
+ share/man/man4/sctp.4                    |   4 +-
+ share/mk/local.dirdeps.mk                |   2 +-
+ share/mk/local.gendirdeps.mk             |   2 +-
+ share/mk/src.libnames.mk                 |   4 +-
+ sys/amd64/amd64/pmap.c                   |  12 ++-
+ sys/arm64/arm64/pmap.c                   |   9 +-
+ sys/conf/options                         |   2 -
+ sys/i386/i386/pmap.c                     |  12 ++-
+ sys/netinet/sctp.h                       |   1 -
+ sys/netinet/sctp_output.c                |   4 +-
+ sys/netinet/sctp_sysctl.c                |   2 +
+ sys/netinet/sctp_sysctl.h                |   7 ++
+ sys/vm/uma.h                             |  11 ++-
+ sys/vm/uma_core.c                        | 139 ++++++++++++++++++-------------
+ sys/vm/uma_int.h                         |   9 +-
+ sys/vm/vm_glue.c                         |   2 +-
+ tests/sys/aio/lio_test.c                 |   1 +
+ tools/build/mk/OptionalObsoleteFiles.inc |  35 --------
+ 29 files changed, 367 insertions(+), 127 deletions(-)
+ create mode 100644 lib/libssp/Makefile
+ create mode 100644 lib/libssp/Symbol.map
+ create mode 100644 lib/libssp/Versions.def
+ create mode 100644 lib/libssp/fortify_stubs.c
+ create mode 100644 lib/libssp_nonshared/Makefile
+ create mode 100644 lib/libssp_nonshared/libssp_nonshared.c
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    a0465dc4a9ac..bae49c515c26  hardened/current/master -> hardened/current/master        
+remote:    40d7ad3dd393..d5eb945ec7ae  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   a0465dc4a9a..bae49c515c2  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
