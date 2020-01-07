@@ -1,0 +1,72 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 19 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 317428905bbd..d3c07758ed91
+Fast-forward
+ Makefile                                           | 15 ++--
+ lib/libc/Makefile.depend.options                   |  2 +-
+ lib/libprocstat/libprocstat.c                      |  6 +-
+ lib/libsysdecode/Makefile.depend                   |  2 +-
+ sbin/fsck_msdosfs/fsck_msdosfs.8                   | 19 ++++-
+ share/man/man5/src.conf.5                          | 89 ++++++++++------------
+ share/mk/src.opts.mk                               | 10 +--
+ stand/libsa/zfs/zfsimpl.c                          | 38 +++++----
+ sys/arm64/arm64/identcpu.c                         |  5 ++
+ sys/arm64/include/cpu.h                            |  7 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_dir.c        |  1 +
+ sys/kern/kern_sysctl.c                             |  6 +-
+ sys/kern/vfs_subr.c                                | 82 +++++++++++++-------
+ sys/mips/mips/pm_machdep.c                         |  4 +-
+ sys/riscv/sifive/sifive_uart.c                     |  4 +-
+ sys/security/mac_veriexec/mac_veriexec.c           | 31 +++++---
+ sys/sys/vnode.h                                    |  1 -
+ targets/pseudo/userland/gnu/Makefile.depend        |  2 -
+ tests/sys/fs/Makefile                              |  5 ++
+ 19 files changed, 192 insertions(+), 137 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/mount.h
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging libexec/rtld-elf/rtld.c
+Merge made by the 'recursive' strategy.
+ Makefile                              |  16 +-
+ libexec/rtld-elf/rtld.c               |   5 +-
+ sys/compat/linux/linux_stats.c        |   2 +-
+ sys/dev/smartpqi/smartpqi_discovery.c |   2 +-
+ sys/dev/smartpqi/smartpqi_init.c      |   2 +-
+ sys/geom/journal/g_journal.c          |   2 +-
+ sys/i386/i386/pmap.c                  |   9 +-
+ sys/i386/i386/pmap_nopae.c            |   2 +-
+ sys/i386/i386/pmap_pae.c              |   3 +-
+ sys/i386/include/pmap.h               |  26 +-
+ sys/kern/vfs_mount.c                  |   2 +-
+ sys/kern/vfs_subr.c                   | 243 ++++++++---
+ sys/kern/vfs_syscalls.c               |   2 +-
+ sys/sys/mount.h                       |   4 +-
+ sys/sys/vnode.h                       |   1 +
+ tools/tools/crypto/cryptocheck.c      | 794 +++++++++++++++-------------------
+ 16 files changed, 555 insertions(+), 560 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d3c07758ed91..733aa50f4d11  hardened/current/master -> hardened/current/master        
+remote:    22ef484d6c4e..bdff175fbcce  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d3c07758ed91..733aa50f4d11  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
