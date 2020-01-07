@@ -1,0 +1,153 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/mips/mips/pm_machdep.c
+Auto-merging sys/kern/kern_sysctl.c
+CONFLICT (content): Merge conflict in sys/kern/kern_sysctl.c
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 9851430d1021,9a394fab716d..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -1021,7 -980,7 +1021,11 @@@ On 64-bit platforms, set to build 32-bi
+  runtime linker.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +amd64/amd64, mips/mips64el, mips/mips64, mips/mips64elhf and mips/mips64hf.
+++=======
++ arm/armv6, arm/armv7, arm64/aarch64, i386/i386, powerpc/powerpc, riscv/riscv64, mips/mipsel, mips/mips, mips/mipsn32, mips/mipselhf, mips/mipshf and sparc64/sparc64.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_LIBCPLUSPLUS
+  Set to avoid building libcxxrt and libc++.
+  .It Va WITHOUT_LIBPTHREAD
+@@@ -1072,15 -1029,7 +1076,19 @@@ To be able to build the system, either 
+  enabled unless an alternate linker is provided via XLD.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +riscv/riscv64, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and sparc64/sparc64.
+ +When set, it enforces these options:
+ +.Pp
+ +.Bl -item -compact
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+ +.Va WITHOUT_RETPOLINE
+ +.El
+++=======
++ powerpc/powerpc, riscv/riscv64, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and sparc64/sparc64.
+++>>>>>>> freebsd/current/master
+  .It Va WITH_LLD_BOOTSTRAP
+  Set to build the LLD linker during the bootstrap phase of the build,
+  and use it during buildworld and buildkernel.
+@@@ -1091,15 -1040,7 +1099,19 @@@ amd64/amd64, arm/armv6, arm/armv7, arm6
+  Set to use GNU binutils ld as the system linker, instead of LLVM's LLD.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +riscv/riscv64, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and sparc64/sparc64.
+ +When set, it enforces these options:
+ +.Pp
+ +.Bl -item -compact
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+ +.Va WITHOUT_RETPOLINE
+ +.El
+++=======
++ powerpc/powerpc, riscv/riscv64, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and sparc64/sparc64.
+++>>>>>>> freebsd/current/master
+  .It Va WITH_LLD_IS_LD
+  Set to use LLVM's LLD as the system linker, instead of GNU binutils ld.
+  .Pp
+@@@ -1507,9 -1448,7 +1519,13 @@@ arm/armv6, arm/armv7, arm64/aarch64, po
+  Set to build LLVM's OpenMP runtime.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +amd64/amd64 and i386/i386.
+ +.It Va WITH_OPENNTPD
+ +Set to build OpenNTPd in stead of ISC ntpd daemon and utilities.
+++=======
++ amd64/amd64, i386/i386 and powerpc/powerpc64.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_OPENSSH
+  Set to not build OpenSSH.
+  .It Va WITHOUT_OPENSSL
+diff --cc sys/kern/kern_sysctl.c
+index 92f87798bd25,bda8fdd6a3a0..000000000000
+--- a/sys/kern/kern_sysctl.c
++++ b/sys/kern/kern_sysctl.c
+@@@ -43,7 -43,7 +43,11 @@@ __FBSDID("$FreeBSD$")
+  #include "opt_capsicum.h"
+  #include "opt_ddb.h"
+  #include "opt_ktrace.h"
+++<<<<<<< HEAD
+ +#include "opt_pax.h"
+++=======
++ #include "opt_sysctl.h"
+++>>>>>>> freebsd/current/master
+  
+  #include <sys/param.h>
+  #include <sys/fail.h>
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile
+	modified:   lib/libc/Makefile.depend.options
+	modified:   lib/libsysdecode/Makefile.depend
+	modified:   sbin/fsck_msdosfs/fsck_msdosfs.8
+	modified:   share/mk/src.opts.mk
+	modified:   stand/libsa/zfs/zfsimpl.c
+	modified:   sys/arm64/arm64/identcpu.c
+	modified:   sys/arm64/include/cpu.h
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_dir.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/mips/mips/pm_machdep.c
+	modified:   sys/security/mac_veriexec/mac_veriexec.c
+	modified:   sys/sys/vnode.h
+	modified:   targets/pseudo/userland/gnu/Makefile.depend
+	modified:   tests/sys/fs/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+	both modified:   sys/kern/kern_sysctl.c
+
+HEAD is now at 317428905bbd Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 317428905bbd Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
