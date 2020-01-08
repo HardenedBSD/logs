@@ -1,0 +1,71 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/netinet6/nd6_rtr.c
+Auto-merging sys/arm/arm/elf_machdep.c
+Removing gnu/lib/libssp/libssp_nonshared/Makefile.depend
+Removing gnu/lib/libssp/libssp_nonshared/Makefile
+Removing gnu/lib/libssp/config.h
+Removing gnu/lib/libssp/Makefile.depend
+Removing gnu/lib/libssp/Makefile
+Merge made by the 'recursive' strategy.
+ Makefile                                           |   1 +
+ .../opensolaris/lib/libdtrace/common/dt_link.c     |  27 +-
+ gnu/lib/libssp/Makefile                            |  40 --
+ gnu/lib/libssp/Makefile.depend                     |  16 -
+ gnu/lib/libssp/config.h                            |  87 ----
+ gnu/lib/libssp/libssp_nonshared/Makefile           |  18 -
+ gnu/lib/libssp/libssp_nonshared/Makefile.depend    |  11 -
+ lib/clang/libllvmminimal/Makefile                  |   1 +
+ lib/libjail/jail.c                                 |   5 +-
+ share/man/man4/nvme.4                              |  10 +-
+ sys/arm/arm/elf_machdep.c                          |   2 +
+ sys/conf/kern.pre.mk                               |  11 +
+ sys/dev/cxgbe/t4_sge.c                             |   2 +-
+ sys/dev/nvme/nvme.h                                |   8 +
+ sys/dev/nvme/nvme_ctrlr.c                          | 179 +++++++-
+ sys/dev/nvme/nvme_ctrlr_cmd.c                      |  15 +-
+ sys/dev/nvme/nvme_private.h                        |  17 +-
+ sys/kern/vfs_subr.c                                |   9 +-
+ sys/net/route.c                                    |  49 +-
+ sys/net/route.h                                    |   9 +-
+ sys/net/rtsock.c                                   |  65 ++-
+ sys/netinet/tcp_stacks/rack_bbr_common.c           |   1 -
+ sys/netinet6/in6.c                                 |  41 +-
+ sys/netinet6/nd6_rtr.c                             |  24 +-
+ sys/riscv/riscv/locore.S                           |  20 +-
+ tests/sys/geom/class/multipath/failloop.sh         |   5 -
+ tests/sys/net/routing/rtsock_common.h              |  66 ++-
+ tests/sys/net/routing/rtsock_print.h               | 104 ++++-
+ tests/sys/net/routing/test_rtsock_l3.c             | 502 ++++++++++++++++++++-
+ 29 files changed, 1027 insertions(+), 318 deletions(-)
+ delete mode 100644 gnu/lib/libssp/Makefile
+ delete mode 100644 gnu/lib/libssp/Makefile.depend
+ delete mode 100644 gnu/lib/libssp/config.h
+ delete mode 100644 gnu/lib/libssp/libssp_nonshared/Makefile
+ delete mode 100644 gnu/lib/libssp/libssp_nonshared/Makefile.depend
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    733aa50f4d11..d812fa834fb5  hardened/current/master -> hardened/current/master
+remote:    bdff175fbcce..8f7704790f8c  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   733aa50f4d11..d812fa834fb5  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
