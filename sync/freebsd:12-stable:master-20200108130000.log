@@ -1,0 +1,143 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating c41bb2e87395..3e44722d3c7b
+Fast-forward
+ etc/mtree/BSD.tests.dist             |   4 +
+ lib/Makefile                         |   3 +-
+ lib/libc/resolv/res_findzonecut.c    |   2 +-
+ lib/libclang_rt/Makefile.inc         |   2 +-
+ share/mk/bsd.dep.mk                  |   8 +-
+ sys/net80211/ieee80211.c             |   2 +
+ sys/netinet/ip_reass.c               |  55 +++-
+ sys/netinet6/frag6.c                 | 466 ++++++++++++++++++++--------------
+ sys/netinet6/ip6_input.c             |   1 +
+ sys/netinet6/ip6_var.h               |  27 +-
+ tests/sys/Makefile                   |   1 +
+ tests/sys/netinet6/Makefile          |  20 ++
+ tests/sys/netinet6/exthdr.py         | 273 ++++++++++++++++++++
+ tests/sys/netinet6/exthdr.sh         | 124 +++++++++
+ tests/sys/netinet6/frag6/Makefile    |  79 ++++++
+ tests/sys/netinet6/frag6/frag6.subr  | 122 +++++++++
+ tests/sys/netinet6/frag6/frag6_01.py | 115 +++++++++
+ tests/sys/netinet6/frag6/frag6_01.sh | 233 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_02.py | 109 ++++++++
+ tests/sys/netinet6/frag6/frag6_02.sh | 230 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_03.py | 107 ++++++++
+ tests/sys/netinet6/frag6/frag6_03.sh | 231 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_04.py | 106 ++++++++
+ tests/sys/netinet6/frag6/frag6_04.sh | 231 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_05.py |  84 +++++++
+ tests/sys/netinet6/frag6/frag6_05.sh | 475 +++++++++++++++++++++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_06.py |  81 ++++++
+ tests/sys/netinet6/frag6/frag6_06.sh | 263 +++++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_07.py | 178 +++++++++++++
+ tests/sys/netinet6/frag6/frag6_07.sh | 232 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_08.py | 152 +++++++++++
+ tests/sys/netinet6/frag6/frag6_08.sh | 232 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_09.py | 109 ++++++++
+ tests/sys/netinet6/frag6/frag6_09.sh | 229 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_10.py |  81 ++++++
+ tests/sys/netinet6/frag6/frag6_10.sh | 231 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_11.py |  81 ++++++
+ tests/sys/netinet6/frag6/frag6_11.sh | 230 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_12.py | 111 ++++++++
+ tests/sys/netinet6/frag6/frag6_12.sh | 228 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_13.py | 122 +++++++++
+ tests/sys/netinet6/frag6/frag6_13.sh | 228 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_14.py | 137 ++++++++++
+ tests/sys/netinet6/frag6/frag6_14.sh | 228 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_15.py | 105 ++++++++
+ tests/sys/netinet6/frag6/frag6_15.sh | 257 +++++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_16.py | 132 ++++++++++
+ tests/sys/netinet6/frag6/frag6_16.sh | 233 +++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_17.py |  90 +++++++
+ tests/sys/netinet6/frag6/frag6_17.sh |  47 ++++
+ tests/sys/netinet6/frag6/frag6_18.py |  90 +++++++
+ tests/sys/netinet6/frag6/frag6_18.sh |  64 +++++
+ tests/sys/netinet6/frag6/frag6_19.py |  83 ++++++
+ tests/sys/netinet6/frag6/frag6_19.sh | 221 ++++++++++++++++
+ tests/sys/netinet6/frag6/frag6_20.py | 137 ++++++++++
+ tests/sys/netinet6/frag6/frag6_20.sh | 231 +++++++++++++++++
+ tests/sys/netinet6/frag6/sniffer.py  |  40 +++
+ tests/sys/netinet6/scapyi386.py      |  85 +++++++
+ tests/sys/netinet6/scapyi386.sh      |  94 +++++++
+ usr.sbin/bhyve/acpi.c                |  14 +-
+ usr.sbin/bhyve/pci_emul.c            |   1 -
+ 61 files changed, 7965 insertions(+), 222 deletions(-)
+ create mode 100644 tests/sys/netinet6/Makefile
+ create mode 100644 tests/sys/netinet6/exthdr.py
+ create mode 100755 tests/sys/netinet6/exthdr.sh
+ create mode 100644 tests/sys/netinet6/frag6/Makefile
+ create mode 100644 tests/sys/netinet6/frag6/frag6.subr
+ create mode 100644 tests/sys/netinet6/frag6/frag6_01.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_01.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_02.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_02.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_03.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_03.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_04.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_04.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_05.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_05.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_06.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_06.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_07.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_07.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_08.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_08.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_09.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_09.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_10.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_10.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_11.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_11.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_12.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_12.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_13.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_13.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_14.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_14.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_15.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_15.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_16.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_16.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_17.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_17.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_18.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_18.sh
+ create mode 100644 tests/sys/netinet6/frag6/frag6_19.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_19.sh
+ create mode 100755 tests/sys/netinet6/frag6/frag6_20.py
+ create mode 100755 tests/sys/netinet6/frag6/frag6_20.sh
+ create mode 100644 tests/sys/netinet6/frag6/sniffer.py
+ create mode 100644 tests/sys/netinet6/scapyi386.py
+ create mode 100755 tests/sys/netinet6/scapyi386.sh
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    c41bb2e87395..3e44722d3c7b  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   c41bb2e87395..3e44722d3c7b  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
