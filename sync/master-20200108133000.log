@@ -16,3 +16,330 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing databases/mysql80-server/files/patch-mysys__ssl_my__md5.cc
+Removing databases/mysql80-server/files/patch-cmd-line-utils_libedit_vi.c
+Removing databases/mysql80-server/files/patch-cmd-line-utils_libedit_chartype.h
+Removing databases/mysql80-client/files/patch-vio_viosslfactories.cc
+Removing databases/mysql80-client/files/patch-utilities_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-support-files_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-storage_myisam_mi__dynrec.cc
+Removing databases/mysql80-client/files/patch-sql_sys__vars.cc
+Removing databases/mysql80-client/files/patch-sql_mysqld.cc
+Removing databases/mysql80-client/files/patch-sql_auth_sha2__password__common.cc
+Removing databases/mysql80-client/files/patch-sql-common_client.cc
+Removing databases/mysql80-client/files/patch-share_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-scripts_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-plugin_x_client_xconnection__impl.cc
+Removing databases/mysql80-client/files/patch-mysys__ssl_my__md5.cc
+Removing databases/mysql80-client/files/patch-mysys__ssl_my__default.cc
+Removing databases/mysql80-client/files/patch-man_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-libmysql_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-include_myisam.h
+Removing databases/mysql80-client/files/patch-include_my__compare.h
+Removing databases/mysql80-client/files/patch-include_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-cmake_ssl.cmake
+Removing databases/mysql80-client/files/patch-client_CMakeLists.txt
+Removing databases/mysql80-client/files/patch-CMakeLists.txt
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ astro/py-metpy/Makefile                            |  16 +-
+ astro/py-metpy/distinfo                            |   6 +-
+ benchmarks/phoronix-test-suite/Makefile            |   8 +-
+ benchmarks/phoronix-test-suite/distinfo            |   6 +-
+ .../phoronix-test-suite/files/patch-install-sh     |   2 +-
+ benchmarks/stress-ng/Makefile                      |   2 +-
+ benchmarks/stress-ng/distinfo                      |   6 +-
+ databases/mysql80-client/Makefile                  |  20 ++-
+ .../mysql80-client/files/patch-CMakeLists.txt      |  35 ----
+ .../files/patch-client_CMakeLists.txt              |  39 -----
+ .../mysql80-client/files/patch-cmake_ssl.cmake     |  14 --
+ .../files/patch-include_CMakeLists.txt             | 176 ---------------------
+ .../files/patch-include_my__compare.h              |  11 --
+ .../mysql80-client/files/patch-include_myisam.h    |  11 --
+ .../files/patch-libmysql_CMakeLists.txt            |  23 ---
+ .../mysql80-client/files/patch-man_CMakeLists.txt  |  13 --
+ .../files/patch-mysys__ssl_my__default.cc          |  60 -------
+ .../files/patch-mysys__ssl_my__md5.cc              |  11 --
+ .../patch-plugin_x_client_xconnection__impl.cc     |  37 -----
+ .../files/patch-scripts_CMakeLists.txt             |  73 ---------
+ .../files/patch-share_CMakeLists.txt               |  27 ----
+ .../files/patch-sql-common_client.cc               |  11 --
+ .../files/patch-sql_auth_sha2__password__common.cc |  11 --
+ databases/mysql80-client/files/patch-sql_mysqld.cc |  11 --
+ .../mysql80-client/files/patch-sql_sys__vars.cc    |  29 ----
+ .../files/patch-storage_myisam_mi__dynrec.cc       |  22 ---
+ .../files/patch-support-files_CMakeLists.txt       |  27 ----
+ .../files/patch-utilities_CMakeLists.txt           |  24 ---
+ .../files/patch-vio_viosslfactories.cc             |  47 ------
+ databases/mysql80-client/pkg-plist                 |  11 +-
+ databases/mysql80-server/Makefile                  |  40 ++---
+ databases/mysql80-server/distinfo                  |   6 +-
+ .../mysql80-server/files/patch-CMakeLists.txt      |  75 +++++++--
+ .../files/patch-client_CMakeLists.txt              |  97 +++++++-----
+ .../files/patch-cmake_os_DragonFly.cmake           |   0
+ .../files/patch-cmake_os_FreeBSD.cmake             |   4 +-
+ .../mysql80-server/files/patch-cmake_plugin.cmake  |  10 +-
+ .../mysql80-server/files/patch-cmake_ssl.cmake     |  22 ++-
+ .../files/patch-cmd-line-utils_libedit_chartype.h  |  11 --
+ .../files/patch-cmd-line-utils_libedit_vi.c        |  20 ---
+ .../files/patch-extra_libedit_chartype.h}          |   2 +-
+ .../files/patch-extra_libedit_vi.c}                |   4 +-
+ .../files/patch-extra_libevent_openssl-compat.h    |  19 +++
+ .../files/patch-include_CMakeLists.txt             | 176 ++++++++++++++++++++-
+ .../files/patch-include_my__compare.h              |   2 +-
+ .../files/patch-include_my__thread__os__id.h       |   4 +-
+ .../mysql80-server/files/patch-include_myisam.h    |   2 +-
+ .../mysql80-server/files/patch-include_violite.h   |  14 ++
+ .../files/patch-libmysql_CMakeLists.txt            |  89 ++++++++---
+ .../files/patch-libservices_CMakeLists.txt         |   3 +-
+ .../mysql80-server/files/patch-man_CMakeLists.txt  |  84 ++++++++--
+ .../files/patch-mysys__ssl_my__md5.cc              |  11 --
+ ...l_my__default.cc => patch-mysys_my__default.cc} |  22 +--
+ .../mysql80-server/files/patch-mysys_my__md5.cc    |  12 ++
+ ...s_src_bindings_xcom_xcom_xcom__ssl__transport.c |  31 ++++
+ ...ugin_password__validation_validate__password.cc |   5 +-
+ .../files/patch-plugin_x_CMakeLists.txt            |  11 +-
+ ..._authentication_sha256__scramble__generator.cc} |   8 +-
+ .../patch-plugin_x_client_xconnection__impl.cc     |  49 +++---
+ .../files/patch-plugin_x_configure.cmake           |   8 +-
+ ...tch-router_src_http_src_tls__client__context.cc |  11 ++
+ .../patch-router_src_http_src_tls__context.cc      |  34 ++++
+ ...tch-router_src_http_src_tls__server__context.cc |  12 ++
+ .../files/patch-scripts_CMakeLists.txt             |  37 +++--
+ .../files/patch-sql-common_client.cc               |  10 +-
+ .../files/patch-sql_auth_sha2__password__common.cc |  10 +-
+ .../patch-sql_conn__handler_socket__connection.cc  |   6 +-
+ databases/mysql80-server/files/patch-sql_mysqld.cc |  15 +-
+ .../mysql80-server/files/patch-sql_sys__vars.cc    |  74 ++++-----
+ .../files/patch-storage_innobase_include_srv0mon.h |   4 +-
+ .../files/patch-storage_myisam_mi__dynrec.cc       |   8 +-
+ .../files/patch-support-files_CMakeLists.txt       |  28 +++-
+ .../files/patch-utilities_CMakeLists.txt           |  59 +++++++
+ databases/mysql80-server/files/patch-vio_viossl.cc |  20 +++
+ .../files/patch-vio_viosslfactories.cc             |  52 ++----
+ databases/mysql80-server/pkg-plist                 |  20 ++-
+ databases/plpgsql_check/Makefile                   |   2 +-
+ databases/plpgsql_check/distinfo                   |   6 +-
+ devel/Makefile                                     |   3 +
+ devel/acsccid/Makefile                             |   2 +-
+ devel/acsccid/distinfo                             |   6 +-
+ devel/alog/Makefile                                |   6 +-
+ devel/alog/distinfo                                |   6 +-
+ devel/alog/pkg-plist                               |   6 +-
+ devel/osc/Makefile                                 |   2 +-
+ devel/osc/distinfo                                 |   6 +-
+ devel/p5-Inline/Makefile                           |   2 +-
+ devel/p5-Inline/distinfo                           |   6 +-
+ devel/p5-Pegex/Makefile                            |   8 +-
+ devel/p5-Pegex/distinfo                            |   6 +-
+ devel/p5-XXX/Makefile                              |  26 +++
+ devel/p5-XXX/distinfo                              |   3 +
+ devel/p5-XXX/pkg-descr                             |   9 ++
+ devel/p5-XXX/pkg-plist                             |   3 +
+ devel/py-automaton/Makefile                        |   8 +-
+ devel/py-automaton/distinfo                        |   6 +-
+ devel/py-automaton/pkg-descr                       |  12 +-
+ devel/py-cliff/Makefile                            |  45 ++----
+ devel/py-cliff/distinfo                            |   6 +-
+ devel/py-cliff/pkg-descr                           |   6 +-
+ devel/py-cmd2/Makefile                             |  30 +++-
+ devel/py-cmd2/distinfo                             |   6 +-
+ devel/py-cmd2/pkg-descr                            |   9 +-
+ devel/py-keystonemiddleware/Makefile               |  11 +-
+ devel/py-keystonemiddleware/distinfo               |   6 +-
+ devel/py-keystonemiddleware/pkg-descr              |  11 +-
+ devel/py-medikit/Makefile                          |   6 +-
+ devel/py-openstacksdk/Makefile                     |  39 ++---
+ devel/py-openstacksdk/pkg-descr                    |  19 ++-
+ devel/py-os-brick/Makefile                         |  34 ++--
+ devel/py-os-brick/distinfo                         |   6 +-
+ devel/py-os-brick/pkg-descr                        |   4 +-
+ devel/py-os-client-config/Makefile                 |  13 +-
+ devel/py-os-client-config/distinfo                 |   6 +-
+ devel/py-os-client-config/pkg-descr                |  13 +-
+ devel/py-os-vif/Makefile                           |  38 +++--
+ devel/py-os-vif/distinfo                           |   6 +-
+ devel/py-os-vif/pkg-descr                          |  14 +-
+ devel/py-os-win/Makefile                           |  19 +--
+ devel/py-os-win/distinfo                           |   6 +-
+ devel/py-os-win/pkg-descr                          |   9 +-
+ devel/py-osc-lib/Makefile                          |  40 ++---
+ devel/py-osc-lib/distinfo                          |   6 +-
+ devel/py-osc-lib/pkg-descr                         |   7 +-
+ devel/py-oslo.db/Makefile                          |   2 +-
+ devel/py-oslo.db/distinfo                          |   6 +-
+ devel/py-oslo.i18n/Makefile                        |   2 +-
+ devel/py-oslo.i18n/distinfo                        |   6 +-
+ devel/py-oslo.log/Makefile                         |   2 +-
+ devel/py-oslo.log/distinfo                         |   6 +-
+ devel/py-oslo.versionedobjects/Makefile            |   2 +-
+ devel/py-oslo.versionedobjects/distinfo            |   6 +-
+ devel/py-ovsdbapp/Makefile                         |  28 ++++
+ devel/py-ovsdbapp/distinfo                         |   3 +
+ devel/py-ovsdbapp/pkg-descr                        |  13 ++
+ devel/py-packaging/Makefile                        |   2 +-
+ devel/py-packaging/distinfo                        |   6 +-
+ devel/py-pipx/Makefile                             |   2 +-
+ devel/py-pipx/distinfo                             |   6 +-
+ devel/py-taskflow/Makefile                         |  44 +++---
+ devel/py-taskflow/distinfo                         |   6 +-
+ devel/py-taskflow/pkg-descr                        |   9 +-
+ devel/py-tenacity/Makefile                         |  24 ++-
+ devel/py-tenacity/distinfo                         |   6 +-
+ devel/py-tenacity/pkg-descr                        |  10 +-
+ devel/py-tooz/Makefile                             |   9 +-
+ devel/py-tooz/distinfo                             |   6 +-
+ devel/py-tooz/pkg-descr                            |   7 +-
+ devel/py-warlock/Makefile                          |  15 +-
+ devel/py-warlock/distinfo                          |   6 +-
+ devel/py-warlock/pkg-descr                         |   4 +-
+ devel/py-websockify/Makefile                       |  12 +-
+ devel/py-websockify/distinfo                       |   6 +-
+ devel/py-websockify/pkg-descr                      |  11 +-
+ devel/py-wsgi_intercept/Makefile                   |  13 +-
+ devel/py-wsgi_intercept/distinfo                   |   6 +-
+ devel/py-wsgi_intercept/pkg-descr                  |  24 ++-
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-comprehend/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-comprehend/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-mediapackage/Makefile        |   2 +-
+ devel/rubygem-aws-sdk-mediapackage/distinfo        |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-sync/Makefile                        |  20 +++
+ devel/rubygem-sync/distinfo                        |   3 +
+ devel/rubygem-sync/pkg-descr                       |   3 +
+ devel/rubygem-tins/Makefile                        |   4 +-
+ devel/rubygem-tins/distinfo                        |   6 +-
+ games/eduke32/Makefile                             |   2 +-
+ lang/perl5-devel/distinfo                          |   6 +-
+ mail/p5-Email-Abstract/Makefile                    |   2 +
+ mail/py-mail-parser/Makefile                       |   6 +-
+ mail/py-mail-parser/distinfo                       |   6 +-
+ multimedia/plexmediaserver-plexpass/Makefile       |   4 +-
+ multimedia/plexmediaserver-plexpass/distinfo       |   6 +-
+ multimedia/plexmediaserver/Makefile                |   4 +-
+ multimedia/plexmediaserver/distinfo                |   6 +-
+ net/Makefile                                       |   1 +
+ net/py-pyroute2/Makefile                           |  23 +++
+ net/py-pyroute2/distinfo                           |   3 +
+ net/py-pyroute2/pkg-descr                          |  18 +++
+ net/py-python-barbicanclient/Makefile              |  29 ++--
+ net/py-python-barbicanclient/distinfo              |   6 +-
+ net/py-python-barbicanclient/pkg-descr             |   9 +-
+ net/py-python-cinderclient/Makefile                |  28 +---
+ net/py-python-cinderclient/distinfo                |   6 +-
+ net/py-python-cinderclient/pkg-descr               |  12 +-
+ net/py-python-designateclient/Makefile             |  32 ++--
+ net/py-python-designateclient/distinfo             |   6 +-
+ net/py-python-designateclient/pkg-descr            |   7 +-
+ net/py-python-glanceclient/Makefile                |  39 +----
+ net/py-python-glanceclient/distinfo                |   6 +-
+ net/py-python-glanceclient/pkg-descr               |  10 +-
+ net/py-python-heatclient/Makefile                  |  44 +++---
+ net/py-python-heatclient/distinfo                  |   6 +-
+ net/py-python-heatclient/pkg-descr                 |   3 +-
+ net/py-python-keystoneclient/Makefile              |  19 +--
+ net/py-python-keystoneclient/distinfo              |   6 +-
+ net/py-python-keystoneclient/pkg-descr             |   9 +-
+ net/py-python-neutronclient/Makefile               |  44 ++----
+ net/py-python-neutronclient/distinfo               |   6 +-
+ net/py-python-neutronclient/pkg-descr              |   8 +-
+ net/py-python-openstackclient/Makefile             |  28 ++--
+ net/py-python-openstackclient/distinfo             |   6 +-
+ net/py-python-openstackclient/pkg-descr            |  10 +-
+ net/rubygem-google-cloud-storage/Makefile          |   2 +-
+ net/rubygem-google-cloud-storage/distinfo          |   6 +-
+ shells/zsh-autosuggestions/Makefile                |   5 +-
+ shells/zsh-autosuggestions/distinfo                |   6 +-
+ textproc/minify/Makefile                           |   2 +-
+ textproc/minify/distinfo                           |   6 +-
+ www/py-instabot/Makefile                           |   2 +-
+ www/py-instabot/distinfo                           |   6 +-
+ x11-wm/sway/Makefile                               |   2 +-
+ x11-wm/sway/distinfo                               |   6 +-
+ x11/xdm/Makefile                                   |   1 +
+ x11/xdm/files/xdm.in                               |  30 ++++
+ 225 files changed, 1771 insertions(+), 1750 deletions(-)
+ delete mode 100644 databases/mysql80-client/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-client_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-cmake_ssl.cmake
+ delete mode 100644 databases/mysql80-client/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-include_my__compare.h
+ delete mode 100644 databases/mysql80-client/files/patch-include_myisam.h
+ delete mode 100644 databases/mysql80-client/files/patch-libmysql_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-mysys__ssl_my__default.cc
+ delete mode 100644 databases/mysql80-client/files/patch-mysys__ssl_my__md5.cc
+ delete mode 100644 databases/mysql80-client/files/patch-plugin_x_client_xconnection__impl.cc
+ delete mode 100644 databases/mysql80-client/files/patch-scripts_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-share_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-sql-common_client.cc
+ delete mode 100644 databases/mysql80-client/files/patch-sql_auth_sha2__password__common.cc
+ delete mode 100644 databases/mysql80-client/files/patch-sql_mysqld.cc
+ delete mode 100644 databases/mysql80-client/files/patch-sql_sys__vars.cc
+ delete mode 100644 databases/mysql80-client/files/patch-storage_myisam_mi__dynrec.cc
+ delete mode 100644 databases/mysql80-client/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-utilities_CMakeLists.txt
+ delete mode 100644 databases/mysql80-client/files/patch-vio_viosslfactories.cc
+ rename databases/{mysql80-client => mysql80-server}/files/patch-cmake_os_DragonFly.cmake (100%)
+ rename databases/{mysql80-client => mysql80-server}/files/patch-cmake_os_FreeBSD.cmake (93%)
+ delete mode 100644 databases/mysql80-server/files/patch-cmd-line-utils_libedit_chartype.h
+ delete mode 100644 databases/mysql80-server/files/patch-cmd-line-utils_libedit_vi.c
+ rename databases/{mysql80-client/files/patch-cmd-line-utils_libedit_chartype.h => mysql80-server/files/patch-extra_libedit_chartype.h} (89%)
+ rename databases/{mysql80-client/files/patch-cmd-line-utils_libedit_vi.c => mysql80-server/files/patch-extra_libedit_vi.c} (84%)
+ create mode 100644 databases/mysql80-server/files/patch-extra_libevent_openssl-compat.h
+ create mode 100644 databases/mysql80-server/files/patch-include_violite.h
+ delete mode 100644 databases/mysql80-server/files/patch-mysys__ssl_my__md5.cc
+ rename databases/mysql80-server/files/{patch-mysys__ssl_my__default.cc => patch-mysys_my__default.cc} (75%)
+ create mode 100644 databases/mysql80-server/files/patch-mysys_my__md5.cc
+ create mode 100644 databases/mysql80-server/files/patch-plugin_group__replication_libmysqlgcs_src_bindings_xcom_xcom_xcom__ssl__transport.c
+ rename databases/mysql80-server/files/{patch-plugin_x_client_sha256__scramble__generator.cc => patch-plugin_x_client_authentication_sha256__scramble__generator.cc} (55%)
+ create mode 100644 databases/mysql80-server/files/patch-router_src_http_src_tls__client__context.cc
+ create mode 100644 databases/mysql80-server/files/patch-router_src_http_src_tls__context.cc
+ create mode 100644 databases/mysql80-server/files/patch-router_src_http_src_tls__server__context.cc
+ create mode 100644 databases/mysql80-server/files/patch-utilities_CMakeLists.txt
+ create mode 100644 databases/mysql80-server/files/patch-vio_viossl.cc
+ create mode 100644 devel/p5-XXX/Makefile
+ create mode 100644 devel/p5-XXX/distinfo
+ create mode 100644 devel/p5-XXX/pkg-descr
+ create mode 100644 devel/p5-XXX/pkg-plist
+ create mode 100644 devel/py-ovsdbapp/Makefile
+ create mode 100644 devel/py-ovsdbapp/distinfo
+ create mode 100644 devel/py-ovsdbapp/pkg-descr
+ create mode 100644 devel/rubygem-sync/Makefile
+ create mode 100644 devel/rubygem-sync/distinfo
+ create mode 100644 devel/rubygem-sync/pkg-descr
+ create mode 100644 net/py-pyroute2/Makefile
+ create mode 100644 net/py-pyroute2/distinfo
+ create mode 100644 net/py-pyroute2/pkg-descr
+ create mode 100644 x11/xdm/files/xdm.in
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    fb39822ec560..b00a878291af  master -> master        
+remote:    4b8427a129bd..fb39822ec560  github/master -> github/master
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   fb39822ec560..b00a878291af  master -> master
+==== END: master ====
