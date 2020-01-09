@@ -1,0 +1,144 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 39 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 05174aa347dc..4bcbec6c8886
+Fast-forward
+ Makefile.inc1                                      |  11 -
+ UPDATING                                           |   9 +
+ .../libunwind/include/__libunwind_config.h         |   2 +-
+ contrib/llvm-project/libunwind/src/config.h        |   3 +-
+ gnu/lib/Makefile                                   |   4 -
+ gnu/lib/libgcc/Makefile                            | 374 ---------------------
+ gnu/lib/libgcc/Makefile.depend                     |  16 -
+ lib/libc/sys/posix_fallocate.2                     |   5 +-
+ libexec/rc/rc.d/netoptions                         |   2 +-
+ libexec/rtld-elf/rtld.c                            |  84 +++--
+ share/man/man4/md.4                                |  10 +-
+ share/man/man5/src.conf.5                          |  86 +++--
+ share/man/man7/arch.7                              |   4 +-
+ share/man/man9/zone.9                              |  32 +-
+ share/mk/bsd.cpu.mk                                |   4 -
+ share/mk/bsd.lib.mk                                |   4 +
+ share/mk/bsd.prog.mk                               |   5 +
+ share/mk/src.opts.mk                               |   8 +-
+ stand/fdt/fdt_loader_cmd.c                         |  40 ++-
+ stand/fdt/fdt_platform.h                           |   3 +-
+ stand/uboot/fdt/uboot_fdt.c                        |   5 +-
+ sys/arm/arm/busdma_machdep-v6.c                    |   2 +-
+ sys/arm64/include/atomic.h                         |  84 +++++
+ sys/dev/cxgbe/tom/t4_tom.c                         |   2 +-
+ sys/dev/iicbus/mux/iic_gpiomux.c                   |  32 +-
+ sys/dev/iicbus/mux/iicmux.c                        |  92 ++---
+ sys/dev/nvme/nvme_ctrlr.c                          |   2 +-
+ sys/dev/usb/controller/xhci.c                      |  31 +-
+ sys/dev/usb/controller/xhci.h                      |   2 +
+ sys/kern/Makefile                                  |   1 +
+ sys/kern/sys_generic.c                             |  41 +++
+ sys/kern/uipc_shm.c                                |  38 +++
+ sys/kern/vfs_syscalls.c                            |  93 -----
+ sys/kern/vfs_vnops.c                               |  59 ++++
+ sys/net/if.c                                       |  27 +-
+ sys/netinet/tcp_input.c                            |  10 +-
+ sys/netinet/tcp_stacks/bbr.c                       |   8 +-
+ sys/netinet/tcp_stacks/rack.c                      |   8 +-
+ sys/netinet/tcp_subr.c                             |   2 +-
+ sys/netinet/tcp_timer.c                            |   9 +-
+ sys/netinet/tcp_timer.h                            |   3 +-
+ sys/netinet/tcp_var.h                              |   3 +-
+ sys/netinet/udp_usrreq.c                           |   8 +-
+ sys/netinet/udp_var.h                              |   3 +-
+ sys/netinet6/udp6_usrreq.c                         |   2 +-
+ sys/opencrypto/cryptodev.c                         |  97 +++---
+ sys/sys/file.h                                     |  12 +
+ sys/sys/param.h                                    |   2 +-
+ sys/vm/uma.h                                       |  29 +-
+ sys/vm/uma_core.c                                  | 372 ++++++++++----------
+ sys/vm/uma_int.h                                   | 107 +++---
+ tests/sys/posixshm/posixshm_test.c                 |  39 +++
+ usr.sbin/bhyve/audio.c                             |  28 +-
+ usr.sbin/bhyve/bhyverun.c                          |   2 +
+ usr.sbin/bhyve/block_if.c                          |   9 +-
+ usr.sbin/bhyve/bootrom.c                           |  15 +-
+ usr.sbin/bhyve/consport.c                          |   2 +
+ usr.sbin/bhyve/debug.h                             |  47 +++
+ usr.sbin/bhyve/hda_codec.c                         |  44 +--
+ usr.sbin/bhyve/mptbl.c                             |  11 +-
+ usr.sbin/bhyve/net_backends.c                      |  23 +-
+ usr.sbin/bhyve/net_utils.c                         |   3 +-
+ usr.sbin/bhyve/pci_ahci.c                          |  44 +--
+ usr.sbin/bhyve/pci_e82545.c                        | 157 ++++-----
+ usr.sbin/bhyve/pci_emul.c                          |   7 +-
+ usr.sbin/bhyve/pci_fbuf.c                          |  23 +-
+ usr.sbin/bhyve/pci_hda.c                           |  68 ++--
+ usr.sbin/bhyve/pci_hda.h                           |   2 +-
+ usr.sbin/bhyve/pci_lpc.c                           |  13 +-
+ usr.sbin/bhyve/pci_nvme.c                          | 235 ++++++-------
+ usr.sbin/bhyve/pci_uart.c                          |   5 +-
+ usr.sbin/bhyve/pci_virtio_block.c                  |  13 +-
+ usr.sbin/bhyve/pci_virtio_console.c                |  11 +-
+ usr.sbin/bhyve/pci_virtio_net.c                    |  11 +-
+ usr.sbin/bhyve/pci_virtio_rnd.c                    |  11 +-
+ usr.sbin/bhyve/pci_virtio_scsi.c                   |  23 +-
+ usr.sbin/bhyve/pci_xhci.c                          | 270 +++++++--------
+ usr.sbin/bhyve/ps2kbd.c                            |  11 +-
+ usr.sbin/bhyve/ps2mouse.c                          |   9 +-
+ usr.sbin/bhyve/rfb.c                               |  17 +-
+ usr.sbin/bhyve/smbiostbl.c                         |   3 +-
+ usr.sbin/bhyve/task_switch.c                       |   3 +-
+ usr.sbin/bhyve/uart_emul.c                         |   2 +
+ usr.sbin/bhyve/usb_mouse.c                         |  71 ++--
+ usr.sbin/bhyve/virtio.c                            |  59 ++--
+ usr.sbin/bhyve/xmsr.c                              |   3 +-
+ 86 files changed, 1567 insertions(+), 1619 deletions(-)
+ delete mode 100644 gnu/lib/libgcc/Makefile
+ delete mode 100644 gnu/lib/libgcc/Makefile.depend
+ create mode 100644 usr.sbin/bhyve/debug.h
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/netinet6/in6_proto.c
+Auto-merging share/mk/src.opts.mk
+Merge made by the 'recursive' strategy.
+ .../libunwind/include/__libunwind_config.h         |  2 +-
+ contrib/llvm-project/libunwind/src/config.h        |  3 +--
+ sbin/ifconfig/iflagg.c                             |  7 ++++--
+ share/mk/src.opts.mk                               |  2 ++
+ sys/cam/cam_sim.h                                  | 20 ++++++++--------
+ sys/cam/scsi/scsi_all.h                            |  2 +-
+ sys/kern/kern_malloc.c                             | 15 ++++++------
+ sys/net/if_lagg.c                                  | 28 +++++++++++++---------
+ sys/net/if_lagg.h                                  |  7 +++---
+ sys/net/radix_mpath.c                              | 12 +++++-----
+ sys/net/radix_mpath.h                              |  4 ++--
+ sys/net/route.c                                    | 11 +++++++--
+ sys/net/route.h                                    |  2 +-
+ sys/net/route_var.h                                |  3 +++
+ sys/netinet/in_proto.c                             |  2 +-
+ sys/netinet/in_rmx.c                               |  6 ++---
+ sys/netinet6/in6_proto.c                           |  2 +-
+ sys/netinet6/in6_rmx.c                             |  7 +++---
+ sys/sys/domain.h                                   |  2 +-
+ usr.sbin/arp/arp.c                                 |  3 +--
+ 20 files changed, 81 insertions(+), 59 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4bcbec6c8886..b4b700604c78  hardened/current/master -> hardened/current/master        
+remote:    f2c97d852852..af1352e631ad  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4bcbec6c8886..b4b700604c78  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
