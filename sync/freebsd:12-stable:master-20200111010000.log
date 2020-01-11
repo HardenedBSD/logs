@@ -1,0 +1,67 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 4c1c571db8d9..799d21597a21
+Fast-forward
+ lib/libc/secure/stack_protector.c |   8 +-
+ sys/net/if_llatbl.c               |  20 +-
+ sys/netinet/ip_carp.c             |  19 +-
+ sys/netinet/ip_carp.h             |   4 +-
+ sys/netinet/ip_mroute.c           |  26 +-
+ sys/netinet/tcp_input.c           |  33 +-
+ sys/netinet/udp_usrreq.c          |   3 +-
+ sys/netinet6/dest6.c              |  45 +-
+ sys/netinet6/frag6.c              |  69 ++-
+ sys/netinet6/icmp6.c              | 319 +++++++------
+ sys/netinet6/in6.c                |   3 +-
+ sys/netinet6/ip6_input.c          | 182 ++------
+ sys/netinet6/ip6_mroute.c         |  23 +-
+ sys/netinet6/ip6_var.h            |   1 +
+ sys/netinet6/mld6.c               |  26 +-
+ sys/netinet6/mld6_var.h           |   2 +-
+ sys/netinet6/nd6.c                | 138 +-----
+ sys/netinet6/nd6.h                |  11 +-
+ sys/netinet6/nd6_nbr.c            | 128 +++---
+ sys/netinet6/nd6_rtr.c            | 916 ++++++++++++++++++++++----------------
+ sys/netinet6/route6.c             |  26 +-
+ sys/netinet6/sctp6_usrreq.c       |  14 +-
+ sys/netinet6/udp6_usrreq.c        |  26 +-
+ sys/netipsec/xform_ah.c           |  16 +-
+ sys/netipsec/xform_esp.c          |  13 +-
+ tests/sys/netinet6/Makefile       |   3 +
+ tests/sys/netinet6/exthdr.sh      |   2 +
+ tests/sys/netinet6/mld.py         |  76 ++++
+ tests/sys/netinet6/mld.sh         |  89 ++++
+ usr.bin/netstat/inet6.c           |   2 +
+ usr.bin/systat/ip6.c              |  40 +-
+ 31 files changed, 1202 insertions(+), 1081 deletions(-)
+ create mode 100644 tests/sys/netinet6/mld.py
+ create mode 100755 tests/sys/netinet6/mld.sh
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4c1c571db8d9..799d21597a21  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4c1c571db8d9..799d21597a21  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
