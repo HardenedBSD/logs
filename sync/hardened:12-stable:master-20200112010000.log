@@ -1,0 +1,145 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/vm/vm_mmap.c
+CONFLICT (content): Merge conflict in sys/vm/vm_mmap.c
+Auto-merging sys/netinet6/nd6_rtr.c
+Auto-merging sys/compat/linux/linux_mmap.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/vm/vm_mmap.c
+index 39c2865895fd,6f83b9a54182..000000000000
+--- a/sys/vm/vm_mmap.c
++++ b/sys/vm/vm_mmap.c
+@@@ -394,15 -374,11 +406,23 @@@ kern_mmap_fpcheck(struct thread *td, ui
+  			error = EINVAL;
+  			goto done;
+  		}
+++<<<<<<< HEAD
+ +
+ +#ifdef PAX_NOEXEC
+ +		pax_pageexec(td->td_proc, (vm_prot_t *)&prot, &cap_maxprot);
+ +		pax_mprotect(td->td_proc, (vm_prot_t *)&prot, &cap_maxprot);
+ +#endif
+ +#ifdef PAX_ASLR
+ +		KASSERT((flags & MAP_FIXED) == MAP_FIXED || pax_aslr_done == 1,
+ +		    ("%s: ASLR reqiured ...", __func__));
+ +#endif
+++=======
++ 		if (check_fp_fn != NULL) {
++ 			error = check_fp_fn(fp, prot, cap_maxprot, flags);
++ 			if (error != 0)
++ 				goto done;
++ 		}
+++>>>>>>> freebsd/12-stable/master
+  		/* This relies on VM_PROT_* matching PROT_*. */
+  		error = fo_mmap(fp, &vms->vm_map, &addr, size, prot,
+  		    cap_maxprot, flags, pos, td);
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/smbfs/lib/smb/rcfile.c
+	modified:   lib/csu/mips/crt.h
+	modified:   lib/libbe/be.c
+	modified:   lib/libbe/be.h
+	modified:   lib/libbe/be_error.c
+	modified:   lib/libc/secure/stack_protector.c
+	modified:   release/Makefile.vm
+	modified:   sbin/bectl/tests/bectl_test.sh
+	modified:   sbin/ifconfig/ifconfig.8
+	modified:   share/man/man4/lagg.4
+	modified:   share/man/man4/md.4
+	modified:   stand/i386/libi386/biosdisk.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_vcbus.c
+	modified:   sys/compat/linux/linux_mmap.c
+	modified:   sys/dev/cxgbe/iw_cxgbe/qp.c
+	modified:   sys/dev/ixl/if_ixl.c
+	modified:   sys/dev/ixl/ixl.h
+	modified:   sys/dev/usb/controller/dwc_otg_fdt.c
+	modified:   sys/geom/gate/g_gate.c
+	modified:   sys/geom/gate/g_gate.h
+	modified:   sys/geom/geom_disk.c
+	modified:   sys/geom/mountver/g_mountver.c
+	modified:   sys/geom/shsec/g_shsec.c
+	modified:   sys/geom/uzip/g_uzip.c
+	modified:   sys/geom/vinum/geom_vinum.h
+	modified:   sys/geom/vinum/geom_vinum_events.c
+	modified:   sys/geom/vinum/geom_vinum_plex.c
+	modified:   sys/geom/vinum/geom_vinum_raid5.c
+	modified:   sys/geom/vinum/geom_vinum_var.h
+	modified:   sys/geom/vinum/geom_vinum_volume.c
+	modified:   sys/geom/virstor/g_virstor.c
+	modified:   sys/i386/i386/pmap.c
+	modified:   sys/net/if_lagg.c
+	modified:   sys/net/if_lagg.h
+	modified:   sys/net/if_llatbl.c
+	modified:   sys/net/iflib.c
+	modified:   sys/netinet/ip_carp.c
+	modified:   sys/netinet/ip_carp.h
+	modified:   sys/netinet/ip_mroute.c
+	modified:   sys/netinet/tcp_input.c
+	modified:   sys/netinet/udp_usrreq.c
+	modified:   sys/netinet6/dest6.c
+	modified:   sys/netinet6/frag6.c
+	modified:   sys/netinet6/icmp6.c
+	modified:   sys/netinet6/in6.c
+	modified:   sys/netinet6/ip6_input.c
+	modified:   sys/netinet6/ip6_mroute.c
+	modified:   sys/netinet6/ip6_var.h
+	modified:   sys/netinet6/mld6.c
+	modified:   sys/netinet6/mld6_var.h
+	modified:   sys/netinet6/nd6.c
+	modified:   sys/netinet6/nd6.h
+	modified:   sys/netinet6/nd6_nbr.c
+	modified:   sys/netinet6/nd6_rtr.c
+	modified:   sys/netinet6/route6.c
+	modified:   sys/netinet6/sctp6_usrreq.c
+	modified:   sys/netinet6/udp6_usrreq.c
+	modified:   sys/netipsec/xform_ah.c
+	modified:   sys/netipsec/xform_esp.c
+	modified:   sys/sys/syscallsubr.h
+	modified:   tests/sys/netinet6/Makefile
+	modified:   tests/sys/netinet6/exthdr.sh
+	modified:   tests/sys/netinet6/frag6/frag6_03.py
+	modified:   tests/sys/netinet6/frag6/frag6_03.sh
+	new file:   tests/sys/netinet6/mld.py
+	new file:   tests/sys/netinet6/mld.sh
+	modified:   usr.bin/netstat/inet6.c
+	modified:   usr.bin/systat/ip6.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/vm/vm_mmap.c
+
+HEAD is now at 32466041bc6b HBSD: Resolve merge conflicts
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 32466041bc6b HBSD: Resolve merge conflicts
+==== END: hardened/12-stable/master ====
