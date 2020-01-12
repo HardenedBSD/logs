@@ -1,0 +1,70 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging libexec/rtld-elf/rtld.c
+Auto-merging libexec/rtld-elf/amd64/Makefile.inc
+CONFLICT (content): Merge conflict in libexec/rtld-elf/amd64/Makefile.inc
+Auto-merging libexec/rtld-elf/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc libexec/rtld-elf/amd64/Makefile.inc
+index 6848b4151a84,9a4df6e7b648..000000000000
+--- a/libexec/rtld-elf/amd64/Makefile.inc
++++ b/libexec/rtld-elf/amd64/Makefile.inc
+@@@ -1,5 -1,3 +1,9 @@@
+  # $FreeBSD$
+  
+++<<<<<<< HEAD
+ +MK_BIND_NOW=	no
+ +
+ +CFLAGS+=	${CFLAGS_NO_SIMD} -msoft-float
+++=======
++ CFLAGS+=	${CFLAGS_NO_SIMD} -msoft-float -fvisibility=hidden
+++>>>>>>> freebsd/current/master
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   libexec/rtld-elf/Makefile
+	modified:   libexec/rtld-elf/arm/Makefile.inc
+	modified:   libexec/rtld-elf/i386/Makefile.inc
+	new file:   libexec/rtld-elf/mips/Makefile.inc
+	modified:   libexec/rtld-elf/powerpc64/Makefile.inc
+	modified:   libexec/rtld-elf/rtld.c
+	modified:   libexec/rtld-elf/sparc64/Makefile.inc
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   libexec/rtld-elf/amd64/Makefile.inc
+
+HEAD is now at 27a329c94e9f Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 27a329c94e9f Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
