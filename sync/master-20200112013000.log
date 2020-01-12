@@ -14,3 +14,122 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing multimedia/libva-intel-media-driver/files/patch-thread-id
+Removing multimedia/libva-intel-media-driver/files/patch-memalign
+Removing multimedia/libva-intel-media-driver/files/patch-glibc
+Removing multimedia/libva-intel-media-driver/files/patch-fbres
+Removing multimedia/libva-intel-media-driver/files/patch-diagnostics
+Removing multimedia/libva-intel-media-driver/files/patch-clang
+Removing multimedia/gmmlib/files/patch-unix
+Removing multimedia/gmmlib/files/patch-thread-id
+Removing multimedia/gmmlib/files/patch-nullptr
+Removing multimedia/gmmlib/files/patch-malloc
+Removing multimedia/gmmlib/files/patch-limits
+Removing multimedia/gmmlib/files/patch-gcc-atomics
+Merge made by the 'recursive' strategy.
+ audio/ardour5/Makefile                             |   3 +-
+ audio/ardour5/files/patch-libs_fst_wscript         |  10 +
+ audio/libaudec/Makefile                            |   2 +-
+ audio/libaudec/distinfo                            |   6 +-
+ audio/vmpk/Makefile                                |   3 +-
+ audio/vmpk/distinfo                                |   6 +-
+ biology/ngs-sdk/Makefile                           |   2 +-
+ biology/ngs-sdk/distinfo                           |   6 +-
+ biology/ngs-sdk/pkg-plist                          |   2 +-
+ comms/fldigi/Makefile                              |   4 +-
+ comms/fldigi/distinfo                              |   6 +-
+ databases/Makefile                                 |   1 +
+ databases/py-aiosqlite/Makefile                    |  19 ++
+ databases/py-aiosqlite/distinfo                    |   3 +
+ databases/py-aiosqlite/pkg-descr                   |  12 +
+ devel/py-generate/Makefile                         |  13 +-
+ devel/py-generate/distinfo                         |   5 +-
+ devel/py-generate/files/patch-setup.py             |  14 +
+ devel/rust-cbindgen/Makefile                       |   2 +-
+ devel/rust-cbindgen/distinfo                       |   6 +-
+ devel/shards/Makefile                              |   2 +-
+ emulators/wine-devel/Makefile                      |   2 +-
+ emulators/wine-devel/distinfo                      |  10 +-
+ graphics/waifu2x-ncnn-vulkan/Makefile              |   2 +-
+ japanese/Makefile                                  |   1 +
+ japanese/R-cran-zipangu/Makefile                   |  31 +++
+ japanese/R-cran-zipangu/distinfo                   |   3 +
+ japanese/R-cran-zipangu/pkg-descr                  |   6 +
+ lang/crystal/Makefile                              |  23 +-
+ lang/crystal/distinfo                              |  18 +-
+ lang/crystal/pkg-message                           |   3 -
+ lang/crystal/pkg-plist                             | 109 ++++++--
+ mail/py-postfix-mta-sts-resolver/Makefile          |  10 +-
+ math/fplll/Makefile                                |   2 +-
+ math/fplll/distinfo                                |   6 +-
+ math/fplll/pkg-plist                               |   2 +-
+ multimedia/gmmlib/Makefile                         |  19 +-
+ multimedia/gmmlib/distinfo                         |  16 ++
+ multimedia/gmmlib/files/patch-gcc-atomics          | 107 -------
+ multimedia/gmmlib/files/patch-limits               |  16 --
+ multimedia/gmmlib/files/patch-malloc               |  16 --
+ multimedia/gmmlib/files/patch-nullptr              |  31 ---
+ multimedia/gmmlib/files/patch-thread-id            |  57 ----
+ multimedia/gmmlib/files/patch-unix                 | 308 ---------------------
+ multimedia/libva-intel-media-driver/Makefile       |  18 +-
+ multimedia/libva-intel-media-driver/distinfo       |  18 ++
+ .../libva-intel-media-driver/files/patch-clang     |  29 --
+ .../files/patch-diagnostics                        |  13 -
+ .../libva-intel-media-driver/files/patch-fbres     |  77 ------
+ .../libva-intel-media-driver/files/patch-glibc     |  52 ----
+ .../libva-intel-media-driver/files/patch-memalign  |  73 -----
+ .../libva-intel-media-driver/files/patch-thread-id |  54 ----
+ net/py-libcloud/Makefile                           |   2 +-
+ net/py-libcloud/distinfo                           |   6 +-
+ science/gromacs/Makefile                           |   2 +-
+ science/gromacs/distinfo                           |   6 +-
+ science/gromacs/pkg-plist                          | 265 ++----------------
+ security/eschalot/Makefile                         |   4 +-
+ security/eschalot/distinfo                         |   6 +-
+ textproc/Makefile                                  |   1 +
+ textproc/aha/Makefile                              |  23 ++
+ textproc/aha/distinfo                              |   3 +
+ textproc/aha/pkg-descr                             |   3 +
+ 63 files changed, 367 insertions(+), 1213 deletions(-)
+ create mode 100644 audio/ardour5/files/patch-libs_fst_wscript
+ create mode 100644 databases/py-aiosqlite/Makefile
+ create mode 100644 databases/py-aiosqlite/distinfo
+ create mode 100644 databases/py-aiosqlite/pkg-descr
+ create mode 100644 devel/py-generate/files/patch-setup.py
+ create mode 100644 japanese/R-cran-zipangu/Makefile
+ create mode 100644 japanese/R-cran-zipangu/distinfo
+ create mode 100644 japanese/R-cran-zipangu/pkg-descr
+ delete mode 100644 multimedia/gmmlib/files/patch-gcc-atomics
+ delete mode 100644 multimedia/gmmlib/files/patch-limits
+ delete mode 100644 multimedia/gmmlib/files/patch-malloc
+ delete mode 100644 multimedia/gmmlib/files/patch-nullptr
+ delete mode 100644 multimedia/gmmlib/files/patch-thread-id
+ delete mode 100644 multimedia/gmmlib/files/patch-unix
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-clang
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-diagnostics
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-fbres
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-glibc
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-memalign
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-thread-id
+ create mode 100644 textproc/aha/Makefile
+ create mode 100644 textproc/aha/distinfo
+ create mode 100644 textproc/aha/pkg-descr
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6e17c01f4e90..b3bcbc0a23df  master -> master        
+remote:    c4ce3d8a507a..6e17c01f4e90  github/master -> github/master
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6e17c01f4e90..b3bcbc0a23df  master -> master
+==== END: master ====
