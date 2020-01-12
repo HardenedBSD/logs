@@ -1,0 +1,64 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 6 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 27a329c94e9f..419823a8bd5a
+Fast-forward
+ libexec/rtld-elf/Makefile                        | 33 +++---------------------
+ libexec/rtld-elf/amd64/Makefile.inc              |  2 +-
+ libexec/rtld-elf/arm/Makefile.inc                |  6 +++++
+ libexec/rtld-elf/i386/Makefile.inc               |  2 +-
+ libexec/rtld-elf/mips/Makefile.inc               |  3 +++
+ libexec/rtld-elf/powerpc64/Makefile.inc          |  2 ++
+ libexec/rtld-elf/rtld.c                          | 27 +++++--------------
+ libexec/rtld-elf/sparc64/Makefile.inc            |  2 ++
+ sys/dev/usb/controller/xhci.c                    | 16 ------------
+ sys/ofed/drivers/infiniband/ulp/ipoib/ipoib_cm.c |  4 +++
+ 10 files changed, 28 insertions(+), 69 deletions(-)
+ create mode 100644 libexec/rtld-elf/mips/Makefile.inc
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/proc.h
+Auto-merging sys/kern/kern_thread.c
+Merge made by the 'recursive' strategy.
+ sbin/fsck_msdosfs/boot.c                           |  17 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_dir.c        |   2 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |   6 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_znode.c      |   6 +-
+ sys/dev/virtio/network/if_vtnet.c                  |   2 +-
+ sys/dts/arm64/overlays/sun50i-a64-spi0-spigen.dtso |  17 ++
+ sys/kern/kern_thread.c                             |   2 +-
+ sys/kern/subr_trap.c                               |   4 +-
+ sys/kern/vfs_cache.c                               |   4 +-
+ sys/kern/vfs_hash.c                                |   2 +-
+ sys/kern/vfs_subr.c                                | 249 ++++++++++++---------
+ sys/modules/dtb/allwinner/Makefile                 |   1 +
+ sys/netinet6/in6_mcast.c                           |   6 +-
+ sys/netinet6/in6_var.h                             |   2 -
+ sys/powerpc/mpc85xx/lbc.c                          |   4 +-
+ sys/sys/proc.h                                     |   2 +-
+ sys/sys/vnode.h                                    |   8 +-
+ 17 files changed, 194 insertions(+), 140 deletions(-)
+ create mode 100644 sys/dts/arm64/overlays/sun50i-a64-spi0-spigen.dtso
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    419823a8bd5a..1966d70d14d9  hardened/current/master -> hardened/current/master        
+remote:    770c4b4d6570..f378822de743  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   419823a8bd5a..1966d70d14d9  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
