@@ -1,0 +1,103 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 32 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 32466041bc6b..6dd5e9c0f59c
+Fast-forward
+ .../opensolaris/lib/libdtrace/common/dt_link.c     |  78 +-
+ contrib/smbfs/lib/smb/rcfile.c                     |   8 +
+ lib/csu/mips/crt.h                                 |  11 +-
+ lib/libbe/be.c                                     | 254 +++++-
+ lib/libbe/be.h                                     |   1 +
+ lib/libbe/be_error.c                               |   3 +
+ lib/libc/secure/stack_protector.c                  |   8 +-
+ release/Makefile.vm                                |   2 +-
+ sbin/bectl/tests/bectl_test.sh                     |  45 +
+ sbin/ifconfig/ifconfig.8                           |   5 +-
+ share/man/man4/lagg.4                              |   2 +-
+ share/man/man4/md.4                                |  10 +-
+ share/man/man4/snd_hda.4                           |   8 +-
+ stand/i386/libi386/biosdisk.c                      |   6 +-
+ sys/arm/broadcom/bcm2835/bcm2835_vcbus.c           |   5 +-
+ sys/compat/linux/linux_mmap.c                      |  43 +-
+ sys/dev/cxgbe/iw_cxgbe/qp.c                        |  11 +-
+ sys/dev/ixl/if_ixl.c                               |  28 +-
+ sys/dev/ixl/ixl.h                                  |   1 +
+ sys/dev/sound/pci/hda/hdaa.c                       |  16 +-
+ sys/dev/sound/pci/hda/hdaa.h                       |   1 +
+ sys/dev/usb/controller/dwc_otg_fdt.c               |  26 +-
+ sys/geom/gate/g_gate.c                             |  92 ++-
+ sys/geom/gate/g_gate.h                             |   9 +-
+ sys/geom/geom_disk.c                               |  12 +-
+ sys/geom/mountver/g_mountver.c                     |  68 +-
+ sys/geom/shsec/g_shsec.c                           |  52 +-
+ sys/geom/uzip/g_uzip.c                             |  60 +-
+ sys/geom/vinum/geom_vinum.h                        |   1 +
+ sys/geom/vinum/geom_vinum_events.c                 |  20 +-
+ sys/geom/vinum/geom_vinum_plex.c                   |  12 +-
+ sys/geom/vinum/geom_vinum_raid5.c                  |   4 +
+ sys/geom/vinum/geom_vinum_var.h                    |   2 +
+ sys/geom/vinum/geom_vinum_volume.c                 |   2 +
+ sys/geom/virstor/g_virstor.c                       |  54 +-
+ sys/i386/i386/pmap.c                               |   6 +-
+ sys/net/if_lagg.c                                  |  48 +-
+ sys/net/if_lagg.h                                  |   5 +-
+ sys/net/if_llatbl.c                                |  20 +-
+ sys/net/iflib.c                                    |   5 +-
+ sys/netinet/ip_carp.c                              |  19 +-
+ sys/netinet/ip_carp.h                              |   4 +-
+ sys/netinet/ip_mroute.c                            |  26 +-
+ sys/netinet/tcp_input.c                            |  33 +-
+ sys/netinet/udp_usrreq.c                           |   3 +-
+ sys/netinet6/dest6.c                               |  45 +-
+ sys/netinet6/frag6.c                               | 100 +--
+ sys/netinet6/icmp6.c                               | 319 ++++---
+ sys/netinet6/in6.c                                 |   3 +-
+ sys/netinet6/ip6_input.c                           | 182 +---
+ sys/netinet6/ip6_mroute.c                          |  23 +-
+ sys/netinet6/ip6_var.h                             |   1 +
+ sys/netinet6/mld6.c                                |  26 +-
+ sys/netinet6/mld6_var.h                            |   2 +-
+ sys/netinet6/nd6.c                                 | 138 +---
+ sys/netinet6/nd6.h                                 |  11 +-
+ sys/netinet6/nd6_nbr.c                             | 128 +--
+ sys/netinet6/nd6_rtr.c                             | 916 ++++++++++++---------
+ sys/netinet6/route6.c                              |  26 +-
+ sys/netinet6/sctp6_usrreq.c                        |  14 +-
+ sys/netinet6/udp6_usrreq.c                         |  26 +-
+ sys/netipsec/xform_ah.c                            |  16 +-
+ sys/netipsec/xform_esp.c                           |  13 +-
+ sys/sys/syscallsubr.h                              |   5 +
+ sys/vm/vm_mmap.c                                   |  17 +
+ tests/sys/netinet6/Makefile                        |   3 +
+ tests/sys/netinet6/exthdr.sh                       |   2 +
+ tests/sys/netinet6/frag6/frag6_03.py               |  27 +
+ tests/sys/netinet6/frag6/frag6_03.sh               |  20 +-
+ tests/sys/netinet6/mld.py                          |  76 ++
+ tests/sys/netinet6/mld.sh                          |  89 ++
+ usr.bin/netstat/inet6.c                            |   2 +
+ usr.bin/systat/ip6.c                               |  40 +-
+ 73 files changed, 2028 insertions(+), 1371 deletions(-)
+ create mode 100644 tests/sys/netinet6/mld.py
+ create mode 100755 tests/sys/netinet6/mld.sh
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Already up to date.
+Everything up-to-date
+==== END: hardened/12-stable/master ====
