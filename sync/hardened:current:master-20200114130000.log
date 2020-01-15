@@ -1,0 +1,81 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 34 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 546919edd288..13ab24e35207
+Fast-forward
+ contrib/llvm-project/llvm/lib/Target/Mips/Mips.td  |  3 +
+ .../llvm/lib/Target/Mips/Mips64InstrInfo.td        | 34 ++++++++
+ .../llvm/lib/Target/Mips/MipsInstrInfo.td          |  6 +-
+ release/Makefile                                   |  2 +-
+ release/Makefile.vm                                |  6 ++
+ sbin/savecore/savecore.c                           |  7 +-
+ share/man/man4/Makefile                            |  4 +-
+ share/man/man4/tap.4                               |  6 +-
+ share/man/man5/src.conf.5                          | 14 +++-
+ .../opensolaris/uts/common/fs/zfs/sys/zio.h        |  9 +--
+ sys/compat/linux/linux_misc.c                      |  2 +-
+ sys/compat/linux/linux_socket.c                    | 39 +++++-----
+ sys/compat/linuxkpi/common/src/linux_rcu.c         |  3 +-
+ sys/dev/cxgbe/iw_cxgbe/iw_cxgbe.h                  |  1 +
+ sys/dev/cxgbe/iw_cxgbe/mem.c                       |  2 +
+ sys/dev/cxgbe/iw_cxgbe/qp.c                        | 14 +++-
+ sys/dev/netmap/if_ptnet.c                          |  3 +
+ sys/dev/netmap/netmap_kern.h                       |  1 -
+ sys/dev/vmware/vmxnet3/if_vmx.c                    |  2 +-
+ sys/fs/nfs/nfsv4_errstr.h                          |  2 +-
+ sys/kern/kern_prot.c                               |  2 +-
+ sys/kern/subr_bus.c                                |  3 +-
+ sys/kern/subr_epoch.c                              |  2 +-
+ sys/net/netmap_virt.h                              |  4 +-
+ sys/netinet/tcp_subr.c                             | 10 ++-
+ sys/powerpc/mpc85xx/lbc.c                          |  2 +-
+ sys/ufs/ffs/ffs_softdep.c                          | 14 +++-
+ sys/ufs/ffs/ffs_vnops.c                            |  2 +-
+ sys/ufs/ufs/inode.h                                |  6 ++
+ sys/vm/uma.h                                       |  2 +-
+ sys/vm/uma_core.c                                  | 91 ++++++++++++++--------
+ sys/vm/uma_int.h                                   | 21 ++---
+ sys/vm/vm_pageout.c                                |  1 +
+ usr.bin/Makefile                                   |  2 +-
+ usr.bin/diff/diff.c                                |  6 +-
+ usr.bin/diff/diffreg.c                             | 17 ++--
+ usr.bin/diff/xmalloc.c                             |  4 +-
+ usr.bin/gprof/Makefile                             |  2 +-
+ usr.bin/gprof/gprof.h                              |  3 +
+ usr.bin/gprof/riscv.h                              | 41 ++++++++++
+ usr.sbin/fstyp/hammer.c                            |  4 +-
+ usr.sbin/fstyp/hammer2.c                           |  5 --
+ 42 files changed, 281 insertions(+), 123 deletions(-)
+ create mode 100644 usr.bin/gprof/riscv.h
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/compat/linux/linux_socket.c                 | 25 +++++++------------------
+ sys/dev/hyperv/storvsc/hv_storvsc_drv_freebsd.c |  6 +++++-
+ sys/dev/hyperv/storvsc/hv_vstorage.h            |  3 ++-
+ tools/build/options/WITH_AMD                    |  9 ++++++---
+ usr.bin/diff/diffreg.c                          |  2 +-
+ 5 files changed, 21 insertions(+), 24 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    13ab24e35207..1c7a8381552e  hardened/current/master -> hardened/current/master        
+remote:    2e64d12585dd..c43640d63071  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   13ab24e35207..1c7a8381552e  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
