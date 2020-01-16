@@ -1,0 +1,74 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging share/mk/src.libnames.mk
+Auto-merging share/man/man4/Makefile
+Auto-merging release/Makefile
+Auto-merging lib/Makefile
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                               |   2 +-
+ ObsoleteFiles.inc                           |   7 ++
+ gnu/lib/Makefile                            |   1 -
+ lib/Makefile                                |   6 +-
+ lib/libc/Makefile.depend.options            |   2 +-
+ lib/libc/locale/collate.c                   |   9 +-
+ lib/libc/locale/rune.c                      |   2 +-
+ lib/libssp/Makefile                         |  20 +++++
+ lib/libssp/Symbol.map                       |  26 ++++++
+ lib/libssp/Versions.def                     |   4 +
+ lib/libssp/fortify_stubs.c                  | 134 ++++++++++++++++++++++++++++
+ lib/libssp_nonshared/Makefile               |  11 +++
+ lib/libssp_nonshared/libssp_nonshared.c     |  17 ++++
+ lib/libsysdecode/Makefile.depend            |   2 +-
+ release/Makefile                            |   2 +-
+ release/Makefile.vm                         |   6 ++
+ share/man/man4/Makefile                     |   4 +-
+ share/man/man4/tap.4                        |   6 +-
+ share/mk/local.dirdeps.mk                   |   2 +-
+ share/mk/local.gendirdeps.mk                |   2 +-
+ share/mk/src.libnames.mk                    |   4 +-
+ stand/fdt/fdt_loader_cmd.c                  |  40 +++++++--
+ stand/fdt/fdt_platform.h                    |   3 +-
+ stand/uboot/fdt/uboot_fdt.c                 |   5 +-
+ sys/dev/extres/regulator/regulator.c        |  34 +++++--
+ targets/pseudo/userland/gnu/Makefile.depend |   2 -
+ tools/build/mk/OptionalObsoleteFiles.inc    |  35 --------
+ 27 files changed, 319 insertions(+), 69 deletions(-)
+ create mode 100644 lib/libssp/Makefile
+ create mode 100644 lib/libssp/Symbol.map
+ create mode 100644 lib/libssp/Versions.def
+ create mode 100644 lib/libssp/fortify_stubs.c
+ create mode 100644 lib/libssp_nonshared/Makefile
+ create mode 100644 lib/libssp_nonshared/libssp_nonshared.c
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    a5c65b148914..6bb046840587  hardened/12-stable/master -> hardened/12-stable/master
+remote:    d37b816efe43..717a75995a52  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   a5c65b148914..6bb046840587  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
