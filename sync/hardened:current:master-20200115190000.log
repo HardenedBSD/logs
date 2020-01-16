@@ -1,0 +1,68 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/vfs_mount.c
+Merge made by the 'recursive' strategy.
+ lib/libc/powerpc64/string/Makefile.inc        |  18 ++
+ lib/libc/powerpc64/string/bcopy.S             | 306 ++++++++++++++++++++++++++
+ lib/libc/powerpc64/string/bcopy_resolver.c    |  68 ++++++
+ lib/libc/powerpc64/string/bcopy_vsx.S         |  61 +++++
+ lib/libc/powerpc64/string/memcpy.S            | 122 ++++++++++
+ lib/libc/powerpc64/string/memcpy_resolver.c   |   4 +
+ lib/libc/powerpc64/string/memcpy_vsx.S        |  65 ++++++
+ lib/libc/powerpc64/string/memmove.S           |   4 +
+ lib/libc/powerpc64/string/memmove_resolver.c  |   4 +
+ lib/libc/powerpc64/string/memmove_vsx.S       |   5 +
+ lib/libc/powerpc64/string/strcpy.c            |  33 +++
+ lib/libc/powerpc64/string/strcpy_arch_2_05.S  | 144 ++++++++++++
+ lib/libc/powerpc64/string/strcpy_resolver.c   |  47 ++++
+ lib/libc/powerpc64/string/strncpy.c           |  33 +++
+ lib/libc/powerpc64/string/strncpy_arch_2_05.S | 131 +++++++++++
+ lib/libc/powerpc64/string/strncpy_resolver.c  |  48 ++++
+ lib/libc/string/strcpy.c                      |  11 +-
+ lib/libc/string/strncpy.c                     |  11 +-
+ share/man/man4/acpi_ibm.4                     |   4 +-
+ sys/dev/acpi_support/acpi_ibm.c               |   6 +-
+ sys/kern/vfs_mount.c                          |   4 +-
+ 21 files changed, 1119 insertions(+), 10 deletions(-)
+ create mode 100644 lib/libc/powerpc64/string/Makefile.inc
+ create mode 100644 lib/libc/powerpc64/string/bcopy.S
+ create mode 100644 lib/libc/powerpc64/string/bcopy_resolver.c
+ create mode 100644 lib/libc/powerpc64/string/bcopy_vsx.S
+ create mode 100644 lib/libc/powerpc64/string/memcpy.S
+ create mode 100644 lib/libc/powerpc64/string/memcpy_resolver.c
+ create mode 100644 lib/libc/powerpc64/string/memcpy_vsx.S
+ create mode 100644 lib/libc/powerpc64/string/memmove.S
+ create mode 100644 lib/libc/powerpc64/string/memmove_resolver.c
+ create mode 100644 lib/libc/powerpc64/string/memmove_vsx.S
+ create mode 100644 lib/libc/powerpc64/string/strcpy.c
+ create mode 100644 lib/libc/powerpc64/string/strcpy_arch_2_05.S
+ create mode 100644 lib/libc/powerpc64/string/strcpy_resolver.c
+ create mode 100644 lib/libc/powerpc64/string/strncpy.c
+ create mode 100644 lib/libc/powerpc64/string/strncpy_arch_2_05.S
+ create mode 100644 lib/libc/powerpc64/string/strncpy_resolver.c
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ea0e9ad0d979..5cf2fa313d6a  hardened/current/master -> hardened/current/master        
+remote:    a35182c66d88..6bddef56a68b  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ea0e9ad0d979..5cf2fa313d6a  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
