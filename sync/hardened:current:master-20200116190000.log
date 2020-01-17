@@ -1,0 +1,51 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ share/man/man9/fdt_pinctrl.9                |  33 +++
+ sys/arm/allwinner/a10_ahci.c                |  55 ++--
+ sys/arm/allwinner/aw_gpio.c                 | 247 +++++++++++------
+ sys/arm/allwinner/axp81x.c                  |  36 +++
+ sys/arm64/conf/GENERIC                      |   1 +
+ sys/arm64/rockchip/clk/rk3399_pmucru.c      |   3 +-
+ sys/arm64/rockchip/rk_gpio.c                |  42 ++-
+ sys/arm64/rockchip/rk_pinctrl.c             | 278 +++++++++++++++++++
+ sys/arm64/rockchip/rk_pwm.c                 | 403 ++++++++++++++++++++++++++++
+ sys/conf/files.arm64                        |   1 +
+ sys/dev/extres/regulator/regulator_fixed.c  |  16 ++
+ sys/dev/fdt/fdt_pinctrl_if.m                |  58 ++++
+ sys/dev/mmc/host/dwmmc.c                    |   5 +-
+ sys/dev/mmc/host/dwmmc_var.h                |   1 -
+ sys/fs/unionfs/union_vfsops.c               |   1 +
+ sys/kern/vfs_subr.c                         | 175 ++++++------
+ sys/netgraph/ng_eiface.c                    |   5 +-
+ usr.bin/random/randomize_fd.c               |   2 +-
+ usr.sbin/extattr/rmextattr.c                |   2 +-
+ usr.sbin/periodic/etc/security/520.pfdenied |   2 +-
+ 20 files changed, 1166 insertions(+), 200 deletions(-)
+ create mode 100644 sys/arm64/rockchip/rk_pwm.c
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    2cc810b6bd7d..8c4af2c88796  hardened/current/master -> hardened/current/master        
+remote:    d73b80180e5b..6fa9e6bb14a5  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   2cc810b6bd7d..8c4af2c88796  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
