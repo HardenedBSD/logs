@@ -1,0 +1,275 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/tinyproxy/Makefile
+Auto-merging textproc/odt2txt/Makefile
+CONFLICT (content): Merge conflict in textproc/odt2txt/Makefile
+Auto-merging sysutils/pciutils/Makefile
+Auto-merging net/vnstat/Makefile
+CONFLICT (content): Merge conflict in net/vnstat/Makefile
+Auto-merging misc/help2man/Makefile
+CONFLICT (content): Merge conflict in misc/help2man/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging graphics/netpbm/Makefile
+Auto-merging editors/hexedit/Makefile
+CONFLICT (content): Merge conflict in editors/hexedit/Makefile
+Removing cad/ktechlab/files/patch-src_electronics_port.cpp
+Removing cad/ktechlab/files/patch-src_electronics_gpsimprocessor.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc editors/hexedit/Makefile
+index 2787ed04b876,bb95e5858db0..000000000000
+--- a/editors/hexedit/Makefile
++++ b/editors/hexedit/Makefile
+@@@ -11,12 -11,11 +11,17 @@@ COMMENT=	View and edit files in hexadec
+  LICENSE=	GPLv2
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+- GNU_CONFIGURE=	yes
+  USES=		autoreconf ncurses
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +PLIST_FILES=	bin/hexedit man/man1/hexedit.1.gz
+++=======
++ GNU_CONFIGURE=	yes
++ 
++ PLIST_FILES=	bin/hexedit share/man/man1/hexedit.1.gz
+++>>>>>>> freebsd/master
+  
+  GH_ACCOUNT=	pixel
+  USE_GITHUB=	yes
+diff --cc misc/help2man/Makefile
+index c500f6585662,9e669a9ef96b..000000000000
+--- a/misc/help2man/Makefile
++++ b/misc/help2man/Makefile
+@@@ -12,10 -12,6 +12,13 @@@ COMMENT=	Automatically generating simpl
+  LICENSE=	GPLv3
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +OPTIONS_DEFINE=	NLS
+ +
+++=======
+++>>>>>>> freebsd/master
+  USES=		gmake localbase perl5 tar:xz
+  
+  GNU_CONFIGURE=	yes
+diff --cc net/vnstat/Makefile
+index 528a3fb80a7d,b8c10956708c..000000000000
+--- a/net/vnstat/Makefile
++++ b/net/vnstat/Makefile
+@@@ -11,17 -11,13 +11,20 @@@ COMMENT=	Console-based network traffic 
+  
+  LICENSE=	GPLv2
+  
+- LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
++ USES=		gmake sqlite
+  
+  GNU_CONFIGURE=	yes
+++<<<<<<< HEAD
+ +
+ +USE_HARDENING=	cfi safestack
+ +
+ +USES=	gmake
+++=======
+++>>>>>>> freebsd/master
+  USE_RC_SUBR=	vnstat
+  
+- USERS=	vnstat
+- GROUPS=	vnstat
++ USERS=		vnstat
++ GROUPS=		vnstat
+  
+  PORTDOCS=	README INSTALL_BSD UPGRADE
+  SUB_FILES=	pkg-message
+diff --cc textproc/odt2txt/Makefile
+index 9e7b366fc7f2,0a0fec32bbb1..000000000000
+--- a/textproc/odt2txt/Makefile
++++ b/textproc/odt2txt/Makefile
+@@@ -14,9 -14,8 +14,14 @@@ LICENSE_FILE=	${WRKSRC}/GPL-
+  
+  USES=		gmake iconv localbase
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +PLIST_FILES=	bin/odt2txt man/man1/odt2txt.1.gz
+++=======
++ PLIST_FILES=	bin/odt2txt \
++ 		share/man/man1/odt2txt.1.gz
+++>>>>>>> freebsd/master
+  
+  GH_ACCOUNT=	dstosberg
+  USE_GITHUB=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   astro/weather/Makefile
+	modified:   audio/id3v2/Makefile
+	modified:   audio/id3v2/files/patch-Makefile
+	modified:   audio/mp3info/Makefile
+	modified:   audio/mp3info/pkg-descr
+	modified:   audio/yoshimi/Makefile
+	modified:   audio/yoshimi/distinfo
+	modified:   audio/yoshimi/pkg-plist
+	modified:   biology/gperiodic/Makefile
+	modified:   biology/gperiodic/pkg-descr
+	modified:   cad/ktechlab/Makefile
+	modified:   cad/ktechlab/distinfo
+	modified:   cad/ktechlab/files/patch-doc_en_CMakeLists.txt
+	deleted:    cad/ktechlab/files/patch-src_electronics_gpsimprocessor.cpp
+	deleted:    cad/ktechlab/files/patch-src_electronics_port.cpp
+	modified:   databases/p5-DBD-Pg/Makefile
+	modified:   databases/p5-DBD-Pg/distinfo
+	modified:   devel/Makefile
+	modified:   devel/cmake/Makefile
+	new file:   devel/cmake/files/patch-Modules_FindFLEX.cmake
+	modified:   devel/jetbrains-goland/Makefile
+	modified:   devel/jetbrains-goland/distinfo
+	modified:   devel/jetbrains-goland/pkg-plist
+	modified:   devel/libphonenumber/Makefile
+	new file:   devel/libphonenumber/files/patch-src_phonenumbers_base_memory_singleton.h
+	new file:   devel/libphonenumber/files/patch-src_phonenumbers_base_synchronization_lock.h
+	new file:   devel/libphonenumber/files/patch-src_phonenumbers_base_thread__checker.h
+	modified:   devel/p5-FFI-Platypus/Makefile
+	modified:   devel/p5-FFI-Platypus/distinfo
+	new file:   devel/p5-File-Find-Object-Rule/Makefile
+	new file:   devel/p5-File-Find-Object-Rule/distinfo
+	new file:   devel/p5-File-Find-Object-Rule/pkg-descr
+	new file:   devel/p5-File-Find-Object-Rule/pkg-plist
+	modified:   devel/p5-Term-ANSIColor/Makefile
+	modified:   devel/p5-Term-ANSIColor/distinfo
+	new file:   devel/p5-Test-TrailingSpace/Makefile
+	new file:   devel/p5-Test-TrailingSpace/distinfo
+	new file:   devel/p5-Test-TrailingSpace/pkg-descr
+	new file:   devel/p5-Test-TrailingSpace/pkg-plist
+	modified:   devel/py-iniparse/Makefile
+	modified:   devel/py-pooch/Makefile
+	modified:   devel/py-pooch/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-mercenary/Makefile
+	modified:   devel/rubygem-mercenary/distinfo
+	new file:   devel/rubygem-middleware/Makefile
+	new file:   devel/rubygem-middleware/distinfo
+	new file:   devel/rubygem-middleware/pkg-descr
+	modified:   devel/tradcpp/Makefile
+	modified:   graphics/dcraw/Makefile
+	modified:   graphics/jhead/Makefile
+	modified:   graphics/lcms/Makefile
+	modified:   graphics/lcms2/Makefile
+	modified:   graphics/netpbm/Makefile
+	modified:   graphics/netpbm/distinfo
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/rust-nightly/files/patch-src_librustc__target_spec_i686__unknown__freebsd.rs
+	modified:   lang/rust/Makefile
+	modified:   multimedia/olive/Makefile
+	modified:   multimedia/olive/distinfo
+	modified:   multimedia/olive/files/patch-olive.pro
+	modified:   multimedia/olive/pkg-plist
+	modified:   net/mDNSResponder/Makefile
+	modified:   net/mDNSResponder/pkg-plist
+	modified:   net/netpipes/pkg-plist
+	modified:   net/pptpclient/Makefile
+	modified:   net/vnstat/pkg-descr
+	modified:   net/vnstat/pkg-plist
+	modified:   science/yoda/Makefile
+	modified:   science/yoda/distinfo
+	modified:   sysutils/gdisk/Makefile
+	modified:   sysutils/gdisk/pkg-plist
+	modified:   sysutils/lfm/Makefile
+	modified:   sysutils/lr/Makefile
+	modified:   sysutils/lr/distinfo
+	modified:   sysutils/moreutils/Makefile
+	modified:   sysutils/moreutils/pkg-plist
+	modified:   sysutils/pciutils/Makefile
+	modified:   sysutils/shlock/Makefile
+	modified:   sysutils/timelimit/Makefile
+	modified:   sysutils/upower/Makefile
+	modified:   sysutils/upower/distinfo
+	modified:   sysutils/upower/pkg-plist
+	modified:   textproc/confget/Makefile
+	modified:   textproc/p5-XML-LibXSLT/Makefile
+	modified:   textproc/p5-XML-LibXSLT/distinfo
+	modified:   textproc/pdfoutline/Makefile
+	modified:   textproc/py-xhtml2pdf/Makefile
+	modified:   textproc/py-xhtml2pdf/distinfo
+	modified:   textproc/translate-toolkit/Makefile
+	modified:   textproc/translate-toolkit/pkg-descr
+	modified:   www/py-utidylib/Makefile
+	modified:   www/py-wfuzz/Makefile
+	modified:   www/py-wfuzz/distinfo
+	modified:   www/rubygem-jekyll/Makefile
+	new file:   www/rubygem-jekyll/files/patch-gemspec
+	modified:   www/rubygem-jekyll3/Makefile
+	modified:   www/rubygem-jekyll3/files/patch-gemspec
+	modified:   www/rubygem-octopress/Makefile
+	new file:   www/rubygem-octopress/files/patch-gemspec
+	modified:   www/tinyproxy/Makefile
+	modified:   www/tinyproxy/pkg-plist
+	modified:   x11/xfce4-whiskermenu-plugin/Makefile
+	modified:   x11/xfce4-whiskermenu-plugin/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   editors/hexedit/Makefile
+	both modified:   misc/help2man/Makefile
+	both modified:   net/vnstat/Makefile
+	both modified:   textproc/odt2txt/Makefile
+
+
+It took 3.52 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 8625935caf2e Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.38 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 8625935caf2e Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
