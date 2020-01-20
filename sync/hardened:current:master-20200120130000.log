@@ -1,0 +1,55 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing tools/build/options/WITHOUT_PC_SYSINSTALL
+Auto-merging sys/x86/x86/mp_x86.c
+Auto-merging lib/libc/tests/stdlib/Makefile
+Merge made by the 'recursive' strategy.
+ include/stdlib.h                          |   8 +
+ lib/libc/stdlib/Makefile.inc              |   7 +-
+ lib/libc/stdlib/Symbol.map                |   4 +
+ lib/libc/stdlib/qsort.3                   |  61 ++++++-
+ lib/libc/stdlib/qsort.c                   |  57 ++++++-
+ lib/libc/stdlib/qsort_s.c                 |   8 +
+ lib/libc/tests/stdlib/Makefile            |   2 +
+ lib/libc/tests/stdlib/qsort_r_test.c      |  92 +++++++++++
+ lib/libc/tests/stdlib/qsort_s_test.c      | 257 ++++++++++++++++++++++++++++++
+ share/man/man7/hier.7                     |   8 +-
+ sys/compat/linux/linux_file.c             |   7 +-
+ sys/compat/linux/linux_file.h             |   5 +
+ sys/dev/e1000/e1000_api.c                 |   1 +
+ sys/dev/e1000/e1000_hw.h                  |   1 +
+ sys/dev/e1000/if_em.c                     |   1 +
+ sys/kern/vfs_cache.c                      |  57 +------
+ sys/x86/x86/mp_x86.c                      |   7 +-
+ tools/build/options/WITHOUT_PC_SYSINSTALL |   4 -
+ 18 files changed, 509 insertions(+), 78 deletions(-)
+ create mode 100644 lib/libc/stdlib/qsort_s.c
+ create mode 100644 lib/libc/tests/stdlib/qsort_r_test.c
+ create mode 100644 lib/libc/tests/stdlib/qsort_s_test.c
+ delete mode 100644 tools/build/options/WITHOUT_PC_SYSINSTALL
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    62a082298230..7870fa4f9b89  hardened/current/master -> hardened/current/master        
+remote:    7b465d316297..85db09767d01  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   62a082298230..7870fa4f9b89  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
