@@ -14,3 +14,231 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/trafficserver/Makefile
+CONFLICT (content): Merge conflict in www/trafficserver/Makefile
+Removing www/py-utidylib/files/patch-tidy-lib.py
+Removing security/py-pymacaroons-pynacl/pkg-descr
+Removing security/py-pymacaroons-pynacl/distinfo
+Removing security/p5-Net-SSLeay/files/patch-libressl-2.9
+Removing security/p5-Net-SSLeay/files/patch-SSLeay.pm
+Auto-merging security/Makefile
+Auto-merging net/wireshark/Makefile
+Auto-merging net/vnstat/Makefile
+Auto-merging misc/mc/Makefile
+Auto-merging devel/bison/Makefile
+Auto-merging Mk/bsd.port.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc www/trafficserver/Makefile
+index 54405adcc271,6bc4fab5093f..000000000000
+--- a/www/trafficserver/Makefile
++++ b/www/trafficserver/Makefile
+@@@ -12,9 -12,7 +12,13 @@@ COMMENT=	Fast, scalable and extensible 
+  
+  LICENSE=	APACHE20
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +ONLY_FOR_ARCHS=	amd64
+++=======
++ ONLY_FOR_ARCHS=	amd64 powerpc64
+++>>>>>>> freebsd/master
+  
+  LIB_DEPENDS=	libcurl.so:ftp/curl \
+  		libhwloc.so:devel/hwloc \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   GIDs
+	modified:   MOVED
+	modified:   Mk/bsd.port.mk
+	modified:   archivers/cabextract/Makefile
+	modified:   databases/db5/Makefile
+	modified:   databases/db6/Makefile
+	modified:   databases/p5-Tie-DBI/Makefile
+	modified:   databases/p5-Tie-DBI/distinfo
+	modified:   deskutils/calibre/Makefile
+	modified:   deskutils/calibre/files/calibre.in
+	modified:   devel/Makefile
+	modified:   devel/bison/Makefile
+	modified:   devel/bison/distinfo
+	modified:   devel/cgit/Makefile
+	modified:   devel/cgit/distinfo
+	modified:   devel/p5-IO-Stty/Makefile
+	modified:   devel/p5-IO-Stty/distinfo
+	modified:   devel/p5-IO-Stty/pkg-plist
+	modified:   devel/p5-IO-Tty/Makefile
+	modified:   devel/p5-IO-Tty/distinfo
+	modified:   devel/p5-IO-Tty/pkg-plist
+	modified:   devel/p5-Set-Object/Makefile
+	modified:   devel/p5-Set-Object/distinfo
+	modified:   devel/p5-Tie-File/Makefile
+	modified:   devel/p5-Tie-File/distinfo
+	modified:   devel/php-composer/Makefile
+	modified:   devel/php-composer/distinfo
+	modified:   devel/py-asn1crypto/Makefile
+	modified:   devel/py-cliff/Makefile
+	modified:   devel/py-cmd2/Makefile
+	modified:   devel/py-cmd2/distinfo
+	new file:   devel/py-cmd208/Makefile
+	new file:   devel/py-cmd208/distinfo
+	new file:   devel/py-cmd208/pkg-descr
+	new file:   devel/py-immutables/Makefile
+	new file:   devel/py-immutables/distinfo
+	new file:   devel/py-immutables/pkg-descr
+	modified:   devel/py-invoke/Makefile
+	modified:   devel/py-libzfs/Makefile
+	modified:   devel/py-setuptools/Makefile
+	modified:   devel/py-setuptools/distinfo
+	modified:   devel/py-subvertpy/Makefile
+	modified:   devel/py-twine/Makefile
+	modified:   devel/py-twine/distinfo
+	new file:   devel/py-twine1/Makefile
+	new file:   devel/py-twine1/distinfo
+	new file:   devel/py-twine1/pkg-descr
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-byebug/Makefile
+	modified:   devel/rubygem-byebug/distinfo
+	modified:   editors/libreoffice/Makefile
+	modified:   german/mythes/Makefile
+	modified:   german/mythes/distinfo
+	modified:   graphics/libimg/Makefile
+	modified:   graphics/libimg/distinfo
+	modified:   graphics/libimg/files/patch-jpeg
+	modified:   graphics/libimg/files/patch-tiff
+	modified:   graphics/libimg/pkg-plist
+	modified:   mail/rss2email2/Makefile
+	modified:   mail/rubygem-roadie-rails52/Makefile
+	modified:   math/octave-forge-audio/Makefile
+	modified:   misc/mc/Makefile
+	modified:   misc/mc/distinfo
+	modified:   misc/mc/pkg-plist
+	modified:   multimedia/libcec/Makefile
+	modified:   multimedia/libcec/files/patch-src_libcec_cmake_SetBuildInfo.cmake
+	modified:   multimedia/libcec/pkg-plist
+	modified:   multimedia/py-cec/Makefile
+	modified:   multimedia/py-cec/pkg-descr
+	modified:   net-im/py-matrix-synapse/Makefile
+	modified:   net-p2p/sonarr-devel/Makefile
+	modified:   net-p2p/sonarr-devel/distinfo
+	modified:   net/Makefile
+	new file:   net/lualdap-51/Makefile
+	modified:   net/lualdap/Makefile
+	modified:   net/py-matrix-synapse-ldap3/Makefile
+	modified:   net/py-matrix-synapse-ldap3/pkg-descr
+	modified:   net/vnstat/Makefile
+	modified:   net/vnstat/distinfo
+	modified:   net/wireshark/Makefile
+	modified:   net/wireshark/distinfo
+	modified:   net/wireshark/pkg-plist
+	modified:   security/Makefile
+	modified:   security/p5-Net-SSLeay/Makefile
+	modified:   security/p5-Net-SSLeay/distinfo
+	new file:   security/p5-Net-SSLeay/files/patch-Makefile.PL
+	deleted:    security/p5-Net-SSLeay/files/patch-SSLeay.pm
+	deleted:    security/p5-Net-SSLeay/files/patch-libressl-2.9
+	modified:   security/p5-openxpki-i18n/Makefile
+	modified:   security/p5-openxpki-i18n/distinfo
+	modified:   security/p5-openxpki/Makefile
+	modified:   security/p5-openxpki/distinfo
+	modified:   security/p5-openxpki/pkg-plist
+	deleted:    security/py-pymacaroons-pynacl/distinfo
+	deleted:    security/py-pymacaroons-pynacl/pkg-descr
+	renamed:    security/py-pymacaroons-pynacl/Makefile -> security/py-pymacaroons/Makefile
+	new file:   security/py-pymacaroons/distinfo
+	new file:   security/py-pymacaroons/pkg-descr
+	modified:   security/py-pysodium/Makefile
+	modified:   security/py-pysodium/distinfo
+	modified:   sysutils/debhelper/Makefile
+	modified:   sysutils/debhelper/distinfo
+	modified:   sysutils/debhelper/pkg-plist
+	modified:   textproc/Makefile
+	modified:   textproc/docbook-xsl-ns/Makefile
+	modified:   textproc/docbook-xsl-ns/pkg-plist
+	modified:   textproc/p5-Lingua-EN-FindNumber/Makefile
+	modified:   textproc/p5-Text-Locus/Makefile
+	modified:   textproc/p5-Text-Locus/distinfo
+	modified:   textproc/p5-XML-LibXML/Makefile
+	modified:   textproc/p5-XML-LibXML/distinfo
+	new file:   textproc/p5-XML-LibXML/files/patch-Makefile.PL
+	modified:   textproc/py-html2text/Makefile
+	modified:   textproc/py-html2text/distinfo
+	new file:   textproc/py-html2text2018/Makefile
+	new file:   textproc/py-html2text2018/distinfo
+	new file:   textproc/py-html2text2018/pkg-descr
+	modified:   textproc/rubygem-actionpack-xml_parser52/Makefile
+	modified:   www/Makefile
+	modified:   www/geeknote/Makefile
+	modified:   www/nginx-devel/Makefile
+	modified:   www/nginx-devel/pkg-plist
+	modified:   www/p5-Catalyst-Runtime/Makefile
+	modified:   www/p5-Catalyst-Runtime/distinfo
+	new file:   www/py-httptools/Makefile
+	new file:   www/py-httptools/distinfo
+	new file:   www/py-httptools/files/patch-httptools-parser-parser.c
+	new file:   www/py-httptools/files/patch-setup.py
+	new file:   www/py-httptools/pkg-descr
+	modified:   www/py-instabot/Makefile
+	modified:   www/py-instabot/distinfo
+	modified:   www/py-python-dotenv/Makefile
+	modified:   www/py-python-dotenv/distinfo
+	modified:   www/py-utidylib/Makefile
+	modified:   www/py-utidylib/distinfo
+	deleted:    www/py-utidylib/files/patch-tidy-lib.py
+	modified:   www/py-utidylib/pkg-descr
+	new file:   www/py-uvicorn/Makefile
+	new file:   www/py-uvicorn/distinfo
+	new file:   www/py-uvicorn/pkg-descr
+	modified:   www/py-weboob/Makefile
+	modified:   www/redmine4/Makefile
+	modified:   www/rt44/Makefile
+	new file:   www/trafficserver/files/patch-configure
+	modified:   www/trafficserver/pkg-plist
+	modified:   x11/lightdm/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   www/trafficserver/Makefile
+
+
+It took 3.21 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 22ce2abeee2e Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 22ce2abeee2e Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
