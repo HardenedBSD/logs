@@ -14,3 +14,146 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/chromium/Makefile
+Removing science/libcint/files/patch-CMakeLists.txt
+Removing math/openblas/files/patch-param.h
+Removing math/openblas/files/patch-exports+Makefile
+Removing math/openblas/files/patch-driver_others_memory.c
+Removing math/openblas/files/patch-cpuid_x86.c
+Removing math/openblas/files/patch-cpuid_sparc.c
+Removing math/openblas/files/patch-cpuid_ia64.c
+Removing math/openblas/files/patch-common__power.h
+Removing math/openblas/files/patch-Makefile.system
+Removing math/openblas/files/patch-Makefile.rule
+Removing math/openblas/files/patch-Makefile
+Removing games/minetest/files/patch-src_main.cpp
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   2 -
+ Mk/Scripts/smart_makepatch.sh                      |   6 +-
+ Mk/Uses/blaslapack.mk                              |   4 +-
+ archivers/snappy/Makefile                          |   2 +-
+ archivers/snappy/distinfo                          |   6 +-
+ astro/mkgmap/Makefile                              |   2 +-
+ astro/mkgmap/distinfo                              |   6 +-
+ biology/gemma/Makefile                             |   2 +-
+ devel/cdecl/Makefile                               |   2 +-
+ devel/cdecl/distinfo                               |   6 +-
+ devel/ghub/Makefile                                |   3 +-
+ devel/ghub/distinfo                                |   6 +-
+ devel/ghub/pkg-plist                               |   2 +
+ devel/jwasm/Makefile                               |  19 +++-
+ devel/jwasm/distinfo                               |   5 +-
+ devel/pecl-swoole/Makefile                         |   2 +-
+ devel/pecl-swoole/distinfo                         |   6 +-
+ games/leela-zero/Makefile                          |   3 +-
+ games/minetest/Makefile                            |   4 +-
+ games/minetest/distinfo                            |   6 +-
+ games/minetest/files/patch-src_CMakeLists.txt      |  22 +++-
+ games/minetest/files/patch-src_main.cpp            |  10 --
+ games/minetest_game/Makefile                       |   2 +-
+ games/minetest_game/distinfo                       |   6 +-
+ graphics/ansilove/Makefile                         |   2 +-
+ graphics/ansilove/distinfo                         |   6 +-
+ graphics/libansilove/Makefile                      |   4 +-
+ graphics/libansilove/distinfo                      |   6 +-
+ graphics/libansilove/pkg-plist                     |   2 +-
+ graphics/qr-code-generator/Makefile                |   2 +-
+ java/apache-bcel/Makefile                          |   2 +-
+ java/apache-bcel/pkg-descr                         |   2 +-
+ java/intellij/Makefile                             |   4 +-
+ java/intellij/distinfo                             |   6 +-
+ java/intellij/pkg-plist                            |   2 +-
+ lang/julia06/Makefile                              |   6 +-
+ lang/julia07/Makefile                              |   6 +-
+ lang/julia10/Makefile                              |   6 +-
+ lang/julia11/Makefile                              |   6 +-
+ math/armadillo/Makefile                            |   2 +-
+ math/hmat-oss/Makefile                             |   6 +-
+ math/metis4/Makefile                               |   3 +
+ math/octave-forge-ltfat/Makefile                   |   2 +-
+ math/openblas/Makefile                             | 124 +++++++--------------
+ math/openblas/distinfo                             |   6 +-
+ math/openblas/files/patch-Makefile                 |  11 --
+ math/openblas/files/patch-Makefile.rule            |  15 ---
+ math/openblas/files/patch-Makefile.system          |  62 -----------
+ math/openblas/files/patch-c_check                  |   4 +-
+ math/openblas/files/patch-common__arm.h            |   4 +-
+ math/openblas/files/patch-common__power.h          |  38 -------
+ math/openblas/files/patch-cpuid__arm64.c           |   4 +-
+ math/openblas/files/patch-cpuid_ia64.c             |  12 --
+ math/openblas/files/patch-cpuid_sparc.c            |  10 --
+ math/openblas/files/patch-cpuid_x86.c              |  18 ---
+ math/openblas/files/patch-driver_others_memory.c   |  13 ---
+ math/openblas/files/patch-exports+Makefile         |  18 ---
+ math/openblas/files/patch-f_check                  |   6 +-
+ math/openblas/files/patch-interface__ztrmv.c       |   4 +-
+ math/openblas/files/patch-param.h                  |  11 --
+ math/openblas/pkg-plist                            |  22 +++-
+ math/py-numpy/Makefile                             |   4 +-
+ misc/mxnet/Makefile                                |   3 +-
+ net/Makefile                                       |   2 +
+ net/rtptools/Makefile                              |  33 ++++++
+ net/rtptools/distinfo                              |   3 +
+ net/rtptools/files/patch-rtp.h                     |  23 ++++
+ net/rtptools/files/patch-rtpdump.c                 |  24 ++++
+ net/rtptools/files/patch-rtpsend.c                 |  24 ++++
+ net/rtptools/pkg-descr                             |  15 +++
+ net/tcptrace/Makefile                              |  41 +++++++
+ net/tcptrace/distinfo                              |   3 +
+ net/tcptrace/files/patch-mod_traffic.c             |  11 ++
+ net/tcptrace/files/patch-tcpdump.c                 |  17 +++
+ net/tcptrace/files/patch-tcpdump.h                 |  34 ++++++
+ net/tcptrace/files/patch-tcptrace.h                |  13 +++
+ net/tcptrace/pkg-descr                             |  15 +++
+ ports-mgmt/portmaster/Makefile                     |   2 +-
+ ports-mgmt/portmaster/files/patch-portmaster       | 109 +++++++++---------
+ science/erkale/Makefile                            |   7 +-
+ science/libcint/files/patch-CMakeLists.txt         |  15 ---
+ www/chromium/Makefile                              |   2 +-
+ www/chromium/distinfo                              |  10 +-
+ .../files/patch-chrome_common_chrome__paths.cc     |  10 ++
+ 84 files changed, 517 insertions(+), 494 deletions(-)
+ delete mode 100644 games/minetest/files/patch-src_main.cpp
+ delete mode 100644 math/openblas/files/patch-Makefile
+ delete mode 100644 math/openblas/files/patch-Makefile.rule
+ delete mode 100644 math/openblas/files/patch-Makefile.system
+ delete mode 100644 math/openblas/files/patch-common__power.h
+ delete mode 100644 math/openblas/files/patch-cpuid_ia64.c
+ delete mode 100644 math/openblas/files/patch-cpuid_sparc.c
+ delete mode 100644 math/openblas/files/patch-cpuid_x86.c
+ delete mode 100644 math/openblas/files/patch-driver_others_memory.c
+ delete mode 100644 math/openblas/files/patch-exports+Makefile
+ delete mode 100644 math/openblas/files/patch-param.h
+ create mode 100644 net/rtptools/Makefile
+ create mode 100644 net/rtptools/distinfo
+ create mode 100644 net/rtptools/files/patch-rtp.h
+ create mode 100644 net/rtptools/files/patch-rtpdump.c
+ create mode 100644 net/rtptools/files/patch-rtpsend.c
+ create mode 100644 net/rtptools/pkg-descr
+ create mode 100644 net/tcptrace/Makefile
+ create mode 100644 net/tcptrace/distinfo
+ create mode 100644 net/tcptrace/files/patch-mod_traffic.c
+ create mode 100644 net/tcptrace/files/patch-tcpdump.c
+ create mode 100644 net/tcptrace/files/patch-tcpdump.h
+ create mode 100644 net/tcptrace/files/patch-tcptrace.h
+ create mode 100644 net/tcptrace/pkg-descr
+ delete mode 100644 science/libcint/files/patch-CMakeLists.txt
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    b04a3f7d7507..a9b93f2047a2  master -> master        
+remote:    b75a3de0b775..b04a3f7d7507  github/master -> github/master
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   b04a3f7d7507..a9b93f2047a2  master -> master
+==== END: master ====
