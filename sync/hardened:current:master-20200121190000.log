@@ -1,0 +1,62 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 10 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 1bf2bde0c734..5b9df98972fc
+Fast-forward
+ lib/libc/gen/ualarm.c                     |   3 +-
+ libexec/rc/rc.d/ipfw                      |   6 +-
+ stand/i386/libi386/bootinfo64.c           |   1 +
+ sys/amd64/amd64/initcpu.c                 |   4 +-
+ sys/amd64/linux32/linux32_machdep.c       |   7 --
+ sys/amd64/linux32/linux32_proto.h         |  33 ++++++---
+ sys/amd64/linux32/linux32_systrace_args.c | 114 +++++++++++++++++++++---------
+ sys/amd64/linux32/syscalls.master         |  21 +++---
+ sys/compat/linux/linux_file.c             |  98 ++++++++++++++++++++-----
+ sys/i386/i386/machdep.c                   |   5 +-
+ sys/i386/linux/linux_machdep.c            |   7 --
+ sys/kern/uipc_ktls.c                      |   2 +
+ sys/net/route_var.h                       |  24 +++++++
+ sys/netinet6/in6_fib.c                    |   2 +
+ sys/x86/cpufreq/hwpstate.c                |  10 ++-
+ sys/x86/include/cputypes.h                |   1 +
+ sys/x86/include/specialreg.h              |   1 +
+ sys/x86/x86/identcpu.c                    |  25 ++++++-
+ sys/x86/x86/local_apic.c                  |   3 +-
+ sys/x86/x86/mca.c                         |   3 +-
+ sys/x86/x86/mp_x86.c                      |   3 +-
+ sys/x86/x86/msi.c                         |   1 +
+ sys/x86/x86/tsc.c                         |   5 +-
+ 23 files changed, 277 insertions(+), 102 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/arm64/arm64/elf_machdep.c
+Merge made by the 'recursive' strategy.
+ lib/libc/gen/posix_spawn.c           |  2 +-
+ sys/arm64/arm64/elf_machdep.c        | 42 +++++++++++++++++++++++++++++++++++-
+ sys/dev/usb/serial/uslcom.c          |  1 +
+ sys/dev/usb/usbdevs                  |  1 +
+ usr.sbin/wpa/wpa_supplicant/Makefile | 34 +++++++++++++++++------------
+ 5 files changed, 64 insertions(+), 16 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5b9df98972fc..ddb9fccafd1f  hardened/current/master -> hardened/current/master        
+remote:    8989bc458110..4f37e1643a90  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5b9df98972fc..ddb9fccafd1f  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
