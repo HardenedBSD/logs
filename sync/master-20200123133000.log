@@ -14,3 +14,167 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/flowgger/files/patch-rust-1.40.0
+Removing sysutils/flowgger/files/patch-openssl-1.1.1
+Removing graphics/waffle/files/patch-src_waffle_CMakeLists.txt
+Removing graphics/waffle/files/patch-examples_CMakeLists.txt
+Removing graphics/waffle/files/patch-cmake_Modules_WaffleValidateOptions.cmake
+Removing graphics/waffle/files/patch-cmake_Modules_WaffleFindDependencies.cmake
+Removing graphics/waffle/files/patch-cmake_Modules_WaffleDefineOS.cmake
+Removing graphics/waffle/files/patch-cmake_Modules_WaffleDefineCompilerFlags.cmake
+Removing graphics/waffle/files/patch-Options.cmake
+Auto-merging graphics/waffle/Makefile
+CONFLICT (content): Merge conflict in graphics/waffle/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc graphics/waffle/Makefile
+index fe0b29bed1e6,8e12aa86d0e3..000000000000
+--- a/graphics/waffle/Makefile
++++ b/graphics/waffle/Makefile
+@@@ -11,26 -13,46 +13,52 @@@ MAINTAINER=	x11@FreeBSD.or
+  COMMENT=	Library that allows to defer selection of an OpenGL API until runtime
+  
+  LICENSE=	BSD2CLAUSE
++ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
++ 
++ BUILD_DEPENDS=	cmake:devel/cmake
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		cmake compiler:c11 gl localbase pathfix pkgconfig tar:xz xorg
+++=======
++ USES=		compiler:c11 gl localbase meson pkgconfig python:3.5+,build
++ USE_GITLAB=	yes
++ GL_SITE=	https://gitlab.freedesktop.org
++ GL_ACCOUNT=	mesa
++ GL_COMMIT=	b71cfa674db5828a2be04a42ce9996d6677629ee
+++>>>>>>> freebsd/master
+  USE_GL=		egl gl
+  USE_LDCONFIG=	yes
+- USE_XORG=	x11 xcb
+  
+  DOCSDIR=	${PREFIX}/share/doc/waffle1
++ BINARY_ALIAS=	python3=${PYTHON_CMD}
++ 
++ OPTIONS_DEFINE=		DOCS GBM MANPAGES SURFACELESS WAYLAND X11
++ OPTIONS_DEFAULT=	GBM MANPAGES SURFACELESS WAYLAND X11
++ OPTIONS_SUB=		yes
+  
+- CMAKE_ARGS+=	-Dwaffle_has_glx=ON \
+- 		-Dwaffle_has_x11_egl=ON
+- #CMAKE_ARGS+=	-Dwaffle_has_gbm=ON # FIXME: Required udev
++ GBM_DESC=		GBM/DRM/KMS direct-on-hardware support
++ SURFACELESS_DESC=	Surfaceless EGL support
+  
+- PLIST_SUB+=	PORTVERSION=${PORTVERSION}
++ GBM_LIB_DEPENDS=	libudev.so:devel/libudev-devd
++ GBM_USE=		GL=gbm
++ GBM_MESON_ENABLED=	gbm
+  
+- OPTIONS_DEFINE=	DOCS WAYLAND
+- OPTIONS_DEFAULT=WAYLAND
++ MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
++ MANPAGES_USES=		gnome
++ MANPAGES_USE=		GNOME=libxslt:build
++ MANPAGES_MESON_TRUE=	build-manpages
+  
++ SURFACELESS_MESON_ENABLED=	surfaceless_egl
++ 
++ WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
++ 			wayland-scanner:graphics/wayland
+  WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+- WAYLAND_CMAKE_BOOL=	waffle_has_wayland
++ WAYLAND_MESON_ENABLED=	wayland
++ 
++ X11_USES=		xorg
++ X11_USE=		XORG=x11,xcb
++ X11_MESON_ENABLED=	glx x11_egl
+  
+  .include <bsd.port.mk>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/apitrace/Makefile
+	modified:   devel/apitrace/distinfo
+	modified:   devel/apitrace/files/patch-dispatch_glproc__egl.cpp
+	modified:   devel/apitrace/files/patch-retrace_CMakeLists.txt
+	modified:   devel/apitrace/files/patch-wrappers_trace.py
+	modified:   devel/apitrace/pkg-plist
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	modified:   devel/jetbrains-phpstorm/Makefile
+	modified:   devel/jetbrains-phpstorm/distinfo
+	modified:   devel/jetbrains-phpstorm/pkg-plist
+	modified:   devel/jetbrains-webstorm/Makefile
+	modified:   devel/jetbrains-webstorm/distinfo
+	modified:   devel/jetbrains-webstorm/pkg-plist
+	modified:   dns/dq/Makefile
+	modified:   dns/dq/distinfo
+	new file:   graphics/piglit/files/patch-tests_egl_egl-context-priority.c
+	modified:   graphics/qgis-ltr/Makefile
+	modified:   graphics/qgis/Makefile
+	modified:   graphics/tesseract/Makefile
+	modified:   graphics/tesseract/distinfo
+	modified:   graphics/waffle/distinfo
+	deleted:    graphics/waffle/files/patch-Options.cmake
+	deleted:    graphics/waffle/files/patch-cmake_Modules_WaffleDefineCompilerFlags.cmake
+	deleted:    graphics/waffle/files/patch-cmake_Modules_WaffleDefineOS.cmake
+	deleted:    graphics/waffle/files/patch-cmake_Modules_WaffleFindDependencies.cmake
+	deleted:    graphics/waffle/files/patch-cmake_Modules_WaffleValidateOptions.cmake
+	deleted:    graphics/waffle/files/patch-examples_CMakeLists.txt
+	deleted:    graphics/waffle/files/patch-src_waffle_CMakeLists.txt
+	modified:   graphics/waffle/pkg-plist
+	modified:   mail/dovecot-fts-xapian/Makefile
+	modified:   mail/dovecot-fts-xapian/distinfo
+	modified:   math/octave-forge-audio/Makefile
+	modified:   security/hitch/Makefile
+	modified:   security/hitch/distinfo
+	modified:   sysutils/flowgger/Makefile
+	modified:   sysutils/flowgger/distinfo
+	deleted:    sysutils/flowgger/files/patch-openssl-1.1.1
+	deleted:    sysutils/flowgger/files/patch-rust-1.40.0
+	modified:   sysutils/flowgger/pkg-descr
+	modified:   textproc/txt2tags/Makefile
+	modified:   textproc/txt2tags/distinfo
+	modified:   x11-toolkits/wlroots/Makefile
+	modified:   x11-toolkits/wlroots/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   graphics/waffle/Makefile
+
+
+It took 3.27 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 6b85d5f58051 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.27 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 6b85d5f58051 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
