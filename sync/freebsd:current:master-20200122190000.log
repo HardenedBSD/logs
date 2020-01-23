@@ -1,0 +1,57 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating afbc3286fa52..a4e3b5b68517
+Fast-forward
+ Makefile.inc1                                  |  18 -
+ etc/Makefile                                   |   3 +-
+ include/unistd.h                               |   2 +-
+ share/man/man4/cpufreq.4                       |   6 +-
+ share/man/man4/hwpstate_intel.4                |  89 +++++
+ share/termcap/Makefile                         |   3 +-
+ sys/conf/files.x86                             |   3 +-
+ sys/kern/kern_cpu.c                            | 297 ++++++++------
+ sys/modules/cpufreq/Makefile                   |   2 +-
+ sys/net/if_bridge.c                            |  22 +-
+ sys/net/if_lagg.c                              |  24 +-
+ sys/net/if_vlan.c                              |  24 +-
+ sys/netpfil/pf/if_pfsync.c                     |   6 +
+ sys/sys/cpu.h                                  |   5 +
+ sys/x86/cpufreq/est.c                          |  12 +
+ sys/x86/cpufreq/{hwpstate.c => hwpstate_amd.c} |   0
+ sys/x86/cpufreq/hwpstate_intel.c               | 516 +++++++++++++++++++++++++
+ sys/x86/cpufreq/hwpstate_intel_internal.h      |  35 ++
+ 18 files changed, 921 insertions(+), 146 deletions(-)
+ create mode 100644 share/man/man4/hwpstate_intel.4
+ rename sys/x86/cpufreq/{hwpstate.c => hwpstate_amd.c} (100%)
+ create mode 100644 sys/x86/cpufreq/hwpstate_intel.c
+ create mode 100644 sys/x86/cpufreq/hwpstate_intel_internal.h
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    afbc3286fa52..a4e3b5b68517  freebsd/current/master -> freebsd/current/master        
+remote:    1186861c487c..7fa896b1e79b  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   afbc3286fa52..a4e3b5b68517  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
