@@ -1,0 +1,51 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging sys/compat/linux/linux_mmap.c
+Merge made by the 'recursive' strategy.
+ secure/caroot/Makefile                             |  3 +-
+ sys/compat/linux/linux_file.c                      | 18 ++++-----
+ sys/compat/linux/linux_mmap.c                      |  9 ++++-
+ sys/compat/linux/linux_mmap.h                      |  1 +
+ .../linuxkpi/common/include/linux/mm_types.h       |  6 +++
+ sys/conf/files.riscv                               |  3 ++
+ sys/dev/ath/if_ath_rx.c                            |  3 ++
+ sys/dev/pci/pci_host_generic.c                     | 17 +-------
+ sys/dev/pci/pci_host_generic.h                     | 17 +++++++-
+ sys/dev/pci/pci_host_generic_acpi.c                |  8 +---
+ sys/dev/pci/pci_host_generic_acpi.h                | 47 ++++++++++++++++++++++
+ sys/dev/re/if_re.c                                 |  6 ++-
+ sys/kern/sched_ule.c                               |  3 +-
+ sys/kern/vfs_mount.c                               | 17 +++++---
+ sys/riscv/conf/DEFAULTS                            |  2 +
+ sys/riscv/conf/GENERIC                             |  3 ++
+ sys/riscv/include/resource.h                       |  3 ++
+ sys/sys/syscallsubr.h                              |  1 +
+ 18 files changed, 124 insertions(+), 43 deletions(-)
+ create mode 100644 sys/dev/pci/pci_host_generic_acpi.h
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    31394e83cde6..882ef5c428ec  hardened/current/master -> hardened/current/master        
+remote:    4e78257337ed..4b1034fea9af  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   31394e83cde6..882ef5c428ec  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
