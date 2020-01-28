@@ -1,0 +1,87 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating f4ed63bee923..1a88d09a37a7
+Fast-forward
+ kerberos5/libexec/digest-service/Makefile   | 2 ++
+ kerberos5/libexec/hprop/Makefile            | 2 ++
+ kerberos5/libexec/hpropd/Makefile           | 2 ++
+ kerberos5/libexec/ipropd-master/Makefile    | 2 ++
+ kerberos5/libexec/ipropd-slave/Makefile     | 2 ++
+ kerberos5/libexec/kadmind/Makefile          | 2 ++
+ kerberos5/libexec/kcm/Makefile              | 2 ++
+ kerberos5/libexec/kdc/Makefile              | 2 ++
+ kerberos5/libexec/kdigest/Makefile          | 2 ++
+ kerberos5/libexec/kfd/Makefile              | 2 ++
+ kerberos5/libexec/kimpersonate/Makefile     | 2 ++
+ kerberos5/libexec/kpasswdd/Makefile         | 2 ++
+ kerberos5/usr.bin/hxtool/Makefile           | 2 ++
+ kerberos5/usr.bin/kadmin/Makefile           | 2 ++
+ kerberos5/usr.bin/kcc/Makefile              | 2 ++
+ kerberos5/usr.bin/kdestroy/Makefile         | 2 ++
+ kerberos5/usr.bin/kf/Makefile               | 2 ++
+ kerberos5/usr.bin/kgetcred/Makefile         | 2 ++
+ kerberos5/usr.bin/kinit/Makefile            | 2 ++
+ kerberos5/usr.bin/kpasswd/Makefile          | 2 ++
+ kerberos5/usr.bin/ksu/Makefile              | 2 ++
+ kerberos5/usr.bin/string2key/Makefile       | 2 ++
+ kerberos5/usr.bin/verify_krb5_conf/Makefile | 2 ++
+ kerberos5/usr.sbin/iprop-log/Makefile       | 2 ++
+ kerberos5/usr.sbin/kstash/Makefile          | 2 ++
+ kerberos5/usr.sbin/ktutil/Makefile          | 2 ++
+ 26 files changed, 52 insertions(+)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/bsdinstall/scripts/auto
+Auto-merging sys/x86/x86/identcpu.c
+Merge made by the 'recursive' strategy.
+ contrib/netbsd-tests/lib/libc/c063/t_o_search.c |  20 +-
+ release/tools/openstack.conf                    |   3 +
+ sbin/newfs_msdos/mkfs_msdos.c                   |  55 ++++--
+ secure/caroot/blacklisted/Makefile              |   4 +-
+ share/man/man4/umass.4                          | 149 +--------------
+ share/mk/bsd.compat.mk                          |   3 +-
+ sys/arm/allwinner/aw_mmc.c                      |  30 +--
+ sys/cam/mmc/mmc_all.h                           |   4 +
+ sys/cam/mmc/mmc_xpt.c                           |  29 +++
+ sys/dev/amdsmn/amdsmn.c                         |   2 +-
+ sys/dev/amdtemp/amdtemp.c                       | 138 +++++++++++---
+ sys/dev/mmc/host/dwmmc.c                        |   2 -
+ sys/dev/sdhci/sdhci.c                           |  45 +----
+ sys/fs/msdosfs/msdosfsmount.h                   |   4 +
+ sys/geom/geom_subr.c                            |   5 +-
+ sys/geom/stripe/g_stripe.c                      |   2 +
+ sys/kern/uipc_mqueue.c                          |   1 +
+ sys/sys/tree.h                                  |  88 ++++-----
+ sys/x86/iommu/intel_dmar.h                      |   3 +-
+ sys/x86/iommu/intel_drv.c                       |   6 +-
+ sys/x86/iommu/intel_gas.c                       | 239 +++++++++---------------
+ sys/x86/x86/identcpu.c                          |   4 +-
+ tools/build/Makefile                            |  20 +-
+ usr.sbin/bsdinstall/scripts/auto                |  39 ++--
+ usr.sbin/makefs/msdos/msdosfs_denode.c          |   4 -
+ usr.sbin/makefs/msdos/msdosfs_vnops.c           |   4 +
+ 26 files changed, 417 insertions(+), 486 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    1a88d09a37a7..66fb17fbeeea  hardened/current/master -> hardened/current/master        
+remote:    4473f0872b05..736feb84c50a  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   1a88d09a37a7..66fb17fbeeea  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
