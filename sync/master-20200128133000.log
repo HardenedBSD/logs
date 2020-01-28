@@ -3546,3 +3546,154 @@ Fast-forward
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/asterisk13/Makefile
+Removing math/rkward-kde/files/patch-rkward_windows_rkworkplace.cpp
+Removing math/rkward-kde/files/patch-rkward_rkward.cpp
+Auto-merging editors/nano/Makefile
+Auto-merging devel/arm-elf-binutils/Makefile
+CONFLICT (content): Merge conflict in devel/arm-elf-binutils/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/arm-elf-binutils/Makefile
+index ba920bf4eecd,b16ad0ccc2f3..000000000000
+--- a/devel/arm-elf-binutils/Makefile
++++ b/devel/arm-elf-binutils/Makefile
+@@@ -10,12 -10,13 +10,19 @@@ PKGNAMEPREFIX=	arm-elf
+  MAINTAINER=	danilo@FreeBSD.org
+  COMMENT=	GNU binutils for vanilla ARM cross-development
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		gettext gmake tar:bzip2
+++=======
++ LICENSE=	GPLv3 LGPL3
++ LICENSE_COMB=	multi
++ 
++ USES=		gettext gmake localbase tar:bzip2
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
+  CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
+- 		--disable-nls CFLAGS="-I/usr/local/include"
++ 		--disable-nls
+  INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
+  
+  post-install:
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/linux.mk
+	modified:   audio/noson-app/Makefile
+	modified:   audio/noson-app/distinfo
+	modified:   deskutils/cherrytree/Makefile
+	modified:   devel/arm-elf-binutils/distinfo
+	modified:   devel/cmake/Makefile
+	modified:   devel/dreampie/Makefile
+	modified:   devel/py-construct/Makefile
+	modified:   devel/py-construct/distinfo
+	modified:   devel/py-construct/pkg-descr
+	modified:   devel/py-orbit/Makefile
+	modified:   editors/nano/Makefile
+	modified:   editors/nano/distinfo
+	modified:   games/Makefile
+	new file:   games/battletanks/Makefile
+	new file:   games/battletanks/distinfo
+	new file:   games/battletanks/files/btanks.6
+	new file:   games/battletanks/files/patch-SConstruct
+	new file:   games/battletanks/files/patch-clunk-sse_fft_context.cpp
+	new file:   games/battletanks/files/patch-engine-sl08-sl08.py
+	new file:   games/battletanks/files/patch-engine_net_monitor.cpp
+	new file:   games/battletanks/files/patch-engine_net_scanner.cpp
+	new file:   games/battletanks/files/patch-math-range_list.h
+	new file:   games/battletanks/files/patch-mrt-base_file.h
+	new file:   games/battletanks/files/patch-mrt_logger.cpp
+	new file:   games/battletanks/files/patch-mrt_tcp_socket.cpp
+	new file:   games/battletanks/files/patch-mrt_udp_socket.cpp
+	new file:   games/battletanks/files/patch-sdlx-SConscript
+	new file:   games/battletanks/pkg-descr
+	new file:   games/battletanks/pkg-plist
+	modified:   games/fs2open/Makefile
+	modified:   games/fs2open/distinfo
+	modified:   games/fs2open/files/patch-cmake_toolchain-clang.cmake
+	modified:   games/fs2open/files/patch-cmake_toolchain-gcc.cmake
+	new file:   games/fs2open/files/patch-code_libs_renderdoc_renderdoc__app.h
+	new file:   games/fs2open/files/patch-code_network_gtrack.cpp
+	new file:   games/fs2open/files/patch-code_network_ptrack.cpp
+	new file:   games/fs2open/files/patch-code_network_valid.cpp
+	modified:   math/rkward-kde/Makefile
+	modified:   math/rkward-kde/distinfo
+	deleted:    math/rkward-kde/files/patch-rkward_rkward.cpp
+	deleted:    math/rkward-kde/files/patch-rkward_windows_rkworkplace.cpp
+	modified:   math/rkward-kde/pkg-plist
+	modified:   net-mgmt/cacti-spine/Makefile
+	modified:   net-mgmt/cacti88-spine/Makefile
+	modified:   net-mgmt/docsis/Makefile
+	modified:   net/asterisk13/Makefile
+	modified:   net/asterisk16/Makefile
+	modified:   net/liveMedia/Makefile
+	modified:   net/liveMedia/distinfo
+	modified:   science/Makefile
+	new file:   science/R-cran-FAdist/Makefile
+	new file:   science/R-cran-FAdist/distinfo
+	new file:   science/R-cran-FAdist/pkg-descr
+	modified:   security/base-audit/Makefile
+	modified:   security/hotssh/Makefile
+	modified:   sysutils/cpuid/Makefile
+	modified:   sysutils/cpuid/distinfo
+	modified:   sysutils/ltfs/Makefile
+	modified:   textproc/chkascii/Makefile
+	modified:   textproc/chkascii/distinfo
+	modified:   www/nginx-devel/Makefile
+	modified:   www/nginx-devel/distinfo
+	new file:   www/nginx-devel/files/extra-patch-nginx-link-function-config
+	new file:   www/nginx-devel/files/extra-patch-ngx_link_func_module.c
+	modified:   www/py-flask-admin/Makefile
+	modified:   www/py-flask-admin/distinfo
+	modified:   www/py-pelican/Makefile
+	modified:   www/py-pelican/distinfo
+	modified:   x11-fm/sunflower/Makefile
+	modified:   x11-toolkits/py-gtksourceview/Makefile
+	modified:   x11-toolkits/py-vte/Makefile
+	modified:   x11-wm/stumpwm/Makefile
+	modified:   x11-wm/stumpwm/distinfo
+	modified:   x11/terminator/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/arm-elf-binutils/Makefile
+
+
+It took 3.08 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at f20671febff8 Merge remote-tracking branch 'upstream/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at f20671febff8 Merge remote-tracking branch 'upstream/master'
+==== END: master ====
