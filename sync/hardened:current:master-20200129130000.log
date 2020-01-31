@@ -1,0 +1,47 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing release/packages/docs.ucl
+Removing release/packages/clibs.ucl
+Merge made by the 'recursive' strategy.
+ release/packages/clibs.ucl              |  17 -
+ release/packages/docs.ucl               |  17 -
+ sys/conf/files.riscv                    |   1 +
+ sys/dev/cadence/if_cgem.c               |   7 +-
+ sys/dev/xilinx/xlnx_pcib.c              | 794 ++++++++++++++++++++++++++++++++
+ sys/dev/xilinx/xlnx_pcib.h              |  84 ++++
+ sys/dts/arm64/overlays/rk3328-dwc3.dtso |  39 ++
+ sys/modules/dtb/rockchip/Makefile       |   2 +
+ sys/riscv/include/riscvreg.h            |   7 +-
+ sys/vm/vm_fault.c                       |  12 +-
+ 10 files changed, 936 insertions(+), 44 deletions(-)
+ delete mode 100644 release/packages/clibs.ucl
+ delete mode 100644 release/packages/docs.ucl
+ create mode 100644 sys/dev/xilinx/xlnx_pcib.c
+ create mode 100644 sys/dev/xilinx/xlnx_pcib.h
+ create mode 100644 sys/dts/arm64/overlays/rk3328-dwc3.dtso
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    cc8c9ee2e59a..0fd46397b038  hardened/current/master -> hardened/current/master        
+remote:    14c5035597f5..29cb70ebaf2a  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   cc8c9ee2e59a..0fd46397b038  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
