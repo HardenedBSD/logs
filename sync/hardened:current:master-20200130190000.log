@@ -1,0 +1,119 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/riscv/riscv/machdep.c
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/sys_process.c
+Auto-merging sys/kern/subr_witness.c
+Auto-merging sys/kern/kern_sysctl.c
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_resource.c
+Auto-merging sys/kern/kern_mib.c
+Auto-merging sys/kern/kern_linker.c
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/kern/init_main.c
+Auto-merging sys/kern/imgact_elf.c
+Merge made by the 'recursive' strategy.
+ contrib/apr/random/unix/apr_random.c   | 276 +++------------------------------
+ contrib/apr/strings/apr_snprintf.c     |   2 +-
+ lib/libc/amd64/string/memcmp.S         | 103 ++++++------
+ sys/amd64/amd64/support.S              | 106 ++++++-------
+ sys/arm64/arm64/gicv3_its.c            |   3 +-
+ sys/dev/aic7xxx/aic79xx_inline.h       |   2 +-
+ sys/fs/nullfs/null_subr.c              |   5 +-
+ sys/kern/imgact_binmisc.c              |   2 -
+ sys/kern/imgact_elf.c                  |   1 -
+ sys/kern/init_main.c                   |   1 -
+ sys/kern/kern_alq.c                    |   3 -
+ sys/kern/kern_conf.c                   |   2 -
+ sys/kern/kern_exit.c                   |   2 -
+ sys/kern/kern_hhook.c                  |   1 -
+ sys/kern/kern_jail.c                   |   6 -
+ sys/kern/kern_kcov.c                   |   1 -
+ sys/kern/kern_kthread.c                |   1 -
+ sys/kern/kern_linker.c                 |   1 -
+ sys/kern/kern_lockf.c                  |   1 -
+ sys/kern/kern_mib.c                    |   1 -
+ sys/kern/kern_mtxpool.c                |   1 -
+ sys/kern/kern_pmc.c                    |   1 -
+ sys/kern/kern_poll.c                   |   2 -
+ sys/kern/kern_resource.c               |   1 -
+ sys/kern/kern_sig.c                    |   3 -
+ sys/kern/kern_switch.c                 |   1 -
+ sys/kern/kern_sysctl.c                 |   3 -
+ sys/kern/kern_tc.c                     |   1 -
+ sys/kern/kern_time.c                   |   1 -
+ sys/kern/kern_ubsan.c                  |   1 -
+ sys/kern/kern_umtx.c                   |   2 -
+ sys/kern/link_elf.c                    |   1 -
+ sys/kern/link_elf_obj.c                |   2 -
+ sys/kern/sched_4bsd.c                  |   2 -
+ sys/kern/sched_ule.c                   |   1 -
+ sys/kern/subr_acl_posix1e.c            |   1 -
+ sys/kern/subr_blist.c                  |   1 -
+ sys/kern/subr_bufring.c                |   2 -
+ sys/kern/subr_bus.c                    |   2 -
+ sys/kern/subr_clock.c                  |   1 -
+ sys/kern/subr_csan.c                   |   3 -
+ sys/kern/subr_fattime.c                |   1 -
+ sys/kern/subr_filter.c                 |   6 -
+ sys/kern/subr_gtaskqueue.c             |   3 -
+ sys/kern/subr_hints.c                  |   2 -
+ sys/kern/subr_intr.c                   |   4 -
+ sys/kern/subr_kdb.c                    |   1 -
+ sys/kern/subr_sbuf.c                   |   1 -
+ sys/kern/subr_sleepqueue.c             |   1 -
+ sys/kern/subr_smp.c                    |  10 +-
+ sys/kern/subr_stats.c                  |   5 +-
+ sys/kern/subr_unit.c                   |   4 -
+ sys/kern/subr_vmem.c                   |   1 -
+ sys/kern/subr_witness.c                |   3 -
+ sys/kern/sys_generic.c                 |   1 -
+ sys/kern/sys_pipe.c                    |   1 -
+ sys/kern/sys_process.c                 |   1 -
+ sys/kern/sysv_msg.c                    |   2 -
+ sys/kern/sysv_shm.c                    |   2 -
+ sys/kern/uipc_mbuf.c                   |   1 -
+ sys/kern/uipc_usrreq.c                 |   4 -
+ sys/kern/vfs_acl.c                     |   1 -
+ sys/kern/vfs_bio.c                     |   2 -
+ sys/kern/vfs_cluster.c                 |   1 -
+ sys/kern/vfs_extattr.c                 |   1 -
+ sys/kern/vfs_init.c                    |   1 -
+ sys/kern/vfs_subr.c                    |   2 -
+ sys/kern/vfs_syscalls.c                |   7 +-
+ sys/kern/vfs_vnops.c                   |   4 -
+ sys/riscv/include/db_machdep.h         |   2 +-
+ sys/riscv/include/pcb.h                |   3 -
+ sys/riscv/riscv/exception.S            |   2 -
+ sys/riscv/riscv/genassym.c             |   2 -
+ sys/riscv/riscv/machdep.c              |   3 -
+ usr.sbin/makefs/msdos/msdosfs_denode.c |   2 +-
+ 75 files changed, 135 insertions(+), 505 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    3c183ee3e06d..0c1f40e8cfd1  hardened/current/master -> hardened/current/master        
+remote:    552b47e9c3fc..8363d7537ad9  github/freebsd/current/master -> github/freebsd/current/master        
+remote: Gitea: Internal Server Error        
+remote: Failed to Update: hardenedbsd/hardenedbsd Branch: hardened/current/master Error: newCommit.CommitsBeforeUntil: packfile not found        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   3c183ee3e06d..0c1f40e8cfd1  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

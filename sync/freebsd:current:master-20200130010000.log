@@ -1,0 +1,123 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating b257e560ce21..215f047a0d8a
+Fast-forward
+ include/stdio.h                                    |   8 +-
+ lib/libc/stdio/Makefile.inc                        |  10 +-
+ lib/libc/stdio/Symbol.map                          |   4 +
+ lib/libc/stdio/fflush.3                            |  15 ++-
+ lib/libc/stdio/fflush.c                            |   2 +
+ lib/libc/stdio/fputc.c                             |   2 +
+ lib/libc/stdio/fputs.3                             |  15 ++-
+ lib/libc/stdio/fputs.c                             |  15 ++-
+ lib/libc/stdio/fread.3                             |  25 ++++-
+ lib/libc/stdio/fread.c                             |   2 +
+ lib/libc/stdio/fwrite.c                            |  17 ++-
+ lib/libc/stdio/putc.3                              |  11 +-
+ release/packages/acct.ucl                          |  24 ----
+ release/packages/acpi.ucl                          |  24 ----
+ release/packages/amd.ucl                           |  24 ----
+ release/packages/apm.ucl                           |  24 ----
+ release/packages/at.ucl                            |  24 ----
+ release/packages/autofs.ucl                        |  24 ----
+ release/packages/bhyve.ucl                         |  24 ----
+ release/packages/binutils.ucl                      |   6 -
+ release/packages/bluetooth.ucl                     |  24 ----
+ release/packages/bsdinstall.ucl                    |  24 ----
+ release/packages/bsnmp.ucl                         |  24 ----
+ release/packages/caroot.ucl                        |   6 -
+ release/packages/clang.ucl                         |   6 -
+ release/packages/dma.ucl                           |  24 ----
+ release/packages/ee.ucl                            |  24 ----
+ release/packages/gdb.ucl                           |   6 -
+ release/packages/generate-ucl.sh                   |  15 ++-
+ release/packages/groff.ucl                         |   6 -
+ release/packages/hostapd.ucl                       |  23 ----
+ release/packages/jail-debug.ucl                    |  24 ----
+ release/packages/jail-development.ucl              |  24 ----
+ release/packages/jail-lib32-debug.ucl              |  24 ----
+ release/packages/jail-lib32-development.ucl        |  24 ----
+ release/packages/jail-lib32-profile.ucl            |  24 ----
+ release/packages/jail-lib32.ucl                    |  24 ----
+ release/packages/jail-profile.ucl                  |  24 ----
+ release/packages/jail.ucl                          |   6 -
+ release/packages/lld.ucl                           |   6 -
+ release/packages/lldb.ucl                          |   6 -
+ release/packages/rcmds.ucl                         |  24 ----
+ release/packages/runtime-debug.ucl                 |  24 ----
+ release/packages/runtime-development.ucl           |  24 ----
+ release/packages/runtime-lib32.ucl                 |  24 ----
+ release/packages/runtime-manuals.ucl               |  24 ----
+ release/packages/runtime-profile.ucl               |  24 ----
+ release/packages/runtime.ucl                       |   6 -
+ release/packages/ssh.ucl                           |   6 -
+ release/packages/svn.ucl                           |   6 -
+ release/packages/syscons.ucl                       |  24 ----
+ release/packages/tests.ucl                         |  24 ----
+ release/packages/unbound.ucl                       |   6 -
+ release/packages/vi.ucl                            |  24 ----
+ release/packages/wpa.ucl                           |  24 ----
+ .../opensolaris/uts/common/fs/zfs/sys/zfs_acl.h    |   3 +
+ .../opensolaris/uts/common/fs/zfs/zfs_acl.c        |  35 ++++++
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |  29 +++++
+ sys/kern/vfs_subr.c                                | 123 ++++++++++-----------
+ 59 files changed, 247 insertions(+), 875 deletions(-)
+ delete mode 100644 release/packages/acct.ucl
+ delete mode 100644 release/packages/acpi.ucl
+ delete mode 100644 release/packages/amd.ucl
+ delete mode 100644 release/packages/apm.ucl
+ delete mode 100644 release/packages/at.ucl
+ delete mode 100644 release/packages/autofs.ucl
+ delete mode 100644 release/packages/bhyve.ucl
+ delete mode 100644 release/packages/bluetooth.ucl
+ delete mode 100644 release/packages/bsdinstall.ucl
+ delete mode 100644 release/packages/bsnmp.ucl
+ delete mode 100644 release/packages/dma.ucl
+ delete mode 100644 release/packages/ee.ucl
+ delete mode 100644 release/packages/hostapd.ucl
+ delete mode 100644 release/packages/jail-debug.ucl
+ delete mode 100644 release/packages/jail-development.ucl
+ delete mode 100644 release/packages/jail-lib32-debug.ucl
+ delete mode 100644 release/packages/jail-lib32-development.ucl
+ delete mode 100644 release/packages/jail-lib32-profile.ucl
+ delete mode 100644 release/packages/jail-lib32.ucl
+ delete mode 100644 release/packages/jail-profile.ucl
+ delete mode 100644 release/packages/rcmds.ucl
+ delete mode 100644 release/packages/runtime-debug.ucl
+ delete mode 100644 release/packages/runtime-development.ucl
+ delete mode 100644 release/packages/runtime-lib32.ucl
+ delete mode 100644 release/packages/runtime-manuals.ucl
+ delete mode 100644 release/packages/runtime-profile.ucl
+ delete mode 100644 release/packages/syscons.ucl
+ delete mode 100644 release/packages/tests.ucl
+ delete mode 100644 release/packages/vi.ucl
+ delete mode 100644 release/packages/wpa.ucl
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    b257e560ce21..215f047a0d8a  freebsd/current/master -> freebsd/current/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b257e560ce21..215f047a0d8a  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
