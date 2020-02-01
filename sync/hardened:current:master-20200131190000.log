@@ -1,0 +1,79 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 7a82e11afccf..f57c56781039
+Fast-forward
+ usr.sbin/hbsd-update/Makefile             |  2 +-
+ usr.sbin/hbsd-update/hbsd-update.tor.conf | 38 +++++++++++++++++++++++++++++++
+ usr.sbin/pkg/HardenedBSD.tor.conf         | 16 +++++++++++++
+ usr.sbin/pkg/Makefile                     | 23 ++++---------------
+ 4 files changed, 59 insertions(+), 20 deletions(-)
+ create mode 100644 usr.sbin/hbsd-update/hbsd-update.tor.conf
+ create mode 100644 usr.sbin/pkg/HardenedBSD.tor.conf
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing tools/build/options/WITH_BSD_CRTBEGIN
+Removing tools/build/options/WITHOUT_BSD_CRTBEGIN
+Auto-merging sys/riscv/riscv/machdep.c
+Auto-merging sys/conf/kern.mk
+Auto-merging sys/conf/files.amd64
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                               |  5 +----
+ contrib/bmake/mk/meta2deps.sh               |  1 -
+ gnu/lib/Makefile                            |  4 ----
+ lib/csu/Makefile.inc                        |  2 +-
+ share/man/man4/cpufreq.4                    | 23 ++++++++++++++++++++---
+ share/man/man5/src.conf.5                   | 18 +-----------------
+ share/mk/bsd.sys.mk                         |  8 ++++++--
+ share/mk/googletest.test.inc.mk             | 12 ++++++++++++
+ share/mk/local.dirdeps-options.mk           |  1 -
+ share/mk/local.dirdeps.mk                   |  6 ------
+ share/mk/local.gendirdeps.mk                |  1 -
+ share/mk/meta2deps.sh                       |  1 -
+ share/mk/src.opts.mk                        |  3 ---
+ sys/conf/files.amd64                        |  3 ++-
+ sys/conf/kern.mk                            |  3 +++
+ sys/conf/kern.post.mk                       |  2 +-
+ sys/kern/subr_smr.c                         | 17 ++++++++++++++---
+ sys/modules/tpm/Makefile                    |  2 ++
+ sys/net/if_vlan.c                           |  2 +-
+ sys/riscv/include/riscvreg.h                |  9 ++++++---
+ sys/riscv/riscv/machdep.c                   | 19 +++++++++++++++----
+ sys/sys/smr.h                               | 11 +++++++++--
+ sys/x86/cpufreq/hwpstate_amd.c              | 26 +++++++++++++++++---------
+ targets/pseudo/userland/gnu/Makefile.depend |  1 -
+ tools/build/options/WITHOUT_BSD_CRTBEGIN    |  5 -----
+ tools/build/options/WITH_BSD_CRTBEGIN       |  5 -----
+ tools/uma/smrstress/smrstress.c             |  3 ++-
+ usr.bin/lex/Makefile                        |  2 ++
+ usr.sbin/bsnmpd/modules/snmp_pf/pf_snmp.c   |  3 ++-
+ usr.sbin/services_mkdb/services             |  8 ++++++++
+ 30 files changed, 125 insertions(+), 81 deletions(-)
+ delete mode 100644 tools/build/options/WITHOUT_BSD_CRTBEGIN
+ delete mode 100644 tools/build/options/WITH_BSD_CRTBEGIN
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f57c56781039..ca307d05db46  hardened/current/master -> hardened/current/master        
+remote:    35eb808ab89a..7a8a25cb1f25  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f57c56781039..ca307d05db46  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
