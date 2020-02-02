@@ -1,0 +1,211 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/files.i386
+CONFLICT (content): Merge conflict in sys/conf/files.i386
+Auto-merging sys/conf/files.amd64
+CONFLICT (content): Merge conflict in sys/conf/files.amd64
+Auto-merging sys/conf/files
+Removing sys/arm/ralink/std.ralink
+Removing sys/arm/ralink/rt1310var.h
+Removing sys/arm/ralink/rt1310reg.h
+Removing sys/arm/ralink/rt1310_timer.c
+Removing sys/arm/ralink/rt1310_machdep.c
+Removing sys/arm/ralink/rt1310_intc.c
+Removing sys/arm/ralink/rt1310_gpio.c
+Removing sys/arm/ralink/if_fvreg.h
+Removing sys/arm/ralink/if_fv.c
+Removing sys/arm/ralink/files.ralink
+Removing sys/arm/mv/orion/std.ts7800
+Removing sys/arm/mv/orion/std.db88f5xxx
+Removing sys/arm/mv/orion/orion.c
+Removing sys/arm/mv/orion/files.ts7800
+Removing sys/arm/mv/orion/files.db88f5xxx
+Removing sys/arm/mv/orion/db88f5xxx.c
+Removing sys/arm/mv/kirkwood/std.kirkwood
+Removing sys/arm/mv/kirkwood/std.db88f6xxx
+Removing sys/arm/mv/kirkwood/kirkwood.c
+Removing sys/arm/mv/kirkwood/files.kirkwood
+Removing sys/arm/mv/files.mv
+Removing sys/arm/mv/discovery/std.db78xxx
+Removing sys/arm/mv/discovery/files.db78xxx
+Removing sys/arm/mv/discovery/discovery.c
+Removing sys/arm/mv/armv5_machdep.c
+Removing sys/arm/include/board.h
+Removing sys/arm/conf/std.arm
+Removing sys/arm/conf/mach-types
+Removing sys/arm/conf/genboardid.awk
+Removing sys/arm/conf/TS7800
+Removing sys/arm/conf/SHEEVAPLUG
+Removing sys/arm/conf/RT1310
+Removing sys/arm/conf/NOTES.armv7
+Removing sys/arm/conf/DREAMPLUG-1001
+Removing sys/arm/conf/DOCKSTAR
+Removing sys/arm/conf/DB-88F6XXX
+Removing sys/arm/conf/DB-88F5XXX
+Removing sys/arm/conf/DB-78XXX
+Removing sys/arm/arm/busdma_machdep-v4.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/conf/files.amd64
+index 27440ec6d03a,adb804a80b13..000000000000
+--- a/sys/conf/files.amd64
++++ b/sys/conf/files.amd64
+@@@ -72,26 -72,6 +72,29 @@@ ia32_assym.h			standard				
+  	no-obj no-implicit-rule before-depend				\
+  	clean		"ia32_assym.h"
+  #
+++<<<<<<< HEAD
+ +font.h				optional	sc_dflt_font		\
+ +	compile-with	"uudecode < /usr/share/syscons/fonts/${SC_DFLT_FONT}-8x16.fnt && file2c 'static u_char dflt_font_16[16*256] = {' '};' < ${SC_DFLT_FONT}-8x16 > font.h && uudecode < /usr/share/syscons/fonts/${SC_DFLT_FONT}-8x14.fnt && file2c 'static u_char dflt_font_14[14*256] = {' '};' < ${SC_DFLT_FONT}-8x14 >> font.h && uudecode < /usr/share/syscons/fonts/${SC_DFLT_FONT}-8x8.fnt && file2c 'static u_char dflt_font_8[8*256] = {' '};' < ${SC_DFLT_FONT}-8x8 >> font.h"									\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"font.h ${SC_DFLT_FONT}-8x14 ${SC_DFLT_FONT}-8x16 ${SC_DFLT_FONT}-8x8"
+ +#
+ +atkbdmap.h			optional	atkbd_dflt_keymap	\
+ +	compile-with	"kbdcontrol -P ${S:S/sys$/share/}/vt/keymaps -P ${S:S/sys$/share/}/syscons/keymaps -L ${ATKBD_DFLT_KEYMAP} | sed -e 's/^static keymap_t.* = /static keymap_t key_map = /' -e 's/^static accentmap_t.* = /static accentmap_t accent_map = /' > atkbdmap.h"			\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"atkbdmap.h"
+ +#
+ +ukbdmap.h			optional	ukbd_dflt_keymap	\
+ +	compile-with	"kbdcontrol -P ${S:S/sys$/share/}/vt/keymaps -P ${S:S/sys$/share/}/syscons/keymaps -L ${UKBD_DFLT_KEYMAP} | sed -e 's/^static keymap_t.* = /static keymap_t key_map = /' -e 's/^static accentmap_t.* = /static accentmap_t accent_map = /' > ukbdmap.h"			\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"ukbdmap.h"
+ +#
+ +kbdmuxmap.h			optional	kbdmux_dflt_keymap	\
+ +	compile-with	"/usr/sbin/kbdcontrol -L ${KBDMUX_DFLT_KEYMAP} | sed -e 's/^static keymap_t.* = /static keymap_t key_map = /' -e 's/^static accentmap_t.* = /static accentmap_t accent_map = /' > kbdmuxmap.h"			\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"kbdmuxmap.h"
+ +#
+++=======
+++>>>>>>> freebsd/current/master
+  amd64/acpica/acpi_machdep.c	optional	acpi
+  acpi_wakecode.o			optional	acpi			\
+  	dependency	"$S/amd64/acpica/acpi_wakecode.S assym.inc"	\
+diff --cc sys/conf/files.i386
+index a250ac5ea596,5aa9a4f3900e..000000000000
+--- a/sys/conf/files.i386
++++ b/sys/conf/files.i386
+@@@ -47,26 -47,6 +47,29 @@@ linux_vdso.so			optional	compat_linux		
+  	no-implicit-rule						\
+  	clean		"linux_vdso.so"
+  #
+++<<<<<<< HEAD
+ +font.h				optional	sc_dflt_font		\
+ +	compile-with	"uudecode < /usr/share/syscons/fonts/${SC_DFLT_FONT}-8x16.fnt && file2c 'static u_char dflt_font_16[16*256] = {' '};' < ${SC_DFLT_FONT}-8x16 > font.h && uudecode < /usr/share/syscons/fonts/${SC_DFLT_FONT}-8x14.fnt && file2c 'static u_char dflt_font_14[14*256] = {' '};' < ${SC_DFLT_FONT}-8x14 >> font.h && uudecode < /usr/share/syscons/fonts/${SC_DFLT_FONT}-8x8.fnt && file2c 'static u_char dflt_font_8[8*256] = {' '};' < ${SC_DFLT_FONT}-8x8 >> font.h"										\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"font.h ${SC_DFLT_FONT}-8x14 ${SC_DFLT_FONT}-8x16 ${SC_DFLT_FONT}-8x8"
+ +#
+ +atkbdmap.h			optional	atkbd_dflt_keymap	\
+ +	compile-with	"kbdcontrol -P ${S:S/sys$/share/}/vt/keymaps -P ${S:S/sys$/share/}/syscons/keymaps -L ${ATKBD_DFLT_KEYMAP} | sed -e 's/^static keymap_t.* = /static keymap_t key_map = /' -e 's/^static accentmap_t.* = /static accentmap_t accent_map = /' > atkbdmap.h"			\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"atkbdmap.h"
+ +#
+ +ukbdmap.h			optional	ukbd_dflt_keymap	\
+ +	compile-with	"kbdcontrol -P ${S:S/sys$/share/}/vt/keymaps -P ${S:S/sys$/share/}/syscons/keymaps -L ${UKBD_DFLT_KEYMAP} | sed -e 's/^static keymap_t.* = /static keymap_t key_map = /' -e 's/^static accentmap_t.* = /static accentmap_t accent_map = /' > ukbdmap.h"			\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"ukbdmap.h"
+ +#
+ +kbdmuxmap.h			optional	kbdmux_dflt_keymap	\
+ +	compile-with	"/usr/sbin/kbdcontrol -L ${KBDMUX_DFLT_KEYMAP} | sed -e 's/^static keymap_t.* = /static keymap_t key_map = /' -e 's/^static accentmap_t.* = /static accentmap_t accent_map = /' > kbdmuxmap.h"			\
+ +	no-obj no-implicit-rule before-depend				\
+ +	clean		"kbdmuxmap.h"
+ +#
+++=======
+++>>>>>>> freebsd/current/master
+  cddl/contrib/opensolaris/common/atomic/i386/opensolaris_atomic.S	optional zfs | dtrace compile-with "${ZFS_S}"
+  cddl/dev/dtrace/i386/dtrace_asm.S			optional dtrace compile-with "${DTRACE_S}"
+  cddl/dev/dtrace/i386/dtrace_subr.c			optional dtrace compile-with "${DTRACE_C}"
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	deleted:    sys/arm/arm/busdma_machdep-v4.c
+	renamed:    sys/arm/arm/busdma_machdep-v6.c -> sys/arm/arm/busdma_machdep.c
+	deleted:    sys/arm/conf/DB-78XXX
+	deleted:    sys/arm/conf/DB-88F5XXX
+	deleted:    sys/arm/conf/DB-88F6XXX
+	deleted:    sys/arm/conf/DOCKSTAR
+	deleted:    sys/arm/conf/DREAMPLUG-1001
+	modified:   sys/arm/conf/NOTES
+	deleted:    sys/arm/conf/NOTES.armv7
+	deleted:    sys/arm/conf/RT1310
+	deleted:    sys/arm/conf/SHEEVAPLUG
+	deleted:    sys/arm/conf/TS7800
+	deleted:    sys/arm/conf/genboardid.awk
+	deleted:    sys/arm/conf/mach-types
+	deleted:    sys/arm/conf/std.arm
+	deleted:    sys/arm/include/board.h
+	deleted:    sys/arm/mv/armv5_machdep.c
+	deleted:    sys/arm/mv/discovery/discovery.c
+	deleted:    sys/arm/mv/discovery/files.db78xxx
+	deleted:    sys/arm/mv/discovery/std.db78xxx
+	deleted:    sys/arm/mv/files.mv
+	deleted:    sys/arm/mv/kirkwood/files.kirkwood
+	deleted:    sys/arm/mv/kirkwood/kirkwood.c
+	deleted:    sys/arm/mv/kirkwood/std.db88f6xxx
+	deleted:    sys/arm/mv/kirkwood/std.kirkwood
+	deleted:    sys/arm/mv/orion/db88f5xxx.c
+	deleted:    sys/arm/mv/orion/files.db88f5xxx
+	deleted:    sys/arm/mv/orion/files.ts7800
+	deleted:    sys/arm/mv/orion/orion.c
+	deleted:    sys/arm/mv/orion/std.db88f5xxx
+	deleted:    sys/arm/mv/orion/std.ts7800
+	deleted:    sys/arm/ralink/files.ralink
+	deleted:    sys/arm/ralink/if_fv.c
+	deleted:    sys/arm/ralink/if_fvreg.h
+	deleted:    sys/arm/ralink/rt1310_gpio.c
+	deleted:    sys/arm/ralink/rt1310_intc.c
+	deleted:    sys/arm/ralink/rt1310_machdep.c
+	deleted:    sys/arm/ralink/rt1310_timer.c
+	deleted:    sys/arm/ralink/rt1310reg.h
+	deleted:    sys/arm/ralink/rt1310var.h
+	deleted:    sys/arm/ralink/std.ralink
+	modified:   sys/conf/files
+	modified:   sys/conf/files.arm
+	modified:   sys/conf/files.powerpc
+	modified:   sys/conf/files.x86
+	modified:   sys/conf/kern.pre.mk
+	modified:   sys/conf/makeLINT.mk
+	modified:   sys/conf/options.arm
+	modified:   sys/fs/nullfs/null_vnops.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/kern/vnode_if.src
+	modified:   sys/sys/vnode.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/conf/files.amd64
+	both modified:   sys/conf/files.i386
+
+HEAD is now at ee77b30d8781 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at ee77b30d8781 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
