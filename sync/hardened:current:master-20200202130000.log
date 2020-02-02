@@ -1,0 +1,149 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 13 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating ee77b30d8781..a4fcaad0e764
+Fast-forward
+ sys/arm/arm/busdma_machdep-v4.c                    | 1671 --------
+ .../arm/{busdma_machdep-v6.c => busdma_machdep.c}  |    0
+ sys/arm/conf/DB-78XXX                              |   81 -
+ sys/arm/conf/DB-88F5XXX                            |   82 -
+ sys/arm/conf/DB-88F6XXX                            |   85 -
+ sys/arm/conf/DOCKSTAR                              |  155 -
+ sys/arm/conf/DREAMPLUG-1001                        |  163 -
+ sys/arm/conf/NOTES                                 |   64 +-
+ sys/arm/conf/NOTES.armv7                           |   64 -
+ sys/arm/conf/RT1310                                |   79 -
+ sys/arm/conf/SHEEVAPLUG                            |   78 -
+ sys/arm/conf/TS7800                                |   78 -
+ sys/arm/conf/genboardid.awk                        |   57 -
+ sys/arm/conf/mach-types                            | 4146 --------------------
+ sys/arm/conf/std.arm                               |   38 -
+ sys/arm/include/board.h                            |   64 -
+ sys/arm/mv/armv5_machdep.c                         |  500 ---
+ sys/arm/mv/discovery/discovery.c                   |  120 -
+ sys/arm/mv/discovery/files.db78xxx                 |    5 -
+ sys/arm/mv/discovery/std.db78xxx                   |    7 -
+ sys/arm/mv/files.mv                                |   34 -
+ sys/arm/mv/kirkwood/files.kirkwood                 |    5 -
+ sys/arm/mv/kirkwood/kirkwood.c                     |   90 -
+ sys/arm/mv/kirkwood/std.db88f6xxx                  |    5 -
+ sys/arm/mv/kirkwood/std.kirkwood                   |    4 -
+ sys/arm/mv/orion/db88f5xxx.c                       |  175 -
+ sys/arm/mv/orion/files.db88f5xxx                   |    5 -
+ sys/arm/mv/orion/files.ts7800                      |    5 -
+ sys/arm/mv/orion/orion.c                           |  111 -
+ sys/arm/mv/orion/std.db88f5xxx                     |    7 -
+ sys/arm/mv/orion/std.ts7800                        |   11 -
+ sys/arm/ralink/files.ralink                        |    7 -
+ sys/arm/ralink/if_fv.c                             | 1875 ---------
+ sys/arm/ralink/if_fvreg.h                          |  452 ---
+ sys/arm/ralink/rt1310_gpio.c                       |  480 ---
+ sys/arm/ralink/rt1310_intc.c                       |  336 --
+ sys/arm/ralink/rt1310_machdep.c                    |  176 -
+ sys/arm/ralink/rt1310_timer.c                      |  343 --
+ sys/arm/ralink/rt1310reg.h                         |   82 -
+ sys/arm/ralink/rt1310var.h                         |   44 -
+ sys/arm/ralink/std.ralink                          |    9 -
+ sys/conf/files                                     |    8 +-
+ sys/conf/files.amd64                               |   20 -
+ sys/conf/files.arm                                 |   12 +-
+ sys/conf/files.i386                                |   20 -
+ sys/conf/files.powerpc                             |    5 -
+ sys/conf/files.x86                                 |    5 +
+ sys/conf/kern.pre.mk                               |    3 +
+ sys/conf/makeLINT.mk                               |    8 +-
+ sys/conf/options.arm                               |    1 -
+ sys/fs/nullfs/null_vnops.c                         |    3 -
+ sys/kern/kern_descrip.c                            |    9 +-
+ sys/kern/vfs_subr.c                                |    6 -
+ sys/kern/vnode_if.src                              |    1 -
+ sys/sys/vnode.h                                    |    3 -
+ 55 files changed, 77 insertions(+), 11820 deletions(-)
+ delete mode 100644 sys/arm/arm/busdma_machdep-v4.c
+ rename sys/arm/arm/{busdma_machdep-v6.c => busdma_machdep.c} (100%)
+ delete mode 100644 sys/arm/conf/DB-78XXX
+ delete mode 100644 sys/arm/conf/DB-88F5XXX
+ delete mode 100644 sys/arm/conf/DB-88F6XXX
+ delete mode 100644 sys/arm/conf/DOCKSTAR
+ delete mode 100644 sys/arm/conf/DREAMPLUG-1001
+ delete mode 100644 sys/arm/conf/NOTES.armv7
+ delete mode 100644 sys/arm/conf/RT1310
+ delete mode 100644 sys/arm/conf/SHEEVAPLUG
+ delete mode 100644 sys/arm/conf/TS7800
+ delete mode 100644 sys/arm/conf/genboardid.awk
+ delete mode 100644 sys/arm/conf/mach-types
+ delete mode 100644 sys/arm/conf/std.arm
+ delete mode 100644 sys/arm/include/board.h
+ delete mode 100644 sys/arm/mv/armv5_machdep.c
+ delete mode 100644 sys/arm/mv/discovery/discovery.c
+ delete mode 100644 sys/arm/mv/discovery/files.db78xxx
+ delete mode 100644 sys/arm/mv/discovery/std.db78xxx
+ delete mode 100644 sys/arm/mv/files.mv
+ delete mode 100644 sys/arm/mv/kirkwood/files.kirkwood
+ delete mode 100644 sys/arm/mv/kirkwood/kirkwood.c
+ delete mode 100644 sys/arm/mv/kirkwood/std.db88f6xxx
+ delete mode 100644 sys/arm/mv/kirkwood/std.kirkwood
+ delete mode 100644 sys/arm/mv/orion/db88f5xxx.c
+ delete mode 100644 sys/arm/mv/orion/files.db88f5xxx
+ delete mode 100644 sys/arm/mv/orion/files.ts7800
+ delete mode 100644 sys/arm/mv/orion/orion.c
+ delete mode 100644 sys/arm/mv/orion/std.db88f5xxx
+ delete mode 100644 sys/arm/mv/orion/std.ts7800
+ delete mode 100644 sys/arm/ralink/files.ralink
+ delete mode 100644 sys/arm/ralink/if_fv.c
+ delete mode 100644 sys/arm/ralink/if_fvreg.h
+ delete mode 100644 sys/arm/ralink/rt1310_gpio.c
+ delete mode 100644 sys/arm/ralink/rt1310_intc.c
+ delete mode 100644 sys/arm/ralink/rt1310_machdep.c
+ delete mode 100644 sys/arm/ralink/rt1310_timer.c
+ delete mode 100644 sys/arm/ralink/rt1310reg.h
+ delete mode 100644 sys/arm/ralink/rt1310var.h
+ delete mode 100644 sys/arm/ralink/std.ralink
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/modules/Makefile
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile                                           |  8 +--
+ Makefile.inc1                                      |  9 +--
+ contrib/netbsd-tests/lib/libc/c063/t_o_search.c    | 78 +++++++++++++++++++++-
+ lib/libc/sys/open.2                                | 23 ++++++-
+ lib/libc/tests/c063/Makefile                       |  3 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      | 43 +++++++-----
+ sys/fs/devfs/devfs_vnops.c                         |  4 +-
+ sys/fs/fuse/fuse_vnops.c                           |  4 +-
+ sys/fs/nfsclient/nfs_clvnops.c                     |  3 +-
+ sys/fs/pseudofs/pseudofs_vnops.c                   |  4 --
+ sys/fs/smbfs/smbfs_vnops.c                         |  3 +-
+ sys/fs/tmpfs/tmpfs_vnops.c                         |  2 +-
+ sys/kern/vfs_cache.c                               |  6 +-
+ sys/kern/vfs_lookup.c                              | 19 +++++-
+ sys/kern/vfs_subr.c                                | 12 ++++
+ sys/modules/Makefile                               |  2 +-
+ sys/sys/fcntl.h                                    |  2 +
+ sys/sys/namei.h                                    |  3 +-
+ sys/sys/vnode.h                                    |  2 +
+ 19 files changed, 174 insertions(+), 56 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    a4fcaad0e764..53f16bebcd0d  hardened/current/master -> hardened/current/master        
+remote:    e98538b60126..11e74d9fa26b  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   a4fcaad0e764..53f16bebcd0d  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
