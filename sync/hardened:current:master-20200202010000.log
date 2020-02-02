@@ -1,0 +1,63 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing sys/modules/vpo/Makefile
+Auto-merging sys/modules/Makefile
+Removing sys/dev/ppbus/vpoio.h
+Removing sys/dev/ppbus/vpoio.c
+Removing sys/dev/ppbus/vpo.c
+Removing sys/dev/ppbus/immio.c
+Auto-merging sys/conf/options
+Auto-merging sys/conf/files
+Auto-merging sys/conf/NOTES
+Removing share/man/man4/vpo.4
+Auto-merging share/man/man4/Makefile
+Auto-merging ObsoleteFiles.inc
+Merge made by the 'recursive' strategy.
+ ObsoleteFiles.inc         |   4 +
+ share/man/man4/Makefile   |   2 -
+ share/man/man4/ppbus.4    |  15 -
+ share/man/man4/vpo.4      | 105 ------
+ share/man/man9/microseq.9 |   4 +-
+ sys/conf/NOTES            |   5 -
+ sys/conf/files            |   3 -
+ sys/conf/options          |   1 -
+ sys/dev/ppbus/immio.c     | 818 ----------------------------------------------
+ sys/dev/ppbus/vpo.c       | 440 -------------------------
+ sys/dev/ppbus/vpoio.c     | 789 --------------------------------------------
+ sys/dev/ppbus/vpoio.h     |  99 ------
+ sys/modules/Makefile      |   2 -
+ sys/modules/vpo/Makefile  |  10 -
+ sys/vm/uma_core.c         |   4 +-
+ 15 files changed, 9 insertions(+), 2292 deletions(-)
+ delete mode 100644 share/man/man4/vpo.4
+ delete mode 100644 sys/dev/ppbus/immio.c
+ delete mode 100644 sys/dev/ppbus/vpo.c
+ delete mode 100644 sys/dev/ppbus/vpoio.c
+ delete mode 100644 sys/dev/ppbus/vpoio.h
+ delete mode 100644 sys/modules/vpo/Makefile
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5b682a6e9e1a..ee77b30d8781  hardened/current/master -> hardened/current/master        
+remote:    cb28946691fb..3ec87c0e02c2  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5b682a6e9e1a..ee77b30d8781  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
