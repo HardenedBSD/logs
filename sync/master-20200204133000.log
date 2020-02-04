@@ -147,3 +147,221 @@ Fast-forward
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-themes/xfce-evolution/pkg-plist
+Removing x11-themes/xfce-evolution/distinfo
+Removing x11-themes/xfce-evolution/Makefile
+Auto-merging net/arp-scan/Makefile
+CONFLICT (content): Merge conflict in net/arp-scan/Makefile
+Auto-merging editors/vim/Makefile
+Removing devel/py-parallax/files/patch-parallax_____init____.py
+Removing devel/pecl-protobuf/files/patch-protobuf.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/arp-scan/Makefile
+index c0b31b17b091,db5c7f303840..000000000000
+--- a/net/arp-scan/Makefile
++++ b/net/arp-scan/Makefile
+@@@ -15,6 -16,7 +16,11 @@@ USES=		autorecon
+  GNU_CONFIGURE=	yes
+  USE_LDCONFIG=	yes
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+++=======
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	royhills
+++>>>>>>> freebsd/master
+  
+  .include <bsd.port.mk>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/python.mk
+	modified:   UPDATING
+	modified:   astro/p5-Astro-SpaceTrack/Makefile
+	modified:   astro/p5-Astro-SpaceTrack/distinfo
+	modified:   databases/p5-DBD-Pg/Makefile
+	modified:   databases/p5-DBD-Pg/distinfo
+	modified:   databases/py-fakeredis/Makefile
+	modified:   databases/py-fakeredis/distinfo
+	modified:   devel/Makefile
+	modified:   devel/git-lfs/Makefile
+	modified:   devel/git-lfs/distinfo
+	modified:   devel/go-bindata-assetfs/Makefile
+	modified:   devel/go-bindata-assetfs/distinfo
+	modified:   devel/libqb/Makefile
+	modified:   devel/libqb/distinfo
+	modified:   devel/libqb/pkg-plist
+	modified:   devel/p5-Alien-Base-ModuleBuild/Makefile
+	modified:   devel/p5-Alien-Base-ModuleBuild/distinfo
+	modified:   devel/p5-Alien-Build/Makefile
+	modified:   devel/p5-Alien-Build/distinfo
+	modified:   devel/p5-Function-Fallback-CoreOrPP/Makefile
+	modified:   devel/p5-Function-Fallback-CoreOrPP/distinfo
+	modified:   devel/pear-SebastianBergmann_FinderFacade/Makefile
+	modified:   devel/pear-SebastianBergmann_FinderFacade/distinfo
+	modified:   devel/pecl-protobuf/Makefile
+	modified:   devel/pecl-protobuf/distinfo
+	deleted:    devel/pecl-protobuf/files/patch-protobuf.h
+	modified:   devel/pecl-vld/Makefile
+	modified:   devel/pecl-vld/distinfo
+	modified:   devel/phpunit7/Makefile
+	modified:   devel/phpunit7/distinfo
+	modified:   devel/phpunit8/Makefile
+	modified:   devel/phpunit8/distinfo
+	modified:   devel/protobuf/Makefile
+	modified:   devel/protobuf/distinfo
+	modified:   devel/protobuf/pkg-plist
+	modified:   devel/py-applicationinsights/Makefile
+	modified:   devel/py-applicationinsights/distinfo
+	modified:   devel/py-applicationinsights/pkg-descr
+	modified:   devel/py-ijson/Makefile
+	modified:   devel/py-ijson/distinfo
+	modified:   devel/py-parallax/Makefile
+	modified:   devel/py-parallax/distinfo
+	deleted:    devel/py-parallax/files/patch-parallax_____init____.py
+	modified:   devel/py-parallax/pkg-descr
+	modified:   devel/py-protobuf/Makefile
+	modified:   devel/py-protobuf/distinfo
+	modified:   devel/py-tinyrpc/Makefile
+	modified:   devel/py-tinyrpc/distinfo
+	modified:   devel/py-tinyrpc/pkg-descr
+	modified:   devel/py-vulture/Makefile
+	modified:   devel/py-vulture/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-console/Makefile
+	modified:   devel/rubygem-console/distinfo
+	new file:   devel/rubygem-e2mmap/Makefile
+	new file:   devel/rubygem-e2mmap/distinfo
+	new file:   devel/rubygem-e2mmap/pkg-descr
+	modified:   devel/rubygem-gettext/Makefile
+	modified:   devel/rubygem-google-protobuf/Makefile
+	modified:   devel/rubygem-google-protobuf/distinfo
+	modified:   devel/rubygem-msgpack/Makefile
+	modified:   devel/rubygem-msgpack/distinfo
+	modified:   devel/rubygem-sidekiq-scheduler/Makefile
+	modified:   devel/rubygem-sidekiq-scheduler/distinfo
+	new file:   devel/rubygem-thwait/Makefile
+	new file:   devel/rubygem-thwait/distinfo
+	new file:   devel/rubygem-thwait/pkg-descr
+	modified:   devel/yasm/pkg-descr
+	modified:   dns/Makefile
+	modified:   dns/p5-Net-DNS-SEC/Makefile
+	modified:   dns/p5-Net-DNS-SEC/distinfo
+	modified:   dns/p5-Net-DNS-SEC/pkg-plist
+	new file:   dns/py-publicsuffix2/Makefile
+	new file:   dns/py-publicsuffix2/distinfo
+	new file:   dns/py-publicsuffix2/files/patch-setup.py
+	new file:   dns/py-publicsuffix2/pkg-descr
+	modified:   editors/nedit/Makefile
+	modified:   editors/vim/Makefile
+	modified:   editors/vim/distinfo
+	modified:   emulators/wine-devel/Makefile
+	modified:   emulators/wine-devel/distinfo
+	modified:   emulators/wine-devel/pkg-plist
+	modified:   lang/coffeescript/Makefile
+	modified:   lang/coffeescript/distinfo
+	modified:   lang/p5-Scalar-List-Utils/Makefile
+	modified:   lang/p5-Scalar-List-Utils/distinfo
+	modified:   misc/p5-Geo-Address-Formatter/Makefile
+	modified:   misc/p5-Geo-Address-Formatter/distinfo
+	modified:   net-mgmt/crmsh/Makefile
+	modified:   net-mgmt/crmsh/distinfo
+	modified:   net-mgmt/crmsh/pkg-plist
+	modified:   net/arp-scan/distinfo
+	modified:   net/p5-Net-Amazon-S3/Makefile
+	modified:   net/p5-Net-Amazon-S3/distinfo
+	modified:   net/tinyfugue/Makefile
+	modified:   net/tinyfugue/pkg-descr
+	modified:   ports-mgmt/pkg-provides/Makefile
+	renamed:    ports-mgmt/pkg-provides/pkg-message -> ports-mgmt/pkg-provides/files/pkg-message.in
+	modified:   print/py-fonttools/Makefile
+	modified:   print/py-fonttools/distinfo
+	modified:   science/py-geometer/Makefile
+	modified:   science/py-geometer/distinfo
+	modified:   security/py-yubikey-manager/Makefile
+	modified:   security/py-yubikey-manager/distinfo
+	modified:   sysutils/kio-fuse/Makefile
+	new file:   sysutils/kio-fuse/files/patch-kiofusevfs.cpp
+	modified:   sysutils/py-plumbum/Makefile
+	modified:   sysutils/py-plumbum/distinfo
+	modified:   sysutils/py-plumbum/pkg-descr
+	modified:   textproc/docbook-to-man/Makefile
+	modified:   textproc/docbook-to-man/files/patch-Instant__Imakefile
+	modified:   textproc/docbook-to-man/files/patch-Transpec__Imakefile
+	modified:   textproc/docbook-to-man/files/patch-cmd__Imakefile
+	modified:   textproc/docbook-to-man/files/patch-cmd__docbook-to-man.sh
+	modified:   textproc/docbook-to-man/pkg-descr
+	modified:   textproc/docbook-xml/Makefile
+	modified:   textproc/docbook-xml/pkg-descr
+	modified:   textproc/docbook-xsd/Makefile
+	modified:   textproc/docbook-xsd/pkg-descr
+	modified:   textproc/p5-Pod-DocBook/Makefile
+	modified:   textproc/p5-Text-Tabs+Wrap/Makefile
+	modified:   textproc/wdiff/Makefile
+	new file:   www/firefox/files/patch-bug1269654_comment5
+	new file:   www/firefox/files/patch-bug1504834_comment10
+	new file:   www/firefox/files/patch-bug1504834_comment5
+	new file:   www/firefox/files/patch-bug1504834_comment7
+	new file:   www/firefox/files/patch-bug1504834_comment9
+	modified:   www/p5-CGI/Makefile
+	modified:   www/p5-CGI/distinfo
+	modified:   www/py-google-cloud-speech/Makefile
+	modified:   www/py-google-cloud-speech/distinfo
+	modified:   www/py-google-cloud-speech/pkg-descr
+	modified:   www/py-waitress/Makefile
+	modified:   www/py-waitress/distinfo
+	modified:   x11-themes/Makefile
+	new file:   x11-themes/classiclooks/Makefile
+	new file:   x11-themes/classiclooks/distinfo
+	renamed:    x11-themes/xfce-evolution/pkg-descr -> x11-themes/classiclooks/pkg-descr
+	renamed:    x11-themes/xfce-evolution/pkg-message -> x11-themes/classiclooks/pkg-message
+	new file:   x11-themes/classiclooks/pkg-plist
+	deleted:    x11-themes/xfce-evolution/Makefile
+	deleted:    x11-themes/xfce-evolution/distinfo
+	deleted:    x11-themes/xfce-evolution/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/arp-scan/Makefile
+
+
+It took 3.49 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 7244feb87ff9 HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.01 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 7244feb87ff9 HBSD: Resolve merge conflict
+==== END: master ====
