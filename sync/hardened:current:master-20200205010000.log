@@ -1,0 +1,140 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 35 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 8d442a1dbc6d..62bfaa79395e
+Fast-forward
+ ObsoleteFiles.inc                                 |     3 +
+ contrib/elftoolchain/elfcopy/main.c               |     8 +-
+ contrib/elftoolchain/elfcopy/sections.c           |     2 +-
+ contrib/elftoolchain/libdwarf/dwarf_pro_attr.c    |     4 +-
+ contrib/elftoolchain/libdwarf/dwarf_pro_expr.c    |    10 +-
+ contrib/elftoolchain/libdwarf/libdwarf_abbrev.c   |     4 +-
+ contrib/elftoolchain/libdwarf/libdwarf_frame.c    |     6 +-
+ contrib/elftoolchain/libelftc/libelftc_dem_arm.c  |    13 +-
+ contrib/elftoolchain/libelftc/libelftc_dem_gnu2.c |    11 +-
+ contrib/elftoolchain/libelftc/libelftc_dem_gnu3.c |     5 +-
+ contrib/elftoolchain/readelf/readelf.c            |     6 +-
+ contrib/elftoolchain/size/size.c                  |    25 +-
+ contrib/sqlite3/Makefile.msc                      |    16 +-
+ contrib/sqlite3/configure                         |    22 +-
+ contrib/sqlite3/configure.ac                      |     4 +-
+ contrib/sqlite3/shell.c                           |   187 +-
+ contrib/sqlite3/sqlite3.c                         | 13869 ++++++++------------
+ contrib/sqlite3/sqlite3.h                         |   545 +-
+ contrib/sqlite3/sqlite3ext.h                      |    12 -
+ contrib/sqlite3/tea/configure                     |    18 +-
+ contrib/sqlite3/tea/configure.ac                  |     2 +-
+ contrib/sqlite3/tea/generic/tclsqlite3.c          |    30 +-
+ contrib/sqlite3/tea/win/makefile.vc               |    49 +-
+ share/man/man5/src.conf.5                         |     4 +-
+ share/man/man9/zone.9                             |    14 +-
+ sys/cddl/compat/opensolaris/kern/opensolaris_vm.c |     1 +
+ sys/compat/cloudabi/cloudabi_vdso.c               |     3 +-
+ sys/dev/atkbdc/psm.c                              |    32 +-
+ sys/fs/tmpfs/tmpfs.h                              |     2 +
+ sys/fs/tmpfs/tmpfs_vfsops.c                       |    30 +-
+ sys/i386/i386/pmap.c                              |     2 +-
+ sys/kern/kern_mbuf.c                              |    31 +-
+ sys/kern/kern_time.c                              |     6 +-
+ sys/kern/sysv_sem.c                               |     4 +-
+ sys/powerpc/aim/aim_machdep.c                     |    21 +-
+ sys/powerpc/aim/slb.c                             |    10 +-
+ sys/powerpc/booke/booke_machdep.c                 |    18 +
+ sys/powerpc/powerpc/exec_machdep.c                |    28 +-
+ sys/vm/uma.h                                      |     7 +-
+ sys/vm/uma_core.c                                 |   244 +-
+ sys/vm/uma_int.h                                  |     1 +
+ sys/vm/vm_object.c                                |    66 +-
+ sys/vm/vm_object.h                                |    11 +-
+ sys/vm/vm_page.c                                  |    43 +-
+ sys/vm/vm_page.h                                  |    14 +-
+ tools/build/options/WITHOUT_HTTPD                 |     2 -
+ tools/build/options/WITH_HTTPD                    |     2 -
+ usr.sbin/Makefile                                 |     1 -
+ usr.sbin/hbsd-update/hbsd-update-build            |     2 +-
+ usr.sbin/simple_httpd/Makefile                    |     7 -
+ usr.sbin/simple_httpd/README                      |   167 -
+ usr.sbin/simple_httpd/simple_httpd.c              |   501 -
+ 52 files changed, 5972 insertions(+), 10153 deletions(-)
+ delete mode 100644 tools/build/options/WITHOUT_HTTPD
+ delete mode 100644 tools/build/options/WITH_HTTPD
+ delete mode 100644 usr.sbin/simple_httpd/Makefile
+ delete mode 100644 usr.sbin/simple_httpd/README
+ delete mode 100644 usr.sbin/simple_httpd/simple_httpd.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/login/login.conf
+CONFLICT (content): Merge conflict in usr.bin/login/login.conf
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.bin/login/login.conf
+index e9869bff965f,b8772e57a7eb..000000000000
+--- a/usr.bin/login/login.conf
++++ b/usr.bin/login/login.conf
+@@@ -26,7 -26,8 +26,12 @@@ default:
+  	:passwd_format=sha512:\
+  	:copyright=/etc/COPYRIGHT:\
+  	:welcome=/var/run/motd:\
+++<<<<<<< HEAD
+ +	:setenv=MAIL=/var/mail/$,BLOCKSIZE=K:LC_COLLATE=C:\
+++=======
++ 	:setenv=BLOCKSIZE=K:\
++ 	:mail=/var/mail/$:\
+++>>>>>>> freebsd/current/master
+  	:path=/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin ~/bin:\
+  	:nologin=/var/run/nologin:\
+  	:cputime=unlimited:\
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   RELNOTES
+	modified:   contrib/netbsd-tests/lib/libc/c063/t_o_search.c
+	modified:   lib/libutil/login.conf.5
+	modified:   lib/libutil/login_class.c
+	modified:   sbin/init/init.c
+	modified:   sys/dev/cxgbe/t4_netmap.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/netgraph/ng_base.c
+	modified:   sys/netgraph/ng_device.c
+	modified:   sys/netgraph/ng_socket.c
+	modified:   usr.bin/env/Makefile
+	modified:   usr.bin/env/env.1
+	modified:   usr.bin/env/env.c
+	modified:   usr.sbin/cron/cron/do_command.c
+	modified:   usr.sbin/cron/crontab/crontab.5
+	modified:   usr.sbin/service/service.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/login/login.conf
+
+HEAD is now at 62bfaa79395e HBSD: Update HardenedBSD git URL in hbsd-update-build
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 62bfaa79395e HBSD: Update HardenedBSD git URL in hbsd-update-build
+==== END: hardened/current/master ====
