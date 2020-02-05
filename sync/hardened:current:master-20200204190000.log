@@ -1,0 +1,143 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing usr.sbin/simple_httpd/simple_httpd.c
+Removing usr.sbin/simple_httpd/README
+Removing usr.sbin/simple_httpd/Makefile
+Auto-merging usr.sbin/Makefile
+CONFLICT (content): Merge conflict in usr.sbin/Makefile
+Removing tools/build/options/WITH_HTTPD
+Removing tools/build/options/WITHOUT_HTTPD
+Auto-merging sys/powerpc/powerpc/exec_machdep.c
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/src.opts.mk
+index dc868f5d5fd7,fc5a2a8ba4f9..000000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -209,10 -205,7 +209,13 @@@ __DEFAULT_NO_OPTIONS = 
+      GNU_GREP_COMPAT \
+      GPL_DTC \
+      HESIOD \
+++<<<<<<< HEAD
+ +    LIB32 \
+ +    LIBRESSL \
+++=======
+++>>>>>>> freebsd/current/master
+      LIBSOFT \
+ +    HTTPD \
+      LOADER_FIREWIRE \
+      LOADER_FORCE_LE \
+      LOADER_VERBOSE \
+diff --cc usr.sbin/Makefile
+index 0595bc12e0f7,6b13bf416edf..000000000000
+--- a/usr.sbin/Makefile
++++ b/usr.sbin/Makefile
+@@@ -142,9 -142,6 +142,12 @@@ SUBDIR.${MK_FMTREE}+=	fmtre
+  SUBDIR.${MK_FREEBSD_UPDATE}+=	freebsd-update
+  SUBDIR.${MK_GSSAPI}+=	gssd
+  SUBDIR.${MK_GPIO}+=	gpioctl
+++<<<<<<< HEAD
+ +SUBDIR.${MK_HBSD_UPDATE}+=	hbsd-update
+ +SUBDIR.${MK_HBSDCONTROL}+=	hbsdcontrol
+ +SUBDIR.${MK_HTTPD}+=	simple_httpd
+++=======
+++>>>>>>> freebsd/current/master
+  SUBDIR.${MK_INET6}+=	ip6addrctl
+  SUBDIR.${MK_INET6}+=	mld6query
+  SUBDIR.${MK_INET6}+=	ndp
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/elftoolchain/elfcopy/main.c
+	modified:   contrib/elftoolchain/elfcopy/sections.c
+	modified:   contrib/elftoolchain/libdwarf/dwarf_pro_attr.c
+	modified:   contrib/elftoolchain/libdwarf/dwarf_pro_expr.c
+	modified:   contrib/elftoolchain/libdwarf/libdwarf_abbrev.c
+	modified:   contrib/elftoolchain/libdwarf/libdwarf_frame.c
+	modified:   contrib/elftoolchain/libelftc/libelftc_dem_arm.c
+	modified:   contrib/elftoolchain/libelftc/libelftc_dem_gnu2.c
+	modified:   contrib/elftoolchain/libelftc/libelftc_dem_gnu3.c
+	modified:   contrib/elftoolchain/readelf/readelf.c
+	modified:   contrib/elftoolchain/size/size.c
+	modified:   contrib/sqlite3/Makefile.msc
+	modified:   contrib/sqlite3/configure
+	modified:   contrib/sqlite3/configure.ac
+	modified:   contrib/sqlite3/shell.c
+	modified:   contrib/sqlite3/sqlite3.c
+	modified:   contrib/sqlite3/sqlite3.h
+	modified:   contrib/sqlite3/sqlite3ext.h
+	modified:   contrib/sqlite3/tea/configure
+	modified:   contrib/sqlite3/tea/configure.ac
+	modified:   contrib/sqlite3/tea/generic/tclsqlite3.c
+	modified:   contrib/sqlite3/tea/win/makefile.vc
+	modified:   share/man/man5/src.conf.5
+	modified:   share/man/man9/zone.9
+	modified:   sys/cddl/compat/opensolaris/kern/opensolaris_vm.c
+	modified:   sys/compat/cloudabi/cloudabi_vdso.c
+	modified:   sys/dev/atkbdc/psm.c
+	modified:   sys/fs/tmpfs/tmpfs.h
+	modified:   sys/fs/tmpfs/tmpfs_vfsops.c
+	modified:   sys/i386/i386/pmap.c
+	modified:   sys/kern/kern_mbuf.c
+	modified:   sys/kern/kern_time.c
+	modified:   sys/kern/sysv_sem.c
+	modified:   sys/powerpc/aim/aim_machdep.c
+	modified:   sys/powerpc/aim/slb.c
+	modified:   sys/powerpc/booke/booke_machdep.c
+	modified:   sys/powerpc/powerpc/exec_machdep.c
+	modified:   sys/vm/uma.h
+	modified:   sys/vm/uma_core.c
+	modified:   sys/vm/uma_int.h
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vm_object.h
+	modified:   sys/vm/vm_page.c
+	modified:   sys/vm/vm_page.h
+	deleted:    tools/build/options/WITHOUT_HTTPD
+	deleted:    tools/build/options/WITH_HTTPD
+	deleted:    usr.sbin/simple_httpd/Makefile
+	deleted:    usr.sbin/simple_httpd/README
+	deleted:    usr.sbin/simple_httpd/simple_httpd.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/mk/src.opts.mk
+	both modified:   usr.sbin/Makefile
+
+HEAD is now at 8d442a1dbc6d Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 8d442a1dbc6d Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
