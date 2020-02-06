@@ -14,3 +14,347 @@ Already up to date.
 Already up to date.
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/arp-scan/Makefile
+Removing deskutils/ical/files/patch-types_Makefile.in
+Removing deskutils/ical/files/patch-time_tcl.C
+Removing deskutils/ical/files/patch-time_Makefile.in
+Removing deskutils/ical/files/patch-pref.tcl
+Removing deskutils/ical/files/patch-object.C
+Removing deskutils/ical/files/patch-main.C
+Removing deskutils/ical/files/patch-item_tcl.C
+Removing deskutils/ical/files/patch-dispatch.C
+Removing deskutils/ical/files/patch-dateeditor.C
+Removing deskutils/ical/files/patch-configure
+Removing deskutils/ical/files/patch-config.h.in
+Removing deskutils/ical/files/patch-calendar_calfile.C
+Removing deskutils/ical/files/patch-calendar_calendar.C
+Removing deskutils/ical/files/patch-calendar_Makefile.in
+Removing deskutils/ical/files/patch-cal_tcl.C
+Removing deskutils/ical/files/patch-bitmaps-todo.xbm
+Removing deskutils/ical/files/patch-bitmaps-sright.xbm
+Removing deskutils/ical/files/patch-bitmaps-sleft.xbm
+Removing deskutils/ical/files/patch-bitmaps-right.xbm
+Removing deskutils/ical/files/patch-bitmaps-left.xbm
+Removing deskutils/ical/files/patch-bitmaps-ical.xbm
+Removing deskutils/ical/files/patch-bitmaps-dright.xbm
+Removing deskutils/ical/files/patch-bitmaps-done.xbm
+Removing deskutils/ical/files/patch-bitmaps-dleft.xbm
+Removing biology/seaview/files/patch-xfmatpt.cxx
+Removing biology/seaview/files/patch-treedraw.cxx
+Removing biology/seaview/files/patch-seaview.cxx
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   3 +
+ biology/seaview/Makefile                           |   2 +-
+ biology/seaview/distinfo                           |   6 +-
+ biology/seaview/files/patch-seaview.cxx            |  34 ----
+ biology/seaview/files/patch-treedraw.cxx           |  11 -
+ biology/seaview/files/patch-xfmatpt.cxx            |  20 --
+ databases/Makefile                                 |   3 +
+ databases/geoserver-mysql-plugin/Makefile          |   4 +-
+ databases/geoserver-mysql-plugin/distinfo          |   6 +-
+ databases/py-fakeredis/Makefile                    |   4 +-
+ databases/py-fakeredis/distinfo                    |   6 +-
+ databases/py-tiledb/Makefile                       |   2 +-
+ databases/py-tiledb/distinfo                       |   6 +-
+ databases/pymongo/Makefile                         |   2 +-
+ databases/pymongo/distinfo                         |   6 +-
+ databases/rubygem-activemodel60/Makefile           |  27 +++
+ databases/rubygem-activemodel60/distinfo           |   3 +
+ databases/rubygem-activemodel60/pkg-descr          |  10 +
+ databases/rubygem-activerecord60/Makefile          |  28 +++
+ databases/rubygem-activerecord60/distinfo          |   3 +
+ databases/rubygem-activerecord60/pkg-descr         |  14 ++
+ databases/rubygem-globalid-rails60/Makefile        |  23 +++
+ databases/rubygem-globalid-rails60/distinfo        |   3 +
+ databases/rubygem-globalid-rails60/pkg-descr       |   3 +
+ databases/tiledb/Makefile                          |   2 +-
+ databases/tiledb/distinfo                          |   6 +-
+ deskutils/Makefile                                 |   1 +
+ deskutils/ical/Makefile                            |  29 +--
+ deskutils/ical/distinfo                            |   8 +-
+ deskutils/ical/files/patch-Makefile.in             |  39 +---
+ deskutils/ical/files/patch-bitmaps-dleft.xbm       |  10 -
+ deskutils/ical/files/patch-bitmaps-done.xbm        |  10 -
+ deskutils/ical/files/patch-bitmaps-dright.xbm      |  10 -
+ deskutils/ical/files/patch-bitmaps-ical.xbm        |  10 -
+ deskutils/ical/files/patch-bitmaps-left.xbm        |  11 -
+ deskutils/ical/files/patch-bitmaps-right.xbm       |  11 -
+ deskutils/ical/files/patch-bitmaps-sleft.xbm       |  10 -
+ deskutils/ical/files/patch-bitmaps-sright.xbm      |  10 -
+ deskutils/ical/files/patch-bitmaps-todo.xbm        |  10 -
+ deskutils/ical/files/patch-cal_tcl.C               |  87 --------
+ deskutils/ical/files/patch-calendar_Makefile.in    |  10 -
+ deskutils/ical/files/patch-calendar_calendar.C     |  18 --
+ deskutils/ical/files/patch-calendar_calfile.C      |  11 -
+ deskutils/ical/files/patch-config.h.in             |  23 ---
+ deskutils/ical/files/patch-configure               |  32 ---
+ deskutils/ical/files/patch-dateeditor.C            |  34 ----
+ deskutils/ical/files/patch-dispatch.C              |  11 -
+ deskutils/ical/files/patch-item_tcl.C              | 225 ---------------------
+ deskutils/ical/files/patch-main.C                  | 132 ------------
+ deskutils/ical/files/patch-object.C                |  20 --
+ deskutils/ical/files/patch-pref.tcl                |  23 ---
+ deskutils/ical/files/patch-time_Makefile.in        |  10 -
+ deskutils/ical/files/patch-time_Time.C             |  10 +
+ deskutils/ical/files/patch-time_tcl.C              |  11 -
+ deskutils/ical/files/patch-types_Makefile.in       |  11 -
+ deskutils/ical/pkg-descr                           |  11 +-
+ deskutils/ical/pkg-plist                           | 137 +++++++------
+ deskutils/kuserfeedback/Makefile                   |  22 ++
+ deskutils/kuserfeedback/distinfo                   |   3 +
+ deskutils/kuserfeedback/pkg-descr                  |  24 +++
+ deskutils/kuserfeedback/pkg-plist                  | 114 +++++++++++
+ devel/Makefile                                     |  13 +-
+ devel/p5-Alien-Build/Makefile                      |   2 +-
+ devel/p5-Alien-Build/distinfo                      |   6 +-
+ devel/p5-Devel-PatchPerl/Makefile                  |   2 +-
+ devel/p5-Devel-PatchPerl/distinfo                  |   6 +-
+ devel/p5-Term-Choose-Util/Makefile                 |   2 +-
+ devel/p5-Term-Choose-Util/distinfo                 |   6 +-
+ devel/py-tabulator/Makefile                        |   2 +-
+ devel/py-tabulator/distinfo                        |   6 +-
+ devel/rubygem-actionview60/Makefile                |  31 +++
+ devel/rubygem-actionview60/distinfo                |   3 +
+ devel/rubygem-actionview60/pkg-descr               |   7 +
+ devel/rubygem-activejob60/Makefile                 |  28 +++
+ devel/rubygem-activejob60/distinfo                 |   3 +
+ devel/rubygem-activejob60/pkg-descr                |  19 ++
+ devel/rubygem-activesupport60/Makefile             |  31 +++
+ devel/rubygem-activesupport60/distinfo             |   3 +
+ devel/rubygem-activesupport60/pkg-descr            |   7 +
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-cloudfront/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-cloudfront/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-iot/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-iot/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-kafka/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-kafka/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-ssm/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ssm/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-storagegateway/Makefile      |   2 +-
+ devel/rubygem-aws-sdk-storagegateway/distinfo      |   6 +-
+ devel/rubygem-aws-sdk-workmail/Makefile            |   2 +-
+ devel/rubygem-aws-sdk-workmail/distinfo            |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-devise-rails60/Makefile              |  30 +++
+ devel/rubygem-devise-rails60/distinfo              |   3 +
+ devel/rubygem-devise-rails60/pkg-descr             |   3 +
+ devel/rubygem-jbuilder-rails60/Makefile            |  23 +++
+ devel/rubygem-jbuilder-rails60/distinfo            |   3 +
+ devel/rubygem-jbuilder-rails60/pkg-descr           |   3 +
+ devel/rubygem-lumberjack/Makefile                  |   2 +-
+ devel/rubygem-lumberjack/distinfo                  |   6 +-
+ devel/rubygem-msgpack/Makefile                     |   2 +-
+ devel/rubygem-msgpack/distinfo                     |   6 +-
+ devel/rubygem-sprockets-rails-rails60/Makefile     |  25 +++
+ devel/rubygem-sprockets-rails-rails60/distinfo     |   3 +
+ devel/rubygem-sprockets-rails-rails60/pkg-descr    |   3 +
+ devel/rubygem-web-console-rails60/Makefile         |  27 +++
+ devel/rubygem-web-console-rails60/distinfo         |   3 +
+ .../pkg-descr                                      |   0
+ .../Makefile                                       |   5 +-
+ .../distinfo                                       |   0
+ .../pkg-descr                                      |   0
+ .../Makefile                                       |   5 +-
+ .../distinfo                                       |   0
+ .../pkg-descr                                      |   0
+ .../Makefile                                       |   5 +-
+ .../distinfo                                       |   0
+ devel/rubygem-web-console3-rails52/pkg-descr       |   3 +
+ graphics/geoserver/Makefile                        |   6 +-
+ graphics/geoserver/distinfo                        |   6 +-
+ graphics/geoserver/pkg-plist                       |   2 +-
+ lang/gcc10-devel/Makefile                          |   2 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ mail/Makefile                                      |   2 +
+ mail/rubygem-actionmailbox60/Makefile              |  30 +++
+ mail/rubygem-actionmailbox60/distinfo              |   3 +
+ mail/rubygem-actionmailbox60/pkg-descr             |  15 ++
+ mail/rubygem-actionmailer60/Makefile               |  31 +++
+ mail/rubygem-actionmailer60/distinfo               |   3 +
+ mail/rubygem-actionmailer60/pkg-descr              |  15 ++
+ math/armadillo/Makefile                            |   2 -
+ math/octave/Makefile                               |   1 -
+ math/octave/Makefile.version                       |   2 +-
+ math/octave/distinfo                               |   6 +-
+ math/octave/pkg-plist                              |  10 +-
+ net-mgmt/fastnetmon/Makefile                       |   3 +-
+ net-mgmt/packit/Makefile                           |   7 +-
+ net-mgmt/packit/distinfo                           |   6 +-
+ net/Makefile                                       |   1 +
+ net/arp-scan/Makefile                              |   2 +-
+ net/arp-scan/distinfo                              |   6 +-
+ net/rubygem-activestorage60/Makefile               |  30 +++
+ net/rubygem-activestorage60/distinfo               |   3 +
+ net/rubygem-activestorage60/pkg-descr              |  14 ++
+ net/rubygem-dogapi/Makefile                        |   2 +-
+ net/rubygem-dogapi/distinfo                        |   6 +-
+ net/rubygem-google-cloud-pubsub/Makefile           |   2 +-
+ net/rubygem-google-cloud-pubsub/distinfo           |   6 +-
+ sysutils/fusefs-sshfs/Makefile                     |   2 +-
+ sysutils/fusefs-sshfs/distinfo                     |   6 +-
+ textproc/Makefile                                  |   4 +
+ textproc/p5-JavaScript-Packer/Makefile             |   2 +-
+ textproc/p5-JavaScript-Packer/distinfo             |   6 +-
+ textproc/rubygem-actiontext60/Makefile             |  29 +++
+ textproc/rubygem-actiontext60/distinfo             |   3 +
+ textproc/rubygem-actiontext60/pkg-descr            |  10 +
+ .../rubygem-rails-dom-testing-rails60/Makefile     |  24 +++
+ .../rubygem-rails-dom-testing-rails60/distinfo     |   3 +
+ .../rubygem-rails-dom-testing-rails60/pkg-descr    |   8 +
+ textproc/rubygem-sass-rails-rails60/Makefile       |  23 +++
+ textproc/rubygem-sass-rails-rails60/distinfo       |   3 +
+ textproc/rubygem-sass-rails-rails60/pkg-descr      |   3 +
+ textproc/rubygem-sassc-rails-rails60/Makefile      |  28 +++
+ textproc/rubygem-sassc-rails-rails60/distinfo      |   3 +
+ textproc/rubygem-sassc-rails-rails60/pkg-descr     |   5 +
+ www/Makefile                                       |   4 +
+ www/py-dj22-django-redis/Makefile                  |   3 +-
+ www/py-django-redis/Makefile                       |   3 +-
+ www/rubygem-actioncable60/Makefile                 |  29 +++
+ www/rubygem-actioncable60/distinfo                 |   3 +
+ www/rubygem-actioncable60/pkg-descr                |  10 +
+ www/rubygem-actionpack60/Makefile                  |  32 +++
+ www/rubygem-actionpack60/distinfo                  |   3 +
+ www/rubygem-actionpack60/pkg-descr                 |  23 +++
+ www/rubygem-rails5/Makefile                        |   4 +-
+ www/rubygem-rails50/Makefile                       |   4 +-
+ www/rubygem-rails52/Makefile                       |   3 +-
+ www/rubygem-railties60/Makefile                    |  35 ++++
+ www/rubygem-railties60/distinfo                    |   3 +
+ www/rubygem-railties60/pkg-descr                   |   7 +
+ www/rubygem-responders-rails60/Makefile            |  24 +++
+ www/rubygem-responders-rails60/distinfo            |   3 +
+ www/rubygem-responders-rails60/pkg-descr           |   3 +
+ 191 files changed, 1305 insertions(+), 1093 deletions(-)
+ delete mode 100644 biology/seaview/files/patch-seaview.cxx
+ delete mode 100644 biology/seaview/files/patch-treedraw.cxx
+ delete mode 100644 biology/seaview/files/patch-xfmatpt.cxx
+ create mode 100644 databases/rubygem-activemodel60/Makefile
+ create mode 100644 databases/rubygem-activemodel60/distinfo
+ create mode 100644 databases/rubygem-activemodel60/pkg-descr
+ create mode 100644 databases/rubygem-activerecord60/Makefile
+ create mode 100644 databases/rubygem-activerecord60/distinfo
+ create mode 100644 databases/rubygem-activerecord60/pkg-descr
+ create mode 100644 databases/rubygem-globalid-rails60/Makefile
+ create mode 100644 databases/rubygem-globalid-rails60/distinfo
+ create mode 100644 databases/rubygem-globalid-rails60/pkg-descr
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-dleft.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-done.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-dright.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-ical.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-left.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-right.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-sleft.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-sright.xbm
+ delete mode 100644 deskutils/ical/files/patch-bitmaps-todo.xbm
+ delete mode 100644 deskutils/ical/files/patch-cal_tcl.C
+ delete mode 100644 deskutils/ical/files/patch-calendar_Makefile.in
+ delete mode 100644 deskutils/ical/files/patch-calendar_calendar.C
+ delete mode 100644 deskutils/ical/files/patch-calendar_calfile.C
+ delete mode 100644 deskutils/ical/files/patch-config.h.in
+ delete mode 100644 deskutils/ical/files/patch-configure
+ delete mode 100644 deskutils/ical/files/patch-dateeditor.C
+ delete mode 100644 deskutils/ical/files/patch-dispatch.C
+ delete mode 100644 deskutils/ical/files/patch-item_tcl.C
+ delete mode 100644 deskutils/ical/files/patch-main.C
+ delete mode 100644 deskutils/ical/files/patch-object.C
+ delete mode 100644 deskutils/ical/files/patch-pref.tcl
+ delete mode 100644 deskutils/ical/files/patch-time_Makefile.in
+ create mode 100644 deskutils/ical/files/patch-time_Time.C
+ delete mode 100644 deskutils/ical/files/patch-time_tcl.C
+ delete mode 100644 deskutils/ical/files/patch-types_Makefile.in
+ create mode 100644 deskutils/kuserfeedback/Makefile
+ create mode 100644 deskutils/kuserfeedback/distinfo
+ create mode 100644 deskutils/kuserfeedback/pkg-descr
+ create mode 100644 deskutils/kuserfeedback/pkg-plist
+ create mode 100644 devel/rubygem-actionview60/Makefile
+ create mode 100644 devel/rubygem-actionview60/distinfo
+ create mode 100644 devel/rubygem-actionview60/pkg-descr
+ create mode 100644 devel/rubygem-activejob60/Makefile
+ create mode 100644 devel/rubygem-activejob60/distinfo
+ create mode 100644 devel/rubygem-activejob60/pkg-descr
+ create mode 100644 devel/rubygem-activesupport60/Makefile
+ create mode 100644 devel/rubygem-activesupport60/distinfo
+ create mode 100644 devel/rubygem-activesupport60/pkg-descr
+ create mode 100644 devel/rubygem-devise-rails60/Makefile
+ create mode 100644 devel/rubygem-devise-rails60/distinfo
+ create mode 100644 devel/rubygem-devise-rails60/pkg-descr
+ create mode 100644 devel/rubygem-jbuilder-rails60/Makefile
+ create mode 100644 devel/rubygem-jbuilder-rails60/distinfo
+ create mode 100644 devel/rubygem-jbuilder-rails60/pkg-descr
+ create mode 100644 devel/rubygem-sprockets-rails-rails60/Makefile
+ create mode 100644 devel/rubygem-sprockets-rails-rails60/distinfo
+ create mode 100644 devel/rubygem-sprockets-rails-rails60/pkg-descr
+ create mode 100644 devel/rubygem-web-console-rails60/Makefile
+ create mode 100644 devel/rubygem-web-console-rails60/distinfo
+ rename devel/{rubygem-web-console-rails5 => rubygem-web-console-rails60}/pkg-descr (100%)
+ rename devel/{rubygem-web-console-rails5 => rubygem-web-console3-rails5}/Makefile (85%)
+ rename devel/{rubygem-web-console-rails5 => rubygem-web-console3-rails5}/distinfo (100%)
+ rename devel/{rubygem-web-console-rails50 => rubygem-web-console3-rails5}/pkg-descr (100%)
+ rename devel/{rubygem-web-console-rails50 => rubygem-web-console3-rails50}/Makefile (85%)
+ rename devel/{rubygem-web-console-rails50 => rubygem-web-console3-rails50}/distinfo (100%)
+ rename devel/{rubygem-web-console-rails52 => rubygem-web-console3-rails50}/pkg-descr (100%)
+ rename devel/{rubygem-web-console-rails52 => rubygem-web-console3-rails52}/Makefile (85%)
+ rename devel/{rubygem-web-console-rails52 => rubygem-web-console3-rails52}/distinfo (100%)
+ create mode 100644 devel/rubygem-web-console3-rails52/pkg-descr
+ create mode 100644 mail/rubygem-actionmailbox60/Makefile
+ create mode 100644 mail/rubygem-actionmailbox60/distinfo
+ create mode 100644 mail/rubygem-actionmailbox60/pkg-descr
+ create mode 100644 mail/rubygem-actionmailer60/Makefile
+ create mode 100644 mail/rubygem-actionmailer60/distinfo
+ create mode 100644 mail/rubygem-actionmailer60/pkg-descr
+ create mode 100644 net/rubygem-activestorage60/Makefile
+ create mode 100644 net/rubygem-activestorage60/distinfo
+ create mode 100644 net/rubygem-activestorage60/pkg-descr
+ create mode 100644 textproc/rubygem-actiontext60/Makefile
+ create mode 100644 textproc/rubygem-actiontext60/distinfo
+ create mode 100644 textproc/rubygem-actiontext60/pkg-descr
+ create mode 100644 textproc/rubygem-rails-dom-testing-rails60/Makefile
+ create mode 100644 textproc/rubygem-rails-dom-testing-rails60/distinfo
+ create mode 100644 textproc/rubygem-rails-dom-testing-rails60/pkg-descr
+ create mode 100644 textproc/rubygem-sass-rails-rails60/Makefile
+ create mode 100644 textproc/rubygem-sass-rails-rails60/distinfo
+ create mode 100644 textproc/rubygem-sass-rails-rails60/pkg-descr
+ create mode 100644 textproc/rubygem-sassc-rails-rails60/Makefile
+ create mode 100644 textproc/rubygem-sassc-rails-rails60/distinfo
+ create mode 100644 textproc/rubygem-sassc-rails-rails60/pkg-descr
+ create mode 100644 www/rubygem-actioncable60/Makefile
+ create mode 100644 www/rubygem-actioncable60/distinfo
+ create mode 100644 www/rubygem-actioncable60/pkg-descr
+ create mode 100644 www/rubygem-actionpack60/Makefile
+ create mode 100644 www/rubygem-actionpack60/distinfo
+ create mode 100644 www/rubygem-actionpack60/pkg-descr
+ create mode 100644 www/rubygem-railties60/Makefile
+ create mode 100644 www/rubygem-railties60/distinfo
+ create mode 100644 www/rubygem-railties60/pkg-descr
+ create mode 100644 www/rubygem-responders-rails60/Makefile
+ create mode 100644 www/rubygem-responders-rails60/distinfo
+ create mode 100644 www/rubygem-responders-rails60/pkg-descr
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    4f19874beeb9..3bb186a87e38  master -> master        
+remote:    1de90ac1e7f0..4f19874beeb9  github/master -> github/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   4f19874beeb9..3bb186a87e38  master -> master
+==== END: master ====
