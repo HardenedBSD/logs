@@ -1,0 +1,81 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 70e92fbbac79..2eae6e6484e9
+Fast-forward
+ Makefile.inc1                                      |    1 +
+ ObsoleteFiles.inc                                  |    4 +
+ RELNOTES                                           |    9 +
+ contrib/netbsd-tests/lib/libc/c063/t_o_search.c    |    4 +-
+ lib/libc/riscv/gen/_set_tp.c                       |    7 +-
+ sbin/Makefile.sparc64                              |    4 -
+ sbin/sunlabel/Makefile                             |   20 -
+ sbin/sunlabel/Makefile.depend                      |   16 -
+ sbin/sunlabel/runtest.sh                           |  157 ---
+ sbin/sunlabel/sun_disklabel.h                      |  125 ---
+ sbin/sunlabel/sunlabel.8                           |  432 ---------
+ sbin/sunlabel/sunlabel.c                           | 1002 --------------------
+ sbin/sunlabel/sunlabel_enc.c                       |  184 ----
+ .../contrib/opensolaris/uts/common/fs/zfs/aggsum.c |   65 +-
+ .../opensolaris/uts/common/fs/zfs/sys/aggsum.h     |    2 +-
+ sys/kern/subr_smr.c                                |   47 +-
+ sys/modules/ix/Makefile                            |    2 +-
+ sys/modules/ixv/Makefile                           |    2 +-
+ sys/modules/lio/Makefile                           |    1 -
+ sys/modules/oce/Makefile                           |    2 +-
+ sys/modules/vmm/Makefile                           |    2 +-
+ sys/net/if.c                                       |    5 +-
+ sys/riscv/riscv/db_trace.c                         |   55 +-
+ sys/riscv/riscv/machdep.c                          |    2 +-
+ usr.bin/Makefile                                   |    1 -
+ usr.bin/Makefile.sparc64                           |    3 -
+ usr.bin/elf2aout/Makefile                          |    7 -
+ usr.bin/elf2aout/Makefile.depend                   |   17 -
+ usr.bin/elf2aout/elf2aout.1                        |   64 --
+ usr.bin/elf2aout/elf2aout.c                        |  164 ----
+ usr.sbin/bsdinstall/bsdinstall.8                   |   14 +-
+ usr.sbin/fstyp/hammer.c                            |   54 +-
+ usr.sbin/fstyp/hammer2.c                           |  216 ++++-
+ 33 files changed, 364 insertions(+), 2326 deletions(-)
+ delete mode 100644 sbin/Makefile.sparc64
+ delete mode 100644 sbin/sunlabel/Makefile
+ delete mode 100644 sbin/sunlabel/Makefile.depend
+ delete mode 100644 sbin/sunlabel/runtest.sh
+ delete mode 100644 sbin/sunlabel/sun_disklabel.h
+ delete mode 100644 sbin/sunlabel/sunlabel.8
+ delete mode 100644 sbin/sunlabel/sunlabel.c
+ delete mode 100644 sbin/sunlabel/sunlabel_enc.c
+ delete mode 100644 usr.bin/Makefile.sparc64
+ delete mode 100644 usr.bin/elf2aout/Makefile
+ delete mode 100644 usr.bin/elf2aout/Makefile.depend
+ delete mode 100644 usr.bin/elf2aout/elf2aout.1
+ delete mode 100644 usr.bin/elf2aout/elf2aout.c
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    70e92fbbac79..2eae6e6484e9  freebsd/current/master -> freebsd/current/master        
+remote:    a0281d1bbfef..955fe394580e  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   70e92fbbac79..2eae6e6484e9  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
