@@ -1,0 +1,230 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing usr.bin/elf2aout/elf2aout.c
+Removing usr.bin/elf2aout/Makefile.depend
+Removing usr.bin/elf2aout/Makefile
+Removing usr.bin/Makefile.sparc64
+Auto-merging usr.bin/Makefile
+Auto-merging sys/sys/sysctl.h
+CONFLICT (content): Merge conflict in sys/sys/sysctl.h
+Auto-merging sys/riscv/riscv/machdep.c
+Auto-merging sys/kern/kern_sysctl.c
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Auto-merging share/man/man5/rc.conf.5
+Removing sbin/sunlabel/sunlabel_enc.c
+Removing sbin/sunlabel/sunlabel.c
+Removing sbin/sunlabel/sunlabel.8
+Removing sbin/sunlabel/sun_disklabel.h
+Removing sbin/sunlabel/runtest.sh
+Removing sbin/sunlabel/Makefile.depend
+Removing sbin/sunlabel/Makefile
+Removing sbin/Makefile.sparc64
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 41fd744327e0,4086ac2f2ed0..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -342,21 -342,8 +342,18 @@@ When set, it enforces these options
+  .It
+  .Va WITHOUT_ZFS
+  .El
+ +.It Va WITHOUT_CFI
+ +Set to build without Control-Flow Integrity (CFI)
+ +.Pp
+ +This is a default setting on
+ +arm/armv6, arm/armv7, i386/i386, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, riscv/riscv64, riscv/riscv64sf and sparc64/sparc64.
+ +.It Va WITH_CFI
+ +Set to build with Control-Flow Integrity (CFI)
+ +.Pp
+ +This is a default setting on
+ +amd64/amd64 and arm64/aarch64.
+  .It Va WITHOUT_CLANG
+  Set to not build the Clang C/C++ compiler during the regular phase of the build.
+- .Pp
+- This is a default setting on
+- sparc64/sparc64.
+  When set, it enforces these options:
+  .Pp
+  .Bl -item -compact
+@@@ -366,14 -353,7 +363,9 @@@
+  .Va WITHOUT_CLANG_FULL
+  .It
+  .Va WITHOUT_LLVM_COV
+ +.It
+ +.Va WITHOUT_SAFESTACK
+  .El
+- .It Va WITH_CLANG
+- Set to build the Clang C/C++ compiler during the normal phase of the build.
+- .Pp
+- This is a default setting on
+- amd64/amd64, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, riscv/riscv64 and riscv/riscv64sf.
+  .It Va WITHOUT_CLANG_BOOTSTRAP
+  Set to not build the Clang C/C++ compiler during the bootstrap phase of
+  the build.
+@@@ -996,7 -922,7 +963,11 @@@ On 64-bit platforms, set to build 32-bi
+  runtime linker.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +amd64/amd64, mips/mips64el, mips/mips64, mips/mips64elhf, mips/mips64hf and powerpc/powerpc64.
+++=======
++ arm/armv6, arm/armv7, arm64/aarch64, i386/i386, mips/mipsel, mips/mips, mips/mipsn32, mips/mipselhf, mips/mipshf, powerpc/powerpc, riscv/riscv64 and riscv/riscv64sf.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_LIBCPLUSPLUS
+  Set to avoid building libcxxrt and libc++.
+  .It Va WITHOUT_LIBPTHREAD
+@@@ -1047,15 -963,7 +1010,19 @@@ To be able to build the system, either 
+  enabled unless an alternate linker is provided via XLD.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc and sparc64/sparc64.
+ +When set, it enforces these options:
+ +.Pp
+ +.Bl -item -compact
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+ +.Va WITHOUT_RETPOLINE
+ +.El
+++=======
++ mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and powerpc/powerpc.
+++>>>>>>> freebsd/current/master
+  .It Va WITH_LLD_BOOTSTRAP
+  Set to build the LLD linker during the bootstrap phase of the build,
+  and use it during buildworld and buildkernel.
+@@@ -1066,15 -974,7 +1033,19 @@@ amd64/amd64, arm/armv6, arm/armv7, arm6
+  Set to use GNU binutils ld as the system linker, instead of LLVM's LLD.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc and sparc64/sparc64.
+ +When set, it enforces these options:
+ +.Pp
+ +.Bl -item -compact
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+ +.Va WITHOUT_RETPOLINE
+ +.El
+++=======
++ mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and powerpc/powerpc.
+++>>>>>>> freebsd/current/master
+  .It Va WITH_LLD_IS_LD
+  Set to use LLVM's LLD as the system linker, instead of GNU binutils ld.
+  .Pp
+diff --cc sys/sys/sysctl.h
+index 2834b4ae84bf,c12befc187b6..000000000000
+--- a/sys/sys/sysctl.h
++++ b/sys/sys/sysctl.h
+@@@ -105,7 -105,13 +105,17 @@@ struct ctlname 
+  #define	CTLFLAG_STATS	0x00002000	/* Statistics, not a tuneable */
+  #define	CTLFLAG_NOFETCH	0x00001000	/* Don't fetch tunable from getenv() */
+  #define	CTLFLAG_CAPRW	(CTLFLAG_CAPRD|CTLFLAG_CAPWR)
+++<<<<<<< HEAD
+ +#define	CTLFLAG_ROOTONLY	0x00000800	/* Only available to root */
+++=======
++ /*
++  * This is transient flag to be used until all sysctl handlers are converted
++  * to not lock Giant.
++  * One, and only one of CTLFLAG_MPSAFE or CTLFLAG_NEEDGIANT is required
++  * for SYSCTL_PROC and SYSCTL_NODE.
++  */
++ #define	CTLFLAG_NEEDGIANT 0x00000800	/* Handler require Giant */
+++>>>>>>> freebsd/current/master
+  
+  /*
+   * Secure level.   Note that CTLFLAG_SECURE == CTLFLAG_SECURE1.
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   ObsoleteFiles.inc
+	modified:   RELNOTES
+	modified:   contrib/netbsd-tests/lib/libc/c063/t_o_search.c
+	modified:   lib/libc/riscv/gen/_set_tp.c
+	modified:   lib/libkvm/Makefile
+	modified:   lib/libkvm/kvm.3
+	modified:   lib/libkvm/kvm.c
+	modified:   lib/libkvm/kvm.h
+	renamed:    usr.bin/elf2aout/elf2aout.1 -> lib/libkvm/kvm_kerndisp.3
+	modified:   lib/libkvm/kvm_minidump_powerpc64.c
+	modified:   lib/libkvm/kvm_private.h
+	deleted:    sbin/Makefile.sparc64
+	deleted:    sbin/sunlabel/Makefile
+	deleted:    sbin/sunlabel/Makefile.depend
+	deleted:    sbin/sunlabel/runtest.sh
+	deleted:    sbin/sunlabel/sun_disklabel.h
+	deleted:    sbin/sunlabel/sunlabel.8
+	deleted:    sbin/sunlabel/sunlabel.c
+	deleted:    sbin/sunlabel/sunlabel_enc.c
+	modified:   share/man/man5/make.conf.5
+	modified:   share/man/man5/rc.conf.5
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/aggsum.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/sys/aggsum.h
+	modified:   sys/dev/xen/console/xen_console.c
+	modified:   sys/kern/kern_sysctl.c
+	modified:   sys/kern/subr_smr.c
+	modified:   sys/modules/ix/Makefile
+	modified:   sys/modules/ixv/Makefile
+	modified:   sys/modules/lio/Makefile
+	modified:   sys/modules/oce/Makefile
+	modified:   sys/modules/vmm/Makefile
+	modified:   sys/net/if.c
+	modified:   sys/riscv/riscv/db_trace.c
+	modified:   sys/riscv/riscv/machdep.c
+	modified:   sys/sys/types.h
+	modified:   tools/build/options/WITHOUT_BINUTILS_BOOTSTRAP
+	modified:   tools/build/options/WITH_BINUTILS_BOOTSTRAP
+	modified:   usr.bin/Makefile
+	deleted:    usr.bin/Makefile.sparc64
+	deleted:    usr.bin/elf2aout/Makefile
+	deleted:    usr.bin/elf2aout/Makefile.depend
+	deleted:    usr.bin/elf2aout/elf2aout.c
+	modified:   usr.sbin/bsdinstall/bsdinstall.8
+	modified:   usr.sbin/fstyp/hammer.c
+	modified:   usr.sbin/fstyp/hammer2.c
+	modified:   usr.sbin/mixer/tests/mixer_test.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+	both modified:   sys/sys/sysctl.h
+
+HEAD is now at 03aa8876d0b4 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 03aa8876d0b4 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
