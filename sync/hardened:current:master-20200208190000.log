@@ -1,0 +1,198 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 53 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 03aa8876d0b4..e227baa2fe34
+Fast-forward
+ Makefile.inc1                                      |    1 +
+ ObsoleteFiles.inc                                  |    4 +
+ RELNOTES                                           |    9 +
+ contrib/netbsd-tests/lib/libc/c063/t_o_search.c    |   26 +-
+ lib/libc/riscv/gen/_set_tp.c                       |    7 +-
+ lib/libc/xdr/xdr_array.c                           |    2 +-
+ lib/libc/xdr/xdr_reference.c                       |    2 +-
+ lib/libkvm/Makefile                                |    4 +-
+ lib/libkvm/kvm.3                                   |    6 +-
+ lib/libkvm/kvm.c                                   |   30 +
+ lib/libkvm/kvm.h                                   |    1 +
+ .../elf2aout.1 => lib/libkvm/kvm_kerndisp.3        |   63 +-
+ lib/libkvm/kvm_minidump_powerpc64.c                |    7 +
+ lib/libkvm/kvm_private.h                           |    1 +
+ lib/libpmc/libpmc_pmu_util.c                       |    3 +-
+ lib/libpmc/pmu-events/arch/x86/mapfile.csv         |    1 +
+ sbin/Makefile.sparc64                              |    4 -
+ sbin/sunlabel/Makefile                             |   20 -
+ sbin/sunlabel/Makefile.depend                      |   16 -
+ sbin/sunlabel/runtest.sh                           |  157 ---
+ sbin/sunlabel/sun_disklabel.h                      |  125 ---
+ sbin/sunlabel/sunlabel.8                           |  432 ---------
+ sbin/sunlabel/sunlabel.c                           | 1002 --------------------
+ sbin/sunlabel/sunlabel_enc.c                       |  184 ----
+ share/man/man4/netmap.4                            |   27 +-
+ share/man/man4/vale.4                              |   20 +-
+ share/man/man5/make.conf.5                         |    2 +-
+ share/man/man5/rc.conf.5                           |    6 +-
+ share/man/man5/src.conf.5                          |  117 +--
+ share/mk/bsd.linker.mk                             |    4 +-
+ sys/amd64/include/counter.h                        |   17 +-
+ sys/cam/ata/ata_da.c                               |    4 +
+ sys/cam/mmc/mmc_da.c                               |    4 +
+ sys/cam/nvme/nvme_da.c                             |    5 +
+ sys/cam/scsi/scsi_cd.c                             |    7 +
+ sys/cam/scsi/scsi_da.c                             |    4 +
+ sys/cam/scsi/scsi_sa.c                             |    6 +
+ .../contrib/opensolaris/uts/common/fs/zfs/aggsum.c |   65 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/dbuf.c   |    2 -
+ .../contrib/opensolaris/uts/common/fs/zfs/dnode.c  |    4 +-
+ .../opensolaris/uts/common/fs/zfs/sys/aggsum.h     |    2 +-
+ .../opensolaris/uts/common/fs/zfs/sys/dnode.h      |    7 +
+ sys/compat/linux/linux_futex.c                     |    2 +-
+ sys/dev/aac/aac_disk.c                             |    5 +
+ sys/dev/acpica/acpi_hpet.c                         |    4 +-
+ sys/dev/altera/avgen/altera_avgen.c                |   10 +-
+ sys/dev/altera/sdcard/altera_sdcard_io.c           |   22 +-
+ sys/dev/amr/amr.c                                  |    4 +
+ sys/dev/cfi/cfi_disk.c                             |   16 +-
+ sys/dev/flash/at45d.c                              |    2 +-
+ sys/dev/flash/mx25l.c                              |    2 +-
+ sys/dev/flash/n25q.c                               |    2 +-
+ sys/dev/hwpmc/hwpmc_amd.c                          |    3 +
+ sys/dev/hwpmc/hwpmc_x86.c                          |    6 +-
+ sys/dev/ida/ida_disk.c                             |    5 +
+ sys/dev/ips/ips_disk.c                             |    7 +
+ sys/dev/ixl/if_iavf.c                              |    2 +-
+ sys/dev/le/lancevar.h                              |    2 +-
+ sys/dev/mfi/mfi.c                                  |    8 +-
+ sys/dev/mlx/mlx_disk.c                             |    5 +
+ sys/dev/mmc/mmcsd.c                                |    7 +-
+ sys/dev/mpr/mpr.c                                  |   14 +-
+ sys/dev/mpr/mprvar.h                               |    1 +
+ sys/dev/mps/mps.c                                  |   14 +-
+ sys/dev/mps/mpsvar.h                               |    1 +
+ sys/dev/netmap/netmap_kern.h                       |    2 -
+ sys/dev/nvme/nvme_ns.c                             |    2 +-
+ sys/dev/pms/RefTisa/discovery/dm/dmdisc.c          |    4 +-
+ sys/dev/ppbus/lpt.c                                |    2 +-
+ sys/dev/pst/pst-raid.c                             |   14 +-
+ sys/dev/puc/pucdata.c                              |    2 +-
+ sys/dev/twe/twe.c                                  |    6 +-
+ sys/dev/usb/net/if_axe.c                           |    2 +-
+ sys/dev/virtio/block/virtio_blk.c                  |    6 +
+ sys/dev/xdma/xdma.c                                |   18 +
+ sys/dev/xdma/xdma.h                                |    1 +
+ sys/dev/xen/blkfront/blkfront.c                    |    4 +-
+ sys/dev/xen/console/xen_console.c                  |    3 +-
+ sys/dev/xilinx/axidma.c                            |   18 +-
+ sys/dev/xilinx/axidma.h                            |   16 +-
+ sys/dev/xilinx/if_xae.c                            |   79 +-
+ sys/geom/eli/g_eli.c                               |    3 +-
+ sys/geom/geom_vfs.c                                |    2 +-
+ sys/kern/kern_rmlock.c                             |   37 +-
+ sys/kern/kern_sysctl.c                             |   54 +-
+ sys/kern/subr_smr.c                                |   47 +-
+ sys/modules/ix/Makefile                            |    2 +-
+ sys/modules/ixv/Makefile                           |    2 +-
+ sys/modules/lio/Makefile                           |    1 -
+ sys/modules/oce/Makefile                           |    2 +-
+ sys/modules/vmm/Makefile                           |    2 +-
+ sys/net/ethernet.h                                 |    2 +-
+ sys/net/if.c                                       |    5 +-
+ sys/netinet/netdump/netdump_client.c               |    2 +-
+ sys/netinet/tcp_sack.c                             |    2 +-
+ sys/netinet/tcp_stacks/bbr.c                       |    4 +-
+ sys/netinet/tcp_stacks/tcp_bbr.h                   |    2 +-
+ sys/opencrypto/xform_enc.h                         |    2 +-
+ sys/riscv/riscv/db_trace.c                         |   55 +-
+ sys/riscv/riscv/machdep.c                          |    2 +-
+ sys/sys/mount.h                                    |   10 +-
+ sys/sys/pcpu.h                                     |   18 +
+ sys/sys/smr.h                                      |    1 +
+ sys/sys/sysctl.h                                   |   48 +-
+ sys/sys/types.h                                    |    1 +
+ sys/xdr/xdr_array.c                                |    2 +-
+ sys/xdr/xdr_reference.c                            |    2 +-
+ tools/build/options/WITHOUT_BINUTILS_BOOTSTRAP     |    2 +-
+ tools/build/options/WITH_BINUTILS_BOOTSTRAP        |    2 +-
+ usr.bin/Makefile                                   |    1 -
+ usr.bin/Makefile.sparc64                           |    3 -
+ usr.bin/diff/TODO                                  |    8 -
+ usr.bin/diff/diff.1                                |   56 +-
+ usr.bin/diff/diff.c                                |   33 +-
+ usr.bin/diff/diff.h                                |    6 +-
+ usr.bin/diff/diffreg.c                             |  191 +++-
+ usr.bin/diff/tests/diff_test.sh                    |    2 -
+ usr.bin/elf2aout/Makefile                          |    7 -
+ usr.bin/elf2aout/Makefile.depend                   |   17 -
+ usr.bin/elf2aout/elf2aout.c                        |  164 ----
+ usr.bin/truss/syscalls.c                           |    2 +-
+ usr.sbin/bsdconfig/share/media/network.subr        |    2 +-
+ usr.sbin/bsdinstall/bsdinstall.8                   |   14 +-
+ usr.sbin/bsdinstall/scripts/mirrorselect           |   24 +-
+ usr.sbin/fstyp/hammer.c                            |   54 +-
+ usr.sbin/fstyp/hammer2.c                           |  216 ++++-
+ usr.sbin/mixer/tests/mixer_test.sh                 |    2 +-
+ usr.sbin/mpsutil/mps_cmd.c                         |   21 +-
+ usr.sbin/mpsutil/mps_show.c                        |    6 +-
+ 129 files changed, 1214 insertions(+), 2662 deletions(-)
+ rename usr.bin/elf2aout/elf2aout.1 => lib/libkvm/kvm_kerndisp.3 (62%)
+ delete mode 100644 sbin/Makefile.sparc64
+ delete mode 100644 sbin/sunlabel/Makefile
+ delete mode 100644 sbin/sunlabel/Makefile.depend
+ delete mode 100644 sbin/sunlabel/runtest.sh
+ delete mode 100644 sbin/sunlabel/sun_disklabel.h
+ delete mode 100644 sbin/sunlabel/sunlabel.8
+ delete mode 100644 sbin/sunlabel/sunlabel.c
+ delete mode 100644 sbin/sunlabel/sunlabel_enc.c
+ delete mode 100644 usr.bin/Makefile.sparc64
+ delete mode 100644 usr.bin/elf2aout/Makefile
+ delete mode 100644 usr.bin/elf2aout/Makefile.depend
+ delete mode 100644 usr.bin/elf2aout/elf2aout.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging sys/kern/kern_thread.c
+Auto-merging sys/kern/kern_jail.c
+Merge made by the 'recursive' strategy.
+ lib/libc/string/memset.3          |  5 ++--
+ sys/arm64/linux/linux_locore.asm  |  9 +++++--
+ sys/cam/ctl/ctl_backend_block.c   |  3 ++-
+ sys/cam/ctl/ctl_backend_ramdisk.c |  3 ++-
+ sys/dev/altera/atse/if_atse.c     |  9 ++++---
+ sys/dev/flash/cqspi.c             |  4 +--
+ sys/dev/neta/if_mvneta.c          | 52 +++++++++++++++++++++++++++++++--------
+ sys/dev/neta/if_mvneta_fdt.c      | 21 ++++++++++++++++
+ sys/dev/neta/if_mvnetavar.h       | 16 ++++++------
+ sys/dev/xdma/xdma.c               | 15 ++++++++---
+ sys/dev/xdma/xdma.h               |  4 ++-
+ sys/dev/xdma/xdma_fdt_test.c      |  2 +-
+ sys/dev/xdma/xdma_sg.c            |  2 +-
+ sys/dev/xilinx/if_xae.c           |  4 +--
+ sys/kern/kern_jail.c              | 25 ++-----------------
+ sys/kern/kern_thread.c            |  2 +-
+ sys/kern/vfs_mount.c              |  5 ++--
+ sys/kern/vfs_subr.c               | 14 +++--------
+ sys/kern/vfs_vnops.c              |  5 ++--
+ sys/mips/ingenic/jz4780_aic.c     |  2 +-
+ 20 files changed, 122 insertions(+), 80 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e227baa2fe34..ff44a48871ce  hardened/current/master -> hardened/current/master
+remote:    5dfa167a47bd..035000c59686  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e227baa2fe34..ff44a48871ce  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
