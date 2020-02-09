@@ -1,0 +1,164 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/procstat/procstat_auxv.c
+CONFLICT (content): Merge conflict in usr.bin/procstat/procstat_auxv.c
+Auto-merging sys/sys/sysctl.h
+Auto-merging sys/sys/proc.h
+Auto-merging sys/sys/elf_common.h
+CONFLICT (content): Merge conflict in sys/sys/elf_common.h
+Auto-merging sys/kern/kern_thread.c
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_proc.c
+Auto-merging sys/kern/kern_fork.c
+Auto-merging sys/kern/kern_exec.c
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging share/man/man5/rc.conf.5
+Auto-merging libexec/rtld-elf/rtld.c
+CONFLICT (content): Merge conflict in libexec/rtld-elf/rtld.c
+Auto-merging libexec/rtld-elf/rtld-libc/Makefile.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc libexec/rtld-elf/rtld.c
+index 6a4c74b2d315,4d3b32381cbd..000000000000
+--- a/libexec/rtld-elf/rtld.c
++++ b/libexec/rtld-elf/rtld.c
+@@@ -459,13 -445,9 +460,19 @@@ _rtld(Elf_Addr *sp, func_ptr_type *exit
+      main_argc = argc;
+      main_argv = argv;
+  
+++<<<<<<< HEAD
+ +#ifdef HARDENEDBSD
+ +    /* Load PaX flags */
+ +    if (aux_info[AT_PAXFLAGS] != NULL) {
+ +        pax_flags = aux_info[AT_PAXFLAGS]->a_un.a_val;
+ +        aux_info[AT_PAXFLAGS]->a_un.a_val = 0;
+ +    }
+ +#endif
+++=======
++     if (aux_info[AT_BSDFLAGS] != NULL &&
++ 	(aux_info[AT_BSDFLAGS]->a_un.a_val & ELF_BSDF_SIGFASTBLK) != 0)
++ 	    ld_fast_sigblock = true;
+++>>>>>>> freebsd/current/master
+  
+      trust = !issetugid();
+  
+diff --cc sys/sys/elf_common.h
+index b4afae82eb9b,643ad61ac82d..000000000000
+--- a/sys/sys/elf_common.h
++++ b/sys/sys/elf_common.h
+@@@ -954,7 -954,7 +954,11 @@@ typedef struct 
+  #define	AT_EHDRFLAGS	24	/* e_flags field from elf hdr */
+  #define	AT_HWCAP	25	/* CPU feature flags. */
+  #define	AT_HWCAP2	26	/* CPU feature flags 2. */
+++<<<<<<< HEAD
+ +#define	AT_PAXFLAGS 	27
+++=======
++ #define	AT_BSDFLAGS	27	/* ELF BSD Flags. */
+++>>>>>>> freebsd/current/master
+  
+  #define	AT_COUNT	28	/* Count of defined aux entry types. */
+  
+diff --cc usr.bin/procstat/procstat_auxv.c
+index 5ffcff0db11e,911132dc79e8..000000000000
+--- a/usr.bin/procstat/procstat_auxv.c
++++ b/usr.bin/procstat/procstat_auxv.c
+@@@ -197,10 -197,10 +197,17 @@@ procstat_auxv(struct procstat *procstat
+  			    prefix, "AT_HWCAP2", (u_long)auxv[i].a_un.a_val);
+  			break;
+  #endif
+++<<<<<<< HEAD
+ +#ifdef AT_PAXFLAGS
+ +		case AT_PAXFLAGS:
+ +			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_PAXFLAGS/%#lx}\n",
+ +			    prefix, "AT_PAXFLAGS", (u_long)auxv[i].a_un.a_val);
+++=======
++ #ifdef AT_BSDFLAGS
++ 		case AT_BSDFLAGS:
++ 			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_BSDFLAGS/%#lx}\n",
++ 			    prefix, "AT_BSDFLAGS", (u_long)auxv[i].a_un.a_val);
+++>>>>>>> freebsd/current/master
+  			break;
+  #endif
+  		default:
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libc/gen/auxv.c
+	modified:   lib/libc/sys/Makefile.inc
+	modified:   lib/libc/sys/Symbol.map
+	new file:   lib/libc/sys/sigfastblock.2
+	modified:   lib/libthr/thread/thr_create.c
+	modified:   lib/libthr/thread/thr_private.h
+	modified:   lib/libthr/thread/thr_rtld.c
+	modified:   lib/libthr/thread/thr_sig.c
+	modified:   libexec/rtld-elf/rtld-libc/Makefile.inc
+	modified:   libexec/rtld-elf/rtld.h
+	modified:   libexec/rtld-elf/rtld_lock.c
+	modified:   share/man/man5/rc.conf.5
+	modified:   sys/compat/freebsd32/freebsd32_syscall.h
+	modified:   sys/compat/freebsd32/freebsd32_syscalls.c
+	modified:   sys/compat/freebsd32/freebsd32_sysent.c
+	modified:   sys/compat/freebsd32/freebsd32_systrace_args.c
+	modified:   sys/compat/freebsd32/syscalls.master
+	modified:   sys/kern/capabilities.conf
+	modified:   sys/kern/imgact_elf.c
+	modified:   sys/kern/init_sysent.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/kern/kern_fork.c
+	modified:   sys/kern/kern_proc.c
+	modified:   sys/kern/kern_sig.c
+	modified:   sys/kern/kern_thread.c
+	modified:   sys/kern/subr_syscall.c
+	modified:   sys/kern/subr_trap.c
+	modified:   sys/kern/syscalls.c
+	modified:   sys/kern/syscalls.master
+	modified:   sys/kern/systrace_args.c
+	modified:   sys/sys/proc.h
+	modified:   sys/sys/signalvar.h
+	modified:   sys/sys/syscall.h
+	modified:   sys/sys/syscall.mk
+	modified:   sys/sys/sysctl.h
+	modified:   sys/sys/sysproto.h
+	modified:   usr.bin/procstat/procstat.c
+	modified:   usr.bin/procstat/procstat.h
+	modified:   usr.bin/procstat/procstat_sigs.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   libexec/rtld-elf/rtld.c
+	both modified:   sys/sys/elf_common.h
+	both modified:   usr.bin/procstat/procstat_auxv.c
+
+HEAD is now at 7c387b96c007 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 7c387b96c007 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
