@@ -1,0 +1,100 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+Updating 7c387b96c007..6fa40f6b8090
+Fast-forward
+ lib/libc/gen/auxv.c                            |  13 +-
+ lib/libc/sys/Makefile.inc                      |   1 +
+ lib/libc/sys/Symbol.map                        |   1 +
+ lib/libc/sys/sigfastblock.2                    | 166 +++++++++++++++++++++
+ lib/libthr/thread/thr_create.c                 |   1 +
+ lib/libthr/thread/thr_private.h                |   5 +
+ lib/libthr/thread/thr_rtld.c                   |   2 +
+ lib/libthr/thread/thr_sig.c                    |  67 ++++++++-
+ libexec/rtld-elf/rtld-libc/Makefile.inc        |   5 +-
+ libexec/rtld-elf/rtld.c                        |   5 +
+ libexec/rtld-elf/rtld.h                        |   1 +
+ libexec/rtld-elf/rtld_lock.c                   | 106 ++++++++-----
+ share/man/man5/rc.conf.5                       |   4 +-
+ sys/compat/freebsd32/freebsd32_syscall.h       |   3 +-
+ sys/compat/freebsd32/freebsd32_syscalls.c      |   1 +
+ sys/compat/freebsd32/freebsd32_sysent.c        |   1 +
+ sys/compat/freebsd32/freebsd32_systrace_args.c |  26 ++++
+ sys/compat/freebsd32/syscalls.master           |   1 +
+ sys/kern/capabilities.conf                     |   1 +
+ sys/kern/imgact_elf.c                          |   7 +
+ sys/kern/init_sysent.c                         |   1 +
+ sys/kern/kern_exec.c                           |   5 +
+ sys/kern/kern_fork.c                           |   3 +-
+ sys/kern/kern_proc.c                           |  75 ++++++++++
+ sys/kern/kern_sig.c                            | 198 ++++++++++++++++++++++---
+ sys/kern/kern_thread.c                         |   8 +-
+ sys/kern/subr_syscall.c                        |   7 +
+ sys/kern/subr_trap.c                           |  81 +++++++---
+ sys/kern/syscalls.c                            |   1 +
+ sys/kern/syscalls.master                       |   6 +
+ sys/kern/systrace_args.c                       |  26 ++++
+ sys/sys/elf_common.h                           |   4 +-
+ sys/sys/proc.h                                 |   6 +-
+ sys/sys/signalvar.h                            |  20 +++
+ sys/sys/syscall.h                              |   3 +-
+ sys/sys/syscall.mk                             |   3 +-
+ sys/sys/sysctl.h                               |   1 +
+ sys/sys/sysproto.h                             |   6 +
+ usr.bin/procstat/procstat.c                    |   2 +
+ usr.bin/procstat/procstat.h                    |   2 +
+ usr.bin/procstat/procstat_auxv.c               |   7 +-
+ usr.bin/procstat/procstat_sigs.c               |  63 ++++++++
+ 42 files changed, 842 insertions(+), 103 deletions(-)
+ create mode 100644 lib/libc/sys/sigfastblock.2
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/login/login.conf
+Auto-merging share/mk/src.opts.mk
+Merge made by the 'recursive' strategy.
+ sbin/fsck_msdosfs/Makefile      |  3 +-
+ sbin/fsck_msdosfs/check.c       | 30 ++++++++++++++--
+ share/mk/src.opts.mk            |  7 +++-
+ sys/arm/include/atomic-v6.h     | 80 +++++++++++++++++++++++++++++++++--------
+ sys/cam/ata/ata_da.c            |  5 +++
+ sys/cam/nvme/nvme_da.c          |  5 +++
+ sys/cam/scsi/scsi_da.c          |  4 +++
+ sys/netinet/sctp_indata.c       |  3 +-
+ sys/netinet/sctp_output.c       |  9 ++---
+ sys/netinet/sctp_pcb.c          | 57 +++++++----------------------
+ sys/netinet/sctp_var.h          |  2 --
+ sys/netinet/sctputil.c          | 66 +++++++++++++++++++++++++++++-----
+ sys/netinet/sctputil.h          |  3 ++
+ sys/ufs/ffs/ffs_softdep.c       |  3 ++
+ sys/ufs/ffs/ffs_vfsops.c        |  9 ++++-
+ sys/ufs/ufs/ufsmount.h          |  1 +
+ usr.bin/login/login.conf        |  3 +-
+ usr.sbin/cron/cron/compat.h     |  4 ---
+ usr.sbin/cron/cron/do_command.c | 64 +++++----------------------------
+ usr.sbin/cron/cron/externs.h    |  4 ---
+ usr.sbin/cron/cron/popen.c      |  2 +-
+ usr.sbin/cron/lib/compat.c      | 12 -------
+ 22 files changed, 218 insertions(+), 158 deletions(-)
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    6fa40f6b8090..be088820eeb8  hardened/current/master -> hardened/current/master        
+remote:    56f8063a5dc6..996c6aefcf2e  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   6fa40f6b8090..be088820eeb8  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
