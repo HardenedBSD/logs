@@ -34,3 +34,136 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/frr7/Makefile
+Auto-merging net/frr6/Makefile
+Auto-merging net/frr5/Makefile
+CONFLICT (content): Merge conflict in net/frr5/Makefile
+Auto-merging emulators/vice/Makefile
+Removing devel/kronosnet/files/patch-libknet_crypto__openssl.c
+Removing devel/kronosnet/files/patch-configure.ac
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/frr5/Makefile
+index b72ff48f0d93,7c126c2826b5..000000000000
+--- a/net/frr5/Makefile
++++ b/net/frr5/Makefile
+@@@ -18,13 -21,6 +21,16 @@@ LIB_DEPENDS=	libjson-c.so:devel/json-
+  
+  CONFLICTS=	openbgpd openospfd zebra quagga frr6 frr7
+  
+++<<<<<<< HEAD
+ +# FRR uses shared libraries as plugins, but
+ +# does not fail with safestack as no port depends
+ +# on these internal library plugins:
+ +USE_HARDENING=	safestack
+ +
+ +USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
+ +		makeinfo python:2.7,build readline
+++=======
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
+  INSTALL_TARGET=	install-strip
+  USE_LDCONFIG=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   comms/ncid/Makefile
+	modified:   comms/ncid/distinfo
+	new file:   comms/ncid/files/patch-client_Makefile
+	new file:   comms/ncid/files/patch-gateway_Makefile
+	new file:   comms/ncid/files/patch-server_Makefile
+	modified:   comms/ncid/pkg-plist
+	modified:   devel/cmake-doc/Makefile
+	modified:   devel/cmake-gui/Makefile
+	modified:   devel/cmake/Makefile
+	modified:   devel/cmake/distinfo
+	modified:   devel/kronosnet/Makefile
+	modified:   devel/kronosnet/distinfo
+	deleted:    devel/kronosnet/files/patch-configure.ac
+	deleted:    devel/kronosnet/files/patch-libknet_crypto__openssl.c
+	modified:   devel/rust-cbindgen/Makefile
+	modified:   devel/rust-cbindgen/distinfo
+	modified:   emulators/vice/Makefile
+	new file:   games/fs2open/files/patch-code_model_modelread.cpp
+	modified:   graphics/embree/Makefile
+	modified:   graphics/embree/distinfo
+	modified:   graphics/embree/pkg-plist
+	modified:   graphics/jp2a/Makefile
+	modified:   graphics/jp2a/distinfo
+	modified:   graphics/py-face_recognition/Makefile
+	modified:   graphics/py-face_recognition/distinfo
+	modified:   graphics/py-pyembree/Makefile
+	modified:   math/Makefile
+	new file:   math/ctl-sat/Makefile
+	new file:   math/ctl-sat/distinfo
+	new file:   math/ctl-sat/files/patch-Makefile
+	new file:   math/ctl-sat/pkg-descr
+	modified:   math/hmat-oss/Makefile
+	modified:   math/py-yt/Makefile
+	modified:   misc/mxnet/Makefile
+	modified:   multimedia/plexmediaserver/Makefile
+	modified:   multimedia/plexmediaserver/distinfo
+	modified:   net/bird2/Makefile
+	modified:   net/bird2/files/bird.in
+	modified:   net/cloudflared/Makefile
+	modified:   net/cloudflared/distinfo
+	modified:   net/frr5/files/frr.in
+	modified:   net/frr6/Makefile
+	modified:   net/frr6/files/frr.in
+	modified:   net/frr7/Makefile
+	modified:   net/frr7/files/frr.in
+	modified:   security/maltrail/Makefile
+	modified:   security/maltrail/distinfo
+	modified:   security/maltrail/pkg-plist
+	modified:   security/vuxml/vuln.xml
+	modified:   x11-servers/xwayland-devel/Makefile
+	modified:   x11/luit/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/frr5/Makefile
+
+
+It took 3.09 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 0e8193267224 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 0e8193267224 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
