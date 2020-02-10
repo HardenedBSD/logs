@@ -1,0 +1,87 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing usr.sbin/eeprom/ofw_options.h
+Removing usr.sbin/eeprom/ofw_options.c
+Removing usr.sbin/eeprom/eeprom.c
+Removing usr.sbin/eeprom/eeprom.8
+Removing usr.sbin/eeprom/Makefile.depend
+Removing usr.sbin/eeprom/Makefile
+Removing usr.sbin/Makefile.sparc64
+Merge made by the 'recursive' strategy.
+ sys/cam/ata/ata_da.c                               |   5 -
+ sys/cam/nvme/nvme_da.c                             |   5 -
+ sys/cam/scsi/scsi_da.c                             |   4 -
+ sys/compat/linux/linux_socket.c                    |  34 +-
+ sys/kern/vfs_subr.c                                |  28 +-
+ sys/sys/pcpu.h                                     |  17 +-
+ sys/ufs/ffs/ffs_softdep.c                          |   3 -
+ sys/ufs/ffs/ffs_vfsops.c                           |   9 +-
+ sys/ufs/ufs/ufsmount.h                             |   1 -
+ usr.sbin/Makefile.sparc64                          |   4 -
+ usr.sbin/binmiscctl/binmiscctl.8                   |  13 +-
+ usr.sbin/bsnmpd/modules/snmp_bridge/bridge_sys.c   |   3 +-
+ .../modules/snmp_hostres/hostres_partition_tbl.c   |   2 +-
+ usr.sbin/config/config.5                           |  12 +-
+ usr.sbin/eeprom/Makefile                           |  11 -
+ usr.sbin/eeprom/Makefile.depend                    |  15 -
+ usr.sbin/eeprom/eeprom.8                           | 700 ---------------------
+ usr.sbin/eeprom/eeprom.c                           | 148 -----
+ usr.sbin/eeprom/ofw_options.c                      | 312 ---------
+ usr.sbin/eeprom/ofw_options.h                      |  36 --
+ usr.sbin/ntp/config.h                              |  16 +-
+ usr.sbin/ntp/libntpevent/Makefile                  |   4 -
+ usr.sbin/tzsetup/tzsetup.c                         |   2 -
+ 23 files changed, 67 insertions(+), 1317 deletions(-)
+ delete mode 100644 usr.sbin/Makefile.sparc64
+ delete mode 100644 usr.sbin/eeprom/Makefile
+ delete mode 100644 usr.sbin/eeprom/Makefile.depend
+ delete mode 100644 usr.sbin/eeprom/eeprom.8
+ delete mode 100644 usr.sbin/eeprom/eeprom.c
+ delete mode 100644 usr.sbin/eeprom/ofw_options.c
+ delete mode 100644 usr.sbin/eeprom/ofw_options.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    9981e783d526..60c213301fb1  hardened/current/master -> hardened/current/master        
+remote:    830cec2e06a9..ec057b7fe754  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   9981e783d526..60c213301fb1  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
