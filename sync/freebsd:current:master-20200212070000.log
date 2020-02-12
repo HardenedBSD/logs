@@ -1,0 +1,120 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 362484a45e13..8534caa69e2e
+Fast-forward
+ lib/Makefile                                |   9 +-
+ lib/libarchive/Makefile                     |   2 +-
+ lib/libcompiler_rt/Makefile.inc             |   3 +-
+ lib/libkvm/kvm_sparc64.c                    | 239 ----------------------
+ lib/libkvm/kvm_sparc64.h                    | 117 -----------
+ share/man/man4/cas.4                        |  23 ---
+ share/man/man4/dc.4                         |  22 --
+ share/man/man4/ddb.4                        |   6 -
+ share/man/man4/gem.4                        |  23 ---
+ share/man/man4/hme.4                        |  23 ---
+ share/man/man4/le.4                         |  53 -----
+ share/man/man4/man4.sparc64/Makefile        |  22 --
+ share/man/man4/man4.sparc64/Makefile.depend |  11 -
+ share/man/man4/man4.sparc64/auxio.4         |  80 --------
+ share/man/man4/man4.sparc64/central.4       |  60 ------
+ share/man/man4/man4.sparc64/clkbrd.4        |  88 --------
+ share/man/man4/man4.sparc64/creator.4       |  88 --------
+ share/man/man4/man4.sparc64/ebus.4          | 122 -----------
+ share/man/man4/man4.sparc64/eeprom.4        | 130 ------------
+ share/man/man4/man4.sparc64/fhc.4           |  82 --------
+ share/man/man4/man4.sparc64/machfb.4        | 180 -----------------
+ share/man/man4/man4.sparc64/ofw_console.4   | 126 ------------
+ share/man/man4/man4.sparc64/openfirm.4      | 300 ----------------------------
+ share/man/man4/man4.sparc64/openprom.4      | 240 ----------------------
+ share/man/man4/man4.sparc64/rtc.4           |  88 --------
+ share/man/man4/man4.sparc64/sbus.4          |  79 --------
+ share/man/man4/man4.sparc64/snd_audiocs.4   |  87 --------
+ share/man/man4/pcm.4                        |   8 +-
+ share/man/man4/smp.4                        |   2 +-
+ share/man/man9/bus_dma.9                    |  12 +-
+ sys/amd64/include/counter.h                 |   9 +-
+ sys/amd64/include/pcpu.h                    |  61 ++++++
+ sys/dev/mlx5/driver.h                       |   3 +
+ sys/dev/mlx5/mlx5_core/mlx5_eq.c            |  25 +++
+ sys/dev/mlx5/mlx5_core/mlx5_main.c          |   4 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c         |  72 +++++++
+ sys/kern/kern_rmlock.c                      |  75 +++----
+ sys/kern/subr_epoch.c                       |   2 +-
+ sys/kern/subr_pcpu.c                        |   1 +
+ sys/kern/subr_smp.c                         |  41 ++++
+ sys/kern/vfs_mount.c                        |  69 ++++---
+ sys/kern/vfs_subr.c                         | 179 +++++++++++------
+ sys/net/iflib.c                             |  67 +++++--
+ sys/riscv/include/pcpu.h                    |   2 +-
+ sys/sys/mount.h                             |  13 +-
+ sys/sys/pcpu.h                              |  35 +++-
+ sys/sys/smp.h                               |  13 ++
+ sys/vm/uma_core.c                           |  15 +-
+ 48 files changed, 506 insertions(+), 2505 deletions(-)
+ delete mode 100644 lib/libkvm/kvm_sparc64.c
+ delete mode 100644 lib/libkvm/kvm_sparc64.h
+ delete mode 100644 share/man/man4/man4.sparc64/Makefile
+ delete mode 100644 share/man/man4/man4.sparc64/Makefile.depend
+ delete mode 100644 share/man/man4/man4.sparc64/auxio.4
+ delete mode 100644 share/man/man4/man4.sparc64/central.4
+ delete mode 100644 share/man/man4/man4.sparc64/clkbrd.4
+ delete mode 100644 share/man/man4/man4.sparc64/creator.4
+ delete mode 100644 share/man/man4/man4.sparc64/ebus.4
+ delete mode 100644 share/man/man4/man4.sparc64/eeprom.4
+ delete mode 100644 share/man/man4/man4.sparc64/fhc.4
+ delete mode 100644 share/man/man4/man4.sparc64/machfb.4
+ delete mode 100644 share/man/man4/man4.sparc64/ofw_console.4
+ delete mode 100644 share/man/man4/man4.sparc64/openfirm.4
+ delete mode 100644 share/man/man4/man4.sparc64/openprom.4
+ delete mode 100644 share/man/man4/man4.sparc64/rtc.4
+ delete mode 100644 share/man/man4/man4.sparc64/sbus.4
+ delete mode 100644 share/man/man4/man4.sparc64/snd_audiocs.4
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    362484a45e13..8534caa69e2e  freebsd/current/master -> freebsd/current/master
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   362484a45e13..8534caa69e2e  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
