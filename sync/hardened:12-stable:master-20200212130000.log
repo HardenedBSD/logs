@@ -1,0 +1,82 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging usr.bin/login/login.conf
+CONFLICT (content): Merge conflict in usr.bin/login/login.conf
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc usr.bin/login/login.conf
+index 894f6ca0a31a,974d4485eadc..000000000000
+--- a/usr.bin/login/login.conf
++++ b/usr.bin/login/login.conf
+@@@ -26,7 -26,8 +26,12 @@@ default:
+  	:passwd_format=sha512:\
+  	:copyright=/etc/COPYRIGHT:\
+  	:welcome=/etc/motd:\
+++<<<<<<< HEAD
+ +	:setenv=MAIL=/var/mail/$,BLOCKSIZE=K:LC_COLLATE=C:\
+++=======
++ 	:setenv=BLOCKSIZE=K:\
++ 	:mail=/var/mail/$:\
+++>>>>>>> freebsd/12-stable/master
+  	:path=/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin ~/bin:\
+  	:nologin=/var/run/nologin:\
+  	:cputime=unlimited:\
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libc/net/rcmd.c
+	modified:   lib/libutil/login.conf.5
+	modified:   lib/libutil/login_class.c
+	modified:   sys/amd64/amd64/sys_machdep.c
+	modified:   sys/geom/eli/g_eli.c
+	modified:   usr.bin/env/Makefile
+	modified:   usr.bin/env/env.1
+	modified:   usr.bin/env/env.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/login/login.conf
+
+HEAD is now at a5cdbc700daa Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a5cdbc700daa Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
