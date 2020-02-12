@@ -34,3 +34,131 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/sddm/pkg-message
+Removing x11/sddm/files/patch-src_daemon_SignalHandler.cpp
+Removing x11/sddm/files/git-patch-b02b00559
+Auto-merging ports-mgmt/pkg/Makefile
+Removing ports-mgmt/pkg-devel/files/patch-libfetch
+Removing graphics/openexr/files/patch-config_LibraryDefine.cmake
+Removing graphics/ilmbase/files/patch-config_LibraryDefine.cmake
+Merge made by the 'recursive' strategy.
+ deskutils/dosage/Makefile                          |   2 +-
+ deskutils/dosage/distinfo                          |   6 +-
+ emulators/nemu/Makefile                            |   2 +-
+ emulators/nemu/distinfo                            |   6 +-
+ graphics/ilmbase/Makefile                          |   4 +-
+ graphics/ilmbase/distinfo                          |   6 +-
+ .../ilmbase/files/patch-config_LibraryDefine.cmake |  11 --
+ graphics/kphotoalbum/Makefile                      |   5 +-
+ graphics/kphotoalbum/distinfo                      |   6 +-
+ graphics/openexr/Makefile                          |   7 +-
+ graphics/openexr/distinfo                          |   6 +-
+ .../openexr/files/patch-config_LibraryDefine.cmake |  11 --
+ graphics/openexr/pkg-plist                         |   1 -
+ lang/rust/Makefile                                 |   6 +-
+ misc/nnn/Makefile                                  |   2 +-
+ misc/nnn/distinfo                                  |   6 +-
+ net/liveMedia/Makefile                             |   2 +-
+ net/liveMedia/distinfo                             |   6 +-
+ net/liveMedia/pkg-plist                            |   4 +
+ net/nats-server/Makefile                           |   2 +-
+ net/nats-server/distinfo                           |  18 +--
+ net/nats-streaming-server/Makefile                 |   3 +-
+ net/nats-streaming-server/distinfo                 |   6 +-
+ ports-mgmt/pkg-devel/Makefile                      |   5 +-
+ ports-mgmt/pkg-devel/distinfo                      |   6 +-
+ ports-mgmt/pkg-devel/files/patch-libfetch          |  31 -----
+ ports-mgmt/pkg/Makefile                            |   2 +-
+ ports-mgmt/pkg/distinfo                            |   6 +-
+ science/dlib-cpp/Makefile                          |   3 +-
+ science/dlib-cpp/distinfo                          |   6 +-
+ science/dlib-cpp/pkg-plist                         |   9 +-
+ science/py-dlib/Makefile                           |  10 +-
+ science/py-dlib/distinfo                           |   6 +-
+ security/vuxml/vuln.xml                            |  62 ++++++++++
+ sysutils/grub2-bhyve/Makefile                      |   2 +-
+ .../files/patch-grub-core_commands_iorw.c          |  39 +++++++
+ .../files/patch-grub-core_commands_memrw.c         |  38 ++++++
+ .../files/patch-grub-core_font_font__cmd.c         |  20 ++++
+ sysutils/zeitgeist/Makefile                        |   5 +-
+ sysutils/zeitgeist/files/patch-python_client.py    |  35 ++++++
+ sysutils/zeitgeist/files/patch-python_datamodel.py | 130 +++++++++++++++++++++
+ www/p5-Mojolicious/Makefile                        |   2 +-
+ www/p5-Mojolicious/distinfo                        |   6 +-
+ www/py-openbrokerapi/Makefile                      |   4 +-
+ www/py-openbrokerapi/distinfo                      |   6 +-
+ x11/plasma5-plasma-desktop/Makefile                |   1 +
+ ...sktoppackage_contents_updates_unlock_widgets.js |   8 ++
+ x11/plasma5-plasma-desktop/pkg-plist               |   1 +
+ x11/sddm/Makefile                                  |  10 +-
+ x11/sddm/distinfo                                  |   6 +-
+ x11/sddm/files/VirtualTerminal_FreeBSD.cpp         |  37 ++++++
+ x11/sddm/files/git-patch-b02b00559                 |  70 -----------
+ x11/sddm/files/patch-data_scripts_Xsession         |  10 +-
+ ...eter.pam => patch-services_sddm-greeter.pam.in} |   9 +-
+ x11/sddm/files/patch-src_common_Configuration.h    |  11 +-
+ x11/sddm/files/patch-src_daemon_CMakeLists.txt     |   8 +-
+ x11/sddm/files/patch-src_daemon_Display.cpp        |  37 +-----
+ x11/sddm/files/patch-src_daemon_SignalHandler.cpp  |  45 -------
+ x11/sddm/files/patch-src_helper_Backend.cpp        |  33 ++++++
+ x11/sddm/files/patch-src_helper_CMakeLists.txt     |  12 ++
+ x11/sddm/files/patch-src_helper_HelperApp.cpp      |  12 +-
+ x11/sddm/files/patch-src_helper_UserSession.cpp    |  53 +++++++--
+ x11/sddm/pkg-message                               |   8 --
+ x11/sddm/pkg-plist                                 |   3 +-
+ 64 files changed, 574 insertions(+), 361 deletions(-)
+ delete mode 100644 graphics/ilmbase/files/patch-config_LibraryDefine.cmake
+ delete mode 100644 graphics/openexr/files/patch-config_LibraryDefine.cmake
+ delete mode 100644 ports-mgmt/pkg-devel/files/patch-libfetch
+ create mode 100644 sysutils/grub2-bhyve/files/patch-grub-core_commands_iorw.c
+ create mode 100644 sysutils/grub2-bhyve/files/patch-grub-core_commands_memrw.c
+ create mode 100644 sysutils/grub2-bhyve/files/patch-grub-core_font_font__cmd.c
+ create mode 100644 sysutils/zeitgeist/files/patch-python_client.py
+ create mode 100644 sysutils/zeitgeist/files/patch-python_datamodel.py
+ create mode 100644 x11/plasma5-plasma-desktop/files/patch-desktoppackage_contents_updates_unlock_widgets.js
+ create mode 100644 x11/sddm/files/VirtualTerminal_FreeBSD.cpp
+ delete mode 100644 x11/sddm/files/git-patch-b02b00559
+ rename x11/sddm/files/{patch-services_sddm-greeter.pam => patch-services_sddm-greeter.pam.in} (60%)
+ delete mode 100644 x11/sddm/files/patch-src_daemon_SignalHandler.cpp
+ create mode 100644 x11/sddm/files/patch-src_helper_Backend.cpp
+ create mode 100644 x11/sddm/files/patch-src_helper_CMakeLists.txt
+ delete mode 100644 x11/sddm/pkg-message
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    12dd2bf5d11e..4cb0d69784eb  master -> master
+remote:    e42e099ce836..12dd2bf5d11e  github/master -> github/master
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   12dd2bf5d11e..4cb0d69784eb  master -> master
+==== END: master ====
