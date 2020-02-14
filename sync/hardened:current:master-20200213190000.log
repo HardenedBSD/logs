@@ -1,0 +1,104 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/bhyve/xmsr.c
+Auto-merging sys/sys/priv.h
+Auto-merging sys/sys/jail.h
+Auto-merging sys/security/mac/mac_framework.h
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/kern_priv.c
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/conf/kern.mk
+Auto-merging sys/conf/files.i386
+Auto-merging sys/amd64/vmm/x86.c
+Merge made by the 'recursive' strategy.
+ lib/libthr/thread/thr_cancel.c              |   2 +-
+ sbin/sconfig/sconfig.c                      |   3 +-
+ sys/amd64/vmm/io/iommu.c                    |   2 +-
+ sys/amd64/vmm/vmm.c                         |   2 +-
+ sys/amd64/vmm/vmm_stat.c                    |   2 +-
+ sys/amd64/vmm/vmm_util.c                    |   5 +-
+ sys/amd64/vmm/vmm_util.h                    |   2 +-
+ sys/amd64/vmm/x86.c                         |  11 ++-
+ sys/conf/files.i386                         |   5 +-
+ sys/conf/kern.mk                            |   3 +
+ sys/dev/amd_ecc_inject/ecc_inject.c         |   3 +-
+ sys/dev/amdpm/amdpm.c                       |   5 +-
+ sys/dev/amdsbwd/amd_chipset.h               |   2 +
+ sys/dev/amdsbwd/amdsbwd.c                   |  10 ++-
+ sys/dev/cxgbe/adapter.h                     |   1 -
+ sys/dev/cxgbe/crypto/t4_kern_tls.c          |   1 -
+ sys/dev/cxgbe/t4_main.c                     |   1 -
+ sys/dev/cxgbe/t4_sge.c                      |   2 -
+ sys/dev/hyperv/vmbus/amd64/hyperv_machdep.c |   1 +
+ sys/dev/intpm/intpm.c                       |   2 +
+ sys/dev/mlx5/mlx5_en/mlx5_en_hw_tls.c       |   8 --
+ sys/kern/kern_jail.c                        |  20 ++---
+ sys/kern/kern_priv.c                        | 106 +++++++++++++++++-------
+ sys/kern/subr_smr.c                         |  13 +--
+ sys/kern/vfs_lookup.c                       |   9 +--
+ sys/kern/vfs_syscalls.c                     |   4 +-
+ sys/kern/vfs_vnops.c                        |   2 +-
+ sys/modules/ce/Makefile                     |   3 +-
+ sys/modules/cp/Makefile                     |   2 +
+ sys/security/mac/mac_framework.c            | 113 ++++++++++++++++++++++++++
+ sys/security/mac/mac_framework.h            | 121 +++++++++++++++++++++++++---
+ sys/security/mac/mac_priv.c                 |   4 +-
+ sys/security/mac/mac_vfs.c                  |  23 ++++--
+ sys/sys/jail.h                              |   7 +-
+ sys/sys/priv.h                              |   1 +
+ sys/sys/smr.h                               |   9 +++
+ sys/vm/uma_core.c                           |  63 +++++++++------
+ sys/vm/vm_page.c                            |   5 +-
+ tests/sys/net/randsleep.c                   |   2 +-
+ usr.bin/diff/diff.1                         |  14 ++--
+ usr.bin/diff/diff.c                         |   2 +-
+ usr.bin/diff/tests/diff_test.sh             |  12 +++
+ usr.sbin/bhyve/xmsr.c                       |   8 +-
+ usr.sbin/bhyvectl/bhyvectl.c                |   2 +
+ 44 files changed, 477 insertions(+), 141 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    a487d5d95591..f34d776bdc70  hardened/current/master -> hardened/current/master        
+remote:    504e40822939..6e6ecd2aa11a  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   a487d5d95591..f34d776bdc70  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
