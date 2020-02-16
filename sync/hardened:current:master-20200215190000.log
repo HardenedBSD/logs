@@ -1,0 +1,174 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/amd64/vmm/x86.c
+Merge made by the 'recursive' strategy.
+ include/pthread_np.h                          |   1 +
+ lib/libfetch/common.c                         | 305 +++++++++++++++++++++++++-
+ lib/libfetch/common.h                         |  36 +++
+ lib/libfetch/fetch.3                          |  22 ++
+ lib/libthr/pthread.map                        |   4 +
+ lib/libthr/thread/thr_join.c                  |  33 ++-
+ share/man/man3/Makefile                       |   3 +-
+ share/man/man3/pthread_join.3                 |  55 ++++-
+ share/misc/committers-ports.dot               |   3 +
+ sys/amd64/vmm/amd/amdvi_hw.c                  |  11 +-
+ sys/amd64/vmm/amd/npt.c                       |   3 +-
+ sys/amd64/vmm/amd/svm.c                       |   3 +-
+ sys/amd64/vmm/intel/ept.c                     |   3 +-
+ sys/amd64/vmm/intel/vmx.c                     |   7 +-
+ sys/amd64/vmm/io/iommu.c                      |   3 +-
+ sys/amd64/vmm/io/ppt.c                        |   3 +-
+ sys/amd64/vmm/io/vrtc.c                       |   3 +-
+ sys/amd64/vmm/vmm.c                           |   3 +-
+ sys/amd64/vmm/vmm_dev.c                       |  10 +-
+ sys/amd64/vmm/x86.c                           |   3 +-
+ sys/cam/cam_periph.c                          |   5 -
+ sys/compat/linuxkpi/common/src/linux_compat.c |   7 +-
+ sys/dev/hptmv/ioctl.c                         |   2 +-
+ sys/dev/iscsi/icl.c                           |   3 +-
+ sys/dev/iscsi/iscsi.c                         |   3 +-
+ sys/dev/sound/usb/uaudio.c                    |  18 +-
+ sys/dev/usb/controller/atmegadci.c            |   2 +-
+ sys/dev/usb/controller/avr32dci.c             |   4 +-
+ sys/dev/usb/controller/dwc_otg.c              |   3 +-
+ sys/dev/usb/controller/ehci.c                 |   3 +-
+ sys/dev/usb/controller/musb_otg.c             |   3 +-
+ sys/dev/usb/controller/ohci.c                 |   3 +-
+ sys/dev/usb/controller/saf1761_otg.c          |   2 +-
+ sys/dev/usb/controller/uhci.c                 |   3 +-
+ sys/dev/usb/controller/usb_controller.c       |   3 +-
+ sys/dev/usb/controller/uss820dci.c            |   2 +-
+ sys/dev/usb/controller/xhci.c                 |   3 +-
+ sys/dev/usb/gadget/g_audio.c                  |   3 +-
+ sys/dev/usb/gadget/g_keyboard.c               |   4 +-
+ sys/dev/usb/gadget/g_modem.c                  |   3 +-
+ sys/dev/usb/gadget/g_mouse.c                  |   3 +-
+ sys/dev/usb/input/atp.c                       |   9 +-
+ sys/dev/usb/input/uep.c                       |   3 +-
+ sys/dev/usb/input/uhid.c                      |   3 +-
+ sys/dev/usb/input/ukbd.c                      |   3 +-
+ sys/dev/usb/input/ums.c                       |  10 +-
+ sys/dev/usb/input/wmt.c                       |   2 +-
+ sys/dev/usb/input/wsp.c                       |   3 +-
+ sys/dev/usb/misc/udbp.c                       |   3 +-
+ sys/dev/usb/misc/ugold.c                      |   2 +-
+ sys/dev/usb/net/if_aue.c                      |   3 +-
+ sys/dev/usb/net/if_axe.c                      |   3 +-
+ sys/dev/usb/net/if_axge.c                     |   3 +-
+ sys/dev/usb/net/if_cdce.c                     |   3 +-
+ sys/dev/usb/net/if_cdceem.c                   |   3 +-
+ sys/dev/usb/net/if_cue.c                      |   3 +-
+ sys/dev/usb/net/if_ipheth.c                   |   3 +-
+ sys/dev/usb/net/if_kue.c                      |   3 +-
+ sys/dev/usb/net/if_mos.c                      |   3 +-
+ sys/dev/usb/net/if_muge.c                     |   2 +-
+ sys/dev/usb/net/if_rue.c                      |   3 +-
+ sys/dev/usb/net/if_smsc.c                     |   3 +-
+ sys/dev/usb/net/if_udav.c                     |   3 +-
+ sys/dev/usb/net/if_ure.c                      |   3 +-
+ sys/dev/usb/net/if_urndis.c                   |   3 +-
+ sys/dev/usb/net/if_usie.c                     |   3 +-
+ sys/dev/usb/net/uhso.c                        |  10 +-
+ sys/dev/usb/net/usb_ethernet.c                |   8 +-
+ sys/dev/usb/serial/u3g.c                      |   3 +-
+ sys/dev/usb/serial/ubsa.c                     |   3 +-
+ sys/dev/usb/serial/ubser.c                    |   3 +-
+ sys/dev/usb/serial/uchcom.c                   |   3 +-
+ sys/dev/usb/serial/ufoma.c                    |  12 +-
+ sys/dev/usb/serial/uftdi.c                    |   3 +-
+ sys/dev/usb/serial/ulpt.c                     |   3 +-
+ sys/dev/usb/serial/umcs.c                     |   3 +-
+ sys/dev/usb/serial/umodem.c                   |   3 +-
+ sys/dev/usb/serial/umoscom.c                  |   3 +-
+ sys/dev/usb/serial/uplcom.c                   |   3 +-
+ sys/dev/usb/serial/usb_serial.c               |   3 +-
+ sys/dev/usb/serial/uslcom.c                   |   3 +-
+ sys/dev/usb/serial/uvisor.c                   |   3 +-
+ sys/dev/usb/serial/uvscom.c                   |   3 +-
+ sys/dev/usb/storage/cfumass.c                 |   2 +-
+ sys/dev/usb/storage/umass.c                   |   3 +-
+ sys/dev/usb/storage/urio.c                    |   3 +-
+ sys/dev/usb/storage/ustorage_fs.c             |   3 +-
+ sys/dev/usb/template/usb_template.c           |   2 +-
+ sys/dev/usb/template/usb_template_audio.c     |   2 +-
+ sys/dev/usb/template/usb_template_cdce.c      |   2 +-
+ sys/dev/usb/template/usb_template_cdceem.c    |   2 +-
+ sys/dev/usb/template/usb_template_kbd.c       |   2 +-
+ sys/dev/usb/template/usb_template_midi.c      |   2 +-
+ sys/dev/usb/template/usb_template_modem.c     |   2 +-
+ sys/dev/usb/template/usb_template_mouse.c     |   2 +-
+ sys/dev/usb/template/usb_template_msc.c       |   2 +-
+ sys/dev/usb/template/usb_template_mtp.c       |   2 +-
+ sys/dev/usb/template/usb_template_multi.c     |   2 +-
+ sys/dev/usb/template/usb_template_phone.c     |   2 +-
+ sys/dev/usb/template/usb_template_serialnet.c |   2 +-
+ sys/dev/usb/usb_debug.c                       |  74 ++++---
+ sys/dev/usb/usb_dev.c                         |   3 +-
+ sys/dev/usb/usb_generic.c                     |   3 +-
+ sys/dev/usb/usb_hub.c                         |   3 +-
+ sys/dev/usb/usb_hub_acpi.c                    |  18 +-
+ sys/dev/usb/usb_process.c                     |   3 +-
+ sys/dev/usb/video/udl.c                       |   3 +-
+ sys/dev/usb/wlan/if_rsu.c                     |   3 +-
+ sys/dev/usb/wlan/if_rum.c                     |   3 +-
+ sys/dev/usb/wlan/if_run.c                     |   3 +-
+ sys/dev/usb/wlan/if_uath.c                    |   7 +-
+ sys/dev/usb/wlan/if_upgt.c                    |   6 +-
+ sys/dev/usb/wlan/if_ural.c                    |   3 +-
+ sys/dev/usb/wlan/if_urtw.c                    |  11 +-
+ sys/dev/usb/wlan/if_zyd.c                     |   3 +-
+ sys/fs/autofs/autofs.c                        |   3 +-
+ sys/kern/kern_rctl.c                          |  15 +-
+ sys/kern/sysv_sem.c                           |  31 ++-
+ sys/ufs/ffs/ffs_vnops.c                       |   9 +-
+ usr.bin/random/random.6                       |  60 +++--
+ usr.bin/random/random.c                       |  45 ++--
+ usr.bin/random/randomize_fd.c                 |   3 +-
+ usr.bin/random/randomize_fd.h                 |  36 +++
+ 123 files changed, 842 insertions(+), 296 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    05588ce5939d..ed5faf1d2344  hardened/current/master -> hardened/current/master        
+remote:    5708bc0dd247..0ee0eac9f670  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   05588ce5939d..ed5faf1d2344  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
