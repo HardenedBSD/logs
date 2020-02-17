@@ -34,3 +34,239 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/xen-tools/files/0004-x86-check-for-multiboot-1-2-header-presence.patch
+Removing sysutils/xen-tools/files/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch
+Removing sysutils/xen-tools/files/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch
+Removing sysutils/xen-tools/files/0001-tools-include-propagate-python-interpreter-path.patch
+Auto-merging sysutils/Makefile
+CONFLICT (content): Merge conflict in sysutils/Makefile
+CONFLICT (add/add): Merge conflict in news/inn/files/patch-nnrpd_tls.c
+Auto-merging news/inn/files/patch-nnrpd_tls.c
+Auto-merging lang/gcc8-devel/Makefile
+Removing emulators/xen-kernel/files/0004-x86-check-for-multiboot-1-2-header-presence.patch
+Removing emulators/xen-kernel/files/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch
+Removing emulators/xen-kernel/files/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch
+Removing emulators/xen-kernel/files/0001-x86-ept-pass-correct-level-to-p2m_entry_modify.patch
+Removing devel/py-freebsd/files/patch-src__netstat.c
+Removing devel/py-freebsd/files/patch-src__.const.def
+Removing devel/py-freebsd/files/patch-src-sysctl.c
+Removing devel/py-freebsd/files/patch-src-process.c
+Removing devel/py-freebsd/files/patch-src-netstat.c
+Removing devel/py-freebsd/files/patch-src-jail.c
+Removing devel/py-freebsd/files/patch-setup.py
+Removing audio/libopenshot-audio/files/patch-src_CMakeLists.txt
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc news/inn/files/patch-nnrpd_tls.c
+index 1fdb08a89f1e,7a69f991b9f1..000000000000
+--- a/news/inn/files/patch-nnrpd_tls.c
++++ b/news/inn/files/patch-nnrpd_tls.c
+@@@ -1,7 -1,7 +1,12 @@@
+  --- nnrpd/tls.c.orig	2017-09-12 18:17:21 UTC
+  +++ nnrpd/tls.c
+++<<<<<<< HEAD
+ +@@ -499,7 +499,7 @@ tls_init_serverengine(int verifydepth, i
+ +       Printf("starting TLS engine");
+++=======
++ @@ -495,7 +495,7 @@ tls_init_serverengine(int verifydepth, int askcert, in
++        syslog(L_NOTICE, "starting TLS engine");
+++>>>>>>> freebsd/master
+   
+   /* New functions have been introduced in OpenSSL 1.1.0. */
+  -#if OPENSSL_VERSION_NUMBER < 0x010100000L
+@@@ -9,3 -9,12 +14,15 @@@
+       SSL_load_error_strings();
+       SSLeay_add_ssl_algorithms();
+       CTX = SSL_CTX_new(SSLv23_server_method());
+++<<<<<<< HEAD
+++=======
++ @@ -652,7 +652,7 @@ tls_init_serverengine(int verifydepth, int askcert, in
++          }
++      }
++  
++ -#if OPENSSL_VERSION_NUMBER >= 0x01010100fL
++ +#if OPENSSL_VERSION_NUMBER >= 0x01010100fL && !defined(LIBRESSL_VERSION_NUMBER)
++      /* New API added in OpenSSL 1.1.1 for TLSv1.3 cipher suites. */
++      if (tls_ciphers13 != NULL) {
++          if (SSL_CTX_set_ciphersuites(CTX, tls_ciphers13) == 0) {
+++>>>>>>> freebsd/master
+diff --cc sysutils/Makefile
+index 9f3d28a891a4,79803e70d138..000000000000
+--- a/sysutils/Makefile
++++ b/sysutils/Makefile
+@@@ -491,7 -491,7 +491,11 @@@
+      SUBDIR += i2c-tools
+      SUBDIR += i7z
+      SUBDIR += iat
+++<<<<<<< HEAD
+ +    SUBDIR += iichid-kmod
+++=======
++     SUBDIR += iichid
+++>>>>>>> freebsd/master
+      SUBDIR += immortal
+      SUBDIR += incron
+      SUBDIR += inotify-tools
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   astro/geographiclib/Makefile
+	modified:   astro/geographiclib/distinfo
+	modified:   astro/geographiclib/files/patch-CMakeLists.txt
+	modified:   astro/geographiclib/pkg-descr
+	new file:   astro/geographiclib/pkg-help
+	modified:   astro/geographiclib/pkg-plist
+	modified:   astro/xearth/files/freebsd.committers.markers
+	modified:   audio/libopenshot-audio/Makefile
+	modified:   audio/libopenshot-audio/distinfo
+	modified:   audio/libopenshot-audio/files/patch-CMakeLists.txt
+	deleted:    audio/libopenshot-audio/files/patch-src_CMakeLists.txt
+	modified:   audio/libopenshot-audio/pkg-plist
+	modified:   devel/Makefile
+	modified:   devel/electron4/Makefile
+	modified:   devel/electron4/Makefile.version
+	modified:   devel/electron4/pkg-plist
+	modified:   devel/liblas/Makefile
+	modified:   devel/liblas/pkg-descr
+	modified:   devel/ocaml-opam/Makefile
+	modified:   devel/ocaml-opam/distinfo
+	modified:   devel/ocaml-opam/pkg-plist
+	modified:   devel/py-Faker/Makefile
+	new file:   devel/py-Faker/files/patch-setup.py
+	modified:   devel/py-Faker/pkg-descr
+	modified:   devel/py-freebsd/Makefile
+	modified:   devel/py-freebsd/distinfo
+	deleted:    devel/py-freebsd/files/patch-setup.py
+	deleted:    devel/py-freebsd/files/patch-src-jail.c
+	deleted:    devel/py-freebsd/files/patch-src-netstat.c
+	deleted:    devel/py-freebsd/files/patch-src-process.c
+	deleted:    devel/py-freebsd/files/patch-src-sysctl.c
+	deleted:    devel/py-freebsd/files/patch-src__.const.def
+	deleted:    devel/py-freebsd/files/patch-src__netstat.c
+	modified:   devel/py-oci/Makefile
+	modified:   devel/py-oci/distinfo
+	new file:   devel/py-pytest-flask/Makefile
+	new file:   devel/py-pytest-flask/distinfo
+	new file:   devel/py-pytest-flask/pkg-descr
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-bind-min-override-ttl
+	modified:   dns/bind9-devel/files/patch-bin_named_include_named_globals.h
+	modified:   emulators/xen-kernel/Makefile
+	modified:   emulators/xen-kernel/distinfo
+	deleted:    emulators/xen-kernel/files/0001-x86-ept-pass-correct-level-to-p2m_entry_modify.patch
+	deleted:    emulators/xen-kernel/files/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch
+	deleted:    emulators/xen-kernel/files/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch
+	deleted:    emulators/xen-kernel/files/0004-x86-check-for-multiboot-1-2-header-presence.patch
+	modified:   ftp/py-pyftpdlib/Makefile
+	modified:   ftp/py-pyftpdlib/distinfo
+	modified:   graphics/seexpr/Makefile
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	new file:   mail/rspamd/files/patch-fips
+	modified:   misc/Makefile
+	renamed:    misc/brs/Makefile -> misc/bible-kjv/Makefile
+	renamed:    misc/brs/distinfo -> misc/bible-kjv/distinfo
+	renamed:    misc/brs/pkg-descr -> misc/bible-kjv/pkg-descr
+	renamed:    misc/brs/pkg-plist -> misc/bible-kjv/pkg-plist
+	modified:   multimedia/libopenshot/Makefile
+	modified:   multimedia/libopenshot/distinfo
+	modified:   multimedia/libopenshot/files/patch-src_CMakeLists.txt
+	modified:   multimedia/libopenshot/files/patch-src_FFmpegReader.cpp
+	modified:   multimedia/libopenshot/pkg-plist
+	modified:   multimedia/openshot/Makefile
+	modified:   multimedia/openshot/distinfo
+	new file:   multimedia/openshot/files/patch-MANIFEST.in
+	modified:   multimedia/openshot/files/patch-setup.py
+	modified:   multimedia/openshot/files/patch-src_classes_info.py
+	modified:   multimedia/openshot/files/patch-src_classes_metrics.py
+	modified:   multimedia/openshot/files/patch-src_windows_main__window.py
+	modified:   multimedia/openshot/pkg-plist
+	modified:   net-mgmt/netdata/Makefile
+	modified:   net-mgmt/netdata/files/patch-collectors_python.d.plugin_python.d.plugin.in
+	modified:   net/sngrep/Makefile
+	new file:   sysutils/iichid/Makefile
+	new file:   sysutils/iichid/distinfo
+	new file:   sysutils/iichid/pkg-descr
+	new file:   sysutils/iichid/pkg-message
+	modified:   sysutils/munin-common/distinfo
+	modified:   sysutils/munin-common/munin.mk
+	modified:   sysutils/py-diffoscope/Makefile
+	modified:   sysutils/py-diffoscope/distinfo
+	modified:   sysutils/xen-tools/Makefile
+	modified:   sysutils/xen-tools/distinfo
+	deleted:    sysutils/xen-tools/files/0001-tools-include-propagate-python-interpreter-path.patch
+	deleted:    sysutils/xen-tools/files/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch
+	deleted:    sysutils/xen-tools/files/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch
+	deleted:    sysutils/xen-tools/files/0004-x86-check-for-multiboot-1-2-header-presence.patch
+	modified:   sysutils/xen-tools/pkg-plist
+	modified:   textproc/py-ocrmypdf/Makefile
+	modified:   textproc/py-ocrmypdf/distinfo
+	modified:   www/Makefile
+	modified:   www/ikiwiki/Makefile
+	modified:   www/ikiwiki/distinfo
+	modified:   www/ikiwiki/pkg-plist
+	modified:   www/py-flask-admin/Makefile
+	modified:   www/py-flask-admin/distinfo
+	modified:   www/py-flask-smorest/Makefile
+	modified:   www/py-flask-smorest/distinfo
+	new file:   www/py-freenit/Makefile
+	new file:   www/py-freenit/distinfo
+	new file:   www/py-freenit/files/patch-setup.py
+	new file:   www/py-freenit/pkg-descr
+	modified:   www/tomcat85/Makefile
+	modified:   www/tomcat85/pkg-plist
+	modified:   www/tomcat9/Makefile
+	modified:   www/tomcat9/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both added:      news/inn/files/patch-nnrpd_tls.c
+	both modified:   sysutils/Makefile
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ec6028adcec6 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.42 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ec6028adcec6 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
