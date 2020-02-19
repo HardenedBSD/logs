@@ -1,0 +1,207 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Removing lib/libedit/editrc.5
+Removing lib/libedit/edit/readline/Makefile.depend
+Removing lib/libedit/chartype.h
+Removing lib/libedit/Makefile.depend
+Merge made by the 'recursive' strategy.
+ bin/sh/histedit.c                                  |   2 +-
+ contrib/gdb/gdb/cli/cli-cmds.c                     |   1 -
+ contrib/gdb/gdb/cli/cli-setshow.c                  |   1 -
+ contrib/gdb/gdb/event-top.c                        |   1 -
+ contrib/gdb/gdb/top.c                              |   1 -
+ contrib/gdb/gdb/tracepoint.c                       |   1 -
+ contrib/libedit/Makefile                           | 139 +++
+ contrib/libedit/TEST/Makefile                      |  13 +
+ {lib => contrib}/libedit/TEST/rl1.c                |   1 -
+ {lib => contrib}/libedit/TEST/tc1.c                |   3 +-
+ contrib/libedit/TEST/test_filecompletion.c         | 553 ++++++++++++
+ {lib => contrib}/libedit/TEST/wtc1.c               |   6 -
+ {lib => contrib}/libedit/chared.c                  | 160 ++--
+ {lib => contrib}/libedit/chared.h                  |  82 +-
+ {lib => contrib}/libedit/chartype.c                | 183 ++--
+ contrib/libedit/chartype.h                         | 119 +++
+ {lib => contrib}/libedit/common.c                  | 212 ++---
+ {lib => contrib}/libedit/config.h                  |  18 +-
+ {lib => contrib}/libedit/editline.3                | 121 ++-
+ contrib/libedit/editline.7                         | 935 +++++++++++++++++++++
+ contrib/libedit/editrc.5                           | 325 +++++++
+ {lib => contrib}/libedit/el.c                      | 161 ++--
+ {lib => contrib}/libedit/el.h                      |  37 +-
+ {lib => contrib}/libedit/eln.c                     |  58 +-
+ {lib => contrib}/libedit/emacs.c                   |  87 +-
+ {lib => contrib}/libedit/filecomplete.c            | 474 +++++++----
+ {lib => contrib}/libedit/filecomplete.h            |  14 +-
+ {lib => contrib}/libedit/hist.c                    | 101 ++-
+ {lib => contrib}/libedit/hist.h                    |  49 +-
+ {lib => contrib}/libedit/histedit.h                |   6 +-
+ {lib => contrib}/libedit/history.c                 | 200 +++--
+ contrib/libedit/historyn.c                         |   3 +
+ {lib => contrib}/libedit/keymacro.c                | 136 ++-
+ {lib => contrib}/libedit/keymacro.h                |  35 +-
+ contrib/libedit/literal.c                          | 136 +++
+ contrib/libedit/literal.h                          |  53 ++
+ {lib => contrib}/libedit/makelist                  | 112 +--
+ {lib => contrib}/libedit/map.c                     | 180 ++--
+ {lib => contrib}/libedit/map.h                     |  27 +-
+ {lib => contrib}/libedit/parse.c                   | 124 ++-
+ {lib => contrib}/libedit/parse.h                   |  11 +-
+ {lib => contrib}/libedit/prompt.c                  |  49 +-
+ {lib => contrib}/libedit/prompt.h                  |  17 +-
+ {lib => contrib}/libedit/read.c                    | 410 ++++-----
+ {lib => contrib}/libedit/read.h                    |  21 +-
+ {lib => contrib}/libedit/readline.c                | 353 +++++---
+ contrib/libedit/readline/Makefile                  |  13 +
+ .../edit => contrib/libedit}/readline/readline.h   |  27 +-
+ {lib => contrib}/libedit/refresh.c                 | 186 ++--
+ {lib => contrib}/libedit/refresh.h                 |  19 +-
+ {lib => contrib}/libedit/search.c                  |  90 +-
+ {lib => contrib}/libedit/search.h                  |  27 +-
+ contrib/libedit/shlib_version                      |   5 +
+ {lib => contrib}/libedit/sig.c                     |  22 +-
+ {lib => contrib}/libedit/sig.h                     |  11 +-
+ {lib => contrib}/libedit/sys.h                     |  22 +-
+ {lib => contrib}/libedit/terminal.c                | 371 ++++----
+ {lib => contrib}/libedit/terminal.h                |  56 +-
+ {lib => contrib}/libedit/tokenizer.c               |  37 +-
+ contrib/libedit/tokenizern.c                       |   3 +
+ {lib => contrib}/libedit/tty.c                     | 139 +--
+ {lib => contrib}/libedit/tty.h                     |  20 +-
+ {lib => contrib}/libedit/vi.c                      | 161 ++--
+ gnu/usr.bin/gdb/Makefile.inc                       |   2 +-
+ gnu/usr.bin/gdb/kgdb/trgt.c                        |   1 -
+ lib/libc/rpc/rpcb_st_xdr.c                         | 159 ++--
+ lib/libedit/Makefile                               | 115 +--
+ lib/libedit/Makefile.depend                        |  17 -
+ lib/libedit/chartype.h                             | 248 ------
+ lib/libedit/edit/readline/Makefile.depend          |  11 -
+ lib/libedit/editrc.5                               | 526 ------------
+ lib/libedit/{edit => }/readline/Makefile           |   2 +-
+ lib/libedit/{edit => }/readline/history.h          |   0
+ lib/libedit/{edit => }/readline/tilde.h            |   0
+ share/man/man7/hier.7                              |   8 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           |   1 -
+ tools/tools/locale/tools/charmaps.pm               |  24 +
+ tools/tools/locale/tools/cldr2def.pl               |  27 +
+ tools/tools/locale/tools/extract-colldef.awk       |  26 +
+ tools/tools/locale/tools/finalize                  |  25 +
+ tools/tools/locale/tools/utf8-rollup.pl            |  27 +
+ usr.sbin/ntp/libntp/Makefile                       |   2 +-
+ usr.sbin/ntp/ntpdc/Makefile                        |   2 -
+ usr.sbin/ntp/ntpq/Makefile                         |   3 -
+ 84 files changed, 4879 insertions(+), 3287 deletions(-)
+ create mode 100644 contrib/libedit/Makefile
+ create mode 100644 contrib/libedit/TEST/Makefile
+ rename {lib => contrib}/libedit/TEST/rl1.c (98%)
+ rename {lib => contrib}/libedit/TEST/tc1.c (99%)
+ create mode 100644 contrib/libedit/TEST/test_filecompletion.c
+ rename {lib => contrib}/libedit/TEST/wtc1.c (98%)
+ rename {lib => contrib}/libedit/chared.c (84%)
+ rename {lib => contrib}/libedit/chared.h (67%)
+ rename {lib => contrib}/libedit/chartype.c (70%)
+ create mode 100644 contrib/libedit/chartype.h
+ rename {lib => contrib}/libedit/common.c (84%)
+ rename {lib => contrib}/libedit/config.h (97%)
+ rename {lib => contrib}/libedit/editline.3 (91%)
+ create mode 100644 contrib/libedit/editline.7
+ create mode 100644 contrib/libedit/editrc.5
+ rename {lib => contrib}/libedit/el.c (81%)
+ rename {lib => contrib}/libedit/el.h (83%)
+ rename {lib => contrib}/libedit/eln.c (89%)
+ rename {lib => contrib}/libedit/emacs.c (90%)
+ rename {lib => contrib}/libedit/filecomplete.c (64%)
+ rename {lib => contrib}/libedit/filecomplete.h (83%)
+ rename {lib => contrib}/libedit/hist.c (71%)
+ rename {lib => contrib}/libedit/hist.h (67%)
+ rename {lib => contrib}/libedit/histedit.h (98%)
+ rename {lib => contrib}/libedit/history.c (85%)
+ create mode 100644 contrib/libedit/historyn.c
+ rename {lib => contrib}/libedit/keymacro.c (84%)
+ rename {lib => contrib}/libedit/keymacro.h (69%)
+ create mode 100644 contrib/libedit/literal.c
+ create mode 100644 contrib/libedit/literal.h
+ rename {lib => contrib}/libedit/makelist (60%)
+ rename {lib => contrib}/libedit/map.c (92%)
+ rename {lib => contrib}/libedit/map.h (78%)
+ rename {lib => contrib}/libedit/parse.c (67%)
+ rename {lib => contrib}/libedit/parse.h (85%)
+ rename {lib => contrib}/libedit/prompt.c (83%)
+ rename {lib => contrib}/libedit/prompt.h (81%)
+ rename {lib => contrib}/libedit/read.c (59%)
+ rename {lib => contrib}/libedit/read.h (78%)
+ rename {lib => contrib}/libedit/readline.c (89%)
+ create mode 100644 contrib/libedit/readline/Makefile
+ rename {lib/libedit/edit => contrib/libedit}/readline/readline.h (91%)
+ rename {lib => contrib}/libedit/refresh.c (89%)
+ rename {lib => contrib}/libedit/refresh.h (80%)
+ rename {lib => contrib}/libedit/search.c (90%)
+ rename {lib => contrib}/libedit/search.h (74%)
+ create mode 100644 contrib/libedit/shlib_version
+ rename {lib => contrib}/libedit/sig.c (93%)
+ rename {lib => contrib}/libedit/sig.h (90%)
+ rename {lib => contrib}/libedit/sys.h (87%)
+ rename {lib => contrib}/libedit/terminal.c (85%)
+ rename {lib => contrib}/libedit/terminal.h (68%)
+ rename {lib => contrib}/libedit/tokenizer.c (93%)
+ create mode 100644 contrib/libedit/tokenizern.c
+ rename {lib => contrib}/libedit/tty.c (92%)
+ rename {lib => contrib}/libedit/tty.h (95%)
+ rename {lib => contrib}/libedit/vi.c (90%)
+ delete mode 100644 lib/libedit/Makefile.depend
+ delete mode 100644 lib/libedit/chartype.h
+ delete mode 100644 lib/libedit/edit/readline/Makefile.depend
+ delete mode 100644 lib/libedit/editrc.5
+ rename lib/libedit/{edit => }/readline/Makefile (72%)
+ rename lib/libedit/{edit => }/readline/history.h (100%)
+ rename lib/libedit/{edit => }/readline/tilde.h (100%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f30960be140f..73f55119c424  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    0f00fa6c5585..7d10f3ce2ae9  github/freebsd/12-stable/master -> github/freebsd/12-stable/master
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f30960be140f..73f55119c424  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
