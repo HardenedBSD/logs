@@ -1,0 +1,231 @@
+==== BEGIN: freebsd/11-stable/master ====
+current branch: freebsd/11-stable/master
+mergeable branch: freebsd/stable/11
+==== change branch ====
+Switched to branch 'freebsd/11-stable/master'
+Your branch is up to date with 'origin/freebsd/11-stable/master'.
+==== show current branch ====
+* freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/11 branch ====
+Updating afa5a086fa79..028f716f7b96
+Fast-forward
+ contrib/libarchive/NEWS                            |  14 +
+ contrib/libarchive/cat/bsdcat.h                    |   5 +
+ contrib/libarchive/cat/test/test_0.c               |   2 +-
+ contrib/libarchive/cpio/cpio.c                     |  22 +-
+ contrib/libarchive/cpio/test/test_basic.c          |  14 +-
+ contrib/libarchive/cpio/test/test_format_newc.c    |  15 +-
+ contrib/libarchive/libarchive/archive.h            |   6 +-
+ .../libarchive/libarchive/archive_acl_private.h    |   6 +-
+ contrib/libarchive/libarchive/archive_blake2.h     |   5 +-
+ .../libarchive/libarchive/archive_blake2_impl.h    |   5 +-
+ .../libarchive/archive_cmdline_private.h           |   6 +-
+ contrib/libarchive/libarchive/archive_crc32.h      |   5 +
+ contrib/libarchive/libarchive/archive_cryptor.c    |  62 ++++
+ .../libarchive/archive_cryptor_private.h           |  24 +-
+ contrib/libarchive/libarchive/archive_digest.c     | 228 ++++++++++++
+ .../libarchive/libarchive/archive_digest_private.h |  43 ++-
+ contrib/libarchive/libarchive/archive_endian.h     |  11 +-
+ contrib/libarchive/libarchive/archive_entry.c      |  10 +-
+ contrib/libarchive/libarchive/archive_entry.h      |   5 +-
+ contrib/libarchive/libarchive/archive_entry_acl.3  |  21 +-
+ .../libarchive/libarchive/archive_entry_locale.h   |   6 +-
+ .../libarchive/libarchive/archive_entry_private.h  |   6 +-
+ contrib/libarchive/libarchive/archive_getdate.c    | 149 +++++++-
+ contrib/libarchive/libarchive/archive_getdate.h    |   6 +-
+ contrib/libarchive/libarchive/archive_hmac.c       |  50 +++
+ .../libarchive/libarchive/archive_hmac_private.h   |  12 +-
+ .../libarchive/archive_openssl_evp_private.h       |   5 +
+ .../libarchive/archive_openssl_hmac_private.h      |   5 +
+ .../libarchive/archive_options_private.h           |   4 +
+ contrib/libarchive/libarchive/archive_pack_dev.c   |   9 +-
+ contrib/libarchive/libarchive/archive_pack_dev.h   |   6 +-
+ contrib/libarchive/libarchive/archive_pathmatch.h  |   6 +-
+ .../libarchive/libarchive/archive_platform_acl.h   |   6 +
+ .../libarchive/libarchive/archive_platform_xattr.h |   6 +
+ contrib/libarchive/libarchive/archive_ppmd7.c      |   2 +-
+ .../libarchive/libarchive/archive_ppmd7_private.h  |   6 +-
+ .../libarchive/libarchive/archive_ppmd8_private.h  |   4 +-
+ .../libarchive/libarchive/archive_ppmd_private.h   |   6 +-
+ contrib/libarchive/libarchive/archive_private.h    |  11 +-
+ .../libarchive/libarchive/archive_random_private.h |   6 +-
+ contrib/libarchive/libarchive/archive_rb.h         |  21 +-
+ contrib/libarchive/libarchive/archive_read.c       |   2 +-
+ .../libarchive/archive_read_disk_entry_from_file.c |   6 +-
+ .../libarchive/archive_read_disk_posix.c           |  49 ++-
+ .../libarchive/archive_read_disk_private.h         |   6 +-
+ .../libarchive/libarchive/archive_read_private.h   |   6 +-
+ .../libarchive/archive_read_set_options.3          |  34 +-
+ .../libarchive/archive_read_support_filter_uu.c    |  30 +-
+ .../libarchive/archive_read_support_format_7zip.c  |  11 +-
+ .../libarchive/archive_read_support_format_lha.c   | 206 ++++++++---
+ .../libarchive/archive_read_support_format_mtree.c |   1 +
+ .../libarchive/archive_read_support_format_rar.c   |  69 +++-
+ .../libarchive/archive_read_support_format_rar5.c  | 288 +++++++++------
+ .../libarchive/archive_read_support_format_warc.c  |   3 +-
+ .../libarchive/archive_read_support_format_xar.c   |  17 +-
+ .../libarchive/archive_read_support_format_zip.c   |  17 +
+ contrib/libarchive/libarchive/archive_string.c     |  40 +-
+ contrib/libarchive/libarchive/archive_string.h     |   6 +-
+ .../libarchive/archive_string_composition.h        |   6 +-
+ contrib/libarchive/libarchive/archive_util.c       | 230 +++++++-----
+ contrib/libarchive/libarchive/archive_write.c      |  91 ++++-
+ .../archive_write_add_filter_b64encode.c           |  12 +-
+ .../libarchive/archive_write_add_filter_bzip2.c    |  10 +-
+ .../libarchive/archive_write_add_filter_compress.c |  22 +-
+ .../libarchive/archive_write_add_filter_gzip.c     |   9 +-
+ .../libarchive/archive_write_add_filter_lz4.c      |  11 +-
+ .../libarchive/archive_write_add_filter_lzop.c     |  10 +-
+ .../libarchive/archive_write_add_filter_program.c  |  12 +-
+ .../libarchive/archive_write_add_filter_uuencode.c |  12 +-
+ .../libarchive/archive_write_add_filter_xz.c       |   9 +-
+ .../libarchive/archive_write_add_filter_zstd.c     |  12 +-
+ contrib/libarchive/libarchive/archive_write_disk.3 |   7 +-
+ .../libarchive/archive_write_disk_posix.c          |  80 +++-
+ .../libarchive/archive_write_disk_private.h        |   6 +-
+ .../libarchive/libarchive/archive_write_private.h  |  14 +-
+ .../libarchive/archive_write_set_format.c          |  45 +++
+ .../libarchive/archive_write_set_format_7zip.c     |   3 +-
+ .../libarchive/archive_write_set_format_ar.c       |   1 +
+ .../libarchive/archive_write_set_format_cpio.c     |   1 +
+ .../archive_write_set_format_cpio_newc.c           |   1 +
+ .../libarchive/archive_write_set_format_gnutar.c   |  15 +-
+ .../libarchive/archive_write_set_format_iso9660.c  |  22 +-
+ .../libarchive/archive_write_set_format_pax.c      | 122 ++++--
+ .../libarchive/archive_write_set_format_private.h  |  42 +++
+ .../libarchive/archive_write_set_format_shar.c     |   5 +-
+ .../libarchive/archive_write_set_format_ustar.c    |  30 +-
+ .../libarchive/archive_write_set_format_v7tar.c    |  29 +-
+ .../libarchive/archive_write_set_format_warc.c     |  18 +-
+ .../libarchive/archive_write_set_format_xar.c      |  65 +++-
+ .../libarchive/archive_write_set_format_zip.c      |  38 +-
+ .../libarchive/archive_write_set_options.3         | 259 +++++++++++--
+ contrib/libarchive/libarchive/archive_xxhash.h     |   5 +-
+ contrib/libarchive/libarchive/filter_fork.h        |   6 +-
+ .../test_archive_write_set_format_filter_by_ext.c  |   2 +-
+ .../libarchive/libarchive/test/test_compat_zip.c   |  10 +-
+ contrib/libarchive/libarchive/test/test_fuzz.c     |   3 +-
+ .../libarchive/libarchive/test/test_open_failure.c |  16 +-
+ contrib/libarchive/libarchive/test/test_open_fd.c  |  27 +-
+ .../libarchive/test/test_pax_xattr_header.c        | 130 +++++++
+ .../test/test_pax_xattr_header_all.tar.uu          |  72 ++++
+ .../test/test_pax_xattr_header_libarchive.tar.uu   |  72 ++++
+ .../test/test_pax_xattr_header_schily.tar.uu       |  72 ++++
+ .../test/test_read_disk_directory_traversals.c     |   3 +-
+ .../libarchive/libarchive/test/test_read_extract.c |   2 +-
+ .../libarchive/test/test_read_format_7zip.c        |  19 +-
+ .../test/test_read_format_7zip_delta4_lzma1.7z.uu  | 407 +++++++++++++++++++++
+ .../test/test_read_format_7zip_delta4_lzma2.7z.uu  | 407 +++++++++++++++++++++
+ .../test_read_format_7zip_packinfo_digests.7z.uu   |   7 +
+ .../test/test_read_format_7zip_packinfo_digests.c  |  89 +++++
+ .../libarchive/test/test_read_format_gtar_sparse.c |   5 +-
+ .../test/test_read_format_lha_filename_utf16.c     | 143 ++++++++
+ .../test_read_format_lha_filename_utf16.lzh.uu     |  19 +
+ .../libarchive/test/test_read_format_rar5.c        | 105 ++++--
+ ...read_format_rar5_block_size_is_too_small.rar.uu |   8 +
+ ..._format_rar5_different_solid_window_size.rar.uu |  73 ++++
+ ...d_format_rar5_different_winsize_on_merge.rar.uu |  16 +
+ .../libarchive/test/test_read_format_zip.c         |   8 +-
+ .../test/test_read_format_zip_7075_utf8_paths.c    |   2 +-
+ .../test/test_read_format_zip_comment_stored.c     |   2 +-
+ .../test/test_read_format_zip_extra_padding.c      |   2 +-
+ .../test/test_read_format_zip_high_compression.c   |   2 +-
+ .../libarchive/test/test_read_format_zip_jar.c     |   2 +-
+ .../test/test_read_format_zip_mac_metadata.c       |   2 +-
+ .../test/test_read_format_zip_malformed.c          |   2 +-
+ .../libarchive/test/test_read_format_zip_msdos.c   |   2 +-
+ .../libarchive/test/test_read_format_zip_nested.c  |   2 +-
+ .../test/test_read_format_zip_nofiletype.c         |   2 +-
+ .../libarchive/test/test_read_format_zip_padded.c  |   2 +-
+ .../libarchive/test/test_read_format_zip_sfx.c     |   2 +-
+ ...read_format_zip_with_invalid_traditional_eocd.c |   2 +-
+ .../libarchive/test/test_read_format_zip_zip64.c   |   4 +-
+ .../libarchive/test/test_read_pax_truncated.c      |   6 +-
+ .../libarchive/test/test_read_truncated_filter.c   |   4 +-
+ .../libarchive/libarchive/test/test_sparse_basic.c |  17 +-
+ .../libarchive/libarchive/test/test_write_disk.c   |   2 +-
+ .../libarchive/test/test_write_format_cpio_empty.c |   2 +-
+ .../libarchive/test/test_write_format_pax.c        |  46 +++
+ .../libarchive/test/test_write_format_shar_empty.c |   2 +-
+ .../libarchive/test/test_write_format_tar.c        |   2 +-
+ .../libarchive/test/test_write_format_tar_sparse.c |   4 +-
+ .../libarchive/test/test_write_format_xar.c        |   3 +
+ .../libarchive/test/test_write_format_zip_file.c   |   2 +-
+ .../test/test_write_format_zip_file_zip64.c        |   2 +-
+ contrib/libarchive/libarchive_fe/err.h             |   9 +-
+ contrib/libarchive/tar/bsdtar.1                    |  49 ++-
+ contrib/libarchive/tar/bsdtar.c                    |   6 +
+ contrib/libarchive/tar/bsdtar.h                    |   7 +
+ contrib/libarchive/tar/cmdline.c                   |   2 +
+ contrib/libarchive/tar/test/test_basic.c           |   2 +-
+ contrib/libarchive/tar/test/test_copy.c            |   4 +-
+ contrib/libarchive/tar/test/test_option_C_upper.c  |   2 +-
+ contrib/libarchive/tar/test/test_option_s.c        |   6 +-
+ .../libarchive/tar/test/test_option_safe_writes.c  |  77 ++++
+ contrib/libarchive/tar/util.c                      |  22 +-
+ contrib/libarchive/test_utils/test_common.h        |  28 +-
+ contrib/libarchive/test_utils/test_main.c          |  44 +--
+ lib/libarchive/tests/Makefile                      |  13 +
+ usr.bin/bsdcat/Makefile                            |   2 +-
+ usr.bin/cpio/Makefile                              |   2 +-
+ usr.bin/tar/Makefile                               |   2 +-
+ usr.bin/tar/tests/Makefile                         |   1 +
+ 161 files changed, 4077 insertions(+), 930 deletions(-)
+ create mode 100644 contrib/libarchive/libarchive/archive_write_set_format_private.h
+ create mode 100644 contrib/libarchive/libarchive/test/test_pax_xattr_header.c
+ create mode 100644 contrib/libarchive/libarchive/test/test_pax_xattr_header_all.tar.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_pax_xattr_header_libarchive.tar.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_pax_xattr_header_schily.tar.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_7zip_delta4_lzma1.7z.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_7zip_delta4_lzma2.7z.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_7zip_packinfo_digests.7z.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_7zip_packinfo_digests.c
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_lha_filename_utf16.c
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_lha_filename_utf16.lzh.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_rar5_block_size_is_too_small.rar.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_rar5_different_solid_window_size.rar.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_rar5_different_winsize_on_merge.rar.uu
+ create mode 100644 contrib/libarchive/tar/test/test_option_safe_writes.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    afa5a086fa79..028f716f7b96  freebsd/11-stable/master -> freebsd/11-stable/master        
+remote:    e28e08ee7517..f30960be140f  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/11-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/11-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   afa5a086fa79..028f716f7b96  freebsd/11-stable/master -> freebsd/11-stable/master
+==== END: freebsd/11-stable/master ====
