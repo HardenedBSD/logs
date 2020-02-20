@@ -1,0 +1,109 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_exec.c
+Auto-merging libexec/rtld-elf/rtld-libc/Makefile.inc
+CONFLICT (content): Merge conflict in libexec/rtld-elf/rtld-libc/Makefile.inc
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc libexec/rtld-elf/rtld-libc/Makefile.inc
+index 6593fac1ebfa,9d56e58dfc8e..000000000000
+--- a/libexec/rtld-elf/rtld-libc/Makefile.inc
++++ b/libexec/rtld-elf/rtld-libc/Makefile.inc
+@@@ -51,8 -49,7 +51,12 @@@ _libc_other_objects= sigsetjmp lstat st
+      sysarch __sysctl issetugid __getcwd utrace \
+      thr_self thr_kill pread mmap lseek _exit _fstat _fstatat _fstatfs \
+      getdirentries _getdirentries _close _fcntl _open _openat _read \
+++<<<<<<< HEAD
+ +    _sigprocmask _write readlink _setjmp setjmp setjmperr \
+ +    __sysctlbyname
+++=======
++     _sigprocmask _write readlink __realpathat _setjmp setjmp setjmperr
+++>>>>>>> freebsd/current/master
+  
+  
+  # Finally add additional architecture-dependent libc dependencies
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   lib/libc/stdlib/realpath.c
+	modified:   sys/bsm/audit_kevents.h
+	modified:   sys/compat/freebsd32/freebsd32_syscall.h
+	modified:   sys/compat/freebsd32/freebsd32_syscalls.c
+	modified:   sys/compat/freebsd32/freebsd32_sysent.c
+	modified:   sys/compat/freebsd32/freebsd32_systrace_args.c
+	modified:   sys/compat/freebsd32/syscalls.master
+	modified:   sys/compat/linuxkpi/common/include/linux/list.h
+	modified:   sys/compat/linuxkpi/common/include/linux/string.h
+	modified:   sys/dev/pci/pcireg.h
+	modified:   sys/dev/virtio/mmio/virtio_mmio.c
+	modified:   sys/kern/init_sysent.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/kern/kern_sig.c
+	modified:   sys/kern/subr_syscall.c
+	modified:   sys/kern/subr_trap.c
+	modified:   sys/kern/syscalls.c
+	modified:   sys/kern/syscalls.master
+	modified:   sys/kern/systrace_args.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/netinet/sctp_constants.h
+	modified:   sys/security/audit/audit_bsm.c
+	modified:   sys/sys/param.h
+	modified:   sys/sys/signalvar.h
+	modified:   sys/sys/syscall.h
+	modified:   sys/sys/syscall.mk
+	modified:   sys/sys/sysproto.h
+	modified:   usr.bin/truss/syscalls.c
+	modified:   usr.sbin/pciconf/cap.c
+	modified:   usr.sbin/pciconf/pciconf.c
+	modified:   usr.sbin/services_mkdb/services
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   libexec/rtld-elf/rtld-libc/Makefile.inc
+
+HEAD is now at 4629553eb3a5 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 4629553eb3a5 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
