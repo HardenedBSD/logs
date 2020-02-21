@@ -1,0 +1,94 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 15 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 4629553eb3a5..265ca4f5771c
+Fast-forward
+ ObsoleteFiles.inc                                 |    8 +-
+ lib/libc/stdlib/realpath.c                        |   11 +-
+ libexec/rtld-elf/rtld-libc/Makefile.inc           |    2 +-
+ sys/bsm/audit_kevents.h                           |    1 +
+ sys/compat/freebsd32/freebsd32_syscall.h          |    3 +-
+ sys/compat/freebsd32/freebsd32_syscalls.c         |    1 +
+ sys/compat/freebsd32/freebsd32_sysent.c           |    1 +
+ sys/compat/freebsd32/freebsd32_systrace_args.c    |   38 +
+ sys/compat/freebsd32/syscalls.master              |    2 +
+ sys/compat/linuxkpi/common/include/linux/list.h   |    7 +
+ sys/compat/linuxkpi/common/include/linux/string.h |    9 +
+ sys/dev/pci/pcireg.h                              |   26 +
+ sys/dev/virtio/mmio/virtio_mmio.c                 |    2 +-
+ sys/kern/init_sysent.c                            |    1 +
+ sys/kern/kern_exec.c                              |    4 +-
+ sys/kern/kern_sig.c                               |  150 ++-
+ sys/kern/subr_syscall.c                           |    8 +-
+ sys/kern/subr_trap.c                              |   35 +-
+ sys/kern/syscalls.c                               |    1 +
+ sys/kern/syscalls.master                          |    9 +
+ sys/kern/systrace_args.c                          |   38 +
+ sys/kern/vfs_cache.c                              |  202 +++-
+ sys/netinet/sctp_constants.h                      |   13 +-
+ sys/security/audit/audit_bsm.c                    |    1 +
+ sys/sys/param.h                                   |    2 +-
+ sys/sys/signalvar.h                               |    6 +-
+ sys/sys/syscall.h                                 |    3 +-
+ sys/sys/syscall.mk                                |    3 +-
+ sys/sys/sysproto.h                                |    9 +
+ usr.bin/truss/syscalls.c                          |    3 +
+ usr.sbin/pciconf/cap.c                            |   14 +
+ usr.sbin/pciconf/pciconf.c                        |   25 +
+ usr.sbin/services_mkdb/services                   | 1176 ++++++++++++++-------
+ 33 files changed, 1343 insertions(+), 471 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/kern/subr_trap.c            | 12 ++---
+ usr.bin/dtc/dtc.cc              |  5 ++-
+ usr.sbin/bhyve/iov.c            | 17 +++----
+ usr.sbin/bhyve/iov.h            |  4 +-
+ usr.sbin/bhyve/net_backends.c   | 98 ++++++++++++++++++++++++++++++++++++++---
+ usr.sbin/bhyve/net_backends.h   |  1 +
+ usr.sbin/bhyve/pci_virtio_net.c | 54 ++++++++++++++---------
+ usr.sbin/pstat/pstat.c          | 22 +++++++--
+ 8 files changed, 166 insertions(+), 47 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    265ca4f5771c..c52d31a4c87c  hardened/current/master -> hardened/current/master        
+remote:    807c4389a7b9..c562354ab8ba  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   265ca4f5771c..c52d31a4c87c  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
