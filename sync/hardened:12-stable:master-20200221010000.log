@@ -1,0 +1,601 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging secure/lib/libcrypto/Makefile
+CONFLICT (content): Merge conflict in secure/lib/libcrypto/Makefile
+Auto-merging etc/mtree/BSD.usr.dist
+CONFLICT (content): Merge conflict in etc/mtree/BSD.usr.dist
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc etc/mtree/BSD.usr.dist
+index 4ad4149548e2,692c0a706d42..000000000000
+--- a/etc/mtree/BSD.usr.dist
++++ b/etc/mtree/BSD.usr.dist
+@@@ -1180,7 -1180,7 +1180,11 @@@
+                  ..
+                  man5
+                  ..
+++<<<<<<< HEAD
+ +                man8
+++=======
++                 man7
+++>>>>>>> freebsd/12-stable/master
+                  ..
+              ..
+          ..
+diff --cc secure/lib/libcrypto/Makefile
+index f1895962939e,db71e23ef85e..000000000000
+--- a/secure/lib/libcrypto/Makefile
++++ b/secure/lib/libcrypto/Makefile
+@@@ -535,9 -528,4 +533,13 @@@ PICFLAG+=	-DOPENSSL_PI
+  	${LCRYPTO_SRC}/crypto/whrlpool \
+  	${LCRYPTO_SRC}/crypto/x509 \
+  	${LCRYPTO_SRC}/crypto/x509v3 \
+++<<<<<<< HEAD
+ +	${LCRYPTO_SRC}/include/openssl \
+ +	${.CURDIR}/man
+ +
+ +.else
+ +.include "Makefile.libressl"
+ +.endif # ${MK_LIBRESSL} != "no"
+++=======
++ 	${LCRYPTO_SRC}/include/openssl
+++>>>>>>> freebsd/12-stable/master
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/ncurses/ncurses/base/MKlib_gen.sh
+	modified:   lib/libpam/modules/pam_login_access/login.access.5
+	modified:   lib/libpam/modules/pam_login_access/login_access.c
+	modified:   lib/libpam/modules/pam_login_access/pam_login_access.8
+	modified:   secure/lib/libcrypto/Makefile.man
+	renamed:    secure/lib/libcrypto/man/ADMISSIONS.3 -> secure/lib/libcrypto/man/man3/ADMISSIONS.3
+	renamed:    secure/lib/libcrypto/man/ASN1_INTEGER_get_int64.3 -> secure/lib/libcrypto/man/man3/ASN1_INTEGER_get_int64.3
+	renamed:    secure/lib/libcrypto/man/ASN1_ITEM_lookup.3 -> secure/lib/libcrypto/man/man3/ASN1_ITEM_lookup.3
+	renamed:    secure/lib/libcrypto/man/ASN1_OBJECT_new.3 -> secure/lib/libcrypto/man/man3/ASN1_OBJECT_new.3
+	renamed:    secure/lib/libcrypto/man/ASN1_STRING_TABLE_add.3 -> secure/lib/libcrypto/man/man3/ASN1_STRING_TABLE_add.3
+	renamed:    secure/lib/libcrypto/man/ASN1_STRING_length.3 -> secure/lib/libcrypto/man/man3/ASN1_STRING_length.3
+	renamed:    secure/lib/libcrypto/man/ASN1_STRING_new.3 -> secure/lib/libcrypto/man/man3/ASN1_STRING_new.3
+	renamed:    secure/lib/libcrypto/man/ASN1_STRING_print_ex.3 -> secure/lib/libcrypto/man/man3/ASN1_STRING_print_ex.3
+	renamed:    secure/lib/libcrypto/man/ASN1_TIME_set.3 -> secure/lib/libcrypto/man/man3/ASN1_TIME_set.3
+	renamed:    secure/lib/libcrypto/man/ASN1_TYPE_get.3 -> secure/lib/libcrypto/man/man3/ASN1_TYPE_get.3
+	renamed:    secure/lib/libcrypto/man/ASN1_generate_nconf.3 -> secure/lib/libcrypto/man/man3/ASN1_generate_nconf.3
+	renamed:    secure/lib/libcrypto/man/ASYNC_WAIT_CTX_new.3 -> secure/lib/libcrypto/man/man3/ASYNC_WAIT_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/ASYNC_start_job.3 -> secure/lib/libcrypto/man/man3/ASYNC_start_job.3
+	renamed:    secure/lib/libcrypto/man/BF_encrypt.3 -> secure/lib/libcrypto/man/man3/BF_encrypt.3
+	renamed:    secure/lib/libcrypto/man/BIO_ADDR.3 -> secure/lib/libcrypto/man/man3/BIO_ADDR.3
+	renamed:    secure/lib/libcrypto/man/BIO_ADDRINFO.3 -> secure/lib/libcrypto/man/man3/BIO_ADDRINFO.3
+	renamed:    secure/lib/libcrypto/man/BIO_connect.3 -> secure/lib/libcrypto/man/man3/BIO_connect.3
+	renamed:    secure/lib/libcrypto/man/BIO_ctrl.3 -> secure/lib/libcrypto/man/man3/BIO_ctrl.3
+	renamed:    secure/lib/libcrypto/man/BIO_f_base64.3 -> secure/lib/libcrypto/man/man3/BIO_f_base64.3
+	renamed:    secure/lib/libcrypto/man/BIO_f_buffer.3 -> secure/lib/libcrypto/man/man3/BIO_f_buffer.3
+	renamed:    secure/lib/libcrypto/man/BIO_f_cipher.3 -> secure/lib/libcrypto/man/man3/BIO_f_cipher.3
+	renamed:    secure/lib/libcrypto/man/BIO_f_md.3 -> secure/lib/libcrypto/man/man3/BIO_f_md.3
+	renamed:    secure/lib/libcrypto/man/BIO_f_null.3 -> secure/lib/libcrypto/man/man3/BIO_f_null.3
+	renamed:    secure/lib/libcrypto/man/BIO_f_ssl.3 -> secure/lib/libcrypto/man/man3/BIO_f_ssl.3
+	renamed:    secure/lib/libcrypto/man/BIO_find_type.3 -> secure/lib/libcrypto/man/man3/BIO_find_type.3
+	renamed:    secure/lib/libcrypto/man/BIO_get_data.3 -> secure/lib/libcrypto/man/man3/BIO_get_data.3
+	renamed:    secure/lib/libcrypto/man/BIO_get_ex_new_index.3 -> secure/lib/libcrypto/man/man3/BIO_get_ex_new_index.3
+	renamed:    secure/lib/libcrypto/man/BIO_meth_new.3 -> secure/lib/libcrypto/man/man3/BIO_meth_new.3
+	renamed:    secure/lib/libcrypto/man/BIO_new.3 -> secure/lib/libcrypto/man/man3/BIO_new.3
+	renamed:    secure/lib/libcrypto/man/BIO_new_CMS.3 -> secure/lib/libcrypto/man/man3/BIO_new_CMS.3
+	renamed:    secure/lib/libcrypto/man/BIO_parse_hostserv.3 -> secure/lib/libcrypto/man/man3/BIO_parse_hostserv.3
+	renamed:    secure/lib/libcrypto/man/BIO_printf.3 -> secure/lib/libcrypto/man/man3/BIO_printf.3
+	renamed:    secure/lib/libcrypto/man/BIO_push.3 -> secure/lib/libcrypto/man/man3/BIO_push.3
+	renamed:    secure/lib/libcrypto/man/BIO_read.3 -> secure/lib/libcrypto/man/man3/BIO_read.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_accept.3 -> secure/lib/libcrypto/man/man3/BIO_s_accept.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_bio.3 -> secure/lib/libcrypto/man/man3/BIO_s_bio.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_connect.3 -> secure/lib/libcrypto/man/man3/BIO_s_connect.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_fd.3 -> secure/lib/libcrypto/man/man3/BIO_s_fd.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_file.3 -> secure/lib/libcrypto/man/man3/BIO_s_file.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_mem.3 -> secure/lib/libcrypto/man/man3/BIO_s_mem.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_null.3 -> secure/lib/libcrypto/man/man3/BIO_s_null.3
+	renamed:    secure/lib/libcrypto/man/BIO_s_socket.3 -> secure/lib/libcrypto/man/man3/BIO_s_socket.3
+	renamed:    secure/lib/libcrypto/man/BIO_set_callback.3 -> secure/lib/libcrypto/man/man3/BIO_set_callback.3
+	renamed:    secure/lib/libcrypto/man/BIO_should_retry.3 -> secure/lib/libcrypto/man/man3/BIO_should_retry.3
+	renamed:    secure/lib/libcrypto/man/BN_BLINDING_new.3 -> secure/lib/libcrypto/man/man3/BN_BLINDING_new.3
+	renamed:    secure/lib/libcrypto/man/BN_CTX_new.3 -> secure/lib/libcrypto/man/man3/BN_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/BN_CTX_start.3 -> secure/lib/libcrypto/man/man3/BN_CTX_start.3
+	renamed:    secure/lib/libcrypto/man/BN_add.3 -> secure/lib/libcrypto/man/man3/BN_add.3
+	renamed:    secure/lib/libcrypto/man/BN_add_word.3 -> secure/lib/libcrypto/man/man3/BN_add_word.3
+	renamed:    secure/lib/libcrypto/man/BN_bn2bin.3 -> secure/lib/libcrypto/man/man3/BN_bn2bin.3
+	renamed:    secure/lib/libcrypto/man/BN_cmp.3 -> secure/lib/libcrypto/man/man3/BN_cmp.3
+	renamed:    secure/lib/libcrypto/man/BN_copy.3 -> secure/lib/libcrypto/man/man3/BN_copy.3
+	renamed:    secure/lib/libcrypto/man/BN_generate_prime.3 -> secure/lib/libcrypto/man/man3/BN_generate_prime.3
+	renamed:    secure/lib/libcrypto/man/BN_mod_inverse.3 -> secure/lib/libcrypto/man/man3/BN_mod_inverse.3
+	renamed:    secure/lib/libcrypto/man/BN_mod_mul_montgomery.3 -> secure/lib/libcrypto/man/man3/BN_mod_mul_montgomery.3
+	renamed:    secure/lib/libcrypto/man/BN_mod_mul_reciprocal.3 -> secure/lib/libcrypto/man/man3/BN_mod_mul_reciprocal.3
+	renamed:    secure/lib/libcrypto/man/BN_new.3 -> secure/lib/libcrypto/man/man3/BN_new.3
+	renamed:    secure/lib/libcrypto/man/BN_num_bytes.3 -> secure/lib/libcrypto/man/man3/BN_num_bytes.3
+	renamed:    secure/lib/libcrypto/man/BN_rand.3 -> secure/lib/libcrypto/man/man3/BN_rand.3
+	renamed:    secure/lib/libcrypto/man/BN_security_bits.3 -> secure/lib/libcrypto/man/man3/BN_security_bits.3
+	renamed:    secure/lib/libcrypto/man/BN_set_bit.3 -> secure/lib/libcrypto/man/man3/BN_set_bit.3
+	renamed:    secure/lib/libcrypto/man/BN_swap.3 -> secure/lib/libcrypto/man/man3/BN_swap.3
+	renamed:    secure/lib/libcrypto/man/BN_zero.3 -> secure/lib/libcrypto/man/man3/BN_zero.3
+	renamed:    secure/lib/libcrypto/man/BUF_MEM_new.3 -> secure/lib/libcrypto/man/man3/BUF_MEM_new.3
+	renamed:    secure/lib/libcrypto/man/CMS_add0_cert.3 -> secure/lib/libcrypto/man/man3/CMS_add0_cert.3
+	renamed:    secure/lib/libcrypto/man/CMS_add1_recipient_cert.3 -> secure/lib/libcrypto/man/man3/CMS_add1_recipient_cert.3
+	renamed:    secure/lib/libcrypto/man/CMS_add1_signer.3 -> secure/lib/libcrypto/man/man3/CMS_add1_signer.3
+	renamed:    secure/lib/libcrypto/man/CMS_compress.3 -> secure/lib/libcrypto/man/man3/CMS_compress.3
+	renamed:    secure/lib/libcrypto/man/CMS_decrypt.3 -> secure/lib/libcrypto/man/man3/CMS_decrypt.3
+	renamed:    secure/lib/libcrypto/man/CMS_encrypt.3 -> secure/lib/libcrypto/man/man3/CMS_encrypt.3
+	renamed:    secure/lib/libcrypto/man/CMS_final.3 -> secure/lib/libcrypto/man/man3/CMS_final.3
+	renamed:    secure/lib/libcrypto/man/CMS_get0_RecipientInfos.3 -> secure/lib/libcrypto/man/man3/CMS_get0_RecipientInfos.3
+	renamed:    secure/lib/libcrypto/man/CMS_get0_SignerInfos.3 -> secure/lib/libcrypto/man/man3/CMS_get0_SignerInfos.3
+	renamed:    secure/lib/libcrypto/man/CMS_get0_type.3 -> secure/lib/libcrypto/man/man3/CMS_get0_type.3
+	renamed:    secure/lib/libcrypto/man/CMS_get1_ReceiptRequest.3 -> secure/lib/libcrypto/man/man3/CMS_get1_ReceiptRequest.3
+	renamed:    secure/lib/libcrypto/man/CMS_sign.3 -> secure/lib/libcrypto/man/man3/CMS_sign.3
+	renamed:    secure/lib/libcrypto/man/CMS_sign_receipt.3 -> secure/lib/libcrypto/man/man3/CMS_sign_receipt.3
+	renamed:    secure/lib/libcrypto/man/CMS_uncompress.3 -> secure/lib/libcrypto/man/man3/CMS_uncompress.3
+	renamed:    secure/lib/libcrypto/man/CMS_verify.3 -> secure/lib/libcrypto/man/man3/CMS_verify.3
+	renamed:    secure/lib/libcrypto/man/CMS_verify_receipt.3 -> secure/lib/libcrypto/man/man3/CMS_verify_receipt.3
+	renamed:    secure/lib/libcrypto/man/CONF_modules_free.3 -> secure/lib/libcrypto/man/man3/CONF_modules_free.3
+	renamed:    secure/lib/libcrypto/man/CONF_modules_load_file.3 -> secure/lib/libcrypto/man/man3/CONF_modules_load_file.3
+	renamed:    secure/lib/libcrypto/man/CRYPTO_THREAD_run_once.3 -> secure/lib/libcrypto/man/man3/CRYPTO_THREAD_run_once.3
+	renamed:    secure/lib/libcrypto/man/CRYPTO_get_ex_new_index.3 -> secure/lib/libcrypto/man/man3/CRYPTO_get_ex_new_index.3
+	renamed:    secure/lib/libcrypto/man/CRYPTO_memcmp.3 -> secure/lib/libcrypto/man/man3/CRYPTO_memcmp.3
+	renamed:    secure/lib/libcrypto/man/CTLOG_STORE_get0_log_by_id.3 -> secure/lib/libcrypto/man/man3/CTLOG_STORE_get0_log_by_id.3
+	renamed:    secure/lib/libcrypto/man/CTLOG_STORE_new.3 -> secure/lib/libcrypto/man/man3/CTLOG_STORE_new.3
+	renamed:    secure/lib/libcrypto/man/CTLOG_new.3 -> secure/lib/libcrypto/man/man3/CTLOG_new.3
+	renamed:    secure/lib/libcrypto/man/CT_POLICY_EVAL_CTX_new.3 -> secure/lib/libcrypto/man/man3/CT_POLICY_EVAL_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/DEFINE_STACK_OF.3 -> secure/lib/libcrypto/man/man3/DEFINE_STACK_OF.3
+	renamed:    secure/lib/libcrypto/man/DES_random_key.3 -> secure/lib/libcrypto/man/man3/DES_random_key.3
+	renamed:    secure/lib/libcrypto/man/DH_generate_key.3 -> secure/lib/libcrypto/man/man3/DH_generate_key.3
+	renamed:    secure/lib/libcrypto/man/DH_generate_parameters.3 -> secure/lib/libcrypto/man/man3/DH_generate_parameters.3
+	renamed:    secure/lib/libcrypto/man/DH_get0_pqg.3 -> secure/lib/libcrypto/man/man3/DH_get0_pqg.3
+	renamed:    secure/lib/libcrypto/man/DH_get_1024_160.3 -> secure/lib/libcrypto/man/man3/DH_get_1024_160.3
+	renamed:    secure/lib/libcrypto/man/DH_meth_new.3 -> secure/lib/libcrypto/man/man3/DH_meth_new.3
+	renamed:    secure/lib/libcrypto/man/DH_new.3 -> secure/lib/libcrypto/man/man3/DH_new.3
+	renamed:    secure/lib/libcrypto/man/DH_new_by_nid.3 -> secure/lib/libcrypto/man/man3/DH_new_by_nid.3
+	renamed:    secure/lib/libcrypto/man/DH_set_method.3 -> secure/lib/libcrypto/man/man3/DH_set_method.3
+	renamed:    secure/lib/libcrypto/man/DH_size.3 -> secure/lib/libcrypto/man/man3/DH_size.3
+	renamed:    secure/lib/libcrypto/man/DSA_SIG_new.3 -> secure/lib/libcrypto/man/man3/DSA_SIG_new.3
+	renamed:    secure/lib/libcrypto/man/DSA_do_sign.3 -> secure/lib/libcrypto/man/man3/DSA_do_sign.3
+	renamed:    secure/lib/libcrypto/man/DSA_dup_DH.3 -> secure/lib/libcrypto/man/man3/DSA_dup_DH.3
+	renamed:    secure/lib/libcrypto/man/DSA_generate_key.3 -> secure/lib/libcrypto/man/man3/DSA_generate_key.3
+	renamed:    secure/lib/libcrypto/man/DSA_generate_parameters.3 -> secure/lib/libcrypto/man/man3/DSA_generate_parameters.3
+	renamed:    secure/lib/libcrypto/man/DSA_get0_pqg.3 -> secure/lib/libcrypto/man/man3/DSA_get0_pqg.3
+	renamed:    secure/lib/libcrypto/man/DSA_meth_new.3 -> secure/lib/libcrypto/man/man3/DSA_meth_new.3
+	renamed:    secure/lib/libcrypto/man/DSA_new.3 -> secure/lib/libcrypto/man/man3/DSA_new.3
+	renamed:    secure/lib/libcrypto/man/DSA_set_method.3 -> secure/lib/libcrypto/man/man3/DSA_set_method.3
+	renamed:    secure/lib/libcrypto/man/DSA_sign.3 -> secure/lib/libcrypto/man/man3/DSA_sign.3
+	renamed:    secure/lib/libcrypto/man/DSA_size.3 -> secure/lib/libcrypto/man/man3/DSA_size.3
+	renamed:    secure/lib/libcrypto/man/DTLS_get_data_mtu.3 -> secure/lib/libcrypto/man/man3/DTLS_get_data_mtu.3
+	renamed:    secure/lib/libcrypto/man/DTLS_set_timer_cb.3 -> secure/lib/libcrypto/man/man3/DTLS_set_timer_cb.3
+	renamed:    secure/lib/libcrypto/man/DTLSv1_listen.3 -> secure/lib/libcrypto/man/man3/DTLSv1_listen.3
+	renamed:    secure/lib/libcrypto/man/ECDSA_SIG_new.3 -> secure/lib/libcrypto/man/man3/ECDSA_SIG_new.3
+	renamed:    secure/lib/libcrypto/man/ECPKParameters_print.3 -> secure/lib/libcrypto/man/man3/ECPKParameters_print.3
+	renamed:    secure/lib/libcrypto/man/EC_GFp_simple_method.3 -> secure/lib/libcrypto/man/man3/EC_GFp_simple_method.3
+	renamed:    secure/lib/libcrypto/man/EC_GROUP_copy.3 -> secure/lib/libcrypto/man/man3/EC_GROUP_copy.3
+	renamed:    secure/lib/libcrypto/man/EC_GROUP_new.3 -> secure/lib/libcrypto/man/man3/EC_GROUP_new.3
+	renamed:    secure/lib/libcrypto/man/EC_KEY_get_enc_flags.3 -> secure/lib/libcrypto/man/man3/EC_KEY_get_enc_flags.3
+	renamed:    secure/lib/libcrypto/man/EC_KEY_new.3 -> secure/lib/libcrypto/man/man3/EC_KEY_new.3
+	renamed:    secure/lib/libcrypto/man/EC_POINT_add.3 -> secure/lib/libcrypto/man/man3/EC_POINT_add.3
+	renamed:    secure/lib/libcrypto/man/EC_POINT_new.3 -> secure/lib/libcrypto/man/man3/EC_POINT_new.3
+	renamed:    secure/lib/libcrypto/man/ENGINE_add.3 -> secure/lib/libcrypto/man/man3/ENGINE_add.3
+	renamed:    secure/lib/libcrypto/man/ERR_GET_LIB.3 -> secure/lib/libcrypto/man/man3/ERR_GET_LIB.3
+	renamed:    secure/lib/libcrypto/man/ERR_clear_error.3 -> secure/lib/libcrypto/man/man3/ERR_clear_error.3
+	renamed:    secure/lib/libcrypto/man/ERR_error_string.3 -> secure/lib/libcrypto/man/man3/ERR_error_string.3
+	renamed:    secure/lib/libcrypto/man/ERR_get_error.3 -> secure/lib/libcrypto/man/man3/ERR_get_error.3
+	renamed:    secure/lib/libcrypto/man/ERR_load_crypto_strings.3 -> secure/lib/libcrypto/man/man3/ERR_load_crypto_strings.3
+	renamed:    secure/lib/libcrypto/man/ERR_load_strings.3 -> secure/lib/libcrypto/man/man3/ERR_load_strings.3
+	renamed:    secure/lib/libcrypto/man/ERR_print_errors.3 -> secure/lib/libcrypto/man/man3/ERR_print_errors.3
+	renamed:    secure/lib/libcrypto/man/ERR_put_error.3 -> secure/lib/libcrypto/man/man3/ERR_put_error.3
+	renamed:    secure/lib/libcrypto/man/ERR_remove_state.3 -> secure/lib/libcrypto/man/man3/ERR_remove_state.3
+	renamed:    secure/lib/libcrypto/man/ERR_set_mark.3 -> secure/lib/libcrypto/man/man3/ERR_set_mark.3
+	renamed:    secure/lib/libcrypto/man/EVP_BytesToKey.3 -> secure/lib/libcrypto/man/man3/EVP_BytesToKey.3
+	renamed:    secure/lib/libcrypto/man/EVP_CIPHER_CTX_get_cipher_data.3 -> secure/lib/libcrypto/man/man3/EVP_CIPHER_CTX_get_cipher_data.3
+	renamed:    secure/lib/libcrypto/man/EVP_CIPHER_meth_new.3 -> secure/lib/libcrypto/man/man3/EVP_CIPHER_meth_new.3
+	renamed:    secure/lib/libcrypto/man/EVP_DigestInit.3 -> secure/lib/libcrypto/man/man3/EVP_DigestInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_DigestSignInit.3 -> secure/lib/libcrypto/man/man3/EVP_DigestSignInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_DigestVerifyInit.3 -> secure/lib/libcrypto/man/man3/EVP_DigestVerifyInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_EncodeInit.3 -> secure/lib/libcrypto/man/man3/EVP_EncodeInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_EncryptInit.3 -> secure/lib/libcrypto/man/man3/EVP_EncryptInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_MD_meth_new.3 -> secure/lib/libcrypto/man/man3/EVP_MD_meth_new.3
+	renamed:    secure/lib/libcrypto/man/EVP_OpenInit.3 -> secure/lib/libcrypto/man/man3/EVP_OpenInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_ASN1_METHOD.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_ASN1_METHOD.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_ctrl.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_ctrl.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_new.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_set1_pbe_pass.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_set1_pbe_pass.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_set_hkdf_md.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_set_hkdf_md.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_set_rsa_pss_keygen_md.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_set_rsa_pss_keygen_md.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_set_scrypt_N.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_set_scrypt_N.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_CTX_set_tls1_prf_md.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_CTX_set_tls1_prf_md.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_asn1_get_count.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_asn1_get_count.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_cmp.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_cmp.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_decrypt.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_decrypt.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_derive.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_derive.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_encrypt.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_encrypt.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_get_default_digest_nid.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_get_default_digest_nid.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_keygen.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_keygen.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_meth_get_count.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_meth_get_count.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_meth_new.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_meth_new.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_new.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_new.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_print_private.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_print_private.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_set1_RSA.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_set1_RSA.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_sign.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_sign.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_verify.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_verify.3
+	renamed:    secure/lib/libcrypto/man/EVP_PKEY_verify_recover.3 -> secure/lib/libcrypto/man/man3/EVP_PKEY_verify_recover.3
+	renamed:    secure/lib/libcrypto/man/EVP_SealInit.3 -> secure/lib/libcrypto/man/man3/EVP_SealInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_SignInit.3 -> secure/lib/libcrypto/man/man3/EVP_SignInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_VerifyInit.3 -> secure/lib/libcrypto/man/man3/EVP_VerifyInit.3
+	renamed:    secure/lib/libcrypto/man/EVP_aes.3 -> secure/lib/libcrypto/man/man3/EVP_aes.3
+	renamed:    secure/lib/libcrypto/man/EVP_aria.3 -> secure/lib/libcrypto/man/man3/EVP_aria.3
+	renamed:    secure/lib/libcrypto/man/EVP_bf_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_bf_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_blake2b512.3 -> secure/lib/libcrypto/man/man3/EVP_blake2b512.3
+	renamed:    secure/lib/libcrypto/man/EVP_camellia.3 -> secure/lib/libcrypto/man/man3/EVP_camellia.3
+	renamed:    secure/lib/libcrypto/man/EVP_cast5_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_cast5_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_chacha20.3 -> secure/lib/libcrypto/man/man3/EVP_chacha20.3
+	renamed:    secure/lib/libcrypto/man/EVP_des.3 -> secure/lib/libcrypto/man/man3/EVP_des.3
+	renamed:    secure/lib/libcrypto/man/EVP_desx_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_desx_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_idea_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_idea_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_md2.3 -> secure/lib/libcrypto/man/man3/EVP_md2.3
+	renamed:    secure/lib/libcrypto/man/EVP_md4.3 -> secure/lib/libcrypto/man/man3/EVP_md4.3
+	renamed:    secure/lib/libcrypto/man/EVP_md5.3 -> secure/lib/libcrypto/man/man3/EVP_md5.3
+	renamed:    secure/lib/libcrypto/man/EVP_mdc2.3 -> secure/lib/libcrypto/man/man3/EVP_mdc2.3
+	renamed:    secure/lib/libcrypto/man/EVP_rc2_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_rc2_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_rc4.3 -> secure/lib/libcrypto/man/man3/EVP_rc4.3
+	renamed:    secure/lib/libcrypto/man/EVP_rc5_32_12_16_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_rc5_32_12_16_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_ripemd160.3 -> secure/lib/libcrypto/man/man3/EVP_ripemd160.3
+	renamed:    secure/lib/libcrypto/man/EVP_seed_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_seed_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_sha1.3 -> secure/lib/libcrypto/man/man3/EVP_sha1.3
+	renamed:    secure/lib/libcrypto/man/EVP_sha224.3 -> secure/lib/libcrypto/man/man3/EVP_sha224.3
+	renamed:    secure/lib/libcrypto/man/EVP_sha3_224.3 -> secure/lib/libcrypto/man/man3/EVP_sha3_224.3
+	renamed:    secure/lib/libcrypto/man/EVP_sm3.3 -> secure/lib/libcrypto/man/man3/EVP_sm3.3
+	renamed:    secure/lib/libcrypto/man/EVP_sm4_cbc.3 -> secure/lib/libcrypto/man/man3/EVP_sm4_cbc.3
+	renamed:    secure/lib/libcrypto/man/EVP_whirlpool.3 -> secure/lib/libcrypto/man/man3/EVP_whirlpool.3
+	renamed:    secure/lib/libcrypto/man/HMAC.3 -> secure/lib/libcrypto/man/man3/HMAC.3
+	renamed:    secure/lib/libcrypto/man/MD5.3 -> secure/lib/libcrypto/man/man3/MD5.3
+	renamed:    secure/lib/libcrypto/man/MDC2_Init.3 -> secure/lib/libcrypto/man/man3/MDC2_Init.3
+	new file:   secure/lib/libcrypto/man/man3/Makefile
+	renamed:    secure/lib/libcrypto/man/OBJ_nid2obj.3 -> secure/lib/libcrypto/man/man3/OBJ_nid2obj.3
+	renamed:    secure/lib/libcrypto/man/OCSP_REQUEST_new.3 -> secure/lib/libcrypto/man/man3/OCSP_REQUEST_new.3
+	renamed:    secure/lib/libcrypto/man/OCSP_cert_to_id.3 -> secure/lib/libcrypto/man/man3/OCSP_cert_to_id.3
+	renamed:    secure/lib/libcrypto/man/OCSP_request_add1_nonce.3 -> secure/lib/libcrypto/man/man3/OCSP_request_add1_nonce.3
+	renamed:    secure/lib/libcrypto/man/OCSP_resp_find_status.3 -> secure/lib/libcrypto/man/man3/OCSP_resp_find_status.3
+	renamed:    secure/lib/libcrypto/man/OCSP_response_status.3 -> secure/lib/libcrypto/man/man3/OCSP_response_status.3
+	renamed:    secure/lib/libcrypto/man/OCSP_sendreq_new.3 -> secure/lib/libcrypto/man/man3/OCSP_sendreq_new.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_Applink.3 -> secure/lib/libcrypto/man/man3/OPENSSL_Applink.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_LH_COMPFUNC.3 -> secure/lib/libcrypto/man/man3/OPENSSL_LH_COMPFUNC.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_LH_stats.3 -> secure/lib/libcrypto/man/man3/OPENSSL_LH_stats.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_VERSION_NUMBER.3 -> secure/lib/libcrypto/man/man3/OPENSSL_VERSION_NUMBER.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_config.3 -> secure/lib/libcrypto/man/man3/OPENSSL_config.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_fork_prepare.3 -> secure/lib/libcrypto/man/man3/OPENSSL_fork_prepare.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_ia32cap.3 -> secure/lib/libcrypto/man/man3/OPENSSL_ia32cap.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_init_crypto.3 -> secure/lib/libcrypto/man/man3/OPENSSL_init_crypto.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_init_ssl.3 -> secure/lib/libcrypto/man/man3/OPENSSL_init_ssl.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_instrument_bus.3 -> secure/lib/libcrypto/man/man3/OPENSSL_instrument_bus.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_load_builtin_modules.3 -> secure/lib/libcrypto/man/man3/OPENSSL_load_builtin_modules.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_malloc.3 -> secure/lib/libcrypto/man/man3/OPENSSL_malloc.3
+	renamed:    secure/lib/libcrypto/man/OPENSSL_secure_malloc.3 -> secure/lib/libcrypto/man/man3/OPENSSL_secure_malloc.3
+	renamed:    secure/lib/libcrypto/man/OSSL_STORE_INFO.3 -> secure/lib/libcrypto/man/man3/OSSL_STORE_INFO.3
+	renamed:    secure/lib/libcrypto/man/OSSL_STORE_LOADER.3 -> secure/lib/libcrypto/man/man3/OSSL_STORE_LOADER.3
+	renamed:    secure/lib/libcrypto/man/OSSL_STORE_SEARCH.3 -> secure/lib/libcrypto/man/man3/OSSL_STORE_SEARCH.3
+	renamed:    secure/lib/libcrypto/man/OSSL_STORE_expect.3 -> secure/lib/libcrypto/man/man3/OSSL_STORE_expect.3
+	renamed:    secure/lib/libcrypto/man/OSSL_STORE_open.3 -> secure/lib/libcrypto/man/man3/OSSL_STORE_open.3
+	renamed:    secure/lib/libcrypto/man/OpenSSL_add_all_algorithms.3 -> secure/lib/libcrypto/man/man3/OpenSSL_add_all_algorithms.3
+	renamed:    secure/lib/libcrypto/man/PEM_bytes_read_bio.3 -> secure/lib/libcrypto/man/man3/PEM_bytes_read_bio.3
+	renamed:    secure/lib/libcrypto/man/PEM_read.3 -> secure/lib/libcrypto/man/man3/PEM_read.3
+	renamed:    secure/lib/libcrypto/man/PEM_read_CMS.3 -> secure/lib/libcrypto/man/man3/PEM_read_CMS.3
+	renamed:    secure/lib/libcrypto/man/PEM_read_bio_PrivateKey.3 -> secure/lib/libcrypto/man/man3/PEM_read_bio_PrivateKey.3
+	renamed:    secure/lib/libcrypto/man/PEM_read_bio_ex.3 -> secure/lib/libcrypto/man/man3/PEM_read_bio_ex.3
+	renamed:    secure/lib/libcrypto/man/PEM_write_bio_CMS_stream.3 -> secure/lib/libcrypto/man/man3/PEM_write_bio_CMS_stream.3
+	renamed:    secure/lib/libcrypto/man/PEM_write_bio_PKCS7_stream.3 -> secure/lib/libcrypto/man/man3/PEM_write_bio_PKCS7_stream.3
+	renamed:    secure/lib/libcrypto/man/PKCS12_create.3 -> secure/lib/libcrypto/man/man3/PKCS12_create.3
+	renamed:    secure/lib/libcrypto/man/PKCS12_newpass.3 -> secure/lib/libcrypto/man/man3/PKCS12_newpass.3
+	renamed:    secure/lib/libcrypto/man/PKCS12_parse.3 -> secure/lib/libcrypto/man/man3/PKCS12_parse.3
+	renamed:    secure/lib/libcrypto/man/PKCS5_PBKDF2_HMAC.3 -> secure/lib/libcrypto/man/man3/PKCS5_PBKDF2_HMAC.3
+	renamed:    secure/lib/libcrypto/man/PKCS7_decrypt.3 -> secure/lib/libcrypto/man/man3/PKCS7_decrypt.3
+	renamed:    secure/lib/libcrypto/man/PKCS7_encrypt.3 -> secure/lib/libcrypto/man/man3/PKCS7_encrypt.3
+	renamed:    secure/lib/libcrypto/man/PKCS7_sign.3 -> secure/lib/libcrypto/man/man3/PKCS7_sign.3
+	renamed:    secure/lib/libcrypto/man/PKCS7_sign_add_signer.3 -> secure/lib/libcrypto/man/man3/PKCS7_sign_add_signer.3
+	renamed:    secure/lib/libcrypto/man/PKCS7_verify.3 -> secure/lib/libcrypto/man/man3/PKCS7_verify.3
+	renamed:    secure/lib/libcrypto/man/RAND_DRBG_generate.3 -> secure/lib/libcrypto/man/man3/RAND_DRBG_generate.3
+	renamed:    secure/lib/libcrypto/man/RAND_DRBG_get0_master.3 -> secure/lib/libcrypto/man/man3/RAND_DRBG_get0_master.3
+	renamed:    secure/lib/libcrypto/man/RAND_DRBG_new.3 -> secure/lib/libcrypto/man/man3/RAND_DRBG_new.3
+	renamed:    secure/lib/libcrypto/man/RAND_DRBG_reseed.3 -> secure/lib/libcrypto/man/man3/RAND_DRBG_reseed.3
+	renamed:    secure/lib/libcrypto/man/RAND_DRBG_set_callbacks.3 -> secure/lib/libcrypto/man/man3/RAND_DRBG_set_callbacks.3
+	renamed:    secure/lib/libcrypto/man/RAND_DRBG_set_ex_data.3 -> secure/lib/libcrypto/man/man3/RAND_DRBG_set_ex_data.3
+	renamed:    secure/lib/libcrypto/man/RAND_add.3 -> secure/lib/libcrypto/man/man3/RAND_add.3
+	renamed:    secure/lib/libcrypto/man/RAND_bytes.3 -> secure/lib/libcrypto/man/man3/RAND_bytes.3
+	renamed:    secure/lib/libcrypto/man/RAND_cleanup.3 -> secure/lib/libcrypto/man/man3/RAND_cleanup.3
+	renamed:    secure/lib/libcrypto/man/RAND_egd.3 -> secure/lib/libcrypto/man/man3/RAND_egd.3
+	renamed:    secure/lib/libcrypto/man/RAND_load_file.3 -> secure/lib/libcrypto/man/man3/RAND_load_file.3
+	renamed:    secure/lib/libcrypto/man/RAND_set_rand_method.3 -> secure/lib/libcrypto/man/man3/RAND_set_rand_method.3
+	renamed:    secure/lib/libcrypto/man/RC4_set_key.3 -> secure/lib/libcrypto/man/man3/RC4_set_key.3
+	renamed:    secure/lib/libcrypto/man/RIPEMD160_Init.3 -> secure/lib/libcrypto/man/man3/RIPEMD160_Init.3
+	renamed:    secure/lib/libcrypto/man/RSA_blinding_on.3 -> secure/lib/libcrypto/man/man3/RSA_blinding_on.3
+	renamed:    secure/lib/libcrypto/man/RSA_check_key.3 -> secure/lib/libcrypto/man/man3/RSA_check_key.3
+	renamed:    secure/lib/libcrypto/man/RSA_generate_key.3 -> secure/lib/libcrypto/man/man3/RSA_generate_key.3
+	renamed:    secure/lib/libcrypto/man/RSA_get0_key.3 -> secure/lib/libcrypto/man/man3/RSA_get0_key.3
+	renamed:    secure/lib/libcrypto/man/RSA_meth_new.3 -> secure/lib/libcrypto/man/man3/RSA_meth_new.3
+	renamed:    secure/lib/libcrypto/man/RSA_new.3 -> secure/lib/libcrypto/man/man3/RSA_new.3
+	renamed:    secure/lib/libcrypto/man/RSA_padding_add_PKCS1_type_1.3 -> secure/lib/libcrypto/man/man3/RSA_padding_add_PKCS1_type_1.3
+	renamed:    secure/lib/libcrypto/man/RSA_print.3 -> secure/lib/libcrypto/man/man3/RSA_print.3
+	renamed:    secure/lib/libcrypto/man/RSA_private_encrypt.3 -> secure/lib/libcrypto/man/man3/RSA_private_encrypt.3
+	renamed:    secure/lib/libcrypto/man/RSA_public_encrypt.3 -> secure/lib/libcrypto/man/man3/RSA_public_encrypt.3
+	renamed:    secure/lib/libcrypto/man/RSA_set_method.3 -> secure/lib/libcrypto/man/man3/RSA_set_method.3
+	renamed:    secure/lib/libcrypto/man/RSA_sign.3 -> secure/lib/libcrypto/man/man3/RSA_sign.3
+	renamed:    secure/lib/libcrypto/man/RSA_sign_ASN1_OCTET_STRING.3 -> secure/lib/libcrypto/man/man3/RSA_sign_ASN1_OCTET_STRING.3
+	renamed:    secure/lib/libcrypto/man/RSA_size.3 -> secure/lib/libcrypto/man/man3/RSA_size.3
+	renamed:    secure/lib/libcrypto/man/SCT_new.3 -> secure/lib/libcrypto/man/man3/SCT_new.3
+	renamed:    secure/lib/libcrypto/man/SCT_print.3 -> secure/lib/libcrypto/man/man3/SCT_print.3
+	renamed:    secure/lib/libcrypto/man/SCT_validate.3 -> secure/lib/libcrypto/man/man3/SCT_validate.3
+	renamed:    secure/lib/libcrypto/man/SHA256_Init.3 -> secure/lib/libcrypto/man/man3/SHA256_Init.3
+	renamed:    secure/lib/libcrypto/man/SMIME_read_CMS.3 -> secure/lib/libcrypto/man/man3/SMIME_read_CMS.3
+	renamed:    secure/lib/libcrypto/man/SMIME_read_PKCS7.3 -> secure/lib/libcrypto/man/man3/SMIME_read_PKCS7.3
+	renamed:    secure/lib/libcrypto/man/SMIME_write_CMS.3 -> secure/lib/libcrypto/man/man3/SMIME_write_CMS.3
+	renamed:    secure/lib/libcrypto/man/SMIME_write_PKCS7.3 -> secure/lib/libcrypto/man/man3/SMIME_write_PKCS7.3
+	renamed:    secure/lib/libcrypto/man/SSL_CIPHER_get_name.3 -> secure/lib/libcrypto/man/man3/SSL_CIPHER_get_name.3
+	renamed:    secure/lib/libcrypto/man/SSL_COMP_add_compression_method.3 -> secure/lib/libcrypto/man/man3/SSL_COMP_add_compression_method.3
+	renamed:    secure/lib/libcrypto/man/SSL_CONF_CTX_new.3 -> secure/lib/libcrypto/man/man3/SSL_CONF_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/SSL_CONF_CTX_set1_prefix.3 -> secure/lib/libcrypto/man/man3/SSL_CONF_CTX_set1_prefix.3
+	renamed:    secure/lib/libcrypto/man/SSL_CONF_CTX_set_flags.3 -> secure/lib/libcrypto/man/man3/SSL_CONF_CTX_set_flags.3
+	renamed:    secure/lib/libcrypto/man/SSL_CONF_CTX_set_ssl_ctx.3 -> secure/lib/libcrypto/man/man3/SSL_CONF_CTX_set_ssl_ctx.3
+	renamed:    secure/lib/libcrypto/man/SSL_CONF_cmd.3 -> secure/lib/libcrypto/man/man3/SSL_CONF_cmd.3
+	renamed:    secure/lib/libcrypto/man/SSL_CONF_cmd_argv.3 -> secure/lib/libcrypto/man/man3/SSL_CONF_cmd_argv.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_add1_chain_cert.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_add1_chain_cert.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_add_extra_chain_cert.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_add_extra_chain_cert.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_add_session.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_add_session.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_config.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_config.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_ctrl.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_ctrl.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_dane_enable.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_dane_enable.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_flush_sessions.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_flush_sessions.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_free.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_free.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_get0_param.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_get0_param.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_get_verify_mode.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_get_verify_mode.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_has_client_custom_ext.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_has_client_custom_ext.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_load_verify_locations.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_load_verify_locations.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_new.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_sess_number.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_sess_number.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_sess_set_cache_size.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_sess_set_cache_size.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_sess_set_get_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_sess_set_get_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_sessions.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_sessions.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set0_CA_list.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set0_CA_list.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set1_curves.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set1_curves.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set1_sigalgs.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set1_sigalgs.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set1_verify_cert_store.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set1_verify_cert_store.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_alpn_select_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_alpn_select_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_cert_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_cert_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_cert_store.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_cert_store.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_cert_verify_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_cert_verify_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_cipher_list.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_cipher_list.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_client_cert_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_client_cert_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_client_hello_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_client_hello_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_ct_validation_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_ct_validation_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_ctlog_list_file.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_ctlog_list_file.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_default_passwd_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_default_passwd_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_ex_data.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_ex_data.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_generate_session_id.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_generate_session_id.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_info_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_info_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_keylog_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_keylog_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_max_cert_list.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_max_cert_list.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_min_proto_version.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_min_proto_version.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_mode.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_mode.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_msg_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_msg_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_num_tickets.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_num_tickets.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_options.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_options.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_psk_client_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_psk_client_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_quiet_shutdown.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_quiet_shutdown.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_read_ahead.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_read_ahead.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_record_padding_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_record_padding_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_security_level.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_security_level.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_session_cache_mode.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_session_cache_mode.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_session_id_context.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_session_id_context.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_session_ticket_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_session_ticket_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_split_send_fragment.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_split_send_fragment.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_ssl_version.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_ssl_version.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_stateless_cookie_generate_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_stateless_cookie_generate_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_timeout.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_timeout.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_tlsext_servername_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_tlsext_servername_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_tlsext_status_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_tlsext_status_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_tlsext_ticket_key_cb.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_tlsext_ticket_key_cb.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_tlsext_use_srtp.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_tlsext_use_srtp.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_tmp_dh_callback.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_tmp_dh_callback.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_set_verify.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_set_verify.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_use_certificate.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_use_certificate.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_use_psk_identity_hint.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_use_psk_identity_hint.3
+	renamed:    secure/lib/libcrypto/man/SSL_CTX_use_serverinfo.3 -> secure/lib/libcrypto/man/man3/SSL_CTX_use_serverinfo.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_free.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_free.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get0_cipher.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get0_cipher.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get0_hostname.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get0_hostname.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get0_id_context.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get0_id_context.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get0_peer.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get0_peer.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get_compress_id.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get_compress_id.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get_ex_data.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get_ex_data.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get_protocol_version.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get_protocol_version.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_get_time.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_get_time.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_has_ticket.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_has_ticket.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_is_resumable.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_is_resumable.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_print.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_print.3
+	renamed:    secure/lib/libcrypto/man/SSL_SESSION_set1_id.3 -> secure/lib/libcrypto/man/man3/SSL_SESSION_set1_id.3
+	renamed:    secure/lib/libcrypto/man/SSL_accept.3 -> secure/lib/libcrypto/man/man3/SSL_accept.3
+	renamed:    secure/lib/libcrypto/man/SSL_alert_type_string.3 -> secure/lib/libcrypto/man/man3/SSL_alert_type_string.3
+	renamed:    secure/lib/libcrypto/man/SSL_alloc_buffers.3 -> secure/lib/libcrypto/man/man3/SSL_alloc_buffers.3
+	renamed:    secure/lib/libcrypto/man/SSL_check_chain.3 -> secure/lib/libcrypto/man/man3/SSL_check_chain.3
+	renamed:    secure/lib/libcrypto/man/SSL_clear.3 -> secure/lib/libcrypto/man/man3/SSL_clear.3
+	renamed:    secure/lib/libcrypto/man/SSL_connect.3 -> secure/lib/libcrypto/man/man3/SSL_connect.3
+	renamed:    secure/lib/libcrypto/man/SSL_do_handshake.3 -> secure/lib/libcrypto/man/man3/SSL_do_handshake.3
+	renamed:    secure/lib/libcrypto/man/SSL_export_keying_material.3 -> secure/lib/libcrypto/man/man3/SSL_export_keying_material.3
+	renamed:    secure/lib/libcrypto/man/SSL_extension_supported.3 -> secure/lib/libcrypto/man/man3/SSL_extension_supported.3
+	renamed:    secure/lib/libcrypto/man/SSL_free.3 -> secure/lib/libcrypto/man/man3/SSL_free.3
+	renamed:    secure/lib/libcrypto/man/SSL_get0_peer_scts.3 -> secure/lib/libcrypto/man/man3/SSL_get0_peer_scts.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_SSL_CTX.3 -> secure/lib/libcrypto/man/man3/SSL_get_SSL_CTX.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_all_async_fds.3 -> secure/lib/libcrypto/man/man3/SSL_get_all_async_fds.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_ciphers.3 -> secure/lib/libcrypto/man/man3/SSL_get_ciphers.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_client_random.3 -> secure/lib/libcrypto/man/man3/SSL_get_client_random.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_current_cipher.3 -> secure/lib/libcrypto/man/man3/SSL_get_current_cipher.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_default_timeout.3 -> secure/lib/libcrypto/man/man3/SSL_get_default_timeout.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_error.3 -> secure/lib/libcrypto/man/man3/SSL_get_error.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_extms_support.3 -> secure/lib/libcrypto/man/man3/SSL_get_extms_support.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_fd.3 -> secure/lib/libcrypto/man/man3/SSL_get_fd.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_peer_cert_chain.3 -> secure/lib/libcrypto/man/man3/SSL_get_peer_cert_chain.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_peer_certificate.3 -> secure/lib/libcrypto/man/man3/SSL_get_peer_certificate.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_peer_signature_nid.3 -> secure/lib/libcrypto/man/man3/SSL_get_peer_signature_nid.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_peer_tmp_key.3 -> secure/lib/libcrypto/man/man3/SSL_get_peer_tmp_key.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_psk_identity.3 -> secure/lib/libcrypto/man/man3/SSL_get_psk_identity.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_rbio.3 -> secure/lib/libcrypto/man/man3/SSL_get_rbio.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_session.3 -> secure/lib/libcrypto/man/man3/SSL_get_session.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_shared_sigalgs.3 -> secure/lib/libcrypto/man/man3/SSL_get_shared_sigalgs.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_verify_result.3 -> secure/lib/libcrypto/man/man3/SSL_get_verify_result.3
+	renamed:    secure/lib/libcrypto/man/SSL_get_version.3 -> secure/lib/libcrypto/man/man3/SSL_get_version.3
+	renamed:    secure/lib/libcrypto/man/SSL_in_init.3 -> secure/lib/libcrypto/man/man3/SSL_in_init.3
+	renamed:    secure/lib/libcrypto/man/SSL_key_update.3 -> secure/lib/libcrypto/man/man3/SSL_key_update.3
+	renamed:    secure/lib/libcrypto/man/SSL_library_init.3 -> secure/lib/libcrypto/man/man3/SSL_library_init.3
+	renamed:    secure/lib/libcrypto/man/SSL_load_client_CA_file.3 -> secure/lib/libcrypto/man/man3/SSL_load_client_CA_file.3
+	renamed:    secure/lib/libcrypto/man/SSL_new.3 -> secure/lib/libcrypto/man/man3/SSL_new.3
+	renamed:    secure/lib/libcrypto/man/SSL_pending.3 -> secure/lib/libcrypto/man/man3/SSL_pending.3
+	renamed:    secure/lib/libcrypto/man/SSL_read.3 -> secure/lib/libcrypto/man/man3/SSL_read.3
+	renamed:    secure/lib/libcrypto/man/SSL_read_early_data.3 -> secure/lib/libcrypto/man/man3/SSL_read_early_data.3
+	renamed:    secure/lib/libcrypto/man/SSL_rstate_string.3 -> secure/lib/libcrypto/man/man3/SSL_rstate_string.3
+	renamed:    secure/lib/libcrypto/man/SSL_session_reused.3 -> secure/lib/libcrypto/man/man3/SSL_session_reused.3
+	renamed:    secure/lib/libcrypto/man/SSL_set1_host.3 -> secure/lib/libcrypto/man/man3/SSL_set1_host.3
+	renamed:    secure/lib/libcrypto/man/SSL_set_bio.3 -> secure/lib/libcrypto/man/man3/SSL_set_bio.3
+	renamed:    secure/lib/libcrypto/man/SSL_set_connect_state.3 -> secure/lib/libcrypto/man/man3/SSL_set_connect_state.3
+	renamed:    secure/lib/libcrypto/man/SSL_set_fd.3 -> secure/lib/libcrypto/man/man3/SSL_set_fd.3
+	renamed:    secure/lib/libcrypto/man/SSL_set_session.3 -> secure/lib/libcrypto/man/man3/SSL_set_session.3
+	renamed:    secure/lib/libcrypto/man/SSL_set_shutdown.3 -> secure/lib/libcrypto/man/man3/SSL_set_shutdown.3
+	renamed:    secure/lib/libcrypto/man/SSL_set_verify_result.3 -> secure/lib/libcrypto/man/man3/SSL_set_verify_result.3
+	renamed:    secure/lib/libcrypto/man/SSL_shutdown.3 -> secure/lib/libcrypto/man/man3/SSL_shutdown.3
+	renamed:    secure/lib/libcrypto/man/SSL_state_string.3 -> secure/lib/libcrypto/man/man3/SSL_state_string.3
+	renamed:    secure/lib/libcrypto/man/SSL_want.3 -> secure/lib/libcrypto/man/man3/SSL_want.3
+	renamed:    secure/lib/libcrypto/man/SSL_write.3 -> secure/lib/libcrypto/man/man3/SSL_write.3
+	renamed:    secure/lib/libcrypto/man/UI_STRING.3 -> secure/lib/libcrypto/man/man3/UI_STRING.3
+	renamed:    secure/lib/libcrypto/man/UI_UTIL_read_pw.3 -> secure/lib/libcrypto/man/man3/UI_UTIL_read_pw.3
+	renamed:    secure/lib/libcrypto/man/UI_create_method.3 -> secure/lib/libcrypto/man/man3/UI_create_method.3
+	renamed:    secure/lib/libcrypto/man/UI_new.3 -> secure/lib/libcrypto/man/man3/UI_new.3
+	renamed:    secure/lib/libcrypto/man/X509V3_get_d2i.3 -> secure/lib/libcrypto/man/man3/X509V3_get_d2i.3
+	renamed:    secure/lib/libcrypto/man/X509_ALGOR_dup.3 -> secure/lib/libcrypto/man/man3/X509_ALGOR_dup.3
+	renamed:    secure/lib/libcrypto/man/X509_CRL_get0_by_serial.3 -> secure/lib/libcrypto/man/man3/X509_CRL_get0_by_serial.3
+	renamed:    secure/lib/libcrypto/man/X509_EXTENSION_set_object.3 -> secure/lib/libcrypto/man/man3/X509_EXTENSION_set_object.3
+	renamed:    secure/lib/libcrypto/man/X509_LOOKUP_hash_dir.3 -> secure/lib/libcrypto/man/man3/X509_LOOKUP_hash_dir.3
+	renamed:    secure/lib/libcrypto/man/X509_LOOKUP_meth_new.3 -> secure/lib/libcrypto/man/man3/X509_LOOKUP_meth_new.3
+	renamed:    secure/lib/libcrypto/man/X509_NAME_ENTRY_get_object.3 -> secure/lib/libcrypto/man/man3/X509_NAME_ENTRY_get_object.3
+	renamed:    secure/lib/libcrypto/man/X509_NAME_add_entry_by_txt.3 -> secure/lib/libcrypto/man/man3/X509_NAME_add_entry_by_txt.3
+	renamed:    secure/lib/libcrypto/man/X509_NAME_get0_der.3 -> secure/lib/libcrypto/man/man3/X509_NAME_get0_der.3
+	renamed:    secure/lib/libcrypto/man/X509_NAME_get_index_by_NID.3 -> secure/lib/libcrypto/man/man3/X509_NAME_get_index_by_NID.3
+	renamed:    secure/lib/libcrypto/man/X509_NAME_print_ex.3 -> secure/lib/libcrypto/man/man3/X509_NAME_print_ex.3
+	renamed:    secure/lib/libcrypto/man/X509_PUBKEY_new.3 -> secure/lib/libcrypto/man/man3/X509_PUBKEY_new.3
+	renamed:    secure/lib/libcrypto/man/X509_SIG_get0.3 -> secure/lib/libcrypto/man/man3/X509_SIG_get0.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_CTX_get_error.3 -> secure/lib/libcrypto/man/man3/X509_STORE_CTX_get_error.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_CTX_new.3 -> secure/lib/libcrypto/man/man3/X509_STORE_CTX_new.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_CTX_set_verify_cb.3 -> secure/lib/libcrypto/man/man3/X509_STORE_CTX_set_verify_cb.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_add_cert.3 -> secure/lib/libcrypto/man/man3/X509_STORE_add_cert.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_get0_param.3 -> secure/lib/libcrypto/man/man3/X509_STORE_get0_param.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_new.3 -> secure/lib/libcrypto/man/man3/X509_STORE_new.3
+	renamed:    secure/lib/libcrypto/man/X509_STORE_set_verify_cb_func.3 -> secure/lib/libcrypto/man/man3/X509_STORE_set_verify_cb_func.3
+	renamed:    secure/lib/libcrypto/man/X509_VERIFY_PARAM_set_flags.3 -> secure/lib/libcrypto/man/man3/X509_VERIFY_PARAM_set_flags.3
+	renamed:    secure/lib/libcrypto/man/X509_check_ca.3 -> secure/lib/libcrypto/man/man3/X509_check_ca.3
+	renamed:    secure/lib/libcrypto/man/X509_check_host.3 -> secure/lib/libcrypto/man/man3/X509_check_host.3
+	renamed:    secure/lib/libcrypto/man/X509_check_issued.3 -> secure/lib/libcrypto/man/man3/X509_check_issued.3
+	renamed:    secure/lib/libcrypto/man/X509_check_private_key.3 -> secure/lib/libcrypto/man/man3/X509_check_private_key.3
+	renamed:    secure/lib/libcrypto/man/X509_cmp.3 -> secure/lib/libcrypto/man/man3/X509_cmp.3
+	renamed:    secure/lib/libcrypto/man/X509_cmp_time.3 -> secure/lib/libcrypto/man/man3/X509_cmp_time.3
+	renamed:    secure/lib/libcrypto/man/X509_digest.3 -> secure/lib/libcrypto/man/man3/X509_digest.3
+	renamed:    secure/lib/libcrypto/man/X509_dup.3 -> secure/lib/libcrypto/man/man3/X509_dup.3
+	renamed:    secure/lib/libcrypto/man/X509_get0_notBefore.3 -> secure/lib/libcrypto/man/man3/X509_get0_notBefore.3
+	renamed:    secure/lib/libcrypto/man/X509_get0_signature.3 -> secure/lib/libcrypto/man/man3/X509_get0_signature.3
+	renamed:    secure/lib/libcrypto/man/X509_get0_uids.3 -> secure/lib/libcrypto/man/man3/X509_get0_uids.3
+	renamed:    secure/lib/libcrypto/man/X509_get_extension_flags.3 -> secure/lib/libcrypto/man/man3/X509_get_extension_flags.3
+	renamed:    secure/lib/libcrypto/man/X509_get_pubkey.3 -> secure/lib/libcrypto/man/man3/X509_get_pubkey.3
+	renamed:    secure/lib/libcrypto/man/X509_get_serialNumber.3 -> secure/lib/libcrypto/man/man3/X509_get_serialNumber.3
+	renamed:    secure/lib/libcrypto/man/X509_get_subject_name.3 -> secure/lib/libcrypto/man/man3/X509_get_subject_name.3
+	renamed:    secure/lib/libcrypto/man/X509_get_version.3 -> secure/lib/libcrypto/man/man3/X509_get_version.3
+	renamed:    secure/lib/libcrypto/man/X509_new.3 -> secure/lib/libcrypto/man/man3/X509_new.3
+	renamed:    secure/lib/libcrypto/man/X509_sign.3 -> secure/lib/libcrypto/man/man3/X509_sign.3
+	renamed:    secure/lib/libcrypto/man/X509_verify_cert.3 -> secure/lib/libcrypto/man/man3/X509_verify_cert.3
+	renamed:    secure/lib/libcrypto/man/X509v3_get_ext_by_NID.3 -> secure/lib/libcrypto/man/man3/X509v3_get_ext_by_NID.3
+	renamed:    secure/lib/libcrypto/man/d2i_DHparams.3 -> secure/lib/libcrypto/man/man3/d2i_DHparams.3
+	renamed:    secure/lib/libcrypto/man/d2i_PKCS8PrivateKey_bio.3 -> secure/lib/libcrypto/man/man3/d2i_PKCS8PrivateKey_bio.3
+	renamed:    secure/lib/libcrypto/man/d2i_PrivateKey.3 -> secure/lib/libcrypto/man/man3/d2i_PrivateKey.3
+	renamed:    secure/lib/libcrypto/man/d2i_SSL_SESSION.3 -> secure/lib/libcrypto/man/man3/d2i_SSL_SESSION.3
+	renamed:    secure/lib/libcrypto/man/d2i_X509.3 -> secure/lib/libcrypto/man/man3/d2i_X509.3
+	renamed:    secure/lib/libcrypto/man/i2d_CMS_bio_stream.3 -> secure/lib/libcrypto/man/man3/i2d_CMS_bio_stream.3
+	renamed:    secure/lib/libcrypto/man/i2d_PKCS7_bio_stream.3 -> secure/lib/libcrypto/man/man3/i2d_PKCS7_bio_stream.3
+	renamed:    secure/lib/libcrypto/man/i2d_re_X509_tbs.3 -> secure/lib/libcrypto/man/man3/i2d_re_X509_tbs.3
+	renamed:    secure/lib/libcrypto/man/o2i_SCT_LIST.3 -> secure/lib/libcrypto/man/man3/o2i_SCT_LIST.3
+	new file:   secure/lib/libcrypto/man/man5/Makefile
+	new file:   secure/lib/libcrypto/man/man5/x509v3_config.5
+	new file:   secure/lib/libcrypto/man/man7/Ed25519.7
+	new file:   secure/lib/libcrypto/man/man7/Makefile
+	new file:   secure/lib/libcrypto/man/man7/RAND.7
+	new file:   secure/lib/libcrypto/man/man7/RAND_DRBG.7
+	new file:   secure/lib/libcrypto/man/man7/RSA-PSS.7
+	new file:   secure/lib/libcrypto/man/man7/SM2.7
+	new file:   secure/lib/libcrypto/man/man7/X25519.7
+	new file:   secure/lib/libcrypto/man/man7/bio.7
+	new file:   secure/lib/libcrypto/man/man7/ct.7
+	new file:   secure/lib/libcrypto/man/man7/des_modes.7
+	new file:   secure/lib/libcrypto/man/man7/evp.7
+	new file:   secure/lib/libcrypto/man/man7/ossl_store-file.7
+	new file:   secure/lib/libcrypto/man/man7/ossl_store.7
+	new file:   secure/lib/libcrypto/man/man7/passphrase-encoding.7
+	new file:   secure/lib/libcrypto/man/man7/scrypt.7
+	new file:   secure/lib/libcrypto/man/man7/ssl.7
+	new file:   secure/lib/libcrypto/man/man7/x509.7
+	modified:   stand/common/interp_lua.c
+	modified:   stand/efi/loader/main.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dbuf.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dnode.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/sys/dnode.h
+	modified:   sys/dev/ahci/ahci_pci.c
+	modified:   sys/dev/ntb/ntb_hw/ntb_hw_amd.c
+	modified:   sys/dev/ntb/ntb_hw/ntb_hw_amd.h
+	modified:   sys/kern/Makefile
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/sys_capability.c
+	modified:   sys/net/ethernet.h
+	modified:   sys/sys/capsicum.h
+	modified:   sys/sys/file.h
+	modified:   usr.bin/dtc/dtb.cc
+	modified:   usr.bin/dtc/dtc.cc
+	modified:   usr.bin/dtc/fdt.cc
+	modified:   usr.bin/dtc/fdt.hh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   etc/mtree/BSD.usr.dist
+	both modified:   secure/lib/libcrypto/Makefile
+
+HEAD is now at 1546c1d70141 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 1546c1d70141 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
