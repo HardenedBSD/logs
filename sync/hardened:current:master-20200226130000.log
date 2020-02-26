@@ -1,0 +1,932 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/x86/mp_x86.c
+Auto-merging sys/x86/x86/cpu_machdep.c
+Auto-merging sys/vm/vm_phys.c
+CONFLICT (content): Merge conflict in sys/vm/vm_phys.c
+Auto-merging sys/sys/sysctl.h
+Auto-merging sys/sys/jail.h
+Auto-merging sys/powerpc/powerpc/elf32_machdep.c
+Auto-merging sys/netinet6/in6_src.c
+Auto-merging sys/netinet6/in6_proto.c
+Auto-merging sys/netinet/ip_reass.c
+Auto-merging sys/netinet/ip_input.c
+Auto-merging sys/netinet/ip_id.c
+Auto-merging sys/libkern/iconv.c
+Auto-merging sys/kern/subr_witness.c
+Auto-merging sys/kern/kern_thr.c
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_shutdown.c
+Auto-merging sys/kern/kern_racct.c
+CONFLICT (content): Merge conflict in sys/kern/kern_racct.c
+Auto-merging sys/kern/kern_prot.c
+Auto-merging sys/kern/kern_proc.c
+Auto-merging sys/kern/kern_mib.c
+CONFLICT (content): Merge conflict in sys/kern/kern_mib.c
+Auto-merging sys/kern/kern_linker.c
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/kern/kern_fork.c
+CONFLICT (content): Merge conflict in sys/kern/kern_fork.c
+Auto-merging sys/kern/imgact_elf.c
+CONFLICT (content): Merge conflict in sys/kern/imgact_elf.c
+Auto-merging sys/i386/i386/machdep.c
+Auto-merging sys/geom/geom_kern.c
+CONFLICT (content): Merge conflict in sys/geom/geom_kern.c
+Auto-merging sys/dev/kbd/kbd.c
+CONFLICT (content): Merge conflict in sys/dev/kbd/kbd.c
+Auto-merging sys/compat/ia32/ia32_sysvec.c
+Auto-merging sys/arm64/arm64/pmap.c
+Auto-merging sys/amd64/linux32/linux32_sysvec.c
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging sys/amd64/amd64/machdep.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/dev/kbd/kbd.c
+index 0de90fcc04fa,fd996f7a06ad..000000000000
+--- a/sys/dev/kbd/kbd.c
++++ b/sys/dev/kbd/kbd.c
+@@@ -85,14 -84,9 +85,19 @@@ static int		keyboards = 1
+  static keyboard_t	*kbd_ini;
+  static keyboard_t	**keyboard = &kbd_ini;
+  
+ +#ifdef PAX_HARDENING
+ +/* Only root should be able to change keyboard mapping */
+ +static int keymap_restrict_change = 4;
+ +#else
+  static int keymap_restrict_change;
+++<<<<<<< HEAD
+ +#endif
+ +
+ +static SYSCTL_NODE(_hw, OID_AUTO, kbd, CTLFLAG_RD, 0, "kbd");
+++=======
++ static SYSCTL_NODE(_hw, OID_AUTO, kbd, CTLFLAG_RD | CTLFLAG_MPSAFE, 0,
++     "kbd");
+++>>>>>>> freebsd/current/master
+  SYSCTL_INT(_hw_kbd, OID_AUTO, keymap_restrict_change, CTLFLAG_RW,
+      &keymap_restrict_change, 0, "restrict ability to change keymap");
+  
+diff --cc sys/geom/geom_kern.c
+index c56e9b9ce4eb,cf13503f3efd..000000000000
+--- a/sys/geom/geom_kern.c
++++ b/sys/geom/geom_kern.c
+@@@ -204,22 -204,23 +204,42 @@@ sysctl_kern_geom_confxml(SYSCTL_HANDLER
+  	return (sysctl_kern_geom_confany(req, g_confxml, &hint));
+  }
+  
+++<<<<<<< HEAD
+ +SYSCTL_NODE(_kern, OID_AUTO, geom, CTLFLAG_RW, 0, "GEOMetry management");
+ +
+ +SYSCTL_PROC(_kern_geom, OID_AUTO, confxml, CTLTYPE_STRING|CTLFLAG_RD
+ +	| CTLFLAG_ROOTONLY,
+ +	0, 0, sysctl_kern_geom_confxml, "",
+ +	"Dump the GEOM config in XML");
+ +
+ +SYSCTL_PROC(_kern_geom, OID_AUTO, confdot, CTLTYPE_STRING|CTLFLAG_RD
+ +	| CTLFLAG_ROOTONLY,
+ +	0, 0, sysctl_kern_geom_confdot, "",
+ +	"Dump the GEOM config in dot");
+ +
+ +SYSCTL_PROC(_kern_geom, OID_AUTO, conftxt, CTLTYPE_STRING|CTLFLAG_RD
+ +	| CTLFLAG_ROOTONLY,
+ +	0, 0, sysctl_kern_geom_conftxt, "",
+ +	"Dump the GEOM config in txt");
+++=======
++ SYSCTL_NODE(_kern, OID_AUTO, geom, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "GEOMetry management");
++ 
++ SYSCTL_PROC(_kern_geom, OID_AUTO, confxml,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_NEEDGIANT, 0, 0,
++     sysctl_kern_geom_confxml, "",
++     "Dump the GEOM config in XML");
++ 
++ SYSCTL_PROC(_kern_geom, OID_AUTO, confdot,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_NEEDGIANT, 0, 0,
++     sysctl_kern_geom_confdot, "",
++     "Dump the GEOM config in dot");
++ 
++ SYSCTL_PROC(_kern_geom, OID_AUTO, conftxt,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_NEEDGIANT, 0, 0,
++     sysctl_kern_geom_conftxt, "",
++     "Dump the GEOM config in txt");
+++>>>>>>> freebsd/current/master
+  
+  SYSCTL_INT(_kern_geom, OID_AUTO, debugflags, CTLFLAG_RWTUN,
+  	&g_debugflags, 0, "Set various trace levels for GEOM debugging");
+diff --cc sys/kern/imgact_elf.c
+index 639d83e5b204,5ba9f7e083de..000000000000
+--- a/sys/kern/imgact_elf.c
++++ b/sys/kern/imgact_elf.c
+@@@ -132,7 -130,35 +133,39 @@@ SYSCTL_INT(__CONCAT(_kern_elf, __ELF_WO
+      nxstack, CTLFLAG_RW, &__elfN(nxstack), 0,
+      __XSTRING(__CONCAT(ELF, __ELF_WORD_SIZE)) ": enable non-executable stack");
+  
+++<<<<<<< HEAD
+ +SYSCTL_NODE(__CONCAT(_kern_elf, __ELF_WORD_SIZE), OID_AUTO, aslr, CTLFLAG_RW, 0,
+++=======
++ #if __ELF_WORD_SIZE == 32 && (defined(__amd64__) || defined(__i386__))
++ int i386_read_exec = 0;
++ SYSCTL_INT(_kern_elf32, OID_AUTO, read_exec, CTLFLAG_RW, &i386_read_exec, 0,
++     "enable execution from readable segments");
++ #endif
++ 
++ static u_long __elfN(pie_base) = ET_DYN_LOAD_ADDR;
++ static int
++ sysctl_pie_base(SYSCTL_HANDLER_ARGS)
++ {
++ 	u_long val;
++ 	int error;
++ 
++ 	val = __elfN(pie_base);
++ 	error = sysctl_handle_long(oidp, &val, 0, req);
++ 	if (error != 0 || req->newptr == NULL)
++ 		return (error);
++ 	if ((val & PAGE_MASK) != 0)
++ 		return (EINVAL);
++ 	__elfN(pie_base) = val;
++ 	return (0);
++ }
++ SYSCTL_PROC(__CONCAT(_kern_elf, __ELF_WORD_SIZE), OID_AUTO, pie_base,
++     CTLTYPE_ULONG | CTLFLAG_MPSAFE | CTLFLAG_RW, NULL, 0,
++     sysctl_pie_base, "LU",
++     "PIE load base without randomization");
++ 
++ SYSCTL_NODE(__CONCAT(_kern_elf, __ELF_WORD_SIZE), OID_AUTO, aslr,
++     CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
+++>>>>>>> freebsd/current/master
+      "");
+  #define	ASLR_NODE_OID	__CONCAT(__CONCAT(_kern_elf, __ELF_WORD_SIZE), _aslr)
+  
+diff --cc sys/kern/kern_fork.c
+index ac8c82fa1b58,d4c481b8f038..000000000000
+--- a/sys/kern/kern_fork.c
++++ b/sys/kern/kern_fork.c
+@@@ -242,9 -236,10 +242,16 @@@ sysctl_kern_randompid(SYSCTL_HANDLER_AR
+  	return (error);
+  }
+  
+++<<<<<<< HEAD
+ +SYSCTL_PROC(_kern, OID_AUTO, randompid, CTLTYPE_INT|CTLFLAG_RW,
+ +    0, 0, sysctl_kern_randompid, "I", "Random PID modulus");
+ +#endif
+++=======
++ SYSCTL_PROC(_kern, OID_AUTO, randompid,
++     CTLTYPE_INT | CTLFLAG_RW | CTLFLAG_MPSAFE, 0, 0,
++     sysctl_kern_randompid, "I",
++     "Random PID modulus. Special values: 0: disable, 1: choose random value");
+++>>>>>>> freebsd/current/master
+  
+  extern bitstr_t proc_id_pidmap;
+  extern bitstr_t proc_id_grpidmap;
+diff --cc sys/kern/kern_mib.c
+index 743e9b6f3eb1,8f7530838c0b..000000000000
+--- a/sys/kern/kern_mib.c
++++ b/sys/kern/kern_mib.c
+@@@ -60,40 -60,38 +60,72 @@@ __FBSDID("$FreeBSD$")
+  #include <sys/systm.h>
+  #include <sys/unistd.h>
+  
+++<<<<<<< HEAD
+ +SYSCTL_ROOT_NODE(0,	  sysctl, CTLFLAG_RW, 0,
+ +	"Sysctl internal magic");
+ +SYSCTL_ROOT_NODE(CTL_KERN,	  kern,   CTLFLAG_RW|CTLFLAG_CAPRD, 0,
+ +	"High kernel, proc, limits &c");
+ +SYSCTL_ROOT_NODE(CTL_VM,	  vm,     CTLFLAG_RW, 0,
+ +	"Virtual memory");
+ +SYSCTL_ROOT_NODE(CTL_VFS,	  vfs,     CTLFLAG_RW, 0,
+ +	"File system");
+ +SYSCTL_ROOT_NODE(CTL_NET,	  net,    CTLFLAG_RW, 0,
+ +	"Network, (see socket.h)");
+ +SYSCTL_ROOT_NODE(CTL_DEBUG,  debug,  CTLFLAG_RW, 0,
+ +	"Debugging");
+ +SYSCTL_NODE(_debug, OID_AUTO,  sizeof,  CTLFLAG_RW, 0,
+ +	"Sizeof various things");
+ +SYSCTL_ROOT_NODE(CTL_HW,	  hw,     CTLFLAG_RW, 0,
+ +	"hardware");
+ +SYSCTL_ROOT_NODE(CTL_MACHDEP, machdep, CTLFLAG_RW, 0,
+ +	"machine dependent");
+ +SYSCTL_NODE(_machdep, OID_AUTO, mitigations, CTLFLAG_RW, 0,
+ +	"Machine dependent platform mitigations.");
+ +SYSCTL_ROOT_NODE(CTL_USER,	  user,   CTLFLAG_RW, 0,
+ +	"user-level");
+ +SYSCTL_ROOT_NODE(CTL_P1003_1B,  p1003_1b,   CTLFLAG_RW, 0,
+ +	"p1003_1b, (see p1003_1b.h)");
+ +
+ +SYSCTL_ROOT_NODE(OID_AUTO,  compat, CTLFLAG_RW, 0,
+ +	"Compatibility code");
+ +SYSCTL_ROOT_NODE(OID_AUTO, security, CTLFLAG_RW, 0, 
+ +     	"Security");
+ +SYSCTL_ROOT_NODE(OID_AUTO, hardening, CTLFLAG_RW, 0,
+ +	"Kernel hardening features");
+++=======
++ SYSCTL_ROOT_NODE(0, sysctl, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Sysctl internal magic");
++ SYSCTL_ROOT_NODE(CTL_KERN, kern, CTLFLAG_RW | CTLFLAG_CAPRD | CTLFLAG_MPSAFE, 0,
++     "High kernel, proc, limits &c");
++ SYSCTL_ROOT_NODE(CTL_VM, vm, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Virtual memory");
++ SYSCTL_ROOT_NODE(CTL_VFS, vfs, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "File system");
++ SYSCTL_ROOT_NODE(CTL_NET, net, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Network, (see socket.h)");
++ SYSCTL_ROOT_NODE(CTL_DEBUG, debug, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Debugging");
++ SYSCTL_NODE(_debug, OID_AUTO,  sizeof,  CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Sizeof various things");
++ SYSCTL_ROOT_NODE(CTL_HW, hw, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "hardware");
++ SYSCTL_ROOT_NODE(CTL_MACHDEP, machdep, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "machine dependent");
++ SYSCTL_NODE(_machdep, OID_AUTO, mitigations, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Machine dependent platform mitigations.");
++ SYSCTL_ROOT_NODE(CTL_USER, user, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "user-level");
++ SYSCTL_ROOT_NODE(CTL_P1003_1B, p1003_1b, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "p1003_1b, (see p1003_1b.h)");
++ 
++ SYSCTL_ROOT_NODE(OID_AUTO, compat, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Compatibility code");
++ SYSCTL_ROOT_NODE(OID_AUTO, security, CTLFLAG_RW | CTLFLAG_MPSAFE, 0, 
++     "Security");
+++>>>>>>> freebsd/current/master
+  #ifdef REGRESSION
+- SYSCTL_ROOT_NODE(OID_AUTO, regression, CTLFLAG_RW, 0,
+-      "Regression test MIB");
++ SYSCTL_ROOT_NODE(OID_AUTO, regression, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Regression test MIB");
+  #endif
+  
+  SYSCTL_STRING(_kern, OID_AUTO, ident, CTLFLAG_RD|CTLFLAG_MPSAFE,
+diff --cc sys/kern/kern_racct.c
+index 611b630c0112,21da6049b603..000000000000
+--- a/sys/kern/kern_racct.c
++++ b/sys/kern/kern_racct.c
+@@@ -79,15 -79,8 +79,20 @@@ bool __read_frequently racct_enable = f
+  bool __read_frequently racct_enable = true;
+  #endif
+  
+++<<<<<<< HEAD
+ +SYSCTL_NODE(_kern, OID_AUTO, racct, CTLFLAG_RW, 0, "Resource Accounting");
+ +/*
+ + * XXXOP 1
+ + *
+ + * force conflict in git, to prevent the changing of this tunable as RW
+ + *
+ + * More details under this link:
+ + * https://reviews.freebsd.org/D2369#inline-15370
+ + */
+++=======
++ SYSCTL_NODE(_kern, OID_AUTO, racct, CTLFLAG_RW | CTLFLAG_MPSAFE, 0,
++     "Resource Accounting");
+++>>>>>>> freebsd/current/master
+  SYSCTL_BOOL(_kern_racct, OID_AUTO, enable, CTLFLAG_RDTUN, &racct_enable,
+      0, "Enable RACCT/RCTL");
+  SYSCTL_UINT(_kern_racct, OID_AUTO, pcpu_threshold, CTLFLAG_RW, &pcpu_threshold,
+diff --cc sys/vm/vm_phys.c
+index 29831c66d926,991241d92c9a..000000000000
+--- a/sys/vm/vm_phys.c
++++ b/sys/vm/vm_phys.c
+@@@ -148,13 -148,16 +148,22 @@@ CTASSERT(VM_LOWMEM_BOUNDARY < VM_DMA32_
+  #endif
+  
+  static int sysctl_vm_phys_free(SYSCTL_HANDLER_ARGS);
+- SYSCTL_OID(_vm, OID_AUTO, phys_free, CTLTYPE_STRING | CTLFLAG_RD,
+-     NULL, 0, sysctl_vm_phys_free, "A", "Phys Free Info");
++ SYSCTL_OID(_vm, OID_AUTO, phys_free,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_NEEDGIANT, NULL, 0,
++     sysctl_vm_phys_free, "A",
++     "Phys Free Info");
+  
+  static int sysctl_vm_phys_segs(SYSCTL_HANDLER_ARGS);
+++<<<<<<< HEAD
+ +SYSCTL_OID(_vm, OID_AUTO, phys_segs, CTLTYPE_STRING | CTLFLAG_RD |
+ +    CTLFLAG_ROOTONLY,
+ +    NULL, 0, sysctl_vm_phys_segs, "A", "Phys Seg Info");
+++=======
++ SYSCTL_OID(_vm, OID_AUTO, phys_segs,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_NEEDGIANT, NULL, 0,
++     sysctl_vm_phys_segs, "A",
++     "Phys Seg Info");
+++>>>>>>> freebsd/current/master
+  
+  #ifdef NUMA
+  static int sysctl_vm_phys_locality(SYSCTL_HANDLER_ARGS);
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/amd64/amd64/efirt_machdep.c
+	modified:   sys/amd64/amd64/machdep.c
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/amd64/amd64/prof_machdep.c
+	modified:   sys/amd64/linux32/linux32_sysvec.c
+	modified:   sys/arm/altera/socfpga/socfpga_rstmgr.c
+	modified:   sys/arm/arm/busdma_machdep.c
+	modified:   sys/arm/arm/cpuinfo.c
+	modified:   sys/arm/arm/machdep_boot.c
+	modified:   sys/arm/arm/pmap-v6.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_audio.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_bsc.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_cpufreq.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_fbd.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_gpio.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_pwm.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_rng.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_spi.c
+	modified:   sys/arm/freescale/imx/imx6_anatop.c
+	modified:   sys/arm/freescale/imx/imx_machdep.c
+	modified:   sys/arm/mv/mv_thermal.c
+	modified:   sys/arm/mv/mv_ts.c
+	modified:   sys/arm/nvidia/tegra124/tegra124_coretemp.c
+	modified:   sys/arm/nvidia/tegra_soctherm.c
+	modified:   sys/arm/ti/am335x/am335x_ehrpwm.c
+	modified:   sys/arm/ti/am335x/am335x_lcd.c
+	modified:   sys/arm/ti/am335x/am335x_musb.c
+	modified:   sys/arm/ti/cpsw/if_cpsw.c
+	modified:   sys/arm/ti/ti_adc.c
+	modified:   sys/arm/ti/ti_pruss.c
+	modified:   sys/arm/ti/twl/twl_clks.c
+	modified:   sys/arm/ti/twl/twl_vreg.c
+	modified:   sys/arm/xilinx/zy7_devcfg.c
+	modified:   sys/arm/xilinx/zy7_slcr.c
+	modified:   sys/arm64/arm64/busdma_bounce.c
+	modified:   sys/arm64/arm64/identcpu.c
+	modified:   sys/arm64/arm64/pmap.c
+	modified:   sys/arm64/include/pmap.h
+	modified:   sys/cam/ata/ata_da.c
+	modified:   sys/cam/ata/ata_pmp.c
+	modified:   sys/cam/cam.c
+	modified:   sys/cam/cam_iosched.c
+	modified:   sys/cam/ctl/ctl.c
+	modified:   sys/cam/ctl/ctl_backend_block.c
+	modified:   sys/cam/ctl/ctl_frontend_cam_sim.c
+	modified:   sys/cam/ctl/ctl_frontend_iscsi.c
+	modified:   sys/cam/ctl/ctl_ha.c
+	modified:   sys/cam/nvme/nvme_da.c
+	modified:   sys/cam/scsi/scsi_all.c
+	modified:   sys/cam/scsi/scsi_cd.c
+	modified:   sys/cam/scsi/scsi_da.c
+	modified:   sys/cam/scsi/scsi_enc.c
+	modified:   sys/cam/scsi/scsi_sa.c
+	modified:   sys/cam/scsi/scsi_xpt.c
+	modified:   sys/cddl/compat/opensolaris/kern/opensolaris_kstat.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/dtrace/fasttrap.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/ddt.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dmu_zfetch.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dsl_scan.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/metaslab.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/trim_map.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/txg.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev_cache.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev_indirect.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev_mirror.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_vfsops.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zio.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zvol.c
+	modified:   sys/cddl/dev/dtrace/dtrace_sysctl.c
+	modified:   sys/cddl/dev/dtrace/dtrace_test.c
+	modified:   sys/cddl/dev/profile/profile.c
+	modified:   sys/compat/ia32/ia32_sysvec.c
+	modified:   sys/compat/linux/linux_mib.c
+	modified:   sys/compat/ndis/subr_ntoskrnl.c
+	modified:   sys/compat/x86bios/x86bios.c
+	modified:   sys/contrib/rdma/krping/krping_dev.c
+	modified:   sys/crypto/ccp/ccp_hardware.c
+	modified:   sys/ddb/db_capture.c
+	modified:   sys/ddb/db_main.c
+	modified:   sys/ddb/db_script.c
+	modified:   sys/ddb/db_textdump.c
+	modified:   sys/dev/aac/aac.c
+	modified:   sys/dev/aacraid/aacraid.c
+	modified:   sys/dev/acpi_support/acpi_asus.c
+	modified:   sys/dev/acpi_support/acpi_asus_wmi.c
+	modified:   sys/dev/acpi_support/acpi_fujitsu.c
+	modified:   sys/dev/acpi_support/acpi_hp.c
+	modified:   sys/dev/acpi_support/acpi_ibm.c
+	modified:   sys/dev/acpi_support/acpi_panasonic.c
+	modified:   sys/dev/acpi_support/acpi_rapidstart.c
+	modified:   sys/dev/acpi_support/acpi_sony.c
+	modified:   sys/dev/acpi_support/acpi_toshiba.c
+	modified:   sys/dev/acpi_support/atk0110.c
+	modified:   sys/dev/acpica/acpi.c
+	modified:   sys/dev/acpica/acpi_acad.c
+	modified:   sys/dev/acpica/acpi_battery.c
+	modified:   sys/dev/acpica/acpi_cpu.c
+	modified:   sys/dev/acpica/acpi_dock.c
+	modified:   sys/dev/acpica/acpi_ec.c
+	modified:   sys/dev/acpica/acpi_smbat.c
+	modified:   sys/dev/acpica/acpi_thermal.c
+	modified:   sys/dev/acpica/acpi_timer.c
+	modified:   sys/dev/acpica/acpi_video.c
+	modified:   sys/dev/adb/adb_kbd.c
+	modified:   sys/dev/adb/adb_mouse.c
+	modified:   sys/dev/ae/if_ae.c
+	modified:   sys/dev/age/if_age.c
+	modified:   sys/dev/ahci/ahci.c
+	modified:   sys/dev/aic7xxx/aic79xx_osm.c
+	modified:   sys/dev/alc/if_alc.c
+	modified:   sys/dev/ale/if_ale.c
+	modified:   sys/dev/altera/atse/if_atse.c
+	modified:   sys/dev/altera/jtag_uart/altera_jtag_uart_cons.c
+	modified:   sys/dev/amd_ecc_inject/ecc_inject.c
+	modified:   sys/dev/amdtemp/amdtemp.c
+	modified:   sys/dev/amr/amr.c
+	modified:   sys/dev/an/if_an.c
+	modified:   sys/dev/asmc/asmc.c
+	modified:   sys/dev/ata/ata-all.c
+	modified:   sys/dev/atkbdc/psm.c
+	modified:   sys/dev/bce/if_bce.c
+	modified:   sys/dev/bfe/if_bfe.c
+	modified:   sys/dev/bge/if_bge.c
+	modified:   sys/dev/bhnd/cores/pmu/bhnd_pmu.c
+	modified:   sys/dev/bktr/bktr_os.c
+	modified:   sys/dev/bnxt/bnxt_sysctl.c
+	modified:   sys/dev/bwn/if_bwn.c
+	modified:   sys/dev/bxe/bxe.c
+	modified:   sys/dev/cadence/if_cgem.c
+	modified:   sys/dev/cardbus/cardbus.c
+	modified:   sys/dev/coretemp/coretemp.c
+	modified:   sys/dev/cxgb/cxgb_main.c
+	modified:   sys/dev/cxgb/cxgb_sge.c
+	modified:   sys/dev/cxgbe/crypto/t4_crypto.c
+	modified:   sys/dev/cxgbe/cxgbei/cxgbei.c
+	modified:   sys/dev/cxgbe/cxgbei/icl_cxgbei.c
+	modified:   sys/dev/cxgbe/iw_cxgbe/cm.c
+	modified:   sys/dev/cxgbe/t4_main.c
+	modified:   sys/dev/cxgbe/t4_sge.c
+	modified:   sys/dev/dcons/dcons_os.c
+	modified:   sys/dev/efidev/efirt.c
+	modified:   sys/dev/ena/ena_sysctl.c
+	modified:   sys/dev/et/if_et.c
+	modified:   sys/dev/etherswitch/mtkswitch/mtkswitch.c
+	modified:   sys/dev/etherswitch/rtl8366/rtl8366rb.c
+	modified:   sys/dev/evdev/evdev.c
+	modified:   sys/dev/extres/clk/clk.c
+	modified:   sys/dev/extres/regulator/regulator.c
+	modified:   sys/dev/fb/vesa.c
+	modified:   sys/dev/fdc/fdc.c
+	modified:   sys/dev/fdt/fdt_common.c
+	modified:   sys/dev/firewire/firewire.c
+	modified:   sys/dev/firewire/fwmem.c
+	modified:   sys/dev/firewire/if_fwe.c
+	modified:   sys/dev/firewire/if_fwip.c
+	modified:   sys/dev/firewire/sbp.c
+	modified:   sys/dev/fxp/if_fxp.c
+	modified:   sys/dev/gpio/gpiobacklight.c
+	modified:   sys/dev/hifn/hifn7751.c
+	modified:   sys/dev/hptmv/hptproc.c
+	modified:   sys/dev/hwpmc/hwpmc_mod.c
+	modified:   sys/dev/hyperv/netvsc/if_hn.c
+	modified:   sys/dev/if_ndis/if_ndis_usb.c
+	modified:   sys/dev/iicbus/ad7417.c
+	modified:   sys/dev/iicbus/ad7418.c
+	modified:   sys/dev/iicbus/ads111x.c
+	modified:   sys/dev/iicbus/adt746x.c
+	modified:   sys/dev/iicbus/ds1631.c
+	modified:   sys/dev/iicbus/ds1775.c
+	modified:   sys/dev/iicbus/max6690.c
+	modified:   sys/dev/ioat/ioat.c
+	modified:   sys/dev/ioat/ioat_test.c
+	modified:   sys/dev/ipmi/ipmi.c
+	modified:   sys/dev/ipw/if_ipw.c
+	modified:   sys/dev/isci/isci_sysctl.c
+	modified:   sys/dev/iscsi_initiator/isc_sm.c
+	modified:   sys/dev/iscsi_initiator/iscsi.c
+	modified:   sys/dev/iser/icl_iser.c
+	modified:   sys/dev/isl/isl.c
+	modified:   sys/dev/isp/isp_freebsd.c
+	modified:   sys/dev/iwi/if_iwi.c
+	modified:   sys/dev/jme/if_jme.c
+	modified:   sys/dev/liquidio/lio_sysctl.c
+	modified:   sys/dev/malo/if_malo.c
+	modified:   sys/dev/malo/if_malo_pci.c
+	modified:   sys/dev/mfi/mfi.c
+	modified:   sys/dev/mge/if_mge.c
+	modified:   sys/dev/mlx4/mlx4_core/mlx4_main.c
+	modified:   sys/dev/mlx4/mlx4_en/mlx4_en_netdev.c
+	modified:   sys/dev/mlx5/mlx5_core/mlx5_main.c
+	modified:   sys/dev/mlx5/mlx5_en/mlx5_en_ethtool.c
+	modified:   sys/dev/mlx5/mlx5_en/mlx5_en_hw_tls.c
+	modified:   sys/dev/mlx5/mlx5_en/mlx5_en_main.c
+	modified:   sys/dev/mlx5/mlx5_en/mlx5_en_rl.c
+	modified:   sys/dev/mlx5/mlx5_ib/mlx5_ib_cong.c
+	modified:   sys/dev/mmc/mmc.c
+	modified:   sys/dev/mmc/mmcsd.c
+	modified:   sys/dev/mpr/mpr.c
+	modified:   sys/dev/mps/mps.c
+	modified:   sys/dev/mpt/mpt_raid.c
+	modified:   sys/dev/mrsas/mrsas.c
+	modified:   sys/dev/msk/if_msk.c
+	modified:   sys/dev/mwl/if_mwl.c
+	modified:   sys/dev/mwl/mwlhal.c
+	modified:   sys/dev/mxge/if_mxge.c
+	modified:   sys/dev/neta/if_mvneta.c
+	modified:   sys/dev/netmap/netmap.c
+	modified:   sys/dev/nfe/if_nfe.c
+	modified:   sys/dev/nge/if_nge.c
+	modified:   sys/dev/ntb/if_ntb/if_ntb.c
+	modified:   sys/dev/ntb/ntb.c
+	modified:   sys/dev/ntb/ntb_hw/ntb_hw_intel.c
+	modified:   sys/dev/ntb/ntb_transport.c
+	modified:   sys/dev/ntb/test/ntb_tool.c
+	modified:   sys/dev/nvd/nvd.c
+	modified:   sys/dev/nvme/nvme_sysctl.c
+	modified:   sys/dev/oce/oce_sysctl.c
+	modified:   sys/dev/ocs_fc/ocs_ioctl.c
+	modified:   sys/dev/ow/ow.c
+	modified:   sys/dev/ow/ow_temp.c
+	modified:   sys/dev/pccard/pccard.c
+	modified:   sys/dev/pccbb/pccbb.c
+	modified:   sys/dev/pccbb/pccbb_isa.c
+	modified:   sys/dev/puc/puc.c
+	modified:   sys/dev/qlnx/qlnxe/qlnx_os.c
+	modified:   sys/dev/qlnx/qlnxr/qlnxr_os.c
+	modified:   sys/dev/qlxgb/qla_os.c
+	modified:   sys/dev/qlxgbe/ql_hw.c
+	modified:   sys/dev/qlxgbe/ql_os.c
+	modified:   sys/dev/qlxge/qls_hw.c
+	modified:   sys/dev/qlxge/qls_os.c
+	modified:   sys/dev/re/if_re.c
+	modified:   sys/dev/rndtest/rndtest.c
+	modified:   sys/dev/rt/if_rt.c
+	modified:   sys/dev/safe/safe.c
+	modified:   sys/dev/sdhci/sdhci.c
+	modified:   sys/dev/sfxge/sfxge.c
+	modified:   sys/dev/sfxge/sfxge_ev.c
+	modified:   sys/dev/sfxge/sfxge_port.c
+	modified:   sys/dev/sfxge/sfxge_rx.c
+	modified:   sys/dev/sfxge/sfxge_tx.c
+	modified:   sys/dev/sk/if_sk.c
+	modified:   sys/dev/sound/clone.c
+	modified:   sys/dev/sound/midi/midi.c
+	modified:   sys/dev/sound/midi/sequencer.c
+	modified:   sys/dev/sound/pci/atiixp.c
+	modified:   sys/dev/sound/pci/emu10kx.c
+	modified:   sys/dev/sound/pci/es137x.c
+	modified:   sys/dev/sound/pci/hda/hdaa.c
+	modified:   sys/dev/sound/pci/hda/hdac.c
+	modified:   sys/dev/sound/pci/maestro.c
+	modified:   sys/dev/sound/pci/via8233.c
+	modified:   sys/dev/sound/pcm/ac97.c
+	modified:   sys/dev/sound/pcm/channel.c
+	modified:   sys/dev/sound/pcm/feeder_eq.c
+	modified:   sys/dev/sound/pcm/feeder_rate.c
+	modified:   sys/dev/sound/pcm/mixer.c
+	modified:   sys/dev/sound/pcm/sndstat.c
+	modified:   sys/dev/sound/pcm/sound.c
+	modified:   sys/dev/sound/pcm/vchan.c
+	modified:   sys/dev/ste/if_ste.c
+	modified:   sys/dev/stge/if_stge.c
+	modified:   sys/dev/syscons/syscons.c
+	modified:   sys/dev/tsec/if_tsec.c
+	modified:   sys/dev/twa/tw_osl_freebsd.c
+	modified:   sys/dev/twe/twe_freebsd.c
+	modified:   sys/dev/tws/tws.c
+	modified:   sys/dev/uart/uart_core.c
+	modified:   sys/dev/ubsec/ubsec.c
+	modified:   sys/dev/vge/if_vge.c
+	modified:   sys/dev/virtio/block/virtio_blk.c
+	modified:   sys/dev/virtio/network/if_vtnet.c
+	modified:   sys/dev/vmware/pvscsi/pvscsi.c
+	modified:   sys/dev/vmware/vmxnet3/if_vmx.c
+	modified:   sys/dev/vr/if_vr.c
+	modified:   sys/dev/vt/vt_core.c
+	modified:   sys/dev/vte/if_vte.c
+	modified:   sys/dev/watchdog/watchdog.c
+	modified:   sys/dev/wbwd/wbwd.c
+	modified:   sys/dev/wi/if_wi.c
+	modified:   sys/fs/cd9660/cd9660_vnops.c
+	modified:   sys/fs/devfs/devfs_devs.c
+	modified:   sys/fs/ext2fs/ext2_alloc.c
+	modified:   sys/fs/ext2fs/ext2_lookup.c
+	modified:   sys/fs/msdosfs/msdosfs_vnops.c
+	modified:   sys/fs/nfs/nfs_commonport.c
+	modified:   sys/fs/nfsclient/nfs_clnfsiod.c
+	modified:   sys/fs/nfsserver/nfs_fha_new.c
+	modified:   sys/fs/nfsserver/nfs_nfsdport.c
+	modified:   sys/fs/smbfs/smbfs_vfsops.c
+	modified:   sys/fs/tmpfs/tmpfs_subr.c
+	modified:   sys/gdb/gdb_main.c
+	modified:   sys/gdb/netgdb.c
+	modified:   sys/geom/cache/g_cache.c
+	modified:   sys/geom/concat/g_concat.c
+	modified:   sys/geom/gate/g_gate.c
+	modified:   sys/geom/geom_dev.c
+	modified:   sys/geom/geom_disk.c
+	modified:   sys/geom/journal/g_journal.c
+	modified:   sys/geom/label/g_label.c
+	modified:   sys/geom/label/g_label.h
+	modified:   sys/geom/linux_lvm/g_linux_lvm.c
+	modified:   sys/geom/mirror/g_mirror.c
+	modified:   sys/geom/mountver/g_mountver.c
+	modified:   sys/geom/multipath/g_multipath.c
+	modified:   sys/geom/nop/g_nop.c
+	modified:   sys/geom/part/g_part.c
+	modified:   sys/geom/part/g_part_gpt.c
+	modified:   sys/geom/part/g_part_ldm.c
+	modified:   sys/geom/part/g_part_mbr.c
+	modified:   sys/geom/raid/g_raid.c
+	modified:   sys/geom/raid/g_raid.h
+	modified:   sys/geom/raid3/g_raid3.c
+	modified:   sys/geom/shsec/g_shsec.c
+	modified:   sys/geom/stripe/g_stripe.c
+	modified:   sys/geom/uzip/g_uzip.c
+	modified:   sys/geom/vinum/geom_vinum.c
+	modified:   sys/geom/virstor/g_virstor.c
+	modified:   sys/geom/zero/g_zero.c
+	modified:   sys/gnu/gcov/gcov_subr.c
+	modified:   sys/i386/i386/elan-mmcr.c
+	modified:   sys/i386/i386/longrun.c
+	modified:   sys/i386/i386/machdep.c
+	modified:   sys/i386/i386/mp_clock.c
+	modified:   sys/i386/i386/pmap_base.c
+	modified:   sys/i386/i386/prof_machdep.c
+	modified:   sys/kern/bus_if.m
+	modified:   sys/kern/imgact_binmisc.c
+	modified:   sys/kern/kern_acct.c
+	modified:   sys/kern/kern_clock.c
+	modified:   sys/kern/kern_cons.c
+	modified:   sys/kern/kern_cpu.c
+	modified:   sys/kern/kern_et.c
+	modified:   sys/kern/kern_fail.c
+	modified:   sys/kern/kern_ffclock.c
+	modified:   sys/kern/kern_intr.c
+	modified:   sys/kern/kern_jail.c
+	modified:   sys/kern/kern_kcov.c
+	modified:   sys/kern/kern_ktr.c
+	modified:   sys/kern/kern_ktrace.c
+	modified:   sys/kern/kern_linker.c
+	modified:   sys/kern/kern_malloc.c
+	modified:   sys/kern/kern_mbuf.c
+	modified:   sys/kern/kern_mutex.c
+	modified:   sys/kern/kern_ntptime.c
+	modified:   sys/kern/kern_pmc.c
+	modified:   sys/kern/kern_poll.c
+	modified:   sys/kern/kern_proc.c
+	modified:   sys/kern/kern_prot.c
+	modified:   sys/kern/kern_rwlock.c
+	modified:   sys/kern/kern_sendfile.c
+	modified:   sys/kern/kern_shutdown.c
+	modified:   sys/kern/kern_sig.c
+	modified:   sys/kern/kern_switch.c
+	modified:   sys/kern/kern_sx.c
+	modified:   sys/kern/kern_tc.c
+	modified:   sys/kern/kern_thr.c
+	modified:   sys/kern/kern_umtx.c
+	modified:   sys/kern/posix4_mib.c
+	modified:   sys/kern/sched_4bsd.c
+	modified:   sys/kern/sched_ule.c
+	modified:   sys/kern/subr_bus.c
+	modified:   sys/kern/subr_devstat.c
+	modified:   sys/kern/subr_epoch.c
+	modified:   sys/kern/subr_kdb.c
+	modified:   sys/kern/subr_lock.c
+	modified:   sys/kern/subr_param.c
+	modified:   sys/kern/subr_prof.c
+	modified:   sys/kern/subr_rman.c
+	modified:   sys/kern/subr_rtc.c
+	modified:   sys/kern/subr_sleepqueue.c
+	modified:   sys/kern/subr_smp.c
+	modified:   sys/kern/subr_smr.c
+	modified:   sys/kern/subr_stats.c
+	modified:   sys/kern/subr_turnstile.c
+	modified:   sys/kern/subr_witness.c
+	modified:   sys/kern/sys_socket.c
+	modified:   sys/kern/uipc_accf.c
+	modified:   sys/kern/uipc_ktls.c
+	modified:   sys/kern/uipc_mbuf.c
+	modified:   sys/kern/uipc_mqueue.c
+	modified:   sys/kern/uipc_sockbuf.c
+	modified:   sys/kern/uipc_socket.c
+	modified:   sys/kern/uipc_usrreq.c
+	modified:   sys/kern/vfs_aio.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/libkern/iconv.c
+	modified:   sys/mips/atheros/ar531x/ar5315_machdep.c
+	modified:   sys/mips/atheros/if_arge.c
+	modified:   sys/mips/cavium/octe/mv88e61xxphy.c
+	modified:   sys/mips/cavium/octeon_machdep.c
+	modified:   sys/mips/cavium/usb/octusb.c
+	modified:   sys/mips/ingenic/jz4780_aic.c
+	modified:   sys/mips/mips/busdma_machdep.c
+	modified:   sys/mips/mips/pmap.c
+	modified:   sys/mips/mips/tick.c
+	modified:   sys/mips/nlm/cms.c
+	modified:   sys/mips/nlm/dev/net/xlpge.c
+	modified:   sys/mips/nlm/tick.c
+	modified:   sys/net/bpf.c
+	modified:   sys/net/bpf_jitter.c
+	modified:   sys/net/debugnet.c
+	modified:   sys/net/ieee8023ad_lacp.c
+	modified:   sys/net/if.c
+	modified:   sys/net/if_bridge.c
+	modified:   sys/net/if_enc.c
+	modified:   sys/net/if_epair.c
+	modified:   sys/net/if_ethersubr.c
+	modified:   sys/net/if_gif.c
+	modified:   sys/net/if_gre.c
+	modified:   sys/net/if_lagg.c
+	modified:   sys/net/if_me.c
+	modified:   sys/net/if_mib.c
+	modified:   sys/net/if_stf.c
+	modified:   sys/net/if_tuntap.c
+	modified:   sys/net/if_var.h
+	modified:   sys/net/if_vxlan.c
+	modified:   sys/net/iflib.c
+	modified:   sys/net/netisr.c
+	modified:   sys/net/raw_cb.c
+	modified:   sys/net/route.c
+	modified:   sys/net/rss_config.c
+	modified:   sys/net/rtsock.c
+	modified:   sys/net/vnet.h
+	modified:   sys/netgraph/bluetooth/common/ng_bluetooth.c
+	modified:   sys/netgraph/bluetooth/socket/ng_btsocket.c
+	modified:   sys/netgraph/bluetooth/socket/ng_btsocket_hci_raw.c
+	modified:   sys/netgraph/bluetooth/socket/ng_btsocket_l2cap.c
+	modified:   sys/netgraph/bluetooth/socket/ng_btsocket_l2cap_raw.c
+	modified:   sys/netgraph/bluetooth/socket/ng_btsocket_rfcomm.c
+	modified:   sys/netgraph/bluetooth/socket/ng_btsocket_sco.c
+	modified:   sys/netgraph/ng_base.c
+	modified:   sys/netgraph/ng_iface.c
+	modified:   sys/netgraph/ng_mppc.c
+	modified:   sys/netgraph/ng_pptpgre.c
+	modified:   sys/netgraph/ng_socket.c
+	modified:   sys/netinet/accf_http.c
+	modified:   sys/netinet/cc/cc.c
+	modified:   sys/netinet/cc/cc_cdg.c
+	modified:   sys/netinet/cc/cc_chd.c
+	modified:   sys/netinet/cc/cc_dctcp.c
+	modified:   sys/netinet/cc/cc_hd.c
+	modified:   sys/netinet/cc/cc_htcp.c
+	modified:   sys/netinet/cc/cc_newreno.c
+	modified:   sys/netinet/cc/cc_vegas.c
+	modified:   sys/netinet/if_ether.c
+	modified:   sys/netinet/in_mcast.c
+	modified:   sys/netinet/in_pcb.c
+	modified:   sys/netinet/in_proto.c
+	modified:   sys/netinet/ip_divert.c
+	modified:   sys/netinet/ip_id.c
+	modified:   sys/netinet/ip_input.c
+	modified:   sys/netinet/ip_mroute.c
+	modified:   sys/netinet/ip_reass.c
+	modified:   sys/netinet/libalias/alias.c
+	modified:   sys/netinet/netdump/netdump_client.c
+	modified:   sys/netinet/raw_ip.c
+	modified:   sys/netinet/siftr.c
+	modified:   sys/netinet/tcp_fastopen.c
+	modified:   sys/netinet/tcp_hostcache.c
+	modified:   sys/netinet/tcp_hpts.c
+	modified:   sys/netinet/tcp_input.c
+	modified:   sys/netinet/tcp_log_buf.c
+	modified:   sys/netinet/tcp_ratelimit.c
+	modified:   sys/netinet/tcp_ratelimit.h
+	modified:   sys/netinet/tcp_reass.c
+	modified:   sys/netinet/tcp_sack.c
+	modified:   sys/netinet/tcp_stacks/bbr.c
+	modified:   sys/netinet/tcp_stacks/rack.c
+	modified:   sys/netinet/tcp_stats.c
+	modified:   sys/netinet/tcp_subr.c
+	modified:   sys/netinet/tcp_syncache.c
+	modified:   sys/netinet/tcp_timer.c
+	modified:   sys/netinet/tcp_timewait.c
+	modified:   sys/netinet/udp_usrreq.c
+	modified:   sys/netinet6/frag6.c
+	modified:   sys/netinet6/in6_mcast.c
+	modified:   sys/netinet6/in6_proto.c
+	modified:   sys/netinet6/in6_src.c
+	modified:   sys/netinet6/ip6_input.c
+	modified:   sys/netinet6/ip6_mroute.c
+	modified:   sys/netinet6/mld6.c
+	modified:   sys/netinet6/udp6_usrreq.c
+	modified:   sys/netipsec/ipsec.c
+	modified:   sys/netipsec/key.c
+	modified:   sys/netipsec/keysock.c
+	modified:   sys/netpfil/ipfw/dn_aqm_codel.c
+	modified:   sys/netpfil/ipfw/dn_aqm_pie.c
+	modified:   sys/netpfil/ipfw/dn_sched_fq_codel.c
+	modified:   sys/netpfil/ipfw/dn_sched_fq_pie.c
+	modified:   sys/netpfil/ipfw/ip_dn_io.c
+	modified:   sys/netpfil/ipfw/ip_fw2.c
+	modified:   sys/netpfil/ipfw/ip_fw_dynamic.c
+	modified:   sys/netpfil/ipfw/ip_fw_pfil.c
+	modified:   sys/netpfil/ipfw/nat64/ip_fw_nat64.c
+	modified:   sys/netsmb/smb_conn.c
+	modified:   sys/nfs/nfs_fha.c
+	modified:   sys/nlm/nlm_prot_impl.c
+	modified:   sys/ofed/drivers/infiniband/ulp/sdp/sdp_main.c
+	modified:   sys/opencrypto/ktls_ocf.c
+	modified:   sys/powerpc/amigaone/cpld_x5000.c
+	modified:   sys/powerpc/fpu/fpu_emu.c
+	modified:   sys/powerpc/ofw/ofw_syscons.c
+	modified:   sys/powerpc/powermac/atibl.c
+	modified:   sys/powerpc/powermac/fcu.c
+	modified:   sys/powerpc/powermac/nvbl.c
+	modified:   sys/powerpc/powermac/pmu.c
+	modified:   sys/powerpc/powermac/smu.c
+	modified:   sys/powerpc/powernv/opal_sensor.c
+	modified:   sys/powerpc/powerpc/busdma_machdep.c
+	modified:   sys/powerpc/powerpc/elf32_machdep.c
+	modified:   sys/powerpc/ps3/ps3disk.c
+	modified:   sys/riscv/riscv/busdma_bounce.c
+	modified:   sys/riscv/riscv/pmap.c
+	modified:   sys/rpc/rpcsec_gss/svc_rpcsec_gss.c
+	modified:   sys/rpc/svc.c
+	modified:   sys/security/audit/audit.c
+	modified:   sys/security/mac/mac_framework.c
+	modified:   sys/security/mac_biba/mac_biba.c
+	modified:   sys/security/mac_bsdextended/mac_bsdextended.c
+	modified:   sys/security/mac_ifoff/mac_ifoff.c
+	modified:   sys/security/mac_lomac/mac_lomac.c
+	modified:   sys/security/mac_mls/mac_mls.c
+	modified:   sys/security/mac_ntpd/mac_ntpd.c
+	modified:   sys/security/mac_partition/mac_partition.c
+	modified:   sys/security/mac_portacl/mac_portacl.c
+	modified:   sys/security/mac_seeotheruids/mac_seeotheruids.c
+	modified:   sys/security/mac_stub/mac_stub.c
+	modified:   sys/security/mac_test/mac_test.c
+	modified:   sys/security/mac_veriexec/mac_veriexec.c
+	modified:   sys/security/mac_veriexec/veriexec_fingerprint.c
+	modified:   sys/sys/jail.h
+	modified:   sys/sys/queue.h
+	modified:   sys/sys/sysctl.h
+	modified:   sys/tests/epoch/epoch_test.c
+	modified:   sys/tests/framework/kern_testfrwk.c
+	modified:   sys/ufs/ffs/ffs_alloc.c
+	modified:   sys/ufs/ffs/ffs_softdep.c
+	modified:   sys/ufs/ufs/ufs_dirhash.c
+	modified:   sys/ufs/ufs/ufs_vnops.c
+	modified:   sys/vm/memguard.c
+	modified:   sys/vm/redzone.c
+	modified:   sys/vm/swap_pager.c
+	modified:   sys/vm/uma_core.c
+	modified:   sys/vm/vm_meter.c
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vm_page.c
+	modified:   sys/vm/vm_pageout.c
+	modified:   sys/vm/vm_reserv.c
+	modified:   sys/x86/bios/vpd.c
+	modified:   sys/x86/cpufreq/hwpstate_intel.c
+	modified:   sys/x86/iommu/intel_utils.c
+	modified:   sys/x86/isa/clock.c
+	modified:   sys/x86/x86/busdma_bounce.c
+	modified:   sys/x86/x86/cpu_machdep.c
+	modified:   sys/x86/x86/intr_machdep.c
+	modified:   sys/x86/x86/local_apic.c
+	modified:   sys/x86/x86/mca.c
+	modified:   sys/x86/x86/mp_watchdog.c
+	modified:   sys/x86/x86/mp_x86.c
+	modified:   sys/x86/x86/tsc.c
+	modified:   tests/sys/netinet/fibs_test.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/dev/kbd/kbd.c
+	both modified:   sys/geom/geom_kern.c
+	both modified:   sys/kern/imgact_elf.c
+	both modified:   sys/kern/kern_fork.c
+	both modified:   sys/kern/kern_mib.c
+	both modified:   sys/kern/kern_racct.c
+	both modified:   sys/vm/vm_phys.c
+
+HEAD is now at 99da10618ecd Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 99da10618ecd Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
