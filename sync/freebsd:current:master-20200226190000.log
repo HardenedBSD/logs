@@ -1,0 +1,224 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating ae114f3d6cd6..d1afc8d1335c
+Fast-forward
+ lib/libc/Makefile                                  |   1 -
+ lib/libc/gdtoa/machdep_ldisQ.c                     |   2 +-
+ lib/libc/gen/tls.c                                 |   5 +-
+ lib/libc/sparc64/Makefile.inc                      |  13 -
+ lib/libc/sparc64/SYS.h                             |  87 --
+ lib/libc/sparc64/Symbol.map                        |  86 --
+ lib/libc/sparc64/_fpmath.h                         |  59 --
+ lib/libc/sparc64/arith.h                           |  19 -
+ lib/libc/sparc64/fpu/Makefile.inc                  |   8 -
+ lib/libc/sparc64/fpu/fpu.c                         | 463 -----------
+ lib/libc/sparc64/fpu/fpu_add.c                     | 216 -----
+ lib/libc/sparc64/fpu/fpu_arith.h                   |  89 ---
+ lib/libc/sparc64/fpu/fpu_compare.c                 | 179 -----
+ lib/libc/sparc64/fpu/fpu_div.c                     | 270 -------
+ lib/libc/sparc64/fpu/fpu_emu.h                     | 179 -----
+ lib/libc/sparc64/fpu/fpu_explode.c                 | 324 --------
+ lib/libc/sparc64/fpu/fpu_extern.h                  |  87 --
+ lib/libc/sparc64/fpu/fpu_implode.c                 | 542 -------------
+ lib/libc/sparc64/fpu/fpu_mul.c                     | 224 ------
+ lib/libc/sparc64/fpu/fpu_qp.c                      | 165 ----
+ lib/libc/sparc64/fpu/fpu_reg.S                     | 194 -----
+ lib/libc/sparc64/fpu/fpu_reg.h                     |  90 ---
+ lib/libc/sparc64/fpu/fpu_sqrt.c                    | 397 ---------
+ lib/libc/sparc64/fpu/fpu_subr.c                    | 221 -----
+ lib/libc/sparc64/gd_qnan.h                         |  21 -
+ lib/libc/sparc64/gen/Makefile.inc                  |   7 -
+ lib/libc/sparc64/gen/_ctx_start.S                  |  36 -
+ lib/libc/sparc64/gen/_set_tp.c                     |  37 -
+ lib/libc/sparc64/gen/_setjmp.S                     |  79 --
+ lib/libc/sparc64/gen/assym.s                       |  18 -
+ lib/libc/sparc64/gen/fabs.S                        |  35 -
+ lib/libc/sparc64/gen/fixunsdfsi.S                  |  93 ---
+ lib/libc/sparc64/gen/flt_rounds.c                  |  26 -
+ lib/libc/sparc64/gen/fpgetmask.c                   |  22 -
+ lib/libc/sparc64/gen/fpgetround.c                  |  21 -
+ lib/libc/sparc64/gen/fpgetsticky.c                 |  21 -
+ lib/libc/sparc64/gen/fpsetmask.c                   |  28 -
+ lib/libc/sparc64/gen/fpsetround.c                  |  30 -
+ lib/libc/sparc64/gen/infinity.c                    |  17 -
+ lib/libc/sparc64/gen/makecontext.c                 |  91 ---
+ lib/libc/sparc64/gen/setjmp.S                      |  88 --
+ lib/libc/sparc64/gen/signalcontext.c               |  79 --
+ lib/libc/sparc64/gen/sigsetjmp.S                   |  56 --
+ lib/libc/sparc64/static_tls.h                      |  44 -
+ lib/libc/sparc64/sys/Makefile.inc                  |  15 -
+ lib/libc/sparc64/sys/__sparc_sigtramp_setup.c      |  48 --
+ lib/libc/sparc64/sys/__sparc_utrap.c               | 143 ----
+ lib/libc/sparc64/sys/__sparc_utrap_align.c         | 119 ---
+ lib/libc/sparc64/sys/__sparc_utrap_emul.c          | 157 ----
+ lib/libc/sparc64/sys/__sparc_utrap_fp_disabled.S   |  36 -
+ lib/libc/sparc64/sys/__sparc_utrap_gen.S           | 107 ---
+ lib/libc/sparc64/sys/__sparc_utrap_install.c       |  51 --
+ lib/libc/sparc64/sys/__sparc_utrap_private.h       |  68 --
+ lib/libc/sparc64/sys/__sparc_utrap_setup.c         |  58 --
+ lib/libc/sparc64/sys/assym.s                       |  39 -
+ lib/libc/sparc64/sys/cerror.S                      |  59 --
+ lib/libc/sparc64/sys/sigaction1.S                  |  50 --
+ lib/libc/sparc64/sys/sigcode.S                     |  40 -
+ lib/libc/sys/Makefile.inc                          |   8 +-
+ lib/libc/sys/mmap.2                                |  12 +-
+ lib/libc/sys/mprotect.2                            |  16 +-
+ lib/msun/ld128/k_expl.h                            |   3 +-
+ lib/msun/ld128/s_expl.c                            |   5 +-
+ lib/msun/ld128/s_logl.c                            |  21 +-
+ lib/msun/sparc64/Makefile.inc                      |   5 -
+ lib/msun/sparc64/Symbol.map                        |  13 -
+ lib/msun/sparc64/e_sqrt.S                          |  33 -
+ lib/msun/sparc64/e_sqrtf.S                         |  33 -
+ lib/msun/sparc64/fenv.c                            |  55 --
+ lib/msun/sparc64/fenv.h                            | 262 ------
+ libexec/rtld-elf/rtld-libc/Makefile.inc            |   6 -
+ libexec/rtld-elf/rtld.c                            |   2 +-
+ libexec/rtld-elf/rtld_tls.h                        |   9 +-
+ libexec/rtld-elf/sparc64/Makefile.inc              |   3 -
+ libexec/rtld-elf/sparc64/reloc.c                   | 887 ---------------------
+ libexec/rtld-elf/sparc64/rtld_machdep.h            |  79 --
+ libexec/rtld-elf/sparc64/rtld_start.S              | 170 ----
+ share/man/man3/sigevent.3                          |   7 +-
+ share/man/man3/stdarg.3                            |  14 +-
+ share/man/man3/tree.3                              |   5 +-
+ share/man/man5/src.conf.5                          |  10 +-
+ share/mk/bsd.cpu.mk                                |  29 +-
+ share/mk/bsd.endian.mk                             |   1 -
+ share/mk/bsd.lib.mk                                |   5 -
+ share/mk/bsd.sys.mk                                |   4 -
+ share/mk/local.meta.sys.mk                         |   2 +-
+ share/mk/src.opts.mk                               |  43 +-
+ stand/libsa/zfs/zfs.c                              |   5 +-
+ stand/libsa/zfs/zfsimpl.c                          |  76 +-
+ sys/cddl/boot/zfs/zfssubr.c                        |  65 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ioctl.c      |   3 +-
+ sys/contrib/ipfilter/netinet/mlfk_ipl.c            |  16 +-
+ sys/dev/agp/agp_nvidia.c                           |   7 -
+ sys/dev/aic7xxx/aic79xx_osm.h                      |   7 -
+ sys/dev/aic7xxx/aic7xxx_osm.h                      |  17 -
+ sys/dev/aic7xxx/aic_osm_lib.c                      |  17 -
+ sys/dev/aic7xxx/aic_osm_lib.h                      |  43 -
+ sys/dev/mpr/mpr.c                                  |  12 -
+ sys/dev/mpr/mpr_sas.c                              | 406 +---------
+ sys/dev/mpr/mpr_sas_lsi.c                          |  18 +-
+ sys/dev/mpr/mprvar.h                               |  21 -
+ sys/dev/mps/mps_sas.c                              | 250 ------
+ sys/dev/mps/mps_sas_lsi.c                          |  10 +-
+ sys/dev/mps/mpsvar.h                               |  21 -
+ sys/vm/vm_mmap.c                                   |   4 +-
+ 105 files changed, 178 insertions(+), 8321 deletions(-)
+ delete mode 100644 lib/libc/sparc64/Makefile.inc
+ delete mode 100644 lib/libc/sparc64/SYS.h
+ delete mode 100644 lib/libc/sparc64/Symbol.map
+ delete mode 100644 lib/libc/sparc64/_fpmath.h
+ delete mode 100644 lib/libc/sparc64/arith.h
+ delete mode 100644 lib/libc/sparc64/fpu/Makefile.inc
+ delete mode 100644 lib/libc/sparc64/fpu/fpu.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_add.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_arith.h
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_compare.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_div.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_emu.h
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_explode.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_extern.h
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_implode.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_mul.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_qp.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_reg.S
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_reg.h
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_sqrt.c
+ delete mode 100644 lib/libc/sparc64/fpu/fpu_subr.c
+ delete mode 100644 lib/libc/sparc64/gd_qnan.h
+ delete mode 100644 lib/libc/sparc64/gen/Makefile.inc
+ delete mode 100644 lib/libc/sparc64/gen/_ctx_start.S
+ delete mode 100644 lib/libc/sparc64/gen/_set_tp.c
+ delete mode 100644 lib/libc/sparc64/gen/_setjmp.S
+ delete mode 100644 lib/libc/sparc64/gen/assym.s
+ delete mode 100644 lib/libc/sparc64/gen/fabs.S
+ delete mode 100644 lib/libc/sparc64/gen/fixunsdfsi.S
+ delete mode 100644 lib/libc/sparc64/gen/flt_rounds.c
+ delete mode 100644 lib/libc/sparc64/gen/fpgetmask.c
+ delete mode 100644 lib/libc/sparc64/gen/fpgetround.c
+ delete mode 100644 lib/libc/sparc64/gen/fpgetsticky.c
+ delete mode 100644 lib/libc/sparc64/gen/fpsetmask.c
+ delete mode 100644 lib/libc/sparc64/gen/fpsetround.c
+ delete mode 100644 lib/libc/sparc64/gen/infinity.c
+ delete mode 100644 lib/libc/sparc64/gen/makecontext.c
+ delete mode 100644 lib/libc/sparc64/gen/setjmp.S
+ delete mode 100644 lib/libc/sparc64/gen/signalcontext.c
+ delete mode 100644 lib/libc/sparc64/gen/sigsetjmp.S
+ delete mode 100644 lib/libc/sparc64/static_tls.h
+ delete mode 100644 lib/libc/sparc64/sys/Makefile.inc
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_sigtramp_setup.c
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap.c
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_align.c
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_emul.c
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_fp_disabled.S
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_gen.S
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_install.c
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_private.h
+ delete mode 100644 lib/libc/sparc64/sys/__sparc_utrap_setup.c
+ delete mode 100644 lib/libc/sparc64/sys/assym.s
+ delete mode 100644 lib/libc/sparc64/sys/cerror.S
+ delete mode 100644 lib/libc/sparc64/sys/sigaction1.S
+ delete mode 100644 lib/libc/sparc64/sys/sigcode.S
+ delete mode 100644 lib/msun/sparc64/Makefile.inc
+ delete mode 100644 lib/msun/sparc64/Symbol.map
+ delete mode 100644 lib/msun/sparc64/e_sqrt.S
+ delete mode 100644 lib/msun/sparc64/e_sqrtf.S
+ delete mode 100644 lib/msun/sparc64/fenv.c
+ delete mode 100644 lib/msun/sparc64/fenv.h
+ delete mode 100644 libexec/rtld-elf/sparc64/Makefile.inc
+ delete mode 100644 libexec/rtld-elf/sparc64/reloc.c
+ delete mode 100644 libexec/rtld-elf/sparc64/rtld_machdep.h
+ delete mode 100644 libexec/rtld-elf/sparc64/rtld_start.S
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ae114f3d6cd6..d1afc8d1335c  freebsd/current/master -> freebsd/current/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ae114f3d6cd6..d1afc8d1335c  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
