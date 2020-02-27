@@ -34,3 +34,296 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/rubygem-webpack-rails-rails52/pkg-descr
+Removing www/rubygem-webpack-rails-rails52/distinfo
+Removing www/rubygem-webpack-rails-rails52/Makefile
+Removing www/rubygem-gon-rails52/pkg-descr
+Removing www/rubygem-gon-rails52/distinfo
+Removing www/rubygem-gon-rails52/Makefile
+Removing security/rubygem-doorkeeper43/pkg-descr
+Removing security/rubygem-doorkeeper43/distinfo
+Removing security/rubygem-doorkeeper43/Makefile
+Auto-merging security/keybase/Makefile
+Auto-merging security/Makefile
+Auto-merging print/cups-pdf/Makefile
+CONFLICT (content): Merge conflict in print/cups-pdf/Makefile
+Removing net-im/dino/files/patch-nwhitehorn-dino.diff
+Removing misc/sent/files/patch-config.mk
+Removing mail/rspamd/files/patch-fips
+Removing graphics/sxiv/files/patch-Makefile
+Removing graphics/openshadinglanguage/files/patch-src_cmake_modules_FindLLVM.cmake
+Removing devel/rubygem-health_check26-rails52/pkg-descr
+Removing devel/rubygem-health_check26-rails52/distinfo
+Removing devel/rubygem-health_check26-rails52/Makefile
+Removing devel/rubygem-health_check26-rails5/pkg-descr
+Removing devel/rubygem-health_check26-rails5/distinfo
+Removing devel/rubygem-health_check26-rails5/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc print/cups-pdf/Makefile
+index 4bd59f497647,2bcda7b8193e..000000000000
+--- a/print/cups-pdf/Makefile
++++ b/print/cups-pdf/Makefile
+@@@ -15,13 -14,16 +14,21 @@@ COMMENT=	Virtual printer for CUPS to pr
+  LICENSE=	GPLv2
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+++=======
++ LIB_DEPENDS=	libcups.so:print/cups
+++>>>>>>> freebsd/master
+  RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:print/cups
+  
+- WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
++ USES=		ghostscript:run localbase
++ 
++ LIBS+=		-lcups
++ 
++ ETCDIR=		${PREFIX}/etc/cups
+  
+- USES=		ghostscript:run
++ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+  
+  OPTIONS_DEFINE=	DOCS
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/kde.mk
+	modified:   archivers/zstd/Makefile
+	modified:   audio/plasma5-plasma-pa/distinfo
+	modified:   audio/timidity++/Makefile
+	modified:   cad/libredwg/Makefile
+	modified:   deskutils/latte-dock/Makefile
+	modified:   deskutils/latte-dock/distinfo
+	modified:   deskutils/plasma5-milou/distinfo
+	modified:   deskutils/plasma5-sddm-kcm/distinfo
+	modified:   deskutils/sysctlview/Makefile
+	modified:   deskutils/sysctlview/distinfo
+	modified:   deskutils/sysctlview/pkg-descr
+	modified:   deskutils/sysctlview/pkg-plist
+	modified:   devel/Makefile
+	modified:   devel/gdb/Makefile
+	modified:   devel/gdb/files/extrapatch-kgdb
+	modified:   devel/gdb/files/kgdb/arm-fbsd-kern.c
+	modified:   devel/gdb/files/kgdb/fbsd-kvm.c
+	modified:   devel/gdb/files/kgdb/ppcfbsd-kern.c
+	modified:   devel/gradle/Makefile
+	modified:   devel/gradle/distinfo
+	modified:   devel/lazygit/Makefile
+	modified:   devel/lazygit/distinfo
+	new file:   devel/love/files/patch-src_libraries_glslang_glslang_Include_PoolAlloc.h
+	modified:   devel/plasma5-khotkeys/distinfo
+	modified:   devel/plasma5-kwrited/distinfo
+	modified:   devel/plasma5-plasma-sdk/distinfo
+	modified:   devel/py-check-manifest/Makefile
+	modified:   devel/py-check-manifest/distinfo
+	modified:   devel/py-epsilon/Makefile
+	modified:   devel/py-libcst/Makefile
+	modified:   devel/py-libcst/distinfo
+	modified:   devel/py-oslo.limit/Makefile
+	modified:   devel/py-oslo.limit/distinfo
+	new file:   devel/py-pep517/Makefile
+	new file:   devel/py-pep517/distinfo
+	new file:   devel/py-pep517/pkg-descr
+	modified:   devel/py-twine/Makefile
+	modified:   devel/py-twine/distinfo
+	modified:   devel/py-typing/Makefile
+	modified:   devel/py-typing/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-kafka/Makefile
+	modified:   devel/rubygem-aws-sdk-kafka/distinfo
+	modified:   devel/rubygem-aws-sdk-outposts/Makefile
+	modified:   devel/rubygem-aws-sdk-outposts/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-secretsmanager/Makefile
+	modified:   devel/rubygem-aws-sdk-secretsmanager/distinfo
+	modified:   devel/rubygem-aws-sdk-states/Makefile
+	modified:   devel/rubygem-aws-sdk-states/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	deleted:    devel/rubygem-health_check26-rails5/Makefile
+	deleted:    devel/rubygem-health_check26-rails5/distinfo
+	deleted:    devel/rubygem-health_check26-rails5/pkg-descr
+	deleted:    devel/rubygem-health_check26-rails52/Makefile
+	deleted:    devel/rubygem-health_check26-rails52/distinfo
+	deleted:    devel/rubygem-health_check26-rails52/pkg-descr
+	modified:   devel/subversion/Makefile
+	modified:   devel/xbyak/Makefile
+	modified:   devel/xbyak/distinfo
+	new file:   emulators/dolphin-emu/files/patch-Externals_glslang_glslang_Include_PoolAlloc.h
+	modified:   games/onscripter/Makefile
+	modified:   games/onscripter/distinfo
+	modified:   graphics/openshadinglanguage/Makefile
+	modified:   graphics/openshadinglanguage/distinfo
+	deleted:    graphics/openshadinglanguage/files/patch-src_cmake_modules_FindLLVM.cmake
+	modified:   graphics/openshadinglanguage/pkg-plist
+	modified:   graphics/pdfpc/Makefile
+	modified:   graphics/pdfpc/distinfo
+	modified:   graphics/sxiv/Makefile
+	modified:   graphics/sxiv/distinfo
+	deleted:    graphics/sxiv/files/patch-Makefile
+	new file:   graphics/sxiv/pkg-plist
+	modified:   graphics/viewnior/Makefile
+	modified:   lang/c/Makefile
+	modified:   mail/dovecot-fts-xapian/Makefile
+	modified:   mail/dovecot-fts-xapian/distinfo
+	modified:   mail/rspamd/Makefile
+	modified:   mail/rspamd/distinfo
+	deleted:    mail/rspamd/files/patch-fips
+	modified:   mail/rspamd/pkg-plist
+	modified:   math/mkl-dnn/Makefile
+	modified:   math/mkl-dnn/distinfo
+	modified:   misc/sent/Makefile
+	deleted:    misc/sent/files/patch-config.mk
+	modified:   multimedia/aom/Makefile
+	modified:   multimedia/aom/distinfo
+	modified:   net-im/dino/Makefile
+	modified:   net-im/dino/distinfo
+	deleted:    net-im/dino/files/patch-nwhitehorn-dino.diff
+	modified:   net-im/dino/pkg-plist
+	modified:   print/cups-pdf/distinfo
+	modified:   print/cups-pdf/pkg-plist
+	modified:   security/Makefile
+	modified:   security/keybase/Makefile
+	modified:   security/keybase/distinfo
+	modified:   security/libfido2/Makefile
+	modified:   security/libfido2/pkg-plist
+	modified:   security/plasma5-kscreenlocker/distinfo
+	modified:   security/plasma5-ksshaskpass/distinfo
+	modified:   security/plasma5-kwallet-pam/distinfo
+	modified:   security/py-keyring/Makefile
+	modified:   security/py-keyring/distinfo
+	deleted:    security/rubygem-doorkeeper43/Makefile
+	deleted:    security/rubygem-doorkeeper43/distinfo
+	deleted:    security/rubygem-doorkeeper43/pkg-descr
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/fluent-bit/Makefile
+	modified:   sysutils/fluent-bit/distinfo
+	modified:   sysutils/nomad-pot-driver/Makefile
+	modified:   sysutils/nomad-pot-driver/distinfo
+	modified:   sysutils/plasma5-discover/distinfo
+	modified:   sysutils/plasma5-drkonqi/distinfo
+	modified:   sysutils/plasma5-kde-cli-tools/distinfo
+	modified:   sysutils/plasma5-kinfocenter/distinfo
+	modified:   sysutils/plasma5-kmenuedit/distinfo
+	modified:   sysutils/plasma5-ksysguard/distinfo
+	modified:   sysutils/plasma5-libksysguard/distinfo
+	modified:   sysutils/plasma5-polkit-kde-agent-1/distinfo
+	modified:   sysutils/plasma5-powerdevil/distinfo
+	modified:   sysutils/plasma5-systemsettings/distinfo
+	modified:   sysutils/plasma5-user-manager/distinfo
+	modified:   sysutils/rsyslog8/Makefile
+	modified:   sysutils/rsyslog8/distinfo
+	modified:   sysutils/vagrant/Makefile
+	modified:   sysutils/vagrant/files/patch-gemspec
+	modified:   textproc/Makefile
+	new file:   textproc/py-pytoml/Makefile
+	new file:   textproc/py-pytoml/distinfo
+	new file:   textproc/py-pytoml/pkg-descr
+	modified:   textproc/rubygem-colored2/Makefile
+	modified:   textproc/rubygem-colored2/pkg-descr
+	modified:   www/Makefile
+	modified:   www/grafana6/Makefile
+	modified:   www/grafana6/distinfo
+	modified:   www/grafana6/files/grafana.in
+	modified:   www/grafana6/pkg-plist
+	modified:   www/kcgi/Makefile
+	modified:   www/kcgi/distinfo
+	modified:   www/plasma5-plasma-browser-integration/distinfo
+	modified:   www/py-bokeh/Makefile
+	modified:   www/py-bokeh/distinfo
+	modified:   www/quark/Makefile
+	new file:   www/quark/files/patch-Makefile
+	deleted:    www/rubygem-gon-rails52/Makefile
+	deleted:    www/rubygem-gon-rails52/distinfo
+	deleted:    www/rubygem-gon-rails52/pkg-descr
+	deleted:    www/rubygem-webpack-rails-rails52/Makefile
+	deleted:    www/rubygem-webpack-rails-rails52/distinfo
+	deleted:    www/rubygem-webpack-rails-rails52/pkg-descr
+	modified:   www/stagit/Makefile
+	modified:   www/stagit/distinfo
+	modified:   www/stagit/pkg-plist
+	modified:   x11-drivers/xorgxrdp/Makefile
+	new file:   x11-drivers/xorgxrdp/files/pkg-message.in
+	modified:   x11-fonts/Makefile
+	new file:   x11-fonts/office-code-pro/Makefile
+	new file:   x11-fonts/office-code-pro/distinfo
+	new file:   x11-fonts/office-code-pro/pkg-descr
+	modified:   x11-fonts/sudo-font/Makefile
+	modified:   x11-fonts/sudo-font/distinfo
+	modified:   x11-fonts/sudo-font/pkg-plist
+	modified:   x11-themes/plasma5-breeze-gtk/distinfo
+	modified:   x11-themes/plasma5-breeze/distinfo
+	modified:   x11-themes/plasma5-kde-gtk-config/distinfo
+	modified:   x11-themes/plasma5-oxygen/distinfo
+	modified:   x11-themes/plasma5-plasma-workspace-wallpapers/distinfo
+	modified:   x11-toolkits/plasma5-kdeplasma-addons/distinfo
+	modified:   x11-wm/plasma5-kdecoration/distinfo
+	modified:   x11-wm/plasma5-kwin/distinfo
+	modified:   x11/plasma5-kactivitymanagerd/distinfo
+	modified:   x11/plasma5-kgamma5/distinfo
+	modified:   x11/plasma5-kscreen/distinfo
+	modified:   x11/plasma5-kwayland-integration/distinfo
+	modified:   x11/plasma5-libkscreen/distinfo
+	modified:   x11/plasma5-plasma-desktop/distinfo
+	modified:   x11/plasma5-plasma-integration/distinfo
+	modified:   x11/plasma5-plasma-workspace/distinfo
+	modified:   x11/squeekboard/Makefile
+	modified:   x11/squeekboard/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   print/cups-pdf/Makefile
+
+
+It took 3.44 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 75f22b131bf3 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.39 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 75f22b131bf3 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
