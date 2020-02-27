@@ -1,0 +1,108 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating d1afc8d1335c..f80767af0363
+Fast-forward
+ lib/csu/sparc64/Makefile                       |   28 -
+ lib/csu/sparc64/Makefile.depend                |   12 -
+ lib/csu/sparc64/crt.h                          |   33 -
+ lib/csu/sparc64/crt1.c                         |  105 ---
+ lib/csu/sparc64/crti.S                         |   57 --
+ lib/csu/sparc64/crtn.S                         |   42 -
+ lib/libthr/arch/sparc64/Makefile.inc           |    3 -
+ lib/libthr/arch/sparc64/include/pthread_md.h   |   80 --
+ lib/libthr/arch/sparc64/include/pthread_tls.h  |   46 -
+ lib/libthr/arch/sparc64/sparc64/_umtx_op_err.S |   38 -
+ lib/libthread_db/arch/sparc64/libpthread_md.c  |   92 --
+ sys/cam/ata/ata_da.c                           |    5 +
+ sys/vm/vm_page.c                               |  425 +++++++--
+ sys/vm/vm_page.h                               |    9 +-
+ tools/test/testfloat/sparc64/Makefile          |  105 ---
+ tools/test/testfloat/sparc64/fpu_emul.S        |  186 ----
+ tools/test/testfloat/sparc64/fpu_reg.h         |   63 --
+ tools/test/testfloat/sparc64/fpu_util.c        |  706 ---------------
+ tools/test/testfloat/sparc64/libc_private.h    |   30 -
+ tools/test/testfloat/sparc64/milieu.h          |   56 --
+ tools/test/testfloat/sparc64/namespace.h       |   30 -
+ tools/test/testfloat/sparc64/softfloat.h       |  267 ------
+ tools/test/testfloat/sparc64/sparc64.h         |   93 --
+ tools/test/testfloat/sparc64/systflags.c       |   73 --
+ tools/test/testfloat/sparc64/systfloat.S       | 1120 ------------------------
+ tools/test/testfloat/sparc64/systfloat.h       |  216 -----
+ tools/test/testfloat/sparc64/systmodes.c       |   54 --
+ tools/test/testfloat/sparc64/un-namespace.h    |   30 -
+ 28 files changed, 345 insertions(+), 3659 deletions(-)
+ delete mode 100644 lib/csu/sparc64/Makefile
+ delete mode 100644 lib/csu/sparc64/Makefile.depend
+ delete mode 100644 lib/csu/sparc64/crt.h
+ delete mode 100644 lib/csu/sparc64/crt1.c
+ delete mode 100644 lib/csu/sparc64/crti.S
+ delete mode 100644 lib/csu/sparc64/crtn.S
+ delete mode 100644 lib/libthr/arch/sparc64/Makefile.inc
+ delete mode 100644 lib/libthr/arch/sparc64/include/pthread_md.h
+ delete mode 100644 lib/libthr/arch/sparc64/include/pthread_tls.h
+ delete mode 100644 lib/libthr/arch/sparc64/sparc64/_umtx_op_err.S
+ delete mode 100644 lib/libthread_db/arch/sparc64/libpthread_md.c
+ delete mode 100644 tools/test/testfloat/sparc64/Makefile
+ delete mode 100644 tools/test/testfloat/sparc64/fpu_emul.S
+ delete mode 100644 tools/test/testfloat/sparc64/fpu_reg.h
+ delete mode 100644 tools/test/testfloat/sparc64/fpu_util.c
+ delete mode 100644 tools/test/testfloat/sparc64/libc_private.h
+ delete mode 100644 tools/test/testfloat/sparc64/milieu.h
+ delete mode 100644 tools/test/testfloat/sparc64/namespace.h
+ delete mode 100644 tools/test/testfloat/sparc64/softfloat.h
+ delete mode 100644 tools/test/testfloat/sparc64/sparc64.h
+ delete mode 100644 tools/test/testfloat/sparc64/systflags.c
+ delete mode 100644 tools/test/testfloat/sparc64/systfloat.S
+ delete mode 100644 tools/test/testfloat/sparc64/systfloat.h
+ delete mode 100644 tools/test/testfloat/sparc64/systmodes.c
+ delete mode 100644 tools/test/testfloat/sparc64/un-namespace.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d1afc8d1335c..f80767af0363  freebsd/current/master -> freebsd/current/master        
+remote:    e328da4b5920..9fb37ad1f341  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d1afc8d1335c..f80767af0363  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
