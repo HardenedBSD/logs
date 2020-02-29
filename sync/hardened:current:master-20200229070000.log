@@ -1,0 +1,184 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 4 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 3d2f177a9c26..653bdcc06212
+Fast-forward
+ Makefile.inc1                               |   66 +-
+ ObsoleteFiles.inc                           |  615 ++++++++++++
+ UPDATING                                    |    6 +
+ etc/mtree/BSD.include.dist                  |   62 --
+ gnu/lib/Makefile                            |   11 -
+ gnu/lib/libgcov/Makefile                    |   66 --
+ gnu/lib/libgcov/Makefile.depend             |   13 -
+ gnu/lib/libgomp/Makefile                    |   61 --
+ gnu/lib/libgomp/Makefile.depend             |   16 -
+ gnu/lib/libgomp/config.h                    |  115 ---
+ gnu/lib/libstdc++/Makefile                  |  637 ------------
+ gnu/lib/libstdc++/Makefile.depend           |   17 -
+ gnu/lib/libstdc++/config.h                  | 1109 ---------------------
+ gnu/lib/libsupc++/Makefile                  |   56 --
+ gnu/lib/libsupc++/Makefile.depend           |   17 -
+ gnu/lib/libsupc++/Version.map               |  193 ----
+ gnu/usr.bin/Makefile                        |    5 -
+ gnu/usr.bin/cc/Makefile                     |   32 -
+ gnu/usr.bin/cc/Makefile.fe                  |   29 -
+ gnu/usr.bin/cc/Makefile.inc                 |  115 ---
+ gnu/usr.bin/cc/Makefile.tgt                 |   23 -
+ gnu/usr.bin/cc/Makefile.ver                 |   10 -
+ gnu/usr.bin/cc/c++/Makefile                 |   22 -
+ gnu/usr.bin/cc/c++/Makefile.depend          |   20 -
+ gnu/usr.bin/cc/cc/Makefile                  |   22 -
+ gnu/usr.bin/cc/cc/Makefile.depend           |   20 -
+ gnu/usr.bin/cc/cc1/Makefile                 |   30 -
+ gnu/usr.bin/cc/cc1/Makefile.depend          |   22 -
+ gnu/usr.bin/cc/cc1plus/Makefile             |   45 -
+ gnu/usr.bin/cc/cc1plus/Makefile.depend      |   23 -
+ gnu/usr.bin/cc/cc_int/Makefile              |  107 --
+ gnu/usr.bin/cc/cc_int/Makefile.depend       |   14 -
+ gnu/usr.bin/cc/cc_tools/Makefile            |  445 ---------
+ gnu/usr.bin/cc/cc_tools/Makefile.dep        |  153 ---
+ gnu/usr.bin/cc/cc_tools/Makefile.depend     |   19 -
+ gnu/usr.bin/cc/cc_tools/Makefile.hdrs       |  139 ---
+ gnu/usr.bin/cc/cc_tools/arm.md.diff         |   41 -
+ gnu/usr.bin/cc/cc_tools/auto-host.h         | 1411 ---------------------------
+ gnu/usr.bin/cc/cc_tools/elfos-undef.h       |    9 -
+ gnu/usr.bin/cc/cc_tools/freebsd-native.h    |   60 --
+ gnu/usr.bin/cc/cc_tools/freebsd.opt         |    6 -
+ gnu/usr.bin/cc/cc_tools/i386-freebsd.opt    |   13 -
+ gnu/usr.bin/cc/cc_tools/size-host.h         |   47 -
+ gnu/usr.bin/cc/cpp/Makefile                 |   16 -
+ gnu/usr.bin/cc/cpp/Makefile.depend          |   20 -
+ gnu/usr.bin/cc/cpp/gcpp.1                   |  929 ------------------
+ gnu/usr.bin/cc/gcov/Makefile                |   17 -
+ gnu/usr.bin/cc/gcov/Makefile.depend         |   19 -
+ gnu/usr.bin/cc/include/Makefile             |   27 -
+ gnu/usr.bin/cc/include/Makefile.depend      |   11 -
+ gnu/usr.bin/cc/include/__wmmintrin_aes.h    |   54 -
+ gnu/usr.bin/cc/include/__wmmintrin_pclmul.h |   53 -
+ gnu/usr.bin/cc/libcpp/Makefile              |   25 -
+ gnu/usr.bin/cc/libcpp/Makefile.depend       |   13 -
+ gnu/usr.bin/cc/libcpp/config.h              |  292 ------
+ gnu/usr.bin/cc/libdecnumber/Makefile        |   19 -
+ gnu/usr.bin/cc/libdecnumber/Makefile.depend |   14 -
+ gnu/usr.bin/cc/libdecnumber/config.h        |   80 --
+ gnu/usr.bin/cc/libiberty/Makefile           |   28 -
+ gnu/usr.bin/cc/libiberty/Makefile.depend    |   13 -
+ gnu/usr.bin/cc/libiberty/config.h           |  448 ---------
+ gnu/usr.bin/gperf/Makefile                  |   17 -
+ gnu/usr.bin/gperf/Makefile.depend           |   20 -
+ gnu/usr.bin/gperf/config.h                  |   22 -
+ share/man/man5/src.conf.5                   |   31 +-
+ share/mk/local.dirdeps.mk                   |    2 -
+ share/mk/src.libnames.mk                    |    3 -
+ share/mk/src.opts.mk                        |   20 +-
+ targets/pseudo/bootstrap-tools/Makefile     |    4 +-
+ targets/pseudo/toolchain/Makefile.depend    |    3 -
+ targets/pseudo/userland/gnu/Makefile.depend |    1 -
+ tools/build/mk/OptionalObsoleteFiles.inc    |  638 +-----------
+ tools/build/options/WITHOUT_CLANG_IS_CC     |    3 -
+ tools/build/options/WITHOUT_SYSTEM_COMPILER |    4 +-
+ tools/build/options/WITH_SYSTEM_COMPILER    |    4 +-
+ tools/tools/nanobsd/dhcpd/common            |    1 -
+ tools/tools/nanobsd/embedded/common         |    1 -
+ usr.bin/clang/llvm-cov/Makefile             |    2 -
+ 78 files changed, 639 insertions(+), 8157 deletions(-)
+ delete mode 100644 gnu/lib/libgcov/Makefile
+ delete mode 100644 gnu/lib/libgcov/Makefile.depend
+ delete mode 100644 gnu/lib/libgomp/Makefile
+ delete mode 100644 gnu/lib/libgomp/Makefile.depend
+ delete mode 100644 gnu/lib/libgomp/config.h
+ delete mode 100644 gnu/lib/libstdc++/Makefile
+ delete mode 100644 gnu/lib/libstdc++/Makefile.depend
+ delete mode 100644 gnu/lib/libstdc++/config.h
+ delete mode 100644 gnu/lib/libsupc++/Makefile
+ delete mode 100644 gnu/lib/libsupc++/Makefile.depend
+ delete mode 100644 gnu/lib/libsupc++/Version.map
+ delete mode 100644 gnu/usr.bin/cc/Makefile
+ delete mode 100644 gnu/usr.bin/cc/Makefile.fe
+ delete mode 100644 gnu/usr.bin/cc/Makefile.inc
+ delete mode 100644 gnu/usr.bin/cc/Makefile.tgt
+ delete mode 100644 gnu/usr.bin/cc/Makefile.ver
+ delete mode 100644 gnu/usr.bin/cc/c++/Makefile
+ delete mode 100644 gnu/usr.bin/cc/c++/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cc/Makefile
+ delete mode 100644 gnu/usr.bin/cc/cc/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cc1/Makefile
+ delete mode 100644 gnu/usr.bin/cc/cc1/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cc1plus/Makefile
+ delete mode 100644 gnu/usr.bin/cc/cc1plus/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cc_int/Makefile
+ delete mode 100644 gnu/usr.bin/cc/cc_int/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/Makefile
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/Makefile.dep
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/Makefile.hdrs
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/arm.md.diff
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/auto-host.h
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/elfos-undef.h
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/freebsd-native.h
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/freebsd.opt
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/i386-freebsd.opt
+ delete mode 100644 gnu/usr.bin/cc/cc_tools/size-host.h
+ delete mode 100644 gnu/usr.bin/cc/cpp/Makefile
+ delete mode 100644 gnu/usr.bin/cc/cpp/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/cpp/gcpp.1
+ delete mode 100644 gnu/usr.bin/cc/gcov/Makefile
+ delete mode 100644 gnu/usr.bin/cc/gcov/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/include/Makefile
+ delete mode 100644 gnu/usr.bin/cc/include/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/include/__wmmintrin_aes.h
+ delete mode 100644 gnu/usr.bin/cc/include/__wmmintrin_pclmul.h
+ delete mode 100644 gnu/usr.bin/cc/libcpp/Makefile
+ delete mode 100644 gnu/usr.bin/cc/libcpp/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/libcpp/config.h
+ delete mode 100644 gnu/usr.bin/cc/libdecnumber/Makefile
+ delete mode 100644 gnu/usr.bin/cc/libdecnumber/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/libdecnumber/config.h
+ delete mode 100644 gnu/usr.bin/cc/libiberty/Makefile
+ delete mode 100644 gnu/usr.bin/cc/libiberty/Makefile.depend
+ delete mode 100644 gnu/usr.bin/cc/libiberty/config.h
+ delete mode 100644 gnu/usr.bin/gperf/Makefile
+ delete mode 100644 gnu/usr.bin/gperf/Makefile.depend
+ delete mode 100644 gnu/usr.bin/gperf/config.h
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: hardened/current/master ====
