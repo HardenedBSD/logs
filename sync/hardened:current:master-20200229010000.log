@@ -1,0 +1,222 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging targets/pseudo/bootstrap-tools/Makefile
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Auto-merging share/mk/src.libnames.mk
+Auto-merging share/man/man5/src.conf.5
+Removing gnu/usr.bin/gperf/config.h
+Removing gnu/usr.bin/gperf/Makefile.depend
+Removing gnu/usr.bin/gperf/Makefile
+Removing gnu/usr.bin/cc/libiberty/config.h
+Removing gnu/usr.bin/cc/libiberty/Makefile.depend
+Removing gnu/usr.bin/cc/libiberty/Makefile
+Removing gnu/usr.bin/cc/libdecnumber/config.h
+Removing gnu/usr.bin/cc/libdecnumber/Makefile.depend
+Removing gnu/usr.bin/cc/libdecnumber/Makefile
+Removing gnu/usr.bin/cc/libcpp/config.h
+Removing gnu/usr.bin/cc/libcpp/Makefile.depend
+Removing gnu/usr.bin/cc/libcpp/Makefile
+Removing gnu/usr.bin/cc/include/__wmmintrin_pclmul.h
+Removing gnu/usr.bin/cc/include/__wmmintrin_aes.h
+Removing gnu/usr.bin/cc/include/Makefile.depend
+Removing gnu/usr.bin/cc/include/Makefile
+Removing gnu/usr.bin/cc/gcov/Makefile.depend
+Removing gnu/usr.bin/cc/gcov/Makefile
+Removing gnu/usr.bin/cc/cpp/gcpp.1
+Removing gnu/usr.bin/cc/cpp/Makefile.depend
+Removing gnu/usr.bin/cc/cpp/Makefile
+Removing gnu/usr.bin/cc/cc_tools/size-host.h
+Removing gnu/usr.bin/cc/cc_tools/i386-freebsd.opt
+Removing gnu/usr.bin/cc/cc_tools/freebsd.opt
+Removing gnu/usr.bin/cc/cc_tools/freebsd-native.h
+Removing gnu/usr.bin/cc/cc_tools/elfos-undef.h
+Removing gnu/usr.bin/cc/cc_tools/auto-host.h
+Removing gnu/usr.bin/cc/cc_tools/arm.md.diff
+Removing gnu/usr.bin/cc/cc_tools/Makefile.hdrs
+Removing gnu/usr.bin/cc/cc_tools/Makefile.depend
+Removing gnu/usr.bin/cc/cc_tools/Makefile.dep
+Removing gnu/usr.bin/cc/cc_tools/Makefile
+Removing gnu/usr.bin/cc/cc_int/Makefile.depend
+Removing gnu/usr.bin/cc/cc_int/Makefile
+Removing gnu/usr.bin/cc/cc1plus/Makefile.depend
+Removing gnu/usr.bin/cc/cc1plus/Makefile
+Removing gnu/usr.bin/cc/cc1/Makefile.depend
+Removing gnu/usr.bin/cc/cc1/Makefile
+Removing gnu/usr.bin/cc/cc/Makefile.depend
+Removing gnu/usr.bin/cc/cc/Makefile
+Removing gnu/usr.bin/cc/c++/Makefile.depend
+Removing gnu/usr.bin/cc/c++/Makefile
+Removing gnu/usr.bin/cc/Makefile.ver
+Removing gnu/usr.bin/cc/Makefile.tgt
+Removing gnu/usr.bin/cc/Makefile.inc
+Removing gnu/usr.bin/cc/Makefile.fe
+Removing gnu/usr.bin/cc/Makefile
+Removing gnu/lib/libsupc++/Version.map
+Removing gnu/lib/libsupc++/Makefile.depend
+Removing gnu/lib/libsupc++/Makefile
+Removing gnu/lib/libstdc++/config.h
+Removing gnu/lib/libstdc++/Makefile.depend
+Removing gnu/lib/libstdc++/Makefile
+Removing gnu/lib/libgomp/config.h
+Removing gnu/lib/libgomp/Makefile.depend
+Removing gnu/lib/libgomp/Makefile
+Removing gnu/lib/libgcov/Makefile.depend
+Removing gnu/lib/libgcov/Makefile
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/src.opts.mk
+index 764c1c3328f8,56c2f82453d9..000000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -198,15 -196,9 +198,18 @@@ __DEFAULT_NO_OPTIONS = 
+      AMD \
+      BEARSSL \
+      BSD_GREP \
+ -    CLANG_EXTRAS \
+ +    BSD_GREP_FASTMATCH \
+ +    DEVD_PIE \
+      DTRACE_TESTS \
+      EXPERIMENTAL \
+++<<<<<<< HEAD
+ +    FREEBSD_UPDATE \
+ +    GCC \
+ +    GCC_BOOTSTRAP \
+ +    GCOV \
+ +    GNUCXX \
+++=======
+++>>>>>>> freebsd/current/master
+      GNU_GREP_COMPAT \
+      GPL_DTC \
+      HESIOD \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   ObsoleteFiles.inc
+	modified:   UPDATING
+	modified:   etc/mtree/BSD.include.dist
+	modified:   gnu/lib/Makefile
+	deleted:    gnu/lib/libgcov/Makefile
+	deleted:    gnu/lib/libgcov/Makefile.depend
+	deleted:    gnu/lib/libgomp/Makefile
+	deleted:    gnu/lib/libgomp/Makefile.depend
+	deleted:    gnu/lib/libgomp/config.h
+	deleted:    gnu/lib/libstdc++/Makefile
+	deleted:    gnu/lib/libstdc++/Makefile.depend
+	deleted:    gnu/lib/libstdc++/config.h
+	deleted:    gnu/lib/libsupc++/Makefile
+	deleted:    gnu/lib/libsupc++/Makefile.depend
+	deleted:    gnu/lib/libsupc++/Version.map
+	modified:   gnu/usr.bin/Makefile
+	deleted:    gnu/usr.bin/cc/Makefile
+	deleted:    gnu/usr.bin/cc/Makefile.fe
+	deleted:    gnu/usr.bin/cc/Makefile.inc
+	deleted:    gnu/usr.bin/cc/Makefile.tgt
+	deleted:    gnu/usr.bin/cc/Makefile.ver
+	deleted:    gnu/usr.bin/cc/c++/Makefile
+	deleted:    gnu/usr.bin/cc/c++/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cc/Makefile
+	deleted:    gnu/usr.bin/cc/cc/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cc1/Makefile
+	deleted:    gnu/usr.bin/cc/cc1/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cc1plus/Makefile
+	deleted:    gnu/usr.bin/cc/cc1plus/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cc_int/Makefile
+	deleted:    gnu/usr.bin/cc/cc_int/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cc_tools/Makefile
+	deleted:    gnu/usr.bin/cc/cc_tools/Makefile.dep
+	deleted:    gnu/usr.bin/cc/cc_tools/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cc_tools/Makefile.hdrs
+	deleted:    gnu/usr.bin/cc/cc_tools/arm.md.diff
+	deleted:    gnu/usr.bin/cc/cc_tools/auto-host.h
+	deleted:    gnu/usr.bin/cc/cc_tools/elfos-undef.h
+	deleted:    gnu/usr.bin/cc/cc_tools/freebsd-native.h
+	deleted:    gnu/usr.bin/cc/cc_tools/freebsd.opt
+	deleted:    gnu/usr.bin/cc/cc_tools/i386-freebsd.opt
+	deleted:    gnu/usr.bin/cc/cc_tools/size-host.h
+	deleted:    gnu/usr.bin/cc/cpp/Makefile
+	deleted:    gnu/usr.bin/cc/cpp/Makefile.depend
+	deleted:    gnu/usr.bin/cc/cpp/gcpp.1
+	deleted:    gnu/usr.bin/cc/gcov/Makefile
+	deleted:    gnu/usr.bin/cc/gcov/Makefile.depend
+	deleted:    gnu/usr.bin/cc/include/Makefile
+	deleted:    gnu/usr.bin/cc/include/Makefile.depend
+	deleted:    gnu/usr.bin/cc/include/__wmmintrin_aes.h
+	deleted:    gnu/usr.bin/cc/include/__wmmintrin_pclmul.h
+	deleted:    gnu/usr.bin/cc/libcpp/Makefile
+	deleted:    gnu/usr.bin/cc/libcpp/Makefile.depend
+	deleted:    gnu/usr.bin/cc/libcpp/config.h
+	deleted:    gnu/usr.bin/cc/libdecnumber/Makefile
+	deleted:    gnu/usr.bin/cc/libdecnumber/Makefile.depend
+	deleted:    gnu/usr.bin/cc/libdecnumber/config.h
+	deleted:    gnu/usr.bin/cc/libiberty/Makefile
+	deleted:    gnu/usr.bin/cc/libiberty/Makefile.depend
+	deleted:    gnu/usr.bin/cc/libiberty/config.h
+	deleted:    gnu/usr.bin/gperf/Makefile
+	deleted:    gnu/usr.bin/gperf/Makefile.depend
+	deleted:    gnu/usr.bin/gperf/config.h
+	modified:   share/man/man5/src.conf.5
+	modified:   share/mk/local.dirdeps.mk
+	modified:   share/mk/src.libnames.mk
+	modified:   targets/pseudo/bootstrap-tools/Makefile
+	modified:   targets/pseudo/toolchain/Makefile.depend
+	modified:   targets/pseudo/userland/gnu/Makefile.depend
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	modified:   tools/build/options/WITHOUT_CLANG_IS_CC
+	modified:   tools/build/options/WITHOUT_SYSTEM_COMPILER
+	modified:   tools/build/options/WITH_SYSTEM_COMPILER
+	modified:   tools/tools/nanobsd/dhcpd/common
+	modified:   tools/tools/nanobsd/embedded/common
+	modified:   usr.bin/clang/llvm-cov/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/mk/src.opts.mk
+
+HEAD is now at 3d2f177a9c26 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 3d2f177a9c26 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
