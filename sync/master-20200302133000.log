@@ -39,3 +39,217 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/smartmontools/files/patch-os__freebsd.cpp
+Removing sysutils/smartmontools/files/patch-configure
+Auto-merging sysutils/smartmontools/Makefile
+CONFLICT (content): Merge conflict in sysutils/smartmontools/Makefile
+Auto-merging security/Makefile
+CONFLICT (content): Merge conflict in security/Makefile
+Auto-merging math/R/Makefile
+Removing lang/go/pkg-plist
+Removing biology/hyphy/files/patch-src_core_dataset.cpp
+Removing audio/timidity++/files/patch-interface_tk__c.c
+Auto-merging Mk/bsd.port.mk
+Auto-merging Mk/Uses/go.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc security/Makefile
+index 928d05ad93cc,e1daf7bdc90b..000000000000
+--- a/security/Makefile
++++ b/security/Makefile
+@@@ -170,7 -170,7 +170,11 @@@
+      SUBDIR += fwlogwatch
+      SUBDIR += gag
+      SUBDIR += gcr
+++<<<<<<< HEAD
+ +    SUBDIR += gibson
+++=======
++     SUBDIR += gef
+++>>>>>>> freebsd/master
+      SUBDIR += git-crypt
+      SUBDIR += git-remote-gcrypt
+      SUBDIR += git-secret
+diff --cc sysutils/smartmontools/Makefile
+index 59efc3da8d95,2ee91dbd02cc..000000000000
+--- a/sysutils/smartmontools/Makefile
++++ b/sysutils/smartmontools/Makefile
+@@@ -13,13 -12,8 +12,18 @@@ COMMENT=	S.M.A.R.T. disk monitoring too
+  LICENSE=	GPLv2+
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USES=		alias compiler:c++11-lib gmake shebangfix
+ +
+ +CONFLICTS=	smartmontools-devel-[0-9]*
+ +
+ +USE_HARDENING=	safestack
+ +
+ +OPTIONS_DEFINE=	DOCS
+++=======
++ USES=		alias compiler:c++11-lib shebangfix
++ USE_RC_SUBR=	smartd
+++>>>>>>> freebsd/master
+  
+  SHEBANG_FILES=	examplescripts/Example5
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/go.mk
+	modified:   Mk/bsd.port.mk
+	modified:   audio/festvox-cmu_us_slt_arctic/Makefile
+	modified:   audio/giada/Makefile
+	modified:   audio/giada/distinfo
+	modified:   audio/timidity++-tcltk/Makefile
+	modified:   audio/timidity++/Makefile
+	modified:   audio/timidity++/distinfo
+	deleted:    audio/timidity++/files/patch-interface_tk__c.c
+	modified:   biology/hyphy/Makefile
+	modified:   biology/hyphy/distinfo
+	deleted:    biology/hyphy/files/patch-src_core_dataset.cpp
+	modified:   cad/veroroute/Makefile
+	modified:   cad/veroroute/distinfo
+	modified:   devel/Makefile
+	modified:   devel/capstone4/Makefile
+	modified:   devel/capstone4/distinfo
+	modified:   devel/capstone4/pkg-plist
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	new file:   devel/microsoft-gsl/Makefile
+	new file:   devel/microsoft-gsl/distinfo
+	new file:   devel/microsoft-gsl/pkg-descr
+	new file:   devel/microsoft-gsl/pkg-plist
+	modified:   devel/opencl-clang/Makefile
+	modified:   devel/opencl-clang/distinfo
+	modified:   devel/plasma/Makefile
+	modified:   devel/py-capstone/Makefile
+	modified:   devel/py-capstone/distinfo
+	modified:   devel/spirv-llvm-translator/Makefile
+	modified:   devel/spirv-llvm-translator/distinfo
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/patch-configure
+	modified:   games/flightgear-terragear/Makefile
+	modified:   graphics/zathura-cb/Makefile
+	modified:   graphics/zathura-pdf-poppler/Makefile
+	modified:   graphics/zathura-ps/Makefile
+	modified:   lang/go-devel/Makefile
+	modified:   lang/go-devel/distinfo
+	modified:   lang/go/Makefile
+	modified:   lang/go/distinfo
+	deleted:    lang/go/pkg-plist
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   mail/Makefile
+	renamed:    mail/rubygem-roadie-rails/Makefile -> mail/rubygem-roadie-rails-rails4/Makefile
+	renamed:    mail/rubygem-roadie-rails/distinfo -> mail/rubygem-roadie-rails-rails4/distinfo
+	renamed:    mail/rubygem-roadie-rails/pkg-descr -> mail/rubygem-roadie-rails-rails4/pkg-descr
+	renamed:    mail/rubygem-roadie-rails52/Makefile -> mail/rubygem-roadie-rails-rails52/Makefile
+	renamed:    mail/rubygem-roadie-rails52/distinfo -> mail/rubygem-roadie-rails-rails52/distinfo
+	renamed:    mail/rubygem-roadie-rails52/pkg-descr -> mail/rubygem-roadie-rails-rails52/pkg-descr
+	modified:   math/R/Makefile
+	modified:   math/R/distinfo
+	modified:   math/libRmath/Makefile
+	modified:   math/libRmath/distinfo
+	modified:   math/nfft/Makefile
+	modified:   misc/openhantek/Makefile
+	modified:   misc/openhantek/distinfo
+	modified:   net/Makefile
+	new file:   net/findomain/Makefile
+	new file:   net/findomain/distinfo
+	new file:   net/findomain/pkg-descr
+	modified:   net/nakenchat/Makefile
+	modified:   net/nakenchat/distinfo
+	modified:   net/py-mpi4py/Makefile
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   science/aircraft-datcom/Makefile
+	new file:   security/gef/Makefile
+	new file:   security/gef/distinfo
+	new file:   security/gef/files/pkg-message.in
+	new file:   security/gef/pkg-descr
+	new file:   security/p5-Crypt-SSSS/Makefile
+	new file:   security/p5-Crypt-SSSS/distinfo
+	new file:   security/p5-Crypt-SSSS/pkg-descr
+	new file:   security/p5-Crypt-SSSS/pkg-plist
+	new file:   security/py-ropper/Makefile
+	new file:   security/py-ropper/distinfo
+	new file:   security/py-ropper/pkg-descr
+	modified:   security/sandsifter/Makefile
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/smartmontools/distinfo
+	deleted:    sysutils/smartmontools/files/patch-configure
+	deleted:    sysutils/smartmontools/files/patch-os__freebsd.cpp
+	modified:   sysutils/smartmontools/pkg-plist
+	modified:   textproc/Makefile
+	renamed:    textproc/rubygem-actionpack-xml_parser/Makefile -> textproc/rubygem-actionpack-xml_parser-rails5/Makefile
+	renamed:    textproc/rubygem-actionpack-xml_parser/distinfo -> textproc/rubygem-actionpack-xml_parser-rails5/distinfo
+	renamed:    textproc/rubygem-actionpack-xml_parser/pkg-descr -> textproc/rubygem-actionpack-xml_parser-rails5/pkg-descr
+	renamed:    textproc/rubygem-actionpack-xml_parser52/Makefile -> textproc/rubygem-actionpack-xml_parser-rails52/Makefile
+	renamed:    textproc/rubygem-actionpack-xml_parser52/distinfo -> textproc/rubygem-actionpack-xml_parser-rails52/distinfo
+	renamed:    textproc/rubygem-actionpack-xml_parser1/pkg-descr -> textproc/rubygem-actionpack-xml_parser-rails52/pkg-descr
+	renamed:    textproc/rubygem-actionpack-xml_parser1/Makefile -> textproc/rubygem-actionpack-xml_parser1-rails4/Makefile
+	renamed:    textproc/rubygem-actionpack-xml_parser1/distinfo -> textproc/rubygem-actionpack-xml_parser1-rails4/distinfo
+	renamed:    textproc/rubygem-actionpack-xml_parser52/pkg-descr -> textproc/rubygem-actionpack-xml_parser1-rails4/pkg-descr
+	modified:   textproc/rubygem-rttool/pkg-descr
+	modified:   www/luakit/Makefile
+	modified:   www/redmine/Makefile
+	modified:   www/redmine4/Makefile
+	modified:   x11-themes/gnome-icons-luv/Makefile
+	modified:   x11-wm/hikari/Makefile
+	modified:   x11-wm/hikari/distinfo
+	modified:   x11-wm/xfce4-session/Makefile
+	modified:   x11-wm/xfce4-session/pkg-plist
+	modified:   x11/xfce4-clipman-plugin/Makefile
+	modified:   x11/xfce4-clipman-plugin/distinfo
+	modified:   x11/xfce4-clipman-plugin/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   security/Makefile
+	both modified:   sysutils/smartmontools/Makefile
+
+
+It took 3.33 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e0b358f77a56 HBSD: Improve stability of x11/nvidia-driver
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.46 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e0b358f77a56 HBSD: Improve stability of x11/nvidia-driver
+==== END: master ====
