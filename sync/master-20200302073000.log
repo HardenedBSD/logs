@@ -34,3 +34,129 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/smartmontools/files/patch-os__freebsd.cpp
+Removing sysutils/smartmontools/files/patch-configure
+Auto-merging sysutils/smartmontools/Makefile
+CONFLICT (content): Merge conflict in sysutils/smartmontools/Makefile
+Auto-merging math/R/Makefile
+Removing biology/hyphy/files/patch-src_core_dataset.cpp
+Removing audio/timidity++/files/patch-interface_tk__c.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc sysutils/smartmontools/Makefile
+index 59efc3da8d95,2ee91dbd02cc..000000000000
+--- a/sysutils/smartmontools/Makefile
++++ b/sysutils/smartmontools/Makefile
+@@@ -13,13 -12,8 +12,18 @@@ COMMENT=	S.M.A.R.T. disk monitoring too
+  LICENSE=	GPLv2+
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USES=		alias compiler:c++11-lib gmake shebangfix
+ +
+ +CONFLICTS=	smartmontools-devel-[0-9]*
+ +
+ +USE_HARDENING=	safestack
+ +
+ +OPTIONS_DEFINE=	DOCS
+++=======
++ USES=		alias compiler:c++11-lib shebangfix
++ USE_RC_SUBR=	smartd
+++>>>>>>> freebsd/master
+  
+  SHEBANG_FILES=	examplescripts/Example5
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/giada/Makefile
+	modified:   audio/giada/distinfo
+	modified:   audio/timidity++-tcltk/Makefile
+	modified:   audio/timidity++/Makefile
+	modified:   audio/timidity++/distinfo
+	deleted:    audio/timidity++/files/patch-interface_tk__c.c
+	modified:   biology/hyphy/Makefile
+	modified:   biology/hyphy/distinfo
+	deleted:    biology/hyphy/files/patch-src_core_dataset.cpp
+	modified:   cad/veroroute/Makefile
+	modified:   cad/veroroute/distinfo
+	modified:   devel/Makefile
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	new file:   devel/microsoft-gsl/Makefile
+	new file:   devel/microsoft-gsl/distinfo
+	new file:   devel/microsoft-gsl/pkg-descr
+	new file:   devel/microsoft-gsl/pkg-plist
+	modified:   devel/opencl-clang/Makefile
+	modified:   devel/opencl-clang/distinfo
+	modified:   devel/spirv-llvm-translator/Makefile
+	modified:   devel/spirv-llvm-translator/distinfo
+	modified:   math/R/Makefile
+	modified:   math/R/distinfo
+	modified:   math/libRmath/Makefile
+	modified:   math/libRmath/distinfo
+	modified:   misc/openhantek/Makefile
+	modified:   misc/openhantek/distinfo
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/smartmontools/distinfo
+	deleted:    sysutils/smartmontools/files/patch-configure
+	deleted:    sysutils/smartmontools/files/patch-os__freebsd.cpp
+	modified:   sysutils/smartmontools/pkg-plist
+	modified:   textproc/rubygem-rttool/pkg-descr
+	modified:   x11-wm/hikari/Makefile
+	modified:   x11-wm/hikari/distinfo
+	modified:   x11-wm/xfce4-session/Makefile
+	modified:   x11-wm/xfce4-session/pkg-plist
+	modified:   x11/xfce4-clipman-plugin/Makefile
+	modified:   x11/xfce4-clipman-plugin/distinfo
+	modified:   x11/xfce4-clipman-plugin/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sysutils/smartmontools/Makefile
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e7915dfce56b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.33 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e7915dfce56b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
