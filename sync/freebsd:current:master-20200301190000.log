@@ -1,0 +1,148 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 6010b3806137..137e3e80591f
+Fast-forward
+ ObsoleteFiles.inc                           |    9 +
+ UPDATING                                    |    3 +
+ contrib/elftoolchain/readelf/readelf.c      |    2 +
+ etc/mtree/BSD.include.dist                  |    2 -
+ include/Makefile                            |   14 +-
+ lib/libprocstat/libprocstat.c               |   51 +-
+ share/man/man4/Makefile                     |    2 -
+ share/man/man4/bktr.4                       |  264 --
+ sys/cam/ctl/ctl_ha.c                        |   62 -
+ sys/compat/linprocfs/linprocfs.c            |   28 +-
+ sys/conf/NOTES                              |   68 +-
+ sys/conf/files                              |    7 -
+ sys/conf/options                            |   21 -
+ sys/dev/bktr/CHANGELOG.TXT                  |  519 ----
+ sys/dev/bktr/bktr_audio.c                   |  646 ----
+ sys/dev/bktr/bktr_audio.h                   |   91 -
+ sys/dev/bktr/bktr_card.c                    | 1408 ---------
+ sys/dev/bktr/bktr_card.h                    |   97 -
+ sys/dev/bktr/bktr_core.c                    | 4316 ---------------------------
+ sys/dev/bktr/bktr_core.h                    |   98 -
+ sys/dev/bktr/bktr_i2c.c                     |  364 ---
+ sys/dev/bktr/bktr_i2c.h                     |   49 -
+ sys/dev/bktr/bktr_mem.c                     |  195 --
+ sys/dev/bktr/bktr_mem.h                     |   65 -
+ sys/dev/bktr/bktr_os.c                      | 1348 ---------
+ sys/dev/bktr/bktr_os.h                      |   87 -
+ sys/dev/bktr/bktr_reg.h                     |  730 -----
+ sys/dev/bktr/bktr_tuner.c                   | 1436 ---------
+ sys/dev/bktr/bktr_tuner.h                   |  107 -
+ sys/dev/bktr/ioctl_bt848.h                  |  298 --
+ sys/dev/bktr/ioctl_meteor.h                 |  189 --
+ sys/dev/bktr/msp34xx.c                      | 1254 --------
+ sys/dev/bxe/bxe.c                           |  105 +-
+ sys/dev/bxe/bxe.h                           |   38 -
+ sys/dev/cxgb/cxgb_osdep.h                   |   26 -
+ sys/dev/cxgb/cxgb_sge.c                     |    5 -
+ sys/dev/iscsi_initiator/isc_cam.c           |   32 +-
+ sys/dev/iscsi_initiator/isc_sm.c            |   16 +-
+ sys/dev/iscsi_initiator/isc_soc.c           |   23 +-
+ sys/dev/iscsi_initiator/isc_subr.c          |   98 -
+ sys/dev/iscsi_initiator/iscsi_subr.c        |   12 +-
+ sys/dev/iscsi_initiator/iscsivar.h          |   33 -
+ sys/dev/virtio/virtio.c                     |    5 -
+ sys/dev/xen/netback/netback.c               |    2 -
+ sys/i386/include/ioctl_bt848.h              |   42 -
+ sys/i386/include/ioctl_meteor.h             |   42 -
+ sys/kern/kern_descrip.c                     |  313 +-
+ sys/kern/kern_linker.c                      |    4 +-
+ sys/kern/vfs_cache.c                        |   45 +-
+ sys/kern/vfs_lookup.c                       |   65 +-
+ sys/kern/vfs_mountroot.c                    |   16 +-
+ sys/modules/Makefile                        |    2 -
+ sys/modules/bktr/Makefile                   |    7 -
+ sys/modules/bktr/Makefile.inc               |    3 -
+ sys/modules/bktr/bktr/Makefile              |   19 -
+ sys/modules/bktr/bktr_mem/Makefile          |   11 -
+ sys/nlm/nlm_prot_impl.c                     |   10 -
+ sys/powerpc/conf/NOTES                      |    1 -
+ sys/rpc/rpc_generic.c                       |    4 -
+ sys/security/audit/audit_bsm_klib.c         |   27 +-
+ sys/sys/filedesc.h                          |   22 +-
+ sys/sys/param.h                             |    2 +-
+ sys/ufs/ffs/ffs_alloc.c                     |   10 +-
+ sys/vm/uma_core.c                           |    3 +
+ sys/vm/vm_page.c                            |    3 +-
+ tools/tools/controlelf/controlelf.c         |    4 +-
+ usr.bin/calendar/calendars/calendar.history |    2 +-
+ 67 files changed, 371 insertions(+), 14511 deletions(-)
+ delete mode 100644 share/man/man4/bktr.4
+ delete mode 100644 sys/dev/bktr/CHANGELOG.TXT
+ delete mode 100644 sys/dev/bktr/bktr_audio.c
+ delete mode 100644 sys/dev/bktr/bktr_audio.h
+ delete mode 100644 sys/dev/bktr/bktr_card.c
+ delete mode 100644 sys/dev/bktr/bktr_card.h
+ delete mode 100644 sys/dev/bktr/bktr_core.c
+ delete mode 100644 sys/dev/bktr/bktr_core.h
+ delete mode 100644 sys/dev/bktr/bktr_i2c.c
+ delete mode 100644 sys/dev/bktr/bktr_i2c.h
+ delete mode 100644 sys/dev/bktr/bktr_mem.c
+ delete mode 100644 sys/dev/bktr/bktr_mem.h
+ delete mode 100644 sys/dev/bktr/bktr_os.c
+ delete mode 100644 sys/dev/bktr/bktr_os.h
+ delete mode 100644 sys/dev/bktr/bktr_reg.h
+ delete mode 100644 sys/dev/bktr/bktr_tuner.c
+ delete mode 100644 sys/dev/bktr/bktr_tuner.h
+ delete mode 100644 sys/dev/bktr/ioctl_bt848.h
+ delete mode 100644 sys/dev/bktr/ioctl_meteor.h
+ delete mode 100644 sys/dev/bktr/msp34xx.c
+ delete mode 100644 sys/i386/include/ioctl_bt848.h
+ delete mode 100644 sys/i386/include/ioctl_meteor.h
+ delete mode 100644 sys/modules/bktr/Makefile
+ delete mode 100644 sys/modules/bktr/Makefile.inc
+ delete mode 100644 sys/modules/bktr/bktr/Makefile
+ delete mode 100644 sys/modules/bktr/bktr_mem/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    6010b3806137..137e3e80591f  freebsd/current/master -> freebsd/current/master        
+remote:    e0e265681a73..9d1b82f82b7a  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   6010b3806137..137e3e80591f  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
