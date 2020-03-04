@@ -1,0 +1,107 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/x86/x86/cpu_machdep.c
+CONFLICT (content): Merge conflict in sys/x86/x86/cpu_machdep.c
+Auto-merging sys/amd64/amd64/initcpu.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/x86/x86/cpu_machdep.c
+index a8956128dd4f,06e5a81a9fec..000000000000
+--- a/sys/x86/x86/cpu_machdep.c
++++ b/sys/x86/x86/cpu_machdep.c
+@@@ -856,12 -855,9 +856,17 @@@ nmi_handle_intr(u_int type, struct trap
+  	nmi_call_kdb(PCPU_GET(cpuid), type, frame);
+  }
+  
+++<<<<<<< HEAD
+ +int hw_ibrs_active;
+ +#ifdef PAX
+ +int hw_ibrs_disable = 0;
+ +#else
+++=======
++ static int hw_ibrs_active;
++ int hw_ibrs_ibpb_active;
+++>>>>>>> freebsd/12-stable/master
+  int hw_ibrs_disable = 1;
+ +#endif
+  
+  SYSCTL_INT(_hw, OID_AUTO, ibrs_active, CTLFLAG_RD, &hw_ibrs_active, 0,
+      "Indirect Branch Restricted Speculation active");
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/elftoolchain/addr2line/addr2line.c
+	modified:   lib/libc/sys/mprotect.2
+	modified:   lib/libkvm/kvm_getswapinfo.c
+	modified:   share/misc/pci_vendors
+	modified:   sys/amd64/amd64/initcpu.c
+	modified:   sys/amd64/amd64/support.S
+	modified:   sys/arm/arm/identcpu-v6.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dsl_scan.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev_indirect.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_ioctl.c
+	modified:   sys/dev/cpuctl/cpuctl.c
+	modified:   sys/fs/ext2fs/ext2_bmap.c
+	modified:   sys/fs/ext2fs/ext2_extern.h
+	modified:   sys/fs/ext2fs/ext2_vnops.c
+	modified:   sys/i386/i386/support.s
+	modified:   sys/net/ieee8023ad_lacp.c
+	modified:   sys/net/if_media.c
+	modified:   sys/net/if_media.h
+	modified:   sys/vm/swap_pager.c
+	modified:   sys/vm/swap_pager.h
+	modified:   sys/x86/acpica/acpi_wakeup.c
+	modified:   sys/x86/include/x86_var.h
+	modified:   usr.bin/diff/diff.1
+	modified:   usr.bin/diff/diff.c
+	modified:   usr.bin/diff/diff.h
+	modified:   usr.bin/diff/diffreg.c
+	modified:   usr.bin/diff/tests/diff_test.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/x86/x86/cpu_machdep.c
+
+HEAD is now at fe8067d186da HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at fe8067d186da HBSD: Resolve merge conflict
+==== END: hardened/12-stable/master ====
