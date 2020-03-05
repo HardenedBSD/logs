@@ -1,0 +1,852 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/x86/x86/cpu_machdep.c
+CONFLICT (content): Merge conflict in sys/x86/x86/cpu_machdep.c
+Removing sys/gnu/dts/arm/rk3288-fennec.dts
+Auto-merging sys/conf/files
+Auto-merging sys/amd64/amd64/initcpu.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/x86/x86/cpu_machdep.c
+index a8956128dd4f,06e5a81a9fec..000000000000
+--- a/sys/x86/x86/cpu_machdep.c
++++ b/sys/x86/x86/cpu_machdep.c
+@@@ -856,12 -855,9 +856,17 @@@ nmi_handle_intr(u_int type, struct trap
+  	nmi_call_kdb(PCPU_GET(cpuid), type, frame);
+  }
+  
+++<<<<<<< HEAD
+ +int hw_ibrs_active;
+ +#ifdef PAX
+ +int hw_ibrs_disable = 0;
+ +#else
+++=======
++ static int hw_ibrs_active;
++ int hw_ibrs_ibpb_active;
+++>>>>>>> freebsd/12-stable/master
+  int hw_ibrs_disable = 1;
+ +#endif
+  
+  SYSCTL_INT(_hw, OID_AUTO, ibrs_active, CTLFLAG_RD, &hw_ibrs_active, 0,
+      "Indirect Branch Restricted Speculation active");
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/elftoolchain/addr2line/addr2line.c
+	modified:   contrib/ntp/COPYRIGHT
+	modified:   contrib/ntp/ChangeLog
+	modified:   contrib/ntp/CommitLog
+	modified:   contrib/ntp/NEWS
+	modified:   contrib/ntp/config.h.in
+	modified:   contrib/ntp/configure
+	modified:   contrib/ntp/configure.ac
+	modified:   contrib/ntp/html/accopt.html
+	modified:   contrib/ntp/html/clockopt.html
+	modified:   contrib/ntp/html/confopt.html
+	modified:   contrib/ntp/html/copyright.html
+	modified:   contrib/ntp/html/discipline.html
+	modified:   contrib/ntp/html/drivers/driver20.html
+	modified:   contrib/ntp/html/drivers/driver29.html
+	modified:   contrib/ntp/html/miscopt.html
+	modified:   contrib/ntp/include/Makefile.am
+	modified:   contrib/ntp/include/Makefile.in
+	modified:   contrib/ntp/include/ntp.h
+	modified:   contrib/ntp/include/ntp_calendar.h
+	new file:   contrib/ntp/include/ntp_calgps.h
+	modified:   contrib/ntp/include/ntp_config.h
+	modified:   contrib/ntp/include/ntp_control.h
+	modified:   contrib/ntp/include/ntp_fp.h
+	modified:   contrib/ntp/include/ntp_io.h
+	new file:   contrib/ntp/include/ntp_psl.h
+	modified:   contrib/ntp/include/ntp_refclock.h
+	modified:   contrib/ntp/include/ntp_request.h
+	modified:   contrib/ntp/include/ntp_stdlib.h
+	modified:   contrib/ntp/include/ntp_syslog.h
+	modified:   contrib/ntp/include/ntpd.h
+	modified:   contrib/ntp/include/timespecops.h
+	new file:   contrib/ntp/include/timexsup.h
+	modified:   contrib/ntp/libntp/Makefile.am
+	modified:   contrib/ntp/libntp/Makefile.in
+	modified:   contrib/ntp/libntp/decodenetnum.c
+	modified:   contrib/ntp/libntp/dofptoa.c
+	modified:   contrib/ntp/libntp/dolfptoa.c
+	modified:   contrib/ntp/libntp/mstolfp.c
+	modified:   contrib/ntp/libntp/msyslog.c
+	modified:   contrib/ntp/libntp/ntp_calendar.c
+	new file:   contrib/ntp/libntp/ntp_calgps.c
+	modified:   contrib/ntp/libntp/recvbuff.c
+	modified:   contrib/ntp/libntp/statestr.c
+	modified:   contrib/ntp/libntp/systime.c
+	new file:   contrib/ntp/libntp/timespecops.c
+	new file:   contrib/ntp/libntp/timexsup.c
+	modified:   contrib/ntp/libparse/Makefile.am
+	modified:   contrib/ntp/libparse/Makefile.in
+	modified:   contrib/ntp/libparse/clk_rawdcf.c
+	modified:   contrib/ntp/ntpd/Makefile.am
+	modified:   contrib/ntp/ntpd/Makefile.in
+	modified:   contrib/ntp/ntpd/cmd_args.c
+	modified:   contrib/ntp/ntpd/complete.conf.in
+	modified:   contrib/ntp/ntpd/invoke-ntp.conf.texi
+	modified:   contrib/ntp/ntpd/invoke-ntp.keys.texi
+	modified:   contrib/ntp/ntpd/invoke-ntpd.texi
+	modified:   contrib/ntp/ntpd/keyword-gen-utd
+	modified:   contrib/ntp/ntpd/keyword-gen.c
+	modified:   contrib/ntp/ntpd/ntp.conf.5man
+	modified:   contrib/ntp/ntpd/ntp.conf.5mdoc
+	modified:   contrib/ntp/ntpd/ntp.conf.def
+	modified:   contrib/ntp/ntpd/ntp.conf.html
+	modified:   contrib/ntp/ntpd/ntp.conf.man.in
+	modified:   contrib/ntp/ntpd/ntp.conf.mdoc.in
+	modified:   contrib/ntp/ntpd/ntp.keys.5man
+	modified:   contrib/ntp/ntpd/ntp.keys.5mdoc
+	modified:   contrib/ntp/ntpd/ntp.keys.html
+	modified:   contrib/ntp/ntpd/ntp.keys.man.in
+	modified:   contrib/ntp/ntpd/ntp.keys.mdoc.in
+	modified:   contrib/ntp/ntpd/ntp_config.c
+	modified:   contrib/ntp/ntpd/ntp_control.c
+	modified:   contrib/ntp/ntpd/ntp_io.c
+	modified:   contrib/ntp/ntpd/ntp_keyword.h
+	modified:   contrib/ntp/ntpd/ntp_leapsec.c
+	modified:   contrib/ntp/ntpd/ntp_leapsec.h
+	modified:   contrib/ntp/ntpd/ntp_loopfilter.c
+	modified:   contrib/ntp/ntpd/ntp_parser.c
+	modified:   contrib/ntp/ntpd/ntp_parser.h
+	modified:   contrib/ntp/ntpd/ntp_peer.c
+	modified:   contrib/ntp/ntpd/ntp_proto.c
+	modified:   contrib/ntp/ntpd/ntp_refclock.c
+	modified:   contrib/ntp/ntpd/ntp_request.c
+	modified:   contrib/ntp/ntpd/ntp_restrict.c
+	modified:   contrib/ntp/ntpd/ntp_scanner.c
+	modified:   contrib/ntp/ntpd/ntp_util.c
+	modified:   contrib/ntp/ntpd/ntpd-opts.c
+	modified:   contrib/ntp/ntpd/ntpd-opts.h
+	modified:   contrib/ntp/ntpd/ntpd.1ntpdman
+	modified:   contrib/ntp/ntpd/ntpd.1ntpdmdoc
+	modified:   contrib/ntp/ntpd/ntpd.c
+	modified:   contrib/ntp/ntpd/ntpd.html
+	modified:   contrib/ntp/ntpd/ntpd.man.in
+	modified:   contrib/ntp/ntpd/ntpd.mdoc.in
+	new file:   contrib/ntp/ntpd/psl0.conf
+	new file:   contrib/ntp/ntpd/psl1.conf
+	new file:   contrib/ntp/ntpd/psl2.conf
+	modified:   contrib/ntp/ntpd/refclock_gpsdjson.c
+	modified:   contrib/ntp/ntpd/refclock_jupiter.c
+	modified:   contrib/ntp/ntpd/refclock_nmea.c
+	modified:   contrib/ntp/ntpd/refclock_oncore.c
+	modified:   contrib/ntp/ntpd/refclock_palisade.c
+	modified:   contrib/ntp/ntpd/refclock_palisade.h
+	modified:   contrib/ntp/ntpd/refclock_parse.c
+	modified:   contrib/ntp/ntpd/refclock_zyfer.c
+	modified:   contrib/ntp/ntpdate/ntpdate.c
+	modified:   contrib/ntp/ntpdc/invoke-ntpdc.texi
+	modified:   contrib/ntp/ntpdc/layout.std
+	modified:   contrib/ntp/ntpdc/ntpdc-opts.c
+	modified:   contrib/ntp/ntpdc/ntpdc-opts.h
+	modified:   contrib/ntp/ntpdc/ntpdc.1ntpdcman
+	modified:   contrib/ntp/ntpdc/ntpdc.1ntpdcmdoc
+	modified:   contrib/ntp/ntpdc/ntpdc.c
+	modified:   contrib/ntp/ntpdc/ntpdc.html
+	modified:   contrib/ntp/ntpdc/ntpdc.man.in
+	modified:   contrib/ntp/ntpdc/ntpdc.mdoc.in
+	modified:   contrib/ntp/ntpdc/ntpdc_ops.c
+	modified:   contrib/ntp/ntpq/Makefile.am
+	modified:   contrib/ntp/ntpq/Makefile.in
+	modified:   contrib/ntp/ntpq/invoke-ntpq.texi
+	modified:   contrib/ntp/ntpq/ntpq-opts.c
+	modified:   contrib/ntp/ntpq/ntpq-opts.h
+	modified:   contrib/ntp/ntpq/ntpq-subs.c
+	modified:   contrib/ntp/ntpq/ntpq.1ntpqman
+	modified:   contrib/ntp/ntpq/ntpq.1ntpqmdoc
+	modified:   contrib/ntp/ntpq/ntpq.c
+	modified:   contrib/ntp/ntpq/ntpq.h
+	modified:   contrib/ntp/ntpq/ntpq.html
+	modified:   contrib/ntp/ntpq/ntpq.man.in
+	modified:   contrib/ntp/ntpq/ntpq.mdoc.in
+	modified:   contrib/ntp/ntpsnmpd/invoke-ntpsnmpd.texi
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd-opts.c
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd-opts.h
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdman
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdmdoc
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.html
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.man.in
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.mdoc.in
+	modified:   contrib/ntp/packageinfo.sh
+	modified:   contrib/ntp/parseutil/dcfd.c
+	modified:   contrib/ntp/scripts/build/mkver.in
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj-opts
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.1calc_tickadjman
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.1calc_tickadjmdoc
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.html
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.man.in
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.mdoc.in
+	modified:   contrib/ntp/scripts/calc_tickadj/invoke-calc_tickadj.texi
+	modified:   contrib/ntp/scripts/invoke-plot_summary.texi
+	modified:   contrib/ntp/scripts/invoke-summary.texi
+	modified:   contrib/ntp/scripts/ntp-wait/invoke-ntp-wait.texi
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait-opts
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.1ntp-waitman
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.1ntp-waitmdoc
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.html
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.man.in
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.mdoc.in
+	modified:   contrib/ntp/scripts/ntpsweep/invoke-ntpsweep.texi
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep-opts
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.1ntpsweepman
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.1ntpsweepmdoc
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.html
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.man.in
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.mdoc.in
+	modified:   contrib/ntp/scripts/ntptrace/invoke-ntptrace.texi
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace-opts
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.1ntptraceman
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.1ntptracemdoc
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.html
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.man.in
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.mdoc.in
+	modified:   contrib/ntp/scripts/plot_summary-opts
+	modified:   contrib/ntp/scripts/plot_summary.1plot_summaryman
+	modified:   contrib/ntp/scripts/plot_summary.1plot_summarymdoc
+	modified:   contrib/ntp/scripts/plot_summary.html
+	modified:   contrib/ntp/scripts/plot_summary.man.in
+	modified:   contrib/ntp/scripts/plot_summary.mdoc.in
+	modified:   contrib/ntp/scripts/summary-opts
+	modified:   contrib/ntp/scripts/summary.1summaryman
+	modified:   contrib/ntp/scripts/summary.1summarymdoc
+	modified:   contrib/ntp/scripts/summary.html
+	modified:   contrib/ntp/scripts/summary.man.in
+	modified:   contrib/ntp/scripts/summary.mdoc.in
+	modified:   contrib/ntp/scripts/update-leap/invoke-update-leap.texi
+	modified:   contrib/ntp/scripts/update-leap/update-leap-opts
+	modified:   contrib/ntp/scripts/update-leap/update-leap.1update-leapman
+	modified:   contrib/ntp/scripts/update-leap/update-leap.1update-leapmdoc
+	modified:   contrib/ntp/scripts/update-leap/update-leap.html
+	modified:   contrib/ntp/scripts/update-leap/update-leap.man.in
+	modified:   contrib/ntp/scripts/update-leap/update-leap.mdoc.in
+	modified:   contrib/ntp/sntp/COPYRIGHT
+	modified:   contrib/ntp/sntp/configure
+	modified:   contrib/ntp/sntp/configure.ac
+	modified:   contrib/ntp/sntp/crypto.c
+	modified:   contrib/ntp/sntp/include/copyright.def
+	modified:   contrib/ntp/sntp/include/version.def
+	modified:   contrib/ntp/sntp/include/version.texi
+	modified:   contrib/ntp/sntp/invoke-sntp.texi
+	modified:   contrib/ntp/sntp/libevent/build-aux/ar-lib
+	modified:   contrib/ntp/sntp/libevent/build-aux/compile
+	modified:   contrib/ntp/sntp/libevent/build-aux/config.guess
+	modified:   contrib/ntp/sntp/libevent/build-aux/config.sub
+	modified:   contrib/ntp/sntp/libevent/build-aux/depcomp
+	modified:   contrib/ntp/sntp/libevent/build-aux/install-sh
+	modified:   contrib/ntp/sntp/libevent/build-aux/missing
+	modified:   contrib/ntp/sntp/libevent/build-aux/test-driver
+	modified:   contrib/ntp/sntp/libevent/build-aux/ylwrap
+	modified:   contrib/ntp/sntp/libevent/test/regress.gen.c
+	modified:   contrib/ntp/sntp/libevent/test/regress.gen.h
+	modified:   contrib/ntp/sntp/libopts/m4/libopts.m4
+	modified:   contrib/ntp/sntp/m4/ntp_problemtests.m4
+	modified:   contrib/ntp/sntp/m4/version.m4
+	modified:   contrib/ntp/sntp/main.c
+	modified:   contrib/ntp/sntp/networking.c
+	modified:   contrib/ntp/sntp/scm-rev
+	modified:   contrib/ntp/sntp/sntp-opts.c
+	modified:   contrib/ntp/sntp/sntp-opts.h
+	modified:   contrib/ntp/sntp/sntp.1sntpman
+	modified:   contrib/ntp/sntp/sntp.1sntpmdoc
+	modified:   contrib/ntp/sntp/sntp.html
+	modified:   contrib/ntp/sntp/sntp.man.in
+	modified:   contrib/ntp/sntp/sntp.mdoc.in
+	modified:   contrib/ntp/sntp/tests/run-crypto.c
+	modified:   contrib/ntp/sntp/tests/run-keyFile.c
+	modified:   contrib/ntp/sntp/tests/run-kodDatabase.c
+	modified:   contrib/ntp/sntp/tests/run-kodFile.c
+	modified:   contrib/ntp/sntp/tests/run-networking.c
+	modified:   contrib/ntp/sntp/tests/run-packetHandling.c
+	modified:   contrib/ntp/sntp/tests/run-packetProcessing.c
+	modified:   contrib/ntp/sntp/tests/run-t-log.c
+	modified:   contrib/ntp/sntp/tests/run-utilities.c
+	modified:   contrib/ntp/sntp/tests/testconf.yml
+	modified:   contrib/ntp/sntp/version.c
+	modified:   contrib/ntp/util/invoke-ntp-keygen.texi
+	modified:   contrib/ntp/util/ntp-keygen-opts.c
+	modified:   contrib/ntp/util/ntp-keygen-opts.h
+	modified:   contrib/ntp/util/ntp-keygen.1ntp-keygenman
+	modified:   contrib/ntp/util/ntp-keygen.1ntp-keygenmdoc
+	modified:   contrib/ntp/util/ntp-keygen.html
+	modified:   contrib/ntp/util/ntp-keygen.man.in
+	modified:   contrib/ntp/util/ntp-keygen.mdoc.in
+	modified:   contrib/ntp/util/ntptime.c
+	modified:   lib/libc/sys/mprotect.2
+	modified:   lib/libkvm/kvm_getswapinfo.c
+	modified:   share/man/man9/fdt_pinctrl.9
+	modified:   share/misc/pci_vendors
+	modified:   sys/amd64/amd64/initcpu.c
+	modified:   sys/amd64/amd64/support.S
+	modified:   sys/arm/allwinner/a10_timer.c
+	modified:   sys/arm/arm/identcpu-v6.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_sdhost.c
+	modified:   sys/arm64/conf/GENERIC
+	modified:   sys/arm64/rockchip/clk/rk3328_cru.c
+	modified:   sys/arm64/rockchip/clk/rk3399_cru.c
+	new file:   sys/arm64/rockchip/clk/rk3399_cru_dt.h
+	modified:   sys/arm64/rockchip/clk/rk3399_pmucru.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_armclk.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_composite.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_composite.h
+	new file:   sys/arm64/rockchip/clk/rk_clk_fract.c
+	new file:   sys/arm64/rockchip/clk/rk_clk_fract.h
+	modified:   sys/arm64/rockchip/clk/rk_clk_gate.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_mux.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_pll.c
+	modified:   sys/arm64/rockchip/clk/rk_clk_pll.h
+	modified:   sys/arm64/rockchip/clk/rk_cru.c
+	modified:   sys/arm64/rockchip/clk/rk_cru.h
+	modified:   sys/arm64/rockchip/if_dwc_rk.c
+	new file:   sys/arm64/rockchip/rk3399_emmcphy.c
+	modified:   sys/arm64/rockchip/rk805.c
+	modified:   sys/arm64/rockchip/rk805reg.h
+	new file:   sys/arm64/rockchip/rk_dwc3.c
+	modified:   sys/arm64/rockchip/rk_gpio.c
+	modified:   sys/arm64/rockchip/rk_grf.c
+	modified:   sys/arm64/rockchip/rk_i2c.c
+	new file:   sys/arm64/rockchip/rk_iodomain.c
+	modified:   sys/arm64/rockchip/rk_pinctrl.c
+	new file:   sys/arm64/rockchip/rk_pwm.c
+	new file:   sys/arm64/rockchip/rk_spi.c
+	new file:   sys/arm64/rockchip/rk_tsadc.c
+	new file:   sys/arm64/rockchip/rk_tsadc_if.m
+	new file:   sys/arm64/rockchip/rk_typec_phy.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dsl_scan.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/vdev_indirect.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_ioctl.c
+	modified:   sys/conf/files
+	modified:   sys/conf/files.arm64
+	modified:   sys/dev/cpuctl/cpuctl.c
+	modified:   sys/dev/cpufreq/cpufreq_dt.c
+	modified:   sys/dev/extres/clk/clk.c
+	modified:   sys/dev/extres/clk/clk.h
+	new file:   sys/dev/extres/clk/clk_link.c
+	new file:   sys/dev/extres/clk/clk_link.h
+	modified:   sys/dev/fdt/fdt_pinctrl_if.m
+	modified:   sys/fs/ext2fs/ext2_bmap.c
+	modified:   sys/fs/ext2fs/ext2_extern.h
+	modified:   sys/fs/ext2fs/ext2_vnops.c
+	modified:   sys/gnu/dts/arm/am335x-boneblue.dts
+	modified:   sys/gnu/dts/arm/am335x-cm-t335.dts
+	modified:   sys/gnu/dts/arm/am335x-icev2.dts
+	modified:   sys/gnu/dts/arm/am33xx-l4.dtsi
+	modified:   sys/gnu/dts/arm/am3517-evm.dts
+	modified:   sys/gnu/dts/arm/am3517.dtsi
+	modified:   sys/gnu/dts/arm/am3874-iceboard.dts
+	modified:   sys/gnu/dts/arm/am4372.dtsi
+	modified:   sys/gnu/dts/arm/am437x-l4.dtsi
+	modified:   sys/gnu/dts/arm/aspeed-ast2500-evb.dts
+	new file:   sys/gnu/dts/arm/aspeed-ast2600-evb.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-facebook-minipack.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-tiogapass.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-facebook-wedge100.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-facebook-wedge40.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-inspur-fp5280g2.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-lenovo-hr855xg2.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-opp-mihawk.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-swift.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-vesnin.dts
+	modified:   sys/gnu/dts/arm/aspeed-g4.dtsi
+	modified:   sys/gnu/dts/arm/aspeed-g5.dtsi
+	new file:   sys/gnu/dts/arm/aspeed-g6-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/aspeed-g6.dtsi
+	modified:   sys/gnu/dts/arm/at91-ariag25.dts
+	modified:   sys/gnu/dts/arm/at91-ariettag25.dts
+	modified:   sys/gnu/dts/arm/at91-cosino.dtsi
+	modified:   sys/gnu/dts/arm/at91-cosino_mega2560.dts
+	modified:   sys/gnu/dts/arm/at91-kizboxmini.dts
+	modified:   sys/gnu/dts/arm/at91sam9261ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9263ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9g15.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9g15ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9g25ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9g35ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9m10g45ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9rlek.dts
+	modified:   sys/gnu/dts/arm/at91sam9x25ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9x35ek.dts
+	modified:   sys/gnu/dts/arm/at91sam9x5.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9x5_lcd.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9x5dm.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9x5ek.dtsi
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-a-plus.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-a.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-b-plus.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-b-rev2.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-b.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-cm1-io1.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-cm1.dtsi
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-zero-w.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-zero.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi.dtsi
+	modified:   sys/gnu/dts/arm/bcm2836-rpi-2-b.dts
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-3-a-plus.dts
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-3-b-plus.dts
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-3-b.dts
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-cm3-io3.dts
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-cm3.dtsi
+	modified:   sys/gnu/dts/arm/bcm283x.dtsi
+	modified:   sys/gnu/dts/arm/da850-evm.dts
+	modified:   sys/gnu/dts/arm/dra7-l4.dtsi
+	modified:   sys/gnu/dts/arm/ep7211-edb7211.dts
+	modified:   sys/gnu/dts/arm/exynos3250.dtsi
+	modified:   sys/gnu/dts/arm/exynos4.dtsi
+	modified:   sys/gnu/dts/arm/exynos4210-universal_c210.dts
+	modified:   sys/gnu/dts/arm/exynos4412-itop-elite.dts
+	modified:   sys/gnu/dts/arm/exynos4412-itop-scp-core.dtsi
+	modified:   sys/gnu/dts/arm/exynos4412-odroidu3.dts
+	modified:   sys/gnu/dts/arm/exynos4412-odroidx.dts
+	modified:   sys/gnu/dts/arm/exynos4412-origen.dts
+	modified:   sys/gnu/dts/arm/exynos5250-arndale.dts
+	modified:   sys/gnu/dts/arm/exynos5250-snow-common.dtsi
+	modified:   sys/gnu/dts/arm/exynos5250.dtsi
+	modified:   sys/gnu/dts/arm/exynos5420-peach-pit.dts
+	modified:   sys/gnu/dts/arm/exynos5420.dtsi
+	modified:   sys/gnu/dts/arm/exynos54xx.dtsi
+	modified:   sys/gnu/dts/arm/exynos5800-peach-pi.dts
+	modified:   sys/gnu/dts/arm/exynos5800.dtsi
+	modified:   sys/gnu/dts/arm/gemini-dlink-dir-685.dts
+	modified:   sys/gnu/dts/arm/gemini-nas4220b.dts
+	modified:   sys/gnu/dts/arm/gemini-sl93512r.dts
+	modified:   sys/gnu/dts/arm/imx25-eukrea-mbimxsd25-baseboard-cmo-qvga.dts
+	modified:   sys/gnu/dts/arm/imx25-eukrea-mbimxsd25-baseboard-dvi-svga.dts
+	modified:   sys/gnu/dts/arm/imx25-eukrea-mbimxsd25-baseboard-dvi-vga.dts
+	modified:   sys/gnu/dts/arm/imx25-pdk.dts
+	modified:   sys/gnu/dts/arm/imx27-apf27dev.dts
+	modified:   sys/gnu/dts/arm/imx27-eukrea-mbimxsd27-baseboard.dts
+	modified:   sys/gnu/dts/arm/imx27-phytec-phycard-s-rdk.dts
+	modified:   sys/gnu/dts/arm/imx27-phytec-phycore-rdk.dts
+	modified:   sys/gnu/dts/arm/imx53-m53menlo.dts
+	modified:   sys/gnu/dts/arm/imx6-logicpd-baseboard.dtsi
+	modified:   sys/gnu/dts/arm/imx6-logicpd-som.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-colibri.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-nit6xlite.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-phytec-pbab01.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-sabreauto.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-wandboard.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl.dtsi
+	modified:   sys/gnu/dts/arm/imx6sl.dtsi
+	modified:   sys/gnu/dts/arm/imx6sll.dtsi
+	modified:   sys/gnu/dts/arm/imx6sx.dtsi
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6310-s-43.dts
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6310-s.dts
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6310-som.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul-opos6uldev.dts
+	renamed:    sys/gnu/dts/arm/imx6ul-phytec-pcl063.dtsi -> sys/gnu/dts/arm/imx6ul-phytec-phycore-som.dtsi
+	renamed:    sys/gnu/dts/arm/imx6ul-phytec-phyboard-segin-full.dts -> sys/gnu/dts/arm/imx6ul-phytec-segin-ff-rdk-nand.dts
+	renamed:    sys/gnu/dts/arm/imx6ul-phytec-peb-eval-01.dtsi -> sys/gnu/dts/arm/imx6ul-phytec-segin-peb-eval-01.dtsi
+	renamed:    sys/gnu/dts/arm/imx6ul-phytec-phyboard-segin.dtsi -> sys/gnu/dts/arm/imx6ul-phytec-segin.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul.dtsi
+	new file:   sys/gnu/dts/arm/imx6ull-phytec-phycore-som.dtsi
+	new file:   sys/gnu/dts/arm/imx6ull-phytec-segin-ff-rdk-emmc.dts
+	new file:   sys/gnu/dts/arm/imx6ull-phytec-segin-ff-rdk-nand.dts
+	new file:   sys/gnu/dts/arm/imx6ull-phytec-segin-lc-rdk-nand.dts
+	new file:   sys/gnu/dts/arm/imx6ull-phytec-segin-peb-eval-01.dtsi
+	new file:   sys/gnu/dts/arm/imx6ull-phytec-segin.dtsi
+	modified:   sys/gnu/dts/arm/imx7-colibri.dtsi
+	modified:   sys/gnu/dts/arm/imx7d-cl-som-imx7.dts
+	new file:   sys/gnu/dts/arm/imx7d-zii-rmu2.dts
+	modified:   sys/gnu/dts/arm/imx7d-zii-rpu2.dts
+	modified:   sys/gnu/dts/arm/imx7d.dtsi
+	modified:   sys/gnu/dts/arm/imx7s.dtsi
+	modified:   sys/gnu/dts/arm/imx7ulp.dtsi
+	modified:   sys/gnu/dts/arm/kirkwood-ts219.dtsi
+	modified:   sys/gnu/dts/arm/logicpd-som-lv.dtsi
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-baseboard.dtsi
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-som.dtsi
+	modified:   sys/gnu/dts/arm/ls1021a.dtsi
+	modified:   sys/gnu/dts/arm/meson8b-ec100.dts
+	modified:   sys/gnu/dts/arm/meson8b-mxq.dts
+	modified:   sys/gnu/dts/arm/meson8b-odroidc1.dts
+	modified:   sys/gnu/dts/arm/meson8b.dtsi
+	new file:   sys/gnu/dts/arm/mmp2-olpc-xo-1-75.dts
+	modified:   sys/gnu/dts/arm/mmp2.dtsi
+	new file:   sys/gnu/dts/arm/mt7629-rfb.dts
+	new file:   sys/gnu/dts/arm/mt7629.dtsi
+	modified:   sys/gnu/dts/arm/nspire-classic.dtsi
+	modified:   sys/gnu/dts/arm/nspire-cx.dts
+	modified:   sys/gnu/dts/arm/nspire.dtsi
+	modified:   sys/gnu/dts/arm/omap3-gta04.dtsi
+	modified:   sys/gnu/dts/arm/omap3-n950-n9.dtsi
+	modified:   sys/gnu/dts/arm/omap34xx.dtsi
+	modified:   sys/gnu/dts/arm/omap36xx.dtsi
+	modified:   sys/gnu/dts/arm/omap4-droid4-xt894.dts
+	modified:   sys/gnu/dts/arm/omap4-l4-abe.dtsi
+	modified:   sys/gnu/dts/arm/omap4-l4.dtsi
+	modified:   sys/gnu/dts/arm/omap4-panda-common.dtsi
+	modified:   sys/gnu/dts/arm/omap4-sdp.dts
+	modified:   sys/gnu/dts/arm/omap4-var-som-om44-wlan.dtsi
+	modified:   sys/gnu/dts/arm/omap4.dtsi
+	modified:   sys/gnu/dts/arm/omap5-board-common.dtsi
+	modified:   sys/gnu/dts/arm/omap5.dtsi
+	modified:   sys/gnu/dts/arm/omap54xx-clocks.dtsi
+	modified:   sys/gnu/dts/arm/r8a77470.dtsi
+	modified:   sys/gnu/dts/arm/r8a7779.dtsi
+	modified:   sys/gnu/dts/arm/rk3036.dtsi
+	new file:   sys/gnu/dts/arm/rk3229-xms6.dts
+	modified:   sys/gnu/dts/arm/rk3288-evb.dtsi
+	deleted:    sys/gnu/dts/arm/rk3288-fennec.dts
+	modified:   sys/gnu/dts/arm/rk3288-tinker.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-veyron-chromebook.dtsi
+	new file:   sys/gnu/dts/arm/rk3288-veyron-edp.dtsi
+	new file:   sys/gnu/dts/arm/rk3288-veyron-fievel.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-jaq.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-jerry.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-minnie.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-pinky.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-speedy.dts
+	new file:   sys/gnu/dts/arm/rk3288-veyron-tiger.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron.dtsi
+	modified:   sys/gnu/dts/arm/socfpga.dtsi
+	modified:   sys/gnu/dts/arm/socfpga_arria10.dtsi
+	modified:   sys/gnu/dts/arm/socfpga_arria10_socdk_nand.dts
+	modified:   sys/gnu/dts/arm/socfpga_cyclone5_vining_fpga.dts
+	new file:   sys/gnu/dts/arm/ste-ab8500.dtsi
+	modified:   sys/gnu/dts/arm/ste-dbx5x0.dtsi
+	modified:   sys/gnu/dts/arm/ste-href-ab8500.dtsi
+	modified:   sys/gnu/dts/arm/ste-href-family-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/ste-href-stuib.dtsi
+	modified:   sys/gnu/dts/arm/ste-href.dtsi
+	modified:   sys/gnu/dts/arm/ste-hrefprev60-stuib.dts
+	modified:   sys/gnu/dts/arm/ste-hrefv60plus-stuib.dts
+	modified:   sys/gnu/dts/arm/ste-nomadik-nhk15.dts
+	modified:   sys/gnu/dts/arm/ste-snowball.dts
+	modified:   sys/gnu/dts/arm/stm32429i-eval.dts
+	modified:   sys/gnu/dts/arm/stm32f429.dtsi
+	modified:   sys/gnu/dts/arm/stm32f746.dtsi
+	modified:   sys/gnu/dts/arm/stm32h743i-eval.dts
+	modified:   sys/gnu/dts/arm/stm32mp157-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/stm32mp157a-dk1.dts
+	modified:   sys/gnu/dts/arm/stm32mp157c-ed1.dts
+	modified:   sys/gnu/dts/arm/stm32mp157c-ev1.dts
+	modified:   sys/gnu/dts/arm/stm32mp157c.dtsi
+	modified:   sys/gnu/dts/arm/sun4i-a10-a1000.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-ba10-tvbox.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-cubieboard.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-hackberry.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-itead-iteaduino-plus.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-jesurun-q5.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-marsboard.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-olinuxino-lime.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10-pcduino.dts
+	modified:   sys/gnu/dts/arm/sun4i-a10.dtsi
+	modified:   sys/gnu/dts/arm/sun5i-a10s-olinuxino-micro.dts
+	modified:   sys/gnu/dts/arm/sun5i-a10s-wobo-i5.dts
+	modified:   sys/gnu/dts/arm/sun5i-a13-q8-tablet.dts
+	modified:   sys/gnu/dts/arm/sun5i.dtsi
+	modified:   sys/gnu/dts/arm/sun6i-a31-colombus.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31-hummingbird.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31-i7.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31-m9.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31-mele-a1000g-quad.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31.dtsi
+	modified:   sys/gnu/dts/arm/sun6i-a31s-cs908.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31s-sina31s.dts
+	modified:   sys/gnu/dts/arm/sun6i-a31s-sinovoip-bpi-m2.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-bananapi-m1-plus.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-bananapi.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-bananapro.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-cubieboard2.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-cubietruck.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-hummingbird.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-i12-tvbox.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-icnova-swac.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-itead-ibox.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-lamobo-r1.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-m3.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-olimex-som-evb.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-olimex-som204-evb.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-olinuxino-lime.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-olinuxino-lime2.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-olinuxino-micro.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-orangepi-mini.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-orangepi.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-pcduino3-nano.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-pcduino3.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20-wits-pro-a20-dkt.dts
+	modified:   sys/gnu/dts/arm/sun7i-a20.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-a23-a33.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-a23-ippo-q8h-v1.2.dts
+	modified:   sys/gnu/dts/arm/sun8i-a23-ippo-q8h-v5.dts
+	modified:   sys/gnu/dts/arm/sun8i-a23-q8-tablet.dts
+	modified:   sys/gnu/dts/arm/sun8i-a83t-cubietruck-plus.dts
+	modified:   sys/gnu/dts/arm/sun8i-a83t-tbs-a711.dts
+	modified:   sys/gnu/dts/arm/sun8i-a83t.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-r40.dtsi
+	new file:   sys/gnu/dts/arm/sun8i-s3-lichee-zero-plus.dts
+	new file:   sys/gnu/dts/arm/sun8i-v3.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-v3s.dtsi
+	modified:   sys/gnu/dts/arm/sun9i-a80-cubieboard4.dts
+	modified:   sys/gnu/dts/arm/sun9i-a80-optimus.dts
+	modified:   sys/gnu/dts/arm/sun9i-a80.dtsi
+	modified:   sys/gnu/dts/arm/sunxi-h3-h5.dtsi
+	modified:   sys/gnu/dts/arm/vexpress-v2m-rs1.dtsi
+	modified:   sys/gnu/dts/arm/vexpress-v2m.dtsi
+	modified:   sys/gnu/dts/arm/vf610-zii-cfu1.dts
+	modified:   sys/gnu/dts/arm/vf610-zii-scu4-aib.dts
+	modified:   sys/gnu/dts/arm/vf610-zii-spb4.dts
+	new file:   sys/gnu/dts/arm64/allwinner/sun50i-a64-olinuxino-emmc.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-orangepi-win.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-pine64-plus.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-pinebook.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-sopine-baseboard.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-beelink-gs1.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-orangepi-3.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-orangepi.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-pine-h64.dts
+	new file:   sys/gnu/dts/arm64/allwinner/sun50i-h6-tanix-tx6.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6.dtsi
+	modified:   sys/gnu/dts/arm64/altera/socfpga_stratix10.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-axg.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12-common.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a-sei510.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a-u200.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a-x96-max.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12b-a311d-khadas-vim3.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12b-a311d.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12b-khadas-vim3.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12b-odroid-n2.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12b-s922x-khadas-vim3.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12b-s922x.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12b.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gx.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-nanopi-k2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-nexbox-a95x.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-odroidc2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-p201.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-p20x.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-wetek-hub.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-wetek-play2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905w-tx3-mini.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-hwacom-amazetv.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-khadas-vim.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-nexbox-a95x.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxm-khadas-vim2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxm.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-khadas-vim3.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-sm1-khadas-vim3l.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-sm1-sei610.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-sm1.dtsi
+	modified:   sys/gnu/dts/arm64/arm/fvp-base-revc.dts
+	modified:   sys/gnu/dts/arm64/arm/rtsm_ve-motherboard.dtsi
+	modified:   sys/gnu/dts/arm64/arm/vexpress-v2m-rs1.dtsi
+	modified:   sys/gnu/dts/arm64/bitmain/bm1880.dtsi
+	modified:   sys/gnu/dts/arm64/broadcom/stingray/stingray-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm64/broadcom/stingray/stingray.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1012a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1028a-qds.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1028a-rdb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1028a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1043a.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/fsl-ls1046a-frwy.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1046a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1088a-qds.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1088a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls208xa.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-lx2160a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mm-evk.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mm.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/imx8mn-ddr4-evk.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mn.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-evk.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mq-hummingboard-pulse.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-librem5-devkit.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mq-nitrogen.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mq-pico-pi.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mq-sr-som.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-zii-ultra.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/imx8qxp-ai_ml.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8qxp-mek.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8qxp.dtsi
+	modified:   sys/gnu/dts/arm64/intel/socfpga_agilex.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-3720-turris-mox.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-37xx.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-7040-db.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-8040-clearfog-gt-8k.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-8040-db.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-8040-mcbin.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-ap806-quad.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-ap806.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-cp110.dtsi
+	modified:   sys/gnu/dts/arm64/mediatek/mt7622-bananapi-bpi-r64.dts
+	modified:   sys/gnu/dts/arm64/mediatek/mt7622.dtsi
+	modified:   sys/gnu/dts/arm64/mediatek/mt8183-evb.dts
+	modified:   sys/gnu/dts/arm64/mediatek/mt8183.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra194-p2888.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra194-p2972-0000.dts
+	modified:   sys/gnu/dts/arm64/nvidia/tegra194.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/msm8916-longcheer-l8150.dts
+	new file:   sys/gnu/dts/arm64/qcom/msm8916-samsung-a2015-common.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/msm8916-samsung-a3u-eur.dts
+	new file:   sys/gnu/dts/arm64/qcom/msm8916-samsung-a5u-eur.dts
+	modified:   sys/gnu/dts/arm64/qcom/msm8996.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/msm8998-asus-novago-tp370ql.dts
+	new file:   sys/gnu/dts/arm64/qcom/msm8998-clamshell.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/msm8998-hp-envy-x2.dts
+	new file:   sys/gnu/dts/arm64/qcom/msm8998-lenovo-miix-630.dts
+	modified:   sys/gnu/dts/arm64/qcom/msm8998.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/pm8150.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/pm8150b.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/pm8150l.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/pm8998.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/pms405.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/qcs404-evb.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/qcs404.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/sdm845-cheza.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/sdm845-db845c.dts
+	modified:   sys/gnu/dts/arm64/qcom/sdm845-mtp.dts
+	modified:   sys/gnu/dts/arm64/qcom/sdm845.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/sdm850-lenovo-yoga-c630.dts
+	new file:   sys/gnu/dts/arm64/qcom/sm8150-mtp.dts
+	new file:   sys/gnu/dts/arm64/qcom/sm8150.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/hihope-common.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/hihope-rzg2-ex.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a774a1.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a774c0-cat874.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a774c0.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a7795-es1-salvator-x.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a7795-es1.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a7795-salvator-x.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a7795-salvator-xs.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a7795.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a7796-salvator-x.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a7796-salvator-xs.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a7796.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77965-salvator-x.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77965-salvator-xs.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77965.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77970-eagle.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77970-v3msk.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77970.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77980-condor.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77980-v3hsk.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77980.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77990-ebisu.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77990.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77995-draak.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77995.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/salvator-common.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/ulcb-kf.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/ulcb.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3328-rock64.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3328.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-gru-kevin.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-hugsun-x99.dts
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399-leez-p710.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-rockpro64.dts
+	modified:   sys/gnu/dts/arm64/ti/k3-am65-main.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am65-mcu.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am65-wakeup.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am65.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am654-base-board.dts
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-common-proc-board.dts
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-main.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-mcu-wakeup.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e.dtsi
+	new file:   sys/gnu/dts/include/dt-bindings/bus/moxtet.h
+	modified:   sys/gnu/dts/include/dt-bindings/bus/ti-sysc.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/ast2600-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/bcm2835.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/g12a-clkc.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/imx8-clock.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/imx8mn-clock.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/ingenic,tcu.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/jz4740-cgu.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/mt6779-clk.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/mt8183-clk.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/omap5.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/qcom,gcc-qcs404.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,gcc-sm8150.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/rk3308-cru.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/sun8i-v3s-ccu.h
+	new file:   sys/gnu/dts/include/dt-bindings/gce/mt8183-gce.h
+	new file:   sys/gnu/dts/include/dt-bindings/interconnect/qcom,qcs404.h
+	modified:   sys/gnu/dts/include/dt-bindings/leds/common.h
+	new file:   sys/gnu/dts/include/dt-bindings/memory/mt8183-larb-port.h
+	new file:   sys/gnu/dts/include/dt-bindings/phy/phy-lantiq-vrx200-pcie.h
+	modified:   sys/gnu/dts/include/dt-bindings/pinctrl/k3.h
+	new file:   sys/gnu/dts/include/dt-bindings/power/meson-g12a-power.h
+	new file:   sys/gnu/dts/include/dt-bindings/power/meson-sm1-power.h
+	new file:   sys/gnu/dts/include/dt-bindings/regulator/active-semi,8865-regulator.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset-controller/mt8183-resets.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson-g12a-audio-reset.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson-gxbb-reset.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson8b-reset.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/hisi,hi6220-resets.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/imx8mq-reset.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset/mt7629-resets.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/sun8i-v3s-ccu.h
+	new file:   sys/gnu/dts/include/dt-bindings/soc/ti,sci_pm_domain.h
+	modified:   sys/i386/i386/support.s
+	modified:   sys/modules/rockchip/Makefile
+	new file:   sys/modules/rockchip/rk_spi/Makefile
+	modified:   sys/net/ieee8023ad_lacp.c
+	modified:   sys/net/if_media.c
+	modified:   sys/net/if_media.h
+	modified:   sys/vm/swap_pager.c
+	modified:   sys/vm/swap_pager.h
+	modified:   sys/x86/acpica/acpi_wakeup.c
+	modified:   sys/x86/include/x86_var.h
+	modified:   usr.bin/diff/diff.1
+	modified:   usr.bin/diff/diff.c
+	modified:   usr.bin/diff/diff.h
+	modified:   usr.bin/diff/diffreg.c
+	modified:   usr.bin/diff/tests/diff_test.sh
+	modified:   usr.sbin/ntp/config.h
+	modified:   usr.sbin/ntp/libntp/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/x86/x86/cpu_machdep.c
+
+HEAD is now at fe8067d186da HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at fe8067d186da HBSD: Resolve merge conflict
+==== END: hardened/12-stable/master ====
