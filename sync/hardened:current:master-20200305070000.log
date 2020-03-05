@@ -1,0 +1,385 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_mmap.c
+CONFLICT (content): Merge conflict in sys/vm/vm_mmap.c
+Auto-merging sys/sys/elf_common.h
+Auto-merging sys/kern/kern_exec.c
+Auto-merging sys/compat/linux/linux_mmap.c
+Auto-merging stand/i386/Makefile.inc
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/vm/vm_mmap.c
+index 7c5b3319b613,8b832b85cafe..000000000000
+--- a/sys/vm/vm_mmap.c
++++ b/sys/vm/vm_mmap.c
+@@@ -217,15 -217,21 +220,32 @@@ kern_mmap_req(struct thread *td, const 
+  	struct vmspace *vms;
+  	struct file *fp;
+  	struct proc *p;
++ 	off_t pos;
+  	vm_offset_t addr;
+++<<<<<<< HEAD
+ +	vm_size_t pageoff, size;
+ +	vm_prot_t cap_maxprot, max_prot;
+ +	int align, error;
+ +	cap_rights_t rights;
+ +#ifdef PAX_ASLR
+ +	vm_offset_t orig_addr;
+ +	int pax_aslr_done;
+ +#endif
+++=======
++ 	vm_size_t len, pageoff, size;
++ 	vm_prot_t cap_maxprot;
++ 	int align, error, fd, flags, max_prot, prot;
++ 	cap_rights_t rights;
++ 	mmap_check_fp_fn check_fp_fn;
++ 
++ 	addr  = mrp->mr_hint;
++ 	len = mrp->mr_len;
++ 	prot = mrp->mr_prot;
++ 	flags = mrp->mr_flags;
++ 	fd = mrp->mr_fd;
++ 	pos = mrp->mr_pos;
++ 	check_fp_fn = mrp->mr_check_fp_fn;
+++>>>>>>> freebsd/current/master
+  
+  	if ((prot & ~(_PROT_ALL | PROT_MAX(_PROT_ALL))) != 0)
+  		return (EINVAL);
+@@@ -246,13 -252,7 +266,12 @@@
+  	vms = p->p_vmspace;
+  	fp = NULL;
+  	AUDIT_ARG_FD(fd);
+- 	addr = addr0;
+  
+ +#ifdef PAX_ASLR
+ +	orig_addr = addr;
+ +	pax_aslr_done = 0;
+ +#endif
+ +
+  	/*
+  	 * Ignore old flags that used to be defined but did not do anything.
+  	 */
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/elftoolchain/readelf/readelf.c
+	modified:   contrib/ntp/COPYRIGHT
+	modified:   contrib/ntp/ChangeLog
+	modified:   contrib/ntp/CommitLog
+	modified:   contrib/ntp/NEWS
+	modified:   contrib/ntp/config.h.in
+	modified:   contrib/ntp/configure
+	modified:   contrib/ntp/configure.ac
+	modified:   contrib/ntp/html/accopt.html
+	modified:   contrib/ntp/html/clockopt.html
+	modified:   contrib/ntp/html/confopt.html
+	modified:   contrib/ntp/html/copyright.html
+	modified:   contrib/ntp/html/discipline.html
+	modified:   contrib/ntp/html/drivers/driver20.html
+	modified:   contrib/ntp/html/drivers/driver29.html
+	modified:   contrib/ntp/html/miscopt.html
+	modified:   contrib/ntp/include/Makefile.am
+	modified:   contrib/ntp/include/Makefile.in
+	modified:   contrib/ntp/include/ntp.h
+	modified:   contrib/ntp/include/ntp_calendar.h
+	new file:   contrib/ntp/include/ntp_calgps.h
+	modified:   contrib/ntp/include/ntp_config.h
+	modified:   contrib/ntp/include/ntp_control.h
+	modified:   contrib/ntp/include/ntp_fp.h
+	modified:   contrib/ntp/include/ntp_io.h
+	new file:   contrib/ntp/include/ntp_psl.h
+	modified:   contrib/ntp/include/ntp_refclock.h
+	modified:   contrib/ntp/include/ntp_request.h
+	modified:   contrib/ntp/include/ntp_stdlib.h
+	modified:   contrib/ntp/include/ntp_syslog.h
+	modified:   contrib/ntp/include/ntpd.h
+	modified:   contrib/ntp/include/timespecops.h
+	new file:   contrib/ntp/include/timexsup.h
+	modified:   contrib/ntp/libntp/Makefile.am
+	modified:   contrib/ntp/libntp/Makefile.in
+	modified:   contrib/ntp/libntp/decodenetnum.c
+	modified:   contrib/ntp/libntp/dofptoa.c
+	modified:   contrib/ntp/libntp/dolfptoa.c
+	modified:   contrib/ntp/libntp/mstolfp.c
+	modified:   contrib/ntp/libntp/msyslog.c
+	modified:   contrib/ntp/libntp/ntp_calendar.c
+	new file:   contrib/ntp/libntp/ntp_calgps.c
+	modified:   contrib/ntp/libntp/recvbuff.c
+	modified:   contrib/ntp/libntp/statestr.c
+	modified:   contrib/ntp/libntp/systime.c
+	new file:   contrib/ntp/libntp/timespecops.c
+	new file:   contrib/ntp/libntp/timexsup.c
+	modified:   contrib/ntp/libparse/Makefile.am
+	modified:   contrib/ntp/libparse/Makefile.in
+	modified:   contrib/ntp/libparse/clk_rawdcf.c
+	modified:   contrib/ntp/ntpd/Makefile.am
+	modified:   contrib/ntp/ntpd/Makefile.in
+	modified:   contrib/ntp/ntpd/cmd_args.c
+	modified:   contrib/ntp/ntpd/complete.conf.in
+	modified:   contrib/ntp/ntpd/invoke-ntp.conf.texi
+	modified:   contrib/ntp/ntpd/invoke-ntp.keys.texi
+	modified:   contrib/ntp/ntpd/invoke-ntpd.texi
+	modified:   contrib/ntp/ntpd/keyword-gen-utd
+	modified:   contrib/ntp/ntpd/keyword-gen.c
+	modified:   contrib/ntp/ntpd/ntp.conf.5man
+	modified:   contrib/ntp/ntpd/ntp.conf.5mdoc
+	modified:   contrib/ntp/ntpd/ntp.conf.def
+	modified:   contrib/ntp/ntpd/ntp.conf.html
+	modified:   contrib/ntp/ntpd/ntp.conf.man.in
+	modified:   contrib/ntp/ntpd/ntp.conf.mdoc.in
+	modified:   contrib/ntp/ntpd/ntp.keys.5man
+	modified:   contrib/ntp/ntpd/ntp.keys.5mdoc
+	modified:   contrib/ntp/ntpd/ntp.keys.html
+	modified:   contrib/ntp/ntpd/ntp.keys.man.in
+	modified:   contrib/ntp/ntpd/ntp.keys.mdoc.in
+	modified:   contrib/ntp/ntpd/ntp_config.c
+	modified:   contrib/ntp/ntpd/ntp_control.c
+	modified:   contrib/ntp/ntpd/ntp_io.c
+	modified:   contrib/ntp/ntpd/ntp_keyword.h
+	modified:   contrib/ntp/ntpd/ntp_leapsec.c
+	modified:   contrib/ntp/ntpd/ntp_leapsec.h
+	modified:   contrib/ntp/ntpd/ntp_loopfilter.c
+	modified:   contrib/ntp/ntpd/ntp_parser.c
+	modified:   contrib/ntp/ntpd/ntp_parser.h
+	modified:   contrib/ntp/ntpd/ntp_peer.c
+	modified:   contrib/ntp/ntpd/ntp_proto.c
+	modified:   contrib/ntp/ntpd/ntp_refclock.c
+	modified:   contrib/ntp/ntpd/ntp_request.c
+	modified:   contrib/ntp/ntpd/ntp_restrict.c
+	modified:   contrib/ntp/ntpd/ntp_scanner.c
+	modified:   contrib/ntp/ntpd/ntp_util.c
+	modified:   contrib/ntp/ntpd/ntpd-opts.c
+	modified:   contrib/ntp/ntpd/ntpd-opts.h
+	modified:   contrib/ntp/ntpd/ntpd.1ntpdman
+	modified:   contrib/ntp/ntpd/ntpd.1ntpdmdoc
+	modified:   contrib/ntp/ntpd/ntpd.c
+	modified:   contrib/ntp/ntpd/ntpd.html
+	modified:   contrib/ntp/ntpd/ntpd.man.in
+	modified:   contrib/ntp/ntpd/ntpd.mdoc.in
+	new file:   contrib/ntp/ntpd/psl0.conf
+	new file:   contrib/ntp/ntpd/psl1.conf
+	new file:   contrib/ntp/ntpd/psl2.conf
+	modified:   contrib/ntp/ntpd/refclock_gpsdjson.c
+	modified:   contrib/ntp/ntpd/refclock_jupiter.c
+	modified:   contrib/ntp/ntpd/refclock_nmea.c
+	modified:   contrib/ntp/ntpd/refclock_oncore.c
+	modified:   contrib/ntp/ntpd/refclock_palisade.c
+	modified:   contrib/ntp/ntpd/refclock_palisade.h
+	modified:   contrib/ntp/ntpd/refclock_parse.c
+	modified:   contrib/ntp/ntpd/refclock_zyfer.c
+	modified:   contrib/ntp/ntpdate/ntpdate.c
+	modified:   contrib/ntp/ntpdc/invoke-ntpdc.texi
+	modified:   contrib/ntp/ntpdc/layout.std
+	modified:   contrib/ntp/ntpdc/ntpdc-opts.c
+	modified:   contrib/ntp/ntpdc/ntpdc-opts.h
+	modified:   contrib/ntp/ntpdc/ntpdc.1ntpdcman
+	modified:   contrib/ntp/ntpdc/ntpdc.1ntpdcmdoc
+	modified:   contrib/ntp/ntpdc/ntpdc.c
+	modified:   contrib/ntp/ntpdc/ntpdc.html
+	modified:   contrib/ntp/ntpdc/ntpdc.man.in
+	modified:   contrib/ntp/ntpdc/ntpdc.mdoc.in
+	modified:   contrib/ntp/ntpdc/ntpdc_ops.c
+	modified:   contrib/ntp/ntpq/Makefile.am
+	modified:   contrib/ntp/ntpq/Makefile.in
+	modified:   contrib/ntp/ntpq/invoke-ntpq.texi
+	modified:   contrib/ntp/ntpq/ntpq-opts.c
+	modified:   contrib/ntp/ntpq/ntpq-opts.h
+	modified:   contrib/ntp/ntpq/ntpq-subs.c
+	modified:   contrib/ntp/ntpq/ntpq.1ntpqman
+	modified:   contrib/ntp/ntpq/ntpq.1ntpqmdoc
+	modified:   contrib/ntp/ntpq/ntpq.c
+	modified:   contrib/ntp/ntpq/ntpq.h
+	modified:   contrib/ntp/ntpq/ntpq.html
+	modified:   contrib/ntp/ntpq/ntpq.man.in
+	modified:   contrib/ntp/ntpq/ntpq.mdoc.in
+	modified:   contrib/ntp/ntpsnmpd/invoke-ntpsnmpd.texi
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd-opts.c
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd-opts.h
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdman
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdmdoc
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.html
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.man.in
+	modified:   contrib/ntp/ntpsnmpd/ntpsnmpd.mdoc.in
+	modified:   contrib/ntp/packageinfo.sh
+	modified:   contrib/ntp/parseutil/dcfd.c
+	modified:   contrib/ntp/scripts/build/mkver.in
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj-opts
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.1calc_tickadjman
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.1calc_tickadjmdoc
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.html
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.man.in
+	modified:   contrib/ntp/scripts/calc_tickadj/calc_tickadj.mdoc.in
+	modified:   contrib/ntp/scripts/calc_tickadj/invoke-calc_tickadj.texi
+	modified:   contrib/ntp/scripts/invoke-plot_summary.texi
+	modified:   contrib/ntp/scripts/invoke-summary.texi
+	modified:   contrib/ntp/scripts/ntp-wait/invoke-ntp-wait.texi
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait-opts
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.1ntp-waitman
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.1ntp-waitmdoc
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.html
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.man.in
+	modified:   contrib/ntp/scripts/ntp-wait/ntp-wait.mdoc.in
+	modified:   contrib/ntp/scripts/ntpsweep/invoke-ntpsweep.texi
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep-opts
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.1ntpsweepman
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.1ntpsweepmdoc
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.html
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.man.in
+	modified:   contrib/ntp/scripts/ntpsweep/ntpsweep.mdoc.in
+	modified:   contrib/ntp/scripts/ntptrace/invoke-ntptrace.texi
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace-opts
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.1ntptraceman
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.1ntptracemdoc
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.html
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.man.in
+	modified:   contrib/ntp/scripts/ntptrace/ntptrace.mdoc.in
+	modified:   contrib/ntp/scripts/plot_summary-opts
+	modified:   contrib/ntp/scripts/plot_summary.1plot_summaryman
+	modified:   contrib/ntp/scripts/plot_summary.1plot_summarymdoc
+	modified:   contrib/ntp/scripts/plot_summary.html
+	modified:   contrib/ntp/scripts/plot_summary.man.in
+	modified:   contrib/ntp/scripts/plot_summary.mdoc.in
+	modified:   contrib/ntp/scripts/summary-opts
+	modified:   contrib/ntp/scripts/summary.1summaryman
+	modified:   contrib/ntp/scripts/summary.1summarymdoc
+	modified:   contrib/ntp/scripts/summary.html
+	modified:   contrib/ntp/scripts/summary.man.in
+	modified:   contrib/ntp/scripts/summary.mdoc.in
+	modified:   contrib/ntp/scripts/update-leap/invoke-update-leap.texi
+	modified:   contrib/ntp/scripts/update-leap/update-leap-opts
+	modified:   contrib/ntp/scripts/update-leap/update-leap.1update-leapman
+	modified:   contrib/ntp/scripts/update-leap/update-leap.1update-leapmdoc
+	modified:   contrib/ntp/scripts/update-leap/update-leap.html
+	modified:   contrib/ntp/scripts/update-leap/update-leap.man.in
+	modified:   contrib/ntp/scripts/update-leap/update-leap.mdoc.in
+	modified:   contrib/ntp/sntp/COPYRIGHT
+	modified:   contrib/ntp/sntp/configure
+	modified:   contrib/ntp/sntp/configure.ac
+	modified:   contrib/ntp/sntp/crypto.c
+	modified:   contrib/ntp/sntp/include/copyright.def
+	modified:   contrib/ntp/sntp/include/version.def
+	modified:   contrib/ntp/sntp/include/version.texi
+	modified:   contrib/ntp/sntp/invoke-sntp.texi
+	modified:   contrib/ntp/sntp/libevent/build-aux/ar-lib
+	modified:   contrib/ntp/sntp/libevent/build-aux/compile
+	modified:   contrib/ntp/sntp/libevent/build-aux/config.guess
+	modified:   contrib/ntp/sntp/libevent/build-aux/config.sub
+	modified:   contrib/ntp/sntp/libevent/build-aux/depcomp
+	modified:   contrib/ntp/sntp/libevent/build-aux/install-sh
+	modified:   contrib/ntp/sntp/libevent/build-aux/missing
+	modified:   contrib/ntp/sntp/libevent/build-aux/test-driver
+	modified:   contrib/ntp/sntp/libevent/build-aux/ylwrap
+	modified:   contrib/ntp/sntp/libevent/test/regress.gen.c
+	modified:   contrib/ntp/sntp/libevent/test/regress.gen.h
+	modified:   contrib/ntp/sntp/libopts/m4/libopts.m4
+	modified:   contrib/ntp/sntp/m4/ntp_problemtests.m4
+	modified:   contrib/ntp/sntp/m4/version.m4
+	modified:   contrib/ntp/sntp/main.c
+	modified:   contrib/ntp/sntp/networking.c
+	modified:   contrib/ntp/sntp/scm-rev
+	modified:   contrib/ntp/sntp/sntp-opts.c
+	modified:   contrib/ntp/sntp/sntp-opts.h
+	modified:   contrib/ntp/sntp/sntp.1sntpman
+	modified:   contrib/ntp/sntp/sntp.1sntpmdoc
+	modified:   contrib/ntp/sntp/sntp.html
+	modified:   contrib/ntp/sntp/sntp.man.in
+	modified:   contrib/ntp/sntp/sntp.mdoc.in
+	modified:   contrib/ntp/sntp/tests/run-crypto.c
+	modified:   contrib/ntp/sntp/tests/run-keyFile.c
+	modified:   contrib/ntp/sntp/tests/run-kodDatabase.c
+	modified:   contrib/ntp/sntp/tests/run-kodFile.c
+	modified:   contrib/ntp/sntp/tests/run-networking.c
+	modified:   contrib/ntp/sntp/tests/run-packetHandling.c
+	modified:   contrib/ntp/sntp/tests/run-packetProcessing.c
+	modified:   contrib/ntp/sntp/tests/run-t-log.c
+	modified:   contrib/ntp/sntp/tests/run-utilities.c
+	modified:   contrib/ntp/sntp/tests/testconf.yml
+	modified:   contrib/ntp/sntp/version.c
+	modified:   contrib/ntp/util/invoke-ntp-keygen.texi
+	modified:   contrib/ntp/util/ntp-keygen-opts.c
+	modified:   contrib/ntp/util/ntp-keygen-opts.h
+	modified:   contrib/ntp/util/ntp-keygen.1ntp-keygenman
+	modified:   contrib/ntp/util/ntp-keygen.1ntp-keygenmdoc
+	modified:   contrib/ntp/util/ntp-keygen.html
+	modified:   contrib/ntp/util/ntp-keygen.man.in
+	modified:   contrib/ntp/util/ntp-keygen.mdoc.in
+	modified:   contrib/ntp/util/ntptime.c
+	modified:   sbin/mount_nfs/mount_nfs.c
+	modified:   share/man/man4/ng_car.4
+	modified:   stand/i386/Makefile.inc
+	modified:   stand/i386/boot.ldscript
+	modified:   stand/i386/boot2/Makefile
+	modified:   stand/i386/gptboot/Makefile
+	modified:   stand/i386/gptzfsboot/Makefile
+	modified:   stand/i386/isoboot/Makefile
+	modified:   stand/i386/loader/Makefile
+	modified:   stand/i386/zfsboot/Makefile
+	modified:   sys/arm64/include/machdep.h
+	modified:   sys/cam/cam_xpt.c
+	modified:   sys/compat/linux/linux_mmap.c
+	modified:   sys/dev/bnxt/if_bnxt.c
+	modified:   sys/dev/mmc/host/dwmmc.c
+	modified:   sys/dev/mmc/host/dwmmc_hisi.c
+	modified:   sys/dev/mmc/host/dwmmc_var.h
+	modified:   sys/dev/wtap/if_wtap.c
+	modified:   sys/dev/wtap/if_wtapvar.h
+	modified:   sys/fs/nullfs/null_vfsops.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/netgraph/ng_car.c
+	modified:   sys/netgraph/ng_car.h
+	modified:   sys/sys/elf_common.h
+	modified:   sys/sys/refcount.h
+	modified:   sys/sys/syscallsubr.h
+	modified:   usr.bin/elfctl/elfctl.c
+	modified:   usr.sbin/ntp/config.h
+	modified:   usr.sbin/ntp/libntp/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/vm/vm_mmap.c
+
+HEAD is now at af5acf13c898 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at af5acf13c898 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
