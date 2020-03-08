@@ -34,3 +34,305 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/xpra/pkg-plist
+Removing x11/xpra/pkg-descr
+Removing x11/xpra/files/patch-xpra_scripts_config.py
+Removing x11/xpra/files/patch-xpra_net_bytestreams.py
+Removing x11/xpra/files/patch-setup.py
+Removing x11/xpra/files/patch-scripts_xpra__launcher
+Removing x11/xpra/files/patch-scripts_xpra
+Removing x11/xpra/distinfo
+Removing x11/xpra/Makefile
+Removing x11/run_scaled/pkg-descr
+Removing x11/run_scaled/files/patch-run__scaled
+Removing x11/run_scaled/distinfo
+Removing x11/run_scaled/Makefile
+Removing x11-wm/compiz-fusion/pkg-descr
+Removing x11-wm/compiz-fusion/Makefile
+Removing x11-wm/ccsm/pkg-plist
+Removing x11-wm/ccsm/pkg-descr
+Removing x11-wm/ccsm/distinfo
+Removing x11-wm/ccsm/Makefile
+Removing x11-toolkits/py-gtksourceview/pkg-plist
+Removing x11-toolkits/py-gtksourceview/pkg-descr
+Removing x11-toolkits/py-gtksourceview/distinfo
+Removing x11-toolkits/py-gtksourceview/Makefile
+Removing x11-toolkits/py-gtkglext/pkg-plist
+Removing x11-toolkits/py-gtkglext/pkg-descr
+Removing x11-toolkits/py-gtkglext/files/patch-py-compile
+Removing x11-toolkits/py-gtkglext/distinfo
+Removing x11-toolkits/py-gtkglext/Makefile
+Removing x11-fonts/font-manager/pkg-plist
+Removing x11-fonts/font-manager/pkg-descr
+Removing x11-fonts/font-manager/files/patch-src_lib_fm-fontutils.c
+Removing x11-fonts/font-manager/files/patch-src-constants.py.in
+Removing x11-fonts/font-manager/files/patch-Makefile.in
+Removing x11-fonts/font-manager/distinfo
+Removing x11-fonts/font-manager/Makefile
+Removing www/pycarddav/pkg-descr
+Removing www/pycarddav/files/pkg-message.in
+Removing www/pycarddav/distinfo
+Removing www/pycarddav/Makefile
+Removing www/gitea/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+Auto-merging www/gitea/Makefile
+CONFLICT (content): Merge conflict in www/gitea/Makefile
+Removing lang/gcc6/pkg-plist
+Removing lang/gcc6/pkg-descr
+Removing lang/gcc6/files/pkg-message.in
+Removing lang/gcc6/files/patch-spe-config
+Removing lang/gcc6/files/patch-libjava-classpath-scripts-check_jni_methods.sh.in
+Removing lang/gcc6/files/patch-arm-unwind-cxx-support
+Removing lang/gcc6/files/java-patch-hier
+Removing lang/gcc6/distinfo
+CONFLICT (modify/delete): lang/gcc6/Makefile deleted in freebsd/master and modified in HEAD. Version HEAD of lang/gcc6/Makefile left in tree.
+Removing deskutils/syncthing-gtk/pkg-descr
+Removing deskutils/syncthing-gtk/files/patch-syncthing__gtk_configuration.py
+Removing deskutils/syncthing-gtk/distinfo
+Removing deskutils/syncthing-gtk/Makefile
+Removing databases/pgworksheet/pkg-descr
+Removing databases/pgworksheet/distinfo
+Removing databases/pgworksheet/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc www/gitea/Makefile
+index 8368536f562a,e1e38bcdf6b1..000000000000
+--- a/www/gitea/Makefile
++++ b/www/gitea/Makefile
+@@@ -11,16 -14,12 +14,18 @@@ COMMENT=	Compact self-hosted Git servic
+  LICENSE=	MIT
+  LICENSE_FILE=	${WRKSRC}/LICENSE
+  
+- RUN_DEPENDS=	git:devel/git
++ RUN_DEPENDS=	git:devel/git \
++ 		git-lfs:devel/git-lfs
+  
+- USES=		go:modules
+- USE_GITHUB=	yes
+- GH_ACCOUNT=	go-gitea
++ USES=		gmake go:no_targets
+  USE_RC_SUBR=	gitea
+  
+++<<<<<<< HEAD
+ +GO_BUILDFLAGS=	-tags "${GO_TAGS}" -ldflags '-X "main.Version=${PORTVERSION}"' -buildmode=pie
+ +GO_TARGET=	:${PREFIX}/sbin/${PORTNAME}
+ +
+++=======
+++>>>>>>> freebsd/master
+  SUB_FILES+=	app.ini.sample
+  SUB_LIST+=	GITUSER=${USERS}
+  
+* Unmerged path lang/gcc6/Makefile
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/gnome.mk
+	modified:   biology/jellyfish/Makefile
+	new file:   biology/jellyfish/files/patch-lib_jsoncpp.cpp
+	modified:   biology/jellyfish/files/patch-sub__commands_count__main.cc
+	modified:   biology/ngs-sdk/Makefile
+	modified:   biology/ngs-sdk/distinfo
+	modified:   biology/ngs-sdk/pkg-plist
+	modified:   cad/veroroute/Makefile
+	modified:   cad/veroroute/distinfo
+	modified:   databases/Makefile
+	deleted:    databases/pgworksheet/Makefile
+	deleted:    databases/pgworksheet/distinfo
+	deleted:    databases/pgworksheet/pkg-descr
+	modified:   databases/redis-devel/Makefile
+	modified:   databases/redis-devel/distinfo
+	modified:   deskutils/Makefile
+	deleted:    deskutils/syncthing-gtk/Makefile
+	deleted:    deskutils/syncthing-gtk/distinfo
+	deleted:    deskutils/syncthing-gtk/files/patch-syncthing__gtk_configuration.py
+	deleted:    deskutils/syncthing-gtk/pkg-descr
+	modified:   devel/Makefile
+	modified:   devel/emscripten/Makefile
+	modified:   devel/emscripten/distinfo
+	modified:   devel/emscripten/pkg-plist
+	modified:   devel/gh/Makefile
+	modified:   devel/gh/distinfo
+	modified:   devel/jetbrains-goland/Makefile
+	modified:   devel/jetbrains-goland/distinfo
+	modified:   devel/jetbrains-goland/pkg-plist
+	modified:   devel/libunwind/Makefile
+	modified:   devel/mingw32-bin-msvcrt/Makefile
+	modified:   devel/mingw32-gcc/Makefile
+	modified:   devel/py-holidays/Makefile
+	modified:   devel/py-holidays/distinfo
+	modified:   devel/rabs/Makefile
+	modified:   devel/rabs/distinfo
+	new file:   devel/tl-expected/Makefile
+	new file:   devel/tl-expected/distinfo
+	new file:   devel/tl-expected/pkg-descr
+	new file:   devel/tl-expected/pkg-plist
+	modified:   devel/xeus-cling/Makefile
+	modified:   devel/xeus-cling/distinfo
+	modified:   devel/xeus-cling/pkg-descr
+	modified:   devel/xeus-cling/pkg-plist
+	modified:   devel/xeus/Makefile
+	modified:   devel/xeus/distinfo
+	modified:   devel/xeus/pkg-descr
+	modified:   editors/o/Makefile
+	modified:   editors/o/distinfo
+	modified:   irc/eggdrop-devel/Makefile
+	modified:   irc/eggdrop/Makefile
+	modified:   java/intellij-ultimate/Makefile
+	modified:   java/intellij-ultimate/distinfo
+	modified:   java/intellij-ultimate/pkg-plist
+	modified:   lang/Makefile
+	deleted:    lang/gcc6/distinfo
+	deleted:    lang/gcc6/files/java-patch-hier
+	deleted:    lang/gcc6/files/patch-arm-unwind-cxx-support
+	deleted:    lang/gcc6/files/patch-libjava-classpath-scripts-check_jni_methods.sh.in
+	deleted:    lang/gcc6/files/patch-spe-config
+	deleted:    lang/gcc6/files/pkg-message.in
+	deleted:    lang/gcc6/pkg-descr
+	deleted:    lang/gcc6/pkg-plist
+	modified:   mail/nextcloud-mail/Makefile
+	modified:   mail/nextcloud-mail/distinfo
+	modified:   mail/nextcloud-mail/pkg-plist
+	modified:   math/adol-c/Makefile
+	modified:   math/adol-c/distinfo
+	modified:   math/adol-c/pkg-plist
+	modified:   math/gretl/Makefile
+	modified:   math/gretl/distinfo
+	modified:   math/gretl/pkg-plist
+	modified:   math/mingw32-libgmp/Makefile
+	modified:   math/py-cvxpy/Makefile
+	modified:   math/py-cvxpy/distinfo
+	modified:   math/py-pyodesys/Makefile
+	modified:   math/py-pyodesys/distinfo
+	modified:   math/py-yt/Makefile
+	modified:   math/py-yt/distinfo
+	modified:   math/py-yt/pkg-descr
+	modified:   math/xtensor/Makefile
+	modified:   math/xtensor/distinfo
+	modified:   math/xtensor/pkg-plist
+	modified:   net/libfabric/Makefile
+	modified:   net/libfabric/distinfo
+	modified:   net/libfabric/pkg-plist
+	modified:   net/liveMedia/Makefile
+	modified:   net/liveMedia/distinfo
+	modified:   net/nxproxy/Makefile
+	modified:   net/nxproxy/distinfo
+	new file:   net/nxproxy/files/patch-configure.ac
+	modified:   science/py-chempy/Makefile
+	modified:   science/py-chempy/distinfo
+	modified:   security/keybase/pkg-message
+	modified:   security/libntlm/Makefile
+	modified:   security/py-stix2-patterns/Makefile
+	modified:   security/py-stix2-patterns/distinfo
+	modified:   security/py-stix2/Makefile
+	modified:   security/py-stix2/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   textproc/py-xlsxwriter/Makefile
+	modified:   textproc/py-xlsxwriter/distinfo
+	modified:   www/Makefile
+	modified:   www/gitea/distinfo
+	deleted:    www/gitea/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+	modified:   www/gitea/pkg-plist
+	modified:   www/nextcloud-calendar/Makefile
+	modified:   www/nextcloud-calendar/distinfo
+	modified:   www/nextcloud-calendar/pkg-plist
+	modified:   www/py-flask-restplus/Makefile
+	deleted:    www/pycarddav/Makefile
+	deleted:    www/pycarddav/distinfo
+	deleted:    www/pycarddav/files/pkg-message.in
+	deleted:    www/pycarddav/pkg-descr
+	modified:   www/searx/Makefile
+	modified:   www/searx/distinfo
+	new file:   x11-fm/doublecmd/files/patch-src_platform_unix_upollthread.pas
+	modified:   x11-fonts/Makefile
+	deleted:    x11-fonts/font-manager/Makefile
+	deleted:    x11-fonts/font-manager/distinfo
+	deleted:    x11-fonts/font-manager/files/patch-Makefile.in
+	deleted:    x11-fonts/font-manager/files/patch-src-constants.py.in
+	deleted:    x11-fonts/font-manager/files/patch-src_lib_fm-fontutils.c
+	deleted:    x11-fonts/font-manager/pkg-descr
+	deleted:    x11-fonts/font-manager/pkg-plist
+	modified:   x11-toolkits/Makefile
+	deleted:    x11-toolkits/py-gtkglext/Makefile
+	deleted:    x11-toolkits/py-gtkglext/distinfo
+	deleted:    x11-toolkits/py-gtkglext/files/patch-py-compile
+	deleted:    x11-toolkits/py-gtkglext/pkg-descr
+	deleted:    x11-toolkits/py-gtkglext/pkg-plist
+	deleted:    x11-toolkits/py-gtksourceview/Makefile
+	deleted:    x11-toolkits/py-gtksourceview/distinfo
+	deleted:    x11-toolkits/py-gtksourceview/pkg-descr
+	deleted:    x11-toolkits/py-gtksourceview/pkg-plist
+	modified:   x11-wm/Makefile
+	deleted:    x11-wm/ccsm/Makefile
+	deleted:    x11-wm/ccsm/distinfo
+	deleted:    x11-wm/ccsm/pkg-descr
+	deleted:    x11-wm/ccsm/pkg-plist
+	deleted:    x11-wm/compiz-fusion/Makefile
+	deleted:    x11-wm/compiz-fusion/pkg-descr
+	modified:   x11/Makefile
+	modified:   x11/nvidia-settings/Makefile
+	modified:   x11/nvidia-settings/distinfo
+	modified:   x11/nvidia-xconfig/Makefile
+	modified:   x11/nvidia-xconfig/distinfo
+	deleted:    x11/run_scaled/Makefile
+	deleted:    x11/run_scaled/distinfo
+	deleted:    x11/run_scaled/files/patch-run__scaled
+	deleted:    x11/run_scaled/pkg-descr
+	deleted:    x11/xpra/Makefile
+	deleted:    x11/xpra/distinfo
+	deleted:    x11/xpra/files/patch-scripts_xpra
+	deleted:    x11/xpra/files/patch-scripts_xpra__launcher
+	deleted:    x11/xpra/files/patch-setup.py
+	deleted:    x11/xpra/files/patch-xpra_net_bytestreams.py
+	deleted:    x11/xpra/files/patch-xpra_scripts_config.py
+	deleted:    x11/xpra/pkg-descr
+	deleted:    x11/xpra/pkg-plist
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by them: lang/gcc6/Makefile
+	both modified:   www/gitea/Makefile
+
+
+It took 3.40 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 4c83abf0682f Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 4c83abf0682f Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
