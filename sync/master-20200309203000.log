@@ -34,3 +34,165 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/Makefile
+Removing lang/gcc8/files/patch-amd64-gcc-multilib-support
+Auto-merging lang/gcc8/Makefile
+Removing dns/dnsmasq-devel/files/patch-src_rfc3315.c
+Removing dns/dnsmasq-devel/files/patch-Makefile
+Removing devel/gdb/files/commit-f5424cfa7e
+Removing devel/gdb/files/commit-ef0bd2046f
+Removing devel/gdb/files/commit-df22c1e5d5
+Removing devel/gdb/files/commit-dd6876c91c
+Removing devel/gdb/files/commit-ce25aa57a3
+Removing devel/gdb/files/commit-cd250a1898
+Removing devel/gdb/files/commit-b0f87ed032
+Removing devel/gdb/files/commit-945f3901b5
+Removing devel/gdb/files/commit-8399425f5f
+Removing devel/gdb/files/commit-6e056c8178
+Removing devel/gdb/files/commit-36c53a0262
+Removing devel/gdb/files/commit-1163a4b7a3
+Merge made by the 'recursive' strategy.
+ Mk/Uses/lua.mk                                     |   2 +-
+ devel/Makefile                                     |   3 +-
+ devel/gdb/Makefile                                 |  35 +-
+ devel/gdb/distinfo                                 |   6 +-
+ devel/gdb/files/commit-1163a4b7a3                  | 419 ---------------------
+ devel/gdb/files/commit-36c53a0262                  |  60 ---
+ devel/gdb/files/commit-6e056c8178                  | 166 --------
+ devel/gdb/files/commit-8399425f5f                  |  69 ----
+ devel/gdb/files/commit-945f3901b5                  | 224 -----------
+ devel/gdb/files/commit-b0f87ed032                  |  60 ---
+ devel/gdb/files/commit-cd250a1898                  |  30 --
+ devel/gdb/files/commit-ce25aa57a3                  |  64 ----
+ devel/gdb/files/commit-dd6876c91c                  | 237 ------------
+ devel/gdb/files/commit-df22c1e5d5                  |  36 --
+ devel/gdb/files/commit-ef0bd2046f                  | 165 --------
+ devel/gdb/files/commit-f5424cfa7e                  |  63 ----
+ devel/gdb/files/extrapatch-kgdb                    | 137 ++++---
+ devel/gdb/files/kgdb/aarch64-fbsd-kern.c           |   1 +
+ devel/gdb/files/kgdb/amd64fbsd-kern.c              |   2 +-
+ devel/gdb/files/kgdb/fbsd-kld.c                    |  61 +--
+ devel/gdb/files/kgdb/fbsd-kthr.c                   | 117 +++---
+ devel/gdb/files/kgdb/fbsd-kvm.c                    |  58 ++-
+ devel/gdb/files/kgdb/i386fbsd-kern.c               |   6 +-
+ devel/gdb/files/kgdb/riscv-fbsd-kern.c             |   1 +
+ devel/gdb/files/kgdb/sparc64fbsd-kern.c            |   1 +
+ ...n-defs.h => patch-gdb_gdbsupport_common-defs.h} |  10 +-
+ ...stddef.in.h => patch-gnulib_import_stddef.in.h} |   4 +-
+ devel/gdb/files/patch-libctf_swap.h                |  11 +
+ devel/rubygem-warden127/Makefile                   |  24 ++
+ devel/rubygem-warden127/distinfo                   |   3 +
+ devel/rubygem-warden127/pkg-descr                  |   3 +
+ dns/dnsmasq-devel/Makefile                         |   5 +-
+ dns/dnsmasq-devel/distinfo                         |   6 +-
+ dns/dnsmasq-devel/files/patch-Makefile             |  13 -
+ dns/dnsmasq-devel/files/patch-src_rfc3315.c        |  11 -
+ lang/gcc8/Makefile                                 |   3 +-
+ lang/gcc8/distinfo                                 |   6 +-
+ lang/gcc8/files/patch-amd64-gcc-multilib-support   |  73 ----
+ mail/dovecot-pigeonhole/Makefile                   |   4 +-
+ mail/dovecot-pigeonhole/distinfo                   |   6 +-
+ mail/dovecot-pigeonhole/pkg-plist                  | 155 ++++----
+ science/elmerfem/Makefile                          |   2 +-
+ security/Makefile                                  |   1 +
+ security/amavisd-milter/Makefile                   |   7 +-
+ security/amavisd-milter/distinfo                   |   5 +-
+ security/amavisd-milter/pkg-message                |   5 +-
+ security/metasploit/Makefile                       |  18 +-
+ security/metasploit/distinfo                       |   6 +-
+ security/rubygem-hrr_rb_ssh/Makefile               |  20 +
+ security/rubygem-hrr_rb_ssh/distinfo               |   3 +
+ security/rubygem-hrr_rb_ssh/pkg-descr              |   3 +
+ security/rubygem-metasploit-credential/Makefile    |   3 +-
+ security/rubygem-metasploit-credential/distinfo    |   6 +-
+ security/rubygem-metasploit-payloads/Makefile      |   2 +-
+ security/rubygem-metasploit-payloads/distinfo      |   6 +-
+ .../rubygem-metasploit_payloads-mettle/Makefile    |   2 +-
+ .../rubygem-metasploit_payloads-mettle/distinfo    |   6 +-
+ security/rubygem-recog/Makefile                    |   2 +-
+ security/rubygem-recog/distinfo                    |   6 +-
+ security/rubygem-rex-exploitation/Makefile         |   2 +-
+ security/rubygem-rex-exploitation/distinfo         |   6 +-
+ security/rubygem-rex-powershell/Makefile           |   5 +-
+ security/rubygem-rex-powershell/distinfo           |   6 +-
+ security/rubygem-rex-socket/Makefile               |   2 +-
+ security/rubygem-rex-socket/distinfo               |   6 +-
+ security/vuxml/vuln.xml                            |  70 +++-
+ sysutils/logstash7/Makefile                        |   2 +-
+ sysutils/logstash7/distinfo                        |   6 +-
+ sysutils/xfce4-power-manager/Makefile              |   2 +-
+ sysutils/xfce4-power-manager/distinfo              |   6 +-
+ textproc/elasticsearch7/Makefile                   |   2 +-
+ textproc/elasticsearch7/distinfo                   |   6 +-
+ textproc/ibus-typing-booster/Makefile              |   2 +-
+ textproc/ibus-typing-booster/distinfo              |   6 +-
+ www/firefox/Makefile                               |   4 +-
+ www/firefox/distinfo                               |   6 +-
+ x11-themes/classiclooks/Makefile                   |   2 +-
+ x11-themes/classiclooks/distinfo                   |   6 +-
+ x11-themes/plata-theme/Makefile                    |   4 +-
+ x11-themes/plata-theme/distinfo                    |   6 +-
+ 80 files changed, 541 insertions(+), 2079 deletions(-)
+ delete mode 100644 devel/gdb/files/commit-1163a4b7a3
+ delete mode 100644 devel/gdb/files/commit-36c53a0262
+ delete mode 100644 devel/gdb/files/commit-6e056c8178
+ delete mode 100644 devel/gdb/files/commit-8399425f5f
+ delete mode 100644 devel/gdb/files/commit-945f3901b5
+ delete mode 100644 devel/gdb/files/commit-b0f87ed032
+ delete mode 100644 devel/gdb/files/commit-cd250a1898
+ delete mode 100644 devel/gdb/files/commit-ce25aa57a3
+ delete mode 100644 devel/gdb/files/commit-dd6876c91c
+ delete mode 100644 devel/gdb/files/commit-df22c1e5d5
+ delete mode 100644 devel/gdb/files/commit-ef0bd2046f
+ delete mode 100644 devel/gdb/files/commit-f5424cfa7e
+ rename devel/gdb/files/{patch-gdb_common_common-defs.h => patch-gdb_gdbsupport_common-defs.h} (52%)
+ rename devel/gdb/files/{patch-gdb_gnulib_import_stddef.in.h => patch-gnulib_import_stddef.in.h} (78%)
+ create mode 100644 devel/gdb/files/patch-libctf_swap.h
+ create mode 100644 devel/rubygem-warden127/Makefile
+ create mode 100644 devel/rubygem-warden127/distinfo
+ create mode 100644 devel/rubygem-warden127/pkg-descr
+ delete mode 100644 dns/dnsmasq-devel/files/patch-Makefile
+ delete mode 100644 dns/dnsmasq-devel/files/patch-src_rfc3315.c
+ delete mode 100644 lang/gcc8/files/patch-amd64-gcc-multilib-support
+ create mode 100644 security/rubygem-hrr_rb_ssh/Makefile
+ create mode 100644 security/rubygem-hrr_rb_ssh/distinfo
+ create mode 100644 security/rubygem-hrr_rb_ssh/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    9b2c704fb504..330c4b9b24a9  master -> master        
+remote:    5819d5020596..9b2c704fb504  github/master -> github/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   9b2c704fb504..330c4b9b24a9  master -> master
+==== END: master ====
