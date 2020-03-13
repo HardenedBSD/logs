@@ -1,0 +1,90 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/logger/logger.c
+CONFLICT (content): Merge conflict in usr.bin/logger/logger.c
+Auto-merging sys/kern/kern_shutdown.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.bin/logger/logger.c
+index e7e80b4b87d2,7b1dd3136c40..000000000000
+--- a/usr.bin/logger/logger.c
++++ b/usr.bin/logger/logger.c
+@@@ -97,7 -104,7 +104,11 @@@ main(int argc, char *argv[]
+  	time_t now;
+  	int ch, logflags, pri;
+  	char *tag, *host, buf[1024], *timestamp, tbuf[26],
+++<<<<<<< HEAD
+ +	    *hostname, hbuf[MAXHOSTNAMELEN+1], *dotp;
+++=======
++ 	    *hostname, hbuf[MAXHOSTNAMELEN], *pristr;
+++>>>>>>> freebsd/current/master
+  	const char *svcname, *src;
+  
+  	tag = NULL;
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libc/gen/ftw.3
+	modified:   lib/libpmcstat/libpmcstat_image.c
+	modified:   libexec/flua/linit_flua.c
+	modified:   libexec/flua/modules/lposix.c
+	modified:   libexec/flua/modules/lposix.h
+	modified:   share/man/man3/CMSG_DATA.3
+	modified:   sys/dev/cxgbe/t4_clip.c
+	modified:   sys/dev/mpr/mpr_sas.c
+	modified:   sys/dev/mps/mps_sas.c
+	modified:   sys/kern/kern_shutdown.c
+	modified:   sys/powerpc/booke/spe.c
+	modified:   sys/powerpc/powerpc/altivec.c
+	modified:   sys/powerpc/powerpc/fpu.c
+	modified:   tests/sys/netpfil/pf/nat.sh
+	modified:   usr.bin/logger/Makefile
+	modified:   usr.sbin/pmcstat/pmcstat.8
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/logger/logger.c
+
+HEAD is now at a1a6a25d7634 HBSD: Add libllvm files that upstream FreeBSD forgot
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a1a6a25d7634 HBSD: Add libllvm files that upstream FreeBSD forgot
+==== END: hardened/current/master ====
