@@ -1,0 +1,89 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 19 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating a1a6a25d7634..945864b455d5
+Fast-forward
+ lib/libc/gen/ftw.3                       |   3 +-
+ lib/libc/sys/sendfile.2                  |   9 +
+ lib/libpmcstat/libpmcstat_image.c        |  22 +-
+ libexec/flua/linit_flua.c                |   1 +
+ libexec/flua/modules/lposix.c            |  38 +++
+ libexec/flua/modules/lposix.h            |   1 +
+ share/man/man3/CMSG_DATA.3               |   6 +-
+ stand/efi/libefi/efi_console.c           |  21 +-
+ stand/efi/loader/arch/arm/Makefile.inc   |   1 +
+ stand/efi/loader/arch/arm64/Makefile.inc |   1 +
+ stand/efi/loader/conf.c                  |   4 +-
+ stand/efi/loader/efiserialio.c           | 518 +++++++++++++++++++++++++++++++
+ stand/efi/loader/main.c                  |  11 +-
+ sys/cam/cam_periph.c                     |   4 +-
+ sys/cam/cam_xpt.c                        |   3 +-
+ sys/cddl/compat/opensolaris/sys/rwlock.h |   3 +-
+ sys/dev/cxgbe/t4_clip.c                  |   8 +-
+ sys/dev/mpr/mpr_sas.c                    |   2 +-
+ sys/dev/mps/mps_sas.c                    |   2 +-
+ sys/dev/usb/net/if_muge.c                |   5 +-
+ sys/kern/kern_sendfile.c                 |   6 +
+ sys/kern/kern_shutdown.c                 |   2 +
+ sys/powerpc/booke/spe.c                  |   5 +-
+ sys/powerpc/powerpc/altivec.c            |   9 +-
+ sys/powerpc/powerpc/fpu.c                |   9 +-
+ tests/sys/netpfil/pf/nat.sh              |   3 +-
+ usr.bin/gzip/gzip.c                      |  34 +-
+ usr.bin/gzip/unlz.c                      |   2 -
+ usr.bin/gzip/unpack.c                    |   3 -
+ usr.bin/logger/Makefile                  |   6 +
+ usr.bin/logger/logger.c                  |  31 +-
+ usr.sbin/pmcstat/pmcstat.8               |   2 +
+ 32 files changed, 695 insertions(+), 80 deletions(-)
+ create mode 100644 stand/efi/loader/efiserialio.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/kern_jail.c
+Merge made by the 'recursive' strategy.
+ lib/libssp/Makefile  |  4 ++++
+ sys/kern/kern_jail.c | 12 +++++++++---
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    945864b455d5..1110a2cf0e50  hardened/current/master -> hardened/current/master        
+remote:    821ea02ca7b9..f62b7318463f  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   945864b455d5..1110a2cf0e50  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
