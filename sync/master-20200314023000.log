@@ -34,3 +34,137 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging lang/ghc/Makefile
+Auto-merging games/gtkradiant/Makefile
+CONFLICT (content): Merge conflict in games/gtkradiant/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc games/gtkradiant/Makefile
+index 99c4b977c418,9c57cb8994e1..000000000000
+--- a/games/gtkradiant/Makefile
++++ b/games/gtkradiant/Makefile
+@@@ -23,9 -20,7 +20,13 @@@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11
+  		libmhash.so:security/mhash \
+  		libpng.so:graphics/png
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		compiler:c++11-lang gnome pkgconfig python:2.7,build scons zip
+++=======
++ USES=		compiler:c++11-lang gnome pkgconfig python:build scons zip
+++>>>>>>> freebsd/master
+  USE_GNOME=	gtk20 libxml2
+  MAKE_ARGS=	${MAKE_ENV} BUILD=release
+  SSP_UNSAFE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/compiler.mk
+	modified:   Mk/Uses/objc.mk
+	modified:   devel/Makefile
+	modified:   devel/php-composer/Makefile
+	modified:   devel/php-composer/distinfo
+	modified:   devel/py-azure-mgmt-cdn/Makefile
+	modified:   devel/py-azure-mgmt-cdn/distinfo
+	modified:   devel/py-azure-mgmt-compute/Makefile
+	modified:   devel/py-azure-mgmt-compute/distinfo
+	modified:   devel/py-azure-mgmt-containerregistry/Makefile
+	modified:   devel/py-azure-mgmt-containerregistry/distinfo
+	modified:   devel/py-azure-mgmt-cosmosdb/Makefile
+	modified:   devel/py-azure-mgmt-cosmosdb/distinfo
+	modified:   devel/py-azure-mgmt-rdbms/Makefile
+	modified:   devel/py-azure-mgmt-rdbms/distinfo
+	modified:   devel/py-azure-mgmt-sql/Makefile
+	modified:   devel/py-azure-mgmt-sql/distinfo
+	modified:   devel/py-azure-mgmt-storage/Makefile
+	modified:   devel/py-azure-mgmt-storage/distinfo
+	modified:   devel/py-portalocker/Makefile
+	modified:   devel/py-portalocker/distinfo
+	modified:   devel/rust-bindgen/Makefile
+	modified:   devel/rust-bindgen/distinfo
+	new file:   devel/stb/Makefile
+	new file:   devel/stb/distinfo
+	new file:   devel/stb/pkg-descr
+	new file:   devel/stb/pkg-plist
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/i386-wine/Makefile
+	renamed:    emulators/i386-wine/Makefile.inc -> emulators/i386-wine/Makefile.amd64
+	modified:   emulators/playonbsd/files/patch-lib_wine.lib
+	modified:   emulators/wine/Makefile
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   games/gtkradiant/files/patch-SConstruct
+	modified:   games/gtkradiant/files/patch-install.py
+	modified:   irc/ircd-hybrid/Makefile
+	modified:   irc/ircd-hybrid/distinfo
+	modified:   lang/ghc/Makefile
+	modified:   lang/ghc/distinfo
+	modified:   math/mlpack/Makefile
+	modified:   math/mlpack/distinfo
+	modified:   math/mlpack/pkg-descr
+	modified:   math/mlpack/pkg-plist
+	modified:   math/octave-forge-symbolic/Makefile
+	modified:   math/octave-forge-symbolic/distinfo
+	modified:   multimedia/aom/Makefile
+	modified:   multimedia/aom/distinfo
+	modified:   sysutils/beats/Makefile
+	modified:   sysutils/beats/distinfo
+	modified:   sysutils/py-azure-cli-core/Makefile
+	modified:   sysutils/py-azure-cli-core/distinfo
+	modified:   sysutils/py-azure-cli/Makefile
+	modified:   sysutils/py-azure-cli/distinfo
+	modified:   www/rubygem-roda/Makefile
+	modified:   www/rubygem-roda/distinfo
+	modified:   x11-wm/chamfer/Makefile
+	modified:   x11-wm/chamfer/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   games/gtkradiant/Makefile
+
+
+It took 3.41 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 25a87dfea8b4 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.41 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 25a87dfea8b4 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
