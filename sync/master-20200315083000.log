@@ -34,3 +34,184 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net-im/telegram-desktop/files/patch-lib_xdg_tg.protocol
+Removing net-im/telegram-desktop/files/patch-Telegram_gyp_telegram_sources.txt
+Removing net-im/telegram-desktop/files/patch-Telegram_gyp_common_common.gypi
+Removing net-im/telegram-desktop/files/patch-Telegram_gyp_PrecompiledHeader.cmake
+Removing net-im/telegram-desktop/files/patch-Telegram_ThirdParty_libtgvoip_os_linux_AudioPulse.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_ui_text_text.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_ui_platform_ui__platform__utility.h
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_storage_storage__encrypted__file__tests.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_qt__functions.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_platform__info.h
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_linux_main__window__linux.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_linux_linux__libs.h
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_linux_linux__libs.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_freebsd_info__freebsd.h
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_freebsd_info__freebsd.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_export_data_export__data__types.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_data_data__document.cpp
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_base_build__config.h
+Removing net-im/telegram-desktop/files/patch-Telegram_Resources_qrc_linux.qrc
+Removing net-im/telegram-desktop/files/gyp-patches
+Removing net-im/telegram-desktop/files/CMakeLists.inj
+Auto-merging cad/gmsh/Makefile
+Merge made by the 'recursive' strategy.
+ audio/pms-devel/Makefile                           |  19 +-
+ audio/pms-devel/distinfo                           |  34 +-
+ cad/gmsh/Makefile                                  |   3 +-
+ cad/gmsh/distinfo                                  |   2 +-
+ databases/adminer/Makefile                         |   6 +-
+ databases/adminer/distinfo                         |   6 +-
+ databases/adminer/pkg-plist                        |   4 +-
+ devel/py-setuptools/Makefile                       |   3 +
+ editors/vscode/Makefile                            |  25 +-
+ editors/vscode/distinfo                            |  14 +-
+ .../vscode/files/patch-build_lib_layersChecker.ts  |   4 +-
+ editors/vscode/files/patch-src_bootstrap.js        |   2 +-
+ editors/vscode/files/patch-src_main.js             |  11 +
+ .../files/patch-src_vs_code_electron-main_app.ts   |   4 +-
+ ...-src_vs_workbench_api_browser_mainThreadTask.ts |   2 +-
+ ...h_contrib_extensions_browser_extensionEditor.ts |   2 +-
+ .../patch-test_integration_browser_src_index.ts    |  11 +
+ editors/vscode/files/patch-test_smoke_src_main.ts  |  38 +-
+ editors/vscode/pkg-plist                           |  29 +-
+ net-im/telegram-desktop/Makefile                   |  98 +---
+ net-im/telegram-desktop/distinfo                   |  22 +-
+ net-im/telegram-desktop/files/CMakeLists.inj       |  19 -
+ net-im/telegram-desktop/files/gyp-patches          | 558 ---------------------
+ .../files/patch-Telegram_CMakeLists.txt            |  10 +
+ .../files/patch-Telegram_Resources_qrc_linux.qrc   |   9 -
+ ...patch-Telegram_SourceFiles_base_build__config.h |  11 -
+ .../patch-Telegram_SourceFiles_core_launcher.cpp   |  41 +-
+ ...h-Telegram_SourceFiles_core_update__checker.cpp |   6 +-
+ ...ch-Telegram_SourceFiles_data_data__document.cpp |  11 -
+ ...SourceFiles_export_data_export__data__types.cpp |  14 -
+ ...story_admin__log_history__admin__log__inner.cpp |   4 +-
+ ..._SourceFiles_history_history__inner__widget.cpp |   6 +-
+ ...es_history_view_history__view__list__widget.cpp |   6 +-
+ .../files/patch-Telegram_SourceFiles_logs.cpp      |   8 +-
+ ..._SourceFiles_platform_freebsd_info__freebsd.cpp |  52 --
+ ...am_SourceFiles_platform_freebsd_info__freebsd.h |  59 ---
+ ...gram_SourceFiles_platform_linux_linux__libs.cpp |  47 --
+ ...legram_SourceFiles_platform_linux_linux__libs.h |  32 --
+ ...rceFiles_platform_linux_main__window__linux.cpp |  87 ----
+ ...-Telegram_SourceFiles_platform_platform__info.h |  10 -
+ .../patch-Telegram_SourceFiles_qt__functions.cpp   |  99 ----
+ ...ch-Telegram_SourceFiles_qt__static__plugins.cpp |  25 +-
+ ...ourceFiles_settings_settings__notifications.cpp |   4 +-
+ ...les_storage_storage__encrypted__file__tests.cpp |  11 -
+ ...SourceFiles_ui_platform_ui__platform__utility.h |  14 -
+ .../patch-Telegram_SourceFiles_ui_text_text.cpp    |  17 -
+ ...ch-Telegram_SourceFiles_window_main__window.cpp |   8 +-
+ ...elegram_ThirdParty_libtgvoip_VoIPController.cpp |   4 +-
+ ...am_ThirdParty_libtgvoip_os_linux_AudioPulse.cpp |  12 -
+ .../patch-Telegram_gyp_PrecompiledHeader.cmake     |  20 -
+ .../files/patch-Telegram_gyp_common_common.gypi    |  11 -
+ .../files/patch-Telegram_gyp_telegram_sources.txt  |  29 --
+ ...tes.h => patch-Telegram_lib__base_base_bytes.h} |   8 +-
+ ...base_platform_base__platform__file__utilities.h |  13 +
+ ..._lib__base_base_platform_base__platform__info.h |  14 +
+ .../patch-Telegram_lib__base_base_zlib__help.h     |  13 +
+ ...ram_lib__ui_ui_platform_ui__platform__utility.h |  11 +
+ ...Telegram_lib__ui_ui_style_style__core__font.cpp |  11 +
+ ...> patch-Telegram_lib__ui_ui_widgets_labels.cpp} |   6 +-
+ .../files/patch-cmake_external_opus_CMakeLists.txt |  11 +
+ .../files/patch-cmake_external_qt_CMakeLists.txt   |  13 +
+ .../files/patch-lib_xdg_tg.protocol                |   9 -
+ net-im/telegram-desktop/pkg-plist                  |  19 +-
+ sysutils/Makefile                                  |   2 +
+ sysutils/cbsd/Makefile                             |   2 +-
+ sysutils/cbsd/distinfo                             |   6 +-
+ sysutils/gigolo/Makefile                           |   2 +-
+ sysutils/gigolo/distinfo                           |   6 +-
+ sysutils/packmule/Makefile                         |  65 +++
+ sysutils/packmule/distinfo                         |   3 +
+ sysutils/packmule/pkg-descr                        |   6 +
+ sysutils/packmule/pkg-plist                        |   8 +
+ sysutils/rsfetch/Makefile                          | 220 ++++++++
+ sysutils/rsfetch/distinfo                          | 379 ++++++++++++++
+ sysutils/rsfetch/pkg-descr                         |  14 +
+ textproc/rubygem-yard/pkg-descr                    |   2 +-
+ www/py-webargs/Makefile                            |   2 +-
+ www/py-webargs/distinfo                            |   6 +-
+ 78 files changed, 1017 insertions(+), 1417 deletions(-)
+ create mode 100644 editors/vscode/files/patch-src_main.js
+ create mode 100644 editors/vscode/files/patch-test_integration_browser_src_index.ts
+ delete mode 100644 net-im/telegram-desktop/files/CMakeLists.inj
+ delete mode 100644 net-im/telegram-desktop/files/gyp-patches
+ create mode 100644 net-im/telegram-desktop/files/patch-Telegram_CMakeLists.txt
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_Resources_qrc_linux.qrc
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_base_build__config.h
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_data_data__document.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_export_data_export__data__types.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_freebsd_info__freebsd.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_freebsd_info__freebsd.h
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_linux_linux__libs.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_linux_linux__libs.h
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_linux_main__window__linux.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_platform_platform__info.h
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_qt__functions.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_storage_storage__encrypted__file__tests.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_ui_platform_ui__platform__utility.h
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_ui_text_text.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_ThirdParty_libtgvoip_os_linux_AudioPulse.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_gyp_PrecompiledHeader.cmake
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_gyp_common_common.gypi
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_gyp_telegram_sources.txt
+ rename net-im/telegram-desktop/files/{patch-Telegram_SourceFiles_base_bytes.h => patch-Telegram_lib__base_base_bytes.h} (72%)
+ create mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__base_base_platform_base__platform__file__utilities.h
+ create mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__base_base_platform_base__platform__info.h
+ create mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__base_base_zlib__help.h
+ create mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_platform_ui__platform__utility.h
+ create mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_style_style__core__font.cpp
+ rename net-im/telegram-desktop/files/{patch-Telegram_SourceFiles_ui_widgets_labels.cpp => patch-Telegram_lib__ui_ui_widgets_labels.cpp} (68%)
+ create mode 100644 net-im/telegram-desktop/files/patch-cmake_external_opus_CMakeLists.txt
+ create mode 100644 net-im/telegram-desktop/files/patch-cmake_external_qt_CMakeLists.txt
+ delete mode 100644 net-im/telegram-desktop/files/patch-lib_xdg_tg.protocol
+ create mode 100644 sysutils/packmule/Makefile
+ create mode 100644 sysutils/packmule/distinfo
+ create mode 100644 sysutils/packmule/pkg-descr
+ create mode 100644 sysutils/packmule/pkg-plist
+ create mode 100644 sysutils/rsfetch/Makefile
+ create mode 100644 sysutils/rsfetch/distinfo
+ create mode 100644 sysutils/rsfetch/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    75ea1ef9d497..f927aad75b23  master -> master        
+remote:    e1f54f2d8353..75ea1ef9d497  github/master -> github/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   75ea1ef9d497..f927aad75b23  master -> master
+==== END: master ====
