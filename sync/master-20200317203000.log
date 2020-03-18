@@ -36,3 +36,168 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing devel/sccache/files/patch-openssl-0.10
+Auto-merging devel/gcc-arm-embedded/Makefile
+Removing devel/electron6/files/patch-third__party_snappy_BUILD.gn
+Removing devel/electron6/files/patch-third__party_re2_BUILD.gn
+Removing devel/electron6/files/patch-third__party_opus_BUILD.gn
+Removing devel/electron6/files/patch-third__party_openh264_BUILD.gn
+Removing devel/electron6/files/patch-third__party_libxslt_BUILD.gn
+Removing devel/electron6/files/patch-third__party_libxml_BUILD.gn
+Removing devel/electron6/files/patch-third__party_libwebp_BUILD.gn
+Removing devel/electron6/files/patch-third__party_libvpx_BUILD.gn
+Removing devel/electron6/files/patch-third__party_libusb_BUILD.gn
+Removing devel/electron6/files/patch-third__party_libjpeg.gni
+Removing devel/electron6/files/patch-third__party_libdrm_BUILD.gn
+Removing devel/electron6/files/patch-third__party_fontconfig_BUILD.gn
+Removing devel/electron6/files/patch-third__party_flac_BUILD.gn
+Removing devel/electron6/files/patch-third__party_ffmpeg_BUILD.gn
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ biology/hyphy/Makefile                             |   2 +-
+ biology/hyphy/distinfo                             |   6 +-
+ biology/hyphy/pkg-plist                            |   1 -
+ databases/mantis/Makefile                          |   2 +-
+ databases/mantis/distinfo                          |   6 +-
+ databases/mantis/pkg-plist                         |   2 +-
+ databases/py-mysql-connector-python/Makefile       |   4 +
+ devel/electron4/Makefile                           |   2 +-
+ ...__party_glslang_src_glslang_Include_PoolAlloc.h |  10 +
+ devel/electron6/Makefile                           |   1 +
+ .../files/patch-third__party_ffmpeg_BUILD.gn       | 477 ------------
+ .../files/patch-third__party_flac_BUILD.gn         | 138 ----
+ .../files/patch-third__party_fontconfig_BUILD.gn   | 111 ---
+ ...__party_glslang_src_glslang_Include_PoolAlloc.h |  10 +
+ .../files/patch-third__party_libdrm_BUILD.gn       |  98 ---
+ .../electron6/files/patch-third__party_libjpeg.gni |  11 -
+ .../files/patch-third__party_libusb_BUILD.gn       | 191 -----
+ .../files/patch-third__party_libvpx_BUILD.gn       | 400 ----------
+ .../files/patch-third__party_libwebp_BUILD.gn      | 659 ----------------
+ .../files/patch-third__party_libxml_BUILD.gn       | 251 ------
+ .../files/patch-third__party_libxslt_BUILD.gn      | 111 ---
+ .../files/patch-third__party_openh264_BUILD.gn     | 221 ------
+ .../files/patch-third__party_opus_BUILD.gn         | 639 ---------------
+ .../files/patch-third__party_re2_BUILD.gn          |  91 ---
+ .../files/patch-third__party_snappy_BUILD.gn       |  77 --
+ devel/electron7/Makefile                           |   1 +
+ ...__party_glslang_src_glslang_Include_PoolAlloc.h |  10 +
+ devel/gcc-arm-embedded/Makefile                    |  10 +-
+ devel/gcc-arm-embedded/distinfo                    |   6 +-
+ .../files/patch-src_binutils_libctf_swap.h         |  34 +
+ .../files/patch-src_gcc_gcc_config_arm_arm.h       |   8 +-
+ .../files/patch-src_gdb_gdb_dtrace-probe.c         |   6 +-
+ .../files/patch-src_gdb_gdb_dwarf2read.c           |   8 +-
+ .../patch-src_gdb_gdb_gnulib_import_stddef.in.h    |   4 +-
+ .../files/patch-src_gdb_gdb_probe.c                |   4 +-
+ .../patch-src_gdb_gdb_python_python-config.py      |   6 +-
+ .../files/patch-src_gdb_gdb_stap-probe.c           |   6 +-
+ .../files/patch-src_gdb_gdb_target-float.c         |   6 +-
+ devel/gcc-arm-embedded/pkg-plist                   | 240 +++++-
+ devel/leiningen/Makefile                           |   2 +-
+ devel/leiningen/distinfo                           |  10 +-
+ devel/libopencm3/Makefile                          |  16 +-
+ devel/libopencm3/distinfo                          |   6 +-
+ devel/libopencm3/files/patch-Makefile              |  36 +-
+ devel/libopencm3/pkg-plist                         | 117 ++-
+ devel/llvm10/Makefile                              |  13 +-
+ devel/llvm10/distinfo                              |  30 +-
+ devel/sccache/Makefile                             | 387 +++++-----
+ devel/sccache/distinfo                             | 770 +++++++++---------
+ devel/sccache/files/patch-openssl-0.10             | 674 ----------------
+ editors/atom/Makefile                              |   7 +-
+ editors/atom/distinfo                              |  14 +-
+ .../atom/patch-node__modules_github_package.json   |   6 +-
+ ...ode__modules_github_test_github-package.test.js |   6 +-
+ editors/vscode/Makefile                            |   1 +
+ games/moonlight-embedded/Makefile                  |   3 +-
+ games/moonlight-embedded/distinfo                  |   6 +-
+ games/moonlight-embedded/files/patch-src_main.c    |  98 +--
+ graphics/ikona/Makefile                            |   3 +-
+ graphics/libfpx/files/Makefile.bsd                 |   2 +-
+ graphics/libfpx/files/patch-warnings               |  20 +
+ lang/rust/Makefile                                 |   2 +-
+ .../powerpc64-elfv2/patch-src_bootstrap_native.rs  |  13 +
+ .../patch-src_librustc__llvm_build.rs              |  14 +
+ ...tes_librocksdb-sys-6.2.4_rocksdb_util_channel.h |  28 +
+ ports-mgmt/pkg-devel/Makefile                      |   4 +-
+ ports-mgmt/pkg-devel/distinfo                      |   6 +-
+ science/agrum/Makefile                             |   7 +-
+ science/agrum/distinfo                             |   6 +-
+ science/agrum/pkg-plist                            |  19 +-
+ security/nflib/Makefile                            |   2 +-
+ security/openssl/Makefile                          |  14 +-
+ security/openssl/distinfo                          |   6 +-
+ security/openssl/pkg-plist                         |  41 +-
+ sysutils/cbsd/Makefile                             |   1 +
+ sysutils/cbsd/files/patch-sudoexec_jstart          |  11 +
+ ...tes_librocksdb-sys-6.1.3_rocksdb_util_channel.h |  28 +
+ www/miniserve/Makefile                             | 436 ++++++-----
+ www/miniserve/distinfo                             | 860 ++++++++++++---------
+ 79 files changed, 2150 insertions(+), 5445 deletions(-)
+ create mode 100644 devel/electron4/files/patch-third__party_angle_third__party_glslang_src_glslang_Include_PoolAlloc.h
+ delete mode 100644 devel/electron6/files/patch-third__party_ffmpeg_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_flac_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_fontconfig_BUILD.gn
+ create mode 100644 devel/electron6/files/patch-third__party_glslang_src_glslang_Include_PoolAlloc.h
+ delete mode 100644 devel/electron6/files/patch-third__party_libdrm_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_libjpeg.gni
+ delete mode 100644 devel/electron6/files/patch-third__party_libusb_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_libvpx_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_libwebp_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_libxml_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_libxslt_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_openh264_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_opus_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_re2_BUILD.gn
+ delete mode 100644 devel/electron6/files/patch-third__party_snappy_BUILD.gn
+ create mode 100644 devel/electron7/files/patch-third__party_glslang_src_glslang_Include_PoolAlloc.h
+ create mode 100644 devel/gcc-arm-embedded/files/patch-src_binutils_libctf_swap.h
+ delete mode 100644 devel/sccache/files/patch-openssl-0.10
+ create mode 100644 graphics/libfpx/files/patch-warnings
+ create mode 100644 lang/rust/files/powerpc64-elfv2/patch-src_bootstrap_native.rs
+ create mode 100644 lang/rust/files/powerpc64-elfv2/patch-src_librustc__llvm_build.rs
+ create mode 100644 net-p2p/parity-ethereum/files/patch-cargo-crates_librocksdb-sys-6.2.4_rocksdb_util_channel.h
+ create mode 100644 sysutils/cbsd/files/patch-sudoexec_jstart
+ create mode 100644 textproc/sonic/files/patch-cargo-crates_librocksdb-sys-6.1.3_rocksdb_util_channel.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    260a863927f4..6dcc7d3e6c94  master -> master        
+remote:    525cf47f9838..260a863927f4  github/master -> github/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   260a863927f4..6dcc7d3e6c94  master -> master
+==== END: master ====
