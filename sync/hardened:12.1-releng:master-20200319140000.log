@@ -1,0 +1,324 @@
+==== BEGIN: hardened/12.1-releng/master ====
+current branch: hardened/12.1-releng/master
+mergeable branch: origin/freebsd/12.1-releng/master
+==== change branch ====
+Switched to branch 'hardened/12.1-releng/master'
+Your branch is up to date with 'origin/hardened/12.1-releng/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+* hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge origin/freebsd/12.1-releng/master branch ====
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/conf/newvers.sh
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |   28 +
+ contrib/ntp/COPYRIGHT                              |    4 +-
+ contrib/ntp/ChangeLog                              |   96 +
+ contrib/ntp/CommitLog                              | 3447 +++++++++++++++++++-
+ contrib/ntp/NEWS                                   |  108 +
+ contrib/ntp/config.h.in                            |    3 +
+ contrib/ntp/configure                              |   43 +-
+ contrib/ntp/configure.ac                           |   12 +-
+ contrib/ntp/html/accopt.html                       |    9 +-
+ contrib/ntp/html/clockopt.html                     |   18 +-
+ contrib/ntp/html/confopt.html                      |   31 +-
+ contrib/ntp/html/copyright.html                    |    5 +-
+ contrib/ntp/html/discipline.html                   |   37 +-
+ contrib/ntp/html/drivers/driver20.html             |  204 +-
+ contrib/ntp/html/drivers/driver29.html             |   78 +-
+ contrib/ntp/html/miscopt.html                      |   33 +-
+ contrib/ntp/include/Makefile.am                    |    3 +
+ contrib/ntp/include/Makefile.in                    |    3 +
+ contrib/ntp/include/ntp.h                          |   10 +-
+ contrib/ntp/include/ntp_calendar.h                 |   73 +-
+ contrib/ntp/include/ntp_calgps.h                   |  151 +
+ contrib/ntp/include/ntp_config.h                   |   39 +-
+ contrib/ntp/include/ntp_control.h                  |    4 +
+ contrib/ntp/include/ntp_fp.h                       |    4 +-
+ contrib/ntp/include/ntp_io.h                       |    2 +-
+ contrib/ntp/include/ntp_psl.h                      |   17 +
+ contrib/ntp/include/ntp_refclock.h                 |   35 +-
+ contrib/ntp/include/ntp_request.h                  |    4 +-
+ contrib/ntp/include/ntp_stdlib.h                   |    2 +-
+ contrib/ntp/include/ntp_syslog.h                   |    3 +
+ contrib/ntp/include/ntpd.h                         |    6 +-
+ contrib/ntp/include/timespecops.h                  |  187 +-
+ contrib/ntp/include/timexsup.h                     |   42 +
+ contrib/ntp/libntp/Makefile.am                     |    3 +
+ contrib/ntp/libntp/Makefile.in                     |   47 +-
+ contrib/ntp/libntp/decodenetnum.c                  |   82 +-
+ contrib/ntp/libntp/dofptoa.c                       |   10 +-
+ contrib/ntp/libntp/dolfptoa.c                      |   10 +-
+ contrib/ntp/libntp/mstolfp.c                       |    7 +-
+ contrib/ntp/libntp/msyslog.c                       |   38 +
+ contrib/ntp/libntp/ntp_calendar.c                  |  910 ++++--
+ contrib/ntp/libntp/ntp_calgps.c                    |  634 ++++
+ contrib/ntp/libntp/recvbuff.c                      |    2 -
+ contrib/ntp/libntp/statestr.c                      |   17 +-
+ contrib/ntp/libntp/systime.c                       |   26 +-
+ contrib/ntp/libntp/timespecops.c                   |  233 ++
+ contrib/ntp/libntp/timexsup.c                      |   83 +
+ contrib/ntp/libparse/Makefile.am                   |    4 +-
+ contrib/ntp/libparse/Makefile.in                   |    4 +-
+ contrib/ntp/libparse/clk_rawdcf.c                  |   55 +
+ contrib/ntp/ntpd/Makefile.am                       |   56 +-
+ contrib/ntp/ntpd/Makefile.in                       |   52 +-
+ contrib/ntp/ntpd/cmd_args.c                        |    6 +-
+ contrib/ntp/ntpd/complete.conf.in                  |   11 +-
+ contrib/ntp/ntpd/invoke-ntp.conf.texi              |   38 +-
+ contrib/ntp/ntpd/invoke-ntp.keys.texi              |    2 +-
+ contrib/ntp/ntpd/invoke-ntpd.texi                  |    4 +-
+ contrib/ntp/ntpd/keyword-gen-utd                   |    2 +-
+ contrib/ntp/ntpd/keyword-gen.c                     |    8 +
+ contrib/ntp/ntpd/ntp.conf.5man                     |   45 +-
+ contrib/ntp/ntpd/ntp.conf.5mdoc                    |   49 +-
+ contrib/ntp/ntpd/ntp.conf.def                      |   44 +-
+ contrib/ntp/ntpd/ntp.conf.html                     |   42 +-
+ contrib/ntp/ntpd/ntp.conf.man.in                   |   45 +-
+ contrib/ntp/ntpd/ntp.conf.mdoc.in                  |   49 +-
+ contrib/ntp/ntpd/ntp.keys.5man                     |    6 +-
+ contrib/ntp/ntpd/ntp.keys.5mdoc                    |    6 +-
+ contrib/ntp/ntpd/ntp.keys.html                     |    2 +-
+ contrib/ntp/ntpd/ntp.keys.man.in                   |    6 +-
+ contrib/ntp/ntpd/ntp.keys.mdoc.in                  |    6 +-
+ contrib/ntp/ntpd/ntp_config.c                      |  332 +-
+ contrib/ntp/ntpd/ntp_control.c                     |   70 +-
+ contrib/ntp/ntpd/ntp_io.c                          |   78 +-
+ contrib/ntp/ntpd/ntp_keyword.h                     | 2098 ++++++------
+ contrib/ntp/ntpd/ntp_leapsec.c                     |   69 +-
+ contrib/ntp/ntpd/ntp_leapsec.h                     |    5 +-
+ contrib/ntp/ntpd/ntp_loopfilter.c                  |   76 +-
+ contrib/ntp/ntpd/ntp_parser.c                      | 2670 ++++++++-------
+ contrib/ntp/ntpd/ntp_parser.h                      |  752 ++---
+ contrib/ntp/ntpd/ntp_peer.c                        |    2 +
+ contrib/ntp/ntpd/ntp_proto.c                       |  306 +-
+ contrib/ntp/ntpd/ntp_refclock.c                    |  420 ++-
+ contrib/ntp/ntpd/ntp_request.c                     |    6 +-
+ contrib/ntp/ntpd/ntp_restrict.c                    |   11 +-
+ contrib/ntp/ntpd/ntp_scanner.c                     |   23 +-
+ contrib/ntp/ntpd/ntp_util.c                        |   36 +-
+ contrib/ntp/ntpd/ntpd-opts.c                       |   20 +-
+ contrib/ntp/ntpd/ntpd-opts.h                       |    8 +-
+ contrib/ntp/ntpd/ntpd.1ntpdman                     |    6 +-
+ contrib/ntp/ntpd/ntpd.1ntpdmdoc                    |    6 +-
+ contrib/ntp/ntpd/ntpd.c                            |  295 +-
+ contrib/ntp/ntpd/ntpd.html                         |    8 +-
+ contrib/ntp/ntpd/ntpd.man.in                       |    6 +-
+ contrib/ntp/ntpd/ntpd.mdoc.in                      |    6 +-
+ contrib/ntp/ntpd/psl0.conf                         |    1 +
+ contrib/ntp/ntpd/psl1.conf                         |    1 +
+ contrib/ntp/ntpd/psl2.conf                         |    1 +
+ contrib/ntp/ntpd/refclock_gpsdjson.c               |    2 +-
+ contrib/ntp/ntpd/refclock_jupiter.c                |  745 ++---
+ contrib/ntp/ntpd/refclock_nmea.c                   | 1391 ++++----
+ contrib/ntp/ntpd/refclock_oncore.c                 |   56 +-
+ contrib/ntp/ntpd/refclock_palisade.c               |  248 +-
+ contrib/ntp/ntpd/refclock_palisade.h               |    7 +-
+ contrib/ntp/ntpd/refclock_parse.c                  |    3 +
+ contrib/ntp/ntpd/refclock_zyfer.c                  |   25 +-
+ contrib/ntp/ntpdate/ntpdate.c                      |   21 +-
+ contrib/ntp/ntpdc/invoke-ntpdc.texi                |    4 +-
+ contrib/ntp/ntpdc/layout.std                       |   14 +-
+ contrib/ntp/ntpdc/ntpdc-opts.c                     |   20 +-
+ contrib/ntp/ntpdc/ntpdc-opts.h                     |    8 +-
+ contrib/ntp/ntpdc/ntpdc.1ntpdcman                  |    6 +-
+ contrib/ntp/ntpdc/ntpdc.1ntpdcmdoc                 |    6 +-
+ contrib/ntp/ntpdc/ntpdc.c                          |   65 +-
+ contrib/ntp/ntpdc/ntpdc.html                       |    4 +-
+ contrib/ntp/ntpdc/ntpdc.man.in                     |    6 +-
+ contrib/ntp/ntpdc/ntpdc.mdoc.in                    |    6 +-
+ contrib/ntp/ntpdc/ntpdc_ops.c                      |  141 +-
+ contrib/ntp/ntpq/Makefile.am                       |   28 +-
+ contrib/ntp/ntpq/Makefile.in                       |    1 -
+ contrib/ntp/ntpq/invoke-ntpq.texi                  |    4 +-
+ contrib/ntp/ntpq/ntpq-opts.c                       |   20 +-
+ contrib/ntp/ntpq/ntpq-opts.h                       |    8 +-
+ contrib/ntp/ntpq/ntpq-subs.c                       |  364 ++-
+ contrib/ntp/ntpq/ntpq.1ntpqman                     |    6 +-
+ contrib/ntp/ntpq/ntpq.1ntpqmdoc                    |    6 +-
+ contrib/ntp/ntpq/ntpq.c                            |   67 +-
+ contrib/ntp/ntpq/ntpq.h                            |    1 +
+ contrib/ntp/ntpq/ntpq.html                         |    4 +-
+ contrib/ntp/ntpq/ntpq.man.in                       |    6 +-
+ contrib/ntp/ntpq/ntpq.mdoc.in                      |    6 +-
+ contrib/ntp/ntpsnmpd/invoke-ntpsnmpd.texi          |    2 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd-opts.c               |   20 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd-opts.h               |    8 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdman         |    6 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdmdoc        |    6 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.html                 |    2 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.man.in               |    6 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.mdoc.in              |    6 +-
+ contrib/ntp/packageinfo.sh                         |    2 +-
+ contrib/ntp/parseutil/dcfd.c                       |   20 +-
+ contrib/ntp/scripts/build/mkver.in                 |    7 +-
+ contrib/ntp/scripts/calc_tickadj/calc_tickadj-opts |    4 +-
+ .../calc_tickadj/calc_tickadj.1calc_tickadjman     |    4 +-
+ .../calc_tickadj/calc_tickadj.1calc_tickadjmdoc    |    4 +-
+ contrib/ntp/scripts/calc_tickadj/calc_tickadj.html |    4 +-
+ .../ntp/scripts/calc_tickadj/calc_tickadj.man.in   |    4 +-
+ .../ntp/scripts/calc_tickadj/calc_tickadj.mdoc.in  |    4 +-
+ .../scripts/calc_tickadj/invoke-calc_tickadj.texi  |    4 +-
+ contrib/ntp/scripts/invoke-plot_summary.texi       |    4 +-
+ contrib/ntp/scripts/invoke-summary.texi            |    4 +-
+ contrib/ntp/scripts/ntp-wait/invoke-ntp-wait.texi  |    4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait-opts         |    4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.1ntp-waitman |    4 +-
+ .../ntp/scripts/ntp-wait/ntp-wait.1ntp-waitmdoc    |    4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.html         |    4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.man.in       |    4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.mdoc.in      |    4 +-
+ contrib/ntp/scripts/ntpsweep/invoke-ntpsweep.texi  |    4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep-opts         |    4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.1ntpsweepman |    4 +-
+ .../ntp/scripts/ntpsweep/ntpsweep.1ntpsweepmdoc    |    4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.html         |    4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.man.in       |    4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.mdoc.in      |    4 +-
+ contrib/ntp/scripts/ntptrace/invoke-ntptrace.texi  |    4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace-opts         |    4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.1ntptraceman |    4 +-
+ .../ntp/scripts/ntptrace/ntptrace.1ntptracemdoc    |    4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.html         |    4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.man.in       |    4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.mdoc.in      |    4 +-
+ contrib/ntp/scripts/plot_summary-opts              |    4 +-
+ contrib/ntp/scripts/plot_summary.1plot_summaryman  |    4 +-
+ contrib/ntp/scripts/plot_summary.1plot_summarymdoc |    4 +-
+ contrib/ntp/scripts/plot_summary.html              |    4 +-
+ contrib/ntp/scripts/plot_summary.man.in            |    4 +-
+ contrib/ntp/scripts/plot_summary.mdoc.in           |    4 +-
+ contrib/ntp/scripts/summary-opts                   |    4 +-
+ contrib/ntp/scripts/summary.1summaryman            |    4 +-
+ contrib/ntp/scripts/summary.1summarymdoc           |    4 +-
+ contrib/ntp/scripts/summary.html                   |    4 +-
+ contrib/ntp/scripts/summary.man.in                 |    4 +-
+ contrib/ntp/scripts/summary.mdoc.in                |    4 +-
+ .../scripts/update-leap/invoke-update-leap.texi    |    2 +-
+ contrib/ntp/scripts/update-leap/update-leap-opts   |    4 +-
+ .../update-leap/update-leap.1update-leapman        |    4 +-
+ .../update-leap/update-leap.1update-leapmdoc       |    4 +-
+ contrib/ntp/scripts/update-leap/update-leap.html   |    2 +-
+ contrib/ntp/scripts/update-leap/update-leap.man.in |    4 +-
+ .../ntp/scripts/update-leap/update-leap.mdoc.in    |    4 +-
+ contrib/ntp/sntp/COPYRIGHT                         |    4 +-
+ contrib/ntp/sntp/configure                         |   21 +-
+ contrib/ntp/sntp/configure.ac                      |   12 +-
+ contrib/ntp/sntp/crypto.c                          |    2 +
+ contrib/ntp/sntp/include/copyright.def             |    2 +-
+ contrib/ntp/sntp/include/version.def               |    2 +-
+ contrib/ntp/sntp/include/version.texi              |    6 +-
+ contrib/ntp/sntp/invoke-sntp.texi                  |    4 +-
+ contrib/ntp/sntp/libevent/build-aux/ar-lib         |    2 +-
+ contrib/ntp/sntp/libevent/build-aux/compile        |    9 +-
+ contrib/ntp/sntp/libevent/build-aux/config.guess   |   38 +-
+ contrib/ntp/sntp/libevent/build-aux/config.sub     |   31 +-
+ contrib/ntp/sntp/libevent/build-aux/depcomp        |    6 +-
+ contrib/ntp/sntp/libevent/build-aux/install-sh     |    4 +-
+ contrib/ntp/sntp/libevent/build-aux/missing        |    6 +-
+ contrib/ntp/sntp/libevent/build-aux/test-driver    |    6 +-
+ contrib/ntp/sntp/libevent/build-aux/ylwrap         |    6 +-
+ contrib/ntp/sntp/libevent/test/regress.gen.c       |    2 +-
+ contrib/ntp/sntp/libevent/test/regress.gen.h       |    8 +-
+ contrib/ntp/sntp/libopts/m4/libopts.m4             |   24 +-
+ contrib/ntp/sntp/m4/ntp_problemtests.m4            |   12 +
+ contrib/ntp/sntp/m4/version.m4                     |    2 +-
+ contrib/ntp/sntp/main.c                            |    4 +
+ contrib/ntp/sntp/networking.c                      |    2 +-
+ contrib/ntp/sntp/scm-rev                           |    2 +-
+ contrib/ntp/sntp/sntp-opts.c                       |   20 +-
+ contrib/ntp/sntp/sntp-opts.h                       |    8 +-
+ contrib/ntp/sntp/sntp.1sntpman                     |    6 +-
+ contrib/ntp/sntp/sntp.1sntpmdoc                    |    6 +-
+ contrib/ntp/sntp/sntp.html                         |    4 +-
+ contrib/ntp/sntp/sntp.man.in                       |    6 +-
+ contrib/ntp/sntp/sntp.mdoc.in                      |    6 +-
+ contrib/ntp/sntp/tests/run-crypto.c                |    2 +
+ contrib/ntp/sntp/tests/run-keyFile.c               |    2 +
+ contrib/ntp/sntp/tests/run-kodDatabase.c           |    2 +
+ contrib/ntp/sntp/tests/run-kodFile.c               |    2 +
+ contrib/ntp/sntp/tests/run-networking.c            |    2 +
+ contrib/ntp/sntp/tests/run-packetHandling.c        |    2 +
+ contrib/ntp/sntp/tests/run-packetProcessing.c      |    2 +
+ contrib/ntp/sntp/tests/run-t-log.c                 |    2 +
+ contrib/ntp/sntp/tests/run-utilities.c             |    2 +
+ contrib/ntp/sntp/tests/testconf.yml                |    2 +
+ contrib/ntp/sntp/version.c                         |    2 +-
+ contrib/ntp/util/invoke-ntp-keygen.texi            |    4 +-
+ contrib/ntp/util/ntp-keygen-opts.c                 |   20 +-
+ contrib/ntp/util/ntp-keygen-opts.h                 |    8 +-
+ contrib/ntp/util/ntp-keygen.1ntp-keygenman         |    6 +-
+ contrib/ntp/util/ntp-keygen.1ntp-keygenmdoc        |    6 +-
+ contrib/ntp/util/ntp-keygen.html                   |    4 +-
+ contrib/ntp/util/ntp-keygen.man.in                 |    6 +-
+ contrib/ntp/util/ntp-keygen.mdoc.in                |    6 +-
+ contrib/ntp/util/ntptime.c                         |   83 +-
+ crypto/openssh/monitor.c                           |    2 +-
+ sys/conf/newvers.sh                                |    2 +-
+ sys/dev/ixl/if_ixl.c                               |   28 +-
+ sys/dev/ixl/ixl.h                                  |    1 +
+ sys/dev/mlx5/mlx5_en/mlx5_en_tx.c                  |    3 +-
+ sys/dev/oce/oce_if.c                               |    3 +
+ sys/dev/oce/oce_if.h                               |    1 +
+ sys/kern/kern_jail.c                               |   12 +-
+ sys/net/if_clone.c                                 |   19 +-
+ sys/net/if_clone.h                                 |    3 +-
+ sys/net/if_epair.c                                 |   42 +-
+ sys/netinet/ip_output.c                            |    2 +
+ sys/netinet/tcp_syncache.c                         |    3 +-
+ sys/netinet6/ip6_output.c                          |   62 +-
+ sys/sys/mbuf.h                                     |    4 +-
+ usr.sbin/ntp/config.h                              |    2 +-
+ usr.sbin/ntp/libntp/Makefile                       |    7 +-
+ 259 files changed, 13073 insertions(+), 5834 deletions(-)
+ create mode 100644 contrib/ntp/include/ntp_calgps.h
+ create mode 100644 contrib/ntp/include/ntp_psl.h
+ create mode 100644 contrib/ntp/include/timexsup.h
+ create mode 100644 contrib/ntp/libntp/ntp_calgps.c
+ create mode 100644 contrib/ntp/libntp/timespecops.c
+ create mode 100644 contrib/ntp/libntp/timexsup.c
+ create mode 100644 contrib/ntp/ntpd/psl0.conf
+ create mode 100644 contrib/ntp/ntpd/psl1.conf
+ create mode 100644 contrib/ntp/ntpd/psl2.conf
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    9dbcc392696a..bcc48a3f2fea  hardened/12.1-releng/master -> hardened/12.1-releng/master        
+remote:    b2d7ad564ed5..321097df2a55  github/freebsd/12.1-releng/master -> github/freebsd/12.1-releng/master        
+remote: 
+remote: Create a new pull request for 'hardened/12.1-releng/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12.1-releng/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   9dbcc392696a..bcc48a3f2fea  hardened/12.1-releng/master -> hardened/12.1-releng/master
+==== END: hardened/12.1-releng/master ====
