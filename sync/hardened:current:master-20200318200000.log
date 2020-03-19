@@ -1,0 +1,117 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging share/mk/src.opts.mk
+Merge made by the 'recursive' strategy.
+ .../llvm-project/clang/include/clang/AST/Expr.h    |   22 +-
+ .../llvm-project/clang/include/clang/AST/Stmt.h    |   15 +
+ .../llvm-project/clang/include/clang/Sema/Sema.h   |   41 +-
+ .../clang/include/clang/Sema/Template.h            |   10 +
+ contrib/llvm-project/clang/lib/AST/ASTImporter.cpp |    2 +-
+ contrib/llvm-project/clang/lib/Lex/Pragma.cpp      |    3 +
+ contrib/llvm-project/clang/lib/Sema/SemaExpr.cpp   |   17 +-
+ .../llvm-project/clang/lib/Sema/SemaExprCXX.cpp    |    2 +-
+ .../llvm-project/clang/lib/Sema/SemaTemplate.cpp   |   54 +-
+ .../clang/lib/Sema/SemaTemplateInstantiate.cpp     |    6 +-
+ .../llvm-project/clang/lib/Sema/TreeTransform.h    |   23 +-
+ .../clang/lib/Serialization/ASTReaderDecl.cpp      |   67 +-
+ .../clang/lib/Serialization/ASTReaderStmt.cpp      |    2 +
+ .../clang/lib/Serialization/ASTWriterStmt.cpp      |    2 +
+ contrib/llvm-project/clang/tools/driver/driver.cpp |   22 +-
+ contrib/llvm-project/libcxx/include/codecvt        |   72 +-
+ contrib/llvm-project/libcxx/include/exception      |    2 +
+ contrib/llvm-project/libcxx/include/filesystem     |    1 +
+ contrib/llvm-project/libcxx/include/future         |    1 +
+ contrib/llvm-project/libcxx/include/ios            |    3 +-
+ contrib/llvm-project/libcxx/include/memory         |   32 +-
+ contrib/llvm-project/libcxx/include/regex          |    3 +-
+ contrib/llvm-project/libcxx/include/stdexcept      |    7 +
+ contrib/llvm-project/libcxx/include/system_error   |    1 +
+ contrib/llvm-project/libcxx/include/typeinfo       |    1 +
+ contrib/llvm-project/lld/ELF/Arch/PPC.cpp          |   11 +-
+ contrib/llvm-project/lld/ELF/InputSection.cpp      |    5 +-
+ contrib/llvm-project/lld/ELF/Relocations.cpp       |    9 +-
+ contrib/llvm-project/lld/ELF/SyntheticSections.cpp |   25 +-
+ contrib/llvm-project/lld/ELF/SyntheticSections.h   |   11 +-
+ contrib/llvm-project/lld/ELF/Writer.cpp            |    3 +-
+ .../llvm/include/llvm/Support/ManagedStatic.h      |    6 +
+ .../llvm-project/llvm/include/llvm/Support/Timer.h |    5 +
+ contrib/llvm-project/llvm/lib/Support/Timer.cpp    |    4 +
+ .../llvm/lib/Transforms/Scalar/EarlyCSE.cpp        |   51 +-
+ lib/clang/include/VCSVersion.inc                   |    8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |    2 +-
+ share/mk/src.opts.mk                               |   34 +-
+ stand/efi/libefi/efi_console.c                     |   46 +-
+ sys/compat/linuxkpi/common/include/linux/pci.h     |    7 +
+ sys/compat/linuxkpi/common/src/linux_pci.c         |   47 +
+ sys/dev/mlx5/device.h                              |    1 +
+ sys/dev/mlx5/driver.h                              |    2 +
+ sys/dev/mlx5/mlx5_core/eswitch.h                   |  169 +++
+ sys/dev/mlx5/mlx5_core/flow_table.h                |   65 +
+ sys/dev/mlx5/mlx5_core/mlx5_eq.c                   |    7 +-
+ sys/dev/mlx5/mlx5_core/mlx5_eswitch.c              | 1307 ++++++++++++++++++++
+ sys/dev/mlx5/mlx5_core/mlx5_main.c                 |  323 ++++-
+ sys/dev/mlx5/mlx5_core/mlx5_mpfs.c                 |    5 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_flow_table.c          |    3 +-
+ sys/dev/mlx5/mpfs.h                                |    3 +-
+ sys/modules/ibcore/Makefile                        |    2 +-
+ sys/modules/linuxkpi/Makefile                      |    1 +
+ sys/modules/mlx4/Makefile                          |    2 +-
+ sys/modules/mlx4en/Makefile                        |    2 +-
+ sys/modules/mlx4ib/Makefile                        |    2 +-
+ sys/modules/mlx5/Makefile                          |    3 +-
+ sys/modules/mlx5en/Makefile                        |    2 +-
+ sys/modules/mlx5fpga_tools/Makefile                |    2 +-
+ sys/modules/mlx5ib/Makefile                        |    2 +-
+ sys/modules/rdma/krping/Makefile                   |    2 +-
+ sys/x86/x86/io_apic.c                              |   35 +-
+ usr.sbin/ntp/config.h                              |    2 +-
+ 63 files changed, 2404 insertions(+), 223 deletions(-)
+ create mode 100644 sys/dev/mlx5/mlx5_core/eswitch.h
+ create mode 100644 sys/dev/mlx5/mlx5_core/flow_table.h
+ create mode 100644 sys/dev/mlx5/mlx5_core/mlx5_eswitch.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    c25c2cceccf8..6c7c55f97729  hardened/current/master -> hardened/current/master        
+remote:    532ff04dd605..ed2a372af56c  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   c25c2cceccf8..6c7c55f97729  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
