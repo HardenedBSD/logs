@@ -1,0 +1,153 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/modules/Makefile
+Auto-merging sys/i386/conf/NOTES
+Removing sys/dev/cx/ng_cx.h
+Removing sys/dev/cx/if_cx.c
+Removing sys/dev/cx/cxreg.h
+Removing sys/dev/cx/cxddk.h
+Removing sys/dev/cx/cxddk.c
+Removing sys/dev/cx/csigmafw.h
+Removing sys/dev/cx/csigma.c
+Removing sys/dev/cx/cronyxfw.h
+Removing sys/dev/ctau/ng_ct.h
+Removing sys/dev/ctau/lxt318.h
+Removing sys/dev/ctau/if_ct.c
+Removing sys/dev/ctau/hdc64570.h
+Removing sys/dev/ctau/ds2153.h
+Removing sys/dev/ctau/ctddk.h
+Removing sys/dev/ctau/ctddk.c
+Removing sys/dev/ctau/ctaureg.h
+Removing sys/dev/ctau/ctaug7fw.h
+Removing sys/dev/ctau/ctaufw.h
+Removing sys/dev/ctau/ctaue1fw.h
+Removing sys/dev/ctau/ctau2fw.h
+Removing sys/dev/ctau/ctau.c
+Removing sys/dev/ctau/am8530.h
+Auto-merging sys/conf/files.i386
+Auto-merging share/mk/src.opts.mk
+Removing share/man/man4/man4.i386/cx.4
+Removing share/man/man4/man4.i386/ctau.4
+Auto-merging lib/clang/llvm.build.mk
+Auto-merging lib/clang/libllvm/Makefile
+Auto-merging ObsoleteFiles.inc
+Merge made by the 'recursive' strategy.
+ ObsoleteFiles.inc                                 |   53 +-
+ contrib/elftoolchain/elfcopy/sections.c           |   11 +
+ contrib/elftoolchain/libdwarf/libdwarf_die.c      |    3 +-
+ contrib/elftoolchain/libelftc/libelftc_dem_gnu3.c |    2 +-
+ contrib/elftoolchain/libpe/pe_symtab.c            |    4 +-
+ contrib/elftoolchain/readelf/readelf.c            |    2 +
+ lib/clang/libllvm/Makefile                        |   48 +-
+ lib/clang/llvm.build.mk                           |    6 -
+ share/man/man4/man4.i386/Makefile                 |    2 -
+ share/man/man4/man4.i386/ctau.4                   |  125 -
+ share/man/man4/man4.i386/cx.4                     |  145 --
+ share/misc/committers-src.dot                     |    4 +
+ share/mk/src.opts.mk                              |    2 -
+ sys/cam/ctl/ctl.c                                 |    2 +-
+ sys/cam/scsi/scsi_all.c                           |    2 +-
+ sys/cam/scsi/scsi_da.c                            |    2 +-
+ sys/compat/linuxkpi/common/include/linux/pci.h    |    2 +-
+ sys/compat/linuxkpi/common/src/linux_pci.c        |    5 +
+ sys/conf/WITHOUT_SOURCELESS_UCODE                 |    1 -
+ sys/conf/files.i386                               |    6 -
+ sys/dev/ctau/am8530.h                             |  115 -
+ sys/dev/ctau/ctau.c                               | 1796 ---------------
+ sys/dev/ctau/ctau2fw.h                            |  498 ----
+ sys/dev/ctau/ctaue1fw.h                           | 2066 -----------------
+ sys/dev/ctau/ctaufw.h                             |  848 -------
+ sys/dev/ctau/ctaug7fw.h                           | 2062 -----------------
+ sys/dev/ctau/ctaureg.h                            |  276 ---
+ sys/dev/ctau/ctddk.c                              | 1162 ----------
+ sys/dev/ctau/ctddk.h                              |  607 -----
+ sys/dev/ctau/ds2153.h                             |  290 ---
+ sys/dev/ctau/hdc64570.h                           |  492 ----
+ sys/dev/ctau/if_ct.c                              | 2207 ------------------
+ sys/dev/ctau/lxt318.h                             |   44 -
+ sys/dev/ctau/ng_ct.h                              |   31 -
+ sys/dev/cx/cronyxfw.h                             |   32 -
+ sys/dev/cx/csigma.c                               | 1438 ------------
+ sys/dev/cx/csigmafw.h                             |  852 -------
+ sys/dev/cx/cxddk.c                                |  905 --------
+ sys/dev/cx/cxddk.h                                |  488 ----
+ sys/dev/cx/cxreg.h                                |  486 ----
+ sys/dev/cx/if_cx.c                                | 2546 ---------------------
+ sys/dev/cx/ng_cx.h                                |   31 -
+ sys/i386/conf/NOTES                               |    8 -
+ sys/kern/uipc_usrreq.c                            |   47 +-
+ sys/modules/Makefile                              |    4 -
+ sys/netinet/sctp_usrreq.c                         |    8 -
+ sys/powerpc/powerpc/mem.c                         |   33 +-
+ sys/sys/unpcb.h                                   |    1 -
+ 48 files changed, 81 insertions(+), 19719 deletions(-)
+ delete mode 100644 share/man/man4/man4.i386/ctau.4
+ delete mode 100644 share/man/man4/man4.i386/cx.4
+ delete mode 100644 sys/dev/ctau/am8530.h
+ delete mode 100644 sys/dev/ctau/ctau.c
+ delete mode 100644 sys/dev/ctau/ctau2fw.h
+ delete mode 100644 sys/dev/ctau/ctaue1fw.h
+ delete mode 100644 sys/dev/ctau/ctaufw.h
+ delete mode 100644 sys/dev/ctau/ctaug7fw.h
+ delete mode 100644 sys/dev/ctau/ctaureg.h
+ delete mode 100644 sys/dev/ctau/ctddk.c
+ delete mode 100644 sys/dev/ctau/ctddk.h
+ delete mode 100644 sys/dev/ctau/ds2153.h
+ delete mode 100644 sys/dev/ctau/hdc64570.h
+ delete mode 100644 sys/dev/ctau/if_ct.c
+ delete mode 100644 sys/dev/ctau/lxt318.h
+ delete mode 100644 sys/dev/ctau/ng_ct.h
+ delete mode 100644 sys/dev/cx/cronyxfw.h
+ delete mode 100644 sys/dev/cx/csigma.c
+ delete mode 100644 sys/dev/cx/csigmafw.h
+ delete mode 100644 sys/dev/cx/cxddk.c
+ delete mode 100644 sys/dev/cx/cxddk.h
+ delete mode 100644 sys/dev/cx/cxreg.h
+ delete mode 100644 sys/dev/cx/if_cx.c
+ delete mode 100644 sys/dev/cx/ng_cx.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    bd103ff6a98a..b51f2e7c2495  hardened/current/master -> hardened/current/master        
+remote:    8ccacff05651..c5bea5a546ab  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   bd103ff6a98a..b51f2e7c2495  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
