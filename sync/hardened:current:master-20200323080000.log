@@ -1,0 +1,92 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/riscv/riscv/machdep.c
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/src.opts.mk
+index de83a21fb59c,54730e4beff8..000000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -80,7 -79,8 +80,12 @@@ __DEFAULT_YES_OPTIONS = 
+      CCD \
+      CDDL \
+      CLANG \
+++<<<<<<< HEAD
+ +    CLANG_EXTRAS \
+++=======
++     CLANG_BOOTSTRAP \
++     CLANG_IS_CC \
+++>>>>>>> freebsd/current/master
+      CPP \
+      CROSS_COMPILER \
+      CRYPT \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile
+	modified:   etc/mtree/BSD.sendmail.dist
+	modified:   etc/mtree/BSD.var.dist
+	modified:   lib/libc/gen/exec.3
+	modified:   share/man/man7/arch.7
+	modified:   share/syscons/keymaps/colemak-dh.iso15.acc.kbd
+	modified:   share/vt/keymaps/colemak-dh.acc.kbd
+	modified:   sys/conf/ldscript.mips.octeon1
+	modified:   sys/dev/rtwn/usb/rtwn_usb_attach.h
+	modified:   sys/dev/usb/usbdevs
+	modified:   sys/kern/vfs_mount.c
+	modified:   sys/mips/nlm/files.xlp
+	modified:   sys/riscv/riscv/machdep.c
+	modified:   usr.bin/tail/tail.1
+	modified:   usr.sbin/pw/rm_r.c
+	modified:   usr.sbin/pw/tests/pw_userdel_test.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/mk/src.opts.mk
+
+HEAD is now at 27cecd98642b Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 27cecd98642b Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
