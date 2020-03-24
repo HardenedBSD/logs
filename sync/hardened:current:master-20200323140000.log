@@ -1,0 +1,98 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 15 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 27cecd98642b..88af4353c3ba
+Fast-forward
+ Makefile                                       |  10 +--
+ etc/mtree/BSD.sendmail.dist                    |   4 +-
+ etc/mtree/BSD.var.dist                         |   4 -
+ lib/libc/gen/exec.3                            |   7 +-
+ share/man/man7/arch.7                          |  18 ++---
+ share/mk/src.opts.mk                           |  12 +--
+ share/syscons/keymaps/colemak-dh.iso15.acc.kbd |  32 ++++----
+ share/vt/keymaps/colemak-dh.acc.kbd            | 104 ++++++++++++-------------
+ sys/conf/ldscript.mips.octeon1                 |   9 ++-
+ sys/dev/rtwn/usb/rtwn_usb_attach.h             |   3 +-
+ sys/dev/usb/usbdevs                            |   1 +
+ sys/kern/vfs_mount.c                           |   5 +-
+ sys/mips/nlm/files.xlp                         |   2 +-
+ sys/riscv/riscv/machdep.c                      |   8 +-
+ usr.bin/tail/tail.1                            |   4 +-
+ usr.sbin/pw/rm_r.c                             |   5 +-
+ usr.sbin/pw/tests/pw_userdel_test.sh           |  20 +++++
+ 17 files changed, 130 insertions(+), 118 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/tcpdump/tcpdump/Makefile
+Auto-merging share/man/man9/sysctl.9
+Auto-merging share/man/man5/rc.conf.5
+Auto-merging libexec/rc/rc.conf
+Merge made by the 'recursive' strategy.
+ etc/master.passwd                 |   1 +
+ lib/libc/gen/exec.3               |   6 +
+ libexec/rc/rc.conf                |   2 +-
+ libexec/rc/rc.d/routed            |   2 +-
+ libexec/rc/rc.d/routing           |  33 +-
+ sbin/setkey/Makefile              |   2 -
+ sbin/setkey/token.l               |   2 +
+ share/man/man5/rc.conf.5          |  16 +-
+ share/man/man9/Makefile           |   4 +
+ share/man/man9/sysctl.9           |   6 +-
+ sys/dev/aic7xxx/aicasm/Makefile   |   1 -
+ sys/netinet/sctp_lock_bsd.h       | 560 +++++++++++++++++---------------
+ tests/sys/common/Makefile         |   2 +
+ tests/sys/common/net_receiver.py  | 116 +++++++
+ tests/sys/common/vnet.subr        |   8 +
+ tests/sys/netinet/Makefile        |   2 +-
+ tests/sys/netinet/output.sh       | 588 ++++++++++++++++++++++++++++++++++
+ tests/sys/netinet6/Makefile       |   3 +-
+ tests/sys/netinet6/output6.sh     | 658 ++++++++++++++++++++++++++++++++++++++
+ tools/bsdbox/Makefile             |   2 +-
+ usr.sbin/tcpdump/tcpdump/Makefile |   2 +-
+ 21 files changed, 1734 insertions(+), 282 deletions(-)
+ create mode 100755 tests/sys/common/net_receiver.py
+ create mode 100755 tests/sys/netinet/output.sh
+ create mode 100755 tests/sys/netinet6/output6.sh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    88af4353c3ba..490ea7d630a7  hardened/current/master -> hardened/current/master        
+remote:    8ac85c9b97bb..ce521a226779  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   88af4353c3ba..490ea7d630a7  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
