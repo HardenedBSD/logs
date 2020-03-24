@@ -34,3 +34,124 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/xfce4-screensaver/files/patch-src_xfce4-screensaver-configure
+Removing www/py-puppetboard/files/patch-puppetboard_app.py
+Auto-merging security/openssh-portable/Makefile
+Removing audio/pianod2/files/patch-src-common-xmlio.cpp
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |   8 +-
+ audio/pianod2/Makefile                             |   3 +-
+ audio/pianod2/distinfo                             |   6 +-
+ audio/pianod2/files/patch-configure.ac             |   4 +-
+ audio/pianod2/files/patch-src-Makefile.am          |   2 +-
+ audio/pianod2/files/patch-src-common-fileio.cpp    |  14 +++
+ audio/pianod2/files/patch-src-common-xmlio.cpp     |  14 ---
+ .../patch-src-mediaunits-pandora-pandorasource.cpp |   2 +-
+ devel/jwasm/Makefile                               |  18 ++--
+ devel/jwasm/distinfo                               |   6 +-
+ devel/jwasm/pkg-descr                              |   2 +-
+ devel/php74-json/files/patch-Makefile.frag         |   9 ++
+ devel/py-enum-compat/Makefile                      |   5 +-
+ lang/php72/Makefile                                |   2 +-
+ lang/php72/distinfo                                |   6 +-
+ lang/php73/Makefile                                |   2 +-
+ lang/php73/distinfo                                |   6 +-
+ lang/php74/Makefile                                |   2 +-
+ lang/php74/Makefile.ext                            |   1 +
+ lang/php74/distinfo                                |   6 +-
+ mail/dovecot/Makefile                              |   8 +-
+ mail/dovecot/files/patch-configure                 |  19 ++++
+ .../files/patch-plugins_fts-lucene_Makefile.in     |  11 +++
+ mail/dovecot/files/patch-src_lib-fts_Makefile.in   |  11 +++
+ ...patch-src_lib-fts_fts-filter-stemmer-snowball.c |  11 +++
+ .../patch-src_plugins_fts-lucene_SnowballFilter.h  |  10 ++
+ mail/nextcloud-mail/Makefile                       |   2 +-
+ mail/nextcloud-mail/distinfo                       |   6 +-
+ mail/nextcloud-mail/pkg-plist                      |  44 ++++-----
+ security/nextcloud-twofactor_totp/Makefile         |   2 +-
+ security/nextcloud-twofactor_totp/distinfo         |   6 +-
+ security/nextcloud-twofactor_u2f/Makefile          |   2 +-
+ security/nextcloud-twofactor_u2f/distinfo          |   6 +-
+ security/nextcloud-twofactor_u2f/pkg-plist         |   9 +-
+ security/openssh-portable/Makefile                 |   2 +-
+ security/openssh-portable/files/patch-session.c    | 100 ++++++++-----------
+ textproc/py-pystemmer/Makefile                     |   3 +-
+ textproc/py-pystemmer/distinfo                     |   5 +-
+ www/nextcloud/Makefile                             |   2 +-
+ www/nextcloud/distinfo                             |   6 +-
+ www/nextcloud/pkg-plist                            |  21 +++-
+ www/py-puppetboard/Makefile                        |   2 +-
+ www/py-puppetboard/distinfo                        |   6 +-
+ www/py-puppetboard/files/patch-puppetboard_app.py  |  20 ----
+ x11-themes/materia-gtk-theme/Makefile              |   2 +-
+ x11-themes/materia-gtk-theme/distinfo              |   6 +-
+ x11-themes/materia-gtk-theme/pkg-plist             | 108 ++++++++++++++-------
+ x11/Makefile                                       |   1 +
+ x11/libxkbcommon/Makefile                          |  10 +-
+ x11/wev/Makefile                                   |   3 +-
+ x11/wev/distinfo                                   |   4 +-
+ x11/wlogout/pkg-descr                              |   2 +-
+ x11/wofi/Makefile                                  |  31 ++++++
+ x11/wofi/distinfo                                  |   3 +
+ x11/wofi/files/patch-glib-2.56                     |  44 +++++++++
+ x11/wofi/pkg-descr                                 |   4 +
+ x11/wofi/pkg-plist                                 |  15 +++
+ x11/xfce4-screensaver/Makefile                     |   3 +-
+ x11/xfce4-screensaver/distinfo                     |   6 +-
+ .../files/patch-src_xfce4-screensaver-configure    |  21 ----
+ x11/xfce4-screensaver/pkg-plist                    |  17 ++++
+ 61 files changed, 447 insertions(+), 265 deletions(-)
+ create mode 100644 audio/pianod2/files/patch-src-common-fileio.cpp
+ delete mode 100644 audio/pianod2/files/patch-src-common-xmlio.cpp
+ create mode 100644 devel/php74-json/files/patch-Makefile.frag
+ create mode 100644 mail/dovecot/files/patch-configure
+ create mode 100644 mail/dovecot/files/patch-plugins_fts-lucene_Makefile.in
+ create mode 100644 mail/dovecot/files/patch-src_lib-fts_Makefile.in
+ create mode 100644 mail/dovecot/files/patch-src_lib-fts_fts-filter-stemmer-snowball.c
+ create mode 100644 mail/dovecot/files/patch-src_plugins_fts-lucene_SnowballFilter.h
+ delete mode 100644 www/py-puppetboard/files/patch-puppetboard_app.py
+ create mode 100644 x11/wofi/Makefile
+ create mode 100644 x11/wofi/distinfo
+ create mode 100644 x11/wofi/files/patch-glib-2.56
+ create mode 100644 x11/wofi/pkg-descr
+ create mode 100644 x11/wofi/pkg-plist
+ delete mode 100644 x11/xfce4-screensaver/files/patch-src_xfce4-screensaver-configure
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    509c8a60c7cc..a3af8fe9cceb  master -> master        
+remote:    581c2fbcdc2e..509c8a60c7cc  github/master -> github/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   509c8a60c7cc..a3af8fe9cceb  master -> master
+==== END: master ====
