@@ -1,0 +1,147 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 5dcd11208989..d7638fe8e15d
+Fast-forward
+ gnu/usr.bin/binutils/Makefile                      |    6 -
+ gnu/usr.bin/binutils/ld/Makefile                   |   89 -
+ gnu/usr.bin/binutils/ld/Makefile.amd64             |   29 -
+ gnu/usr.bin/binutils/ld/Makefile.arm               |   17 -
+ gnu/usr.bin/binutils/ld/Makefile.depend            |   20 -
+ gnu/usr.bin/binutils/ld/Makefile.depend.host       |   14 -
+ gnu/usr.bin/binutils/ld/Makefile.i386              |   12 -
+ gnu/usr.bin/binutils/ld/Makefile.mips              |   38 -
+ gnu/usr.bin/binutils/ld/Makefile.powerpc           |   12 -
+ gnu/usr.bin/binutils/ld/Makefile.powerpc64         |   30 -
+ gnu/usr.bin/binutils/ld/Makefile.sparc64           |   32 -
+ gnu/usr.bin/binutils/ld/armelf_fbsd.sh             |    9 -
+ gnu/usr.bin/binutils/ld/armelfb_fbsd.sh            |   14 -
+ gnu/usr.bin/binutils/ld/config.h                   |  141 --
+ gnu/usr.bin/binutils/ld/elf32btsmip_fbsd.sh        |    4 -
+ gnu/usr.bin/binutils/ld/elf32btsmipn32_fbsd.sh     |    5 -
+ gnu/usr.bin/binutils/ld/elf32ltsmip_fbsd.sh        |    4 -
+ gnu/usr.bin/binutils/ld/elf32ltsmipn32_fbsd.sh     |    5 -
+ gnu/usr.bin/binutils/ld/elf64btsmip_fbsd.sh        |    4 -
+ gnu/usr.bin/binutils/ld/elf64ltsmip_fbsd.sh        |    4 -
+ gnu/usr.bin/binutils/ld/genscripts.sh              |  240 ---
+ gnu/usr.bin/binutils/ld/ld.1                       | 2155 --------------------
+ share/man/man7/arch.7                              |    4 +-
+ share/mk/bsd.compat.mk                             |    6 +-
+ share/mk/bsd.cpu.mk                                |   13 -
+ share/mk/src.opts.mk                               |    9 +-
+ stand/defs.mk                                      |    4 -
+ sys/amd64/vmm/amd/amdvi_priv.h                     |   26 +-
+ sys/amd64/vmm/amd/ivrs_drv.c                       |   35 +-
+ sys/contrib/dev/acpica/changes.txt                 |   95 +
+ sys/contrib/dev/acpica/common/ahtable.c            |    2 +-
+ sys/contrib/dev/acpica/common/dmtable.c            |    3 +-
+ sys/contrib/dev/acpica/common/dmtbdump2.c          |   25 +-
+ sys/contrib/dev/acpica/common/dmtbinfo2.c          |   16 +-
+ sys/contrib/dev/acpica/common/dmtbinfo3.c          |    2 +-
+ sys/contrib/dev/acpica/compiler/aslcompile.c       |    1 +
+ sys/contrib/dev/acpica/compiler/aslcompiler.h      |    8 +-
+ sys/contrib/dev/acpica/compiler/aslcompiler.l      |   20 +-
+ sys/contrib/dev/acpica/compiler/asldefine.h        |    1 +
+ sys/contrib/dev/acpica/compiler/aslerror.c         |  125 +-
+ sys/contrib/dev/acpica/compiler/aslglobal.h        |    1 +
+ sys/contrib/dev/acpica/compiler/aslload.c          |   88 +-
+ sys/contrib/dev/acpica/compiler/asloptions.c       |    2 +-
+ sys/contrib/dev/acpica/compiler/asltypes.h         |   31 +-
+ sys/contrib/dev/acpica/compiler/dtcompiler.h       |    1 -
+ sys/contrib/dev/acpica/compiler/dtcompilerparser.l |    1 -
+ sys/contrib/dev/acpica/compiler/dtcompilerparser.y |    1 -
+ sys/contrib/dev/acpica/compiler/dtparser.l         |    2 +-
+ sys/contrib/dev/acpica/compiler/dttable1.c         |   10 +-
+ sys/contrib/dev/acpica/compiler/dtutils.c          |    3 +-
+ sys/contrib/dev/acpica/compiler/prparser.l         |    2 +-
+ .../dev/acpica/components/debugger/dbinput.c       |   19 +-
+ .../dev/acpica/components/debugger/dbxface.c       |    1 +
+ .../dev/acpica/components/dispatcher/dswexec.c     |   32 +-
+ .../dev/acpica/components/dispatcher/dswload.c     |    2 -
+ .../dev/acpica/components/dispatcher/dswload2.c    |   37 +
+ .../dev/acpica/components/hardware/hwsleep.c       |    4 +-
+ .../dev/acpica/components/namespace/nsnames.c      |    8 +-
+ .../dev/acpica/components/utilities/utdecode.c     |    2 +-
+ .../dev/acpica/components/utilities/utdelete.c     |    9 +-
+ sys/contrib/dev/acpica/include/acdisasm.h          |    1 +
+ sys/contrib/dev/acpica/include/acnamesp.h          |    4 +
+ sys/contrib/dev/acpica/include/acpixf.h            |    2 +-
+ sys/contrib/dev/acpica/include/actbinfo.h          |    3 +-
+ sys/contrib/dev/acpica/include/actbl2.h            |   24 +-
+ sys/contrib/dev/acpica/include/actbl3.h            |    6 +-
+ sys/contrib/dev/acpica/include/acuuid.h            |    2 +-
+ sys/sys/param.h                                    |    2 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           |    5 +-
+ tools/build/options/WITHOUT_BINUTILS               |    3 +-
+ tools/build/options/WITH_BINUTILS                  |    5 +-
+ 71 files changed, 543 insertions(+), 3049 deletions(-)
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.amd64
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.arm
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.depend.host
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.i386
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.mips
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.powerpc
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.powerpc64
+ delete mode 100644 gnu/usr.bin/binutils/ld/Makefile.sparc64
+ delete mode 100644 gnu/usr.bin/binutils/ld/armelf_fbsd.sh
+ delete mode 100644 gnu/usr.bin/binutils/ld/armelfb_fbsd.sh
+ delete mode 100644 gnu/usr.bin/binutils/ld/config.h
+ delete mode 100755 gnu/usr.bin/binutils/ld/elf32btsmip_fbsd.sh
+ delete mode 100755 gnu/usr.bin/binutils/ld/elf32btsmipn32_fbsd.sh
+ delete mode 100755 gnu/usr.bin/binutils/ld/elf32ltsmip_fbsd.sh
+ delete mode 100755 gnu/usr.bin/binutils/ld/elf32ltsmipn32_fbsd.sh
+ delete mode 100755 gnu/usr.bin/binutils/ld/elf64btsmip_fbsd.sh
+ delete mode 100755 gnu/usr.bin/binutils/ld/elf64ltsmip_fbsd.sh
+ delete mode 100755 gnu/usr.bin/binutils/ld/genscripts.sh
+ delete mode 100644 gnu/usr.bin/binutils/ld/ld.1
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5dcd11208989..d7638fe8e15d  freebsd/current/master -> freebsd/current/master        
+remote:    fd4b12234cea..789466ac63f7  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5dcd11208989..d7638fe8e15d  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
