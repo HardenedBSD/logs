@@ -34,3 +34,158 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing ports-mgmt/poudriere/files/patch-image-pkg1.11
+Removing multimedia/vapoursynth/files/patch-non-x86
+Auto-merging lang/ghc/Makefile
+CONFLICT (content): Merge conflict in lang/ghc/Makefile
+Auto-merging comms/ebook2cwgui/Makefile
+Auto-merging comms/ebook2cw/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/ghc/Makefile
+index 09f46a479990,a981e84e5c56..000000000000
+--- a/lang/ghc/Makefile
++++ b/lang/ghc/Makefile
+@@@ -21,10 -21,8 +21,15 @@@ LICENSE_FILE=	${WRKSRC}/LICENS
+  # other supported arches are added based on GHC_VERSION below
+  ONLY_FOR_ARCHS=	amd64 i386
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=		pie:off
+ +LLVM_AR_UNSAFE=		yes
+ +
+ +USES=			autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
+++=======
++ USES=			autoreconf compiler:c11 gmake iconv:translit \
++ 			localbase:ldflags ncurses perl5 tar:xz
+++>>>>>>> freebsd/master
+  USE_LOCALE=		en_US.UTF-8
+  USE_PERL5=		build
+  GNU_CONFIGURE=		yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   comms/ebook2cw/Makefile
+	modified:   comms/ebook2cw/files/patch-Makefile
+	modified:   comms/ebook2cwgui/Makefile
+	modified:   devel/gitaly/Makefile
+	modified:   devel/gitaly/distinfo
+	modified:   emulators/winetricks/Makefile
+	modified:   emulators/winetricks/distinfo
+	modified:   games/stockfish/Makefile
+	modified:   games/stockfish/distinfo
+	modified:   graphics/py-PyOpenGL-accelerate/Makefile
+	modified:   lang/ghc/distinfo
+	new file:   lang/ghc/files/patch-utils_iserv_ghc.mk
+	modified:   math/flint2/Makefile
+	modified:   math/flint2/pkg-plist
+	modified:   multimedia/vapoursynth/Makefile
+	modified:   multimedia/vapoursynth/distinfo
+	deleted:    multimedia/vapoursynth/files/patch-non-x86
+	modified:   net-im/signal-cli/Makefile
+	modified:   net-mgmt/netdata-go/Makefile
+	modified:   net-mgmt/netdata-go/distinfo
+	modified:   net-mgmt/netdata-go/pkg-plist
+	modified:   net/findomain/Makefile
+	modified:   net/findomain/distinfo
+	modified:   net/findomain/files/patch-Cargo.toml
+	modified:   ports-mgmt/poudriere-devel/Makefile
+	modified:   ports-mgmt/poudriere-devel/distinfo
+	modified:   ports-mgmt/poudriere/Makefile
+	modified:   ports-mgmt/poudriere/distinfo
+	deleted:    ports-mgmt/poudriere/files/patch-image-pkg1.11
+	modified:   science/2d-rewriter/Makefile
+	modified:   science/2d-rewriter/distinfo
+	modified:   science/2d-rewriter/pkg-descr
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/Makefile
+	modified:   sysutils/acpica-tools/Makefile
+	modified:   sysutils/acpica-tools/distinfo
+	new file:   sysutils/nut-devel/Makefile
+	new file:   sysutils/nut-devel/distinfo
+	new file:   sysutils/nut-devel/files/nut.in
+	new file:   sysutils/nut-devel/files/nut.newsyslog
+	new file:   sysutils/nut-devel/files/nut.syslog
+	new file:   sysutils/nut-devel/files/nut_upslog.in
+	new file:   sysutils/nut-devel/files/nut_upsmon.in
+	new file:   sysutils/nut-devel/files/patch-drivers_blazer__usb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_libshut.c
+	new file:   sysutils/nut-devel/files/patch-drivers_libusb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_libusb.h
+	new file:   sysutils/nut-devel/files/patch-drivers_nutdrv__qx.c
+	new file:   sysutils/nut-devel/files/patch-drivers_riello__usb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_tripplite__usb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_usbhid-ups.c
+	new file:   sysutils/nut-devel/files/patch-scripts_Makefile
+	new file:   sysutils/nut-devel/pkg-descr
+	new file:   sysutils/nut-devel/pkg-plist
+	modified:   sysutils/xen-guest-tools/Makefile
+	new file:   sysutils/xen-guest-tools/files/patch-fsys_zfs.h
+	modified:   textproc/rubygem-nokogiri/Makefile
+	modified:   textproc/rubygem-nokogiri/distinfo
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/gitlab-ce/distinfo
+	modified:   www/gitlab-ce/pkg-plist
+	modified:   www/gitlab-workhorse/Makefile
+	modified:   www/gitlab-workhorse/distinfo
+	modified:   x11-fonts/fonttosfnt/Makefile
+	modified:   x11-fonts/fonttosfnt/distinfo
+	modified:   x11/Makefile
+	new file:   x11/xpra/Makefile
+	new file:   x11/xpra/distinfo
+	new file:   x11/xpra/files/patch-scripts_xpra
+	new file:   x11/xpra/files/patch-scripts_xpra__launcher
+	new file:   x11/xpra/files/patch-setup.py
+	new file:   x11/xpra/files/patch-xpra_scripts_config.py
+	new file:   x11/xpra/pkg-descr
+	new file:   x11/xpra/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lang/ghc/Makefile
+
+
+It took 3.20 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at a0929e0de89b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.19 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at a0929e0de89b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
