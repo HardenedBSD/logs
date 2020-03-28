@@ -1,0 +1,151 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating a623604dddea..446e37697259
+Fast-forward
+ Makefile.inc1                                |    3 +-
+ ObsoleteFiles.inc                            |    5 +
+ contrib/binutils/binutils/objdump.c          |    2 +
+ gnu/usr.bin/binutils/Makefile                |    1 -
+ share/man/man4/crypto.4                      |   22 +-
+ share/man/man7/crypto.7                      |   32 +-
+ share/man/man9/Makefile                      |   45 +-
+ share/man/man9/bus_dma.9                     |   21 +-
+ share/man/man9/crypto.9                      |  753 ++----------
+ share/man/man9/crypto_asym.9                 |  178 +++
+ share/man/man9/crypto_driver.9               |  392 ++++++
+ share/man/man9/crypto_request.9              |  419 +++++++
+ share/man/man9/crypto_session.9              |  245 ++++
+ share/mk/bsd.compat.mk                       |    3 +-
+ stand/efi/libefi/efi_console.c               |   18 +-
+ stand/forth/loader.4th                       |    6 +
+ stand/forth/loader.rc                        |    1 +
+ stand/forth/screen.4th                       |    3 +
+ stand/lua/core.lua                           |    1 +
+ stand/lua/loader.lua                         |   23 +-
+ sys/crypto/aesni/aesni.c                     |  834 ++++++-------
+ sys/crypto/aesni/aesni.h                     |   14 +-
+ sys/crypto/aesni/aesni_wrap.c                |   58 +-
+ sys/crypto/armv8/armv8_crypto.c              |  244 ++--
+ sys/crypto/blake2/blake2_cryptodev.c         |  215 ++--
+ sys/crypto/ccp/ccp.c                         |  468 ++++---
+ sys/crypto/ccp/ccp.h                         |   19 +-
+ sys/crypto/ccp/ccp_hardware.c                |  234 ++--
+ sys/crypto/via/padlock.c                     |  140 +--
+ sys/crypto/via/padlock.h                     |   10 +-
+ sys/crypto/via/padlock_cipher.c              |  124 +-
+ sys/crypto/via/padlock_hash.c                |  118 +-
+ sys/dev/cesa/cesa.c                          |  599 ++++-----
+ sys/dev/cesa/cesa.h                          |    5 -
+ sys/dev/cxgbe/adapter.h                      |    2 +-
+ sys/dev/cxgbe/crypto/t4_crypto.c             | 1299 +++++++++-----------
+ sys/dev/cxgbe/crypto/t4_keyctx.c             |   40 +-
+ sys/dev/cxgbe/tom/t4_tls.c                   |    4 +-
+ sys/dev/glxsb/glxsb.c                        |  268 ++--
+ sys/dev/glxsb/glxsb.h                        |    6 +-
+ sys/dev/glxsb/glxsb_hash.c                   |  100 +-
+ sys/dev/hifn/hifn7751.c                      |  622 +++++-----
+ sys/dev/hifn/hifn7751var.h                   |   15 +-
+ sys/dev/safe/safe.c                          |  915 ++++++--------
+ sys/dev/safe/safevar.h                       |   12 +-
+ sys/dev/sec/sec.c                            |  540 ++++----
+ sys/dev/sec/sec.h                            |   18 +-
+ sys/dev/ubsec/ubsec.c                        |  585 ++++-----
+ sys/dev/ubsec/ubsecvar.h                     |   10 +-
+ sys/geom/eli/g_eli.c                         |   49 +-
+ sys/geom/eli/g_eli.h                         |   20 +
+ sys/geom/eli/g_eli_crypto.c                  |   50 +-
+ sys/geom/eli/g_eli_integrity.c               |  183 +--
+ sys/geom/eli/g_eli_privacy.c                 |   85 +-
+ sys/kern/subr_bus_dma.c                      |   51 +
+ sys/kern/uipc_ktls.c                         |    3 +
+ sys/kgssapi/krb5/kcrypto_aes.c               |  111 +-
+ sys/kgssapi/krb5/kcrypto_des.c               |   55 +-
+ sys/kgssapi/krb5/kcrypto_des3.c              |  110 +-
+ sys/mips/cavium/cryptocteon/cavium_crypto.c  |  180 ++-
+ sys/mips/cavium/cryptocteon/cryptocteon.c    |  449 +++----
+ sys/mips/cavium/cryptocteon/cryptocteonvar.h |   12 +-
+ sys/mips/nlm/dev/sec/nlmrsa.c                |   16 -
+ sys/mips/nlm/dev/sec/nlmsec.c                |  438 +++----
+ sys/mips/nlm/dev/sec/nlmseclib.c             |  125 +-
+ sys/mips/nlm/dev/sec/nlmseclib.h             |   22 +-
+ sys/mips/nlm/hal/nlmsaelib.h                 |    4 +-
+ sys/netinet/ip_input.c                       |    2 +-
+ sys/netinet/sctp_pcb.h                       |   10 +-
+ sys/netinet/sctp_structs.h                   |    2 +-
+ sys/netinet/sctp_timer.c                     |   11 +-
+ sys/netinet/tcp_ratelimit.c                  |    2 +-
+ sys/netipsec/xform.h                         |    5 +-
+ sys/netipsec/xform_ah.c                      |   78 +-
+ sys/netipsec/xform_esp.c                     |  173 +--
+ sys/netipsec/xform_ipcomp.c                  |   79 +-
+ sys/opencrypto/criov.c                       |   85 +-
+ sys/opencrypto/crypto.c                      | 1309 +++++++++++++-------
+ sys/opencrypto/cryptodev.c                   |  559 +++++----
+ sys/opencrypto/cryptodev.h                   |  150 ++-
+ sys/opencrypto/cryptodev_if.m                |  118 +-
+ sys/opencrypto/cryptosoft.c                  | 1705 ++++++++++++++------------
+ sys/opencrypto/cryptosoft.h                  |   71 --
+ sys/opencrypto/ktls_ocf.c                    |   95 +-
+ sys/opencrypto/xform_gmac.c                  |    6 +-
+ sys/sys/bus_dma.h                            |    8 +
+ sys/sys/param.h                              |    2 +-
+ tests/sys/opencrypto/cryptodev.py            |    5 +-
+ tests/sys/opencrypto/cryptodevh.py           |    3 -
+ tests/sys/opencrypto/cryptotest.py           |    8 +-
+ tools/tools/crypto/cryptocheck.c             |  196 ++-
+ 91 files changed, 8373 insertions(+), 7963 deletions(-)
+ create mode 100644 share/man/man9/crypto_asym.9
+ create mode 100644 share/man/man9/crypto_driver.9
+ create mode 100644 share/man/man9/crypto_request.9
+ create mode 100644 share/man/man9/crypto_session.9
+ delete mode 100644 sys/opencrypto/cryptosoft.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    a623604dddea..446e37697259  freebsd/current/master -> freebsd/current/master
+remote:    6d06a939147d..69ba59d4b1bc  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   a623604dddea..446e37697259  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
