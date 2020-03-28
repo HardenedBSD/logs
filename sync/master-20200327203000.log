@@ -34,3 +34,431 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/waybar/files/patch-libc++6
+Removing www/minio/files/patch-pkg_event_target_nats.go
+Auto-merging security/tinc/Makefile
+Removing ports-mgmt/poudriere/files/patch-image-pkg1.11
+Auto-merging net/wizd/Makefile
+Removing net/ntopng/files/patch-scripts_lua_examples_sqlite.lua
+Auto-merging net/ntopng/Makefile
+Removing multimedia/vapoursynth/files/patch-non-x86
+Auto-merging multimedia/mpv/Makefile
+Removing multimedia/intel-media-sdk/files/patch-sysinfo
+Removing multimedia/intel-media-sdk/files/patch-libc++
+Removing multimedia/intel-media-sdk/files/patch-includes
+Auto-merging multimedia/dvdauthor/Makefile
+Removing math/wxmaxima/files/patch-data_CMakeLists.txt
+Removing math/cryptominisat/files/patch-cryptominisat5Config.cmake.in
+Removing lang/rust-nightly/files/patch-vendor_backtrace-sys_src_libbacktrace_fileline.c
+Removing lang/rust-nightly/files/patch-vendor_backtrace-sys_build.rs
+Auto-merging lang/ghc/Makefile
+CONFLICT (content): Merge conflict in lang/ghc/Makefile
+Auto-merging graphics/netpbm/Makefile
+Auto-merging emulators/qemu-cheri/Makefile
+Auto-merging emulators/mame/Makefile
+Removing devel/android-tools-adb/files/extra-patch-revert-d3d650628c8c
+Removing deskutils/shutter/files/patch-CVE-2015-0854
+Removing deskutils/lookbook/files/patch-src_CategoryView.vala
+Auto-merging comms/ebook2cwgui/Makefile
+Auto-merging comms/ebook2cw/Makefile
+Removing cad/lepton-eda/files/patch-schematic_src_x__tabs.c
+Removing cad/lepton-eda/files/patch-netlist_scheme_backend_gnet-spice-sdb.scm
+Removing cad/lepton-eda/files/patch-liblepton_src_scheme__os.c
+Removing cad/lepton-eda/files/patch-liblepton_src_geda__list.c
+Removing cad/lepton-eda/files/patch-liblepton_scheme_geda_os.scm
+Removing cad/lepton-eda/files/patch-liblepton_scheme_geda_log-rotate.scm
+Removing cad/lepton-eda/files/patch-liblepton_include_liblepton_geda__list.h
+Removing cad/lepton-eda/files/patch-examples_lightning__detector_Makefile.am
+Removing cad/lepton-eda/files/patch-examples_gTAG_Makefile.am
+Removing cad/lepton-eda/files/patch-examples_TwoStageAmp_Makefile.am
+Removing cad/lepton-eda/files/patch-examples_RF__Amp_sym_Makefile.am
+Removing cad/lepton-eda/files/patch-examples_RF__Amp_model_Makefile.am
+Removing cad/lepton-eda/files/patch-examples_RF__Amp_Makefile.am
+Removing cad/lepton-eda/files/patch-examples_Makefile.am
+Removing cad/lepton-eda/files/patch-docs_scheme-api_Makefile.am
+Removing cad/lepton-eda/files/patch-build-tools_icon-theme-installer
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/ghc/Makefile
+index 09f46a479990,2f7fea191b1f..000000000000
+--- a/lang/ghc/Makefile
++++ b/lang/ghc/Makefile
+@@@ -21,10 -21,8 +21,15 @@@ LICENSE_FILE=	${WRKSRC}/LICENS
+  # other supported arches are added based on GHC_VERSION below
+  ONLY_FOR_ARCHS=	amd64 i386
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=		pie:off
+ +LLVM_AR_UNSAFE=		yes
+ +
+ +USES=			autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
+++=======
++ USES=			autoreconf compiler:c11 gmake iconv:translit \
++ 			localbase:ldflags ncurses perl5 tar:xz
+++>>>>>>> freebsd/master
+  USE_LOCALE=		en_US.UTF-8
+  USE_PERL5=		build
+  GNU_CONFIGURE=		yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   archivers/Makefile
+	new file:   archivers/lib1541img/Makefile
+	new file:   archivers/lib1541img/distinfo
+	new file:   archivers/lib1541img/pkg-descr
+	new file:   archivers/lib1541img/pkg-plist
+	new file:   archivers/v1541commander/Makefile
+	new file:   archivers/v1541commander/distinfo
+	new file:   archivers/v1541commander/pkg-descr
+	new file:   archivers/v1541commander/pkg-plist
+	modified:   audio/jack_umidi/Makefile
+	modified:   audio/jack_umidi/distinfo
+	modified:   cad/cura/Makefile
+	modified:   cad/cura/distinfo
+	modified:   cad/lepton-eda/Makefile
+	modified:   cad/lepton-eda/distinfo
+	deleted:    cad/lepton-eda/files/patch-build-tools_icon-theme-installer
+	deleted:    cad/lepton-eda/files/patch-docs_scheme-api_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_RF__Amp_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_RF__Amp_model_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_RF__Amp_sym_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_TwoStageAmp_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_gTAG_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-examples_lightning__detector_Makefile.am
+	deleted:    cad/lepton-eda/files/patch-liblepton_include_liblepton_geda__list.h
+	deleted:    cad/lepton-eda/files/patch-liblepton_scheme_geda_log-rotate.scm
+	deleted:    cad/lepton-eda/files/patch-liblepton_scheme_geda_os.scm
+	deleted:    cad/lepton-eda/files/patch-liblepton_src_geda__list.c
+	deleted:    cad/lepton-eda/files/patch-liblepton_src_scheme__os.c
+	deleted:    cad/lepton-eda/files/patch-netlist_scheme_backend_gnet-spice-sdb.scm
+	deleted:    cad/lepton-eda/files/patch-schematic_src_x__tabs.c
+	new file:   cad/lepton-eda/files/patch-utils_scripts_lepton-upcfg.in
+	modified:   cad/lepton-eda/files/patch-version.h
+	modified:   cad/lepton-eda/pkg-descr
+	modified:   cad/lepton-eda/pkg-plist
+	modified:   comms/ebook2cw/Makefile
+	modified:   comms/ebook2cw/files/patch-Makefile
+	modified:   comms/ebook2cwgui/Makefile
+	modified:   deskutils/Makefile
+	modified:   deskutils/calibre/Makefile
+	modified:   deskutils/calibre/distinfo
+	modified:   deskutils/calibre/pkg-plist
+	modified:   deskutils/lookbook/Makefile
+	modified:   deskutils/lookbook/distinfo
+	deleted:    deskutils/lookbook/files/patch-src_CategoryView.vala
+	new file:   deskutils/peaclock/Makefile
+	new file:   deskutils/peaclock/distinfo
+	new file:   deskutils/peaclock/pkg-descr
+	modified:   deskutils/shutter/Makefile
+	modified:   deskutils/shutter/distinfo
+	deleted:    deskutils/shutter/files/patch-CVE-2015-0854
+	modified:   deskutils/shutter/pkg-plist
+	modified:   devel/Makefile
+	modified:   devel/android-tools-adb/Makefile
+	deleted:    devel/android-tools-adb/files/extra-patch-revert-d3d650628c8c
+	new file:   devel/dbus-java/Makefile
+	new file:   devel/dbus-java/distinfo
+	new file:   devel/dbus-java/pkg-descr
+	new file:   devel/dbus-java/pkg-plist
+	modified:   devel/dbus/Makefile
+	new file:   devel/dbus/files/patch-Makefile.in
+	modified:   devel/dbus/files/patch-dbus_dbus-connection.c
+	modified:   devel/dbus/files/patch-dbus_dbus-sysdeps-util-unix.c
+	modified:   devel/gitaly/Makefile
+	modified:   devel/gitaly/distinfo
+	new file:   devel/gitlab-runner/files/patch-vendor_github.com_kr_pty_ztypes__freebsd__arm64.go
+	new file:   devel/gitlab-runner/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+	modified:   devel/go-bindata/Makefile
+	modified:   devel/go-bindata/distinfo
+	modified:   devel/libsavitar/Makefile
+	modified:   devel/llvm-cheri/Makefile
+	modified:   devel/llvm-cheri/Makefile.snapshot
+	modified:   devel/llvm-cheri/distinfo
+	modified:   devel/llvm-cheri/files/gen-Makefile.snapshot.sh
+	modified:   devel/llvm-cheri/pkg-plist
+	modified:   devel/llvm-devel/Makefile
+	modified:   devel/llvm-devel/Makefile.COMMANDS
+	modified:   devel/llvm-devel/Makefile.snapshot
+	modified:   devel/llvm-devel/distinfo
+	new file:   devel/llvm-devel/files/patch-llvm-revert-17e4c38739aa
+	modified:   devel/llvm-devel/pkg-plist
+	modified:   devel/p5-Data-ObjectDriver/Makefile
+	modified:   devel/p5-Data-ObjectDriver/distinfo
+	modified:   devel/rubygem-mini_portile2/Makefile
+	modified:   devel/rubygem-mini_portile2/distinfo
+	modified:   emulators/Makefile
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/mame/Makefile
+	modified:   emulators/mame/distinfo
+	modified:   emulators/mame/files/patch-makefile
+	modified:   emulators/mame/pkg-plist
+	modified:   emulators/qemu-cheri/Makefile
+	modified:   emulators/qemu-cheri/Makefile.snapshot
+	modified:   emulators/qemu-cheri/distinfo
+	modified:   emulators/qemu-cheri/files/gen-Makefile.snapshot.sh
+	new file:   emulators/qemu-cheri/files/patch-configure
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/rpcs3/files/patch-CMakeLists.txt
+	new file:   emulators/rpcs3/files/patch-libc++8
+	modified:   emulators/rpcs3/files/patch-qt-5.13
+	modified:   emulators/wine-devel/Makefile
+	modified:   emulators/wine-devel/distinfo
+	modified:   emulators/wine-devel/pkg-plist
+	modified:   emulators/winetricks/Makefile
+	modified:   emulators/winetricks/distinfo
+	new file:   emulators/x16-emulator/Makefile
+	new file:   emulators/x16-emulator/distinfo
+	new file:   emulators/x16-emulator/files/patch-Makefile
+	new file:   emulators/x16-emulator/files/patch-main.c
+	new file:   emulators/x16-emulator/pkg-descr
+	new file:   emulators/x16-rom/Makefile
+	new file:   emulators/x16-rom/distinfo
+	new file:   emulators/x16-rom/pkg-descr
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   games/cockatrice/Makefile
+	modified:   games/cockatrice/distinfo
+	modified:   games/stockfish/Makefile
+	modified:   games/stockfish/distinfo
+	modified:   graphics/minder/Makefile
+	modified:   graphics/minder/distinfo
+	new file:   graphics/minder/files/patch-meson.build
+	modified:   graphics/netpbm/Makefile
+	modified:   graphics/py-PyOpenGL-accelerate/Makefile
+	modified:   graphics/waifu2x-converter-cpp/Makefile
+	modified:   lang/ghc/distinfo
+	new file:   lang/ghc/files/patch-utils_iserv_ghc.mk
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   lang/rust-nightly/Makefile
+	modified:   lang/rust-nightly/distinfo
+	deleted:    lang/rust-nightly/files/patch-vendor_backtrace-sys_build.rs
+	deleted:    lang/rust-nightly/files/patch-vendor_backtrace-sys_src_libbacktrace_fileline.c
+	modified:   math/Makefile
+	new file:   math/cliquer/Makefile
+	new file:   math/cliquer/distinfo
+	new file:   math/cliquer/pkg-descr
+	new file:   math/cliquer/pkg-plist
+	modified:   math/cryptominisat/Makefile
+	deleted:    math/cryptominisat/files/patch-cryptominisat5Config.cmake.in
+	modified:   math/eclib/Makefile
+	modified:   math/flint2/Makefile
+	modified:   math/flint2/pkg-plist
+	new file:   math/gf2x/Makefile
+	new file:   math/gf2x/distinfo
+	new file:   math/gf2x/pkg-descr
+	new file:   math/gf2x/pkg-plist
+	modified:   math/stp/Makefile
+	new file:   math/stp/files/patch-STPConfig.cmake.in
+	modified:   math/wxmaxima/Makefile
+	deleted:    math/wxmaxima/files/patch-data_CMakeLists.txt
+	modified:   math/wxmaxima/pkg-plist
+	modified:   misc/exercism/Makefile
+	modified:   misc/exercism/distinfo
+	modified:   misc/xiphos/Makefile
+	modified:   misc/xiphos/distinfo
+	modified:   multimedia/aom/Makefile
+	modified:   multimedia/aom/distinfo
+	modified:   multimedia/dvdauthor/Makefile
+	modified:   multimedia/gstreamer-plugins-dvd/Makefile
+	modified:   multimedia/gstreamer1-plugins-dvdread/Makefile
+	modified:   multimedia/gstreamer1-plugins-resindvd/Makefile
+	modified:   multimedia/intel-media-sdk/Makefile
+	modified:   multimedia/intel-media-sdk/distinfo
+	deleted:    multimedia/intel-media-sdk/files/patch-includes
+	deleted:    multimedia/intel-media-sdk/files/patch-libc++
+	deleted:    multimedia/intel-media-sdk/files/patch-sysinfo
+	modified:   multimedia/intel-media-sdk/pkg-plist
+	modified:   multimedia/kodi-devel/Makefile
+	modified:   multimedia/libdvdnav/Makefile
+	modified:   multimedia/libdvdnav/distinfo
+	modified:   multimedia/libdvdnav/pkg-plist
+	modified:   multimedia/libdvdread/Makefile
+	modified:   multimedia/libdvdread/distinfo
+	modified:   multimedia/libdvdread/files/patch-src-dvd_reader.c
+	modified:   multimedia/libdvdread/files/patch-src-dvdread-ifo_types.h
+	modified:   multimedia/libdvdread/pkg-plist
+	modified:   multimedia/libva/Makefile
+	modified:   multimedia/libxine/Makefile
+	modified:   multimedia/lsdvd/Makefile
+	modified:   multimedia/lxdvdrip/Makefile
+	modified:   multimedia/mencoder/Makefile
+	modified:   multimedia/mplayer/Makefile
+	modified:   multimedia/mpv/Makefile
+	modified:   multimedia/ogmrip/Makefile
+	modified:   multimedia/ogmtools/Makefile
+	modified:   multimedia/pipewire/Makefile
+	modified:   multimedia/py-kaa-metadata/Makefile
+	modified:   multimedia/transcode/Makefile
+	modified:   multimedia/vamps/Makefile
+	modified:   multimedia/vapoursynth/Makefile
+	modified:   multimedia/vapoursynth/distinfo
+	deleted:    multimedia/vapoursynth/files/patch-non-x86
+	modified:   multimedia/vlc/Makefile
+	modified:   net-im/signal-cli/Makefile
+	modified:   net-mgmt/netdata-go/Makefile
+	modified:   net-mgmt/netdata-go/distinfo
+	modified:   net-mgmt/netdata-go/pkg-plist
+	modified:   net-mgmt/thanos/Makefile
+	modified:   net-mgmt/thanos/distinfo
+	modified:   net/findomain/Makefile
+	modified:   net/findomain/distinfo
+	modified:   net/findomain/files/patch-Cargo.toml
+	modified:   net/ndpi/Makefile
+	modified:   net/ndpi/distinfo
+	modified:   net/ndpi/files/patch-example_Makefile.in
+	modified:   net/ntopng/Makefile
+	modified:   net/ntopng/distinfo
+	modified:   net/ntopng/files/patch-configure.seed
+	deleted:    net/ntopng/files/patch-scripts_lua_examples_sqlite.lua
+	modified:   net/ntopng/pkg-plist
+	modified:   net/rubygem-net-ping/Makefile
+	modified:   net/rubygem-net-ping/distinfo
+	modified:   net/syncthing/Makefile
+	modified:   net/syncthing/distinfo
+	modified:   net/wizd/Makefile
+	modified:   ports-mgmt/poudriere-devel/Makefile
+	modified:   ports-mgmt/poudriere-devel/distinfo
+	modified:   ports-mgmt/poudriere/Makefile
+	modified:   ports-mgmt/poudriere/distinfo
+	deleted:    ports-mgmt/poudriere/files/patch-image-pkg1.11
+	modified:   science/2d-rewriter/Makefile
+	modified:   science/2d-rewriter/distinfo
+	modified:   science/2d-rewriter/pkg-descr
+	modified:   security/openvpn-devel/Makefile
+	modified:   security/openvpn-devel/distinfo
+	modified:   security/p5-Crypt-RandPasswd/Makefile
+	modified:   security/p5-Crypt-RandPasswd/pkg-descr
+	modified:   security/py-fail2ban/Makefile
+	modified:   security/py-fail2ban/files/patch-config_filter.d_bsd-sshd.conf
+	modified:   security/tinc-devel/Makefile
+	modified:   security/tinc-devel/files/tincd.in
+	modified:   security/tinc/Makefile
+	modified:   security/tinc/files/tincd.in
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/Makefile
+	modified:   sysutils/acpica-tools/Makefile
+	modified:   sysutils/acpica-tools/distinfo
+	modified:   sysutils/consul/Makefile
+	modified:   sysutils/consul/distinfo
+	modified:   sysutils/consul/files/consul.in
+	modified:   sysutils/dua-cli/Makefile
+	modified:   sysutils/dua-cli/distinfo
+	modified:   sysutils/dvdbackup/Makefile
+	modified:   sysutils/k3b/Makefile
+	new file:   sysutils/nut-devel/Makefile
+	new file:   sysutils/nut-devel/distinfo
+	new file:   sysutils/nut-devel/files/nut.in
+	new file:   sysutils/nut-devel/files/nut.newsyslog
+	new file:   sysutils/nut-devel/files/nut.syslog
+	new file:   sysutils/nut-devel/files/nut_upslog.in
+	new file:   sysutils/nut-devel/files/nut_upsmon.in
+	new file:   sysutils/nut-devel/files/patch-drivers_blazer__usb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_libshut.c
+	new file:   sysutils/nut-devel/files/patch-drivers_libusb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_libusb.h
+	new file:   sysutils/nut-devel/files/patch-drivers_nutdrv__qx.c
+	new file:   sysutils/nut-devel/files/patch-drivers_riello__usb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_tripplite__usb.c
+	new file:   sysutils/nut-devel/files/patch-drivers_usbhid-ups.c
+	new file:   sysutils/nut-devel/files/patch-scripts_Makefile
+	new file:   sysutils/nut-devel/pkg-descr
+	new file:   sysutils/nut-devel/pkg-plist
+	modified:   sysutils/vobcopy/Makefile
+	modified:   sysutils/xen-guest-tools/Makefile
+	new file:   sysutils/xen-guest-tools/files/patch-fsys_zfs.h
+	modified:   textproc/rubygem-nokogiri/Makefile
+	modified:   textproc/rubygem-nokogiri/distinfo
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/gitlab-ce/distinfo
+	modified:   www/gitlab-ce/pkg-plist
+	modified:   www/gitlab-workhorse/Makefile
+	modified:   www/gitlab-workhorse/distinfo
+	modified:   www/mediawiki131/Makefile
+	modified:   www/mediawiki131/distinfo
+	modified:   www/mediawiki133/Makefile
+	modified:   www/mediawiki133/distinfo
+	modified:   www/mediawiki134/Makefile
+	modified:   www/mediawiki134/distinfo
+	modified:   www/minio/Makefile
+	modified:   www/minio/distinfo
+	new file:   www/minio/files/patch-cmd_build-constants.go
+	deleted:    www/minio/files/patch-pkg_event_target_nats.go
+	modified:   www/py-asgiref/Makefile
+	modified:   www/py-asgiref/distinfo
+	modified:   x11-fonts/fonttosfnt/Makefile
+	modified:   x11-fonts/fonttosfnt/distinfo
+	modified:   x11-fonts/moveable-type-fonts/Makefile
+	modified:   x11-fonts/moveable-type-fonts/distinfo
+	modified:   x11-fonts/moveable-type-fonts/pkg-plist
+	modified:   x11-themes/greybird-theme/Makefile
+	modified:   x11-themes/greybird-theme/distinfo
+	modified:   x11-toolkits/wlroots/Makefile
+	modified:   x11-wm/chamfer/Makefile
+	modified:   x11-wm/chamfer/distinfo
+	modified:   x11/Makefile
+	modified:   x11/sddm/Makefile
+	new file:   x11/sddm/files/patch-data_themes_maya_metadata.desktop
+	modified:   x11/sddm/files/patch-src_common_Configuration.h
+	deleted:    x11/waybar/files/patch-libc++6
+	new file:   x11/xpra/Makefile
+	new file:   x11/xpra/distinfo
+	new file:   x11/xpra/files/patch-scripts_xpra
+	new file:   x11/xpra/files/patch-scripts_xpra__launcher
+	new file:   x11/xpra/files/patch-setup.py
+	new file:   x11/xpra/files/patch-xpra_scripts_config.py
+	new file:   x11/xpra/pkg-descr
+	new file:   x11/xpra/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lang/ghc/Makefile
+
+
+It took 3.09 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at a0929e0de89b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at a0929e0de89b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
