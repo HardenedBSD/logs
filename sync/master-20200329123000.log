@@ -34,3 +34,139 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging lang/sbcl/Makefile
+Merge made by the 'recursive' strategy.
+ astro/osmosis/Makefile                             |   5 +-
+ astro/osmosis/distinfo                             |   6 +-
+ benchmarks/stress-ng/Makefile                      |   2 +-
+ benchmarks/stress-ng/distinfo                      |   6 +-
+ converters/cl-babel-sbcl/Makefile                  |   2 +-
+ databases/memcached/Makefile                       |   2 +-
+ databases/memcached/distinfo                       |   6 +-
+ databases/memcached/files/patch-configure.ac       |  15 +-
+ databases/memcached/files/patch-memcached.c        |  66 ++--
+ devel/cl-alexandria-sbcl/Makefile                  |   2 +-
+ devel/cl-infix-sbcl/Makefile                       |   2 +-
+ devel/cl-port-sbcl/Makefile                        |   2 +-
+ devel/cl-split-sequence-sbcl/Makefile              |   2 +-
+ devel/cl-trivial-features-sbcl/Makefile            |   2 +-
+ devel/cl-trivial-gray-streams-sbcl/Makefile        |   2 +-
+ devel/osc/Makefile                                 |   9 +-
+ devel/osc/distinfo                                 |   6 +-
+ devel/stfl/Makefile                                |   2 +
+ devel/stfl/files/patch-base.c                      |  19 +
+ games/dangerdeep/files/patch-src__subsim.cpp       |  15 +-
+ games/dangerdeep/files/patch-src_coastmap.h        |  20 +
+ games/powder-toy/Makefile                          |  10 +-
+ games/powder-toy/distinfo                          |   6 +-
+ .../files/patch-resources_powder.appdata.xml       |  19 +-
+ games/sgt-puzzles/Makefile                         |   4 +-
+ games/sgt-puzzles/distinfo                         |   6 +-
+ graphics/kdiagram/Makefile                         |   3 +-
+ graphics/kdiagram/distinfo                         |   6 +-
+ graphics/kdiagram/pkg-plist                        |   4 -
+ lang/sbcl/Makefile                                 |   2 +-
+ lang/sbcl/distinfo                                 |  10 +-
+ math/maxima/Makefile                               |   2 +-
+ net-mgmt/netbox/Makefile                           |   2 +-
+ net-mgmt/netbox/distinfo                           |   6 +-
+ net-mgmt/netbox/files/pkg-message.in               |  15 +-
+ net-mgmt/netbox/pkg-plist                          |  71 +++-
+ net-mgmt/prometheus2/Makefile                      |   2 +-
+ net-mgmt/prometheus2/distinfo                      |  10 +-
+ net/traefik/Makefile                               |   2 +-
+ net/traefik/distinfo                               |  10 +-
+ security/cl-md5-sbcl/Makefile                      |   2 +-
+ security/openssl/Makefile                          |   1 +
+ security/openssl/files/patch-PR245154              | 155 ++++++++
+ security/py-scramp/Makefile                        |   2 +-
+ security/py-scramp/distinfo                        |   6 +-
+ security/vault/Makefile                            | 204 +----------
+ security/vault/distinfo                            | 406 +-------------------
+ security/vault/files/patch-gopsutil_aarch64        | 407 +++++++++++++++++++++
+ ...golang.org_x_sys_unix_ztypes__freebsd__arm64.go |  24 ++
+ sysutils/direnv/Makefile                           |   2 +-
+ textproc/cl-meta-sbcl/Makefile                     |   2 +-
+ textproc/cl-ppcre-sbcl/Makefile                    |   2 +-
+ www/cl-lml-sbcl/Makefile                           |   2 +-
+ www/miniflux/Makefile                              |   2 +-
+ www/miniflux/distinfo                              |   6 +-
+ www/py-dj22-django-auth-ldap/Makefile              |   2 +-
+ www/py-dj22-django-auth-ldap/distinfo              |   6 +-
+ www/py-django-auth-ldap/Makefile                   |   2 +-
+ www/py-django-auth-ldap/distinfo                   |   6 +-
+ x11-fonts/Makefile                                 |   1 +
+ x11-fonts/manrope/Makefile                         |  37 ++
+ x11-fonts/manrope/distinfo                         |   3 +
+ x11-fonts/manrope/pkg-descr                        |  16 +
+ x11-fonts/manrope/pkg-plist                        |  30 ++
+ x11-themes/kf5-breeze-icons/files/patch-D28407     |  55 +++
+ x11-wm/stumpwm/Makefile                            |   1 +
+ x11/Makefile                                       |   2 +
+ x11/cl-clx-sbcl/Makefile                           |   2 +-
+ x11/wshowkeys/Makefile                             |  25 ++
+ x11/wshowkeys/distinfo                             |   3 +
+ x11/wshowkeys/files/patch-devmgr.c                 |  14 +
+ x11/wshowkeys/pkg-descr                            |   4 +
+ x11/xtitle/Makefile                                |  22 ++
+ x11/xtitle/distinfo                                |   3 +
+ x11/xtitle/pkg-descr                               |   7 +
+ 75 files changed, 1077 insertions(+), 770 deletions(-)
+ create mode 100644 devel/stfl/files/patch-base.c
+ create mode 100644 games/dangerdeep/files/patch-src_coastmap.h
+ create mode 100644 security/openssl/files/patch-PR245154
+ create mode 100644 security/vault/files/patch-gopsutil_aarch64
+ create mode 100644 security/vault/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+ create mode 100644 x11-fonts/manrope/Makefile
+ create mode 100644 x11-fonts/manrope/distinfo
+ create mode 100644 x11-fonts/manrope/pkg-descr
+ create mode 100644 x11-fonts/manrope/pkg-plist
+ create mode 100644 x11-themes/kf5-breeze-icons/files/patch-D28407
+ create mode 100644 x11/wshowkeys/Makefile
+ create mode 100644 x11/wshowkeys/distinfo
+ create mode 100644 x11/wshowkeys/files/patch-devmgr.c
+ create mode 100644 x11/wshowkeys/pkg-descr
+ create mode 100644 x11/xtitle/Makefile
+ create mode 100644 x11/xtitle/distinfo
+ create mode 100644 x11/xtitle/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   463f377a94f1..4727378d6fec  master -> master
+==== END: master ====
