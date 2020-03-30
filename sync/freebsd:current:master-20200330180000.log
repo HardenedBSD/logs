@@ -1,0 +1,111 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 376cca941fb2..741007073176
+Fast-forward
+ Makefile.inc1                                      |  13 +-
+ ObsoleteFiles.inc                                  |   8 +
+ contrib/bmake/main.c                               |   8 +-
+ contrib/bmake/make.h                               |   2 +-
+ gnu/usr.bin/gdb/Makefile                           |   6 -
+ gnu/usr.bin/gdb/Makefile.inc                       |   2 +-
+ lib/libc/gen/Symbol.map                            |   1 -
+ lib/libc/gen/nlist.3                               |   1 -
+ lib/libc/gen/nlist.c                               | 110 ------
+ libexec/flua/Makefile                              |   8 +
+ share/man/man5/elf.5                               |  24 +-
+ share/man/man5/src.conf.5                          |  97 ++----
+ share/mk/bsd.cpu.mk                                |   2 +-
+ share/mk/src.opts.mk                               |   1 -
+ share/vt/fonts/gallant.hex                         | 281 ++++++++++++++-
+ sys/arm/nvidia/drm2/tegra_dc.c                     |   2 +-
+ sys/arm/nvidia/drm2/tegra_hdmi.c                   |   2 +-
+ sys/dev/bnxt/bnxt_hwrm.c                           |   2 +-
+ sys/dev/bnxt/bnxt_sysctl.c                         |   4 +-
+ sys/dev/bxe/bxe.c                                  |   2 +-
+ sys/dev/etherswitch/mtkswitch/mtkswitch_mt7620.c   |   2 +-
+ sys/dev/hptnr/hptnr_os_bsd.c                       |   2 +-
+ sys/dev/nvme/nvme_qpair.c                          |   2 +-
+ sys/dev/ocs_fc/ocs_hw_queues.c                     |   2 +-
+ sys/dev/ocs_fc/ocs_io.c                            |   2 +-
+ sys/dev/ocs_fc/ocs_mgmt.c                          |   2 +-
+ sys/dev/ocs_fc/ocs_node.c                          |   2 +-
+ sys/dev/pms/RefTisa/discovery/dm/dmdisc.c          |   4 +-
+ sys/dev/pms/RefTisa/sallsdk/spc/sainit.c           |   2 +-
+ .../pms/RefTisa/tisa/sassata/common/ossacmnapi.c   |   4 +-
+ sys/dev/pms/RefTisa/tisa/sassata/common/tdmisc.c   |   2 +-
+ sys/dev/pms/RefTisa/tisa/sassata/sas/ini/itddisc.c |   4 +-
+ sys/dev/pms/RefTisa/tisa/sassata/sata/host/sat.c   |   2 +-
+ sys/dev/pms/freebsd/driver/ini/src/agtiapi.c       |   4 +-
+ sys/dev/qlxgbe/ql_hw.c                             |   4 +-
+ sys/dev/smartpqi/smartpqi_queue.c                  |  10 +-
+ sys/dev/smartpqi/smartpqi_request.c                |   2 +-
+ sys/dev/sound/pcm/mixer.c                          |   8 +
+ sys/dev/sound/pcm/mixer.h                          |   1 +
+ sys/dev/sound/usb/uaudio.c                         | 376 +++++++++++++--------
+ sys/dev/sound/usb/uaudio.h                         |  14 +-
+ sys/dev/sound/usb/uaudio_pcm.c                     |   6 +-
+ sys/dev/vnic/thunder_bgx.c                         |   2 +-
+ sys/fs/cuse/cuse.c                                 | 312 +++++++++--------
+ sys/kern/capabilities.conf                         |   5 +
+ sys/net/if_me.c                                    |   2 +-
+ sys/powerpc/booke/pmap.c                           |   4 +-
+ sys/security/audit/audit_bsm.c                     |   3 +
+ tools/build/depend-cleanup.sh                      |  36 ++
+ tools/build/mk/OptionalObsoleteFiles.inc           |  11 +-
+ tools/build/options/WITHOUT_GDB_LIBEXEC            |   5 -
+ tools/build/options/WITH_GDB_LIBEXEC               |  10 -
+ usr.sbin/bluetooth/hccontrol/le.c                  |   2 +-
+ 53 files changed, 853 insertions(+), 572 deletions(-)
+ create mode 100755 tools/build/depend-cleanup.sh
+ delete mode 100644 tools/build/options/WITHOUT_GDB_LIBEXEC
+ delete mode 100644 tools/build/options/WITH_GDB_LIBEXEC
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    376cca941fb2..741007073176  freebsd/current/master -> freebsd/current/master        
+remote:    605cdc927cf4..40cec26611c5  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   376cca941fb2..741007073176  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
