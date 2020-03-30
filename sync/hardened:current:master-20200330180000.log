@@ -1,0 +1,221 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing tools/build/options/WITH_GDB_LIBEXEC
+Removing tools/build/options/WITHOUT_GDB_LIBEXEC
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/dev/sound/pcm/mixer.c
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 57a81fcde13f,5948ee752cbf..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -170,15 -170,14 +170,14 @@@ Set to not build or instal
+  associated utilities, and examples.
+  .Pp
+  This option only affects amd64/amd64.
+ -.It Va WITH_BIND_NOW
+ -Build all binaries with the
+ +.It Va WITHOUT_BIND_NOW
+ +Do not build all binaries with the
+  .Dv DF_BIND_NOW
+ -flag set to indicate that the run-time loader should perform all relocation
+ -processing at process startup rather than on demand.
+ +flag set.
+ +Run-time relocation processing will be performed on demand.
+  .It Va WITHOUT_BINUTILS
+  Do not build or install GNU
+- .Xr as 1 ,
+- .Xr ld.bfd 1 , and
++ .Xr as 1 and
+  .Xr objdump 1
+  as part
+  of the normal system build.
+@@@ -368,14 -354,9 +366,20 @@@ Set to not build the Clang C/C++ compil
+  the build.
+  To be able to build the system, either gcc or clang bootstrap must be
+  enabled unless an alternate compiler is provided via XCC.
+++<<<<<<< HEAD
+ +.Pp
+ +This is a default setting on
+ +mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf and mips/mips64hf.
+ +.It Va WITH_CLANG_BOOTSTRAP
+ +Set to build the Clang C/C++ compiler during the bootstrap phase of the build.
+ +.Pp
+ +This is a default setting on
+ +amd64/amd64, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, powerpc/powerpc, powerpc/powerpc64, riscv/riscv64 and riscv/riscv64sf.
+++=======
++ .It Va WITH_CLANG_EXTRAS
++ Set to build additional clang and llvm tools, such as bugpoint and
++ clang-format.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_CLANG_FULL
+  Set to avoid building the ARCMigrate, Rewriter and StaticAnalyzer components of
+  the Clang C/C++ compiler.
+@@@ -939,7 -877,7 +926,11 @@@ On 64-bit platforms, set to build 32-bi
+  runtime linker.
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +amd64/amd64, mips/mips64el, mips/mips64, mips/mips64elhf, mips/mips64hf and powerpc/powerpc64.
+++=======
++ arm/armv6, arm/armv7, arm64/aarch64, i386/i386, mips/mips, powerpc/powerpc, riscv/riscv64 and riscv/riscv64sf.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_LIBCPLUSPLUS
+  Set to avoid building libcxxrt and libc++.
+  .It Va WITHOUT_LIBPTHREAD
+@@@ -978,41 -916,8 +969,46 @@@ Set to not build the LLD linker during 
+  the build.
+  To be able to build the system, either Binutils or LLD bootstrap must be
+  enabled unless an alternate linker is provided via XLD.
+++<<<<<<< HEAD
+ +.Pp
+ +This is a default setting on
+ +mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and powerpc/powerpc.
+ +When set, it enforces these options:
+ +.Pp
+ +.Bl -item -compact
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+ +.Va WITHOUT_RETPOLINE
+ +.El
+ +.It Va WITH_LLD_BOOTSTRAP
+ +Set to build the LLD linker during the bootstrap phase of the build,
+ +and use it during buildworld and buildkernel.
+ +.Pp
+ +This is a default setting on
+ +amd64/amd64, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, powerpc/powerpc64, riscv/riscv64 and riscv/riscv64sf.
+  .It Va WITHOUT_LLD_IS_LD
+  Set to use GNU binutils ld as the system linker, instead of LLVM's LLD.
+ +.Pp
+ +This is a default setting on
+ +mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf and powerpc/powerpc.
+ +When set, it enforces these options:
+ +.Pp
+ +.Bl -item -compact
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+ +.Va WITHOUT_RETPOLINE
+ +.El
+ +.It Va WITH_LLD_IS_LD
+ +Set to use LLVM's LLD as the system linker, instead of GNU binutils ld.
+ +.Pp
+ +This is a default setting on
+ +amd64/amd64, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, powerpc/powerpc64, riscv/riscv64 and riscv/riscv64sf.
+++=======
+++.It Va WITHOUT_LLD_IS_LD
+++Set to use GNU binutils ld as the system linker, instead of LLVM's LLD.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_LLVM_COV
+  Set to not build the
+  .Xr llvm-cov 1
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/bmake/main.c
+	modified:   contrib/bmake/make.h
+	modified:   gnu/usr.bin/gdb/Makefile
+	modified:   gnu/usr.bin/gdb/Makefile.inc
+	modified:   lib/libc/gen/Symbol.map
+	modified:   lib/libc/gen/nlist.3
+	modified:   lib/libc/gen/nlist.c
+	modified:   libexec/flua/Makefile
+	modified:   share/man/man5/elf.5
+	modified:   share/mk/bsd.cpu.mk
+	modified:   share/mk/src.opts.mk
+	modified:   share/vt/fonts/gallant.hex
+	modified:   sys/arm/nvidia/drm2/tegra_dc.c
+	modified:   sys/arm/nvidia/drm2/tegra_hdmi.c
+	modified:   sys/dev/bnxt/bnxt_hwrm.c
+	modified:   sys/dev/bnxt/bnxt_sysctl.c
+	modified:   sys/dev/bxe/bxe.c
+	modified:   sys/dev/etherswitch/mtkswitch/mtkswitch_mt7620.c
+	modified:   sys/dev/hptnr/hptnr_os_bsd.c
+	modified:   sys/dev/nvme/nvme_qpair.c
+	modified:   sys/dev/ocs_fc/ocs_hw_queues.c
+	modified:   sys/dev/ocs_fc/ocs_io.c
+	modified:   sys/dev/ocs_fc/ocs_mgmt.c
+	modified:   sys/dev/ocs_fc/ocs_node.c
+	modified:   sys/dev/pms/RefTisa/discovery/dm/dmdisc.c
+	modified:   sys/dev/pms/RefTisa/sallsdk/spc/sainit.c
+	modified:   sys/dev/pms/RefTisa/tisa/sassata/common/ossacmnapi.c
+	modified:   sys/dev/pms/RefTisa/tisa/sassata/common/tdmisc.c
+	modified:   sys/dev/pms/RefTisa/tisa/sassata/sas/ini/itddisc.c
+	modified:   sys/dev/pms/RefTisa/tisa/sassata/sata/host/sat.c
+	modified:   sys/dev/pms/freebsd/driver/ini/src/agtiapi.c
+	modified:   sys/dev/qlxgbe/ql_hw.c
+	modified:   sys/dev/smartpqi/smartpqi_queue.c
+	modified:   sys/dev/smartpqi/smartpqi_request.c
+	modified:   sys/dev/sound/pcm/mixer.c
+	modified:   sys/dev/sound/pcm/mixer.h
+	modified:   sys/dev/sound/usb/uaudio.c
+	modified:   sys/dev/sound/usb/uaudio.h
+	modified:   sys/dev/sound/usb/uaudio_pcm.c
+	modified:   sys/dev/vnic/thunder_bgx.c
+	modified:   sys/fs/cuse/cuse.c
+	modified:   sys/kern/capabilities.conf
+	modified:   sys/net/if_me.c
+	modified:   sys/powerpc/booke/pmap.c
+	modified:   sys/security/audit/audit_bsm.c
+	new file:   tools/build/depend-cleanup.sh
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	deleted:    tools/build/options/WITHOUT_GDB_LIBEXEC
+	deleted:    tools/build/options/WITH_GDB_LIBEXEC
+	modified:   usr.sbin/bluetooth/hccontrol/le.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+
+HEAD is now at 8d6fef8301a6 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 8d6fef8301a6 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
