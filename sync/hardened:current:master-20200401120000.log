@@ -1,0 +1,95 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/iscsid/Makefile
+CONFLICT (content): Merge conflict in usr.sbin/iscsid/Makefile
+Auto-merging bin/sh/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.sbin/iscsid/Makefile
+index 19070bb3c6ce,e3b1acb636b2..000000000000
+--- a/usr.sbin/iscsid/Makefile
++++ b/usr.sbin/iscsid/Makefile
+@@@ -11,7 -11,4 +11,10 @@@ MAN=		iscsid.
+  
+  LIBADD=		md util
+  
+++<<<<<<< HEAD
+ +
+ +WARNS=		6
+ +
+++=======
+++>>>>>>> freebsd/current/master
+  .include <bsd.prog.mk>
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   bin/sh/Makefile
+	modified:   contrib/bsnmp/lib/asn1.c
+	modified:   contrib/bsnmp/lib/bsnmpclient.3
+	modified:   contrib/bsnmp/lib/snmpclient.c
+	modified:   contrib/bsnmp/lib/snmpcrypto.c
+	modified:   contrib/bsnmp/snmp_mibII/mibII.c
+	modified:   contrib/bsnmp/snmp_mibII/mibII.h
+	modified:   contrib/bsnmp/snmp_usm/usm_snmp.c
+	modified:   contrib/bsnmp/snmp_vacm/vacm_snmp.c
+	modified:   contrib/bsnmp/snmpd/snmpd.config
+	modified:   contrib/bsnmp/snmpd/trans_inet.c
+	new file:   contrib/bsnmp/tests/asn1.cc
+	new file:   contrib/bsnmp/tests/catch.hpp
+	new file:   contrib/bsnmp/tests/constbuf.h
+	new file:   contrib/bsnmp/tests/main.cc
+	new file:   contrib/bsnmp/tests/snmp_parse_server.cc
+	modified:   contrib/llvm-project/FREEBSD-Xlist
+	modified:   lib/libbsnmp/libbsnmp/Makefile
+	modified:   usr.bin/iscsictl/Makefile
+	modified:   usr.sbin/autofs/Makefile
+	modified:   usr.sbin/jail/config.c
+	modified:   usr.sbin/uefisign/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.sbin/iscsid/Makefile
+
+HEAD is now at f1d1fd0428e7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at f1d1fd0428e7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
