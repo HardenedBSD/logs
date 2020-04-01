@@ -1,0 +1,174 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 35 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 8d6fef8301a6..f57c6a15967b
+Fast-forward
+ Makefile.inc1                                      |  13 +-
+ ObsoleteFiles.inc                                  |   8 +
+ contrib/bmake/main.c                               |   8 +-
+ contrib/bmake/make.h                               |   2 +-
+ gnu/usr.bin/gdb/Makefile                           |   6 -
+ gnu/usr.bin/gdb/Makefile.inc                       |   2 +-
+ lib/libc/gen/Symbol.map                            |   1 -
+ lib/libc/gen/nlist.3                               |   1 -
+ lib/libc/gen/nlist.c                               | 110 ------
+ lib/libc/sys/access.2                              |   4 +-
+ lib/libc/sys/acct.2                                |   4 +-
+ lib/libc/sys/bind.2                                |   4 +-
+ lib/libc/sys/chdir.2                               |   4 +-
+ lib/libc/sys/chflags.2                             |   6 +-
+ lib/libc/sys/chmod.2                               |   6 +-
+ lib/libc/sys/chown.2                               |   6 +-
+ lib/libc/sys/chroot.2                              |   4 +-
+ lib/libc/sys/copy_file_range.2                     |   4 +-
+ lib/libc/sys/execve.2                              |   4 +-
+ lib/libc/sys/fhlink.2                              |   4 +-
+ lib/libc/sys/fhreadlink.2                          |   4 +-
+ lib/libc/sys/fsync.2                               |   4 +-
+ lib/libc/sys/getdirentries.2                       |   4 +-
+ lib/libc/sys/getfh.2                               |   4 +-
+ lib/libc/sys/getfsstat.2                           |   4 +-
+ lib/libc/sys/ktrace.2                              |   4 +-
+ lib/libc/sys/link.2                                |   4 +-
+ lib/libc/sys/mkdir.2                               |   4 +-
+ lib/libc/sys/mkfifo.2                              |   8 +-
+ lib/libc/sys/mknod.2                               |   4 +-
+ lib/libc/sys/mount.2                               |   9 +-
+ lib/libc/sys/open.2                                |   4 +-
+ lib/libc/sys/pathconf.2                            |   6 +-
+ lib/libc/sys/posix_fadvise.2                       |   6 +-
+ lib/libc/sys/posix_fallocate.2                     |   4 +-
+ lib/libc/sys/quotactl.2                            |   4 +-
+ lib/libc/sys/read.2                                |   4 +-
+ lib/libc/sys/readlink.2                            |   4 +-
+ lib/libc/sys/rename.2                              |   4 +-
+ lib/libc/sys/rmdir.2                               |   4 +-
+ lib/libc/sys/sendfile.2                            |   5 +-
+ lib/libc/sys/stat.2                                |   6 +-
+ lib/libc/sys/statfs.2                              |   6 +-
+ lib/libc/sys/swapon.2                              |   5 +-
+ lib/libc/sys/symlink.2                             |   8 +-
+ lib/libc/sys/truncate.2                            |   4 +-
+ lib/libc/sys/undelete.2                            |   4 +-
+ lib/libc/sys/unlink.2                              |   4 +-
+ lib/libc/sys/utimensat.2                           |   4 +-
+ lib/libc/sys/utimes.2                              |   4 +-
+ lib/libc/sys/write.2                               |   8 +-
+ libexec/flua/Makefile                              |   8 +
+ share/man/man5/elf.5                               |  24 +-
+ share/man/man5/src.conf.5                          | 106 ++----
+ share/man/man9/VOP_COPY_FILE_RANGE.9               |   4 +-
+ share/man/man9/VOP_READDIR.9                       |   4 +-
+ share/man/man9/VOP_READLINK.9                      |   4 +-
+ share/man/man9/g_data.9                            |   4 +-
+ share/mk/bsd.cpu.mk                                |   2 +-
+ share/mk/src.opts.mk                               |   1 -
+ share/vt/fonts/gallant.hex                         | 281 ++++++++++++++-
+ sys/arm/nvidia/drm2/tegra_dc.c                     |   2 +-
+ sys/arm/nvidia/drm2/tegra_hdmi.c                   |   2 +-
+ sys/dev/bnxt/bnxt_hwrm.c                           |   2 +-
+ sys/dev/bnxt/bnxt_sysctl.c                         |   4 +-
+ sys/dev/bxe/bxe.c                                  |   2 +-
+ sys/dev/etherswitch/mtkswitch/mtkswitch_mt7620.c   |   2 +-
+ sys/dev/hptnr/hptnr_os_bsd.c                       |   2 +-
+ sys/dev/nvme/nvme_qpair.c                          |   2 +-
+ sys/dev/ocs_fc/ocs_hw_queues.c                     |   2 +-
+ sys/dev/ocs_fc/ocs_io.c                            |   2 +-
+ sys/dev/ocs_fc/ocs_mgmt.c                          |   2 +-
+ sys/dev/ocs_fc/ocs_node.c                          |   2 +-
+ sys/dev/pms/RefTisa/discovery/dm/dmdisc.c          |   4 +-
+ sys/dev/pms/RefTisa/sallsdk/spc/sainit.c           |   2 +-
+ .../pms/RefTisa/tisa/sassata/common/ossacmnapi.c   |   4 +-
+ sys/dev/pms/RefTisa/tisa/sassata/common/tdmisc.c   |   2 +-
+ sys/dev/pms/RefTisa/tisa/sassata/sas/ini/itddisc.c |   4 +-
+ sys/dev/pms/RefTisa/tisa/sassata/sata/host/sat.c   |   2 +-
+ sys/dev/pms/freebsd/driver/ini/src/agtiapi.c       |   4 +-
+ sys/dev/qlxgbe/ql_hw.c                             |   4 +-
+ sys/dev/smartpqi/smartpqi_queue.c                  |  10 +-
+ sys/dev/smartpqi/smartpqi_request.c                |   2 +-
+ sys/dev/sound/pcm/mixer.c                          |   8 +
+ sys/dev/sound/pcm/mixer.h                          |   1 +
+ sys/dev/sound/usb/uaudio.c                         | 376 +++++++++++++--------
+ sys/dev/sound/usb/uaudio.h                         |  14 +-
+ sys/dev/sound/usb/uaudio_pcm.c                     |   6 +-
+ sys/dev/vnic/thunder_bgx.c                         |   2 +-
+ sys/fs/cuse/cuse.c                                 | 312 +++++++++--------
+ sys/kern/capabilities.conf                         |   5 +
+ sys/kern/kern_sendfile.c                           | 138 +++++---
+ sys/kern/uipc_sockbuf.c                            |  44 ++-
+ sys/kern/vfs_bio.c                                 |  10 +-
+ sys/kern/vfs_default.c                             |   3 +-
+ sys/net/if_me.c                                    |   2 +-
+ sys/netinet6/in6_mcast.c                           |  13 +-
+ sys/powerpc/booke/pmap.c                           |   4 +-
+ sys/security/audit/audit_bsm.c                     |   3 +
+ sys/ufs/ffs/ffs_vnops.c                            |  21 +-
+ sys/vm/vm_page.c                                   |   4 -
+ sys/vm/vnode_pager.c                               |   8 +-
+ tools/build/depend-cleanup.sh                      |  36 ++
+ tools/build/mk/OptionalObsoleteFiles.inc           |  11 +-
+ tools/build/options/WITHOUT_GDB_LIBEXEC            |   5 -
+ tools/build/options/WITH_GDB_LIBEXEC               |  10 -
+ usr.sbin/bhyve/smbiostbl.c                         |  41 ++-
+ usr.sbin/bluetooth/hccontrol/le.c                  |   2 +-
+ 108 files changed, 1224 insertions(+), 709 deletions(-)
+ create mode 100755 tools/build/depend-cleanup.sh
+ delete mode 100644 tools/build/options/WITHOUT_GDB_LIBEXEC
+ delete mode 100644 tools/build/options/WITH_GDB_LIBEXEC
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/modules/Makefile
+Auto-merging share/man/man4/Makefile
+Merge made by the 'recursive' strategy.
+ share/man/man4/Makefile       |   2 +
+ share/man/man4/pchtherm.4     | 117 ++++++++++++++++
+ sys/dev/intel/pchtherm.c      | 316 ++++++++++++++++++++++++++++++++++++++++++
+ sys/modules/Makefile          |   2 +
+ sys/modules/pchtherm/Makefile |   8 ++
+ 5 files changed, 445 insertions(+)
+ create mode 100644 share/man/man4/pchtherm.4
+ create mode 100644 sys/dev/intel/pchtherm.c
+ create mode 100644 sys/modules/pchtherm/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f57c6a15967b..8404e9a23367  hardened/current/master -> hardened/current/master
+remote:    dd589c9906a9..e8bcece98d4e  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f57c6a15967b..8404e9a23367  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
