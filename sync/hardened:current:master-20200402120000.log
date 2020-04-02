@@ -1,0 +1,147 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 31 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating f1d1fd0428e7..d4af655bc4d3
+Fast-forward
+ ObsoleteFiles.inc                        |     3 +
+ bin/sh/Makefile                          |     2 -
+ contrib/bsnmp/lib/asn1.c                 |    76 +-
+ contrib/bsnmp/lib/bsnmpclient.3          |    59 +-
+ contrib/bsnmp/lib/snmpclient.c           |    45 +-
+ contrib/bsnmp/lib/snmpcrypto.c           |     4 +-
+ contrib/bsnmp/snmp_mibII/mibII.c         |     5 +-
+ contrib/bsnmp/snmp_mibII/mibII.h         |     3 +-
+ contrib/bsnmp/snmp_usm/usm_snmp.c        |     4 +-
+ contrib/bsnmp/snmp_vacm/vacm_snmp.c      |     2 +-
+ contrib/bsnmp/snmpd/snmpd.config         |   123 +-
+ contrib/bsnmp/snmpd/trans_inet.c         |     1 +
+ contrib/bsnmp/tests/asn1.cc              |  1041 ++
+ contrib/bsnmp/tests/catch.hpp            | 17597 +++++++++++++++++++++++++++++
+ contrib/bsnmp/tests/constbuf.h           |   317 +
+ contrib/bsnmp/tests/main.cc              |     2 +
+ contrib/bsnmp/tests/snmp_parse_server.cc |   529 +
+ contrib/llvm-project/FREEBSD-Xlist       |     1 -
+ include/Makefile                         |     1 -
+ lib/libbsnmp/libbsnmp/Makefile           |     2 +
+ lib/libc/stdio/getwc.3                   |     7 +
+ lib/libc/stdlib/atof.3                   |     7 +-
+ lib/libc/stdlib/atoi.3                   |     7 +-
+ lib/libsysdecode/Makefile                |     5 -
+ lib/msun/man/cos.3                       |     7 +-
+ lib/msun/man/exp.3                       |     7 +-
+ lib/msun/man/sin.3                       |     7 +-
+ release/scripts/mtree-to-plist.awk       |     2 +-
+ sbin/nvmecontrol/firmware.c              |     2 +
+ sbin/nvmecontrol/identify.c              |     5 +-
+ sbin/nvmecontrol/logpage.c               |     4 +-
+ sbin/nvmecontrol/modules/wdc/wdc.c       |     2 +-
+ sbin/nvmecontrol/nsid.c                  |     3 +-
+ sbin/nvmecontrol/passthru.c              |    16 +-
+ sbin/nvmecontrol/power.c                 |     3 +-
+ sbin/nvmecontrol/reset.c                 |     3 +-
+ share/man/man4/ufm.4                     |     6 +
+ share/man/man5/elf.5                     |    29 +
+ share/misc/bsd-family-tree               |    29 +-
+ sys/amd64/amd64/trap.c                   |     1 -
+ sys/amd64/amd64/vm_machdep.c             |    13 +-
+ sys/amd64/ia32/ia32_reg.c                |     1 -
+ sys/amd64/ia32/ia32_signal.c             |     1 -
+ sys/amd64/ia32/ia32_syscall.c            |     1 -
+ sys/arm/arm/syscall.c                    |     1 -
+ sys/arm64/arm64/trap.c                   |     1 -
+ sys/compat/ia32/ia32_sysvec.c            |     1 -
+ sys/conf/files                           |     1 -
+ sys/dev/usb/misc/ufm.c                   |     1 +
+ sys/fs/procfs/procfs.c                   |     5 +-
+ sys/fs/procfs/procfs.h                   |     2 -
+ sys/fs/procfs/procfs_ioctl.c             |   263 -
+ sys/i386/i386/trap.c                     |     1 -
+ sys/i386/i386/vm_machdep.c               |    13 +-
+ sys/kern/imgact_elf.c                    |     1 -
+ sys/kern/kern_exec.c                     |     7 -
+ sys/kern/kern_exit.c                     |    17 +-
+ sys/kern/kern_fork.c                     |    11 -
+ sys/kern/kern_prot.c                     |     3 -
+ sys/kern/kern_sig.c                      |    28 +-
+ sys/kern/kern_thread.c                   |    12 +-
+ sys/kern/subr_syscall.c                  |     7 -
+ sys/kern/subr_trap.c                     |     1 -
+ sys/kern/sys_process.c                   |    24 -
+ sys/kgssapi/krb5/kcrypto_aes.c           |     2 +
+ sys/mips/mips/trap.c                     |     1 -
+ sys/modules/procfs/Makefile              |     1 -
+ sys/netgraph/bluetooth/hci/ng_hci_evnt.c |     9 +-
+ sys/powerpc/powerpc/trap.c               |     1 -
+ sys/riscv/riscv/trap.c                   |     1 -
+ sys/riscv/sifive/fe310_aon.c             |   318 +
+ sys/riscv/sifive/files.sifive            |     1 +
+ sys/sys/param.h                          |     2 +-
+ sys/sys/pioctl.h                         |    85 -
+ sys/sys/proc.h                           |    21 -
+ sys/x86/x86/tsc.c                        |    41 +-
+ tools/test/bsnmp/Makefile                |    19 +
+ usr.bin/iscsictl/Makefile                |     1 -
+ usr.sbin/autofs/Makefile                 |     2 -
+ usr.sbin/iscsid/Makefile                 |     1 -
+ usr.sbin/jail/config.c                   |     4 +-
+ usr.sbin/uefisign/Makefile               |     2 -
+ 82 files changed, 20243 insertions(+), 654 deletions(-)
+ create mode 100644 contrib/bsnmp/tests/asn1.cc
+ create mode 100644 contrib/bsnmp/tests/catch.hpp
+ create mode 100644 contrib/bsnmp/tests/constbuf.h
+ create mode 100644 contrib/bsnmp/tests/main.cc
+ create mode 100644 contrib/bsnmp/tests/snmp_parse_server.cc
+ delete mode 100644 sys/fs/procfs/procfs_ioctl.c
+ create mode 100644 sys/riscv/sifive/fe310_aon.c
+ delete mode 100644 sys/sys/pioctl.h
+ create mode 100644 tools/test/bsnmp/Makefile
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sbin/recoverdisk/Makefile      |   4 +
+ sbin/recoverdisk/recoverdisk.1 |   9 +
+ sbin/recoverdisk/recoverdisk.c | 469 +++++++++++++++++++++++++++++++++--------
+ 3 files changed, 395 insertions(+), 87 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d4af655bc4d3..19f319d04aae  hardened/current/master -> hardened/current/master        
+remote:    017de2fd547b..c96a802d1d0b  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d4af655bc4d3..19f319d04aae  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
