@@ -56,3 +56,327 @@ remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedb
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    716aaad9e1c9..4cea097fbbb0  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/apache24/Makefile
+Auto-merging security/keybase/Makefile
+Auto-merging ports-mgmt/pkg/Makefile
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/Makefile
+Removing comms/gnuradio/files/patch-cmake_Modules_GrPython.cmake
+Auto-merging archivers/unrar/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/Makefile
+index aceed022f777,334b73b7203e..000000000000
+--- a/ports-mgmt/pkg/Makefile
++++ b/ports-mgmt/pkg/Makefile
+@@@ -24,9 -24,7 +24,13 @@@ PORTSCOUT=	ignore:
+  CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
+  CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +# Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
+++=======
++ # Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
+++>>>>>>> freebsd/master
+  # so that pkg-static is used from the wrkdir
+  USE_SUBMAKE=	yes
+  CFLAGS+=	-Wno-error
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/bsd.ruby.mk
+	modified:   archivers/rar/Makefile
+	modified:   archivers/rar/distinfo
+	modified:   archivers/unrar/Makefile
+	modified:   archivers/unrar/distinfo
+	modified:   astro/qmapshack/Makefile
+	modified:   astro/qmapshack/distinfo
+	modified:   astro/qmapshack/files/patch-CMakeLists.txt
+	modified:   astro/qmapshack/files/patch-cmake_Modules_DefineInstallationPaths.cmake
+	modified:   astro/qmapshack/files/patch-src_qmapshack_CMakeLists.txt
+	modified:   astro/qmapshack/files/patch-src_qmaptool_CMakeLists.txt
+	modified:   astro/qmapshack/files/patch-src_qmt__map2jnx_CMakeLists.txt
+	modified:   astro/qmapshack/files/patch-src_qmt__rgb2pct_CMakeLists.txt
+	modified:   astro/qmapshack/pkg-plist
+	modified:   audio/libfishsound/Makefile
+	modified:   audio/libfishsound/pkg-plist
+	modified:   audio/liblo/Makefile
+	modified:   audio/liblo/pkg-plist
+	modified:   benchmarks/p5-Dumbbench/Makefile
+	modified:   biology/p5-Bio-Coordinate/Makefile
+	modified:   biology/p5-Bio-FeatureIO/Makefile
+	modified:   cad/k40-whisperer/Makefile
+	modified:   cad/k40-whisperer/distinfo
+	modified:   chinese/p5-Lingua-ZH-HanDetect/Makefile
+	modified:   chinese/p5-Lingua-ZH-WordSegmenter/Makefile
+	modified:   comms/fldigi/Makefile
+	modified:   comms/fldigi/distinfo
+	modified:   comms/flrig/Makefile
+	modified:   comms/flrig/distinfo
+	modified:   comms/gnuradio/Makefile
+	modified:   comms/gnuradio/distinfo
+	modified:   comms/gnuradio/files/patch-CMakeLists.txt
+	modified:   comms/gnuradio/files/patch-cmake_Modules_FindQwt.cmake
+	deleted:    comms/gnuradio/files/patch-cmake_Modules_GrPython.cmake
+	modified:   comms/gnuradio/files/patch-docs_doxygen_Doxyfile.in
+	modified:   comms/gnuradio/files/patch-gr-vocoder_lib_gsm__fr__decode__ps__impl.h
+	modified:   comms/gnuradio/files/patch-gr-vocoder_lib_gsm__fr__encode__sp__impl.h
+	modified:   comms/gnuradio/pkg-plist
+	modified:   comms/openzwave-devel/Makefile
+	modified:   comms/openzwave-devel/distinfo
+	modified:   comms/openzwave-devel/files/patch-cpp_build_Makefile
+	modified:   comms/openzwave-devel/files/patch-cpp_build_support.mk
+	modified:   comms/openzwave-devel/pkg-descr
+	modified:   comms/openzwave-devel/pkg-plist
+	modified:   converters/p5-Convert-NLS_DATE_FORMAT/Makefile
+	modified:   converters/p5-Encode-Detect-CJK/Makefile
+	modified:   converters/p5-JSON-MaybeXS/Makefile
+	modified:   converters/p5-JSON-Tiny/Makefile
+	modified:   databases/foundationdb-devel/Makefile
+	modified:   databases/foundationdb/Makefile
+	modified:   databases/libzdb/Makefile
+	modified:   databases/libzdb/distinfo
+	modified:   databases/libzdb/pkg-plist
+	modified:   databases/pgFormatter/Makefile
+	modified:   databases/pgFormatter/distinfo
+	modified:   databases/plpgsql_check/Makefile
+	modified:   databases/plpgsql_check/distinfo
+	modified:   databases/py-fakeredis/Makefile
+	modified:   databases/py-fakeredis/distinfo
+	modified:   databases/py-tiledb/Makefile
+	modified:   databases/py-tiledb/distinfo
+	modified:   databases/tiledb/Makefile
+	modified:   databases/tiledb/distinfo
+	modified:   devel/Makefile
+	modified:   devel/byacc/Makefile
+	modified:   devel/byacc/distinfo
+	modified:   devel/libmaa/Makefile
+	modified:   devel/libmaa/distinfo
+	modified:   devel/p5-Term-Choose-Util/Makefile
+	modified:   devel/p5-Term-Choose-Util/distinfo
+	modified:   devel/p5-Test-Simple/Makefile
+	modified:   devel/p5-Test-Simple/distinfo
+	modified:   devel/p5-Test2-Harness/Makefile
+	new file:   devel/p5-Test2-Plugin-IOEvents/Makefile
+	new file:   devel/p5-Test2-Plugin-IOEvents/distinfo
+	new file:   devel/p5-Test2-Plugin-IOEvents/pkg-descr
+	new file:   devel/p5-Test2-Plugin-IOEvents/pkg-plist
+	modified:   devel/py-castellan/Makefile
+	modified:   devel/py-castellan/distinfo
+	modified:   devel/py-clikit/Makefile
+	modified:   devel/py-clikit/distinfo
+	modified:   devel/py-distributed/Makefile
+	modified:   devel/py-distributed/distinfo
+	modified:   devel/py-fsspec/Makefile
+	modified:   devel/py-fsspec/distinfo
+	modified:   devel/py-json5/Makefile
+	modified:   devel/py-lark-parser/Makefile
+	modified:   devel/py-lark-parser/distinfo
+	modified:   devel/py-logfury/Makefile
+	modified:   devel/py-logfury/distinfo
+	modified:   devel/py-notify/Makefile
+	modified:   devel/py-openstacksdk/Makefile
+	modified:   devel/py-openstacksdk/distinfo
+	modified:   devel/py-vulture/Makefile
+	modified:   devel/py-vulture/distinfo
+	modified:   devel/rubygem-async-io/Makefile
+	modified:   devel/rubygem-async-io/distinfo
+	modified:   devel/rubygem-aws-sdk-accessanalyzer/Makefile
+	modified:   devel/rubygem-aws-sdk-accessanalyzer/distinfo
+	modified:   devel/rubygem-aws-sdk-apigatewayv2/Makefile
+	modified:   devel/rubygem-aws-sdk-apigatewayv2/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-detective/Makefile
+	modified:   devel/rubygem-aws-sdk-detective/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-eks/Makefile
+	modified:   devel/rubygem-aws-sdk-eks/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticinference/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticinference/distinfo
+	modified:   devel/rubygem-aws-sdk-fms/Makefile
+	modified:   devel/rubygem-aws-sdk-fms/distinfo
+	modified:   devel/rubygem-aws-sdk-glue/Makefile
+	modified:   devel/rubygem-aws-sdk-glue/distinfo
+	modified:   devel/rubygem-aws-sdk-guardduty/Makefile
+	modified:   devel/rubygem-aws-sdk-guardduty/distinfo
+	modified:   devel/rubygem-aws-sdk-lambda/Makefile
+	modified:   devel/rubygem-aws-sdk-lambda/distinfo
+	modified:   devel/rubygem-aws-sdk-mediastore/Makefile
+	modified:   devel/rubygem-aws-sdk-mediastore/distinfo
+	modified:   devel/rubygem-aws-sdk-opsworkscm/Makefile
+	modified:   devel/rubygem-aws-sdk-opsworkscm/distinfo
+	modified:   devel/rubygem-aws-sdk-organizations/Makefile
+	modified:   devel/rubygem-aws-sdk-organizations/distinfo
+	modified:   devel/rubygem-aws-sdk-pinpoint/Makefile
+	modified:   devel/rubygem-aws-sdk-pinpoint/distinfo
+	modified:   devel/rubygem-aws-sdk-rekognition/Makefile
+	modified:   devel/rubygem-aws-sdk-rekognition/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-servicecatalog/Makefile
+	modified:   devel/rubygem-aws-sdk-servicecatalog/distinfo
+	modified:   devel/rubygem-aws-sdk-storagegateway/Makefile
+	modified:   devel/rubygem-aws-sdk-storagegateway/distinfo
+	modified:   devel/rubygem-aws-sdk-wafv2/Makefile
+	modified:   devel/rubygem-aws-sdk-wafv2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-ddtrace/Makefile
+	modified:   devel/rubygem-ddtrace/distinfo
+	modified:   devel/rubygem-os/Makefile
+	modified:   devel/rubygem-os/distinfo
+	modified:   devel/rubygem-sidekiq-unique-jobs/Makefile
+	modified:   devel/rubygem-sidekiq-unique-jobs/distinfo
+	modified:   devel/rubygem-webpacker-rails5/Makefile
+	modified:   devel/rubygem-webpacker-rails50/Makefile
+	modified:   devel/rubygem-webpacker-rails60/Makefile
+	modified:   devel/rubygem-webpacker-rails60/distinfo
+	new file:   devel/rubygem-webpacker4-rails60/Makefile
+	new file:   devel/rubygem-webpacker4-rails60/distinfo
+	new file:   devel/rubygem-webpacker4-rails60/pkg-descr
+	new file:   devel/volk/Makefile
+	new file:   devel/volk/distinfo
+	new file:   devel/volk/pkg-descr
+	new file:   devel/volk/pkg-plist
+	modified:   ftp/curl/Makefile
+	new file:   ftp/curl/files/patch-lib-easy.c
+	modified:   german/mythes/Makefile
+	modified:   german/mythes/distinfo
+	modified:   graphics/alembic/Makefile
+	modified:   graphics/alembic/distinfo
+	modified:   graphics/gpxsee/Makefile
+	modified:   graphics/gpxsee/distinfo
+	modified:   graphics/py-PyOpenGL-accelerate/Makefile
+	modified:   lang/ruby25/distinfo
+	modified:   lang/ruby25/pkg-plist
+	modified:   lang/ruby26/distinfo
+	modified:   lang/ruby26/pkg-plist
+	modified:   lang/ruby27/distinfo
+	modified:   lang/ruby27/pkg-plist
+	modified:   mail/dbmail/Makefile
+	modified:   mail/p5-Mail-AuthenticationResults/Makefile
+	modified:   mail/p5-Mail-AuthenticationResults/distinfo
+	modified:   mail/rspamd-devel/Makefile
+	modified:   mail/rspamd-devel/distinfo
+	modified:   mail/rspamd-devel/pkg-plist
+	modified:   mail/rspamd/Makefile
+	modified:   mail/rspamd/distinfo
+	modified:   mail/rspamd/pkg-plist
+	modified:   mail/spmfilter/Makefile
+	modified:   math/Makefile
+	new file:   math/mpfi/Makefile
+	new file:   math/mpfi/distinfo
+	new file:   math/mpfi/files/patch-tests_mpfi-tests.h
+	new file:   math/mpfi/pkg-descr
+	new file:   math/mpfi/pkg-plist
+	modified:   misc/py-cinder/Makefile
+	modified:   net-mgmt/ccnet-server/Makefile
+	modified:   net-mgmt/seafile-server/Makefile
+	modified:   net/Makefile
+	modified:   net/haproxy/Makefile
+	modified:   net/haproxy/distinfo
+	modified:   net/haproxy18/Makefile
+	modified:   net/haproxy18/distinfo
+	modified:   net/haproxy19/Makefile
+	modified:   net/haproxy19/distinfo
+	modified:   net/haproxy21/Makefile
+	modified:   net/haproxy21/distinfo
+	renamed:    net/librsync2/Makefile -> net/librsync/Makefile
+	renamed:    net/librsync2/distinfo -> net/librsync/distinfo
+	renamed:    net/librsync2/files/patch-CMakeLists.txt -> net/librsync/files/patch-CMakeLists.txt
+	renamed:    net/librsync2/pkg-descr -> net/librsync/pkg-descr
+	renamed:    net/librsync2/pkg-plist -> net/librsync/pkg-plist
+	modified:   net/py-python-openstackclient/Makefile
+	modified:   net/py-python-openstackclient/distinfo
+	modified:   net/rubygem-fog-aliyun/Makefile
+	modified:   net/rubygem-fog-aliyun/distinfo
+	modified:   polish/hunspell/Makefile
+	modified:   polish/hunspell/distinfo
+	modified:   ports-mgmt/pkg/distinfo
+	modified:   ports-mgmt/pkg/pkg-plist
+	modified:   print/libraqm/files/patch-src_raqm.c
+	modified:   print/py-font-v/Makefile
+	modified:   print/py-font-v/distinfo
+	modified:   print/py-fonttools/Makefile
+	modified:   print/py-fonttools/distinfo
+	modified:   security/keybase/Makefile
+	modified:   security/keybase/distinfo
+	modified:   security/py-keystone/Makefile
+	modified:   security/py-trezor/Makefile
+	modified:   security/py-trezor/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/burp-devel/Makefile
+	modified:   sysutils/burp/Makefile
+	modified:   sysutils/checkrestart/Makefile
+	modified:   sysutils/checkrestart/distinfo
+	new file:   sysutils/checkrestart/files/checkrestart.in
+	new file:   sysutils/checkrestart/pkg-message
+	modified:   sysutils/duplicity/Makefile
+	modified:   sysutils/duplicity07/Makefile
+	modified:   sysutils/rdiff-backup/Makefile
+	modified:   textproc/p5-PPIx-QuoteLike/Makefile
+	modified:   textproc/p5-PPIx-QuoteLike/distinfo
+	modified:   www/apache24/Makefile
+	modified:   www/apache24/distinfo
+	modified:   www/py-werkzeug/Makefile
+	modified:   www/py-werkzeug/distinfo
+	modified:   www/rubygem-async-http/Makefile
+	modified:   www/rubygem-async-http/distinfo
+	modified:   www/rubygem-http/Makefile
+	modified:   www/rubygem-http/distinfo
+	modified:   www/rubygem-protocol-http2/Makefile
+	modified:   www/rubygem-protocol-http2/distinfo
+	modified:   www/rubygem-rails60/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/Makefile
+
+
+It took 3.59 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 4cea097fbbb0 Merge branch 'master' of git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.58 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 4cea097fbbb0 Merge branch 'master' of git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports
+==== END: master ====
