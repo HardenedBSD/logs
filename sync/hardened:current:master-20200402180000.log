@@ -1,0 +1,222 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/files
+Auto-merging sys/conf/NOTES
+Merge made by the 'recursive' strategy.
+ contrib/llvm-project/lldb/bindings/headers.swig    |   76 ++
+ .../lldb/bindings/interface/SBAddress.i            |  185 ++++
+ .../lldb/bindings/interface/SBAttachInfo.i         |  115 +++
+ .../llvm-project/lldb/bindings/interface/SBBlock.i |  163 +++
+ .../lldb/bindings/interface/SBBreakpoint.i         |  334 ++++++
+ .../lldb/bindings/interface/SBBreakpointLocation.i |  141 +++
+ .../lldb/bindings/interface/SBBreakpointName.i     |  115 +++
+ .../lldb/bindings/interface/SBBroadcaster.i        |   69 ++
+ .../lldb/bindings/interface/SBCommandInterpreter.i |  235 +++++
+ .../bindings/interface/SBCommandReturnObject.i     |  127 +++
+ .../lldb/bindings/interface/SBCommunication.i      |   83 ++
+ .../lldb/bindings/interface/SBCompileUnit.i        |  138 +++
+ .../llvm-project/lldb/bindings/interface/SBData.i  |  297 ++++++
+ .../lldb/bindings/interface/SBDebugger.i           |  535 ++++++++++
+ .../lldb/bindings/interface/SBDeclaration.i        |   67 ++
+ .../llvm-project/lldb/bindings/interface/SBError.i |  122 +++
+ .../llvm-project/lldb/bindings/interface/SBEvent.i |  153 +++
+ .../lldb/bindings/interface/SBExecutionContext.i   |   51 +
+ .../lldb/bindings/interface/SBExpressionOptions.i  |  158 +++
+ .../llvm-project/lldb/bindings/interface/SBFile.i  |  101 ++
+ .../lldb/bindings/interface/SBFileSpec.i           |  107 ++
+ .../lldb/bindings/interface/SBFileSpecList.i       |   44 +
+ .../llvm-project/lldb/bindings/interface/SBFrame.i |  364 +++++++
+ .../lldb/bindings/interface/SBFunction.i           |  134 +++
+ .../lldb/bindings/interface/SBHostOS.i             |   49 +
+ .../lldb/bindings/interface/SBInstruction.i        |  104 ++
+ .../lldb/bindings/interface/SBInstructionList.i    |  107 ++
+ .../lldb/bindings/interface/SBLanguageRuntime.i    |   21 +
+ .../lldb/bindings/interface/SBLaunchInfo.i         |  131 +++
+ .../lldb/bindings/interface/SBLineEntry.i          |  100 ++
+ .../lldb/bindings/interface/SBListener.i           |  100 ++
+ .../lldb/bindings/interface/SBMemoryRegionInfo.i   |   61 ++
+ .../bindings/interface/SBMemoryRegionInfoList.i    |   37 +
+ .../lldb/bindings/interface/SBModule.i             |  554 ++++++++++
+ .../lldb/bindings/interface/SBModuleSpec.i         |  134 +++
+ .../lldb/bindings/interface/SBPlatform.i           |  197 ++++
+ .../lldb/bindings/interface/SBProcess.i            |  505 +++++++++
+ .../lldb/bindings/interface/SBProcessInfo.i        |   67 ++
+ .../llvm-project/lldb/bindings/interface/SBQueue.i |   74 ++
+ .../lldb/bindings/interface/SBQueueItem.i          |   47 +
+ .../lldb/bindings/interface/SBSection.i            |  149 +++
+ .../lldb/bindings/interface/SBSourceManager.i      |   59 ++
+ .../lldb/bindings/interface/SBStream.i             |  102 ++
+ .../lldb/bindings/interface/SBStringList.i         |   57 ++
+ .../lldb/bindings/interface/SBStructuredData.i     |   63 ++
+ .../lldb/bindings/interface/SBSymbol.i             |   96 ++
+ .../lldb/bindings/interface/SBSymbolContext.i      |   99 ++
+ .../lldb/bindings/interface/SBSymbolContextList.i  |  139 +++
+ .../lldb/bindings/interface/SBTarget.i             | 1070 +++++++++++++++++++
+ .../lldb/bindings/interface/SBThread.i             |  461 +++++++++
+ .../lldb/bindings/interface/SBThreadCollection.i   |   39 +
+ .../lldb/bindings/interface/SBThreadPlan.i         |  137 +++
+ .../llvm-project/lldb/bindings/interface/SBTrace.i |   35 +
+ .../lldb/bindings/interface/SBTraceOptions.i       |   39 +
+ .../llvm-project/lldb/bindings/interface/SBType.i  |  487 +++++++++
+ .../lldb/bindings/interface/SBTypeCategory.i       |  225 ++++
+ .../lldb/bindings/interface/SBTypeEnumMember.i     |  107 ++
+ .../lldb/bindings/interface/SBTypeFilter.i         |   75 ++
+ .../lldb/bindings/interface/SBTypeFormat.i         |   77 ++
+ .../lldb/bindings/interface/SBTypeNameSpecifier.i  |   69 ++
+ .../lldb/bindings/interface/SBTypeSummary.i        |  119 +++
+ .../lldb/bindings/interface/SBTypeSynthetic.i      |   78 ++
+ .../lldb/bindings/interface/SBUnixSignals.i        |   76 ++
+ .../llvm-project/lldb/bindings/interface/SBValue.i |  598 +++++++++++
+ .../lldb/bindings/interface/SBValueList.i          |  172 ++++
+ .../lldb/bindings/interface/SBVariablesOptions.i   |   68 ++
+ .../lldb/bindings/interface/SBWatchpoint.i         |   96 ++
+ contrib/llvm-project/lldb/bindings/interfaces.swig |   82 ++
+ contrib/llvm-project/lldb/bindings/lua.swig        |   21 +
+ .../lldb/bindings/lua/lua-typemaps.swig            |    1 +
+ contrib/llvm-project/lldb/bindings/macros.swig     |   33 +
+ contrib/llvm-project/lldb/bindings/python.swig     |  138 +++
+ .../lldb/bindings/python/createPythonInit.py       |   17 +
+ .../lldb/bindings/python/python-extensions.swig    |  592 +++++++++++
+ .../lldb/bindings/python/python-swigsafecast.swig  |  154 +++
+ .../lldb/bindings/python/python-typemaps.swig      |  530 ++++++++++
+ .../lldb/bindings/python/python-wrapper.swig       | 1074 ++++++++++++++++++++
+ .../lldb/include/lldb/lldb-enumerations.h          |    2 +-
+ .../lldb/source/Core/CoreProperties.td             |    2 +-
+ sys/arm/xilinx/files.zynq7                         |    1 -
+ sys/conf/NOTES                                     |    1 +
+ sys/conf/files                                     |    1 +
+ sys/conf/files.riscv                               |    1 -
+ sys/dev/cadence/if_cgem.c                          |  531 +++++-----
+ sys/dev/cadence/if_cgem_hw.h                       |  372 +++----
+ sys/kern/subr_turnstile.c                          |   14 +-
+ sys/netinet/if_ether.c                             |   14 +-
+ sys/opencrypto/crypto.c                            |    2 -
+ sys/opencrypto/cryptodev.c                         |   12 +-
+ tests/sys/net/routing/rtsock_common.h              |   78 +-
+ tests/sys/net/routing/rtsock_config.h              |   59 +-
+ tests/sys/net/routing/test_rtsock_l3.c             |  273 ++++-
+ tests/sys/net/routing/test_rtsock_lladdr.c         |    6 +-
+ 93 files changed, 14466 insertions(+), 539 deletions(-)
+ create mode 100644 contrib/llvm-project/lldb/bindings/headers.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBAddress.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBAttachInfo.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBBlock.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBBreakpoint.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBBreakpointLocation.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBBreakpointName.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBBroadcaster.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBCommandInterpreter.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBCommandReturnObject.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBCommunication.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBCompileUnit.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBData.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBDebugger.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBDeclaration.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBError.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBEvent.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBExecutionContext.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBExpressionOptions.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBFile.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBFileSpec.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBFileSpecList.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBFrame.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBFunction.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBHostOS.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBInstruction.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBInstructionList.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBLanguageRuntime.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBLaunchInfo.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBLineEntry.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBListener.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBMemoryRegionInfo.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBMemoryRegionInfoList.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBModule.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBModuleSpec.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBPlatform.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBProcess.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBProcessInfo.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBQueue.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBQueueItem.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBSection.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBSourceManager.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBStream.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBStringList.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBStructuredData.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBSymbol.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBSymbolContext.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBSymbolContextList.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTarget.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBThread.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBThreadCollection.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBThreadPlan.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTrace.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTraceOptions.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBType.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeCategory.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeEnumMember.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeFilter.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeFormat.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeNameSpecifier.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeSummary.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBTypeSynthetic.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBUnixSignals.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBValue.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBValueList.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBVariablesOptions.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interface/SBWatchpoint.i
+ create mode 100644 contrib/llvm-project/lldb/bindings/interfaces.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/lua.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/lua/lua-typemaps.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/macros.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/python.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/python/createPythonInit.py
+ create mode 100644 contrib/llvm-project/lldb/bindings/python/python-extensions.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/python/python-swigsafecast.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/python/python-typemaps.swig
+ create mode 100644 contrib/llvm-project/lldb/bindings/python/python-wrapper.swig
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    19f319d04aae..b6ed3523659d  hardened/current/master -> hardened/current/master        
+remote:    c96a802d1d0b..471c4e6b0bc9  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   19f319d04aae..b6ed3523659d  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
