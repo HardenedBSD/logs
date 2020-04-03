@@ -1,0 +1,218 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=1&verb=git-upload-pack: dial tcp 127.0.0.1:3000: connect: connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at f1d1fd0428e7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/iscsid/Makefile
+CONFLICT (content): Merge conflict in usr.sbin/iscsid/Makefile
+Auto-merging sys/sys/proc.h
+Removing sys/sys/pioctl.h
+Auto-merging sys/kern/sys_process.c
+Auto-merging sys/kern/kern_thread.c
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_prot.c
+Auto-merging sys/kern/kern_fork.c
+Auto-merging sys/kern/kern_exec.c
+CONFLICT (content): Merge conflict in sys/kern/kern_exec.c
+Auto-merging sys/kern/imgact_elf.c
+CONFLICT (content): Merge conflict in sys/kern/imgact_elf.c
+Removing sys/fs/procfs/procfs_ioctl.c
+Auto-merging sys/conf/files
+Auto-merging sys/compat/ia32/ia32_sysvec.c
+CONFLICT (content): Merge conflict in sys/compat/ia32/ia32_sysvec.c
+Auto-merging sys/amd64/ia32/ia32_syscall.c
+Auto-merging sys/amd64/ia32/ia32_signal.c
+Auto-merging bin/sh/Makefile
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/compat/ia32/ia32_sysvec.c
+index 27d82086d40a,cceb2b38b84c..000000000000
+--- a/sys/compat/ia32/ia32_sysvec.c
++++ b/sys/compat/ia32/ia32_sysvec.c
+@@@ -44,8 -42,6 +44,11 @@@ __FBSDID("$FreeBSD$")
+  #include <sys/mutex.h>
+  #include <sys/mman.h>
+  #include <sys/namei.h>
+++<<<<<<< HEAD
+ +#include <sys/pax.h>
+ +#include <sys/pioctl.h>
+++=======
+++>>>>>>> freebsd/current/master
+  #include <sys/proc.h>
+  #include <sys/procfs.h>
+  #include <sys/resourcevar.h>
+diff --cc sys/kern/imgact_elf.c
+index e5267c5a7772,bbd5fcd5249e..000000000000
+--- a/sys/kern/imgact_elf.c
++++ b/sys/kern/imgact_elf.c
+@@@ -52,8 -50,6 +52,11 @@@ __FBSDID("$FreeBSD$")
+  #include <sys/mount.h>
+  #include <sys/mman.h>
+  #include <sys/namei.h>
+++<<<<<<< HEAD
+ +#include <sys/pax.h>
+ +#include <sys/pioctl.h>
+++=======
+++>>>>>>> freebsd/current/master
+  #include <sys/proc.h>
+  #include <sys/procfs.h>
+  #include <sys/ptrace.h>
+diff --cc sys/kern/kern_exec.c
+index 6e32bf5e9c52,1e8cd39192fc..000000000000
+--- a/sys/kern/kern_exec.c
++++ b/sys/kern/kern_exec.c
+@@@ -52,8 -51,6 +52,11 @@@ __FBSDID("$FreeBSD$")
+  #include <sys/mount.h>
+  #include <sys/mutex.h>
+  #include <sys/namei.h>
+++<<<<<<< HEAD
+ +#include <sys/pax.h>
+ +#include <sys/pioctl.h>
+++=======
+++>>>>>>> freebsd/current/master
+  #include <sys/priv.h>
+  #include <sys/proc.h>
+  #include <sys/ptrace.h>
+diff --cc usr.sbin/iscsid/Makefile
+index 19070bb3c6ce,e3b1acb636b2..000000000000
+--- a/usr.sbin/iscsid/Makefile
++++ b/usr.sbin/iscsid/Makefile
+@@@ -11,7 -11,4 +11,10 @@@ MAN=		iscsid.
+  
+  LIBADD=		md util
+  
+++<<<<<<< HEAD
+ +
+ +WARNS=		6
+ +
+++=======
+++>>>>>>> freebsd/current/master
+  .include <bsd.prog.mk>
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   bin/sh/Makefile
+	modified:   contrib/bsnmp/lib/asn1.c
+	modified:   contrib/bsnmp/lib/bsnmpclient.3
+	modified:   contrib/bsnmp/lib/snmpclient.c
+	modified:   contrib/bsnmp/lib/snmpcrypto.c
+	modified:   contrib/bsnmp/snmp_mibII/mibII.c
+	modified:   contrib/bsnmp/snmp_mibII/mibII.h
+	modified:   contrib/bsnmp/snmp_usm/usm_snmp.c
+	modified:   contrib/bsnmp/snmp_vacm/vacm_snmp.c
+	modified:   contrib/bsnmp/snmpd/snmpd.config
+	modified:   contrib/bsnmp/snmpd/trans_inet.c
+	new file:   contrib/bsnmp/tests/asn1.cc
+	new file:   contrib/bsnmp/tests/catch.hpp
+	new file:   contrib/bsnmp/tests/constbuf.h
+	new file:   contrib/bsnmp/tests/main.cc
+	new file:   contrib/bsnmp/tests/snmp_parse_server.cc
+	modified:   contrib/llvm-project/FREEBSD-Xlist
+	modified:   include/Makefile
+	modified:   lib/libbsnmp/libbsnmp/Makefile
+	modified:   lib/libc/stdio/getwc.3
+	modified:   lib/libc/stdlib/atof.3
+	modified:   lib/libc/stdlib/atoi.3
+	modified:   lib/libsysdecode/Makefile
+	modified:   lib/msun/man/cos.3
+	modified:   lib/msun/man/exp.3
+	modified:   lib/msun/man/sin.3
+	modified:   release/scripts/mtree-to-plist.awk
+	modified:   share/man/man4/ufm.4
+	modified:   share/man/man5/elf.5
+	modified:   sys/amd64/amd64/trap.c
+	modified:   sys/amd64/amd64/vm_machdep.c
+	modified:   sys/amd64/ia32/ia32_reg.c
+	modified:   sys/amd64/ia32/ia32_signal.c
+	modified:   sys/amd64/ia32/ia32_syscall.c
+	modified:   sys/arm/arm/syscall.c
+	modified:   sys/arm64/arm64/trap.c
+	modified:   sys/conf/files
+	modified:   sys/dev/usb/misc/ufm.c
+	modified:   sys/fs/procfs/procfs.c
+	modified:   sys/fs/procfs/procfs.h
+	deleted:    sys/fs/procfs/procfs_ioctl.c
+	modified:   sys/i386/i386/trap.c
+	modified:   sys/i386/i386/vm_machdep.c
+	modified:   sys/kern/kern_exit.c
+	modified:   sys/kern/kern_fork.c
+	modified:   sys/kern/kern_prot.c
+	modified:   sys/kern/kern_sig.c
+	modified:   sys/kern/kern_thread.c
+	modified:   sys/kern/subr_syscall.c
+	modified:   sys/kern/subr_trap.c
+	modified:   sys/kern/sys_process.c
+	modified:   sys/kgssapi/krb5/kcrypto_aes.c
+	modified:   sys/mips/mips/trap.c
+	modified:   sys/modules/procfs/Makefile
+	modified:   sys/netgraph/bluetooth/hci/ng_hci_evnt.c
+	modified:   sys/powerpc/powerpc/trap.c
+	modified:   sys/riscv/riscv/trap.c
+	new file:   sys/riscv/sifive/fe310_aon.c
+	modified:   sys/riscv/sifive/files.sifive
+	modified:   sys/sys/param.h
+	deleted:    sys/sys/pioctl.h
+	modified:   sys/sys/proc.h
+	modified:   sys/x86/x86/tsc.c
+	new file:   tools/test/bsnmp/Makefile
+	modified:   usr.bin/iscsictl/Makefile
+	modified:   usr.sbin/autofs/Makefile
+	modified:   usr.sbin/jail/config.c
+	modified:   usr.sbin/uefisign/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/compat/ia32/ia32_sysvec.c
+	both modified:   sys/kern/imgact_elf.c
+	both modified:   sys/kern/kern_exec.c
+	both modified:   usr.sbin/iscsid/Makefile
+
+HEAD is now at f1d1fd0428e7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at f1d1fd0428e7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
