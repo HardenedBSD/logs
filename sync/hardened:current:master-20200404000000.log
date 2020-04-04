@@ -1,0 +1,182 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ include/protocols/dumprestore.h                    |    2 +-
+ .../pmu-events/arch/x86/bonnell/frontend.json      |    2 +-
+ .../pmu-events/arch/x86/bonnell/pipeline.json      |    2 +-
+ .../pmu-events/arch/x86/broadwell/bdw-metrics.json |  242 +-
+ .../pmu-events/arch/x86/broadwell/cache.json       | 1626 ++--
+ .../arch/x86/broadwell/floating-point.json         |   51 +-
+ .../pmu-events/arch/x86/broadwell/frontend.json    |    4 +-
+ .../pmu-events/arch/x86/broadwell/memory.json      | 1640 ++--
+ .../pmu-events/arch/x86/broadwell/pipeline.json    |   34 +-
+ .../arch/x86/broadwellde/bdwde-metrics.json        |    2 +-
+ .../pmu-events/arch/x86/broadwellde/pipeline.json  |    4 -
+ .../arch/x86/broadwellx/bdx-metrics.json           |  260 +-
+ .../pmu-events/arch/x86/broadwellx/cache.json      |  161 +-
+ .../arch/x86/broadwellx/floating-point.json        |   16 +-
+ .../pmu-events/arch/x86/broadwellx/memory.json     |  148 +-
+ .../pmu-events/arch/x86/broadwellx/pipeline.json   |   48 +-
+ .../pmu-events/arch/x86/cascadelakex/cache.json    | 9976 ++++++++++++++++++++
+ .../arch/x86/cascadelakex/clx-metrics.json         |  413 +
+ .../arch/x86/cascadelakex/floating-point.json      |   85 +
+ .../pmu-events/arch/x86/cascadelakex/frontend.json |  482 +
+ .../pmu-events/arch/x86/cascadelakex/memory.json   | 9909 +++++++++++++++++++
+ .../pmu-events/arch/x86/cascadelakex/other.json    | 8662 +++++++++++++++++
+ .../pmu-events/arch/x86/cascadelakex/pipeline.json |  969 ++
+ .../arch/x86/cascadelakex/uncore-memory.json       |  308 +
+ .../arch/x86/cascadelakex/uncore-other.json        | 1770 ++++
+ .../arch/x86/cascadelakex/virtual-memory.json      |  284 +
+ lib/libpmc/pmu-events/arch/x86/goldmont/cache.json | 1244 +--
+ .../pmu-events/arch/x86/goldmont/memory.json       |  260 -
+ .../pmu-events/arch/x86/goldmont/pipeline.json     |    5 +-
+ .../arch/x86/goldmont/virtual-memory.json          |    9 +-
+ .../pmu-events/arch/x86/goldmontplus/cache.json    |   74 +-
+ .../pmu-events/arch/x86/goldmontplus/pipeline.json |    5 +-
+ .../arch/x86/goldmontplus/virtual-memory.json      |    9 +-
+ lib/libpmc/pmu-events/arch/x86/haswell/cache.json  |  175 +-
+ .../arch/x86/haswell/floating-point.json           |   33 +-
+ .../pmu-events/arch/x86/haswell/hsw-metrics.json   |  216 +-
+ lib/libpmc/pmu-events/arch/x86/haswell/memory.json |  172 +-
+ .../pmu-events/arch/x86/haswell/pipeline.json      |   33 +-
+ lib/libpmc/pmu-events/arch/x86/haswellx/cache.json |  173 +-
+ .../pmu-events/arch/x86/haswellx/hsx-metrics.json  |  234 +-
+ .../pmu-events/arch/x86/haswellx/memory.json       |  172 +-
+ .../pmu-events/arch/x86/haswellx/pipeline.json     |   10 +-
+ lib/libpmc/pmu-events/arch/x86/icelake/cache.json  |  552 ++
+ .../arch/x86/icelake/floating-point.json           |  102 +
+ .../pmu-events/arch/x86/icelake/frontend.json      |  424 +
+ lib/libpmc/pmu-events/arch/x86/icelake/memory.json |  410 +
+ lib/libpmc/pmu-events/arch/x86/icelake/other.json  |  121 +
+ .../pmu-events/arch/x86/icelake/pipeline.json      |  892 ++
+ .../arch/x86/icelake/virtual-memory.json           |  236 +
+ .../pmu-events/arch/x86/ivybridge/cache.json       |   10 +-
+ .../pmu-events/arch/x86/ivybridge/ivb-metrics.json |  232 +-
+ .../pmu-events/arch/x86/ivybridge/pipeline.json    |    4 -
+ .../pmu-events/arch/x86/ivytown/ivt-metrics.json   |  238 +-
+ .../pmu-events/arch/x86/ivytown/pipeline.json      |    4 -
+ .../pmu-events/arch/x86/ivytown/uncore-power.json  |   16 +-
+ lib/libpmc/pmu-events/arch/x86/jaketown/cache.json |    2 +-
+ .../pmu-events/arch/x86/jaketown/jkt-metrics.json  |  132 +-
+ .../pmu-events/arch/x86/jaketown/pipeline.json     |   10 +-
+ .../pmu-events/arch/x86/jaketown/uncore-power.json |   16 +-
+ .../pmu-events/arch/x86/knightslanding/cache.json  |  666 +-
+ .../pmu-events/arch/x86/knightslanding/memory.json |  268 +-
+ .../arch/x86/knightslanding/pipeline.json          |   15 +-
+ .../arch/x86/knightslanding/virtual-memory.json    |    2 +-
+ lib/libpmc/pmu-events/arch/x86/mapfile.csv         |    4 +
+ .../pmu-events/arch/x86/sandybridge/cache.json     |  680 +-
+ .../arch/x86/sandybridge/floating-point.json       |  126 +-
+ .../pmu-events/arch/x86/sandybridge/frontend.json  |  268 +-
+ .../pmu-events/arch/x86/sandybridge/memory.json    |   68 +-
+ .../pmu-events/arch/x86/sandybridge/other.json     |   18 +-
+ .../pmu-events/arch/x86/sandybridge/pipeline.json  | 1338 +--
+ .../arch/x86/sandybridge/snb-metrics.json          |  126 +-
+ .../arch/x86/sandybridge/virtual-memory.json       |  108 +-
+ .../pmu-events/arch/x86/silvermont/cache.json      |    2 +-
+ .../pmu-events/arch/x86/silvermont/other.json      |   20 +
+ .../pmu-events/arch/x86/silvermont/pipeline.json   |    5 +-
+ lib/libpmc/pmu-events/arch/x86/skylake/cache.json  | 2193 ++++-
+ .../pmu-events/arch/x86/skylake/frontend.json      |   14 +-
+ lib/libpmc/pmu-events/arch/x86/skylake/memory.json | 1121 ++-
+ .../pmu-events/arch/x86/skylake/pipeline.json      |   39 +-
+ .../pmu-events/arch/x86/skylake/skl-metrics.json   |  267 +-
+ lib/libpmc/pmu-events/arch/x86/skylakex/cache.json |  786 +-
+ .../arch/x86/skylakex/floating-point.json          |    2 -
+ .../pmu-events/arch/x86/skylakex/frontend.json     |  234 +-
+ .../pmu-events/arch/x86/skylakex/memory.json       |  751 +-
+ .../pmu-events/arch/x86/skylakex/pipeline.json     |  173 +-
+ .../pmu-events/arch/x86/skylakex/skx-metrics.json  |  291 +-
+ .../pmu-events/arch/x86/skylakex/uncore-other.json |   12 +-
+ lib/libpmc/pmu-events/arch/x86/tremontx/cache.json |  111 +
+ .../pmu-events/arch/x86/tremontx/frontend.json     |   26 +
+ .../pmu-events/arch/x86/tremontx/memory.json       |   26 +
+ lib/libpmc/pmu-events/arch/x86/tremontx/other.json |   26 +
+ .../pmu-events/arch/x86/tremontx/pipeline.json     |  111 +
+ .../arch/x86/tremontx/uncore-memory.json           |   73 +
+ .../pmu-events/arch/x86/tremontx/uncore-other.json |  431 +
+ .../pmu-events/arch/x86/tremontx/uncore-power.json |   11 +
+ .../arch/x86/tremontx/virtual-memory.json          |   86 +
+ sbin/dump/dump.h                                   |   78 +-
+ sbin/dump/dumprmt.c                                |    1 -
+ sbin/dump/itime.c                                  |    6 +-
+ sbin/dump/main.c                                   |   36 +-
+ sbin/dump/pathnames.h                              |    1 -
+ sbin/dump/tape.c                                   |   34 +-
+ sbin/restore/restore.h                             |    2 +-
+ sbin/restore/tape.c                                |    2 +
+ sys/dev/vt/hw/fb/vt_fb.c                           |    6 +-
+ 105 files changed, 47056 insertions(+), 6933 deletions(-)
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/clx-metrics.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/floating-point.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/frontend.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/pipeline.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/uncore-memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/uncore-other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/cascadelakex/virtual-memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/floating-point.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/frontend.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/pipeline.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/icelake/virtual-memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/silvermont/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/frontend.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/pipeline.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/uncore-memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/uncore-other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/uncore-power.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/tremontx/virtual-memory.json
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    41790feb689e..db41dba071d5  hardened/current/master -> hardened/current/master        
+remote:    04f16bb71a5b..1e06b2547738  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   41790feb689e..db41dba071d5  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
