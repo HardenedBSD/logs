@@ -1,0 +1,240 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/file/ChangeLog                             |   20 +
+ contrib/file/Makefile.in                           |   26 +-
+ contrib/file/README                                |    7 +-
+ contrib/file/aclocal.m4                            |  263 +-
+ contrib/file/compile                               |   13 +-
+ contrib/file/config.guess                          |  670 +--
+ contrib/file/config.h.in                           |   24 +-
+ contrib/file/config.sub                            | 2531 +++++----
+ contrib/file/configure                             | 2587 +++++----
+ contrib/file/configure.ac                          |   41 +-
+ contrib/file/depcomp                               |   10 +-
+ contrib/file/doc/Makefile.in                       |   14 +-
+ contrib/file/doc/file.man                          |   11 +-
+ contrib/file/doc/libmagic.man                      |    8 +-
+ contrib/file/doc/magic.man                         |    6 +-
+ contrib/file/ltmain.sh                             | 5509 +++++++++++++-------
+ contrib/file/m4/libtool.m4                         | 2561 +++++----
+ contrib/file/m4/ltoptions.m4                       |  127 +-
+ contrib/file/m4/ltsugar.m4                         |    7 +-
+ contrib/file/m4/ltversion.m4                       |   12 +-
+ contrib/file/m4/lt~obsolete.m4                     |    7 +-
+ contrib/file/magic/Magdir/android                  |   16 +-
+ contrib/file/magic/Magdir/animation                |   89 +-
+ contrib/file/magic/Magdir/apple                    |   60 +-
+ contrib/file/magic/Magdir/archive                  |   60 +-
+ contrib/file/magic/Magdir/audio                    |   49 +-
+ contrib/file/magic/Magdir/bsi                      |    2 +-
+ contrib/file/magic/Magdir/c-lang                   |    4 +-
+ contrib/file/magic/Magdir/cad                      |  187 +-
+ contrib/file/magic/Magdir/commands                 |    5 +-
+ contrib/file/magic/Magdir/compress                 |   20 +-
+ contrib/file/magic/Magdir/console                  |   95 +-
+ contrib/file/magic/Magdir/database                 |   37 +-
+ contrib/file/magic/Magdir/elf                      |    4 +-
+ contrib/file/magic/Magdir/espressif                |    4 +-
+ contrib/file/magic/Magdir/filesystems              |   60 +-
+ contrib/file/magic/Magdir/fonts                    |   56 +-
+ contrib/file/magic/Magdir/forth                    |   80 +
+ contrib/file/magic/Magdir/frame                    |   24 +-
+ contrib/file/magic/Magdir/games                    |    6 +-
+ contrib/file/magic/Magdir/gimp                     |   32 +-
+ contrib/file/magic/Magdir/git                      |   13 +
+ contrib/file/magic/Magdir/icc                      |    4 +-
+ contrib/file/magic/Magdir/images                   |  290 +-
+ contrib/file/magic/Magdir/javascript               |    7 +-
+ contrib/file/magic/Magdir/kml                      |    6 +-
+ contrib/file/magic/Magdir/linux                    |    7 +-
+ contrib/file/magic/Magdir/macintosh                |   39 +-
+ contrib/file/magic/Magdir/mail.news                |   13 +-
+ contrib/file/magic/Magdir/map                      |   79 +-
+ contrib/file/magic/Magdir/modulefile               |    9 +
+ contrib/file/magic/Magdir/msdos                    |  282 +-
+ contrib/file/magic/Magdir/msooxml                  |    4 +-
+ contrib/file/magic/Magdir/ole2compounddocs         |  474 +-
+ contrib/file/magic/Magdir/openfst                  |   17 +
+ contrib/file/magic/Magdir/opentimestamps           |   16 +
+ contrib/file/magic/Magdir/pdf                      |    8 +-
+ contrib/file/magic/Magdir/pmem                     |   46 +
+ contrib/file/magic/Magdir/python                   |   25 +-
+ contrib/file/magic/Magdir/rpi                      |   16 +-
+ contrib/file/magic/Magdir/rst                      |   11 +
+ contrib/file/magic/Magdir/ruby                     |    6 +-
+ contrib/file/magic/Magdir/sgml                     |    6 +-
+ contrib/file/magic/Magdir/sniffer                  |    8 +-
+ contrib/file/magic/Magdir/sosi                     |   40 +
+ contrib/file/magic/Magdir/ssh                      |    6 +
+ contrib/file/magic/Magdir/uuencode                 |    7 +-
+ contrib/file/magic/Magdir/varied.script            |   10 +-
+ contrib/file/magic/Magdir/vax                      |   19 +-
+ contrib/file/magic/Magdir/windows                  |  122 +-
+ contrib/file/magic/Magdir/wordprocessors           |   50 +-
+ contrib/file/magic/Magdir/zip                      |    4 +-
+ contrib/file/magic/Makefile.am                     |   10 +-
+ contrib/file/magic/Makefile.in                     |   24 +-
+ contrib/file/missing                               |   16 +-
+ contrib/file/python/Makefile.in                    |   14 +-
+ contrib/file/src/Makefile.am                       |    4 +-
+ contrib/file/src/Makefile.in                       |  279 +-
+ contrib/file/src/apprentice.c                      |   14 +-
+ contrib/file/src/ascmagic.c                        |    3 +-
+ contrib/file/src/buffer.c                          |    3 +-
+ contrib/file/src/compress.c                        |  196 +-
+ contrib/file/src/encoding.c                        |    3 +-
+ contrib/file/src/file.c                            |   18 +-
+ contrib/file/src/file.h                            |    3 +-
+ contrib/file/src/file_opts.h                       |    7 +-
+ contrib/file/src/fsmagic.c                         |    8 +-
+ contrib/file/src/funcs.c                           |   23 +-
+ contrib/file/src/is_csv.c                          |  197 +
+ contrib/file/src/magic.h.in                        |    2 +
+ contrib/file/src/readcdf.c                         |   11 +-
+ contrib/file/src/readelf.c                         |   14 +-
+ contrib/file/src/seccomp.c                         |   24 +-
+ contrib/file/src/vasprintf.c                       |    4 +-
+ contrib/file/tests/JW07022A.mp3.result             |    2 +-
+ contrib/file/tests/Makefile.in                     |   55 +-
+ contrib/file/tests/test.c                          |    4 +-
+ contrib/xz/ChangeLog                               | 1332 +++++
+ contrib/xz/FREEBSD-Xlist                           |    1 +
+ contrib/xz/README                                  |  120 +-
+ contrib/xz/THANKS                                  |   10 +
+ contrib/xz/src/common/sysdefs.h                    |   11 +-
+ contrib/xz/src/common/tuklib_cpucores.c            |   10 +-
+ contrib/xz/src/common/tuklib_exit.c                |    1 +
+ contrib/xz/src/common/tuklib_integer.h             |  520 +-
+ contrib/xz/src/common/tuklib_mbstr.h               |    2 +-
+ contrib/xz/src/common/tuklib_mbstr_fw.c            |    2 +-
+ contrib/xz/src/common/tuklib_mbstr_width.c         |    5 +-
+ contrib/xz/src/common/tuklib_physmem.c             |    6 +-
+ contrib/xz/src/liblzma/api/lzma.h                  |    5 +-
+ contrib/xz/src/liblzma/api/lzma/block.h            |    2 +-
+ contrib/xz/src/liblzma/api/lzma/filter.h           |    7 +-
+ contrib/xz/src/liblzma/api/lzma/hardware.h         |    2 +-
+ contrib/xz/src/liblzma/api/lzma/lzma12.h           |    2 +-
+ contrib/xz/src/liblzma/api/lzma/version.h          |    2 +-
+ contrib/xz/src/liblzma/api/lzma/vli.h              |    2 +-
+ contrib/xz/src/liblzma/check/crc32_fast.c          |    4 +-
+ contrib/xz/src/liblzma/check/crc32_table.c         |    3 +
+ contrib/xz/src/liblzma/check/crc64_fast.c          |    4 +-
+ contrib/xz/src/liblzma/check/crc64_table.c         |    3 +
+ contrib/xz/src/liblzma/common/alone_decoder.c      |    3 +-
+ contrib/xz/src/liblzma/common/alone_encoder.c      |    9 +-
+ .../xz/src/liblzma/common/block_header_decoder.c   |    4 +-
+ .../xz/src/liblzma/common/block_header_encoder.c   |    2 +-
+ contrib/xz/src/liblzma/common/block_util.c         |    2 +-
+ contrib/xz/src/liblzma/common/common.c             |    8 +-
+ contrib/xz/src/liblzma/common/filter_common.h      |    2 +-
+ contrib/xz/src/liblzma/common/filter_decoder.h     |    2 +-
+ .../xz/src/liblzma/common/filter_flags_encoder.c   |    2 +-
+ contrib/xz/src/liblzma/common/hardware_physmem.c   |    2 +-
+ contrib/xz/src/liblzma/common/index.c              |    8 +-
+ contrib/xz/src/liblzma/common/memcmplen.h          |   19 +-
+ contrib/xz/src/liblzma/common/stream_encoder_mt.c  |    4 +-
+ .../xz/src/liblzma/common/stream_flags_decoder.c   |    6 +-
+ .../xz/src/liblzma/common/stream_flags_encoder.c   |    8 +-
+ contrib/xz/src/liblzma/common/vli_decoder.c        |    2 +-
+ contrib/xz/src/liblzma/delta/delta_decoder.c       |    2 +-
+ contrib/xz/src/liblzma/lz/lz_decoder.c             |   17 +-
+ contrib/xz/src/liblzma/lz/lz_encoder_hash.h        |    2 +-
+ contrib/xz/src/liblzma/lz/lz_encoder_mf.c          |    2 +-
+ contrib/xz/src/liblzma/lzma/fastpos.h              |    2 +-
+ contrib/xz/src/liblzma/lzma/fastpos_tablegen.c     |    1 -
+ contrib/xz/src/liblzma/lzma/lzma2_decoder.c        |    8 +-
+ contrib/xz/src/liblzma/lzma/lzma_common.h          |    3 +-
+ contrib/xz/src/liblzma/lzma/lzma_decoder.c         |   18 +-
+ contrib/xz/src/liblzma/lzma/lzma_encoder.c         |    2 +-
+ .../src/liblzma/lzma/lzma_encoder_optimum_normal.c |   16 +-
+ contrib/xz/src/liblzma/lzma/lzma_encoder_private.h |    3 +-
+ contrib/xz/src/liblzma/simple/arm.c                |    6 +-
+ contrib/xz/src/liblzma/simple/armthumb.c           |    8 +-
+ contrib/xz/src/liblzma/simple/ia64.c               |    2 +-
+ contrib/xz/src/liblzma/simple/powerpc.c            |    9 +-
+ contrib/xz/src/liblzma/simple/simple_coder.c       |   10 +-
+ contrib/xz/src/liblzma/simple/simple_decoder.c     |    2 +-
+ contrib/xz/src/liblzma/simple/simple_encoder.c     |    2 +-
+ contrib/xz/src/liblzma/simple/x86.c                |    2 +-
+ contrib/xz/src/xz/args.c                           |    6 +-
+ contrib/xz/src/xz/coder.c                          |   60 +-
+ contrib/xz/src/xz/file_io.c                        |   69 +-
+ contrib/xz/src/xz/file_io.h                        |   12 +-
+ contrib/xz/src/xz/hardware.c                       |   32 +-
+ contrib/xz/src/xz/main.c                           |    4 +-
+ contrib/xz/src/xz/message.c                        |   22 +-
+ contrib/xz/src/xz/message.h                        |    3 +-
+ contrib/xz/src/xz/mytime.c                         |    8 +-
+ contrib/xz/src/xz/mytime.h                         |    6 +-
+ contrib/xz/src/xz/options.c                        |    2 +-
+ contrib/xz/src/xz/private.h                        |    2 +-
+ contrib/xz/src/xz/signals.c                        |    6 +-
+ contrib/xz/src/xz/util.c                           |   18 +-
+ contrib/xz/src/xz/xz.1                             |   25 +-
+ contrib/xz/src/xzdec/xzdec.c                       |    2 +-
+ lib/liblzma/config.h                               |   27 +-
+ lib/libmagic/Makefile                              |    1 +
+ lib/libmagic/config.h                              |   12 +-
+ sbin/fsck_msdosfs/Makefile                         |    3 +-
+ sbin/fsck_msdosfs/check.c                          |   30 +-
+ 177 files changed, 13436 insertions(+), 7096 deletions(-)
+ create mode 100644 contrib/file/magic/Magdir/forth
+ create mode 100644 contrib/file/magic/Magdir/git
+ create mode 100644 contrib/file/magic/Magdir/modulefile
+ create mode 100644 contrib/file/magic/Magdir/openfst
+ create mode 100644 contrib/file/magic/Magdir/opentimestamps
+ create mode 100644 contrib/file/magic/Magdir/pmem
+ create mode 100644 contrib/file/magic/Magdir/rst
+ create mode 100644 contrib/file/magic/Magdir/sosi
+ create mode 100644 contrib/file/src/is_csv.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    662196cea359..79be4837cc97  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    685e22e84faa..c6857342d8d9  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   662196cea359..79be4837cc97  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
