@@ -1,0 +1,79 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/kmod.mk
+Auto-merging share/mk/bsd.init.mk
+Merge made by the 'recursive' strategy.
+ etc/mtree/BSD.tests.dist                           |   2 +
+ lib/libcasper/services/cap_dns/cap_dns.h           |   5 +
+ lib/libcasper/services/cap_fileargs/cap_fileargs.h |   6 +
+ lib/libcasper/services/cap_grp/cap_grp.h           |   7 +
+ lib/libcasper/services/cap_pwd/cap_pwd.h           |   7 +
+ lib/libcasper/services/cap_sysctl/cap_sysctl.h     |   7 +
+ lib/libcasper/services/cap_syslog/cap_syslog.h     |   7 +
+ lib/libsecureboot/vectx.c                          |  28 ++-
+ sbin/nvmecontrol/Makefile                          |   4 +
+ sbin/nvmecontrol/devlist.c                         |   6 +-
+ sbin/nvmecontrol/tests/Makefile                    |   6 +
+ sbin/nvmecontrol/tests/basic.sh                    | 236 +++++++++++++++++++++
+ share/mk/bsd.init.mk                               |   2 -
+ share/mk/bsd.obj.mk                                |  10 +-
+ share/mk/src.sys.mk                                |   5 +
+ stand/libsa/pkgfs.c                                |  47 ++--
+ stand/libsa/tftp.c                                 |  11 +-
+ stand/powerpc/ofw/conf.c                           |   3 +
+ sys/conf/kern.post.mk                              |   6 +-
+ sys/conf/kern.pre.mk                               |   6 +-
+ sys/conf/kmod.mk                                   |   7 +
+ usr.sbin/bhyve/net_backends.h                      |   2 +
+ usr.sbin/bhyve/net_utils.c                         |  34 +++
+ usr.sbin/bhyve/net_utils.h                         |   1 +
+ usr.sbin/bhyve/pci_virtio_net.c                    |  30 +++
+ 25 files changed, 443 insertions(+), 42 deletions(-)
+ create mode 100644 sbin/nvmecontrol/tests/Makefile
+ create mode 100755 sbin/nvmecontrol/tests/basic.sh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    b8fd1f5f26a7..c75e8e919c54  hardened/current/master -> hardened/current/master
+remote:    8c958c8d9c34..d59fe9f8846d  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b8fd1f5f26a7..c75e8e919c54  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
