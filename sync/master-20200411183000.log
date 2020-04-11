@@ -34,3 +34,150 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging math/suitesparse/Makefile
+CONFLICT (content): Merge conflict in math/suitesparse/Makefile
+Removing devel/tortoisehg/files/patch-thg
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc math/suitesparse/Makefile
+index 6173ffef04fb,f8ce8e6303c8..000000000000
+--- a/math/suitesparse/Makefile
++++ b/math/suitesparse/Makefile
+@@@ -17,7 -14,9 +14,13 @@@ LICENSE_COMB=	dua
+  
+  LIB_DEPENDS=	libmetis.so:math/metis
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	retpoline:off
+++=======
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	DrTimothyAldenDavis
++ GH_PROJECT=	SuiteSparse
+++>>>>>>> freebsd/master
+  
+  USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
+  USE_LDCONFIG=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/bsd.default-versions.mk
+	modified:   Mk/bsd.java.mk
+	modified:   UIDs
+	modified:   databases/pspg/Makefile
+	modified:   databases/pspg/distinfo
+	modified:   devel/Makefile
+	modified:   devel/aarch64-none-elf-gcc/Makefile
+	modified:   devel/aarch64-none-elf-gcc/distinfo
+	modified:   devel/aarch64-none-elf-gcc/pkg-plist
+	modified:   devel/arm-none-eabi-gcc/Makefile
+	new file:   devel/arm-none-eabi-gcc/distinfo
+	modified:   devel/arm-none-eabi-gcc/pkg-plist
+	modified:   devel/emscripten/Makefile
+	modified:   devel/emscripten/distinfo
+	modified:   devel/emscripten/pkg-plist
+	modified:   devel/mutagen/Makefile
+	modified:   devel/mutagen/distinfo
+	new file:   devel/py-flynt/Makefile
+	new file:   devel/py-flynt/distinfo
+	new file:   devel/py-flynt/pkg-descr
+	modified:   devel/py-json_tricks/Makefile
+	modified:   devel/py-json_tricks/distinfo
+	modified:   devel/riscv32-unknown-elf-gcc/Makefile
+	modified:   devel/riscv32-unknown-elf-gcc/distinfo
+	modified:   devel/riscv32-unknown-elf-gcc/pkg-plist
+	modified:   devel/riscv64-none-elf-gcc/Makefile
+	modified:   devel/riscv64-none-elf-gcc/distinfo
+	modified:   devel/riscv64-none-elf-gcc/pkg-plist
+	modified:   devel/tortoisehg/Makefile
+	modified:   devel/tortoisehg/distinfo
+	modified:   devel/tortoisehg/files/patch-setup.py
+	deleted:    devel/tortoisehg/files/patch-thg
+	modified:   devel/tortoisehg/files/patch-tortoisehg_util_hgversion.py
+	modified:   devel/tortoisehg/pkg-plist
+	modified:   games/emptyepsilon/Makefile
+	modified:   games/emptyepsilon/distinfo
+	modified:   games/emptyepsilon/pkg-plist
+	modified:   graphics/photoflare/Makefile
+	modified:   graphics/photoflare/distinfo
+	modified:   graphics/photoflare/pkg-plist
+	modified:   math/Makefile
+	modified:   math/g2o/Makefile
+	modified:   math/g2o/distinfo
+	modified:   math/gh-bc/Makefile
+	modified:   math/gh-bc/distinfo
+	new file:   math/libbraiding/Makefile
+	new file:   math/libbraiding/distinfo
+	new file:   math/libbraiding/pkg-descr
+	new file:   math/libbraiding/pkg-plist
+	modified:   math/suitesparse/distinfo
+	modified:   math/suitesparse/pkg-descr
+	modified:   math/suitesparse/pkg-plist
+	modified:   multimedia/librav1e/Makefile
+	modified:   multimedia/obs-ndi/Makefile
+	modified:   multimedia/obs-ndi/distinfo
+	modified:   multimedia/obs-studio/Makefile
+	modified:   multimedia/py-pretty_midi/Makefile
+	modified:   multimedia/py-pretty_midi/distinfo
+	modified:   net-im/telegram-desktop/Makefile
+	modified:   ports-mgmt/portgrep/Makefile
+	modified:   ports-mgmt/portgrep/distinfo
+	modified:   science/erkale/Makefile
+	modified:   science/erkale/distinfo
+	modified:   science/qbox/Makefile
+	modified:   science/qbox/distinfo
+	modified:   sysutils/atf-master/Makefile
+	modified:   www/gobuffalo/Makefile
+	modified:   www/gobuffalo/distinfo
+	modified:   www/gohugo/Makefile
+	modified:   www/gohugo/distinfo
+	modified:   www/py-rfc3986/Makefile
+	modified:   www/py-rfc3986/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   math/suitesparse/Makefile
+
+
+It took 3.69 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 17953436655a Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.31 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 17953436655a Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
