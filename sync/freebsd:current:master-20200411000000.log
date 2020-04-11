@@ -1,0 +1,80 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 581f12f4a677..99c822eed492
+Fast-forward
+ RELNOTES                           |   4 +
+ sbin/fsck_ffs/suj.c                |  36 +++-
+ sys/conf/files                     |   3 -
+ sys/dev/cxgbe/adapter.h            |   2 -
+ sys/dev/cxgbe/crypto/t4_crypto.c   | 181 ++++++++++++-----
+ sys/fs/nfsclient/nfs_clcomsubs.c   |  42 ++--
+ sys/kgssapi/krb5/kcrypto.c         |   9 -
+ sys/kgssapi/krb5/kcrypto.h         |   5 -
+ sys/kgssapi/krb5/kcrypto_arcfour.c | 225 --------------------
+ sys/kgssapi/krb5/kcrypto_des.c     | 260 -----------------------
+ sys/kgssapi/krb5/kcrypto_des3.c    | 401 ------------------------------------
+ sys/modules/kgssapi_krb5/Makefile  |   3 -
+ sys/powerpc/booke/pmap.c           | 119 +++++------
+ sys/powerpc/booke/pmap_32.c        |  77 ++++++-
+ sys/powerpc/booke/pmap_64.c        | 407 ++++++++++++++++++++-----------------
+ sys/powerpc/booke/trap_subr.S      |  15 +-
+ sys/powerpc/include/pmap.h         |   2 +-
+ sys/powerpc/include/pte.h          |  59 +++---
+ sys/powerpc/include/vmparam.h      |   4 +
+ sys/powerpc/powerpc/genassym.c     |   2 +-
+ usr.sbin/gssd/gssd.8               |   7 +-
+ usr.sbin/gssd/gssd.c               |  52 +----
+ 22 files changed, 591 insertions(+), 1324 deletions(-)
+ delete mode 100644 sys/kgssapi/krb5/kcrypto_arcfour.c
+ delete mode 100644 sys/kgssapi/krb5/kcrypto_des.c
+ delete mode 100644 sys/kgssapi/krb5/kcrypto_des3.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    581f12f4a677..99c822eed492  freebsd/current/master -> freebsd/current/master        
+remote:    15e06b654f20..7be9473c9a07  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   581f12f4a677..99c822eed492  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
