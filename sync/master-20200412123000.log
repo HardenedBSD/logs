@@ -314,3 +314,244 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/keepassxc/Makefile
+Auto-merging net/frr7/Makefile
+Auto-merging editors/vim/Makefile
+Removing databases/mariadb55-server/pkg-plist
+Removing databases/mariadb55-server/pkg-descr
+Removing databases/mariadb55-server/files/pkg-message.in
+Removing databases/mariadb55-server/files/patch-support-files_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-sql_sys__vars.cc
+Removing databases/mariadb55-server/files/patch-sql_sql__view.cc
+Removing databases/mariadb55-server/files/patch-sql_sql__trigger.cc
+Removing databases/mariadb55-server/files/patch-sql_item__subselect.cc
+Removing databases/mariadb55-server/files/patch-sql_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-scripts_mysqld__safe.sh
+Removing databases/mariadb55-server/files/patch-scripts_mysql__config.sh
+Removing databases/mariadb55-server/files/patch-scripts_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-regex_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-mysys_default.c
+Removing databases/mariadb55-server/files/patch-man_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-libservices_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-libmysql_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-include_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-extra_yassl_taocrypt_src_integer.cpp
+Removing databases/mariadb55-server/files/patch-extra_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-cmake_jemalloc.cmake
+Removing databases/mariadb55-server/files/patch-client_CMakeLists.txt
+Removing databases/mariadb55-server/files/patch-CMakeLists.txt
+Removing databases/mariadb55-server/files/mysql-server.in
+Removing databases/mariadb55-server/files/extra-patch-include_my__compare.h
+Removing databases/mariadb55-server/distinfo
+Removing databases/mariadb55-server/Makefile
+Removing databases/mariadb55-client/pkg-plist
+Removing databases/mariadb55-client/files/pkg-message.in
+Removing databases/mariadb55-client/files/patch-support-files_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-scripts_mysql__config.sh
+Removing databases/mariadb55-client/files/patch-scripts_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-regex_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-mysys_default.c
+Removing databases/mariadb55-client/files/patch-man_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-libservices_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-include_my__compare.h
+Removing databases/mariadb55-client/files/patch-include_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-extra_yassl_taocrypt_src_integer.cpp
+Removing databases/mariadb55-client/files/patch-extra_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-cmake_jemalloc.cmake
+Removing databases/mariadb55-client/files/patch-client_CMakeLists.txt
+Removing databases/mariadb55-client/files/patch-CMakeLists.txt
+Removing databases/mariadb55-client/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   3 +
+ Mk/bsd.default-versions.mk                         |   6 +-
+ audio/cli-visualizer/Makefile                      |   1 +
+ audio/cli-visualizer/files/patch-CMakeLists.txt    |  24 +++
+ audio/shairport-sync/Makefile                      |   7 +-
+ databases/Makefile                                 |   2 -
+ databases/mariadb55-client/Makefile                |  30 ---
+ .../mariadb55-client/files/patch-CMakeLists.txt    |  55 ------
+ .../files/patch-client_CMakeLists.txt              |  52 -----
+ .../files/patch-cmake_jemalloc.cmake               |  16 --
+ .../files/patch-extra_CMakeLists.txt               |  25 ---
+ .../patch-extra_yassl_taocrypt_src_integer.cpp     |  11 --
+ .../files/patch-include_CMakeLists.txt             |  25 ---
+ .../files/patch-include_my__compare.h              |  11 --
+ .../files/patch-libservices_CMakeLists.txt         |   9 -
+ .../files/patch-man_CMakeLists.txt                 |  16 --
+ .../mariadb55-client/files/patch-mysys_default.c   |  58 ------
+ .../files/patch-regex_CMakeLists.txt               |   9 -
+ .../files/patch-scripts_CMakeLists.txt             |  78 --------
+ .../files/patch-scripts_mysql__config.sh           |  14 --
+ .../files/patch-support-files_CMakeLists.txt       |  40 ----
+ databases/mariadb55-client/files/pkg-message.in    |   9 -
+ databases/mariadb55-client/pkg-plist               |  89 ---------
+ databases/mariadb55-server/Makefile                | 132 -------------
+ databases/mariadb55-server/distinfo                |   3 -
+ .../files/extra-patch-include_my__compare.h        |  11 --
+ databases/mariadb55-server/files/mysql-server.in   | 140 -------------
+ .../mariadb55-server/files/patch-CMakeLists.txt    |  46 -----
+ .../files/patch-client_CMakeLists.txt              |  70 -------
+ .../files/patch-cmake_jemalloc.cmake               |  16 --
+ .../files/patch-extra_CMakeLists.txt               |  14 --
+ .../patch-extra_yassl_taocrypt_src_integer.cpp     |  11 --
+ .../files/patch-include_CMakeLists.txt             |  27 ---
+ .../files/patch-libmysql_CMakeLists.txt            |  39 ----
+ .../files/patch-libservices_CMakeLists.txt         |   9 -
+ .../files/patch-man_CMakeLists.txt                 |  12 --
+ .../mariadb55-server/files/patch-mysys_default.c   |  58 ------
+ .../files/patch-regex_CMakeLists.txt               |   9 -
+ .../files/patch-scripts_CMakeLists.txt             |  28 ---
+ .../files/patch-scripts_mysql__config.sh           |  14 --
+ .../files/patch-scripts_mysqld__safe.sh            |  24 ---
+ .../files/patch-sql_CMakeLists.txt                 |  29 ---
+ .../files/patch-sql_item__subselect.cc             |  11 --
+ .../files/patch-sql_sql__trigger.cc                |  50 -----
+ .../mariadb55-server/files/patch-sql_sql__view.cc  |  63 ------
+ .../mariadb55-server/files/patch-sql_sys__vars.cc  |  38 ----
+ .../files/patch-support-files_CMakeLists.txt       |  16 --
+ databases/mariadb55-server/files/pkg-message.in    |  16 --
+ databases/mariadb55-server/pkg-descr               |  14 --
+ databases/mariadb55-server/pkg-plist               | 217 ---------------------
+ databases/sequeler/Makefile                        |   2 +-
+ databases/sequeler/distinfo                        |   6 +-
+ databases/sequeler/pkg-plist                       | 185 ------------------
+ deskutils/latte-dock/Makefile                      |   2 +-
+ deskutils/latte-dock/distinfo                      |   6 +-
+ devel/Makefile                                     |   2 +-
+ devel/{aws-c-commons => aws-c-common}/Makefile     |   0
+ devel/{aws-c-commons => aws-c-common}/distinfo     |   0
+ .../files/patch-CMakeLists.txt                     |   0
+ .../files/patch-source_posix_clock.c               |   0
+ devel/{aws-c-commons => aws-c-common}/pkg-descr    |   0
+ devel/{aws-c-commons => aws-c-common}/pkg-plist    |   0
+ devel/aws-c-event-stream/Makefile                  |   3 +-
+ devel/aws-sdk-cpp/Makefile                         |   3 +-
+ editors/vim/Makefile                               |   3 +
+ finance/bitcoinnodestats/Makefile                  |   3 +
+ games/openra/Makefile                              |  21 +-
+ games/openra/distinfo                              |  16 +-
+ graphics/graphviz/Makefile                         |   2 +-
+ graphics/graphviz/distinfo                         |   6 +-
+ .../files/patch-lib-sfdpgen-PriorityQueue.c        |  11 ++
+ math/ascent/Makefile                               |   2 +-
+ net-im/ejabberd/Makefile                           |   3 +-
+ net-im/libqmatrixclient/Makefile                   |   2 +-
+ net-im/libqmatrixclient/distinfo                   |   6 +-
+ net-im/quaternion/Makefile                         |   5 +-
+ net-im/quaternion/distinfo                         |   6 +-
+ net-im/spectral/Makefile                           |   4 +-
+ net/frr7/Makefile                                  |   3 +-
+ net/frr7/files/frr.in                              |   2 +-
+ science/dlpoly-classic/Makefile                    |  21 +-
+ science/py-tensorflow/Makefile                     |   1 +
+ security/keepassxc/Makefile                        |   2 +-
+ security/keepassxc/distinfo                        |   6 +-
+ security/openvpn-devel/Makefile                    |   2 +-
+ security/openvpn-devel/distinfo                    |   6 +-
+ textproc/sd/Makefile                               |   2 +-
+ textproc/sd/distinfo                               |   6 +-
+ www/py-dj22-django-extensions/Makefile             |   4 +-
+ www/py-dj22-django-extensions/distinfo             |   6 +-
+ www/py-django-extensions/Makefile                  |   9 +-
+ www/py-django-extensions/distinfo                  |   6 +-
+ x11/bemenu/Makefile                                |  18 +-
+ x11/bemenu/distinfo                                |   6 +-
+ x11/bemenu/files/Makefile                          |  53 +++++
+ x11/bemenu/pkg-plist                               |   5 +-
+ 96 files changed, 213 insertions(+), 1951 deletions(-)
+ create mode 100644 audio/cli-visualizer/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/Makefile
+ delete mode 100644 databases/mariadb55-client/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-client_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-cmake_jemalloc.cmake
+ delete mode 100644 databases/mariadb55-client/files/patch-extra_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-extra_yassl_taocrypt_src_integer.cpp
+ delete mode 100644 databases/mariadb55-client/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-include_my__compare.h
+ delete mode 100644 databases/mariadb55-client/files/patch-libservices_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-mysys_default.c
+ delete mode 100644 databases/mariadb55-client/files/patch-regex_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-scripts_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/patch-scripts_mysql__config.sh
+ delete mode 100644 databases/mariadb55-client/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-client/files/pkg-message.in
+ delete mode 100644 databases/mariadb55-client/pkg-plist
+ delete mode 100644 databases/mariadb55-server/Makefile
+ delete mode 100644 databases/mariadb55-server/distinfo
+ delete mode 100644 databases/mariadb55-server/files/extra-patch-include_my__compare.h
+ delete mode 100644 databases/mariadb55-server/files/mysql-server.in
+ delete mode 100644 databases/mariadb55-server/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-client_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-cmake_jemalloc.cmake
+ delete mode 100644 databases/mariadb55-server/files/patch-extra_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-extra_yassl_taocrypt_src_integer.cpp
+ delete mode 100644 databases/mariadb55-server/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-libmysql_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-libservices_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-mysys_default.c
+ delete mode 100644 databases/mariadb55-server/files/patch-regex_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-scripts_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-scripts_mysql__config.sh
+ delete mode 100644 databases/mariadb55-server/files/patch-scripts_mysqld__safe.sh
+ delete mode 100644 databases/mariadb55-server/files/patch-sql_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/patch-sql_item__subselect.cc
+ delete mode 100644 databases/mariadb55-server/files/patch-sql_sql__trigger.cc
+ delete mode 100644 databases/mariadb55-server/files/patch-sql_sql__view.cc
+ delete mode 100644 databases/mariadb55-server/files/patch-sql_sys__vars.cc
+ delete mode 100644 databases/mariadb55-server/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mariadb55-server/files/pkg-message.in
+ delete mode 100644 databases/mariadb55-server/pkg-descr
+ delete mode 100644 databases/mariadb55-server/pkg-plist
+ rename devel/{aws-c-commons => aws-c-common}/Makefile (100%)
+ rename devel/{aws-c-commons => aws-c-common}/distinfo (100%)
+ rename devel/{aws-c-commons => aws-c-common}/files/patch-CMakeLists.txt (100%)
+ rename devel/{aws-c-commons => aws-c-common}/files/patch-source_posix_clock.c (100%)
+ rename devel/{aws-c-commons => aws-c-common}/pkg-descr (100%)
+ rename devel/{aws-c-commons => aws-c-common}/pkg-plist (100%)
+ create mode 100644 graphics/graphviz/files/patch-lib-sfdpgen-PriorityQueue.c
+ create mode 100644 x11/bemenu/files/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    9e880a83c648..c2e87b096c6c  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c2e87b096c6c..b85b09157e96  master -> master
+==== END: master ====
