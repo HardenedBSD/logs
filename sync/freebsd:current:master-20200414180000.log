@@ -1,0 +1,826 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 7f82c3af0982..d11edfe286ab
+Fast-forward
+ UPDATING                                           |    8 +
+ lib/libc/include/libc_private.h                    |    1 +
+ lib/libc/sys/Makefile.inc                          |    1 +
+ lib/libc/sys/Symbol.map                            |    2 -
+ lib/libc/sys/closefrom.c                           |   47 +
+ lib/libc/sys/listen.2                              |    9 +-
+ sys/amd64/linux/linux.h                            |   10 +-
+ sys/amd64/linux32/linux.h                          |   10 +-
+ sys/arm/allwinner/aw_mmc.c                         |  127 +-
+ sys/arm/allwinner/aw_sid.c                         |   13 +-
+ sys/arm/allwinner/aw_thermal.c                     |   14 +-
+ sys/arm64/linux/linux.h                            |   10 +-
+ sys/compat/freebsd32/freebsd32.h                   |   26 +-
+ sys/compat/freebsd32/freebsd32_misc.c              |    9 +-
+ sys/compat/freebsd32/freebsd32_syscall.h           |    2 +-
+ sys/compat/freebsd32/freebsd32_syscalls.c          |    2 +-
+ sys/compat/freebsd32/freebsd32_sysent.c            |    2 +-
+ sys/compat/freebsd32/freebsd32_systrace_args.c     |   22 -
+ sys/compat/freebsd32/syscalls.master               |    2 +-
+ sys/compat/linux/linux_ioctl.c                     |    9 +-
+ sys/compat/linux/linux_timer.h                     |   12 +-
+ sys/conf/files                                     |    1 +
+ sys/dev/ipmi/ipmi.c                                |    9 +-
+ sys/dev/mmc/host/dwmmc.c                           |   26 +-
+ sys/dev/mmc/host/dwmmc_altera.c                    |    1 +
+ sys/dev/mmc/host/dwmmc_hisi.c                      |    1 +
+ sys/dev/mmc/host/dwmmc_rockchip.c                  |    1 +
+ sys/dev/mmc/host/dwmmc_samsung.c                   |    1 +
+ sys/dev/mmc/host/dwmmc_var.h                       |    1 +
+ sys/dev/mmc/mmc_fdt_helpers.c                      |  414 +++
+ sys/dev/mmc/mmc_fdt_helpers.h                      |   76 +
+ sys/dev/mpr/mpr_user.c                             |   11 +-
+ sys/dev/mps/mps_user.c                             |   11 +-
+ sys/dev/mpt/mpt_user.c                             |    8 +-
+ sys/dts/arm/overlays/sun8i-h3-sid.dtso             |   19 -
+ sys/dts/arm/overlays/sun8i-h3-ths.dtso             |   27 -
+ sys/dts/arm64/overlays/sun50i-a64-sid.dtso         |   17 -
+ sys/dts/arm64/overlays/sun50i-a64-ths.dtso         |   27 -
+ sys/dts/arm64/overlays/sun50i-h5-sid.dtso          |   17 -
+ sys/dts/arm64/overlays/sun50i-h5-ths.dtso          |   26 -
+ sys/gnu/dts/arm/am335x-evm.dts                     |   40 +-
+ sys/gnu/dts/arm/am335x-evmsk.dts                   |   38 +-
+ sys/gnu/dts/arm/am335x-icev2.dts                   |   13 +
+ sys/gnu/dts/arm/am33xx-l4.dtsi                     |   16 -
+ sys/gnu/dts/arm/am33xx.dtsi                        |   94 +-
+ sys/gnu/dts/arm/am3517.dtsi                        |    2 +-
+ sys/gnu/dts/arm/am3703.dtsi                        |   14 +
+ sys/gnu/dts/arm/am3715.dtsi                        |   10 +
+ sys/gnu/dts/arm/am4372.dtsi                        |  162 +-
+ sys/gnu/dts/arm/am437x-idk-evm.dts                 |    4 +-
+ sys/gnu/dts/arm/am437x-l4.dtsi                     |   29 -
+ sys/gnu/dts/arm/am437x-sk-evm.dts                  |   27 +-
+ sys/gnu/dts/arm/am43x-epos-evm.dts                 |   23 +-
+ sys/gnu/dts/arm/am43xx-clocks.dtsi                 |   54 +
+ sys/gnu/dts/arm/am57xx-idk-common.dtsi             |   59 +
+ sys/gnu/dts/arm/armada-385-clearfog-gtr-l8.dts     |  115 +
+ sys/gnu/dts/arm/armada-385-clearfog-gtr-s4.dts     |   79 +
+ sys/gnu/dts/arm/armada-385-clearfog-gtr.dtsi       |  450 +++
+ sys/gnu/dts/arm/armada-388-clearfog.dtsi           |   11 +-
+ sys/gnu/dts/arm/armada-388-helios4.dts             |    5 -
+ sys/gnu/dts/arm/armada-38x-solidrun-microsom.dtsi  |   13 +
+ sys/gnu/dts/arm/aspeed-bmc-facebook-wedge100.dts   |    1 -
+ sys/gnu/dts/arm/aspeed-bmc-facebook-wedge40.dts    |    1 -
+ sys/gnu/dts/arm/aspeed-bmc-facebook-yamp.dts       |    1 -
+ sys/gnu/dts/arm/aspeed-bmc-ibm-rainier.dts         |   20 +-
+ sys/gnu/dts/arm/aspeed-bmc-inspur-fp5280g2.dts     |    2 -
+ sys/gnu/dts/arm/aspeed-bmc-opp-swift.dts           |    2 -
+ sys/gnu/dts/arm/aspeed-bmc-opp-vesnin.dts          |   18 +-
+ sys/gnu/dts/arm/aspeed-bmc-opp-witherspoon.dts     |    2 -
+ sys/gnu/dts/arm/aspeed-g4.dtsi                     |   21 +-
+ sys/gnu/dts/arm/aspeed-g5.dtsi                     |   49 +-
+ sys/gnu/dts/arm/aspeed-g6.dtsi                     |    2 +-
+ .../dts/arm/ast2500-facebook-netbmc-common.dtsi    |    1 -
+ sys/gnu/dts/arm/at91-kizbox.dts                    |  172 +-
+ sys/gnu/dts/arm/at91-kizboxmini-base.dts           |   24 +
+ ...-kizboxmini.dts => at91-kizboxmini-common.dtsi} |  163 +-
+ sys/gnu/dts/arm/at91-kizboxmini-mb.dts             |   26 +
+ sys/gnu/dts/arm/at91-kizboxmini-rd.dts             |   49 +
+ sys/gnu/dts/arm/at91-nattis-2-natte-2.dts          |    1 -
+ sys/gnu/dts/arm/at91-sam9x60ek.dts                 |  647 ++++
+ sys/gnu/dts/arm/at91-sama5d27_som1.dtsi            |    4 +
+ sys/gnu/dts/arm/at91-sama5d27_som1_ek.dts          |    6 +
+ sys/gnu/dts/arm/at91-sama5d27_wlsom1.dtsi          |  304 ++
+ sys/gnu/dts/arm/at91-sama5d27_wlsom1_ek.dts        |  270 ++
+ sys/gnu/dts/arm/at91-smartkiz.dts                  |  109 +
+ sys/gnu/dts/arm/at91sam9260.dtsi                   |   16 +-
+ sys/gnu/dts/arm/at91sam9261.dtsi                   |    6 +-
+ sys/gnu/dts/arm/at91sam9263.dtsi                   |    6 +-
+ sys/gnu/dts/arm/at91sam9g45.dtsi                   |    8 +-
+ sys/gnu/dts/arm/at91sam9rl.dtsi                    |    8 +-
+ sys/gnu/dts/arm/bcm2711-rpi-4-b.dts                |    3 +
+ sys/gnu/dts/arm/bcm2711.dtsi                       |   82 +-
+ sys/gnu/dts/arm/bcm2835-common.dtsi                |    6 +
+ sys/gnu/dts/arm/bcm2835-rpi-zero-w.dts             |    1 +
+ sys/gnu/dts/arm/bcm2835-rpi.dtsi                   |    1 +
+ sys/gnu/dts/arm/bcm2837-rpi-3-a-plus.dts           |    2 +
+ sys/gnu/dts/arm/bcm2837-rpi-3-b-plus.dts           |    2 +
+ sys/gnu/dts/arm/bcm283x.dtsi                       |   19 +-
+ sys/gnu/dts/arm/bcm958625hr.dts                    |   15 +-
+ sys/gnu/dts/arm/dm3725.dtsi                        |   10 +
+ sys/gnu/dts/arm/dm8148-evm.dts                     |    4 +-
+ sys/gnu/dts/arm/dm8148-t410.dts                    |    4 +-
+ sys/gnu/dts/arm/dra62x-j5eco-evm.dts               |    4 +-
+ sys/gnu/dts/arm/dra7-evm-common.dtsi               |    2 +-
+ sys/gnu/dts/arm/dra7-evm.dts                       |    4 +-
+ sys/gnu/dts/arm/dra7-l4.dtsi                       |  130 +-
+ sys/gnu/dts/arm/dra7.dtsi                          |  279 +-
+ sys/gnu/dts/arm/dra72-evm-common.dtsi              |   33 +-
+ sys/gnu/dts/arm/dra72x.dtsi                        |   42 +
+ sys/gnu/dts/arm/dra74x.dtsi                        |   71 +-
+ sys/gnu/dts/arm/dra76-evm.dts                      |  101 +
+ sys/gnu/dts/arm/dra76x.dtsi                        |   47 +
+ sys/gnu/dts/arm/dra7xx-clocks.dtsi                 |   58 +-
+ sys/gnu/dts/arm/e60k02.dtsi                        |    3 +-
+ sys/gnu/dts/arm/exynos3250.dtsi                    |    4 +-
+ sys/gnu/dts/arm/exynos4210-universal_c210.dts      |    6 +-
+ sys/gnu/dts/arm/exynos4210.dtsi                    |    4 +-
+ sys/gnu/dts/arm/exynos4412-galaxy-s3.dtsi          |    9 +-
+ sys/gnu/dts/arm/exynos4412-midas.dtsi              |   29 +
+ sys/gnu/dts/arm/exynos4412-n710x.dts               |    7 +-
+ sys/gnu/dts/arm/exynos4412-odroid-common.dtsi      |    2 +-
+ sys/gnu/dts/arm/exynos4412-tiny4412.dts            |   25 +
+ sys/gnu/dts/arm/exynos4412.dtsi                    |    4 +-
+ sys/gnu/dts/arm/exynos5.dtsi                       |    2 +-
+ sys/gnu/dts/arm/exynos5250-arndale.dts             |    4 +-
+ sys/gnu/dts/arm/exynos5250-smdk5250.dts            |    4 +-
+ sys/gnu/dts/arm/exynos5250.dtsi                    |   12 +-
+ sys/gnu/dts/arm/exynos5260-xyref5260.dts           |    4 +-
+ sys/gnu/dts/arm/exynos5260.dtsi                    |    2 +-
+ sys/gnu/dts/arm/exynos5410-odroidxu.dts            |    2 +-
+ sys/gnu/dts/arm/exynos5410-smdk5410.dts            |    4 +-
+ sys/gnu/dts/arm/exynos5410.dtsi                    |    6 +-
+ sys/gnu/dts/arm/exynos5420-arndale-octa.dts        |    2 +-
+ sys/gnu/dts/arm/exynos5420-cpus.dtsi               |    2 +-
+ sys/gnu/dts/arm/exynos5420-smdk5420.dts            |    4 +-
+ sys/gnu/dts/arm/exynos5420.dtsi                    |  339 +-
+ sys/gnu/dts/arm/exynos5422-cpus.dtsi               |    2 +-
+ sys/gnu/dts/arm/exynos5422-odroid-core.dtsi        |  285 +-
+ sys/gnu/dts/arm/exynos5422-odroidhc1.dts           |   64 +-
+ sys/gnu/dts/arm/exynos5422-odroidxu3-common.dtsi   |   78 +-
+ sys/gnu/dts/arm/exynos5422-odroidxu3-lite.dts      |   58 +
+ sys/gnu/dts/arm/exynos54xx.dtsi                    |    4 +-
+ sys/gnu/dts/arm/exynos5800-peach-pi.dts            |   13 +
+ sys/gnu/dts/arm/exynos5800.dtsi                    |   58 +-
+ sys/gnu/dts/arm/ibm-power9-dual.dtsi               |    4 +-
+ .../dts/arm/imx25-eukrea-mbimxsd25-baseboard.dts   |    2 -
+ sys/gnu/dts/arm/imx25-pdk.dts                      |    2 -
+ sys/gnu/dts/arm/imx25.dtsi                         |    3 +
+ sys/gnu/dts/arm/imx51-babbage.dts                  |   64 +-
+ sys/gnu/dts/arm/imx6dl-colibri-eval-v3.dts         |    4 +-
+ sys/gnu/dts/arm/imx6dl-gw5907.dts                  |   14 +
+ sys/gnu/dts/arm/imx6dl-gw5910.dts                  |   14 +
+ sys/gnu/dts/arm/imx6dl-gw5912.dts                  |   13 +
+ sys/gnu/dts/arm/imx6dl-gw5913.dts                  |   14 +
+ sys/gnu/dts/arm/imx6q-gw5907.dts                   |   14 +
+ sys/gnu/dts/arm/imx6q-gw5910.dts                   |   14 +
+ sys/gnu/dts/arm/imx6q-gw5912.dts                   |   13 +
+ sys/gnu/dts/arm/imx6q-gw5913.dts                   |   14 +
+ sys/gnu/dts/arm/imx6q-logicpd.dts                  |   10 +
+ sys/gnu/dts/arm/imx6qdl-apalis.dtsi                |    2 +-
+ sys/gnu/dts/arm/imx6qdl-gw5907.dtsi                |  399 +++
+ sys/gnu/dts/arm/imx6qdl-gw5910.dtsi                |  491 +++
+ sys/gnu/dts/arm/imx6qdl-gw5912.dtsi                |  461 +++
+ sys/gnu/dts/arm/imx6qdl-gw5913.dtsi                |  348 ++
+ sys/gnu/dts/arm/imx6qdl-icore-1.5.dtsi             |    2 -
+ sys/gnu/dts/arm/imx6qdl-icore.dtsi                 |   15 +-
+ sys/gnu/dts/arm/imx6qdl-phytec-phycore-som.dtsi    |   14 +-
+ sys/gnu/dts/arm/imx6qdl-zii-rdu2.dtsi              |   84 +-
+ sys/gnu/dts/arm/imx6sl-tolino-shine3.dts           |  322 ++
+ sys/gnu/dts/arm/imx6sll.dtsi                       |    9 +
+ sys/gnu/dts/arm/imx6sx-sdb-reva.dts                |    1 +
+ sys/gnu/dts/arm/imx6ul-14x14-evk.dtsi              |    1 +
+ sys/gnu/dts/arm/imx6ull-colibri.dtsi               |  188 +-
+ sys/gnu/dts/arm/imx7-colibri.dtsi                  |    1 -
+ sys/gnu/dts/arm/imx7d-pico.dtsi                    |   90 +
+ sys/gnu/dts/arm/imx7d-sdb-reva.dts                 |    3 +
+ sys/gnu/dts/arm/imx7d.dtsi                         |    8 +-
+ sys/gnu/dts/arm/imx7s.dtsi                         |   16 +-
+ sys/gnu/dts/arm/imx7ulp-com.dts                    |   79 +
+ sys/gnu/dts/arm/iwg20d-q7-common.dtsi              |   88 +-
+ sys/gnu/dts/arm/iwg20d-q7-dbcm-ca.dtsi             |    1 -
+ sys/gnu/dts/arm/ls1021a-tsn.dts                    |    4 +
+ sys/gnu/dts/arm/ls1021a.dtsi                       |   23 +-
+ sys/gnu/dts/arm/meson.dtsi                         |    7 +
+ sys/gnu/dts/arm/meson6.dtsi                        |    7 -
+ sys/gnu/dts/arm/meson8.dtsi                        |   28 +-
+ sys/gnu/dts/arm/meson8b-ec100.dts                  |    2 +-
+ sys/gnu/dts/arm/meson8b-mxq.dts                    |    2 +-
+ sys/gnu/dts/arm/meson8b-odroidc1.dts               |    2 +-
+ sys/gnu/dts/arm/meson8b.dtsi                       |   30 +-
+ sys/gnu/dts/arm/mmp3-dell-ariel.dts                |   22 +
+ sys/gnu/dts/arm/mmp3.dtsi                          |   44 +
+ sys/gnu/dts/arm/motorola-cpcap-mapphone.dtsi       |    5 +-
+ sys/gnu/dts/arm/motorola-mapphone-common.dtsi      |   34 +-
+ sys/gnu/dts/arm/omap2.dtsi                         |   43 +-
+ sys/gnu/dts/arm/omap2430.dtsi                      |    4 +
+ sys/gnu/dts/arm/omap3-echo.dts                     |  461 +++
+ sys/gnu/dts/arm/omap3-n900.dts                     |   49 +-
+ sys/gnu/dts/arm/omap3.dtsi                         |   46 +-
+ sys/gnu/dts/arm/omap36xx.dtsi                      |    4 +
+ sys/gnu/dts/arm/omap4-l4-abe.dtsi                  |    7 -
+ sys/gnu/dts/arm/omap4-l4.dtsi                      |   79 +-
+ sys/gnu/dts/arm/omap4.dtsi                         |  154 +-
+ sys/gnu/dts/arm/omap44xx-clocks.dtsi               |   11 +-
+ sys/gnu/dts/arm/omap5-l4-abe.dtsi                  |    6 -
+ sys/gnu/dts/arm/omap5-l4.dtsi                      |   44 +-
+ sys/gnu/dts/arm/omap5.dtsi                         |   41 +-
+ sys/gnu/dts/arm/omap54xx-clocks.dtsi               |   10 +-
+ sys/gnu/dts/arm/ox810se.dtsi                       |    4 +-
+ sys/gnu/dts/arm/ox820.dtsi                         |    4 +-
+ sys/gnu/dts/arm/qcom-apq8084.dtsi                  |   44 +-
+ sys/gnu/dts/arm/qcom-ipq4019.dtsi                  |    7 +
+ .../dts/arm/qcom-mdm9615-wp8548-mangoh-green.dts   |    2 +-
+ sys/gnu/dts/arm/qcom-msm8974-fairphone-fp2.dts     |   45 +
+ sys/gnu/dts/arm/qcom-msm8974.dtsi                  |  222 +-
+ sys/gnu/dts/arm/r7s72100.dtsi                      |   18 +-
+ sys/gnu/dts/arm/r8a73a4.dtsi                       |   42 +-
+ sys/gnu/dts/arm/r8a7740-armadillo800eva.dts        |    3 +-
+ sys/gnu/dts/arm/r8a7740.dtsi                       |  102 +-
+ sys/gnu/dts/arm/r8a7743.dtsi                       |  162 +-
+ sys/gnu/dts/arm/r8a7744.dtsi                       |  162 +-
+ sys/gnu/dts/arm/r8a7745-iwg22d-sodimm.dts          |    3 +-
+ sys/gnu/dts/arm/r8a7745.dtsi                       |  122 +-
+ sys/gnu/dts/arm/r8a77470-iwg23s-sbc.dts            |    3 +-
+ sys/gnu/dts/arm/r8a77470.dtsi                      |   86 +-
+ sys/gnu/dts/arm/r8a7778.dtsi                       |   11 +-
+ sys/gnu/dts/arm/r8a7779-marzen.dts                 |    3 +-
+ sys/gnu/dts/arm/r8a7779.dtsi                       |   18 +-
+ sys/gnu/dts/arm/r8a7790-lager.dts                  |    6 +-
+ sys/gnu/dts/arm/r8a7790.dtsi                       |  167 +-
+ sys/gnu/dts/arm/r8a7791-koelsch.dts                |    9 +-
+ sys/gnu/dts/arm/r8a7791-porter.dts                 |    6 +-
+ sys/gnu/dts/arm/r8a7791.dtsi                       |  159 +-
+ sys/gnu/dts/arm/r8a7792.dtsi                       |   67 +-
+ sys/gnu/dts/arm/r8a7793-gose.dts                   |    9 +-
+ sys/gnu/dts/arm/r8a7793.dtsi                       |  123 +-
+ sys/gnu/dts/arm/r8a7794-alt.dts                    |    6 +-
+ sys/gnu/dts/arm/r8a7794-silk.dts                   |    3 +-
+ sys/gnu/dts/arm/r8a7794.dtsi                       |  111 +-
+ sys/gnu/dts/arm/rk3036.dtsi                        |    6 +-
+ sys/gnu/dts/arm/rk3188-bqedison2qc.dts             |    3 +
+ sys/gnu/dts/arm/rk322x.dtsi                        |    6 +-
+ sys/gnu/dts/arm/rk3288-evb.dtsi                    |    2 +-
+ sys/gnu/dts/arm/rk3288-tinker.dtsi                 |   13 +-
+ sys/gnu/dts/arm/rk3288-veyron-brain.dts            |    9 +
+ .../dts/arm/rk3288-veyron-broadcom-bluetooth.dtsi  |   22 +
+ sys/gnu/dts/arm/rk3288-veyron-chromebook.dtsi      |   21 -
+ sys/gnu/dts/arm/rk3288-veyron-edp.dtsi             |    2 +-
+ sys/gnu/dts/arm/rk3288-veyron-fievel.dts           |   14 +-
+ sys/gnu/dts/arm/rk3288-veyron-jaq.dts              |   22 +
+ sys/gnu/dts/arm/rk3288-veyron-jerry.dts            |   22 +
+ sys/gnu/dts/arm/rk3288-veyron-mickey.dts           |    9 +
+ sys/gnu/dts/arm/rk3288-veyron-minnie.dts           |   23 +-
+ sys/gnu/dts/arm/rk3288-veyron-pinky.dts            |   22 +
+ sys/gnu/dts/arm/rk3288-veyron-speedy.dts           |   21 +
+ sys/gnu/dts/arm/rk3288-veyron-tiger.dts            |    2 +-
+ sys/gnu/dts/arm/rk3288-veyron.dtsi                 |   59 +-
+ sys/gnu/dts/arm/rk3288.dtsi                        |    8 +-
+ sys/gnu/dts/arm/rk3xxx.dtsi                        |    6 +-
+ sys/gnu/dts/arm/rockchip-radxa-dalang-carrier.dtsi |   81 +
+ sys/gnu/dts/arm/rv1108.dtsi                        |    6 +-
+ sys/gnu/dts/arm/s3c2416-smdk2416.dts               |    2 +-
+ sys/gnu/dts/arm/s3c6410-smdk6410.dts               |    4 +-
+ sys/gnu/dts/arm/sam9x60.dtsi                       |  691 ++++
+ sys/gnu/dts/arm/sama5d2.dtsi                       |   10 +-
+ sys/gnu/dts/arm/sama5d3.dtsi                       |   28 +-
+ sys/gnu/dts/arm/sama5d3_can.dtsi                   |    4 +-
+ sys/gnu/dts/arm/sama5d3_tcb1.dtsi                  |    1 +
+ sys/gnu/dts/arm/sama5d3_uart.dtsi                  |    4 +-
+ sys/gnu/dts/arm/sh73a0.dtsi                        |  139 +-
+ sys/gnu/dts/arm/ste-ab8500.dtsi                    |  102 +-
+ sys/gnu/dts/arm/ste-ab8505.dtsi                    |  275 ++
+ sys/gnu/dts/arm/ste-db8500.dtsi                    |   15 +
+ sys/gnu/dts/arm/ste-db8520.dtsi                    |   15 +
+ sys/gnu/dts/arm/ste-dbx5x0-pinctrl.dtsi            |  632 ++++
+ sys/gnu/dts/arm/ste-dbx5x0.dtsi                    |   75 +-
+ sys/gnu/dts/arm/ste-href-ab8505.dtsi               |  234 --
+ sys/gnu/dts/arm/ste-href-family-pinctrl.dtsi       |  532 +--
+ sys/gnu/dts/arm/ste-href-tvk1281618-r2.dtsi        |   79 +
+ sys/gnu/dts/arm/ste-href-tvk1281618-r3.dtsi        |   58 +
+ sys/gnu/dts/arm/ste-href-tvk1281618.dtsi           |   71 +-
+ sys/gnu/dts/arm/ste-href.dtsi                      |   67 +-
+ sys/gnu/dts/arm/ste-href520-tvk.dts                |   22 +
+ sys/gnu/dts/arm/ste-hrefprev60-stuib.dts           |   10 +-
+ sys/gnu/dts/arm/ste-hrefprev60-tvk.dts             |   10 +-
+ sys/gnu/dts/arm/ste-hrefprev60.dtsi                |    2 +-
+ sys/gnu/dts/arm/ste-hrefv60plus-stuib.dts          |   10 +-
+ sys/gnu/dts/arm/ste-hrefv60plus-tvk.dts            |   10 +-
+ sys/gnu/dts/arm/ste-hrefv60plus.dtsi               |    1 -
+ sys/gnu/dts/arm/ste-nomadik-pinctrl.dtsi           |    5 +
+ sys/gnu/dts/arm/ste-snowball.dts                   |   70 +-
+ sys/gnu/dts/arm/ste-ux500-samsung-golden.dts       |  455 +++
+ sys/gnu/dts/arm/stih410-b2260.dts                  |    3 -
+ sys/gnu/dts/arm/stihxxx-b2120.dtsi                 |    2 +-
+ sys/gnu/dts/arm/stm32429i-eval.dts                 |    8 +
+ sys/gnu/dts/arm/stm32f4-pinctrl.dtsi               |   28 +-
+ sys/gnu/dts/arm/stm32f429.dtsi                     |    4 +-
+ sys/gnu/dts/arm/stm32f469-disco.dts                |    8 +
+ sys/gnu/dts/arm/stm32f7-pinctrl.dtsi               |   22 +-
+ sys/gnu/dts/arm/stm32f746.dtsi                     |    5 +-
+ sys/gnu/dts/arm/stm32h743.dtsi                     |    6 +-
+ sys/gnu/dts/arm/stm32mp15-pinctrl.dtsi             | 1092 ++++++
+ .../dts/arm/{stm32mp157c.dtsi => stm32mp151.dtsi}  |  301 +-
+ sys/gnu/dts/arm/stm32mp153.dtsi                    |   45 +
+ sys/gnu/dts/arm/stm32mp157-pinctrl.dtsi            |  953 ------
+ sys/gnu/dts/arm/stm32mp157.dtsi                    |   31 +
+ sys/gnu/dts/arm/stm32mp157a-avenger96.dts          |    5 +-
+ sys/gnu/dts/arm/stm32mp157a-dk1.dts                |  498 +--
+ sys/gnu/dts/arm/stm32mp157c-dk2.dts                |   15 +-
+ sys/gnu/dts/arm/stm32mp157c-ed1.dts                |   38 +-
+ sys/gnu/dts/arm/stm32mp157c-ev1.dts                |   22 +-
+ sys/gnu/dts/arm/stm32mp157xaa-pinctrl.dtsi         |   90 -
+ sys/gnu/dts/arm/stm32mp157xab-pinctrl.dtsi         |   62 -
+ sys/gnu/dts/arm/stm32mp157xac-pinctrl.dtsi         |   78 -
+ sys/gnu/dts/arm/stm32mp157xad-pinctrl.dtsi         |   62 -
+ sys/gnu/dts/arm/stm32mp15xc.dtsi                   |   18 +
+ sys/gnu/dts/arm/stm32mp15xx-dkx.dtsi               |  625 ++++
+ sys/gnu/dts/arm/stm32mp15xxaa-pinctrl.dtsi         |   85 +
+ sys/gnu/dts/arm/stm32mp15xxab-pinctrl.dtsi         |   57 +
+ sys/gnu/dts/arm/stm32mp15xxac-pinctrl.dtsi         |   73 +
+ sys/gnu/dts/arm/stm32mp15xxad-pinctrl.dtsi         |   57 +
+ sys/gnu/dts/arm/sun4i-a10.dtsi                     |   35 +
+ sys/gnu/dts/arm/sun5i.dtsi                         |    3 +-
+ sys/gnu/dts/arm/sun6i-a31.dtsi                     |   25 +-
+ sys/gnu/dts/arm/sun7i-a20.dtsi                     |   36 +
+ sys/gnu/dts/arm/sun8i-a23-a33.dtsi                 |   13 +-
+ sys/gnu/dts/arm/sun8i-a33.dtsi                     |    2 +-
+ sys/gnu/dts/arm/sun8i-a83t-tbs-a711.dts            |    7 +-
+ sys/gnu/dts/arm/sun8i-a83t.dtsi                    |   44 +-
+ sys/gnu/dts/arm/sun8i-h3-beelink-x2.dts            |    1 +
+ .../arm/sun8i-h3-emlid-neutis-n5h3-devboard.dts    |   72 +
+ sys/gnu/dts/arm/sun8i-h3-emlid-neutis-n5h3.dtsi    |   11 +
+ sys/gnu/dts/arm/sun8i-h3-nanopi-duo2.dts           |    3 +-
+ sys/gnu/dts/arm/sun8i-h3.dtsi                      |   35 +-
+ sys/gnu/dts/arm/sun8i-r40.dtsi                     |  193 +-
+ sys/gnu/dts/arm/sun8i-v3s.dtsi                     |    2 -
+ sys/gnu/dts/arm/sun9i-a80.dtsi                     |   42 +-
+ sys/gnu/dts/arm/sunxi-h3-h5-emlid-neutis.dtsi      |  170 +
+ sys/gnu/dts/arm/sunxi-h3-h5.dtsi                   |   13 +-
+ sys/gnu/dts/arm/sunxi-libretech-all-h3-it.dtsi     |  180 +
+ sys/gnu/dts/arm/tegra124-apalis-emc.dtsi           |    2 +-
+ sys/gnu/dts/arm/tegra124-jetson-tk1-emc.dtsi       |    2 +-
+ sys/gnu/dts/arm/tegra124-nyan-big-emc.dtsi         |    2 +-
+ sys/gnu/dts/arm/tegra124-nyan-blaze-emc.dtsi       |    2 +-
+ sys/gnu/dts/arm/tegra124.dtsi                      |    4 +-
+ sys/gnu/dts/arm/tegra20-paz00.dts                  |   46 +
+ sys/gnu/dts/arm/uniphier-ld4.dtsi                  |    3 +-
+ sys/gnu/dts/arm/uniphier-pinctrl.dtsi              |   10 +
+ sys/gnu/dts/arm/uniphier-pro4.dtsi                 |    3 +-
+ sys/gnu/dts/arm/uniphier-pro5.dtsi                 |    3 +-
+ sys/gnu/dts/arm/uniphier-pxs2.dtsi                 |    3 +-
+ sys/gnu/dts/arm/uniphier-sld8.dtsi                 |    3 +-
+ sys/gnu/dts/arm/vf610-zii-dev-rev-b.dts            |   10 -
+ sys/gnu/dts/arm/vf610-zii-scu4-aib.dts             |   29 +-
+ sys/gnu/dts/arm/zynq-7000.dtsi                     |  135 +
+ sys/gnu/dts/arm64/allwinner/axp803.dtsi            |   43 +-
+ .../arm64/allwinner/sun50i-a64-amarula-relic.dts   |   23 +-
+ .../arm64/allwinner/sun50i-a64-bananapi-m64.dts    |   60 +-
+ .../dts/arm64/allwinner/sun50i-a64-cpu-opp.dtsi    |   75 +
+ .../dts/arm64/allwinner/sun50i-a64-nanopi-a64.dts  |   60 +-
+ .../allwinner/sun50i-a64-oceanic-5205-5inmfd.dts   |    8 +-
+ .../arm64/allwinner/sun50i-a64-olinuxino-emmc.dts  |   10 +-
+ .../dts/arm64/allwinner/sun50i-a64-olinuxino.dts   |   77 +-
+ .../arm64/allwinner/sun50i-a64-orangepi-win.dts    |   62 +-
+ .../dts/arm64/allwinner/sun50i-a64-pine64-lts.dts  |    7 +-
+ .../dts/arm64/allwinner/sun50i-a64-pine64-plus.dts |   43 +-
+ sys/gnu/dts/arm64/allwinner/sun50i-a64-pine64.dts  |   60 +-
+ .../dts/arm64/allwinner/sun50i-a64-pinebook.dts    |   26 +-
+ .../allwinner/sun50i-a64-sopine-baseboard.dts      |   48 +-
+ sys/gnu/dts/arm64/allwinner/sun50i-a64-sopine.dtsi |   65 +-
+ sys/gnu/dts/arm64/allwinner/sun50i-a64-teres-i.dts |   26 +-
+ sys/gnu/dts/arm64/allwinner/sun50i-a64.dtsi        |  185 +-
+ .../sun50i-h5-emlid-neutis-n5-devboard.dts         |   88 +-
+ .../arm64/allwinner/sun50i-h5-emlid-neutis-n5.dtsi |   68 +-
+ .../allwinner/sun50i-h5-libretech-all-h3-cc.dts    |    6 +-
+ .../allwinner/sun50i-h5-libretech-all-h3-it.dts    |   11 +
+ .../allwinner/sun50i-h5-libretech-all-h5-cc.dts    |   61 +
+ .../arm64/allwinner/sun50i-h5-nanopi-neo-plus2.dts |   45 +-
+ .../dts/arm64/allwinner/sun50i-h5-nanopi-neo2.dts  |   43 +-
+ .../dts/arm64/allwinner/sun50i-h5-orangepi-pc2.dts |   43 +-
+ .../arm64/allwinner/sun50i-h5-orangepi-prime.dts   |   48 +-
+ .../allwinner/sun50i-h5-orangepi-zero-plus.dts     |    9 +-
+ .../allwinner/sun50i-h5-orangepi-zero-plus2.dts    |   43 +-
+ sys/gnu/dts/arm64/allwinner/sun50i-h5.dtsi         |   85 +-
+ .../dts/arm64/allwinner/sun50i-h6-beelink-gs1.dts  |   14 +-
+ .../dts/arm64/allwinner/sun50i-h6-orangepi-3.dts   |   10 +-
+ .../arm64/allwinner/sun50i-h6-orangepi-lite2.dts   |    6 +-
+ .../allwinner/sun50i-h6-orangepi-one-plus.dts      |    8 +-
+ .../dts/arm64/allwinner/sun50i-h6-orangepi.dtsi    |    8 +-
+ .../arm64/allwinner/sun50i-h6-pine-h64-model-b.dts |   21 +
+ sys/gnu/dts/arm64/allwinner/sun50i-h6-pine-h64.dts |   23 +-
+ .../dts/arm64/allwinner/sun50i-h6-tanix-tx6.dts    |   15 +-
+ sys/gnu/dts/arm64/allwinner/sun50i-h6.dtsi         |   59 +-
+ .../arm64/altera/socfpga_stratix10_socdk_nand.dts  |  223 ++
+ sys/gnu/dts/arm64/amlogic/meson-a1.dtsi            |   25 +
+ sys/gnu/dts/arm64/amlogic/meson-axg.dtsi           |    6 +
+ sys/gnu/dts/arm64/amlogic/meson-g12-common.dtsi    |   23 +
+ sys/gnu/dts/arm64/amlogic/meson-g12.dtsi           |    6 +
+ .../dts/arm64/amlogic/meson-gx-libretech-pc.dtsi   |  375 +++
+ sys/gnu/dts/arm64/amlogic/meson-gxbb-kii-pro.dts   |   78 +
+ .../arm64/amlogic/meson-gxl-s905d-libretech-pc.dts |   16 +
+ sys/gnu/dts/arm64/amlogic/meson-gxl.dtsi           |    9 +
+ .../dts/arm64/amlogic/meson-gxm-khadas-vim2.dts    |    2 +-
+ .../arm64/amlogic/meson-gxm-s912-libretech-pc.dts  |   62 +
+ sys/gnu/dts/arm64/amlogic/meson-sm1-sei610.dts     |    1 +
+ sys/gnu/dts/arm64/amlogic/meson-sm1.dtsi           |   12 +
+ sys/gnu/dts/arm64/arm/fvp-base-revc.dts            |    8 +-
+ sys/gnu/dts/arm64/bitmain/bm1880-sophon-edge.dts   |    9 -
+ sys/gnu/dts/arm64/bitmain/bm1880.dtsi              |   28 +
+ .../dts/arm64/exynos/exynos5433-tm2-common.dtsi    |    2 +-
+ sys/gnu/dts/arm64/exynos/exynos5433-tm2.dts        |    2 +-
+ sys/gnu/dts/arm64/exynos/exynos5433-tm2e.dts       |    2 +-
+ sys/gnu/dts/arm64/exynos/exynos7-espresso.dts      |    4 +-
+ sys/gnu/dts/arm64/exynos/exynos7.dtsi              |    2 +-
+ sys/gnu/dts/arm64/freescale/fsl-ls1028a-qds.dts    |   15 +
+ sys/gnu/dts/arm64/freescale/fsl-ls1028a-rdb.dts    |   17 +
+ sys/gnu/dts/arm64/freescale/fsl-ls1028a.dtsi       |   65 +-
+ sys/gnu/dts/arm64/freescale/fsl-ls1043-post.dtsi   |    2 +
+ sys/gnu/dts/arm64/freescale/fsl-ls1043a-rdb.dts    |    4 +-
+ sys/gnu/dts/arm64/freescale/fsl-ls1046a-frwy.dts   |   14 +
+ sys/gnu/dts/arm64/freescale/fsl-ls1046a-rdb.dts    |   20 +-
+ sys/gnu/dts/arm64/freescale/fsl-ls1088a-qds.dts    |   24 +
+ sys/gnu/dts/arm64/freescale/fsl-ls1088a-rdb.dts    |   24 +
+ sys/gnu/dts/arm64/freescale/fsl-ls1088a.dtsi       |   13 +
+ sys/gnu/dts/arm64/freescale/fsl-ls208xa-rdb.dtsi   |   10 +-
+ sys/gnu/dts/arm64/freescale/fsl-ls208xa.dtsi       |    6 +-
+ sys/gnu/dts/arm64/freescale/fsl-lx2160a-cex7.dtsi  |  127 +
+ .../arm64/freescale/fsl-lx2160a-clearfog-cx.dts    |   15 +
+ .../arm64/freescale/fsl-lx2160a-clearfog-itx.dtsi  |   57 +
+ .../dts/arm64/freescale/fsl-lx2160a-honeycomb.dts  |   15 +
+ sys/gnu/dts/arm64/freescale/fsl-lx2160a-rdb.dts    |   28 +
+ sys/gnu/dts/arm64/freescale/fsl-lx2160a.dtsi       |   21 +
+ sys/gnu/dts/arm64/freescale/imx8mm-evk.dts         |   25 +
+ sys/gnu/dts/arm64/freescale/imx8mm-pinfunc.h       |   16 +
+ sys/gnu/dts/arm64/freescale/imx8mm.dtsi            |   55 +-
+ sys/gnu/dts/arm64/freescale/imx8mn-ddr4-evk.dts    |   20 +
+ sys/gnu/dts/arm64/freescale/imx8mn-evk.dtsi        |   70 +
+ sys/gnu/dts/arm64/freescale/imx8mn.dtsi            |   61 +-
+ sys/gnu/dts/arm64/freescale/imx8mq-evk.dts         |   27 +
+ .../arm64/freescale/imx8mq-hummingboard-pulse.dts  |    6 +
+ .../dts/arm64/freescale/imx8mq-librem5-devkit.dts  |    7 +
+ sys/gnu/dts/arm64/freescale/imx8mq-phanbell.dts    |  376 +++
+ sys/gnu/dts/arm64/freescale/imx8mq-sr-som.dtsi     |    6 +
+ sys/gnu/dts/arm64/freescale/imx8mq-thor96.dts      |  581 ++++
+ .../dts/arm64/freescale/imx8mq-zii-ultra-rmb3.dts  |    2 +-
+ .../dts/arm64/freescale/imx8mq-zii-ultra-zest.dts  |    2 +-
+ sys/gnu/dts/arm64/freescale/imx8mq.dtsi            |  107 +-
+ sys/gnu/dts/arm64/freescale/imx8qxp-mek.dts        |    5 -
+ sys/gnu/dts/arm64/freescale/imx8qxp.dtsi           |   12 -
+ sys/gnu/dts/arm64/hisilicon/hi3798cv200-poplar.dts |    1 +
+ sys/gnu/dts/arm64/hisilicon/hi3798cv200.dtsi       |    2 +-
+ sys/gnu/dts/arm64/intel/socfpga_agilex.dtsi        |   82 +-
+ .../dts/arm64/intel/socfpga_agilex_socdk_nand.dts  |  135 +
+ sys/gnu/dts/arm64/marvell/armada-3720-uDPU.dts     |    8 +
+ .../arm64/marvell/armada-8040-clearfog-gt-8k.dts   |    2 +
+ sys/gnu/dts/arm64/mediatek/mt8173.dtsi             |   18 +
+ sys/gnu/dts/arm64/mediatek/mt8183.dtsi             |   11 +
+ sys/gnu/dts/arm64/nvidia/tegra132.dtsi             |    4 +-
+ sys/gnu/dts/arm64/nvidia/tegra186-p3310.dtsi       |    1 +
+ sys/gnu/dts/arm64/nvidia/tegra186.dtsi             |   34 +-
+ sys/gnu/dts/arm64/nvidia/tegra194-p2888.dtsi       |    4 +
+ sys/gnu/dts/arm64/nvidia/tegra194-p2972-0000.dts   |    2 +-
+ sys/gnu/dts/arm64/nvidia/tegra194.dtsi             |   56 +
+ sys/gnu/dts/arm64/nvidia/tegra210-p3450-0000.dts   |   73 +
+ sys/gnu/dts/arm64/qcom/apq8016-sbc-pmic-pins.dtsi  |   19 +
+ sys/gnu/dts/arm64/qcom/apq8016-sbc.dtsi            |   11 +-
+ sys/gnu/dts/arm64/qcom/apq8096-db820c-pins.dtsi    |  109 -
+ .../dts/arm64/qcom/apq8096-db820c-pmic-pins.dtsi   |   92 -
+ sys/gnu/dts/arm64/qcom/apq8096-db820c.dtsi         | 1408 +++++---
+ sys/gnu/dts/arm64/qcom/apq8096-ifc6640.dts         |  385 +++
+ sys/gnu/dts/arm64/qcom/msm8916.dtsi                |   62 +-
+ sys/gnu/dts/arm64/qcom/msm8996.dtsi                | 3530 ++++++++++----------
+ sys/gnu/dts/arm64/qcom/msm8998-clamshell.dtsi      |   49 +
+ sys/gnu/dts/arm64/qcom/msm8998-mtp.dtsi            |   41 +
+ sys/gnu/dts/arm64/qcom/msm8998-pins.dtsi           |   25 +-
+ sys/gnu/dts/arm64/qcom/msm8998.dtsi                |  262 +-
+ sys/gnu/dts/arm64/qcom/pm6150.dtsi                 |   72 +
+ sys/gnu/dts/arm64/qcom/pm6150l.dtsi                |   31 +
+ sys/gnu/dts/arm64/qcom/pm8004.dtsi                 |   10 +-
+ sys/gnu/dts/arm64/qcom/pm8916.dtsi                 |    6 +
+ sys/gnu/dts/arm64/qcom/pm8994.dtsi                 |    4 +
+ sys/gnu/dts/arm64/qcom/qcs404-evb.dtsi             |    1 +
+ sys/gnu/dts/arm64/qcom/qcs404.dtsi                 |  160 +-
+ sys/gnu/dts/arm64/qcom/sc7180-idp.dts              |  430 +++
+ sys/gnu/dts/arm64/qcom/sc7180.dtsi                 | 2187 ++++++++++++
+ sys/gnu/dts/arm64/qcom/sdm845-cheza.dtsi           |   15 +-
+ sys/gnu/dts/arm64/qcom/sdm845-db845c.dts           |   18 +-
+ sys/gnu/dts/arm64/qcom/sdm845-mtp.dts              |    7 +
+ sys/gnu/dts/arm64/qcom/sdm845.dtsi                 |   32 +-
+ sys/gnu/dts/arm64/qcom/sdm850-lenovo-yoga-c630.dts |    7 +
+ sys/gnu/dts/arm64/qcom/sm8150-mtp.dts              |   35 +
+ sys/gnu/dts/arm64/qcom/sm8150.dtsi                 |  391 ++-
+ sys/gnu/dts/arm64/renesas/hihope-common.dtsi       |    3 +-
+ sys/gnu/dts/arm64/renesas/r8a774a1.dtsi            |  206 +-
+ sys/gnu/dts/arm64/renesas/r8a774b1.dtsi            |  206 +-
+ sys/gnu/dts/arm64/renesas/r8a774c0-cat874.dts      |    3 +-
+ .../arm64/renesas/r8a774c0-ek874-idk-2121wr.dts    |  116 +
+ sys/gnu/dts/arm64/renesas/r8a774c0.dtsi            |  164 +-
+ ...-es1-salvator-x.dts => r8a77950-salvator-x.dts} |    4 +-
+ ...{r8a7795-h3ulcb-kf.dts => r8a77950-ulcb-kf.dts} |    4 +-
+ .../{r8a7795-es1-h3ulcb.dts => r8a77950-ulcb.dts}  |    4 +-
+ .../renesas/{r8a7795-es1.dtsi => r8a77950.dtsi}    |    4 +-
+ ...7795-salvator-x.dts => r8a77951-salvator-x.dts} |    4 +-
+ ...95-salvator-xs.dts => r8a77951-salvator-xs.dts} |    8 +-
+ ...7795-es1-h3ulcb-kf.dts => r8a77951-ulcb-kf.dts} |    4 +-
+ .../{r8a7795-h3ulcb.dts => r8a77951-ulcb.dts}      |    4 +-
+ .../arm64/renesas/{r8a7795.dtsi => r8a77951.dtsi}  |  216 +-
+ ...7796-salvator-x.dts => r8a77960-salvator-x.dts} |    4 +-
+ ...96-salvator-xs.dts => r8a77960-salvator-xs.dts} |    4 +-
+ ...{r8a7796-m3ulcb-kf.dts => r8a77960-ulcb-kf.dts} |    4 +-
+ .../{r8a7796-m3ulcb.dts => r8a77960-ulcb.dts}      |    4 +-
+ .../arm64/renesas/{r8a7796.dtsi => r8a77960.dtsi}  |  206 +-
+ sys/gnu/dts/arm64/renesas/r8a77961.dtsi            |  390 ++-
+ ...8a77965-m3nulcb-kf.dts => r8a77965-ulcb-kf.dts} |    2 +-
+ .../{r8a77965-m3nulcb.dts => r8a77965-ulcb.dts}    |    0
+ sys/gnu/dts/arm64/renesas/r8a77965.dtsi            |  206 +-
+ sys/gnu/dts/arm64/renesas/r8a77970.dtsi            |   52 +-
+ sys/gnu/dts/arm64/renesas/r8a77980.dtsi            |   96 +-
+ sys/gnu/dts/arm64/renesas/r8a77990-ebisu.dts       |    7 +-
+ sys/gnu/dts/arm64/renesas/r8a77990.dtsi            |  164 +-
+ sys/gnu/dts/arm64/renesas/r8a77995.dtsi            |   74 +-
+ sys/gnu/dts/arm64/renesas/salvator-common.dtsi     |    6 +-
+ sys/gnu/dts/arm64/renesas/ulcb.dtsi                |    3 +-
+ sys/gnu/dts/arm64/rockchip/px30-evb.dts            |   43 +
+ sys/gnu/dts/arm64/rockchip/px30.dtsi               |  199 +-
+ sys/gnu/dts/arm64/rockchip/rk3308.dtsi             |   12 +-
+ sys/gnu/dts/arm64/rockchip/rk3328.dtsi             |   23 +-
+ sys/gnu/dts/arm64/rockchip/rk3368-lion-haikou.dts  |    6 -
+ sys/gnu/dts/arm64/rockchip/rk3368.dtsi             |    6 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-firefly.dts      |    6 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-gru-bob.dts      |    2 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-gru-kevin.dts    |    2 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-hugsun-x99.dts   |    2 -
+ sys/gnu/dts/arm64/rockchip/rk3399-khadas-edge.dtsi |    3 +
+ sys/gnu/dts/arm64/rockchip/rk3399-nanopc-t4.dts    |   28 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-nanopi4.dtsi     |   27 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-orangepi.dts     |    3 +
+ .../dts/arm64/rockchip/rk3399-roc-pc-mezzanine.dts |   25 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-roc-pc.dtsi      |   97 +-
+ sys/gnu/dts/arm64/rockchip/rk3399-rock-pi-4.dts    |   26 +
+ sys/gnu/dts/arm64/rockchip/rk3399-rock960.dtsi     |   11 +
+ sys/gnu/dts/arm64/rockchip/rk3399-rockpro64-v2.dts |   30 +
+ sys/gnu/dts/arm64/rockchip/rk3399-rockpro64.dts    |  759 +----
+ sys/gnu/dts/arm64/rockchip/rk3399-rockpro64.dtsi   |  797 +++++
+ .../arm64/rockchip/rk3399-sapphire-excavator.dts   |    2 +-
+ sys/gnu/dts/arm64/rockchip/rk3399.dtsi             |   13 +-
+ .../dts/arm64/rockchip/rk3399pro-rock-pi-n10.dts   |   17 +
+ .../dts/arm64/rockchip/rk3399pro-vmarc-som.dtsi    |  333 ++
+ sys/gnu/dts/arm64/socionext/uniphier-ld11.dtsi     |    3 +-
+ sys/gnu/dts/arm64/socionext/uniphier-ld20.dtsi     |    3 +-
+ sys/gnu/dts/arm64/socionext/uniphier-pxs3.dtsi     |    3 +-
+ sys/gnu/dts/arm64/sprd/sc9863a.dtsi                |  523 +++
+ sys/gnu/dts/arm64/sprd/sharkl3.dtsi                |   78 +
+ sys/gnu/dts/arm64/sprd/sp9863a-1h10.dts            |   39 +
+ sys/gnu/dts/arm64/ti/k3-am65-main.dtsi             |  144 +-
+ sys/gnu/dts/arm64/ti/k3-am65-mcu.dtsi              |   92 +
+ sys/gnu/dts/arm64/ti/k3-am65.dtsi                  |   13 +-
+ sys/gnu/dts/arm64/ti/k3-am654-base-board.dts       |   80 +
+ .../dts/arm64/ti/k3-j721e-common-proc-board.dts    |  150 +
+ sys/gnu/dts/arm64/ti/k3-j721e-main.dtsi            |  411 ++-
+ sys/gnu/dts/arm64/ti/k3-j721e-mcu-wakeup.dtsi      |  149 +
+ sys/gnu/dts/arm64/ti/k3-j721e-som-p0.dtsi          |   45 +
+ sys/gnu/dts/arm64/ti/k3-j721e.dtsi                 |    2 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-clk-ccf.dtsi       |  222 ++
+ sys/gnu/dts/arm64/xilinx/zynqmp-clk.dtsi           |  213 --
+ sys/gnu/dts/arm64/xilinx/zynqmp-zc1232-revA.dts    |    4 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zc1254-revA.dts    |    4 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zc1275-revA.dts    |    4 +-
+ .../dts/arm64/xilinx/zynqmp-zc1751-xm015-dc1.dts   |    7 +-
+ .../dts/arm64/xilinx/zynqmp-zc1751-xm016-dc2.dts   |   11 +-
+ .../dts/arm64/xilinx/zynqmp-zc1751-xm017-dc3.dts   |    6 +-
+ .../dts/arm64/xilinx/zynqmp-zc1751-xm018-dc4.dts   |    4 +-
+ .../dts/arm64/xilinx/zynqmp-zc1751-xm019-dc5.dts   |    6 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zcu100-revC.dts    |   17 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zcu102-revA.dts    |  197 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zcu102-revB.dts    |    4 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zcu104-revA.dts    |   11 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zcu106-revA.dts    |  154 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp-zcu111-revA.dts    |  124 +-
+ sys/gnu/dts/arm64/xilinx/zynqmp.dtsi               |   74 +-
+ sys/gnu/dts/include/dt-bindings/clock/dra7.h       |   23 +
+ .../dts/include/dt-bindings/clock/imx8mn-clock.h   |    4 +-
+ .../dts/include/dt-bindings/clock/imx8mp-clock.h   |  300 ++
+ .../dts/include/dt-bindings/clock/marvell,mmp2.h   |    2 +
+ .../include/dt-bindings/clock/meson8-ddr-clkc.h    |    4 +
+ sys/gnu/dts/include/dt-bindings/clock/omap4.h      |   11 +
+ sys/gnu/dts/include/dt-bindings/clock/omap5.h      |   12 +
+ .../include/dt-bindings/clock/qcom,dispcc-sc7180.h |   46 +
+ .../include/dt-bindings/clock/qcom,dispcc-sdm845.h |   13 +-
+ .../include/dt-bindings/clock/qcom,gcc-ipq6018.h   |  262 ++
+ .../include/dt-bindings/clock/qcom,gcc-msm8998.h   |    1 +
+ .../include/dt-bindings/clock/qcom,gpucc-sc7180.h  |   21 +
+ .../include/dt-bindings/clock/qcom,mmcc-msm8998.h  |  210 ++
+ .../dt-bindings/clock/qcom,videocc-sc7180.h        |   23 +
+ .../dts/include/dt-bindings/clock/sun50i-a64-ccu.h |    1 +
+ .../dts/include/dt-bindings/clock/sun6i-a31-ccu.h  |    2 +
+ .../include/dt-bindings/clock/sun8i-a23-a33-ccu.h  |    2 +
+ .../dts/include/dt-bindings/clock/sun8i-r40-ccu.h  |    2 +-
+ .../dt-bindings/{clk => clock}/ti-dra7-atl.h       |    0
+ .../include/dt-bindings/clock/xlnx-versal-clk.h    |  123 +
+ sys/gnu/dts/include/dt-bindings/dma/x1830-dma.h    |   39 +
+ .../include/dt-bindings/input/linux-event-codes.h  |    3 +
+ .../dt-bindings/interconnect/qcom,msm8916.h        |  100 +
+ .../interrupt-controller/aspeed-scu-ic.h           |   23 +
+ .../dts/include/dt-bindings/memory/tegra186-mc.h   |  139 +
+ .../dts/include/dt-bindings/memory/tegra194-mc.h   |  410 +++
+ sys/gnu/dts/include/dt-bindings/phy/phy.h          |    1 +
+ .../dts/include/dt-bindings/power/mt6765-power.h   |   14 +
+ sys/gnu/dts/include/dt-bindings/power/qcom-rpmpd.h |   24 +
+ .../dt-bindings/reset-controller/mt2712-resets.h   |   22 +
+ .../dt-bindings/reset-controller/mt8183-resets.h   |   17 +
+ .../dt-bindings/reset/nuvoton,npcm7xx-reset.h      |   91 +
+ .../include/dt-bindings/reset/qcom,gcc-ipq6018.h   |  157 +
+ .../include/dt-bindings/thermal/thermal_exynos.h   |    2 +-
+ sys/gnu/dts/riscv/sifive/fu540-c000.dtsi           |   15 +-
+ sys/gnu/dts/riscv/sifive/hifive-unleashed-a00.dts  |    9 +
+ sys/i386/linux/linux.h                             |    9 +-
+ sys/kern/init_sysent.c                             |    2 +-
+ sys/kern/kern_descrip.c                            |    6 +-
+ sys/kern/kern_time.c                               |    9 +-
+ sys/kern/syscalls.c                                |    2 +-
+ sys/kern/syscalls.master                           |    2 +-
+ sys/kern/systrace_args.c                           |   22 -
+ sys/kern/sysv_sem.c                                |    5 +-
+ sys/kern/sysv_shm.c                                |    5 +-
+ sys/kern/uipc_socket.c                             |   35 +-
+ sys/modules/dtb/allwinner/Makefile                 |    7 +-
+ sys/netinet/tcp_timer.c                            |   50 +-
+ sys/netinet/tcp_var.h                              |    2 +
+ sys/sys/abi_compat.h                               |   77 +
+ sys/sys/socketvar.h                                |    4 +
+ sys/sys/syscall.h                                  |    2 +-
+ sys/sys/syscall.mk                                 |    2 +-
+ sys/sys/sysproto.h                                 |   10 +-
+ tools/build/depend-cleanup.sh                      |    2 +
+ 635 files changed, 34030 insertions(+), 11326 deletions(-)
+ create mode 100644 lib/libc/sys/closefrom.c
+ create mode 100644 sys/dev/mmc/mmc_fdt_helpers.c
+ create mode 100644 sys/dev/mmc/mmc_fdt_helpers.h
+ delete mode 100644 sys/dts/arm/overlays/sun8i-h3-sid.dtso
+ delete mode 100644 sys/dts/arm/overlays/sun8i-h3-ths.dtso
+ delete mode 100644 sys/dts/arm64/overlays/sun50i-a64-sid.dtso
+ delete mode 100644 sys/dts/arm64/overlays/sun50i-a64-ths.dtso
+ delete mode 100644 sys/dts/arm64/overlays/sun50i-h5-sid.dtso
+ delete mode 100644 sys/dts/arm64/overlays/sun50i-h5-ths.dtso
+ create mode 100644 sys/gnu/dts/arm/am3703.dtsi
+ create mode 100644 sys/gnu/dts/arm/am3715.dtsi
+ create mode 100644 sys/gnu/dts/arm/armada-385-clearfog-gtr-l8.dts
+ create mode 100644 sys/gnu/dts/arm/armada-385-clearfog-gtr-s4.dts
+ create mode 100644 sys/gnu/dts/arm/armada-385-clearfog-gtr.dtsi
+ create mode 100644 sys/gnu/dts/arm/at91-kizboxmini-base.dts
+ rename sys/gnu/dts/arm/{at91-kizboxmini.dts => at91-kizboxmini-common.dtsi} (51%)
+ create mode 100644 sys/gnu/dts/arm/at91-kizboxmini-mb.dts
+ create mode 100644 sys/gnu/dts/arm/at91-kizboxmini-rd.dts
+ create mode 100644 sys/gnu/dts/arm/at91-sam9x60ek.dts
+ create mode 100644 sys/gnu/dts/arm/at91-sama5d27_wlsom1.dtsi
+ create mode 100644 sys/gnu/dts/arm/at91-sama5d27_wlsom1_ek.dts
+ create mode 100644 sys/gnu/dts/arm/at91-smartkiz.dts
+ create mode 100644 sys/gnu/dts/arm/dm3725.dtsi
+ create mode 100644 sys/gnu/dts/arm/imx6dl-gw5907.dts
+ create mode 100644 sys/gnu/dts/arm/imx6dl-gw5910.dts
+ create mode 100644 sys/gnu/dts/arm/imx6dl-gw5912.dts
+ create mode 100644 sys/gnu/dts/arm/imx6dl-gw5913.dts
+ create mode 100644 sys/gnu/dts/arm/imx6q-gw5907.dts
+ create mode 100644 sys/gnu/dts/arm/imx6q-gw5910.dts
+ create mode 100644 sys/gnu/dts/arm/imx6q-gw5912.dts
+ create mode 100644 sys/gnu/dts/arm/imx6q-gw5913.dts
+ create mode 100644 sys/gnu/dts/arm/imx6qdl-gw5907.dtsi
+ create mode 100644 sys/gnu/dts/arm/imx6qdl-gw5910.dtsi
+ create mode 100644 sys/gnu/dts/arm/imx6qdl-gw5912.dtsi
+ create mode 100644 sys/gnu/dts/arm/imx6qdl-gw5913.dtsi
+ create mode 100644 sys/gnu/dts/arm/imx6sl-tolino-shine3.dts
+ create mode 100644 sys/gnu/dts/arm/imx7ulp-com.dts
+ create mode 100644 sys/gnu/dts/arm/omap3-echo.dts
+ create mode 100644 sys/gnu/dts/arm/rk3288-veyron-broadcom-bluetooth.dtsi
+ create mode 100644 sys/gnu/dts/arm/rockchip-radxa-dalang-carrier.dtsi
+ create mode 100644 sys/gnu/dts/arm/sam9x60.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-ab8505.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-db8500.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-db8520.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-dbx5x0-pinctrl.dtsi
+ delete mode 100644 sys/gnu/dts/arm/ste-href-ab8505.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-href-tvk1281618-r2.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-href-tvk1281618-r3.dtsi
+ create mode 100644 sys/gnu/dts/arm/ste-href520-tvk.dts
+ create mode 100644 sys/gnu/dts/arm/ste-ux500-samsung-golden.dts
+ create mode 100644 sys/gnu/dts/arm/stm32mp15-pinctrl.dtsi
+ rename sys/gnu/dts/arm/{stm32mp157c.dtsi => stm32mp151.dtsi} (87%)
+ create mode 100644 sys/gnu/dts/arm/stm32mp153.dtsi
+ delete mode 100644 sys/gnu/dts/arm/stm32mp157-pinctrl.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp157.dtsi
+ delete mode 100644 sys/gnu/dts/arm/stm32mp157xaa-pinctrl.dtsi
+ delete mode 100644 sys/gnu/dts/arm/stm32mp157xab-pinctrl.dtsi
+ delete mode 100644 sys/gnu/dts/arm/stm32mp157xac-pinctrl.dtsi
+ delete mode 100644 sys/gnu/dts/arm/stm32mp157xad-pinctrl.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp15xc.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp15xx-dkx.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp15xxaa-pinctrl.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp15xxab-pinctrl.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp15xxac-pinctrl.dtsi
+ create mode 100644 sys/gnu/dts/arm/stm32mp15xxad-pinctrl.dtsi
+ create mode 100644 sys/gnu/dts/arm/sun8i-h3-emlid-neutis-n5h3-devboard.dts
+ create mode 100644 sys/gnu/dts/arm/sun8i-h3-emlid-neutis-n5h3.dtsi
+ create mode 100644 sys/gnu/dts/arm/sunxi-h3-h5-emlid-neutis.dtsi
+ create mode 100644 sys/gnu/dts/arm/sunxi-libretech-all-h3-it.dtsi
+ create mode 100644 sys/gnu/dts/arm64/allwinner/sun50i-a64-cpu-opp.dtsi
+ create mode 100644 sys/gnu/dts/arm64/allwinner/sun50i-h5-libretech-all-h3-it.dts
+ create mode 100644 sys/gnu/dts/arm64/allwinner/sun50i-h5-libretech-all-h5-cc.dts
+ create mode 100644 sys/gnu/dts/arm64/allwinner/sun50i-h6-pine-h64-model-b.dts
+ create mode 100644 sys/gnu/dts/arm64/altera/socfpga_stratix10_socdk_nand.dts
+ create mode 100644 sys/gnu/dts/arm64/amlogic/meson-gx-libretech-pc.dtsi
+ create mode 100644 sys/gnu/dts/arm64/amlogic/meson-gxbb-kii-pro.dts
+ create mode 100644 sys/gnu/dts/arm64/amlogic/meson-gxl-s905d-libretech-pc.dts
+ create mode 100644 sys/gnu/dts/arm64/amlogic/meson-gxm-s912-libretech-pc.dts
+ create mode 100644 sys/gnu/dts/arm64/freescale/fsl-lx2160a-cex7.dtsi
+ create mode 100644 sys/gnu/dts/arm64/freescale/fsl-lx2160a-clearfog-cx.dts
+ create mode 100644 sys/gnu/dts/arm64/freescale/fsl-lx2160a-clearfog-itx.dtsi
+ create mode 100644 sys/gnu/dts/arm64/freescale/fsl-lx2160a-honeycomb.dts
+ create mode 100644 sys/gnu/dts/arm64/freescale/imx8mq-phanbell.dts
+ create mode 100644 sys/gnu/dts/arm64/freescale/imx8mq-thor96.dts
+ create mode 100644 sys/gnu/dts/arm64/intel/socfpga_agilex_socdk_nand.dts
+ delete mode 100644 sys/gnu/dts/arm64/qcom/apq8096-db820c-pins.dtsi
+ delete mode 100644 sys/gnu/dts/arm64/qcom/apq8096-db820c-pmic-pins.dtsi
+ create mode 100644 sys/gnu/dts/arm64/qcom/apq8096-ifc6640.dts
+ create mode 100644 sys/gnu/dts/arm64/qcom/pm6150.dtsi
+ create mode 100644 sys/gnu/dts/arm64/qcom/pm6150l.dtsi
+ create mode 100644 sys/gnu/dts/arm64/qcom/sc7180-idp.dts
+ create mode 100644 sys/gnu/dts/arm64/qcom/sc7180.dtsi
+ create mode 100644 sys/gnu/dts/arm64/renesas/r8a774c0-ek874-idk-2121wr.dts
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-es1-salvator-x.dts => r8a77950-salvator-x.dts} (96%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-h3ulcb-kf.dts => r8a77950-ulcb-kf.dts} (75%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-es1-h3ulcb.dts => r8a77950-ulcb.dts} (89%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-es1.dtsi => r8a77950.dtsi} (98%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-salvator-x.dts => r8a77951-salvator-x.dts} (96%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-salvator-xs.dts => r8a77951-salvator-xs.dts} (96%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-es1-h3ulcb-kf.dts => r8a77951-ulcb-kf.dts} (75%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795-h3ulcb.dts => r8a77951-ulcb.dts} (92%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7795.dtsi => r8a77951.dtsi} (94%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7796-salvator-x.dts => r8a77960-salvator-x.dts} (94%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7796-salvator-xs.dts => r8a77960-salvator-xs.dts} (94%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7796-m3ulcb-kf.dts => r8a77960-ulcb-kf.dts} (77%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7796-m3ulcb.dts => r8a77960-ulcb.dts} (90%)
+ rename sys/gnu/dts/arm64/renesas/{r8a7796.dtsi => r8a77960.dtsi} (94%)
+ rename sys/gnu/dts/arm64/renesas/{r8a77965-m3nulcb-kf.dts => r8a77965-ulcb-kf.dts} (92%)
+ rename sys/gnu/dts/arm64/renesas/{r8a77965-m3nulcb.dts => r8a77965-ulcb.dts} (100%)
+ create mode 100644 sys/gnu/dts/arm64/rockchip/rk3399-rockpro64-v2.dts
+ create mode 100644 sys/gnu/dts/arm64/rockchip/rk3399-rockpro64.dtsi
+ create mode 100644 sys/gnu/dts/arm64/rockchip/rk3399pro-rock-pi-n10.dts
+ create mode 100644 sys/gnu/dts/arm64/rockchip/rk3399pro-vmarc-som.dtsi
+ create mode 100644 sys/gnu/dts/arm64/sprd/sc9863a.dtsi
+ create mode 100644 sys/gnu/dts/arm64/sprd/sharkl3.dtsi
+ create mode 100644 sys/gnu/dts/arm64/sprd/sp9863a-1h10.dts
+ create mode 100644 sys/gnu/dts/arm64/xilinx/zynqmp-clk-ccf.dtsi
+ delete mode 100644 sys/gnu/dts/arm64/xilinx/zynqmp-clk.dtsi
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/imx8mp-clock.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/meson8-ddr-clkc.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/qcom,dispcc-sc7180.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/qcom,gcc-ipq6018.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/qcom,gpucc-sc7180.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/qcom,mmcc-msm8998.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/qcom,videocc-sc7180.h
+ rename sys/gnu/dts/include/dt-bindings/{clk => clock}/ti-dra7-atl.h (100%)
+ create mode 100644 sys/gnu/dts/include/dt-bindings/clock/xlnx-versal-clk.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/dma/x1830-dma.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/interconnect/qcom,msm8916.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/interrupt-controller/aspeed-scu-ic.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/memory/tegra194-mc.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/power/mt6765-power.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/reset-controller/mt2712-resets.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/reset/nuvoton,npcm7xx-reset.h
+ create mode 100644 sys/gnu/dts/include/dt-bindings/reset/qcom,gcc-ipq6018.h
+ create mode 100644 sys/sys/abi_compat.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    7f82c3af0982..d11edfe286ab  freebsd/current/master -> freebsd/current/master        
+remote:    6f11e06779b0..4e76b934a629  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   7f82c3af0982..d11edfe286ab  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
