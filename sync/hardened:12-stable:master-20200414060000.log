@@ -1,0 +1,413 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/amd64/vmm/amd/amdvi_priv.h                     |  26 +-
+ sys/amd64/vmm/amd/ivrs_drv.c                       |  35 ++-
+ sys/contrib/dev/acpica/changes.txt                 | 246 +++++++++++++++-
+ sys/contrib/dev/acpica/common/acfileio.c           |   2 +-
+ sys/contrib/dev/acpica/common/acgetline.c          |   2 +-
+ sys/contrib/dev/acpica/common/adfile.c             |   2 +-
+ sys/contrib/dev/acpica/common/adisasm.c            |  21 +-
+ sys/contrib/dev/acpica/common/adwalk.c             |   2 +-
+ sys/contrib/dev/acpica/common/ahids.c              |   2 +-
+ sys/contrib/dev/acpica/common/ahpredef.c           |   2 +-
+ sys/contrib/dev/acpica/common/ahtable.c            |   4 +-
+ sys/contrib/dev/acpica/common/ahuuids.c            |   2 +-
+ sys/contrib/dev/acpica/common/cmfsize.c            |   2 +-
+ sys/contrib/dev/acpica/common/dmextern.c           |   2 +-
+ sys/contrib/dev/acpica/common/dmrestag.c           |   2 +-
+ sys/contrib/dev/acpica/common/dmswitch.c           |   2 +-
+ sys/contrib/dev/acpica/common/dmtable.c            |   5 +-
+ sys/contrib/dev/acpica/common/dmtables.c           |   3 +-
+ sys/contrib/dev/acpica/common/dmtbdump.c           |   2 +-
+ sys/contrib/dev/acpica/common/dmtbdump1.c          |   2 +-
+ sys/contrib/dev/acpica/common/dmtbdump2.c          |  27 +-
+ sys/contrib/dev/acpica/common/dmtbdump3.c          |   2 +-
+ sys/contrib/dev/acpica/common/dmtbinfo.c           |   2 +-
+ sys/contrib/dev/acpica/common/dmtbinfo1.c          |   2 +-
+ sys/contrib/dev/acpica/common/dmtbinfo2.c          |  18 +-
+ sys/contrib/dev/acpica/common/dmtbinfo3.c          |   4 +-
+ sys/contrib/dev/acpica/common/getopt.c             |   2 +-
+ sys/contrib/dev/acpica/compiler/aslallocate.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslanalyze.c       |  16 +-
+ sys/contrib/dev/acpica/compiler/aslascii.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslbtypes.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslcache.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslcodegen.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/aslcompile.c       |  19 +-
+ sys/contrib/dev/acpica/compiler/aslcompiler.h      |  27 +-
+ sys/contrib/dev/acpica/compiler/aslcompiler.l      |  22 +-
+ sys/contrib/dev/acpica/compiler/aslcstyle.y        |   2 +-
+ sys/contrib/dev/acpica/compiler/asldebug.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/asldefine.h        |   3 +-
+ sys/contrib/dev/acpica/compiler/aslerror.c         | 136 ++++++++-
+ sys/contrib/dev/acpica/compiler/aslexternal.c      |  46 ++-
+ sys/contrib/dev/acpica/compiler/aslfileio.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslfiles.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslfold.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/aslglobal.h        |   3 +-
+ sys/contrib/dev/acpica/compiler/aslhelp.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/aslhelpers.y       |   2 +-
+ sys/contrib/dev/acpica/compiler/aslhex.c           |   2 +-
+ sys/contrib/dev/acpica/compiler/aslkeywords.y      |   2 +-
+ sys/contrib/dev/acpica/compiler/asllength.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/asllisting.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/asllistsup.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/aslload.c          | 327 +++++++++++++++++----
+ sys/contrib/dev/acpica/compiler/asllookup.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslmain.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/aslmap.c           |   2 +-
+ sys/contrib/dev/acpica/compiler/aslmapenter.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslmapoutput.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslmaputils.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslmessages.c      |  15 +-
+ sys/contrib/dev/acpica/compiler/aslmessages.h      |  12 +-
+ sys/contrib/dev/acpica/compiler/aslmethod.c        | 207 ++++++++++---
+ sys/contrib/dev/acpica/compiler/aslnamesp.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/asloffset.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslopcodes.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/asloperands.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslopt.c           |   2 +-
+ sys/contrib/dev/acpica/compiler/asloptions.c       |   4 +-
+ sys/contrib/dev/acpica/compiler/aslparseop.c       |  15 +-
+ sys/contrib/dev/acpica/compiler/aslparser.y        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslpld.c           |   2 +-
+ sys/contrib/dev/acpica/compiler/aslpredef.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslprepkg.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslprimaries.y     |   4 +-
+ sys/contrib/dev/acpica/compiler/aslprintf.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/aslprune.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslresource.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslresources.y     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype1.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype1i.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype2.c      |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype2d.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype2e.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype2q.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype2s.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrestype2w.c     |   2 +-
+ sys/contrib/dev/acpica/compiler/aslrules.y         |  25 +-
+ sys/contrib/dev/acpica/compiler/aslstartup.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/aslstubs.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslsupport.l       |   2 +-
+ sys/contrib/dev/acpica/compiler/aslsupport.y       |   2 +-
+ sys/contrib/dev/acpica/compiler/asltokens.y        |   2 +-
+ sys/contrib/dev/acpica/compiler/asltransform.c     | 151 +++++++++-
+ sys/contrib/dev/acpica/compiler/asltree.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/asltypes.h         |  33 ++-
+ sys/contrib/dev/acpica/compiler/asltypes.y         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslutils.c         |  43 ++-
+ sys/contrib/dev/acpica/compiler/asluuid.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/aslwalks.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/aslxref.c          |  59 +---
+ sys/contrib/dev/acpica/compiler/aslxrefout.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/cvcompiler.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/cvdisasm.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/cvparser.c         |  18 +-
+ sys/contrib/dev/acpica/compiler/dtcompile.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/dtcompiler.h       |   3 +-
+ sys/contrib/dev/acpica/compiler/dtcompilerparser.l |   1 -
+ sys/contrib/dev/acpica/compiler/dtcompilerparser.y |   1 -
+ sys/contrib/dev/acpica/compiler/dtexpress.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/dtfield.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/dtio.c             |   2 +-
+ sys/contrib/dev/acpica/compiler/dtparser.l         |   4 +-
+ sys/contrib/dev/acpica/compiler/dtparser.y         |   2 +-
+ sys/contrib/dev/acpica/compiler/dtsubtable.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/dttable.c          |   2 +-
+ sys/contrib/dev/acpica/compiler/dttable1.c         |  12 +-
+ sys/contrib/dev/acpica/compiler/dttable2.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/dttemplate.c       |   2 +-
+ sys/contrib/dev/acpica/compiler/dttemplate.h       |   2 +-
+ sys/contrib/dev/acpica/compiler/dtutils.c          |   5 +-
+ sys/contrib/dev/acpica/compiler/preprocess.h       |   2 +-
+ sys/contrib/dev/acpica/compiler/prexpress.c        |   2 +-
+ sys/contrib/dev/acpica/compiler/prmacros.c         |   2 +-
+ sys/contrib/dev/acpica/compiler/prparser.l         |   4 +-
+ sys/contrib/dev/acpica/compiler/prparser.y         |   2 +-
+ sys/contrib/dev/acpica/compiler/prscan.c           |   2 +-
+ sys/contrib/dev/acpica/compiler/prutils.c          |   2 +-
+ .../dev/acpica/components/debugger/dbcmds.c        |   2 +-
+ .../dev/acpica/components/debugger/dbconvert.c     |   2 +-
+ .../dev/acpica/components/debugger/dbdisply.c      |   2 +-
+ .../dev/acpica/components/debugger/dbexec.c        |   2 +-
+ .../dev/acpica/components/debugger/dbfileio.c      |   2 +-
+ .../dev/acpica/components/debugger/dbhistry.c      |   2 +-
+ .../dev/acpica/components/debugger/dbinput.c       |  21 +-
+ .../dev/acpica/components/debugger/dbmethod.c      |   2 +-
+ .../dev/acpica/components/debugger/dbnames.c       |   2 +-
+ .../dev/acpica/components/debugger/dbobject.c      |   2 +-
+ .../dev/acpica/components/debugger/dbstats.c       |   2 +-
+ .../dev/acpica/components/debugger/dbtest.c        |   2 +-
+ .../dev/acpica/components/debugger/dbutils.c       |   2 +-
+ .../dev/acpica/components/debugger/dbxface.c       |   3 +-
+ .../dev/acpica/components/disassembler/dmbuffer.c  |   2 +-
+ .../dev/acpica/components/disassembler/dmcstyle.c  |   2 +-
+ .../acpica/components/disassembler/dmdeferred.c    |   2 +-
+ .../dev/acpica/components/disassembler/dmnames.c   |   2 +-
+ .../dev/acpica/components/disassembler/dmopcode.c  |   2 +-
+ .../dev/acpica/components/disassembler/dmresrc.c   |   2 +-
+ .../dev/acpica/components/disassembler/dmresrcl.c  |   2 +-
+ .../dev/acpica/components/disassembler/dmresrcl2.c |   2 +-
+ .../dev/acpica/components/disassembler/dmresrcs.c  |   2 +-
+ .../dev/acpica/components/disassembler/dmutils.c   |   2 +-
+ .../dev/acpica/components/disassembler/dmwalk.c    |   2 +-
+ .../dev/acpica/components/dispatcher/dsargs.c      |   2 +-
+ .../dev/acpica/components/dispatcher/dscontrol.c   |   2 +-
+ .../dev/acpica/components/dispatcher/dsdebug.c     |   2 +-
+ .../dev/acpica/components/dispatcher/dsfield.c     |   2 +-
+ .../dev/acpica/components/dispatcher/dsinit.c      |   2 +-
+ .../dev/acpica/components/dispatcher/dsmethod.c    |   2 +-
+ .../dev/acpica/components/dispatcher/dsmthdat.c    |   2 +-
+ .../dev/acpica/components/dispatcher/dsobject.c    |   2 +-
+ .../dev/acpica/components/dispatcher/dsopcode.c    |   2 +-
+ .../dev/acpica/components/dispatcher/dspkginit.c   |   2 +-
+ .../dev/acpica/components/dispatcher/dsutils.c     |   2 +-
+ .../dev/acpica/components/dispatcher/dswexec.c     |  34 ++-
+ .../dev/acpica/components/dispatcher/dswload.c     |   4 +-
+ .../dev/acpica/components/dispatcher/dswload2.c    |  39 ++-
+ .../dev/acpica/components/dispatcher/dswscope.c    |   2 +-
+ .../dev/acpica/components/dispatcher/dswstate.c    |   2 +-
+ sys/contrib/dev/acpica/components/events/evevent.c |   4 +-
+ sys/contrib/dev/acpica/components/events/evglock.c |   2 +-
+ sys/contrib/dev/acpica/components/events/evgpe.c   |   2 +-
+ .../dev/acpica/components/events/evgpeblk.c        |   2 +-
+ .../dev/acpica/components/events/evgpeinit.c       |   2 +-
+ .../dev/acpica/components/events/evgpeutil.c       |   2 +-
+ .../dev/acpica/components/events/evhandler.c       |   2 +-
+ sys/contrib/dev/acpica/components/events/evmisc.c  |   2 +-
+ .../dev/acpica/components/events/evregion.c        |   2 +-
+ .../dev/acpica/components/events/evrgnini.c        |   2 +-
+ sys/contrib/dev/acpica/components/events/evsci.c   |   2 +-
+ sys/contrib/dev/acpica/components/events/evxface.c |   2 +-
+ .../dev/acpica/components/events/evxfevnt.c        |   2 +-
+ sys/contrib/dev/acpica/components/events/evxfgpe.c |  40 ++-
+ .../dev/acpica/components/events/evxfregn.c        |   2 +-
+ .../dev/acpica/components/executer/exconcat.c      |   2 +-
+ .../dev/acpica/components/executer/exconfig.c      |   2 +-
+ .../dev/acpica/components/executer/exconvrt.c      |   2 +-
+ .../dev/acpica/components/executer/excreate.c      |   2 +-
+ .../dev/acpica/components/executer/exdebug.c       |   2 +-
+ .../dev/acpica/components/executer/exdump.c        |   2 +-
+ .../dev/acpica/components/executer/exfield.c       |   2 +-
+ .../dev/acpica/components/executer/exfldio.c       |   2 +-
+ .../dev/acpica/components/executer/exmisc.c        |   2 +-
+ .../dev/acpica/components/executer/exmutex.c       |   2 +-
+ .../dev/acpica/components/executer/exnames.c       |   2 +-
+ .../dev/acpica/components/executer/exoparg1.c      |   2 +-
+ .../dev/acpica/components/executer/exoparg2.c      |   2 +-
+ .../dev/acpica/components/executer/exoparg3.c      |   2 +-
+ .../dev/acpica/components/executer/exoparg6.c      |   2 +-
+ .../dev/acpica/components/executer/exprep.c        |   2 +-
+ .../dev/acpica/components/executer/exregion.c      |   2 +-
+ .../dev/acpica/components/executer/exresnte.c      |   2 +-
+ .../dev/acpica/components/executer/exresolv.c      |   2 +-
+ .../dev/acpica/components/executer/exresop.c       |   2 +-
+ .../dev/acpica/components/executer/exserial.c      |   2 +-
+ .../dev/acpica/components/executer/exstore.c       |   2 +-
+ .../dev/acpica/components/executer/exstoren.c      |   2 +-
+ .../dev/acpica/components/executer/exstorob.c      |   2 +-
+ .../dev/acpica/components/executer/exsystem.c      |   2 +-
+ .../dev/acpica/components/executer/extrace.c       |   2 +-
+ .../dev/acpica/components/executer/exutils.c       |   2 +-
+ .../dev/acpica/components/hardware/hwacpi.c        |   2 +-
+ .../dev/acpica/components/hardware/hwesleep.c      |   2 +-
+ sys/contrib/dev/acpica/components/hardware/hwgpe.c |  81 ++++-
+ sys/contrib/dev/acpica/components/hardware/hwpci.c |   2 +-
+ .../dev/acpica/components/hardware/hwregs.c        |   2 +-
+ .../dev/acpica/components/hardware/hwsleep.c       |  12 +-
+ .../dev/acpica/components/hardware/hwtimer.c       |   2 +-
+ .../dev/acpica/components/hardware/hwvalid.c       |   2 +-
+ .../dev/acpica/components/hardware/hwxface.c       |   2 +-
+ .../dev/acpica/components/hardware/hwxfsleep.c     |   2 +-
+ .../dev/acpica/components/namespace/nsaccess.c     |   2 +-
+ .../dev/acpica/components/namespace/nsalloc.c      |   2 +-
+ .../dev/acpica/components/namespace/nsarguments.c  |   2 +-
+ .../dev/acpica/components/namespace/nsconvert.c    |   2 +-
+ .../dev/acpica/components/namespace/nsdump.c       |   2 +-
+ .../dev/acpica/components/namespace/nsdumpdv.c     |   2 +-
+ .../dev/acpica/components/namespace/nseval.c       |   2 +-
+ .../dev/acpica/components/namespace/nsinit.c       |   2 +-
+ .../dev/acpica/components/namespace/nsload.c       |   2 +-
+ .../dev/acpica/components/namespace/nsnames.c      |  16 +-
+ .../dev/acpica/components/namespace/nsobject.c     |   2 +-
+ .../dev/acpica/components/namespace/nsparse.c      |   2 +-
+ .../dev/acpica/components/namespace/nspredef.c     |   2 +-
+ .../dev/acpica/components/namespace/nsprepkg.c     |   2 +-
+ .../dev/acpica/components/namespace/nsrepair.c     |   2 +-
+ .../dev/acpica/components/namespace/nsrepair2.c    |   2 +-
+ .../dev/acpica/components/namespace/nssearch.c     |   2 +-
+ .../dev/acpica/components/namespace/nsutils.c      |   2 +-
+ .../dev/acpica/components/namespace/nswalk.c       |   2 +-
+ .../dev/acpica/components/namespace/nsxfeval.c     |   2 +-
+ .../dev/acpica/components/namespace/nsxfname.c     |   4 +-
+ .../dev/acpica/components/namespace/nsxfobj.c      |   2 +-
+ sys/contrib/dev/acpica/components/parser/psargs.c  |   2 +-
+ sys/contrib/dev/acpica/components/parser/psloop.c  |   2 +-
+ .../dev/acpica/components/parser/psobject.c        |   2 +-
+ .../dev/acpica/components/parser/psopcode.c        |   2 +-
+ .../dev/acpica/components/parser/psopinfo.c        |   2 +-
+ sys/contrib/dev/acpica/components/parser/psparse.c |   2 +-
+ sys/contrib/dev/acpica/components/parser/psscope.c |   2 +-
+ sys/contrib/dev/acpica/components/parser/pstree.c  |   2 +-
+ sys/contrib/dev/acpica/components/parser/psutils.c |   2 +-
+ sys/contrib/dev/acpica/components/parser/pswalk.c  |   2 +-
+ sys/contrib/dev/acpica/components/parser/psxface.c |   2 +-
+ .../dev/acpica/components/resources/rsaddr.c       |   2 +-
+ .../dev/acpica/components/resources/rscalc.c       |   2 +-
+ .../dev/acpica/components/resources/rscreate.c     |   2 +-
+ .../dev/acpica/components/resources/rsdump.c       |   2 +-
+ .../dev/acpica/components/resources/rsdumpinfo.c   |   2 +-
+ .../dev/acpica/components/resources/rsinfo.c       |   2 +-
+ sys/contrib/dev/acpica/components/resources/rsio.c |   2 +-
+ .../dev/acpica/components/resources/rsirq.c        |   2 +-
+ .../dev/acpica/components/resources/rslist.c       |   2 +-
+ .../dev/acpica/components/resources/rsmemory.c     |   2 +-
+ .../dev/acpica/components/resources/rsmisc.c       |   2 +-
+ .../dev/acpica/components/resources/rsserial.c     |   2 +-
+ .../dev/acpica/components/resources/rsutils.c      |   2 +-
+ .../dev/acpica/components/resources/rsxface.c      |   2 +-
+ sys/contrib/dev/acpica/components/tables/tbdata.c  |   2 +-
+ sys/contrib/dev/acpica/components/tables/tbfadt.c  |   2 +-
+ sys/contrib/dev/acpica/components/tables/tbfind.c  |   2 +-
+ .../dev/acpica/components/tables/tbinstal.c        |   2 +-
+ sys/contrib/dev/acpica/components/tables/tbprint.c |   2 +-
+ sys/contrib/dev/acpica/components/tables/tbutils.c |   2 +-
+ sys/contrib/dev/acpica/components/tables/tbxface.c |  14 +-
+ .../dev/acpica/components/tables/tbxfload.c        |   2 +-
+ .../dev/acpica/components/tables/tbxfroot.c        |   2 +-
+ .../dev/acpica/components/utilities/utaddress.c    |   2 +-
+ .../dev/acpica/components/utilities/utalloc.c      |   2 +-
+ .../dev/acpica/components/utilities/utascii.c      |   2 +-
+ .../dev/acpica/components/utilities/utbuffer.c     |   2 +-
+ .../dev/acpica/components/utilities/utcache.c      |   2 +-
+ .../dev/acpica/components/utilities/utcopy.c       |   2 +-
+ .../dev/acpica/components/utilities/utdebug.c      |   2 +-
+ .../dev/acpica/components/utilities/utdecode.c     |   4 +-
+ .../dev/acpica/components/utilities/utdelete.c     |  11 +-
+ .../dev/acpica/components/utilities/uterror.c      |   2 +-
+ .../dev/acpica/components/utilities/uteval.c       |   2 +-
+ .../dev/acpica/components/utilities/utexcep.c      |   2 +-
+ .../dev/acpica/components/utilities/utglobal.c     |   2 +-
+ .../dev/acpica/components/utilities/uthex.c        |   2 +-
+ .../dev/acpica/components/utilities/utids.c        |   2 +-
+ .../dev/acpica/components/utilities/utinit.c       |   2 +-
+ .../dev/acpica/components/utilities/utlock.c       |   2 +-
+ .../dev/acpica/components/utilities/utmath.c       |   2 +-
+ .../dev/acpica/components/utilities/utmisc.c       |   2 +-
+ .../dev/acpica/components/utilities/utmutex.c      |   2 +-
+ .../dev/acpica/components/utilities/utnonansi.c    |   2 +-
+ .../dev/acpica/components/utilities/utobject.c     |   4 +-
+ .../dev/acpica/components/utilities/utosi.c        |   2 +-
+ .../dev/acpica/components/utilities/utownerid.c    |   2 +-
+ .../dev/acpica/components/utilities/utpredef.c     |   2 +-
+ .../dev/acpica/components/utilities/utresdecode.c  |   2 +-
+ .../dev/acpica/components/utilities/utresrc.c      |   2 +-
+ .../dev/acpica/components/utilities/utstate.c      |   2 +-
+ .../dev/acpica/components/utilities/utstring.c     |   2 +-
+ .../dev/acpica/components/utilities/utstrsuppt.c   |   2 +-
+ .../dev/acpica/components/utilities/utstrtoul64.c  |   2 +-
+ .../dev/acpica/components/utilities/uttrack.c      |   2 +-
+ .../dev/acpica/components/utilities/utuuid.c       |   2 +-
+ .../dev/acpica/components/utilities/utxface.c      |   2 +-
+ .../dev/acpica/components/utilities/utxferror.c    |   2 +-
+ .../dev/acpica/components/utilities/utxfinit.c     |   2 +-
+ .../dev/acpica/components/utilities/utxfmutex.c    |   2 +-
+ sys/contrib/dev/acpica/include/acapps.h            |   4 +-
+ sys/contrib/dev/acpica/include/acbuffer.h          |   2 +-
+ sys/contrib/dev/acpica/include/acclib.h            |   2 +-
+ sys/contrib/dev/acpica/include/accommon.h          |   2 +-
+ sys/contrib/dev/acpica/include/acconfig.h          |   2 +-
+ sys/contrib/dev/acpica/include/acconvert.h         |   5 +-
+ sys/contrib/dev/acpica/include/acdebug.h           |   2 +-
+ sys/contrib/dev/acpica/include/acdisasm.h          |   3 +-
+ sys/contrib/dev/acpica/include/acdispat.h          |   2 +-
+ sys/contrib/dev/acpica/include/acevents.h          |   2 +-
+ sys/contrib/dev/acpica/include/acexcep.h           |   2 +-
+ sys/contrib/dev/acpica/include/acglobal.h          |   2 +-
+ sys/contrib/dev/acpica/include/achware.h           |   6 +-
+ sys/contrib/dev/acpica/include/acinterp.h          |   2 +-
+ sys/contrib/dev/acpica/include/aclocal.h           |   2 +-
+ sys/contrib/dev/acpica/include/acmacros.h          |   6 +-
+ sys/contrib/dev/acpica/include/acnames.h           |   2 +-
+ sys/contrib/dev/acpica/include/acnamesp.h          |   6 +-
+ sys/contrib/dev/acpica/include/acobject.h          |   2 +-
+ sys/contrib/dev/acpica/include/acopcode.h          |   2 +-
+ sys/contrib/dev/acpica/include/acoutput.h          |   2 +-
+ sys/contrib/dev/acpica/include/acparser.h          |   2 +-
+ sys/contrib/dev/acpica/include/acpi.h              |   2 +-
+ sys/contrib/dev/acpica/include/acpiosxf.h          |   2 +-
+ sys/contrib/dev/acpica/include/acpixf.h            |   8 +-
+ sys/contrib/dev/acpica/include/acpredef.h          |   2 +-
+ sys/contrib/dev/acpica/include/acresrc.h           |   2 +-
+ sys/contrib/dev/acpica/include/acrestyp.h          |   2 +-
+ sys/contrib/dev/acpica/include/acstruct.h          |   2 +-
+ sys/contrib/dev/acpica/include/actables.h          |   2 +-
+ sys/contrib/dev/acpica/include/actbinfo.h          |   5 +-
+ sys/contrib/dev/acpica/include/actbl.h             |   2 +-
+ sys/contrib/dev/acpica/include/actbl1.h            |   4 +-
+ sys/contrib/dev/acpica/include/actbl2.h            |  26 +-
+ sys/contrib/dev/acpica/include/actbl3.h            |   8 +-
+ sys/contrib/dev/acpica/include/actypes.h           |   9 +-
+ sys/contrib/dev/acpica/include/acutils.h           |   2 +-
+ sys/contrib/dev/acpica/include/acuuid.h            |   4 +-
+ sys/contrib/dev/acpica/include/amlcode.h           |   2 +-
+ sys/contrib/dev/acpica/include/amlresrc.h          |   2 +-
+ sys/contrib/dev/acpica/include/platform/acenv.h    |   2 +-
+ sys/contrib/dev/acpica/include/platform/acenvex.h  |   2 +-
+ .../dev/acpica/include/platform/acfreebsd.h        |   2 +-
+ sys/contrib/dev/acpica/include/platform/acgcc.h    |   2 +-
+ sys/contrib/dev/acpica/include/platform/acgccex.h  |   2 +-
+ .../acpica/os_specific/service_layers/osunixxf.c   |   2 +-
+ 359 files changed, 1891 insertions(+), 684 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    6045b9fc36be..6f11e06779b0  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    4ac0c0448557..40ca2b7ef2e7  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   6045b9fc36be..6f11e06779b0  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
