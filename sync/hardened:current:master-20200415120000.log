@@ -1,0 +1,93 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging ObsoleteFiles.inc
+CONFLICT (content): Merge conflict in ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc ObsoleteFiles.inc
+index fa08a2835c5a,c26136474bd0..000000000000
+--- a/ObsoleteFiles.inc
++++ b/ObsoleteFiles.inc
+@@@ -1686,10 -1685,6 +1686,13 @@@ OLD_FILES+=lib/casper/libcap_sysctl.so.
+  # 20190509: tests/sys/opencrypto requires the net/py-dpkt package.
+  OLD_FILES+=usr/tests/sys/opencrypto/dpkt.py
+  OLD_FILES+=usr/tests/sys/opencrypto/dpkt.pyc
+++<<<<<<< HEAD
+ +# 20190311: libexecinfo move to /lib
+ +OLD_LIBS+=usr/lib/libexecinfo.so.1
+ +# 20190326: tzdata 2019a import
+ +OLD_FILES+=usr/share/zoneinfo/Etc/UCT
+++=======
+++>>>>>>> freebsd/current/master
+  # 20190304: new libc++ import which bumps version from 7.0.1 to 8.0.0.
+  OLD_FILES+=usr/include/c++/v1/experimental/dynarray
+  # 20190304: new clang import which bumps version from 7.0.1 to 8.0.0.
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   libexec/rc/rc.d/sshd
+	modified:   sys/arm/allwinner/aw_sid.c
+	modified:   sys/dev/cxgbe/iw_cxgbe/cm.c
+	modified:   sys/dev/mmc/mmc_fdt_helpers.c
+	modified:   sys/kern/kern_uuid.c
+	modified:   sys/kern/sys_generic.c
+	modified:   sys/netinet6/ip6_forward.c
+	modified:   sys/netinet6/scope6.c
+	modified:   sys/netinet6/scope6_var.h
+	modified:   sys/netpfil/pf/pf.c
+	modified:   sys/ofed/drivers/infiniband/core/ib_addr.c
+	modified:   sys/ofed/drivers/infiniband/core/ib_cma.c
+	modified:   sys/sys/types.h
+	modified:   sys/sys/uuid.h
+	modified:   usr.bin/calendar/calendars/calendar.freebsd
+	modified:   usr.sbin/bhyve/vmgenc.c
+	modified:   usr.sbin/bhyve/vmgenc.h
+	modified:   usr.sbin/nologin/nologin.8
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ObsoleteFiles.inc
+
+HEAD is now at 341c8429a94c Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 341c8429a94c Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
