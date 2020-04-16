@@ -1,0 +1,327 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/procstat/procstat_auxv.c
+CONFLICT (content): Merge conflict in usr.bin/procstat/procstat_auxv.c
+Auto-merging sys/sys/imgact_elf.h
+Auto-merging sys/sys/imgact.h
+Auto-merging sys/sys/elf_common.h
+CONFLICT (content): Merge conflict in sys/sys/elf_common.h
+Auto-merging sys/kern/kern_sysctl.c
+Auto-merging sys/kern/kern_jail.c
+CONFLICT (content): Merge conflict in sys/kern/kern_jail.c
+Auto-merging sys/kern/kern_exec.c
+CONFLICT (content): Merge conflict in sys/kern/kern_exec.c
+Auto-merging sys/kern/imgact_elf.c
+CONFLICT (modify/delete): sys/kern/imgact_aout.c deleted in HEAD and modified in freebsd/current/master. Version freebsd/current/master of sys/kern/imgact_aout.c left in tree.
+Auto-merging sys/compat/freebsd32/freebsd32_misc.c
+CONFLICT (content): Merge conflict in sys/compat/freebsd32/freebsd32_misc.c
+Auto-merging sys/amd64/linux32/linux32_sysvec.c
+Auto-merging sys/amd64/ia32/ia32_signal.c
+Auto-merging stand/defaults/loader.conf
+Auto-merging lib/libc/gen/setproctitle.c
+Auto-merging ObsoleteFiles.inc
+CONFLICT (content): Merge conflict in ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc ObsoleteFiles.inc
+index fa08a2835c5a,c26136474bd0..000000000000
+--- a/ObsoleteFiles.inc
++++ b/ObsoleteFiles.inc
+@@@ -1686,10 -1685,6 +1686,13 @@@ OLD_FILES+=lib/casper/libcap_sysctl.so.
+  # 20190509: tests/sys/opencrypto requires the net/py-dpkt package.
+  OLD_FILES+=usr/tests/sys/opencrypto/dpkt.py
+  OLD_FILES+=usr/tests/sys/opencrypto/dpkt.pyc
+++<<<<<<< HEAD
+ +# 20190311: libexecinfo move to /lib
+ +OLD_LIBS+=usr/lib/libexecinfo.so.1
+ +# 20190326: tzdata 2019a import
+ +OLD_FILES+=usr/share/zoneinfo/Etc/UCT
+++=======
+++>>>>>>> freebsd/current/master
+  # 20190304: new libc++ import which bumps version from 7.0.1 to 8.0.0.
+  OLD_FILES+=usr/include/c++/v1/experimental/dynarray
+  # 20190304: new clang import which bumps version from 7.0.1 to 8.0.0.
+diff --cc sys/compat/freebsd32/freebsd32_misc.c
+index 4e6d0933fa72,89088a2aba42..000000000000
+--- a/sys/compat/freebsd32/freebsd32_misc.c
++++ b/sys/compat/freebsd32/freebsd32_misc.c
+@@@ -3126,16 -3135,13 +3126,23 @@@ freebsd32_copyout_strings(struct image_
+  		execpath_len = strlen(imgp->execpath) + 1;
+  	else
+  		execpath_len = 0;
+++<<<<<<< HEAD
+ +	arginfo = (struct freebsd32_ps_strings *)curproc->p_psstrings;
+ +	imgp->proc->p_sigcode_base = imgp->proc->p_sysent->sv_sigcode_base;
+ +	if (imgp->proc->p_sigcode_base == 0)
+++=======
++ 	arginfo = (struct freebsd32_ps_strings *)curproc->p_sysent->
++ 	    sv_psstrings;
++ 	imgp->ps_strings = arginfo;
++ 	if (imgp->proc->p_sysent->sv_sigcode_base == 0)
+++>>>>>>> freebsd/current/master
+  		szsigcode = *(imgp->proc->p_sysent->sv_szsigcode);
+ -	else
+ +	else {
+  		szsigcode = 0;
+ +#ifdef PAX_ASLR
+ +		pax_aslr_vdso(imgp->proc, &(imgp->proc->p_sigcode_base));
+ +#endif
+ +	}
+  	destp =	(uintptr_t)arginfo;
+  
+  	/*
+diff --cc sys/kern/kern_exec.c
+index 36a19565ac54,197ca3bc9dcb..000000000000
+--- a/sys/kern/kern_exec.c
++++ b/sys/kern/kern_exec.c
+@@@ -1614,16 -1545,11 +1614,22 @@@ exec_copyout_strings(struct image_param
+  		execpath_len = 0;
+  	p = imgp->proc;
+  	szsigcode = 0;
+++<<<<<<< HEAD
+ +	p->p_sigcode_base = p->p_sysent->sv_sigcode_base;
+ +	arginfo = (struct ps_strings *)p->p_psstrings;
+ +	if (p->p_sigcode_base == 0) {
+++=======
++ 	arginfo = (struct ps_strings *)p->p_sysent->sv_psstrings;
++ 	imgp->ps_strings = arginfo;
++ 	if (p->p_sysent->sv_sigcode_base == 0) {
+++>>>>>>> freebsd/current/master
+  		if (p->p_sysent->sv_szsigcode != NULL)
+  			szsigcode = *(p->p_sysent->sv_szsigcode);
+ +#ifdef PAX_ASLR
+ +	} else {
+ +		// XXXOP
+ +		pax_aslr_vdso(p, &(p->p_sigcode_base));
+ +#endif
+  	}
+  	destp =	(uintptr_t)arginfo;
+  
+diff --cc sys/kern/kern_jail.c
+index 09e221f7f0cd,3317b1a72c95..000000000000
+--- a/sys/kern/kern_jail.c
++++ b/sys/kern/kern_jail.c
+@@@ -227,9 -228,31 +232,37 @@@ prison0_init(void
+  	prison0.pr_osreldate = osreldate;
+  	strlcpy(prison0.pr_osrelease, osrelease, sizeof(prison0.pr_osrelease));
+  
+++<<<<<<< HEAD
+ +#ifdef PAX
+ +	(void)pax_init_prison(&prison0, NULL);
+ +#endif
+++=======
++ 	/* If we have a preloaded hostuuid, use it. */
++ 	file = preload_search_by_type(PRISON0_HOSTUUID_MODULE);
++ 	if (file != NULL) {
++ 		data = preload_fetch_addr(file);
++ 		size = preload_fetch_size(file);
++ 		if (data != NULL) {
++ 			/*
++ 			 * The preloaded data may include trailing whitespace, almost
++ 			 * certainly a newline; skip over any whitespace or
++ 			 * non-printable characters to be safe.
++ 			 */
++ 			while (size > 0 && data[size - 1] <= 0x20) {
++ 				data[size--] = '\0';
++ 			}
++ 			if (validate_uuid(data, size, NULL, 0) == 0) {
++ 				(void)strlcpy(prison0.pr_hostuuid, data,
++ 				    size + 1);
++ 			} else if (bootverbose) {
++ 				printf("hostuuid: preload data malformed: '%s'",
++ 				    data);
++ 			}
++ 		}
++ 	}
++ 	if (bootverbose)
++ 		printf("hostuuid: using %s\n", prison0.pr_hostuuid);
+++>>>>>>> freebsd/current/master
+  }
+  
+  /*
+diff --cc sys/sys/elf_common.h
+index 25311dcd9364,d6b0f71adbd9..000000000000
+--- a/sys/sys/elf_common.h
++++ b/sys/sys/elf_common.h
+@@@ -955,10 -955,14 +955,21 @@@ typedef struct 
+  #define	AT_EHDRFLAGS	24	/* e_flags field from elf hdr */
+  #define	AT_HWCAP	25	/* CPU feature flags. */
+  #define	AT_HWCAP2	26	/* CPU feature flags 2. */
+++<<<<<<< HEAD
+ +#define	AT_PAXFLAGS 	27
+ +#define	AT_BSDFLAGS	28	/* ELF BSD Flags. */
+ +
+ +#define	AT_COUNT	29	/* Count of defined aux entry types. */
+++=======
++ #define	AT_BSDFLAGS	27	/* ELF BSD Flags. */
++ #define	AT_ARGC		28	/* Argument count */
++ #define	AT_ARGV		29	/* Argument vector */
++ #define	AT_ENVC		30	/* Environment count */
++ #define	AT_ENVV		31	/* Environment vector */
++ #define	AT_PS_STRINGS	32	/* struct ps_strings */
++ 
++ #define	AT_COUNT	33	/* Count of defined aux entry types. */
+++>>>>>>> freebsd/current/master
+  
+  /*
+   * Relocation types.
+diff --cc usr.bin/procstat/procstat_auxv.c
+index 5cdcf5179af3,a3baac7b6c72..000000000000
+--- a/usr.bin/procstat/procstat_auxv.c
++++ b/usr.bin/procstat/procstat_auxv.c
+@@@ -203,10 -203,35 +203,42 @@@ procstat_auxv(struct procstat *procstat
+  			    prefix, "AT_BSDFLAGS", (u_long)auxv[i].a_un.a_val);
+  			break;
+  #endif
+++<<<<<<< HEAD
+ +#ifdef AT_PAXFLAGS
+ +		case AT_PAXFLAGS:
+ +			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_PAXFLAGS/%#lx}\n",
+ +			    prefix, "AT_PAXFLAGS", (u_long)auxv[i].a_un.a_val);
+++=======
++ #ifdef AT_ARGC
++ 		case AT_ARGC:
++ 			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_ARGC/%ld}\n",
++ 			    prefix, "AT_ARGC", (long)auxv[i].a_un.a_val);
++ 			break;
++ #endif
++ #ifdef AT_ARGV
++ 		case AT_ARGV:
++ 			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_ARGV/%p}\n",
++ 			    prefix, "AT_ARGV", auxv[i].a_un.a_ptr);
++ 			break;
++ #endif
++ #ifdef AT_ENVC
++ 		case AT_ENVC:
++ 			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_ENVC/%ld}\n",
++ 			    prefix, "AT_ENVC", (long)auxv[i].a_un.a_val);
++ 			break;
++ #endif
++ #ifdef AT_ENVV
++ 		case AT_ENVV:
++ 			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_ENVV/%p}\n",
++ 			    prefix, "AT_ENVV", auxv[i].a_un.a_ptr);
++ 			break;
++ #endif
++ #ifdef AT_PS_STRINGS
++ 		case AT_PS_STRINGS:
++ 			xo_emit("{dw:/%s}{Lw:/%-16s/%s}{:AT_PS_STRINGS/%p}\n",
++ 			    prefix, "AT_PS_STRINGS", auxv[i].a_un.a_ptr);
++ 			break;
+++>>>>>>> freebsd/current/master
+  #endif
+  		default:
+  			xo_emit("{dw:/%s}{Lw:/%16ld/%ld}{:UNKNOWN/%#lx}\n",
+* Unmerged path sys/kern/imgact_aout.c
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   RELNOTES
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPC.td
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCISelLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCSubtarget.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCSubtarget.h
+	modified:   lib/libc/gen/auxv.c
+	modified:   lib/libc/gen/getgrent.c
+	modified:   lib/libc/gen/getpwent.c
+	modified:   lib/libc/gen/setproctitle.c
+	modified:   lib/libc/net/gethostnamadr.c
+	modified:   lib/libc/net/getnetnamadr.c
+	modified:   lib/libc/net/getprotoent.c
+	modified:   lib/libc/net/getservent.c
+	modified:   lib/libc/rpc/getrpcent.c
+	modified:   libexec/rc/rc.d/sshd
+	modified:   stand/defaults/loader.conf
+	modified:   sys/amd64/ia32/ia32_signal.c
+	modified:   sys/amd64/linux32/linux32_sysvec.c
+	modified:   sys/arm/allwinner/aw_sid.c
+	modified:   sys/crypto/via/padlock_cipher.c
+	modified:   sys/dev/cxgbe/iw_cxgbe/cm.c
+	modified:   sys/dev/cxgbe/tom/t4_connect.c
+	modified:   sys/dev/cxgbe/tom/t4_listen.c
+	modified:   sys/dev/cxgbe/tom/t4_tom.c
+	modified:   sys/dev/cxgbe/tom/t4_tom.h
+	modified:   sys/dev/mmc/mmc_fdt_helpers.c
+	modified:   sys/dev/mpr/mpr_ioctl.h
+	modified:   sys/dev/mps/mps_ioctl.h
+	modified:   sys/dev/ocs_fc/ocs_device.c
+	modified:   sys/fs/nfsclient/nfs_clrpcops.c
+	modified:   sys/fs/nfsserver/nfs_nfsdserv.c
+	modified:   sys/geom/eli/g_eli.h
+	modified:   sys/kern/imgact_elf.c
+	modified:   sys/kern/kern_sysctl.c
+	modified:   sys/kern/kern_uuid.c
+	modified:   sys/kern/sys_generic.c
+	modified:   sys/mips/mips/trap.c
+	modified:   sys/net80211/ieee80211_output.c
+	modified:   sys/netinet6/ip6_forward.c
+	modified:   sys/netinet6/scope6.c
+	modified:   sys/netinet6/scope6_var.h
+	modified:   sys/netpfil/pf/pf.c
+	modified:   sys/ofed/drivers/infiniband/core/ib_addr.c
+	modified:   sys/ofed/drivers/infiniband/core/ib_cma.c
+	modified:   sys/powerpc/aim/mmu_oea64.c
+	modified:   sys/sys/imgact.h
+	modified:   sys/sys/imgact_elf.h
+	modified:   sys/sys/types.h
+	modified:   sys/sys/uuid.h
+	modified:   sys/x86/x86/tsc.c
+	modified:   usr.bin/calendar/calendars/calendar.freebsd
+	modified:   usr.sbin/bhyve/vmgenc.c
+	modified:   usr.sbin/bhyve/vmgenc.h
+	modified:   usr.sbin/mailwrapper/mailwrapper.8
+	modified:   usr.sbin/nologin/nologin.8
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	both modified:   ObsoleteFiles.inc
+	both modified:   sys/compat/freebsd32/freebsd32_misc.c
+	deleted by us:   sys/kern/imgact_aout.c
+	both modified:   sys/kern/kern_exec.c
+	both modified:   sys/kern/kern_jail.c
+	both modified:   sys/sys/elf_common.h
+	both modified:   usr.bin/procstat/procstat_auxv.c
+
+HEAD is now at 341c8429a94c Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 341c8429a94c Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
