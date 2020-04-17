@@ -34,3 +34,167 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/chromium/Makefile
+Removing multimedia/w_scan/files/types.sed
+Removing multimedia/libv4l/files/patch-utils_v4l2-ctl_v4l2-ctl.cpp
+Removing multimedia/libv4l/files/patch-utils_Makefile.in
+Removing multimedia/libv4l/files/patch-lib_libv4lconvert_jpeg__memsrcdest.h
+Removing multimedia/libv4l/files/patch-lib_Makefile.in
+Removing multimedia/libv4l/files/patch-include_linux_dvb_video.h
+Removing multimedia/libv4l/files/patch-include_linux_dvb_frontend.h
+Removing multimedia/libv4l/files/patch-contrib_freebsd_include_linux_videodev2.h
+Removing multimedia/libv4l/files/patch-configure
+Removing multimedia/libv4l/files/extra-patch-configure
+Removing multimedia/libv4l/files/extra-linux_dvb_osd.h
+Removing multimedia/libv4l/files/extra-linux_dvb_ca.h
+Merge made by the 'recursive' strategy.
+ audio/sonic-visualiser/Makefile                    |   3 +-
+ databases/timescaledb/Makefile                     |   4 +-
+ databases/timescaledb/distinfo                     |   6 +-
+ databases/timescaledb/pkg-plist                    |   1 +
+ editors/o/Makefile                                 |   8 +-
+ editors/o/distinfo                                 |  18 +-
+ math/py-yt/Makefile                                |   3 +-
+ math/py-yt/distinfo                                |   6 +-
+ math/xtensor/Makefile                              |   2 +-
+ math/xtensor/distinfo                              |   6 +-
+ math/xtensor/pkg-descr                             |   2 +-
+ math/xtensor/pkg-plist                             |   1 +
+ misc/mnn/Makefile                                  |   2 +-
+ misc/mnn/distinfo                                  |   6 +-
+ misc/urh/Makefile                                  |   2 +-
+ misc/urh/distinfo                                  |   6 +-
+ multimedia/kaffeine/Makefile                       |   7 +-
+ multimedia/libv4l/Makefile                         | 122 ++--
+ multimedia/libv4l/distinfo                         |   9 +-
+ multimedia/libv4l/files/extra-linux_dvb_ca.h       |  20 -
+ multimedia/libv4l/files/extra-linux_dvb_osd.h      |  11 -
+ multimedia/libv4l/files/extra-patch-configure      |  78 ---
+ multimedia/libv4l/files/patch-configure            |  11 -
+ ...patch-contrib_freebsd_include_linux_videodev2.h | 662 ---------------------
+ .../files/patch-include_linux_dvb_frontend.h       |  17 -
+ .../libv4l/files/patch-include_linux_dvb_video.h   |  11 -
+ multimedia/libv4l/files/patch-lib_Makefile.in      |  13 -
+ .../files/patch-lib_include_libdvbv5_descriptors.h |  20 +
+ .../patch-lib_include_libdvbv5_dvb-frontend.h      |  19 +-
+ .../files/patch-lib_libdvbv5_dvb-dev-remote.c      |  14 +
+ ...patch-lib_libv4lconvert_control_libv4lcontrol.c |  10 +-
+ .../patch-lib_libv4lconvert_jpeg__memsrcdest.h     |  16 -
+ .../libv4l/files/patch-lib_libv4lconvert_rgbyuv.c  |  11 +
+ multimedia/libv4l/files/patch-utils_Makefile.in    |  11 -
+ .../libv4l/files/patch-utils_cec-ctl_msg2ctl.pl    |  11 +
+ .../libv4l/files/patch-utils_common_ir-encode.c    | 322 ++++++++++
+ .../libv4l/files/patch-utils_common_keymap.h       |  32 +
+ .../libv4l/files/patch-utils_common_v4l2-tpg.h     |  12 +
+ .../libv4l/files/patch-utils_dvb_dvbv5-daemon.c    |  14 +
+ .../libv4l/files/patch-utils_ir-ctl_bpf__encoder.c |  50 ++
+ .../libv4l/files/patch-utils_ir-ctl_ir-ctl.c       |  10 +
+ .../libv4l/files/patch-utils_media-ctl_media-ctl.c |  11 +
+ ...tch-utils_v4l2-compliance_v4l2-test-buffers.cpp |  30 +
+ .../patch-utils_v4l2-ctl_v4l2-ctl-overlay.cpp      |  42 ++
+ .../libv4l/files/patch-utils_v4l2-ctl_v4l2-ctl.cpp |  54 --
+ multimedia/libv4l/files/types.h                    |  35 ++
+ multimedia/libv4l/pkg-plist                        |   3 +
+ multimedia/mythtv/Makefile                         |   4 +-
+ .../mythtv/files/patch-libs_libmythtv_videodev2.h  |  62 +-
+ multimedia/obs-studio/Makefile                     |   2 +-
+ multimedia/obs-studio/distinfo                     |   8 +-
+ multimedia/v4l-utils/Makefile                      |   1 -
+ multimedia/v4l-utils/pkg-plist                     |  31 +-
+ multimedia/v4l_compat/Makefile                     |  57 +-
+ multimedia/v4l_compat/pkg-plist                    |  10 +-
+ multimedia/w_scan/Makefile                         |   5 +-
+ multimedia/w_scan/files/patch-si__types.h          |  10 +
+ multimedia/w_scan/files/types.sed                  |   6 -
+ net-p2p/bitcoin/Makefile                           |   7 +-
+ net-p2p/bitcoin/distinfo                           |   8 +-
+ net/clash/Makefile                                 |   8 +-
+ net/clash/distinfo                                 |  18 +-
+ security/py-python-gnupg/Makefile                  |   8 +-
+ security/py-python-gnupg/distinfo                  |   6 +-
+ security/ylva/Makefile                             |   2 +-
+ security/ylva/distinfo                             |   6 +-
+ sysutils/rshim-user-space/Makefile                 |   3 +-
+ www/chromium/Makefile                              |   2 +-
+ www/chromium/distinfo                              |  10 +-
+ www/nginx/Makefile                                 |   2 +-
+ www/nginx/Makefile.extmod                          |   4 +-
+ www/nginx/distinfo                                 |   6 +-
+ x11/Makefile                                       |   1 +
+ x11/dmenu-wayland/Makefile                         |  29 +
+ x11/dmenu-wayland/distinfo                         |   3 +
+ x11/dmenu-wayland/pkg-descr                        |   8 +
+ 76 files changed, 972 insertions(+), 1119 deletions(-)
+ delete mode 100644 multimedia/libv4l/files/extra-linux_dvb_ca.h
+ delete mode 100644 multimedia/libv4l/files/extra-linux_dvb_osd.h
+ delete mode 100644 multimedia/libv4l/files/extra-patch-configure
+ delete mode 100644 multimedia/libv4l/files/patch-configure
+ delete mode 100644 multimedia/libv4l/files/patch-contrib_freebsd_include_linux_videodev2.h
+ delete mode 100644 multimedia/libv4l/files/patch-include_linux_dvb_frontend.h
+ delete mode 100644 multimedia/libv4l/files/patch-include_linux_dvb_video.h
+ delete mode 100644 multimedia/libv4l/files/patch-lib_Makefile.in
+ create mode 100644 multimedia/libv4l/files/patch-lib_include_libdvbv5_descriptors.h
+ create mode 100644 multimedia/libv4l/files/patch-lib_libdvbv5_dvb-dev-remote.c
+ delete mode 100644 multimedia/libv4l/files/patch-lib_libv4lconvert_jpeg__memsrcdest.h
+ create mode 100644 multimedia/libv4l/files/patch-lib_libv4lconvert_rgbyuv.c
+ delete mode 100644 multimedia/libv4l/files/patch-utils_Makefile.in
+ create mode 100644 multimedia/libv4l/files/patch-utils_cec-ctl_msg2ctl.pl
+ create mode 100644 multimedia/libv4l/files/patch-utils_common_ir-encode.c
+ create mode 100644 multimedia/libv4l/files/patch-utils_common_keymap.h
+ create mode 100644 multimedia/libv4l/files/patch-utils_common_v4l2-tpg.h
+ create mode 100644 multimedia/libv4l/files/patch-utils_dvb_dvbv5-daemon.c
+ create mode 100644 multimedia/libv4l/files/patch-utils_ir-ctl_bpf__encoder.c
+ create mode 100644 multimedia/libv4l/files/patch-utils_ir-ctl_ir-ctl.c
+ create mode 100644 multimedia/libv4l/files/patch-utils_media-ctl_media-ctl.c
+ create mode 100644 multimedia/libv4l/files/patch-utils_v4l2-compliance_v4l2-test-buffers.cpp
+ create mode 100644 multimedia/libv4l/files/patch-utils_v4l2-ctl_v4l2-ctl-overlay.cpp
+ delete mode 100644 multimedia/libv4l/files/patch-utils_v4l2-ctl_v4l2-ctl.cpp
+ create mode 100644 multimedia/libv4l/files/types.h
+ create mode 100644 multimedia/w_scan/files/patch-si__types.h
+ delete mode 100644 multimedia/w_scan/files/types.sed
+ create mode 100644 x11/dmenu-wayland/Makefile
+ create mode 100644 x11/dmenu-wayland/distinfo
+ create mode 100644 x11/dmenu-wayland/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    ec35af4e8054..5a8879e96203  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   5a8879e96203..11fe05718e53  master -> master
+==== END: master ====
