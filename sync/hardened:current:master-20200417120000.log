@@ -1,0 +1,176 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 74 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 341c8429a94c..99cef6ab30e8
+Fast-forward
+ ObsoleteFiles.inc                                  |  34 --
+ RELNOTES                                           |   4 +
+ bin/sh/miscbltin.c                                 |   1 +
+ .../llvm-project/llvm/lib/Target/PowerPC/PPC.td    |   6 +-
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.cpp    |   3 -
+ .../llvm/lib/Target/PowerPC/PPCSubtarget.cpp       |   1 -
+ .../llvm/lib/Target/PowerPC/PPCSubtarget.h         |   2 -
+ lib/libc/gen/auxv.c                                |  16 +-
+ lib/libc/gen/getgrent.c                            |  16 +-
+ lib/libc/gen/getpwent.c                            |  16 +-
+ lib/libc/gen/setproctitle.c                        |   8 +
+ lib/libc/net/gethostnamadr.c                       |   6 +-
+ lib/libc/net/getnetnamadr.c                        |   6 +-
+ lib/libc/net/getprotoent.c                         |   6 +-
+ lib/libc/net/getservent.c                          |  18 +-
+ lib/libc/rpc/getrpcent.c                           |  14 +-
+ libexec/rc/rc.d/sshd                               |  15 +-
+ share/man/man4/tcp.4                               |   4 +-
+ share/man/man7/tuning.7                            |   4 +-
+ stand/defaults/loader.conf                         |   5 +
+ stand/libsa/pkgfs.c                                |   2 +-
+ sys/amd64/ia32/ia32_signal.c                       |   2 +-
+ sys/amd64/include/vmm_instruction_emul.h           |   9 +
+ sys/amd64/linux/linux_sysvec.c                     |  12 +-
+ sys/amd64/linux32/linux32_sysvec.c                 |  10 +-
+ sys/amd64/vmm/vmm_instruction_emul.c               |  17 +-
+ sys/arm/allwinner/aw_mmc.c                         |  57 ++-
+ sys/arm/allwinner/aw_sid.c                         |   2 +-
+ sys/arm/mv/mv_pci.c                                |   4 +-
+ sys/arm/nvidia/tegra_pcie.c                        |   2 +-
+ sys/arm64/linux/linux_sysvec.c                     |  12 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ioctl.c      |   2 +-
+ sys/compat/freebsd32/freebsd32_misc.c              |  20 +-
+ sys/conf/files                                     |  12 +-
+ sys/conf/options                                   |   1 +
+ sys/crypto/via/padlock_cipher.c                    |  24 +-
+ sys/dev/acpica/acpi_video.c                        |   3 +
+ sys/dev/cxgbe/iw_cxgbe/cm.c                        |   4 +-
+ sys/dev/cxgbe/tom/t4_connect.c                     |   2 +
+ sys/dev/cxgbe/tom/t4_listen.c                      |   7 +-
+ sys/dev/cxgbe/tom/t4_tom.c                         |   1 +
+ sys/dev/cxgbe/tom/t4_tom.h                         |   1 +
+ sys/dev/mmc/mmc_fdt_helpers.c                      |   9 +-
+ sys/dev/mpr/mpr_ioctl.h                            |   2 +
+ sys/dev/mps/mps_ioctl.h                            |   2 +
+ sys/dev/ocs_fc/ocs_device.c                        |   2 +-
+ sys/dev/usb/controller/ehci_imx.c                  |   4 +-
+ sys/dev/usb/controller/generic_ehci_fdt.c          |   4 +-
+ sys/fs/nfsclient/nfs_clrpcops.c                    |   2 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |  11 +
+ sys/fs/nfsserver/nfs_nfsdserv.c                    |   3 +-
+ sys/geom/eli/g_eli.h                               |   2 +-
+ sys/i386/i386/machdep.c                            |   2 +-
+ sys/i386/linux/linux_sysvec.c                      |  12 +-
+ sys/kern/imgact_elf.c                              |  11 +-
+ sys/kern/kern_exec.c                               |  17 +-
+ sys/kern/kern_jail.c                               |  31 ++
+ sys/kern/kern_sysctl.c                             |  11 +-
+ sys/kern/kern_uuid.c                               |  49 ++-
+ sys/kern/sys_generic.c                             |   7 +-
+ sys/mips/conf/std.XLP                              |   1 +
+ sys/mips/mips/trap.c                               |  21 +-
+ sys/modules/Makefile                               |   1 +
+ sys/modules/allwinner/Makefile                     |   1 +
+ sys/modules/allwinner/aw_mmc/Makefile              |  14 +
+ sys/modules/krpc/Makefile                          |   9 +-
+ sys/modules/xdr/Makefile                           |  12 +
+ sys/net/route.c                                    |  10 +-
+ sys/net/route.h                                    |   4 +-
+ sys/net/route/nhop.h                               |   2 -
+ sys/net/route_temporal.c                           |   2 +-
+ sys/net/rtsock.c                                   |   1 +
+ sys/net80211/ieee80211_output.c                    |   2 +-
+ sys/netgraph/ng_tty.c                              |   2 -
+ sys/netinet/in_proto.c                             |   2 +-
+ sys/netinet/in_rmx.c                               |   7 +-
+ sys/netinet/tcp_timer.h                            |   2 +-
+ sys/netinet6/in6_proto.c                           |   8 +-
+ sys/netinet6/ip6_forward.c                         | 135 ++++---
+ sys/netinet6/nd6.c                                 |   6 +-
+ sys/netinet6/nd6_rtr.c                             |  15 +-
+ sys/netinet6/scope6.c                              |  22 ++
+ sys/netinet6/scope6_var.h                          |   2 +
+ sys/netpfil/pf/pf.c                                | 153 +-------
+ sys/ofed/drivers/infiniband/core/ib_addr.c         |  92 +++--
+ sys/ofed/drivers/infiniband/core/ib_cma.c          |  49 ++-
+ sys/powerpc/aim/mmu_oea64.c                        |  19 +-
+ sys/powerpc/powerpc/elf_common.c                   |   6 +-
+ sys/rpc/rpc_generic.c                              |   1 +
+ sys/rpc/rpc_prot.c                                 |   2 -
+ sys/security/audit/audit_bsm_klib.c                |   9 +-
+ sys/sys/elf_common.h                               |  13 +-
+ sys/sys/imgact.h                                   |  10 +-
+ sys/sys/imgact_elf.h                               |   7 +
+ sys/sys/types.h                                    |   2 +-
+ sys/sys/uuid.h                                     |  13 +
+ sys/x86/x86/tsc.c                                  |  31 +-
+ sys/xdr/xdr.c                                      |  20 ++
+ tests/sys/kern/Makefile                            |   8 +
+ tests/sys/kern/sonewconn_overflow.py               | 156 +++++++++
+ tests/sys/kern/sonewconn_overflow.sh               |  43 +++
+ tests/sys/kqueue/libkqueue/timer.c                 |  16 +-
+ usr.bin/calendar/calendars/calendar.freebsd        |   1 +
+ usr.bin/procstat/procstat_auxv.c                   |  30 ++
+ usr.sbin/bhyve/vmgenc.c                            |   4 +-
+ usr.sbin/bhyve/vmgenc.h                            |   4 +-
+ usr.sbin/mailwrapper/mailwrapper.8                 | 117 ++++---
+ usr.sbin/mpsutil/mpr_ioctl.h                       | 388 ---------------------
+ usr.sbin/mpsutil/mps_cmd.c                         |   8 +-
+ usr.sbin/mpsutil/mps_ioctl.h                       | 387 --------------------
+ usr.sbin/mpsutil/mps_show.c                        |   7 +
+ usr.sbin/nologin/nologin.8                         |  25 +-
+ 112 files changed, 1050 insertions(+), 1424 deletions(-)
+ create mode 100644 sys/modules/allwinner/aw_mmc/Makefile
+ create mode 100644 sys/modules/xdr/Makefile
+ create mode 100644 tests/sys/kern/sonewconn_overflow.py
+ create mode 100755 tests/sys/kern/sonewconn_overflow.sh
+ delete mode 100644 usr.sbin/mpsutil/mpr_ioctl.h
+ delete mode 100644 usr.sbin/mpsutil/mps_ioctl.h
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/amd64/include/vmm.h         | 16 ++++++++++++++--
+ sys/netpfil/pf/pf_ioctl.c       |  2 +-
+ tests/sys/net/if_bridge_test.sh | 27 +++++++++++++++++++++++++++
+ usr.sbin/jail/jail.8            |  7 +++++--
+ usr.sbin/jail/jail.c            |  5 +++--
+ 5 files changed, 50 insertions(+), 7 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    99cef6ab30e8..ab843e756604  hardened/current/master -> hardened/current/master        
+remote:    77755bd98c42..8094f2d78e12  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   99cef6ab30e8..ab843e756604  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
