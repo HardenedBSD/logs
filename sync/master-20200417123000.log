@@ -36,3 +36,127 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ comms/openzwave-devel/Makefile                     |   4 +-
+ devel/electron7/Makefile                           |  13 +-
+ devel/electron7/Makefile.version                   |   2 +-
+ devel/electron7/distinfo                           |  10 +-
+ devel/electron7/files/package.json                 |   2 +-
+ .../patch-electron_default__app_default__app.ts    |   6 +-
+ .../files/patch-electron_lib_browser_api_app.ts    |   8 +-
+ .../files/patch-electron_lib_browser_api_dialog.js |   6 +-
+ ...tch-electron_lib_browser_api_menu-item-roles.js |  12 +-
+ .../files/patch-electron_lib_browser_init.ts       |  12 +-
+ .../files/patch-electron_lib_browser_rpc-server.js |   8 +-
+ .../patch-electron_lib_common_api_clipboard.js     |   8 +-
+ .../files/patch-electron_script_lib_utils.js       |  10 +-
+ .../files/patch-electron_script_spec-runner.js     |  10 +-
+ ...n_shell_browser_api_atom__api__web__contents.cc |   8 +-
+ ...h-electron_spec-main_api-browser-window-spec.ts |   4 +-
+ .../patch-electron_spec_api-clipboard-spec.js      |  38 +-
+ .../patch-electron_spec_api-crash-reporter-spec.js |  76 ++--
+ ...tch-electron_spec_api-notification-dbus-spec.js |   6 +-
+ .../patch-electron_spec_api-power-monitor-spec.js  |  14 +-
+ .../files/patch-electron_spec_api-process-spec.js  |  10 +-
+ .../files/patch-electron_spec_api-shell-spec.js    |  30 +-
+ .../files/patch-electron_spec_api-subframe-spec.js |   8 +-
+ .../files/patch-electron_spec_chromium-spec.js     |  12 +-
+ .../patch-electron_spec_fixtures_module_crash.js   |  10 +-
+ .../files/patch-electron_spec_node-spec.js         |   4 +-
+ devel/libcircllhist/Makefile                       |  14 +-
+ devel/libcircllhist/distinfo                       |   6 +-
+ devel/libcircllhist/files/patch-configure.ac       |  26 ++
+ devel/libcircllhist/pkg-descr                      |   4 +-
+ devel/p5-Devel-CheckOS/Makefile                    |   5 +-
+ devel/p5-Devel-CheckOS/distinfo                    |   6 +-
+ editors/vscode/Makefile                            |   1 +
+ graphics/libavif/Makefile                          |   7 +-
+ graphics/libavif/distinfo                          |   8 +-
+ graphics/libavif/pkg-plist                         |   4 +-
+ graphics/mesa-libs/Makefile                        |   2 +
+ lang/intel-compute-runtime/Makefile                |   2 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ lang/intel-compute-runtime/files/patch-max_freq    |  18 +-
+ lang/intel-compute-runtime/files/patch-no-blitter  |  37 ++
+ lang/rust-nightly/Makefile                         |   2 +-
+ lang/rust-nightly/distinfo                         |   6 +-
+ lang/rust-nightly/files/patch-vendor_cc_src_lib.rs |  42 +++
+ .../files/patch-vendor_libgit2-sys_build.rs        |  11 +
+ multimedia/libv4l/Makefile                         |   9 +-
+ multimedia/libva/Makefile                          |   2 +
+ multimedia/libva/distinfo                          |   4 +
+ net/aluminum/Makefile                              |   2 +-
+ net/knxd/Makefile                                  |   5 +-
+ net/knxd/files/knxd.in                             |  13 +-
+ net/knxd/pkg-plist                                 |   2 +
+ print/gv/Makefile                                  |   2 +-
+ sysutils/ltfs/Makefile                             |   2 +-
+ sysutils/openzfs-kmod/Makefile                     |  10 +-
+ sysutils/openzfs-kmod/distinfo                     |   6 +-
+ sysutils/openzfs/Makefile                          |  10 +-
+ sysutils/openzfs/distinfo                          |   6 +-
+ sysutils/openzfs/pkg-plist                         |  24 +-
+ www/bacula-web/Makefile                            |  36 +-
+ www/bacula-web/distinfo                            |   6 +-
+ www/bacula-web/files/pkg-message.in                |  28 +-
+ www/bacula-web/pkg-plist                           | 385 +++++++++------------
+ www/py-django-bitfield/Makefile                    |  10 +-
+ www/py-django-bitfield/distinfo                    |   6 +-
+ www/py-django-netfields/Makefile                   |  12 +-
+ www/py-django-netfields/distinfo                   |   6 +-
+ www/py-django-reversion/Makefile                   |   7 +-
+ www/py-django-reversion/distinfo                   |   6 +-
+ x11/Makefile                                       |   2 +-
+ x11/dmenu-wayland/Makefile                         |   2 +-
+ 71 files changed, 608 insertions(+), 533 deletions(-)
+ create mode 100644 devel/libcircllhist/files/patch-configure.ac
+ create mode 100644 lang/intel-compute-runtime/files/patch-no-blitter
+ create mode 100644 lang/rust-nightly/files/patch-vendor_cc_src_lib.rs
+ create mode 100644 lang/rust-nightly/files/patch-vendor_libgit2-sys_build.rs
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    5a8879e96203..11fe05718e53  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   11fe05718e53..7180f4b30000  master -> master
+==== END: master ====
