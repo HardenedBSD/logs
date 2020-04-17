@@ -34,3 +34,249 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11/nvidia-driver/Makefile
+Auto-merging x11-servers/xorg-server/Makefile
+Removing security/openvpn/files/patch-g3bd91cd-Fix-broken-fragmentation-logic-when-using-NCP
+Removing security/openvpn/files/patch-CVE-2020-11810
+Auto-merging security/openvpn/Makefile
+Auto-merging security/Makefile
+Removing games/retroarch/files/patch-qb_qb.params.sh
+Removing games/retroarch/files/patch-libretro-common_rthreads_rthreads.c
+Removing games/retroarch/files/patch-libretro-common_include_streams_interface__stream.h
+Removing devel/simavr/files/patch-examples_parts_uart__pty.c
+Removing devel/simavr/files/patch-examples_Makefile.opengl
+Merge made by the 'recursive' strategy.
+ GIDs                                               |    2 +-
+ UIDs                                               |    2 +-
+ audio/wavpack/Makefile                             |    2 +-
+ audio/wavpack/distinfo                             |    6 +-
+ audio/wavpack/pkg-plist                            |    2 +-
+ comms/dcf77pi/Makefile                             |   13 +-
+ comms/dcf77pi/distinfo                             |    6 +-
+ comms/dcf77pi/pkg-plist                            |    3 +-
+ deskutils/Makefile                                 |    1 +
+ deskutils/ydotool/Makefile                         |   35 +
+ deskutils/ydotool/distinfo                         |    3 +
+ deskutils/ydotool/files/patch-CMakeLists.txt       |   42 +
+ deskutils/ydotool/pkg-descr                        |    5 +
+ devel/Makefile                                     |    2 +
+ devel/libevdevPlus/Makefile                        |   23 +
+ devel/libevdevPlus/distinfo                        |    3 +
+ devel/libevdevPlus/pkg-descr                       |    3 +
+ devel/libevdevPlus/pkg-plist                       |    8 +
+ devel/libuInputPlus/Makefile                       |   23 +
+ devel/libuInputPlus/distinfo                       |    3 +
+ devel/libuInputPlus/pkg-descr                      |    3 +
+ devel/libuInputPlus/pkg-plist                      |    7 +
+ devel/simavr/Makefile                              |   44 +-
+ devel/simavr/distinfo                              |   13 +-
+ devel/simavr/files/patch-Makefile                  |   12 +
+ devel/simavr/files/patch-examples_Makefile.opengl  |   13 -
+ devel/simavr/files/patch-examples_parts_Makefile   |   12 +
+ .../simavr/files/patch-examples_parts_uart__pty.c  |   18 -
+ devel/simavr/files/patch-simavr_Makefile           |   33 +-
+ devel/simavr/pkg-plist                             |   51 +-
+ games/Makefile                                     |    4 +
+ games/libretro-core-info/Makefile                  |   16 +
+ games/libretro-core-info/distinfo                  |    3 +
+ games/libretro-core-info/files/patch-Makefile      |    8 +
+ games/libretro-core-info/pkg-descr                 |    5 +
+ games/libretro-core-info/pkg-plist                 |  201 +
+ games/libretro-shaders-glsl/Makefile               |   17 +
+ games/libretro-shaders-glsl/distinfo               |    3 +
+ games/libretro-shaders-glsl/files/patch-Makefile   |   16 +
+ games/libretro-shaders-glsl/pkg-descr              |    4 +
+ games/libretro-shaders-glsl/pkg-plist              | 1178 +++++
+ games/libretro-shaders-slang/Makefile              |   17 +
+ games/libretro-shaders-slang/distinfo              |    3 +
+ games/libretro-shaders-slang/files/patch-Makefile  |   16 +
+ games/libretro-shaders-slang/pkg-descr             |    3 +
+ games/libretro-shaders-slang/pkg-plist             | 1346 ++++++
+ games/retroarch-assets/Makefile                    |   17 +
+ games/retroarch-assets/distinfo                    |    3 +
+ games/retroarch-assets/files/patch-Makefile        |   17 +
+ games/retroarch-assets/pkg-descr                   |    4 +
+ games/retroarch-assets/pkg-plist                   | 4957 ++++++++++++++++++++
+ games/retroarch/Makefile                           |   82 +-
+ games/retroarch/distinfo                           |   16 +-
+ ...eps_glslang_glslang_glslang_Include_PoolAlloc.h |   12 +
+ ...etro-common_include_streams_interface__stream.h |   11 -
+ .../patch-libretro-common_rthreads_rthreads.c      |   11 -
+ games/retroarch/files/patch-qb_qb.params.sh        |   14 -
+ games/retroarch/files/pkg-message.in               |   17 +-
+ games/retroarch/pkg-plist                          |    4 +-
+ mail/postfix-current/Makefile                      |    2 +-
+ mail/postfix-current/distinfo                      |    6 +-
+ mail/sympa/Makefile                                |    2 +-
+ mail/sympa/distinfo                                |    6 +-
+ mail/sympa/pkg-plist                               |    6 +-
+ misc/Makefile                                      |    1 +
+ misc/ngraph/Makefile                               |   46 +
+ misc/ngraph/distinfo                               |    3 +
+ misc/ngraph/files/patch-CMakeLists.txt             |   23 +
+ .../files/patch-src_ngraph_codegen_CMakeLists.txt  |   35 +
+ .../files/patch-src_ngraph_runtime_backend.cpp     |   20 +
+ .../patch-src_ngraph_runtime_cpu_CMakeLists.txt    |   22 +
+ ..._ngraph_runtime_cpu_cpu__external__function.cpp |   18 +
+ .../ngraph/files/patch-src_resource_CMakeLists.txt |   19 +
+ misc/ngraph/pkg-descr                              |    3 +
+ misc/ngraph/pkg-plist                              |  728 +++
+ net/haproxy-devel/Makefile                         |    2 +-
+ net/haproxy-devel/distinfo                         |    6 +-
+ science/R-cran-FAdist/Makefile                     |    2 +-
+ science/R-cran-FAdist/distinfo                     |    6 +-
+ science/erkale/Makefile                            |    4 +-
+ science/erkale/distinfo                            |    6 +-
+ security/Makefile                                  |    2 +
+ security/openvpn/Makefile                          |   10 +-
+ security/openvpn/distinfo                          |    6 +-
+ security/openvpn/files/patch-CVE-2020-11810        |   64 -
+ ...d-Fix-broken-fragmentation-logic-when-using-NCP |  195 -
+ security/step-certificates/Makefile                |   89 +
+ security/step-certificates/distinfo                |  103 +
+ security/step-certificates/files/step-ca.in        |   90 +
+ security/step-certificates/pkg-descr               |   11 +
+ security/step-certificates/pkg-message             |   17 +
+ security/step-certificates/pkg-plist               |   20 +
+ security/step-cli/Makefile                         |  212 +
+ security/step-cli/distinfo                         |  349 ++
+ .../files/patch-autocomplete_bash__autocomplete    |   18 +
+ security/step-cli/pkg-descr                        |    8 +
+ security/step-cli/pkg-message                      |   12 +
+ security/wazuh-agent/Makefile                      |    2 +-
+ security/wazuh-agent/distinfo                      |   54 +-
+ sysutils/less/Makefile                             |    7 +-
+ sysutils/less/distinfo                             |    6 +-
+ www/Makefile                                       |    1 +
+ www/bacula-web/Makefile                            |    2 +-
+ www/bacula-web/files/pkg-message.in                |    2 +-
+ www/firefox/Makefile                               |    2 +-
+ www/firefox/files/patch-bug1625431                 |   34 +
+ www/firefox/files/patch-bug1628690                 |   82 +
+ www/gobuffalo/Makefile                             |    2 +-
+ www/gobuffalo/distinfo                             |    6 +-
+ www/luakit-devel/Makefile                          |   54 +
+ www/luakit-devel/distinfo                          |    3 +
+ www/luakit-devel/pkg-descr                         |    9 +
+ www/luakit-devel/pkg-plist                         |  224 +
+ www/luakit/Makefile                                |    2 +
+ x11-fonts/freefont-ttf/Makefile                    |    2 +-
+ x11-servers/xorg-server/Makefile                   |    2 +-
+ x11-servers/xwayland/Makefile                      |    6 +
+ x11-wm/hikari/Makefile                             |    2 +-
+ x11-wm/hikari/distinfo                             |    6 +-
+ x11/nvidia-driver/Makefile                         |    2 +-
+ x11/nvidia-driver/pkg-plist                        |    6 +-
+ 121 files changed, 10565 insertions(+), 523 deletions(-)
+ create mode 100644 deskutils/ydotool/Makefile
+ create mode 100644 deskutils/ydotool/distinfo
+ create mode 100644 deskutils/ydotool/files/patch-CMakeLists.txt
+ create mode 100644 deskutils/ydotool/pkg-descr
+ create mode 100644 devel/libevdevPlus/Makefile
+ create mode 100644 devel/libevdevPlus/distinfo
+ create mode 100644 devel/libevdevPlus/pkg-descr
+ create mode 100644 devel/libevdevPlus/pkg-plist
+ create mode 100644 devel/libuInputPlus/Makefile
+ create mode 100644 devel/libuInputPlus/distinfo
+ create mode 100644 devel/libuInputPlus/pkg-descr
+ create mode 100644 devel/libuInputPlus/pkg-plist
+ create mode 100644 devel/simavr/files/patch-Makefile
+ delete mode 100644 devel/simavr/files/patch-examples_Makefile.opengl
+ create mode 100644 devel/simavr/files/patch-examples_parts_Makefile
+ delete mode 100644 devel/simavr/files/patch-examples_parts_uart__pty.c
+ create mode 100644 games/libretro-core-info/Makefile
+ create mode 100644 games/libretro-core-info/distinfo
+ create mode 100644 games/libretro-core-info/files/patch-Makefile
+ create mode 100644 games/libretro-core-info/pkg-descr
+ create mode 100644 games/libretro-core-info/pkg-plist
+ create mode 100644 games/libretro-shaders-glsl/Makefile
+ create mode 100644 games/libretro-shaders-glsl/distinfo
+ create mode 100644 games/libretro-shaders-glsl/files/patch-Makefile
+ create mode 100644 games/libretro-shaders-glsl/pkg-descr
+ create mode 100644 games/libretro-shaders-glsl/pkg-plist
+ create mode 100644 games/libretro-shaders-slang/Makefile
+ create mode 100644 games/libretro-shaders-slang/distinfo
+ create mode 100644 games/libretro-shaders-slang/files/patch-Makefile
+ create mode 100644 games/libretro-shaders-slang/pkg-descr
+ create mode 100644 games/libretro-shaders-slang/pkg-plist
+ create mode 100644 games/retroarch-assets/Makefile
+ create mode 100644 games/retroarch-assets/distinfo
+ create mode 100644 games/retroarch-assets/files/patch-Makefile
+ create mode 100644 games/retroarch-assets/pkg-descr
+ create mode 100644 games/retroarch-assets/pkg-plist
+ create mode 100644 games/retroarch/files/patch-deps_glslang_glslang_glslang_Include_PoolAlloc.h
+ delete mode 100644 games/retroarch/files/patch-libretro-common_include_streams_interface__stream.h
+ delete mode 100644 games/retroarch/files/patch-libretro-common_rthreads_rthreads.c
+ delete mode 100644 games/retroarch/files/patch-qb_qb.params.sh
+ create mode 100644 misc/ngraph/Makefile
+ create mode 100644 misc/ngraph/distinfo
+ create mode 100644 misc/ngraph/files/patch-CMakeLists.txt
+ create mode 100644 misc/ngraph/files/patch-src_ngraph_codegen_CMakeLists.txt
+ create mode 100644 misc/ngraph/files/patch-src_ngraph_runtime_backend.cpp
+ create mode 100644 misc/ngraph/files/patch-src_ngraph_runtime_cpu_CMakeLists.txt
+ create mode 100644 misc/ngraph/files/patch-src_ngraph_runtime_cpu_cpu__external__function.cpp
+ create mode 100644 misc/ngraph/files/patch-src_resource_CMakeLists.txt
+ create mode 100644 misc/ngraph/pkg-descr
+ create mode 100644 misc/ngraph/pkg-plist
+ delete mode 100644 security/openvpn/files/patch-CVE-2020-11810
+ delete mode 100644 security/openvpn/files/patch-g3bd91cd-Fix-broken-fragmentation-logic-when-using-NCP
+ create mode 100644 security/step-certificates/Makefile
+ create mode 100644 security/step-certificates/distinfo
+ create mode 100644 security/step-certificates/files/step-ca.in
+ create mode 100644 security/step-certificates/pkg-descr
+ create mode 100644 security/step-certificates/pkg-message
+ create mode 100644 security/step-certificates/pkg-plist
+ create mode 100644 security/step-cli/Makefile
+ create mode 100644 security/step-cli/distinfo
+ create mode 100644 security/step-cli/files/patch-autocomplete_bash__autocomplete
+ create mode 100644 security/step-cli/pkg-descr
+ create mode 100644 security/step-cli/pkg-message
+ create mode 100644 www/firefox/files/patch-bug1625431
+ create mode 100644 www/firefox/files/patch-bug1628690
+ create mode 100644 www/luakit-devel/Makefile
+ create mode 100644 www/luakit-devel/distinfo
+ create mode 100644 www/luakit-devel/pkg-descr
+ create mode 100644 www/luakit-devel/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    11fe05718e53..7180f4b30000  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   7180f4b30000..723022bdaaa6  master -> master
+==== END: master ====
