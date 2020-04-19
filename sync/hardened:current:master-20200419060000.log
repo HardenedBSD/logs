@@ -1,0 +1,114 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/riscv/riscv/machdep.c
+Auto-merging sys/arm64/arm64/pmap.c
+Auto-merging sys/arm64/arm64/machdep.c
+Auto-merging sys/arm/arm/machdep.c
+CONFLICT (content): Merge conflict in sys/arm/arm/machdep.c
+Auto-merging share/mk/src.libnames.mk
+Auto-merging libexec/rtld-elf/rtld.c
+Auto-merging libexec/rtld-elf/amd64/rtld_machdep.h
+Auto-merging libexec/rtld-elf/aarch64/rtld_machdep.h
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/arm/arm/machdep.c
+index 1569d099303c,629706910185..000000000000
+--- a/sys/arm/arm/machdep.c
++++ b/sys/arm/arm/machdep.c
+@@@ -67,7 -66,7 +67,11 @@@ __FBSDID("$FreeBSD$")
+  #include <sys/ktr.h>
+  #include <sys/linker.h>
+  #include <sys/msgbuf.h>
+++<<<<<<< HEAD
+ +#include <sys/pax.h>
+++=======
++ #include <sys/physmem.h>
+++>>>>>>> freebsd/current/master
+  #include <sys/reboot.h>
+  #include <sys/rwlock.h>
+  #include <sys/sched.h>
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/openbsm/bin/auditd/auditd.8
+	modified:   lib/libauditd/Makefile
+	modified:   lib/libbsm/Makefile
+	modified:   libexec/rtld-elf/aarch64/rtld_machdep.h
+	modified:   libexec/rtld-elf/amd64/reloc.c
+	modified:   libexec/rtld-elf/amd64/rtld_machdep.h
+	modified:   libexec/rtld-elf/arm/rtld_machdep.h
+	modified:   libexec/rtld-elf/i386/reloc.c
+	modified:   libexec/rtld-elf/i386/rtld_machdep.h
+	modified:   libexec/rtld-elf/mips/rtld_machdep.h
+	modified:   libexec/rtld-elf/powerpc/rtld_machdep.h
+	modified:   libexec/rtld-elf/powerpc64/rtld_machdep.h
+	modified:   libexec/rtld-elf/riscv/rtld_machdep.h
+	modified:   libexec/rtld-elf/rtld.c
+	modified:   sbin/bectl/bectl.8
+	modified:   share/mk/src.libnames.mk
+	modified:   sys/arm/arm/machdep_boot.c
+	modified:   sys/arm/arm/mp_machdep.c
+	modified:   sys/arm/arm/pmap-v6.c
+	modified:   sys/arm/include/md_var.h
+	modified:   sys/arm64/arm64/machdep.c
+	modified:   sys/arm64/arm64/pmap.c
+	modified:   sys/conf/files.arm
+	modified:   sys/conf/files.arm64
+	modified:   sys/conf/files.riscv
+	renamed:    sys/arm/arm/physmem.c -> sys/kern/subr_physmem.c
+	modified:   sys/netinet6/in6_fib.c
+	modified:   sys/riscv/include/machdep.h
+	modified:   sys/riscv/riscv/machdep.c
+	modified:   sys/riscv/riscv/pmap.c
+	renamed:    sys/arm/include/physmem.h -> sys/sys/physmem.h
+	modified:   usr.sbin/nfscbd/nfscbd.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/arm/arm/machdep.c
+
+HEAD is now at 2f02a5c7a308 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 2f02a5c7a308 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
