@@ -1,0 +1,96 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 12 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 2f02a5c7a308..47bfab88bb73
+Fast-forward
+ ObsoleteFiles.inc                              |  10 +++
+ contrib/openbsm/bin/auditd/auditd.8            |   3 +-
+ lib/libauditd/Makefile                         |   1 +
+ lib/libbsm/Makefile                            |   8 +-
+ libexec/rtld-elf/aarch64/rtld_machdep.h        |   4 +-
+ libexec/rtld-elf/amd64/reloc.c                 |  30 +++++++
+ libexec/rtld-elf/amd64/rtld_machdep.h          |  12 +--
+ libexec/rtld-elf/arm/rtld_machdep.h            |   4 +-
+ libexec/rtld-elf/i386/reloc.c                  |  30 +++++++
+ libexec/rtld-elf/i386/rtld_machdep.h           |  12 +--
+ libexec/rtld-elf/mips/rtld_machdep.h           |   4 +-
+ libexec/rtld-elf/powerpc/rtld_machdep.h        |   4 +-
+ libexec/rtld-elf/powerpc64/rtld_machdep.h      |   4 +-
+ libexec/rtld-elf/riscv/rtld_machdep.h          |   4 +-
+ libexec/rtld-elf/rtld.c                        |  11 +--
+ sbin/bectl/bectl.8                             |   2 +-
+ share/mk/src.libnames.mk                       |   2 +-
+ sys/arm/arm/machdep.c                          |  24 +++---
+ sys/arm/arm/machdep_boot.c                     |   4 +-
+ sys/arm/arm/mp_machdep.c                       |   1 -
+ sys/arm/arm/pmap-v6.c                          |   2 -
+ sys/arm/include/md_var.h                       |   1 +
+ sys/arm64/arm64/machdep.c                      |  17 ++--
+ sys/arm64/arm64/pmap.c                         |   7 +-
+ sys/conf/files.arm                             |   2 +-
+ sys/conf/files.arm64                           |   2 +-
+ sys/conf/files.riscv                           |   1 +
+ sys/{arm/arm/physmem.c => kern/subr_physmem.c} |  27 +++---
+ sys/netinet6/in6_fib.c                         |  13 ++-
+ sys/riscv/include/machdep.h                    |   2 +-
+ sys/riscv/riscv/machdep.c                      | 114 +++++++------------------
+ sys/riscv/riscv/pmap.c                         |  49 ++---------
+ sys/{arm/include => sys}/physmem.h             |  32 +++----
+ usr.sbin/nfscbd/nfscbd.c                       |   3 +-
+ 34 files changed, 211 insertions(+), 235 deletions(-)
+ rename sys/{arm/arm/physmem.c => kern/subr_physmem.c} (94%)
+ rename sys/{arm/include => sys}/physmem.h (74%)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ release/arm64/PINE64-LTS.conf            |   2 +-
+ release/arm64/PINE64.conf                |   2 +-
+ release/arm64/PINEBOOK.conf              |   2 +-
+ sys/netgraph/bluetooth/hci/ng_hci_misc.c |  30 ++++++-
+ usr.sbin/bluetooth/hccontrol/hccontrol.h |   1 +
+ usr.sbin/bluetooth/hccontrol/le.c        |  31 +++++--
+ usr.sbin/bluetooth/hccontrol/util.c      | 146 ++++++++++++++++++++++++++++++-
+ 7 files changed, 203 insertions(+), 11 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    47bfab88bb73..1d27740dd080  hardened/current/master -> hardened/current/master
+remote:    307edaaf7a94..d5bc23a40ab4  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   47bfab88bb73..1d27740dd080  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
