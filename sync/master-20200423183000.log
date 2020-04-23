@@ -34,3 +34,602 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/konsole/files/patch-src_main.cpp
+Auto-merging www/node12/Makefile
+Auto-merging www/node10/Makefile
+Auto-merging www/node/Makefile
+Auto-merging www/firefox-esr/Makefile
+Auto-merging www/chromium/Makefile
+Auto-merging sysutils/tracker/Makefile
+Auto-merging sysutils/osquery/Makefile
+Auto-merging net/freerdp/Makefile
+Auto-merging math/R/Makefile
+Auto-merging lang/gnustep-base/Makefile
+Removing graphics/okular/files/patch-git_6a93a03
+Auto-merging games/openttd/Makefile
+Auto-merging games/openrct2/Makefile
+Auto-merging games/0ad/Makefile
+Auto-merging emulators/qemu/Makefile
+Auto-merging editors/nano/Makefile
+Removing editors/nano-devel/pkg-plist
+Removing editors/nano-devel/pkg-descr
+Removing editors/nano-devel/files/patch-doc_man_nanorc.5
+Removing editors/nano-devel/files/patch-doc_man_nano.1
+Removing editors/nano-devel/distinfo
+Removing editors/nano-devel/Makefile
+Removing devel/icu/files/patch-data_Makefile.in
+Auto-merging databases/tarantool/Makefile
+Auto-merging databases/firebird25-server/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ Mk/Scripts/do-users-groups.sh                      |  12 +-
+ Mk/Uses/kde.mk                                     |   6 +-
+ accessibility/kmag/distinfo                        |   6 +-
+ accessibility/kmag/pkg-plist                       |   1 +
+ accessibility/kmousetool/Makefile                  |   1 -
+ accessibility/kmousetool/distinfo                  |   6 +-
+ accessibility/kmouth/distinfo                      |   6 +-
+ accessibility/kmouth/pkg-plist                     |   5 +
+ archivers/ark/distinfo                             |   6 +-
+ archivers/ark/pkg-plist                            |   3 +-
+ archivers/unarchiver/Makefile                      |   2 +-
+ astro/libkgeomap/distinfo                          |   6 +-
+ astro/marble/distinfo                              |   6 +-
+ audio/audiocd-kio/distinfo                         |   6 +-
+ audio/audiocd-kio/pkg-plist                        |   2 +-
+ audio/elisa/distinfo                               |   6 +-
+ audio/elisa/pkg-plist                              |   1 +
+ audio/juk/Makefile                                 |   1 -
+ audio/juk/distinfo                                 |   6 +-
+ audio/kmix/distinfo                                |   6 +-
+ audio/kwave/distinfo                               |   6 +-
+ audio/libkcddb/distinfo                            |   6 +-
+ audio/libkcddb/pkg-plist                           |   1 +
+ audio/libkcompactdisc/distinfo                     |   6 +-
+ audio/musicpd/Makefile                             |   1 +
+ audio/ncmpcpp/Makefile                             |   2 +-
+ benchmarks/libcelero/Makefile                      |  13 +-
+ comms/fldigi/Makefile                              |   2 +-
+ comms/fldigi/distinfo                              |   6 +-
+ databases/akonadi/Makefile                         |   1 -
+ databases/akonadi/distinfo                         |   6 +-
+ databases/clickhouse/Makefile                      |   2 +-
+ databases/couchdb2/Makefile                        |   2 +-
+ databases/evolution-data-server/Makefile           |   2 +-
+ databases/firebird25-server/Makefile               |   2 +-
+ databases/kbibtex/Makefile                         |   2 +-
+ databases/kdb/Makefile                             |   2 +-
+ databases/mysql80-client/Makefile                  |   2 +-
+ databases/mysql80-server/Makefile                  |   2 +-
+ databases/postgresql10-server/Makefile             |   2 +-
+ databases/postgresql11-server/Makefile             |   2 +-
+ databases/postgresql12-server/Makefile             |   2 +-
+ databases/postgresql96-server/Makefile             |   2 +-
+ databases/sqlite3/Makefile                         |   1 +
+ databases/tarantool/Makefile                       |   2 +-
+ deskutils/akonadi-calendar-tools/distinfo          |   6 +-
+ deskutils/akonadi-import-wizard/distinfo           |   6 +-
+ deskutils/akonadiconsole/distinfo                  |   6 +-
+ deskutils/akregator/Makefile                       |   1 -
+ deskutils/akregator/distinfo                       |   6 +-
+ deskutils/calibre/Makefile                         |   2 +-
+ deskutils/grantlee-editor/Makefile                 |   1 -
+ deskutils/grantlee-editor/distinfo                 |   6 +-
+ deskutils/grantleetheme/Makefile                   |   1 -
+ deskutils/grantleetheme/distinfo                   |   6 +-
+ deskutils/kaddressbook/Makefile                    |   1 -
+ deskutils/kaddressbook/distinfo                    |   6 +-
+ deskutils/kalarm/distinfo                          |   6 +-
+ deskutils/kcharselect/distinfo                     |   6 +-
+ deskutils/kdeconnect-kde/Makefile                  |   9 +-
+ deskutils/kdeconnect-kde/distinfo                  |   6 +-
+ deskutils/kdeconnect-kde/pkg-plist                 | 171 +++++++--
+ deskutils/kdepim-addons/Makefile                   |   1 -
+ deskutils/kdepim-addons/distinfo                   |   6 +-
+ deskutils/kdepim-addons/pkg-plist                  | 165 +++-----
+ deskutils/kdepim-apps-libs/Makefile                |   1 -
+ deskutils/kdepim-apps-libs/distinfo                |   6 +-
+ deskutils/kdepim-apps-libs/pkg-plist               |   1 +
+ deskutils/kdepim-runtime/Makefile                  |   1 -
+ deskutils/kdepim-runtime/distinfo                  |   6 +-
+ deskutils/kdepim-runtime/pkg-plist                 |   3 +
+ deskutils/keditbookmarks/distinfo                  |   6 +-
+ deskutils/keditbookmarks/pkg-plist                 |   1 +
+ deskutils/kfind/distinfo                           |   6 +-
+ deskutils/kmail-account-wizard/distinfo            |   6 +-
+ deskutils/kmail/distinfo                           |   6 +-
+ deskutils/kmail/pkg-plist                          |   5 +-
+ deskutils/knotes/Makefile                          |   1 -
+ deskutils/knotes/distinfo                          |   6 +-
+ deskutils/kontact/distinfo                         |   6 +-
+ deskutils/korganizer/distinfo                      |   6 +-
+ deskutils/korganizer/pkg-plist                     |   1 +
+ deskutils/kruler/distinfo                          |   6 +-
+ deskutils/libkdepim/distinfo                       |   6 +-
+ deskutils/mbox-importer/distinfo                   |   6 +-
+ deskutils/osmo/Makefile                            |   2 +-
+ deskutils/peaclock/Makefile                        |   1 +
+ deskutils/pim-data-exporter/distinfo               |   6 +-
+ deskutils/pim-sieve-editor/distinfo                |   6 +-
+ devel/boost-libs/Makefile                          |   2 +-
+ devel/cervisia/distinfo                            |   6 +-
+ devel/dee/Makefile                                 |   2 +-
+ devel/dolphin-plugins/distinfo                     |   6 +-
+ devel/icu-le-hb/Makefile                           |   2 +-
+ devel/icu/Makefile                                 |   2 +-
+ devel/icu/distinfo                                 |   6 +-
+ devel/icu/files/patch-data_Makefile.in             |  12 -
+ devel/kapptemplate/distinfo                        |   6 +-
+ devel/kcachegrind/distinfo                         |   6 +-
+ devel/kde-dev-scripts/distinfo                     |   6 +-
+ devel/kde-dev-utils/distinfo                       |   6 +-
+ devel/kdesdk-thumbnailers/distinfo                 |   6 +-
+ devel/kio-extras/Makefile                          |   4 +-
+ devel/kio-extras/distinfo                          |   6 +-
+ devel/kio-extras/pkg-plist                         |  35 +-
+ devel/kiwix-lib/Makefile                           |   2 +-
+ devel/libical/Makefile                             |   2 +-
+ devel/libphonenumber/Makefile                      |   1 +
+ devel/libzim/Makefile                              |   2 +-
+ devel/lokalize/distinfo                            |   6 +-
+ devel/objecthash/Makefile                          |   2 +-
+ devel/pegtl/Makefile                               |   2 +-
+ devel/pegtl/distinfo                               |   6 +-
+ devel/pegtl/pkg-plist                              |   2 +
+ devel/php72-intl/Makefile                          |   1 +
+ devel/php73-intl/Makefile                          |   1 +
+ devel/php74-intl/Makefile                          |   1 +
+ devel/poxml/distinfo                               |   6 +-
+ devel/py-pyicu/Makefile                            |   2 +-
+ devel/qt5-core/Makefile                            |   2 +-
+ devel/ticcutils/Makefile                           |   2 +-
+ devel/umbrello/distinfo                            |   6 +-
+ devel/umbrello/pkg-plist                           |   2 +
+ dns/libpsl/Makefile                                |   2 +-
+ editors/Makefile                                   |   1 -
+ editors/kate/Makefile                              |   1 -
+ editors/kate/distinfo                              |   6 +-
+ editors/kate/pkg-plist                             |   4 +
+ editors/libreoffice/Makefile                       |   2 +-
+ editors/nano-devel/Makefile                        |  50 ---
+ editors/nano-devel/distinfo                        |   2 -
+ editors/nano-devel/files/patch-doc_man_nano.1      |  11 -
+ editors/nano-devel/files/patch-doc_man_nanorc.5    |  12 -
+ editors/nano-devel/pkg-descr                       |   9 -
+ editors/nano-devel/pkg-plist                       |  91 -----
+ editors/nano/Makefile                              |   4 +-
+ editors/nano/distinfo                              |   6 +-
+ editors/poedit/Makefile                            |   2 +-
+ emulators/qemu/Makefile                            |   6 +-
+ finance/gnucash/Makefile                           |   1 +
+ games/0ad/Makefile                                 |   2 +-
+ games/an/Makefile                                  |   2 +-
+ games/blinken/distinfo                             |   6 +-
+ games/bomber/distinfo                              |   6 +-
+ games/bovo/distinfo                                |   6 +-
+ games/bovo/pkg-plist                               |   2 +-
+ games/easyrpg-player/Makefile                      |   2 +-
+ games/granatier/distinfo                           |   6 +-
+ games/granatier/pkg-plist                          |   1 +
+ games/kanagram/distinfo                            |   6 +-
+ games/kapman/distinfo                              |   6 +-
+ games/katomic/distinfo                             |   6 +-
+ games/katomic/pkg-plist                            |   2 +
+ games/kblackbox/distinfo                           |   6 +-
+ games/kblackbox/pkg-plist                          |   1 +
+ games/kblocks/distinfo                             |   6 +-
+ games/kbounce/distinfo                             |   6 +-
+ games/kbreakout/distinfo                           |   6 +-
+ games/kdiamond/distinfo                            |   6 +-
+ games/kdiamond/pkg-plist                           |   1 +
+ games/kfourinline/distinfo                         |   6 +-
+ games/kfourinline/pkg-plist                        |   1 +
+ games/kgoldrunner/distinfo                         |   6 +-
+ games/kgoldrunner/pkg-plist                        |   1 +
+ games/khangman/distinfo                            |   6 +-
+ games/kigo/distinfo                                |   6 +-
+ games/kigo/pkg-plist                               |   2 +
+ games/killbots/distinfo                            |   6 +-
+ games/killbots/pkg-plist                           |   2 +
+ games/kiriki/distinfo                              |   6 +-
+ games/kiriki/pkg-plist                             |   1 +
+ games/kjumpingcube/distinfo                        |   6 +-
+ games/kjumpingcube/pkg-plist                       |   1 +
+ games/klickety/distinfo                            |   6 +-
+ games/klickety/pkg-plist                           |   1 +
+ games/klines/distinfo                              |   6 +-
+ games/klines/pkg-plist                             |   2 +
+ games/kmahjongg/distinfo                           |   6 +-
+ games/kmahjongg/pkg-plist                          |   1 +
+ games/kmines/distinfo                              |   6 +-
+ games/kmines/pkg-plist                             |   1 +
+ games/knavalbattle/distinfo                        |   6 +-
+ games/knavalbattle/pkg-plist                       |   2 +
+ games/knetwalk/distinfo                            |   6 +-
+ games/knetwalk/pkg-plist                           |   1 +
+ games/knights/distinfo                             |   6 +-
+ games/knights/pkg-plist                            |   1 +
+ games/kolf/distinfo                                |   6 +-
+ games/kolf/pkg-plist                               |   1 +
+ games/kollision/distinfo                           |   6 +-
+ games/kollision/pkg-plist                          |   1 +
+ games/konquest/distinfo                            |   6 +-
+ games/konquest/pkg-plist                           |   1 +
+ games/kpat/distinfo                                |   6 +-
+ games/kpat/pkg-plist                               |   1 +
+ games/kreversi/distinfo                            |   6 +-
+ games/kreversi/pkg-plist                           |   1 +
+ games/kshisen/distinfo                             |   6 +-
+ games/kshisen/pkg-plist                            |   1 +
+ games/ksirk/Makefile                               |   1 -
+ games/ksirk/distinfo                               |   6 +-
+ games/ksirk/pkg-plist                              |   2 +
+ games/ksnakeduel/distinfo                          |   6 +-
+ games/ksnakeduel/pkg-plist                         |   1 +
+ games/kspaceduel/distinfo                          |   6 +-
+ games/kspaceduel/pkg-plist                         |   1 +
+ games/ksquares/distinfo                            |   6 +-
+ games/ksquares/pkg-plist                           |   1 +
+ games/ksudoku/distinfo                             |   6 +-
+ games/ksudoku/pkg-plist                            |   1 +
+ games/ktuberling/distinfo                          |   6 +-
+ games/ktuberling/pkg-plist                         |   2 +
+ games/kubrick/distinfo                             |   6 +-
+ games/kubrick/pkg-plist                            |   1 +
+ games/libkdegames/distinfo                         |   6 +-
+ games/libkdegames/pkg-plist                        |   1 +
+ games/libkmahjongg/distinfo                        |   6 +-
+ games/liblcf/Makefile                              |   2 +-
+ games/lskat/distinfo                               |   6 +-
+ games/lskat/pkg-plist                              |   1 +
+ games/openrct2/Makefile                            |   1 +
+ games/openttd/Makefile                             |   1 +
+ games/palapeli/Makefile                            |   1 -
+ games/palapeli/distinfo                            |   6 +-
+ games/palapeli/pkg-plist                           |   1 +
+ games/picmi/distinfo                               |   6 +-
+ games/picmi/pkg-plist                              |   4 +
+ games/widelands/Makefile                           |   2 +-
+ graphics/dcmtk/Makefile                            |   2 +-
+ graphics/gwenview/distinfo                         |   6 +-
+ graphics/gwenview/pkg-plist                        |   3 +-
+ graphics/imv/Makefile                              |   2 +-
+ graphics/kamera/distinfo                           |   6 +-
+ graphics/kamera/pkg-plist                          |   2 +-
+ graphics/kcolorchooser/distinfo                    |   6 +-
+ graphics/kdegraphics-mobipocket/distinfo           |   6 +-
+ graphics/kdegraphics-svgpart/distinfo              |   6 +-
+ graphics/kdegraphics-thumbnailers/distinfo         |   6 +-
+ graphics/kimagemapeditor/Makefile                  |   1 -
+ graphics/kimagemapeditor/distinfo                  |   6 +-
+ graphics/kipi-plugins/distinfo                     |   6 +-
+ graphics/kipi-plugins/pkg-plist                    |  39 +-
+ graphics/kolourpaint/distinfo                      |   6 +-
+ graphics/kolourpaint/pkg-plist                     |  14 -
+ graphics/kqtquickcharts/distinfo                   |   6 +-
+ graphics/libcdr01/Makefile                         |   2 +-
+ graphics/libfreehand/Makefile                      |   2 +-
+ graphics/libkdcraw/Makefile                        |   1 -
+ graphics/libkdcraw/distinfo                        |   6 +-
+ graphics/libkexiv2/distinfo                        |   6 +-
+ graphics/libkipi/distinfo                          |   6 +-
+ graphics/libksane/distinfo                         |   6 +-
+ graphics/libzmf/Makefile                           |   2 +-
+ graphics/maim/Makefile                             |   1 +
+ graphics/okular/Makefile                           |   1 -
+ graphics/okular/distinfo                           |   6 +-
+ graphics/okular/files/patch-git_6a93a03            |  27 --
+ graphics/okular/pkg-plist                          |   7 -
+ graphics/openfx-arena/Makefile                     |   2 +-
+ graphics/osg/Makefile                              |   2 +-
+ graphics/spectacle/Makefile                        |   1 -
+ graphics/spectacle/distinfo                        |   6 +-
+ graphics/spectacle/pkg-plist                       |   1 +
+ graphics/tesseract/Makefile                        |   2 +-
+ irc/znc-push/Makefile                              |   2 +-
+ irc/znc/Makefile                                   |   2 +-
+ japanese/kiten/distinfo                            |   6 +-
+ java/openjfx8-devel/Makefile                       |   2 +-
+ java/trove4j/Makefile                              |   7 +-
+ java/trove4j/distinfo                              |   1 +
+ lang/gnustep-base/Makefile                         |   2 +-
+ lang/kross-interpreters/distinfo                   |   6 +-
+ lang/kturtle/distinfo                              |   6 +-
+ lang/parrot/Makefile                               |   2 +-
+ lang/spidermonkey52/Makefile                       |   2 +-
+ lang/spidermonkey60/Makefile                       |   2 +-
+ mail/cyrus-imapd30/Makefile                        |   2 +-
+ mail/dovecot-fts-xapian/Makefile                   |   1 +
+ mail/dovecot/Makefile                              |   2 +-
+ mail/evolution-ews/Makefile                        |   2 +-
+ mail/evolution/Makefile                            |   2 +-
+ mail/postfix-current/Makefile                      |   2 +-
+ mail/postfix/Makefile                              |   2 +-
+ mail/rspamd-devel/Makefile                         |   1 +
+ mail/rspamd/Makefile                               |   1 +
+ mail/sendmail-devel/Makefile                       |   2 +-
+ mail/sendmail/Makefile                             |   2 +-
+ mail/thunderbird/Makefile                          |   2 +-
+ math/R/Makefile                                    |   2 +-
+ math/analitza/distinfo                             |   6 +-
+ math/cantor/Makefile                               |   1 -
+ math/cantor/distinfo                               |   6 +-
+ math/cantor/pkg-plist                              |  10 +-
+ math/gmm++/Makefile                                |   2 +-
+ math/gmm++/distinfo                                |   6 +-
+ math/kalgebra/distinfo                             |   6 +-
+ math/kalgebra/pkg-plist                            |   2 +
+ math/kbruch/distinfo                               |   6 +-
+ math/kcalc/distinfo                                |   6 +-
+ math/kig/Makefile                                  |   1 -
+ math/kig/distinfo                                  |   6 +-
+ math/kmplot/distinfo                               |   6 +-
+ math/libqalculate/Makefile                         |   2 +-
+ math/py-Diofant/Makefile                           |   3 +-
+ math/py-Diofant/distinfo                           |   6 +-
+ math/py-rpy2/Makefile                              |   1 +
+ math/rocs/Makefile                                 |   1 -
+ math/rocs/distinfo                                 |   6 +-
+ math/rocs/pkg-plist                                |   2 -
+ misc/artikulate/distinfo                           |   6 +-
+ misc/artikulate/pkg-plist                          |  31 --
+ misc/kdeedu-data/distinfo                          |   6 +-
+ misc/kgeography/distinfo                           |   6 +-
+ misc/klettres/distinfo                             |   6 +-
+ misc/ktouch/Makefile                               |   1 -
+ misc/ktouch/distinfo                               |   6 +-
+ misc/kwordquiz/distinfo                            |   6 +-
+ misc/libkeduvocdocument/distinfo                   |   6 +-
+ misc/parley/distinfo                               |   6 +-
+ misc/sword/Makefile                                |   2 +-
+ misc/xiphos/Makefile                               |   1 +
+ multimedia/aegisub/Makefile                        |   2 +-
+ multimedia/dragon/distinfo                         |   6 +-
+ multimedia/intel-media-sdk/Makefile                |   2 +-
+ multimedia/intel-media-sdk/distinfo                |   6 +-
+ multimedia/kamoso/distinfo                         |   6 +-
+ multimedia/kdemultimedia-ffmpegthumbs/distinfo     |   6 +-
+ multimedia/kdemultimedia-ffmpegthumbs/pkg-plist    |   3 +-
+ multimedia/kdenlive/Makefile                       |   1 -
+ multimedia/kdenlive/distinfo                       |   6 +-
+ multimedia/subtitlecomposer/Makefile               |   2 +-
+ net-im/dino/Makefile                               |   2 +-
+ net-im/kaccounts-integration/distinfo              |   6 +-
+ net-im/kaccounts-integration/pkg-plist             |  22 +-
+ net-im/kaccounts-providers/Makefile                |   3 +-
+ net-im/kaccounts-providers/distinfo                |   6 +-
+ net-im/kaccounts-providers/pkg-plist               |   8 +
+ net-im/kopete/Makefile                             |   1 -
+ net-im/kopete/distinfo                             |   6 +-
+ net-im/ktp-accounts-kcm/distinfo                   |   6 +-
+ net-im/ktp-approver/distinfo                       |   6 +-
+ net-im/ktp-auth-handler/Makefile                   |   1 -
+ net-im/ktp-auth-handler/distinfo                   |   6 +-
+ net-im/ktp-call-ui/distinfo                        |   6 +-
+ net-im/ktp-common-internals/distinfo               |   6 +-
+ net-im/ktp-contact-list/distinfo                   |   6 +-
+ net-im/ktp-contact-runner/distinfo                 |   6 +-
+ net-im/ktp-desktop-applets/distinfo                |   6 +-
+ net-im/ktp-filetransfer-handler/distinfo           |   6 +-
+ net-im/ktp-kded-module/distinfo                    |   6 +-
+ net-im/ktp-kded-module/pkg-plist                   |   3 +-
+ net-im/ktp-send-file/distinfo                      |   6 +-
+ net-im/ktp-send-file/pkg-plist                     |   1 -
+ net-im/ktp-text-ui/distinfo                        |   6 +-
+ net-im/ktp-text-ui/pkg-plist                       |  10 +
+ net-mgmt/prometheus2/Makefile                      |   2 +-
+ net-mgmt/prometheus2/distinfo                      |  10 +-
+ net/akonadi-calendar/distinfo                      |   6 +-
+ net/akonadi-contacts/Makefile                      |   1 -
+ net/akonadi-contacts/distinfo                      |   6 +-
+ net/akonadi-mime/distinfo                          |   6 +-
+ net/akonadi-notes/distinfo                         |   6 +-
+ net/akonadi-search/distinfo                        |   6 +-
+ net/calendarsupport/distinfo                       |   6 +-
+ net/eventviews/Makefile                            |   1 -
+ net/eventviews/distinfo                            |   6 +-
+ net/freerdp/Makefile                               |   2 +-
+ net/incidenceeditor/Makefile                       |   1 -
+ net/incidenceeditor/distinfo                       |   6 +-
+ net/kalarmcal/distinfo                             |   6 +-
+ net/kalarmcal/pkg-plist                            |   2 +
+ net/kblog/distinfo                                 |   6 +-
+ net/kcalutils/Makefile                             |   1 -
+ net/kcalutils/distinfo                             |   6 +-
+ net/kdav/distinfo                                  |   6 +-
+ net/kdav/pkg-plist                                 | 101 ++---
+ net/kdenetwork-filesharing/distinfo                |   6 +-
+ net/kdenetwork-filesharing/pkg-plist               |   1 +
+ net/kdenetwork/Makefile                            |   1 -
+ net/kget/Makefile                                  |   1 -
+ net/kget/distinfo                                  |   6 +-
+ net/kidentitymanagement/distinfo                   |   6 +-
+ net/kimap/distinfo                                 |   6 +-
+ net/kitinerary/Makefile                            |   1 -
+ net/kitinerary/distinfo                            |   6 +-
+ net/kitinerary/pkg-plist                           |   6 +
+ net/kldap/distinfo                                 |   6 +-
+ net/kldap/pkg-plist                                |   6 -
+ net/kmailtransport/distinfo                        |   6 +-
+ net/kmbox/distinfo                                 |   6 +-
+ net/kmime/Makefile                                 |   1 -
+ net/kmime/distinfo                                 |   6 +-
+ net/kmime/pkg-plist                                |   1 +
+ net/kontactinterface/distinfo                      |   6 +-
+ net/kpimtextedit/Makefile                          |   1 -
+ net/kpimtextedit/distinfo                          |   6 +-
+ net/kpimtextedit/pkg-plist                         |   4 +
+ net/krdc/distinfo                                  |   6 +-
+ net/krdc/files/patch-CMakeLists.txt                |  11 +-
+ net/krfb/Makefile                                  |   1 -
+ net/krfb/distinfo                                  |   6 +-
+ net/ksmtp/distinfo                                 |   6 +-
+ net/ktnef/distinfo                                 |   6 +-
+ net/libgravatar/distinfo                           |   6 +-
+ net/libkgapi/distinfo                              |   6 +-
+ net/libksieve/distinfo                             |   6 +-
+ net/mailcommon/distinfo                            |   6 +-
+ net/mailimporter/distinfo                          |   6 +-
+ net/messagelib/Makefile                            |   4 -
+ net/messagelib/distinfo                            |   8 +-
+ net/messagelib/pkg-plist                           |  12 +-
+ net/openldap24-server/Makefile                     |   2 +-
+ net/pimcommon/Makefile                             |   1 -
+ net/pimcommon/distinfo                             |   6 +-
+ net/pimcommon/pkg-plist                            |   2 -
+ net/yaz/Makefile                                   |   2 +-
+ net/zebra-server/Makefile                          |   2 +-
+ net/zeroconf-ioslave/distinfo                      |   6 +-
+ news/tin/Makefile                                  |   2 +-
+ print/harfbuzz-icu/Makefile                        |   2 +-
+ print/libmspub01/Makefile                          |   2 +-
+ print/print-manager/distinfo                       |   6 +-
+ print/print-manager/pkg-plist                      |   5 +-
+ print/scribus-devel/Makefile                       |   2 +-
+ print/tex-xetex/Makefile                           |   2 +-
+ print/texlive-base/Makefile                        |   2 +-
+ science/kalzium/distinfo                           |   6 +-
+ science/py-tensorflow/Makefile                     |   2 +-
+ science/step/distinfo                              |   6 +-
+ science/step/pkg-plist                             | 426 +++++++++++++++------
+ security/certificate-transparency/Makefile         |   2 +-
+ security/kgpg/distinfo                             |   6 +-
+ security/kleopatra/Makefile                        |   1 -
+ security/kleopatra/distinfo                        |   6 +-
+ security/kpkpass/distinfo                          |   6 +-
+ security/kwalletmanager/distinfo                   |   6 +-
+ security/libkleo/distinfo                          |   6 +-
+ security/libkleo/pkg-plist                         |   2 +
+ security/wolfssl/Makefile                          |   2 +-
+ security/wolfssl/distinfo                          |   6 +-
+ security/wolfssl/pkg-plist                         |  24 +-
+ sysutils/atf-master/Makefile                       |   2 +-
+ sysutils/atf-master/distinfo                       |   6 +-
+ sysutils/baloo-widgets/distinfo                    |   6 +-
+ sysutils/baloo-widgets/pkg-plist                   |   3 +-
+ sysutils/filelight/distinfo                        |   6 +-
+ sysutils/gdisk/Makefile                            |   2 +-
+ sysutils/k3b/Makefile                              |   1 -
+ sysutils/k3b/distinfo                              |   6 +-
+ sysutils/kbackup/distinfo                          |   6 +-
+ sysutils/kbackup/pkg-plist                         |   1 +
+ sysutils/kcron/distinfo                            |   6 +-
+ sysutils/kdebugsettings/distinfo                   |   6 +-
+ sysutils/kdf/distinfo                              |   6 +-
+ sysutils/kdialog/distinfo                          |   6 +-
+ sysutils/kfloppy/distinfo                          |   6 +-
+ sysutils/khelpcenter/Makefile                      |   1 -
+ sysutils/khelpcenter/distinfo                      |   6 +-
+ sysutils/ksystemlog/distinfo                       |   6 +-
+ sysutils/kubectl/Makefile                          |   2 +-
+ sysutils/kubectl/distinfo                          |   6 +-
+ sysutils/ltfs/Makefile                             |   1 +
+ sysutils/osquery/Makefile                          |   2 +-
+ sysutils/signon-kwallet-extension/distinfo         |   6 +-
+ sysutils/sweeper/distinfo                          |   6 +-
+ sysutils/tracker-miners/Makefile                   |   2 +-
+ sysutils/tracker/Makefile                          |   2 +-
+ sysutils/u-boot-duovero/Makefile                   |   2 +
+ sysutils/u-boot-master/Makefile                    |   6 +-
+ sysutils/u-boot-master/distinfo                    |   6 +-
+ sysutils/u-boot-pandaboard/Makefile                |   2 +
+ sysutils/u-boot-rock64/Makefile                    |   6 -
+ sysutils/u-boot-rpi3/Makefile                      |   2 -
+ sysutils/u-boot-rpi4/Makefile                      |   2 -
+ textproc/R-cran-stringi/Makefile                   |   1 +
+ textproc/dwdiff/Makefile                           |   2 +-
+ textproc/hs-pandoc-citeproc/Makefile               |   2 +-
+ textproc/kompare/distinfo                          |   6 +-
+ textproc/libe-book/Makefile                        |   2 +-
+ textproc/libfolia/Makefile                         |   2 +-
+ textproc/libkomparediff2/distinfo                  |   6 +-
+ textproc/libqxp/Makefile                           |   2 +-
+ textproc/libvisio01/Makefile                       |   2 +-
+ textproc/nuspell/Makefile                          |   1 +
+ textproc/raptor2/Makefile                          |   2 +-
+ textproc/rubygem-charlock_holmes/Makefile          |   2 +-
+ textproc/ucto/Makefile                             |   2 +-
+ textproc/zorba/Makefile                            |   2 +-
+ www/chromium/Makefile                              |   3 +-
+ www/chromium/distinfo                              |  10 +-
+ www/cliqz/Makefile                                 |   2 +-
+ www/epiphany/Makefile                              |   2 +-
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox/Makefile                               |   2 +-
+ www/iridium/Makefile                               |   2 +-
+ www/mod_pagespeed/Makefile                         |   2 +-
+ www/node/Makefile                                  |   1 +
+ .../patch-deps_v8_src_objects_js-number-format.cc  | 145 +++++++
+ www/node10/Makefile                                |   1 +
+ www/node12/Makefile                                |   1 +
+ .../patch-deps_v8_src_objects_js-number-format.cc  | 145 +++++++
+ www/qt5-webkit/Makefile                            |   2 +-
+ www/webkit2-gtk3/Makefile                          |   1 +
+ x11-clocks/kteatime/distinfo                       |   6 +-
+ x11-clocks/ktimer/distinfo                         |   6 +-
+ x11-fm/dolphin/distinfo                            |   6 +-
+ x11-fm/dolphin/pkg-plist                           |   2 +
+ x11-fm/konqueror/distinfo                          |   6 +-
+ x11-fm/konqueror/pkg-plist                         |   3 -
+ x11-toolkits/gnustep-gui/Makefile                  |   2 +-
+ x11/gnome-shell/Makefile                           |   2 +-
+ x11/konsole/distinfo                               |   6 +-
+ x11/konsole/files/patch-src_main.cpp               |  13 -
+ x11/slop/Makefile                                  |   1 +
+ x11/yakuake/distinfo                               |   6 +-
+ x11/yakuake/pkg-plist                              |   2 +
+ 517 files changed, 1942 insertions(+), 1540 deletions(-)
+ delete mode 100644 devel/icu/files/patch-data_Makefile.in
+ delete mode 100644 editors/nano-devel/Makefile
+ delete mode 100644 editors/nano-devel/distinfo
+ delete mode 100644 editors/nano-devel/files/patch-doc_man_nano.1
+ delete mode 100644 editors/nano-devel/files/patch-doc_man_nanorc.5
+ delete mode 100644 editors/nano-devel/pkg-descr
+ delete mode 100644 editors/nano-devel/pkg-plist
+ delete mode 100644 graphics/okular/files/patch-git_6a93a03
+ create mode 100644 www/node/files/patch-deps_v8_src_objects_js-number-format.cc
+ create mode 100644 www/node12/files/patch-deps_v8_src_objects_js-number-format.cc
+ delete mode 100644 x11/konsole/files/patch-src_main.cpp
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    8e05caf1f93a..86ab879aa104  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   86ab879aa104..528965291639  master -> master
+==== END: master ====
