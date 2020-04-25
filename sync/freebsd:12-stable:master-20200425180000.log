@@ -1,0 +1,155 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 3ed643a10ecb..2e87be6a0caa
+Fast-forward
+ contrib/binutils/bfd/elfxx-mips.c                  |     2 +-
+ contrib/binutils/binutils/stabs.c                  |     2 +-
+ crypto/openssh/.depend                             |     6 +-
+ crypto/openssh/.skipped-commit-ids                 |     1 +
+ crypto/openssh/ChangeLog                           | 12287 +++++++++----------
+ crypto/openssh/Makefile.in                         |     2 +-
+ crypto/openssh/PROTOCOL                            |     9 +-
+ crypto/openssh/PROTOCOL.krl                        |    16 +-
+ crypto/openssh/PROTOCOL.mux                        |   144 +-
+ crypto/openssh/README                              |     8 +-
+ crypto/openssh/auth-options.c                      |    17 +-
+ crypto/openssh/auth-passwd.c                       |     3 +
+ crypto/openssh/auth.c                              |    22 +-
+ crypto/openssh/auth2-hostbased.c                   |    11 +-
+ crypto/openssh/auth2-pubkey.c                      |    12 +-
+ crypto/openssh/authfile.c                          |    14 +-
+ crypto/openssh/channels.c                          |    54 +-
+ crypto/openssh/channels.h                          |     3 +-
+ crypto/openssh/clientloop.c                        |    43 +-
+ crypto/openssh/configure.ac                        |    54 +-
+ crypto/openssh/contrib/redhat/openssh.spec         |     2 +-
+ crypto/openssh/contrib/suse/openssh.spec           |     2 +-
+ crypto/openssh/dh.c                                |    14 +-
+ crypto/openssh/groupaccess.c                       |    11 +-
+ crypto/openssh/kexgexs.c                           |     3 +-
+ crypto/openssh/krl.c                               |   126 +-
+ crypto/openssh/krl.h                               |     6 +-
+ crypto/openssh/misc.c                              |    31 +-
+ crypto/openssh/misc.h                              |     3 +-
+ crypto/openssh/moduli                              |   864 +-
+ crypto/openssh/mux.c                               |    87 +-
+ crypto/openssh/myproposal.h                        |    14 +-
+ crypto/openssh/nchan.c                             |    74 +-
+ crypto/openssh/openbsd-compat/bsd-asprintf.c       |     9 +
+ crypto/openssh/openbsd-compat/bsd-misc.c           |     8 +-
+ crypto/openssh/openbsd-compat/openssl-compat.c     |     6 +
+ crypto/openssh/openbsd-compat/port-linux.c         |     1 +
+ crypto/openssh/openbsd-compat/port-uw.c            |     3 +
+ crypto/openssh/openbsd-compat/setproctitle.c       |     2 +-
+ crypto/openssh/openbsd-compat/xcrypt.c             |     3 +-
+ crypto/openssh/readconf.c                          |    48 +-
+ crypto/openssh/readconf.h                          |     3 +-
+ crypto/openssh/regress/README.regress              |    23 +-
+ crypto/openssh/regress/krl.sh                      |    49 +-
+ crypto/openssh/regress/misc/fuzz-harness/Makefile  |     7 +-
+ .../regress/misc/fuzz-harness/authopt_fuzz.cc      |    33 +
+ crypto/openssh/regress/unittests/sshkey/common.c   |     2 +
+ .../openssh/regress/unittests/sshkey/mktestdata.sh |    14 +-
+ .../openssh/regress/unittests/sshkey/test_file.c   |    18 +
+ .../openssh/regress/unittests/sshkey/test_sshkey.c |     8 +-
+ .../regress/unittests/sshkey/testdata/rsa_1_sha1   |    15 +
+ .../unittests/sshkey/testdata/rsa_1_sha1-cert.pub  |     1 +
+ .../unittests/sshkey/testdata/rsa_1_sha1.pub       |     1 +
+ .../regress/unittests/sshkey/testdata/rsa_1_sha512 |    15 +
+ .../sshkey/testdata/rsa_1_sha512-cert.pub          |     1 +
+ .../unittests/sshkey/testdata/rsa_1_sha512.pub     |     1 +
+ .../openssh/regress/unittests/test_helper/fuzz.c   |     8 +-
+ .../regress/unittests/test_helper/test_helper.c    |     3 +-
+ crypto/openssh/sandbox-seccomp-filter.c            |     3 +
+ crypto/openssh/scp.1                               |     5 +-
+ crypto/openssh/servconf.c                          |    17 +-
+ crypto/openssh/servconf.h                          |     4 +-
+ crypto/openssh/session.c                           |    85 +-
+ crypto/openssh/session.h                           |     3 +-
+ crypto/openssh/sftp-common.c                       |     2 +-
+ crypto/openssh/sftp.1                              |     5 +-
+ crypto/openssh/sftp.c                              |     4 +-
+ crypto/openssh/ssh-add.c                           |    62 +-
+ crypto/openssh/ssh-keygen.1                        |    19 +-
+ crypto/openssh/ssh-keygen.c                        |    79 +-
+ crypto/openssh/ssh.1                               |    20 +-
+ crypto/openssh/ssh.c                               |    38 +-
+ crypto/openssh/ssh_config                          |     2 +-
+ crypto/openssh/ssh_config.5                        |    28 +-
+ crypto/openssh/ssh_namespace.h                     |    10 +-
+ crypto/openssh/sshconnect.c                        |    17 +-
+ crypto/openssh/sshconnect2.c                       |    82 +-
+ crypto/openssh/sshd.c                              |     5 +-
+ crypto/openssh/sshd_config                         |     2 +-
+ crypto/openssh/sshd_config.5                       |    15 +-
+ crypto/openssh/sshkey.c                            |   174 +-
+ crypto/openssh/sshkey.h                            |     5 +-
+ crypto/openssh/version.h                           |     6 +-
+ lib/Makefile                                       |     1 +
+ lib/liblua/Makefile                                |    29 +
+ {libexec/flua => lib/liblua}/luaconf.h             |     0
+ libexec/flua/Makefile                              |    15 +-
+ share/mk/src.libnames.mk                           |     5 +
+ sys/dev/sound/pci/hda/hdac.c                       |     2 +-
+ sys/netpfil/pf/pf.c                                |     2 +-
+ usr.sbin/bluetooth/hccontrol/le.c                  |     2 +-
+ usr.sbin/i2c/i2c.c                                 |     2 +-
+ 92 files changed, 7902 insertions(+), 7077 deletions(-)
+ create mode 100644 crypto/openssh/regress/misc/fuzz-harness/authopt_fuzz.cc
+ create mode 100644 crypto/openssh/regress/unittests/sshkey/testdata/rsa_1_sha1
+ create mode 100644 crypto/openssh/regress/unittests/sshkey/testdata/rsa_1_sha1-cert.pub
+ create mode 100644 crypto/openssh/regress/unittests/sshkey/testdata/rsa_1_sha1.pub
+ create mode 100644 crypto/openssh/regress/unittests/sshkey/testdata/rsa_1_sha512
+ create mode 100644 crypto/openssh/regress/unittests/sshkey/testdata/rsa_1_sha512-cert.pub
+ create mode 100644 crypto/openssh/regress/unittests/sshkey/testdata/rsa_1_sha512.pub
+ create mode 100644 lib/liblua/Makefile
+ rename {libexec/flua => lib/liblua}/luaconf.h (100%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    3ed643a10ecb..2e87be6a0caa  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   3ed643a10ecb..2e87be6a0caa  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
