@@ -34,3 +34,158 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11/xterm/Makefile
+Removing sysutils/ftwin/files/patch-acinclude-check-cflags-ldflags
+Auto-merging sysutils/ftwin/Makefile
+CONFLICT (content): Merge conflict in sysutils/ftwin/Makefile
+Auto-merging print/pdftk/Makefile
+Auto-merging ports-mgmt/pkg/Makefile
+Auto-merging editors/emacs/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc sysutils/ftwin/Makefile
+index d9e2e9714b34,fe5cc0566ef8..000000000000
+--- a/sysutils/ftwin/Makefile
++++ b/sysutils/ftwin/Makefile
+@@@ -21,10 -17,16 +17,22 @@@ LIB_DEPENDS=	libapr-1.so:devel/apr1 
+  		libpcre.so:devel/pcre \
+  		libpuzzle.so:graphics/libpuzzle
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		autoreconf libarchive tar:bzip2
+++=======
++ USES=		autoreconf bdb libarchive pkgconfig tar:bzip2
++ 
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	fpesce
++ GH_PROJECT=	ftwin
++ GH_TAGNAME=	3355fd9
++ 
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
++ CONFIGURE_ARGS=	--with-archive=${LOCALBASE}
++ MAKE_ARGS=	CFLAGS="${CFLAGS}"
+  
+  PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README
+  PLIST_FILES=	bin/ftwin man/man8/ftwin.8.gz
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/bchoppr-lv2/Makefile
+	modified:   audio/bchoppr-lv2/distinfo
+	modified:   audio/gonic/Makefile
+	modified:   audio/gonic/distinfo
+	modified:   cad/freecad/Makefile
+	modified:   cad/opencascade/Makefile
+	modified:   databases/pglogical/Makefile
+	modified:   databases/pglogical/distinfo
+	modified:   devel/librelp/Makefile
+	modified:   devel/librelp/distinfo
+	modified:   devel/mutagen/Makefile
+	modified:   devel/mutagen/distinfo
+	modified:   devel/py-cookiecutter/Makefile
+	modified:   devel/py-cookiecutter/distinfo
+	modified:   devel/py-yamllint/Makefile
+	modified:   devel/py-yamllint/distinfo
+	modified:   editors/emacs/Makefile
+	modified:   graphics/avir/Makefile
+	modified:   graphics/avir/distinfo
+	modified:   lang/rust-nightly/Makefile
+	modified:   lang/rust-nightly/distinfo
+	modified:   mail/postfix-current/Makefile
+	modified:   mail/postfix-current/distinfo
+	modified:   math/Makefile
+	modified:   math/vtk8/Makefile
+	new file:   math/vtk9/Makefile
+	new file:   math/vtk9/distinfo
+	new file:   math/vtk9/files/patch-ThirdParty_libproj_vtklibproj_src_pj__mutex.c
+	new file:   math/vtk9/pkg-descr
+	modified:   multimedia/Makefile
+	new file:   multimedia/f3d/Makefile
+	new file:   multimedia/f3d/distinfo
+	new file:   multimedia/f3d/pkg-descr
+	modified:   multimedia/mimms/Makefile
+	modified:   multimedia/mimms/pkg-descr
+	modified:   multimedia/mimms/pkg-plist
+	modified:   net/py-aiohttp-socks/Makefile
+	modified:   net/py-aiohttp-socks/distinfo
+	modified:   net/storj/Makefile
+	modified:   net/storj/Makefile.deps
+	modified:   net/storj/distinfo
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   ports-mgmt/pkg-devel/distinfo
+	modified:   ports-mgmt/pkg-devel/pkg-plist
+	modified:   ports-mgmt/pkg/Makefile
+	modified:   ports-mgmt/pkg/distinfo
+	modified:   ports-mgmt/pkg/pkg-plist
+	modified:   print/pdftk/Makefile
+	modified:   print/pdftk/distinfo
+	modified:   sysutils/ftwin/distinfo
+	deleted:    sysutils/ftwin/files/patch-acinclude-check-cflags-ldflags
+	modified:   sysutils/fwup/Makefile
+	modified:   sysutils/fwup/distinfo
+	modified:   www/authelia/Makefile
+	modified:   www/authelia/distinfo
+	modified:   www/mod_auth_gssapi/Makefile
+	modified:   www/mod_auth_gssapi/distinfo
+	modified:   www/qt5-webengine/Makefile
+	modified:   www/qt5-webengine/distinfo
+	modified:   www/qt5-webengine/files/patch-configure.pri
+	new file:   www/qt5-webengine/files/patch-src_3rdparty_chromium_base_files_file__path__watcher__kqueue.h
+	modified:   www/qt5-webengine/files/patch-src_3rdparty_gn_build_gen.py
+	modified:   x11/simplestroke/Makefile
+	modified:   x11/simplestroke/distinfo
+	modified:   x11/simplestroke/pkg-descr
+	modified:   x11/xterm/Makefile
+	modified:   x11/xterm/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sysutils/ftwin/Makefile
+
+
+It took 3.26 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 059c1126ce6c Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 059c1126ce6c Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
