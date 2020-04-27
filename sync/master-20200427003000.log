@@ -34,3 +34,102 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/ftwin/files/patch-acinclude-check-cflags-ldflags
+Auto-merging sysutils/ftwin/Makefile
+CONFLICT (content): Merge conflict in sysutils/ftwin/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc sysutils/ftwin/Makefile
+index d9e2e9714b34,fe5cc0566ef8..000000000000
+--- a/sysutils/ftwin/Makefile
++++ b/sysutils/ftwin/Makefile
+@@@ -21,10 -17,16 +17,22 @@@ LIB_DEPENDS=	libapr-1.so:devel/apr1 
+  		libpcre.so:devel/pcre \
+  		libpuzzle.so:graphics/libpuzzle
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		autoreconf libarchive tar:bzip2
+++=======
++ USES=		autoreconf bdb libarchive pkgconfig tar:bzip2
++ 
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	fpesce
++ GH_PROJECT=	ftwin
++ GH_TAGNAME=	3355fd9
++ 
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
++ CONFIGURE_ARGS=	--with-archive=${LOCALBASE}
++ MAKE_ARGS=	CFLAGS="${CFLAGS}"
+  
+  PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README
+  PLIST_FILES=	bin/ftwin man/man8/ftwin.8.gz
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/mutagen/Makefile
+	modified:   devel/mutagen/distinfo
+	modified:   math/Makefile
+	new file:   math/vtk9/Makefile
+	new file:   math/vtk9/distinfo
+	new file:   math/vtk9/files/patch-ThirdParty_libproj_vtklibproj_src_pj__mutex.c
+	new file:   math/vtk9/pkg-descr
+	modified:   multimedia/Makefile
+	new file:   multimedia/f3d/Makefile
+	new file:   multimedia/f3d/distinfo
+	new file:   multimedia/f3d/pkg-descr
+	modified:   sysutils/ftwin/distinfo
+	deleted:    sysutils/ftwin/files/patch-acinclude-check-cflags-ldflags
+	modified:   www/authelia/Makefile
+	modified:   www/authelia/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sysutils/ftwin/Makefile
+
+
+It took 3.24 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 059c1126ce6c Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.42 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 059c1126ce6c Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
