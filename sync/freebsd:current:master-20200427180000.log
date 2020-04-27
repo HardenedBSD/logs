@@ -1,0 +1,74 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 76f2a017361c..7cd0c41207f9
+Fast-forward
+ lib/libc/sys/kqueue.2                  |  12 +-
+ lib/libc/sys/send.2                    |  28 ++-
+ sys/dev/iscsi_initiator/isc_subr.c     |  17 +-
+ sys/fs/fifofs/fifo_vnops.c             |  10 +-
+ sys/kern/kern_mib.c                    |  40 +--
+ sys/kern/sys_pipe.c                    |  56 +++--
+ sys/netinet/tcp.h                      |  29 ++-
+ sys/netinet/tcp_log_buf.h              |   6 +-
+ sys/netinet/tcp_subr.c                 |  29 +++
+ sys/netinet/tcp_var.h                  |  41 ++++
+ sys/riscv/include/param.h              |  18 +-
+ sys/riscv/riscv/elf_machdep.c          |  13 +
+ sys/sys/sysent.h                       |   2 +
+ tests/sys/fifo/Makefile                |   1 +
+ tests/sys/fifo/fifo_kqueue.c           | 430 +++++++++++++++++++++++++++++++++
+ tests/sys/kern/pipe/Makefile           |   1 +
+ tests/sys/kern/pipe/pipe_kqueue_test.c | 366 ++++++++++++++++++++++++++++
+ 17 files changed, 1032 insertions(+), 67 deletions(-)
+ create mode 100644 tests/sys/fifo/fifo_kqueue.c
+ create mode 100644 tests/sys/kern/pipe/pipe_kqueue_test.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    76f2a017361c..7cd0c41207f9  freebsd/current/master -> freebsd/current/master        
+remote:    0c9b7ac3e219..43f2e92f2e04  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   76f2a017361c..7cd0c41207f9  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
