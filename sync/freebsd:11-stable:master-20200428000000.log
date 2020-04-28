@@ -1,0 +1,372 @@
+==== BEGIN: freebsd/11-stable/master ====
+current branch: freebsd/11-stable/master
+mergeable branch: freebsd/stable/11
+==== change branch ====
+Switched to branch 'freebsd/11-stable/master'
+Your branch is up to date with 'origin/freebsd/11-stable/master'.
+==== show current branch ====
+* freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/11 branch ====
+Updating 43f2e92f2e04..873ad2d4fb85
+Fast-forward
+ lib/libc/gen/getgrent.c                            |  16 +-
+ lib/libc/gen/getpwent.c                            |  16 +-
+ lib/libc/net/gethostnamadr.c                       |   6 +-
+ lib/libc/net/getnetnamadr.c                        |   6 +-
+ lib/libc/net/getprotoent.c                         |   6 +-
+ lib/libc/net/getservent.c                          |  18 +--
+ lib/libc/rpc/getrpcent.c                           |  14 +-
+ lib/libc/sys/kqueue.2                              |   7 +-
+ secure/caroot/trusted/ACCVRAIZ1.pem                | 164 +++++++++++++++++++++
+ secure/caroot/trusted/AC_RAIZ_FNMT-RCM.pem         | 137 +++++++++++++++++
+ .../trusted/Actalis_Authentication_Root_CA.pem     | 136 +++++++++++++++++
+ secure/caroot/trusted/AddTrust_External_Root.pem   |  99 +++++++++++++
+ .../trusted/AddTrust_Low-Value_Services_Root.pem   |  98 ++++++++++++
+ secure/caroot/trusted/AffirmTrust_Commercial.pem   |  89 +++++++++++
+ secure/caroot/trusted/AffirmTrust_Networking.pem   |  89 +++++++++++
+ secure/caroot/trusted/AffirmTrust_Premium.pem      | 131 ++++++++++++++++
+ secure/caroot/trusted/AffirmTrust_Premium_ECC.pem  |  63 ++++++++
+ secure/caroot/trusted/Amazon_Root_CA_1.pem         |  90 +++++++++++
+ secure/caroot/trusted/Amazon_Root_CA_2.pem         | 132 +++++++++++++++++
+ secure/caroot/trusted/Amazon_Root_CA_3.pem         |  59 ++++++++
+ secure/caroot/trusted/Amazon_Root_CA_4.pem         |  64 ++++++++
+ secure/caroot/trusted/Atos_TrustedRoot_2011.pem    |  96 ++++++++++++
+ ...ertificacion_Firmaprofesional_CIF_A62634068.pem | 141 ++++++++++++++++++
+ .../caroot/trusted/Baltimore_CyberTrust_Root.pem   |  90 +++++++++++
+ secure/caroot/trusted/Buypass_Class_2_Root_CA.pem  | 131 ++++++++++++++++
+ secure/caroot/trusted/Buypass_Class_3_Root_CA.pem  | 131 ++++++++++++++++
+ secure/caroot/trusted/CA_Disig_Root_R2.pem         | 132 +++++++++++++++++
+ secure/caroot/trusted/CFCA_EV_ROOT.pem             | 135 +++++++++++++++++
+ .../trusted/COMODO_Certification_Authority.pem     | 100 +++++++++++++
+ .../trusted/COMODO_ECC_Certification_Authority.pem |  67 +++++++++
+ .../trusted/COMODO_RSA_Certification_Authority.pem | 135 +++++++++++++++++
+ .../Camerfirma_Chambers_of_Commerce_Root.pem       | 112 ++++++++++++++
+ .../trusted/Camerfirma_Global_Chambersign_Root.pem | 112 ++++++++++++++
+ secure/caroot/trusted/Certigna.pem                 |  99 +++++++++++++
+ secure/caroot/trusted/Certigna_Root_CA.pem         | 152 +++++++++++++++++++
+ secure/caroot/trusted/Certum_Root_CA.pem           |  84 +++++++++++
+ .../caroot/trusted/Certum_Trusted_Network_CA.pem   |  91 ++++++++++++
+ .../caroot/trusted/Certum_Trusted_Network_CA_2.pem | 135 +++++++++++++++++
+ .../trusted/Chambers_of_Commerce_Root_-_2008.pem   | 152 +++++++++++++++++++
+ secure/caroot/trusted/Comodo_AAA_Services_root.pem | 102 +++++++++++++
+ secure/caroot/trusted/Cybertrust_Global_Root.pem   | 100 +++++++++++++
+ secure/caroot/trusted/D-TRUST_Root_CA_3_2013.pem   | 101 +++++++++++++
+ .../trusted/D-TRUST_Root_Class_3_CA_2_2009.pem     | 102 +++++++++++++
+ .../trusted/D-TRUST_Root_Class_3_CA_2_EV_2009.pem  | 102 +++++++++++++
+ secure/caroot/trusted/DST_Root_CA_X3.pem           |  90 +++++++++++
+ .../caroot/trusted/DigiCert_Assured_ID_Root_CA.pem |  95 ++++++++++++
+ .../caroot/trusted/DigiCert_Assured_ID_Root_G2.pem |  92 ++++++++++++
+ .../caroot/trusted/DigiCert_Assured_ID_Root_G3.pem |  66 +++++++++
+ secure/caroot/trusted/DigiCert_Global_Root_CA.pem  |  95 ++++++++++++
+ secure/caroot/trusted/DigiCert_Global_Root_G2.pem  |  92 ++++++++++++
+ secure/caroot/trusted/DigiCert_Global_Root_G3.pem  |  66 +++++++++
+ .../trusted/DigiCert_High_Assurance_EV_Root_CA.pem |  96 ++++++++++++
+ secure/caroot/trusted/DigiCert_Trusted_Root_G4.pem | 133 +++++++++++++++++
+ .../trusted/E-Tugra_Certification_Authority.pem    | 139 +++++++++++++++++
+ secure/caroot/trusted/EC-ACC.pem                   | 109 ++++++++++++++
+ .../trusted/EE_Certification_Centre_Root_CA.pem    |  96 ++++++++++++
+ .../Entrust_Root_Certification_Authority.pem       | 103 +++++++++++++
+ .../Entrust_Root_Certification_Authority_-_EC1.pem |  69 +++++++++
+ .../Entrust_Root_Certification_Authority_-_G2.pem  |  94 ++++++++++++
+ .../Entrust_Root_Certification_Authority_-_G4.pem  | 137 +++++++++++++++++
+ .../Entrust_net_Premium_2048_Secure_Server_CA.pem  |  94 ++++++++++++
+ secure/caroot/trusted/GDCA_TrustAUTH_R5_ROOT.pem   | 132 +++++++++++++++++
+ secure/caroot/trusted/GTS_Root_R1.pem              | 132 +++++++++++++++++
+ secure/caroot/trusted/GTS_Root_R2.pem              | 132 +++++++++++++++++
+ secure/caroot/trusted/GTS_Root_R3.pem              |  64 ++++++++
+ secure/caroot/trusted/GTS_Root_R4.pem              |  64 ++++++++
+ secure/caroot/trusted/GeoTrust_Global_CA.pem       |  90 +++++++++++
+ .../GeoTrust_Primary_Certification_Authority.pem   |  91 ++++++++++++
+ ...oTrust_Primary_Certification_Authority_-_G2.pem |  68 +++++++++
+ ...oTrust_Primary_Certification_Authority_-_G3.pem |  94 ++++++++++++
+ secure/caroot/trusted/GeoTrust_Universal_CA.pem    | 134 +++++++++++++++++
+ secure/caroot/trusted/GeoTrust_Universal_CA_2.pem  | 134 +++++++++++++++++
+ .../caroot/trusted/GlobalSign_ECC_Root_CA_-_R4.pem |  60 ++++++++
+ .../caroot/trusted/GlobalSign_ECC_Root_CA_-_R5.pem |  65 ++++++++
+ secure/caroot/trusted/GlobalSign_Root_CA.pem       |  91 ++++++++++++
+ secure/caroot/trusted/GlobalSign_Root_CA_-_R2.pem  | 100 +++++++++++++
+ secure/caroot/trusted/GlobalSign_Root_CA_-_R3.pem  |  91 ++++++++++++
+ secure/caroot/trusted/GlobalSign_Root_CA_-_R6.pem  | 136 +++++++++++++++++
+ .../trusted/Global_Chambersign_Root_-_2008.pem     | 151 +++++++++++++++++++
+ secure/caroot/trusted/Go_Daddy_Class_2_CA.pem      |  96 ++++++++++++
+ .../Go_Daddy_Root_Certificate_Authority_-_G2.pem   |  92 ++++++++++++
+ ...c_and_Research_Institutions_ECC_RootCA_2015.pem |  67 +++++++++
+ ...demic_and_Research_Institutions_RootCA_2011.pem | 105 +++++++++++++
+ ...demic_and_Research_Institutions_RootCA_2015.pem | 135 +++++++++++++++++
+ secure/caroot/trusted/Hongkong_Post_Root_CA_1.pem  |  87 +++++++++++
+ secure/caroot/trusted/Hongkong_Post_Root_CA_3.pem  | 138 +++++++++++++++++
+ secure/caroot/trusted/ISRG_Root_X1.pem             | 132 +++++++++++++++++
+ .../trusted/IdenTrust_Commercial_Root_CA_1.pem     | 132 +++++++++++++++++
+ .../trusted/IdenTrust_Public_Sector_Root_CA_1.pem  | 132 +++++++++++++++++
+ secure/caroot/trusted/Izenpe_com.pem               | 137 +++++++++++++++++
+ secure/caroot/trusted/LuxTrust_Global_Root_2.pem   | 141 ++++++++++++++++++
+ .../trusted/Microsec_e-Szigno_Root_CA_2009.pem     |  99 +++++++++++++
+ ...etLock_Arany__Class_Gold__F__tan__s__tv__ny.pem |  93 ++++++++++++
+ .../Network_Solutions_Certificate_Authority.pem    |  98 ++++++++++++
+ .../trusted/OISTE_WISeKey_Global_Root_GA_CA.pem    |  96 ++++++++++++
+ .../trusted/OISTE_WISeKey_Global_Root_GB_CA.pem    |  94 ++++++++++++
+ .../trusted/OISTE_WISeKey_Global_Root_GC_CA.pem    |  68 +++++++++
+ secure/caroot/trusted/QuoVadis_Root_CA.pem         | 117 +++++++++++++++
+ secure/caroot/trusted/QuoVadis_Root_CA_1_G3.pem    | 132 +++++++++++++++++
+ secure/caroot/trusted/QuoVadis_Root_CA_2.pem       | 138 +++++++++++++++++
+ secure/caroot/trusted/QuoVadis_Root_CA_2_G3.pem    | 132 +++++++++++++++++
+ secure/caroot/trusted/QuoVadis_Root_CA_3.pem       | 149 +++++++++++++++++++
+ secure/caroot/trusted/QuoVadis_Root_CA_3_G3.pem    | 132 +++++++++++++++++
+ ...SSL_com_EV_Root_Certification_Authority_ECC.pem |  69 +++++++++
+ ..._com_EV_Root_Certification_Authority_RSA_R2.pem | 137 +++++++++++++++++
+ .../SSL_com_Root_Certification_Authority_ECC.pem   |  69 +++++++++
+ .../SSL_com_Root_Certification_Authority_RSA.pem   | 137 +++++++++++++++++
+ secure/caroot/trusted/SZAFIR_ROOT_CA2.pem          |  91 ++++++++++++
+ secure/caroot/trusted/SecureSign_RootCA11.pem      |  90 +++++++++++
+ secure/caroot/trusted/SecureTrust_CA.pem           | 101 +++++++++++++
+ secure/caroot/trusted/Secure_Global_CA.pem         | 101 +++++++++++++
+ .../trusted/Security_Communication_RootCA2.pem     |  90 +++++++++++
+ .../trusted/Security_Communication_Root_CA.pem     |  89 +++++++++++
+ secure/caroot/trusted/Sonera_Class_2_Root_CA.pem   |  88 +++++++++++
+ .../trusted/Staat_der_Nederlanden_EV_Root_CA.pem   | 132 +++++++++++++++++
+ .../trusted/Staat_der_Nederlanden_Root_CA_-_G2.pem | 137 +++++++++++++++++
+ .../trusted/Staat_der_Nederlanden_Root_CA_-_G3.pem | 132 +++++++++++++++++
+ secure/caroot/trusted/Starfield_Class_2_CA.pem     |  96 ++++++++++++
+ .../Starfield_Root_Certificate_Authority_-_G2.pem  |  92 ++++++++++++
+ ...ld_Services_Root_Certificate_Authority_-_G2.pem |  93 ++++++++++++
+ secure/caroot/trusted/SwissSign_Gold_CA_-_G2.pem   | 141 ++++++++++++++++++
+ .../caroot/trusted/SwissSign_Platinum_CA_-_G2.pem  | 140 ++++++++++++++++++
+ secure/caroot/trusted/SwissSign_Silver_CA_-_G2.pem | 140 ++++++++++++++++++
+ ...Public_Primary_Certification_Authority_-_G4.pem |  68 +++++++++
+ ...Public_Primary_Certification_Authority_-_G6.pem |  94 ++++++++++++
+ ...Public_Primary_Certification_Authority_-_G4.pem |  68 +++++++++
+ ...Public_Primary_Certification_Authority_-_G6.pem |  94 ++++++++++++
+ .../trusted/T-TeleSec_GlobalRoot_Class_2.pem       |  92 ++++++++++++
+ .../trusted/T-TeleSec_GlobalRoot_Class_3.pem       |  92 ++++++++++++
+ ...BITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem |  95 ++++++++++++
+ secure/caroot/trusted/TWCA_Global_Root_CA.pem      | 129 ++++++++++++++++
+ .../trusted/TWCA_Root_Certification_Authority.pem  |  90 +++++++++++
+ secure/caroot/trusted/Taiwan_GRCA.pem              | 133 +++++++++++++++++
+ secure/caroot/trusted/TeliaSonera_Root_CA_v1.pem   | 131 ++++++++++++++++
+ secure/caroot/trusted/TrustCor_ECA-1.pem           |  98 ++++++++++++
+ secure/caroot/trusted/TrustCor_RootCert_CA-1.pem   |  98 ++++++++++++
+ secure/caroot/trusted/TrustCor_RootCert_CA-2.pem   | 139 +++++++++++++++++
+ secure/caroot/trusted/Trustis_FPS_Root_CA.pem      |  92 ++++++++++++
+ .../trusted/UCA_Extended_Validation_Root.pem       | 132 +++++++++++++++++
+ secure/caroot/trusted/UCA_Global_G2_Root.pem       | 132 +++++++++++++++++
+ .../USERTrust_ECC_Certification_Authority.pem      |  67 +++++++++
+ .../USERTrust_RSA_Certification_Authority.pem      | 135 +++++++++++++++++
+ ...Public_Primary_Certification_Authority_-_G4.pem |  74 ++++++++++
+ ...Public_Primary_Certification_Authority_-_G5.pem | 100 +++++++++++++
+ ...Sign_Universal_Root_Certification_Authority.pem | 100 +++++++++++++
+ ...Public_Primary_Certification_Authority_-_G3.pem |  87 +++++++++++
+ ...Public_Primary_Certification_Authority_-_G3.pem |  87 +++++++++++
+ ...Public_Primary_Certification_Authority_-_G3.pem |  87 +++++++++++
+ secure/caroot/trusted/XRamp_Global_CA_Root.pem     | 104 +++++++++++++
+ secure/caroot/trusted/certSIGN_ROOT_CA.pem         |  89 +++++++++++
+ .../trusted/ePKI_Root_Certification_Authority.pem  | 135 +++++++++++++++++
+ secure/caroot/trusted/emSign_ECC_Root_CA_-_C3.pem  |  65 ++++++++
+ secure/caroot/trusted/emSign_ECC_Root_CA_-_G3.pem  |  66 +++++++++
+ secure/caroot/trusted/emSign_Root_CA_-_C1.pem      |  91 ++++++++++++
+ secure/caroot/trusted/emSign_Root_CA_-_G1.pem      |  92 ++++++++++++
+ secure/caroot/trusted/thawte_Primary_Root_CA.pem   |  95 ++++++++++++
+ .../caroot/trusted/thawte_Primary_Root_CA_-_G2.pem |  67 +++++++++
+ .../caroot/trusted/thawte_Primary_Root_CA_-_G3.pem |  95 ++++++++++++
+ sys/dev/ocs_fc/ocs_device.c                        |   2 +-
+ sys/net80211/ieee80211_output.c                    |   2 +-
+ sys/sys/types.h                                    |   2 +-
+ usr.bin/diff/diff.1                                |  12 +-
+ usr.bin/diff/diff.c                                |   8 +-
+ usr.bin/diff/diffreg.c                             |  12 +-
+ usr.bin/diff/tests/diff_test.sh                    |  12 ++
+ usr.bin/diff/xmalloc.c                             |   4 +-
+ usr.sbin/freebsd-update/freebsd-update.sh          |   7 +-
+ 167 files changed, 15854 insertions(+), 64 deletions(-)
+ create mode 100644 secure/caroot/trusted/ACCVRAIZ1.pem
+ create mode 100644 secure/caroot/trusted/AC_RAIZ_FNMT-RCM.pem
+ create mode 100644 secure/caroot/trusted/Actalis_Authentication_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/AddTrust_External_Root.pem
+ create mode 100644 secure/caroot/trusted/AddTrust_Low-Value_Services_Root.pem
+ create mode 100644 secure/caroot/trusted/AffirmTrust_Commercial.pem
+ create mode 100644 secure/caroot/trusted/AffirmTrust_Networking.pem
+ create mode 100644 secure/caroot/trusted/AffirmTrust_Premium.pem
+ create mode 100644 secure/caroot/trusted/AffirmTrust_Premium_ECC.pem
+ create mode 100644 secure/caroot/trusted/Amazon_Root_CA_1.pem
+ create mode 100644 secure/caroot/trusted/Amazon_Root_CA_2.pem
+ create mode 100644 secure/caroot/trusted/Amazon_Root_CA_3.pem
+ create mode 100644 secure/caroot/trusted/Amazon_Root_CA_4.pem
+ create mode 100644 secure/caroot/trusted/Atos_TrustedRoot_2011.pem
+ create mode 100644 secure/caroot/trusted/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+ create mode 100644 secure/caroot/trusted/Baltimore_CyberTrust_Root.pem
+ create mode 100644 secure/caroot/trusted/Buypass_Class_2_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Buypass_Class_3_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/CA_Disig_Root_R2.pem
+ create mode 100644 secure/caroot/trusted/CFCA_EV_ROOT.pem
+ create mode 100644 secure/caroot/trusted/COMODO_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/COMODO_ECC_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/COMODO_RSA_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/Camerfirma_Chambers_of_Commerce_Root.pem
+ create mode 100644 secure/caroot/trusted/Camerfirma_Global_Chambersign_Root.pem
+ create mode 100644 secure/caroot/trusted/Certigna.pem
+ create mode 100644 secure/caroot/trusted/Certigna_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Certum_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Certum_Trusted_Network_CA.pem
+ create mode 100644 secure/caroot/trusted/Certum_Trusted_Network_CA_2.pem
+ create mode 100644 secure/caroot/trusted/Chambers_of_Commerce_Root_-_2008.pem
+ create mode 100644 secure/caroot/trusted/Comodo_AAA_Services_root.pem
+ create mode 100644 secure/caroot/trusted/Cybertrust_Global_Root.pem
+ create mode 100644 secure/caroot/trusted/D-TRUST_Root_CA_3_2013.pem
+ create mode 100644 secure/caroot/trusted/D-TRUST_Root_Class_3_CA_2_2009.pem
+ create mode 100644 secure/caroot/trusted/D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+ create mode 100644 secure/caroot/trusted/DST_Root_CA_X3.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Assured_ID_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Assured_ID_Root_G2.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Assured_ID_Root_G3.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Global_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Global_Root_G2.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Global_Root_G3.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_High_Assurance_EV_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/DigiCert_Trusted_Root_G4.pem
+ create mode 100644 secure/caroot/trusted/E-Tugra_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/EC-ACC.pem
+ create mode 100644 secure/caroot/trusted/EE_Certification_Centre_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Entrust_Root_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/Entrust_Root_Certification_Authority_-_EC1.pem
+ create mode 100644 secure/caroot/trusted/Entrust_Root_Certification_Authority_-_G2.pem
+ create mode 100644 secure/caroot/trusted/Entrust_Root_Certification_Authority_-_G4.pem
+ create mode 100644 secure/caroot/trusted/Entrust_net_Premium_2048_Secure_Server_CA.pem
+ create mode 100644 secure/caroot/trusted/GDCA_TrustAUTH_R5_ROOT.pem
+ create mode 100644 secure/caroot/trusted/GTS_Root_R1.pem
+ create mode 100644 secure/caroot/trusted/GTS_Root_R2.pem
+ create mode 100644 secure/caroot/trusted/GTS_Root_R3.pem
+ create mode 100644 secure/caroot/trusted/GTS_Root_R4.pem
+ create mode 100644 secure/caroot/trusted/GeoTrust_Global_CA.pem
+ create mode 100644 secure/caroot/trusted/GeoTrust_Primary_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/GeoTrust_Primary_Certification_Authority_-_G2.pem
+ create mode 100644 secure/caroot/trusted/GeoTrust_Primary_Certification_Authority_-_G3.pem
+ create mode 100644 secure/caroot/trusted/GeoTrust_Universal_CA.pem
+ create mode 100644 secure/caroot/trusted/GeoTrust_Universal_CA_2.pem
+ create mode 100644 secure/caroot/trusted/GlobalSign_ECC_Root_CA_-_R4.pem
+ create mode 100644 secure/caroot/trusted/GlobalSign_ECC_Root_CA_-_R5.pem
+ create mode 100644 secure/caroot/trusted/GlobalSign_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/GlobalSign_Root_CA_-_R2.pem
+ create mode 100644 secure/caroot/trusted/GlobalSign_Root_CA_-_R3.pem
+ create mode 100644 secure/caroot/trusted/GlobalSign_Root_CA_-_R6.pem
+ create mode 100644 secure/caroot/trusted/Global_Chambersign_Root_-_2008.pem
+ create mode 100644 secure/caroot/trusted/Go_Daddy_Class_2_CA.pem
+ create mode 100644 secure/caroot/trusted/Go_Daddy_Root_Certificate_Authority_-_G2.pem
+ create mode 100644 secure/caroot/trusted/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+ create mode 100644 secure/caroot/trusted/Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+ create mode 100644 secure/caroot/trusted/Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+ create mode 100644 secure/caroot/trusted/Hongkong_Post_Root_CA_1.pem
+ create mode 100644 secure/caroot/trusted/Hongkong_Post_Root_CA_3.pem
+ create mode 100644 secure/caroot/trusted/ISRG_Root_X1.pem
+ create mode 100644 secure/caroot/trusted/IdenTrust_Commercial_Root_CA_1.pem
+ create mode 100644 secure/caroot/trusted/IdenTrust_Public_Sector_Root_CA_1.pem
+ create mode 100644 secure/caroot/trusted/Izenpe_com.pem
+ create mode 100644 secure/caroot/trusted/LuxTrust_Global_Root_2.pem
+ create mode 100644 secure/caroot/trusted/Microsec_e-Szigno_Root_CA_2009.pem
+ create mode 100644 secure/caroot/trusted/NetLock_Arany__Class_Gold__F__tan__s__tv__ny.pem
+ create mode 100644 secure/caroot/trusted/Network_Solutions_Certificate_Authority.pem
+ create mode 100644 secure/caroot/trusted/OISTE_WISeKey_Global_Root_GA_CA.pem
+ create mode 100644 secure/caroot/trusted/OISTE_WISeKey_Global_Root_GB_CA.pem
+ create mode 100644 secure/caroot/trusted/OISTE_WISeKey_Global_Root_GC_CA.pem
+ create mode 100644 secure/caroot/trusted/QuoVadis_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/QuoVadis_Root_CA_1_G3.pem
+ create mode 100644 secure/caroot/trusted/QuoVadis_Root_CA_2.pem
+ create mode 100644 secure/caroot/trusted/QuoVadis_Root_CA_2_G3.pem
+ create mode 100644 secure/caroot/trusted/QuoVadis_Root_CA_3.pem
+ create mode 100644 secure/caroot/trusted/QuoVadis_Root_CA_3_G3.pem
+ create mode 100644 secure/caroot/trusted/SSL_com_EV_Root_Certification_Authority_ECC.pem
+ create mode 100644 secure/caroot/trusted/SSL_com_EV_Root_Certification_Authority_RSA_R2.pem
+ create mode 100644 secure/caroot/trusted/SSL_com_Root_Certification_Authority_ECC.pem
+ create mode 100644 secure/caroot/trusted/SSL_com_Root_Certification_Authority_RSA.pem
+ create mode 100644 secure/caroot/trusted/SZAFIR_ROOT_CA2.pem
+ create mode 100644 secure/caroot/trusted/SecureSign_RootCA11.pem
+ create mode 100644 secure/caroot/trusted/SecureTrust_CA.pem
+ create mode 100644 secure/caroot/trusted/Secure_Global_CA.pem
+ create mode 100644 secure/caroot/trusted/Security_Communication_RootCA2.pem
+ create mode 100644 secure/caroot/trusted/Security_Communication_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Sonera_Class_2_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Staat_der_Nederlanden_EV_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/Staat_der_Nederlanden_Root_CA_-_G2.pem
+ create mode 100644 secure/caroot/trusted/Staat_der_Nederlanden_Root_CA_-_G3.pem
+ create mode 100644 secure/caroot/trusted/Starfield_Class_2_CA.pem
+ create mode 100644 secure/caroot/trusted/Starfield_Root_Certificate_Authority_-_G2.pem
+ create mode 100644 secure/caroot/trusted/Starfield_Services_Root_Certificate_Authority_-_G2.pem
+ create mode 100644 secure/caroot/trusted/SwissSign_Gold_CA_-_G2.pem
+ create mode 100644 secure/caroot/trusted/SwissSign_Platinum_CA_-_G2.pem
+ create mode 100644 secure/caroot/trusted/SwissSign_Silver_CA_-_G2.pem
+ create mode 100644 secure/caroot/trusted/Symantec_Class_1_Public_Primary_Certification_Authority_-_G4.pem
+ create mode 100644 secure/caroot/trusted/Symantec_Class_1_Public_Primary_Certification_Authority_-_G6.pem
+ create mode 100644 secure/caroot/trusted/Symantec_Class_2_Public_Primary_Certification_Authority_-_G4.pem
+ create mode 100644 secure/caroot/trusted/Symantec_Class_2_Public_Primary_Certification_Authority_-_G6.pem
+ create mode 100644 secure/caroot/trusted/T-TeleSec_GlobalRoot_Class_2.pem
+ create mode 100644 secure/caroot/trusted/T-TeleSec_GlobalRoot_Class_3.pem
+ create mode 100644 secure/caroot/trusted/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+ create mode 100644 secure/caroot/trusted/TWCA_Global_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/TWCA_Root_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/Taiwan_GRCA.pem
+ create mode 100644 secure/caroot/trusted/TeliaSonera_Root_CA_v1.pem
+ create mode 100644 secure/caroot/trusted/TrustCor_ECA-1.pem
+ create mode 100644 secure/caroot/trusted/TrustCor_RootCert_CA-1.pem
+ create mode 100644 secure/caroot/trusted/TrustCor_RootCert_CA-2.pem
+ create mode 100644 secure/caroot/trusted/Trustis_FPS_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/UCA_Extended_Validation_Root.pem
+ create mode 100644 secure/caroot/trusted/UCA_Global_G2_Root.pem
+ create mode 100644 secure/caroot/trusted/USERTrust_ECC_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/USERTrust_RSA_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+ create mode 100644 secure/caroot/trusted/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+ create mode 100644 secure/caroot/trusted/VeriSign_Universal_Root_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.pem
+ create mode 100644 secure/caroot/trusted/Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.pem
+ create mode 100644 secure/caroot/trusted/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+ create mode 100644 secure/caroot/trusted/XRamp_Global_CA_Root.pem
+ create mode 100644 secure/caroot/trusted/certSIGN_ROOT_CA.pem
+ create mode 100644 secure/caroot/trusted/ePKI_Root_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/emSign_ECC_Root_CA_-_C3.pem
+ create mode 100644 secure/caroot/trusted/emSign_ECC_Root_CA_-_G3.pem
+ create mode 100644 secure/caroot/trusted/emSign_Root_CA_-_C1.pem
+ create mode 100644 secure/caroot/trusted/emSign_Root_CA_-_G1.pem
+ create mode 100644 secure/caroot/trusted/thawte_Primary_Root_CA.pem
+ create mode 100644 secure/caroot/trusted/thawte_Primary_Root_CA_-_G2.pem
+ create mode 100644 secure/caroot/trusted/thawte_Primary_Root_CA_-_G3.pem
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    43f2e92f2e04..873ad2d4fb85  freebsd/11-stable/master -> freebsd/11-stable/master
+remote:    b0aa84d7775a..710be9794b62  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/11-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/11-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   43f2e92f2e04..873ad2d4fb85  freebsd/11-stable/master -> freebsd/11-stable/master
+==== END: freebsd/11-stable/master ====
