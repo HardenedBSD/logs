@@ -1,0 +1,83 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing sys/riscv/conf/GENERICSF
+Auto-merging sys/conf/kern.mk
+Merge made by the 'recursive' strategy.
+ release/tools/ec2.conf          |   4 +
+ share/man/man4/tcp.4            |  38 ++++--
+ stand/lua/cli.lua               |   8 ++
+ stand/lua/config.lua            |  64 +++++-----
+ stand/lua/config.lua.8          |  11 +-
+ sys/cam/ata/ata_da.c            |  97 ++++++++++++---
+ sys/cam/nvme/nvme_da.c          |  30 +++++
+ sys/cam/scsi/scsi_da.c          |   4 +-
+ sys/conf/Makefile.riscv         |   2 +-
+ sys/conf/kern.mk                |   4 -
+ sys/dev/cxgbe/tom/t4_tls.c      | 265 +++++++++++++++++++++++++++++-----------
+ sys/dev/cxgbe/tom/t4_tom.c      |   4 +-
+ sys/dev/cxgbe/tom/t4_tom.h      |   2 +-
+ sys/fs/nfs/nfskpiport.h         |  16 ---
+ sys/fs/nfsclient/nfs_clrpcops.c | 186 +++++++++++++++-------------
+ sys/kern/uipc_ktls.c            |  80 +++++++++++-
+ sys/kern/uipc_socket.c          |  26 +++-
+ sys/net/ifdi_if.m               |  11 ++
+ sys/net/iflib.c                 |  18 ++-
+ sys/net/iflib.h                 |   9 ++
+ sys/netinet/tcp.h               |   3 +
+ sys/netinet/tcp_offload.c       |   5 +-
+ sys/netinet/tcp_offload.h       |   2 +-
+ sys/netinet/tcp_usrreq.c        |  47 ++++++-
+ sys/netinet/toecore.c           |   2 +-
+ sys/netinet/toecore.h           |   2 +-
+ sys/riscv/conf/GENERICSF        |   9 --
+ sys/sys/ktls.h                  |  36 +++++-
+ sys/sys/param.h                 |   2 +-
+ usr.sbin/bhyve/pci_emul.c       |  36 +++---
+ 30 files changed, 747 insertions(+), 276 deletions(-)
+ delete mode 100644 sys/riscv/conf/GENERICSF
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    2f49e3d3e041..e4690a94ff73  hardened/current/master -> hardened/current/master        
+remote:    7cd0c41207f9..f95dd6e4af5f  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   2f49e3d3e041..e4690a94ff73  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
