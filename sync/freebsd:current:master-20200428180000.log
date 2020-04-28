@@ -1,0 +1,91 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 7d7c4f74f010..0b1d4f866032
+Fast-forward
+ bin/sh/memalloc.c                        |  19 +-
+ sys/conf/Makefile.amd64                  |   2 +-
+ sys/conf/files                           |   3 +-
+ sys/conf/files.amd64                     |   3 +-
+ sys/modules/cxgb/cxgb/Makefile           |   2 +-
+ sys/modules/cxgbe/iw_cxgbe/Makefile      |   2 +-
+ sys/modules/rdma/krping/Makefile         |   2 +-
+ sys/modules/sfxge/Makefile               |   2 +-
+ sys/net/radix_mpath.c                    |   2 +-
+ sys/net/route.c                          |   2 +-
+ sys/net/route.h                          |  85 +-----
+ sys/net/route/nhop.c                     |   2 +-
+ sys/net/route/nhop_ctl.c                 |   2 +-
+ sys/net/route/route_ctl.c                |   2 +-
+ sys/net/route/route_ddb.c                | 458 +++++++++++++++++++++++++++++++
+ sys/net/route/route_helpers.c            |   2 +-
+ sys/net/{ => route}/route_temporal.c     |   2 +-
+ sys/net/{ => route}/route_var.h          |  73 +++++
+ sys/net/rtsock.c                         | 420 +---------------------------
+ sys/netgraph/bluetooth/include/ng_hci.h  |   9 +
+ sys/netinet/in_fib.c                     |   2 +-
+ sys/netinet/in_rmx.c                     |   2 +-
+ sys/netinet6/in6_fib.c                   |   2 +-
+ sys/netinet6/in6_rmx.c                   |   2 +-
+ sys/netinet6/nd6.c                       |   1 +
+ sys/netinet6/nd6_rtr.c                   |   2 +-
+ sys/netpfil/ipfw/ip_fw_table_algo.c      |   2 +-
+ usr.sbin/bluetooth/hccontrol/hccontrol.8 |   3 +-
+ usr.sbin/bluetooth/hccontrol/le.c        |  64 +++++
+ usr.sbin/config/config.h                 |   1 +
+ usr.sbin/config/configvers.h             |   2 +-
+ usr.sbin/config/mkmakefile.c             |  13 +-
+ usr.sbin/syslogd/syslogd.c               |  86 +++++-
+ 33 files changed, 736 insertions(+), 540 deletions(-)
+ create mode 100644 sys/net/route/route_ddb.c
+ rename sys/net/{ => route}/route_temporal.c (99%)
+ rename sys/net/{ => route}/route_var.h (73%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    7d7c4f74f010..0b1d4f866032  freebsd/current/master -> freebsd/current/master        
+remote:    f615f5e2f2f0..e28ba05b572a  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   7d7c4f74f010..0b1d4f866032  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
