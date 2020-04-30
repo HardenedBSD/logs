@@ -34,3 +34,226 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/tmux/files/patch-spawn.c
+Removing ftp/curl/files/patch-lib-easy.c
+Removing dns/dnsperf/pkg-descr
+Removing dns/dnsperf/distinfo
+Removing dns/dnsperf/Makefile
+Removing dns/bind914/pkg-plist
+Removing dns/bind914/pkg-help
+Removing dns/bind914/pkg-descr
+Removing dns/bind914/files/pkg-message.in
+Removing dns/bind914/files/patch-configure
+Removing dns/bind914/files/patch-bin_tests_system_dlzexternal_Makefile.in
+Removing dns/bind914/files/patch-bin_named_include_named_globals.h
+Removing dns/bind914/files/named.root
+Removing dns/bind914/files/named.in
+Removing dns/bind914/files/named.conf.in
+Removing dns/bind914/files/localhost-reverse.db
+Removing dns/bind914/files/localhost-forward.db
+Removing dns/bind914/files/extrapatch-no-bind-tools
+Removing dns/bind914/files/extrapatch-bind-min-override-ttl
+Removing dns/bind914/files/empty.db
+Removing dns/bind914/files/BIND.chroot.local.dist
+Removing dns/bind914/files/BIND.chroot.dist
+Removing dns/bind914/distinfo
+Removing dns/bind914/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   2 +
+ Mk/Scripts/do-patch.sh                             |  81 ++--
+ audio/fasttracker2/Makefile                        |   2 +-
+ audio/fasttracker2/distinfo                        |   6 +-
+ deskutils/lumina-calculator/pkg-plist              | 126 +++---
+ deskutils/lumina-pdf/pkg-plist                     | 132 +++---
+ devel/Makefile                                     |   2 +
+ devel/kio-extras/Makefile                          |   4 +-
+ devel/p5-Data-Domain/Makefile                      |   8 +-
+ devel/p5-Data-Domain/distinfo                      |   5 +-
+ devel/p5-Module-CoreList/Makefile                  |   2 +-
+ devel/p5-Module-CoreList/distinfo                  |   6 +-
+ devel/pecl-dio/Makefile                            |   2 +-
+ devel/pecl-dio/distinfo                            |   6 +-
+ devel/py-dogpile.cache/Makefile                    |   2 +-
+ devel/py-dogpile.cache/distinfo                    |   6 +-
+ devel/py-glance-store/Makefile                     |  11 +-
+ devel/py-oslo.vmware/Makefile                      |  20 +-
+ devel/py-oslo.vmware/distinfo                      |   6 +-
+ devel/py-oslo.vmware2/Makefile                     |  48 +++
+ devel/py-oslo.vmware2/distinfo                     |   3 +
+ devel/py-oslo.vmware2/pkg-descr                    |   4 +
+ devel/py-semantic_version/Makefile                 |   2 +-
+ devel/py-semantic_version/distinfo                 |   6 +-
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-iotsitewise/Makefile         |  22 +
+ devel/rubygem-aws-sdk-iotsitewise/distinfo         |   3 +
+ devel/rubygem-aws-sdk-iotsitewise/pkg-descr        |   4 +
+ devel/rubygem-aws-sdk-resources/Makefile           |   3 +-
+ devel/rubygem-aws-sdk-resources/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-servicediscovery/Makefile    |   2 +-
+ devel/rubygem-aws-sdk-servicediscovery/distinfo    |   6 +-
+ devel/rubygem-aws-sdk-transcribeservice/Makefile   |   2 +-
+ devel/rubygem-aws-sdk-transcribeservice/distinfo   |   6 +-
+ devel/rubygem-aws-sdk-waf/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-waf/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-wafregional/Makefile         |   2 +-
+ devel/rubygem-aws-sdk-wafregional/distinfo         |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-parser/Makefile                      |   2 +-
+ devel/rubygem-parser/distinfo                      |   6 +-
+ dns/Makefile                                       |   2 -
+ dns/bind914/Makefile                               | 225 ----------
+ dns/bind914/distinfo                               |   3 -
+ dns/bind914/files/BIND.chroot.dist                 |  26 --
+ dns/bind914/files/BIND.chroot.local.dist           |  20 -
+ dns/bind914/files/empty.db                         |  11 -
+ dns/bind914/files/extrapatch-bind-min-override-ttl |  61 ---
+ dns/bind914/files/extrapatch-no-bind-tools         |  51 ---
+ dns/bind914/files/localhost-forward.db             |  11 -
+ dns/bind914/files/localhost-reverse.db             |  13 -
+ dns/bind914/files/named.conf.in                    | 380 -----------------
+ dns/bind914/files/named.in                         | 467 ---------------------
+ dns/bind914/files/named.root                       |  96 -----
+ .../files/patch-bin_named_include_named_globals.h  |  13 -
+ .../patch-bin_tests_system_dlzexternal_Makefile.in |  13 -
+ dns/bind914/files/patch-configure                  | 135 ------
+ dns/bind914/files/pkg-message.in                   |  22 -
+ dns/bind914/pkg-descr                              |  15 -
+ dns/bind914/pkg-help                               |  38 --
+ dns/bind914/pkg-plist                              | 308 --------------
+ dns/dnsperf/Makefile                               |  35 --
+ dns/dnsperf/distinfo                               |   3 -
+ dns/dnsperf/pkg-descr                              |  18 -
+ ftp/curl/Makefile                                  |   3 +-
+ ftp/curl/distinfo                                  |   6 +-
+ ftp/curl/files/patch-lib-easy.c                    |  38 --
+ graphics/py-img2pdf/Makefile                       |  10 +-
+ graphics/py-img2pdf/distinfo                       |   6 +-
+ lang/fasm/Makefile                                 |   2 +-
+ lang/fasm/distinfo                                 |   6 +-
+ lang/perl5-devel/Makefile                          |   2 +-
+ lang/perl5-devel/distinfo                          |   6 +-
+ lang/perl5-devel/pkg-plist                         |   6 +-
+ lang/perl5-devel/version.mk                        |   2 +-
+ mail/postsrsd/Makefile                             |   2 +-
+ mail/postsrsd/distinfo                             |   4 +-
+ mail/postsrsd/files/patch-CMakeLists.txt           |  28 +-
+ math/Makefile                                      |   1 +
+ math/libhomfly/Makefile                            |  30 ++
+ math/libhomfly/distinfo                            |   3 +
+ math/libhomfly/files/patch-configure.ac            |   8 +
+ math/libhomfly/pkg-descr                           |   8 +
+ misc/py-cinder/Makefile                            |   5 +-
+ net-mgmt/check_logfiles/Makefile                   |   2 +-
+ net-mgmt/check_logfiles/distinfo                   |   6 +-
+ net-mgmt/librenms/Makefile                         |  12 +-
+ net-mgmt/librenms/distinfo                         |  10 +-
+ .../files/patch-LibreNMS_Validations_Programs.php  |   4 +-
+ .../files/patch-LibreNMS_Validations_User.php      |  14 +-
+ net-mgmt/librenms/files/patch-config.php.default   |   4 +-
+ net-mgmt/librenms/files/patch-html_install.php     |  39 +-
+ net-mgmt/nagios4/Makefile                          |   2 +-
+ net-mgmt/nagios4/distinfo                          |   6 +-
+ net-mgmt/nagios4/files/patch-html_main.php         |   2 +-
+ net/p5-Net-OpenSSH/Makefile                        |   2 +-
+ net/p5-Net-OpenSSH/distinfo                        |   6 +-
+ print/py-fonttools/Makefile                        |   2 +-
+ print/py-fonttools/distinfo                        |   6 +-
+ print/py-ufolib2/Makefile                          |  12 +-
+ print/py-ufolib2/distinfo                          |   6 +-
+ science/afni/Makefile                              |   2 +-
+ science/afni/distinfo                              |   6 +-
+ sysutils/munin-common/distinfo                     |   6 +-
+ sysutils/munin-common/munin.mk                     |   3 +-
+ sysutils/munin-node/pkg-plist                      |   8 -
+ sysutils/rsyslog8/Makefile                         |   2 +-
+ sysutils/rsyslog8/distinfo                         |   6 +-
+ sysutils/tmux/Makefile                             |   3 +-
+ sysutils/tmux/distinfo                             |   6 +-
+ sysutils/tmux/files/extra-patch-tty-keys.c         |   4 +-
+ sysutils/tmux/files/patch-spawn.c                  |  23 -
+ www/py-uvicorn/Makefile                            |   2 +-
+ www/py-uvicorn/distinfo                            |   6 +-
+ 120 files changed, 537 insertions(+), 2419 deletions(-)
+ create mode 100644 devel/py-oslo.vmware2/Makefile
+ create mode 100644 devel/py-oslo.vmware2/distinfo
+ create mode 100644 devel/py-oslo.vmware2/pkg-descr
+ create mode 100644 devel/rubygem-aws-sdk-iotsitewise/Makefile
+ create mode 100644 devel/rubygem-aws-sdk-iotsitewise/distinfo
+ create mode 100644 devel/rubygem-aws-sdk-iotsitewise/pkg-descr
+ delete mode 100644 dns/bind914/Makefile
+ delete mode 100644 dns/bind914/distinfo
+ delete mode 100644 dns/bind914/files/BIND.chroot.dist
+ delete mode 100644 dns/bind914/files/BIND.chroot.local.dist
+ delete mode 100644 dns/bind914/files/empty.db
+ delete mode 100644 dns/bind914/files/extrapatch-bind-min-override-ttl
+ delete mode 100644 dns/bind914/files/extrapatch-no-bind-tools
+ delete mode 100644 dns/bind914/files/localhost-forward.db
+ delete mode 100644 dns/bind914/files/localhost-reverse.db
+ delete mode 100644 dns/bind914/files/named.conf.in
+ delete mode 100644 dns/bind914/files/named.in
+ delete mode 100644 dns/bind914/files/named.root
+ delete mode 100644 dns/bind914/files/patch-bin_named_include_named_globals.h
+ delete mode 100644 dns/bind914/files/patch-bin_tests_system_dlzexternal_Makefile.in
+ delete mode 100644 dns/bind914/files/patch-configure
+ delete mode 100644 dns/bind914/files/pkg-message.in
+ delete mode 100644 dns/bind914/pkg-descr
+ delete mode 100644 dns/bind914/pkg-help
+ delete mode 100644 dns/bind914/pkg-plist
+ delete mode 100644 dns/dnsperf/Makefile
+ delete mode 100644 dns/dnsperf/distinfo
+ delete mode 100644 dns/dnsperf/pkg-descr
+ delete mode 100644 ftp/curl/files/patch-lib-easy.c
+ create mode 100644 math/libhomfly/Makefile
+ create mode 100644 math/libhomfly/distinfo
+ create mode 100644 math/libhomfly/files/patch-configure.ac
+ create mode 100644 math/libhomfly/pkg-descr
+ delete mode 100644 sysutils/tmux/files/patch-spawn.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    7f592560304a..3ec11bb49c94  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   3ec11bb49c94..48842529114e  master -> master
+==== END: master ====
