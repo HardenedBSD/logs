@@ -1,0 +1,88 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 14 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating f258e47a40e9..31d612581858
+Fast-forward
+ share/man/man5/Makefile       |  3 +-
+ share/man/man5/src.conf.5     | 47 ++++++++++------------
+ share/man/man5/unionfs.5      | 87 ++++++++++++++++++++++++++++++++++++++++
+ share/man/man9/disk.9         |  7 +++-
+ share/man/man9/driver.9       |  7 +++-
+ share/man/man9/epoch.9        |  7 +++-
+ stand/defaults/loader.conf.5  |  6 ++-
+ sys/cam/cam_ccb.h             |  5 +++
+ sys/cam/nvme/nvme_da.c        | 93 +++++++++++++++++++++++++++++++++++++++++--
+ sys/dev/nvme/nvme_ctrlr.c     | 52 ++++++++++++++++++++----
+ sys/dev/nvme/nvme_sim.c       |  2 +
+ sys/net/radix_mpath.c         | 17 ++++----
+ sys/net/route.c               | 15 +++----
+ sys/net/route/route_ddb.c     |  8 ++--
+ sys/net/rtsock.c              | 17 ++++----
+ sys/netinet/cc/cc_cubic.c     | 11 +++--
+ sys/netinet/tcp_input.c       | 24 +++++++----
+ sys/netinet/tcp_output.c      |  5 ++-
+ sys/netinet/tcp_stacks/bbr.c  | 17 +++++---
+ sys/netinet/tcp_stacks/rack.c | 18 +++++----
+ 20 files changed, 357 insertions(+), 91 deletions(-)
+ create mode 100644 share/man/man5/unionfs.5
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Merge made by the 'recursive' strategy.
+ share/man/man5/src.conf.5     | 16 ++++++++
+ share/mk/src.opts.mk          |  4 ++
+ stand/lua/cli.lua             |  5 +--
+ stand/lua/config.lua          | 95 +++++++++++++++++++++++++++----------------
+ stand/lua/config.lua.8        | 25 ++++++++----
+ sys/cam/cam_ccb.h             |  1 -
+ sys/cam/nvme/nvme_da.c        |  7 ++--
+ sys/dev/ichiic/ig4_acpi.c     |  2 -
+ sys/dev/nvme/nvme_ns.c        |  3 +-
+ sys/dev/nvme/nvme_sim.c       | 12 +++---
+ sys/net/iflib.c               |  2 +-
+ tests/sys/geom/class/Makefile |  4 ++
+ 12 files changed, 113 insertions(+), 63 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    31d612581858..15e8909ee40f  hardened/current/master -> hardened/current/master
+remote:    feff9a6fbe84..312327e698f3  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   31d612581858..15e8909ee40f  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
