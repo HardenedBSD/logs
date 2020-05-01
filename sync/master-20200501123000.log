@@ -34,3 +34,159 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-drivers/xf86-video-tseng/pkg-plist
+Removing x11-drivers/xf86-video-tseng/pkg-descr
+Removing x11-drivers/xf86-video-tseng/files/patch-src_tseng__driver.c
+Removing x11-drivers/xf86-video-tseng/distinfo
+Removing x11-drivers/xf86-video-tseng/Makefile
+Removing x11-drivers/xf86-video-s3virge/pkg-plist
+Removing x11-drivers/xf86-video-s3virge/pkg-descr
+Removing x11-drivers/xf86-video-s3virge/files/patch-src_s3v__driver.c
+Removing x11-drivers/xf86-video-s3virge/distinfo
+Removing x11-drivers/xf86-video-s3virge/Makefile
+Removing net/py-pcap/pkg-descr
+Removing net/py-pcap/distinfo
+Removing net/py-pcap/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   3 +
+ devel/Makefile                                     |   2 +
+ devel/gitaly/Makefile                              |  10 +-
+ devel/gitaly/distinfo                              |   6 +-
+ devel/py-azure-mgmt-cosmosdb/Makefile              |   2 +-
+ devel/py-azure-mgmt-cosmosdb/distinfo              |   6 +-
+ devel/py-azure-mgmt-loganalytics/Makefile          |   5 +-
+ devel/py-azure-mgmt-loganalytics/distinfo          |   6 +-
+ devel/py-azure-multiapi-storage/Makefile           |   3 +-
+ devel/py-azure-multiapi-storage/distinfo           |   6 +-
+ devel/py-knack/Makefile                            |   2 +-
+ devel/py-knack/distinfo                            |   6 +-
+ devel/py-msal-extensions/Makefile                  |  23 +++
+ devel/py-msal-extensions/distinfo                  |   3 +
+ devel/py-msal-extensions/pkg-descr                 |  12 ++
+ devel/py-msal/Makefile                             |  22 +++
+ devel/py-msal/distinfo                             |   3 +
+ devel/py-msal/pkg-descr                            |   8 +
+ devel/rust-cbindgen/Makefile                       |   5 +-
+ devel/rust-cbindgen/distinfo                       |  10 +-
+ graphics/libplacebo/Makefile                       |   2 +-
+ graphics/libplacebo/distinfo                       |   6 +-
+ graphics/py-mcomix/Makefile                        |   2 +-
+ graphics/py-mcomix/pkg-plist                       | 200 ++++++++++-----------
+ lang/intel-compute-runtime/Makefile                |   3 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ mail/Makefile                                      |   1 +
+ mail/py-email-validator/Makefile                   |  24 +++
+ mail/py-email-validator/distinfo                   |   3 +
+ mail/py-email-validator/pkg-descr                  |  14 ++
+ mail/spamilter/files/patch-spamilter.h             |  11 ++
+ net/Makefile                                       |   1 -
+ net/py-pcap/Makefile                               |  40 -----
+ net/py-pcap/distinfo                               |   3 -
+ net/py-pcap/pkg-descr                              |   4 -
+ security/aws-vault/Makefile                        |   2 +-
+ security/aws-vault/distinfo                        |   6 +-
+ security/step-certificates/Makefile                |  15 +-
+ security/step-certificates/distinfo                |  26 ++-
+ security/step-cli/Makefile                         |  22 ++-
+ security/step-cli/distinfo                         |  28 ++-
+ sysutils/auto-admin/Makefile                       |   2 +-
+ sysutils/auto-admin/distinfo                       |   6 +-
+ sysutils/auto-admin/pkg-plist                      |   8 +
+ sysutils/desktop-installer/Makefile                |   4 +-
+ sysutils/desktop-installer/distinfo                |   6 +-
+ sysutils/desktop-installer/pkg-plist               |   2 +
+ sysutils/pot/Makefile                              |   2 +-
+ sysutils/pot/distinfo                              |   6 +-
+ sysutils/py-azure-cli-core/Makefile                |   6 +-
+ sysutils/py-azure-cli-core/distinfo                |   6 +-
+ sysutils/py-azure-cli/Makefile                     |  10 +-
+ sysutils/py-azure-cli/distinfo                     |   6 +-
+ sysutils/py-salt/Makefile                          |   6 +-
+ sysutils/py-salt/distinfo                          |   6 +-
+ sysutils/reggae/Makefile                           |   2 +-
+ sysutils/reggae/distinfo                           |   6 +-
+ www/gitlab-ce/Makefile                             |  10 +-
+ www/gitlab-ce/distinfo                             |   6 +-
+ www/gitlab-ce/pkg-plist                            |   3 +
+ www/py-freenit/Makefile                            |   7 +-
+ www/py-freenit/distinfo                            |   6 +-
+ www/webalizer/files/patch-dns_resolv.c             |  24 ++-
+ x11-drivers/Makefile                               |   2 -
+ x11-drivers/xf86-video-s3virge/Makefile            |  17 --
+ x11-drivers/xf86-video-s3virge/distinfo            |   3 -
+ .../files/patch-src_s3v__driver.c                  |  13 --
+ x11-drivers/xf86-video-s3virge/pkg-descr           |   3 -
+ x11-drivers/xf86-video-s3virge/pkg-plist           |   2 -
+ x11-drivers/xf86-video-tseng/Makefile              |  20 ---
+ x11-drivers/xf86-video-tseng/distinfo              |   2 -
+ .../files/patch-src_tseng__driver.c                |  20 ---
+ x11-drivers/xf86-video-tseng/pkg-descr             |   1 -
+ x11-drivers/xf86-video-tseng/pkg-plist             |   2 -
+ x11-servers/xwayland-devel/Makefile                |  15 +-
+ 75 files changed, 439 insertions(+), 363 deletions(-)
+ create mode 100644 devel/py-msal-extensions/Makefile
+ create mode 100644 devel/py-msal-extensions/distinfo
+ create mode 100644 devel/py-msal-extensions/pkg-descr
+ create mode 100644 devel/py-msal/Makefile
+ create mode 100644 devel/py-msal/distinfo
+ create mode 100644 devel/py-msal/pkg-descr
+ create mode 100644 mail/py-email-validator/Makefile
+ create mode 100644 mail/py-email-validator/distinfo
+ create mode 100644 mail/py-email-validator/pkg-descr
+ create mode 100644 mail/spamilter/files/patch-spamilter.h
+ delete mode 100644 net/py-pcap/Makefile
+ delete mode 100644 net/py-pcap/distinfo
+ delete mode 100644 net/py-pcap/pkg-descr
+ delete mode 100644 x11-drivers/xf86-video-s3virge/Makefile
+ delete mode 100644 x11-drivers/xf86-video-s3virge/distinfo
+ delete mode 100644 x11-drivers/xf86-video-s3virge/files/patch-src_s3v__driver.c
+ delete mode 100644 x11-drivers/xf86-video-s3virge/pkg-descr
+ delete mode 100644 x11-drivers/xf86-video-s3virge/pkg-plist
+ delete mode 100644 x11-drivers/xf86-video-tseng/Makefile
+ delete mode 100644 x11-drivers/xf86-video-tseng/distinfo
+ delete mode 100644 x11-drivers/xf86-video-tseng/files/patch-src_tseng__driver.c
+ delete mode 100644 x11-drivers/xf86-video-tseng/pkg-descr
+ delete mode 100644 x11-drivers/xf86-video-tseng/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    3d0949953d05..c7a793e2802f  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c7a793e2802f..7d74f1cbe3b4  master -> master
+==== END: master ====
