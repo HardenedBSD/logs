@@ -1,0 +1,77 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/arm64/arm64/busdma_bounce.c                    |  62 ++-
+ sys/arm64/include/bus_dma.h                        |  12 +
+ sys/arm64/include/bus_dma_impl.h                   |   1 +
+ sys/compat/linuxkpi/common/include/linux/device.h  |   2 +-
+ .../linuxkpi/common/include/linux/dma-mapping.h    |  61 +--
+ sys/compat/linuxkpi/common/include/linux/dmapool.h |  38 +-
+ sys/compat/linuxkpi/common/include/linux/gfp.h     |   1 +
+ sys/compat/linuxkpi/common/include/linux/io.h      | 106 ++--
+ sys/compat/linuxkpi/common/include/linux/pci.h     |  36 +-
+ .../linuxkpi/common/include/linux/scatterlist.h    |   8 +-
+ sys/compat/linuxkpi/common/src/linux_pci.c         | 601 ++++++++++++++++++++-
+ sys/dev/ofw/ofwpci.c                               |  42 ++
+ sys/dev/pci/vga_pci.c                              | 123 ++++-
+ sys/kern/bus_if.m                                  |  29 +
+ sys/kern/subr_bus.c                                |   1 -
+ sys/sys/bus.h                                      |   2 +
+ sys/sys/bus_dma.h                                  |   4 +
+ sys/sys/param.h                                    |   2 +-
+ sys/x86/include/bus_dma.h                          |  12 +
+ sys/x86/include/busdma_impl.h                      |   1 +
+ sys/x86/iommu/busdma_dmar.c                        |   8 +
+ sys/x86/x86/busdma_bounce.c                        |  62 ++-
+ usr.sbin/camdd/camdd.c                             |   1 -
+ 23 files changed, 1033 insertions(+), 182 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ca2b48d99561..81d7f84ea501  hardened/12-stable/master -> hardened/12-stable/master
+remote:    445e63df8d45..f6dc98527448  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ca2b48d99561..81d7f84ea501  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
