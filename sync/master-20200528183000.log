@@ -15398,3 +15398,185 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing math/scilab-toolbox-swt/files/patch-clang
+Auto-merging math/scilab-toolbox-swt/Makefile
+CONFLICT (content): Merge conflict in math/scilab-toolbox-swt/Makefile
+Removing graphics/tiled/files/patch-src_tiled_tilesetview.cpp
+Removing graphics/tiled/files/patch-src_tiled_tiledproxystyle.cpp
+Removing graphics/tiled/files/patch-src_tiled_mapobjectitem.cpp
+Removing graphics/tiled/files/patch-src_libtiled_orthogonalrenderer.cpp
+Removing graphics/tiled/files/patch-src_libtiled_maprenderer.cpp
+Removing graphics/tiled/files/patch-src_libtiled_mapobject.cpp
+Removing graphics/tiled/files/patch-src_libtiled_isometricrenderer.cpp
+Removing devel/websocketpp/files/patch-boost-1.70
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc math/scilab-toolbox-swt/Makefile
+index bb5d745dff5e,3156579ece54..000000000000
+--- a/math/scilab-toolbox-swt/Makefile
++++ b/math/scilab-toolbox-swt/Makefile
+@@@ -14,7 -13,8 +13,12 @@@ COMMENT=	Scilab 1-D and 2-D Wavelet Too
+  BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
+  RUN_DEPENDS:=	${BUILD_DEPENDS}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ USES=		dos2unix zip
++ USE_LOCALE=	en_US.UTF-8
+++>>>>>>> freebsd/master
+  
+  SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
+  SCILAB_ARGS=	-noatomsautoload -nb -nouserstartup
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   databases/py-flask-sqlalchemy/Makefile
+	modified:   databases/py-flask-sqlalchemy/distinfo
+	modified:   devel/Makefile
+	modified:   devel/cscout/Makefile
+	modified:   devel/osc/Makefile
+	modified:   devel/osc/distinfo
+	modified:   devel/py-dask/Makefile
+	modified:   devel/py-dask/distinfo
+	modified:   devel/py-flake8-builtins/Makefile
+	modified:   devel/py-flake8-builtins/distinfo
+	new file:   devel/py-hypothesmith/Makefile
+	new file:   devel/py-hypothesmith/distinfo
+	new file:   devel/py-hypothesmith/files/patch-setup.py
+	new file:   devel/py-hypothesmith/pkg-descr
+	modified:   devel/py-json5/Makefile
+	modified:   devel/py-json5/distinfo
+	modified:   devel/py-libtaxii/Makefile
+	modified:   devel/py-libtaxii/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-dlm/Makefile
+	modified:   devel/rubygem-aws-sdk-dlm/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticache/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticache/distinfo
+	modified:   devel/rubygem-aws-sdk-macie/Makefile
+	modified:   devel/rubygem-aws-sdk-macie/distinfo
+	modified:   devel/rubygem-aws-sdk-quicksight/Makefile
+	modified:   devel/rubygem-aws-sdk-quicksight/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-ssm/Makefile
+	modified:   devel/rubygem-aws-sdk-ssm/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-fast_gettext/Makefile
+	modified:   devel/rubygem-fast_gettext/distinfo
+	modified:   devel/rubygem-parser/Makefile
+	modified:   devel/rubygem-parser/distinfo
+	modified:   devel/websocketpp/Makefile
+	modified:   devel/websocketpp/distinfo
+	deleted:    devel/websocketpp/files/patch-boost-1.70
+	modified:   dns/nextdns/Makefile
+	modified:   dns/nextdns/distinfo
+	modified:   dns/py-publicsuffixlist/Makefile
+	modified:   dns/py-publicsuffixlist/distinfo
+	modified:   editors/o/Makefile
+	modified:   editors/o/distinfo
+	modified:   games/easyrpg-player/Makefile
+	modified:   games/easyrpg-player/distinfo
+	modified:   games/sgt-puzzles/Makefile
+	modified:   games/sgt-puzzles/distinfo
+	modified:   graphics/py-willow/Makefile
+	modified:   graphics/py-willow/distinfo
+	modified:   graphics/tiled/Makefile
+	modified:   graphics/tiled/distinfo
+	deleted:    graphics/tiled/files/patch-src_libtiled_isometricrenderer.cpp
+	deleted:    graphics/tiled/files/patch-src_libtiled_mapobject.cpp
+	deleted:    graphics/tiled/files/patch-src_libtiled_maprenderer.cpp
+	deleted:    graphics/tiled/files/patch-src_libtiled_orthogonalrenderer.cpp
+	deleted:    graphics/tiled/files/patch-src_tiled_mapobjectitem.cpp
+	deleted:    graphics/tiled/files/patch-src_tiled_tiledproxystyle.cpp
+	deleted:    graphics/tiled/files/patch-src_tiled_tilesetview.cpp
+	modified:   lang/erlang-runtime23/Makefile
+	modified:   lang/erlang-runtime23/distinfo
+	modified:   math/scilab-toolbox-swt/distinfo
+	deleted:    math/scilab-toolbox-swt/files/patch-clang
+	modified:   math/scilab-toolbox-swt/pkg-descr
+	modified:   math/scilab-toolbox-swt/pkg-plist
+	modified:   net/rubygem-fog-ovirt/Makefile
+	modified:   net/rubygem-fog-ovirt/distinfo
+	modified:   science/Makefile
+	modified:   science/jmol/Makefile
+	modified:   science/jmol/distinfo
+	new file:   science/xtb/Makefile
+	new file:   science/xtb/distinfo
+	new file:   science/xtb/pkg-descr
+	new file:   science/xtb/pkg-plist
+	modified:   sysutils/acpica-tools/Makefile
+	modified:   sysutils/acpica-tools/distinfo
+	modified:   sysutils/watchman/Makefile
+	modified:   sysutils/watchman/distinfo
+	new file:   sysutils/watchman/files/patch-CMakeLists.txt
+	modified:   textproc/py-elasticsearch/Makefile
+	modified:   textproc/py-elasticsearch/distinfo
+	modified:   textproc/py-isbnlib/Makefile
+	modified:   textproc/py-isbnlib/distinfo
+	modified:   www/p5-HTTP-Daemon/Makefile
+	modified:   www/p5-HTTP-Daemon/distinfo
+	modified:   www/py-django-modelcluster/Makefile
+	modified:   www/py-django-modelcluster/distinfo
+	modified:   www/py-wagtail/Makefile
+	modified:   www/py-wagtail/files/patch-setup.py
+	modified:   www/tinymce/Makefile
+	modified:   www/tinymce/distinfo
+	modified:   x11/xorgproto/Makefile
+	modified:   x11/xorgproto/pkg-descr
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   math/scilab-toolbox-swt/Makefile
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 3f348f290c8a Merge remote-tracking branch 'upstream/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.28 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 3f348f290c8a Merge remote-tracking branch 'upstream/master'
+==== END: master ====
