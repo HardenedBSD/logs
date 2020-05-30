@@ -36,3 +36,207 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox-esr/Makefile
+Removing misc/freebsd-release-manifests/files/MANIFESTS/sparc64-sparc64-11.4-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc64-11.4-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc-11.4-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/i386-i386-11.4-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/arm64-aarch64-11.4-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/amd64-amd64-11.4-BETA2
+Auto-merging graphics/kludge3d/Makefile
+CONFLICT (content): Merge conflict in graphics/kludge3d/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc graphics/kludge3d/Makefile
+index a0239a15e008,2bd64b418fba..000000000000
+--- a/graphics/kludge3d/Makefile
++++ b/graphics/kludge3d/Makefile
+@@@ -13,9 -13,7 +13,13 @@@ COMMENT=	Simple 3D edito
+  LIB_DEPENDS=	lib3ds.so:graphics/lib3ds \
+  		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		gl gmake gnome pkgconfig python
+++=======
++ USES=		compiler:c++11-lang gl gmake gnome pkgconfig python
+++>>>>>>> freebsd/master
+  USE_GL=		gl
+  USE_GNOME=	gtk20
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	new file:   audio/carla/files/patch-source_theme_CarlaStyle.cpp
+	modified:   audio/cava/Makefile
+	modified:   audio/cava/distinfo
+	modified:   audio/cava/files/patch-Makefile.am
+	modified:   audio/cava/files/patch-cava.c
+	modified:   audio/cava/files/patch-config.c
+	new file:   audio/cava/files/patch-configure.ac
+	new file:   audio/cava/files/patch-example__files_config
+	new file:   audio/cava/files/patch-input_sndio.c
+	modified:   audio/cava/files/patch-output_terminal__ncurses.c
+	modified:   audio/strawberry/Makefile
+	modified:   biology/py-pandas-charm/Makefile
+	modified:   cad/digital/Makefile
+	modified:   cad/digital/distinfo
+	new file:   cad/qcad/files/patch-src_gui_RRulerQt.h
+	modified:   databases/postgresql-ogr_fdw/Makefile
+	modified:   databases/postgresql-ogr_fdw/distinfo
+	modified:   databases/py-pymemcache/Makefile
+	modified:   deskutils/hs-arbtt/Makefile
+	modified:   devel/agar/Makefile
+	modified:   devel/libsavitar/Makefile
+	modified:   devel/rust-analyzer/Makefile
+	modified:   devel/rust-analyzer/distinfo
+	modified:   devel/tokei/Makefile
+	modified:   devel/tokei/distinfo
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/open-vm-tools/Makefile
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	new file:   graphics/drawpile/files/patch-src_desktop_bundled_QtColorWidgets_color__wheel.cpp
+	new file:   graphics/drawpile/files/patch-src_desktop_widgets_popupmessage.h
+	modified:   graphics/sane-backends/Makefile
+	modified:   graphics/sane-backends/distinfo
+	modified:   graphics/sane-backends/files/patch-backend_Makefile.in
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   lang/intel-compute-runtime/files/patch-i386
+	modified:   mail/aerc/Makefile
+	modified:   mail/aerc/distinfo
+	modified:   mail/aerc/pkg-plist
+	modified:   mail/thunderbird/Makefile
+	modified:   mail/thunderbird/files/patch-bug1618914
+	modified:   math/cadical/Makefile
+	modified:   math/elemental/Makefile
+	modified:   math/gambit/Makefile
+	modified:   math/octave-forge-ltfat/Makefile
+	modified:   math/sympow/Makefile
+	new file:   math/vtk8/files/patch-Rendering_Qt_vtkQtLabelRenderStrategy.cxx
+	modified:   misc/darknet/Makefile
+	modified:   misc/freebsd-release-manifests/Makefile
+	deleted:    misc/freebsd-release-manifests/files/MANIFESTS/amd64-amd64-11.4-BETA2
+	new file:   misc/freebsd-release-manifests/files/MANIFESTS/amd64-amd64-11.4-RC2
+	deleted:    misc/freebsd-release-manifests/files/MANIFESTS/arm64-aarch64-11.4-BETA2
+	new file:   misc/freebsd-release-manifests/files/MANIFESTS/arm64-aarch64-11.4-RC2
+	deleted:    misc/freebsd-release-manifests/files/MANIFESTS/i386-i386-11.4-BETA2
+	new file:   misc/freebsd-release-manifests/files/MANIFESTS/i386-i386-11.4-RC2
+	deleted:    misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc-11.4-BETA2
+	new file:   misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc-11.4-RC2
+	deleted:    misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc64-11.4-BETA2
+	new file:   misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc64-11.4-RC2
+	deleted:    misc/freebsd-release-manifests/files/MANIFESTS/sparc64-sparc64-11.4-BETA2
+	new file:   misc/freebsd-release-manifests/files/MANIFESTS/sparc64-sparc64-11.4-RC2
+	modified:   misc/freebsd-release-manifests/pkg-plist
+	modified:   multimedia/kodi-devel/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/distinfo
+	modified:   multimedia/plexmediaserver/Makefile
+	modified:   multimedia/plexmediaserver/distinfo
+	new file:   multimedia/vlc/files/patch-modules_gui_qt_components_playlist_views.cpp
+	new file:   multimedia/vlc/files/patch-modules_gui_qt_dialogs_plugins.cpp
+	new file:   multimedia/vlc/files/patch-modules_gui_qt_util_timetooltip.hpp
+	new file:   net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_effects_animation__value.h
+	new file:   net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_widgets_input__fields.h
+	modified:   net-p2p/qbittorrent/Makefile
+	modified:   net/Makefile
+	modified:   net/activemq/Makefile
+	modified:   net/activemq/distinfo
+	new file:   net/libiscsi/Makefile
+	new file:   net/libiscsi/distinfo
+	new file:   net/libiscsi/files/patch-configure.ac
+	new file:   net/libiscsi/files/patch-lib_login.c
+	new file:   net/libiscsi/pkg-descr
+	new file:   net/libiscsi/pkg-plist
+	modified:   science/Makefile
+	modified:   security/ca_root_nss/Makefile
+	modified:   security/ca_root_nss/distinfo
+	modified:   security/nss/Makefile
+	modified:   security/nss/distinfo
+	modified:   security/nss/files/patch-sysdb
+	modified:   security/snort3/Makefile
+	modified:   security/snort3/distinfo
+	modified:   security/snort3/pkg-plist
+	modified:   sysutils/runit-faster/Makefile
+	modified:   sysutils/runit-faster/files/runsvdir.in
+	modified:   textproc/codespell/Makefile
+	modified:   textproc/codespell/distinfo
+	modified:   textproc/codespell/files/pkg-message.in
+	modified:   textproc/codespell/pkg-descr
+	modified:   www/Makefile
+	modified:   www/firefox-esr/Makefile
+	modified:   www/firefox-esr/files/patch-bug1618914
+	modified:   www/firefox/Makefile
+	modified:   www/firefox/distinfo
+	modified:   www/firefox/files/patch-bug1618914
+	modified:   www/fusionpbx/Makefile
+	modified:   www/ilias/Makefile
+	new file:   www/ilias6/Makefile
+	new file:   www/ilias6/distinfo
+	new file:   www/ilias6/files/pkg-message.in
+	new file:   www/ilias6/pkg-descr
+	modified:   www/py-flexget/Makefile
+	modified:   www/py-flexget/distinfo
+	modified:   www/unit/Makefile
+	new file:   www/unit/files/patch-fix-rootfs-build
+	modified:   www/youtube_dl/Makefile
+	modified:   www/youtube_dl/distinfo
+	modified:   x11-wm/cwm/Makefile
+	modified:   x11-wm/cwm/distinfo
+	modified:   x11-wm/cwm/files/patch-Makefile
+	modified:   x11/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   graphics/kludge3d/Makefile
+
+
+It took 3.02 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at aee57b6c9564 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at aee57b6c9564 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
