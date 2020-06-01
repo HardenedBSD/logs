@@ -1,0 +1,715 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/svn/svnversion/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnversion/Makefile
+Auto-merging usr.bin/svn/svnsync/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnsync/Makefile
+Auto-merging usr.bin/svn/svnserve/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnserve/Makefile
+Auto-merging usr.bin/svn/svnrdump/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnrdump/Makefile
+Auto-merging usr.bin/svn/svnmucc/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnmucc/Makefile
+Auto-merging usr.bin/svn/svnlook/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnlook/Makefile
+Auto-merging usr.bin/svn/svnfsfs/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnfsfs/Makefile
+Auto-merging usr.bin/svn/svndumpfilter/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svndumpfilter/Makefile
+Auto-merging usr.bin/svn/svnbench/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnbench/Makefile
+Auto-merging usr.bin/svn/svnadmin/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnadmin/Makefile
+Auto-merging usr.bin/svn/svn/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svn/Makefile
+Auto-merging libexec/rtld-elf/rtld.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.bin/svn/svn/Makefile
+index e7669df1c71d,52ca922cd34d..000000000000
+--- a/usr.bin/svn/svn/Makefile
++++ b/usr.bin/svn/svn/Makefile
+@@@ -2,56 -2,111 +2,134 @@@
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+- .PATH:	${SVNDIR}/svn
++ .PATH:		${SVNDIR}/svn
+  
+- PROG=	svn${SVNLITE}
++ PROG=		svn${SVNLITE}
+  
+- SRCS=	add-cmd.c auth-cmd.c blame-cmd.c cat-cmd.c changelist-cmd.c \
+- 	checkout-cmd.c cl-conflicts.c cleanup-cmd.c commit-cmd.c \
+- 	conflict-callbacks.c copy-cmd.c delete-cmd.c deprecated.c \
+- 	diff-cmd.c export-cmd.c file-merge.c help-cmd.c import-cmd.c \
+- 	info-cmd.c list-cmd.c lock-cmd.c log-cmd.c merge-cmd.c \
+- 	mergeinfo-cmd.c mkdir-cmd.c move-cmd.c notify.c patch-cmd.c \
+- 	propdel-cmd.c propedit-cmd.c propget-cmd.c proplist-cmd.c \
+- 	props.c propset-cmd.c relocate-cmd.c resolve-cmd.c \
+- 	resolved-cmd.c revert-cmd.c \
+- 	shelve-cmd.c status-cmd.c similarity.c status.c \
+- 	svn.c switch-cmd.c unlock-cmd.c update-cmd.c upgrade-cmd.c util.c
++ SRCS=		add-cmd.c \
++ 		auth-cmd.c \
++ 		blame-cmd.c \
++ 		cat-cmd.c \
++ 		changelist-cmd.c \
++ 		checkout-cmd.c \
++ 		cl-conflicts.c \
++ 		cleanup-cmd.c \
++ 		commit-cmd.c \
++ 		conflict-callbacks.c \
++ 		copy-cmd.c \
++ 		delete-cmd.c \
++ 		deprecated.c \
++ 		diff-cmd.c \
++ 		export-cmd.c \
++ 		file-merge.c \
++ 		help-cmd.c \
++ 		import-cmd.c \
++ 		info-cmd.c \
++ 		list-cmd.c \
++ 		lock-cmd.c \
++ 		log-cmd.c \
++ 		merge-cmd.c \
++ 		mergeinfo-cmd.c \
++ 		mkdir-cmd.c \
++ 		move-cmd.c \
++ 		notify.c \
++ 		patch-cmd.c \
++ 		propdel-cmd.c \
++ 		propedit-cmd.c \
++ 		propget-cmd.c \
++ 		proplist-cmd.c \
++ 		props.c \
++ 		propset-cmd.c \
++ 		relocate-cmd.c \
++ 		resolve-cmd.c \
++ 		resolved-cmd.c \
++ 		revert-cmd.c \
++ 		shelve-cmd.c \
++ 		status-cmd.c \
++ 		similarity.c \
++ 		status.c \
++ 		svn.c \
++ 		switch-cmd.c \
++ 		unlock-cmd.c \
++ 		update-cmd.c \
++ 		upgrade-cmd.c \
++ 		util.c
+  
+- CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+- 	-I${.CURDIR:H}/lib/libapr \
+- 	-I${APR}/include/arch/unix \
+- 	-I${APR}/include \
+- 	-I${.CURDIR:H}/lib/libapr_util \
+- 	-I${APRU}/include/private \
+- 	-I${APRU}/include
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
+  
+++<<<<<<< HEAD
+ +CFI_OVERRIDE=	-fno-sanitize=cfi-icall
+ +
+ +LDADD=	-L${LIBSVN_CLIENTDIR} -lsvn_client \
+ +	-L${LIBSVN_WCDIR} -lsvn_wc \
+ +	-L${LIBSVN_RADIR} -lsvn_ra \
+ +	-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local \
+ +	-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn \
+ +	-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf \
+ +	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_DIFFDIR} -lsvn_diff \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBSERFDIR} -lserf \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z magic crypto ssl pthread
+++=======
++ LDADD=		-L${LIBSVN_CLIENTDIR} -lsvn_client${PIE_SUFFIX} \
++ 		-L${LIBSVN_WCDIR} -lsvn_wc${PIE_SUFFIX} \
++ 		-L${LIBSVN_RADIR} -lsvn_ra${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf${PIE_SUFFIX} \
++ 		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_DIFFDIR} -lsvn_diff${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBSERFDIR} -lserf${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
+++>>>>>>> freebsd/current/master
+  
+- DPADD=	${LIBSVN_CLIENT} ${LIBSVN_WC} ${LIBSVN_RA} ${LIBSVN_RA_LOCAL} \
+- 	${LIBSVN_RA_SVN} ${LIBSVN_RA_SERF} ${LIBSVN_REPOS} \
+- 	${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} ${LIBSVN_DELTA} \
+- 	${LIBSVN_DIFF} ${LIBSVN_SUBR} ${LIBSERF} ${LIBAPR_UTIL} \
+- 	${LIBAPR}
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		magic \
++ 		crypto \
++ 		ssl \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_CLIENT} \
++ 		${LIBSVN_WC} \
++ 		${LIBSVN_RA} \
++ 		${LIBSVN_RA_LOCAL} \
++ 		${LIBSVN_RA_SVN} \
++ 		${LIBSVN_RA_SERF} \
++ 		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_DIFF} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBSERF} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+  
+  CLEANFILES+=	svnlite.1
+  .if(defined(ORGANIZATION) && !empty(ORGANIZATION))
+diff --cc usr.bin/svn/svnadmin/Makefile
+index eab3b2c89be9,f6d0a8e0c540..000000000000
+--- a/usr.bin/svn/svnadmin/Makefile
++++ b/usr.bin/svn/svnadmin/Makefile
+@@@ -4,33 -4,44 +4,75 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svnadmin
+ +
+ +PROG=	svn${SVNLITE}admin
+ +
+ +SRCS=	svnadmin.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z pthread
+ +
+ +DPADD=	${LIBSVN_REPOS} ${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} \
+ +	${LIBSVN_DELTA} ${LIBSVN_SUBR} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svnadmin
++ 
++ PROG=		svn${SVNLITE}admin
++ 
++ SRCS=		svnadmin.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
++ 
++ LDADD=		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
++ 
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+++>>>>>>> freebsd/current/master
+  
+  .include <bsd.prog.mk>
+diff --cc usr.bin/svn/svnbench/Makefile
+index 8fe07d7f40c5,5ab6d8636156..000000000000
+--- a/usr.bin/svn/svnbench/Makefile
++++ b/usr.bin/svn/svnbench/Makefile
+@@@ -4,45 -4,71 +4,114 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svnbench
+ +
+ +PROG=	svn${SVNLITE}bench
+ +
+ +SRCS=	help-cmd.c notify.c null-blame-cmd.c null-export-cmd.c \
+ +	null-info-cmd.c null-list-cmd.c null-log-cmd.c svnbench.c util.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_CLIENTDIR} -lsvn_client \
+ +	-L${LIBSVN_WCDIR} -lsvn_wc \
+ +	-L${LIBSVN_RADIR} -lsvn_ra \
+ +	-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local \
+ +	-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn \
+ +	-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf \
+ +	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_DIFFDIR} -lsvn_diff \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBSERFDIR} -lserf \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +
+ +LIBADD+=	bsdxml sqlite3 z magic crypto ssl pthread
+ +
+ +DPADD=	${LIBSVN_CLIENT} ${LIBSVN_WC} ${LIBSVN_RA} ${LIBSVN_RA_LOCAL} \
+ +	${LIBSVN_RA_SVN} ${LIBSVN_RA_SERF} ${LIBSVN_REPOS} \
+ +	${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} ${LIBSVN_DELTA} \
+ +	${LIBSVN_DIFF} ${LIBSVN_SUBR} ${LIBSERF} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svnbench
++ 
++ PROG=		svn${SVNLITE}bench
++ 
++ SRCS=		help-cmd.c \
++ 		notify.c \
++ 		null-blame-cmd.c \
++ 		null-export-cmd.c \
++ 		null-info-cmd.c \
++ 		null-list-cmd.c \
++ 		null-log-cmd.c \
++ 		svnbench.c \
++ 		util.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
++ 
++ LDADD=		-L${LIBSVN_CLIENTDIR} -lsvn_client${PIE_SUFFIX} \
++ 		-L${LIBSVN_WCDIR} -lsvn_wc${PIE_SUFFIX} \
++ 		-L${LIBSVN_RADIR} -lsvn_ra${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf${PIE_SUFFIX} \
++ 		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_DIFFDIR} -lsvn_diff${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBSERFDIR} -lserf${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
++ 
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		magic \
++ 		crypto \
++ 		ssl \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_CLIENT} \
++ 		${LIBSVN_WC} \
++ 		${LIBSVN_RA} \
++ 		${LIBSVN_RA_LOCAL} \
++ 		${LIBSVN_RA_SVN} \
++ 		${LIBSVN_RA_SERF} \
++ 		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_DIFF} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBSERF} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+++>>>>>>> freebsd/current/master
+  
+  .include <bsd.prog.mk>
+diff --cc usr.bin/svn/svndumpfilter/Makefile
+index ccb54eb35f19,6c9024fbe9bc..000000000000
+--- a/usr.bin/svn/svndumpfilter/Makefile
++++ b/usr.bin/svn/svndumpfilter/Makefile
+@@@ -4,33 -4,45 +4,76 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svndumpfilter
+ +
+ +PROG=	svn${SVNLITE}dumpfilter
+ +
+ +SRCS=	svndumpfilter.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z crypt pthread
+ +
+ +DPADD=	${LIBSVN_REPOS} ${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} \
+ +	${LIBSVN_DELTA} ${LIBSVN_SUBR} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svndumpfilter
++ 
++ PROG=		svn${SVNLITE}dumpfilter
++ 
++ SRCS=		svndumpfilter.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
++ 
++ LDADD=		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
++ 
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		crypt \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+++>>>>>>> freebsd/current/master
+  
+  .include <bsd.prog.mk>
+diff --cc usr.bin/svn/svnfsfs/Makefile
+index 2a465b6038b4,2818d5bc6ccc..000000000000
+--- a/usr.bin/svn/svnfsfs/Makefile
++++ b/usr.bin/svn/svnfsfs/Makefile
+@@@ -4,33 -4,47 +4,78 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svnfsfs
+ +
+ +PROG=	svn${SVNLITE}fsfs
+ +
+ +SRCS=	dump-index-cmd.c load-index-cmd.c stats-cmd.c svnfsfs.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z pthread
+ +
+ +DPADD=	${LIBSVN_REPOS} ${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} \
+ +	${LIBSVN_DELTA} ${LIBSVN_SUBR} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svnfsfs
++ 
++ PROG=		svn${SVNLITE}fsfs
++ 
++ SRCS=		dump-index-cmd.c \
++ 		load-index-cmd.c \
++ 		stats-cmd.c \
++ 		svnfsfs.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/apr/CHANGES
+	modified:   contrib/apr/CMakeLists.txt
+	modified:   contrib/apr/Makefile.in
+	modified:   contrib/apr/Makefile.win
+	modified:   contrib/apr/NOTICE
+	modified:   contrib/apr/NWGNUmakefile
+	modified:   contrib/apr/apr.dsp
+	modified:   contrib/apr/apr.mak
+	modified:   contrib/apr/apr.spec
+	new file:   contrib/apr/atomic/unix/builtins64.c
+	modified:   contrib/apr/atomic/unix/ia32.c
+	modified:   contrib/apr/atomic/unix/mutex.c
+	new file:   contrib/apr/atomic/unix/mutex64.c
+	modified:   contrib/apr/atomic/unix/ppc.c
+	modified:   contrib/apr/atomic/unix/s390.c
+	modified:   contrib/apr/atomic/unix/solaris.c
+	modified:   contrib/apr/build-outputs.mk
+	modified:   contrib/apr/buildconf
+	modified:   contrib/apr/config.layout
+	modified:   contrib/apr/configure
+	modified:   contrib/apr/configure.in
+	modified:   contrib/apr/docs/APRDesign.html
+	modified:   contrib/apr/docs/canonical_filenames.html
+	modified:   contrib/apr/docs/incomplete_types
+	modified:   contrib/apr/docs/pool-design.html
+	new file:   contrib/apr/encoding/apr_encode.c
+	modified:   contrib/apr/encoding/apr_escape.c
+	modified:   contrib/apr/file_io/unix/copy.c
+	modified:   contrib/apr/file_io/unix/dir.c
+	modified:   contrib/apr/file_io/unix/flock.c
+	modified:   contrib/apr/file_io/unix/pipe.c
+	modified:   contrib/apr/file_io/unix/readwrite.c
+	modified:   contrib/apr/file_io/unix/seek.c
+	modified:   contrib/apr/include/apr.h.in
+	modified:   contrib/apr/include/apr.hnw
+	modified:   contrib/apr/include/apr.hw
+	modified:   contrib/apr/include/apr.hwc
+	modified:   contrib/apr/include/apr_allocator.h
+	modified:   contrib/apr/include/apr_atomic.h
+	new file:   contrib/apr/include/apr_cstr.h
+	new file:   contrib/apr/include/apr_encode.h
+	modified:   contrib/apr/include/apr_errno.h
+	modified:   contrib/apr/include/apr_escape.h
+	modified:   contrib/apr/include/apr_file_info.h
+	modified:   contrib/apr/include/apr_file_io.h
+	modified:   contrib/apr/include/apr_general.h
+	modified:   contrib/apr/include/apr_global_mutex.h
+	modified:   contrib/apr/include/apr_hash.h
+	modified:   contrib/apr/include/apr_network_io.h
+	new file:   contrib/apr/include/apr_perms_set.h
+	modified:   contrib/apr/include/apr_poll.h
+	modified:   contrib/apr/include/apr_portable.h
+	modified:   contrib/apr/include/apr_proc_mutex.h
+	modified:   contrib/apr/include/apr_shm.h
+	modified:   contrib/apr/include/apr_skiplist.h
+	modified:   contrib/apr/include/apr_strings.h
+	modified:   contrib/apr/include/apr_tables.h
+	modified:   contrib/apr/include/apr_thread_mutex.h
+	modified:   contrib/apr/include/apr_thread_proc.h
+	modified:   contrib/apr/include/apr_time.h
+	modified:   contrib/apr/include/apr_version.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_atomic.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_networkio.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_poll_private.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_proc_mutex.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_shm.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_thread_mutex.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_threadproc.h
+	modified:   contrib/apr/include/arch/unix/apr_private.h.in
+	new file:   contrib/apr/include/private/apr_encode_private.h
+	modified:   contrib/apr/libapr.dsp
+	modified:   contrib/apr/libapr.mak
+	modified:   contrib/apr/locks/unix/global_mutex.c
+	modified:   contrib/apr/locks/unix/proc_mutex.c
+	modified:   contrib/apr/locks/unix/thread_cond.c
+	modified:   contrib/apr/locks/unix/thread_mutex.c
+	modified:   contrib/apr/memory/unix/apr_pools.c
+	modified:   contrib/apr/misc/unix/errorcodes.c
+	modified:   contrib/apr/misc/unix/rand.c
+	modified:   contrib/apr/network_io/unix/multicast.c
+	modified:   contrib/apr/network_io/unix/sockaddr.c
+	modified:   contrib/apr/network_io/unix/sockets.c
+	modified:   contrib/apr/network_io/unix/sockopt.c
+	modified:   contrib/apr/poll/unix/epoll.c
+	modified:   contrib/apr/poll/unix/kqueue.c
+	modified:   contrib/apr/poll/unix/poll.c
+	modified:   contrib/apr/poll/unix/pollcb.c
+	modified:   contrib/apr/poll/unix/pollset.c
+	modified:   contrib/apr/poll/unix/port.c
+	modified:   contrib/apr/poll/unix/select.c
+	new file:   contrib/apr/poll/unix/wakeup.c
+	modified:   contrib/apr/poll/unix/z_asio.c
+	modified:   contrib/apr/shmem/unix/shm.c
+	modified:   contrib/apr/strings/apr_cpystrn.c
+	new file:   contrib/apr/strings/apr_cstr.c
+	modified:   contrib/apr/strings/apr_fnmatch.c
+	modified:   contrib/apr/strings/apr_snprintf.c
+	modified:   contrib/apr/tables/apr_skiplist.c
+	modified:   contrib/apr/tables/apr_tables.c
+	modified:   contrib/apr/threadproc/unix/proc.c
+	modified:   contrib/apr/threadproc/unix/signals.c
+	modified:   contrib/apr/tools/gen_test_char.c
+	modified:   include/Makefile
+	modified:   libexec/rtld-elf/rtld.1
+	modified:   libexec/rtld-elf/rtld.c
+	modified:   share/misc/bsd-family-tree
+	modified:   usr.bin/svn/Makefile
+	modified:   usr.bin/svn/lib/Makefile
+	modified:   usr.bin/svn/lib/libapr/Makefile
+	new file:   usr.bin/svn/lib/libapr/apr_escape_test_char.h
+	modified:   usr.bin/svn/lib/libapr_util/Makefile
+	modified:   usr.bin/svn/lib/libserf/Makefile
+	modified:   usr.bin/svn/lib/libsvn_client/Makefile
+	modified:   usr.bin/svn/lib/libsvn_delta/Makefile
+	modified:   usr.bin/svn/lib/libsvn_diff/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs_fs/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs_util/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs_x/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra_local/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra_serf/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra_svn/Makefile
+	modified:   usr.bin/svn/lib/libsvn_repos/Makefile
+	modified:   usr.bin/svn/lib/libsvn_subr/Makefile
+	modified:   usr.bin/svn/lib/libsvn_wc/Makefile
+	modified:   usr.sbin/certctl/certctl.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/svn/svn/Makefile
+	both modified:   usr.bin/svn/svnadmin/Makefile
+	both modified:   usr.bin/svn/svnbench/Makefile
+	both modified:   usr.bin/svn/svndumpfilter/Makefile
+	both modified:   usr.bin/svn/svnfsfs/Makefile
+	both modified:   usr.bin/svn/svnlook/Makefile
+	both modified:   usr.bin/svn/svnmucc/Makefile
+	both modified:   usr.bin/svn/svnrdump/Makefile
+	both modified:   usr.bin/svn/svnserve/Makefile
+	both modified:   usr.bin/svn/svnsync/Makefile
+	both modified:   usr.bin/svn/svnversion/Makefile
+
+HEAD is now at b6dd2bf0cc2d Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at b6dd2bf0cc2d Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
