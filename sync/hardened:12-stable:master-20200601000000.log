@@ -1,0 +1,160 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/bmake/ChangeLog                            |  169 +++
+ contrib/bmake/FILES                                |   18 +-
+ contrib/bmake/Makefile                             |   21 +-
+ contrib/bmake/Makefile.config.in                   |   11 +-
+ contrib/bmake/VERSION                              |    2 +-
+ contrib/bmake/arch.c                               |    8 +-
+ contrib/bmake/bmake.1                              |   11 +-
+ contrib/bmake/boot-strap                           |    8 +-
+ contrib/bmake/bsd.after-import.mk                  |    5 +-
+ contrib/bmake/compat.c                             |    8 +-
+ contrib/bmake/config.h.in                          |    2 +-
+ contrib/bmake/configure                            | 1103 +++++++++++---------
+ contrib/bmake/configure.in                         |   67 +-
+ contrib/bmake/dir.c                                |   67 +-
+ contrib/bmake/dirname.c                            |   10 +-
+ contrib/bmake/filemon/filemon.h                    |   53 +
+ contrib/bmake/filemon/filemon_dev.c                |  151 +++
+ contrib/bmake/filemon/filemon_ktrace.c             |  878 ++++++++++++++++
+ contrib/bmake/job.c                                |   72 +-
+ contrib/bmake/make-bootstrap.sh.in                 |   33 +-
+ contrib/bmake/make.1                               |   48 +-
+ contrib/bmake/make.h                               |    2 +-
+ contrib/bmake/meta.c                               |  192 +++-
+ contrib/bmake/meta.h                               |    9 +-
+ contrib/bmake/mk/ChangeLog                         |  105 ++
+ contrib/bmake/mk/FILES                             |    2 +
+ contrib/bmake/mk/autodep.mk                        |   13 +-
+ contrib/bmake/mk/compiler.mk                       |   43 +
+ contrib/bmake/mk/dirdeps-options.mk                |   13 +-
+ contrib/bmake/mk/dirdeps-targets.mk                |  133 +++
+ contrib/bmake/mk/dirdeps.mk                        |   61 +-
+ contrib/bmake/mk/doc.mk                            |   11 +-
+ contrib/bmake/mk/dpadd.mk                          |   67 +-
+ contrib/bmake/mk/gendirdeps.mk                     |   32 +-
+ contrib/bmake/mk/init.mk                           |    9 +-
+ contrib/bmake/mk/install-mk                        |    4 +-
+ contrib/bmake/mk/lib.mk                            |   16 +-
+ contrib/bmake/mk/meta.autodep.mk                   |   16 +-
+ contrib/bmake/mk/meta.stage.mk                     |   32 +-
+ contrib/bmake/mk/meta.sys.mk                       |   18 +-
+ contrib/bmake/mk/meta2deps.py                      |    5 +-
+ contrib/bmake/mk/mk-files.txt                      |   26 +-
+ contrib/bmake/mk/options.mk                        |    3 +-
+ contrib/bmake/mk/sys.mk                            |    6 +-
+ contrib/bmake/mk/sys.vars.mk                       |    7 +-
+ contrib/bmake/mk/sys/AIX.mk                        |    2 -
+ contrib/bmake/mk/sys/Darwin.mk                     |   27 +-
+ contrib/bmake/mk/sys/Generic.mk                    |    4 +-
+ contrib/bmake/mk/sys/HP-UX.mk                      |    4 +-
+ contrib/bmake/mk/sys/IRIX.mk                       |    2 -
+ contrib/bmake/mk/sys/Linux.mk                      |    4 +-
+ contrib/bmake/mk/sys/NetBSD.mk                     |    2 -
+ contrib/bmake/mk/sys/OSF1.mk                       |    4 +-
+ contrib/bmake/mk/sys/OpenBSD.mk                    |    2 -
+ contrib/bmake/mk/sys/SunOS.mk                      |    4 +-
+ contrib/bmake/mk/sys/UnixWare.mk                   |    4 +-
+ contrib/bmake/mk/whats.mk                          |   73 +-
+ contrib/bmake/nonints.h                            |    6 +-
+ contrib/bmake/parse.c                              |   35 +-
+ contrib/bmake/str.c                                |  142 +--
+ contrib/bmake/unit-tests/{Makefile.in => Makefile} |   20 +-
+ contrib/bmake/unit-tests/Makefile.config.in        |    4 +
+ contrib/bmake/unit-tests/cond-late.exp             |    3 +
+ contrib/bmake/unit-tests/cond-late.mk              |   23 +
+ contrib/bmake/unit-tests/dollar.exp                |   51 +
+ contrib/bmake/unit-tests/dollar.mk                 |   81 ++
+ contrib/bmake/unit-tests/escape.mk                 |    6 +-
+ contrib/bmake/unit-tests/forloop.exp               |    3 +-
+ contrib/bmake/unit-tests/forloop.mk                |   12 +-
+ contrib/bmake/unit-tests/include-main.exp          |    6 +
+ contrib/bmake/unit-tests/include-main.mk           |   30 +
+ contrib/bmake/unit-tests/include-sub.mk            |   17 +
+ contrib/bmake/unit-tests/include-subsub.mk         |    7 +
+ contrib/bmake/unit-tests/modorder.mk               |    7 +-
+ contrib/bmake/unit-tests/sysv.exp                  |    8 +
+ contrib/bmake/unit-tests/sysv.mk                   |   21 +-
+ contrib/bmake/unit-tests/varmod-edge.exp           |   17 +
+ contrib/bmake/unit-tests/varmod-edge.mk            |  162 +++
+ contrib/bmake/unit-tests/varquote.exp              |    3 +
+ contrib/bmake/unit-tests/varquote.mk               |   14 +
+ contrib/bmake/util.c                               |   34 +-
+ contrib/bmake/var.c                                |   28 +-
+ usr.bin/bmake/Makefile                             |   21 +-
+ usr.bin/bmake/Makefile.config                      |    9 +-
+ usr.bin/bmake/Makefile.depend                      |    1 -
+ usr.bin/bmake/config.h                             |    6 +-
+ usr.bin/bmake/unit-tests/Makefile                  |    5 +-
+ 87 files changed, 3521 insertions(+), 963 deletions(-)
+ create mode 100644 contrib/bmake/filemon/filemon.h
+ create mode 100644 contrib/bmake/filemon/filemon_dev.c
+ create mode 100644 contrib/bmake/filemon/filemon_ktrace.c
+ create mode 100644 contrib/bmake/mk/compiler.mk
+ create mode 100644 contrib/bmake/mk/dirdeps-targets.mk
+ rename contrib/bmake/unit-tests/{Makefile.in => Makefile} (93%)
+ create mode 100644 contrib/bmake/unit-tests/Makefile.config.in
+ create mode 100644 contrib/bmake/unit-tests/cond-late.exp
+ create mode 100644 contrib/bmake/unit-tests/cond-late.mk
+ create mode 100644 contrib/bmake/unit-tests/dollar.exp
+ create mode 100644 contrib/bmake/unit-tests/dollar.mk
+ create mode 100644 contrib/bmake/unit-tests/include-main.exp
+ create mode 100644 contrib/bmake/unit-tests/include-main.mk
+ create mode 100644 contrib/bmake/unit-tests/include-sub.mk
+ create mode 100644 contrib/bmake/unit-tests/include-subsub.mk
+ create mode 100644 contrib/bmake/unit-tests/varmod-edge.exp
+ create mode 100644 contrib/bmake/unit-tests/varmod-edge.mk
+ create mode 100644 contrib/bmake/unit-tests/varquote.exp
+ create mode 100644 contrib/bmake/unit-tests/varquote.mk
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    36e5107d851e..252c7ce00ed1  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    6bc23cfe4b7c..a253f89a5f14  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   36e5107d851e..252c7ce00ed1  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
