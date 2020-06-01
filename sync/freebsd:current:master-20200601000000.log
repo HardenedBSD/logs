@@ -1,0 +1,203 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 9d666f8d140a..326ab2dcc6fb
+Fast-forward
+ contrib/apr/CHANGES                                |  194 +-
+ contrib/apr/CMakeLists.txt                         |    4 +
+ contrib/apr/Makefile.in                            |    2 +
+ contrib/apr/Makefile.win                           |   10 -
+ contrib/apr/NOTICE                                 |    2 +-
+ contrib/apr/NWGNUmakefile                          |    1 +
+ contrib/apr/apr.dsp                                |  148 +-
+ contrib/apr/apr.mak                                |  978 +----
+ contrib/apr/apr.spec                               |    4 +-
+ contrib/apr/atomic/unix/builtins64.c               |   64 +
+ contrib/apr/atomic/unix/ia32.c                     |    4 +
+ contrib/apr/atomic/unix/mutex.c                    |    5 +-
+ contrib/apr/atomic/unix/mutex64.c                  |  178 +
+ contrib/apr/atomic/unix/ppc.c                      |    4 +
+ contrib/apr/atomic/unix/s390.c                     |    4 +
+ contrib/apr/atomic/unix/solaris.c                  |    4 +
+ contrib/apr/build-outputs.mk                       |  254 +-
+ contrib/apr/buildconf                              |    4 +-
+ contrib/apr/config.layout                          |    1 +
+ contrib/apr/configure                              | 3921 ++++++++++++++------
+ contrib/apr/configure.in                           |  246 +-
+ contrib/apr/docs/APRDesign.html                    |   10 +-
+ contrib/apr/docs/canonical_filenames.html          |   26 +-
+ contrib/apr/docs/incomplete_types                  |    6 +-
+ contrib/apr/docs/pool-design.html                  |    4 -
+ contrib/apr/encoding/apr_encode.c                  | 1419 +++++++
+ contrib/apr/encoding/apr_escape.c                  |  119 +-
+ contrib/apr/file_io/unix/copy.c                    |    1 +
+ contrib/apr/file_io/unix/dir.c                     |   27 +-
+ contrib/apr/file_io/unix/flock.c                   |    8 +-
+ contrib/apr/file_io/unix/pipe.c                    |   64 +-
+ contrib/apr/file_io/unix/readwrite.c               |    2 +
+ contrib/apr/file_io/unix/seek.c                    |    7 +
+ contrib/apr/include/apr.h.in                       |   49 +-
+ contrib/apr/include/apr.hnw                        |    2 +
+ contrib/apr/include/apr.hw                         |   43 +-
+ contrib/apr/include/apr.hwc                        |   41 +-
+ contrib/apr/include/apr_allocator.h                |   10 +
+ contrib/apr/include/apr_atomic.h                   |   69 +-
+ contrib/apr/include/apr_cstr.h                     |  292 ++
+ contrib/apr/include/apr_encode.h                   |  569 +++
+ contrib/apr/include/apr_errno.h                    |   31 +-
+ contrib/apr/include/apr_escape.h                   |   69 +-
+ contrib/apr/include/apr_file_info.h                |    4 +-
+ contrib/apr/include/apr_file_io.h                  |   34 +-
+ contrib/apr/include/apr_general.h                  |   25 +-
+ contrib/apr/include/apr_global_mutex.h             |   34 +-
+ contrib/apr/include/apr_hash.h                     |    3 +-
+ contrib/apr/include/apr_network_io.h               |   72 +
+ contrib/apr/include/apr_perms_set.h                |   65 +
+ contrib/apr/include/apr_poll.h                     |   45 +-
+ contrib/apr/include/apr_portable.h                 |   47 +-
+ contrib/apr/include/apr_proc_mutex.h               |   34 +-
+ contrib/apr/include/apr_shm.h                      |   21 +
+ contrib/apr/include/apr_skiplist.h                 |  126 +-
+ contrib/apr/include/apr_strings.h                  |    4 +-
+ contrib/apr/include/apr_tables.h                   |   28 +-
+ contrib/apr/include/apr_thread_mutex.h             |   13 +
+ contrib/apr/include/apr_thread_proc.h              |   20 +
+ contrib/apr/include/apr_time.h                     |    4 +-
+ contrib/apr/include/apr_version.h                  |    8 +-
+ contrib/apr/include/arch/unix/apr_arch_atomic.h    |   18 +-
+ contrib/apr/include/arch/unix/apr_arch_networkio.h |    3 +
+ .../apr/include/arch/unix/apr_arch_poll_private.h  |   19 +-
+ .../apr/include/arch/unix/apr_arch_proc_mutex.h    |   28 +-
+ contrib/apr/include/arch/unix/apr_arch_shm.h       |    1 +
+ .../apr/include/arch/unix/apr_arch_thread_mutex.h  |    3 +
+ .../apr/include/arch/unix/apr_arch_threadproc.h    |   10 +
+ contrib/apr/include/arch/unix/apr_private.h.in     |   81 +-
+ contrib/apr/include/private/apr_encode_private.h   |   84 +
+ contrib/apr/libapr.dsp                             |  134 +-
+ contrib/apr/libapr.mak                             |  647 +---
+ contrib/apr/locks/unix/global_mutex.c              |   59 +-
+ contrib/apr/locks/unix/proc_mutex.c                |  952 ++++-
+ contrib/apr/locks/unix/thread_cond.c               |   32 +-
+ contrib/apr/locks/unix/thread_mutex.c              |  200 +-
+ contrib/apr/memory/unix/apr_pools.c                |  379 +-
+ contrib/apr/misc/unix/errorcodes.c                 |    2 +-
+ contrib/apr/misc/unix/rand.c                       |  136 +-
+ contrib/apr/network_io/unix/multicast.c            |    2 +-
+ contrib/apr/network_io/unix/sockaddr.c             |  200 +-
+ contrib/apr/network_io/unix/sockets.c              |   61 +-
+ contrib/apr/network_io/unix/sockopt.c              |   35 +
+ contrib/apr/poll/unix/epoll.c                      |   43 +-
+ contrib/apr/poll/unix/kqueue.c                     |   44 +-
+ contrib/apr/poll/unix/poll.c                       |   28 +-
+ contrib/apr/poll/unix/pollcb.c                     |   63 +-
+ contrib/apr/poll/unix/pollset.c                    |  141 +-
+ contrib/apr/poll/unix/port.c                       |  104 +-
+ contrib/apr/poll/unix/select.c                     |   10 +-
+ contrib/apr/poll/unix/wakeup.c                     |  151 +
+ contrib/apr/poll/unix/z_asio.c                     |   19 +-
+ contrib/apr/shmem/unix/shm.c                       |   51 +-
+ contrib/apr/strings/apr_cpystrn.c                  |    2 +
+ contrib/apr/strings/apr_cstr.c                     |  403 ++
+ contrib/apr/strings/apr_fnmatch.c                  |    2 +-
+ contrib/apr/strings/apr_snprintf.c                 |    3 +-
+ contrib/apr/tables/apr_skiplist.c                  |  211 +-
+ contrib/apr/tables/apr_tables.c                    |    4 +
+ contrib/apr/threadproc/unix/proc.c                 |   30 +-
+ contrib/apr/threadproc/unix/signals.c              |    6 -
+ contrib/apr/tools/gen_test_char.c                  |   18 +-
+ include/Makefile                                   |    5 +-
+ libexec/rtld-elf/rtld.1                            |   16 +-
+ libexec/rtld-elf/rtld.c                            |   71 +-
+ share/misc/bsd-family-tree                         |    2 +-
+ usr.bin/svn/Makefile                               |   16 +-
+ usr.bin/svn/lib/Makefile                           |   21 +-
+ usr.bin/svn/lib/libapr/Makefile                    |  130 +-
+ usr.bin/svn/lib/libapr/apr_escape_test_char.h      |   27 +
+ usr.bin/svn/lib/libapr_util/Makefile               |   71 +-
+ usr.bin/svn/lib/libserf/Makefile                   |   46 +-
+ usr.bin/svn/lib/libsvn_client/Makefile             |   60 +-
+ usr.bin/svn/lib/libsvn_delta/Makefile              |   28 +-
+ usr.bin/svn/lib/libsvn_diff/Makefile               |   20 +-
+ usr.bin/svn/lib/libsvn_fs/Makefile                 |    9 +-
+ usr.bin/svn/lib/libsvn_fs_fs/Makefile              |   30 +-
+ usr.bin/svn/lib/libsvn_fs_util/Makefile            |    4 +-
+ usr.bin/svn/lib/libsvn_fs_x/Makefile               |   37 +-
+ usr.bin/svn/lib/libsvn_ra/Makefile                 |   12 +-
+ usr.bin/svn/lib/libsvn_ra_local/Makefile           |    7 +-
+ usr.bin/svn/lib/libsvn_ra_serf/Makefile            |   41 +-
+ usr.bin/svn/lib/libsvn_ra_svn/Makefile             |   16 +-
+ usr.bin/svn/lib/libsvn_repos/Makefile              |   31 +-
+ usr.bin/svn/lib/libsvn_subr/Makefile               |  112 +-
+ usr.bin/svn/lib/libsvn_wc/Makefile                 |   51 +-
+ usr.bin/svn/svn/Makefile                           |  143 +-
+ usr.bin/svn/svnadmin/Makefile                      |   67 +-
+ usr.bin/svn/svnbench/Makefile                      |  106 +-
+ usr.bin/svn/svndumpfilter/Makefile                 |   68 +-
+ usr.bin/svn/svnfsfs/Makefile                       |   70 +-
+ usr.bin/svn/svnlook/Makefile                       |   70 +-
+ usr.bin/svn/svnmucc/Makefile                       |   92 +-
+ usr.bin/svn/svnrdump/Makefile                      |   98 +-
+ usr.bin/svn/svnserve/Makefile                      |   88 +-
+ usr.bin/svn/svnsync/Makefile                       |   86 +-
+ usr.bin/svn/svnversion/Makefile                    |   59 +-
+ usr.sbin/certctl/certctl.sh                        |    2 +-
+ 138 files changed, 11305 insertions(+), 4413 deletions(-)
+ create mode 100644 contrib/apr/atomic/unix/builtins64.c
+ create mode 100644 contrib/apr/atomic/unix/mutex64.c
+ create mode 100644 contrib/apr/encoding/apr_encode.c
+ create mode 100644 contrib/apr/include/apr_cstr.h
+ create mode 100644 contrib/apr/include/apr_encode.h
+ create mode 100644 contrib/apr/include/apr_perms_set.h
+ create mode 100644 contrib/apr/include/private/apr_encode_private.h
+ create mode 100644 contrib/apr/poll/unix/wakeup.c
+ create mode 100644 contrib/apr/strings/apr_cstr.c
+ create mode 100644 usr.bin/svn/lib/libapr/apr_escape_test_char.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    9d666f8d140a..326ab2dcc6fb  freebsd/current/master -> freebsd/current/master        
+remote:    36e5107d851e..252c7ce00ed1  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   9d666f8d140a..326ab2dcc6fb  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
