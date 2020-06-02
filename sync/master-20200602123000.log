@@ -34,3 +34,263 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing ports-mgmt/jailaudit/files/patch-jailaudit
+Auto-merging graphics/gimp-app/Makefile
+Auto-merging games/julius/Makefile
+Removing databases/db48/pkg-plist
+Removing databases/db48/pkg-descr
+Removing databases/db48/files/patch-dist__configure
+Removing databases/db48/files/patch-dbinc_mutex_int.h
+Removing databases/db48/files/patch-dbinc_atomic.h
+Removing databases/db48/distinfo
+Removing databases/db48/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ Mk/Uses/bdb.mk                                     |  20 +-
+ Mk/Uses/scons.mk                                   |   2 +
+ UPDATING                                           |  13 +
+ converters/pdf2djvu/Makefile                       |   2 +-
+ databases/Makefile                                 |   1 -
+ databases/db48/Makefile                            |  54 ----
+ databases/db48/distinfo                            |   2 -
+ databases/db48/files/patch-dbinc_atomic.h          |  20 --
+ databases/db48/files/patch-dbinc_mutex_int.h       |  11 -
+ databases/db48/files/patch-dist__configure         |  13 -
+ databases/db48/pkg-descr                           |  11 -
+ databases/db48/pkg-plist                           |  49 ----
+ databases/db6/Makefile                             |   3 +
+ databases/kbibtex/Makefile                         |   2 +-
+ deskutils/calibre/Makefile                         |   1 +
+ deskutils/cfiles/Makefile                          |   2 +-
+ deskutils/lumina-pdf/Makefile                      |   2 +-
+ deskutils/recoll/Makefile                          |   2 +-
+ deskutils/xfce4-tumbler/Makefile                   |   2 +-
+ devel/Makefile                                     |   1 +
+ devel/bazel/Makefile                               |   4 +-
+ devel/bazel/distinfo                               |   6 +-
+ devel/cmake-doc/Makefile                           |   3 +-
+ devel/cmake-gui/Makefile                           |   2 +-
+ devel/cmake/Makefile                               |   2 +-
+ devel/cmake/distinfo                               |   6 +-
+ devel/cmake/pkg-plist                              |   2 +
+ devel/efl/Makefile                                 |   2 +-
+ devel/kf5-kfilemetadata/Makefile                   |   2 +-
+ devel/p5-subversion/Makefile                       |   2 +-
+ devel/py-subversion/Makefile                       |  16 +-
+ devel/py3c/Makefile                                |  29 ++
+ devel/py3c/distinfo                                |   3 +
+ devel/py3c/files/patch-Makefile                    |  20 ++
+ devel/py3c/pkg-descr                               |   6 +
+ devel/py3c/pkg-plist                               |   8 +
+ devel/ruby-subversion/Makefile                     |   2 +-
+ devel/subversion/Makefile                          |   8 +-
+ devel/subversion/Makefile.addons                   |  12 +-
+ devel/subversion/Makefile.common                   |   2 +-
+ devel/subversion/distinfo                          |   6 +-
+ devel/subversion/files/build-outputs.mk.addons     | 136 +++++----
+ devel/subversion/files/patch-Makefile.in           |  16 +-
+ devel/subversion/files/patch-build.conf            |   6 +-
+ devel/subversion/files/patch-configure             | 310 +++++++++++++++++++++
+ devel/subversion/pkg-plist                         |   5 +-
+ dns/bind9-devel/Makefile                           |   8 +-
+ dns/bind9-devel/distinfo                           |   6 +-
+ dns/bind9-devel/files/extrapatch-bind-tools        |   6 +-
+ dns/bind9-devel/files/extrapatch-no-bind-tools     |   8 +-
+ dns/bind9-devel/pkg-plist                          |   8 +-
+ editors/calligra/Makefile                          |   1 +
+ editors/kile/Makefile                              |   2 +-
+ editors/libreoffice/Makefile                       |   2 +-
+ editors/openoffice-devel/Makefile                  |   2 +-
+ editors/texstudio/Makefile                         |   2 +-
+ editors/texworks/Makefile                          |   2 +-
+ games/julius/Makefile                              |   2 +-
+ games/julius/distinfo                              |   6 +-
+ games/tty-solitaire/Makefile                       |   3 +-
+ games/tty-solitaire/distinfo                       |   6 +-
+ graphics/atril/Makefile                            |   2 +-
+ graphics/diff-pdf/Makefile                         |   2 +-
+ graphics/diffpdf/Makefile                          |   2 +-
+ graphics/drm-devel-kmod/Makefile                   |   6 +-
+ graphics/drm-devel-kmod/distinfo                   |   6 +-
+ graphics/dspdfviewer/Makefile                      |   2 +-
+ graphics/engauge-digitizer/Makefile                |   2 +-
+ graphics/epdfview/Makefile                         |   2 +-
+ graphics/evince/Makefile                           |   2 +-
+ graphics/gdal/Makefile                             |   2 +-
+ graphics/geeqie/Makefile                           |   2 +-
+ graphics/gegl/Makefile                             |   2 +-
+ graphics/gimp-app/Makefile                         |   2 +-
+ graphics/graphviz/Makefile                         |   2 +-
+ graphics/impressive/Makefile                       |   2 +-
+ graphics/inkscape/Makefile                         |   2 +-
+ graphics/krita/Makefile                            |   2 +-
+ graphics/okular/Makefile                           |   1 +
+ graphics/openfx-arena/Makefile                     |   2 +-
+ graphics/osg/Makefile                              |   2 +-
+ graphics/pdf2svg/Makefile                          |   2 +-
+ graphics/pdfpc/Makefile                            |   2 +-
+ graphics/poppler-data/Makefile                     |   2 +-
+ graphics/poppler-glib/Makefile                     |   2 +-
+ graphics/poppler-glib/pkg-plist                    |   2 +-
+ graphics/poppler-qt5/Makefile                      |   2 +-
+ graphics/poppler-utils/Makefile                    |   2 +-
+ graphics/poppler/Makefile                          |   6 +-
+ graphics/poppler/distinfo                          |   6 +-
+ graphics/poppler/pkg-plist                         |   3 +-
+ graphics/pqiv/Makefile                             |   2 +-
+ graphics/py-poppler/Makefile                       |   2 +-
+ graphics/py-python-poppler-qt5/Makefile            |   2 +-
+ graphics/qcomicbook/Makefile                       |   2 +-
+ graphics/vips/Makefile                             |   2 +-
+ graphics/xournal/Makefile                          |   2 +-
+ graphics/xournalpp/Makefile                        |   2 +-
+ graphics/yacreader/Makefile                        |   2 +-
+ graphics/zathura-pdf-mupdf/Makefile                |   2 +-
+ graphics/zathura-pdf-poppler/Makefile              |   2 +-
+ java/java-subversion/Makefile                      |   4 +-
+ lang/go-devel/Makefile                             |   4 +-
+ lang/go-devel/distinfo                             |   6 +-
+ lang/go/Makefile                                   |   2 +-
+ lang/go/distinfo                                   |   6 +-
+ lang/perl5-devel/Makefile                          |   2 +-
+ lang/perl5-devel/distinfo                          |   6 +-
+ lang/perl5-devel/pkg-plist                         |  32 +--
+ lang/perl5-devel/version.mk                        |   2 +-
+ mail/claws-mail-pdf_viewer/Makefile                |   2 +-
+ mail/mailfromd/Makefile                            |   8 +-
+ mail/textmail/Makefile                             |   2 +-
+ math/labplot/Makefile                              |   2 +-
+ misc/rubygem-rabbit/Makefile                       |   2 +-
+ misc/tellico/Makefile                              |   1 +
+ net-p2p/litecoin/Makefile                          |  12 +-
+ net-p2p/namecoin/Makefile                          |  12 +-
+ net-p2p/zetacoin/Makefile                          |  12 +-
+ net/kitinerary/Makefile                            |   2 +-
+ net/py-kombu/Makefile                              |   2 +-
+ net/py-kombu/distinfo                              |   6 +-
+ net/webalizer-geodb/Makefile                       |   2 +-
+ net/webalizer-geodb/distinfo                       |   6 +-
+ ports-mgmt/jailaudit/Makefile                      |   3 +-
+ ports-mgmt/jailaudit/distinfo                      |   6 +-
+ ports-mgmt/jailaudit/files/patch-jailaudit         |  20 --
+ print/cups-filters/Makefile                        |   2 +-
+ print/deforaos-pdfviewer/Makefile                  |   2 +-
+ print/ghostscript9-agpl-base/Makefile              |   2 +-
+ print/pdf-tools/Makefile                           |   2 +-
+ print/qpdfview/Makefile                            |   2 +-
+ print/scribus-devel/Makefile                       |   2 +-
+ print/tex-luatex/Makefile                          |   2 +-
+ print/tex-xetex/Makefile                           |   2 +-
+ print/texlive-base/Makefile                        |   2 +-
+ security/subversion-gnome-keyring/Makefile         |   2 +-
+ sysutils/Makefile                                  |   1 +
+ sysutils/py-salt-2019/Makefile                     | 104 +++++++
+ sysutils/py-salt-2019/distinfo                     |   3 +
+ .../files/patch-requirements_base.txt              |   0
+ sysutils/py-salt-2019/files/patch-salt_loader.py   |  11 +
+ sysutils/py-salt-2019/files/patch-setup.py         |  13 +
+ sysutils/py-salt-2019/files/pkg-message.in         |  36 +++
+ sysutils/py-salt-2019/files/salt_api.in            |  31 +++
+ sysutils/py-salt-2019/files/salt_master.in         |  42 +++
+ sysutils/py-salt-2019/files/salt_minion.in         |  42 +++
+ sysutils/py-salt-2019/files/salt_proxy.in          |  59 ++++
+ sysutils/py-salt-2019/files/salt_syndic.in         |  31 +++
+ sysutils/py-salt-2019/pkg-descr                    |   8 +
+ sysutils/py-salt-2019/pkg-plist                    |   7 +
+ sysutils/py-salt/Makefile                          |   5 +-
+ sysutils/py-salt/distinfo                          |   6 +-
+ sysutils/tracker-miners/Makefile                   |   2 +-
+ textproc/Makefile                                  |   1 +
+ textproc/ibus-typing-booster/Makefile              |   2 +-
+ textproc/ibus-typing-booster/distinfo              |   6 +-
+ textproc/pdfgrep/Makefile                          |   2 +-
+ textproc/pdfsandwich/Makefile                      |   2 +-
+ textproc/py-iso3166/Makefile                       |  24 ++
+ textproc/py-iso3166/distinfo                       |   3 +
+ textproc/py-iso3166/pkg-descr                      |   3 +
+ textproc/py-pdftotext/Makefile                     |   2 +-
+ www/hotcrp/Makefile                                |   2 +-
+ www/mod_qos/Makefile                               |   2 +-
+ www/mod_qos/distinfo                               |   6 +-
+ www/nginx/Makefile                                 |   2 +-
+ www/nginx/Makefile.extmod                          |   2 +-
+ www/nginx/distinfo                                 |   6 +-
+ .../files/extra-patch-nginx-link-function-config   |   4 +-
+ www/nginx/files/extra-patch-ngx_link_func_module.c |   4 +-
+ x11-toolkits/rubygem-poppler/Makefile              |   1 +
+ x11/eaglemode/Makefile                             |   2 +-
+ x11/rubygem-gnome/Makefile                         |   1 +
+ 175 files changed, 1160 insertions(+), 492 deletions(-)
+ delete mode 100644 databases/db48/Makefile
+ delete mode 100644 databases/db48/distinfo
+ delete mode 100644 databases/db48/files/patch-dbinc_atomic.h
+ delete mode 100644 databases/db48/files/patch-dbinc_mutex_int.h
+ delete mode 100644 databases/db48/files/patch-dist__configure
+ delete mode 100644 databases/db48/pkg-descr
+ delete mode 100644 databases/db48/pkg-plist
+ create mode 100644 devel/py3c/Makefile
+ create mode 100644 devel/py3c/distinfo
+ create mode 100644 devel/py3c/files/patch-Makefile
+ create mode 100644 devel/py3c/pkg-descr
+ create mode 100644 devel/py3c/pkg-plist
+ create mode 100644 devel/subversion/files/patch-configure
+ delete mode 100644 ports-mgmt/jailaudit/files/patch-jailaudit
+ create mode 100644 sysutils/py-salt-2019/Makefile
+ create mode 100644 sysutils/py-salt-2019/distinfo
+ rename sysutils/{py-salt => py-salt-2019}/files/patch-requirements_base.txt (100%)
+ create mode 100644 sysutils/py-salt-2019/files/patch-salt_loader.py
+ create mode 100644 sysutils/py-salt-2019/files/patch-setup.py
+ create mode 100644 sysutils/py-salt-2019/files/pkg-message.in
+ create mode 100644 sysutils/py-salt-2019/files/salt_api.in
+ create mode 100644 sysutils/py-salt-2019/files/salt_master.in
+ create mode 100644 sysutils/py-salt-2019/files/salt_minion.in
+ create mode 100644 sysutils/py-salt-2019/files/salt_proxy.in
+ create mode 100644 sysutils/py-salt-2019/files/salt_syndic.in
+ create mode 100644 sysutils/py-salt-2019/pkg-descr
+ create mode 100644 sysutils/py-salt-2019/pkg-plist
+ create mode 100644 textproc/py-iso3166/Makefile
+ create mode 100644 textproc/py-iso3166/distinfo
+ create mode 100644 textproc/py-iso3166/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    e61d9306f407..3642aabe4ee4  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   3642aabe4ee4..3fbf16caddc8  master -> master
+==== END: master ====
