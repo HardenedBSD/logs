@@ -1,0 +1,1155 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/svn/svnversion/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnversion/Makefile
+Auto-merging usr.bin/svn/svnsync/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnsync/Makefile
+Auto-merging usr.bin/svn/svnserve/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnserve/Makefile
+Auto-merging usr.bin/svn/svnrdump/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnrdump/Makefile
+Auto-merging usr.bin/svn/svnmucc/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnmucc/Makefile
+Auto-merging usr.bin/svn/svnlook/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnlook/Makefile
+Auto-merging usr.bin/svn/svnfsfs/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnfsfs/Makefile
+Auto-merging usr.bin/svn/svndumpfilter/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svndumpfilter/Makefile
+Auto-merging usr.bin/svn/svnbench/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnbench/Makefile
+Auto-merging usr.bin/svn/svnadmin/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svnadmin/Makefile
+Auto-merging usr.bin/svn/svn/Makefile
+CONFLICT (content): Merge conflict in usr.bin/svn/svn/Makefile
+Auto-merging sys/sys/mount.h
+Auto-merging sys/netinet6/nd6_rtr.c
+Auto-merging sys/netinet/ip_icmp.c
+Auto-merging sys/modules/Makefile
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging sys/kern/kern_linker.c
+Auto-merging stand/lua/drawer.lua
+CONFLICT (content): Merge conflict in stand/lua/drawer.lua
+Auto-merging share/mk/bsd.prog.mk
+CONFLICT (content): Merge conflict in share/mk/bsd.prog.mk
+Auto-merging libexec/rtld-elf/rtld.c
+Removing contrib/subversion/subversion/svn/shelve-cmd.c
+Removing contrib/subversion/subversion/libsvn_client/shelve.c
+Removing contrib/subversion/subversion/libsvn_client/copy_foreign.c
+Removing contrib/subversion/doc/programmer/gtest-guide.txt
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/bsd.prog.mk
+index e1621e9af4d2,fbd75318a358..000000000000
+--- a/share/mk/bsd.prog.mk
++++ b/share/mk/bsd.prog.mk
+@@@ -35,6 -35,30 +35,33 @@@ PROG=	${PROG_CXX
+  MK_DEBUG_FILES=	no
+  .endif
+  
+++<<<<<<< HEAD
+++=======
++ # ELF hardening knobs
++ .if ${MK_BIND_NOW} != "no"
++ LDFLAGS+= -Wl,-znow
++ .endif
++ .if ${MK_PIE} != "no"
++ # Static PIE is not yet supported/tested.
++ .if !defined(NO_SHARED) || ${NO_SHARED:tl} == "no"
++ CFLAGS+= -fPIE
++ CXXFLAGS+= -fPIE
++ LDFLAGS+= -pie
++ .endif
++ .endif
++ .if ${MK_RETPOLINE} != "no"
++ .if ${COMPILER_FEATURES:Mretpoline} && ${LINKER_FEATURES:Mretpoline}
++ CFLAGS+= -mretpoline
++ CXXFLAGS+= -mretpoline
++ # retpolineplt is broken with static linking (PR 233336)
++ .if !defined(NO_SHARED) || ${NO_SHARED:tl} == "no"
++ LDFLAGS+= -Wl,-zretpolineplt
++ .endif
++ .else
++ .warning Retpoline requested but not supported by compiler or linker
++ .endif
++ .endif
+++>>>>>>> freebsd/current/master
+  
+  .if ${MACHINE_CPUARCH} == "riscv" && ${LINKER_FEATURES:Mriscv-relaxations} == ""
+  CFLAGS += -mno-relax
+diff --cc stand/lua/drawer.lua
+index 9004b75eda14,12a27bfda233..000000000000
+--- a/stand/lua/drawer.lua
++++ b/stand/lua/drawer.lua
+@@@ -364,9 -357,12 +369,18 @@@ default_shift = {x = 0, y = 0
+  shift = default_shift
+  
+  -- Module exports
+++<<<<<<< HEAD
+ +drawer.default_brand = 'hbsd'
+ +drawer.default_color_logodef = 'hardenedbsd'
+ +drawer.default_bw_logodef = 'hardenedbsdbw'
+++=======
++ drawer.default_brand = 'fbsd'
++ drawer.default_color_logodef = 'orb'
++ drawer.default_bw_logodef = 'orbbw'
++ -- For when things go terribly wrong; this def should be present here in the
++ -- drawer module in case it's a filesystem issue.
++ drawer.default_fallback_logodef = 'none'
+++>>>>>>> freebsd/current/master
+  
+  function drawer.addBrand(name, def)
+  	branddefs[name] = def
+diff --cc usr.bin/svn/svn/Makefile
+index e7669df1c71d,fc31b878fbee..000000000000
+--- a/usr.bin/svn/svn/Makefile
++++ b/usr.bin/svn/svn/Makefile
+@@@ -2,56 -2,113 +2,136 @@@
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+- .PATH:	${SVNDIR}/svn
++ .PATH:		${SVNDIR}/svn
+  
+- PROG=	svn${SVNLITE}
++ PROG=		svn${SVNLITE}
+  
+- SRCS=	add-cmd.c auth-cmd.c blame-cmd.c cat-cmd.c changelist-cmd.c \
+- 	checkout-cmd.c cl-conflicts.c cleanup-cmd.c commit-cmd.c \
+- 	conflict-callbacks.c copy-cmd.c delete-cmd.c deprecated.c \
+- 	diff-cmd.c export-cmd.c file-merge.c help-cmd.c import-cmd.c \
+- 	info-cmd.c list-cmd.c lock-cmd.c log-cmd.c merge-cmd.c \
+- 	mergeinfo-cmd.c mkdir-cmd.c move-cmd.c notify.c patch-cmd.c \
+- 	propdel-cmd.c propedit-cmd.c propget-cmd.c proplist-cmd.c \
+- 	props.c propset-cmd.c relocate-cmd.c resolve-cmd.c \
+- 	resolved-cmd.c revert-cmd.c \
+- 	shelve-cmd.c status-cmd.c similarity.c status.c \
+- 	svn.c switch-cmd.c unlock-cmd.c update-cmd.c upgrade-cmd.c util.c
++ SRCS=		add-cmd.c \
++ 		auth-cmd.c \
++ 		blame-cmd.c \
++ 		cat-cmd.c \
++ 		changelist-cmd.c \
++ 		checkout-cmd.c \
++ 		cl-conflicts.c \
++ 		cleanup-cmd.c \
++ 		commit-cmd.c \
++ 		conflict-callbacks.c \
++ 		copy-cmd.c \
++ 		delete-cmd.c \
++ 		deprecated.c \
++ 		diff-cmd.c \
++ 		export-cmd.c \
++ 		file-merge.c \
++ 		filesize.c \
++ 		help-cmd.c \
++ 		import-cmd.c \
++ 		info-cmd.c \
++ 		list-cmd.c \
++ 		lock-cmd.c \
++ 		log-cmd.c \
++ 		merge-cmd.c \
++ 		mergeinfo-cmd.c \
++ 		mkdir-cmd.c \
++ 		move-cmd.c \
++ 		notify.c \
++ 		patch-cmd.c \
++ 		propdel-cmd.c \
++ 		propedit-cmd.c \
++ 		propget-cmd.c \
++ 		proplist-cmd.c \
++ 		props.c \
++ 		propset-cmd.c \
++ 		relocate-cmd.c \
++ 		resolve-cmd.c \
++ 		resolved-cmd.c \
++ 		revert-cmd.c \
++ 		shelf-cmd.c \
++ 		shelf2-cmd.c \
++ 		similarity.c \
++ 		status-cmd.c \
++ 		status.c \
++ 		svn.c \
++ 		switch-cmd.c \
++ 		unlock-cmd.c \
++ 		update-cmd.c \
++ 		upgrade-cmd.c \
++ 		util.c
+  
+- CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+- 	-I${.CURDIR:H}/lib/libapr \
+- 	-I${APR}/include/arch/unix \
+- 	-I${APR}/include \
+- 	-I${.CURDIR:H}/lib/libapr_util \
+- 	-I${APRU}/include/private \
+- 	-I${APRU}/include
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
+  
+++<<<<<<< HEAD
+ +CFI_OVERRIDE=	-fno-sanitize=cfi-icall
+ +
+ +LDADD=	-L${LIBSVN_CLIENTDIR} -lsvn_client \
+ +	-L${LIBSVN_WCDIR} -lsvn_wc \
+ +	-L${LIBSVN_RADIR} -lsvn_ra \
+ +	-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local \
+ +	-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn \
+ +	-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf \
+ +	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_DIFFDIR} -lsvn_diff \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBSERFDIR} -lserf \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z magic crypto ssl pthread
+++=======
++ LDADD=		-L${LIBSVN_CLIENTDIR} -lsvn_client${PIE_SUFFIX} \
++ 		-L${LIBSVN_WCDIR} -lsvn_wc${PIE_SUFFIX} \
++ 		-L${LIBSVN_RADIR} -lsvn_ra${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf${PIE_SUFFIX} \
++ 		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_DIFFDIR} -lsvn_diff${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBSERFDIR} -lserf${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
+++>>>>>>> freebsd/current/master
+  
+- DPADD=	${LIBSVN_CLIENT} ${LIBSVN_WC} ${LIBSVN_RA} ${LIBSVN_RA_LOCAL} \
+- 	${LIBSVN_RA_SVN} ${LIBSVN_RA_SERF} ${LIBSVN_REPOS} \
+- 	${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} ${LIBSVN_DELTA} \
+- 	${LIBSVN_DIFF} ${LIBSVN_SUBR} ${LIBSERF} ${LIBAPR_UTIL} \
+- 	${LIBAPR}
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		magic \
++ 		crypto \
++ 		ssl \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_CLIENT} \
++ 		${LIBSVN_WC} \
++ 		${LIBSVN_RA} \
++ 		${LIBSVN_RA_LOCAL} \
++ 		${LIBSVN_RA_SVN} \
++ 		${LIBSVN_RA_SERF} \
++ 		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_DIFF} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBSERF} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+  
+  CLEANFILES+=	svnlite.1
+  .if(defined(ORGANIZATION) && !empty(ORGANIZATION))
+diff --cc usr.bin/svn/svnadmin/Makefile
+index eab3b2c89be9,f6d0a8e0c540..000000000000
+--- a/usr.bin/svn/svnadmin/Makefile
++++ b/usr.bin/svn/svnadmin/Makefile
+@@@ -4,33 -4,44 +4,75 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svnadmin
+ +
+ +PROG=	svn${SVNLITE}admin
+ +
+ +SRCS=	svnadmin.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z pthread
+ +
+ +DPADD=	${LIBSVN_REPOS} ${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} \
+ +	${LIBSVN_DELTA} ${LIBSVN_SUBR} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svnadmin
++ 
++ PROG=		svn${SVNLITE}admin
++ 
++ SRCS=		svnadmin.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
++ 
++ LDADD=		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
++ 
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+++>>>>>>> freebsd/current/master
+  
+  .include <bsd.prog.mk>
+diff --cc usr.bin/svn/svnbench/Makefile
+index 8fe07d7f40c5,5ab6d8636156..000000000000
+--- a/usr.bin/svn/svnbench/Makefile
++++ b/usr.bin/svn/svnbench/Makefile
+@@@ -4,45 -4,71 +4,114 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svnbench
+ +
+ +PROG=	svn${SVNLITE}bench
+ +
+ +SRCS=	help-cmd.c notify.c null-blame-cmd.c null-export-cmd.c \
+ +	null-info-cmd.c null-list-cmd.c null-log-cmd.c svnbench.c util.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_CLIENTDIR} -lsvn_client \
+ +	-L${LIBSVN_WCDIR} -lsvn_wc \
+ +	-L${LIBSVN_RADIR} -lsvn_ra \
+ +	-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local \
+ +	-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn \
+ +	-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf \
+ +	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_DIFFDIR} -lsvn_diff \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBSERFDIR} -lserf \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +
+ +LIBADD+=	bsdxml sqlite3 z magic crypto ssl pthread
+ +
+ +DPADD=	${LIBSVN_CLIENT} ${LIBSVN_WC} ${LIBSVN_RA} ${LIBSVN_RA_LOCAL} \
+ +	${LIBSVN_RA_SVN} ${LIBSVN_RA_SERF} ${LIBSVN_REPOS} \
+ +	${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} ${LIBSVN_DELTA} \
+ +	${LIBSVN_DIFF} ${LIBSVN_SUBR} ${LIBSERF} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svnbench
++ 
++ PROG=		svn${SVNLITE}bench
++ 
++ SRCS=		help-cmd.c \
++ 		notify.c \
++ 		null-blame-cmd.c \
++ 		null-export-cmd.c \
++ 		null-info-cmd.c \
++ 		null-list-cmd.c \
++ 		null-log-cmd.c \
++ 		svnbench.c \
++ 		util.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
++ 
++ LDADD=		-L${LIBSVN_CLIENTDIR} -lsvn_client${PIE_SUFFIX} \
++ 		-L${LIBSVN_WCDIR} -lsvn_wc${PIE_SUFFIX} \
++ 		-L${LIBSVN_RADIR} -lsvn_ra${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_LOCALDIR} -lsvn_ra_local${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SVNDIR} -lsvn_ra_svn${PIE_SUFFIX} \
++ 		-L${LIBSVN_RA_SERFDIR} -lsvn_ra_serf${PIE_SUFFIX} \
++ 		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_DIFFDIR} -lsvn_diff${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBSERFDIR} -lserf${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
++ 
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		magic \
++ 		crypto \
++ 		ssl \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_CLIENT} \
++ 		${LIBSVN_WC} \
++ 		${LIBSVN_RA} \
++ 		${LIBSVN_RA_LOCAL} \
++ 		${LIBSVN_RA_SVN} \
++ 		${LIBSVN_RA_SERF} \
++ 		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
++ 		${LIBSVN_DELTA} \
++ 		${LIBSVN_DIFF} \
++ 		${LIBSVN_SUBR} \
++ 		${LIBSERF} \
++ 		${LIBAPR_UTIL} \
++ 		${LIBAPR}
+++>>>>>>> freebsd/current/master
+  
+  .include <bsd.prog.mk>
+diff --cc usr.bin/svn/svndumpfilter/Makefile
+index ccb54eb35f19,6c9024fbe9bc..000000000000
+--- a/usr.bin/svn/svndumpfilter/Makefile
++++ b/usr.bin/svn/svndumpfilter/Makefile
+@@@ -4,33 -4,45 +4,76 @@@ MAN
+  
+  .include "${.CURDIR:H}/Makefile.inc"
+  
+++<<<<<<< HEAD
+ +.PATH:	${SVNDIR}/svndumpfilter
+ +
+ +PROG=	svn${SVNLITE}dumpfilter
+ +
+ +SRCS=	svndumpfilter.c
+ +
+ +CFLAGS+=-I${SVNDIR}/include -I${SVNDIR} -I${.CURDIR:H} \
+ +	-I${.CURDIR:H}/lib/libapr \
+ +	-I${APR}/include/arch/unix \
+ +	-I${APR}/include \
+ +	-I${.CURDIR:H}/lib/libapr_util \
+ +	-I${APRU}/include/private \
+ +	-I${APRU}/include
+ +
+ +LDADD=	-L${LIBSVN_REPOSDIR} -lsvn_repos \
+ +	-L${LIBSVN_FSDIR} -lsvn_fs \
+ +	-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs \
+ +	-L${LIBSVN_FS_XDIR} -lsvn_fs_x \
+ +	-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util \
+ +	-L${LIBSVN_DELTADIR} -lsvn_delta \
+ +	-L${LIBSVN_SUBRDIR} -lsvn_subr \
+ +	-L${LIBAPR_UTILDIR} -lapr-util \
+ +	-L${LIBAPRDIR} -lapr
+ +LIBADD+=	bsdxml sqlite3 z crypt pthread
+ +
+ +DPADD=	${LIBSVN_REPOS} ${LIBSVN_FS} ${LIBSVN_FS_FS} ${LIBSVN_FS_UTIL} \
+ +	${LIBSVN_DELTA} ${LIBSVN_SUBR} ${LIBAPR_UTIL} \
+ +	${LIBAPR}
+++=======
++ .PATH:		${SVNDIR}/svndumpfilter
++ 
++ PROG=		svn${SVNLITE}dumpfilter
++ 
++ SRCS=		svndumpfilter.c
++ 
++ CFLAGS+=	-I${SVNDIR}/include \
++ 		-I${SVNDIR} \
++ 		-I${.CURDIR:H} \
++ 		-I${.CURDIR:H}/lib/libapr \
++ 		-I${APR}/include/arch/unix \
++ 		-I${APR}/include \
++ 		-I${.CURDIR:H}/lib/libapr_util \
++ 		-I${APRU}/include/private \
++ 		-I${APRU}/include
++ 
++ LDADD=		-L${LIBSVN_REPOSDIR} -lsvn_repos${PIE_SUFFIX} \
++ 		-L${LIBSVN_FSDIR} -lsvn_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_FSDIR} -lsvn_fs_fs${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_XDIR} -lsvn_fs_x${PIE_SUFFIX} \
++ 		-L${LIBSVN_FS_UTILDIR} -lsvn_fs_util${PIE_SUFFIX} \
++ 		-L${LIBSVN_DELTADIR} -lsvn_delta${PIE_SUFFIX} \
++ 		-L${LIBSVN_SUBRDIR} -lsvn_subr${PIE_SUFFIX} \
++ 		-L${LIBAPR_UTILDIR} -lapr-util${PIE_SUFFIX} \
++ 		-L${LIBAPRDIR} -lapr${PIE_SUFFIX}
++ 
++ LIBADD+=	bsdxml \
++ 		sqlite3 \
++ 		z \
++ 		crypt \
++ 		pthread
++ 
++ DPADD=		${LIBSVN_REPOS} \
++ 		${LIBSVN_FS} \
++ 		${LIBSVN_FS_FS} \
++ 		${LIBSVN_FS_UTIL} \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/apr-util/CHANGES
+	new file:   contrib/apr-util/CMakeLists.txt
+	modified:   contrib/apr-util/LICENSE
+	modified:   contrib/apr-util/Makefile.in
+	modified:   contrib/apr-util/Makefile.win
+	modified:   contrib/apr-util/NOTICE
+	modified:   contrib/apr-util/NWGNUmakefile
+	modified:   contrib/apr-util/README
+	new file:   contrib/apr-util/README.FREETDS
+	new file:   contrib/apr-util/README.cmake
+	modified:   contrib/apr-util/apr-util.spec
+	modified:   contrib/apr-util/aprutil.dsw
+	modified:   contrib/apr-util/apu-config.in
+	modified:   contrib/apr-util/buckets/apr_buckets_alloc.c
+	modified:   contrib/apr-util/buckets/apr_buckets_file.c
+	modified:   contrib/apr-util/build-outputs.mk
+	modified:   contrib/apr-util/build.conf
+	modified:   contrib/apr-util/buildconf
+	modified:   contrib/apr-util/configure
+	modified:   contrib/apr-util/configure.in
+	modified:   contrib/apr-util/crypto/apr_crypto.c
+	new file:   contrib/apr-util/crypto/apr_crypto_commoncrypto.c
+	modified:   contrib/apr-util/crypto/apr_crypto_nss.c
+	modified:   contrib/apr-util/crypto/apr_crypto_openssl.c
+	new file:   contrib/apr-util/crypto/apr_siphash.c
+	modified:   contrib/apr-util/crypto/crypt_blowfish.c
+	modified:   contrib/apr-util/dbd/NWGNUmakefile
+	modified:   contrib/apr-util/dbd/apr_dbd.c
+	renamed:    contrib/apr-util/dbd/NWGNUdbdfreetds -> contrib/apr-util/dbd/unsupported/NWGNUdbdfreetds
+	renamed:    contrib/apr-util/dbd/apr_dbd_freetds.c -> contrib/apr-util/dbd/unsupported/apr_dbd_freetds.c
+	modified:   contrib/apr-util/dbm/sdbm/sdbm.c
+	modified:   contrib/apr-util/dbm/sdbm/sdbm_pair.c
+	modified:   contrib/apr-util/include/apr_buckets.h
+	modified:   contrib/apr-util/include/apr_crypto.h
+	modified:   contrib/apr-util/include/apr_dbd.h
+	new file:   contrib/apr-util/include/apr_ldap.hwc
+	new file:   contrib/apr-util/include/apr_redis.h
+	new file:   contrib/apr-util/include/apr_siphash.h
+	modified:   contrib/apr-util/include/apr_xml.h
+	modified:   contrib/apr-util/include/apu.h.in
+	modified:   contrib/apr-util/include/apu.hnw
+	modified:   contrib/apr-util/include/apu.hw
+	new file:   contrib/apr-util/include/apu.hwc
+	modified:   contrib/apr-util/include/apu_version.h
+	modified:   contrib/apr-util/include/private/apr_crypto_internal.h
+	modified:   contrib/apr-util/include/private/apu_config.h.in
+	modified:   contrib/apr-util/memcache/apr_memcache.c
+	new file:   contrib/apr-util/redis/apr_redis.c
+	modified:   contrib/apr-util/test/Makefile.in
+	modified:   contrib/apr-util/test/Makefile.win
+	modified:   contrib/apr-util/test/NWGNUaputest
+	modified:   contrib/apr-util/test/abts_tests.h
+	modified:   contrib/apr-util/test/testall.dsw
+	modified:   contrib/apr-util/test/testcrypto.c
+	new file:   contrib/apr-util/test/testredis.c
+	new file:   contrib/apr-util/test/testsiphash.c
+	modified:   contrib/apr-util/test/testutil.h
+	modified:   contrib/apr-util/xml/apr_xml.c
+	modified:   contrib/apr/CHANGES
+	modified:   contrib/apr/CMakeLists.txt
+	modified:   contrib/apr/Makefile.in
+	modified:   contrib/apr/Makefile.win
+	modified:   contrib/apr/NOTICE
+	modified:   contrib/apr/NWGNUmakefile
+	modified:   contrib/apr/apr.dsp
+	modified:   contrib/apr/apr.mak
+	modified:   contrib/apr/apr.spec
+	new file:   contrib/apr/atomic/unix/builtins64.c
+	modified:   contrib/apr/atomic/unix/ia32.c
+	modified:   contrib/apr/atomic/unix/mutex.c
+	new file:   contrib/apr/atomic/unix/mutex64.c
+	modified:   contrib/apr/atomic/unix/ppc.c
+	modified:   contrib/apr/atomic/unix/s390.c
+	modified:   contrib/apr/atomic/unix/solaris.c
+	modified:   contrib/apr/build-outputs.mk
+	modified:   contrib/apr/buildconf
+	modified:   contrib/apr/config.layout
+	modified:   contrib/apr/configure
+	modified:   contrib/apr/configure.in
+	modified:   contrib/apr/docs/APRDesign.html
+	modified:   contrib/apr/docs/canonical_filenames.html
+	modified:   contrib/apr/docs/incomplete_types
+	modified:   contrib/apr/docs/pool-design.html
+	new file:   contrib/apr/encoding/apr_encode.c
+	modified:   contrib/apr/encoding/apr_escape.c
+	modified:   contrib/apr/file_io/unix/copy.c
+	modified:   contrib/apr/file_io/unix/dir.c
+	modified:   contrib/apr/file_io/unix/flock.c
+	modified:   contrib/apr/file_io/unix/pipe.c
+	modified:   contrib/apr/file_io/unix/readwrite.c
+	modified:   contrib/apr/file_io/unix/seek.c
+	modified:   contrib/apr/include/apr.h.in
+	modified:   contrib/apr/include/apr.hnw
+	modified:   contrib/apr/include/apr.hw
+	modified:   contrib/apr/include/apr.hwc
+	modified:   contrib/apr/include/apr_allocator.h
+	modified:   contrib/apr/include/apr_atomic.h
+	new file:   contrib/apr/include/apr_cstr.h
+	new file:   contrib/apr/include/apr_encode.h
+	modified:   contrib/apr/include/apr_errno.h
+	modified:   contrib/apr/include/apr_escape.h
+	modified:   contrib/apr/include/apr_file_info.h
+	modified:   contrib/apr/include/apr_file_io.h
+	modified:   contrib/apr/include/apr_general.h
+	modified:   contrib/apr/include/apr_global_mutex.h
+	modified:   contrib/apr/include/apr_hash.h
+	modified:   contrib/apr/include/apr_network_io.h
+	new file:   contrib/apr/include/apr_perms_set.h
+	modified:   contrib/apr/include/apr_poll.h
+	modified:   contrib/apr/include/apr_portable.h
+	modified:   contrib/apr/include/apr_proc_mutex.h
+	modified:   contrib/apr/include/apr_shm.h
+	modified:   contrib/apr/include/apr_skiplist.h
+	modified:   contrib/apr/include/apr_strings.h
+	modified:   contrib/apr/include/apr_tables.h
+	modified:   contrib/apr/include/apr_thread_mutex.h
+	modified:   contrib/apr/include/apr_thread_proc.h
+	modified:   contrib/apr/include/apr_time.h
+	modified:   contrib/apr/include/apr_version.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_atomic.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_networkio.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_poll_private.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_proc_mutex.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_shm.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_thread_mutex.h
+	modified:   contrib/apr/include/arch/unix/apr_arch_threadproc.h
+	modified:   contrib/apr/include/arch/unix/apr_private.h.in
+	new file:   contrib/apr/include/private/apr_encode_private.h
+	modified:   contrib/apr/libapr.dsp
+	modified:   contrib/apr/libapr.mak
+	modified:   contrib/apr/locks/unix/global_mutex.c
+	modified:   contrib/apr/locks/unix/proc_mutex.c
+	modified:   contrib/apr/locks/unix/thread_cond.c
+	modified:   contrib/apr/locks/unix/thread_mutex.c
+	modified:   contrib/apr/memory/unix/apr_pools.c
+	modified:   contrib/apr/misc/unix/errorcodes.c
+	modified:   contrib/apr/misc/unix/rand.c
+	modified:   contrib/apr/network_io/unix/multicast.c
+	modified:   contrib/apr/network_io/unix/sockaddr.c
+	modified:   contrib/apr/network_io/unix/sockets.c
+	modified:   contrib/apr/network_io/unix/sockopt.c
+	modified:   contrib/apr/poll/unix/epoll.c
+	modified:   contrib/apr/poll/unix/kqueue.c
+	modified:   contrib/apr/poll/unix/poll.c
+	modified:   contrib/apr/poll/unix/pollcb.c
+	modified:   contrib/apr/poll/unix/pollset.c
+	modified:   contrib/apr/poll/unix/port.c
+	modified:   contrib/apr/poll/unix/select.c
+	new file:   contrib/apr/poll/unix/wakeup.c
+	modified:   contrib/apr/poll/unix/z_asio.c
+	modified:   contrib/apr/shmem/unix/shm.c
+	modified:   contrib/apr/strings/apr_cpystrn.c
+	new file:   contrib/apr/strings/apr_cstr.c
+	modified:   contrib/apr/strings/apr_fnmatch.c
+	modified:   contrib/apr/strings/apr_snprintf.c
+	modified:   contrib/apr/tables/apr_skiplist.c
+	modified:   contrib/apr/tables/apr_tables.c
+	modified:   contrib/apr/threadproc/unix/proc.c
+	modified:   contrib/apr/threadproc/unix/signals.c
+	modified:   contrib/apr/tools/gen_test_char.c
+	modified:   contrib/ipfilter/man/ipfstat.8
+	modified:   contrib/llvm-project/lld/ELF/SyntheticSections.cpp
+	modified:   contrib/llvm-project/llvm/include/llvm/BinaryFormat/ELF.h
+	modified:   contrib/llvm-project/llvm/tools/llvm-readobj/ELFDumper.cpp
+	modified:   contrib/subversion/.editorconfig
+	new file:   contrib/subversion/.swig_pl_checked
+	new file:   contrib/subversion/.swig_py_checked
+	new file:   contrib/subversion/.swig_rb_checked
+	modified:   contrib/subversion/CHANGES
+	modified:   contrib/subversion/COMMITTERS
+	modified:   contrib/subversion/INSTALL
+	modified:   contrib/subversion/LICENSE
+	modified:   contrib/subversion/Makefile.in
+	modified:   contrib/subversion/NOTICE
+	modified:   contrib/subversion/aclocal.m4
+	modified:   contrib/subversion/autogen.sh
+	modified:   contrib/subversion/build-outputs.mk
+	modified:   contrib/subversion/build.conf
+	modified:   contrib/subversion/configure
+	modified:   contrib/subversion/configure.ac
+	modified:   contrib/subversion/doc/doxygen.conf
+	deleted:    contrib/subversion/doc/programmer/gtest-guide.txt
+	modified:   contrib/subversion/doc/user/svn-best-practices.html
+	modified:   contrib/subversion/gen-make.py
+	modified:   contrib/subversion/get-deps.sh
+	modified:   contrib/subversion/subversion/include/private/svn_branch.h
+	modified:   contrib/subversion/subversion/include/private/svn_client_mtcc.h
+	modified:   contrib/subversion/subversion/include/private/svn_client_private.h
+	new file:   contrib/subversion/subversion/include/private/svn_client_shelf.h
+	new file:   contrib/subversion/subversion/include/private/svn_client_shelf2.h
+	modified:   contrib/subversion/subversion/include/private/svn_dep_compat.h
+	modified:   contrib/subversion/subversion/include/private/svn_diff_tree.h
+	new file:   contrib/subversion/subversion/include/private/svn_dirent_uri_private.h
+	modified:   contrib/subversion/subversion/include/private/svn_element.h
+	modified:   contrib/subversion/subversion/include/private/svn_fs_fs_private.h
+	modified:   contrib/subversion/subversion/include/private/svn_repos_private.h
+	modified:   contrib/subversion/subversion/include/private/svn_sorts_private.h
+	modified:   contrib/subversion/subversion/include/private/svn_subr_private.h
+	modified:   contrib/subversion/subversion/include/private/svn_wc_private.h
+	modified:   contrib/subversion/subversion/include/svn_client.h
+	modified:   contrib/subversion/subversion/include/svn_config.h
+	modified:   contrib/subversion/subversion/include/svn_delta.h
+	modified:   contrib/subversion/subversion/include/svn_diff.h
+	modified:   contrib/subversion/subversion/include/svn_dirent_uri.h
+	modified:   contrib/subversion/subversion/include/svn_error_codes.h
+	modified:   contrib/subversion/subversion/include/svn_fs.h
+	modified:   contrib/subversion/subversion/include/svn_opt.h
+	new file:   contrib/subversion/subversion/include/svn_opt_impl.h
+	modified:   contrib/subversion/subversion/include/svn_props.h
+	modified:   contrib/subversion/subversion/include/svn_ra.h
+	modified:   contrib/subversion/subversion/include/svn_ra_svn.h
+	modified:   contrib/subversion/subversion/include/svn_repos.h
+	modified:   contrib/subversion/subversion/include/svn_time.h
+	modified:   contrib/subversion/subversion/include/svn_types.h
+	new file:   contrib/subversion/subversion/include/svn_types_impl.h
+	modified:   contrib/subversion/subversion/include/svn_utf.h
+	modified:   contrib/subversion/subversion/include/svn_version.h
+	modified:   contrib/subversion/subversion/include/svn_wc.h
+	modified:   contrib/subversion/subversion/libsvn_auth_gnome_keyring/gnome_keyring.c
+	modified:   contrib/subversion/subversion/libsvn_auth_gnome_keyring/libsvn_auth_gnome_keyring.pc.in
+	modified:   contrib/subversion/subversion/libsvn_auth_kwallet/kwallet.cpp
+	modified:   contrib/subversion/subversion/libsvn_auth_kwallet/libsvn_auth_kwallet.pc.in
+	modified:   contrib/subversion/subversion/libsvn_client/add.c
+	modified:   contrib/subversion/subversion/libsvn_client/blame.c
+	modified:   contrib/subversion/subversion/libsvn_client/client.h
+	modified:   contrib/subversion/subversion/libsvn_client/commit.c
+	modified:   contrib/subversion/subversion/libsvn_client/commit_util.c
+	modified:   contrib/subversion/subversion/libsvn_client/conflicts.c
+	modified:   contrib/subversion/subversion/libsvn_client/copy.c
+	deleted:    contrib/subversion/subversion/libsvn_client/copy_foreign.c
+	modified:   contrib/subversion/subversion/libsvn_client/delete.c
+	modified:   contrib/subversion/subversion/libsvn_client/deprecated.c
+	modified:   contrib/subversion/subversion/libsvn_client/diff.c
+	modified:   contrib/subversion/subversion/libsvn_client/diff_local.c
+	modified:   contrib/subversion/subversion/libsvn_client/diff_summarize.c
+	modified:   contrib/subversion/subversion/libsvn_client/export.c
+	modified:   contrib/subversion/subversion/libsvn_client/info.c
+	new file:   contrib/subversion/subversion/libsvn_client/layout.c
+	modified:   contrib/subversion/subversion/libsvn_client/libsvn_client.pc.in
+	modified:   contrib/subversion/subversion/libsvn_client/list.c
+	modified:   contrib/subversion/subversion/libsvn_client/merge.c
+	modified:   contrib/subversion/subversion/libsvn_client/mtcc.c
+	modified:   contrib/subversion/subversion/libsvn_client/patch.c
+	modified:   contrib/subversion/subversion/libsvn_client/ra.c
+	modified:   contrib/subversion/subversion/libsvn_client/repos_diff.c
+	modified:   contrib/subversion/subversion/libsvn_client/revert.c
+	modified:   contrib/subversion/subversion/libsvn_client/revisions.c
+	new file:   contrib/subversion/subversion/libsvn_client/shelf.c
+	new file:   contrib/subversion/subversion/libsvn_client/shelf2.c
+	deleted:    contrib/subversion/subversion/libsvn_client/shelve.c
+	modified:   contrib/subversion/subversion/libsvn_client/status.c
+	modified:   contrib/subversion/subversion/libsvn_client/update.c
+	modified:   contrib/subversion/subversion/libsvn_client/upgrade.c
+	modified:   contrib/subversion/subversion/libsvn_client/util.c
+	new file:   contrib/subversion/subversion/libsvn_client/wc_editor.c
+	modified:   contrib/subversion/subversion/libsvn_delta/branch.c
+	modified:   contrib/subversion/subversion/libsvn_delta/branch_compat.c
+	modified:   contrib/subversion/subversion/libsvn_delta/compat.c
+	modified:   contrib/subversion/subversion/libsvn_delta/debug_editor.c
+	modified:   contrib/subversion/subversion/libsvn_delta/deprecated.c
+	modified:   contrib/subversion/subversion/libsvn_delta/element.c
+	modified:   contrib/subversion/subversion/libsvn_delta/libsvn_delta.pc.in
+	modified:   contrib/subversion/subversion/libsvn_delta/path_driver.c
+	modified:   contrib/subversion/subversion/libsvn_diff/diff_file.c
+	modified:   contrib/subversion/subversion/libsvn_diff/diff_tree.c
+	modified:   contrib/subversion/subversion/libsvn_diff/libsvn_diff.pc.in
+	modified:   contrib/subversion/subversion/libsvn_diff/parse-diff.c
+	modified:   contrib/subversion/subversion/libsvn_fs/fs-loader.c
+	modified:   contrib/subversion/subversion/libsvn_fs/fs-loader.h
+	modified:   contrib/subversion/subversion/libsvn_fs/libsvn_fs.pc.in
+	modified:   contrib/subversion/subversion/libsvn_fs_base/fs.c
+	modified:   contrib/subversion/subversion/libsvn_fs_base/libsvn_fs_base.pc.in
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/cached_data.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/cached_data.h
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/dag.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/dump-index.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/fs.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/fs_fs.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/fs_fs.h
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/id.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/index.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/libsvn_fs_fs.pc.in
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/load-index.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/low_level.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/pack.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/recovery.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/rep-cache-db.h
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/rep-cache-db.sql
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/rep-cache.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/revprops.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/revprops.h
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/stats.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/temp_serializer.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/temp_serializer.h
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/transaction.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/tree.c
+	modified:   contrib/subversion/subversion/libsvn_fs_fs/verify.c
+	modified:   contrib/subversion/subversion/libsvn_fs_util/libsvn_fs_util.pc.in
+	modified:   contrib/subversion/subversion/libsvn_fs_x/cached_data.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/changes.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/dag_cache.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/dag_cache.h
+	modified:   contrib/subversion/subversion/libsvn_fs_x/fs.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/fs_x.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/libsvn_fs_x.pc.in
+	modified:   contrib/subversion/subversion/libsvn_fs_x/low_level.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/pack.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/rep-cache-db.h
+	modified:   contrib/subversion/subversion/libsvn_fs_x/revprops.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/temp_serializer.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/transaction.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/tree.c
+	modified:   contrib/subversion/subversion/libsvn_fs_x/verify.c
+	modified:   contrib/subversion/subversion/libsvn_ra/compat.c
+	modified:   contrib/subversion/subversion/libsvn_ra/deprecated.c
+	modified:   contrib/subversion/subversion/libsvn_ra/libsvn_ra.pc.in
+	modified:   contrib/subversion/subversion/libsvn_ra/ra_loader.c
+	modified:   contrib/subversion/subversion/libsvn_ra/ra_loader.h
+	modified:   contrib/subversion/subversion/libsvn_ra/wrapper_template.h
+	modified:   contrib/subversion/subversion/libsvn_ra_local/libsvn_ra_local.pc.in
+	modified:   contrib/subversion/subversion/libsvn_ra_local/ra_plugin.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/commit.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/inherited_props.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/libsvn_ra_serf.pc.in
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/list.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/lock.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/options.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/ra_serf.h
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/replay.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/serf.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/update.c
+	modified:   contrib/subversion/subversion/libsvn_ra_serf/util.c
+	modified:   contrib/subversion/subversion/libsvn_ra_svn/client.c
+	modified:   contrib/subversion/subversion/libsvn_ra_svn/editorp.c
+	modified:   contrib/subversion/subversion/libsvn_ra_svn/libsvn_ra_svn.pc.in
+	modified:   contrib/subversion/subversion/libsvn_ra_svn/protocol
+	modified:   contrib/subversion/subversion/libsvn_repos/authz.c
+	modified:   contrib/subversion/subversion/libsvn_repos/authz.h
+	modified:   contrib/subversion/subversion/libsvn_repos/authz_info.c
+	modified:   contrib/subversion/subversion/libsvn_repos/authz_parse.c
+	modified:   contrib/subversion/subversion/libsvn_repos/commit.c
+	modified:   contrib/subversion/subversion/libsvn_repos/config_file.c
+	modified:   contrib/subversion/subversion/libsvn_repos/config_file.h
+	modified:   contrib/subversion/subversion/libsvn_repos/delta.c
+	modified:   contrib/subversion/subversion/libsvn_repos/deprecated.c
+	modified:   contrib/subversion/subversion/libsvn_repos/dump.c
+	new file:   contrib/subversion/subversion/libsvn_repos/dump_editor.c
+	modified:   contrib/subversion/subversion/libsvn_repos/fs-wrap.c
+	modified:   contrib/subversion/subversion/libsvn_repos/libsvn_repos.pc.in
+	modified:   contrib/subversion/subversion/libsvn_repos/list.c
+	modified:   contrib/subversion/subversion/libsvn_repos/load-fs-vtable.c
+	modified:   contrib/subversion/subversion/libsvn_repos/load.c
+	modified:   contrib/subversion/subversion/libsvn_repos/log.c
+	modified:   contrib/subversion/subversion/libsvn_repos/replay.c
+	modified:   contrib/subversion/subversion/libsvn_repos/repos.c
+	modified:   contrib/subversion/subversion/libsvn_subr/cmdline.c
+	modified:   contrib/subversion/subversion/libsvn_subr/compress_lz4.c
+	modified:   contrib/subversion/subversion/libsvn_subr/config_file.c
+	modified:   contrib/subversion/subversion/libsvn_subr/config_keys.inc
+	modified:   contrib/subversion/subversion/libsvn_subr/config_win.c
+	modified:   contrib/subversion/subversion/libsvn_subr/deprecated.c
+	modified:   contrib/subversion/subversion/libsvn_subr/dirent_uri.c
+	modified:   contrib/subversion/subversion/libsvn_subr/error.c
+	modified:   contrib/subversion/subversion/libsvn_subr/gpg_agent.c
+	modified:   contrib/subversion/subversion/libsvn_subr/internal_statements.h
+	modified:   contrib/subversion/subversion/libsvn_subr/io.c
+	modified:   contrib/subversion/subversion/libsvn_subr/iter.c
+	modified:   contrib/subversion/subversion/libsvn_subr/libsvn_subr.pc.in
+	modified:   contrib/subversion/subversion/libsvn_subr/lz4/lz4.c
+	modified:   contrib/subversion/subversion/libsvn_subr/lz4/lz4internal.h
+	modified:   contrib/subversion/subversion/libsvn_subr/mergeinfo.c
+	modified:   contrib/subversion/subversion/libsvn_subr/object_pool.c
+	modified:   contrib/subversion/subversion/libsvn_subr/opt.c
+	modified:   contrib/subversion/subversion/libsvn_subr/pool.c
+	modified:   contrib/subversion/subversion/libsvn_subr/sorts.c
+	modified:   contrib/subversion/subversion/libsvn_subr/sqlite3wrapper.c
+	modified:   contrib/subversion/subversion/libsvn_subr/ssl_client_cert_pw_providers.c
+	modified:   contrib/subversion/subversion/libsvn_subr/stream.c
+	modified:   contrib/subversion/subversion/libsvn_subr/sysinfo.c
+	modified:   contrib/subversion/subversion/libsvn_subr/utf.c
+	modified:   contrib/subversion/subversion/libsvn_subr/utf8proc/utf8proc_data.c
+	modified:   contrib/subversion/subversion/libsvn_subr/version.c
+	modified:   contrib/subversion/subversion/libsvn_subr/win32_crashrpt.c
+	modified:   contrib/subversion/subversion/libsvn_subr/win32_crypto.c
+	modified:   contrib/subversion/subversion/libsvn_subr/x509info.c
+	modified:   contrib/subversion/subversion/libsvn_subr/x509parse.c
+	modified:   contrib/subversion/subversion/libsvn_wc/README
+	modified:   contrib/subversion/subversion/libsvn_wc/conflicts.c
+	modified:   contrib/subversion/subversion/libsvn_wc/conflicts.h
+	modified:   contrib/subversion/subversion/libsvn_wc/deprecated.c
+	modified:   contrib/subversion/subversion/libsvn_wc/diff_local.c
+	modified:   contrib/subversion/subversion/libsvn_wc/entries.c
+	modified:   contrib/subversion/subversion/libsvn_wc/libsvn_wc.pc.in
+	modified:   contrib/subversion/subversion/libsvn_wc/node.c
+	modified:   contrib/subversion/subversion/libsvn_wc/props.c
+	modified:   contrib/subversion/subversion/libsvn_wc/questions.c
+	modified:   contrib/subversion/subversion/libsvn_wc/revert.c
+	modified:   contrib/subversion/subversion/libsvn_wc/tree_conflicts.c
+	modified:   contrib/subversion/subversion/libsvn_wc/update_editor.c
+	modified:   contrib/subversion/subversion/libsvn_wc/upgrade.c
+	modified:   contrib/subversion/subversion/libsvn_wc/wc-checks.h
+	modified:   contrib/subversion/subversion/libsvn_wc/wc-metadata.h
+	modified:   contrib/subversion/subversion/libsvn_wc/wc-queries.h
+	modified:   contrib/subversion/subversion/libsvn_wc/wc-queries.sql
+	modified:   contrib/subversion/subversion/libsvn_wc/wc.h
+	modified:   contrib/subversion/subversion/libsvn_wc/wc_db.c
+	modified:   contrib/subversion/subversion/libsvn_wc/wc_db.h
+	modified:   contrib/subversion/subversion/libsvn_wc/wc_db_update_move.c
+	modified:   contrib/subversion/subversion/libsvn_wc/wc_db_wcroot.c
+	modified:   contrib/subversion/subversion/libsvn_wc/wcroot_anchor.c
+	modified:   contrib/subversion/subversion/svn/auth-cmd.c
+	modified:   contrib/subversion/subversion/svn/blame-cmd.c
+	modified:   contrib/subversion/subversion/svn/cl.h
+	modified:   contrib/subversion/subversion/svn/conflict-callbacks.c
+	modified:   contrib/subversion/subversion/svn/diff-cmd.c
+	new file:   contrib/subversion/subversion/svn/filesize.c
+	modified:   contrib/subversion/subversion/svn/help-cmd.c
+	modified:   contrib/subversion/subversion/svn/info-cmd.c
+	modified:   contrib/subversion/subversion/svn/list-cmd.c
+	modified:   contrib/subversion/subversion/svn/log-cmd.c
+	modified:   contrib/subversion/subversion/svn/merge-cmd.c
+	modified:   contrib/subversion/subversion/svn/notify.c
+	modified:   contrib/subversion/subversion/svn/propset-cmd.c
+	modified:   contrib/subversion/subversion/svn/resolve-cmd.c
+	modified:   contrib/subversion/subversion/svn/revert-cmd.c
+	new file:   contrib/subversion/subversion/svn/shelf-cmd.c
+	new file:   contrib/subversion/subversion/svn/shelf-cmd.h
+	new file:   contrib/subversion/subversion/svn/shelf2-cmd.c
+	new file:   contrib/subversion/subversion/svn/shelf2-cmd.h
+	deleted:    contrib/subversion/subversion/svn/shelve-cmd.c
+	modified:   contrib/subversion/subversion/svn/svn.c
+	modified:   contrib/subversion/subversion/svn/util.c
+	modified:   contrib/subversion/subversion/svn_private_config.h.in
+	modified:   contrib/subversion/subversion/svnadmin/svnadmin.c
+	modified:   contrib/subversion/subversion/svnbench/cl.h
+	modified:   contrib/subversion/subversion/svnbench/help-cmd.c
+	modified:   contrib/subversion/subversion/svnbench/svnbench.c
+	modified:   contrib/subversion/subversion/svndumpfilter/svndumpfilter.c
+	modified:   contrib/subversion/subversion/svnfsfs/dump-index-cmd.c
+	modified:   contrib/subversion/subversion/svnfsfs/load-index-cmd.c
+	modified:   contrib/subversion/subversion/svnfsfs/stats-cmd.c
+	modified:   contrib/subversion/subversion/svnfsfs/svnfsfs.c
+	modified:   contrib/subversion/subversion/svnlook/svnlook.c
+	modified:   contrib/subversion/subversion/svnmucc/svnmucc.c
+	modified:   contrib/subversion/subversion/svnrdump/dump_editor.c
+	modified:   contrib/subversion/subversion/svnrdump/load_editor.c
+	modified:   contrib/subversion/subversion/svnrdump/svnrdump.c
+	modified:   contrib/subversion/subversion/svnrdump/svnrdump.h
+	modified:   contrib/subversion/subversion/svnrdump/util.c
+	modified:   contrib/subversion/subversion/svnserve/logger.c
+	modified:   contrib/subversion/subversion/svnserve/logger.h
+	modified:   contrib/subversion/subversion/svnserve/serve.c
+	modified:   contrib/subversion/subversion/svnserve/svnserve.c
+	modified:   contrib/subversion/subversion/svnsync/svnsync.c
+	modified:   contrib/subversion/subversion/svnversion/svnversion.c
+	modified:   contrib/subversion/win-tests.py
+	modified:   etc/Makefile
+	modified:   etc/mail/mailer.conf
+	modified:   etc/mtree/BSD.lib32.dist
+	modified:   include/Makefile
+	modified:   lib/libcasper/services/cap_fileargs/cap_fileargs.c
+	modified:   libexec/rtld-elf/rtld.1
+	modified:   libexec/rtld-elf/rtld.c
+	modified:   libexec/rtld-elf/rtld.h
+	modified:   secure/lib/libcrypto/Makefile.inc
+	modified:   secure/lib/libcrypto/engines/Makefile.inc
+	modified:   share/man/man4/psm.4
+	modified:   share/misc/bsd-family-tree
+	modified:   stand/uboot/lib/net.c
+	modified:   sys/compat/linuxkpi/common/include/linux/kernel.h
+	modified:   sys/conf/ldscript.powerpc64
+	modified:   sys/dev/ath/if_ath_rx.c
+	modified:   sys/dev/atkbdc/psm.c
+	modified:   sys/dev/netmap/if_vtnet_netmap.h
+	modified:   sys/dev/netmap/netmap_vale.c
+	modified:   sys/dev/usb/wlan/if_run.c
+	modified:   sys/dev/usb/wlan/if_runreg.h
+	modified:   sys/dev/virtio/network/if_vtnet.c
+	modified:   sys/dev/vt/vt_buf.c
+	modified:   sys/dev/vt/vt_core.c
+	modified:   sys/fs/tmpfs/tmpfs.h
+	modified:   sys/fs/tmpfs/tmpfs_vfsops.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/kern/kern_linker.c
+	modified:   sys/kern/subr_terminal.c
+	modified:   sys/kern/vfs_mount.c
+	modified:   sys/modules/Makefile
+	modified:   sys/modules/tcp/Makefile
+	modified:   sys/net/if_gif.c
+	modified:   sys/net/if_gre.c
+	modified:   sys/net/if_ipsec.c
+	modified:   sys/net/if_llatbl.c
+	modified:   sys/net/if_me.c
+	modified:   sys/net/route.c
+	modified:   sys/net/route.h
+	modified:   sys/net/route/nhop_ctl.c
+	modified:   sys/net/route/route_ctl.c
+	new file:   sys/net/route/route_ctl.h
+	modified:   sys/net/route/route_ddb.c
+	modified:   sys/net/route/route_helpers.c
+	modified:   sys/net/route/route_temporal.c
+	modified:   sys/net/route/route_var.h
+	modified:   sys/netinet/in_rmx.c
+	modified:   sys/netinet/ip_icmp.c
+	modified:   sys/netinet/tcp_input.c
+	modified:   sys/netinet/tcp_stacks/bbr.c
+	modified:   sys/netinet/tcp_stacks/rack.c
+	modified:   sys/netinet/tcp_stacks/tcp_rack.h
+	modified:   sys/netinet/tcp_usrreq.c
+	modified:   sys/netinet6/icmp6.c
+	modified:   sys/netinet6/in6_rmx.c
+	modified:   sys/netinet6/nd6_rtr.c
+	modified:   sys/sys/file.h
+	modified:   sys/sys/mount.h
+	modified:   sys/sys/param.h
+	modified:   sys/sys/tree.h
+	modified:   sys/x86/x86/busdma_bounce.c
+	modified:   sys/x86/x86/busdma_machdep.c
+	modified:   tests/sys/net/if_bridge_test.sh
+	modified:   usr.bin/diff/diff.1
+	modified:   usr.bin/diff/diff.c
+	modified:   usr.bin/diff/tests/diff_test.sh
+	modified:   usr.bin/svn/Makefile
+	modified:   usr.bin/svn/lib/Makefile
+	modified:   usr.bin/svn/lib/libapr/Makefile
+	modified:   usr.bin/svn/lib/libapr/apr.h
+	new file:   usr.bin/svn/lib/libapr/apr_escape_test_char.h
+	modified:   usr.bin/svn/lib/libapr/apr_private.h
+	modified:   usr.bin/svn/lib/libapr_util/Makefile
+	modified:   usr.bin/svn/lib/libapr_util/apu.h
+	modified:   usr.bin/svn/lib/libapr_util/apu_config.h
+	modified:   usr.bin/svn/lib/libserf/Makefile
+	modified:   usr.bin/svn/lib/libsvn_client/Makefile
+	modified:   usr.bin/svn/lib/libsvn_delta/Makefile
+	modified:   usr.bin/svn/lib/libsvn_diff/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs_fs/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs_util/Makefile
+	modified:   usr.bin/svn/lib/libsvn_fs_x/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra_local/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra_serf/Makefile
+	modified:   usr.bin/svn/lib/libsvn_ra_svn/Makefile
+	modified:   usr.bin/svn/lib/libsvn_repos/Makefile
+	modified:   usr.bin/svn/lib/libsvn_subr/Makefile
+	modified:   usr.bin/svn/lib/libsvn_wc/Makefile
+	modified:   usr.bin/svn/svn_private_config.h
+	modified:   usr.sbin/certctl/certctl.sh
+	modified:   usr.sbin/mailwrapper/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/mk/bsd.prog.mk
+	both modified:   stand/lua/drawer.lua
+	both modified:   usr.bin/svn/svn/Makefile
+	both modified:   usr.bin/svn/svnadmin/Makefile
+	both modified:   usr.bin/svn/svnbench/Makefile
+	both modified:   usr.bin/svn/svndumpfilter/Makefile
+	both modified:   usr.bin/svn/svnfsfs/Makefile
+	both modified:   usr.bin/svn/svnlook/Makefile
+	both modified:   usr.bin/svn/svnmucc/Makefile
+	both modified:   usr.bin/svn/svnrdump/Makefile
+	both modified:   usr.bin/svn/svnserve/Makefile
+	both modified:   usr.bin/svn/svnsync/Makefile
+	both modified:   usr.bin/svn/svnversion/Makefile
+
+HEAD is now at b6dd2bf0cc2d Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at b6dd2bf0cc2d Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
