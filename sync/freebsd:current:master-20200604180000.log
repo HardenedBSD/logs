@@ -1,0 +1,121 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating dd5a75d38669..3ba5840a26f1
+Fast-forward
+ RELNOTES                                           |   13 +-
+ UPDATING                                           |   12 +
+ bin/csh/dot.cshrc                                  |    4 +
+ bin/dd/args.c                                      |    2 +
+ bin/dd/dd.1                                        |    8 +-
+ bin/dd/dd.c                                        |    9 +-
+ bin/dd/dd.h                                        |    2 +
+ bin/sh/dot.shrc                                    |    3 +
+ etc/mtree/BSD.root.dist                            |    2 +-
+ lib/libc/sys/read.2                                |   13 +-
+ sbin/dhclient/dispatch.c                           |   11 +-
+ share/man/man4/vt.4                                |   10 +-
+ sys/conf/NOTES                                     |    6 +-
+ sys/conf/options                                   |    4 +-
+ sys/contrib/edk2/FREEBSD-upgrade                   |   23 +
+ sys/contrib/edk2/Include/Base.h                    |  203 +-
+ .../edk2/Include/Guid/HiiFormMapMethodGuid.h       |   10 +-
+ sys/contrib/edk2/Include/Guid/PcAnsi.h             |   12 +-
+ sys/contrib/edk2/Include/Guid/WinCertificate.h     |    8 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi10.h |   20 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi20.h |   20 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi30.h |   22 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi40.h |   20 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi50.h |   30 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi51.h |   30 +-
+ sys/contrib/edk2/Include/IndustryStandard/Acpi60.h |   78 +-
+ .../edk2/Include/IndustryStandard/AcpiAml.h        |   18 +-
+ .../edk2/Include/IndustryStandard/Bluetooth.h      |   25 +-
+ sys/contrib/edk2/Include/Library/BaseLib.h         | 2281 ++++++--------------
+ sys/contrib/edk2/Include/Library/BaseMemoryLib.h   |   46 +-
+ sys/contrib/edk2/Include/Library/DebugLib.h        |  228 +-
+ sys/contrib/edk2/Include/Library/DevicePathLib.h   |   95 +-
+ .../edk2/Include/Library/MemoryAllocationLib.h     |   84 +-
+ sys/contrib/edk2/Include/Library/PcdLib.h          |  410 ++--
+ sys/contrib/edk2/Include/Library/PrintLib.h        |  209 +-
+ .../Include/Library/UefiBootServicesTableLib.h     |    8 +-
+ sys/contrib/edk2/Include/Protocol/DebugPort.h      |   46 +-
+ sys/contrib/edk2/Include/Protocol/DevicePath.h     |   90 +-
+ .../edk2/Include/Protocol/DevicePathFromText.h     |   18 +-
+ .../edk2/Include/Protocol/DevicePathToText.h       |   18 +-
+ .../edk2/Include/Protocol/DevicePathUtilities.h    |   44 +-
+ sys/contrib/edk2/Include/Protocol/SimpleTextIn.h   |    8 +-
+ sys/contrib/edk2/Include/Protocol/SimpleTextInEx.h |   36 +-
+ sys/contrib/edk2/Include/Protocol/SimpleTextOut.h  |   34 +-
+ sys/contrib/edk2/Include/Uefi.h                    |   18 +-
+ sys/contrib/edk2/Include/Uefi/UefiBaseType.h       |  129 +-
+ sys/contrib/edk2/Include/Uefi/UefiGpt.h            |   18 +-
+ .../Include/Uefi/UefiInternalFormRepresentation.h  |  139 +-
+ sys/contrib/edk2/Include/Uefi/UefiMultiPhase.h     |   54 +-
+ sys/contrib/edk2/Include/Uefi/UefiPxe.h            |   10 +-
+ sys/contrib/edk2/Include/Uefi/UefiSpec.h           |  159 +-
+ sys/contrib/edk2/MdePkg.dec                        |  336 ++-
+ sys/dev/e1000/e1000_api.c                          |    7 +-
+ sys/dev/e1000/e1000_hw.h                           |    7 +-
+ sys/dev/e1000/e1000_i210.c                         |    5 +
+ sys/dev/e1000/e1000_ich8lan.c                      |   22 +-
+ sys/dev/e1000/if_em.c                              |    7 +-
+ sys/dts/arm64/overlays/spigen-rpi3.dtso            |   29 +-
+ sys/dts/arm64/overlays/spigen-rpi4.dtso            |   29 +-
+ sys/kern/kern_jail.c                               |    8 +
+ sys/kern/kern_priv.c                               |    8 +
+ sys/kern/vfs_vnops.c                               |   23 +
+ sys/opencrypto/ktls_ocf.c                          |  161 +-
+ sys/sys/priv.h                                     |    1 +
+ sys/ufs/ffs/ffs_balloc.c                           |    5 +-
+ 65 files changed, 2419 insertions(+), 3029 deletions(-)
+ create mode 100644 sys/contrib/edk2/FREEBSD-upgrade
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    dd5a75d38669..3ba5840a26f1  freebsd/current/master -> freebsd/current/master        
+remote:    ae30a2c57465..815b60ff6b19  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   dd5a75d38669..3ba5840a26f1  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
