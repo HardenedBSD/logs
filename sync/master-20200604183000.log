@@ -34,3 +34,323 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node12/Makefile
+Removing www/node/files/patch-deps_v8_src_objects_js-number-format.cc
+Auto-merging www/node/Makefile
+Removing www/gitlab-ce/files/patch-config_initializers_active__record__fix__insert__all.rb
+Auto-merging www/firefox-esr/Makefile
+Auto-merging security/suricata/Makefile
+Removing lang/rust/files/powerpc64-elfv2/patch-src_librustc__mir_dataflow_generic_engine.rs
+Removing lang/rust/files/powerpc64-elfv1/patch-src_librustc__mir_dataflow_generic_engine.rs
+Removing lang/rust/files/patch-vendor_backtrace-sys_src_libbacktrace_fileline.c
+Removing lang/rust/files/patch-vendor_backtrace-sys_build.rs
+Auto-merging lang/ghc/Makefile
+Auto-merging graphics/netpbm/Makefile
+Removing devel/cargo-tree/pkg-descr
+Removing devel/cargo-tree/distinfo
+Removing devel/cargo-tree/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    1 +
+ Mk/Uses/cargo.mk                                   |    2 +-
+ Tools/scripts/mfh                                  |    2 +-
+ audio/faudio/Makefile                              |    2 +-
+ audio/faudio/distinfo                              |    6 +-
+ audio/ncspot/Makefile                              |    2 +-
+ audio/spotify-tui/Makefile                         |    1 +
+ audio/spotifyd/Makefile                            |    2 +-
+ benchmarks/hyperfine/Makefile                      |    2 +-
+ biology/Makefile                                   |    1 +
+ biology/vt/Makefile                                |   27 +
+ biology/vt/distinfo                                |    3 +
+ biology/vt/files/patch-Makefile                    |   41 +
+ biology/vt/files/patch-lib_Rmath_Make.inc          |   31 +
+ biology/vt/files/patch-lib_pcre2_Makefile          |   11 +
+ biology/vt/files/patch-svm__predict.h              |   14 +
+ biology/vt/files/patch-svm__train.h                |   15 +
+ biology/vt/pkg-descr                               |    4 +
+ cad/netgen/Makefile                                |    3 +-
+ deskutils/just/Makefile                            |    1 +
+ devel/Makefile                                     |    5 +-
+ devel/bingrep/Makefile                             |    2 +-
+ devel/cargo-c/Makefile                             |    1 +
+ devel/cargo-tree/Makefile                          |   68 -
+ devel/cargo-tree/distinfo                          |   79 -
+ devel/cargo-tree/pkg-descr                         |    4 -
+ devel/desed/Makefile                               |    1 +
+ devel/dtool/Makefile                               |    1 +
+ devel/gbump/Makefile                               |    1 +
+ devel/ghq/Makefile                                 |    9 +-
+ devel/ghq/distinfo                                 |    6 +-
+ devel/ghq/pkg-descr                                |    2 +-
+ devel/git-absorb/Makefile                          |    2 +-
+ devel/git-cinnabar/Makefile                        |    5 +-
+ devel/git-delta/Makefile                           |    2 +-
+ devel/gitaly/Makefile                              |   21 +-
+ devel/gitaly/distinfo                              |   20 +-
+ .../gitaly/files/patch-__support_Makefile.template |    4 +-
+ devel/gitaly/files/patch-config.toml.example       |   14 +-
+ devel/gitaly/files/patch-ruby_Gemfile              |   33 +-
+ devel/gitaly/pkg-plist                             |    5 +-
+ devel/gitlab-shell/Makefile                        |   30 +-
+ devel/gitlab-shell/distinfo                        |   54 +-
+ devel/gitlab-shell/files/patch-config.yml.example  |   13 +-
+ devel/gradle/Makefile                              |    2 +-
+ devel/gradle/distinfo                              |    6 +-
+ devel/interactive_rebase_tool/Makefile             |    2 +-
+ devel/pijul/Makefile                               |    2 +-
+ devel/pycharm-ce/Makefile                          |    2 +-
+ devel/pycharm-ce/distinfo                          |    6 +-
+ devel/racer/Makefile                               |  168 +-
+ devel/racer/distinfo                               |  334 ++--
+ devel/rubygem-hocon/Makefile                       |    2 +-
+ devel/rubygem-hocon/distinfo                       |    6 +-
+ devel/rubygem-re2/Makefile                         |    3 +-
+ devel/rubygem-re2/distinfo                         |    6 +-
+ devel/rubygem-request_store/Makefile               |    2 +-
+ devel/rubygem-request_store/distinfo               |    6 +-
+ devel/rust-analyzer/Makefile                       |   28 +-
+ devel/rust-analyzer/distinfo                       |   58 +-
+ devel/rust-bindgen/Makefile                        |    1 +
+ devel/rust-cbindgen/Makefile                       |    1 +
+ devel/sccache/Makefile                             |    2 +-
+ devel/sentry-cli/Makefile                          |    1 +
+ devel/tokei/Makefile                               |    1 +
+ dns/doh-proxy/Makefile                             |    1 +
+ editors/kak-lsp/Makefile                           |    2 +-
+ editors/parinfer-rust/Makefile                     |    2 +-
+ editors/xi-core/Makefile                           |    2 +-
+ editors/xi-term/Makefile                           |    2 +-
+ emulators/i386-wine-devel/Makefile                 |    3 +-
+ emulators/qemu40/Makefile                          |    2 +-
+ emulators/qemu40/files/patch-util-cacheinfo.c      |   41 +
+ games/dose-response/Makefile                       |    2 +-
+ games/genact/Makefile                              |    2 +-
+ games/jaggedalliance2/Makefile                     |    2 +-
+ games/libretro-fbneo/Makefile                      |    6 +-
+ games/veloren/Makefile                             |    1 +
+ graphics/ikona/Makefile                            |    2 +-
+ graphics/librsvg2-rust/Makefile                    |    2 +-
+ graphics/librsvg2-rust/distinfo                    |    6 +-
+ graphics/netpbm/Makefile                           |    2 +-
+ graphics/netpbm/distinfo                           |    6 +-
+ graphics/pastel/Makefile                           |    1 +
+ graphics/rx/Makefile                               |    2 +-
+ graphics/svgbob/Makefile                           |    2 +-
+ graphics/viu/Makefile                              |    1 +
+ java/intellij/Makefile                             |    4 +-
+ java/intellij/distinfo                             |    6 +-
+ java/intellij/pkg-plist                            |    8 +-
+ lang/ghc/Makefile                                  |    8 +-
+ lang/rust-bootstrap/Makefile                       |    2 +-
+ lang/rust-bootstrap/distinfo                       |    6 +-
+ lang/rust/Makefile                                 |   12 +-
+ lang/rust/distinfo                                 |   90 +-
+ .../rust/files/patch-vendor_backtrace-sys_build.rs |   17 -
+ ...endor_backtrace-sys_src_libbacktrace_fileline.c |  117 --
+ .../files/patch-vendor_openssl-sys_build_main.rs   |   21 +
+ ...ch-src_librustc__mir_dataflow_generic_engine.rs |   81 -
+ ...ch-src_librustc__mir_dataflow_generic_engine.rs |   81 -
+ lang/solidity/Makefile                             |    2 +-
+ lang/solidity/distinfo                             |    6 +-
+ mail/Makefile                                      |    1 +
+ mail/rubygem-valid_email/Makefile                  |   23 +
+ mail/rubygem-valid_email/distinfo                  |    3 +
+ mail/rubygem-valid_email/pkg-descr                 |    4 +
+ mail/thunderbird/Makefile                          |    1 +
+ misc/broot/Makefile                                |    2 +-
+ multimedia/librav1e/Makefile                       |    2 +-
+ multimedia/rav1e/Makefile                          |    2 +-
+ multimedia/termplay/Makefile                       |    2 +-
+ net-im/fractal/Makefile                            |    2 +-
+ net-p2p/litecoin/Makefile                          |    1 -
+ net-p2p/openethereum/Makefile                      |    1 +
+ net-p2p/zetacoin/Makefile                          |    1 -
+ net/Makefile                                       |    2 +-
+ net/findomain/Makefile                             |    2 +-
+ net/proby/Makefile                                 |    2 +-
+ net/rabbiteer/Makefile                             |    2 +-
+ net/routinator/Makefile                            |    1 +
+ net/rubygem-gitaly/Makefile                        |    5 +-
+ net/rubygem-gitaly/distinfo                        |    6 +-
+ science/afni/Makefile                              |    2 +-
+ science/afni/distinfo                              |    6 +-
+ science/afni/pkg-plist                             |    6 +-
+ security/acmed/Makefile                            |    2 +-
+ security/cargo-audit/Makefile                      |    1 +
+ security/cloak/Makefile                            |    2 +-
+ security/rubygem-doorkeeper/Makefile               |    3 +-
+ security/rubygem-doorkeeper/distinfo               |    6 +-
+ security/rubygem-net-ssh/Makefile                  |    2 +-
+ security/rubygem-net-ssh/distinfo                  |    6 +-
+ security/suricata/Makefile                         |    2 +-
+ security/vuxml/vuln.xml                            |   27 +
+ shells/ion/Makefile                                |    2 +-
+ shells/starship/Makefile                           |    2 +-
+ sysutils/Makefile                                  |    1 +
+ sysutils/dua-cli/Makefile                          |    1 +
+ sysutils/exa/Makefile                              |    2 +-
+ sysutils/fd/Makefile                               |    2 +-
+ sysutils/flowgger/Makefile                         |    2 +-
+ sysutils/fselect/Makefile                          |    1 +
+ sysutils/fusefs-sandboxfs/Makefile                 |    1 +
+ sysutils/hexyl/Makefile                            |    2 +-
+ sysutils/lsd/Makefile                              |    1 +
+ sysutils/onefetch/Makefile                         |    1 +
+ sysutils/potnet/Makefile                           |    2 +-
+ sysutils/rsfetch/Makefile                          |    2 +-
+ sysutils/rubygem-bolt/Makefile                     |    5 +-
+ sysutils/rubygem-bolt/distinfo                     |    6 +-
+ sysutils/tealdeer/Makefile                         |    2 +-
+ sysutils/terraform-provider-gridscale/Makefile     |   23 +
+ sysutils/terraform-provider-gridscale/distinfo     |    3 +
+ sysutils/terraform-provider-gridscale/pkg-descr    |   10 +
+ sysutils/vector/Makefile                           |    2 +-
+ sysutils/zoxide/Makefile                           |    1 +
+ textproc/bat/Makefile                              |    2 +-
+ textproc/gitlab-elasticsearch-indexer/Makefile     |   10 +-
+ textproc/gitlab-elasticsearch-indexer/distinfo     |   18 +-
+ textproc/kreport/Makefile                          |    5 +-
+ textproc/kreport/files/KReportGroupTracker.cpp     |    2 +
+ textproc/kreport/files/patch-src_CMakeLists.txt    |   21 +
+ ...ch-src_renderer_scripting_KReportGroupTracker.h |   11 +
+ textproc/ripgrep/Makefile                          |    1 +
+ textproc/rubygem-github-linguist/Makefile          |    3 +-
+ textproc/rubygem-github-linguist/distinfo          |    6 +-
+ textproc/sd/Makefile                               |    1 +
+ textproc/sonic/Makefile                            |    2 +-
+ textproc/txt2man/Makefile                          |   11 +-
+ textproc/txt2man/distinfo                          |    6 +-
+ textproc/xsv-rs/Makefile                           |    2 +-
+ www/cliqz/Makefile                                 |    1 +
+ www/ffsend/Makefile                                |    2 +-
+ www/firefox-esr/Makefile                           |    2 +-
+ www/firefox/Makefile                               |    1 +
+ www/geckodriver/Makefile                           |    2 +-
+ www/gitlab-ce/Makefile                             |   59 +-
+ www/gitlab-ce/distinfo                             |    6 +-
+ www/gitlab-ce/files/gitlab.in                      |   26 +-
+ www/gitlab-ce/files/patch-Gemfile                  |   19 +-
+ .../files/patch-config_gitlab.yml.example          |   10 +-
+ ...nitializers_active__record__fix__insert__all.rb |   11 -
+ .../files/patch-config_redis.cache.yml.example     |   11 +
+ .../files/patch-config_redis.queues.yml.example    |   11 +
+ .../patch-config_redis.shared__state.yml.example   |   11 +
+ www/gitlab-ce/pkg-message                          |    2 +-
+ www/gitlab-ce/pkg-plist                            | 1761 +++++++++++++++-----
+ www/gitlab-pages/Makefile                          |    4 +-
+ www/gitlab-pages/distinfo                          |    6 +-
+ www/gitlab-workhorse/Makefile                      |    4 +-
+ www/gitlab-workhorse/distinfo                      |    6 +-
+ www/jwt-cli/Makefile                               |    2 +-
+ www/miniserve/Makefile                             |    1 +
+ www/newsboat/Makefile                              |    2 +-
+ www/nginx/Makefile                                 |    2 +-
+ www/nginx/Makefile.extmod                          |   12 +-
+ .../extra-patch-nginx-http-footer-filter-config    |   12 +
+ ...tra-patch-openresty-drizzle-nginx-module-config |   42 +
+ www/nginx/pkg-plist                                |    5 +
+ www/node/Makefile                                  |    3 +-
+ www/node/distinfo                                  |    6 +-
+ .../patch-deps_v8_src_objects_js-number-format.cc  |  145 --
+ www/node12/Makefile                                |    3 +-
+ www/node12/distinfo                                |    6 +-
+ .../files/patch-deps_v8_src_execution_simulator.h  |    4 +-
+ .../patch-deps_v8_src_objects_js-number-format.cc  |   14 +-
+ www/node12/files/patch-node.gypi                   |    4 +-
+ www/redmine4/Makefile                              |    4 +-
+ www/rubygem-gitlab-gollum-lib/Makefile             |    6 +-
+ www/rubygem-gitlab-gollum-lib/distinfo             |    6 +-
+ www/rubygem-rack-attack/Makefile                   |    2 +-
+ www/rubygem-rack-attack/distinfo                   |    6 +-
+ www/rubygem-raindrops/Makefile                     |    2 +-
+ www/rubygem-raindrops/distinfo                     |    6 +-
+ www/rubygem-unicorn/Makefile                       |    8 +-
+ www/rubygem-unicorn/distinfo                       |    6 +-
+ www/websocat/Makefile                              |    2 +-
+ www/zola/Makefile                                  |    2 +-
+ x11-clocks/xfce4-stopwatch-plugin/Makefile         |    2 +-
+ x11-clocks/xfce4-stopwatch-plugin/distinfo         |    6 +-
+ x11-clocks/xfce4-stopwatch-plugin/pkg-plist        |    6 +-
+ x11-fonts/firacode/Makefile                        |    1 +
+ x11-fonts/firacode/pkg-plist                       |    1 +
+ x11/admiral/Makefile                               |    2 +-
+ x11/alacritty/Makefile                             |  146 +-
+ x11/alacritty/distinfo                             |  284 ++--
+ x11/squeekboard/Makefile                           |    1 +
+ 227 files changed, 2857 insertions(+), 1910 deletions(-)
+ create mode 100644 biology/vt/Makefile
+ create mode 100644 biology/vt/distinfo
+ create mode 100644 biology/vt/files/patch-Makefile
+ create mode 100644 biology/vt/files/patch-lib_Rmath_Make.inc
+ create mode 100644 biology/vt/files/patch-lib_pcre2_Makefile
+ create mode 100644 biology/vt/files/patch-svm__predict.h
+ create mode 100644 biology/vt/files/patch-svm__train.h
+ create mode 100644 biology/vt/pkg-descr
+ delete mode 100644 devel/cargo-tree/Makefile
+ delete mode 100644 devel/cargo-tree/distinfo
+ delete mode 100644 devel/cargo-tree/pkg-descr
+ create mode 100644 emulators/qemu40/files/patch-util-cacheinfo.c
+ delete mode 100644 lang/rust/files/patch-vendor_backtrace-sys_build.rs
+ delete mode 100644 lang/rust/files/patch-vendor_backtrace-sys_src_libbacktrace_fileline.c
+ create mode 100644 lang/rust/files/patch-vendor_openssl-sys_build_main.rs
+ delete mode 100644 lang/rust/files/powerpc64-elfv1/patch-src_librustc__mir_dataflow_generic_engine.rs
+ delete mode 100644 lang/rust/files/powerpc64-elfv2/patch-src_librustc__mir_dataflow_generic_engine.rs
+ create mode 100644 mail/rubygem-valid_email/Makefile
+ create mode 100644 mail/rubygem-valid_email/distinfo
+ create mode 100644 mail/rubygem-valid_email/pkg-descr
+ create mode 100644 sysutils/terraform-provider-gridscale/Makefile
+ create mode 100644 sysutils/terraform-provider-gridscale/distinfo
+ create mode 100644 sysutils/terraform-provider-gridscale/pkg-descr
+ create mode 100644 textproc/kreport/files/KReportGroupTracker.cpp
+ create mode 100644 textproc/kreport/files/patch-src_CMakeLists.txt
+ create mode 100644 textproc/kreport/files/patch-src_renderer_scripting_KReportGroupTracker.h
+ delete mode 100644 www/gitlab-ce/files/patch-config_initializers_active__record__fix__insert__all.rb
+ create mode 100644 www/gitlab-ce/files/patch-config_redis.cache.yml.example
+ create mode 100644 www/gitlab-ce/files/patch-config_redis.queues.yml.example
+ create mode 100644 www/gitlab-ce/files/patch-config_redis.shared__state.yml.example
+ create mode 100644 www/nginx/files/extra-patch-nginx-http-footer-filter-config
+ create mode 100644 www/nginx/files/extra-patch-openresty-drizzle-nginx-module-config
+ delete mode 100644 www/node/files/patch-deps_v8_src_objects_js-number-format.cc
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    7b6c4720a621..7245688e3d20  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   7245688e3d20..bb903f0e26ed  master -> master
+==== END: master ====
