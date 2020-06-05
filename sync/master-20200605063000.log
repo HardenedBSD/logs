@@ -50,3 +50,121 @@ remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedb
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    756cef9d6711..2263fc901509  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/nginx/files/extra-patch-ngx_http_sticky_misc.c
+Removing graphics/mesa-dri/files/patch-src_intel_Makefile.in
+Removing graphics/mesa-dri/files/patch-src_gallium_targets_xvmc_Makefile.in
+Removing graphics/mesa-dri/files/patch-src_gallium_state__trackers_xvmc_Makefile.in
+Removing graphics/mesa-dri/files/patch-configure
+Removing graphics/mesa-dri/files/configure.ac
+Removing cad/lepton-eda/files/patch-utils_scripts_lepton-upcfg.in
+Merge made by the 'recursive' strategy.
+ cad/lepton-eda/Makefile                            |   4 +-
+ cad/lepton-eda/distinfo                            |   6 +-
+ .../files/patch-utils_scripts_lepton-upcfg.in      |  17 ---
+ cad/lepton-eda/files/patch-version.h               |   8 +-
+ cad/lepton-eda/pkg-plist                           |  99 +++++++------
+ devel/elfio/Makefile                               |   3 +-
+ devel/elfio/distinfo                               |   6 +-
+ devel/msgpack/Makefile                             |   2 +-
+ devel/msgpack/distinfo                             |   6 +-
+ devel/p5-Scope-Guard/Makefile                      |   6 +-
+ devel/p5-Scope-Guard/distinfo                      |   5 +-
+ devel/py-repoze.who/Makefile                       |   2 +-
+ devel/py-repoze.who/distinfo                       |   6 +-
+ devel/pygobject3-common/Makefile                   |   2 +-
+ devel/pygobject3-common/files/patch-python38       |  88 ++++++++++++
+ graphics/libheif/Makefile                          |   3 +-
+ graphics/libheif/distinfo                          |   6 +-
+ graphics/libheif/pkg-descr                         |   6 +-
+ graphics/libheif/pkg-plist                         |   2 +-
+ graphics/libosmesa/Makefile                        |  32 +++--
+ graphics/libosmesa/pkg-plist                       |   1 +
+ graphics/libxatracker/Makefile                     |  35 +++--
+ graphics/libxatracker/pkg-plist                    |   1 +
+ graphics/mesa-dri/Makefile                         |  35 +++--
+ graphics/mesa-dri/Makefile.common                  |  32 ++---
+ graphics/mesa-dri/Makefile.targets                 |  29 ----
+ graphics/mesa-dri/files/configure.ac               |  66 ---------
+ graphics/mesa-dri/files/patch-configure            | 153 ---------------------
+ graphics/mesa-dri/files/patch-meson.build          |  26 ++++
+ ...ch-src_gallium_state__trackers_xvmc_Makefile.in |  11 --
+ ...ch-src_gallium_state__trackers_xvmc_meson.build |  19 +++
+ .../patch-src_gallium_targets_xvmc_Makefile.in     |  11 --
+ .../patch-src_gallium_targets_xvmc_meson.build     |  11 ++
+ .../mesa-dri/files/patch-src_intel_Makefile.in     |  18 ---
+ .../mesa-dri/files/patch-src_mesa_main_macros.h    |  13 ++
+ graphics/mesa-dri/files/patch-src_util_futex.h     |  19 ++-
+ graphics/mesa-dri/pkg-plist                        |  49 +------
+ graphics/mesa-libs/Makefile                        |  37 +++--
+ graphics/mesa-libs/pkg-plist                       |   5 +-
+ lang/clover/Makefile                               |  29 ++--
+ lang/clover/pkg-plist                              |   1 +
+ lang/gcc11-devel/Makefile                          |   2 +-
+ lang/gcc11-devel/distinfo                          |   6 +-
+ math/R-cran-MCMCpack/Makefile                      |   2 +-
+ math/R-cran-MCMCpack/distinfo                      |   6 +-
+ security/fiked/pkg-descr                           |   2 +-
+ www/nginx/Makefile                                 |   2 +-
+ www/nginx/Makefile.extmod                          |  30 ++--
+ www/nginx/distinfo                                 |  30 ++--
+ .../files/extra-patch-nginx-link-function-config   |   4 +-
+ www/nginx/files/extra-patch-ngx_http_sticky_misc.c |  17 ---
+ www/nginx/files/extra-patch-ngx_link_func_module.c |   4 +-
+ www/nginx/pkg-plist                                |   7 +
+ www/py-cherrypy/Makefile                           |   2 +-
+ www/py-cherrypy/files/patch-python38               |  60 ++++++++
+ 55 files changed, 502 insertions(+), 582 deletions(-)
+ delete mode 100644 cad/lepton-eda/files/patch-utils_scripts_lepton-upcfg.in
+ create mode 100644 devel/pygobject3-common/files/patch-python38
+ delete mode 100644 graphics/mesa-dri/files/configure.ac
+ delete mode 100644 graphics/mesa-dri/files/patch-configure
+ create mode 100644 graphics/mesa-dri/files/patch-meson.build
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_state__trackers_xvmc_Makefile.in
+ create mode 100644 graphics/mesa-dri/files/patch-src_gallium_state__trackers_xvmc_meson.build
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_targets_xvmc_Makefile.in
+ create mode 100644 graphics/mesa-dri/files/patch-src_gallium_targets_xvmc_meson.build
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_Makefile.in
+ create mode 100644 graphics/mesa-dri/files/patch-src_mesa_main_macros.h
+ delete mode 100644 www/nginx/files/extra-patch-ngx_http_sticky_misc.c
+ create mode 100644 www/py-cherrypy/files/patch-python38
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   2263fc901509..c754fe41f3c6  master -> master
+==== END: master ====
