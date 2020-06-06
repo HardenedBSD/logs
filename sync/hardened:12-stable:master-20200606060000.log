@@ -1,0 +1,92 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging stand/lua/drawer.lua
+CONFLICT (content): Merge conflict in stand/lua/drawer.lua
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc stand/lua/drawer.lua
+index 7720582beb37,2c669aa76d1a..000000000000
+--- a/stand/lua/drawer.lua
++++ b/stand/lua/drawer.lua
+@@@ -364,9 -357,12 +369,18 @@@ default_shift = {x = 0, y = 0
+  shift = default_shift
+  
+  -- Module exports
+++<<<<<<< HEAD
+ +drawer.default_brand = 'hbsd'
+ +drawer.default_color_logodef = 'hardenedbsd'
+ +drawer.default_bw_logodef = 'hardenedbsdbw'
+++=======
++ drawer.default_brand = 'fbsd'
++ drawer.default_color_logodef = 'orb'
++ drawer.default_bw_logodef = 'orbbw'
++ -- For when things go terribly wrong; this def should be present here in the
++ -- drawer module in case it's a filesystem issue.
++ drawer.default_fallback_logodef = 'none'
+++>>>>>>> freebsd/12-stable/master
+  
+  function drawer.addBrand(name, def)
+  	branddefs[name] = def
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   bin/ls/ls.1
+	modified:   bin/ls/ls.c
+	modified:   lib/libprocstat/Makefile
+	modified:   lib/libprocstat/zfs.c
+	modified:   lib/libprocstat/zfs/Makefile
+	new file:   lib/libprocstat/zfs_defs.c
+	new file:   lib/libprocstat/zfs_defs.h
+	modified:   stand/common/interp_lua.c
+	modified:   sys/netinet/tcp_input.c
+	modified:   sys/netinet/tcp_stacks/rack.c
+	modified:   sys/netinet6/scope6.c
+	modified:   sys/netpfil/ipfw/ip_fw2.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   stand/lua/drawer.lua
+
+HEAD is now at 3c9b611085b8 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 3c9b611085b8 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
