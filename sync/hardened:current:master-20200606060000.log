@@ -1,0 +1,120 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Auto-merging share/man/man4/Makefile
+Removing gnu/usr.bin/binutils/objdump/objdump.1
+Removing gnu/usr.bin/binutils/objdump/Makefile.depend
+CONFLICT (modify/delete): gnu/usr.bin/binutils/objdump/Makefile deleted in freebsd/current/master and modified in HEAD. Version HEAD of gnu/usr.bin/binutils/objdump/Makefile left in tree.
+Removing gnu/usr.bin/binutils/objcopy/objcopy.1
+Removing gnu/usr.bin/binutils/objcopy/Makefile.depend
+CONFLICT (modify/delete): gnu/usr.bin/binutils/objcopy/Makefile deleted in freebsd/current/master and modified in HEAD. Version HEAD of gnu/usr.bin/binutils/objcopy/Makefile left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 0113a9aab763,26cc2fadcd42..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -188,12 -188,6 +188,15 @@@ Build and install GN
+  as part of the normal system build.
+  This option is not available as of
+  .Fx 13.0 .
+++<<<<<<< HEAD
+ +.It Va WITHOUT_BINUTILS_BOOTSTRAP
+ +Do not build GNU binutils
+ +as part of the bootstrap process.
+ +.Pp
+ +This is a default setting on
+ +arm/armv6, arm/armv7, arm64/aarch64, mips/mips, mips/mips64, powerpc/powerpc, powerpc/powerpc64, riscv/riscv64 and riscv/riscv64sf.
+++=======
+++>>>>>>> freebsd/current/master
+  .It Va WITH_BINUTILS_BOOTSTRAP
+  Build GNU binutils
+  as part of the bootstrap process.
+* Unmerged path gnu/usr.bin/binutils/objcopy/Makefile
+* Unmerged path gnu/usr.bin/binutils/objdump/Makefile
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	deleted:    gnu/usr.bin/binutils/objcopy/Makefile.depend
+	deleted:    gnu/usr.bin/binutils/objcopy/objcopy.1
+	deleted:    gnu/usr.bin/binutils/objdump/Makefile.depend
+	deleted:    gnu/usr.bin/binutils/objdump/objdump.1
+	modified:   lib/libmd/Makefile
+	modified:   share/man/man4/Makefile
+	modified:   share/man/man4/nda.4
+	modified:   share/mk/src.opts.mk
+	modified:   sys/cam/nvme/nvme_da.c
+	modified:   sys/conf/files.powerpc
+	renamed:    sys/crypto/skein/amd64/skein_block_asm.s -> sys/crypto/skein/amd64/skein_block_asm.S
+	modified:   sys/kern/kern_sendfile.c
+	modified:   sys/modules/crypto/Makefile
+	modified:   sys/net80211/ieee80211_ht.h
+	modified:   sys/net80211/ieee80211_node.c
+	modified:   sys/powerpc/aim/mmu_radix.c
+	modified:   sys/powerpc/aim/trap_subr64.S
+	modified:   sys/powerpc/booke/pmap.c
+	modified:   sys/powerpc/include/asm.h
+	modified:   sys/powerpc/include/mmuvar.h
+	modified:   sys/powerpc/include/param.h
+	modified:   sys/powerpc/include/pcpu.h
+	modified:   sys/powerpc/powerpc/copyinout.c
+	modified:   sys/powerpc/powerpc/db_interface.c
+	modified:   sys/powerpc/powerpc/genassym.c
+	modified:   sys/powerpc/powerpc/mp_machdep.c
+	modified:   sys/powerpc/powerpc/pmap_dispatch.c
+	new file:   sys/powerpc/powerpc/support.S
+	modified:   sys/powerpc/powerpc/trap.c
+	modified:   sys/vm/vnode_pager.c
+	modified:   usr.sbin/mountd/mountd.c
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by them: gnu/usr.bin/binutils/objcopy/Makefile
+	deleted by them: gnu/usr.bin/binutils/objdump/Makefile
+	both modified:   share/man/man5/src.conf.5
+
+HEAD is now at 7bb5c834fe26 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 7bb5c834fe26 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
