@@ -1,0 +1,97 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 18 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 7bb5c834fe26..cf2bc65148f0
+Fast-forward
+ gnu/usr.bin/binutils/objcopy/Makefile              |  17 -
+ gnu/usr.bin/binutils/objcopy/Makefile.depend       |  20 -
+ gnu/usr.bin/binutils/objcopy/objcopy.1             | 858 ---------------------
+ gnu/usr.bin/binutils/objdump/Makefile              |  25 -
+ gnu/usr.bin/binutils/objdump/Makefile.depend       |  21 -
+ gnu/usr.bin/binutils/objdump/objdump.1             | 640 ---------------
+ lib/libmd/Makefile                                 |  11 +-
+ share/man/man4/Makefile                            |   2 +-
+ share/man/man4/nda.4                               | 131 +++-
+ share/man/man5/src.conf.5                          |  11 +-
+ share/mk/src.opts.mk                               |   7 +-
+ sys/cam/nvme/nvme_da.c                             |   9 +-
+ sys/conf/files.powerpc                             |   3 +-
+ .../amd64/{skein_block_asm.s => skein_block_asm.S} |   0
+ sys/kern/kern_sendfile.c                           |  68 +-
+ sys/modules/crypto/Makefile                        |   6 +-
+ sys/net80211/ieee80211_ht.h                        |   2 +-
+ sys/net80211/ieee80211_node.c                      |   2 +-
+ sys/powerpc/aim/mmu_radix.c                        |  18 +-
+ sys/powerpc/aim/trap_subr64.S                      |   7 +
+ sys/powerpc/booke/pmap.c                           |  23 -
+ sys/powerpc/include/asm.h                          |  12 +
+ sys/powerpc/include/mmuvar.h                       |  19 +
+ sys/powerpc/include/param.h                        |   3 +
+ sys/powerpc/include/pcpu.h                         |   4 +
+ sys/powerpc/powerpc/copyinout.c                    | 133 +++-
+ sys/powerpc/powerpc/db_interface.c                 |   1 +
+ sys/powerpc/powerpc/genassym.c                     |   2 +
+ sys/powerpc/powerpc/mp_machdep.c                   |   1 +
+ sys/powerpc/powerpc/pmap_dispatch.c                |  16 +-
+ sys/powerpc/powerpc/support.S                      | 539 +++++++++++++
+ sys/powerpc/powerpc/trap.c                         |  20 +
+ sys/vm/vnode_pager.c                               |  46 +-
+ usr.sbin/mountd/mountd.c                           |  52 +-
+ 34 files changed, 965 insertions(+), 1764 deletions(-)
+ delete mode 100644 gnu/usr.bin/binutils/objcopy/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/objcopy/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/objcopy/objcopy.1
+ delete mode 100644 gnu/usr.bin/binutils/objdump/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/objdump/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/objdump/objdump.1
+ rename sys/crypto/skein/amd64/{skein_block_asm.s => skein_block_asm.S} (100%)
+ create mode 100644 sys/powerpc/powerpc/support.S
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/geom/geom_dev.c      | 25 ++-----------------------
+ sys/geom/label/g_label.c | 38 ++++++--------------------------------
+ 2 files changed, 8 insertions(+), 55 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    cf2bc65148f0..9d5169ab4a98  hardened/current/master -> hardened/current/master        
+remote:    d5a3981de9fd..d4d4471117d7  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   cf2bc65148f0..9d5169ab4a98  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
