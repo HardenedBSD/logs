@@ -34,3 +34,315 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing textproc/py-jc/files/patch-jc_utils.py
+Auto-merging math/R/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging irc/weechat/Makefile
+Removing games/netrek-client-cow/files/patch-parsemeta.c
+Auto-merging emulators/fs-uae/Makefile
+Removing devel/stlink/files/extra-pacth-32bit
+Auto-merging devel/stlink/Makefile
+Auto-merging devel/gcc-arm-embedded/Makefile
+CONFLICT (content): Merge conflict in devel/gcc-arm-embedded/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/gcc-arm-embedded/Makefile
+index bafa090c2691,8bb494bba264..000000000000
+--- a/devel/gcc-arm-embedded/Makefile
++++ b/devel/gcc-arm-embedded/Makefile
+@@@ -21,10 -21,9 +21,15 @@@ NOT_FOR_ARCHS_REASON=	Very slow to buil
+  
+  BUILD_DEPENDS=		objdump:devel/binutils
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS SYMLINK
+++=======
++ OPTIONS_DEFINE=	APROFILE PURE PYGDB EXAMPLES HTML PDF DOCS SYMLINK
+++>>>>>>> freebsd/master
+  OPTIONS_DEFAULT=PURE PYGDB SYMLINK
++ APROFILE_DESC=	Add support for Cortex-A profiles
+  PURE_DESC=	Use all libraries from bundle, do not depend on anything
+  HTML_DESC=	Install HTML documentation
+  PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/rosegarden/Makefile
+	modified:   audio/rosegarden/distinfo
+	modified:   databases/Makefile
+	modified:   databases/mongodb36/Makefile
+	modified:   databases/mongodb40/Makefile
+	new file:   databases/mongodb42/Makefile
+	new file:   databases/mongodb42/distinfo
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src0.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src1.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src10.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src11.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src12.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src13.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src14.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src15.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src16.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src17.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src18.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src19.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src2.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src20.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src21.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src22.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src23.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src24.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src25.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src26.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src27.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src28.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src29.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src3.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src30.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src31.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src32.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src33.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src4.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src5.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src6.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src7.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src8.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_Unified__cpp__js__src9.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_build_js-confdefs.h
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-45_platform_aarch64_freebsd_include_js-config.h
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_gen-config.sh
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src0.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src1.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src10.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src11.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src12.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src13.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src14.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src15.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src16.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src17.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src18.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src19.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src2.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src20.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src21.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src22.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src23.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src24.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src25.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src26.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src27.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src28.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src29.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src3.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src30.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src31.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src32.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src33.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src34.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src35.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src36.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src37.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src38.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src39.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src4.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src40.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src41.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src42.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src43.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src44.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src45.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src5.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src6.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src7.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src8.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src9.cpp
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_js-confdefs.h
+	new file:   databases/mongodb42/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_include_js-config.h
+	new file:   databases/mongodb42/files/mongod.in
+	new file:   databases/mongodb42/files/patch-SConstruct
+	new file:   databases/mongodb42/files/patch-rpm_mongod.conf
+	new file:   databases/mongodb42/pkg-descr
+	new file:   databases/mongodb42/pkg-plist
+	modified:   devel/clojure-cider/Makefile
+	modified:   devel/clojure-cider/distinfo
+	modified:   devel/gcc-arm-embedded/files/Makefile
+	modified:   devel/gcc-arm-embedded/pkg-plist
+	modified:   devel/ipython/Makefile
+	modified:   devel/ipython/distinfo
+	modified:   devel/libqb/Makefile
+	modified:   devel/libqb/distinfo
+	modified:   devel/linux-ltp/Makefile
+	modified:   devel/linux-ltp/distinfo
+	modified:   devel/linux-ltp/pkg-plist.amd64
+	modified:   devel/py-azure-mgmt-loganalytics/Makefile
+	modified:   devel/py-azure-mgmt-loganalytics/distinfo
+	modified:   devel/py-azure-mgmt-network/Makefile
+	modified:   devel/py-azure-mgmt-network/distinfo
+	modified:   devel/py-wlc/Makefile
+	modified:   devel/py-wlc/distinfo
+	modified:   devel/rubygem-slack-messenger/pkg-descr
+	modified:   devel/stlink/Makefile
+	deleted:    devel/stlink/files/extra-pacth-32bit
+	modified:   emulators/fs-uae/Makefile
+	modified:   emulators/ppsspp/Makefile
+	modified:   emulators/virtualbox-ose/Makefile
+	modified:   games/ltris/Makefile
+	modified:   games/ltris/distinfo
+	modified:   games/netrek-client-cow/Makefile
+	modified:   games/netrek-client-cow/distinfo
+	deleted:    games/netrek-client-cow/files/patch-parsemeta.c
+	modified:   games/netrek-client-cow/files/patch-system.mk.in
+	modified:   graphics/icc-profiles-adobe-cs4/Makefile
+	modified:   graphics/icc-profiles-adobe-cs4/pkg-descr
+	modified:   irc/weechat/Makefile
+	modified:   irc/weechat/distinfo
+	modified:   java/netty/Makefile
+	modified:   java/netty/distinfo
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   lang/rust-nightly/Makefile
+	modified:   lang/rust-nightly/distinfo
+	new file:   lang/rust-nightly/files/patch-vendor_openssl-sys_build_main.rs
+	modified:   math/R/Makefile
+	modified:   math/R/distinfo
+	modified:   math/R/pkg-plist
+	modified:   math/mcsim/Makefile
+	modified:   math/mcsim/distinfo
+	modified:   math/mcsim/pkg-plist
+	modified:   misc/broot/Makefile
+	modified:   misc/broot/distinfo
+	modified:   net-mgmt/zabbix4-server/Makefile
+	modified:   net-mgmt/zabbix4-server/distinfo
+	modified:   net-mgmt/zabbix44-server/Makefile
+	modified:   net-mgmt/zabbix44-server/pkg-plist
+	modified:   net-p2p/ktorrent/Makefile
+	modified:   net-p2p/ktorrent/distinfo
+	modified:   net-p2p/ktorrent/pkg-plist
+	modified:   net-p2p/libktorrent/Makefile
+	modified:   net-p2p/libktorrent/distinfo
+	modified:   net-p2p/libktorrent/pkg-plist
+	modified:   print/cups-filters/Makefile
+	modified:   print/cups-filters/distinfo
+	modified:   print/cups-filters/pkg-plist
+	modified:   security/acmetool/Makefile
+	modified:   security/acmetool/distinfo
+	modified:   security/openssl-devel/Makefile
+	modified:   security/openssl-devel/distinfo
+	modified:   security/openssl-devel/pkg-message
+	modified:   security/openssl-devel/pkg-plist
+	modified:   security/py-acme/distinfo
+	modified:   security/py-acme/version.mk
+	modified:   security/py-certbot-apache/distinfo
+	modified:   security/py-certbot-dns-cloudflare/distinfo
+	modified:   security/py-certbot-dns-cloudxns/distinfo
+	modified:   security/py-certbot-dns-digitalocean/distinfo
+	modified:   security/py-certbot-dns-dnsimple/distinfo
+	modified:   security/py-certbot-dns-dnsmadeeasy/distinfo
+	modified:   security/py-certbot-dns-gehirn/distinfo
+	modified:   security/py-certbot-dns-google/distinfo
+	modified:   security/py-certbot-dns-linode/distinfo
+	modified:   security/py-certbot-dns-luadns/distinfo
+	modified:   security/py-certbot-dns-nsone/distinfo
+	modified:   security/py-certbot-dns-ovh/distinfo
+	modified:   security/py-certbot-dns-rfc2136/distinfo
+	modified:   security/py-certbot-dns-route53/distinfo
+	modified:   security/py-certbot-dns-sakuracloud/distinfo
+	modified:   security/py-certbot-nginx/distinfo
+	modified:   security/py-certbot/distinfo
+	modified:   security/tailscale/Makefile
+	modified:   security/tailscale/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/Makefile
+	modified:   sysutils/dua-cli/Makefile
+	modified:   sysutils/dua-cli/distinfo
+	modified:   sysutils/go-btfs/Makefile
+	modified:   sysutils/go-btfs/distinfo
+	new file:   sysutils/lttng-ust/files/patch-liblttng-ust_compat.h
+	modified:   sysutils/py-azure-cli-core/Makefile
+	modified:   sysutils/py-azure-cli-core/distinfo
+	modified:   sysutils/py-azure-cli/Makefile
+	modified:   sysutils/py-azure-cli/distinfo
+	new file:   sysutils/py-liquidctl/Makefile
+	new file:   sysutils/py-liquidctl/distinfo
+	new file:   sysutils/py-liquidctl/pkg-descr
+	modified:   textproc/Makefile
+	modified:   textproc/csvq/Makefile
+	modified:   textproc/csvq/distinfo
+	new file:   textproc/py-docrepr/Makefile
+	new file:   textproc/py-docrepr/distinfo
+	new file:   textproc/py-docrepr/pkg-descr
+	modified:   textproc/py-jc/Makefile
+	modified:   textproc/py-jc/distinfo
+	deleted:    textproc/py-jc/files/patch-jc_utils.py
+	modified:   www/Makefile
+	new file:   www/annie/Makefile
+	new file:   www/annie/distinfo
+	new file:   www/annie/pkg-descr
+	modified:   www/jetty9/Makefile
+	modified:   www/jetty9/distinfo
+	modified:   www/jetty9/pkg-plist
+	modified:   www/nextcloud-notes/Makefile
+	modified:   www/nextcloud-notes/distinfo
+	modified:   www/nextcloud-notes/pkg-plist
+	modified:   x11-servers/Xfstt/Makefile
+	modified:   x11-toolkits/py-xlib/Makefile
+	modified:   x11-toolkits/py-xlib/distinfo
+	new file:   x11-toolkits/wlroots/pkg-message
+	new file:   x11-wm/sway/pkg-message
+	modified:   x11/plasma5-plasma-desktop/Makefile
+	modified:   x11/plasma5-plasma-desktop/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/gcc-arm-embedded/Makefile
+
+
+It took 3.50 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at fc5b7810f769 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at fc5b7810f769 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
