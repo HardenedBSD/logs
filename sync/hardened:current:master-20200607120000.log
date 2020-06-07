@@ -1,0 +1,150 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Removing gnu/usr.bin/binutils/as/targ-env.h
+Removing gnu/usr.bin/binutils/as/sparc64-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/powerpc-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/powerpc-freebsd/itbl-cpu.h
+Removing gnu/usr.bin/binutils/as/obj-format.h
+Removing gnu/usr.bin/binutils/as/mips-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/mips-freebsd/itbl-cpu.h
+Removing gnu/usr.bin/binutils/as/i386-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/config.h
+Removing gnu/usr.bin/binutils/as/as.1
+Removing gnu/usr.bin/binutils/as/arm-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/amd64-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/amd64-freebsd/itbl-cpu.h
+Removing gnu/usr.bin/binutils/as/alpha-freebsd/targ-cpu.h
+Removing gnu/usr.bin/binutils/as/Makefile.depend
+CONFLICT (modify/delete): gnu/usr.bin/binutils/as/Makefile deleted in freebsd/current/master and modified in HEAD. Version HEAD of gnu/usr.bin/binutils/as/Makefile left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index ca65ddb34a4a,609a644359ce..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -177,20 -177,11 +177,25 @@@ an
+  .Xr bhyvectl 8 .
+  .Pp
+  This option only affects amd64/amd64.
+ -.It Va WITH_BIND_NOW
+ -Build all binaries with the
+ +.It Va WITHOUT_BIND_NOW
+ +Do not build all binaries with the
+  .Dv DF_BIND_NOW
+++<<<<<<< HEAD
+ +flag set.
+ +Run-time relocation processing will be performed on demand.
+ +.It Va WITH_BINUTILS
+ +Build and install GNU
+ +.Xr as 1
+ +as part of the normal system build.
+ +This option is not available as of
+ +.Fx 13.0 .
+ +.It Va WITH_BINUTILS_BOOTSTRAP
+ +Build GNU binutils
+ +as part of the bootstrap process.
+++=======
++ flag set to indicate that the run-time loader should perform all relocation
++ processing at process startup rather than on demand.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_BLACKLIST
+  Set this if you do not want to build
+  .Xr blacklistd 8
+@@@ -386,10 -362,6 +391,13 @@@ When set, it enforces these options
+  .Pp
+  .Bl -item -compact
+  .It
+++<<<<<<< HEAD
+ +.Va WITHOUT_BINUTILS_BOOTSTRAP
+ +.It
+ +.Va WITHOUT_CFI
+ +.It
+++=======
+++>>>>>>> freebsd/current/master
+  .Va WITHOUT_CLANG_BOOTSTRAP
+  .It
+  .Va WITHOUT_ELFTOOLCHAIN_BOOTSTRAP
+* Unmerged path gnu/usr.bin/binutils/as/Makefile
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	deleted:    gnu/usr.bin/binutils/as/Makefile.depend
+	deleted:    gnu/usr.bin/binutils/as/alpha-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/amd64-freebsd/itbl-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/amd64-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/arm-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/as.1
+	deleted:    gnu/usr.bin/binutils/as/config.h
+	deleted:    gnu/usr.bin/binutils/as/i386-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/mips-freebsd/itbl-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/mips-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/obj-format.h
+	deleted:    gnu/usr.bin/binutils/as/powerpc-freebsd/itbl-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/powerpc-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/sparc64-freebsd/targ-cpu.h
+	deleted:    gnu/usr.bin/binutils/as/targ-env.h
+	modified:   sys/netinet/sctp_auth.c
+	modified:   sys/netinet/sctp_constants.h
+	modified:   sys/netinet/sctp_indata.c
+	modified:   sys/netinet/sctp_input.c
+	modified:   sys/netinet/sctp_output.c
+	modified:   sys/netinet/sctp_output.h
+	modified:   sys/netinet/sctp_sysctl.c
+	modified:   sys/netinet/sctp_sysctl.h
+	modified:   sys/netinet/sctp_usrreq.c
+	modified:   sys/netinet/sctputil.c
+	modified:   sys/netinet/sctputil.h
+	modified:   sys/netinet6/sctp6_usrreq.c
+	modified:   tests/sys/net/if_bridge_test.sh
+	modified:   usr.bin/uniq/uniq.1
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by them: gnu/usr.bin/binutils/as/Makefile
+	both modified:   share/man/man5/src.conf.5
+
+HEAD is now at cdb7bd9bcc87 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at cdb7bd9bcc87 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
