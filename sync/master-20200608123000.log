@@ -34,3 +34,145 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/freerdp/Makefile
+Removing games/doomlegacy/files/patch-src_d__main.c
+Removing devel/spdlog/files/patch-include_spdlog_details_thread__pool-inl.h
+Removing devel/spdlog/files/patch-include_spdlog_details_pattern__formatter-inl.h
+Merge made by the 'recursive' strategy.
+ Mk/Uses/perl5.mk                                   |    6 +-
+ Mk/bsd.default-versions.mk                         |    2 +-
+ databases/freetds-devel/Makefile                   |   10 +-
+ databases/freetds-devel/distinfo                   |    6 +-
+ devel/spdlog/Makefile                              |    3 +-
+ devel/spdlog/distinfo                              |    6 +-
+ ...include_spdlog_details_pattern__formatter-inl.h |   10 -
+ ...patch-include_spdlog_details_thread__pool-inl.h |   11 -
+ .../patch-include_spdlog_pattern__formatter-inl.h  |   10 +
+ devel/spdlog/pkg-plist                             |   19 +-
+ dns/bind-tools/pkg-plist-devel                     |   52 +-
+ dns/bind9-devel/Makefile                           |    4 +-
+ dns/bind9-devel/distinfo                           |    6 +-
+ .../files/extrapatch-bind-min-override-ttl         |   12 +-
+ dns/bind9-devel/files/extrapatch-bind-tools        |    8 +-
+ dns/bind9-devel/files/extrapatch-no-bind-tools     |   12 +-
+ dns/bind9-devel/files/patch-configure.ac           |    4 +-
+ dns/bind9-devel/pkg-plist                          |   48 +-
+ games/doomlegacy/Makefile                          |    2 +-
+ games/doomlegacy/distinfo                          |   10 +-
+ games/doomlegacy/files/patch-src_Makefile          |    6 +-
+ games/doomlegacy/files/patch-src_d__main.c         |   26 -
+ graphics/mesa-devel/Makefile                       |   22 +-
+ graphics/mesa-dri/Makefile                         |    6 +-
+ lang/Makefile                                      |    1 +
+ lang/perl5-devel/Makefile                          |    2 +-
+ lang/perl5-devel/distinfo                          |    6 +-
+ lang/perl5-devel/files/patch-perl.c                |    4 +-
+ lang/perl5.32/Makefile                             |  293 +++
+ lang/perl5.32/distinfo                             |    3 +
+ lang/perl5.32/files/patch-Configure                |   37 +
+ lang/perl5.32/files/patch-Makefile.SH              |   12 +
+ ...h-cpan_ExtUtils-Install_lib_ExtUtils_Install.pm |   13 +
+ .../files/patch-cpan_ExtUtils-Install_t_Install.t  |   22 +
+ ...cpan_ExtUtils-MakeMaker_lib_ExtUtils_MM__Any.pm |   20 +
+ .../patch-cpan_ExtUtils-MakeMaker_t_INST__PREFIX.t |   22 +
+ .../patch-cpan_Pod-Perldoc_lib_Pod_Perldoc.pm      |   16 +
+ ...patch-cpan_Pod-Perldoc_lib_Pod_Perldoc_ToMan.pm |   24 +
+ ...atch-cpan_Pod-Perldoc_lib_Pod_Perldoc_ToTerm.pm |   13 +
+ lang/perl5.32/files/patch-hints_freebsd.sh         |   24 +
+ lang/perl5.32/files/patch-perl.c                   |   28 +
+ lang/perl5.32/files/patch-t_porting_customized.dat |   21 +
+ lang/perl5.32/files/perl-man.conf.in               |    2 +
+ lang/perl5.32/pkg-descr                            |    6 +
+ lang/perl5.32/pkg-plist                            | 2470 ++++++++++++++++++++
+ lang/perl5.32/version.mk                           |    2 +
+ net-mgmt/ipv6mon/Makefile                          |   20 +-
+ net-mgmt/ipv6mon/distinfo                          |    5 +-
+ net-mgmt/ipv6mon/files/patch-ipv6mon.c             |    8 +-
+ net-mgmt/py-arouteserver/Makefile                  |    2 +-
+ net-mgmt/py-arouteserver/distinfo                  |    6 +-
+ net/freerdp/Makefile                               |   22 +-
+ net/freerdp/distinfo                               |   14 +-
+ net/freerdp/files/mntent.h                         |   64 +
+ ...channels_urbdrc_client_libusb_libusb__udevice.h |   11 +
+ ...channels_urbdrc_client_libusb_libusb__udevman.c |   11 +
+ net/freerdp/pkg-plist                              |   26 +-
+ net/v2ray/Makefile                                 |    8 +-
+ net/v2ray/distinfo                                 |   18 +-
+ security/maltrail/Makefile                         |    2 +-
+ security/maltrail/distinfo                         |    6 +-
+ security/maltrail/pkg-plist                        |   28 +-
+ security/vuxml/vuln.xml                            |   39 +
+ sysutils/cpuid2cpuflags/Makefile                   |    2 +-
+ sysutils/cpuid2cpuflags/distinfo                   |    6 +-
+ textproc/lowdown/Makefile                          |    2 +-
+ textproc/lowdown/distinfo                          |    6 +-
+ textproc/lowdown/pkg-plist                         |    3 +
+ 68 files changed, 3419 insertions(+), 232 deletions(-)
+ delete mode 100644 devel/spdlog/files/patch-include_spdlog_details_pattern__formatter-inl.h
+ delete mode 100644 devel/spdlog/files/patch-include_spdlog_details_thread__pool-inl.h
+ create mode 100644 devel/spdlog/files/patch-include_spdlog_pattern__formatter-inl.h
+ delete mode 100644 games/doomlegacy/files/patch-src_d__main.c
+ create mode 100644 lang/perl5.32/Makefile
+ create mode 100644 lang/perl5.32/distinfo
+ create mode 100644 lang/perl5.32/files/patch-Configure
+ create mode 100644 lang/perl5.32/files/patch-Makefile.SH
+ create mode 100644 lang/perl5.32/files/patch-cpan_ExtUtils-Install_lib_ExtUtils_Install.pm
+ create mode 100644 lang/perl5.32/files/patch-cpan_ExtUtils-Install_t_Install.t
+ create mode 100644 lang/perl5.32/files/patch-cpan_ExtUtils-MakeMaker_lib_ExtUtils_MM__Any.pm
+ create mode 100644 lang/perl5.32/files/patch-cpan_ExtUtils-MakeMaker_t_INST__PREFIX.t
+ create mode 100644 lang/perl5.32/files/patch-cpan_Pod-Perldoc_lib_Pod_Perldoc.pm
+ create mode 100644 lang/perl5.32/files/patch-cpan_Pod-Perldoc_lib_Pod_Perldoc_ToMan.pm
+ create mode 100644 lang/perl5.32/files/patch-cpan_Pod-Perldoc_lib_Pod_Perldoc_ToTerm.pm
+ create mode 100644 lang/perl5.32/files/patch-hints_freebsd.sh
+ create mode 100644 lang/perl5.32/files/patch-perl.c
+ create mode 100644 lang/perl5.32/files/patch-t_porting_customized.dat
+ create mode 100644 lang/perl5.32/files/perl-man.conf.in
+ create mode 100644 lang/perl5.32/pkg-descr
+ create mode 100644 lang/perl5.32/pkg-plist
+ create mode 100644 lang/perl5.32/version.mk
+ create mode 100644 net/freerdp/files/mntent.h
+ create mode 100644 net/freerdp/files/patch-channels_urbdrc_client_libusb_libusb__udevice.h
+ create mode 100644 net/freerdp/files/patch-channels_urbdrc_client_libusb_libusb__udevman.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    1def540a4ae9..62fafabcb232  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:  ! [rejected]                  master -> master (atomic push failed)        
+remote:  ! [rejected]                  github/master -> github/master (atomic push failed)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'git@github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   62fafabcb232..d680cd6f0c42  master -> master
+==== END: master ====
