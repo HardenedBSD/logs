@@ -1,0 +1,118 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ stand/common/install.c                             |  81 +++-
+ sys/cam/ctl/ctl_backend_block.c                    |  22 +-
+ sys/cam/ctl/ctl_frontend_iscsi.c                   |  43 +-
+ sys/cam/ctl/ctl_io.h                               |   4 +
+ sys/dev/iscsi/icl.h                                |   9 +-
+ sys/dev/iscsi/icl_conn_if.m                        |  16 +
+ sys/dev/iscsi/icl_soft.c                           | 144 ++++--
+ sys/dev/iscsi/icl_wrappers.h                       |   7 +
+ sys/netinet/sctp_pcb.c                             |   2 -
+ sys/netinet/sctp_sysctl.c                          |   1 -
+ sys/netinet/sctputil.c                             |   1 -
+ sys/riscv/riscv/sbi.c                              |  19 +
+ sys/sys/lock.h                                     |  10 -
+ sys/sys/systm.h                                    |  10 +
+ usr.bin/mkimg/Makefile                             |   1 +
+ usr.bin/mkimg/mkimg.1                              |  20 +-
+ usr.bin/mkimg/tests/img-1x1-4096-apm.vhdx.hex      |  79 +++
+ usr.bin/mkimg/tests/img-1x1-4096-bsd.vhdx.hex      |  75 +++
+ usr.bin/mkimg/tests/img-1x1-4096-ebr.vhdx.hex      |  80 +++
+ usr.bin/mkimg/tests/img-1x1-4096-gpt.vhdx.hex      | 100 ++++
+ usr.bin/mkimg/tests/img-1x1-4096-mbr.vhdx.hex      |  82 ++++
+ usr.bin/mkimg/tests/img-1x1-4096-vtoc8.vhdx.hex    |  72 +++
+ usr.bin/mkimg/tests/img-1x1-512-apm.vhdx.hex       |  79 +++
+ usr.bin/mkimg/tests/img-1x1-512-bsd.vhdx.hex       |  75 +++
+ usr.bin/mkimg/tests/img-1x1-512-ebr.vhdx.hex       |  80 +++
+ usr.bin/mkimg/tests/img-1x1-512-gpt.vhdx.hex       | 100 ++++
+ usr.bin/mkimg/tests/img-1x1-512-mbr.vhdx.hex       |  82 ++++
+ usr.bin/mkimg/tests/img-1x1-512-vtoc8.vhdx.hex     |  72 +++
+ usr.bin/mkimg/tests/img-63x255-4096-apm.vhdx.hex   |  79 +++
+ usr.bin/mkimg/tests/img-63x255-4096-bsd.vhdx.hex   |  75 +++
+ usr.bin/mkimg/tests/img-63x255-4096-ebr.vhdx.hex   |  82 ++++
+ usr.bin/mkimg/tests/img-63x255-4096-gpt.vhdx.hex   | 100 ++++
+ usr.bin/mkimg/tests/img-63x255-4096-mbr.vhdx.hex   |  84 ++++
+ usr.bin/mkimg/tests/img-63x255-4096-vtoc8.vhdx.hex |  74 +++
+ usr.bin/mkimg/tests/img-63x255-512-apm.vhdx.hex    |  79 +++
+ usr.bin/mkimg/tests/img-63x255-512-bsd.vhdx.hex    |  75 +++
+ usr.bin/mkimg/tests/img-63x255-512-ebr.vhdx.hex    |  82 ++++
+ usr.bin/mkimg/tests/img-63x255-512-gpt.vhdx.hex    | 100 ++++
+ usr.bin/mkimg/tests/img-63x255-512-mbr.vhdx.hex    |  84 ++++
+ usr.bin/mkimg/tests/img-63x255-512-vtoc8.vhdx.hex  |  74 +++
+ usr.bin/mkimg/tests/mkimg_test.sh                  |   2 +-
+ usr.bin/mkimg/vhdx.c                               | 534 +++++++++++++++++++++
+ usr.sbin/crashinfo/crashinfo.sh                    |   2 +-
+ 43 files changed, 2808 insertions(+), 84 deletions(-)
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-4096-apm.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-4096-bsd.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-4096-ebr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-4096-gpt.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-4096-mbr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-4096-vtoc8.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-512-apm.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-512-bsd.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-512-ebr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-512-gpt.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-512-mbr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-1x1-512-vtoc8.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-4096-apm.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-4096-bsd.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-4096-ebr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-4096-gpt.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-4096-mbr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-4096-vtoc8.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-512-apm.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-512-bsd.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-512-ebr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-512-gpt.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-512-mbr.vhdx.hex
+ create mode 100644 usr.bin/mkimg/tests/img-63x255-512-vtoc8.vhdx.hex
+ create mode 100644 usr.bin/mkimg/vhdx.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    cdd9b12b02e8..871ee0662411  hardened/current/master -> hardened/current/master
+remote:    0b7e58eb670d..7d94c999fc43  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   cdd9b12b02e8..871ee0662411  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
