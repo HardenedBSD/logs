@@ -1,0 +1,115 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/sys_process.c
+Auto-merging sys/compat/freebsd32/freebsd32_misc.c
+Auto-merging release/release.sh
+Merge made by the 'recursive' strategy.
+ contrib/bmake/ChangeLog                            |  22 ++
+ contrib/bmake/Makefile                             |   8 +-
+ contrib/bmake/VERSION                              |   2 +-
+ contrib/bmake/bmake.1                              |  54 +++-
+ contrib/bmake/bmake.cat1                           |  41 ++-
+ contrib/bmake/configure                            | 219 +++++++++++++---
+ contrib/bmake/configure.in                         |  13 +-
+ contrib/bmake/dir.c                                |  31 ++-
+ contrib/bmake/dirname.c                            |   1 -
+ contrib/bmake/make.1                               |  17 +-
+ contrib/bmake/mk/ChangeLog                         |  17 ++
+ contrib/bmake/mk/dirdeps-targets.mk                |   9 +-
+ contrib/bmake/mk/init.mk                           |  25 +-
+ contrib/bmake/mk/install-mk                        |   4 +-
+ contrib/bmake/mk/meta2deps.py                      |  20 +-
+ contrib/bmake/var.c                                |  18 +-
+ lib/libusb/Makefile                                |   1 +
+ lib/libusb/libusb.3                                |  29 ++-
+ lib/libusb/libusb.h                                |  17 ++
+ lib/libusb/libusb10.c                              |  15 ++
+ release/release.sh                                 |   2 +-
+ sys/arm/freescale/imx/imx6_machdep.c               |   4 +
+ sys/arm64/coresight/coresight.c                    |  19 +-
+ .../coresight/{coresight-cmd.c => coresight_cmd.c} |   0
+ ...coresight-cpu-debug.c => coresight_cpu_debug.c} |   0
+ ...replicator.c => coresight_dynamic_replicator.c} |   0
+ .../{coresight-etm4x.c => coresight_etm4x.c}       |  41 +--
+ .../{coresight-etm4x.h => coresight_etm4x.h}       |   7 +
+ sys/arm64/coresight/coresight_etm4x_acpi.c         |  79 ++++++
+ sys/arm64/coresight/coresight_etm4x_fdt.c          |  82 ++++++
+ .../{coresight-funnel.c => coresight_funnel.c}     |   2 +-
+ .../{coresight-funnel.h => coresight_funnel.h}     |   0
+ .../coresight/{coresight-tmc.c => coresight_tmc.c} |   2 +-
+ .../coresight/{coresight-tmc.h => coresight_tmc.h} |   0
+ sys/compat/freebsd32/freebsd32_misc.c              | 212 ++++++++++++++++
+ sys/compat/freebsd32/freebsd32_proto.h             |   8 +
+ sys/compat/freebsd32/freebsd32_syscall.h           |   2 +-
+ sys/compat/freebsd32/freebsd32_syscalls.c          |   2 +-
+ sys/compat/freebsd32/freebsd32_sysent.c            |   2 +-
+ sys/compat/freebsd32/freebsd32_systrace_args.c     |   8 +-
+ sys/compat/freebsd32/syscalls.master               |   2 +-
+ sys/compat/linuxkpi/common/include/linux/rbtree.h  |   5 -
+ sys/conf/files.arm64                               |  14 +-
+ sys/dev/acpica/acpi_resource.c                     |   4 +
+ sys/kern/sys_process.c                             | 247 ++----------------
+ sys/net/iflib.c                                    |  14 +-
+ sys/netinet/cc/cc_cubic.c                          |  28 +-
+ sys/sys/tree.h                                     | 281 +++++++++++----------
+ usr.bin/bmake/Makefile                             |   4 +-
+ usr.bin/bmake/Makefile.config                      |   2 +-
+ usr.bin/bmake/config.h                             |   4 +-
+ 51 files changed, 1077 insertions(+), 563 deletions(-)
+ rename sys/arm64/coresight/{coresight-cmd.c => coresight_cmd.c} (100%)
+ rename sys/arm64/coresight/{coresight-cpu-debug.c => coresight_cpu_debug.c} (100%)
+ rename sys/arm64/coresight/{coresight-dynamic-replicator.c => coresight_dynamic_replicator.c} (100%)
+ rename sys/arm64/coresight/{coresight-etm4x.c => coresight_etm4x.c} (89%)
+ rename sys/arm64/coresight/{coresight-etm4x.h => coresight_etm4x.h} (98%)
+ create mode 100644 sys/arm64/coresight/coresight_etm4x_acpi.c
+ create mode 100644 sys/arm64/coresight/coresight_etm4x_fdt.c
+ rename sys/arm64/coresight/{coresight-funnel.c => coresight_funnel.c} (99%)
+ rename sys/arm64/coresight/{coresight-funnel.h => coresight_funnel.h} (100%)
+ rename sys/arm64/coresight/{coresight-tmc.c => coresight_tmc.c} (99%)
+ rename sys/arm64/coresight/{coresight-tmc.h => coresight_tmc.h} (100%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    c4efd850a217..fcb9430cb434  hardened/current/master -> hardened/current/master        
+remote:    a8ea5ca76fea..16beac848ffc  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   c4efd850a217..fcb9430cb434  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
