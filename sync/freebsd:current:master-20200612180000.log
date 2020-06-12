@@ -1,0 +1,153 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 41056ba93b7f..8abd951159e9
+Fast-forward
+ contrib/sqlite3/Makefile.msc                       |    2 +
+ contrib/sqlite3/configure                          |   20 +-
+ contrib/sqlite3/configure.ac                       |    2 +-
+ contrib/sqlite3/shell.c                            |  670 ++-
+ contrib/sqlite3/sqlite3.c                          | 4555 ++++++++++++--------
+ contrib/sqlite3/sqlite3.h                          |  242 +-
+ contrib/sqlite3/sqlite3ext.h                       |    9 +
+ contrib/sqlite3/tea/configure                      |   18 +-
+ contrib/sqlite3/tea/configure.ac                   |    2 +-
+ contrib/sqlite3/tea/generic/tclsqlite3.c           |   45 +-
+ lib/libc/gen/posix_spawn.c                         |   12 +-
+ sbin/ifconfig/iflagg.c                             |    8 +-
+ share/man/man4/linux.4                             |    6 +-
+ share/misc/committers-doc.dot                      |    2 +
+ sys/amd64/amd64/fpu.c                              |   22 +-
+ sys/arm/nvidia/tegra_uart.c                        |    4 +
+ ...dynamic_replicator.c => coresight_replicator.c} |   46 +-
+ sys/arm64/coresight/coresight_replicator.h         |   46 +
+ sys/arm64/coresight/coresight_replicator_acpi.c    |   81 +
+ sys/arm64/coresight/coresight_replicator_fdt.c     |   83 +
+ sys/arm64/coresight/coresight_tmc.c                |   49 +-
+ sys/arm64/coresight/coresight_tmc.h                |   16 +
+ sys/arm64/coresight/coresight_tmc_acpi.c           |   79 +
+ sys/arm64/coresight/coresight_tmc_fdt.c            |   82 +
+ sys/arm64/include/vfp.h                            |    1 +
+ .../opensolaris/uts/common/fs/zfs/dmu_objset.c     |    6 +
+ .../opensolaris/uts/common/fs/zfs/dmu_send.c       |    8 +
+ .../opensolaris/uts/common/fs/zfs/dsl_dataset.c    |   23 +-
+ .../opensolaris/uts/common/fs/zfs/dsl_destroy.c    |   15 +
+ .../opensolaris/uts/common/fs/zfs/dsl_dir.c        |    2 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/spa.c    |   34 +-
+ .../opensolaris/uts/common/fs/zfs/sys/spa_impl.h   |    3 +
+ .../opensolaris/uts/common/fs/zfs/sys/zvol.h       |   10 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ioctl.c      |   56 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/zvol.c   |  129 +-
+ sys/compat/linux/linux.c                           |    2 +-
+ sys/compat/linux/linux_event.c                     |    2 +-
+ sys/compat/linux/linux_file.c                      |   11 +-
+ sys/compat/linux/linux_file.h                      |    2 +-
+ sys/compat/linux/linux_futex.c                     |   27 +-
+ sys/compat/linux/linux_mib.c                       |    4 +
+ sys/compat/linux/linux_mib.h                       |    1 +
+ sys/compat/linux/linux_socket.c                    |   52 +-
+ sys/compat/linux/linux_socket.h                    |    7 +-
+ sys/compat/linux/linux_util.c                      |    3 +
+ sys/conf/files.arm64                               |    6 +-
+ sys/crypto/aesni/aesni_ccm.c                       |    2 +-
+ sys/dev/e1000/if_em.c                              |    1 -
+ sys/dev/netmap/if_vtnet_netmap.h                   |   19 -
+ sys/dev/netmap/netmap_kern.h                       |   18 +
+ sys/dev/nvme/nvme_ctrlr.c                          |    2 +
+ sys/dev/usb/net/if_cdceem.c                        |   17 +-
+ sys/dev/usb/net/if_muge.c                          |   11 +-
+ sys/dev/usb/net/if_smsc.c                          |   13 +-
+ sys/dev/virtio/network/if_vtnet.c                  |   16 +-
+ sys/i386/i386/npx.c                                |   28 +-
+ sys/mips/include/proc.h                            |    4 +-
+ sys/mips/mips/genassym.c                           |    4 +-
+ sys/mips/mips/pm_machdep.c                         |    7 +-
+ sys/mips/mips/swtch.S                              |    3 +-
+ sys/mips/mips/sys_machdep.c                        |    2 +-
+ sys/mips/mips/trap.c                               |    2 +-
+ sys/mips/mips/vm_machdep.c                         |   11 +-
+ sys/net/if_lagg.c                                  |   10 +-
+ sys/net/if_lagg.h                                  |    4 +-
+ sys/net80211/ieee80211_ht.c                        |    9 +-
+ sys/netinet/sctp_asconf.c                          |    1 -
+ sys/netinet/sctp_auth.c                            |    8 +-
+ sys/netinet/sctp_constants.h                       |    4 +-
+ sys/netinet/sctp_input.c                           |   10 +-
+ sys/netinet/sctp_output.c                          |   48 +-
+ sys/netinet/sctp_output.h                          |   17 +-
+ sys/netinet/sctp_pcb.c                             |   17 +-
+ sys/netinet/sctp_pcb.h                             |    5 +-
+ sys/netinet/sctp_peeloff.c                         |    1 -
+ sys/netinet/sctp_structs.h                         |    5 +-
+ sys/netinet/sctp_timer.c                           |    1 -
+ sys/netinet/sctp_uio.h                             |    2 +-
+ sys/netinet/sctp_usrreq.c                          |    1 -
+ sys/netinet/sctputil.c                             |   49 +-
+ sys/netinet/sctputil.h                             |   28 +-
+ sys/netinet/tcp_output.c                           |    5 +-
+ sys/netinet/tcp_stacks/bbr.c                       |   20 +-
+ sys/netinet/tcp_stacks/rack.c                      |   16 +-
+ sys/x86/x86/mp_x86.c                               |   37 +-
+ sys/x86/x86/msi.c                                  |    2 +-
+ tests/sys/net/if_lagg_test.sh                      |    3 +-
+ tools/tools/net80211/wlanstats/main.c              |    2 +-
+ tools/tools/net80211/wlanstats/wlanstats.c         |   10 +-
+ usr.bin/calendar/calendars/calendar.freebsd        |    1 +
+ usr.bin/sed/tests/sed2_test.sh                     |   36 -
+ usr.bin/xargs/xargs.1                              |   30 +-
+ 92 files changed, 4499 insertions(+), 2548 deletions(-)
+ rename sys/arm64/coresight/{coresight_dynamic_replicator.c => coresight_replicator.c} (80%)
+ create mode 100644 sys/arm64/coresight/coresight_replicator.h
+ create mode 100644 sys/arm64/coresight/coresight_replicator_acpi.c
+ create mode 100644 sys/arm64/coresight/coresight_replicator_fdt.c
+ create mode 100644 sys/arm64/coresight/coresight_tmc_acpi.c
+ create mode 100644 sys/arm64/coresight/coresight_tmc_fdt.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    41056ba93b7f..8abd951159e9  freebsd/current/master -> freebsd/current/master        
+remote:    50abe0f7e5e3..c704ed2b794d  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   41056ba93b7f..8abd951159e9  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
