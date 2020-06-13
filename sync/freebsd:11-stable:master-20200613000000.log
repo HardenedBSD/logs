@@ -1,0 +1,92 @@
+==== BEGIN: freebsd/11-stable/master ====
+current branch: freebsd/11-stable/master
+mergeable branch: freebsd/stable/11
+==== change branch ====
+Switched to branch 'freebsd/11-stable/master'
+Your branch is up to date with 'origin/freebsd/11-stable/master'.
+==== show current branch ====
+* freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/11 branch ====
+Updating c704ed2b794d..a4f09e7acbb3
+Fast-forward
+ contrib/libarchive/NEWS                            |   6 +
+ contrib/libarchive/README.md                       |   2 +-
+ contrib/libarchive/libarchive/archive.h            |   4 +-
+ contrib/libarchive/libarchive/archive_digest.c     | 534 +++++++--------------
+ contrib/libarchive/libarchive/archive_entry.c      |   6 +-
+ contrib/libarchive/libarchive/archive_entry.h      |   2 +-
+ contrib/libarchive/libarchive/archive_entry_stat.3 |   4 +-
+ .../libarchive/archive_read_add_passphrase.c       |   4 +
+ .../libarchive/archive_read_disk_posix.c           |  46 +-
+ .../archive_read_support_filter_program.c          |  23 +-
+ .../libarchive/archive_read_support_filter_zstd.c  |   4 +
+ .../libarchive/archive_read_support_format_rar5.c  |   6 -
+ .../libarchive/archive_read_support_format_tar.c   |  18 +
+ .../libarchive/archive_write_add_filter_program.c  |  26 +-
+ .../libarchive/archive_write_add_filter_zstd.c     |  79 ++-
+ .../libarchive/archive_write_set_options.3         |   3 +-
+ contrib/libarchive/libarchive/filter_fork.h        |   9 +-
+ contrib/libarchive/libarchive/filter_fork_posix.c  |  10 +-
+ .../libarchive/test/test_acl_platform_nfs4.c       |   2 +
+ .../libarchive/test/test_acl_platform_posix1e.c    |   4 +-
+ .../libarchive/libarchive/test/test_compat_zstd.c  |   3 +
+ .../libarchive/test/test_compat_zstd_2.tar.zst.uu  |   8 +
+ .../test_read_pax_xattr_rht_security_selinux.c     |  62 +++
+ ...test_read_pax_xattr_rht_security_selinux.tar.uu | 231 +++++++++
+ ...schily_xattr.c => test_read_pax_xattr_schily.c} |   4 +-
+ ...tr.tar.uu => test_read_pax_xattr_schily.tar.uu} |   2 +-
+ .../libarchive/test/test_write_filter_zstd.c       |   3 +
+ contrib/libarchive/tar/bsdtar.1                    |   3 +-
+ lib/libarchive/tests/Makefile                      |   5 +
+ usr.bin/bsdcat/Makefile                            |   2 +-
+ usr.bin/cpio/Makefile                              |   2 +-
+ usr.bin/tar/Makefile                               |   2 +-
+ 32 files changed, 655 insertions(+), 464 deletions(-)
+ create mode 100644 contrib/libarchive/libarchive/test/test_compat_zstd_2.tar.zst.uu
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_pax_xattr_rht_security_selinux.c
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_pax_xattr_rht_security_selinux.tar.uu
+ rename contrib/libarchive/libarchive/test/{test_read_pax_schily_xattr.c => test_read_pax_xattr_schily.c} (96%)
+ rename contrib/libarchive/libarchive/test/{test_read_pax_schily_xattr.tar.uu => test_read_pax_xattr_schily.tar.uu} (99%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    c704ed2b794d..a4f09e7acbb3  freebsd/11-stable/master -> freebsd/11-stable/master        
+remote:    7701cc9460a4..8fe04feee531  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/11-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/11-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   c704ed2b794d..a4f09e7acbb3  freebsd/11-stable/master -> freebsd/11-stable/master
+==== END: freebsd/11-stable/master ====
