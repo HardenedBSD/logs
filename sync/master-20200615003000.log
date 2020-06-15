@@ -34,3 +34,162 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/opensips/files/patch-mem__shm_mem.h
+Removing net/opensips/files/patch-Makefile.defs
+Removing net/opensips/files/patch-Makefile
+Auto-merging net/opensips/Makefile
+CONFLICT (content): Merge conflict in net/opensips/Makefile
+Removing mail/meta1/files/patch-mapcnf.h
+Removing audio/strawberry/files/patch-tests_src_playlist__test.cpp
+Removing audio/strawberry/files/patch-tests_src_organiseformat__test.cpp
+Removing audio/strawberry/files/patch-tests_src_collectionmodel__test.cpp
+Removing audio/strawberry/files/patch-tests_CMakeLists.txt
+Removing audio/strawberry/files/patch-src_organise_organiseformat.cpp
+Removing audio/strawberry/files/patch-src_collection_collectionmodel.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/opensips/Makefile
+index 5bbf4b9a9575,b743696e1c72..000000000000
+--- a/net/opensips/Makefile
++++ b/net/opensips/Makefile
+@@@ -40,11 -45,7 +45,15 @@@ DOCSDIR=		share/doc/opensip
+  USERS=			opensips
+  GROUPS=			opensips
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=		pie:off relro:off
+ +
+ +USES=			gmake ncurses perl5 pkgconfig python:2.7 shebangfix ssl
+ +USE_RC_SUBR=		opensips
+ +USE_GCC=		yes
+++=======
++ LDFLAGS+=		-pthread
+++>>>>>>> freebsd/master
+  
+  NOPRECIOUSMAKEVARS=	yes
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/bchoppr-lv2/Makefile
+	modified:   audio/bchoppr-lv2/distinfo
+	modified:   audio/bjumblr-lv2/Makefile
+	modified:   audio/bjumblr-lv2/distinfo
+	modified:   audio/bslizr-lv2/Makefile
+	modified:   audio/bslizr-lv2/distinfo
+	modified:   audio/strawberry/Makefile
+	modified:   audio/strawberry/distinfo
+	deleted:    audio/strawberry/files/patch-src_collection_collectionmodel.cpp
+	deleted:    audio/strawberry/files/patch-src_organise_organiseformat.cpp
+	deleted:    audio/strawberry/files/patch-tests_CMakeLists.txt
+	deleted:    audio/strawberry/files/patch-tests_src_collectionmodel__test.cpp
+	deleted:    audio/strawberry/files/patch-tests_src_organiseformat__test.cpp
+	deleted:    audio/strawberry/files/patch-tests_src_playlist__test.cpp
+	modified:   cad/netgen/Makefile
+	modified:   cad/qflow/Makefile
+	modified:   cad/qflow/distinfo
+	modified:   cad/veroroute/Makefile
+	modified:   cad/veroroute/distinfo
+	modified:   devel/R-cran-promises/Makefile
+	modified:   devel/R-cran-promises/distinfo
+	modified:   devel/emscripten/Makefile
+	modified:   devel/emscripten/distinfo
+	modified:   devel/emscripten/pkg-plist
+	modified:   devel/git-cinnabar/Makefile
+	new file:   devel/git-cinnabar/files/patch-no-wrapper
+	modified:   dns/amass/Makefile
+	modified:   dns/amass/distinfo
+	modified:   dns/knot-resolver/Makefile
+	modified:   dns/knot-resolver/distinfo
+	modified:   dns/knot-resolver/pkg-plist
+	modified:   games/libretro-picodrive/Makefile
+	modified:   graphics/py-pyglet/Makefile
+	modified:   graphics/py-pyglet/distinfo
+	modified:   japanese/mozc-server/Makefile
+	modified:   lang/janet/Makefile
+	modified:   lang/janet/distinfo
+	modified:   mail/meta1/Makefile
+	modified:   mail/meta1/distinfo
+	deleted:    mail/meta1/files/patch-mapcnf.h
+	modified:   math/R-cran-sf/Makefile
+	modified:   math/R-cran-sf/distinfo
+	modified:   math/R-cran-units/Makefile
+	modified:   math/R-cran-units/distinfo
+	modified:   misc/urbit/Makefile
+	modified:   net/Makefile
+	new file:   net/ooni-mini/Makefile
+	new file:   net/ooni-mini/distinfo
+	new file:   net/ooni-mini/pkg-descr
+	new file:   net/ooni-probe-cli/Makefile
+	new file:   net/ooni-probe-cli/distinfo
+	new file:   net/ooni-probe-cli/pkg-descr
+	modified:   net/opensips/distinfo
+	modified:   net/opensips/files/Makefile.conf
+	modified:   net/opensips/files/opensips.cfg.sample
+	new file:   net/opensips/files/opensips.cfg.sample.simple
+	modified:   net/opensips/files/opensips.in
+	deleted:    net/opensips/files/patch-Makefile
+	deleted:    net/opensips/files/patch-Makefile.defs
+	deleted:    net/opensips/files/patch-mem__shm_mem.h
+	modified:   net/opensips/pkg-message
+	modified:   net/opensips/pkg-plist
+	modified:   science/hepmc3/Makefile
+	modified:   science/hepmc3/distinfo
+	modified:   science/hepmc3/pkg-plist
+	modified:   science/qbox/Makefile
+	modified:   science/qbox/distinfo
+	renamed:    science/qbox/files/patch-readTSC.C -> science/qbox/files/patch-readTSC.cpp
+	modified:   sysutils/py-py-cpuinfo/Makefile
+	modified:   sysutils/py-py-cpuinfo/distinfo
+	modified:   www/uwebsockets/Makefile
+	modified:   www/uwebsockets/distinfo
+	modified:   www/uwebsockets/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/opensips/Makefile
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at c4a6f42c5432 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.11 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c4a6f42c5432 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
