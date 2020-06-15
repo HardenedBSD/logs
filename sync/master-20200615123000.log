@@ -34,3 +34,190 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/mate-panel/files/patch-applets_clock_clock.c
+Removing x11/mate-panel/files/patch-applets_clock_clock-location.c
+Removing net-im/nheko/files/patch-src_ui_Painter.h
+Removing net-im/nheko/files/patch-src_ui_InfoMessage.cpp
+Removing net-im/nheko/files/patch-src_ui_Avatar.cpp
+Auto-merging irc/irssi/Makefile
+CONFLICT (content): Merge conflict in irc/irssi/Makefile
+Auto-merging graphics/gimp-app/Makefile
+Removing devel/cppcheck/files/patch-cmake_versions.cmake
+Removing audio/supercollider/files/patch-external__libraries_CMakeLists.txt
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc irc/irssi/Makefile
+index 7c17674abcb8,9ab316dafd5d..000000000000
+--- a/irc/irssi/Makefile
++++ b/irc/irssi/Makefile
+@@@ -12,10 -13,9 +13,16 @@@ COMMENT=	Modular IRC client with many f
+  LICENSE=	GPLv2+
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +USES=		autoreconf cpe gettext-runtime gmake gnome libtool ncurses \
+ +		pkgconfig tar:xz
+++=======
++ USES=		autoreconf cpe gettext-runtime gmake gnome libtool localbase \
++ 		ncurses pkgconfig tar:xz
++ USE_LDCONFIG=	yes
+++>>>>>>> freebsd/master
+  USE_GNOME=	glib20
+  
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   astro/mkgmap/Makefile
+	modified:   astro/mkgmap/distinfo
+	modified:   audio/supercollider/Makefile
+	modified:   audio/supercollider/distinfo
+	new file:   audio/supercollider/files/patch-QtCollider_primitives_prim__QPen.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcGraph.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcLevelIndicator.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcMultiSlider.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcScopeShm.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_soundfileview_view.cpp
+	deleted:    audio/supercollider/files/patch-external__libraries_CMakeLists.txt
+	modified:   audio/supercollider/pkg-plist
+	modified:   databases/freetds-devel/Makefile
+	modified:   databases/freetds-devel/distinfo
+	modified:   databases/freetds/Makefile
+	modified:   databases/freetds/distinfo
+	modified:   deskutils/gnome-font-viewer/Makefile
+	modified:   deskutils/gnome-font-viewer/distinfo
+	modified:   deskutils/gnome-font-viewer/pkg-plist
+	modified:   deskutils/gnome-sound-recorder/Makefile
+	modified:   deskutils/gnome-sound-recorder/distinfo
+	modified:   deskutils/gnome-sound-recorder/pkg-plist
+	modified:   deskutils/nautilus-sendto/Makefile
+	modified:   deskutils/nautilus-sendto/distinfo
+	modified:   deskutils/nautilus-sendto/pkg-plist
+	modified:   deskutils/sysctlview/Makefile
+	modified:   deskutils/sysctlview/distinfo
+	modified:   devel/cppcheck/Makefile
+	modified:   devel/cppcheck/distinfo
+	deleted:    devel/cppcheck/files/patch-cmake_versions.cmake
+	modified:   devel/docopt.cpp/Makefile
+	modified:   devel/docopt.cpp/distinfo
+	modified:   devel/docopt.cpp/files/patch-CMakeLists.txt
+	modified:   devel/docopt.cpp/pkg-plist
+	modified:   devel/goffice/Makefile
+	modified:   devel/goffice/distinfo
+	modified:   devel/goffice/pkg-plist
+	modified:   devel/libgsf/Makefile
+	modified:   devel/libgsf/distinfo
+	modified:   devel/libgsf/pkg-plist
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-no-bind-tools
+	modified:   graphics/gegl/Makefile
+	modified:   graphics/gegl/distinfo
+	modified:   graphics/gegl/pkg-plist
+	modified:   graphics/gimp-app/Makefile
+	modified:   graphics/gimp-app/distinfo
+	modified:   graphics/gimp-app/pkg-plist
+	modified:   graphics/gimp/Makefile
+	modified:   graphics/inkscape/Makefile
+	modified:   graphics/libglvnd/Makefile
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   net-im/mtxclient/Makefile
+	modified:   net-im/mtxclient/distinfo
+	modified:   net-im/mtxclient/pkg-plist
+	modified:   net-im/nheko/Makefile
+	modified:   net-im/nheko/distinfo
+	deleted:    net-im/nheko/files/patch-src_ui_Avatar.cpp
+	deleted:    net-im/nheko/files/patch-src_ui_InfoMessage.cpp
+	deleted:    net-im/nheko/files/patch-src_ui_Painter.h
+	modified:   net-im/spectral/Makefile
+	modified:   net-im/spectral/distinfo
+	modified:   net-mgmt/tcpreplay/Makefile
+	modified:   net-mgmt/tcpreplay/distinfo
+	modified:   net-p2p/litecoin/Makefile
+	modified:   net-p2p/litecoin/distinfo
+	modified:   net-p2p/litecoin/files/litecoind.in
+	modified:   science/code_saturne/Makefile
+	modified:   science/code_saturne/distinfo
+	modified:   science/opensim-core/Makefile
+	modified:   security/cvm/Makefile
+	modified:   textproc/R-cran-rmarkdown/Makefile
+	modified:   textproc/R-cran-rmarkdown/distinfo
+	modified:   textproc/libyaml/Makefile
+	modified:   textproc/libyaml/distinfo
+	modified:   textproc/libyaml/pkg-plist
+	modified:   x11-themes/Makefile
+	modified:   x11-toolkits/c++-gtk-utils/Makefile
+	modified:   x11-toolkits/c++-gtk-utils/distinfo
+	modified:   x11-toolkits/gtkmm30/Makefile
+	modified:   x11-toolkits/gtkmm30/distinfo
+	modified:   x11-toolkits/gtkmm30/pkg-plist
+	modified:   x11-toolkits/gtksourceview3/Makefile
+	modified:   x11-toolkits/gtksourceview3/distinfo
+	modified:   x11-toolkits/gtksourceview3/pkg-plist
+	modified:   x11-toolkits/gtksourceviewmm3/Makefile
+	modified:   x11-toolkits/gtksourceviewmm3/distinfo
+	modified:   x11/babl/Makefile
+	modified:   x11/babl/distinfo
+	modified:   x11/babl/pkg-plist
+	modified:   x11/mate-menus/Makefile
+	modified:   x11/mate-menus/distinfo
+	modified:   x11/mate-panel/Makefile
+	modified:   x11/mate-panel/distinfo
+	deleted:    x11/mate-panel/files/patch-applets_clock_clock-location.c
+	deleted:    x11/mate-panel/files/patch-applets_clock_clock.c
+	modified:   x11/zenity/Makefile
+	modified:   x11/zenity/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   irc/irssi/Makefile
+
+
+It took 3.17 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e4bef260e630 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.35 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e4bef260e630 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
