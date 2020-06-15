@@ -1,0 +1,98 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing lib/csu/common/crtbrand.c
+Merge made by the 'recursive' strategy.
+ lib/csu/Makefile.inc                   |  4 +-
+ lib/csu/aarch64/Makefile               | 36 ++++++---------
+ lib/csu/aarch64/{crt1.c => crt1_c.c}   | 14 ------
+ lib/csu/aarch64/crt1_s.S               | 47 +++++++++++++++++++
+ lib/csu/amd64/Makefile                 | 37 ++++++---------
+ lib/csu/amd64/{crt1.c => crt1_c.c}     |  1 -
+ lib/csu/arm/Makefile                   | 37 ++++++---------
+ lib/csu/arm/{crt1.c => crt1_c.c}       | 35 --------------
+ lib/csu/arm/crt1_s.S                   | 78 +++++++++++++++++++++++++++++++
+ lib/csu/common/crtbrand.S              | 59 ++++++++++++++++++++++++
+ lib/csu/common/crtbrand.c              | 84 ----------------------------------
+ lib/csu/common/ignore_init.c           | 17 -------
+ lib/csu/common/ignore_init_note.S      | 43 +++++++++++++++++
+ lib/csu/i386/Makefile                  | 29 ++----------
+ lib/csu/i386/crt1_c.c                  |  1 -
+ lib/csu/i386/crt1_s.S                  |  3 ++
+ lib/csu/mips/Makefile                  | 37 ++++++---------
+ lib/csu/mips/{crt1.c => crt1_c.c}      |  1 -
+ lib/csu/powerpc/Makefile               | 37 ++++++---------
+ lib/csu/powerpc/{crt1.c => crt1_c.c}   |  1 -
+ lib/csu/powerpc64/Makefile             | 38 ++++++---------
+ lib/csu/powerpc64/{crt1.c => crt1_c.c} |  1 -
+ lib/csu/riscv/Makefile                 | 36 ++++++---------
+ lib/csu/riscv/{crt1.c => crt1_c.c}     | 18 --------
+ lib/csu/riscv/crt1_s.S                 | 56 +++++++++++++++++++++++
+ sys/arm/include/param.h                | 20 ++------
+ sys/compat/linux/linux_misc.c          | 10 ++++
+ sys/dev/cxgb/cxgb_main.c               |  2 +
+ sys/dev/cxgbe/t4_main.c                |  2 +
+ sys/dev/mlx4/mlx4_en/mlx4_en_netdev.c  |  2 +
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c    |  2 +
+ sys/dev/mxge/if_mxge.c                 |  8 +++-
+ sys/dev/oce/oce_if.c                   |  1 +
+ sys/dev/virtio/network/if_vtnet.c      | 56 ++++++-----------------
+ 34 files changed, 435 insertions(+), 418 deletions(-)
+ rename lib/csu/aarch64/{crt1.c => crt1_c.c} (86%)
+ create mode 100644 lib/csu/aarch64/crt1_s.S
+ rename lib/csu/amd64/{crt1.c => crt1_c.c} (98%)
+ rename lib/csu/arm/{crt1.c => crt1_c.c} (77%)
+ create mode 100644 lib/csu/arm/crt1_s.S
+ create mode 100644 lib/csu/common/crtbrand.S
+ delete mode 100644 lib/csu/common/crtbrand.c
+ create mode 100644 lib/csu/common/ignore_init_note.S
+ rename lib/csu/mips/{crt1.c => crt1_c.c} (99%)
+ rename lib/csu/powerpc/{crt1.c => crt1_c.c} (99%)
+ rename lib/csu/powerpc64/{crt1.c => crt1_c.c} (99%)
+ rename lib/csu/riscv/{crt1.c => crt1_c.c} (84%)
+ create mode 100644 lib/csu/riscv/crt1_s.S
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f7670e7f0854..cd6ccecc576c  hardened/current/master -> hardened/current/master        
+remote:    f5f865dedf1c..6b8f9f044da8  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f7670e7f0854..cd6ccecc576c  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
