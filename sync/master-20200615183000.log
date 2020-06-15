@@ -34,3 +34,1028 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/mate-panel/files/patch-applets_clock_clock.c
+Removing x11/mate-panel/files/patch-applets_clock_clock-location.c
+Removing www/squid-devel/files/patch-src_acl_external_session_ext__session__acl.cc
+Removing www/squid-devel/files/patch-src_acl_external_kerberos__ldap__group_support__krb5.cc
+Removing www/squid-devel/files/patch-src_acl_external_eDirectory__userip_ext__edirectory__userip__acl.cc
+Removing www/py-djangorestframework36/pkg-descr
+Removing www/py-djangorestframework36/distinfo
+Removing www/py-djangorestframework36/Makefile
+Auto-merging textproc/scdoc/Makefile
+Auto-merging net/ntopng/Makefile
+Auto-merging net-im/profanity/Makefile
+Removing net-im/nheko/files/patch-src_ui_Painter.h
+Removing net-im/nheko/files/patch-src_ui_InfoMessage.cpp
+Removing net-im/nheko/files/patch-src_ui_Avatar.cpp
+Auto-merging irc/irssi/Makefile
+CONFLICT (content): Merge conflict in irc/irssi/Makefile
+Removing graphics/gthumb/files/patch-gentoo_2bd8b9
+Auto-merging graphics/gimp-app/Makefile
+Removing devel/py-greenlet/files/patch-slp_platformselect.h
+Removing devel/dconf/files/patch-userconfigdir
+Removing devel/dconf/files/patch-meson.build
+Removing devel/dconf/files/patch-docs_meson.build
+Removing devel/cppcheck/files/patch-cmake_versions.cmake
+Auto-merging databases/rocksdb/Makefile
+Removing audio/supercollider/files/patch-external__libraries_CMakeLists.txt
+Removing audio/carla/files/patch-source_theme_CarlaStyle.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc irc/irssi/Makefile
+index 7c17674abcb8,9ab316dafd5d..000000000000
+--- a/irc/irssi/Makefile
++++ b/irc/irssi/Makefile
+@@@ -12,10 -13,9 +13,16 @@@ COMMENT=	Modular IRC client with many f
+  LICENSE=	GPLv2+
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +USES=		autoreconf cpe gettext-runtime gmake gnome libtool ncurses \
+ +		pkgconfig tar:xz
+++=======
++ USES=		autoreconf cpe gettext-runtime gmake gnome libtool localbase \
++ 		ncurses pkgconfig tar:xz
++ USE_LDCONFIG=	yes
+++>>>>>>> freebsd/master
+  USE_GNOME=	glib20
+  
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   astro/mkgmap/Makefile
+	modified:   astro/mkgmap/distinfo
+	modified:   audio/carla/Makefile
+	modified:   audio/carla/distinfo
+	deleted:    audio/carla/files/patch-source_theme_CarlaStyle.cpp
+	modified:   audio/supercollider/Makefile
+	modified:   audio/supercollider/distinfo
+	new file:   audio/supercollider/files/patch-QtCollider_primitives_prim__QPen.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcGraph.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcLevelIndicator.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcMultiSlider.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_QcScopeShm.cpp
+	new file:   audio/supercollider/files/patch-QtCollider_widgets_soundfileview_view.cpp
+	deleted:    audio/supercollider/files/patch-external__libraries_CMakeLists.txt
+	modified:   audio/supercollider/pkg-plist
+	modified:   databases/freetds-devel/Makefile
+	modified:   databases/freetds-devel/distinfo
+	modified:   databases/freetds/Makefile
+	modified:   databases/freetds/distinfo
+	modified:   databases/lua-xapian/Makefile
+	modified:   databases/lua-xapian/distinfo
+	modified:   databases/p5-DBD-Pg/Makefile
+	modified:   databases/p5-DBD-Pg/distinfo
+	modified:   databases/p5-Xapian/Makefile
+	modified:   databases/p5-Xapian/distinfo
+	modified:   databases/p5-Xapian/pkg-plist
+	modified:   databases/php-xapian/Makefile
+	modified:   databases/php-xapian/distinfo
+	modified:   databases/plpgsql_check/Makefile
+	modified:   databases/plpgsql_check/distinfo
+	modified:   databases/py-apsw/Makefile
+	modified:   databases/py-apsw/distinfo
+	modified:   databases/py-xapian/Makefile
+	modified:   databases/py-xapian/distinfo
+	modified:   databases/rocksdb/Makefile
+	modified:   databases/rocksdb/distinfo
+	modified:   databases/ruby-xapian/Makefile
+	modified:   databases/ruby-xapian/distinfo
+	modified:   databases/rubygem-redis/Makefile
+	modified:   databases/rubygem-redis/distinfo
+	modified:   databases/tiledb/Makefile
+	modified:   databases/tiledb/distinfo
+	modified:   databases/xapian-bindings/Makefile
+	modified:   databases/xapian-core/Makefile
+	modified:   databases/xapian-core/distinfo
+	modified:   databases/xapian-core/pkg-plist
+	modified:   deskutils/gnome-font-viewer/Makefile
+	modified:   deskutils/gnome-font-viewer/distinfo
+	modified:   deskutils/gnome-font-viewer/pkg-plist
+	modified:   deskutils/gnome-sound-recorder/Makefile
+	modified:   deskutils/gnome-sound-recorder/distinfo
+	modified:   deskutils/gnome-sound-recorder/pkg-plist
+	modified:   deskutils/nautilus-sendto/Makefile
+	modified:   deskutils/nautilus-sendto/distinfo
+	modified:   deskutils/nautilus-sendto/pkg-plist
+	modified:   deskutils/sysctlview/Makefile
+	modified:   deskutils/sysctlview/distinfo
+	modified:   devel/Makefile
+	modified:   devel/cdecl/Makefile
+	modified:   devel/cdecl/distinfo
+	modified:   devel/cppcheck/Makefile
+	modified:   devel/cppcheck/distinfo
+	deleted:    devel/cppcheck/files/patch-cmake_versions.cmake
+	modified:   devel/dconf/Makefile
+	modified:   devel/dconf/distinfo
+	deleted:    devel/dconf/files/patch-docs_meson.build
+	deleted:    devel/dconf/files/patch-meson.build
+	deleted:    devel/dconf/files/patch-userconfigdir
+	modified:   devel/docopt.cpp/Makefile
+	modified:   devel/docopt.cpp/distinfo
+	modified:   devel/docopt.cpp/files/patch-CMakeLists.txt
+	modified:   devel/docopt.cpp/pkg-plist
+	modified:   devel/estd/Makefile
+	modified:   devel/estd/distinfo
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/github-backup-utils/Makefile
+	modified:   devel/github-backup-utils/distinfo
+	modified:   devel/github-backup-utils/pkg-plist
+	modified:   devel/goffice/Makefile
+	modified:   devel/goffice/distinfo
+	modified:   devel/goffice/pkg-plist
+	modified:   devel/libgsf/Makefile
+	modified:   devel/libgsf/distinfo
+	modified:   devel/libgsf/pkg-plist
+	modified:   devel/nlohmann-json/Makefile
+	modified:   devel/nlohmann-json/distinfo
+	modified:   devel/p5-CPAN-Perl-Releases/Makefile
+	modified:   devel/p5-CPAN-Perl-Releases/distinfo
+	modified:   devel/p5-Color-ANSI-Util/Makefile
+	modified:   devel/p5-Color-ANSI-Util/distinfo
+	modified:   devel/p5-Color-RGB-Util/Makefile
+	modified:   devel/p5-Color-RGB-Util/distinfo
+	modified:   devel/p5-Data-Object-Space/Makefile
+	modified:   devel/p5-Data-Object-Space/distinfo
+	modified:   devel/p5-Devel-PatchPerl/Makefile
+	modified:   devel/p5-Devel-PatchPerl/distinfo
+	modified:   devel/p5-FFI-Platypus/Makefile
+	modified:   devel/p5-FFI-Platypus/distinfo
+	modified:   devel/p5-Glib/Makefile
+	modified:   devel/p5-Glib/distinfo
+	modified:   devel/p5-IO-Pager/Makefile
+	modified:   devel/p5-IO-Pager/distinfo
+	modified:   devel/p5-Module-CoreList/Makefile
+	modified:   devel/p5-Module-CoreList/distinfo
+	modified:   devel/p5-Term-App-Roles/Makefile
+	modified:   devel/p5-Term-App-Roles/distinfo
+	new file:   devel/p5-Term-App-Util-Color/Makefile
+	new file:   devel/p5-Term-App-Util-Color/distinfo
+	new file:   devel/p5-Term-App-Util-Color/pkg-descr
+	new file:   devel/p5-Term-App-Util-Color/pkg-plist
+	new file:   devel/p5-Term-App-Util-Interactive/Makefile
+	new file:   devel/p5-Term-App-Util-Interactive/distinfo
+	new file:   devel/p5-Term-App-Util-Interactive/pkg-descr
+	new file:   devel/p5-Term-App-Util-Interactive/pkg-plist
+	new file:   devel/p5-Term-App-Util-Size/Makefile
+	new file:   devel/p5-Term-App-Util-Size/distinfo
+	new file:   devel/p5-Term-App-Util-Size/pkg-descr
+	new file:   devel/p5-Term-App-Util-Size/pkg-plist
+	modified:   devel/p5-Test-TrailingSpace/Makefile
+	modified:   devel/p5-Test-TrailingSpace/distinfo
+	modified:   devel/py-astroid/Makefile
+	modified:   devel/py-astroid/distinfo
+	modified:   devel/py-aws-xray-sdk/Makefile
+	modified:   devel/py-aws-xray-sdk/distinfo
+	modified:   devel/py-backcall/Makefile
+	modified:   devel/py-backcall/distinfo
+	modified:   devel/py-backcall/pkg-descr
+	modified:   devel/py-cliff/Makefile
+	modified:   devel/py-cliff/distinfo
+	modified:   devel/py-clikit/Makefile
+	modified:   devel/py-clikit/distinfo
+	modified:   devel/py-cmd2/Makefile
+	modified:   devel/py-cmd2/distinfo
+	modified:   devel/py-dask/Makefile
+	modified:   devel/py-dask/distinfo
+	modified:   devel/py-ddtrace/Makefile
+	modified:   devel/py-ddtrace/distinfo
+	modified:   devel/py-futurist/Makefile
+	modified:   devel/py-futurist/distinfo
+	modified:   devel/py-graphene-sqlalchemy/Makefile
+	modified:   devel/py-graphene-sqlalchemy/distinfo
+	modified:   devel/py-greenlet/Makefile
+	modified:   devel/py-greenlet/distinfo
+	deleted:    devel/py-greenlet/files/patch-slp_platformselect.h
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-lark-parser/Makefile
+	modified:   devel/py-lark-parser/distinfo
+	modified:   devel/py-logilab-common/Makefile
+	modified:   devel/py-logilab-common/distinfo
+	modified:   devel/py-mypy-protobuf/Makefile
+	modified:   devel/py-mypy-protobuf/distinfo
+	modified:   devel/py-osc-lib/Makefile
+	modified:   devel/py-osc-lib/distinfo
+	modified:   devel/py-oslo.cache/Makefile
+	modified:   devel/py-oslo.cache/distinfo
+	modified:   devel/py-oslo.context/Makefile
+	modified:   devel/py-oslo.context/distinfo
+	modified:   devel/py-oslo.context2/Makefile
+	modified:   devel/py-oslo.context2/distinfo
+	modified:   devel/py-oslo.middleware/Makefile
+	modified:   devel/py-oslo.middleware/distinfo
+	modified:   devel/py-oslo.policy/Makefile
+	modified:   devel/py-oslo.policy/distinfo
+	modified:   devel/py-oslo.privsep/Makefile
+	modified:   devel/py-oslo.privsep/distinfo
+	modified:   devel/py-oslo.serialization/Makefile
+	modified:   devel/py-oslo.serialization/distinfo
+	modified:   devel/py-oslo.upgradecheck/Makefile
+	modified:   devel/py-oslo.upgradecheck/distinfo
+	modified:   devel/py-oslo.utils/Makefile
+	modified:   devel/py-oslo.utils/distinfo
+	modified:   devel/py-oslo.versionedobjects/Makefile
+	modified:   devel/py-oslo.versionedobjects/distinfo
+	modified:   devel/py-responses/Makefile
+	modified:   devel/py-responses/distinfo
+	modified:   devel/py-taskflow/Makefile
+	modified:   devel/py-taskflow/distinfo
+	modified:   devel/py-xdis/Makefile
+	modified:   devel/py-xdis/distinfo
+	modified:   devel/pylint/Makefile
+	modified:   devel/pylint/distinfo
+	modified:   devel/rubygem-aliyun-sdk/Makefile
+	modified:   devel/rubygem-aliyun-sdk/distinfo
+	modified:   devel/rubygem-async/Makefile
+	modified:   devel/rubygem-async/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-accessanalyzer/Makefile
+	modified:   devel/rubygem-aws-sdk-accessanalyzer/distinfo
+	modified:   devel/rubygem-aws-sdk-acm/Makefile
+	modified:   devel/rubygem-aws-sdk-acm/distinfo
+	modified:   devel/rubygem-aws-sdk-acmpca/Makefile
+	modified:   devel/rubygem-aws-sdk-acmpca/distinfo
+	modified:   devel/rubygem-aws-sdk-alexaforbusiness/Makefile
+	modified:   devel/rubygem-aws-sdk-alexaforbusiness/distinfo
+	modified:   devel/rubygem-aws-sdk-amplify/Makefile
+	modified:   devel/rubygem-aws-sdk-amplify/distinfo
+	modified:   devel/rubygem-aws-sdk-apigateway/Makefile
+	modified:   devel/rubygem-aws-sdk-apigateway/distinfo
+	modified:   devel/rubygem-aws-sdk-apigatewaymanagementapi/Makefile
+	modified:   devel/rubygem-aws-sdk-apigatewaymanagementapi/distinfo
+	modified:   devel/rubygem-aws-sdk-apigatewayv2/Makefile
+	modified:   devel/rubygem-aws-sdk-apigatewayv2/distinfo
+	modified:   devel/rubygem-aws-sdk-appconfig/Makefile
+	modified:   devel/rubygem-aws-sdk-appconfig/distinfo
+	modified:   devel/rubygem-aws-sdk-applicationautoscaling/Makefile
+	modified:   devel/rubygem-aws-sdk-applicationautoscaling/distinfo
+	modified:   devel/rubygem-aws-sdk-applicationdiscoveryservice/Makefile
+	modified:   devel/rubygem-aws-sdk-applicationdiscoveryservice/distinfo
+	modified:   devel/rubygem-aws-sdk-applicationinsights/Makefile
+	modified:   devel/rubygem-aws-sdk-applicationinsights/distinfo
+	modified:   devel/rubygem-aws-sdk-appmesh/Makefile
+	modified:   devel/rubygem-aws-sdk-appmesh/distinfo
+	modified:   devel/rubygem-aws-sdk-appstream/Makefile
+	modified:   devel/rubygem-aws-sdk-appstream/distinfo
+	modified:   devel/rubygem-aws-sdk-appsync/Makefile
+	modified:   devel/rubygem-aws-sdk-appsync/distinfo
+	modified:   devel/rubygem-aws-sdk-athena/Makefile
+	modified:   devel/rubygem-aws-sdk-athena/distinfo
+	modified:   devel/rubygem-aws-sdk-augmentedairuntime/Makefile
+	modified:   devel/rubygem-aws-sdk-augmentedairuntime/distinfo
+	modified:   devel/rubygem-aws-sdk-autoscaling/Makefile
+	modified:   devel/rubygem-aws-sdk-autoscaling/distinfo
+	modified:   devel/rubygem-aws-sdk-autoscalingplans/Makefile
+	modified:   devel/rubygem-aws-sdk-autoscalingplans/distinfo
+	modified:   devel/rubygem-aws-sdk-backup/Makefile
+	modified:   devel/rubygem-aws-sdk-backup/distinfo
+	modified:   devel/rubygem-aws-sdk-batch/Makefile
+	modified:   devel/rubygem-aws-sdk-batch/distinfo
+	modified:   devel/rubygem-aws-sdk-budgets/Makefile
+	modified:   devel/rubygem-aws-sdk-budgets/distinfo
+	modified:   devel/rubygem-aws-sdk-chime/Makefile
+	modified:   devel/rubygem-aws-sdk-chime/distinfo
+	modified:   devel/rubygem-aws-sdk-cloud9/Makefile
+	modified:   devel/rubygem-aws-sdk-cloud9/distinfo
+	modified:   devel/rubygem-aws-sdk-clouddirectory/Makefile
+	modified:   devel/rubygem-aws-sdk-clouddirectory/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudformation/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudformation/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudfront/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudfront/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudhsm/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudhsm/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudhsmv2/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudhsmv2/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudsearch/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudsearch/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudsearchdomain/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudsearchdomain/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudtrail/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudtrail/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudwatch/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudwatch/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudwatchevents/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudwatchevents/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudwatchlogs/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudwatchlogs/distinfo
+	new file:   devel/rubygem-aws-sdk-codeartifact/Makefile
+	new file:   devel/rubygem-aws-sdk-codeartifact/distinfo
+	new file:   devel/rubygem-aws-sdk-codeartifact/pkg-descr
+	modified:   devel/rubygem-aws-sdk-codebuild/Makefile
+	modified:   devel/rubygem-aws-sdk-codebuild/distinfo
+	modified:   devel/rubygem-aws-sdk-codecommit/Makefile
+	modified:   devel/rubygem-aws-sdk-codecommit/distinfo
+	modified:   devel/rubygem-aws-sdk-codedeploy/Makefile
+	modified:   devel/rubygem-aws-sdk-codedeploy/distinfo
+	modified:   devel/rubygem-aws-sdk-codeguruprofiler/Makefile
+	modified:   devel/rubygem-aws-sdk-codeguruprofiler/distinfo
+	modified:   devel/rubygem-aws-sdk-codegurureviewer/Makefile
+	modified:   devel/rubygem-aws-sdk-codegurureviewer/distinfo
+	modified:   devel/rubygem-aws-sdk-codepipeline/Makefile
+	modified:   devel/rubygem-aws-sdk-codepipeline/distinfo
+	modified:   devel/rubygem-aws-sdk-codestar/Makefile
+	modified:   devel/rubygem-aws-sdk-codestar/distinfo
+	modified:   devel/rubygem-aws-sdk-codestarconnections/Makefile
+	modified:   devel/rubygem-aws-sdk-codestarconnections/distinfo
+	modified:   devel/rubygem-aws-sdk-codestarnotifications/Makefile
+	modified:   devel/rubygem-aws-sdk-codestarnotifications/distinfo
+	modified:   devel/rubygem-aws-sdk-cognitoidentity/Makefile
+	modified:   devel/rubygem-aws-sdk-cognitoidentity/distinfo
+	modified:   devel/rubygem-aws-sdk-cognitoidentityprovider/Makefile
+	modified:   devel/rubygem-aws-sdk-cognitoidentityprovider/distinfo
+	modified:   devel/rubygem-aws-sdk-cognitosync/Makefile
+	modified:   devel/rubygem-aws-sdk-cognitosync/distinfo
+	modified:   devel/rubygem-aws-sdk-comprehend/Makefile
+	modified:   devel/rubygem-aws-sdk-comprehend/distinfo
+	modified:   devel/rubygem-aws-sdk-comprehendmedical/Makefile
+	modified:   devel/rubygem-aws-sdk-comprehendmedical/distinfo
+	modified:   devel/rubygem-aws-sdk-computeoptimizer/Makefile
+	modified:   devel/rubygem-aws-sdk-computeoptimizer/distinfo
+	modified:   devel/rubygem-aws-sdk-configservice/Makefile
+	modified:   devel/rubygem-aws-sdk-configservice/distinfo
+	modified:   devel/rubygem-aws-sdk-connect/Makefile
+	modified:   devel/rubygem-aws-sdk-connect/distinfo
+	modified:   devel/rubygem-aws-sdk-connectparticipant/Makefile
+	modified:   devel/rubygem-aws-sdk-connectparticipant/distinfo
+	modified:   devel/rubygem-aws-sdk-core/Makefile
+	modified:   devel/rubygem-aws-sdk-core/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-costandusagereportservice/Makefile
+	modified:   devel/rubygem-aws-sdk-costandusagereportservice/distinfo
+	modified:   devel/rubygem-aws-sdk-costexplorer/Makefile
+	modified:   devel/rubygem-aws-sdk-costexplorer/distinfo
+	modified:   devel/rubygem-aws-sdk-databasemigrationservice/Makefile
+	modified:   devel/rubygem-aws-sdk-databasemigrationservice/distinfo
+	modified:   devel/rubygem-aws-sdk-dataexchange/Makefile
+	modified:   devel/rubygem-aws-sdk-dataexchange/distinfo
+	modified:   devel/rubygem-aws-sdk-datapipeline/Makefile
+	modified:   devel/rubygem-aws-sdk-datapipeline/distinfo
+	modified:   devel/rubygem-aws-sdk-datasync/Makefile
+	modified:   devel/rubygem-aws-sdk-datasync/distinfo
+	modified:   devel/rubygem-aws-sdk-dax/Makefile
+	modified:   devel/rubygem-aws-sdk-dax/distinfo
+	modified:   devel/rubygem-aws-sdk-detective/Makefile
+	modified:   devel/rubygem-aws-sdk-detective/distinfo
+	modified:   devel/rubygem-aws-sdk-devicefarm/Makefile
+	modified:   devel/rubygem-aws-sdk-devicefarm/distinfo
+	modified:   devel/rubygem-aws-sdk-directconnect/Makefile
+	modified:   devel/rubygem-aws-sdk-directconnect/distinfo
+	modified:   devel/rubygem-aws-sdk-directoryservice/Makefile
+	modified:   devel/rubygem-aws-sdk-directoryservice/distinfo
+	modified:   devel/rubygem-aws-sdk-dlm/Makefile
+	modified:   devel/rubygem-aws-sdk-dlm/distinfo
+	modified:   devel/rubygem-aws-sdk-docdb/Makefile
+	modified:   devel/rubygem-aws-sdk-docdb/distinfo
+	modified:   devel/rubygem-aws-sdk-dynamodb/Makefile
+	modified:   devel/rubygem-aws-sdk-dynamodb/distinfo
+	modified:   devel/rubygem-aws-sdk-dynamodbstreams/Makefile
+	modified:   devel/rubygem-aws-sdk-dynamodbstreams/distinfo
+	modified:   devel/rubygem-aws-sdk-ebs/Makefile
+	modified:   devel/rubygem-aws-sdk-ebs/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2instanceconnect/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2instanceconnect/distinfo
+	modified:   devel/rubygem-aws-sdk-ecr/Makefile
+	modified:   devel/rubygem-aws-sdk-ecr/distinfo
+	modified:   devel/rubygem-aws-sdk-ecs/Makefile
+	modified:   devel/rubygem-aws-sdk-ecs/distinfo
+	modified:   devel/rubygem-aws-sdk-efs/Makefile
+	modified:   devel/rubygem-aws-sdk-efs/distinfo
+	modified:   devel/rubygem-aws-sdk-eks/Makefile
+	modified:   devel/rubygem-aws-sdk-eks/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticache/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticache/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticbeanstalk/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticbeanstalk/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticinference/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticinference/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticloadbalancing/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticloadbalancing/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticloadbalancingv2/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticloadbalancingv2/distinfo
+	modified:   devel/rubygem-aws-sdk-elasticsearchservice/Makefile
+	modified:   devel/rubygem-aws-sdk-elasticsearchservice/distinfo
+	modified:   devel/rubygem-aws-sdk-elastictranscoder/Makefile
+	modified:   devel/rubygem-aws-sdk-elastictranscoder/distinfo
+	modified:   devel/rubygem-aws-sdk-emr/Makefile
+	modified:   devel/rubygem-aws-sdk-emr/distinfo
+	modified:   devel/rubygem-aws-sdk-eventbridge/Makefile
+	modified:   devel/rubygem-aws-sdk-eventbridge/distinfo
+	modified:   devel/rubygem-aws-sdk-firehose/Makefile
+	modified:   devel/rubygem-aws-sdk-firehose/distinfo
+	modified:   devel/rubygem-aws-sdk-fms/Makefile
+	modified:   devel/rubygem-aws-sdk-fms/distinfo
+	modified:   devel/rubygem-aws-sdk-forecastqueryservice/Makefile
+	modified:   devel/rubygem-aws-sdk-forecastqueryservice/distinfo
+	modified:   devel/rubygem-aws-sdk-forecastservice/Makefile
+	modified:   devel/rubygem-aws-sdk-forecastservice/distinfo
+	modified:   devel/rubygem-aws-sdk-frauddetector/Makefile
+	modified:   devel/rubygem-aws-sdk-frauddetector/distinfo
+	modified:   devel/rubygem-aws-sdk-fsx/Makefile
+	modified:   devel/rubygem-aws-sdk-fsx/distinfo
+	modified:   devel/rubygem-aws-sdk-gamelift/Makefile
+	modified:   devel/rubygem-aws-sdk-gamelift/distinfo
+	modified:   devel/rubygem-aws-sdk-glacier/Makefile
+	modified:   devel/rubygem-aws-sdk-glacier/distinfo
+	modified:   devel/rubygem-aws-sdk-globalaccelerator/Makefile
+	modified:   devel/rubygem-aws-sdk-globalaccelerator/distinfo
+	modified:   devel/rubygem-aws-sdk-glue/Makefile
+	modified:   devel/rubygem-aws-sdk-glue/distinfo
+	modified:   devel/rubygem-aws-sdk-greengrass/Makefile
+	modified:   devel/rubygem-aws-sdk-greengrass/distinfo
+	modified:   devel/rubygem-aws-sdk-groundstation/Makefile
+	modified:   devel/rubygem-aws-sdk-groundstation/distinfo
+	modified:   devel/rubygem-aws-sdk-guardduty/Makefile
+	modified:   devel/rubygem-aws-sdk-guardduty/distinfo
+	modified:   devel/rubygem-aws-sdk-health/Makefile
+	modified:   devel/rubygem-aws-sdk-health/distinfo
+	modified:   devel/rubygem-aws-sdk-iam/Makefile
+	modified:   devel/rubygem-aws-sdk-iam/distinfo
+	modified:   devel/rubygem-aws-sdk-imagebuilder/Makefile
+	modified:   devel/rubygem-aws-sdk-imagebuilder/distinfo
+	modified:   devel/rubygem-aws-sdk-importexport/Makefile
+	modified:   devel/rubygem-aws-sdk-importexport/distinfo
+	modified:   devel/rubygem-aws-sdk-inspector/Makefile
+	modified:   devel/rubygem-aws-sdk-inspector/distinfo
+	modified:   devel/rubygem-aws-sdk-iot/Makefile
+	modified:   devel/rubygem-aws-sdk-iot/distinfo
+	modified:   devel/rubygem-aws-sdk-iot1clickdevicesservice/Makefile
+	modified:   devel/rubygem-aws-sdk-iot1clickdevicesservice/distinfo
+	modified:   devel/rubygem-aws-sdk-iot1clickprojects/Makefile
+	modified:   devel/rubygem-aws-sdk-iot1clickprojects/distinfo
+	modified:   devel/rubygem-aws-sdk-iotanalytics/Makefile
+	modified:   devel/rubygem-aws-sdk-iotanalytics/distinfo
+	modified:   devel/rubygem-aws-sdk-iotdataplane/Makefile
+	modified:   devel/rubygem-aws-sdk-iotdataplane/distinfo
+	modified:   devel/rubygem-aws-sdk-iotevents/Makefile
+	modified:   devel/rubygem-aws-sdk-iotevents/distinfo
+	modified:   devel/rubygem-aws-sdk-ioteventsdata/Makefile
+	modified:   devel/rubygem-aws-sdk-ioteventsdata/distinfo
+	modified:   devel/rubygem-aws-sdk-iotjobsdataplane/Makefile
+	modified:   devel/rubygem-aws-sdk-iotjobsdataplane/distinfo
+	modified:   devel/rubygem-aws-sdk-iotsecuretunneling/Makefile
+	modified:   devel/rubygem-aws-sdk-iotsecuretunneling/distinfo
+	modified:   devel/rubygem-aws-sdk-iotsitewise/Makefile
+	modified:   devel/rubygem-aws-sdk-iotsitewise/distinfo
+	modified:   devel/rubygem-aws-sdk-iotthingsgraph/Makefile
+	modified:   devel/rubygem-aws-sdk-iotthingsgraph/distinfo
+	modified:   devel/rubygem-aws-sdk-kafka/Makefile
+	modified:   devel/rubygem-aws-sdk-kafka/distinfo
+	modified:   devel/rubygem-aws-sdk-kendra/Makefile
+	modified:   devel/rubygem-aws-sdk-kendra/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesis/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesis/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesisanalytics/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesisanalytics/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesisanalyticsv2/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesisanalyticsv2/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesisvideo/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesisvideo/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesisvideoarchivedmedia/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesisvideoarchivedmedia/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesisvideomedia/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesisvideomedia/distinfo
+	modified:   devel/rubygem-aws-sdk-kinesisvideosignalingchannels/Makefile
+	modified:   devel/rubygem-aws-sdk-kinesisvideosignalingchannels/distinfo
+	modified:   devel/rubygem-aws-sdk-kms/Makefile
+	modified:   devel/rubygem-aws-sdk-kms/distinfo
+	modified:   devel/rubygem-aws-sdk-lakeformation/Makefile
+	modified:   devel/rubygem-aws-sdk-lakeformation/distinfo
+	modified:   devel/rubygem-aws-sdk-lambda/Makefile
+	modified:   devel/rubygem-aws-sdk-lambda/distinfo
+	modified:   devel/rubygem-aws-sdk-lambdapreview/Makefile
+	modified:   devel/rubygem-aws-sdk-lambdapreview/distinfo
+	modified:   devel/rubygem-aws-sdk-lex/Makefile
+	modified:   devel/rubygem-aws-sdk-lex/distinfo
+	modified:   devel/rubygem-aws-sdk-lexmodelbuildingservice/Makefile
+	modified:   devel/rubygem-aws-sdk-lexmodelbuildingservice/distinfo
+	modified:   devel/rubygem-aws-sdk-licensemanager/Makefile
+	modified:   devel/rubygem-aws-sdk-licensemanager/distinfo
+	modified:   devel/rubygem-aws-sdk-lightsail/Makefile
+	modified:   devel/rubygem-aws-sdk-lightsail/distinfo
+	modified:   devel/rubygem-aws-sdk-machinelearning/Makefile
+	modified:   devel/rubygem-aws-sdk-machinelearning/distinfo
+	modified:   devel/rubygem-aws-sdk-macie/Makefile
+	modified:   devel/rubygem-aws-sdk-macie/distinfo
+	modified:   devel/rubygem-aws-sdk-macie2/Makefile
+	modified:   devel/rubygem-aws-sdk-macie2/distinfo
+	modified:   devel/rubygem-aws-sdk-managedblockchain/Makefile
+	modified:   devel/rubygem-aws-sdk-managedblockchain/distinfo
+	modified:   devel/rubygem-aws-sdk-marketplacecatalog/Makefile
+	modified:   devel/rubygem-aws-sdk-marketplacecatalog/distinfo
+	modified:   devel/rubygem-aws-sdk-marketplacecommerceanalytics/Makefile
+	modified:   devel/rubygem-aws-sdk-marketplacecommerceanalytics/distinfo
+	modified:   devel/rubygem-aws-sdk-marketplaceentitlementservice/Makefile
+	modified:   devel/rubygem-aws-sdk-marketplaceentitlementservice/distinfo
+	modified:   devel/rubygem-aws-sdk-marketplacemetering/Makefile
+	modified:   devel/rubygem-aws-sdk-marketplacemetering/distinfo
+	modified:   devel/rubygem-aws-sdk-mediaconnect/Makefile
+	modified:   devel/rubygem-aws-sdk-mediaconnect/distinfo
+	modified:   devel/rubygem-aws-sdk-mediaconvert/Makefile
+	modified:   devel/rubygem-aws-sdk-mediaconvert/distinfo
+	modified:   devel/rubygem-aws-sdk-medialive/Makefile
+	modified:   devel/rubygem-aws-sdk-medialive/distinfo
+	modified:   devel/rubygem-aws-sdk-mediapackage/Makefile
+	modified:   devel/rubygem-aws-sdk-mediapackage/distinfo
+	modified:   devel/rubygem-aws-sdk-mediapackagevod/Makefile
+	modified:   devel/rubygem-aws-sdk-mediapackagevod/distinfo
+	modified:   devel/rubygem-aws-sdk-mediastore/Makefile
+	modified:   devel/rubygem-aws-sdk-mediastore/distinfo
+	modified:   devel/rubygem-aws-sdk-mediastoredata/Makefile
+	modified:   devel/rubygem-aws-sdk-mediastoredata/distinfo
+	modified:   devel/rubygem-aws-sdk-mediatailor/Makefile
+	modified:   devel/rubygem-aws-sdk-mediatailor/distinfo
+	modified:   devel/rubygem-aws-sdk-migrationhub/Makefile
+	modified:   devel/rubygem-aws-sdk-migrationhub/distinfo
+	modified:   devel/rubygem-aws-sdk-migrationhubconfig/Makefile
+	modified:   devel/rubygem-aws-sdk-migrationhubconfig/distinfo
+	modified:   devel/rubygem-aws-sdk-mobile/Makefile
+	modified:   devel/rubygem-aws-sdk-mobile/distinfo
+	modified:   devel/rubygem-aws-sdk-mq/Makefile
+	modified:   devel/rubygem-aws-sdk-mq/distinfo
+	modified:   devel/rubygem-aws-sdk-mturk/Makefile
+	modified:   devel/rubygem-aws-sdk-mturk/distinfo
+	modified:   devel/rubygem-aws-sdk-neptune/Makefile
+	modified:   devel/rubygem-aws-sdk-neptune/distinfo
+	modified:   devel/rubygem-aws-sdk-networkmanager/Makefile
+	modified:   devel/rubygem-aws-sdk-networkmanager/distinfo
+	modified:   devel/rubygem-aws-sdk-opsworks/Makefile
+	modified:   devel/rubygem-aws-sdk-opsworks/distinfo
+	modified:   devel/rubygem-aws-sdk-opsworkscm/Makefile
+	modified:   devel/rubygem-aws-sdk-opsworkscm/distinfo
+	modified:   devel/rubygem-aws-sdk-organizations/Makefile
+	modified:   devel/rubygem-aws-sdk-organizations/distinfo
+	modified:   devel/rubygem-aws-sdk-outposts/Makefile
+	modified:   devel/rubygem-aws-sdk-outposts/distinfo
+	modified:   devel/rubygem-aws-sdk-personalize/Makefile
+	modified:   devel/rubygem-aws-sdk-personalize/distinfo
+	modified:   devel/rubygem-aws-sdk-personalizeevents/Makefile
+	modified:   devel/rubygem-aws-sdk-personalizeevents/distinfo
+	modified:   devel/rubygem-aws-sdk-personalizeruntime/Makefile
+	modified:   devel/rubygem-aws-sdk-personalizeruntime/distinfo
+	modified:   devel/rubygem-aws-sdk-pi/Makefile
+	modified:   devel/rubygem-aws-sdk-pi/distinfo
+	modified:   devel/rubygem-aws-sdk-pinpoint/Makefile
+	modified:   devel/rubygem-aws-sdk-pinpoint/distinfo
+	modified:   devel/rubygem-aws-sdk-pinpointemail/Makefile
+	modified:   devel/rubygem-aws-sdk-pinpointemail/distinfo
+	modified:   devel/rubygem-aws-sdk-pinpointsmsvoice/Makefile
+	modified:   devel/rubygem-aws-sdk-pinpointsmsvoice/distinfo
+	modified:   devel/rubygem-aws-sdk-polly/Makefile
+	modified:   devel/rubygem-aws-sdk-polly/distinfo
+	modified:   devel/rubygem-aws-sdk-pricing/Makefile
+	modified:   devel/rubygem-aws-sdk-pricing/distinfo
+	modified:   devel/rubygem-aws-sdk-qldb/Makefile
+	modified:   devel/rubygem-aws-sdk-qldb/distinfo
+	modified:   devel/rubygem-aws-sdk-qldbsession/Makefile
+	modified:   devel/rubygem-aws-sdk-qldbsession/distinfo
+	modified:   devel/rubygem-aws-sdk-quicksight/Makefile
+	modified:   devel/rubygem-aws-sdk-quicksight/distinfo
+	modified:   devel/rubygem-aws-sdk-ram/Makefile
+	modified:   devel/rubygem-aws-sdk-ram/distinfo
+	modified:   devel/rubygem-aws-sdk-rds/Makefile
+	modified:   devel/rubygem-aws-sdk-rds/distinfo
+	modified:   devel/rubygem-aws-sdk-rdsdataservice/Makefile
+	modified:   devel/rubygem-aws-sdk-rdsdataservice/distinfo
+	modified:   devel/rubygem-aws-sdk-redshift/Makefile
+	modified:   devel/rubygem-aws-sdk-redshift/distinfo
+	modified:   devel/rubygem-aws-sdk-rekognition/Makefile
+	modified:   devel/rubygem-aws-sdk-rekognition/distinfo
+	modified:   devel/rubygem-aws-sdk-resourcegroups/Makefile
+	modified:   devel/rubygem-aws-sdk-resourcegroups/distinfo
+	modified:   devel/rubygem-aws-sdk-resourcegroupstaggingapi/Makefile
+	modified:   devel/rubygem-aws-sdk-resourcegroupstaggingapi/distinfo
+	modified:   devel/rubygem-aws-sdk-resources/Makefile
+	modified:   devel/rubygem-aws-sdk-resources/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-robomaker/Makefile
+	modified:   devel/rubygem-aws-sdk-robomaker/distinfo
+	modified:   devel/rubygem-aws-sdk-route53/Makefile
+	modified:   devel/rubygem-aws-sdk-route53/distinfo
+	modified:   devel/rubygem-aws-sdk-route53domains/Makefile
+	modified:   devel/rubygem-aws-sdk-route53domains/distinfo
+	modified:   devel/rubygem-aws-sdk-route53resolver/Makefile
+	modified:   devel/rubygem-aws-sdk-route53resolver/distinfo
+	modified:   devel/rubygem-aws-sdk-s3/Makefile
+	modified:   devel/rubygem-aws-sdk-s3/distinfo
+	modified:   devel/rubygem-aws-sdk-s3control/Makefile
+	modified:   devel/rubygem-aws-sdk-s3control/distinfo
+	modified:   devel/rubygem-aws-sdk-sagemaker/Makefile
+	modified:   devel/rubygem-aws-sdk-sagemaker/distinfo
+	modified:   devel/rubygem-aws-sdk-sagemakerruntime/Makefile
+	modified:   devel/rubygem-aws-sdk-sagemakerruntime/distinfo
+	modified:   devel/rubygem-aws-sdk-savingsplans/Makefile
+	modified:   devel/rubygem-aws-sdk-savingsplans/distinfo
+	modified:   devel/rubygem-aws-sdk-schemas/Makefile
+	modified:   devel/rubygem-aws-sdk-schemas/distinfo
+	modified:   devel/rubygem-aws-sdk-secretsmanager/Makefile
+	modified:   devel/rubygem-aws-sdk-secretsmanager/distinfo
+	modified:   devel/rubygem-aws-sdk-securityhub/Makefile
+	modified:   devel/rubygem-aws-sdk-securityhub/distinfo
+	modified:   devel/rubygem-aws-sdk-serverlessapplicationrepository/Makefile
+	modified:   devel/rubygem-aws-sdk-serverlessapplicationrepository/distinfo
+	modified:   devel/rubygem-aws-sdk-servicecatalog/Makefile
+	modified:   devel/rubygem-aws-sdk-servicecatalog/distinfo
+	modified:   devel/rubygem-aws-sdk-servicediscovery/Makefile
+	modified:   devel/rubygem-aws-sdk-servicediscovery/distinfo
+	modified:   devel/rubygem-aws-sdk-servicequotas/Makefile
+	modified:   devel/rubygem-aws-sdk-servicequotas/distinfo
+	modified:   devel/rubygem-aws-sdk-ses/Makefile
+	modified:   devel/rubygem-aws-sdk-ses/distinfo
+	modified:   devel/rubygem-aws-sdk-sesv2/Makefile
+	modified:   devel/rubygem-aws-sdk-sesv2/distinfo
+	modified:   devel/rubygem-aws-sdk-shield/Makefile
+	modified:   devel/rubygem-aws-sdk-shield/distinfo
+	modified:   devel/rubygem-aws-sdk-signer/Makefile
+	modified:   devel/rubygem-aws-sdk-signer/distinfo
+	modified:   devel/rubygem-aws-sdk-simpledb/Makefile
+	modified:   devel/rubygem-aws-sdk-simpledb/distinfo
+	modified:   devel/rubygem-aws-sdk-sms/Makefile
+	modified:   devel/rubygem-aws-sdk-sms/distinfo
+	modified:   devel/rubygem-aws-sdk-snowball/Makefile
+	modified:   devel/rubygem-aws-sdk-snowball/distinfo
+	modified:   devel/rubygem-aws-sdk-sns/Makefile
+	modified:   devel/rubygem-aws-sdk-sns/distinfo
+	modified:   devel/rubygem-aws-sdk-sqs/Makefile
+	modified:   devel/rubygem-aws-sdk-sqs/distinfo
+	modified:   devel/rubygem-aws-sdk-ssm/Makefile
+	modified:   devel/rubygem-aws-sdk-ssm/distinfo
+	modified:   devel/rubygem-aws-sdk-sso/Makefile
+	modified:   devel/rubygem-aws-sdk-sso/distinfo
+	modified:   devel/rubygem-aws-sdk-ssooidc/Makefile
+	modified:   devel/rubygem-aws-sdk-ssooidc/distinfo
+	modified:   devel/rubygem-aws-sdk-states/Makefile
+	modified:   devel/rubygem-aws-sdk-states/distinfo
+	modified:   devel/rubygem-aws-sdk-storagegateway/Makefile
+	modified:   devel/rubygem-aws-sdk-storagegateway/distinfo
+	modified:   devel/rubygem-aws-sdk-support/Makefile
+	modified:   devel/rubygem-aws-sdk-support/distinfo
+	modified:   devel/rubygem-aws-sdk-swf/Makefile
+	modified:   devel/rubygem-aws-sdk-swf/distinfo
+	modified:   devel/rubygem-aws-sdk-synthetics/Makefile
+	modified:   devel/rubygem-aws-sdk-synthetics/distinfo
+	modified:   devel/rubygem-aws-sdk-textract/Makefile
+	modified:   devel/rubygem-aws-sdk-textract/distinfo
+	modified:   devel/rubygem-aws-sdk-transcribeservice/Makefile
+	modified:   devel/rubygem-aws-sdk-transcribeservice/distinfo
+	modified:   devel/rubygem-aws-sdk-transcribestreamingservice/Makefile
+	modified:   devel/rubygem-aws-sdk-transcribestreamingservice/distinfo
+	modified:   devel/rubygem-aws-sdk-transfer/Makefile
+	modified:   devel/rubygem-aws-sdk-transfer/distinfo
+	modified:   devel/rubygem-aws-sdk-translate/Makefile
+	modified:   devel/rubygem-aws-sdk-translate/distinfo
+	modified:   devel/rubygem-aws-sdk-waf/Makefile
+	modified:   devel/rubygem-aws-sdk-waf/distinfo
+	modified:   devel/rubygem-aws-sdk-wafregional/Makefile
+	modified:   devel/rubygem-aws-sdk-wafregional/distinfo
+	modified:   devel/rubygem-aws-sdk-wafv2/Makefile
+	modified:   devel/rubygem-aws-sdk-wafv2/distinfo
+	modified:   devel/rubygem-aws-sdk-workdocs/Makefile
+	modified:   devel/rubygem-aws-sdk-workdocs/distinfo
+	modified:   devel/rubygem-aws-sdk-worklink/Makefile
+	modified:   devel/rubygem-aws-sdk-worklink/distinfo
+	modified:   devel/rubygem-aws-sdk-workmail/Makefile
+	modified:   devel/rubygem-aws-sdk-workmail/distinfo
+	modified:   devel/rubygem-aws-sdk-workmailmessageflow/Makefile
+	modified:   devel/rubygem-aws-sdk-workmailmessageflow/distinfo
+	modified:   devel/rubygem-aws-sdk-workspaces/Makefile
+	modified:   devel/rubygem-aws-sdk-workspaces/distinfo
+	modified:   devel/rubygem-aws-sdk-xray/Makefile
+	modified:   devel/rubygem-aws-sdk-xray/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-cucumber-expressions/Makefile
+	modified:   devel/rubygem-cucumber-expressions6/Makefile
+	modified:   devel/rubygem-devise-rails5/Makefile
+	modified:   devel/rubygem-devise-rails5/distinfo
+	modified:   devel/rubygem-devise-rails5/pkg-descr
+	modified:   devel/rubygem-devise-rails52/Makefile
+	modified:   devel/rubygem-devise-rails52/distinfo
+	modified:   devel/rubygem-devise-rails52/pkg-descr
+	modified:   devel/rubygem-devise-rails60/Makefile
+	modified:   devel/rubygem-devise-rails60/distinfo
+	modified:   devel/rubygem-devise-rails60/pkg-descr
+	modified:   devel/rubygem-devise/Makefile
+	modified:   devel/rubygem-devise/distinfo
+	modified:   devel/rubygem-devise/pkg-descr
+	modified:   devel/rubygem-excon/Makefile
+	modified:   devel/rubygem-excon/distinfo
+	modified:   devel/rubygem-ffi/Makefile
+	modified:   devel/rubygem-ffi/distinfo
+	modified:   devel/rubygem-google-api-client/Makefile
+	modified:   devel/rubygem-google-api-client/distinfo
+	modified:   devel/rubygem-i18n/Makefile
+	modified:   devel/rubygem-i18n/distinfo
+	modified:   devel/rubygem-sprockets/Makefile
+	modified:   devel/rubygem-sprockets/distinfo
+	modified:   devel/rust-analyzer/Makefile
+	modified:   devel/rust-analyzer/distinfo
+	modified:   devel/template-glib/Makefile
+	modified:   devel/template-glib/distinfo
+	modified:   devel/template-glib/pkg-plist
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-no-bind-tools
+	modified:   editors/o/Makefile
+	modified:   editors/o/distinfo
+	modified:   graphics/cogl/Makefile
+	modified:   graphics/cogl/distinfo
+	modified:   graphics/cogl/pkg-plist
+	modified:   graphics/gegl/Makefile
+	modified:   graphics/gegl/distinfo
+	modified:   graphics/gegl/pkg-plist
+	modified:   graphics/gimp-app/Makefile
+	modified:   graphics/gimp-app/distinfo
+	modified:   graphics/gimp-app/pkg-plist
+	modified:   graphics/gimp/Makefile
+	modified:   graphics/gthumb/Makefile
+	modified:   graphics/gthumb/distinfo
+	deleted:    graphics/gthumb/files/patch-gentoo_2bd8b9
+	modified:   graphics/gthumb/pkg-plist
+	modified:   graphics/inkscape/Makefile
+	modified:   graphics/jogamp-jogl/Makefile
+	renamed:    graphics/jogamp-jogl/files/patch-freebsd.x86 -> graphics/jogamp-jogl/files/patch-freebsd
+	modified:   graphics/jogamp-jogl/pkg-descr
+	modified:   graphics/libglvnd/Makefile
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   lang/purescript/Makefile
+	modified:   lang/purescript/distinfo
+	modified:   lang/purescript/files/patch-purescript.cabal
+	modified:   lang/purescript/files/patch-src_Language_PureScript_Names.hs
+	modified:   mail/gmime30/Makefile
+	modified:   mail/gmime30/distinfo
+	modified:   mail/gmime30/pkg-plist
+	modified:   mail/rubygem-email_reply_trimmer/Makefile
+	modified:   mail/rubygem-email_reply_trimmer/distinfo
+	modified:   math/Makefile
+	modified:   math/maxima/Makefile
+	new file:   math/maxima/files/extra-patch-share_linearalgebra_matrixexp.lisp
+	new file:   math/maxima/files/extra-patch-src_grind.lisp
+	new file:   math/maxima/files/extra-patch-src_hayat.lisp
+	new file:   math/maxima/files/extra-patch-src_init-cl.lisp
+	new file:   math/maxima/files/extra-patch-src_maxima.system
+	new file:   math/maxima/files/patch-interfaces_xmaxima_Tkmaxima_Paths.tcl
+	modified:   math/maxima/pkg-plist
+	new file:   math/mpsolve/Makefile
+	new file:   math/mpsolve/distinfo
+	new file:   math/mpsolve/files/patch-configure.ac
+	new file:   math/mpsolve/pkg-descr
+	new file:   math/mpsolve/pkg-plist
+	modified:   misc/rubygem-octicons/Makefile
+	modified:   misc/rubygem-octicons/distinfo
+	modified:   multimedia/clutter-gst3/Makefile
+	modified:   multimedia/clutter-gst3/distinfo
+	modified:   multimedia/clutter-gst3/pkg-plist
+	modified:   net-im/mtxclient/Makefile
+	modified:   net-im/mtxclient/distinfo
+	modified:   net-im/mtxclient/pkg-plist
+	modified:   net-im/nheko/Makefile
+	modified:   net-im/nheko/distinfo
+	deleted:    net-im/nheko/files/patch-src_ui_Avatar.cpp
+	deleted:    net-im/nheko/files/patch-src_ui_InfoMessage.cpp
+	deleted:    net-im/nheko/files/patch-src_ui_Painter.h
+	modified:   net-im/profanity/Makefile
+	modified:   net-im/profanity/distinfo
+	modified:   net-im/spectral/Makefile
+	modified:   net-im/spectral/distinfo
+	new file:   net-im/spectral/files/patch-CMakeLists.txt
+	new file:   net-im/spectral/files/patch-src_spectralroom.cpp
+	modified:   net-im/spectral/pkg-plist
+	modified:   net-im/tut/Makefile
+	modified:   net-im/tut/distinfo
+	modified:   net-mgmt/2ping/Makefile
+	modified:   net-mgmt/2ping/distinfo
+	modified:   net-mgmt/py-adal/Makefile
+	modified:   net-mgmt/py-adal/distinfo
+	modified:   net-mgmt/py-msrest/Makefile
+	modified:   net-mgmt/py-msrest/distinfo
+	modified:   net-mgmt/tcpreplay/Makefile
+	modified:   net-mgmt/tcpreplay/distinfo
+	modified:   net-p2p/litecoin/Makefile
+	modified:   net-p2p/litecoin/distinfo
+	modified:   net-p2p/litecoin/files/litecoind.in
+	modified:   net-p2p/monero-cli/Makefile
+	modified:   net-p2p/monero-cli/distinfo
+	modified:   net/corosync2/Makefile.common
+	modified:   net/drive/Makefile
+	modified:   net/drive/distinfo
+	modified:   net/findomain/Makefile
+	modified:   net/findomain/distinfo
+	modified:   net/findomain/files/patch-Cargo.toml
+	modified:   net/go-bapu/Makefile
+	modified:   net/go-bapu/distinfo
+	modified:   net/ntopng/Makefile
+	modified:   net/ntopng/distinfo
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   net/rubygem-asset_sync/Makefile
+	modified:   net/rubygem-asset_sync/distinfo
+	modified:   net/rubygem-google-cloud-logging/Makefile
+	modified:   net/rubygem-google-cloud-logging/distinfo
+	modified:   net/uhttpmock/Makefile
+	modified:   net/uhttpmock/distinfo
+	modified:   net/uhttpmock/pkg-plist
+	modified:   news/py-sabyenc3/Makefile
+	modified:   news/py-sabyenc3/distinfo
+	modified:   print/libspectre/Makefile
+	modified:   print/libspectre/distinfo
+	modified:   print/libspectre/pkg-plist
+	modified:   print/py-fontbakery/Makefile
+	modified:   print/py-fontbakery/distinfo
+	modified:   print/py-fonttools/Makefile
+	modified:   print/py-fonttools/distinfo
+	modified:   science/code_saturne/Makefile
+	modified:   science/code_saturne/distinfo
+	modified:   science/jdftx/Makefile
+	modified:   science/jdftx/distinfo
+	modified:   science/jdftx/pkg-plist
+	modified:   science/opensim-core/Makefile
+	modified:   security/cvm/Makefile
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/py-certifi/Makefile
+	modified:   security/py-certifi/distinfo
+	modified:   security/py-google-auth/Makefile
+	modified:   security/py-google-auth/distinfo
+	modified:   security/py-pysaml2/Makefile
+	modified:   security/py-pysaml2/distinfo
+	modified:   security/totp-cli/Makefile
+	modified:   security/totp-cli/distinfo
+	modified:   sysutils/Makefile
+	modified:   sysutils/mate-power-manager/Makefile
+	modified:   sysutils/mate-power-manager/distinfo
+	modified:   sysutils/mate-power-manager/pkg-plist
+	modified:   sysutils/p5-Rex/Makefile
+	modified:   sysutils/p5-Rex/distinfo
+	modified:   sysutils/p5-Rex/pkg-plist
+	new file:   sysutils/pwol/Makefile
+	new file:   sysutils/pwol/distinfo
+	new file:   sysutils/pwol/pkg-descr
+	new file:   sysutils/pwol/pkg-plist
+	modified:   sysutils/watchman/Makefile
+	modified:   sysutils/watchman/distinfo
+	modified:   textproc/Makefile
+	modified:   textproc/R-cran-rmarkdown/Makefile
+	modified:   textproc/R-cran-rmarkdown/distinfo
+	modified:   textproc/gspell/Makefile
+	modified:   textproc/gspell/distinfo
+	modified:   textproc/gspell/pkg-plist
+	modified:   textproc/libyaml/Makefile
+	modified:   textproc/libyaml/distinfo
+	modified:   textproc/libyaml/pkg-plist
+	modified:   textproc/link-grammar/Makefile
+	modified:   textproc/link-grammar/distinfo
+	modified:   textproc/link-grammar/pkg-plist
+	modified:   textproc/minify/Makefile
+	modified:   textproc/minify/distinfo
+	modified:   textproc/p5-CSS-Sass/Makefile
+	modified:   textproc/p5-Text-Table-Any/Makefile
+	modified:   textproc/p5-Text-Table-Any/distinfo
+	modified:   textproc/rubygem-rouge/Makefile
+	modified:   textproc/rubygem-rouge/distinfo
+	new file:   textproc/rubygem-rouge319/Makefile
+	new file:   textproc/rubygem-rouge319/distinfo
+	new file:   textproc/rubygem-rouge319/pkg-descr
+	modified:   textproc/scdoc/Makefile
+	modified:   textproc/scdoc/distinfo
+	modified:   textproc/sift/Makefile
+	modified:   textproc/sift/distinfo
+	modified:   www/Makefile
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/p5-CGI/Makefile
+	modified:   www/p5-CGI/distinfo
+	modified:   www/p5-HTTP-Daemon/Makefile
+	modified:   www/p5-HTTP-Daemon/distinfo
+	modified:   www/p5-libwww/Makefile
+	modified:   www/p5-libwww/distinfo
+	modified:   www/py-biscuits/Makefile
+	modified:   www/py-biscuits/distinfo
+	modified:   www/py-django-modern-rpc/Makefile
+	modified:   www/py-django-modern-rpc/distinfo
+	deleted:    www/py-djangorestframework36/Makefile
+	deleted:    www/py-djangorestframework36/distinfo
+	deleted:    www/py-djangorestframework36/pkg-descr
+	modified:   www/py-flask-marshmallow/Makefile
+	modified:   www/py-flask-marshmallow/distinfo
+	modified:   www/py-google-api-core/Makefile
+	modified:   www/py-google-api-core/distinfo
+	modified:   www/py-google-cloud-storage/Makefile
+	modified:   www/py-google-cloud-storage/distinfo
+	modified:   www/py-requests-aws4auth/Makefile
+	modified:   www/py-requests-aws4auth/distinfo
+	modified:   www/py-requests-aws4auth/files/patch-setup.py
+	modified:   www/rubygem-heroics00/Makefile
+	modified:   www/rubygem-platform-api/Makefile
+	modified:   www/rubygem-platform-api/distinfo
+	modified:   www/rubygem-platform-api/files/patch-gemspec
+	new file:   www/rubygem-rate_throttle_client/Makefile
+	new file:   www/rubygem-rate_throttle_client/distinfo
+	new file:   www/rubygem-rate_throttle_client/pkg-descr
+	modified:   www/squid-devel/Makefile
+	modified:   www/squid-devel/distinfo
+	modified:   www/squid-devel/files/patch-configure
+	deleted:    www/squid-devel/files/patch-src_acl_external_eDirectory__userip_ext__edirectory__userip__acl.cc
+	deleted:    www/squid-devel/files/patch-src_acl_external_kerberos__ldap__group_support__krb5.cc
+	deleted:    www/squid-devel/files/patch-src_acl_external_session_ext__session__acl.cc
+	modified:   www/tinymce/Makefile
+	modified:   www/tinymce/distinfo
+	modified:   www/xapian-omega/Makefile
+	modified:   www/xapian-omega/distinfo
+	modified:   www/youtube_dl/Makefile
+	modified:   www/youtube_dl/distinfo
+	modified:   www/zenphoto/Makefile
+	modified:   www/zenphoto/distinfo
+	modified:   www/zenphoto/pkg-plist
+	modified:   x11-themes/Makefile
+	modified:   x11-toolkits/c++-gtk-utils/Makefile
+	modified:   x11-toolkits/c++-gtk-utils/distinfo
+	modified:   x11-toolkits/gtkmm30/Makefile
+	modified:   x11-toolkits/gtkmm30/distinfo
+	modified:   x11-toolkits/gtkmm30/pkg-plist
+	modified:   x11-toolkits/gtksourceview3/Makefile
+	modified:   x11-toolkits/gtksourceview3/distinfo
+	modified:   x11-toolkits/gtksourceview3/pkg-plist
+	modified:   x11-toolkits/gtksourceviewmm3/Makefile
+	modified:   x11-toolkits/gtksourceviewmm3/distinfo
+	modified:   x11-wm/Makefile
+	new file:   x11-wm/compiz-plugins-unsupported/Makefile
+	new file:   x11-wm/compiz-plugins-unsupported/distinfo
+	new file:   x11-wm/compiz-plugins-unsupported/pkg-descr
+	new file:   x11-wm/compiz-plugins-unsupported/pkg-plist
+	modified:   x11-wm/twm/Makefile
+	modified:   x11-wm/twm/distinfo
+	modified:   x11-wm/twm/pkg-descr
+	modified:   x11/babl/Makefile
+	modified:   x11/babl/distinfo
+	modified:   x11/babl/pkg-plist
+	modified:   x11/mate-menus/Makefile
+	modified:   x11/mate-menus/distinfo
+	modified:   x11/mate-panel/Makefile
+	modified:   x11/mate-panel/distinfo
+	deleted:    x11/mate-panel/files/patch-applets_clock_clock-location.c
+	deleted:    x11/mate-panel/files/patch-applets_clock_clock.c
+	modified:   x11/squeekboard/Makefile
+	modified:   x11/squeekboard/distinfo
+	modified:   x11/zenity/Makefile
+	modified:   x11/zenity/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   irc/irssi/Makefile
+
+
+It took 3.35 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at e4bef260e630 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.25 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e4bef260e630 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
