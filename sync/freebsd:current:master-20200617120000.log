@@ -1,0 +1,132 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 4e890703d284..bb705f11f9b3
+Fast-forward
+ ObsoleteFiles.inc                                  |    3 +
+ contrib/file/magic/Magdir/elf                      |    5 +-
+ .../opencsd/decoder/include/common/ocsd_dcd_mngr.h |    6 +
+ .../decoder/include/common/ocsd_gen_elem_list.h    |    8 +-
+ .../decoder/include/common/ocsd_gen_elem_stack.h   |  109 ++
+ .../decoder/include/common/trc_core_arch_map.h     |   34 +-
+ .../opencsd/decoder/include/common/trc_gen_elem.h  |   19 +-
+ .../decoder/include/common/trc_pkt_decode_base.h   |    5 +
+ .../decoder/include/common/trc_raw_buffer.h        |   96 ++
+ .../opencsd/decoder/include/i_dec/trc_i_decode.h   |    7 +-
+ .../decoder/include/i_dec/trc_idec_arminst.h       |   44 +-
+ .../decoder/include/mem_acc/trc_mem_acc_bufptr.h   |    1 -
+ .../include/opencsd/etmv3/trc_pkt_decode_etmv3.h   |    1 +
+ .../decoder/include/opencsd/etmv4/etmv4_decoder.h  |    1 -
+ .../include/opencsd/etmv4/trc_etmv4_stack_elem.h   |   99 +-
+ .../include/opencsd/etmv4/trc_pkt_decode_etmv4i.h  |  131 +-
+ .../include/opencsd/etmv4/trc_pkt_elem_etmv4d.h    |   73 --
+ .../include/opencsd/etmv4/trc_pkt_elem_etmv4i.h    |   40 +-
+ .../include/opencsd/etmv4/trc_pkt_proc_etmv4.h     |   63 +-
+ .../opencsd/etmv4/trc_pkt_proc_etmv4i.h}           |   67 +-
+ .../include/opencsd/etmv4/trc_pkt_types_etmv4.h    |    3 +-
+ .../decoder/include/opencsd/ocsd_if_types.h        |   39 +-
+ .../decoder/include/opencsd/ocsd_if_version.h      |    6 +-
+ .../include/opencsd/ptm/trc_pkt_decode_ptm.h       |    1 +
+ .../include/opencsd/stm/trc_pkt_decode_stm.h       |    1 +
+ .../decoder/include/opencsd/trc_gen_elem_types.h   |   12 +
+ .../decoder/include/pkt_printers/pkt_printer_t.h   |    2 +-
+ .../decoder/source/etmv3/trc_pkt_decode_etmv3.cpp  |   10 +
+ .../decoder/source/etmv4/trc_etmv4_stack_elem.cpp  |   44 +-
+ .../decoder/source/etmv4/trc_pkt_decode_etmv4i.cpp | 1272 +++++++++++++-------
+ .../decoder/source/etmv4/trc_pkt_elem_etmv4d.cpp   |   57 -
+ .../decoder/source/etmv4/trc_pkt_elem_etmv4i.cpp   |   97 +-
+ .../decoder/source/etmv4/trc_pkt_proc_etmv4.cpp    |  126 --
+ .../source/etmv4/trc_pkt_proc_etmv4d_impl.h        |   71 --
+ ...roc_etmv4i_impl.cpp => trc_pkt_proc_etmv4i.cpp} |  333 +++--
+ .../opencsd/decoder/source/i_dec/trc_i_decode.cpp  |   51 +-
+ .../decoder/source/i_dec/trc_idec_arminst.cpp      |  137 +--
+ .../decoder/source/mem_acc/trc_mem_acc_bufptr.cpp  |    3 +-
+ contrib/opencsd/decoder/source/ocsd_dcd_tree.cpp   |    1 +
+ contrib/opencsd/decoder/source/ocsd_error.cpp      |    2 +-
+ .../opencsd/decoder/source/ocsd_gen_elem_stack.cpp |  196 +++
+ .../decoder/source/ptm/trc_pkt_decode_ptm.cpp      |   12 +-
+ .../decoder/source/stm/trc_pkt_decode_stm.cpp      |    6 +-
+ contrib/opencsd/decoder/source/trc_component.cpp   |   14 +-
+ .../opencsd/decoder/source/trc_core_arch_map.cpp   |   24 +-
+ contrib/opencsd/decoder/source/trc_gen_elem.cpp    |   27 +-
+ contrib/tzcode/stdtime/ctime.3                     |    2 +-
+ lib/libopencsd/Makefile                            |    7 +-
+ stand/libsa/zfs/zfsimpl.c                          |  145 ++-
+ sys/arm64/include/armreg.h                         |  141 ++-
+ sys/dev/mlx4/mlx4_en/mlx4_en_netdev.c              |    8 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_hw_tls.c              |   16 +-
+ sys/netinet/dccp.h                                 |   78 ++
+ sys/netinet/sctputil.c                             |    2 +-
+ 54 files changed, 2349 insertions(+), 1409 deletions(-)
+ create mode 100644 contrib/opencsd/decoder/include/common/ocsd_gen_elem_stack.h
+ create mode 100644 contrib/opencsd/decoder/include/common/trc_raw_buffer.h
+ delete mode 100644 contrib/opencsd/decoder/include/opencsd/etmv4/trc_pkt_elem_etmv4d.h
+ rename contrib/opencsd/decoder/{source/etmv4/trc_pkt_proc_etmv4i_impl.h => include/opencsd/etmv4/trc_pkt_proc_etmv4i.h} (82%)
+ delete mode 100644 contrib/opencsd/decoder/source/etmv4/trc_pkt_elem_etmv4d.cpp
+ delete mode 100644 contrib/opencsd/decoder/source/etmv4/trc_pkt_proc_etmv4.cpp
+ delete mode 100644 contrib/opencsd/decoder/source/etmv4/trc_pkt_proc_etmv4d_impl.h
+ rename contrib/opencsd/decoder/source/etmv4/{trc_pkt_proc_etmv4i_impl.cpp => trc_pkt_proc_etmv4i.cpp} (81%)
+ create mode 100644 contrib/opencsd/decoder/source/ocsd_gen_elem_stack.cpp
+ create mode 100644 sys/netinet/dccp.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4e890703d284..bb705f11f9b3  freebsd/current/master -> freebsd/current/master        
+remote:    75ada8f9ac31..ac5b9058aa18  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4e890703d284..bb705f11f9b3  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
