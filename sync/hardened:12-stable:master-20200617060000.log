@@ -1,0 +1,107 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging usr.sbin/bsdinstall/scripts/netconfig_ipv4
+CONFLICT (content): Merge conflict in usr.sbin/bsdinstall/scripts/netconfig_ipv4
+Auto-merging sys/conf/files
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc usr.sbin/bsdinstall/scripts/netconfig_ipv4
+index 47b6f1ec794a,7d5b9486bc4f..000000000000
+--- a/usr.sbin/bsdinstall/scripts/netconfig_ipv4
++++ b/usr.sbin/bsdinstall/scripts/netconfig_ipv4
+@@@ -46,10 -46,11 +46,15 @@@ case "${INTERFACE}" i
+  	;;
+  esac
+  
+ -dialog --backtitle 'FreeBSD Installer' --title 'Network Configuration' --yesno 'Would you like to use DHCP to configure this interface?' 0 0
+ +dialog --backtitle 'HardenedBSD Installer' --title 'Network Configuration' --yesno 'Would you like to use DHCP to configure this interface?' 0 0
+  if [ $? -eq $DIALOG_OK ]; then
+  	if [ ! -z $BSDINSTALL_CONFIGCURRENT ]; then
+++<<<<<<< HEAD
+ +		dialog --backtitle 'HardenedBSD Installer' --infobox "Acquiring DHCP lease..." 0 0
+++=======
++ 		ifconfig $INTERFACE up
++ 		dialog --backtitle 'FreeBSD Installer' --infobox "Acquiring DHCP lease..." 0 0
+++>>>>>>> freebsd/12-stable/master
+  		err=$( dhclient $INTERFACE 2>&1 )
+  		if [ $? -ne 0 ]; then
+  			f_dprintf "%s" "$err"
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	new file:   share/man/man9/ofw_graph.9
+	modified:   sys/arm64/arm64/efirt_machdep.c
+	modified:   sys/arm64/conf/GENERIC
+	modified:   sys/conf/files
+	modified:   sys/dev/ahci/ahci_generic.c
+	modified:   sys/dev/extres/regulator/regulator.c
+	new file:   sys/dev/ofw/ofw_graph.c
+	new file:   sys/dev/ofw/ofw_graph.h
+	modified:   sys/dev/pci/pci_host_generic.c
+	modified:   sys/dev/pci/pci_host_generic_acpi.c
+	new file:   sys/gnu/dts/riscv/sifive/fu540-c000.dtsi
+	new file:   sys/gnu/dts/riscv/sifive/hifive-unleashed-a00.dts
+	modified:   sys/modules/dtb/mv/Makefile
+	modified:   sys/modules/dtb/rockchip/Makefile
+	modified:   usr.sbin/efibootmgr/efibootmgr.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.sbin/bsdinstall/scripts/netconfig_ipv4
+
+HEAD is now at 1b393ae17f46 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 1b393ae17f46 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
