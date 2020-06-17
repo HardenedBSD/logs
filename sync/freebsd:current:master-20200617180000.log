@@ -1,0 +1,112 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating bb705f11f9b3..21438e1d6133
+Fast-forward
+ lib/libmagic/Makefile                           |   4 +-
+ sys/arm64/arm64/pmap.c                          |  18 +-
+ sys/arm64/coresight/coresight.c                 | 138 ++-------
+ sys/arm64/coresight/coresight.h                 |  34 ++-
+ sys/arm64/coresight/coresight_acpi.c            | 373 ++++++++++++++++++++++++
+ sys/arm64/coresight/coresight_cmd.c             |   7 +-
+ sys/arm64/coresight/coresight_cpu_debug.c       |   4 +-
+ sys/arm64/coresight/coresight_etm4x.c           |   7 +-
+ sys/arm64/coresight/coresight_etm4x.h           |  18 +-
+ sys/arm64/coresight/coresight_etm4x_acpi.c      |  13 +
+ sys/arm64/coresight/coresight_etm4x_fdt.c       |  12 +
+ sys/arm64/coresight/coresight_fdt.c             | 154 ++++++++++
+ sys/arm64/coresight/coresight_funnel.c          |   6 +-
+ sys/arm64/coresight/coresight_funnel.h          |   2 +
+ sys/arm64/coresight/coresight_funnel_acpi.c     |  13 +
+ sys/arm64/coresight/coresight_funnel_fdt.c      |  11 +
+ sys/arm64/coresight/coresight_replicator.c      |   8 +-
+ sys/arm64/coresight/coresight_replicator.h      |   2 +
+ sys/arm64/coresight/coresight_replicator_acpi.c |  15 +-
+ sys/arm64/coresight/coresight_replicator_fdt.c  |  11 +
+ sys/arm64/coresight/coresight_tmc.c             |   6 +-
+ sys/arm64/coresight/coresight_tmc.h             |   4 +-
+ sys/arm64/coresight/coresight_tmc_acpi.c        |  13 +
+ sys/arm64/coresight/coresight_tmc_fdt.c         |  12 +
+ sys/conf/files.arm64                            |   2 +
+ sys/dev/nvme/nvme_ctrlr.c                       |   2 +-
+ sys/dev/nvme/nvme_qpair.c                       |  45 ++-
+ sys/dev/pci/pci_host_generic.c                  | 151 +++++++---
+ sys/dev/pci/pci_host_generic.h                  |  10 +-
+ sys/dev/pci/pci_host_generic_acpi.c             |  31 +-
+ sys/dev/pci/pci_host_generic_fdt.c              |  30 +-
+ sys/fs/nfs/nfs_commonsubs.c                     |  10 +-
+ sys/fs/nfs/nfsdport.h                           |   6 -
+ sys/fs/nfs/nfskpiport.h                         |   2 -
+ sys/fs/nfs/nfsport.h                            |   5 -
+ sys/fs/nfsclient/nfs_clbio.c                    |   2 +-
+ sys/fs/nfsclient/nfs_clrpcops.c                 |  74 ++---
+ sys/fs/nfsclient/nfs_clstate.c                  |  54 ++--
+ sys/fs/nfsclient/nfs_clvnops.c                  |   6 +-
+ sys/fs/nfsserver/nfs_nfsdserv.c                 |   2 +-
+ sys/netinet/ip_mroute.c                         |   8 +-
+ usr.bin/fstat/fstat.1                           | 109 ++++---
+ 42 files changed, 1018 insertions(+), 416 deletions(-)
+ create mode 100644 sys/arm64/coresight/coresight_acpi.c
+ create mode 100644 sys/arm64/coresight/coresight_fdt.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    bb705f11f9b3..21438e1d6133  freebsd/current/master -> freebsd/current/master        
+remote:    8dc6ac9c6a5d..b17912e50ba5  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   bb705f11f9b3..21438e1d6133  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
