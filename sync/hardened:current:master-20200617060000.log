@@ -1,0 +1,141 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/file/ChangeLog                     |  80 +++++
+ contrib/file/Makefile.am                   |   5 +
+ contrib/file/Makefile.in                   |  89 +++++-
+ contrib/file/configure                     |  23 +-
+ contrib/file/configure.ac                  |   4 +-
+ contrib/file/doc/file.man                  |  21 +-
+ contrib/file/doc/magic.man                 |  60 +++-
+ contrib/file/libmagic.pc.in                |  10 +
+ contrib/file/magic/Magdir/animation        |   8 +-
+ contrib/file/magic/Magdir/archive          | 117 ++++++--
+ contrib/file/magic/Magdir/asf              | 132 +++++++++
+ contrib/file/magic/Magdir/cad              |  11 +-
+ contrib/file/magic/Magdir/commands         |  26 +-
+ contrib/file/magic/Magdir/compress         |  13 +-
+ contrib/file/magic/Magdir/console          |  96 +++++-
+ contrib/file/magic/Magdir/database         |  33 ++-
+ contrib/file/magic/Magdir/der              |  24 +-
+ contrib/file/magic/Magdir/dif              |  33 +++
+ contrib/file/magic/Magdir/elf              |   7 +-
+ contrib/file/magic/Magdir/filesystems      |   6 +-
+ contrib/file/magic/Magdir/games            |  12 +-
+ contrib/file/magic/Magdir/gnu              |   7 +-
+ contrib/file/magic/Magdir/images           | 461 +++++++++++++++++++++++++----
+ contrib/file/magic/Magdir/intel            |  59 +++-
+ contrib/file/magic/Magdir/kicad            |  28 +-
+ contrib/file/magic/Magdir/linux            | 197 ++++++------
+ contrib/file/magic/Magdir/msdos            |  19 +-
+ contrib/file/magic/Magdir/ole2compounddocs |  52 +++-
+ contrib/file/magic/Magdir/parix            |   4 +-
+ contrib/file/magic/Magdir/pascal           |   6 +-
+ contrib/file/magic/Magdir/pdf              |   9 +-
+ contrib/file/magic/Magdir/pgp              |  97 +++++-
+ contrib/file/magic/Magdir/python           | 226 ++++++++++++--
+ contrib/file/magic/Magdir/riff             | 123 +++++++-
+ contrib/file/magic/Magdir/rst              |   4 +-
+ contrib/file/magic/Magdir/rtf              |  98 +++++-
+ contrib/file/magic/Magdir/sgml             |   4 +-
+ contrib/file/magic/Magdir/sniffer          | 356 +++++++++++-----------
+ contrib/file/magic/Magdir/ssh              |  20 ++
+ contrib/file/magic/Magdir/sylk             |  36 +++
+ contrib/file/magic/Magdir/ti-8x            |   4 +-
+ contrib/file/magic/Magdir/tplink           |   6 +-
+ contrib/file/magic/Magdir/troff            |  10 +-
+ contrib/file/magic/Magdir/unisig           |  12 +
+ contrib/file/magic/Magdir/usd              |  21 ++
+ contrib/file/magic/Magdir/virtual          |   2 +-
+ contrib/file/magic/Magdir/web              |  12 +
+ contrib/file/magic/Magdir/windows          | 200 ++++++++-----
+ contrib/file/magic/Magdir/wordprocessors   |  19 +-
+ contrib/file/magic/Magdir/zip              |  85 ++++--
+ contrib/file/magic/Makefile.am             |   8 +-
+ contrib/file/magic/Makefile.in             |   8 +-
+ contrib/file/src/apprentice.c              | 152 +++++++---
+ contrib/file/src/ascmagic.c                |  14 +-
+ contrib/file/src/buffer.c                  |   6 +-
+ contrib/file/src/compress.c                |  56 ++--
+ contrib/file/src/der.c                     |  78 +++--
+ contrib/file/src/file.c                    |  90 ++++--
+ contrib/file/src/file.h                    |  94 +++---
+ contrib/file/src/file_opts.h               |  97 +++---
+ contrib/file/src/funcs.c                   | 138 ++++++++-
+ contrib/file/src/is_json.c                 |  17 +-
+ contrib/file/src/magic.c                   |   5 +-
+ contrib/file/src/print.c                   |  29 +-
+ contrib/file/src/readelf.c                 |  41 ++-
+ contrib/file/src/seccomp.c                 |  13 +-
+ contrib/file/src/softmagic.c               | 158 +++++++---
+ lib/libmagic/Makefile                      |  17 ++
+ lib/libmagic/config.h                      |   6 +-
+ stand/i386/libi386/vidconsole.c            |   7 +-
+ sys/dev/evdev/evdev_utils.c                |   2 +-
+ 71 files changed, 3125 insertions(+), 898 deletions(-)
+ create mode 100644 contrib/file/libmagic.pc.in
+ create mode 100644 contrib/file/magic/Magdir/asf
+ create mode 100644 contrib/file/magic/Magdir/dif
+ create mode 100644 contrib/file/magic/Magdir/sylk
+ create mode 100644 contrib/file/magic/Magdir/unisig
+ create mode 100644 contrib/file/magic/Magdir/usd
+ create mode 100644 contrib/file/magic/Magdir/web
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    2d2dbc4c73b9..7da3d3443f23  hardened/current/master -> hardened/current/master        
+remote:    6bcf4b843c11..4e890703d284  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   2d2dbc4c73b9..7da3d3443f23  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
