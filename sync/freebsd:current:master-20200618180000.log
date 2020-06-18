@@ -1,0 +1,171 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating bd0833e31e57..00d3dff5885a
+Fast-forward
+ contrib/flex/ChangeLog                             | 2772 ++++++++++++
+ contrib/flex/FlexLexer.h                           |  206 -
+ contrib/flex/NEWS                                  |  234 +-
+ contrib/flex/README                                |   79 -
+ contrib/flex/README.md                             |  109 +
+ contrib/flex/src/FlexLexer.h                       |  220 +
+ contrib/flex/{ => src}/buf.c                       |   89 +-
+ contrib/flex/{ => src}/ccl.c                       |   15 +-
+ contrib/flex/{ => src}/dfa.c                       |   99 +-
+ contrib/flex/{ => src}/ecs.c                       |   21 +-
+ contrib/flex/{ => src}/filter.c                    |   62 +-
+ contrib/flex/{ => src}/flex.skl                    |  751 ++--
+ contrib/flex/{ => src}/flexdef.h                   |  432 +-
+ contrib/flex/{ => src}/flexint.h                   |    4 +
+ contrib/flex/{ => src}/gen.c                       |  370 +-
+ contrib/flex/{ => src}/libmain.c                   |   13 +-
+ contrib/flex/{ => src}/libyywrap.c                 |    1 +
+ contrib/flex/{ => src}/main.c                      |  230 +-
+ contrib/flex/{ => src}/misc.c                      |  359 +-
+ contrib/flex/{ => src}/mkskel.sh                   |   39 +-
+ contrib/flex/{ => src}/nfa.c                       |   72 +-
+ contrib/flex/{ => src}/options.c                   |    9 +-
+ contrib/flex/{ => src}/options.h                   |    6 +-
+ contrib/flex/{ => src}/parse.y                     |   87 +-
+ contrib/flex/{ => src}/regex.c                     |   33 +-
+ contrib/flex/{ => src}/scan.l                      |  370 +-
+ contrib/flex/{ => src}/scanflags.c                 |   12 +-
+ contrib/flex/{ => src}/scanopt.c                   |  165 +-
+ contrib/flex/{ => src}/scanopt.h                   |   19 +-
+ contrib/flex/{ => src}/sym.c                       |   71 +-
+ contrib/flex/{ => src}/tables.c                    |   74 +-
+ contrib/flex/{ => src}/tables.h                    |    2 +-
+ contrib/flex/{ => src}/tables_shared.c             |    6 +-
+ contrib/flex/{ => src}/tables_shared.h             |    0
+ contrib/flex/{ => src}/tblcmp.c                    |   72 +-
+ contrib/flex/{ => src}/version.h                   |    0
+ contrib/flex/{ => src}/yylex.c                     |   31 +-
+ .../llvm/lib/Analysis/BasicAliasAnalysis.cpp       |    5 +-
+ lib/libc/net/sctp_sys_calls.c                      |   45 +-
+ lib/libc/sys/cpuset_getdomain.2                    |    4 +-
+ share/man/man4/sctp.4                              |    5 +-
+ sys/compat/linux/linux_emul.c                      |   40 +-
+ sys/conf/NOTES                                     |    7 +-
+ sys/conf/options                                   |    1 +
+ sys/dev/nvme/nvme_ctrlr.c                          |    2 +-
+ sys/dev/nvme/nvme_private.h                        |   12 +-
+ sys/dev/nvme/nvme_qpair.c                          |   12 +-
+ sys/kern/uipc_socket.c                             |    2 +-
+ sys/netinet/in_proto.c                             |    4 +-
+ sys/netinet/ip_divert.c                            |    4 +-
+ sys/netinet/ip_output.c                            |   10 +-
+ sys/netinet/sctp_crc32.c                           |   17 +-
+ sys/netinet/sctp_crc32.h                           |    2 +-
+ sys/netinet6/in6_proto.c                           |    2 +-
+ sys/netinet6/ip6_forward.c                         |    2 +-
+ sys/netinet6/ip6_output.c                          |   10 +-
+ sys/netipsec/ipsec_output.c                        |    6 +-
+ sys/netpfil/pf/pf.c                                |    6 +-
+ tests/sys/audit/Makefile                           |    2 +-
+ usr.bin/lex/Makefile                               |    8 +-
+ usr.bin/lex/config.h                               |   97 +-
+ usr.bin/lex/initparse.c                            |  394 +-
+ usr.bin/lex/initparse.h                            |   14 +-
+ usr.bin/lex/initscan.c                             | 4580 ++++++++++----------
+ usr.bin/lex/initskel.c                             | 1335 +++---
+ usr.bin/lex/lex.1                                  |    2 +-
+ usr.bin/lex/lib/Makefile                           |    2 +-
+ usr.bin/lex/version.awk                            |    4 +-
+ 68 files changed, 8451 insertions(+), 5319 deletions(-)
+ delete mode 100644 contrib/flex/FlexLexer.h
+ delete mode 100644 contrib/flex/README
+ create mode 100644 contrib/flex/README.md
+ create mode 100644 contrib/flex/src/FlexLexer.h
+ rename contrib/flex/{ => src}/buf.c (76%)
+ rename contrib/flex/{ => src}/ccl.c (96%)
+ rename contrib/flex/{ => src}/dfa.c (92%)
+ rename contrib/flex/{ => src}/ecs.c (91%)
+ rename contrib/flex/{ => src}/filter.c (88%)
+ rename contrib/flex/{ => src}/flex.skl (85%)
+ rename contrib/flex/{ => src}/flexdef.h (75%)
+ rename contrib/flex/{ => src}/flexint.h (95%)
+ rename contrib/flex/{ => src}/gen.c (88%)
+ rename contrib/flex/{ => src}/libmain.c (90%)
+ rename contrib/flex/{ => src}/libyywrap.c (99%)
+ rename contrib/flex/{ => src}/main.c (92%)
+ rename contrib/flex/{ => src}/misc.c (71%)
+ rename contrib/flex/{ => src}/mkskel.sh (64%)
+ rename contrib/flex/{ => src}/nfa.c (93%)
+ rename contrib/flex/{ => src}/options.c (98%)
+ rename contrib/flex/{ => src}/options.h (97%)
+ rename contrib/flex/{ => src}/parse.y (93%)
+ rename contrib/flex/{ => src}/regex.c (85%)
+ rename contrib/flex/{ => src}/scan.l (78%)
+ rename contrib/flex/{ => src}/scanflags.c (85%)
+ rename contrib/flex/{ => src}/scanopt.c (83%)
+ rename contrib/flex/{ => src}/scanopt.h (91%)
+ rename contrib/flex/{ => src}/sym.c (76%)
+ rename contrib/flex/{ => src}/tables.c (87%)
+ rename contrib/flex/{ => src}/tables.h (98%)
+ rename contrib/flex/{ => src}/tables_shared.c (96%)
+ rename contrib/flex/{ => src}/tables_shared.h (100%)
+ rename contrib/flex/{ => src}/tblcmp.c (93%)
+ rename contrib/flex/{ => src}/version.h (100%)
+ rename contrib/flex/{ => src}/yylex.c (90%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    bd0833e31e57..00d3dff5885a  freebsd/current/master -> freebsd/current/master        
+remote:    5b595c0a347b..1262e4dda3ee  github/freebsd/11-stable/master -> github/freebsd/11-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   bd0833e31e57..00d3dff5885a  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
