@@ -47,3 +47,157 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node12/Makefile
+Removing print/lilypond-devel/files/patch-python_GNUmakefile
+Removing print/lilypond-devel/files/patch-lily_include_lily-guile.hh
+Removing print/lilypond-devel/files/patch-flower_include_std-vector.hh
+Removing print/lilypond-devel/files/patch-flower_include_std-string.hh
+Auto-merging net/asterisk13/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Merge made by the 'recursive' strategy.
+ archivers/py-zstd/Makefile                         |   2 +-
+ archivers/py-zstd/distinfo                         |   6 +-
+ cad/netgen-lvs/Makefile                            |   2 +-
+ cad/netgen-lvs/distinfo                            |   6 +-
+ devel/aegis/Makefile                               |   4 +-
+ devel/aegis/files/patch-aefind_cmdline_y           |  18 +
+ devel/aegis/files/patch-aeimport_format_rcs_gram_y |  18 +
+ .../aegis/files/patch-aeimport_format_sccs_gram_y  |  18 +
+ devel/aegis/files/patch-common_gettime_y           |  18 +
+ devel/aegis/files/patch-fmtgen_lex_cc              |  19 ++
+ devel/aegis/files/patch-fmtgen_parse_y             |  35 ++
+ devel/aegis/files/patch-libaegis_aer_lex_cc        |  19 ++
+ devel/aegis/files/patch-libaegis_aer_report_y      |  18 +
+ devel/aegis/files/patch-libaegis_gram_y            |  18 +
+ devel/aegis/files/patch-libaegis_meta_lex_cc       |  19 ++
+ devel/aegis/files/patch-libaegis_sub_expr_gram_y   | 149 ++++++++
+ devel/aegis/files/patch-libaegis_sub_plural_gram_y | 373 +++++++++++++++++++++
+ devel/aixlog/Makefile                              |   2 +-
+ devel/aixlog/distinfo                              |   6 +-
+ devel/rabs/Makefile                                |   6 +-
+ devel/rabs/distinfo                                |  10 +-
+ dns/c-ares/Makefile                                |   4 +-
+ dns/c-ares/distinfo                                |   6 +-
+ dns/c-ares/pkg-plist                               |   6 +-
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ math/gh-bc/Makefile                                |   2 +-
+ math/gh-bc/distinfo                                |   6 +-
+ math/mppp/Makefile                                 |   3 +-
+ math/mppp/distinfo                                 |   6 +-
+ math/mppp/pkg-plist                                |   4 +-
+ math/onednn/Makefile                               |   5 +-
+ math/onednn/distinfo                               |   8 +-
+ math/onednn/files/patch-cmake_platform.cmake       |  35 +-
+ .../files/patch-src_common_memory__debug.cpp       |  11 +
+ math/onednn/files/patch-src_common_utils.cpp       |  11 +
+ math/onednn/pkg-plist                              |   8 +-
+ math/py-keras/Makefile                             |   2 +-
+ math/py-keras/distinfo                             |   6 +-
+ math/py-keras/files/pkg-message.in                 |   2 +-
+ net/asterisk13/Makefile                            |   1 +
+ net/asterisk13/files/patch-channels-chan_dahdi.c   |  21 +-
+ net/asterisk16/Makefile                            |   1 +
+ net/asterisk16/files/patch-channels-chan_dahdi.c   |  21 +-
+ print/lilypond-devel/Makefile                      |  67 ++--
+ print/lilypond-devel/distinfo                      |   6 +-
+ .../files/patch-Documentation_GNUmakefile          |   4 +-
+ print/lilypond-devel/files/patch-config.make.in    |  12 +-
+ print/lilypond-devel/files/patch-configure         |  34 +-
+ .../files/patch-flower_include_std-string.hh       |  18 -
+ .../files/patch-flower_include_std-vector.hh       |  10 -
+ .../files/patch-lily_include_lily-guile.hh         |  11 -
+ print/lilypond-devel/files/patch-lily_midi-item.cc |  11 +
+ print/lilypond-devel/files/patch-lily_parse-scm.cc |  10 +
+ .../lilypond-devel/files/patch-python_GNUmakefile  |  10 -
+ .../patch-stepmake_stepmake_texinfo-vars.make      |   4 +-
+ print/lilypond-devel/pkg-plist                     |  41 +--
+ science/afni/Makefile                              |   2 +-
+ science/afni/distinfo                              |   6 +-
+ www/authelia/Makefile                              |  21 +-
+ www/authelia/distinfo                              |  40 +--
+ www/authelia/pkg-descr                             |   2 +-
+ www/node12/Makefile                                |   2 +-
+ www/node12/distinfo                                |   6 +-
+ www/py-httpie/Makefile                             |   2 +-
+ www/py-httpie/distinfo                             |   6 +-
+ x11-wm/spectrwm/Makefile                           |   2 +-
+ x11-wm/spectrwm/distinfo                           |   6 +-
+ x11-wm/spectrwm/files/patch-6c1a7ca.c              |  42 +++
+ x11-wm/spectrwm/files/patch-spectrwm.c             |  12 +-
+ 70 files changed, 1039 insertions(+), 291 deletions(-)
+ create mode 100644 devel/aegis/files/patch-aefind_cmdline_y
+ create mode 100644 devel/aegis/files/patch-aeimport_format_rcs_gram_y
+ create mode 100644 devel/aegis/files/patch-aeimport_format_sccs_gram_y
+ create mode 100644 devel/aegis/files/patch-common_gettime_y
+ create mode 100644 devel/aegis/files/patch-fmtgen_lex_cc
+ create mode 100644 devel/aegis/files/patch-fmtgen_parse_y
+ create mode 100644 devel/aegis/files/patch-libaegis_aer_lex_cc
+ create mode 100644 devel/aegis/files/patch-libaegis_aer_report_y
+ create mode 100644 devel/aegis/files/patch-libaegis_gram_y
+ create mode 100644 devel/aegis/files/patch-libaegis_meta_lex_cc
+ create mode 100644 devel/aegis/files/patch-libaegis_sub_expr_gram_y
+ create mode 100644 devel/aegis/files/patch-libaegis_sub_plural_gram_y
+ create mode 100644 math/onednn/files/patch-src_common_memory__debug.cpp
+ create mode 100644 math/onednn/files/patch-src_common_utils.cpp
+ delete mode 100644 print/lilypond-devel/files/patch-flower_include_std-string.hh
+ delete mode 100644 print/lilypond-devel/files/patch-flower_include_std-vector.hh
+ delete mode 100644 print/lilypond-devel/files/patch-lily_include_lily-guile.hh
+ create mode 100644 print/lilypond-devel/files/patch-lily_midi-item.cc
+ create mode 100644 print/lilypond-devel/files/patch-lily_parse-scm.cc
+ delete mode 100644 print/lilypond-devel/files/patch-python_GNUmakefile
+ create mode 100644 x11-wm/spectrwm/files/patch-6c1a7ca.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    0942e1f8d6e1..50ede28bded4  master -> master        
+remote:    009858a1b554..0942e1f8d6e1  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   0942e1f8d6e1..50ede28bded4  master -> master
+==== END: master ====
