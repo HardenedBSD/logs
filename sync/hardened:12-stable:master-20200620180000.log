@@ -1,0 +1,1178 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/x86/x86/identcpu.c
+Auto-merging sys/x86/x86/cpu_machdep.c
+Auto-merging sys/x86/include/specialreg.h
+CONFLICT (content): Merge conflict in sys/x86/include/specialreg.h
+Auto-merging sys/kern/vfs_mount.c
+Removing sys/gnu/dts/arm64/xilinx/zynqmp-clk.dtsi
+Removing sys/gnu/dts/arm64/qcom/apq8096-db820c-pmic-pins.dtsi
+Removing sys/gnu/dts/arm64/qcom/apq8096-db820c-pins.dtsi
+Removing sys/gnu/dts/arm/stm32mp157xad-pinctrl.dtsi
+Removing sys/gnu/dts/arm/stm32mp157xac-pinctrl.dtsi
+Removing sys/gnu/dts/arm/stm32mp157xab-pinctrl.dtsi
+Removing sys/gnu/dts/arm/stm32mp157xaa-pinctrl.dtsi
+Removing sys/gnu/dts/arm/stm32mp157-pinctrl.dtsi
+Removing sys/gnu/dts/arm/ste-href-ab8505.dtsi
+Removing sys/gnu/dts/arm/at91-kizbox2.dts
+Removing sys/dts/arm64/overlays/sun50i-h5-ths.dtso
+Removing sys/dts/arm64/overlays/sun50i-h5-sid.dtso
+Removing sys/dts/arm64/overlays/sun50i-a64-ths.dtso
+Removing sys/dts/arm64/overlays/sun50i-a64-sid.dtso
+Removing sys/dts/arm/overlays/sun8i-h3-ths.dtso
+Removing sys/dts/arm/overlays/sun8i-h3-sid.dtso
+Auto-merging sys/conf/files
+Auto-merging sys/arm64/include/elf.h
+Auto-merging sys/arm64/arm64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm64/arm64/elf_machdep.c
+Auto-merging sys/amd64/amd64/machdep.c
+Auto-merging sys/amd64/amd64/initcpu.c
+Auto-merging release/release.sh
+Auto-merging libexec/rtld-elf/rtld.c
+Auto-merging lib/libc/sys/procctl.2
+CONFLICT (content): Merge conflict in lib/libc/sys/procctl.2
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc lib/libc/sys/procctl.2
+index 5acf78ee5245,80408b73d616..000000000000
+--- a/lib/libc/sys/procctl.2
++++ b/lib/libc/sys/procctl.2
+@@@ -72,6 -72,46 +72,49 @@@ The control request to perform is speci
+  argument.
+  The following commands are supported:
+  .Bl -tag -width PROC_TRAPCAP_STATUS
+++<<<<<<< HEAD
+++=======
++ .It Dv PROC_ASLR_CTL
++ Controls the Address Space Layout Randomization (ASLR) in the program
++ images created
++ by
++ .Xr execve 2
++ in the specified process or its descendants that did not changed
++ the control nor modified it by other means.
++ The
++ .Fa data
++ parameter must point to the integer variable holding one of the following
++ values:
++ .Bl -tag -width PROC_ASLR_FORCE_DISABLE
++ .It Dv PROC_ASLR_FORCE_ENABLE
++ Request that ASLR is enabled after execution, even if it is disabled
++ system-wide.
++ The image flag and set-uid might prevent ASLR enablement still.
++ .It Dv PROC_ASLR_FORCE_DISABLE
++ Request that ASLR is disabled after execution.
++ Same notes as for
++ .Dv PROC_ASLR_FORCE_ENABLE
++ apply.
++ .It Dv PROC_ASLR_NOFORCE
++ Use system-wide configured policy for ASLR.
++ .El
++ .It Dv PROC_ASLR_STATUS
++ Returns the current status of ASLR enablement for the target process.
++ The
++ .Fa data
++ parameter must point to the integer variable, where one of the
++ following values is written:
++ .Bl -tag -width PROC_ASLR_FORCE_DISABLE
++ .It Dv PROC_ASLR_FORCE_ENABLE
++ .It Dv PROC_ASLR_FORCE_DISABLE
++ .It Dv PROC_ASLR_NOFORCE
++ .El
++ .Pp
++ If the currently executed image in the process itself has ASLR enabled,
++ the
++ .Dv PROC_ASLR_ACTIVE
++ flag is or-ed with the value listed above.
+++>>>>>>> freebsd/12-stable/master
+  .It Dv PROC_SPROTECT
+  Set process protection state.
+  This is used to mark a process as protected from being killed if the system
+diff --cc sys/arm64/arm64/elf_machdep.c
+index a64ea8e63954,90149303f664..000000000000
+--- a/sys/arm64/arm64/elf_machdep.c
++++ b/sys/arm64/arm64/elf_machdep.c
+@@@ -91,7 -91,7 +93,11 @@@ static struct sysentvec elf64_freebsd_s
+  	.sv_schedtail	= NULL,
+  	.sv_thread_detach = NULL,
+  	.sv_trap	= NULL,
+++<<<<<<< HEAD
+ +	.sv_pax_aslr_init = pax_aslr_init_vmspace,
+++=======
++ 	.sv_hwcap	= &elf_hwcap,
+++>>>>>>> freebsd/12-stable/master
+  };
+  INIT_SYSENTVEC(elf64_sysvec, &elf64_freebsd_sysvec);
+  
+diff --cc sys/x86/include/specialreg.h
+index 67ef8e10add0,b017dd9ff8eb..000000000000
+--- a/sys/x86/include/specialreg.h
++++ b/sys/x86/include/specialreg.h
+@@@ -561,8 -581,14 +581,18 @@@
+  #define	MSR_DRAM_ENERGY_STATUS	0x619
+  #define	MSR_PP0_ENERGY_STATUS	0x639
+  #define	MSR_PP1_ENERGY_STATUS	0x641
++ #define	MSR_PPERF		0x64e
+  #define	MSR_TSC_DEADLINE	0x6e0	/* Writes are not serializing */
+++<<<<<<< HEAD
+ +#define	MSR_IA32_DEBUG_INTERFACE 0xc80	/* Intel Silicon Debug interface */
+++=======
++ #define	MSR_IA32_PM_ENABLE	0x770
++ #define	MSR_IA32_HWP_CAPABILITIES	0x771
++ #define	MSR_IA32_HWP_REQUEST_PKG	0x772
++ #define	MSR_IA32_HWP_INTERRUPT		0x773
++ #define	MSR_IA32_HWP_REQUEST	0x774
++ #define	MSR_IA32_HWP_STATUS	0x777
+++>>>>>>> freebsd/12-stable/master
+  
+  /*
+   * VMX MSRs
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   UPDATING
+	modified:   libexec/rtld-elf/rtld.c
+	modified:   release/arm64/PINE64-LTS.conf
+	modified:   release/arm64/PINE64.conf
+	modified:   release/arm64/PINEBOOK.conf
+	new file:   release/arm64/ROCKPRO64.conf
+	modified:   release/release.sh
+	modified:   release/tools/arm.subr
+	modified:   sys/amd64/amd64/initcpu.c
+	modified:   sys/amd64/amd64/machdep.c
+	modified:   sys/arm/allwinner/aw_mmc.c
+	modified:   sys/arm/allwinner/aw_sid.c
+	modified:   sys/arm/allwinner/aw_thermal.c
+	modified:   sys/arm/mv/mv_pci.c
+	modified:   sys/arm/nvidia/tegra_pcie.c
+	modified:   sys/arm/ti/am335x/am335x_pmic.c
+	modified:   sys/arm64/arm64/identcpu.c
+	modified:   sys/arm64/include/cpu.h
+	modified:   sys/arm64/include/elf.h
+	modified:   sys/arm64/rockchip/rk805.c
+	modified:   sys/arm64/rockchip/rk_tsadc.c
+	modified:   sys/conf/files
+	modified:   sys/dev/cpuctl/cpuctl.c
+	modified:   sys/dev/cpufreq/cpufreq_dt.c
+	modified:   sys/dev/extres/regulator/regulator_fixed.c
+	modified:   sys/dev/mmc/host/dwmmc.c
+	modified:   sys/dev/mmc/host/dwmmc_altera.c
+	modified:   sys/dev/mmc/host/dwmmc_hisi.c
+	modified:   sys/dev/mmc/host/dwmmc_rockchip.c
+	modified:   sys/dev/mmc/host/dwmmc_samsung.c
+	modified:   sys/dev/mmc/host/dwmmc_var.h
+	new file:   sys/dev/mmc/mmc_fdt_helpers.c
+	new file:   sys/dev/mmc/mmc_fdt_helpers.h
+	modified:   sys/dev/usb/controller/ehci_imx.c
+	modified:   sys/dev/usb/controller/generic_ehci_fdt.c
+	deleted:    sys/dts/arm/overlays/sun8i-h3-sid.dtso
+	deleted:    sys/dts/arm/overlays/sun8i-h3-ths.dtso
+	deleted:    sys/dts/arm64/overlays/sun50i-a64-sid.dtso
+	deleted:    sys/dts/arm64/overlays/sun50i-a64-ths.dtso
+	deleted:    sys/dts/arm64/overlays/sun50i-h5-sid.dtso
+	deleted:    sys/dts/arm64/overlays/sun50i-h5-ths.dtso
+	modified:   sys/gnu/dts/arm/am335x-baltos.dtsi
+	modified:   sys/gnu/dts/arm/am335x-bone-common.dtsi
+	modified:   sys/gnu/dts/arm/am335x-boneblack-common.dtsi
+	modified:   sys/gnu/dts/arm/am335x-boneblue.dts
+	modified:   sys/gnu/dts/arm/am335x-chiliboard.dts
+	modified:   sys/gnu/dts/arm/am335x-cm-t335.dts
+	modified:   sys/gnu/dts/arm/am335x-evm.dts
+	modified:   sys/gnu/dts/arm/am335x-evmsk.dts
+	modified:   sys/gnu/dts/arm/am335x-guardian.dts
+	modified:   sys/gnu/dts/arm/am335x-icev2.dts
+	modified:   sys/gnu/dts/arm/am335x-igep0033.dtsi
+	modified:   sys/gnu/dts/arm/am335x-lxm.dts
+	modified:   sys/gnu/dts/arm/am335x-moxa-uc-2100-common.dtsi
+	modified:   sys/gnu/dts/arm/am335x-moxa-uc-8100-me-t.dts
+	new file:   sys/gnu/dts/arm/am335x-netcan-plus-1xx.dts
+	new file:   sys/gnu/dts/arm/am335x-netcom-plus-2xx.dts
+	new file:   sys/gnu/dts/arm/am335x-netcom-plus-8xx.dts
+	modified:   sys/gnu/dts/arm/am335x-osd3358-sm-red.dts
+	modified:   sys/gnu/dts/arm/am335x-pcm-953.dtsi
+	modified:   sys/gnu/dts/arm/am335x-pdu001.dts
+	modified:   sys/gnu/dts/arm/am335x-pepper.dts
+	modified:   sys/gnu/dts/arm/am335x-pocketbeagle.dts
+	modified:   sys/gnu/dts/arm/am335x-regor.dtsi
+	modified:   sys/gnu/dts/arm/am335x-sancloud-bbe.dts
+	modified:   sys/gnu/dts/arm/am335x-shc.dts
+	modified:   sys/gnu/dts/arm/am335x-sl50.dts
+	modified:   sys/gnu/dts/arm/am335x-wega.dtsi
+	modified:   sys/gnu/dts/arm/am33xx-l4.dtsi
+	modified:   sys/gnu/dts/arm/am33xx.dtsi
+	modified:   sys/gnu/dts/arm/am3517.dtsi
+	modified:   sys/gnu/dts/arm/am3517_mt_ventoux.dts
+	new file:   sys/gnu/dts/arm/am3703.dtsi
+	new file:   sys/gnu/dts/arm/am3715.dtsi
+	modified:   sys/gnu/dts/arm/am4372.dtsi
+	modified:   sys/gnu/dts/arm/am437x-gp-evm.dts
+	modified:   sys/gnu/dts/arm/am437x-idk-evm.dts
+	modified:   sys/gnu/dts/arm/am437x-l4.dtsi
+	modified:   sys/gnu/dts/arm/am437x-sk-evm.dts
+	modified:   sys/gnu/dts/arm/am43x-epos-evm.dts
+	modified:   sys/gnu/dts/arm/am43xx-clocks.dtsi
+	modified:   sys/gnu/dts/arm/am571x-idk.dts
+	modified:   sys/gnu/dts/arm/am572x-idk-common.dtsi
+	modified:   sys/gnu/dts/arm/am572x-idk.dts
+	modified:   sys/gnu/dts/arm/am574x-idk.dts
+	modified:   sys/gnu/dts/arm/am57xx-beagle-x15-common.dtsi
+	modified:   sys/gnu/dts/arm/am57xx-beagle-x15-revb1.dts
+	modified:   sys/gnu/dts/arm/am57xx-beagle-x15-revc.dts
+	modified:   sys/gnu/dts/arm/am57xx-idk-common.dtsi
+	new file:   sys/gnu/dts/arm/armada-385-clearfog-gtr-l8.dts
+	new file:   sys/gnu/dts/arm/armada-385-clearfog-gtr-s4.dts
+	new file:   sys/gnu/dts/arm/armada-385-clearfog-gtr.dtsi
+	modified:   sys/gnu/dts/arm/armada-388-clearfog.dtsi
+	modified:   sys/gnu/dts/arm/armada-388-helios4.dts
+	modified:   sys/gnu/dts/arm/armada-38x-solidrun-microsom.dtsi
+	modified:   sys/gnu/dts/arm/armada-38x.dtsi
+	modified:   sys/gnu/dts/arm/armada-xp-98dx3236.dtsi
+	modified:   sys/gnu/dts/arm/armada-xp-db-xc3-24g4xg.dts
+	modified:   sys/gnu/dts/arm/armada-xp.dtsi
+	modified:   sys/gnu/dts/arm/aspeed-ast2500-evb.dts
+	modified:   sys/gnu/dts/arm/aspeed-ast2600-evb.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-arm-stardragon4800-rep2.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-cmm.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-minipack.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-tiogapass.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-wedge100.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-wedge40.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-facebook-yamp.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-ibm-rainier.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-inspur-fp5280g2.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-inspur-on5263m5.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-intel-s2600wf.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-lenovo-hr630.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-lenovo-hr855xg2.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-lanyang.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-mihawk.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-palmetto.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-romulus.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-swift.dts
+	new file:   sys/gnu/dts/arm/aspeed-bmc-opp-tacoma.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-vesnin.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-witherspoon.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-opp-zaius.dts
+	modified:   sys/gnu/dts/arm/aspeed-bmc-portwell-neptune.dts
+	modified:   sys/gnu/dts/arm/aspeed-g4.dtsi
+	modified:   sys/gnu/dts/arm/aspeed-g5.dtsi
+	modified:   sys/gnu/dts/arm/aspeed-g6-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/aspeed-g6.dtsi
+	new file:   sys/gnu/dts/arm/ast2500-facebook-netbmc-common.dtsi
+	modified:   sys/gnu/dts/arm/at91-kizbox.dts
+	new file:   sys/gnu/dts/arm/at91-kizbox2-2.dts
+	new file:   sys/gnu/dts/arm/at91-kizbox2-common.dtsi
+	deleted:    sys/gnu/dts/arm/at91-kizbox2.dts
+	new file:   sys/gnu/dts/arm/at91-kizbox3-hs.dts
+	new file:   sys/gnu/dts/arm/at91-kizbox3_common.dtsi
+	new file:   sys/gnu/dts/arm/at91-kizboxmini-base.dts
+	renamed:    sys/gnu/dts/arm/at91-kizboxmini.dts -> sys/gnu/dts/arm/at91-kizboxmini-common.dtsi
+	new file:   sys/gnu/dts/arm/at91-kizboxmini-mb.dts
+	new file:   sys/gnu/dts/arm/at91-kizboxmini-rd.dts
+	modified:   sys/gnu/dts/arm/at91-nattis-2-natte-2.dts
+	new file:   sys/gnu/dts/arm/at91-sam9x60ek.dts
+	modified:   sys/gnu/dts/arm/at91-sama5d27_som1.dtsi
+	modified:   sys/gnu/dts/arm/at91-sama5d27_som1_ek.dts
+	new file:   sys/gnu/dts/arm/at91-sama5d27_wlsom1.dtsi
+	new file:   sys/gnu/dts/arm/at91-sama5d27_wlsom1_ek.dts
+	modified:   sys/gnu/dts/arm/at91-sama5d2_xplained.dts
+	modified:   sys/gnu/dts/arm/at91-sama5d4_xplained.dts
+	new file:   sys/gnu/dts/arm/at91-smartkiz.dts
+	modified:   sys/gnu/dts/arm/at91sam9260.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9261.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9263.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9g45.dtsi
+	modified:   sys/gnu/dts/arm/at91sam9rl.dtsi
+	modified:   sys/gnu/dts/arm/atlas7-evb.dts
+	modified:   sys/gnu/dts/arm/bcm-cygnus.dtsi
+	modified:   sys/gnu/dts/arm/bcm-hr2.dtsi
+	new file:   sys/gnu/dts/arm/bcm2711-rpi-4-b.dts
+	new file:   sys/gnu/dts/arm/bcm2711.dtsi
+	new file:   sys/gnu/dts/arm/bcm2835-common.dtsi
+	modified:   sys/gnu/dts/arm/bcm2835-rpi-zero-w.dts
+	modified:   sys/gnu/dts/arm/bcm2835-rpi.dtsi
+	modified:   sys/gnu/dts/arm/bcm2835.dtsi
+	modified:   sys/gnu/dts/arm/bcm2836.dtsi
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-3-a-plus.dts
+	modified:   sys/gnu/dts/arm/bcm2837-rpi-3-b-plus.dts
+	modified:   sys/gnu/dts/arm/bcm2837.dtsi
+	new file:   sys/gnu/dts/arm/bcm283x-rpi-usb-peripheral.dtsi
+	modified:   sys/gnu/dts/arm/bcm283x.dtsi
+	new file:   sys/gnu/dts/arm/bcm47094-luxul-xwc-2000.dts
+	modified:   sys/gnu/dts/arm/bcm5301x.dtsi
+	modified:   sys/gnu/dts/arm/bcm958625hr.dts
+	new file:   sys/gnu/dts/arm/dm3725.dtsi
+	modified:   sys/gnu/dts/arm/dm8148-evm.dts
+	modified:   sys/gnu/dts/arm/dm8148-t410.dts
+	modified:   sys/gnu/dts/arm/dove.dtsi
+	modified:   sys/gnu/dts/arm/dra62x-j5eco-evm.dts
+	modified:   sys/gnu/dts/arm/dra7-evm-common.dtsi
+	modified:   sys/gnu/dts/arm/dra7-evm.dts
+	modified:   sys/gnu/dts/arm/dra7-l4.dtsi
+	modified:   sys/gnu/dts/arm/dra7.dtsi
+	modified:   sys/gnu/dts/arm/dra72-evm-common.dtsi
+	modified:   sys/gnu/dts/arm/dra72x.dtsi
+	modified:   sys/gnu/dts/arm/dra74x.dtsi
+	modified:   sys/gnu/dts/arm/dra76-evm.dts
+	modified:   sys/gnu/dts/arm/dra76x.dtsi
+	modified:   sys/gnu/dts/arm/dra7xx-clocks.dtsi
+	new file:   sys/gnu/dts/arm/e60k02.dtsi
+	modified:   sys/gnu/dts/arm/emev2.dtsi
+	modified:   sys/gnu/dts/arm/exynos3250.dtsi
+	modified:   sys/gnu/dts/arm/exynos4.dtsi
+	modified:   sys/gnu/dts/arm/exynos4210-universal_c210.dts
+	modified:   sys/gnu/dts/arm/exynos4210.dtsi
+	modified:   sys/gnu/dts/arm/exynos4412-galaxy-s3.dtsi
+	modified:   sys/gnu/dts/arm/exynos4412-midas.dtsi
+	modified:   sys/gnu/dts/arm/exynos4412-n710x.dts
+	modified:   sys/gnu/dts/arm/exynos4412-odroid-common.dtsi
+	modified:   sys/gnu/dts/arm/exynos4412-tiny4412.dts
+	modified:   sys/gnu/dts/arm/exynos4412.dtsi
+	modified:   sys/gnu/dts/arm/exynos5.dtsi
+	modified:   sys/gnu/dts/arm/exynos5250-arndale.dts
+	modified:   sys/gnu/dts/arm/exynos5250-smdk5250.dts
+	modified:   sys/gnu/dts/arm/exynos5250.dtsi
+	modified:   sys/gnu/dts/arm/exynos5260-xyref5260.dts
+	modified:   sys/gnu/dts/arm/exynos5260.dtsi
+	modified:   sys/gnu/dts/arm/exynos5410-odroidxu.dts
+	modified:   sys/gnu/dts/arm/exynos5410-smdk5410.dts
+	modified:   sys/gnu/dts/arm/exynos5410.dtsi
+	modified:   sys/gnu/dts/arm/exynos5420-arndale-octa.dts
+	modified:   sys/gnu/dts/arm/exynos5420-cpus.dtsi
+	modified:   sys/gnu/dts/arm/exynos5420-peach-pit.dts
+	modified:   sys/gnu/dts/arm/exynos5420-smdk5420.dts
+	modified:   sys/gnu/dts/arm/exynos5420.dtsi
+	modified:   sys/gnu/dts/arm/exynos5422-cpus.dtsi
+	modified:   sys/gnu/dts/arm/exynos5422-odroid-core.dtsi
+	modified:   sys/gnu/dts/arm/exynos5422-odroidhc1.dts
+	modified:   sys/gnu/dts/arm/exynos5422-odroidxu3-common.dtsi
+	modified:   sys/gnu/dts/arm/exynos5422-odroidxu3-lite.dts
+	modified:   sys/gnu/dts/arm/exynos54xx.dtsi
+	modified:   sys/gnu/dts/arm/exynos5800-peach-pi.dts
+	modified:   sys/gnu/dts/arm/exynos5800.dtsi
+	modified:   sys/gnu/dts/arm/ibm-power9-dual.dtsi
+	modified:   sys/gnu/dts/arm/imx25-eukrea-mbimxsd25-baseboard.dts
+	modified:   sys/gnu/dts/arm/imx25-pdk.dts
+	modified:   sys/gnu/dts/arm/imx25.dtsi
+	modified:   sys/gnu/dts/arm/imx27.dtsi
+	modified:   sys/gnu/dts/arm/imx31.dtsi
+	modified:   sys/gnu/dts/arm/imx51-babbage.dts
+	modified:   sys/gnu/dts/arm/imx51.dtsi
+	modified:   sys/gnu/dts/arm/imx53-qsb-common.dtsi
+	modified:   sys/gnu/dts/arm/imx53-usbarmory.dts
+	modified:   sys/gnu/dts/arm/imx6dl-apf6dev.dts
+	modified:   sys/gnu/dts/arm/imx6dl-colibri-eval-v3.dts
+	new file:   sys/gnu/dts/arm/imx6dl-gw5907.dts
+	new file:   sys/gnu/dts/arm/imx6dl-gw5910.dts
+	new file:   sys/gnu/dts/arm/imx6dl-gw5912.dts
+	new file:   sys/gnu/dts/arm/imx6dl-gw5913.dts
+	modified:   sys/gnu/dts/arm/imx6dl-icore-mipi.dts
+	modified:   sys/gnu/dts/arm/imx6dl-yapp4-common.dtsi
+	modified:   sys/gnu/dts/arm/imx6dl-yapp4-hydra.dts
+	modified:   sys/gnu/dts/arm/imx6dl.dtsi
+	modified:   sys/gnu/dts/arm/imx6q-apalis-eval.dts
+	modified:   sys/gnu/dts/arm/imx6q-apalis-ixora-v1.1.dts
+	modified:   sys/gnu/dts/arm/imx6q-apalis-ixora.dts
+	modified:   sys/gnu/dts/arm/imx6q-apf6dev.dts
+	modified:   sys/gnu/dts/arm/imx6q-dhcom-pdk2.dts
+	modified:   sys/gnu/dts/arm/imx6q-dhcom-som.dtsi
+	modified:   sys/gnu/dts/arm/imx6q-gw54xx.dts
+	new file:   sys/gnu/dts/arm/imx6q-gw5907.dts
+	new file:   sys/gnu/dts/arm/imx6q-gw5910.dts
+	new file:   sys/gnu/dts/arm/imx6q-gw5912.dts
+	new file:   sys/gnu/dts/arm/imx6q-gw5913.dts
+	modified:   sys/gnu/dts/arm/imx6q-logicpd.dts
+	modified:   sys/gnu/dts/arm/imx6q.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-apalis.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-apf6.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-apf6dev.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-colibri.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-gw551x.dtsi
+	new file:   sys/gnu/dts/arm/imx6qdl-gw5907.dtsi
+	new file:   sys/gnu/dts/arm/imx6qdl-gw5910.dtsi
+	new file:   sys/gnu/dts/arm/imx6qdl-gw5912.dtsi
+	new file:   sys/gnu/dts/arm/imx6qdl-gw5913.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-icore-1.5.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-icore.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-phytec-phycore-som.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-rex.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-sabresd.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-udoo.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-wandboard.dtsi
+	modified:   sys/gnu/dts/arm/imx6qdl-zii-rdu2.dtsi
+	modified:   sys/gnu/dts/arm/imx6sl-evk.dts
+	new file:   sys/gnu/dts/arm/imx6sl-tolino-shine3.dts
+	modified:   sys/gnu/dts/arm/imx6sl.dtsi
+	modified:   sys/gnu/dts/arm/imx6sll-evk.dts
+	new file:   sys/gnu/dts/arm/imx6sll-kobo-clarahd.dts
+	modified:   sys/gnu/dts/arm/imx6sll.dtsi
+	modified:   sys/gnu/dts/arm/imx6sx-sdb-reva.dts
+	modified:   sys/gnu/dts/arm/imx6sx-sdb.dts
+	modified:   sys/gnu/dts/arm/imx6sx.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul-14x14-evk.dtsi
+	new file:   sys/gnu/dts/arm/imx6ul-imx6ull-opos6ul.dtsi
+	new file:   sys/gnu/dts/arm/imx6ul-imx6ull-opos6uldev.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul-kontron-n6310-s.dts
+	modified:   sys/gnu/dts/arm/imx6ul-kontron-n6310-som.dtsi
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6311-s.dts
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6311-som.dtsi
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6x1x-s.dtsi
+	new file:   sys/gnu/dts/arm/imx6ul-kontron-n6x1x-som-common.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul-opos6ul.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul-opos6uldev.dts
+	modified:   sys/gnu/dts/arm/imx6ul-phytec-phycore-som.dtsi
+	modified:   sys/gnu/dts/arm/imx6ul.dtsi
+	modified:   sys/gnu/dts/arm/imx6ull-colibri-eval-v3.dtsi
+	modified:   sys/gnu/dts/arm/imx6ull-colibri-nonwifi.dtsi
+	modified:   sys/gnu/dts/arm/imx6ull-colibri-wifi.dtsi
+	modified:   sys/gnu/dts/arm/imx6ull-colibri.dtsi
+	new file:   sys/gnu/dts/arm/imx6ull-kontron-n6411-s.dts
+	new file:   sys/gnu/dts/arm/imx6ull-kontron-n6411-som.dtsi
+	new file:   sys/gnu/dts/arm/imx6ull-opos6ul.dtsi
+	new file:   sys/gnu/dts/arm/imx6ull-opos6uldev.dts
+	modified:   sys/gnu/dts/arm/imx7-colibri-eval-v3.dtsi
+	modified:   sys/gnu/dts/arm/imx7-colibri.dtsi
+	modified:   sys/gnu/dts/arm/imx7d-pico.dtsi
+	modified:   sys/gnu/dts/arm/imx7d-sdb-reva.dts
+	modified:   sys/gnu/dts/arm/imx7d.dtsi
+	modified:   sys/gnu/dts/arm/imx7s-colibri.dtsi
+	modified:   sys/gnu/dts/arm/imx7s.dtsi
+	new file:   sys/gnu/dts/arm/imx7ulp-com.dts
+	modified:   sys/gnu/dts/arm/imx7ulp-evk.dts
+	modified:   sys/gnu/dts/arm/imx7ulp.dtsi
+	modified:   sys/gnu/dts/arm/iwg20d-q7-common.dtsi
+	modified:   sys/gnu/dts/arm/iwg20d-q7-dbcm-ca.dtsi
+	modified:   sys/gnu/dts/arm/keystone-clocks.dtsi
+	modified:   sys/gnu/dts/arm/keystone-k2e-clocks.dtsi
+	modified:   sys/gnu/dts/arm/keystone-k2e-netcp.dtsi
+	modified:   sys/gnu/dts/arm/keystone-k2hk-netcp.dtsi
+	modified:   sys/gnu/dts/arm/keystone-k2l-netcp.dtsi
+	modified:   sys/gnu/dts/arm/kirkwood-synology.dtsi
+	modified:   sys/gnu/dts/arm/logicpd-som-lv-35xx-devkit.dts
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-35xx-devkit.dts
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-37xx-devkit-28.dts
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-37xx-devkit.dts
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-baseboard.dtsi
+	modified:   sys/gnu/dts/arm/logicpd-torpedo-som.dtsi
+	modified:   sys/gnu/dts/arm/ls1021a-tsn.dts
+	modified:   sys/gnu/dts/arm/ls1021a.dtsi
+	modified:   sys/gnu/dts/arm/meson.dtsi
+	modified:   sys/gnu/dts/arm/meson6.dtsi
+	modified:   sys/gnu/dts/arm/meson8.dtsi
+	modified:   sys/gnu/dts/arm/meson8b-ec100.dts
+	modified:   sys/gnu/dts/arm/meson8b-mxq.dts
+	modified:   sys/gnu/dts/arm/meson8b-odroidc1.dts
+	modified:   sys/gnu/dts/arm/meson8b.dtsi
+	new file:   sys/gnu/dts/arm/mmp3-dell-ariel.dts
+	new file:   sys/gnu/dts/arm/mmp3.dtsi
+	modified:   sys/gnu/dts/arm/motorola-cpcap-mapphone.dtsi
+	new file:   sys/gnu/dts/arm/motorola-mapphone-common.dtsi
+	modified:   sys/gnu/dts/arm/mt6323.dtsi
+	modified:   sys/gnu/dts/arm/omap2.dtsi
+	modified:   sys/gnu/dts/arm/omap2430.dtsi
+	modified:   sys/gnu/dts/arm/omap3-beagle-xm.dts
+	modified:   sys/gnu/dts/arm/omap3-beagle.dts
+	modified:   sys/gnu/dts/arm/omap3-cm-t3530.dts
+	modified:   sys/gnu/dts/arm/omap3-cm-t3730.dts
+	modified:   sys/gnu/dts/arm/omap3-devkit8000-lcd43.dts
+	modified:   sys/gnu/dts/arm/omap3-devkit8000-lcd70.dts
+	modified:   sys/gnu/dts/arm/omap3-devkit8000.dts
+	new file:   sys/gnu/dts/arm/omap3-echo.dts
+	modified:   sys/gnu/dts/arm/omap3-gta04.dtsi
+	modified:   sys/gnu/dts/arm/omap3-ha-lcd.dts
+	modified:   sys/gnu/dts/arm/omap3-ha.dts
+	modified:   sys/gnu/dts/arm/omap3-igep0020-rev-f.dts
+	modified:   sys/gnu/dts/arm/omap3-igep0020.dts
+	modified:   sys/gnu/dts/arm/omap3-igep0030-rev-g.dts
+	modified:   sys/gnu/dts/arm/omap3-igep0030.dts
+	modified:   sys/gnu/dts/arm/omap3-ldp.dts
+	modified:   sys/gnu/dts/arm/omap3-lilly-a83x.dtsi
+	modified:   sys/gnu/dts/arm/omap3-lilly-dbb056.dts
+	modified:   sys/gnu/dts/arm/omap3-n9.dts
+	modified:   sys/gnu/dts/arm/omap3-n900.dts
+	modified:   sys/gnu/dts/arm/omap3-n950-n9.dtsi
+	modified:   sys/gnu/dts/arm/omap3-n950.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-alto35.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-chestnut43.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-gallop43.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-palo35.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-palo43.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-summit.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-tobi.dts
+	modified:   sys/gnu/dts/arm/omap3-overo-storm-tobiduo.dts
+	modified:   sys/gnu/dts/arm/omap3-pandora-1ghz.dts
+	modified:   sys/gnu/dts/arm/omap3-pandora-common.dtsi
+	modified:   sys/gnu/dts/arm/omap3-sbc-t3530.dts
+	modified:   sys/gnu/dts/arm/omap3-sbc-t3730.dts
+	modified:   sys/gnu/dts/arm/omap3-sniper.dts
+	modified:   sys/gnu/dts/arm/omap3-tao3530.dtsi
+	modified:   sys/gnu/dts/arm/omap3-thunder.dts
+	modified:   sys/gnu/dts/arm/omap3-zoom3.dts
+	modified:   sys/gnu/dts/arm/omap3.dtsi
+	modified:   sys/gnu/dts/arm/omap3430-sdp.dts
+	modified:   sys/gnu/dts/arm/omap34xx-omap36xx-clocks.dtsi
+	modified:   sys/gnu/dts/arm/omap34xx.dtsi
+	modified:   sys/gnu/dts/arm/omap36xx-clocks.dtsi
+	modified:   sys/gnu/dts/arm/omap36xx.dtsi
+	modified:   sys/gnu/dts/arm/omap3xxx-clocks.dtsi
+	new file:   sys/gnu/dts/arm/omap4-droid-bionic-xt875.dts
+	modified:   sys/gnu/dts/arm/omap4-droid4-xt894.dts
+	modified:   sys/gnu/dts/arm/omap4-l4-abe.dtsi
+	modified:   sys/gnu/dts/arm/omap4-l4.dtsi
+	modified:   sys/gnu/dts/arm/omap4.dtsi
+	modified:   sys/gnu/dts/arm/omap44xx-clocks.dtsi
+	modified:   sys/gnu/dts/arm/omap5-l4-abe.dtsi
+	modified:   sys/gnu/dts/arm/omap5-l4.dtsi
+	modified:   sys/gnu/dts/arm/omap5.dtsi
+	modified:   sys/gnu/dts/arm/omap54xx-clocks.dtsi
+	new file:   sys/gnu/dts/arm/openbmc-flash-layout-128.dtsi
+	modified:   sys/gnu/dts/arm/ox810se.dtsi
+	modified:   sys/gnu/dts/arm/ox820.dtsi
+	modified:   sys/gnu/dts/arm/qcom-apq8084.dtsi
+	modified:   sys/gnu/dts/arm/qcom-ipq4019.dtsi
+	modified:   sys/gnu/dts/arm/qcom-mdm9615-wp8548-mangoh-green.dts
+	modified:   sys/gnu/dts/arm/qcom-msm8974-fairphone-fp2.dts
+	modified:   sys/gnu/dts/arm/qcom-msm8974.dtsi
+	modified:   sys/gnu/dts/arm/qcom-pm8941.dtsi
+	modified:   sys/gnu/dts/arm/r7s72100.dtsi
+	modified:   sys/gnu/dts/arm/r8a73a4.dtsi
+	modified:   sys/gnu/dts/arm/r8a7740-armadillo800eva.dts
+	modified:   sys/gnu/dts/arm/r8a7740.dtsi
+	modified:   sys/gnu/dts/arm/r8a7743.dtsi
+	modified:   sys/gnu/dts/arm/r8a7744.dtsi
+	modified:   sys/gnu/dts/arm/r8a7745-iwg22d-sodimm.dts
+	modified:   sys/gnu/dts/arm/r8a7745.dtsi
+	modified:   sys/gnu/dts/arm/r8a77470-iwg23s-sbc.dts
+	modified:   sys/gnu/dts/arm/r8a77470.dtsi
+	modified:   sys/gnu/dts/arm/r8a7778.dtsi
+	modified:   sys/gnu/dts/arm/r8a7779-marzen.dts
+	modified:   sys/gnu/dts/arm/r8a7779.dtsi
+	modified:   sys/gnu/dts/arm/r8a7790-lager.dts
+	modified:   sys/gnu/dts/arm/r8a7790.dtsi
+	modified:   sys/gnu/dts/arm/r8a7791-koelsch.dts
+	modified:   sys/gnu/dts/arm/r8a7791-porter.dts
+	modified:   sys/gnu/dts/arm/r8a7791.dtsi
+	modified:   sys/gnu/dts/arm/r8a7792.dtsi
+	modified:   sys/gnu/dts/arm/r8a7793-gose.dts
+	modified:   sys/gnu/dts/arm/r8a7793.dtsi
+	modified:   sys/gnu/dts/arm/r8a7794-alt.dts
+	modified:   sys/gnu/dts/arm/r8a7794-silk.dts
+	modified:   sys/gnu/dts/arm/r8a7794.dtsi
+	modified:   sys/gnu/dts/arm/rda8810pl.dtsi
+	modified:   sys/gnu/dts/arm/rk3036.dtsi
+	modified:   sys/gnu/dts/arm/rk3188-bqedison2qc.dts
+	modified:   sys/gnu/dts/arm/rk322x.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-evb.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-rock2-som.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-tinker.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-veyron-analog-audio.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-veyron-brain.dts
+	new file:   sys/gnu/dts/arm/rk3288-veyron-broadcom-bluetooth.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-veyron-chromebook.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-veyron-edp.dtsi
+	modified:   sys/gnu/dts/arm/rk3288-veyron-fievel.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-jaq.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-jerry.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-mickey.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-minnie.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-pinky.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-speedy.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron-tiger.dts
+	modified:   sys/gnu/dts/arm/rk3288-veyron.dtsi
+	modified:   sys/gnu/dts/arm/rk3288.dtsi
+	modified:   sys/gnu/dts/arm/rk3xxx.dtsi
+	new file:   sys/gnu/dts/arm/rockchip-radxa-dalang-carrier.dtsi
+	modified:   sys/gnu/dts/arm/rv1108.dtsi
+	modified:   sys/gnu/dts/arm/s3c2416-smdk2416.dts
+	modified:   sys/gnu/dts/arm/s3c6410-mini6410.dts
+	modified:   sys/gnu/dts/arm/s3c6410-smdk6410.dts
+	new file:   sys/gnu/dts/arm/sam9x60.dtsi
+	modified:   sys/gnu/dts/arm/sama5d2.dtsi
+	modified:   sys/gnu/dts/arm/sama5d3.dtsi
+	modified:   sys/gnu/dts/arm/sama5d3_can.dtsi
+	modified:   sys/gnu/dts/arm/sama5d3_tcb1.dtsi
+	modified:   sys/gnu/dts/arm/sama5d3_uart.dtsi
+	modified:   sys/gnu/dts/arm/sh73a0.dtsi
+	modified:   sys/gnu/dts/arm/socfpga_arria10_socdk_qspi.dts
+	modified:   sys/gnu/dts/arm/ste-ab8500.dtsi
+	new file:   sys/gnu/dts/arm/ste-ab8505.dtsi
+	new file:   sys/gnu/dts/arm/ste-db8500.dtsi
+	new file:   sys/gnu/dts/arm/ste-db8520.dtsi
+	new file:   sys/gnu/dts/arm/ste-dbx5x0-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/ste-dbx5x0.dtsi
+	deleted:    sys/gnu/dts/arm/ste-href-ab8505.dtsi
+	modified:   sys/gnu/dts/arm/ste-href-family-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/ste-href-tvk1281618-r2.dtsi
+	new file:   sys/gnu/dts/arm/ste-href-tvk1281618-r3.dtsi
+	modified:   sys/gnu/dts/arm/ste-href-tvk1281618.dtsi
+	modified:   sys/gnu/dts/arm/ste-href.dtsi
+	new file:   sys/gnu/dts/arm/ste-href520-tvk.dts
+	modified:   sys/gnu/dts/arm/ste-hrefprev60-stuib.dts
+	modified:   sys/gnu/dts/arm/ste-hrefprev60-tvk.dts
+	modified:   sys/gnu/dts/arm/ste-hrefprev60.dtsi
+	modified:   sys/gnu/dts/arm/ste-hrefv60plus-stuib.dts
+	modified:   sys/gnu/dts/arm/ste-hrefv60plus-tvk.dts
+	modified:   sys/gnu/dts/arm/ste-hrefv60plus.dtsi
+	modified:   sys/gnu/dts/arm/ste-nomadik-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/ste-snowball.dts
+	new file:   sys/gnu/dts/arm/ste-ux500-samsung-golden.dts
+	modified:   sys/gnu/dts/arm/stih410-b2260.dts
+	modified:   sys/gnu/dts/arm/stihxxx-b2120.dtsi
+	modified:   sys/gnu/dts/arm/stm32429i-eval.dts
+	modified:   sys/gnu/dts/arm/stm32746g-eval.dts
+	modified:   sys/gnu/dts/arm/stm32f4-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/stm32f429-disco.dts
+	modified:   sys/gnu/dts/arm/stm32f429.dtsi
+	modified:   sys/gnu/dts/arm/stm32f469-disco.dts
+	modified:   sys/gnu/dts/arm/stm32f469.dtsi
+	modified:   sys/gnu/dts/arm/stm32f7-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/stm32f746-disco.dts
+	modified:   sys/gnu/dts/arm/stm32f746.dtsi
+	modified:   sys/gnu/dts/arm/stm32f769-disco.dts
+	modified:   sys/gnu/dts/arm/stm32h743.dtsi
+	modified:   sys/gnu/dts/arm/stm32h743i-disco.dts
+	modified:   sys/gnu/dts/arm/stm32h743i-eval.dts
+	new file:   sys/gnu/dts/arm/stm32mp15-pinctrl.dtsi
+	renamed:    sys/gnu/dts/arm/stm32mp157c.dtsi -> sys/gnu/dts/arm/stm32mp151.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp153.dtsi
+	deleted:    sys/gnu/dts/arm/stm32mp157-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp157.dtsi
+	modified:   sys/gnu/dts/arm/stm32mp157a-avenger96.dts
+	modified:   sys/gnu/dts/arm/stm32mp157a-dk1.dts
+	modified:   sys/gnu/dts/arm/stm32mp157c-dk2.dts
+	modified:   sys/gnu/dts/arm/stm32mp157c-ed1.dts
+	modified:   sys/gnu/dts/arm/stm32mp157c-ev1.dts
+	deleted:    sys/gnu/dts/arm/stm32mp157xaa-pinctrl.dtsi
+	deleted:    sys/gnu/dts/arm/stm32mp157xab-pinctrl.dtsi
+	deleted:    sys/gnu/dts/arm/stm32mp157xac-pinctrl.dtsi
+	deleted:    sys/gnu/dts/arm/stm32mp157xad-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp15xc.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp15xx-dkx.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp15xxaa-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp15xxab-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp15xxac-pinctrl.dtsi
+	new file:   sys/gnu/dts/arm/stm32mp15xxad-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/sun4i-a10.dtsi
+	modified:   sys/gnu/dts/arm/sun5i-a10s-olinuxino-micro.dts
+	modified:   sys/gnu/dts/arm/sun5i.dtsi
+	modified:   sys/gnu/dts/arm/sun6i-a31.dtsi
+	modified:   sys/gnu/dts/arm/sun7i-a20.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-a23-a33.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-a33.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-a83t-cubietruck-plus.dts
+	modified:   sys/gnu/dts/arm/sun8i-a83t-tbs-a711.dts
+	modified:   sys/gnu/dts/arm/sun8i-a83t.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-h3-beelink-x2.dts
+	new file:   sys/gnu/dts/arm/sun8i-h3-emlid-neutis-n5h3-devboard.dts
+	new file:   sys/gnu/dts/arm/sun8i-h3-emlid-neutis-n5h3.dtsi
+	new file:   sys/gnu/dts/arm/sun8i-h3-nanopi-duo2.dts
+	modified:   sys/gnu/dts/arm/sun8i-h3.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-r40.dtsi
+	modified:   sys/gnu/dts/arm/sun8i-v3s.dtsi
+	modified:   sys/gnu/dts/arm/sun9i-a80.dtsi
+	new file:   sys/gnu/dts/arm/sunxi-h3-h5-emlid-neutis.dtsi
+	modified:   sys/gnu/dts/arm/sunxi-h3-h5.dtsi
+	new file:   sys/gnu/dts/arm/sunxi-libretech-all-h3-it.dtsi
+	modified:   sys/gnu/dts/arm/tegra124-apalis-emc.dtsi
+	modified:   sys/gnu/dts/arm/tegra124-jetson-tk1-emc.dtsi
+	modified:   sys/gnu/dts/arm/tegra124-nyan-big-emc.dtsi
+	modified:   sys/gnu/dts/arm/tegra124-nyan-blaze-emc.dtsi
+	modified:   sys/gnu/dts/arm/tegra124-venice2.dts
+	modified:   sys/gnu/dts/arm/tegra124.dtsi
+	new file:   sys/gnu/dts/arm/tegra20-cpu-opp-microvolt.dtsi
+	new file:   sys/gnu/dts/arm/tegra20-cpu-opp.dtsi
+	modified:   sys/gnu/dts/arm/tegra20-paz00.dts
+	modified:   sys/gnu/dts/arm/tegra20-trimslice.dts
+	modified:   sys/gnu/dts/arm/tegra20.dtsi
+	modified:   sys/gnu/dts/arm/tegra30-apalis-v1.1.dtsi
+	modified:   sys/gnu/dts/arm/tegra30-apalis.dtsi
+	modified:   sys/gnu/dts/arm/tegra30-cardhu-a04.dts
+	modified:   sys/gnu/dts/arm/tegra30-colibri.dtsi
+	new file:   sys/gnu/dts/arm/tegra30-cpu-opp-microvolt.dtsi
+	new file:   sys/gnu/dts/arm/tegra30-cpu-opp.dtsi
+	modified:   sys/gnu/dts/arm/tegra30.dtsi
+	modified:   sys/gnu/dts/arm/uniphier-ld4.dtsi
+	modified:   sys/gnu/dts/arm/uniphier-pinctrl.dtsi
+	modified:   sys/gnu/dts/arm/uniphier-pro4.dtsi
+	modified:   sys/gnu/dts/arm/uniphier-pro5.dtsi
+	modified:   sys/gnu/dts/arm/uniphier-pxs2.dtsi
+	modified:   sys/gnu/dts/arm/uniphier-sld8.dtsi
+	modified:   sys/gnu/dts/arm/vf-colibri.dtsi
+	modified:   sys/gnu/dts/arm/vf500-colibri.dtsi
+	modified:   sys/gnu/dts/arm/vf610-bk4.dts
+	modified:   sys/gnu/dts/arm/vf610-zii-dev-rev-b.dts
+	modified:   sys/gnu/dts/arm/vf610-zii-scu4-aib.dts
+	modified:   sys/gnu/dts/arm/zynq-7000.dtsi
+	modified:   sys/gnu/dts/arm64/actions/s900-bubblegum-96.dts
+	modified:   sys/gnu/dts/arm64/actions/s900.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/axp803.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-amarula-relic.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-bananapi-m64.dts
+	new file:   sys/gnu/dts/arm64/allwinner/sun50i-a64-cpu-opp.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-nanopi-a64.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-olinuxino-emmc.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-olinuxino.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-orangepi-win.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-pine64-lts.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-pine64-plus.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-pine64.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-pinebook.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-sopine-baseboard.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-sopine.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64-teres-i.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-a64.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-emlid-neutis-n5.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-libretech-all-h3-cc.dts
+	new file:   sys/gnu/dts/arm64/allwinner/sun50i-h5-libretech-all-h3-it.dts
+	new file:   sys/gnu/dts/arm64/allwinner/sun50i-h5-libretech-all-h5-cc.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-nanopi-neo-plus2.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-nanopi-neo2.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-orangepi-pc2.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-orangepi-prime.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-orangepi-zero-plus.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5-orangepi-zero-plus2.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h5.dtsi
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-beelink-gs1.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-orangepi-3.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-orangepi-lite2.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-orangepi-one-plus.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-orangepi.dtsi
+	new file:   sys/gnu/dts/arm64/allwinner/sun50i-h6-pine-h64-model-b.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-pine-h64.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6-tanix-tx6.dts
+	modified:   sys/gnu/dts/arm64/allwinner/sun50i-h6.dtsi
+	modified:   sys/gnu/dts/arm64/altera/socfpga_stratix10.dtsi
+	modified:   sys/gnu/dts/arm64/altera/socfpga_stratix10_socdk.dts
+	new file:   sys/gnu/dts/arm64/altera/socfpga_stratix10_socdk_nand.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-a1-ad401.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-a1.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-axg.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12-common.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a-sei510.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a-x96-max.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12a.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12b-a311d-khadas-vim3.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12b-odroid-n2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12b-s922x-khadas-vim3.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-g12b-ugoos-am6.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-g12b.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-gx-libretech-pc.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gx-p23x-q20x.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gx.dtsi
+	new file:   sys/gnu/dts/arm64/amlogic/meson-gxbb-kii-pro.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-nanopi-k2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-nexbox-a95x.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-odroidc2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-p20x.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-vega-s95.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxbb-wetek.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s805x-libretech-ac.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s805x-p241.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905d-libretech-pc.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-khadas-vim.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-libretech-cc.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-nexbox-a95x.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl-s905x-p212.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxl.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxm-khadas-vim2.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxm-rbox-pro.dts
+	new file:   sys/gnu/dts/arm64/amlogic/meson-gxm-s912-libretech-pc.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxm-vega-s96.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-gxm.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-khadas-vim3.dtsi
+	modified:   sys/gnu/dts/arm64/amlogic/meson-sm1-khadas-vim3l.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-sm1-sei610.dts
+	modified:   sys/gnu/dts/arm64/amlogic/meson-sm1.dtsi
+	modified:   sys/gnu/dts/arm64/arm/fvp-base-revc.dts
+	modified:   sys/gnu/dts/arm64/arm/juno-base.dtsi
+	modified:   sys/gnu/dts/arm64/arm/juno-clocks.dtsi
+	modified:   sys/gnu/dts/arm64/bitmain/bm1880-sophon-edge.dts
+	modified:   sys/gnu/dts/arm64/bitmain/bm1880.dtsi
+	new file:   sys/gnu/dts/arm64/broadcom/bcm2711-rpi-4-b.dts
+	modified:   sys/gnu/dts/arm64/exynos/exynos5433-tm2-common.dtsi
+	modified:   sys/gnu/dts/arm64/exynos/exynos5433-tm2.dts
+	modified:   sys/gnu/dts/arm64/exynos/exynos5433-tm2e.dts
+	modified:   sys/gnu/dts/arm64/exynos/exynos5433.dtsi
+	modified:   sys/gnu/dts/arm64/exynos/exynos7-espresso.dts
+	modified:   sys/gnu/dts/arm64/exynos/exynos7.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1028a-qds.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1028a-rdb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1028a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1043-post.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1043a-rdb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1046a-frwy.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1046a-rdb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1088a-qds.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1088a-rdb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls1088a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls208xa-rdb.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/fsl-ls208xa.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/fsl-lx2160a-cex7.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/fsl-lx2160a-clearfog-cx.dts
+	new file:   sys/gnu/dts/arm64/freescale/fsl-lx2160a-clearfog-itx.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/fsl-lx2160a-honeycomb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-lx2160a-rdb.dts
+	modified:   sys/gnu/dts/arm64/freescale/fsl-lx2160a.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mm-evk.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mm-pinfunc.h
+	modified:   sys/gnu/dts/arm64/freescale/imx8mm.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mn-ddr4-evk.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mn-evk.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mn-evk.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mn.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-evk.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-hummingboard-pulse.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-librem5-devkit.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-nitrogen.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8mq-phanbell.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-pico-pi.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-sr-som.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/imx8mq-thor96.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-zii-ultra-rmb3.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-zii-ultra-zest.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq-zii-ultra.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8mq.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8qxp-ai_ml.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8qxp-colibri-eval-v3.dts
+	new file:   sys/gnu/dts/arm64/freescale/imx8qxp-colibri-eval-v3.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/imx8qxp-colibri.dtsi
+	modified:   sys/gnu/dts/arm64/freescale/imx8qxp-mek.dts
+	modified:   sys/gnu/dts/arm64/freescale/imx8qxp.dtsi
+	new file:   sys/gnu/dts/arm64/freescale/s32v234-evb.dts
+	new file:   sys/gnu/dts/arm64/freescale/s32v234.dtsi
+	modified:   sys/gnu/dts/arm64/hisilicon/hi3798cv200-poplar.dts
+	modified:   sys/gnu/dts/arm64/hisilicon/hi3798cv200.dtsi
+	modified:   sys/gnu/dts/arm64/hisilicon/hi6220.dtsi
+	modified:   sys/gnu/dts/arm64/intel/socfpga_agilex.dtsi
+	modified:   sys/gnu/dts/arm64/intel/socfpga_agilex_socdk.dts
+	new file:   sys/gnu/dts/arm64/intel/socfpga_agilex_socdk_nand.dts
+	modified:   sys/gnu/dts/arm64/lg/lg1312.dtsi
+	modified:   sys/gnu/dts/arm64/lg/lg1313.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-3720-espressobin-emmc.dts
+	new file:   sys/gnu/dts/arm64/marvell/armada-3720-espressobin-v7-emmc.dts
+	new file:   sys/gnu/dts/arm64/marvell/armada-3720-espressobin-v7.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-3720-espressobin.dts
+	new file:   sys/gnu/dts/arm64/marvell/armada-3720-espressobin.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-3720-turris-mox.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-3720-uDPU.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-70x0.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-8040-clearfog-gt-8k.dts
+	modified:   sys/gnu/dts/arm64/marvell/armada-8040-mcbin.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-80x0.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-ap806-dual.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-ap806-quad.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-ap806.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-ap807-quad.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-ap807.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-ap80x.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-common.dtsi
+	modified:   sys/gnu/dts/arm64/marvell/armada-cp110.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-cp115.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/armada-cp11x.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/cn9130-db.dts
+	new file:   sys/gnu/dts/arm64/marvell/cn9130.dtsi
+	new file:   sys/gnu/dts/arm64/marvell/cn9131-db.dts
+	new file:   sys/gnu/dts/arm64/marvell/cn9132-db.dts
+	modified:   sys/gnu/dts/arm64/mediatek/mt8173.dtsi
+	modified:   sys/gnu/dts/arm64/mediatek/mt8183.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra132.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra186-p2771-0000.dts
+	modified:   sys/gnu/dts/arm64/nvidia/tegra186-p3310.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra186.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra194-p2888.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra194-p2972-0000.dts
+	modified:   sys/gnu/dts/arm64/nvidia/tegra194.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra210-p2180.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra210-p2597.dtsi
+	modified:   sys/gnu/dts/arm64/nvidia/tegra210-p3450-0000.dts
+	modified:   sys/gnu/dts/arm64/nvidia/tegra210.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/apq8016-sbc-pmic-pins.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/apq8016-sbc.dtsi
+	deleted:    sys/gnu/dts/arm64/qcom/apq8096-db820c-pins.dtsi
+	deleted:    sys/gnu/dts/arm64/qcom/apq8096-db820c-pmic-pins.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/apq8096-db820c.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/apq8096-ifc6640.dts
+	modified:   sys/gnu/dts/arm64/qcom/msm8916-longcheer-l8150.dts
+	modified:   sys/gnu/dts/arm64/qcom/msm8916-samsung-a2015-common.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/msm8916-samsung-a5u-eur.dts
+	modified:   sys/gnu/dts/arm64/qcom/msm8916.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/msm8996.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/msm8998-clamshell.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/msm8998-mtp.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/msm8998-pins.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/msm8998.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/pm6150.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/pm6150l.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/pm8004.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/pm8916.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/pm8994.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/qcs404-evb.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/qcs404.dtsi
+	new file:   sys/gnu/dts/arm64/qcom/sc7180-idp.dts
+	new file:   sys/gnu/dts/arm64/qcom/sc7180.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/sdm845-cheza.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/sdm845-db845c.dts
+	modified:   sys/gnu/dts/arm64/qcom/sdm845-mtp.dts
+	modified:   sys/gnu/dts/arm64/qcom/sdm845.dtsi
+	modified:   sys/gnu/dts/arm64/qcom/sdm850-lenovo-yoga-c630.dts
+	modified:   sys/gnu/dts/arm64/qcom/sm8150-mtp.dts
+	modified:   sys/gnu/dts/arm64/qcom/sm8150.dtsi
+	new file:   sys/gnu/dts/arm64/realtek/rtd1293-ds418j.dts
+	new file:   sys/gnu/dts/arm64/realtek/rtd1293.dtsi
+	modified:   sys/gnu/dts/arm64/realtek/rtd1295-zidoo-x9s.dts
+	modified:   sys/gnu/dts/arm64/realtek/rtd1295.dtsi
+	new file:   sys/gnu/dts/arm64/realtek/rtd1296-ds418.dts
+	new file:   sys/gnu/dts/arm64/realtek/rtd1296.dtsi
+	modified:   sys/gnu/dts/arm64/realtek/rtd129x.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/hihope-common.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/hihope-rzg2-ex.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a774a1-hihope-rzg2m-ex.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a774a1-hihope-rzg2m.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a774a1.dtsi
+	new file:   sys/gnu/dts/arm64/renesas/r8a774b1-hihope-rzg2n-ex.dts
+	new file:   sys/gnu/dts/arm64/renesas/r8a774b1-hihope-rzg2n.dts
+	new file:   sys/gnu/dts/arm64/renesas/r8a774b1.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a774c0-cat874.dts
+	new file:   sys/gnu/dts/arm64/renesas/r8a774c0-ek874-idk-2121wr.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a774c0.dtsi
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-es1-salvator-x.dts -> sys/gnu/dts/arm64/renesas/r8a77950-salvator-x.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-h3ulcb-kf.dts -> sys/gnu/dts/arm64/renesas/r8a77950-ulcb-kf.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-es1-h3ulcb.dts -> sys/gnu/dts/arm64/renesas/r8a77950-ulcb.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-es1.dtsi -> sys/gnu/dts/arm64/renesas/r8a77950.dtsi
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-salvator-x.dts -> sys/gnu/dts/arm64/renesas/r8a77951-salvator-x.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-salvator-xs.dts -> sys/gnu/dts/arm64/renesas/r8a77951-salvator-xs.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-es1-h3ulcb-kf.dts -> sys/gnu/dts/arm64/renesas/r8a77951-ulcb-kf.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795-h3ulcb.dts -> sys/gnu/dts/arm64/renesas/r8a77951-ulcb.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7795.dtsi -> sys/gnu/dts/arm64/renesas/r8a77951.dtsi
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7796-salvator-x.dts -> sys/gnu/dts/arm64/renesas/r8a77960-salvator-x.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7796-salvator-xs.dts -> sys/gnu/dts/arm64/renesas/r8a77960-salvator-xs.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7796-m3ulcb-kf.dts -> sys/gnu/dts/arm64/renesas/r8a77960-ulcb-kf.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7796-m3ulcb.dts -> sys/gnu/dts/arm64/renesas/r8a77960-ulcb.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a7796.dtsi -> sys/gnu/dts/arm64/renesas/r8a77960.dtsi
+	new file:   sys/gnu/dts/arm64/renesas/r8a77961-salvator-xs.dts
+	new file:   sys/gnu/dts/arm64/renesas/r8a77961.dtsi
+	renamed:    sys/gnu/dts/arm64/renesas/r8a77965-m3nulcb-kf.dts -> sys/gnu/dts/arm64/renesas/r8a77965-ulcb-kf.dts
+	renamed:    sys/gnu/dts/arm64/renesas/r8a77965-m3nulcb.dts -> sys/gnu/dts/arm64/renesas/r8a77965-ulcb.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77965.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77970.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77980.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77990-ebisu.dts
+	modified:   sys/gnu/dts/arm64/renesas/r8a77990.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/r8a77995.dtsi
+	new file:   sys/gnu/dts/arm64/renesas/rzg2-advantech-idk-1110wr-panel.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/salvator-common.dtsi
+	modified:   sys/gnu/dts/arm64/renesas/ulcb.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/px30-evb.dts
+	modified:   sys/gnu/dts/arm64/rockchip/px30.dtsi
+	new file:   sys/gnu/dts/arm64/rockchip/rk3308-evb.dts
+	new file:   sys/gnu/dts/arm64/rockchip/rk3308-roc-cc.dts
+	new file:   sys/gnu/dts/arm64/rockchip/rk3308.dtsi
+	new file:   sys/gnu/dts/arm64/rockchip/rk3328-a1.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3328-roc-cc.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3328.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3368-lion-haikou.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3368.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-firefly.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-gru-bob.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-gru-kevin.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-gru-scarlet.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-hugsun-x99.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-khadas-edge.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-nanopc-t4.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-nanopi4.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-orangepi.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-puma.dtsi
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399-roc-pc-mezzanine.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-roc-pc.dts
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399-roc-pc.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-rock-pi-4.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-rock960.dtsi
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399-rockpro64-v2.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-rockpro64.dts
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399-rockpro64.dtsi
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399-sapphire-excavator.dts
+	modified:   sys/gnu/dts/arm64/rockchip/rk3399.dtsi
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399pro-rock-pi-n10.dts
+	new file:   sys/gnu/dts/arm64/rockchip/rk3399pro-vmarc-som.dtsi
+	modified:   sys/gnu/dts/arm64/socionext/uniphier-ld11.dtsi
+	modified:   sys/gnu/dts/arm64/socionext/uniphier-ld20.dtsi
+	modified:   sys/gnu/dts/arm64/socionext/uniphier-pxs3.dtsi
+	new file:   sys/gnu/dts/arm64/sprd/sc9863a.dtsi
+	new file:   sys/gnu/dts/arm64/sprd/sharkl3.dtsi
+	new file:   sys/gnu/dts/arm64/sprd/sp9863a-1h10.dts
+	modified:   sys/gnu/dts/arm64/ti/k3-am65-main.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am65-mcu.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am65.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-am654-base-board.dts
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-common-proc-board.dts
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-main.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-mcu-wakeup.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e-som-p0.dtsi
+	modified:   sys/gnu/dts/arm64/ti/k3-j721e.dtsi
+	new file:   sys/gnu/dts/arm64/xilinx/zynqmp-clk-ccf.dtsi
+	deleted:    sys/gnu/dts/arm64/xilinx/zynqmp-clk.dtsi
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1232-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1254-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1275-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1751-xm015-dc1.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1751-xm016-dc2.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1751-xm017-dc3.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1751-xm018-dc4.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zc1751-xm019-dc5.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zcu100-revC.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zcu102-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zcu102-revB.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zcu104-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zcu106-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp-zcu111-revA.dts
+	modified:   sys/gnu/dts/arm64/xilinx/zynqmp.dtsi
+	modified:   sys/gnu/dts/include/dt-bindings/clock/aspeed-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/ast2600-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/axg-audio-clkc.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/bm1880-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/dra7.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/imx7ulp-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/imx8mm-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/imx8mn-clock.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/imx8mp-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/imx8mq-clock.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/marvell,mmp2.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/meson8-ddr-clkc.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/omap4.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/omap5.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/px30-cru.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,dispcc-sc7180.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/qcom,dispcc-sdm845.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,gcc-ipq6018.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/qcom,gcc-msm8998.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,gcc-sc7180.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,gpucc-sc7180.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,mmcc-msm8998.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,q6sstopcc-qcs404.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/qcom,videocc-sc7180.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/r8a774b1-cpg-mssr.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/r8a77961-cpg-mssr.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/sun50i-a64-ccu.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/sun6i-a31-ccu.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/sun8i-a23-a33-ccu.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/sun8i-h3-ccu.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/sun8i-r40-ccu.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/tegra124-car-common.h
+	modified:   sys/gnu/dts/include/dt-bindings/clock/tegra210-car.h
+	renamed:    sys/gnu/dts/include/dt-bindings/clk/ti-dra7-atl.h -> sys/gnu/dts/include/dt-bindings/clock/ti-dra7-atl.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/x1000-cgu.h
+	new file:   sys/gnu/dts/include/dt-bindings/clock/xlnx-versal-clk.h
+	new file:   sys/gnu/dts/include/dt-bindings/dma/x1000-dma.h
+	new file:   sys/gnu/dts/include/dt-bindings/dma/x1830-dma.h
+	new file:   sys/gnu/dts/include/dt-bindings/gpio/meson-a1-gpio.h
+	modified:   sys/gnu/dts/include/dt-bindings/iio/adc/ingenic,adc.h
+	modified:   sys/gnu/dts/include/dt-bindings/input/linux-event-codes.h
+	new file:   sys/gnu/dts/include/dt-bindings/interconnect/qcom,msm8916.h
+	new file:   sys/gnu/dts/include/dt-bindings/interconnect/qcom,msm8974.h
+	new file:   sys/gnu/dts/include/dt-bindings/interrupt-controller/aspeed-scu-ic.h
+	modified:   sys/gnu/dts/include/dt-bindings/memory/tegra186-mc.h
+	new file:   sys/gnu/dts/include/dt-bindings/memory/tegra194-mc.h
+	new file:   sys/gnu/dts/include/dt-bindings/net/qca-ar803x.h
+	new file:   sys/gnu/dts/include/dt-bindings/net/ti-dp83869.h
+	modified:   sys/gnu/dts/include/dt-bindings/phy/phy.h
+	modified:   sys/gnu/dts/include/dt-bindings/pinctrl/at91.h
+	modified:   sys/gnu/dts/include/dt-bindings/pinctrl/rockchip.h
+	new file:   sys/gnu/dts/include/dt-bindings/pmu/exynos_ppmu.h
+	new file:   sys/gnu/dts/include/dt-bindings/power/mt6765-power.h
+	modified:   sys/gnu/dts/include/dt-bindings/power/qcom-rpmpd.h
+	new file:   sys/gnu/dts/include/dt-bindings/power/r8a774b1-sysc.h
+	new file:   sys/gnu/dts/include/dt-bindings/power/r8a77961-sysc.h
+	new file:   sys/gnu/dts/include/dt-bindings/regulator/dlg,da9063-regulator.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset-controller/mt2712-resets.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset-controller/mt8183-resets.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson-a1-reset.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson-axg-audio-arb.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson-g12a-audio-reset.h
+	modified:   sys/gnu/dts/include/dt-bindings/reset/amlogic,meson8b-reset.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset/nuvoton,npcm7xx-reset.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset/qcom,gcc-ipq6018.h
+	new file:   sys/gnu/dts/include/dt-bindings/reset/realtek,rtd1295.h
+	modified:   sys/gnu/dts/include/dt-bindings/sound/samsung-i2s.h
+	modified:   sys/gnu/dts/include/dt-bindings/thermal/thermal_exynos.h
+	modified:   sys/gnu/dts/riscv/sifive/fu540-c000.dtsi
+	modified:   sys/gnu/dts/riscv/sifive/hifive-unleashed-a00.dts
+	modified:   sys/kern/vfs_export.c
+	modified:   sys/kern/vfs_mount.c
+	modified:   sys/modules/allwinner/Makefile
+	new file:   sys/modules/allwinner/aw_mmc/Makefile
+	modified:   sys/modules/dtb/allwinner/Makefile
+	modified:   sys/netinet/in_pcb.c
+	modified:   sys/netinet/in_pcb.h
+	modified:   sys/netinet/tcp_usrreq.c
+	modified:   sys/netinet6/in6_pcb.c
+	modified:   sys/netinet6/in6_pcb.h
+	modified:   sys/x86/include/x86_var.h
+	modified:   sys/x86/x86/cpu_machdep.c
+	modified:   sys/x86/x86/identcpu.c
+	modified:   usr.bin/ldd/ldd.c
+	modified:   usr.sbin/gpioctl/gpioctl.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lib/libc/sys/procctl.2
+	both modified:   sys/arm64/arm64/elf_machdep.c
+	both modified:   sys/x86/include/specialreg.h
+
+HEAD is now at 962916c270aa HBSD: Remove ${PIE_SUFFIX} shenanigans
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 962916c270aa HBSD: Remove ${PIE_SUFFIX} shenanigans
+==== END: hardened/12-stable/master ====
