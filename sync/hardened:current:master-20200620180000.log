@@ -1,0 +1,140 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/compat/linux/linux_mmap.c
+Merge made by the 'recursive' strategy.
+ contrib/llvm-project/FREEBSD-Xlist                 |    1 +
+ .../llvm-project/clang/lib/Sema/SemaTemplate.cpp   |    8 +-
+ .../clang/lib/Tooling/Syntax/Tokens.cpp            |  320 ++--
+ .../clang/utils/TableGen/ClangAttrEmitter.cpp      |    3 +
+ contrib/llvm-project/lld/COFF/Chunks.h             |   10 +-
+ contrib/llvm-project/lld/COFF/DLL.cpp              |   16 +-
+ contrib/llvm-project/lld/ELF/ScriptLexer.cpp       |    6 +-
+ contrib/llvm-project/lld/ELF/ScriptParser.cpp      |    1 +
+ .../include/llvm/Support/AArch64TargetParser.def   |    4 +
+ .../llvm/lib/CodeGen/BranchFolding.cpp             |   18 +-
+ .../llvm/lib/Target/AArch64/AArch64.td             |   26 +
+ .../lib/Target/AArch64/AArch64BranchTargets.cpp    |   12 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedA53.td     |    3 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedA57.td     |    3 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedCyclone.td |    3 +-
+ .../lib/Target/AArch64/AArch64SchedExynosM3.td     |    3 +-
+ .../lib/Target/AArch64/AArch64SchedExynosM4.td     |    3 +-
+ .../lib/Target/AArch64/AArch64SchedExynosM5.td     |    3 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedFalkor.td  |    4 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedKryo.td    |    4 +-
+ .../lib/Target/AArch64/AArch64SchedThunderX.td     |    4 +-
+ .../lib/Target/AArch64/AArch64SchedThunderX2T99.td |    4 +-
+ .../Target/AArch64/AArch64SchedThunderX3T110.td    | 1997 ++++++++++++++++++++
+ .../llvm/lib/Target/AArch64/AArch64Subtarget.cpp   |   11 +
+ .../llvm/lib/Target/AArch64/AArch64Subtarget.h     |    3 +-
+ .../llvm/lib/Target/X86/X86AsmPrinter.cpp          |   46 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.cpp        |   21 +-
+ .../llvm/lib/Target/X86/X86InstrInfo.cpp           |    2 +
+ .../llvm/lib/Transforms/Scalar/IndVarSimplify.cpp  |   94 +-
+ .../llvm/lib/Transforms/Utils/ValueMapper.cpp      |    3 +-
+ lib/clang/include/VCSVersion.inc                   |    8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |    2 +-
+ lib/libc/net/sctp_sys_calls.c                      |   35 +-
+ sbin/dump/tape.c                                   |  156 +-
+ sys/amd64/linux/linux_machdep.c                    |    7 +
+ sys/amd64/linux/linux_proto.h                      |    7 +
+ sys/amd64/linux/linux_syscall.h                    |    2 +-
+ sys/amd64/linux/linux_syscalls.c                   |    2 +-
+ sys/amd64/linux/linux_sysent.c                     |    2 +-
+ sys/amd64/linux/linux_systrace_args.c              |    8 +-
+ sys/amd64/linux/syscalls.master                    |    2 +-
+ sys/amd64/linux32/linux32_machdep.c                |    7 +
+ sys/amd64/linux32/linux32_proto.h                  |    7 +
+ sys/amd64/linux32/linux32_syscall.h                |    2 +-
+ sys/amd64/linux32/linux32_syscalls.c               |    2 +-
+ sys/amd64/linux32/linux32_sysent.c                 |    2 +-
+ sys/amd64/linux32/linux32_systrace_args.c          |    8 +-
+ sys/amd64/linux32/syscalls.master                  |    2 +-
+ sys/arm64/linux/linux_machdep.c                    |    7 +
+ sys/arm64/linux/linux_proto.h                      |    7 +
+ sys/arm64/linux/linux_syscall.h                    |    2 +-
+ sys/arm64/linux/linux_syscalls.c                   |    2 +-
+ sys/arm64/linux/linux_sysent.c                     |    2 +-
+ sys/arm64/linux/linux_systrace_args.c              |    8 +-
+ sys/arm64/linux/syscalls.master                    |    5 +-
+ sys/compat/linux/linux_mmap.c                      |   56 +
+ sys/compat/linux/linux_mmap.h                      |   21 +
+ sys/dev/oce/oce_if.c                               |   18 +-
+ sys/i386/linux/linux_machdep.c                     |    7 +
+ sys/i386/linux/linux_proto.h                       |    7 +
+ sys/i386/linux/linux_syscall.h                     |    2 +-
+ sys/i386/linux/linux_syscalls.c                    |    2 +-
+ sys/i386/linux/linux_sysent.c                      |    2 +-
+ sys/i386/linux/linux_systrace_args.c               |    8 +-
+ sys/i386/linux/syscalls.master                     |    2 +-
+ sys/netinet/sctp_usrreq.c                          |   45 +-
+ sys/netinet/sctputil.c                             |  148 +-
+ sys/netinet/sctputil.h                             |    7 +-
+ sys/sys/syscallsubr.h                              |    2 +
+ sys/sys/tree.h                                     |   26 +-
+ sys/vm/uma.h                                       |   11 +-
+ sys/vm/uma_core.c                                  |   12 +-
+ sys/vm/uma_int.h                                   |    4 +-
+ sys/vm/vm_mmap.c                                   |   14 +-
+ 74 files changed, 2792 insertions(+), 532 deletions(-)
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedThunderX3T110.td
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    8c9a4606d98b..35c5fc442ac0  hardened/current/master -> hardened/current/master        
+remote:    d8fc66b39d39..ccebfa2cfd31  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   8c9a4606d98b..35c5fc442ac0  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
