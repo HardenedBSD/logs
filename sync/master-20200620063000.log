@@ -47,3 +47,156 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/qterminal/files/patch-src_forms_qterminal.ui
+Removing x11/lxqt-globalkeys/files/patch-daemon_core.cpp
+Removing x11-fm/pcmanfm-qt/files/patch-config_pcmanfm-qt_lxqt_settings.conf.in
+Removing devel/liblxqt/files/patch-lxqtpowermanager.cpp
+Merge made by the 'recursive' strategy.
+ audio/pavucontrol-qt/Makefile                      |   2 +-
+ audio/pavucontrol-qt/distinfo                      |   6 +-
+ audio/pavucontrol-qt/pkg-plist                     |   2 +
+ deskutils/calibre/Makefile                         |   2 +-
+ deskutils/calibre/distinfo                         |   8 +-
+ deskutils/lxqt-notificationd/Makefile              |   5 +-
+ deskutils/lxqt-notificationd/distinfo              |   6 +-
+ deskutils/lxqt-notificationd/pkg-plist             |  11 +++
+ devel/liblxqt/Makefile                             |   2 +-
+ devel/liblxqt/distinfo                             |   6 +-
+ devel/liblxqt/files/patch-lxqtpowermanager.cpp     |  12 ---
+ devel/liblxqt/pkg-plist                            |   3 +
+ devel/libqtxdg/Makefile                            |   2 +-
+ devel/libqtxdg/distinfo                            |   6 +-
+ devel/lxqt-build-tools/Makefile                    |   2 +-
+ devel/lxqt-build-tools/distinfo                    |   6 +-
+ devel/lxqt-build-tools/pkg-plist                   |   5 +
+ graphics/lximage-qt/Makefile                       |   2 +-
+ graphics/lximage-qt/distinfo                       |   6 +-
+ graphics/lximage-qt/pkg-plist                      |   4 +
+ math/gh-bc/Makefile                                |   2 +-
+ math/gh-bc/distinfo                                |   6 +-
+ net/nbdkit/Makefile                                |   4 +-
+ net/nbdkit/pkg-descr                               |   2 +-
+ security/lxqt-openssh-askpass/Makefile             |   5 +-
+ security/lxqt-openssh-askpass/distinfo             |   6 +-
+ security/lxqt-openssh-askpass/pkg-plist            |   7 +-
+ security/lxqt-sudo/Makefile                        |   5 +-
+ security/lxqt-sudo/distinfo                        |   6 +-
+ security/lxqt-sudo/files/patch-sudo.cpp            | 103 +++++----------------
+ security/lxqt-sudo/pkg-plist                       |  10 +-
+ sysutils/bsdisks/Makefile                          |   4 +-
+ sysutils/bsdisks/distinfo                          |   6 +-
+ sysutils/bsdisks/pkg-descr                         |   2 +-
+ sysutils/libsysstat/Makefile                       |   3 +-
+ sysutils/libsysstat/distinfo                       |   6 +-
+ sysutils/lxqt-admin/Makefile                       |   2 +-
+ sysutils/lxqt-admin/distinfo                       |   6 +-
+ sysutils/lxqt-admin/pkg-plist                      |   6 ++
+ sysutils/lxqt-config/Makefile                      |   6 +-
+ sysutils/lxqt-config/distinfo                      |   6 +-
+ sysutils/lxqt-config/pkg-descr                     |   2 +-
+ sysutils/lxqt-config/pkg-plist                     |  49 +++++++++-
+ sysutils/lxqt-policykit/Makefile                   |   2 +-
+ sysutils/lxqt-policykit/distinfo                   |   6 +-
+ sysutils/lxqt-policykit/pkg-plist                  |   5 +-
+ sysutils/lxqt-qtplugin/Makefile                    |   3 +-
+ sysutils/lxqt-qtplugin/distinfo                    |   6 +-
+ x11-fm/pcmanfm-qt/Makefile                         |   2 +-
+ x11-fm/pcmanfm-qt/distinfo                         |   6 +-
+ .../patch-config_pcmanfm-qt_lxqt_settings.conf.in  |  12 ---
+ x11-fm/pcmanfm-qt/pkg-plist                        |  10 +-
+ x11-themes/lxqt-themes/Makefile                    |   2 +-
+ x11-themes/lxqt-themes/distinfo                    |   6 +-
+ x11-toolkits/qtermwidget/Makefile                  |   2 +-
+ x11-toolkits/qtermwidget/distinfo                  |   6 +-
+ x11-toolkits/qtermwidget/pkg-plist                 |   4 +
+ x11-wm/lxqt-panel/Makefile                         |   4 +-
+ x11-wm/lxqt-panel/distinfo                         |   6 +-
+ .../patch-plugin-kbindicator_src_x11_kbdlayout.cpp |  14 +--
+ x11-wm/lxqt-panel/pkg-plist                        |  70 +++++++++++++-
+ x11-wm/lxqt-session/Makefile                       |   5 +-
+ x11-wm/lxqt-session/distinfo                       |   6 +-
+ x11-wm/lxqt-session/pkg-plist                      |  19 +++-
+ x11-wm/lxqt/Makefile                               |   4 +-
+ x11-wm/obconf-qt/Makefile                          |   2 +-
+ x11-wm/obconf-qt/distinfo                          |   6 +-
+ x11-wm/obconf-qt/pkg-plist                         |   3 +
+ x11-wm/xfce4-desktop/Makefile                      |   2 +
+ x11/compton-conf/Makefile                          |   2 +-
+ x11/compton-conf/distinfo                          |   6 +-
+ x11/compton-conf/pkg-plist                         |   8 ++
+ x11/libfm-qt/Makefile                              |   2 +-
+ x11/libfm-qt/distinfo                              |   6 +-
+ x11/libfm-qt/pkg-plist                             |   8 +-
+ x11/lxqt-about/Makefile                            |   5 +-
+ x11/lxqt-about/distinfo                            |   6 +-
+ x11/lxqt-globalkeys/Makefile                       |   5 +-
+ x11/lxqt-globalkeys/distinfo                       |   6 +-
+ x11/lxqt-globalkeys/files/patch-daemon_core.cpp    |  10 --
+ x11/lxqt-globalkeys/pkg-plist                      |   5 +-
+ x11/lxqt-runner/Makefile                           |   2 +-
+ x11/lxqt-runner/distinfo                           |   6 +-
+ x11/lxqt-runner/pkg-plist                          |   5 +-
+ x11/qterminal/Makefile                             |   2 +-
+ x11/qterminal/distinfo                             |   6 +-
+ x11/qterminal/files/patch-src_config.h             |  24 ++---
+ x11/qterminal/files/patch-src_forms_qterminal.ui   |  13 ---
+ x11/qterminal/pkg-plist                            |   4 +
+ 89 files changed, 393 insertions(+), 303 deletions(-)
+ delete mode 100644 devel/liblxqt/files/patch-lxqtpowermanager.cpp
+ delete mode 100644 x11-fm/pcmanfm-qt/files/patch-config_pcmanfm-qt_lxqt_settings.conf.in
+ delete mode 100644 x11/lxqt-globalkeys/files/patch-daemon_core.cpp
+ delete mode 100644 x11/qterminal/files/patch-src_forms_qterminal.ui
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d59123c60aae..30e068aaea70  master -> master        
+remote:    283a0fdb3639..d59123c60aae  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d59123c60aae..30e068aaea70  master -> master
+==== END: master ====
