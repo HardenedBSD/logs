@@ -47,3 +47,131 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/duplicity07/pkg-message
+Removing sysutils/duplicity07/pkg-descr
+Removing sysutils/duplicity07/files/patch-setup.py
+Removing sysutils/duplicity07/distinfo
+Removing sysutils/duplicity07/Makefile
+Removing net-mgmt/zabbix42-server/pkg-plist.java
+Removing net-mgmt/zabbix42-server/pkg-plist.frontend
+Removing net-mgmt/zabbix42-server/pkg-plist.agent
+Removing net-mgmt/zabbix42-server/pkg-plist
+Removing net-mgmt/zabbix42-server/pkg-descr
+Removing net-mgmt/zabbix42-server/files/zabbix_server.in
+Removing net-mgmt/zabbix42-server/files/zabbix_proxy.in
+Removing net-mgmt/zabbix42-server/files/zabbix_java.in
+Removing net-mgmt/zabbix42-server/files/zabbix_agentd.in
+Removing net-mgmt/zabbix42-server/files/pkg-message.in
+Removing net-mgmt/zabbix42-server/distinfo
+Removing net-mgmt/zabbix42-server/Makefile
+Removing net-mgmt/zabbix42-proxy/Makefile
+Removing net-mgmt/zabbix42-java/Makefile
+Removing net-mgmt/zabbix42-frontend/Makefile
+Removing net-mgmt/zabbix42-agent/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                           |   6 +
+ lang/gcc9-devel/Makefile                        |   2 +-
+ lang/gcc9-devel/distinfo                        |   6 +-
+ net-mgmt/Makefile                               |   5 -
+ net-mgmt/netbox/Makefile                        |  27 +-
+ net-mgmt/zabbix42-agent/Makefile                |  14 -
+ net-mgmt/zabbix42-frontend/Makefile             |  34 -
+ net-mgmt/zabbix42-java/Makefile                 |  15 -
+ net-mgmt/zabbix42-proxy/Makefile                |  12 -
+ net-mgmt/zabbix42-server/Makefile               | 216 ------
+ net-mgmt/zabbix42-server/distinfo               |   3 -
+ net-mgmt/zabbix42-server/files/pkg-message.in   |  61 --
+ net-mgmt/zabbix42-server/files/zabbix_agentd.in |  64 --
+ net-mgmt/zabbix42-server/files/zabbix_java.in   |  47 --
+ net-mgmt/zabbix42-server/files/zabbix_proxy.in  |  65 --
+ net-mgmt/zabbix42-server/files/zabbix_server.in |  66 --
+ net-mgmt/zabbix42-server/pkg-descr              |  10 -
+ net-mgmt/zabbix42-server/pkg-plist              |  24 -
+ net-mgmt/zabbix42-server/pkg-plist.agent        |   9 -
+ net-mgmt/zabbix42-server/pkg-plist.frontend     | 975 ------------------------
+ net-mgmt/zabbix42-server/pkg-plist.java         |  11 -
+ net-p2p/amule-devel/Makefile                    |  10 +-
+ net-p2p/amule-devel/distinfo                    |   6 +-
+ sysutils/Makefile                               |   1 -
+ sysutils/duplicity07/Makefile                   |  86 ---
+ sysutils/duplicity07/distinfo                   |   3 -
+ sysutils/duplicity07/files/patch-setup.py       | 109 ---
+ sysutils/duplicity07/pkg-descr                  |   8 -
+ sysutils/duplicity07/pkg-message                |  29 -
+ 29 files changed, 33 insertions(+), 1891 deletions(-)
+ delete mode 100644 net-mgmt/zabbix42-agent/Makefile
+ delete mode 100644 net-mgmt/zabbix42-frontend/Makefile
+ delete mode 100644 net-mgmt/zabbix42-java/Makefile
+ delete mode 100644 net-mgmt/zabbix42-proxy/Makefile
+ delete mode 100644 net-mgmt/zabbix42-server/Makefile
+ delete mode 100644 net-mgmt/zabbix42-server/distinfo
+ delete mode 100644 net-mgmt/zabbix42-server/files/pkg-message.in
+ delete mode 100644 net-mgmt/zabbix42-server/files/zabbix_agentd.in
+ delete mode 100644 net-mgmt/zabbix42-server/files/zabbix_java.in
+ delete mode 100644 net-mgmt/zabbix42-server/files/zabbix_proxy.in
+ delete mode 100644 net-mgmt/zabbix42-server/files/zabbix_server.in
+ delete mode 100644 net-mgmt/zabbix42-server/pkg-descr
+ delete mode 100644 net-mgmt/zabbix42-server/pkg-plist
+ delete mode 100644 net-mgmt/zabbix42-server/pkg-plist.agent
+ delete mode 100644 net-mgmt/zabbix42-server/pkg-plist.frontend
+ delete mode 100644 net-mgmt/zabbix42-server/pkg-plist.java
+ delete mode 100644 sysutils/duplicity07/Makefile
+ delete mode 100644 sysutils/duplicity07/distinfo
+ delete mode 100644 sysutils/duplicity07/files/patch-setup.py
+ delete mode 100644 sysutils/duplicity07/pkg-descr
+ delete mode 100644 sysutils/duplicity07/pkg-message
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    364a183d4f4c..0a14c9e4fc08  master -> master
+remote:    ce4de5293d25..364a183d4f4c  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   364a183d4f4c..0a14c9e4fc08  master -> master
+==== END: master ====
