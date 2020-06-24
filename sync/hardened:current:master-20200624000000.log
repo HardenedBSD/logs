@@ -1,0 +1,220 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/ntp/ChangeLog                              |  29 +
+ contrib/ntp/CommitLog                              | 717 ++++++++++++++++++++-
+ contrib/ntp/NEWS                                   |  38 ++
+ contrib/ntp/config.h.in                            |   6 +
+ contrib/ntp/configure                              |  22 +-
+ contrib/ntp/configure.ac                           |   2 +-
+ contrib/ntp/html/drivers/driver40-ja.html          |  12 +-
+ contrib/ntp/html/drivers/driver40.html             |  11 +-
+ contrib/ntp/include/l_stdlib.h                     |   9 +
+ contrib/ntp/include/ntp.h                          |   2 +-
+ contrib/ntp/include/ntp_config.h                   |  10 -
+ contrib/ntp/include/recvbuff.h                     |  30 +-
+ contrib/ntp/lib/isc/win32/include/isc/int.h        |   4 +-
+ contrib/ntp/libntp/a_md5encrypt.c                  |   2 +-
+ contrib/ntp/libntp/decodenetnum.c                  | 200 +++---
+ contrib/ntp/libntp/recvbuff.c                      | 204 +++---
+ contrib/ntp/libntp/strdup.c                        |  34 +-
+ contrib/ntp/libntp/timexsup.c                      |   7 +-
+ contrib/ntp/ntpd/invoke-ntp.conf.texi              |   2 +-
+ contrib/ntp/ntpd/invoke-ntp.keys.texi              |   2 +-
+ contrib/ntp/ntpd/invoke-ntpd.texi                  |   4 +-
+ contrib/ntp/ntpd/ntp.conf.5man                     |   4 +-
+ contrib/ntp/ntpd/ntp.conf.5mdoc                    |   4 +-
+ contrib/ntp/ntpd/ntp.conf.html                     |   2 +-
+ contrib/ntp/ntpd/ntp.conf.man.in                   |   4 +-
+ contrib/ntp/ntpd/ntp.conf.mdoc.in                  |   4 +-
+ contrib/ntp/ntpd/ntp.keys.5man                     |   4 +-
+ contrib/ntp/ntpd/ntp.keys.5mdoc                    |   4 +-
+ contrib/ntp/ntpd/ntp.keys.html                     |   2 +-
+ contrib/ntp/ntpd/ntp.keys.man.in                   |   4 +-
+ contrib/ntp/ntpd/ntp.keys.mdoc.in                  |   4 +-
+ contrib/ntp/ntpd/ntp_config.c                      |  12 +-
+ contrib/ntp/ntpd/ntp_io.c                          |  36 +-
+ contrib/ntp/ntpd/ntp_proto.c                       |  57 +-
+ contrib/ntp/ntpd/ntp_refclock.c                    |  72 +--
+ contrib/ntp/ntpd/ntp_request.c                     |   2 +-
+ contrib/ntp/ntpd/ntp_timer.c                       |  35 +-
+ contrib/ntp/ntpd/ntpd-opts.c                       |  14 +-
+ contrib/ntp/ntpd/ntpd-opts.h                       |   6 +-
+ contrib/ntp/ntpd/ntpd.1ntpdman                     |   4 +-
+ contrib/ntp/ntpd/ntpd.1ntpdmdoc                    |   4 +-
+ contrib/ntp/ntpd/ntpd.html                         |   4 +-
+ contrib/ntp/ntpd/ntpd.man.in                       |   4 +-
+ contrib/ntp/ntpd/ntpd.mdoc.in                      |   4 +-
+ contrib/ntp/ntpd/refclock_jjy.c                    | 108 +++-
+ contrib/ntp/ntpd/refclock_nmea.c                   |   2 +-
+ contrib/ntp/ntpd/refclock_palisade.c               |  48 +-
+ contrib/ntp/ntpd/refclock_parse.c                  |   2 +-
+ contrib/ntp/ntpdate/ntpdate.c                      |   5 +-
+ contrib/ntp/ntpdc/invoke-ntpdc.texi                |   4 +-
+ contrib/ntp/ntpdc/ntpdc-opts.c                     |  14 +-
+ contrib/ntp/ntpdc/ntpdc-opts.h                     |   6 +-
+ contrib/ntp/ntpdc/ntpdc.1ntpdcman                  |   4 +-
+ contrib/ntp/ntpdc/ntpdc.1ntpdcmdoc                 |   4 +-
+ contrib/ntp/ntpdc/ntpdc.html                       |   4 +-
+ contrib/ntp/ntpdc/ntpdc.man.in                     |   4 +-
+ contrib/ntp/ntpdc/ntpdc.mdoc.in                    |   4 +-
+ contrib/ntp/ntpq/invoke-ntpq.texi                  |   4 +-
+ contrib/ntp/ntpq/ntpq-opts.c                       |  14 +-
+ contrib/ntp/ntpq/ntpq-opts.h                       |   6 +-
+ contrib/ntp/ntpq/ntpq.1ntpqman                     |   4 +-
+ contrib/ntp/ntpq/ntpq.1ntpqmdoc                    |   4 +-
+ contrib/ntp/ntpq/ntpq.html                         |   4 +-
+ contrib/ntp/ntpq/ntpq.man.in                       |   4 +-
+ contrib/ntp/ntpq/ntpq.mdoc.in                      |   4 +-
+ contrib/ntp/ntpsnmpd/invoke-ntpsnmpd.texi          |   2 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd-opts.c               |  14 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd-opts.h               |   6 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdman         |   4 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.1ntpsnmpdmdoc        |   4 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.html                 |   2 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.man.in               |   4 +-
+ contrib/ntp/ntpsnmpd/ntpsnmpd.mdoc.in              |   4 +-
+ contrib/ntp/packageinfo.sh                         |   2 +-
+ .../calc_tickadj/calc_tickadj.1calc_tickadjman     |   4 +-
+ .../calc_tickadj/calc_tickadj.1calc_tickadjmdoc    |   4 +-
+ contrib/ntp/scripts/calc_tickadj/calc_tickadj.html |   2 +-
+ .../ntp/scripts/calc_tickadj/calc_tickadj.man.in   |   4 +-
+ .../ntp/scripts/calc_tickadj/calc_tickadj.mdoc.in  |   4 +-
+ .../scripts/calc_tickadj/invoke-calc_tickadj.texi  |   2 +-
+ contrib/ntp/scripts/invoke-plot_summary.texi       |   4 +-
+ contrib/ntp/scripts/invoke-summary.texi            |   4 +-
+ contrib/ntp/scripts/ntp-wait/invoke-ntp-wait.texi  |   4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait-opts         |   4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.1ntp-waitman |   4 +-
+ .../ntp/scripts/ntp-wait/ntp-wait.1ntp-waitmdoc    |   4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.html         |   4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.man.in       |   4 +-
+ contrib/ntp/scripts/ntp-wait/ntp-wait.mdoc.in      |   4 +-
+ contrib/ntp/scripts/ntpsweep/invoke-ntpsweep.texi  |   4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep-opts         |   4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.1ntpsweepman |   4 +-
+ .../ntp/scripts/ntpsweep/ntpsweep.1ntpsweepmdoc    |   4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.html         |   4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.man.in       |   4 +-
+ contrib/ntp/scripts/ntpsweep/ntpsweep.mdoc.in      |   4 +-
+ contrib/ntp/scripts/ntptrace/invoke-ntptrace.texi  |   4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace-opts         |   4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.1ntptraceman |   4 +-
+ .../ntp/scripts/ntptrace/ntptrace.1ntptracemdoc    |   4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.html         |   4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.man.in       |   4 +-
+ contrib/ntp/scripts/ntptrace/ntptrace.mdoc.in      |   4 +-
+ contrib/ntp/scripts/plot_summary-opts              |   4 +-
+ contrib/ntp/scripts/plot_summary.1plot_summaryman  |   4 +-
+ contrib/ntp/scripts/plot_summary.1plot_summarymdoc |   4 +-
+ contrib/ntp/scripts/plot_summary.html              |   4 +-
+ contrib/ntp/scripts/plot_summary.man.in            |   4 +-
+ contrib/ntp/scripts/plot_summary.mdoc.in           |   4 +-
+ contrib/ntp/scripts/summary-opts                   |   4 +-
+ contrib/ntp/scripts/summary.1summaryman            |   4 +-
+ contrib/ntp/scripts/summary.1summarymdoc           |   4 +-
+ contrib/ntp/scripts/summary.html                   |   4 +-
+ contrib/ntp/scripts/summary.man.in                 |   4 +-
+ contrib/ntp/scripts/summary.mdoc.in                |   4 +-
+ .../scripts/update-leap/invoke-update-leap.texi    |   2 +-
+ contrib/ntp/scripts/update-leap/update-leap-opts   |   4 +-
+ .../update-leap/update-leap.1update-leapman        |   4 +-
+ .../update-leap/update-leap.1update-leapmdoc       |   4 +-
+ contrib/ntp/scripts/update-leap/update-leap.html   |   2 +-
+ contrib/ntp/scripts/update-leap/update-leap.man.in |   4 +-
+ .../ntp/scripts/update-leap/update-leap.mdoc.in    |   4 +-
+ contrib/ntp/sntp/configure                         |  20 +-
+ contrib/ntp/sntp/crypto.c                          |   3 +-
+ contrib/ntp/sntp/include/version.def               |   2 +-
+ contrib/ntp/sntp/include/version.texi              |   6 +-
+ contrib/ntp/sntp/invoke-sntp.texi                  |   4 +-
+ contrib/ntp/sntp/m4/version.m4                     |   2 +-
+ contrib/ntp/sntp/sntp-opts.c                       |  14 +-
+ contrib/ntp/sntp/sntp-opts.h                       |   6 +-
+ contrib/ntp/sntp/sntp.1sntpman                     |   4 +-
+ contrib/ntp/sntp/sntp.1sntpmdoc                    |   4 +-
+ contrib/ntp/sntp/sntp.html                         |   4 +-
+ contrib/ntp/sntp/sntp.man.in                       |   4 +-
+ contrib/ntp/sntp/sntp.mdoc.in                      |   4 +-
+ contrib/ntp/sntp/version.c                         |   2 +-
+ contrib/ntp/util/invoke-ntp-keygen.texi            |   4 +-
+ contrib/ntp/util/ntp-keygen-opts.c                 |  14 +-
+ contrib/ntp/util/ntp-keygen-opts.h                 |   6 +-
+ contrib/ntp/util/ntp-keygen.1ntp-keygenman         |   4 +-
+ contrib/ntp/util/ntp-keygen.1ntp-keygenmdoc        |   4 +-
+ contrib/ntp/util/ntp-keygen.html                   |   4 +-
+ contrib/ntp/util/ntp-keygen.man.in                 |   4 +-
+ contrib/ntp/util/ntp-keygen.mdoc.in                |   4 +-
+ lib/libufs/sbread.3                                |  22 +-
+ libexec/ftpd/ftpcmd.y                              |   2 +
+ stand/common/bootstrap.h                           |   2 -
+ stand/efi/include/efilib.h                         |   1 -
+ stand/efi/libefi/efihttp.c                         |   1 +
+ sys/compat/linuxkpi/common/include/linux/rbtree.h  |   2 +-
+ sys/geom/journal/g_journal_ufs.c                   |  14 +-
+ sys/netinet/sctp_usrreq.c                          |  42 +-
+ usr.bin/localedef/localedef.c                      |   2 +
+ usr.bin/localedef/localedef.h                      |   2 +
+ usr.sbin/ntp/config.h                              |   6 +-
+ usr.sbin/ntp/scripts/mkver                         |   2 +-
+ usr.sbin/rrenumd/parser.y                          |   2 +-
+ 157 files changed, 1692 insertions(+), 647 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    b8ddc62473d2..80ebf28e6c86  hardened/current/master -> hardened/current/master        
+remote:    6d06608c3cf3..9f70f1573797  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b8ddc62473d2..80ebf28e6c86  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
