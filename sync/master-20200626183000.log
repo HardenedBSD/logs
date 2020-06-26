@@ -47,3 +47,148 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/palisade/files/patch-src_core_include_utils_parallel.h
+Removing security/palisade/files/patch-CMakeLists.txt
+Removing net-mgmt/resource-agents/files/patch-heartbeat_tomcat
+Removing lang/gcc48/files/patch-armv6-hf-support
+Removing lang/gcc48/files/patch-arm-support
+Removing lang/gcc48/files/patch-arm-libcpp
+Removing dns/nss_mdns/files/patch-src__nss_gethostname_select.h
+Removing dns/nss_mdns/files/patch-src__nss.c
+Removing dns/nss_mdns/files/patch-src__bsdnss.c
+Removing dns/nss_mdns/files/patch-src__Makefile.am
+Merge made by the 'recursive' strategy.
+ audio/gbsplay/Makefile                             |  17 +-
+ audio/gbsplay/distinfo                             |   6 +-
+ deskutils/py-vdirsyncer/Makefile                   |   1 +
+ .../py-vdirsyncer/files/patch-github_3eb9ce5.patch |  39 ++
+ devel/kf5-kitemmodels/Makefile                     |   4 +-
+ devel/kf5-kitemmodels/pkg-plist                    |   2 +
+ devel/php-composer/Makefile                        |   2 +-
+ devel/php-composer/distinfo                        |   6 +-
+ dns/nss_mdns/Makefile                              |  32 +-
+ dns/nss_mdns/distinfo                              |   5 +-
+ dns/nss_mdns/files/patch-src__Makefile.am          |  24 -
+ dns/nss_mdns/files/patch-src__bsdnss.c             |  73 ---
+ dns/nss_mdns/files/patch-src__nss.c                |  39 --
+ .../files/patch-src__nss_gethostname_select.h      |  55 --
+ dns/nss_mdns/pkg-descr                             |   2 +
+ editors/micro/Makefile                             |  12 +-
+ editors/micro/distinfo                             |  18 +-
+ lang/gcc48/files/patch-arm-libcpp                  |  25 -
+ lang/gcc48/files/patch-arm-support                 | 717 ---------------------
+ lang/gcc48/files/patch-armv6-hf-support            |  18 -
+ math/Makefile                                      |   1 +
+ math/e-antic/Makefile                              |  36 ++
+ math/e-antic/distinfo                              |   3 +
+ math/e-antic/pkg-descr                             |   5 +
+ math/e-antic/pkg-plist                             |  17 +
+ math/vtk9/Makefile                                 |   2 +-
+ math/vtk9/distinfo                                 |   6 +-
+ net-mgmt/resource-agents/Makefile                  |   9 +-
+ net-mgmt/resource-agents/distinfo                  |   6 +-
+ .../resource-agents/files/patch-heartbeat_tomcat   |  15 -
+ net-mgmt/resource-agents/pkg-plist                 |   8 +
+ net/cloudflared/Makefile                           |   2 +-
+ net/cloudflared/distinfo                           |   6 +-
+ net/corosync2/Makefile                             |   5 +-
+ net/corosync2/Makefile.common                      |   2 -
+ net/ooni-mini/Makefile                             |  14 +-
+ net/ooni-mini/distinfo                             |  30 +-
+ net/ooni-probe-cli/Makefile                        |  21 +-
+ net/ooni-probe-cli/distinfo                        |  44 +-
+ net/pacemaker1/Makefile                            |   3 +-
+ net/pacemaker1/distinfo                            |   6 +-
+ net/pacemaker1/pkg-plist                           |  33 +-
+ net/pacemaker2/Makefile                            |   3 +-
+ net/pacemaker2/distinfo                            |   6 +-
+ net/pacemaker2/files/patch-tools_cibsecret.in      |  48 +-
+ net/pacemaker2/pkg-plist                           |  57 +-
+ security/palisade/Makefile                         |  11 +-
+ security/palisade/distinfo                         |  10 +-
+ security/palisade/files/patch-CMakeLists.txt       |  70 --
+ .../files/patch-src_core_include_utils_parallel.h  |  14 -
+ ...tch-third-party_google-benchmark_CMakeLists.txt |  13 +-
+ security/palisade/pkg-plist                        |  20 +-
+ security/yubikey-agent/Makefile                    |   4 +-
+ security/yubikey-agent/distinfo                    |   6 +-
+ sysutils/py-borgmatic/Makefile                     |   2 +-
+ sysutils/py-borgmatic/distinfo                     |   6 +-
+ textproc/ibus-typing-booster/Makefile              |   2 +-
+ textproc/ibus-typing-booster/distinfo              |   6 +-
+ x11-servers/xwayland-devel/Makefile                |  18 +-
+ x11-servers/xwayland-devel/distinfo                |  14 +-
+ x11-themes/slim-freebsd-black-theme/Makefile       |   5 +-
+ x11-themes/slim-freebsd-dark-theme/Makefile        |   4 +-
+ x11-themes/slim-freebsd-themes/Makefile            |   3 +
+ x11-themes/slim-themes/Makefile                    |   4 +-
+ 64 files changed, 422 insertions(+), 1275 deletions(-)
+ create mode 100644 deskutils/py-vdirsyncer/files/patch-github_3eb9ce5.patch
+ delete mode 100644 dns/nss_mdns/files/patch-src__Makefile.am
+ delete mode 100644 dns/nss_mdns/files/patch-src__bsdnss.c
+ delete mode 100644 dns/nss_mdns/files/patch-src__nss.c
+ delete mode 100644 dns/nss_mdns/files/patch-src__nss_gethostname_select.h
+ delete mode 100644 lang/gcc48/files/patch-arm-libcpp
+ delete mode 100644 lang/gcc48/files/patch-arm-support
+ delete mode 100644 lang/gcc48/files/patch-armv6-hf-support
+ create mode 100644 math/e-antic/Makefile
+ create mode 100644 math/e-antic/distinfo
+ create mode 100644 math/e-antic/pkg-descr
+ create mode 100644 math/e-antic/pkg-plist
+ delete mode 100644 net-mgmt/resource-agents/files/patch-heartbeat_tomcat
+ delete mode 100644 security/palisade/files/patch-CMakeLists.txt
+ delete mode 100644 security/palisade/files/patch-src_core_include_utils_parallel.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    0b3856e84965..5f99b3e157fc  master -> master        
+remote:    d78c10fc8535..0b3856e84965  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   0b3856e84965..5f99b3e157fc  master -> master
+==== END: master ====
