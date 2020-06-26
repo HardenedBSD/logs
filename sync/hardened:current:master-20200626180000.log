@@ -1,0 +1,243 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 54 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 8d3562b3433e..b3b464e4e2c9
+Fast-forward
+ .clang-format                                      | 149 +++-
+ MAINTAINERS                                        |   6 +-
+ Makefile.inc1                                      |   7 +-
+ UPDATING                                           |   4 +
+ bin/sh/tests/functional_test.sh                    |  16 +-
+ .../clang/include/clang/Driver/Options.td          |   8 +
+ contrib/llvm-project/clang/lib/Basic/Targets/PPC.h |   3 +-
+ .../clang/lib/Driver/SanitizerArgs.cpp             |   3 +-
+ .../llvm-project/clang/lib/Driver/ToolChain.cpp    |   9 +-
+ .../clang/lib/Driver/ToolChains/Arch/X86.cpp       |  23 +
+ .../Hexagon => include/llvm/CodeGen}/RDFGraph.h    |   0
+ .../Hexagon => include/llvm/CodeGen}/RDFLiveness.h |   0
+ .../llvm/CodeGen}/RDFRegisters.h                   |   0
+ .../llvm/include/llvm/IR/IntrinsicsPowerPC.td      |   3 +
+ .../llvm/include/llvm/Support/ManagedStatic.h      |   4 +-
+ .../llvm/include/llvm/Target/TargetSelectionDAG.td |   9 +
+ .../lib/{Target/Hexagon => CodeGen}/RDFGraph.cpp   |  10 +-
+ .../{Target/Hexagon => CodeGen}/RDFLiveness.cpp    |   6 +-
+ .../{Target/Hexagon => CodeGen}/RDFRegisters.cpp   |   2 +-
+ contrib/llvm-project/llvm/lib/LTO/LTO.cpp          |  28 +-
+ .../llvm/lib/Target/BPF/BPFISelDAGToDAG.cpp        |   2 +-
+ .../llvm-project/llvm/lib/Target/BPF/BTFDebug.cpp  |  32 +
+ .../llvm/lib/Target/Hexagon/HexagonOptAddrMode.cpp |   6 +-
+ .../llvm/lib/Target/Hexagon/HexagonRDFOpt.cpp      |   6 +-
+ .../llvm/lib/Target/Hexagon/RDFCopy.cpp            |   6 +-
+ .../llvm-project/llvm/lib/Target/Hexagon/RDFCopy.h |   6 +-
+ .../llvm/lib/Target/Hexagon/RDFDeadCode.cpp        |   4 +-
+ .../llvm/lib/Target/Hexagon/RDFDeadCode.h          |   4 +-
+ .../llvm/lib/Target/PowerPC/P9InstrResources.td    |   1 +
+ .../llvm-project/llvm/lib/Target/PowerPC/PPC.td    |   6 +-
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.cpp    |  28 +
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.h      |   2 +-
+ .../llvm/lib/Target/PowerPC/PPCInstrAltivec.td     |   4 +
+ .../llvm/lib/Target/PowerPC/PPCInstrInfo.cpp       |   4 +
+ .../llvm/lib/Target/PowerPC/PPCInstrVSX.td         |  17 +
+ .../llvm/lib/Target/PowerPC/PPCSubtarget.h         |   2 +
+ .../llvm/lib/Target/X86/ImmutableGraph.h           | 446 ++++++++++
+ contrib/llvm-project/llvm/lib/Target/X86/X86.h     |   8 +-
+ contrib/llvm-project/llvm/lib/Target/X86/X86.td    |  16 +
+ .../llvm/lib/Target/X86/X86FastISel.cpp            |   4 +-
+ .../llvm/lib/Target/X86/X86FrameLowering.cpp       |  10 +-
+ .../llvm/lib/Target/X86/X86ISelDAGToDAG.cpp        |   2 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.cpp        |  81 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.h          |   4 +-
+ .../llvm/lib/Target/X86/X86IndirectThunks.cpp      | 364 +++++++++
+ .../llvm/lib/Target/X86/X86InstrCompiler.td        |  16 +-
+ .../llvm/lib/Target/X86/X86InstrControl.td         |  22 +-
+ .../llvm/lib/Target/X86/X86InstrInfo.td            |   4 +-
+ .../X86/X86LoadValueInjectionLoadHardening.cpp     | 900 +++++++++++++++++++++
+ .../X86/X86LoadValueInjectionRetHardening.cpp      | 143 ++++
+ .../llvm/lib/Target/X86/X86MCInstLower.cpp         |   8 +-
+ .../llvm/lib/Target/X86/X86RetpolineThunks.cpp     | 286 -------
+ .../llvm/lib/Target/X86/X86Subtarget.h             |  27 +-
+ .../llvm/lib/Target/X86/X86TargetMachine.cpp       |   9 +-
+ .../Transforms/InstCombine/InstCombineAddSub.cpp   |   2 +-
+ crypto/openssh/auth2.c                             |   2 -
+ lib/clang/include/VCSVersion.inc                   |   8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |   2 +-
+ lib/clang/libclang/Makefile                        |   4 +-
+ lib/clang/libllvm/Makefile                         |   7 +-
+ lib/csu/aarch64/Makefile                           |  13 +-
+ lib/csu/aarch64/crt1_s.S                           |   3 -
+ lib/csu/arm/Makefile                               |  13 +-
+ lib/csu/arm/crt1_s.S                               |   5 +-
+ lib/csu/i386/Makefile                              |  13 +-
+ lib/csu/i386/crt1_s.S                              |   3 -
+ lib/csu/riscv/Makefile                             |  13 +-
+ lib/csu/riscv/crt1_s.S                             |   3 -
+ lib/libc/sys/select.2                              |   3 +-
+ lib/libkvm/kvm_getswapinfo.3                       |   4 +-
+ lib/libutil/pidfile.c                              |   2 +-
+ sbin/ifconfig/ifconfig.8                           |   1 -
+ sbin/ipfw/ipfw2.c                                  |  59 +-
+ secure/lib/libcrypto/opensslconf.h.in              |   3 -
+ share/man/man4/acpi_ibm.4                          |   6 +-
+ share/man/man5/src.conf.5                          |  10 +-
+ share/man/man7/tests.7                             |  29 +-
+ share/mk/src.opts.mk                               |   3 +-
+ sys/amd64/include/vmm.h                            |   3 +
+ sys/amd64/include/vmm_instruction_emul.h           |   1 +
+ sys/amd64/vmm/vmm_instruction_emul.c               |  32 +-
+ sys/compat/linux/linux_mmap.c                      |  97 ++-
+ sys/conf/config.mk                                 |   7 +
+ sys/conf/kern.opts.mk                              |   1 +
+ sys/crypto/aesni/aesni.c                           |  18 +-
+ sys/crypto/armv8/armv8_crypto.c                    |   6 +-
+ sys/crypto/via/padlock_cipher.c                    |   3 +-
+ sys/crypto/via/padlock_hash.c                      |   9 +-
+ sys/dev/acpi_support/acpi_ibm.c                    |  12 +-
+ sys/dev/cesa/cesa.c                                |   1 +
+ sys/dev/cxgbe/adapter.h                            |  13 +-
+ sys/dev/cxgbe/crypto/t4_crypto.c                   | 405 ++++++----
+ sys/dev/cxgbe/crypto/t4_kern_tls.c                 |   5 +-
+ sys/dev/cxgbe/cxgbei/icl_cxgbei.c                  |   2 +-
+ sys/dev/cxgbe/t4_main.c                            |  31 +-
+ sys/dev/cxgbe/t4_netmap.c                          |  16 +-
+ sys/dev/cxgbe/t4_sge.c                             |  15 +-
+ sys/dev/cxgbe/t4_vf.c                              |   1 +
+ sys/dev/cxgbe/tom/t4_listen.c                      |   2 +-
+ sys/dev/cxgbe/tom/t4_tom.c                         |   4 +-
+ sys/dev/evdev/evdev_utils.c                        |   2 +-
+ sys/dev/glxsb/glxsb_hash.c                         |  17 +-
+ sys/dev/md/md.c                                    |   2 -
+ sys/dev/nvme/nvme_ctrlr.c                          |  32 +-
+ sys/dev/random/randomdev.c                         |   3 +-
+ sys/dev/sound/pci/hda/hdac.c                       |  53 +-
+ sys/fs/nfs/nfs.h                                   |  10 +
+ sys/fs/nfs/nfs_commonsubs.c                        |   9 +-
+ sys/fs/nfs/nfs_var.h                               |   2 +-
+ sys/fs/nfs/nfscl.h                                 |   2 +-
+ sys/fs/nfsclient/nfs_clrpcops.c                    |  80 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |  14 +-
+ sys/fs/tmpfs/tmpfs_subr.c                          |   5 +-
+ sys/geom/bde/g_bde.c                               |  10 +-
+ sys/geom/bde/g_bde_lock.c                          |  12 +-
+ sys/geom/eli/g_eli.c                               |  21 +-
+ sys/geom/eli/g_eli_ctl.c                           |   9 +-
+ sys/geom/eli/g_eli_key_cache.c                     |   6 +-
+ sys/geom/geom_dev.c                                |   5 +-
+ sys/geom/shsec/g_shsec.c                           |   4 +-
+ sys/kern/kern_environment.c                        |   3 +-
+ sys/kern/kern_shutdown.c                           |  21 +-
+ sys/kern/subr_witness.c                            |   2 +
+ sys/kern/uipc_ktls.c                               |   7 +-
+ sys/kern/uipc_shm.c                                |   5 -
+ sys/modules/ena/Makefile                           |   1 +
+ sys/net/iflib.c                                    |  48 +-
+ sys/netinet/netdump/netdump_client.c               |   6 +-
+ sys/netipsec/ipsec_input.c                         |  16 +-
+ sys/netipsec/ipsec_output.c                        |  13 +-
+ sys/netipsec/key.c                                 |  17 +-
+ sys/netipsec/xform.h                               |   3 +-
+ sys/netipsec/xform_ah.c                            |  16 +-
+ sys/netipsec/xform_esp.c                           |  18 +-
+ sys/netipsec/xform_ipcomp.c                        |   9 +-
+ sys/netipsec/xform_tcp.c                           |  11 +-
+ sys/netpfil/ipfw/ip_fw2.c                          |   2 +-
+ sys/opencrypto/crypto.c                            |   4 +-
+ sys/opencrypto/cryptosoft.c                        |  17 +-
+ sys/opencrypto/ktls_ocf.c                          |   3 +-
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/tree.h                                     | 253 +++---
+ sys/vm/vm_map.c                                    |   8 +-
+ sys/vm/vm_object.c                                 |   9 +-
+ targets/pseudo/bootstrap-tools/Makefile            |   1 +
+ targets/pseudo/clang/Makefile.depend               |   5 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           |   5 +-
+ tools/build/options/WITH_CLANG_FORMAT              |   2 +
+ usr.bin/clang/Makefile                             |   5 +-
+ usr.bin/limits/limits.1                            |  42 +-
+ usr.sbin/bhyve/bhyve.8                             |   6 +-
+ usr.sbin/bhyve/bhyverun.c                          |  30 +-
+ usr.sbin/bhyve/pci_xhci.c                          |   4 +
+ usr.sbin/bhyve/usb_mouse.c                         |  16 +-
+ usr.sbin/wpa/wpa_supplicant/Makefile               |   3 +-
+ 155 files changed, 3401 insertions(+), 1175 deletions(-)
+ rename contrib/llvm-project/llvm/{lib/Target/Hexagon => include/llvm/CodeGen}/RDFGraph.h (100%)
+ rename contrib/llvm-project/llvm/{lib/Target/Hexagon => include/llvm/CodeGen}/RDFLiveness.h (100%)
+ rename contrib/llvm-project/llvm/{lib/Target/Hexagon => include/llvm/CodeGen}/RDFRegisters.h (100%)
+ rename contrib/llvm-project/llvm/lib/{Target/Hexagon => CodeGen}/RDFGraph.cpp (99%)
+ rename contrib/llvm-project/llvm/lib/{Target/Hexagon => CodeGen}/RDFLiveness.cpp (99%)
+ rename contrib/llvm-project/llvm/lib/{Target/Hexagon => CodeGen}/RDFRegisters.cpp (99%)
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/ImmutableGraph.h
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86IndirectThunks.cpp
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86LoadValueInjectionLoadHardening.cpp
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86LoadValueInjectionRetHardening.cpp
+ delete mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86RetpolineThunks.cpp
+ create mode 100644 tools/build/options/WITH_CLANG_FORMAT
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/netbsd-tests/kernel/t_sysv.c |  3 +++
+ lib/csu/aarch64/Makefile             |  6 +++---
+ lib/csu/arm/Makefile                 |  6 +++---
+ lib/csu/i386/Makefile                |  6 +++---
+ lib/csu/riscv/Makefile               |  6 +++---
+ sbin/ifconfig/af_link.c              |  6 +++---
+ stand/libsa/zfs/zfsimpl.c            | 14 ++++++++++++--
+ sys/dev/acpica/acpi_pcib_acpi.c      |  4 ++++
+ sys/dev/pci/pci.c                    |  4 ++++
+ sys/dev/pci/pcivar.h                 |  1 +
+ 10 files changed, 39 insertions(+), 17 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    b3b464e4e2c9..35c5e907e4a2  hardened/current/master -> hardened/current/master
+remote:    8ae3dd51b85d..0d4baaace5dd  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b3b464e4e2c9..35c5e907e4a2  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
