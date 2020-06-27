@@ -47,3 +47,267 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging print/dymo-cups-drivers/Makefile
+Auto-merging net/haproxy-devel/files/patch-include-haproxy-atomic.h
+CONFLICT (content): Merge conflict in net/haproxy-devel/files/patch-include-haproxy-atomic.h
+Removing graphics/py-fiona/files/patch-setup.py
+Removing devel/py-usb/distinfo
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/haproxy-devel/files/patch-include-haproxy-atomic.h
+index 219ea8d85120,d8b7c8ea15cb..000000000000
+--- a/net/haproxy-devel/files/patch-include-haproxy-atomic.h
++++ b/net/haproxy-devel/files/patch-include-haproxy-atomic.h
+@@@ -1,6 -1,6 +1,12 @@@
+++<<<<<<< HEAD:net/haproxy-devel/files/patch-include-common-hathreads.h
+ +--- include/common/hathreads.h.orig	2019-01-16 17:18:07 UTC
+ ++++ include/common/hathreads.h
+ +@@ -196,7 +196,7 @@ static inline unsigned long thread_isolated()
+++=======
++ --- include/haproxy/atomic.h.orig	2018-02-17 18:17:22.219400000 +0000
++ +++ include/haproxy/atomic.h	2018-02-17 18:18:44.598422000 +0000
++ @@ -104,7 +104,7 @@ extern THREAD_LOCAL unsigned long tid_bit; /* The bit 
+++>>>>>>> freebsd/master:net/haproxy-devel/files/patch-include-haproxy-atomic.h
+   /* TODO: thread: For now, we rely on GCC builtins but it could be a good idea to
+    * have a header file regrouping all functions dealing with threads. */
+   
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   astro/gpsd/Makefile
+	modified:   cad/cura/Makefile
+	modified:   cad/k40-whisperer/Makefile
+	modified:   comms/Makefile
+	modified:   comms/chirp/Makefile
+	modified:   comms/nanovna-saver/Makefile
+	modified:   comms/py-adafruit-ampy/Makefile
+	modified:   comms/py-esptool/Makefile
+	renamed:    comms/py-serial/Makefile -> comms/py-pyserial/Makefile
+	renamed:    comms/py-serial/distinfo -> comms/py-pyserial/distinfo
+	renamed:    comms/py-serial/pkg-descr -> comms/py-pyserial/pkg-descr
+	renamed:    comms/py-serial/pkg-plist -> comms/py-pyserial/pkg-plist
+	modified:   databases/Makefile
+	modified:   databases/grass7/Makefile
+	modified:   databases/grass7/distinfo
+	new file:   databases/grass7/files/patch-lib_python_ctypes_Makefile
+	new file:   databases/grass7/files/patch-lib_python_ctypes_ctypesgencore_parser_preprocessor.py
+	modified:   databases/grass7/pkg-plist
+	new file:   databases/mongodb44/Makefile
+	new file:   databases/mongodb44/distinfo
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_gen-config.sh
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src0.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src1.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src10.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src11.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src12.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src13.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src14.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src15.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src16.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src17.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src18.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src19.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src2.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src20.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src21.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src22.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src23.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src24.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src25.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src26.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src27.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src28.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src29.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src3.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src30.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src31.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src32.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src33.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src34.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src35.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src36.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src37.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src38.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src39.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src4.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src40.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src41.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src42.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src43.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src44.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src45.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src5.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src6.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src7.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src8.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_Unified__cpp__js__src9.cpp
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_build_js-confdefs.h
+	new file:   databases/mongodb44/files/aarch64/patch-src_third__party_mozjs-60_platform_aarch64_freebsd_include_js-config.h
+	new file:   databases/mongodb44/files/mongod.in
+	new file:   databases/mongodb44/files/patch-SConstruct
+	new file:   databases/mongodb44/files/patch-rpm_mongod.conf
+	new file:   databases/mongodb44/pkg-descr
+	new file:   databases/mongodb44/pkg-plist
+	modified:   databases/py-python-swiftclient/Makefile
+	modified:   databases/py-python-swiftclient/distinfo
+	modified:   devel/Makefile
+	modified:   devel/py-gevent/Makefile
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-opengrok-tools/Makefile
+	modified:   devel/py-opengrok-tools/distinfo
+	renamed:    devel/py-usb/Makefile -> devel/py-pyusb/Makefile
+	new file:   devel/py-pyusb/distinfo
+	renamed:    devel/py-usb/pkg-descr -> devel/py-pyusb/pkg-descr
+	modified:   devel/py-pyvisa-py/Makefile
+	modified:   devel/py-twisted/Makefile
+	deleted:    devel/py-usb/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudformation/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudformation/distinfo
+	modified:   devel/rubygem-aws-sdk-cognitoidentityprovider/Makefile
+	modified:   devel/rubygem-aws-sdk-cognitoidentityprovider/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-databasemigrationservice/Makefile
+	modified:   devel/rubygem-aws-sdk-databasemigrationservice/distinfo
+	modified:   devel/rubygem-aws-sdk-quicksight/Makefile
+	modified:   devel/rubygem-aws-sdk-quicksight/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-sagemaker/Makefile
+	modified:   devel/rubygem-aws-sdk-sagemaker/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/thonny/Makefile
+	modified:   dns/p5-Net-DNS/Makefile
+	modified:   dns/p5-Net-DNS/distinfo
+	modified:   finance/odoo/Makefile
+	modified:   games/py-mnemosyne/Makefile
+	modified:   games/py-mnemosyne/distinfo
+	modified:   graphics/Makefile
+	modified:   graphics/py-OWSLib/Makefile
+	modified:   graphics/py-OWSLib/distinfo
+	modified:   graphics/py-fiona/Makefile
+	modified:   graphics/py-fiona/distinfo
+	deleted:    graphics/py-fiona/files/patch-setup.py
+	modified:   graphics/py-geopandas/Makefile
+	modified:   graphics/py-geopandas/distinfo
+	modified:   graphics/py-glfw/Makefile
+	modified:   graphics/py-glfw/distinfo
+	modified:   graphics/py-pygeoapi/Makefile
+	modified:   graphics/py-pygeoapi/distinfo
+	new file:   graphics/qvge/Makefile
+	new file:   graphics/qvge/distinfo
+	new file:   graphics/qvge/files/patch-app.pri
+	new file:   graphics/qvge/files/patch-commonui_ogdf_COGDFLayout.cpp
+	new file:   graphics/qvge/files/patch-qvge_CNodeEditorScene.cpp
+	new file:   graphics/qvge/pkg-descr
+	modified:   mail/archivesmtp/pkg-descr
+	modified:   math/Makefile
+	renamed:    math/py-igraph/Makefile -> math/py-python-igraph/Makefile
+	renamed:    math/py-igraph/distinfo -> math/py-python-igraph/distinfo
+	renamed:    math/py-igraph/pkg-descr -> math/py-python-igraph/pkg-descr
+	modified:   misc/pyobd/Makefile
+	modified:   net-mgmt/py-junos-eznc/Makefile
+	modified:   net/cloud-init-azure/Makefile
+	modified:   net/cloud-init/Makefile
+	modified:   net/haproxy-devel/Makefile
+	modified:   net/haproxy-devel/distinfo
+	deleted:    net/haproxy-devel/files/patch-include-common-hathreads.h
+	modified:   print/dymo-cups-drivers/Makefile
+	new file:   print/dymo-cups-drivers/files/patch-src_common_CupsPrintEnvironment.h
+	modified:   security/doscan/pkg-descr
+	modified:   security/py-netmiko/Makefile
+	modified:   security/py-yubikey-manager/Makefile
+	modified:   sysutils/py-leviathan/Makefile
+	modified:   sysutils/py-liquidctl/Makefile
+	modified:   textproc/asciidoc/Makefile
+	modified:   textproc/asciidoc/distinfo
+	modified:   textproc/plover/Makefile
+	modified:   textproc/py-sphinx-tabs/Makefile
+	new file:   textproc/py-sphinx-tabs/files/patch-setup.py
+	modified:   www/drush/Makefile
+	modified:   www/drush/distinfo
+	modified:   www/drush/pkg-descr
+	modified:   www/libmicrohttpd/Makefile
+	modified:   www/libmicrohttpd/distinfo
+	modified:   www/libmicrohttpd/pkg-plist
+	modified:   www/mod_evasive/Makefile
+	new file:   www/mod_evasive/files/patch-test.pl
+	modified:   www/mod_evasive/pkg-descr
+	modified:   www/py-django-openid-auth/Makefile
+	modified:   www/py-django-subdomains/Makefile
+	modified:   www/qutebrowser/Makefile
+	modified:   www/qutebrowser/distinfo
+	modified:   www/typo3-10/Makefile
+	modified:   www/typo3-10/distinfo
+	modified:   www/typo3-10/pkg-descr
+	modified:   www/typo3-9/Makefile
+	modified:   www/typo3-9/distinfo
+	modified:   www/typo3-9/pkg-descr
+	modified:   x11/zenity/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/haproxy-devel/files/patch-include-haproxy-atomic.h
+
+
+It took 3.26 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 10803e98380a Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 10803e98380a Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
