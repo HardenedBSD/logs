@@ -1,0 +1,108 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is ahead of 'origin/freebsd/current/master' by 2 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 661f178661a0..1923ebb41692
+Fast-forward
+ contrib/llvm-project/FREEBSD-Xlist                 |   9 +-
+ .../llvm-project/clang/lib/CodeGen/TargetInfo.cpp  |   3 +-
+ .../lib/builtins/riscv/int_mul_impl.inc            |  31 +
+ .../compiler-rt/lib/builtins/riscv/muldi3.S        |  11 +
+ .../compiler-rt/lib/builtins/riscv/mulsi3.S        |  23 +-
+ contrib/llvm-project/libcxx/include/array          |   2 +-
+ .../CodeGen/SelectionDAG/LegalizeIntegerTypes.cpp  |  14 +-
+ .../lib/CodeGen/SelectionDAG/TargetLowering.cpp    |  26 +-
+ .../lib/Target/AArch64/AArch64FrameLowering.cpp    | 101 ++-
+ .../llvm/lib/Target/PowerPC/PPCAsmPrinter.cpp      |   7 +-
+ .../llvm/lib/Target/RISCV/RISCVFrameLowering.cpp   |   4 +-
+ .../llvm/lib/Target/RISCV/RISCVISelLowering.cpp    |  34 +
+ .../llvm-project/llvm/tools/llvm-dwp/DWPError.cpp  |   3 +
+ .../llvm-project/llvm/tools/llvm-dwp/DWPError.h    |  23 +
+ .../llvm/tools/llvm-dwp/DWPStringPool.h            |  56 ++
+ .../llvm-project/llvm/tools/llvm-dwp/llvm-dwp.cpp  | 749 +++++++++++++++++
+ .../llvm/tools/llvm-size/llvm-size.cpp             | 894 +++++++++++++++++++++
+ .../llvm/tools/llvm-strings/llvm-strings.cpp       | 120 +++
+ lib/clang/include/VCSVersion.inc                   |   8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |   2 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           |   6 +
+ usr.bin/clang/Makefile                             |   3 +
+ usr.bin/clang/llvm-dwp/Makefile                    |  12 +
+ usr.bin/clang/llvm-size/Makefile                   |   8 +
+ usr.bin/clang/llvm-size/llvm-size.1                | 275 +++++++
+ usr.bin/clang/llvm-strings/Makefile                |   9 +
+ usr.bin/clang/llvm-strings/llvm-strings.1          | 179 +++++
+ usr.sbin/fifolog/lib/fifolog_write_poll.c          |   8 +
+ 28 files changed, 2532 insertions(+), 88 deletions(-)
+ create mode 100644 contrib/llvm-project/compiler-rt/lib/builtins/riscv/int_mul_impl.inc
+ create mode 100644 contrib/llvm-project/compiler-rt/lib/builtins/riscv/muldi3.S
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/DWPError.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/DWPError.h
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/DWPStringPool.h
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/llvm-dwp.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-size/llvm-size.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-strings/llvm-strings.cpp
+ create mode 100644 usr.bin/clang/llvm-dwp/Makefile
+ create mode 100644 usr.bin/clang/llvm-size/Makefile
+ create mode 100644 usr.bin/clang/llvm-size/llvm-size.1
+ create mode 100644 usr.bin/clang/llvm-strings/Makefile
+ create mode 100644 usr.bin/clang/llvm-strings/llvm-strings.1
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    0b552d524caf..1923ebb41692  freebsd/current/master -> freebsd/current/master        
+remote:    c0aaccfbd618..984fa742e572  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: Gitea: Internal Server Error        
+remote: Failed to Update: hardenedbsd/hardenedbsd Branch: freebsd/current/master Error: newCommit.CommitsBeforeUntil: packfile not found        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   0b552d524caf..1923ebb41692  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
