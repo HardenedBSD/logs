@@ -47,3 +47,134 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/softether/Makefile
+Auto-merging security/softether-devel/Makefile
+Removing math/givaro/files/patch-src_kernel_gmp++_gmp++__int__cstor.C
+Removing math/givaro/files/patch-src_kernel_gmp++_gmp++__int.h
+Merge made by the 'recursive' strategy.
+ audio/protracker/Makefile                          |   2 +-
+ audio/protracker/distinfo                          |   6 +-
+ databases/Makefile                                 |   1 +
+ databases/libcouchbase/Makefile                    |   3 +-
+ databases/libcouchbase/distinfo                    |   6 +-
+ .../libcouchbase/files/patch-src_lcbio_ioutils.cc  |  10 +
+ .../libcouchbase/files/patch-tools_cbc-proxy.cc    |  10 +
+ databases/libcouchbase/pkg-plist                   |  17 +-
+ .../rubygem-flipper-active_record017/Makefile      |  25 ++
+ .../rubygem-flipper-active_record017/distinfo      |   3 +
+ .../rubygem-flipper-active_record017/pkg-descr     |   3 +
+ devel/Makefile                                     |   1 +
+ devel/py-srsly/Makefile                            |  23 ++
+ devel/py-srsly/distinfo                            |   3 +
+ devel/py-srsly/pkg-descr                           |   7 +
+ devel/sbt/Makefile                                 |  16 +-
+ devel/sbt/distinfo                                 |   6 +-
+ finance/ledger/Makefile                            |   9 +-
+ finance/ledger/distinfo                            |   8 +-
+ finance/ledger/pkg-plist                           |   2 -
+ graphics/elementary-photos/Makefile                |   8 +-
+ mail/rubygem-gitlab-mail_room/Makefile             |   2 +-
+ mail/rubygem-gitlab-mail_room/distinfo             |   6 +-
+ math/givaro/Makefile                               |   2 +-
+ .../files/patch-src_kernel_gmp++_gmp++__int.h      |  10 -
+ .../patch-src_kernel_gmp++_gmp++__int__cstor.C     |  14 -
+ math/linbox/Makefile                               |   2 +-
+ .../files/patch-linbox_algorithms_det-rational.h   |  13 +
+ multimedia/elementary-videos/Makefile              |   7 +-
+ net-mgmt/ccnet-server/Makefile                     |   1 -
+ net-mgmt/ccnet-server/distinfo                     |   6 +-
+ net-mgmt/netdata/Makefile                          |   6 +-
+ net-mgmt/netdata/distinfo                          |   6 +-
+ net-mgmt/netdata/pkg-plist                         |   4 +-
+ net-mgmt/seafile-server/Makefile                   |   1 -
+ net-mgmt/seafile-server/Makefile.include           |   4 +-
+ net-mgmt/seafile-server/distinfo                   |   6 +-
+ security/softether-devel/Makefile                  |   5 +-
+ security/softether-devel/files/pkg-message.in      |  11 +-
+ .../files/softether_trafficserver.in               |  66 ++++
+ security/softether/Makefile                        |   5 +-
+ security/softether/files/pkg-message.in            |  11 +-
+ .../softether/files/softether_trafficserver.in     |  66 ++++
+ security/softether5/Makefile                       |   3 +-
+ security/softether5/files/pkg-message.in           |  11 +-
+ .../softether5/files/softether_trafficserver.in    |  66 ++++
+ sysutils/packer/Makefile                           |   2 +-
+ sysutils/packer/distinfo                           |   6 +-
+ sysutils/packer/files/patch-gopsutil_aarch64       | 407 +++++++++++++++++++++
+ textproc/rubygem-ronn/Makefile                     |   5 +-
+ www/py-seafdav/distinfo                            |   6 +-
+ www/py-seafobj/distinfo                            |   6 +-
+ www/seahub/Makefile                                |   1 -
+ www/seahub/distinfo                                |   6 +-
+ www/seahub/pkg-plist                               | 136 +++----
+ www/trac-datefield/pkg-descr                       |   2 +-
+ 56 files changed, 890 insertions(+), 190 deletions(-)
+ create mode 100644 databases/libcouchbase/files/patch-src_lcbio_ioutils.cc
+ create mode 100644 databases/libcouchbase/files/patch-tools_cbc-proxy.cc
+ create mode 100644 databases/rubygem-flipper-active_record017/Makefile
+ create mode 100644 databases/rubygem-flipper-active_record017/distinfo
+ create mode 100644 databases/rubygem-flipper-active_record017/pkg-descr
+ create mode 100644 devel/py-srsly/Makefile
+ create mode 100644 devel/py-srsly/distinfo
+ create mode 100644 devel/py-srsly/pkg-descr
+ delete mode 100644 math/givaro/files/patch-src_kernel_gmp++_gmp++__int.h
+ delete mode 100644 math/givaro/files/patch-src_kernel_gmp++_gmp++__int__cstor.C
+ create mode 100644 math/linbox/files/patch-linbox_algorithms_det-rational.h
+ create mode 100644 security/softether-devel/files/softether_trafficserver.in
+ create mode 100644 security/softether/files/softether_trafficserver.in
+ create mode 100644 security/softether5/files/softether_trafficserver.in
+ create mode 100644 sysutils/packer/files/patch-gopsutil_aarch64
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6e882b6d3941..c038f2d35f65  master -> master
+remote:    e75e6486a73d..6e882b6d3941  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6e882b6d3941..c038f2d35f65  master -> master
+==== END: master ====
