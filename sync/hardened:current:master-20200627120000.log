@@ -1,0 +1,296 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 97e6554fe31a..d453d5fcacce
+Fast-forward
+ sys/kern/tty_info.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/clang/llvm-ar/Makefile
+Auto-merging usr.bin/Makefile
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging share/mk/src.opts.mk
+Merge made by the 'recursive' strategy.
+ contrib/bc/LICENSE.md                           |   59 +
+ contrib/bc/Makefile.in                          |  362 +++
+ contrib/bc/NEWS.md                              |  824 +++++++
+ contrib/bc/NOTICE.md                            |   14 +
+ contrib/bc/README.md                            |  332 +++
+ contrib/bc/RELEASE.md                           |   54 +
+ contrib/bc/gen/bc_help.txt                      |  115 +
+ contrib/bc/gen/dc_help.txt                      |  101 +
+ contrib/bc/gen/lib.bc                           |  201 ++
+ contrib/bc/gen/lib2.bc                          |  317 +++
+ contrib/bc/gen/strgen.sh                        |   79 +
+ contrib/bc/include/args.h                       |   46 +
+ contrib/bc/include/bc.h                         |  181 ++
+ contrib/bc/include/dc.h                         |   70 +
+ contrib/bc/include/file.h                       |   67 +
+ contrib/bc/include/history.h                    |  260 +++
+ contrib/bc/include/lang.h                       |  326 +++
+ contrib/bc/include/lex.h                        |  232 ++
+ contrib/bc/include/num.h                        |  235 ++
+ contrib/bc/include/opt.h                        |   79 +
+ contrib/bc/include/parse.h                      |  115 +
+ contrib/bc/include/program.h                    |  183 ++
+ contrib/bc/include/rand.h                       |  229 ++
+ contrib/bc/include/read.h                       |   59 +
+ contrib/bc/include/status.h                     |  186 ++
+ contrib/bc/include/vector.h                     |  101 +
+ contrib/bc/include/vm.h                         |  357 +++
+ contrib/bc/locales/de_DE.ISO8859-1.msg          |   80 +
+ contrib/bc/locales/de_DE.UTF-8.msg              |   80 +
+ contrib/bc/locales/en_US.UTF-8.msg              |    1 +
+ contrib/bc/locales/en_US.msg                    |  108 +
+ contrib/bc/locales/es_ES.UTF-8.msg              |  108 +
+ contrib/bc/locales/fr_FR.ISO8859-1.msg          |  108 +
+ contrib/bc/locales/fr_FR.UTF-8.msg              |  108 +
+ contrib/bc/locales/ja_JP.UTF-8.msg              |   83 +
+ contrib/bc/locales/ja_JP.eucJP.msg              |   83 +
+ contrib/bc/locales/nl_NL.ISO8859-1.msg          |   83 +
+ contrib/bc/locales/nl_NL.UTF-8.msg              |   83 +
+ contrib/bc/locales/pl_PL.ISO8859-2.msg          |   83 +
+ contrib/bc/locales/pl_PL.UTF-8.msg              |   83 +
+ contrib/bc/locales/pt_PT.ISO8859-1.msg          |  108 +
+ contrib/bc/locales/pt_PT.UTF-8.msg              |  108 +
+ contrib/bc/locales/ru_RU.CP1251.msg             |   83 +
+ contrib/bc/locales/ru_RU.CP866.msg              |   83 +
+ contrib/bc/locales/ru_RU.ISO8859-5.msg          |   83 +
+ contrib/bc/locales/ru_RU.KOI8-R.msg             |   83 +
+ contrib/bc/locales/ru_RU.UTF-8.msg              |   83 +
+ contrib/bc/locales/zh_CN.GB18030.msg            |  111 +
+ contrib/bc/locales/zh_CN.GB2312.msg             |  111 +
+ contrib/bc/locales/zh_CN.GBK.msg                |  111 +
+ contrib/bc/locales/zh_CN.UTF-8.msg              |  111 +
+ contrib/bc/locales/zh_CN.eucCN.msg              |  111 +
+ contrib/bc/manuals/algorithms.md                |  189 ++
+ contrib/bc/manuals/bc.1                         | 1566 +++++++++++++
+ contrib/bc/manuals/bc.1.ronn                    | 1556 +++++++++++++
+ contrib/bc/manuals/bc.md                        |    1 +
+ contrib/bc/manuals/benchmarks.md                |  673 ++++++
+ contrib/bc/manuals/build.md                     |  672 ++++++
+ contrib/bc/manuals/dc.1                         |  951 ++++++++
+ contrib/bc/manuals/dc.1.ronn                    | 1103 +++++++++
+ contrib/bc/manuals/dc.md                        |    1 +
+ contrib/bc/src/args.c                           |  215 ++
+ contrib/bc/src/bc/bc.c                          |   57 +
+ contrib/bc/src/bc/lex.c                         |  410 ++++
+ contrib/bc/src/bc/parse.c                       | 1526 ++++++++++++
+ contrib/bc/src/data.c                           |  995 ++++++++
+ contrib/bc/src/dc/dc.c                          |   57 +
+ contrib/bc/src/dc/lex.c                         |  202 ++
+ contrib/bc/src/dc/parse.c                       |  236 ++
+ contrib/bc/src/file.c                           |  225 ++
+ contrib/bc/src/history/history.c                | 1450 ++++++++++++
+ contrib/bc/src/lang.c                           |  313 +++
+ contrib/bc/src/lex.c                            |  231 ++
+ contrib/bc/src/main.c                           |   93 +
+ contrib/bc/src/num.c                            | 2837 +++++++++++++++++++++++
+ contrib/bc/src/opt.c                            |  250 ++
+ contrib/bc/src/parse.c                          |  222 ++
+ contrib/bc/src/program.c                        | 2300 ++++++++++++++++++
+ contrib/bc/src/rand/rand.c                      |  415 ++++
+ contrib/bc/src/read.c                           |  226 ++
+ contrib/bc/src/vector.c                         |  311 +++
+ contrib/bc/src/vm.c                             |  819 +++++++
+ crypto/heimdal/lib/krb5/krb5.conf.5             |    2 +-
+ lib/libcasper/libcasper/libcasper_service.3     |    2 +-
+ share/man/man4/ixl.4                            |   12 +-
+ share/mk/src.opts.mk                            |    1 +
+ sys/amd64/linux/linux_proto.h                   |  156 +-
+ sys/amd64/linux/linux_sysent.c                  |   36 +-
+ sys/amd64/linux/linux_systrace_args.c           |  596 ++++-
+ sys/amd64/linux/syscalls.master                 |  200 +-
+ sys/amd64/linux32/linux32_proto.h               |   80 +-
+ sys/amd64/linux32/linux32_sysent.c              |   36 +-
+ sys/amd64/linux32/linux32_systrace_args.c       |  428 +++-
+ sys/amd64/linux32/syscalls.master               |  116 +-
+ sys/arm64/linux/linux.h                         |    1 +
+ sys/arm64/linux/linux_proto.h                   |  136 +-
+ sys/arm64/linux/linux_sysent.c                  |   36 +-
+ sys/arm64/linux/linux_systrace_args.c           |  556 ++++-
+ sys/arm64/linux/syscalls.master                 |  180 +-
+ sys/i386/linux/linux_proto.h                    |   66 +-
+ sys/i386/linux/linux_sysent.c                   |   24 +-
+ sys/i386/linux/linux_systrace_args.c            |  312 ++-
+ sys/i386/linux/syscalls.master                  |   90 +-
+ tools/build/mk/OptionalObsoleteFiles.inc        |    5 +
+ usr.bin/Makefile                                |    8 +-
+ usr.bin/clang/bugpoint/bugpoint.1               |    8 +-
+ usr.bin/clang/clang/clang.1                     |   37 +-
+ usr.bin/clang/llc/llc.1                         |   34 +-
+ usr.bin/clang/lldb/lldb.1                       |   72 +-
+ usr.bin/clang/lli/lli.1                         |    9 +-
+ usr.bin/clang/llvm-ar/Makefile                  |    1 +
+ usr.bin/clang/llvm-ar/llvm-ar.1                 |  530 +++--
+ usr.bin/clang/llvm-ar/llvm-ranlib.1             |   52 +
+ usr.bin/clang/llvm-as/llvm-as.1                 |    8 +-
+ usr.bin/clang/llvm-bcanalyzer/llvm-bcanalyzer.1 |    8 +-
+ usr.bin/clang/llvm-cov/llvm-cov.1               |   60 +-
+ usr.bin/clang/llvm-cxxfilt/Makefile             |    1 -
+ usr.bin/clang/llvm-cxxfilt/llvm-cxxfilt.1       |  117 +
+ usr.bin/clang/llvm-diff/llvm-diff.1             |    6 +-
+ usr.bin/clang/llvm-dis/llvm-dis.1               |    8 +-
+ usr.bin/clang/llvm-dwarfdump/llvm-dwarfdump.1   |   90 +-
+ usr.bin/clang/llvm-extract/llvm-extract.1       |    8 +-
+ usr.bin/clang/llvm-link/llvm-link.1             |    8 +-
+ usr.bin/clang/llvm-mca/llvm-mca.1               |  529 +++--
+ usr.bin/clang/llvm-nm/llvm-nm.1                 |  278 ++-
+ usr.bin/clang/llvm-objcopy/Makefile             |    1 -
+ usr.bin/clang/llvm-objcopy/llvm-objcopy.1       |  721 ++++++
+ usr.bin/clang/llvm-objdump/llvm-objdump.1       |    7 +-
+ usr.bin/clang/llvm-pdbutil/llvm-pdbutil.1       |    6 +-
+ usr.bin/clang/llvm-profdata/llvm-profdata.1     |  104 +-
+ usr.bin/clang/llvm-symbolizer/Makefile          |    3 +
+ usr.bin/clang/llvm-symbolizer/llvm-addr2line.1  |   66 +
+ usr.bin/clang/llvm-symbolizer/llvm-symbolizer.1 |  459 +++-
+ usr.bin/clang/llvm-tblgen/llvm-tblgen.1         |   11 +-
+ usr.bin/clang/opt/opt.1                         |    6 +-
+ usr.bin/gh-bc/Makefile                          |  100 +
+ usr.bin/killall/killall.1                       |   24 +-
+ usr.bin/rev/rev.1                               |    9 +-
+ 138 files changed, 32762 insertions(+), 1261 deletions(-)
+ create mode 100644 contrib/bc/LICENSE.md
+ create mode 100644 contrib/bc/Makefile.in
+ create mode 100644 contrib/bc/NEWS.md
+ create mode 100644 contrib/bc/NOTICE.md
+ create mode 100644 contrib/bc/README.md
+ create mode 100644 contrib/bc/RELEASE.md
+ create mode 100644 contrib/bc/gen/bc_help.txt
+ create mode 100644 contrib/bc/gen/dc_help.txt
+ create mode 100644 contrib/bc/gen/lib.bc
+ create mode 100644 contrib/bc/gen/lib2.bc
+ create mode 100755 contrib/bc/gen/strgen.sh
+ create mode 100644 contrib/bc/include/args.h
+ create mode 100644 contrib/bc/include/bc.h
+ create mode 100644 contrib/bc/include/dc.h
+ create mode 100644 contrib/bc/include/file.h
+ create mode 100644 contrib/bc/include/history.h
+ create mode 100644 contrib/bc/include/lang.h
+ create mode 100644 contrib/bc/include/lex.h
+ create mode 100644 contrib/bc/include/num.h
+ create mode 100644 contrib/bc/include/opt.h
+ create mode 100644 contrib/bc/include/parse.h
+ create mode 100644 contrib/bc/include/program.h
+ create mode 100644 contrib/bc/include/rand.h
+ create mode 100644 contrib/bc/include/read.h
+ create mode 100644 contrib/bc/include/status.h
+ create mode 100644 contrib/bc/include/vector.h
+ create mode 100644 contrib/bc/include/vm.h
+ create mode 100644 contrib/bc/locales/de_DE.ISO8859-1.msg
+ create mode 100644 contrib/bc/locales/de_DE.UTF-8.msg
+ create mode 120000 contrib/bc/locales/en_US.UTF-8.msg
+ create mode 100644 contrib/bc/locales/en_US.msg
+ create mode 100644 contrib/bc/locales/es_ES.UTF-8.msg
+ create mode 100644 contrib/bc/locales/fr_FR.ISO8859-1.msg
+ create mode 100644 contrib/bc/locales/fr_FR.UTF-8.msg
+ create mode 100644 contrib/bc/locales/ja_JP.UTF-8.msg
+ create mode 100644 contrib/bc/locales/ja_JP.eucJP.msg
+ create mode 100644 contrib/bc/locales/nl_NL.ISO8859-1.msg
+ create mode 100644 contrib/bc/locales/nl_NL.UTF-8.msg
+ create mode 100644 contrib/bc/locales/pl_PL.ISO8859-2.msg
+ create mode 100644 contrib/bc/locales/pl_PL.UTF-8.msg
+ create mode 100644 contrib/bc/locales/pt_PT.ISO8859-1.msg
+ create mode 100644 contrib/bc/locales/pt_PT.UTF-8.msg
+ create mode 100644 contrib/bc/locales/ru_RU.CP1251.msg
+ create mode 100644 contrib/bc/locales/ru_RU.CP866.msg
+ create mode 100644 contrib/bc/locales/ru_RU.ISO8859-5.msg
+ create mode 100644 contrib/bc/locales/ru_RU.KOI8-R.msg
+ create mode 100644 contrib/bc/locales/ru_RU.UTF-8.msg
+ create mode 100644 contrib/bc/locales/zh_CN.GB18030.msg
+ create mode 100644 contrib/bc/locales/zh_CN.GB2312.msg
+ create mode 100644 contrib/bc/locales/zh_CN.GBK.msg
+ create mode 100644 contrib/bc/locales/zh_CN.UTF-8.msg
+ create mode 100644 contrib/bc/locales/zh_CN.eucCN.msg
+ create mode 100644 contrib/bc/manuals/algorithms.md
+ create mode 100644 contrib/bc/manuals/bc.1
+ create mode 100644 contrib/bc/manuals/bc.1.ronn
+ create mode 120000 contrib/bc/manuals/bc.md
+ create mode 100644 contrib/bc/manuals/benchmarks.md
+ create mode 100644 contrib/bc/manuals/build.md
+ create mode 100644 contrib/bc/manuals/dc.1
+ create mode 100644 contrib/bc/manuals/dc.1.ronn
+ create mode 120000 contrib/bc/manuals/dc.md
+ create mode 100644 contrib/bc/src/args.c
+ create mode 100644 contrib/bc/src/bc/bc.c
+ create mode 100644 contrib/bc/src/bc/lex.c
+ create mode 100644 contrib/bc/src/bc/parse.c
+ create mode 100644 contrib/bc/src/data.c
+ create mode 100644 contrib/bc/src/dc/dc.c
+ create mode 100644 contrib/bc/src/dc/lex.c
+ create mode 100644 contrib/bc/src/dc/parse.c
+ create mode 100644 contrib/bc/src/file.c
+ create mode 100644 contrib/bc/src/history/history.c
+ create mode 100644 contrib/bc/src/lang.c
+ create mode 100644 contrib/bc/src/lex.c
+ create mode 100644 contrib/bc/src/main.c
+ create mode 100644 contrib/bc/src/num.c
+ create mode 100644 contrib/bc/src/opt.c
+ create mode 100644 contrib/bc/src/parse.c
+ create mode 100644 contrib/bc/src/program.c
+ create mode 100644 contrib/bc/src/rand/rand.c
+ create mode 100644 contrib/bc/src/read.c
+ create mode 100644 contrib/bc/src/vector.c
+ create mode 100644 contrib/bc/src/vm.c
+ create mode 100644 usr.bin/clang/llvm-ar/llvm-ranlib.1
+ create mode 100644 usr.bin/clang/llvm-cxxfilt/llvm-cxxfilt.1
+ create mode 100644 usr.bin/clang/llvm-objcopy/llvm-objcopy.1
+ create mode 100644 usr.bin/clang/llvm-symbolizer/llvm-addr2line.1
+ create mode 100644 usr.bin/gh-bc/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d453d5fcacce..0b1de99f1645  hardened/current/master -> hardened/current/master        
+remote:    cec81270ee86..1b54e5a80611  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d453d5fcacce..0b1de99f1645  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
