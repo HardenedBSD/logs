@@ -1,0 +1,485 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 69 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 8705aae28fe3..50aadff48877
+Fast-forward
+ MOVED                                              |    4 +
+ Mk/bsd.port.mk                                     |   22 +-
+ archivers/zoo/Makefile                             |    2 +-
+ archivers/zoo/files/patch-zoodel.c                 |   14 +
+ archivers/zoo/files/patch-zoopack.c                |   14 +
+ audio/jamulus/Makefile                             |    2 +-
+ audio/jamulus/distinfo                             |    6 +-
+ audio/kid3-qt5/Makefile                            |   11 +-
+ audio/kid3-qt5/distinfo                            |    6 +-
+ .../files/patch-src_app_kde_kdemainwindow.cpp      |   14 +-
+ ...atch-src_plugins_oggflacmetadata_CMakeLists.txt |   35 +
+ ...tch-src_test_testmusicbrainzreleaseimporter.cpp |   14 +-
+ audio/kid3-qt5/pkg-plist                           |   53 +-
+ biology/bamtools/Makefile                          |    2 +-
+ converters/cl-babel-sbcl/Makefile                  |    2 +-
+ databases/Makefile                                 |    4 -
+ databases/mariadb101-client/Makefile               |   14 -
+ .../mariadb101-client/files/patch-CMakeLists.txt   |   27 -
+ .../files/patch-client_CMakeLists.txt              |   58 -
+ .../mariadb101-client/files/patch-cmake_ssl.cmake  |   31 -
+ .../files/patch-extra_CMakeLists.txt               |   34 -
+ .../files/patch-include_CMakeLists.txt             |   22 -
+ .../files/patch-include_my__compare.h              |   11 -
+ .../patch-include_mysql_service__encryption.h      |   14 -
+ .../files/patch-libmysql_CMakeLists.txt            |   11 -
+ .../files/patch-libservices_CMakeLists.txt         |    9 -
+ .../files/patch-man_CMakeLists.txt                 |   16 -
+ .../files/patch-mysys_my__default.c                |   60 -
+ .../files/patch-pcre_CMakeLists.txt                |   11 -
+ .../files/patch-scripts_CMakeLists.txt             |   64 -
+ .../files/patch-scripts_mysql__config.sh           |   12 -
+ .../files/patch-sql_CMakeLists.txt                 |   14 -
+ .../files/patch-support-files_CMakeLists.txt       |   34 -
+ databases/mariadb101-client/files/pkg-message.in   |    9 -
+ databases/mariadb101-client/pkg-plist              |  121 -
+ databases/mariadb101-server/Makefile               |  224 --
+ databases/mariadb101-server/distinfo               |    3 -
+ .../files/extra-patch-include_my__compare.h        |   11 -
+ databases/mariadb101-server/files/mysql-server.in  |  140 -
+ .../mariadb101-server/files/patch-CMakeLists.txt   |   26 -
+ databases/mariadb101-server/files/patch-MDEV-15961 |   46 -
+ .../files/patch-client_CMakeLists.txt              |   72 -
+ .../mariadb101-server/files/patch-cmake_ssl.cmake  |   31 -
+ .../files/patch-extra_CMakeLists.txt               |   13 -
+ .../files/patch-include_CMakeLists.txt             |   26 -
+ .../files/patch-libmysql_CMakeLists.txt            |   41 -
+ .../files/patch-libservices_CMakeLists.txt         |   11 -
+ .../files/patch-man_CMakeLists.txt                 |   14 -
+ .../files/patch-mysys__ssl_my__crypt.cc            |   20 -
+ .../files/patch-mysys_my__default.c                |   60 -
+ .../files/patch-oqgraph-MDEV-15291                 |   40 -
+ .../files/patch-pcre_CMakeLists.txt                |   13 -
+ .../files/patch-scripts_mysql__config.sh           |   12 -
+ .../files/patch-scripts_mysqld__safe.sh            |   24 -
+ .../files/patch-scripts_wsrep__sst__mariabackup.sh |   11 -
+ .../files/patch-sql_CMakeLists.txt                 |   30 -
+ .../files/patch-sql_sql__trigger.cc                |   52 -
+ .../mariadb101-server/files/patch-sql_sql__view.cc |   65 -
+ .../mariadb101-server/files/patch-sql_sys__vars.cc |   40 -
+ .../files/patch-storage_mroonga_CMakeLists.txt     |   11 -
+ ...h-storage_mroonga_vendor_groonga_CMakeLists.txt |   15 -
+ .../files/patch-storage_tokudb_CMakeLists.txt      |   12 -
+ .../patch-storage_tokudb_PerconaFT_CMakeLists.txt  |   11 -
+ ...b_PerconaFT_cmake__modules_TokuThirdParty.cmake |   36 -
+ ...-storage_tokudb_PerconaFT_portability_memory.cc |   16 -
+ .../files/patch-support-files_CMakeLists.txt       |   14 -
+ databases/mariadb101-server/files/pkg-message.in   |   17 -
+ databases/mariadb101-server/pkg-descr              |   14 -
+ databases/mariadb101-server/pkg-plist              |  271 --
+ databases/mariadb102-client/Makefile               |   14 -
+ .../mariadb102-client/files/patch-CMakeLists.txt   |   27 -
+ databases/mariadb102-client/files/patch-MDEV-20463 |   11 -
+ .../files/patch-client_CMakeLists.txt              |   62 -
+ .../files/patch-extra_CMakeLists.txt               |   35 -
+ .../files/patch-include_CMakeLists.txt             |   17 -
+ .../files/patch-include_my__compare.h              |   11 -
+ .../patch-include_mysql_service__encryption.h      |   14 -
+ .../files/patch-man_CMakeLists.txt                 |   16 -
+ .../files/patch-mysys_my__default.c                |   52 -
+ .../files/patch-scripts_CMakeLists.txt             |   49 -
+ .../files/patch-scripts_mysql__config.sh           |   12 -
+ .../files/patch-support-files_CMakeLists.txt       |   33 -
+ databases/mariadb102-client/files/pkg-message.in   |    9 -
+ databases/mariadb102-client/pkg-plist              |   93 -
+ databases/mariadb102-server/Makefile               |  243 --
+ databases/mariadb102-server/distinfo               |    3 -
+ .../files/extra-patch-include_my__compare.h        |   11 -
+ databases/mariadb102-server/files/mysql-server.in  |  140 -
+ .../mariadb102-server/files/patch-CMakeLists.txt   |   27 -
+ databases/mariadb102-server/files/patch-MDEV-15961 |   47 -
+ databases/mariadb102-server/files/patch-MDEV-20248 |   13 -
+ .../files/patch-extra_CMakeLists.txt               |   16 -
+ .../files/patch-extra_mariabackup_CMakeLists.txt   |   10 -
+ .../files/patch-include_CMakeLists.txt             |   38 -
+ .../files/patch-libmariadb_CMakeLists.txt          |   11 -
+ .../files/patch-libmariadb_include_CMakeLists.txt  |   15 -
+ .../patch-libmariadb_libmariadb_CMakeLists.txt     |   14 -
+ .../patch-libmariadb_plugins_auth_CMakeLists.txt   |   31 -
+ .../files/patch-libservices_CMakeLists.txt         |   11 -
+ .../files/patch-man_CMakeLists.txt                 |   14 -
+ .../files/patch-mysys_my__default.c                |   52 -
+ .../files/patch-oqgraph-MDEV-15291                 |   40 -
+ .../files/patch-pcre_CMakeLists.txt                |   11 -
+ .../files/patch-scripts_mysql__config.sh           |   12 -
+ .../files/patch-scripts_mysqld__safe.sh            |   16 -
+ .../files/patch-scripts_wsrep__sst__mariabackup.sh |   11 -
+ .../files/patch-sql-common_client.c                |   13 -
+ .../files/patch-sql_CMakeLists.txt                 |   28 -
+ .../mariadb102-server/files/patch-sql_mysqld.cc    |   13 -
+ .../files/patch-sql_share_CMakeLists.txt           |   14 -
+ .../mariadb102-server/files/patch-sql_slave.cc     |   14 -
+ .../files/patch-sql_sql__trigger.cc                |   52 -
+ .../mariadb102-server/files/patch-sql_sql__view.cc |   65 -
+ .../mariadb102-server/files/patch-sql_sys__vars.cc |   40 -
+ .../files/patch-storage_innobase_lz4.cmake         |   36 -
+ .../files/patch-storage_innobase_lzo.cmake         |   38 -
+ .../files/patch-storage_innobase_snappy.cmake      |   24 -
+ .../files/patch-storage_mroonga_CMakeLists.txt     |   11 -
+ ...h-storage_mroonga_vendor_groonga_CMakeLists.txt |   15 -
+ .../patch-storage_rocksdb_build__rocksdb.cmake     |   18 -
+ .../files/patch-storage_tokudb_CMakeLists.txt      |    9 -
+ .../patch-storage_tokudb_PerconaFT_CMakeLists.txt  |   11 -
+ ...b_PerconaFT_cmake__modules_TokuThirdParty.cmake |   36 -
+ ...-storage_tokudb_PerconaFT_portability_memory.cc |   16 -
+ .../files/patch-support-files_CMakeLists.txt       |   14 -
+ databases/mariadb102-server/files/pkg-message.in   |   23 -
+ databases/mariadb102-server/pkg-descr              |   14 -
+ databases/mariadb102-server/pkg-plist              |  214 --
+ databases/pecl-redis/Makefile                      |    2 +-
+ databases/pecl-redis/distinfo                      |    6 +-
+ databases/py-redis/Makefile                        |    2 +-
+ databases/py-redis/distinfo                        |    6 +-
+ deskutils/just/Makefile                            |   39 +-
+ deskutils/just/distinfo                            |   78 +-
+ devel/awscli/Makefile                              |    4 +-
+ devel/awscli/distinfo                              |    6 +-
+ devel/cargo-c/Makefile                             |   68 +-
+ devel/cargo-c/distinfo                             |  138 +-
+ devel/cl-alexandria-sbcl/Makefile                  |    2 +-
+ devel/cl-infix-sbcl/Makefile                       |    2 +-
+ devel/cl-port-sbcl/Makefile                        |    2 +-
+ devel/cl-split-sequence-sbcl/Makefile              |    2 +-
+ devel/cl-trivial-features-sbcl/Makefile            |    2 +-
+ devel/cl-trivial-gray-streams-sbcl/Makefile        |    2 +-
+ devel/cmake-gui/Makefile                           |    1 +
+ devel/cmake/Makefile                               |    1 +
+ devel/libccid/Makefile                             |    8 +-
+ devel/libccid/distinfo                             |    6 +-
+ devel/libccid/pkg-plist                            |    4 -
+ devel/opendht/Makefile                             |    2 +-
+ devel/pcsc-lite/Makefile                           |   16 +-
+ devel/pcsc-lite/distinfo                           |    6 +-
+ devel/pecl-json_post/Makefile                      |    3 +-
+ devel/pecl-json_post/distinfo                      |    5 +-
+ devel/pecl-uuid/Makefile                           |    3 +-
+ devel/pecl-uuid/distinfo                           |    5 +-
+ devel/py-botocore/Makefile                         |    2 +-
+ devel/py-botocore/distinfo                         |    6 +-
+ devel/py-oci/Makefile                              |    2 +-
+ devel/py-oci/distinfo                              |    6 +-
+ devel/rubygem-stackprof/Makefile                   |    1 +
+ devel/rubygem-stackprof/pkg-descr                  |    2 +-
+ emulators/Makefile                                 |    1 +
+ emulators/elliott-803/Makefile                     |   23 +
+ emulators/elliott-803/distinfo                     |    3 +
+ emulators/elliott-803/pkg-descr                    |    7 +
+ emulators/elliott-803/pkg-plist                    |   18 +
+ emulators/rpcs3/Makefile                           |    4 +-
+ emulators/rpcs3/distinfo                           |    6 +-
+ emulators/yuzu/Makefile                            |   43 +-
+ emulators/yuzu/distinfo                            |   42 +-
+ emulators/yuzu/files/patch-CMakeLists.txt          |   42 +-
+ emulators/yuzu/files/patch-openssl                 |   65 +
+ graphics/minder/Makefile                           |    2 +-
+ graphics/minder/distinfo                           |    6 +-
+ graphics/minder/files/patch-meson.build            |   24 -
+ graphics/minder/pkg-plist                          |    1 +
+ graphics/open3d/Makefile                           |    2 +-
+ graphics/opencolorio/Makefile                      |    4 +
+ graphics/ossim/Makefile                            |    2 +-
+ graphics/pecl-vips/Makefile                        |    3 +-
+ graphics/pecl-vips/distinfo                        |    6 +-
+ graphics/qgis/Makefile                             |   78 +-
+ graphics/qgis/distinfo                             |    8 +-
+ graphics/qgis/pkg-plist                            |  223 +-
+ graphics/zathura-djvu/Makefile                     |   10 +-
+ graphics/zathura-djvu/distinfo                     |    6 +-
+ lang/polyml/Makefile                               |   15 +-
+ lang/polyml/distinfo                               |    6 +-
+ lang/polyml/files/patch-libpolyml_sighandler.cpp   |   14 +
+ lang/polyml/pkg-plist                              |    4 +-
+ lang/sbcl/Makefile                                 |    2 +-
+ lang/sbcl/distinfo                                 |   10 +-
+ lang/sdcc/Makefile                                 |   17 +-
+ lang/sdcc/distinfo                                 |    6 +-
+ lang/sdcc/files/patch-device-lib-Makefile.in       |   12 +-
+ lang/sdcc/pkg-plist                                |  496 ++-
+ lang/solidity/Makefile                             |    1 +
+ lang/swi-pl/Makefile                               |   76 +-
+ lang/swi-pl/distinfo                               |    6 +-
+ lang/swi-pl/files/extra-patch-skip-gnu-qsort       |   55 -
+ .../patch-packages_clib_cmake_FindLibUUID.cmake    |   14 +
+ lang/swi-pl/pkg-plist                              | 3677 ++++++++++----------
+ mail/Makefile                                      |    1 +
+ mail/courier-analog/Makefile                       |   22 +
+ mail/courier-analog/distinfo                       |    3 +
+ mail/courier-analog/pkg-descr                      |    6 +
+ mail/thunderbird/Makefile                          |    3 +-
+ mail/thunderbird/distinfo                          |    6 +-
+ math/cadabra2/Makefile                             |    1 +
+ math/libqalculate/Makefile                         |    6 +-
+ math/libqalculate/distinfo                         |    8 +-
+ math/libqalculate/pkg-plist                        |    2 +-
+ math/maxima/Makefile                               |    2 +-
+ math/py-pynndescent/Makefile                       |    2 +-
+ math/py-pynndescent/distinfo                       |    6 +-
+ math/py-uncertainties/Makefile                     |    2 +-
+ math/py-uncertainties/distinfo                     |    6 +-
+ math/qalculate/Makefile                            |    2 +-
+ math/qalculate/distinfo                            |    6 +-
+ math/qalculate/pkg-plist                           |   15 +-
+ misc/ezc3d/Makefile                                |    2 +-
+ misc/ezc3d/distinfo                                |    6 +-
+ misc/ignition-fuel-tools/Makefile                  |    2 +-
+ .../files/patch-cmake_scripts_common_Macros.cmake  |   10 +
+ multimedia/libopenshot/Makefile                    |    1 +
+ net-im/kde-telepathy/pkg-descr                     |    2 +-
+ net-mgmt/netdata/Makefile                          |    2 -
+ net-p2p/eiskaltdcpp-daemon/Makefile                |    2 +-
+ net/coturn/Makefile                                |    2 +-
+ net/coturn/distinfo                                |    6 +-
+ net/dpdk/Makefile                                  |    2 +-
+ net/dpdk/distinfo                                  |    6 +-
+ net/dpdk/pkg-plist                                 |    1 +
+ net/flower/Makefile                                |    2 +-
+ net/libjson-rpc-cpp/Makefile                       |    2 +-
+ net/lualdap/Makefile                               |   20 +-
+ net/lualdap/distinfo                               |    5 +-
+ net/lualdap/files/patch-src__lualdap.c             |  346 --
+ net/lualdap/pkg-descr                              |    2 +-
+ net/xrdp/Makefile                                  |    2 +-
+ net/xrdp/distinfo                                  |    6 +-
+ print/ps2eps/Makefile                              |    2 +
+ print/texlive-base/Makefile                        |    2 +-
+ science/py-tensorflow/Makefile                     |    2 +-
+ security/cl-md5-sbcl/Makefile                      |    2 +-
+ security/libpwquality/Makefile                     |   19 +-
+ security/libpwquality/distinfo                     |    6 +-
+ security/libpwquality/pkg-plist                    |   98 +-
+ security/vuxml/vuln.xml                            |   26 +
+ sysutils/digdag/Makefile                           |    2 +-
+ sysutils/digdag/distinfo                           |    6 +-
+ sysutils/fdupes/Makefile                           |    4 +-
+ sysutils/fdupes/distinfo                           |    6 +-
+ sysutils/fusefs-securefs/Makefile                  |    1 +
+ sysutils/liburcu/Makefile                          |    2 +-
+ sysutils/luckybackup/Makefile                      |    8 +-
+ sysutils/luckybackup/distinfo                      |    6 +-
+ sysutils/luckybackup/pkg-plist                     |    6 +-
+ sysutils/py-supervisor/Makefile                    |    5 +-
+ sysutils/py-supervisor/distinfo                    |    6 +-
+ textproc/cl-meta-sbcl/Makefile                     |    2 +-
+ textproc/cl-ppcre-sbcl/Makefile                    |    2 +-
+ textproc/nuspell/Makefile                          |    2 +-
+ textproc/nuspell/distinfo                          |    6 +-
+ textproc/nuspell/pkg-plist                         |    3 +-
+ textproc/p5-JSON-Validator/Makefile                |    2 +-
+ textproc/p5-JSON-Validator/distinfo                |    6 +-
+ textproc/xalan-c/Makefile                          |   25 +-
+ textproc/xalan-c/distinfo                          |    5 +-
+ .../xalan-c/files/patch-src_xalanc_CMakeLists.txt  |   10 +
+ ...tch-src_xalanc_PlatformSupport_XalanLocator.hpp |   11 -
+ textproc/xalan-c/pkg-plist                         |   30 +-
+ www/chromium/Makefile                              |    1 +
+ www/cl-lml-sbcl/Makefile                           |    2 +-
+ www/domoticz/Makefile                              |    1 +
+ www/drupal7/Makefile                               |    2 +-
+ www/drupal7/distinfo                               |    6 +-
+ www/drupal7/pkg-plist                              |    2 +-
+ www/firefox/Makefile                               |    5 +-
+ www/firefox/distinfo                               |    6 +-
+ www/iridium/Makefile                               |    2 +-
+ www/node12/Makefile                                |    8 +-
+ www/node12/distinfo                                |    6 +-
+ www/qt5-webengine/Makefile                         |    1 +
+ x11-fonts/cascadia-code/Makefile                   |    4 +-
+ x11-fonts/cascadia-code/distinfo                   |    6 +-
+ x11-themes/qtcurve-kf5/Makefile                    |    2 +-
+ x11-themes/qtcurve-qt5/Makefile                    |    2 +-
+ x11-themes/qtcurve/Makefile                        |   23 +-
+ x11-themes/qtcurve/distinfo                        |    8 +-
+ x11-themes/qtcurve/pkg-plist.kde4                  |   21 -
+ x11-themes/qtcurve/pkg-plist.utils                 |   27 +
+ x11-wm/e-modules/Makefile                          |    2 +-
+ x11-wm/stumpwm/Makefile                            |    1 +
+ x11/cl-clx-sbcl/Makefile                           |    2 +-
+ x11/mate-panel/Makefile                            |    2 +-
+ x11/mate-panel/distinfo                            |    4 +-
+ x11/polybar/Makefile                               |    1 +
+ x11/waybar/Makefile                                |    2 +-
+ 300 files changed, 3602 insertions(+), 7046 deletions(-)
+ create mode 100644 archivers/zoo/files/patch-zoodel.c
+ create mode 100644 archivers/zoo/files/patch-zoopack.c
+ create mode 100644 audio/kid3-qt5/files/patch-src_plugins_oggflacmetadata_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/Makefile
+ delete mode 100644 databases/mariadb101-client/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-client_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-cmake_ssl.cmake
+ delete mode 100644 databases/mariadb101-client/files/patch-extra_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-include_my__compare.h
+ delete mode 100644 databases/mariadb101-client/files/patch-include_mysql_service__encryption.h
+ delete mode 100644 databases/mariadb101-client/files/patch-libmysql_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-libservices_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-mysys_my__default.c
+ delete mode 100644 databases/mariadb101-client/files/patch-pcre_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-scripts_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-scripts_mysql__config.sh
+ delete mode 100644 databases/mariadb101-client/files/patch-sql_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-client/files/pkg-message.in
+ delete mode 100644 databases/mariadb101-client/pkg-plist
+ delete mode 100644 databases/mariadb101-server/Makefile
+ delete mode 100644 databases/mariadb101-server/distinfo
+ delete mode 100644 databases/mariadb101-server/files/extra-patch-include_my__compare.h
+ delete mode 100644 databases/mariadb101-server/files/mysql-server.in
+ delete mode 100644 databases/mariadb101-server/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-MDEV-15961
+ delete mode 100644 databases/mariadb101-server/files/patch-client_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-cmake_ssl.cmake
+ delete mode 100644 databases/mariadb101-server/files/patch-extra_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-libmysql_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-libservices_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-mysys__ssl_my__crypt.cc
+ delete mode 100644 databases/mariadb101-server/files/patch-mysys_my__default.c
+ delete mode 100644 databases/mariadb101-server/files/patch-oqgraph-MDEV-15291
+ delete mode 100644 databases/mariadb101-server/files/patch-pcre_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-scripts_mysql__config.sh
+ delete mode 100644 databases/mariadb101-server/files/patch-scripts_mysqld__safe.sh
+ delete mode 100644 databases/mariadb101-server/files/patch-scripts_wsrep__sst__mariabackup.sh
+ delete mode 100644 databases/mariadb101-server/files/patch-sql_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-sql_sql__trigger.cc
+ delete mode 100644 databases/mariadb101-server/files/patch-sql_sql__view.cc
+ delete mode 100644 databases/mariadb101-server/files/patch-sql_sys__vars.cc
+ delete mode 100644 databases/mariadb101-server/files/patch-storage_mroonga_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-storage_mroonga_vendor_groonga_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-storage_tokudb_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-storage_tokudb_PerconaFT_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/patch-storage_tokudb_PerconaFT_cmake__modules_TokuThirdParty.cmake
+ delete mode 100644 databases/mariadb101-server/files/patch-storage_tokudb_PerconaFT_portability_memory.cc
+ delete mode 100644 databases/mariadb101-server/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mariadb101-server/files/pkg-message.in
+ delete mode 100644 databases/mariadb101-server/pkg-descr
+ delete mode 100644 databases/mariadb101-server/pkg-plist
+ delete mode 100644 databases/mariadb102-client/Makefile
+ delete mode 100644 databases/mariadb102-client/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/patch-MDEV-20463
+ delete mode 100644 databases/mariadb102-client/files/patch-client_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/patch-extra_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/patch-include_my__compare.h
+ delete mode 100644 databases/mariadb102-client/files/patch-include_mysql_service__encryption.h
+ delete mode 100644 databases/mariadb102-client/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/patch-mysys_my__default.c
+ delete mode 100644 databases/mariadb102-client/files/patch-scripts_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/patch-scripts_mysql__config.sh
+ delete mode 100644 databases/mariadb102-client/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-client/files/pkg-message.in
+ delete mode 100644 databases/mariadb102-client/pkg-plist
+ delete mode 100644 databases/mariadb102-server/Makefile
+ delete mode 100644 databases/mariadb102-server/distinfo
+ delete mode 100644 databases/mariadb102-server/files/extra-patch-include_my__compare.h
+ delete mode 100644 databases/mariadb102-server/files/mysql-server.in
+ delete mode 100644 databases/mariadb102-server/files/patch-CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-MDEV-15961
+ delete mode 100644 databases/mariadb102-server/files/patch-MDEV-20248
+ delete mode 100644 databases/mariadb102-server/files/patch-extra_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-extra_mariabackup_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-include_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-libmariadb_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-libmariadb_include_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-libmariadb_libmariadb_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-libmariadb_plugins_auth_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-libservices_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-man_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-mysys_my__default.c
+ delete mode 100644 databases/mariadb102-server/files/patch-oqgraph-MDEV-15291
+ delete mode 100644 databases/mariadb102-server/files/patch-pcre_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-scripts_mysql__config.sh
+ delete mode 100644 databases/mariadb102-server/files/patch-scripts_mysqld__safe.sh
+ delete mode 100644 databases/mariadb102-server/files/patch-scripts_wsrep__sst__mariabackup.sh
+ delete mode 100644 databases/mariadb102-server/files/patch-sql-common_client.c
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_mysqld.cc
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_share_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_slave.cc
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_sql__trigger.cc
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_sql__view.cc
+ delete mode 100644 databases/mariadb102-server/files/patch-sql_sys__vars.cc
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_innobase_lz4.cmake
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_innobase_lzo.cmake
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_innobase_snappy.cmake
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_mroonga_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_mroonga_vendor_groonga_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_rocksdb_build__rocksdb.cmake
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_tokudb_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_tokudb_PerconaFT_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_tokudb_PerconaFT_cmake__modules_TokuThirdParty.cmake
+ delete mode 100644 databases/mariadb102-server/files/patch-storage_tokudb_PerconaFT_portability_memory.cc
+ delete mode 100644 databases/mariadb102-server/files/patch-support-files_CMakeLists.txt
+ delete mode 100644 databases/mariadb102-server/files/pkg-message.in
+ delete mode 100644 databases/mariadb102-server/pkg-descr
+ delete mode 100644 databases/mariadb102-server/pkg-plist
+ delete mode 100644 devel/libccid/pkg-plist
+ create mode 100644 emulators/elliott-803/Makefile
+ create mode 100644 emulators/elliott-803/distinfo
+ create mode 100644 emulators/elliott-803/pkg-descr
+ create mode 100644 emulators/elliott-803/pkg-plist
+ create mode 100644 emulators/yuzu/files/patch-openssl
+ delete mode 100644 graphics/minder/files/patch-meson.build
+ create mode 100644 lang/polyml/files/patch-libpolyml_sighandler.cpp
+ delete mode 100644 lang/swi-pl/files/extra-patch-skip-gnu-qsort
+ create mode 100644 lang/swi-pl/files/patch-packages_clib_cmake_FindLibUUID.cmake
+ create mode 100644 mail/courier-analog/Makefile
+ create mode 100644 mail/courier-analog/distinfo
+ create mode 100644 mail/courier-analog/pkg-descr
+ create mode 100644 multimedia/kodi-devel/files/patch-cmake_scripts_common_Macros.cmake
+ delete mode 100644 net/lualdap/files/patch-src__lualdap.c
+ create mode 100644 textproc/xalan-c/files/patch-src_xalanc_CMakeLists.txt
+ delete mode 100644 textproc/xalan-c/files/patch-src_xalanc_PlatformSupport_XalanLocator.hpp
+ delete mode 100644 x11-themes/qtcurve/pkg-plist.kde4
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
