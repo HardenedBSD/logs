@@ -1,0 +1,171 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating e8d3bcbb5f4c..2644d1a2315b
+Fast-forward
+ contrib/file/ChangeLog                             |  80 ++++
+ contrib/file/Makefile.am                           |   5 +
+ contrib/file/Makefile.in                           |  89 +++-
+ contrib/file/configure                             |  23 +-
+ contrib/file/configure.ac                          |   4 +-
+ contrib/file/doc/file.man                          |  21 +-
+ contrib/file/doc/magic.man                         |  60 ++-
+ contrib/file/libmagic.pc.in                        |  10 +
+ contrib/file/magic/Magdir/animation                |   8 +-
+ contrib/file/magic/Magdir/archive                  | 117 +++++-
+ contrib/file/magic/Magdir/asf                      | 132 ++++++
+ contrib/file/magic/Magdir/cad                      |  11 +-
+ contrib/file/magic/Magdir/commands                 |  26 +-
+ contrib/file/magic/Magdir/compress                 |  13 +-
+ contrib/file/magic/Magdir/console                  |  96 ++++-
+ contrib/file/magic/Magdir/database                 |  33 +-
+ contrib/file/magic/Magdir/der                      |  24 +-
+ contrib/file/magic/Magdir/dif                      |  33 ++
+ contrib/file/magic/Magdir/elf                      |   7 +-
+ contrib/file/magic/Magdir/filesystems              |   6 +-
+ contrib/file/magic/Magdir/games                    |  12 +-
+ contrib/file/magic/Magdir/gnu                      |   7 +-
+ contrib/file/magic/Magdir/images                   | 461 ++++++++++++++++++---
+ contrib/file/magic/Magdir/intel                    |  59 ++-
+ contrib/file/magic/Magdir/kicad                    |  28 +-
+ contrib/file/magic/Magdir/linux                    | 197 +++++----
+ contrib/file/magic/Magdir/msdos                    |  19 +-
+ contrib/file/magic/Magdir/ole2compounddocs         |  52 ++-
+ contrib/file/magic/Magdir/parix                    |   4 +-
+ contrib/file/magic/Magdir/pascal                   |   6 +-
+ contrib/file/magic/Magdir/pdf                      |   9 +-
+ contrib/file/magic/Magdir/pgp                      |  97 ++++-
+ contrib/file/magic/Magdir/python                   | 226 ++++++++--
+ contrib/file/magic/Magdir/riff                     | 123 +++++-
+ contrib/file/magic/Magdir/rst                      |   4 +-
+ contrib/file/magic/Magdir/rtf                      |  98 ++++-
+ contrib/file/magic/Magdir/sgml                     |   4 +-
+ contrib/file/magic/Magdir/sniffer                  | 356 ++++++++--------
+ contrib/file/magic/Magdir/ssh                      |  20 +
+ contrib/file/magic/Magdir/sylk                     |  36 ++
+ contrib/file/magic/Magdir/ti-8x                    |   4 +-
+ contrib/file/magic/Magdir/tplink                   |   6 +-
+ contrib/file/magic/Magdir/troff                    |  10 +-
+ contrib/file/magic/Magdir/unisig                   |  12 +
+ contrib/file/magic/Magdir/usd                      |  21 +
+ contrib/file/magic/Magdir/virtual                  |   2 +-
+ contrib/file/magic/Magdir/web                      |  12 +
+ contrib/file/magic/Magdir/windows                  | 200 +++++----
+ contrib/file/magic/Magdir/wordprocessors           |  19 +-
+ contrib/file/magic/Magdir/zip                      |  85 +++-
+ contrib/file/magic/Makefile.am                     |   8 +-
+ contrib/file/magic/Makefile.in                     |   8 +-
+ contrib/file/src/apprentice.c                      | 152 +++++--
+ contrib/file/src/ascmagic.c                        |  14 +-
+ contrib/file/src/buffer.c                          |   6 +-
+ contrib/file/src/compress.c                        |  56 +--
+ contrib/file/src/der.c                             |  78 +++-
+ contrib/file/src/file.c                            |  90 ++--
+ contrib/file/src/file.h                            |  94 +++--
+ contrib/file/src/file_opts.h                       |  97 +++--
+ contrib/file/src/funcs.c                           | 138 +++++-
+ contrib/file/src/is_json.c                         |  17 +-
+ contrib/file/src/magic.c                           |   5 +-
+ contrib/file/src/print.c                           |  29 +-
+ contrib/file/src/readelf.c                         |  41 +-
+ contrib/file/src/seccomp.c                         |  13 +-
+ contrib/file/src/softmagic.c                       | 158 +++++--
+ lib/libmagic/Makefile                              |  17 +
+ lib/libmagic/config.h                              |   6 +-
+ share/man/man4/tcp.4                               |   5 +-
+ sys/dev/cxgbe/tom/t4_listen.c                      |  25 +-
+ sys/dev/virtio/network/if_vtnet.c                  |  56 +--
+ sys/net/route.c                                    |  25 +-
+ sys/netinet/cc/cc_cubic.c                          |  54 ++-
+ sys/netinet/cc/cc_cubic.h                          |  29 +-
+ sys/netinet/in_kdtrace.c                           |  29 --
+ sys/netinet/in_kdtrace.h                           |  17 -
+ sys/netinet/sctp_asconf.c                          |   9 +-
+ sys/netinet/sctp_bsd_addr.c                        |   6 +
+ sys/netinet/sctp_bsd_addr.h                        |   2 +
+ sys/netinet/sctp_cc_functions.c                    |   2 +-
+ sys/netinet/sctp_input.c                           |   8 +-
+ sys/netinet/sctp_kdtrace.c                         |  28 +-
+ .../{sctp_dtrace_declare.h => sctp_kdtrace.h}      |  29 +-
+ sys/netinet/sctp_os_bsd.h                          |   4 +-
+ sys/netinet/sctp_output.c                          |   2 +-
+ sys/netinet/sctp_pcb.c                             |   7 +-
+ sys/netinet/sctp_usrreq.c                          | 303 +++++++++-----
+ sys/netinet/sctputil.c                             |   2 +-
+ sys/netinet/tcp_input.c                            |   2 +-
+ sys/netinet/tcp_syncache.c                         |   2 +-
+ sys/netinet/tcp_syncache.h                         |   2 +-
+ sys/netinet/toecore.c                              |   4 +-
+ sys/netinet/toecore.h                              |   2 +-
+ sys/netinet6/sctp6_usrreq.c                        |   7 +-
+ sys/sys/eventhandler.h                             |   5 +
+ 96 files changed, 3516 insertions(+), 1164 deletions(-)
+ create mode 100644 contrib/file/libmagic.pc.in
+ create mode 100644 contrib/file/magic/Magdir/asf
+ create mode 100644 contrib/file/magic/Magdir/dif
+ create mode 100644 contrib/file/magic/Magdir/sylk
+ create mode 100644 contrib/file/magic/Magdir/unisig
+ create mode 100644 contrib/file/magic/Magdir/usd
+ create mode 100644 contrib/file/magic/Magdir/web
+ rename sys/netinet/{sctp_dtrace_declare.h => sctp_kdtrace.h} (77%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e8d3bcbb5f4c..2644d1a2315b  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e8d3bcbb5f4c..2644d1a2315b  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
