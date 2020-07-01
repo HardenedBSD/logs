@@ -1,0 +1,142 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/options.arm64
+Auto-merging sys/conf/options
+Auto-merging sys/conf/files
+Auto-merging sys/conf/NOTES
+Merge made by the 'recursive' strategy.
+ lib/libifconfig/Makefile                        |  11 +-
+ lib/libifconfig/libifconfig.h                   |  25 +-
+ lib/libifconfig/libifconfig_bridge.c            | 142 +++++++
+ sbin/ifconfig/ifbridge.c                        |  33 +-
+ secure/lib/libcrypto/opensslconf.h.in           |   3 +
+ secure/lib/libssl/Makefile                      |   2 +
+ secure/lib/libssl/dummy_abi.c                   |  46 +++
+ stand/efi/boot1/boot1.c                         |  52 +--
+ sys/amd64/conf/DEFAULTS                         |   1 -
+ sys/arm/freescale/imx/imx_gpio.c                |  47 ++-
+ sys/arm/freescale/imx/imx_i2c.c                 |  46 +++
+ sys/arm/freescale/imx/imx_iomux.c               |   1 +
+ sys/arm64/conf/GENERIC                          |   6 +-
+ sys/arm64/freescale/imx/clk/imx_clk_composite.c | 309 +++++++++++++++
+ sys/arm64/freescale/imx/clk/imx_clk_composite.h |  45 +++
+ sys/arm64/freescale/imx/clk/imx_clk_frac_pll.c  | 177 +++++++++
+ sys/arm64/freescale/imx/clk/imx_clk_frac_pll.h  |  42 ++
+ sys/arm64/freescale/imx/clk/imx_clk_gate.c      | 117 ++++++
+ sys/arm64/freescale/imx/clk/imx_clk_gate.h      |  45 +++
+ sys/arm64/freescale/imx/clk/imx_clk_mux.c       | 138 +++++++
+ sys/arm64/freescale/imx/clk/imx_clk_mux.h       |  45 +++
+ sys/arm64/freescale/imx/clk/imx_clk_sscg_pll.c  | 195 ++++++++++
+ sys/arm64/freescale/imx/clk/imx_clk_sscg_pll.h  |  42 ++
+ sys/arm64/freescale/imx/imx7gpc.c               | 263 +++++++++++++
+ sys/arm64/freescale/imx/imx8mq_ccm.c            | 484 ++++++++++++++++++++++++
+ sys/arm64/freescale/imx/imx8mq_ccm.h            | 173 +++++++++
+ sys/arm64/freescale/imx/imx_ccm_clk.h           | 212 +++++++++++
+ sys/conf/NOTES                                  |   1 -
+ sys/conf/files                                  |   1 +
+ sys/conf/files.arm64                            |  15 +
+ sys/conf/options                                |   1 -
+ sys/conf/options.arm64                          |   1 +
+ sys/dev/ffec/if_ffec.c                          |   1 +
+ sys/dev/uart/uart_dev_imx.c                     |  61 ++-
+ sys/geom/part/g_part_ebr.c                      | 138 ++++---
+ sys/i386/conf/DEFAULTS                          |   1 -
+ sys/modules/dtb/imx8/Makefile                   |   7 +
+ sys/net/if_bridgevar.h                          |  30 ++
+ sys/net80211/ieee80211_ddb.c                    |  20 +-
+ sys/net80211/ieee80211_hostap.c                 |  24 +-
+ sys/net80211/ieee80211_ht.c                     | 140 ++++---
+ sys/net80211/ieee80211_ht.h                     |   5 +-
+ sys/net80211/ieee80211_ioctl.c                  |  12 +-
+ sys/net80211/ieee80211_node.c                   | 142 ++++---
+ sys/net80211/ieee80211_node.h                   |   2 +-
+ sys/net80211/ieee80211_output.c                 |  39 +-
+ sys/net80211/ieee80211_power.c                  |   2 +-
+ sys/net80211/ieee80211_proto.c                  | 425 +++++++++++++++++++--
+ sys/net80211/ieee80211_proto.h                  |   3 +
+ sys/net80211/ieee80211_sta.c                    |  25 +-
+ sys/net80211/ieee80211_var.h                    |  39 +-
+ sys/net80211/ieee80211_vht.c                    |   2 +-
+ sys/net80211/ieee80211_vht.h                    |   2 +-
+ sys/netinet/sctputil.c                          |   6 +-
+ sys/opencrypto/crypto.c                         |  46 ++-
+ sys/opencrypto/cryptodev.h                      |  16 +-
+ usr.sbin/acpi/acpidump/acpi.c                   | 295 ++++++++++++++-
+ usr.sbin/acpi/acpidump/acpidump.8               |  10 +-
+ 58 files changed, 3832 insertions(+), 382 deletions(-)
+ create mode 100644 lib/libifconfig/libifconfig_bridge.c
+ create mode 100644 secure/lib/libssl/dummy_abi.c
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_composite.c
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_composite.h
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_frac_pll.c
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_frac_pll.h
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_gate.c
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_gate.h
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_mux.c
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_mux.h
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_sscg_pll.c
+ create mode 100644 sys/arm64/freescale/imx/clk/imx_clk_sscg_pll.h
+ create mode 100644 sys/arm64/freescale/imx/imx7gpc.c
+ create mode 100644 sys/arm64/freescale/imx/imx8mq_ccm.c
+ create mode 100644 sys/arm64/freescale/imx/imx8mq_ccm.h
+ create mode 100644 sys/arm64/freescale/imx/imx_ccm_clk.h
+ create mode 100644 sys/modules/dtb/imx8/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ee68de7531dd..6a5d083ae7bc  hardened/current/master -> hardened/current/master        
+remote:    9abb5f82a9ec..251424cb6aad  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ee68de7531dd..6a5d083ae7bc  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
