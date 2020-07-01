@@ -47,3 +47,173 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-themes/qtcurve/pkg-plist.kde4
+Auto-merging www/node12/Makefile
+Auto-merging www/chromium/Makefile
+Removing lang/swi-pl/files/extra-patch-skip-gnu-qsort
+Auto-merging lang/swi-pl/Makefile
+CONFLICT (content): Merge conflict in lang/swi-pl/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/swi-pl/Makefile
+index c44813e0bc32,5dca8dfaaf4e..000000000000
+--- a/lang/swi-pl/Makefile
++++ b/lang/swi-pl/Makefile
+@@@ -20,15 -20,11 +20,21 @@@ LIB_DEPENDS=	libgmp.so:math/gmp 
+  		libodbc.so:databases/unixODBC \
+  		libfontconfig.so:x11-fonts/fontconfig \
+  		libfreetype.so:print/freetype2 \
+- 		libpcre.so:devel/pcre
++ 		libpcre.so:devel/pcre \
++ 		libossp-uuid.so:misc/ossp-uuid \
++ 		libyaml.so:textproc/libyaml
+  
+++<<<<<<< HEAD
+ +SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
+ +
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +NOPRECIOUSMAKEVARS=	yes
+ +
+ +USES=		compiler:c11 libedit gmake jpeg libarchive pathfix pkgconfig \
+++=======
++ USES=		compiler:c11 libedit cmake jpeg libarchive pathfix pkgconfig \
+++>>>>>>> freebsd/master
+  		readline shebangfix ssl xorg
+  USE_XORG=	ice sm x11 xext xft xinerama xpm xt
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/jamulus/Makefile
+	modified:   audio/jamulus/distinfo
+	modified:   audio/kid3-qt5/Makefile
+	modified:   audio/kid3-qt5/distinfo
+	modified:   audio/kid3-qt5/files/patch-src_app_kde_kdemainwindow.cpp
+	new file:   audio/kid3-qt5/files/patch-src_plugins_oggflacmetadata_CMakeLists.txt
+	modified:   audio/kid3-qt5/files/patch-src_test_testmusicbrainzreleaseimporter.cpp
+	modified:   audio/kid3-qt5/pkg-plist
+	modified:   biology/bamtools/Makefile
+	modified:   databases/py-redis/Makefile
+	modified:   databases/py-redis/distinfo
+	modified:   devel/awscli/Makefile
+	modified:   devel/awscli/distinfo
+	modified:   devel/cargo-c/Makefile
+	modified:   devel/cargo-c/distinfo
+	modified:   devel/cmake-gui/Makefile
+	modified:   devel/cmake/Makefile
+	modified:   devel/opendht/Makefile
+	modified:   devel/py-botocore/Makefile
+	modified:   devel/py-botocore/distinfo
+	modified:   graphics/open3d/Makefile
+	modified:   graphics/ossim/Makefile
+	modified:   lang/solidity/Makefile
+	modified:   lang/swi-pl/distinfo
+	deleted:    lang/swi-pl/files/extra-patch-skip-gnu-qsort
+	new file:   lang/swi-pl/files/patch-packages_clib_cmake_FindLibUUID.cmake
+	modified:   lang/swi-pl/pkg-plist
+	modified:   math/cadabra2/Makefile
+	modified:   math/libqalculate/Makefile
+	modified:   math/libqalculate/distinfo
+	modified:   math/libqalculate/pkg-plist
+	modified:   math/py-pynndescent/Makefile
+	modified:   math/py-pynndescent/distinfo
+	modified:   math/py-uncertainties/Makefile
+	modified:   math/py-uncertainties/distinfo
+	modified:   math/qalculate/Makefile
+	modified:   math/qalculate/distinfo
+	modified:   math/qalculate/pkg-plist
+	modified:   misc/ezc3d/Makefile
+	modified:   misc/ezc3d/distinfo
+	modified:   misc/ignition-fuel-tools/Makefile
+	modified:   multimedia/libopenshot/Makefile
+	modified:   net-p2p/eiskaltdcpp-daemon/Makefile
+	modified:   net/coturn/Makefile
+	modified:   net/coturn/distinfo
+	modified:   net/flower/Makefile
+	modified:   net/libjson-rpc-cpp/Makefile
+	modified:   net/xrdp/Makefile
+	modified:   net/xrdp/distinfo
+	modified:   science/py-tensorflow/Makefile
+	modified:   sysutils/fusefs-securefs/Makefile
+	modified:   sysutils/luckybackup/Makefile
+	modified:   sysutils/luckybackup/distinfo
+	modified:   sysutils/luckybackup/pkg-plist
+	modified:   www/chromium/Makefile
+	modified:   www/domoticz/Makefile
+	modified:   www/firefox/Makefile
+	modified:   www/firefox/distinfo
+	modified:   www/iridium/Makefile
+	modified:   www/node12/Makefile
+	modified:   www/node12/distinfo
+	modified:   www/qt5-webengine/Makefile
+	modified:   x11-themes/qtcurve-kf5/Makefile
+	modified:   x11-themes/qtcurve-qt5/Makefile
+	modified:   x11-themes/qtcurve/Makefile
+	modified:   x11-themes/qtcurve/distinfo
+	deleted:    x11-themes/qtcurve/pkg-plist.kde4
+	modified:   x11-themes/qtcurve/pkg-plist.utils
+	modified:   x11/polybar/Makefile
+	modified:   x11/waybar/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lang/swi-pl/Makefile
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 8705aae28fe3 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.17 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 8705aae28fe3 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
