@@ -1,0 +1,97 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 2644d1a2315b..a119ff88bd31
+Fast-forward
+ share/man/man4/sctp.4                    |    4 +-
+ sys/dev/nvme/nvme_ctrlr.c                |   32 +-
+ sys/modules/tcp/rack/Makefile            |    2 +-
+ sys/netinet/in_pcb.c                     |   36 +-
+ sys/netinet/in_pcb.h                     |    8 +-
+ sys/netinet/sctp.h                       |    7 +-
+ sys/netinet/sctp_auth.c                  |    3 +-
+ sys/netinet/sctp_cc_functions.c          |    2 +-
+ sys/netinet/sctp_output.c                |    6 +-
+ sys/netinet/sctp_pcb.c                   |    7 +-
+ sys/netinet/sctp_sysctl.c                |    2 +
+ sys/netinet/sctp_sysctl.h                |    7 +
+ sys/netinet/sctp_usrreq.c                |   16 +-
+ sys/netinet/sctputil.c                   |    5 +-
+ sys/netinet/tcp.h                        |   30 +-
+ sys/netinet/tcp_hpts.c                   | 1337 ++++++++++++++++--------------
+ sys/netinet/tcp_hpts.h                   |  130 ++-
+ sys/netinet/tcp_input.c                  |   13 +-
+ sys/netinet/tcp_log_buf.h                |   29 +-
+ sys/netinet/tcp_sack.c                   |    5 -
+ sys/netinet/tcp_stacks/rack.c            |  783 +++++++++--------
+ sys/netinet/tcp_stacks/rack_bbr_common.c |  859 +++++++++++++++++++
+ sys/netinet/tcp_stacks/rack_bbr_common.h |   69 +-
+ sys/netinet/tcp_syncache.c               |   30 +-
+ sys/netinet/tcp_syncache.h               |    4 +
+ sys/netinet/tcp_var.h                    |   60 +-
+ sys/netinet6/in6_pcb.c                   |    9 +-
+ sys/netinet6/in6_pcb.h                   |    2 +-
+ sys/sys/mbuf.h                           |    1 +
+ 29 files changed, 2225 insertions(+), 1273 deletions(-)
+ create mode 100644 sys/netinet/tcp_stacks/rack_bbr_common.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    2644d1a2315b..a119ff88bd31  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   2644d1a2315b..a119ff88bd31  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
