@@ -58,3 +58,160 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node12/Makefile
+Removing sysutils/ufs_copy/pkg-plist
+Auto-merging science/cgnslib/Makefile
+Auto-merging print/cups-pdf/Makefile
+Removing net-mgmt/nsca-ng/files/patch-src_common_tls.c
+Auto-merging net-mgmt/nsca-ng/Makefile
+CONFLICT (content): Merge conflict in net-mgmt/nsca-ng/Makefile
+Auto-merging emulators/skyeye/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net-mgmt/nsca-ng/Makefile
+index d486896f683d,854003ccc244..000000000000
+--- a/net-mgmt/nsca-ng/Makefile
++++ b/net-mgmt/nsca-ng/Makefile
+@@@ -19,11 -17,7 +17,15 @@@ LIB_DEPENDS=	libev.so:devel/libe
+  LIB_DEPENDS+=	libconfuse.so:devel/libconfuse
+  .endif
+  
+++<<<<<<< HEAD
+ +CONFLICTS?=	nsca-2.* nsca27-2.*
+ +
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		ssl
+++=======
++ USES=		ssl autoreconf
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
+  CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios
+  CPPFLAGS+=	-I${OPENSSLINC}
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	new file:   audio/synthpod-lv2/files/patch-mapper.lv2_mapper.lv2_mum.h
+	modified:   benchmarks/unixbench/Makefile
+	modified:   benchmarks/unixbench/files/patch-Run
+	new file:   biology/bowtie/files/patch-processor__support.h
+	modified:   biology/psi88/Makefile
+	modified:   databases/redis-devel/Makefile
+	modified:   databases/redis-devel/pkg-descr
+	modified:   emulators/skyeye/Makefile
+	modified:   emulators/wine-devel/Makefile
+	modified:   emulators/wine-devel/distinfo
+	modified:   emulators/wine-devel/pkg-plist
+	modified:   graphics/geomorph/Makefile
+	modified:   graphics/xd3d/Makefile
+	modified:   math/R-cran-spdep/Makefile
+	modified:   math/R-cran-spdep/distinfo
+	modified:   math/cmlib/Makefile
+	modified:   math/elpa/Makefile
+	modified:   math/lapack/Makefile
+	modified:   math/slatec/Makefile
+	modified:   misc/libemos/Makefile
+	modified:   net-mgmt/nsca-ng/distinfo
+	deleted:    net-mgmt/nsca-ng/files/patch-src_common_tls.c
+	modified:   net-mgmt/nsca-ng/pkg-descr
+	modified:   net/cloudflared/Makefile
+	modified:   net/cloudflared/distinfo
+	modified:   net/haproxy-devel/Makefile
+	modified:   net/haproxy-devel/distinfo
+	modified:   print/cups-pdf/Makefile
+	modified:   science/aircraft-datcom/Makefile
+	modified:   science/cdf/Makefile
+	modified:   science/cgnslib/Makefile
+	modified:   science/libccp4/Makefile
+	modified:   science/xtb/Makefile
+	modified:   security/vuxml/vuln.xml
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_net_internal_socket_zsys__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_net_ipv4_zsys__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_net_ipv6_zsys__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_asm__freebsd__arm64.s
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_syscall__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_zerrors__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_zsyscall__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_zsysnum__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+	modified:   sysutils/mate-control-center/Makefile
+	modified:   sysutils/ufs_copy/Makefile
+	modified:   sysutils/ufs_copy/files/patch-ufs_copy.c
+	deleted:    sysutils/ufs_copy/pkg-plist
+	modified:   www/logswan/Makefile
+	modified:   www/logswan/distinfo
+	modified:   www/nextcloud-deck/Makefile
+	modified:   www/nextcloud-deck/distinfo
+	modified:   www/nextcloud-notes/Makefile
+	modified:   www/nextcloud-notes/distinfo
+	modified:   www/node12/Makefile
+	new file:   www/node12/files/extra-patch-common.gypi
+	new file:   www/node12/files/patch-deps_v8_src_codegen_ppc_constants-ppc.h
+	new file:   www/node12/files/patch-deps_v8_src_compiler_backend_instruction-selector.cc
+	new file:   www/node12/files/patch-deps_v8_src_compiler_backend_ppc_code-generator-ppc.cc
+	modified:   www/node12/files/patch-deps_v8_src_execution_simulator.h
+	modified:   x11/bemenu/Makefile
+	modified:   x11/bemenu/distinfo
+	modified:   x11/bemenu/files/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net-mgmt/nsca-ng/Makefile
+
+
+It took 3.58 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1f58c53f2931 HBSD: Remove old OpenSMTPD patch
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.46 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1f58c53f2931 HBSD: Remove old OpenSMTPD patch
+==== END: master ====
