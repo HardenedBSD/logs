@@ -47,3 +47,356 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11-toolkits/gtkada3/Makefile
+Auto-merging www/node12/Makefile
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Removing sysutils/ufs_copy/pkg-plist
+Auto-merging science/paraview/Makefile
+Auto-merging science/cgnslib/Makefile
+Auto-merging print/cups-pdf/Makefile
+Auto-merging net/wireshark/Makefile
+Removing net-mgmt/nsca-ng/files/patch-src_common_tls.c
+Auto-merging net-mgmt/nsca-ng/Makefile
+CONFLICT (content): Merge conflict in net-mgmt/nsca-ng/Makefile
+Removing math/maxima/files/patch-src_maxima.in
+Removing math/maxima/files/patch-interfaces-emacs-imaxima-imaxima.texi
+Auto-merging lang/python38/Makefile
+Auto-merging lang/python37/Makefile
+Auto-merging lang/gnustep-base/Makefile
+Auto-merging lang/ghc/Makefile
+Removing lang/ecl/files/extra-patch-src_lsp_format.lsp
+Auto-merging java/openjdk8/Makefile
+Auto-merging emulators/skyeye/Makefile
+Removing devel/libffi/files/patch-src_arm_sysv.S
+Removing devel/libffi/files/patch-configure
+Removing devel/libffi/files/patch-b5ade2
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net-mgmt/nsca-ng/Makefile
+index d486896f683d,854003ccc244..000000000000
+--- a/net-mgmt/nsca-ng/Makefile
++++ b/net-mgmt/nsca-ng/Makefile
+@@@ -19,11 -17,7 +17,15 @@@ LIB_DEPENDS=	libev.so:devel/libe
+  LIB_DEPENDS+=	libconfuse.so:devel/libconfuse
+  .endif
+  
+++<<<<<<< HEAD
+ +CONFLICTS?=	nsca-2.* nsca27-2.*
+ +
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		ssl
+++=======
++ USES=		ssl autoreconf
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
+  CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios
+  CPPFLAGS+=	-I${OPENSSLINC}
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/cabal.mk
+	modified:   Mk/bsd.ruby.mk
+	new file:   audio/synthpod-lv2/files/patch-mapper.lv2_mapper.lv2_mum.h
+	modified:   benchmarks/unixbench/Makefile
+	modified:   benchmarks/unixbench/files/patch-Run
+	modified:   biology/abyss/Makefile
+	new file:   biology/bowtie/files/patch-processor__support.h
+	modified:   biology/psi88/Makefile
+	modified:   cad/yosys/Makefile
+	modified:   converters/hs-aeson-pretty/Makefile
+	modified:   databases/ldb20/Makefile
+	modified:   databases/ldb20/distinfo
+	modified:   databases/redis-devel/Makefile
+	modified:   databases/redis-devel/pkg-descr
+	modified:   databases/tdb/Makefile
+	modified:   databases/tdb/distinfo
+	modified:   deskutils/hs-arbtt/Makefile
+	modified:   devel/ctypes.sh/Makefile
+	modified:   devel/elm-format/Makefile
+	modified:   devel/g-wrap/Makefile
+	modified:   devel/gdcm/Makefile
+	modified:   devel/gdcm/distinfo
+	modified:   devel/glib20/Makefile
+	modified:   devel/gobject-introspection/Makefile
+	modified:   devel/hs-ShellCheck/Makefile
+	modified:   devel/hs-alex/Makefile
+	modified:   devel/hs-c2hs/Makefile
+	modified:   devel/hs-cabal-install/Makefile
+	modified:   devel/hs-cpphs/Makefile
+	modified:   devel/hs-darcs/Makefile
+	modified:   devel/hs-ghc-events/Makefile
+	modified:   devel/hs-ghcprofview/Makefile
+	modified:   devel/hs-git-annex/Makefile
+	modified:   devel/hs-haddock/Makefile
+	modified:   devel/hs-happy/Makefile
+	modified:   devel/hs-hasktags/Makefile
+	modified:   devel/hs-hlint/Makefile
+	modified:   devel/hs-hoogle/Makefile
+	modified:   devel/hs-hpack/Makefile
+	modified:   devel/hs-hspec-discover/Makefile
+	modified:   devel/hs-mueval/Makefile
+	modified:   devel/hs-profiteur/Makefile
+	modified:   devel/hs-shake/Makefile
+	modified:   devel/hs-spago/Makefile
+	modified:   devel/hs-threadscope/Makefile
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	modified:   devel/libffi/Makefile
+	modified:   devel/libffi/distinfo
+	new file:   devel/libffi/files/patch-Makefile.in
+	deleted:    devel/libffi/files/patch-b5ade2
+	deleted:    devel/libffi/files/patch-configure
+	new file:   devel/libffi/files/patch-configure.host
+	modified:   devel/libffi/files/patch-src__arm__ffi.c
+	deleted:    devel/libffi/files/patch-src_arm_sysv.S
+	modified:   devel/libffi/pkg-descr
+	modified:   devel/libffi/pkg-plist
+	modified:   devel/libuv/Makefile
+	modified:   devel/libuv/distinfo
+	modified:   devel/p5-FFI-Platypus/Makefile
+	modified:   devel/p5-Glib-Object-Introspection/Makefile
+	modified:   devel/py-cffi/Makefile
+	modified:   devel/py-gobject/Makefile
+	modified:   devel/pygobject3-common/Makefile
+	modified:   devel/rubygem-ffi/Makefile
+	modified:   devel/rubygem-ffi110/Makefile
+	modified:   devel/stack/Makefile
+	modified:   devel/talloc/Makefile
+	modified:   devel/talloc/distinfo
+	modified:   devel/tevent/Makefile
+	modified:   devel/tevent/distinfo
+	modified:   emulators/skyeye/Makefile
+	modified:   emulators/wine-devel/Makefile
+	modified:   emulators/wine-devel/distinfo
+	modified:   emulators/wine-devel/pkg-plist
+	modified:   games/hedgewars-server/Makefile
+	modified:   games/hs-scroll/Makefile
+	modified:   graphics/geomorph/Makefile
+	modified:   graphics/opencv/Makefile
+	modified:   graphics/openfx-arena/Makefile
+	modified:   graphics/vv/Makefile
+	modified:   graphics/wayland/Makefile
+	modified:   graphics/xd3d/Makefile
+	modified:   java/bootstrap-openjdk8/Makefile
+	modified:   java/openjdk8/Makefile
+	modified:   java/sablevm/Makefile
+	modified:   lang/ecl/Makefile
+	modified:   lang/ecl/distinfo
+	modified:   lang/ecl/files/extra-patch-src_Makefile.in
+	modified:   lang/ecl/files/extra-patch-src_aclocal.m4
+	deleted:    lang/ecl/files/extra-patch-src_lsp_format.lsp
+	new file:   lang/ecl/files/patch-75877dd.c
+	modified:   lang/ecl/pkg-plist
+	modified:   lang/elixir/Makefile
+	modified:   lang/elixir/distinfo
+	modified:   lang/elixir/pkg-plist
+	modified:   lang/elm/Makefile
+	modified:   lang/gforth/Makefile
+	modified:   lang/ghc/Makefile
+	modified:   lang/gjs/Makefile
+	modified:   lang/gnustep-base/Makefile
+	modified:   lang/guile2/Makefile
+	modified:   lang/hs-brainfuck/Makefile
+	modified:   lang/hs-unlambda/Makefile
+	modified:   lang/librep/Makefile
+	modified:   lang/micropython/Makefile
+	modified:   lang/newlisp/Makefile
+	modified:   lang/polyml/Makefile
+	new file:   lang/polyml/files/patch-libpolyml_polyffi.cpp
+	modified:   lang/purescript/Makefile
+	modified:   lang/pypy/bsd.pypy.mk
+	modified:   lang/python27/Makefile
+	modified:   lang/python35/Makefile
+	modified:   lang/python36/Makefile
+	modified:   lang/python37/Makefile
+	modified:   lang/python38/Makefile
+	modified:   lang/racket-minimal/Makefile
+	modified:   lang/racket/Makefile
+	modified:   lang/sagittarius-scheme/Makefile
+	modified:   lang/smalltalk/Makefile
+	modified:   lang/spidermonkey52/Makefile
+	modified:   lang/spidermonkey60/Makefile
+	modified:   lang/squeak/Makefile
+	modified:   lang/yabasic/Makefile
+	modified:   mail/thunderbird/Makefile
+	modified:   math/GiNaC/Makefile
+	modified:   math/GiNaC/distinfo
+	modified:   math/GiNaC/pkg-plist
+	modified:   math/R-cran-memisc/Makefile
+	modified:   math/R-cran-memisc/distinfo
+	modified:   math/R-cran-spdep/Makefile
+	modified:   math/R-cran-spdep/distinfo
+	modified:   math/cmlib/Makefile
+	modified:   math/elpa/Makefile
+	modified:   math/hs-Agda/Makefile
+	modified:   math/hs-penrose/Makefile
+	modified:   math/lapack/Makefile
+	modified:   math/maxima/Makefile
+	modified:   math/maxima/distinfo
+	renamed:    math/maxima/files/patch-Makefile.am -> math/maxima/files/extra-patch-OFF-Makefile.am
+	new file:   math/maxima/files/extra-patch-interfaces_Makefile.am
+	modified:   math/maxima/files/extra-patch-src_hayat.lisp
+	new file:   math/maxima/files/extra-patch-src_maxima.in
+	deleted:    math/maxima/files/patch-interfaces-emacs-imaxima-imaxima.texi
+	deleted:    math/maxima/files/patch-src_maxima.in
+	modified:   math/maxima/pkg-plist
+	modified:   math/octave-forge-dicom/Makefile
+	modified:   math/sage/Makefile
+	new file:   math/sage/files/patch-src_sage_libs_ecl.pxd
+	modified:   math/sage/files/patch-src_sage_libs_ecl.pyx
+	modified:   math/slatec/Makefile
+	new file:   math/suitesparse/files/patch-SLIP__LU_Source_slip__internal.h
+	modified:   misc/adios2/Makefile
+	modified:   misc/libemos/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/distinfo
+	modified:   net-im/matterhorn/Makefile
+	modified:   net-mgmt/nsca-ng/distinfo
+	deleted:    net-mgmt/nsca-ng/files/patch-src_common_tls.c
+	modified:   net-mgmt/nsca-ng/pkg-descr
+	modified:   net-mgmt/zabbix44-server/Makefile
+	modified:   net-mgmt/zabbix44-server/distinfo
+	modified:   net/cloudflared/Makefile
+	modified:   net/cloudflared/distinfo
+	modified:   net/haproxy-devel/Makefile
+	modified:   net/haproxy-devel/distinfo
+	modified:   net/samba410/Makefile
+	modified:   net/samba410/distinfo
+	new file:   net/samba410/files/patch-lib_util_util__paths.c
+	modified:   net/samba410/files/patch-lib_util_wscript__build
+	new file:   net/samba410/files/patch-source3_modules_vfs__zfsacl.c
+	modified:   net/samba410/pkg-plist
+	modified:   net/samba411/Makefile
+	modified:   net/samba411/distinfo
+	new file:   net/samba411/files/patch-lib_util_util__paths.c
+	modified:   net/samba411/files/patch-lib_util_wscript__build
+	new file:   net/samba411/files/patch-source3_modules_vfs__zfsacl.c
+	modified:   net/samba411/pkg-plist
+	modified:   net/wireshark/Makefile
+	modified:   net/wireshark/distinfo
+	modified:   net/wireshark/pkg-plist
+	modified:   print/cups-pdf/Makefile
+	modified:   print/hs-hscolour/Makefile
+	modified:   science/InsightToolkit/Makefile
+	modified:   science/aircraft-datcom/Makefile
+	modified:   science/cdf/Makefile
+	modified:   science/cgnslib/Makefile
+	modified:   science/libccp4/Makefile
+	modified:   science/paraview/Makefile
+	modified:   science/xtb/Makefile
+	modified:   security/hs-cryptol/Makefile
+	modified:   security/p11-kit/Makefile
+	modified:   security/vuxml/vuln.xml
+	modified:   security/yubioath-desktop/Makefile
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_net_internal_socket_zsys__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_net_ipv4_zsys__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_net_ipv6_zsys__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_asm__freebsd__arm64.s
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_syscall__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_zerrors__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_zsyscall__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_zsysnum__freebsd__arm64.go
+	new file:   sysutils/docker-machine/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+	modified:   sysutils/duplicity/Makefile
+	modified:   sysutils/duplicity/distinfo
+	modified:   sysutils/hs-cputype/Makefile
+	modified:   sysutils/mate-control-center/Makefile
+	modified:   sysutils/ufs_copy/Makefile
+	modified:   sysutils/ufs_copy/files/patch-ufs_copy.c
+	deleted:    sysutils/ufs_copy/pkg-plist
+	modified:   textproc/cgrep/Makefile
+	modified:   textproc/hs-lhs2tex/Makefile
+	modified:   textproc/hs-pandoc-citeproc/Makefile
+	modified:   textproc/hs-pandoc-crossref/Makefile
+	modified:   textproc/hs-pandoc/Makefile
+	modified:   textproc/hs-yaml/Makefile
+	modified:   www/firefox-esr/Makefile
+	modified:   www/firefox/Makefile
+	modified:   www/hs-DAV/Makefile
+	modified:   www/hs-hjsmin/Makefile
+	modified:   www/hs-postgrest/Makefile
+	modified:   www/hs-wai-app-static/Makefile
+	modified:   www/hs-yesod-bin/Makefile
+	modified:   www/logswan/Makefile
+	modified:   www/logswan/distinfo
+	modified:   www/nextcloud-deck/Makefile
+	modified:   www/nextcloud-deck/distinfo
+	modified:   www/nextcloud-notes/Makefile
+	modified:   www/nextcloud-notes/distinfo
+	modified:   www/node12/Makefile
+	new file:   www/node12/files/extra-patch-common.gypi
+	new file:   www/node12/files/patch-deps_v8_src_codegen_ppc_constants-ppc.h
+	new file:   www/node12/files/patch-deps_v8_src_compiler_backend_instruction-selector.cc
+	new file:   www/node12/files/patch-deps_v8_src_compiler_backend_ppc_code-generator-ppc.cc
+	modified:   www/node12/files/patch-deps_v8_src_execution_simulator.h
+	modified:   x11-toolkits/gtkada3/Makefile
+	modified:   x11-wm/hs-xmonad/Makefile
+	modified:   x11/bemenu/Makefile
+	modified:   x11/bemenu/distinfo
+	modified:   x11/bemenu/files/Makefile
+	modified:   x11/conlecterm/Makefile
+	modified:   x11/hs-xmobar/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net-mgmt/nsca-ng/Makefile
+
+
+It took 3.31 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1f58c53f2931 HBSD: Remove old OpenSMTPD patch
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.24 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1f58c53f2931 HBSD: Remove old OpenSMTPD patch
+==== END: master ====
