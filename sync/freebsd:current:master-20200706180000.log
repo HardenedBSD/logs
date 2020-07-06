@@ -1,0 +1,97 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 6cee1596c05e..2c83536931a0
+Fast-forward
+ lib/libefivar/efi-osdep.h                  |   2 +
+ share/man/man5/src.conf.5                  |   6 +-
+ share/mk/src.opts.mk                       |   4 +-
+ stand/common/self_reloc.c                  |   5 +-
+ stand/defs.mk                              |  13 +-
+ stand/efi/include/riscv/efibind.h          | 217 +++++++++++++++++++++++++++++
+ stand/efi/libefi/Makefile                  |   3 +-
+ stand/efi/loader/arch/riscv/Makefile.inc   |   7 +
+ stand/efi/loader/arch/riscv/exec.c         |  92 ++++++++++++
+ stand/efi/loader/arch/riscv/ldscript.riscv |  87 ++++++++++++
+ stand/efi/loader/arch/riscv/start.S        | 168 ++++++++++++++++++++++
+ stand/efi/loader/copy.c                    |   9 +-
+ stand/efi/loader/main.c                    |   2 +-
+ stand/loader.mk                            |   3 +
+ sys/compat/freebsd32/freebsd32_sysent.c    |   4 +-
+ sys/kern/capabilities.conf                 |   2 +
+ sys/kern/init_sysent.c                     |   4 +-
+ sys/kern/kern_cpuset.c                     |  69 +++++----
+ sys/kern/subr_stack.c                      |  19 ++-
+ sys/kern/tty_info.c                        |  46 ++++--
+ sys/net/route/nhop_ctl.c                   |  13 +-
+ sys/net/route/shared.h                     |   3 +-
+ sys/riscv/include/metadata.h               |  24 +++-
+ sys/riscv/riscv/plic.c                     |  13 +-
+ sys/sys/stack.h                            |   8 +-
+ 25 files changed, 752 insertions(+), 71 deletions(-)
+ create mode 100644 stand/efi/include/riscv/efibind.h
+ create mode 100644 stand/efi/loader/arch/riscv/Makefile.inc
+ create mode 100644 stand/efi/loader/arch/riscv/exec.c
+ create mode 100644 stand/efi/loader/arch/riscv/ldscript.riscv
+ create mode 100644 stand/efi/loader/arch/riscv/start.S
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    6cee1596c05e..2c83536931a0  freebsd/current/master -> freebsd/current/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   6cee1596c05e..2c83536931a0  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
