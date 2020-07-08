@@ -1,0 +1,259 @@
+==== BEGIN: hardened/12.1-releng/master ====
+current branch: hardened/12.1-releng/master
+mergeable branch: origin/freebsd/12.1-releng/master
+==== change branch ====
+Switched to branch 'hardened/12.1-releng/master'
+Your branch is up to date with 'origin/hardened/12.1-releng/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+* hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge origin/freebsd/12.1-releng/master branch ====
+Auto-merging usr.sbin/unbound/daemon/Makefile
+Auto-merging usr.sbin/unbound/checkconf/Makefile
+Auto-merging sys/conf/newvers.sh
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |   16 +
+ contrib/unbound/.github/FUNDING.yml                |   12 +
+ contrib/unbound/.travis.yml                        |   16 +
+ contrib/unbound/Makefile.in                        | 1249 ++++++++--------
+ contrib/unbound/README.md                          |   38 +
+ contrib/unbound/aclocal.m4                         |    8 +-
+ contrib/unbound/cachedb/cachedb.c                  |   93 +-
+ contrib/unbound/compat/arc4random.c                |    1 +
+ contrib/unbound/compat/getentropy_freebsd.c        |   62 +
+ contrib/unbound/compat/getentropy_linux.c          |  147 +-
+ contrib/unbound/compat/getentropy_osx.c            |   65 +-
+ contrib/unbound/compat/getentropy_solaris.c        |    6 +-
+ contrib/unbound/compat/getentropy_win.c            |    7 +-
+ contrib/unbound/compat/malloc.c                    |    5 +
+ contrib/unbound/compat/snprintf.c                  |    7 +-
+ contrib/unbound/config.guess                       |    2 +-
+ contrib/unbound/config.h.in                        |   78 +-
+ contrib/unbound/config.sub                         |    2 +-
+ contrib/unbound/configure                          | 1487 +++++++++++++-------
+ contrib/unbound/configure.ac                       |  265 +++-
+ contrib/unbound/contrib/README                     |   17 +-
+ .../unbound/contrib/create_unbound_ad_servers.sh   |    7 +-
+ contrib/unbound/contrib/drop-tld.diff              |   82 ++
+ contrib/unbound/contrib/drop2rpz                   |   39 +
+ contrib/unbound/contrib/fastrpz.patch              |  373 ++---
+ contrib/unbound/contrib/libunbound.pc.in           |    8 +-
+ contrib/unbound/contrib/libunbound.so.conf         |    1 +
+ contrib/unbound/contrib/unbound-fuzzme.patch       |  148 ++
+ contrib/unbound/contrib/unbound.init               |   14 +-
+ contrib/unbound/contrib/unbound.init_fedora        |    4 +-
+ contrib/unbound/contrib/unbound.service.in         |   63 +-
+ contrib/unbound/contrib/unbound_munin_             |    5 +-
+ .../unbound/contrib/unbound_portable.service.in    |   49 +
+ contrib/unbound/daemon/daemon.c                    |   30 +-
+ contrib/unbound/daemon/daemon.h                    |    2 +
+ contrib/unbound/daemon/remote.c                    |  110 +-
+ contrib/unbound/daemon/stats.c                     |   23 +-
+ contrib/unbound/daemon/unbound.c                   |  104 +-
+ contrib/unbound/daemon/worker.c                    |  211 +--
+ contrib/unbound/dns64/dns64.c                      |  129 +-
+ contrib/unbound/dnscrypt/dnscrypt.c                |   49 +-
+ contrib/unbound/dnstap/dnstap.c                    |   17 +
+ contrib/unbound/doc/Changelog                      | 1038 +++++++++++++-
+ contrib/unbound/doc/README                         |    4 +-
+ contrib/unbound/doc/README.ipset.md                |   65 +
+ contrib/unbound/doc/TODO                           |    2 +-
+ contrib/unbound/doc/example.conf                   |   74 +-
+ contrib/unbound/doc/example.conf.in                |  121 +-
+ contrib/unbound/doc/libunbound.3                   |   14 +-
+ contrib/unbound/doc/libunbound.3.in                |   21 +-
+ contrib/unbound/doc/unbound-anchor.8               |    2 +-
+ contrib/unbound/doc/unbound-anchor.8.in            |    6 +-
+ contrib/unbound/doc/unbound-checkconf.8            |    2 +-
+ contrib/unbound/doc/unbound-checkconf.8.in         |    2 +-
+ contrib/unbound/doc/unbound-control.8              |   13 +-
+ contrib/unbound/doc/unbound-control.8.in           |   27 +-
+ contrib/unbound/doc/unbound-host.1                 |    2 +-
+ contrib/unbound/doc/unbound-host.1.in              |    2 +-
+ contrib/unbound/doc/unbound.8                      |    4 +-
+ contrib/unbound/doc/unbound.8.in                   |    9 +-
+ contrib/unbound/doc/unbound.conf.5                 |  165 ++-
+ contrib/unbound/doc/unbound.conf.5.in              |  309 +++-
+ contrib/unbound/doc/unbound.doxygen                |   12 +-
+ contrib/unbound/edns-subnet/addrtree.c             |    2 +-
+ contrib/unbound/edns-subnet/addrtree.h             |    6 +-
+ contrib/unbound/edns-subnet/subnetmod.c            |   91 +-
+ contrib/unbound/edns-subnet/subnetmod.h            |    5 +
+ contrib/unbound/install-sh                         |    2 +-
+ contrib/unbound/ipsecmod/ipsecmod.c                |  149 +-
+ contrib/unbound/ipset/ipset.c                      |  383 +++++
+ contrib/unbound/ipset/ipset.h                      |   79 ++
+ contrib/unbound/iterator/iter_delegpt.c            |   51 +-
+ contrib/unbound/iterator/iter_delegpt.h            |   28 +-
+ contrib/unbound/iterator/iter_fwd.c                |    2 +-
+ contrib/unbound/iterator/iter_hints.c              |    2 +-
+ contrib/unbound/iterator/iter_scrub.c              |   65 +-
+ contrib/unbound/iterator/iter_utils.c              |  200 ++-
+ contrib/unbound/iterator/iter_utils.h              |   16 +
+ contrib/unbound/iterator/iterator.c                |  272 ++--
+ contrib/unbound/iterator/iterator.h                |   14 +-
+ contrib/unbound/libunbound/context.c               |   14 +-
+ contrib/unbound/libunbound/context.h               |    6 +
+ contrib/unbound/libunbound/libunbound.c            |   39 +-
+ contrib/unbound/libunbound/libworker.c             |   20 +-
+ contrib/unbound/libunbound/ubsyms.def              |    1 +
+ contrib/unbound/libunbound/unbound.h               |   28 +-
+ contrib/unbound/ltmain.sh                          |    6 +-
+ contrib/unbound/respip/respip.c                    |  344 +++--
+ contrib/unbound/respip/respip.h                    |   97 +-
+ contrib/unbound/services/authzone.c                |  504 +++++--
+ contrib/unbound/services/authzone.h                |   22 +-
+ contrib/unbound/services/cache/dns.c               |  139 +-
+ contrib/unbound/services/cache/dns.h               |    7 +-
+ contrib/unbound/services/cache/infra.c             |   44 +-
+ contrib/unbound/services/cache/infra.h             |    9 +-
+ contrib/unbound/services/listen_dnsport.c          |  437 +++++-
+ contrib/unbound/services/listen_dnsport.h          |  130 ++
+ contrib/unbound/services/localzone.c               |  246 +++-
+ contrib/unbound/services/localzone.h               |  119 +-
+ contrib/unbound/services/mesh.c                    |  582 ++++++--
+ contrib/unbound/services/mesh.h                    |   43 +-
+ contrib/unbound/services/modstack.c                |   19 +-
+ contrib/unbound/services/outside_network.c         |  192 +--
+ contrib/unbound/services/outside_network.h         |    6 +-
+ contrib/unbound/services/rpz.c                     | 1015 +++++++++++++
+ contrib/unbound/services/rpz.h                     |  201 +++
+ contrib/unbound/services/view.c                    |    2 -
+ contrib/unbound/sldns/parse.c                      |   15 +-
+ contrib/unbound/sldns/rrdef.c                      |  382 ++---
+ contrib/unbound/sldns/sbuffer.c                    |   33 -
+ contrib/unbound/sldns/sbuffer.h                    |   68 +-
+ contrib/unbound/sldns/str2wire.c                   |   21 +-
+ contrib/unbound/sldns/wire2str.c                   |   77 +-
+ contrib/unbound/sldns/wire2str.h                   |   29 +-
+ contrib/unbound/smallapp/unbound-anchor.c          |   79 +-
+ contrib/unbound/smallapp/unbound-checkconf.c       |   92 +-
+ contrib/unbound/smallapp/unbound-control-setup.sh  |    4 +-
+ .../unbound/smallapp/unbound-control-setup.sh.in   |    4 +-
+ contrib/unbound/smallapp/unbound-control.c         |   71 +-
+ contrib/unbound/smallapp/unbound-host.c            |    9 +-
+ contrib/unbound/util/alloc.c                       |    8 +-
+ contrib/unbound/util/config_file.c                 |  156 +-
+ contrib/unbound/util/config_file.h                 |   79 +-
+ contrib/unbound/util/configlexer.lex               |   38 +-
+ contrib/unbound/util/configparser.y                |  411 +++++-
+ contrib/unbound/util/data/dname.c                  |   70 +
+ contrib/unbound/util/data/dname.h                  |    9 +
+ contrib/unbound/util/data/msgencode.c              |   85 +-
+ contrib/unbound/util/data/msgencode.h              |    4 +-
+ contrib/unbound/util/data/msgparse.c               |   10 +-
+ contrib/unbound/util/data/msgparse.h               |    4 +
+ contrib/unbound/util/data/msgreply.c               |   20 +-
+ contrib/unbound/util/data/msgreply.h               |    2 +-
+ contrib/unbound/util/data/packed_rrset.c           |   21 +-
+ contrib/unbound/util/data/packed_rrset.h           |   13 +
+ contrib/unbound/util/edns.c                        |    2 +-
+ contrib/unbound/util/fptr_wlist.c                  |   44 +-
+ contrib/unbound/util/fptr_wlist.h                  |    7 +
+ contrib/unbound/util/iana_ports.inc                |    8 +-
+ contrib/unbound/util/log.c                         |   78 +-
+ contrib/unbound/util/log.h                         |   35 +-
+ contrib/unbound/util/mini_event.c                  |    4 +-
+ contrib/unbound/util/module.h                      |   21 +
+ contrib/unbound/util/net_help.c                    |  359 ++++-
+ contrib/unbound/util/net_help.h                    |   58 +
+ contrib/unbound/util/netevent.c                    |  255 +++-
+ contrib/unbound/util/netevent.h                    |    8 +-
+ contrib/unbound/util/random.c                      |   53 +-
+ contrib/unbound/util/random.h                      |   13 +-
+ contrib/unbound/util/regional.c                    |   13 +-
+ contrib/unbound/util/shm_side/shm_main.c           |    8 +-
+ contrib/unbound/util/storage/dnstree.c             |   13 +-
+ contrib/unbound/util/storage/dnstree.h             |    7 +
+ contrib/unbound/util/storage/lookup3.c             |    8 +-
+ contrib/unbound/util/ub_event.c                    |   16 +
+ contrib/unbound/util/ub_event_pluggable.c          |    4 +-
+ contrib/unbound/util/winsock_event.c               |    2 +-
+ contrib/unbound/validator/autotrust.c              |   32 +-
+ contrib/unbound/validator/val_anchor.c             |    4 +-
+ contrib/unbound/validator/val_neg.c                |    1 +
+ contrib/unbound/validator/val_secalgo.c            |   37 +-
+ contrib/unbound/validator/val_sigcrypt.c           |   22 +-
+ contrib/unbound/validator/validator.c              |    8 +-
+ lib/libunbound/Makefile                            |    5 +-
+ sys/amd64/vmm/intel/vtd.c                          |  122 +-
+ sys/compat/linuxkpi/common/src/linux_compat.c      |    3 +
+ sys/conf/newvers.sh                                |    2 +-
+ sys/dev/mps/mps_user.c                             |    8 +-
+ sys/netinet6/ip6_output.c                          |    9 +-
+ usr.sbin/bhyve/pci_emul.c                          |   41 +-
+ usr.sbin/bhyve/pci_emul.h                          |    6 +-
+ usr.sbin/bhyve/pci_passthru.c                      |    7 +-
+ usr.sbin/unbound/anchor/Makefile                   |    1 +
+ usr.sbin/unbound/checkconf/Makefile                |    1 +
+ {contrib => usr.sbin}/unbound/config.h             |   77 +-
+ usr.sbin/unbound/control/Makefile                  |    1 +
+ usr.sbin/unbound/daemon/Makefile                   |    1 +
+ 177 files changed, 12354 insertions(+), 3448 deletions(-)
+ create mode 100644 contrib/unbound/.github/FUNDING.yml
+ create mode 100644 contrib/unbound/.travis.yml
+ create mode 100644 contrib/unbound/README.md
+ create mode 100644 contrib/unbound/compat/getentropy_freebsd.c
+ create mode 100644 contrib/unbound/contrib/drop-tld.diff
+ create mode 100644 contrib/unbound/contrib/drop2rpz
+ create mode 100644 contrib/unbound/contrib/unbound-fuzzme.patch
+ create mode 100644 contrib/unbound/contrib/unbound_portable.service.in
+ create mode 100644 contrib/unbound/doc/README.ipset.md
+ create mode 100644 contrib/unbound/ipset/ipset.c
+ create mode 100644 contrib/unbound/ipset/ipset.h
+ create mode 100644 contrib/unbound/services/rpz.c
+ create mode 100644 contrib/unbound/services/rpz.h
+ rename {contrib => usr.sbin}/unbound/config.h (94%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    480cbe2eb4f2..78aee9e2abff  hardened/12.1-releng/master -> hardened/12.1-releng/master        
+remote:    55f3b6123c21..e1a11e350964  github/freebsd/12.1-releng/master -> github/freebsd/12.1-releng/master        
+remote: Gitea: Internal Server Error        
+remote: Failed to Update: hardenedbsd/hardenedbsd Branch: hardened/12.1-releng/master Error: newCommit.CommitsBeforeUntil: packfile not found        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   480cbe2eb4f2..78aee9e2abff  hardened/12.1-releng/master -> hardened/12.1-releng/master
+==== END: hardened/12.1-releng/master ====
