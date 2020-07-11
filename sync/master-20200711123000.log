@@ -181,3 +181,202 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging shells/bash/Makefile
+Auto-merging multimedia/ffmpeg/Makefile
+Removing multimedia/audacious-plugins/files/patch-src_cdaudio_cdaudio-ng.cc
+Removing deskutils/nextcloudclient/files/patch-src_libsync_networkjobs.cpp
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 -
+ benchmarks/stress-ng/Makefile                      |   2 +-
+ benchmarks/stress-ng/distinfo                      |   6 +-
+ deskutils/nextcloudclient/Makefile                 |   2 +-
+ deskutils/nextcloudclient/distinfo                 |   6 +-
+ .../files/patch-src_libsync_networkjobs.cpp        |  10 -
+ deskutils/nextcloudclient/pkg-plist                |   4 +-
+ games/kdegames/Makefile                            |   2 +-
+ games/kdegames/Makefile.common                     |   7 +
+ graphics/Makefile                                  |   1 +
+ graphics/elementary-photos/Makefile                |   1 +
+ graphics/wayland-info/Makefile                     |  27 +++
+ graphics/wayland-info/distinfo                     |   5 +
+ graphics/wayland-info/pkg-descr                    |  11 +
+ java/bouncycastle15/Makefile                       |   2 +-
+ java/netty/Makefile                                |   2 +-
+ java/netty/distinfo                                |   6 +-
+ mail/alpine/Makefile                               |   8 +-
+ mail/alpine/distinfo                               |   6 +-
+ mail/phplist/Makefile                              |   2 +-
+ mail/phplist/distinfo                              |   4 +-
+ mail/phplist/pkg-plist                             | 145 +++++++++++++
+ math/Makefile                                      |   1 +
+ math/R-cran-conquer/Makefile                       |  21 ++
+ math/R-cran-conquer/distinfo                       |   3 +
+ math/R-cran-conquer/pkg-descr                      |   6 +
+ misc/kf5-purpose/Makefile                          |   2 +-
+ misc/valentina/Makefile                            |  27 +--
+ misc/valentina/distinfo                            |   6 +-
+ misc/valentina/files/patch-common.pri              |  13 +-
+ .../patch-src_libs_vgeometry_vellipticalarc.cpp    |  10 +
+ .../patch-src_libs_vgeometry_vplacelabelitem.cpp   |  10 +
+ .../files/patch-src_libs_vmisc_debugbreak.h        |  10 +-
+ .../files/patch-src_libs_vpatterndb_vpassmark.h    |  10 +
+ misc/valentina/pkg-plist                           |  34 ++-
+ multimedia/audacious-plugins/Makefile              |   2 +-
+ multimedia/audacious-plugins/distinfo              |   6 +-
+ .../files/patch-src_cdaudio_cdaudio-ng.cc          |  11 -
+ multimedia/audacious/Makefile                      |   2 +-
+ multimedia/audacious/distinfo                      |   6 +-
+ multimedia/ffmpeg/Makefile                         |   9 +-
+ multimedia/ffmpeg/distinfo                         |   8 +-
+ net-im/kaccounts-integration/Makefile              |   1 +
+ net-im/kaccounts-providers/Makefile                |   1 +
+ net-im/ktp-accounts-kcm/Makefile                   |   1 +
+ net-im/ktp-auth-handler/Makefile                   |   1 +
+ net-im/ktp-common-internals/Makefile               |   1 +
+ net-im/libaccounts-glib/Makefile                   |  33 ++-
+ net-im/libaccounts-glib/distinfo                   |   6 +-
+ net-im/libaccounts-glib/files/patch-meson.build    |  11 +
+ .../files/patch-meson__options.txt                 |   5 +
+ net-im/libaccounts-glib/pkg-plist                  |  28 ++-
+ net-im/libaccounts-qt5/Makefile                    |  25 ++-
+ net-im/libaccounts-qt5/distinfo                    |   5 +-
+ net-im/libaccounts-qt5/files/patch-accounts-qt.pro |  15 ++
+ .../files/patch-common-project-config.pri          |  11 +
+ net-im/libaccounts-qt5/pkg-plist                   | 232 +++++++++------------
+ net-im/libsignon-glib/Makefile                     |  29 ++-
+ net-im/libsignon-glib/distinfo                     |   6 +-
+ net-im/libsignon-glib/files/patch-meson.build      |  14 ++
+ .../libsignon-glib/files/patch-meson__options.txt  |   7 +
+ net-im/libsignon-glib/pkg-plist                    |  21 +-
+ net-im/telepathy-accounts-signon/Makefile          |   7 +-
+ net-im/telepathy-accounts-signon/distinfo          |   6 +-
+ net-mgmt/netdata-go/Makefile                       |   4 +-
+ net-mgmt/netdata-go/distinfo                       |  10 +-
+ net-mgmt/py-prometheus-client/Makefile             |   2 +-
+ net-mgmt/py-prometheus-client/distinfo             |   6 +-
+ net/kio-gdrive/Makefile                            |   1 +
+ net/librdkafka/Makefile                            |   2 +-
+ net/librdkafka/distinfo                            |   6 +-
+ net/py-aiohttp-socks/Makefile                      |   2 +-
+ net/py-aiohttp-socks/distinfo                      |   6 +-
+ security/py-certbot/Makefile                       |   4 +-
+ security/py-certbot/files/500.certbot.in           |  62 ++++--
+ .../{pkg-message => files/pkg-message.in}          |  22 ++
+ security/snort2pfcd/Makefile                       |   2 +-
+ security/snort2pfcd/distinfo                       |   6 +-
+ security/snort2pfcd/files/snort2pfcd.in            |   1 -
+ security/vuxml/vuln.xml                            |  53 +++++
+ shells/bash/Makefile                               |   2 +-
+ shells/bash/distinfo                               |   4 +-
+ sysutils/Makefile                                  |   1 +
+ sysutils/accounts-qml-module/Makefile              |   1 +
+ sysutils/goaccess/Makefile                         |  17 +-
+ sysutils/goaccess/files/goaccess.in                |  45 ++++
+ sysutils/scanmem/Makefile                          |  39 ++++
+ sysutils/scanmem/distinfo                          |   3 +
+ sysutils/scanmem/files/patch-common.h              |  22 ++
+ sysutils/scanmem/files/patch-gui-GameConqueror.py  |  28 +++
+ sysutils/scanmem/files/patch-gui-gameconqueror.in  |  15 ++
+ sysutils/scanmem/files/patch-handlers.c            |  12 ++
+ sysutils/scanmem/files/patch-interrupt.h           |  11 +
+ sysutils/scanmem/files/patch-maps.c                |  30 +++
+ sysutils/scanmem/files/patch-ptrace.c              |  52 +++++
+ sysutils/scanmem/files/patch-scanroutines.c        |  20 ++
+ sysutils/scanmem/files/patch-targetmem.h           |  11 +
+ sysutils/scanmem/pkg-descr                         |  22 ++
+ sysutils/scanmem/pkg-plist                         |  50 +++++
+ sysutils/signon-qt5/Makefile                       |   5 +-
+ sysutils/signon-qt5/distinfo                       |   6 +-
+ sysutils/signon-qt5/files/patch-signon.pro         |   8 +-
+ sysutils/signon-qt5/pkg-plist                      |   7 +-
+ sysutils/signon-ui/Makefile                        |   2 +-
+ www/riot-web/Makefile                              |   2 +-
+ www/riot-web/distinfo                              |   6 +-
+ www/riot-web/pkg-plist                             | 167 +++++++--------
+ 107 files changed, 1238 insertions(+), 462 deletions(-)
+ delete mode 100644 deskutils/nextcloudclient/files/patch-src_libsync_networkjobs.cpp
+ create mode 100644 graphics/wayland-info/Makefile
+ create mode 100644 graphics/wayland-info/distinfo
+ create mode 100644 graphics/wayland-info/pkg-descr
+ create mode 100644 math/R-cran-conquer/Makefile
+ create mode 100644 math/R-cran-conquer/distinfo
+ create mode 100644 math/R-cran-conquer/pkg-descr
+ create mode 100644 misc/valentina/files/patch-src_libs_vgeometry_vellipticalarc.cpp
+ create mode 100644 misc/valentina/files/patch-src_libs_vgeometry_vplacelabelitem.cpp
+ create mode 100644 misc/valentina/files/patch-src_libs_vpatterndb_vpassmark.h
+ delete mode 100644 multimedia/audacious-plugins/files/patch-src_cdaudio_cdaudio-ng.cc
+ create mode 100644 net-im/libaccounts-glib/files/patch-meson.build
+ create mode 100644 net-im/libaccounts-glib/files/patch-meson__options.txt
+ create mode 100644 net-im/libaccounts-qt5/files/patch-accounts-qt.pro
+ create mode 100644 net-im/libaccounts-qt5/files/patch-common-project-config.pri
+ create mode 100644 net-im/libsignon-glib/files/patch-meson.build
+ create mode 100644 net-im/libsignon-glib/files/patch-meson__options.txt
+ rename security/py-certbot/{pkg-message => files/pkg-message.in} (68%)
+ create mode 100644 sysutils/goaccess/files/goaccess.in
+ create mode 100644 sysutils/scanmem/Makefile
+ create mode 100644 sysutils/scanmem/distinfo
+ create mode 100644 sysutils/scanmem/files/patch-common.h
+ create mode 100644 sysutils/scanmem/files/patch-gui-GameConqueror.py
+ create mode 100644 sysutils/scanmem/files/patch-gui-gameconqueror.in
+ create mode 100644 sysutils/scanmem/files/patch-handlers.c
+ create mode 100644 sysutils/scanmem/files/patch-interrupt.h
+ create mode 100644 sysutils/scanmem/files/patch-maps.c
+ create mode 100644 sysutils/scanmem/files/patch-ptrace.c
+ create mode 100644 sysutils/scanmem/files/patch-scanroutines.c
+ create mode 100644 sysutils/scanmem/files/patch-targetmem.h
+ create mode 100644 sysutils/scanmem/pkg-descr
+ create mode 100644 sysutils/scanmem/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    55e0957f6d52..c06c1ab2e750  master -> master        
+remote:    af7b3fc46ebc..55e0957f6d52  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   55e0957f6d52..c06c1ab2e750  master -> master
+==== END: master ====
