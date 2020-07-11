@@ -47,3 +47,203 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/radvd/Makefile
+CONFLICT (content): Merge conflict in net/radvd/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/radvd/Makefile
+index b5174cdcf004,834b2eb36df3..000000000000
+--- a/net/radvd/Makefile
++++ b/net/radvd/Makefile
+@@@ -15,13 -15,9 +15,16 @@@ LICENSE_NAME=	RADVD Licens
+  LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+  LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+  
+++<<<<<<< HEAD
+ +LIB_DEPENDS=	libdaemon.so:devel/libdaemon
+ +
+ +USE_HARDENING=	safestack
+ +
+++=======
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
+- CONFIGURE_ARGS=	--program-transform-name=
+  USES=		gmake pkgconfig
++ CONFIGURE_ARGS=	--program-transform-name=
+  USE_RC_SUBR=	radvd
+  
+  PORTDOCS=	CHANGES COPYRIGHT INTRO.html README TODO
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   databases/Makefile
+	new file:   databases/py-litecli/Makefile
+	new file:   databases/py-litecli/distinfo
+	new file:   databases/py-litecli/pkg-descr
+	modified:   databases/py-mycli/Makefile
+	modified:   databases/py-mycli/distinfo
+	modified:   databases/py-pgcli/Makefile
+	modified:   databases/py-pgcli/distinfo
+	modified:   databases/py-tiledb/Makefile
+	modified:   databases/py-tiledb/distinfo
+	modified:   databases/tiledb/Makefile
+	modified:   databases/tiledb/distinfo
+	modified:   devel/Makefile
+	modified:   devel/R-cran-broom/Makefile
+	modified:   devel/R-cran-broom/distinfo
+	modified:   devel/p5-JSON-Parse/Makefile
+	modified:   devel/p5-JSON-Parse/distinfo
+	modified:   devel/p5-Minion/Makefile
+	modified:   devel/p5-Minion/distinfo
+	modified:   devel/p5-Progress-Any/Makefile
+	modified:   devel/p5-Progress-Any/distinfo
+	modified:   devel/p5-Term-Detect-Software/Makefile
+	modified:   devel/p5-Term-Detect-Software/distinfo
+	modified:   devel/p5-Test2-Harness/Makefile
+	modified:   devel/p5-Test2-Harness/distinfo
+	modified:   devel/py-castellan/Makefile
+	modified:   devel/py-castellan/distinfo
+	modified:   devel/py-cli-helpers/Makefile
+	modified:   devel/py-cli-helpers/distinfo
+	modified:   devel/py-graphene-django/Makefile
+	modified:   devel/py-graphene-django/distinfo
+	modified:   devel/py-http-prompt/Makefile
+	modified:   devel/py-jupyter_console/Makefile
+	modified:   devel/py-jupyter_console/distinfo
+	modified:   devel/py-oslo.messaging/Makefile
+	modified:   devel/py-oslo.messaging/distinfo
+	modified:   devel/py-oslo.policy/Makefile
+	modified:   devel/py-oslo.policy/distinfo
+	modified:   devel/py-prompt_toolkit/Makefile
+	modified:   devel/py-prompt_toolkit/distinfo
+	new file:   devel/py-prompt_toolkit2/Makefile
+	new file:   devel/py-prompt_toolkit2/distinfo
+	new file:   devel/py-prompt_toolkit2/pkg-descr
+	modified:   devel/py-ptpython/Makefile
+	modified:   devel/py-ptpython/distinfo
+	modified:   devel/py-taskflow/Makefile
+	modified:   devel/py-taskflow/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-alexaforbusiness/Makefile
+	modified:   devel/rubygem-aws-sdk-alexaforbusiness/distinfo
+	modified:   devel/rubygem-aws-sdk-amplify/Makefile
+	modified:   devel/rubygem-aws-sdk-amplify/distinfo
+	modified:   devel/rubygem-aws-sdk-appmesh/Makefile
+	modified:   devel/rubygem-aws-sdk-appmesh/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudhsmv2/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudhsmv2/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudwatchevents/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudwatchevents/distinfo
+	modified:   devel/rubygem-aws-sdk-comprehend/Makefile
+	modified:   devel/rubygem-aws-sdk-comprehend/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-costexplorer/Makefile
+	modified:   devel/rubygem-aws-sdk-costexplorer/distinfo
+	modified:   devel/rubygem-aws-sdk-ebs/Makefile
+	modified:   devel/rubygem-aws-sdk-ebs/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-eventbridge/Makefile
+	modified:   devel/rubygem-aws-sdk-eventbridge/distinfo
+	modified:   devel/rubygem-aws-sdk-forecastservice/Makefile
+	modified:   devel/rubygem-aws-sdk-forecastservice/distinfo
+	modified:   devel/rubygem-aws-sdk-organizations/Makefile
+	modified:   devel/rubygem-aws-sdk-organizations/distinfo
+	modified:   devel/rubygem-aws-sdk-rds/Makefile
+	modified:   devel/rubygem-aws-sdk-rds/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-sagemaker/Makefile
+	modified:   devel/rubygem-aws-sdk-sagemaker/distinfo
+	modified:   devel/rubygem-aws-sdk-secretsmanager/Makefile
+	modified:   devel/rubygem-aws-sdk-secretsmanager/distinfo
+	modified:   devel/rubygem-aws-sdk-sns/Makefile
+	modified:   devel/rubygem-aws-sdk-sns/distinfo
+	modified:   devel/rubygem-aws-sdk-wafv2/Makefile
+	modified:   devel/rubygem-aws-sdk-wafv2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-git-version-bump/Makefile
+	modified:   devel/rubygem-git-version-bump/distinfo
+	modified:   devel/rubygem-jira-ruby/Makefile
+	modified:   devel/rubygem-jira-ruby/distinfo
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	new file:   mail/libvmime/files/patch-CMakeLists.txt
+	modified:   multimedia/gstreamer1-libav/Makefile
+	modified:   multimedia/gstreamer1-libav/pkg-descr
+	modified:   print/py-fontbakery/Makefile
+	modified:   print/py-fontbakery/distinfo
+	modified:   security/distcache/Makefile
+	modified:   security/distcache/files/patch-ssl__swamp__utils.c
+	modified:   shells/bash-completion/Makefile
+	modified:   www/py-google-cloud-datastore/Makefile
+	modified:   www/py-google-cloud-datastore/distinfo
+	modified:   www/rubygem-websocket-driver/Makefile
+	modified:   www/rubygem-websocket-driver/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/radvd/Makefile
+
+
+It took 3.48 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at af7b3fc46ebc Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.10 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at af7b3fc46ebc Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
