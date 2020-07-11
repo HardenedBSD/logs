@@ -47,3 +47,424 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing textproc/py-sphinx-hieroglyph/distinfo
+Removing sysutils/goaccess/files/patch-src_gholder.c
+Removing security/libssh2/files/patch-tests_test__hostkey__hash.c
+Removing security/libssh2/files/patch-tests_test__hostkey.c
+Removing security/libssh2/files/patch-tests_openssh__server_ssh__host__ecdsa__key
+Removing security/libssh2/files/patch-tests_openssh__server_Dockerfile
+Removing security/libssh2/files/patch-src_openssl.h
+Removing security/libssh2/files/patch-src_openssl.c
+Removing security/libssh2/files/patch-src_mbedtls.h
+Removing security/libssh2/files/patch-src_libssh2__priv.h
+Removing security/libssh2/files/patch-src_libgcrypt.h
+Removing security/libssh2/files/patch-src_knownhost.c
+Removing security/libssh2/files/patch-src_kex.c
+Removing security/libssh2/files/patch-src_hostkey.c
+Removing security/libssh2/files/patch-src_crypto.h
+Removing security/libssh2/files/patch-include_libssh2.h
+Removing security/libssh2/files/patch-configure
+Auto-merging net/netsed/Makefile
+Removing astro/gpsbabel/files/patch-unicsv.cc
+Removing astro/gpsbabel/files/patch-tef_xml.cc
+Removing astro/gpsbabel/files/patch-src_core_ziparchive.h
+Removing astro/gpsbabel/files/patch-src_core_ziparchive.cc
+Removing astro/gpsbabel/files/patch-psitrex.cc
+Removing astro/gpsbabel/files/patch-magproto.cc
+Removing astro/gpsbabel/files/patch-lowranceusr.cc
+Removing astro/gpsbabel/files/patch-jeeps_gpslibusb.cc
+Removing astro/gpsbabel/files/patch-gpx.cc
+Removing astro/gpsbabel/files/patch-garmin__device__xml.cc
+Removing astro/gpsbabel/files/patch-bushnell.cc
+Removing astro/gpsbabel/files/patch-Makefile.in
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    3 +-
+ Tools/scripts/patchtool.py                         |    7 +-
+ astro/gpsbabel/Makefile                            |   22 +-
+ astro/gpsbabel/distinfo                            |    6 +-
+ astro/gpsbabel/files/patch-Makefile.in             |   15 -
+ astro/gpsbabel/files/patch-bushnell.cc             |   22 -
+ astro/gpsbabel/files/patch-garmin__device__xml.cc  |   11 -
+ astro/gpsbabel/files/patch-gpx.cc                  |   50 -
+ astro/gpsbabel/files/patch-gui_gpsbabel.desktop    |   10 +
+ astro/gpsbabel/files/patch-jeeps_gpslibusb.cc      |   13 -
+ astro/gpsbabel/files/patch-lowranceusr.cc          |   11 -
+ astro/gpsbabel/files/patch-magproto.cc             |   17 -
+ astro/gpsbabel/files/patch-psitrex.cc              |   11 -
+ astro/gpsbabel/files/patch-src_core_ziparchive.cc  |   11 -
+ astro/gpsbabel/files/patch-src_core_ziparchive.h   |   11 -
+ astro/gpsbabel/files/patch-tef_xml.cc              |   57 -
+ astro/gpsbabel/files/patch-unicsv.cc               |   20 -
+ astro/gpsbabel/pkg-plist                           |    4 +-
+ astro/py-metpy/Makefile                            |    5 +-
+ audio/libvorbis/Makefile                           |    6 +-
+ audio/libvorbis/files/patch-lib_Makefile.in        |   13 +
+ benchmarks/ttcp/pkg-descr                          |    2 +-
+ databases/Makefile                                 |    3 +
+ databases/ateam_mysql57_ldap_auth/Makefile         |   45 +
+ databases/ateam_mysql57_ldap_auth/distinfo         |    3 +
+ .../ateam_mysql57_ldap_auth/files/pkg-message.in   |    4 +
+ databases/ateam_mysql57_ldap_auth/pkg-descr        |   24 +
+ databases/mariadb105-client/Makefile               |   13 +
+ databases/mariadb105-client/pkg-plist              |  185 ++
+ databases/mariadb105-server/Makefile               |  271 ++
+ databases/mariadb105-server/distinfo               |    3 +
+ .../mariadb105-server/files/client.cnf.sample.in   |   52 +
+ databases/mariadb105-server/files/my.cnf.sample.in |   13 +
+ databases/mariadb105-server/files/mysql-server.in  |  140 +
+ .../files/patch-extra_CMakeLists.txt               |   11 +
+ .../files/patch-scripts_mysql__config.sh           |   10 +
+ .../files/patch-scripts_wsrep__sst__mariabackup.sh |   11 +
+ .../files/patch-scripts_wsrep__sst__rsync.sh       |   18 +
+ .../files/patch-storage_mroonga_CMakeLists.txt     |   11 +
+ .../files/patch-storage_perfschema_my__thread.h    |   13 +
+ ...storage_rocksdb_rocksdb_port_jemalloc__helper.h |   13 +
+ .../files/patch-tpool_CMakeLists.txt               |   17 +
+ databases/mariadb105-server/files/pkg-message.in   |   24 +
+ .../mariadb105-server/files/server.cnf.sample.in   |   60 +
+ databases/mariadb105-server/pkg-descr              |   14 +
+ databases/mariadb105-server/pkg-plist              |  464 +++
+ databases/py-litecli/Makefile                      |    2 +-
+ databases/sqlite3/Makefile                         |   29 +-
+ devel/Makefile                                     |    3 +-
+ devel/R-cran-rlang/Makefile                        |    3 +-
+ devel/R-cran-rlang/distinfo                        |    6 +-
+ devel/google-styleguide/Makefile                   |    4 +-
+ devel/google-styleguide/distinfo                   |    6 +-
+ devel/google-styleguide/pkg-plist                  |    1 +
+ devel/hhdate/Makefile                              |    7 +-
+ devel/libosmo-abis/Makefile                        |    5 +-
+ devel/libosmocore/Makefile                         |    5 +-
+ devel/libsmpp34/Makefile                           |    5 +-
+ devel/lua-cqueues/Makefile                         |   36 +-
+ devel/lua-cqueues/pkg-plist                        |    4 +-
+ devel/py-lark-parser/Makefile                      |    7 +
+ devel/{py-Pint => py-pint}/Makefile                |    3 +-
+ devel/{py-Pint => py-pint}/distinfo                |    0
+ devel/{py-Pint => py-pint}/pkg-descr               |    0
+ devel/py-pipenv/Makefile                           |    5 +-
+ devel/py-pipenv/distinfo                           |    6 +-
+ devel/py-ptpython/Makefile                         |   10 +-
+ devel/py-ptpython/distinfo                         |    6 +-
+ devel/py-simpleparse/Makefile                      |    4 +-
+ devel/py-simpleparse/distinfo                      |    5 +-
+ devel/pycharm-ce/Makefile                          |    2 +-
+ devel/pycharm-ce/distinfo                          |    6 +-
+ devel/pycharm-ce/pkg-plist                         |    2 +-
+ devel/pycharm-pro/Makefile                         |   60 +
+ devel/pycharm-pro/distinfo                         |    3 +
+ devel/pycharm-pro/files/pkg-message.in             |   36 +
+ devel/pycharm-pro/files/pycharm-pro.desktop.in     |   13 +
+ devel/pycharm-pro/files/pycharm.in                 |    3 +
+ devel/pycharm-pro/pkg-descr                        |   10 +
+ devel/pycharm-pro/pkg-plist                        | 3067 ++++++++++++++++++++
+ devel/rubygem-aws-partitions/Makefile              |    2 +-
+ devel/rubygem-aws-partitions/distinfo              |    6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |    2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |    6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-rds/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-rds/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-s3/Makefile                  |    4 +-
+ devel/rubygem-aws-sdk-s3/distinfo                  |    6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |    2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |    6 +-
+ devel/rubygem-grape/Makefile                       |    3 +-
+ devel/rubygem-grape/distinfo                       |    6 +-
+ devel/rubygem-multi_json/Makefile                  |    2 +-
+ devel/rubygem-multi_json/distinfo                  |    6 +-
+ dns/knot-resolver/Makefile                         |  137 +-
+ dns/knot-resolver/distinfo                         |    6 +-
+ dns/knot-resolver/files/krescachegc.in             |   35 +
+ dns/knot-resolver/files/kresd.in                   |   37 +
+ dns/knot-resolver/files/patch-etc_meson.build      |   14 +
+ dns/knot-resolver/files/patch-meson.build          |   11 +
+ dns/knot-resolver/files/pkg-message.in             |    5 +-
+ dns/knot-resolver/pkg-descr                        |   10 +-
+ dns/knot-resolver/pkg-plist                        |   12 +-
+ dns/mdnsd/pkg-descr                                |    5 +-
+ dns/p5-Mozilla-PublicSuffix/Makefile               |    2 +-
+ dns/public_suffix_list/Makefile                    |    4 +-
+ dns/public_suffix_list/distinfo                    |    6 +-
+ dns/py-publicsuffix/Makefile                       |    2 +-
+ dns/py-publicsuffix2/Makefile                      |    2 +-
+ dns/py-publicsuffixlist/Makefile                   |    1 +
+ dns/rubygem-public_suffix/Makefile                 |    2 +-
+ dns/rubygem-public_suffix_service/Makefile         |    2 +-
+ games/Makefile                                     |    1 +
+ games/lolcat/Makefile                              |   27 +
+ games/lolcat/distinfo                              |    3 +
+ games/lolcat/pkg-descr                             |    4 +
+ games/rubygem-lolcat/Makefile                      |    3 +
+ java/intellij/Makefile                             |    4 +-
+ java/intellij/distinfo                             |    6 +-
+ java/openjdk14/Makefile                            |    4 +-
+ .../files/patch-make_lib_Awt2dLibraries.gmk        |   11 +
+ ...op_share_native_libfontmanager_freetypeScaler.c |  209 ++
+ math/R-cran-quantreg/Makefile                      |    6 +-
+ math/R-cran-quantreg/distinfo                      |    6 +-
+ math/gnuplot/Makefile                              |   10 +-
+ misc/pciids/Makefile                               |    4 +-
+ misc/pciids/distinfo                               |    6 +-
+ misc/tvbrowser/Makefile                            |    2 +-
+ misc/tvbrowser/distinfo                            |    6 +-
+ misc/usbids/Makefile                               |    4 +-
+ misc/usbids/distinfo                               |    6 +-
+ multimedia/kodi-devel/Makefile                     |    1 +
+ multimedia/kodi/Makefile                           |    2 +-
+ multimedia/libcec/Makefile                         |    2 +-
+ multimedia/libcec/distinfo                         |    6 +-
+ multimedia/libcec/pkg-plist                        |    2 +-
+ multimedia/py-cec/Makefile                         |    2 +-
+ multimedia/py-cec/files/patch-cec.cpp              |   37 +
+ net/go-bapu/Makefile                               |   35 +-
+ net/go-bapu/distinfo                               |   56 +-
+ net/netsed/Makefile                                |    2 +-
+ net/ns3/Makefile                                   |    2 +-
+ net/openggsn/Makefile                              |    5 +-
+ net/rubygem-amq-protocol/Makefile                  |    2 +-
+ net/rubygem-amq-protocol/distinfo                  |    6 +-
+ print/py-fonttools/Makefile                        |    2 +-
+ print/py-fonttools/distinfo                        |    6 +-
+ science/eccodes/Makefile                           |    2 +-
+ science/eccodes/distinfo                           |    6 +-
+ science/eccodes/pkg-plist                          |  513 ++++
+ science/py-qcelemental/Makefile                    |    3 +-
+ security/libssh2/Makefile                          |   12 +-
+ security/libssh2/distinfo                          |    6 +-
+ security/libssh2/files/patch-configure             |   15 -
+ security/libssh2/files/patch-include_libssh2.h     |   43 -
+ security/libssh2/files/patch-src_crypto.h          |   56 -
+ security/libssh2/files/patch-src_hostkey.c         |  363 ---
+ security/libssh2/files/patch-src_kex.c             | 1040 -------
+ security/libssh2/files/patch-src_knownhost.c       |   34 -
+ security/libssh2/files/patch-src_libgcrypt.h       |   59 -
+ security/libssh2/files/patch-src_libssh2__priv.h   |   47 -
+ security/libssh2/files/patch-src_mbedtls.h         |   57 -
+ security/libssh2/files/patch-src_openssl.c         |  727 -----
+ security/libssh2/files/patch-src_openssl.h         |  107 -
+ .../files/patch-tests_openssh__server_Dockerfile   |   13 -
+ ...tch-tests_openssh__server_ssh__host__ecdsa__key |    8 -
+ security/libssh2/files/patch-tests_test__hostkey.c |   47 -
+ .../files/patch-tests_test__hostkey__hash.c        |  173 --
+ security/py-acme/distinfo                          |    6 +-
+ security/py-acme/version.mk                        |    2 +-
+ security/py-certbot-apache/distinfo                |    6 +-
+ security/py-certbot-dns-cloudflare/Makefile        |    5 -
+ security/py-certbot-dns-cloudflare/distinfo        |    6 +-
+ security/py-certbot-dns-cloudxns/Makefile          |    5 -
+ security/py-certbot-dns-cloudxns/distinfo          |    6 +-
+ security/py-certbot-dns-digitalocean/Makefile      |    5 -
+ security/py-certbot-dns-digitalocean/distinfo      |    6 +-
+ security/py-certbot-dns-dnsimple/Makefile          |    5 -
+ security/py-certbot-dns-dnsimple/distinfo          |    6 +-
+ security/py-certbot-dns-dnsmadeeasy/Makefile       |    5 -
+ security/py-certbot-dns-dnsmadeeasy/distinfo       |    6 +-
+ security/py-certbot-dns-gehirn/Makefile            |    5 -
+ security/py-certbot-dns-gehirn/distinfo            |    6 +-
+ security/py-certbot-dns-google/Makefile            |    5 -
+ security/py-certbot-dns-google/distinfo            |    6 +-
+ security/py-certbot-dns-linode/Makefile            |    5 -
+ security/py-certbot-dns-linode/distinfo            |    6 +-
+ security/py-certbot-dns-luadns/Makefile            |    5 -
+ security/py-certbot-dns-luadns/distinfo            |    6 +-
+ security/py-certbot-dns-nsone/Makefile             |    5 -
+ security/py-certbot-dns-nsone/distinfo             |    6 +-
+ security/py-certbot-dns-ovh/Makefile               |    5 -
+ security/py-certbot-dns-ovh/distinfo               |    6 +-
+ security/py-certbot-dns-rfc2136/Makefile           |    5 -
+ security/py-certbot-dns-rfc2136/distinfo           |    6 +-
+ security/py-certbot-dns-route53/distinfo           |    6 +-
+ security/py-certbot-dns-sakuracloud/Makefile       |    5 -
+ security/py-certbot-dns-sakuracloud/distinfo       |    6 +-
+ security/py-certbot-nginx/Makefile                 |    5 -
+ security/py-certbot-nginx/distinfo                 |    6 +-
+ security/py-certbot/Makefile                       |    1 -
+ security/py-certbot/distinfo                       |    6 +-
+ security/py-pysaml2/Makefile                       |    4 +-
+ security/py-pysaml2/distinfo                       |    6 +-
+ security/py-python3-openid/Makefile                |    7 +
+ security/py-signedjson/Makefile                    |   10 +-
+ security/py-signedjson/files/patch-setup.py        |   13 +
+ .../files/patch-signedjson-__init__.py             |   16 +
+ security/samhain/Makefile                          |    2 +-
+ sysutils/agedu/Makefile                            |    2 +-
+ sysutils/agedu/distinfo                            |    6 +-
+ sysutils/auto-admin/Makefile                       |    2 +-
+ sysutils/auto-admin/distinfo                       |    6 +-
+ sysutils/auto-admin/pkg-plist                      |    2 +
+ sysutils/goaccess/Makefile                         |    3 +-
+ sysutils/goaccess/distinfo                         |    6 +-
+ sysutils/goaccess/files/patch-src_gholder.c        |   10 -
+ sysutils/goaccess/files/patch-src_goaccess.c       |    4 +-
+ sysutils/goaccess/files/patch-src_parser.c         |   10 +
+ sysutils/openzfs-kmod/Makefile                     |    4 +-
+ sysutils/openzfs-kmod/distinfo                     |    6 +-
+ sysutils/openzfs/Makefile                          |    6 +-
+ sysutils/openzfs/distinfo                          |    6 +-
+ sysutils/openzfs/pkg-plist                         |   43 +-
+ textproc/Makefile                                  |    2 +-
+ .../Makefile                                       |   14 +-
+ textproc/py-hieroglyph/distinfo                    |    3 +
+ .../pkg-descr                                      |    0
+ textproc/py-pycountry/Makefile                     |    4 +-
+ textproc/py-pycountry/distinfo                     |    6 +-
+ textproc/py-sphinx-hieroglyph/distinfo             |    3 -
+ textproc/rubygem-autoprefixer-rails/Makefile       |    2 +-
+ textproc/rubygem-autoprefixer-rails/distinfo       |    6 +-
+ textproc/rubygem-jekyll-feed/Makefile              |    2 +-
+ textproc/rubygem-jekyll-feed/distinfo              |    6 +-
+ www/libnghttp3/Makefile                            |    4 +-
+ www/libnghttp3/distinfo                            |    6 +-
+ www/py-flask-smorest/Makefile                      |    2 +-
+ www/py-flask-smorest/distinfo                      |    6 +-
+ www/py-freenit/Makefile                            |    2 +-
+ www/py-freenit/distinfo                            |    6 +-
+ www/py-horizon/Makefile                            |    3 +-
+ www/py-hstspreload/Makefile                        |    4 +-
+ www/py-hstspreload/distinfo                        |    6 +-
+ x11-fonts/gnu-unifont-ttf/distinfo                 |   14 +-
+ x11-fonts/gnu-unifont/Makefile                     |    4 +-
+ x11-fonts/gnu-unifont/distinfo                     |    6 +-
+ x11/libX11/Makefile                                |    4 +-
+ x11/libxkbcommon/Makefile                          |   11 +-
+ x11/libxkbcommon/pkg-plist                         |   10 +-
+ x11/xkeyboard-config/Makefile                      |   16 +-
+ 255 files changed, 6218 insertions(+), 3591 deletions(-)
+ delete mode 100644 astro/gpsbabel/files/patch-Makefile.in
+ delete mode 100644 astro/gpsbabel/files/patch-bushnell.cc
+ delete mode 100644 astro/gpsbabel/files/patch-garmin__device__xml.cc
+ delete mode 100644 astro/gpsbabel/files/patch-gpx.cc
+ create mode 100644 astro/gpsbabel/files/patch-gui_gpsbabel.desktop
+ delete mode 100644 astro/gpsbabel/files/patch-jeeps_gpslibusb.cc
+ delete mode 100644 astro/gpsbabel/files/patch-lowranceusr.cc
+ delete mode 100644 astro/gpsbabel/files/patch-magproto.cc
+ delete mode 100644 astro/gpsbabel/files/patch-psitrex.cc
+ delete mode 100644 astro/gpsbabel/files/patch-src_core_ziparchive.cc
+ delete mode 100644 astro/gpsbabel/files/patch-src_core_ziparchive.h
+ delete mode 100644 astro/gpsbabel/files/patch-tef_xml.cc
+ delete mode 100644 astro/gpsbabel/files/patch-unicsv.cc
+ create mode 100644 audio/libvorbis/files/patch-lib_Makefile.in
+ create mode 100644 databases/ateam_mysql57_ldap_auth/Makefile
+ create mode 100644 databases/ateam_mysql57_ldap_auth/distinfo
+ create mode 100644 databases/ateam_mysql57_ldap_auth/files/pkg-message.in
+ create mode 100644 databases/ateam_mysql57_ldap_auth/pkg-descr
+ create mode 100644 databases/mariadb105-client/Makefile
+ create mode 100644 databases/mariadb105-client/pkg-plist
+ create mode 100644 databases/mariadb105-server/Makefile
+ create mode 100644 databases/mariadb105-server/distinfo
+ create mode 100644 databases/mariadb105-server/files/client.cnf.sample.in
+ create mode 100644 databases/mariadb105-server/files/my.cnf.sample.in
+ create mode 100644 databases/mariadb105-server/files/mysql-server.in
+ create mode 100644 databases/mariadb105-server/files/patch-extra_CMakeLists.txt
+ create mode 100644 databases/mariadb105-server/files/patch-scripts_mysql__config.sh
+ create mode 100644 databases/mariadb105-server/files/patch-scripts_wsrep__sst__mariabackup.sh
+ create mode 100644 databases/mariadb105-server/files/patch-scripts_wsrep__sst__rsync.sh
+ create mode 100644 databases/mariadb105-server/files/patch-storage_mroonga_CMakeLists.txt
+ create mode 100644 databases/mariadb105-server/files/patch-storage_perfschema_my__thread.h
+ create mode 100644 databases/mariadb105-server/files/patch-storage_rocksdb_rocksdb_port_jemalloc__helper.h
+ create mode 100644 databases/mariadb105-server/files/patch-tpool_CMakeLists.txt
+ create mode 100644 databases/mariadb105-server/files/pkg-message.in
+ create mode 100644 databases/mariadb105-server/files/server.cnf.sample.in
+ create mode 100644 databases/mariadb105-server/pkg-descr
+ create mode 100644 databases/mariadb105-server/pkg-plist
+ rename devel/{py-Pint => py-pint}/Makefile (94%)
+ rename devel/{py-Pint => py-pint}/distinfo (100%)
+ rename devel/{py-Pint => py-pint}/pkg-descr (100%)
+ create mode 100644 devel/pycharm-pro/Makefile
+ create mode 100644 devel/pycharm-pro/distinfo
+ create mode 100644 devel/pycharm-pro/files/pkg-message.in
+ create mode 100644 devel/pycharm-pro/files/pycharm-pro.desktop.in
+ create mode 100644 devel/pycharm-pro/files/pycharm.in
+ create mode 100644 devel/pycharm-pro/pkg-descr
+ create mode 100644 devel/pycharm-pro/pkg-plist
+ create mode 100644 dns/knot-resolver/files/krescachegc.in
+ create mode 100644 dns/knot-resolver/files/kresd.in
+ create mode 100644 dns/knot-resolver/files/patch-etc_meson.build
+ create mode 100644 dns/knot-resolver/files/patch-meson.build
+ create mode 100644 games/lolcat/Makefile
+ create mode 100644 games/lolcat/distinfo
+ create mode 100644 games/lolcat/pkg-descr
+ create mode 100644 java/openjdk14/files/patch-make_lib_Awt2dLibraries.gmk
+ create mode 100644 java/openjdk14/files/patch-src_java.desktop_share_native_libfontmanager_freetypeScaler.c
+ create mode 100644 multimedia/py-cec/files/patch-cec.cpp
+ delete mode 100644 security/libssh2/files/patch-configure
+ delete mode 100644 security/libssh2/files/patch-include_libssh2.h
+ delete mode 100644 security/libssh2/files/patch-src_crypto.h
+ delete mode 100644 security/libssh2/files/patch-src_hostkey.c
+ delete mode 100644 security/libssh2/files/patch-src_kex.c
+ delete mode 100644 security/libssh2/files/patch-src_knownhost.c
+ delete mode 100644 security/libssh2/files/patch-src_libgcrypt.h
+ delete mode 100644 security/libssh2/files/patch-src_libssh2__priv.h
+ delete mode 100644 security/libssh2/files/patch-src_mbedtls.h
+ delete mode 100644 security/libssh2/files/patch-src_openssl.c
+ delete mode 100644 security/libssh2/files/patch-src_openssl.h
+ delete mode 100644 security/libssh2/files/patch-tests_openssh__server_Dockerfile
+ delete mode 100644 security/libssh2/files/patch-tests_openssh__server_ssh__host__ecdsa__key
+ delete mode 100644 security/libssh2/files/patch-tests_test__hostkey.c
+ delete mode 100644 security/libssh2/files/patch-tests_test__hostkey__hash.c
+ create mode 100644 security/py-signedjson/files/patch-setup.py
+ create mode 100644 security/py-signedjson/files/patch-signedjson-__init__.py
+ delete mode 100644 sysutils/goaccess/files/patch-src_gholder.c
+ create mode 100644 sysutils/goaccess/files/patch-src_parser.c
+ rename textproc/{py-sphinx-hieroglyph => py-hieroglyph}/Makefile (64%)
+ create mode 100644 textproc/py-hieroglyph/distinfo
+ rename textproc/{py-sphinx-hieroglyph => py-hieroglyph}/pkg-descr (100%)
+ delete mode 100644 textproc/py-sphinx-hieroglyph/distinfo
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    c06c1ab2e750..7ff157f10e93  master -> master
+remote:    55e0957f6d52..c06c1ab2e750  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c06c1ab2e750..7ff157f10e93  master -> master
+==== END: master ====
