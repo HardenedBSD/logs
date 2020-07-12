@@ -47,3 +47,158 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net-im/profanity/Makefile
+CONFLICT (add/add): Merge conflict in net-im/libmesode/files/patch-src_tls__openssl.c
+Auto-merging net-im/libmesode/files/patch-src_tls__openssl.c
+Auto-merging lang/gcc9-devel/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net-im/libmesode/files/patch-src_tls__openssl.c
+index a28fd0cfcd25,f07b29524d40..000000000000
+--- a/net-im/libmesode/files/patch-src_tls__openssl.c
++++ b/net-im/libmesode/files/patch-src_tls__openssl.c
+@@@ -1,38 -1,14 +1,55 @@@
+++<<<<<<< HEAD
+ +--- src/tls_openssl.c.orig	2018-09-18 18:30:27 UTC
+ ++++ src/tls_openssl.c
+ +@@ -47,7 +47,7 @@ static void _tls_log_error(xmpp_ctx_t *c
+ + 
+ + void tls_initialize(void)
+ + {
+ +-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ ++#if OPENSSL_VERSION_NUMBER < 0x10100000L || ( defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L )
+ +     SSL_library_init();
+ +     SSL_load_error_strings();
+ + #else
+ +@@ -191,7 +191,7 @@ static struct _tlscert_t *_x509_to_tlsce
+ + 	}
+ + 
+ +     tlscert->keyalg = NULL;
+ +-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ ++#if OPENSSL_VERSION_NUMBER < 0x10100000L || ( defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L )
+ +     int alg_nid = OBJ_obj2nid(cert->cert_info->key->algor->algorithm);
+ + #else
+ +     X509_PUBKEY *pubkey = X509_get_X509_PUBKEY(cert);
+ +@@ -210,7 +210,7 @@ static struct _tlscert_t *_x509_to_tlsce
+ +     }
+ + 
+ +     tlscert->sigalg = NULL;
+ +-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ ++#if OPENSSL_VERSION_NUMBER < 0x10100000L || ( defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L )
+ +     alg_nid = OBJ_obj2nid(cert->sig_alg->algorithm);
+ + #else
+ +     const X509_ALGOR *palg;
+ +@@ -330,7 +330,7 @@ tls_t *tls_new(xmpp_conn_t *conn)
+ +         /* Trust server's certificate when user sets the flag explicitly. */
+ +         mode = conn->tls_trust ? SSL_VERIFY_NONE : SSL_VERIFY_PEER;
+ +         SSL_set_verify(tls->ssl, mode, 0);
+ +-#if OPENSSL_VERSION_NUMBER >= 0x10002000L
+ ++#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
+ +         /* Hostname verification is supported in OpenSSL 1.0.2 and newer. */
+ +         X509_VERIFY_PARAM *param = SSL_get0_param(tls->ssl);
+ + 
+++=======
++ Patch from:
++ 
++   https://github.com/profanity-im/libmesode/commit/532ed1e9d3e71e5bea0752e03dbacd4139d750d1
++ 
++ --- src/tls_openssl.c.orig	2019-10-11 19:08:58 UTC
++ +++ src/tls_openssl.c
++ @@ -320,6 +320,7 @@ tls_t *tls_new(xmpp_conn_t *conn)
++          SSL_CTX_set_client_cert_cb(tls->ssl_ctx, NULL);
++          SSL_CTX_set_mode(tls->ssl_ctx, SSL_MODE_ENABLE_PARTIAL_WRITE);
++          SSL_CTX_set_verify(tls->ssl_ctx, SSL_VERIFY_PEER, verify_callback);
++ +        SSL_CTX_set_default_verify_paths(tls->ssl_ctx);
++          if (conn->tls_cert_path) {
++              SSL_CTX_load_verify_locations(tls->ssl_ctx, NULL, conn->tls_cert_path);
++          }
+++>>>>>>> freebsd/master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/mysql.mk
+	modified:   databases/mariadb105-server/Makefile
+	modified:   databases/mariadb105-server/files/client.cnf.sample.in
+	modified:   databases/mariadb105-server/files/my.cnf.sample.in
+	modified:   databases/mariadb105-server/files/mysql-server.in
+	modified:   databases/mariadb105-server/files/server.cnf.sample.in
+	modified:   databases/rocksdb-lite/Makefile
+	modified:   devel/libopkele/Makefile
+	modified:   devel/llvm-devel/Makefile
+	modified:   devel/llvm-devel/pkg-plist
+	modified:   games/burrtools/Makefile
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   misc/dartsim/Makefile
+	modified:   net-im/libmesode/Makefile
+	modified:   net-im/profanity/Makefile
+	modified:   net-im/profanity/distinfo
+	modified:   print/cloud-print-connector/Makefile
+	modified:   science/libgeodecomp/Makefile
+	modified:   security/meek/Makefile
+	modified:   shells/antibody/Makefile
+	modified:   shells/antibody/distinfo
+	modified:   sysutils/vimpager/Makefile
+	modified:   sysutils/vimpager/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both added:      net-im/libmesode/files/patch-src_tls__openssl.c
+
+
+It took 3.15 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at f1960d587820 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at f1960d587820 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
