@@ -1,0 +1,522 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 206cfe46e7da..c5a6aa5bbbda
+Fast-forward
+ contrib/bc/src/program.c                           |    2 +-
+ contrib/byacc/CHANGES                              |  430 +++-
+ contrib/byacc/MANIFEST                             |   12 +-
+ contrib/byacc/VERSION                              |    2 +-
+ contrib/byacc/aclocal.m4                           |  420 +++-
+ contrib/byacc/btyaccpar.c                          |   51 +-
+ contrib/byacc/btyaccpar.skel                       |   51 +-
+ contrib/byacc/config.guess                         |  869 ++++---
+ contrib/byacc/config.sub                           | 2532 ++++++++++----------
+ contrib/byacc/config_h.in                          |   47 +-
+ contrib/byacc/configure                            | 2448 +++++++++++++------
+ contrib/byacc/configure.in                         |   11 +-
+ contrib/byacc/defs.h                               |  137 +-
+ contrib/byacc/main.c                               |  105 +-
+ contrib/byacc/mkpar.c                              |   18 +-
+ contrib/byacc/mstring.c                            |   23 +-
+ contrib/byacc/output.c                             |   99 +-
+ contrib/byacc/package/byacc.spec                   |   79 +-
+ contrib/byacc/package/debian/changelog             |   72 +
+ contrib/byacc/package/debian/control               |   16 +-
+ contrib/byacc/package/debian/copyright             |    2 +-
+ contrib/byacc/package/debian/rules                 |  132 +-
+ contrib/byacc/package/debian/watch                 |    2 +-
+ contrib/byacc/package/mingw-byacc.spec             |   13 +-
+ contrib/byacc/package/pkgsrc/Makefile              |    4 +-
+ contrib/byacc/reader.c                             |  263 +-
+ contrib/byacc/test/btyacc/big_b.error              |   19 +
+ contrib/byacc/test/btyacc/big_b.output             |   18 -
+ contrib/byacc/test/btyacc/big_l.error              |   19 +
+ contrib/byacc/test/btyacc/big_l.output             |   18 -
+ contrib/byacc/test/btyacc/btyacc_calc1.tab.c       |   53 +-
+ contrib/byacc/test/btyacc/btyacc_calc1.tab.h       |    1 -
+ contrib/byacc/test/btyacc/btyacc_demo.tab.c        |  165 +-
+ contrib/byacc/test/btyacc/btyacc_demo.tab.h        |    1 +
+ contrib/byacc/test/btyacc/btyacc_demo2.error       |    1 -
+ contrib/byacc/test/btyacc/btyacc_demo2.tab.c       |   15 -
+ contrib/byacc/test/btyacc/btyacc_destroy1.tab.c    |   55 +-
+ contrib/byacc/test/btyacc/btyacc_destroy2.tab.c    |   55 +-
+ contrib/byacc/test/btyacc/btyacc_destroy3.tab.c    |   55 +-
+ contrib/byacc/test/btyacc/calc.tab.c               |   53 +-
+ contrib/byacc/test/btyacc/calc1.tab.c              |   53 +-
+ contrib/byacc/test/btyacc/calc2.tab.c              |   53 +-
+ contrib/byacc/test/btyacc/calc3.tab.c              |   53 +-
+ .../{btyacc_demo2.output => calc_code_all.error}   |    0
+ contrib/byacc/test/btyacc/calc_code_all.output     |  485 ++++
+ contrib/byacc/test/btyacc/calc_code_all.tab.c      | 1502 ++++++++++++
+ contrib/byacc/test/btyacc/calc_code_all.tab.h      |   18 +
+ ...{btyacc_demo2.tab.h => calc_code_default.error} |    0
+ contrib/byacc/test/btyacc/calc_code_default.output |  485 ++++
+ contrib/byacc/test/btyacc/calc_code_default.tab.c  | 1482 ++++++++++++
+ contrib/byacc/test/btyacc/calc_code_default.tab.h  |    8 +
+ .../{code_debug.error => calc_code_imports.error}  |    0
+ contrib/byacc/test/btyacc/calc_code_imports.output |  485 ++++
+ contrib/byacc/test/btyacc/calc_code_imports.tab.c  | 1474 ++++++++++++
+ contrib/byacc/test/btyacc/calc_code_imports.tab.h  |    8 +
+ contrib/byacc/test/btyacc/calc_code_provides.error |    0
+ .../byacc/test/btyacc/calc_code_provides.output    |  485 ++++
+ contrib/byacc/test/btyacc/calc_code_provides.tab.c | 1482 ++++++++++++
+ contrib/byacc/test/btyacc/calc_code_provides.tab.h |   14 +
+ contrib/byacc/test/btyacc/calc_code_requires.error |    0
+ .../byacc/test/btyacc/calc_code_requires.output    |  485 ++++
+ contrib/byacc/test/btyacc/calc_code_requires.tab.c | 1482 ++++++++++++
+ contrib/byacc/test/btyacc/calc_code_requires.tab.h |   14 +
+ contrib/byacc/test/btyacc/calc_code_top.error      |    0
+ contrib/byacc/test/btyacc/calc_code_top.output     |  485 ++++
+ contrib/byacc/test/btyacc/calc_code_top.tab.c      | 1482 ++++++++++++
+ contrib/byacc/test/btyacc/calc_code_top.tab.h      |    8 +
+ contrib/byacc/test/btyacc/code_calc.code.c         |   53 +-
+ contrib/byacc/test/btyacc/code_calc.tab.c          |    2 +-
+ contrib/byacc/test/btyacc/code_debug.i             |   60 -
+ contrib/byacc/test/btyacc/code_debug.output        |   34 -
+ contrib/byacc/test/btyacc/code_error.code.c        |   51 +-
+ contrib/byacc/test/btyacc/code_error.tab.c         |    2 +-
+ .../test/btyacc/{code_debug.c => defines1.calc.c}  |  468 +++-
+ .../test/btyacc/{code_debug.h => defines1.calc.h}  |    4 +-
+ contrib/byacc/test/btyacc/defines1.error           |    0
+ contrib/byacc/test/btyacc/defines1.output          |    0
+ contrib/byacc/test/btyacc/defines2.calc.c          | 1381 +++++++++++
+ contrib/byacc/test/btyacc/defines2.calc.h          |    8 +
+ contrib/byacc/test/btyacc/defines2.error           |    0
+ contrib/byacc/test/btyacc/defines2.output          |    0
+ contrib/byacc/test/btyacc/defines3.calc.c          | 1381 +++++++++++
+ contrib/byacc/test/btyacc/defines3.calc.h          |    8 +
+ contrib/byacc/test/btyacc/defines3.error           |    0
+ contrib/byacc/test/btyacc/defines3.output          |    0
+ contrib/byacc/test/btyacc/empty.tab.c              |   51 +-
+ contrib/byacc/test/btyacc/err_inherit3.tab.c       |   59 +-
+ contrib/byacc/test/btyacc/err_inherit4.tab.c       |   59 +-
+ contrib/byacc/test/btyacc/err_inherit4.tab.h       |    1 +
+ contrib/byacc/test/btyacc/err_syntax10.tab.c       |   51 +-
+ contrib/byacc/test/btyacc/err_syntax11.tab.c       |   51 +-
+ contrib/byacc/test/btyacc/err_syntax12.tab.c       |   51 +-
+ contrib/byacc/test/btyacc/err_syntax18.tab.c       |   53 +-
+ contrib/byacc/test/btyacc/err_syntax20.tab.c       |   53 +-
+ contrib/byacc/test/btyacc/error.tab.c              |   51 +-
+ contrib/byacc/test/btyacc/expr.oxout.tab.c         |   53 +-
+ contrib/byacc/test/btyacc/grammar.tab.c            |  256 +-
+ contrib/byacc/test/btyacc/help.error               |   20 +
+ contrib/byacc/test/btyacc/help.output              |   18 -
+ contrib/byacc/test/btyacc/inherit0.tab.c           |   53 +-
+ contrib/byacc/test/btyacc/inherit1.tab.c           |   53 +-
+ contrib/byacc/test/btyacc/inherit2.tab.c           |   59 +-
+ contrib/byacc/test/btyacc/no_b_opt.error           |   20 +
+ contrib/byacc/test/btyacc/no_b_opt.output          |   18 -
+ contrib/byacc/test/btyacc/no_b_opt1.error          |    1 +
+ contrib/byacc/test/btyacc/no_b_opt1.output         |    1 -
+ contrib/byacc/test/btyacc/no_code_c.error          |    1 +
+ contrib/byacc/test/btyacc/no_code_c.output         |    1 -
+ contrib/byacc/test/btyacc/no_defines.error         |    1 +
+ contrib/byacc/test/btyacc/no_defines.output        |    1 -
+ contrib/byacc/test/btyacc/no_graph.error           |    1 +
+ contrib/byacc/test/btyacc/no_graph.output          |    1 -
+ contrib/byacc/test/btyacc/no_include.error         |    1 +
+ contrib/byacc/test/btyacc/no_include.output        |    1 -
+ contrib/byacc/test/btyacc/no_opts.error            |    1 +
+ contrib/byacc/test/btyacc/no_opts.output           |    1 -
+ contrib/byacc/test/btyacc/no_output.error          |    1 +
+ contrib/byacc/test/btyacc/no_output.output         |    1 -
+ contrib/byacc/test/btyacc/no_output1.error         |    1 +
+ contrib/byacc/test/btyacc/no_output1.output        |    1 -
+ contrib/byacc/test/btyacc/no_output2.error         |   20 +
+ contrib/byacc/test/btyacc/no_output2.output        |   18 -
+ contrib/byacc/test/btyacc/no_p_opt.error           |   20 +
+ contrib/byacc/test/btyacc/no_p_opt.output          |   18 -
+ contrib/byacc/test/btyacc/no_p_opt1.error          |    1 +
+ contrib/byacc/test/btyacc/no_p_opt1.output         |    1 -
+ contrib/byacc/test/btyacc/no_verbose.error         |    1 +
+ contrib/byacc/test/btyacc/no_verbose.output        |    1 -
+ contrib/byacc/test/btyacc/nostdin.error            |   19 +
+ contrib/byacc/test/btyacc/nostdin.output           |   18 -
+ contrib/byacc/test/btyacc/ok_syntax1.tab.c         |   53 +-
+ contrib/byacc/test/btyacc/ok_syntax1.tab.h         |    1 -
+ contrib/byacc/test/btyacc/pure_calc.tab.c          |   53 +-
+ contrib/byacc/test/btyacc/pure_error.tab.c         |   51 +-
+ contrib/byacc/test/btyacc/quote_calc-s.tab.c       |   53 +-
+ contrib/byacc/test/btyacc/quote_calc.tab.c         |   53 +-
+ contrib/byacc/test/btyacc/quote_calc2-s.tab.c      |   53 +-
+ contrib/byacc/test/btyacc/quote_calc2.tab.c        |   53 +-
+ contrib/byacc/test/btyacc/quote_calc3-s.tab.c      |   53 +-
+ contrib/byacc/test/btyacc/quote_calc3.tab.c        |   53 +-
+ contrib/byacc/test/btyacc/quote_calc4-s.tab.c      |   53 +-
+ contrib/byacc/test/btyacc/quote_calc4.tab.c        |   53 +-
+ contrib/byacc/test/btyacc/rename_debug.c           |   51 +-
+ contrib/byacc/test/btyacc/rename_debug.i           |   13 +-
+ contrib/byacc/test/btyacc/stdin1.calc.c            | 1381 +++++++++++
+ contrib/byacc/test/btyacc/stdin1.error             |    0
+ contrib/byacc/test/btyacc/stdin1.output            |    0
+ contrib/byacc/test/btyacc/stdin2.calc.c            | 1381 +++++++++++
+ contrib/byacc/test/btyacc/stdin2.error             |    0
+ contrib/byacc/test/btyacc/stdin2.output            |    0
+ contrib/byacc/test/btyacc/varsyntax_calc1.tab.c    |   53 +-
+ contrib/byacc/test/calc.tab.c                      |  668 ++++++
+ contrib/byacc/test/calc_code_all.y                 |  113 +
+ contrib/byacc/test/calc_code_default.y             |  109 +
+ contrib/byacc/test/calc_code_imports.y             |  109 +
+ contrib/byacc/test/calc_code_provides.y            |  109 +
+ contrib/byacc/test/calc_code_requires.y            |  109 +
+ contrib/byacc/test/calc_code_top.y                 |  109 +
+ contrib/byacc/test/grammar.y                       |   37 +-
+ contrib/byacc/test/run_make.sh                     |   20 +-
+ contrib/byacc/test/run_test.sh                     |   68 +-
+ contrib/byacc/test/yacc/big_b.error                |   20 +
+ contrib/byacc/test/yacc/big_b.output               |   19 -
+ contrib/byacc/test/yacc/big_l.error                |   20 +
+ contrib/byacc/test/yacc/big_l.output               |   19 -
+ contrib/byacc/test/yacc/calc.tab.c                 |    8 +-
+ contrib/byacc/test/yacc/calc1.tab.c                |    8 +-
+ contrib/byacc/test/yacc/calc2.tab.c                |    8 +-
+ contrib/byacc/test/yacc/calc3.tab.c                |    8 +-
+ contrib/byacc/test/yacc/calc_code_all.error        |    0
+ contrib/byacc/test/yacc/calc_code_all.output       |  461 ++++
+ contrib/byacc/test/yacc/calc_code_all.tab.c        |  699 ++++++
+ contrib/byacc/test/yacc/calc_code_all.tab.h        |   13 +
+ contrib/byacc/test/yacc/calc_code_default.error    |    0
+ contrib/byacc/test/yacc/calc_code_default.output   |  461 ++++
+ contrib/byacc/test/yacc/calc_code_default.tab.c    |  679 ++++++
+ contrib/byacc/test/yacc/calc_code_default.tab.h    |    3 +
+ contrib/byacc/test/yacc/calc_code_imports.error    |    0
+ contrib/byacc/test/yacc/calc_code_imports.output   |  461 ++++
+ contrib/byacc/test/yacc/calc_code_imports.tab.c    |  671 ++++++
+ contrib/byacc/test/yacc/calc_code_imports.tab.h    |    3 +
+ contrib/byacc/test/yacc/calc_code_provides.error   |    0
+ contrib/byacc/test/yacc/calc_code_provides.output  |  461 ++++
+ contrib/byacc/test/yacc/calc_code_provides.tab.c   |  679 ++++++
+ contrib/byacc/test/yacc/calc_code_provides.tab.h   |    9 +
+ contrib/byacc/test/yacc/calc_code_requires.error   |    0
+ contrib/byacc/test/yacc/calc_code_requires.output  |  461 ++++
+ contrib/byacc/test/yacc/calc_code_requires.tab.c   |  679 ++++++
+ contrib/byacc/test/yacc/calc_code_requires.tab.h   |    9 +
+ contrib/byacc/test/yacc/calc_code_top.error        |    0
+ contrib/byacc/test/yacc/calc_code_top.output       |  461 ++++
+ contrib/byacc/test/yacc/calc_code_top.tab.c        |  679 ++++++
+ contrib/byacc/test/yacc/calc_code_top.tab.h        |    3 +
+ contrib/byacc/test/yacc/code_calc.code.c           |    8 +-
+ contrib/byacc/test/yacc/code_error.code.c          |    6 +-
+ contrib/byacc/test/yacc/defines1.calc.c            |  595 +++++
+ contrib/byacc/test/yacc/defines1.calc.h            |    3 +
+ contrib/byacc/test/yacc/defines1.error             |    0
+ contrib/byacc/test/yacc/defines1.output            |    0
+ contrib/byacc/test/yacc/defines2.calc.c            |  595 +++++
+ contrib/byacc/test/yacc/defines2.calc.h            |    3 +
+ contrib/byacc/test/yacc/defines2.error             |    0
+ contrib/byacc/test/yacc/defines2.output            |    0
+ contrib/byacc/test/yacc/defines3.calc.c            |  595 +++++
+ contrib/byacc/test/yacc/defines3.calc.h            |    3 +
+ contrib/byacc/test/yacc/defines3.error             |    0
+ contrib/byacc/test/yacc/defines3.output            |    0
+ contrib/byacc/test/yacc/empty.tab.c                |    6 +-
+ contrib/byacc/test/yacc/err_syntax10.tab.c         |    6 +-
+ contrib/byacc/test/yacc/err_syntax11.tab.c         |    6 +-
+ contrib/byacc/test/yacc/err_syntax12.tab.c         |    6 +-
+ contrib/byacc/test/yacc/err_syntax18.tab.c         |    8 +-
+ contrib/byacc/test/yacc/err_syntax20.tab.c         |    8 +-
+ contrib/byacc/test/yacc/error.tab.c                |    6 +-
+ contrib/byacc/test/yacc/expr.oxout.tab.c           |    8 +-
+ contrib/byacc/test/yacc/grammar.tab.c              |  211 +-
+ contrib/byacc/test/yacc/help.error                 |   20 +
+ contrib/byacc/test/yacc/help.output                |   18 -
+ contrib/byacc/test/yacc/no_b_opt.error             |   20 +
+ contrib/byacc/test/yacc/no_b_opt.output            |   18 -
+ contrib/byacc/test/yacc/no_b_opt1.error            |    1 +
+ contrib/byacc/test/yacc/no_b_opt1.output           |    1 -
+ contrib/byacc/test/yacc/no_code_c.error            |    1 +
+ contrib/byacc/test/yacc/no_code_c.output           |    1 -
+ contrib/byacc/test/yacc/no_defines.error           |    1 +
+ contrib/byacc/test/yacc/no_defines.output          |    1 -
+ contrib/byacc/test/yacc/no_graph.error             |    1 +
+ contrib/byacc/test/yacc/no_graph.output            |    1 -
+ contrib/byacc/test/yacc/no_include.error           |    1 +
+ contrib/byacc/test/yacc/no_include.output          |    1 -
+ contrib/byacc/test/yacc/no_opts.error              |    1 +
+ contrib/byacc/test/yacc/no_opts.output             |    1 -
+ contrib/byacc/test/yacc/no_output.error            |    1 +
+ contrib/byacc/test/yacc/no_output.output           |    1 -
+ contrib/byacc/test/yacc/no_output1.error           |    1 +
+ contrib/byacc/test/yacc/no_output1.output          |    1 -
+ contrib/byacc/test/yacc/no_output2.error           |   20 +
+ contrib/byacc/test/yacc/no_output2.output          |   18 -
+ contrib/byacc/test/yacc/no_p_opt.error             |   20 +
+ contrib/byacc/test/yacc/no_p_opt.output            |   18 -
+ contrib/byacc/test/yacc/no_p_opt1.error            |    1 +
+ contrib/byacc/test/yacc/no_p_opt1.output           |    1 -
+ contrib/byacc/test/yacc/no_verbose.error           |    1 +
+ contrib/byacc/test/yacc/no_verbose.output          |    1 -
+ contrib/byacc/test/yacc/nostdin.error              |   19 +
+ contrib/byacc/test/yacc/nostdin.output             |   18 -
+ contrib/byacc/test/yacc/ok_syntax1.tab.c           |    8 +-
+ contrib/byacc/test/yacc/ok_syntax1.tab.h           |    1 -
+ contrib/byacc/test/yacc/pure_calc.tab.c            |    8 +-
+ contrib/byacc/test/yacc/pure_error.tab.c           |    6 +-
+ contrib/byacc/test/yacc/quote_calc-s.tab.c         |    8 +-
+ contrib/byacc/test/yacc/quote_calc.tab.c           |    8 +-
+ contrib/byacc/test/yacc/quote_calc2-s.tab.c        |    8 +-
+ contrib/byacc/test/yacc/quote_calc2.tab.c          |    8 +-
+ contrib/byacc/test/yacc/quote_calc3-s.tab.c        |    8 +-
+ contrib/byacc/test/yacc/quote_calc3.tab.c          |    8 +-
+ contrib/byacc/test/yacc/quote_calc4-s.tab.c        |    8 +-
+ contrib/byacc/test/yacc/quote_calc4.tab.c          |    8 +-
+ contrib/byacc/test/yacc/rename_debug.c             |    6 +-
+ contrib/byacc/test/yacc/rename_debug.i             |   12 +-
+ contrib/byacc/test/yacc/stdin1.calc.c              |  595 +++++
+ contrib/byacc/test/yacc/stdin1.error               |    0
+ contrib/byacc/test/yacc/stdin1.output              |    0
+ contrib/byacc/test/yacc/stdin2.calc.c              |  595 +++++
+ contrib/byacc/test/yacc/stdin2.error               |    0
+ contrib/byacc/test/yacc/stdin2.output              |    0
+ contrib/byacc/test/yacc/varsyntax_calc1.tab.c      |    8 +-
+ contrib/byacc/yacc.1                               |  190 +-
+ contrib/byacc/yaccpar.c                            |    7 +-
+ contrib/byacc/yaccpar.skel                         |    7 +-
+ contrib/flex/src/main.c                            |    2 +-
+ contrib/mandoc/apropos.1                           |    8 +-
+ contrib/mandoc/makewhatis.8                        |    8 +-
+ lib/libc/gen/gethostname.3                         |    8 +-
+ lib/libc/sys/lseek.2                               |   41 +-
+ lib/libc/tests/gen/getmntinfo_test.c               |    3 -
+ .../pmu-events/arch/x86/amdfam17h/cache.json       |  332 ---
+ lib/libpmc/pmu-events/arch/x86/amdfam17h/core.json |  127 -
+ .../arch/x86/amdfam17h/floating-point.json         |  196 --
+ .../pmu-events/arch/x86/amdfam17h/memory.json      |  226 --
+ .../pmu-events/arch/x86/amdfam17h/other.json       |   51 -
+ lib/libpmc/pmu-events/arch/x86/amdzen1/branch.json |   23 +
+ lib/libpmc/pmu-events/arch/x86/amdzen1/cache.json  |  294 +++
+ lib/libpmc/pmu-events/arch/x86/amdzen1/core.json   |  125 +
+ .../x86/{amdfam17h => amdzen1}/data-fabric.json    |    0
+ .../arch/x86/amdzen1/floating-point.json           |  224 ++
+ .../arch/x86/{amdfam17h => amdzen1}/l3cache.json   |    0
+ lib/libpmc/pmu-events/arch/x86/amdzen1/memory.json |  184 ++
+ lib/libpmc/pmu-events/arch/x86/amdzen1/other.json  |   56 +
+ lib/libpmc/pmu-events/arch/x86/amdzen2/branch.json |   52 +
+ lib/libpmc/pmu-events/arch/x86/amdzen2/cache.json  |  338 +++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/core.json   |  130 +
+ .../arch/x86/amdzen2/floating-point.json           |  140 ++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/memory.json |  341 +++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/other.json  |  115 +
+ lib/libpmc/pmu-events/arch/x86/mapfile.csv         |   17 +-
+ libexec/rc/rc.d/ipfw                               |    2 +-
+ libexec/rc/rc.d/mountlate                          |    2 +-
+ sbin/ipfw/Makefile                                 |    3 +-
+ sbin/ipfw/altq.c                                   |    2 +-
+ sbin/ipfw/dummynet.c                               |   20 +-
+ sbin/ipfw/ipfw2.c                                  |  230 +-
+ sbin/ipfw/ipfw2.h                                  |   22 +-
+ sbin/ipfw/ipv6.c                                   |   27 +-
+ sbin/ipfw/main.c                                   |   84 +-
+ sbin/ipfw/nat.c                                    |   26 +-
+ sbin/ipfw/nat64clat.c                              |   24 +-
+ sbin/ipfw/nat64lsn.c                               |   49 +-
+ sbin/ipfw/nat64stl.c                               |   24 +-
+ sbin/ipfw/nptv6.c                                  |   25 +-
+ sbin/ipfw/tables.c                                 |   79 +-
+ stand/man/loader.8                                 |   12 +-
+ sys/arm64/arm64/machdep.c                          |   23 +
+ sys/dev/cxgbe/t4_sge.c                             |   12 +-
+ sys/fs/nfsclient/nfs_clcomsubs.c                   |    5 +-
+ sys/netpfil/ipfw/ip_dummynet.c                     |    1 -
+ sys/sys/iommu.h                                    |  155 ++
+ sys/vm/vm_map.c                                    |    7 +
+ sys/vm/vm_map.h                                    |    3 +
+ sys/x86/iommu/busdma_dmar.c                        |  424 ++--
+ sys/x86/iommu/busdma_dmar.h                        |   21 +-
+ sys/x86/iommu/intel_ctx.c                          |  230 +-
+ sys/x86/iommu/intel_dmar.h                         |  171 +-
+ sys/x86/iommu/intel_drv.c                          |   86 +-
+ sys/x86/iommu/intel_fault.c                        |   26 +-
+ sys/x86/iommu/intel_gas.c                          |  227 +-
+ sys/x86/iommu/intel_idpgtbl.c                      |   52 +-
+ sys/x86/iommu/intel_intrmap.c                      |    2 +-
+ sys/x86/iommu/intel_qi.c                           |   43 +-
+ sys/x86/iommu/intel_quirks.c                       |    5 +-
+ sys/x86/iommu/intel_utils.c                        |   37 +-
+ usr.bin/mkimg/vhdx.c                               |    8 +-
+ usr.bin/sed/tests/multi_test.sh                    |    5 +-
+ usr.bin/yacc/Makefile                              |    6 +-
+ usr.bin/yacc/config.h                              |  108 +
+ usr.bin/yacc/tests/Makefile                        |   61 +-
+ usr.sbin/arp/arp.8                                 |    6 +-
+ usr.sbin/periodic/etc/daily/Makefile               |    1 +
+ 338 files changed, 39612 insertions(+), 6514 deletions(-)
+ delete mode 100644 contrib/byacc/test/btyacc/btyacc_demo2.error
+ delete mode 100644 contrib/byacc/test/btyacc/btyacc_demo2.tab.c
+ rename contrib/byacc/test/btyacc/{btyacc_demo2.output => calc_code_all.error} (100%)
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_all.output
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_all.tab.c
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_all.tab.h
+ rename contrib/byacc/test/btyacc/{btyacc_demo2.tab.h => calc_code_default.error} (100%)
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_default.output
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_default.tab.c
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_default.tab.h
+ rename contrib/byacc/test/btyacc/{code_debug.error => calc_code_imports.error} (100%)
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_imports.output
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_imports.tab.c
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_imports.tab.h
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_provides.error
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_provides.output
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_provides.tab.c
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_provides.tab.h
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_requires.error
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_requires.output
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_requires.tab.c
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_requires.tab.h
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_top.error
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_top.output
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_top.tab.c
+ create mode 100644 contrib/byacc/test/btyacc/calc_code_top.tab.h
+ delete mode 100644 contrib/byacc/test/btyacc/code_debug.i
+ delete mode 100644 contrib/byacc/test/btyacc/code_debug.output
+ rename contrib/byacc/test/btyacc/{code_debug.c => defines1.calc.c} (67%)
+ rename contrib/byacc/test/btyacc/{code_debug.h => defines1.calc.h} (57%)
+ create mode 100644 contrib/byacc/test/btyacc/defines1.error
+ create mode 100644 contrib/byacc/test/btyacc/defines1.output
+ create mode 100644 contrib/byacc/test/btyacc/defines2.calc.c
+ create mode 100644 contrib/byacc/test/btyacc/defines2.calc.h
+ create mode 100644 contrib/byacc/test/btyacc/defines2.error
+ create mode 100644 contrib/byacc/test/btyacc/defines2.output
+ create mode 100644 contrib/byacc/test/btyacc/defines3.calc.c
+ create mode 100644 contrib/byacc/test/btyacc/defines3.calc.h
+ create mode 100644 contrib/byacc/test/btyacc/defines3.error
+ create mode 100644 contrib/byacc/test/btyacc/defines3.output
+ create mode 100644 contrib/byacc/test/btyacc/stdin1.calc.c
+ create mode 100644 contrib/byacc/test/btyacc/stdin1.error
+ create mode 100644 contrib/byacc/test/btyacc/stdin1.output
+ create mode 100644 contrib/byacc/test/btyacc/stdin2.calc.c
+ create mode 100644 contrib/byacc/test/btyacc/stdin2.error
+ create mode 100644 contrib/byacc/test/btyacc/stdin2.output
+ create mode 100644 contrib/byacc/test/calc.tab.c
+ create mode 100644 contrib/byacc/test/calc_code_all.y
+ create mode 100644 contrib/byacc/test/calc_code_default.y
+ create mode 100644 contrib/byacc/test/calc_code_imports.y
+ create mode 100644 contrib/byacc/test/calc_code_provides.y
+ create mode 100644 contrib/byacc/test/calc_code_requires.y
+ create mode 100644 contrib/byacc/test/calc_code_top.y
+ create mode 100644 contrib/byacc/test/yacc/calc_code_all.error
+ create mode 100644 contrib/byacc/test/yacc/calc_code_all.output
+ create mode 100644 contrib/byacc/test/yacc/calc_code_all.tab.c
+ create mode 100644 contrib/byacc/test/yacc/calc_code_all.tab.h
+ create mode 100644 contrib/byacc/test/yacc/calc_code_default.error
+ create mode 100644 contrib/byacc/test/yacc/calc_code_default.output
+ create mode 100644 contrib/byacc/test/yacc/calc_code_default.tab.c
+ create mode 100644 contrib/byacc/test/yacc/calc_code_default.tab.h
+ create mode 100644 contrib/byacc/test/yacc/calc_code_imports.error
+ create mode 100644 contrib/byacc/test/yacc/calc_code_imports.output
+ create mode 100644 contrib/byacc/test/yacc/calc_code_imports.tab.c
+ create mode 100644 contrib/byacc/test/yacc/calc_code_imports.tab.h
+ create mode 100644 contrib/byacc/test/yacc/calc_code_provides.error
+ create mode 100644 contrib/byacc/test/yacc/calc_code_provides.output
+ create mode 100644 contrib/byacc/test/yacc/calc_code_provides.tab.c
+ create mode 100644 contrib/byacc/test/yacc/calc_code_provides.tab.h
+ create mode 100644 contrib/byacc/test/yacc/calc_code_requires.error
+ create mode 100644 contrib/byacc/test/yacc/calc_code_requires.output
+ create mode 100644 contrib/byacc/test/yacc/calc_code_requires.tab.c
+ create mode 100644 contrib/byacc/test/yacc/calc_code_requires.tab.h
+ create mode 100644 contrib/byacc/test/yacc/calc_code_top.error
+ create mode 100644 contrib/byacc/test/yacc/calc_code_top.output
+ create mode 100644 contrib/byacc/test/yacc/calc_code_top.tab.c
+ create mode 100644 contrib/byacc/test/yacc/calc_code_top.tab.h
+ create mode 100644 contrib/byacc/test/yacc/defines1.calc.c
+ create mode 100644 contrib/byacc/test/yacc/defines1.calc.h
+ create mode 100644 contrib/byacc/test/yacc/defines1.error
+ create mode 100644 contrib/byacc/test/yacc/defines1.output
+ create mode 100644 contrib/byacc/test/yacc/defines2.calc.c
+ create mode 100644 contrib/byacc/test/yacc/defines2.calc.h
+ create mode 100644 contrib/byacc/test/yacc/defines2.error
+ create mode 100644 contrib/byacc/test/yacc/defines2.output
+ create mode 100644 contrib/byacc/test/yacc/defines3.calc.c
+ create mode 100644 contrib/byacc/test/yacc/defines3.calc.h
+ create mode 100644 contrib/byacc/test/yacc/defines3.error
+ create mode 100644 contrib/byacc/test/yacc/defines3.output
+ create mode 100644 contrib/byacc/test/yacc/stdin1.calc.c
+ create mode 100644 contrib/byacc/test/yacc/stdin1.error
+ create mode 100644 contrib/byacc/test/yacc/stdin1.output
+ create mode 100644 contrib/byacc/test/yacc/stdin2.calc.c
+ create mode 100644 contrib/byacc/test/yacc/stdin2.error
+ create mode 100644 contrib/byacc/test/yacc/stdin2.output
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/cache.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/core.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/floating-point.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/memory.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/branch.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/core.json
+ rename lib/libpmc/pmu-events/arch/x86/{amdfam17h => amdzen1}/data-fabric.json (100%)
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/floating-point.json
+ rename lib/libpmc/pmu-events/arch/x86/{amdfam17h => amdzen1}/l3cache.json (100%)
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/branch.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/core.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/floating-point.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/other.json
+ create mode 100644 sys/sys/iommu.h
+ create mode 100644 usr.bin/yacc/config.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    206cfe46e7da..c5a6aa5bbbda  freebsd/current/master -> freebsd/current/master
+remote:    d4a64ef09e5e..0a125b4ff417  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   206cfe46e7da..c5a6aa5bbbda  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
