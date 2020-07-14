@@ -47,3 +47,112 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/samdruckerclientshell/files/samdrucker.conf.sample.in
+Removing multimedia/intel-media-sdk/files/patch-no-tracer
+Removing games/sdl-ball/files/patch-menu.cpp
+Removing games/sdl-ball/files/patch-main.cpp
+Removing games/sdl-ball/files/patch-Makefile
+Removing devel/gitlab-runner/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+Removing databases/mysql80-server/files/patch-extra_libevent_openssl-compat.h
+Merge made by the 'recursive' strategy.
+ Mk/bsd.default-versions.mk                         |  2 +-
+ databases/mysql80-client/Makefile                  |  1 -
+ databases/mysql80-server/Makefile                  |  4 +-
+ databases/mysql80-server/distinfo                  |  6 +--
+ .../mysql80-server/files/patch-cmake_plugin.cmake  | 29 ++++++++---
+ .../files/patch-extra_libevent_openssl-compat.h    | 19 -------
+ ...s_src_bindings_xcom_xcom_xcom__ssl__transport.c |  4 +-
+ databases/mysql80-server/files/patch-sql_mysqld.cc | 10 ++--
+ ...ge_temptable_include_temptable_lock_free_type.h | 17 +++++++
+ databases/mysql80-server/pkg-plist                 |  2 +
+ devel/gitlab-runner/Makefile                       | 34 +++++++------
+ devel/gitlab-runner/distinfo                       | 58 ++++++++++++----------
+ .../files/patch-helpers_service_simple.go          | 11 ++--
+ ...golang.org_x_sys_unix_ztypes__freebsd__arm64.go | 24 ---------
+ devel/llvm-devel/Makefile                          |  5 +-
+ games/sdl-ball/Makefile                            | 12 ++---
+ games/sdl-ball/distinfo                            |  6 +--
+ games/sdl-ball/files/patch-Makefile                | 27 ----------
+ games/sdl-ball/files/patch-main.cpp                | 11 ----
+ games/sdl-ball/files/patch-menu.cpp                | 11 ----
+ irc/smuxi/Makefile                                 | 18 +++----
+ multimedia/intel-media-sdk/Makefile                |  4 ++
+ multimedia/intel-media-sdk/distinfo                |  2 +
+ multimedia/intel-media-sdk/files/patch-gettid      | 49 ++++++++++++++++++
+ multimedia/intel-media-sdk/files/patch-no-tracer   |  9 ----
+ multimedia/intel-media-sdk/files/patch-rtld        | 28 +++++++++++
+ multimedia/intel-media-sdk/pkg-plist               |  4 ++
+ print/xreader/Makefile                             |  4 +-
+ print/xreader/distinfo                             |  6 +--
+ security/libssh2/Makefile                          |  2 +-
+ sysutils/samdruckerclientshell/Makefile            |  6 +--
+ sysutils/samdruckerclientshell/distinfo            |  6 +--
+ .../files/samdrucker.conf.sample.in                |  2 -
+ sysutils/samdruckerclientshell/pkg-plist           |  2 +-
+ textproc/consul-template/Makefile                  | 25 +++++++---
+ textproc/consul-template/distinfo                  | 36 ++++++++++----
+ 36 files changed, 273 insertions(+), 223 deletions(-)
+ delete mode 100644 databases/mysql80-server/files/patch-extra_libevent_openssl-compat.h
+ create mode 100644 databases/mysql80-server/files/patch-storage_temptable_include_temptable_lock_free_type.h
+ delete mode 100644 devel/gitlab-runner/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+ delete mode 100644 games/sdl-ball/files/patch-Makefile
+ delete mode 100644 games/sdl-ball/files/patch-main.cpp
+ delete mode 100644 games/sdl-ball/files/patch-menu.cpp
+ create mode 100644 multimedia/intel-media-sdk/files/patch-gettid
+ delete mode 100644 multimedia/intel-media-sdk/files/patch-no-tracer
+ create mode 100644 multimedia/intel-media-sdk/files/patch-rtld
+ delete mode 100644 sysutils/samdruckerclientshell/files/samdrucker.conf.sample.in
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    2c6d3082b944..198f2e2db87f  master -> master        
+remote:    a16fe5eb1c85..2c6d3082b944  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   2c6d3082b944..198f2e2db87f  master -> master
+==== END: master ====
