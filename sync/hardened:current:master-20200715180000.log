@@ -1,0 +1,322 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/sendmail/Makefile
+Merge made by the 'recursive' strategy.
+ RELNOTES                                           |    3 +
+ contrib/sendmail/CACerts                           |  240 ++--
+ contrib/sendmail/FREEBSD-upgrade                   |   16 +-
+ contrib/sendmail/KNOWNBUGS                         |    1 -
+ contrib/sendmail/LICENSE                           |    2 +-
+ contrib/sendmail/PGPKEYS                           | 1334 ++++++++++++++++---
+ contrib/sendmail/README                            |    4 +-
+ contrib/sendmail/RELEASE_NOTES                     |  144 ++-
+ contrib/sendmail/cf/README                         |   89 +-
+ contrib/sendmail/cf/cf/Makefile                    |    2 +-
+ contrib/sendmail/cf/cf/knecht.mc                   |    4 +-
+ contrib/sendmail/cf/cf/submit.cf                   |   18 +-
+ contrib/sendmail/cf/feature/bcc.m4                 |    2 +-
+ .../sendmail/cf/feature/blacklist_recipients.m4    |    7 +-
+ .../sendmail/cf/feature/blocklist_recipients.m4    |   19 +
+ contrib/sendmail/cf/feature/check_cert_altnames.m4 |   17 +
+ contrib/sendmail/cf/feature/dnsbl.m4               |    2 +-
+ contrib/sendmail/cf/feature/enhdnsbl.m4            |    2 +-
+ contrib/sendmail/cf/feature/tls_failures.m4        |   13 +
+ contrib/sendmail/cf/m4/cfhead.m4                   |    9 +
+ contrib/sendmail/cf/m4/proto.m4                    |   85 +-
+ contrib/sendmail/cf/m4/version.m4                  |    4 +-
+ contrib/sendmail/cf/ostype/hpux10.m4               |    2 +-
+ contrib/sendmail/cf/ostype/hpux9.m4                |    2 +-
+ contrib/sendmail/contrib/cidrexpand                |  149 ++-
+ contrib/sendmail/contrib/dnsblaccess.m4            |    4 +-
+ contrib/sendmail/contrib/expn.pl                   |    2 +-
+ contrib/sendmail/contrib/mmuegel                   |   28 +-
+ contrib/sendmail/doc/op/op.me                      |  342 +++--
+ contrib/sendmail/editmap/Makefile                  |    2 +
+ contrib/sendmail/editmap/editmap.c                 |    8 +-
+ contrib/sendmail/include/libmilter/mfapi.h         |   20 +-
+ contrib/sendmail/include/libmilter/mfdef.h         |    4 +-
+ contrib/sendmail/include/libsmdb/smdb.h            |   77 +-
+ contrib/sendmail/include/sendmail/pathnames.h      |   16 +-
+ contrib/sendmail/include/sendmail/sendmail.h       |    2 +-
+ contrib/sendmail/include/sm/assert.h               |    8 +-
+ contrib/sendmail/include/sm/bdb.h                  |    2 +-
+ contrib/sendmail/include/sm/cdefs.h                |   20 +-
+ contrib/sendmail/include/sm/clock.h                |    6 +-
+ contrib/sendmail/include/sm/conf.h                 |  662 +++++-----
+ contrib/sendmail/include/sm/config.h               |   40 +-
+ contrib/sendmail/include/sm/debug.h                |    2 +-
+ contrib/sendmail/include/sm/errstring.h            |    9 +-
+ contrib/sendmail/include/sm/gen.h                  |    2 +-
+ contrib/sendmail/include/sm/heap.h                 |    2 +-
+ contrib/sendmail/include/sm/io.h                   |    6 +-
+ contrib/sendmail/include/sm/ldap.h                 |   15 +-
+ contrib/sendmail/include/sm/limits.h               |   10 +-
+ contrib/sendmail/include/sm/notify.h               |   19 +
+ contrib/sendmail/include/sm/os/sm_os_freebsd.h     |   16 +-
+ contrib/sendmail/include/sm/rpool.h                |    6 +-
+ contrib/sendmail/include/sm/sem.h                  |    4 +-
+ contrib/sendmail/include/sm/shm.h                  |    4 +-
+ contrib/sendmail/include/sm/string.h               |    6 +-
+ contrib/sendmail/include/sm/test.h                 |    4 +-
+ contrib/sendmail/include/sm/types.h                |    4 +-
+ contrib/sendmail/include/sm/varargs.h              |    5 +
+ contrib/sendmail/include/sm/xtrap.h                |    4 +-
+ contrib/sendmail/libmilter/Makefile                |    4 +-
+ contrib/sendmail/libmilter/README                  |   19 +-
+ contrib/sendmail/libmilter/comm.c                  |    6 +-
+ contrib/sendmail/libmilter/docs/api.html           |   71 +-
+ contrib/sendmail/libmilter/docs/design.html        |   12 +-
+ contrib/sendmail/libmilter/docs/index.html         |    2 +-
+ contrib/sendmail/libmilter/docs/installation.html  |    4 +-
+ contrib/sendmail/libmilter/docs/overview.html      |   16 +-
+ contrib/sendmail/libmilter/docs/sample.html        |    4 +-
+ .../sendmail/libmilter/docs/smfi_addheader.html    |   16 +-
+ contrib/sendmail/libmilter/docs/smfi_addrcpt.html  |   12 +-
+ .../sendmail/libmilter/docs/smfi_addrcpt_par.html  |   15 +-
+ contrib/sendmail/libmilter/docs/smfi_chgfrom.html  |   12 +-
+ .../sendmail/libmilter/docs/smfi_chgheader.html    |   12 +-
+ contrib/sendmail/libmilter/docs/smfi_delrcpt.html  |   11 +-
+ contrib/sendmail/libmilter/docs/smfi_getpriv.html  |    3 +-
+ .../sendmail/libmilter/docs/smfi_getsymval.html    |    5 +-
+ .../sendmail/libmilter/docs/smfi_insheader.html    |   17 +-
+ contrib/sendmail/libmilter/docs/smfi_main.html     |    3 +-
+ .../sendmail/libmilter/docs/smfi_opensocket.html   |    9 +-
+ contrib/sendmail/libmilter/docs/smfi_progress.html |    3 +-
+ .../sendmail/libmilter/docs/smfi_quarantine.html   |    5 +-
+ contrib/sendmail/libmilter/docs/smfi_register.html |   25 +-
+ .../sendmail/libmilter/docs/smfi_replacebody.html  |   15 +-
+ .../sendmail/libmilter/docs/smfi_setbacklog.html   |    3 +-
+ contrib/sendmail/libmilter/docs/smfi_setconn.html  |    9 +-
+ contrib/sendmail/libmilter/docs/smfi_setdbg.html   |    3 +-
+ .../sendmail/libmilter/docs/smfi_setmlreply.html   |   11 +-
+ contrib/sendmail/libmilter/docs/smfi_setpriv.html  |    5 +-
+ contrib/sendmail/libmilter/docs/smfi_setreply.html |   13 +-
+ .../sendmail/libmilter/docs/smfi_setsymlist.html   |    7 +-
+ .../sendmail/libmilter/docs/smfi_settimeout.html   |   10 +-
+ contrib/sendmail/libmilter/docs/smfi_stop.html     |    3 +-
+ contrib/sendmail/libmilter/docs/smfi_version.html  |    1 +
+ contrib/sendmail/libmilter/docs/xxfi_abort.html    |    3 +-
+ contrib/sendmail/libmilter/docs/xxfi_body.html     |    5 +-
+ contrib/sendmail/libmilter/docs/xxfi_close.html    |    5 +-
+ contrib/sendmail/libmilter/docs/xxfi_connect.html  |   10 +-
+ contrib/sendmail/libmilter/docs/xxfi_data.html     |    7 +-
+ contrib/sendmail/libmilter/docs/xxfi_envfrom.html  |    5 +-
+ contrib/sendmail/libmilter/docs/xxfi_envrcpt.html  |    7 +-
+ contrib/sendmail/libmilter/docs/xxfi_eoh.html      |    1 +
+ contrib/sendmail/libmilter/docs/xxfi_eom.html      |    3 +-
+ contrib/sendmail/libmilter/docs/xxfi_header.html   |    5 +-
+ contrib/sendmail/libmilter/docs/xxfi_helo.html     |    3 +-
+ .../sendmail/libmilter/docs/xxfi_negotiate.html    |   18 +-
+ contrib/sendmail/libmilter/docs/xxfi_unknown.html  |    9 +-
+ contrib/sendmail/libmilter/engine.c                |   42 +-
+ contrib/sendmail/libmilter/example.c               |    2 +-
+ contrib/sendmail/libmilter/handler.c               |    2 +-
+ contrib/sendmail/libmilter/libmilter.h             |   16 +-
+ contrib/sendmail/libmilter/listener.c              |   66 +-
+ contrib/sendmail/libmilter/main.c                  |    2 +-
+ contrib/sendmail/libmilter/monitor.c               |    2 +-
+ contrib/sendmail/libmilter/sm_gethost.c            |   41 +-
+ contrib/sendmail/libmilter/smfi.c                  |    3 +-
+ contrib/sendmail/libmilter/worker.c                |    8 +-
+ contrib/sendmail/libsm/Makefile                    |    4 +-
+ contrib/sendmail/libsm/Makefile.m4                 |    3 +-
+ contrib/sendmail/libsm/assert.c                    |    2 +-
+ contrib/sendmail/libsm/clock.c                     |   46 +-
+ contrib/sendmail/libsm/config.c                    |   54 +-
+ contrib/sendmail/libsm/debug.c                     |   36 +-
+ contrib/sendmail/libsm/errstring.c                 |   26 +-
+ contrib/sendmail/libsm/exc.c                       |    4 +-
+ contrib/sendmail/libsm/findfp.c                    |   18 +-
+ contrib/sendmail/libsm/flags.c                     |    2 +-
+ contrib/sendmail/libsm/fopen.c                     |    8 +-
+ contrib/sendmail/libsm/fpos.c                      |    2 +-
+ contrib/sendmail/libsm/fscanf.c                    |    2 +-
+ contrib/sendmail/libsm/io.html                     |   17 +-
+ contrib/sendmail/libsm/ldap.c                      |  351 +++--
+ contrib/sendmail/libsm/local.h                     |    2 +-
+ contrib/sendmail/libsm/makebuf.c                   |    4 +-
+ contrib/sendmail/libsm/mbdb.c                      |   16 +-
+ contrib/sendmail/libsm/memstat.c                   |    2 +-
+ contrib/sendmail/libsm/niprop.c                    |   10 +-
+ contrib/sendmail/libsm/notify.c                    |  205 +++
+ contrib/sendmail/libsm/refill.c                    |    4 +-
+ contrib/sendmail/libsm/rewind.c                    |    2 +-
+ contrib/sendmail/libsm/rpool.c                     |   12 +-
+ contrib/sendmail/libsm/sem.c                       |    2 +-
+ contrib/sendmail/libsm/signal.c                    |   18 +-
+ contrib/sendmail/libsm/stdio.c                     |    6 +-
+ contrib/sendmail/libsm/strdup.c                    |    2 +-
+ contrib/sendmail/libsm/strerror.c                  |    2 +-
+ contrib/sendmail/libsm/string.c                    |   31 +
+ contrib/sendmail/libsm/strio.c                     |    8 +-
+ contrib/sendmail/libsm/strto.c                     |    4 +-
+ contrib/sendmail/libsm/syslogio.c                  |    2 +-
+ contrib/sendmail/libsm/t-event.c                   |    2 +-
+ contrib/sendmail/libsm/t-exc.c                     |    2 +-
+ contrib/sendmail/libsm/t-heap.c                    |    4 +-
+ contrib/sendmail/libsm/t-notify.c                  |  122 ++
+ contrib/sendmail/libsm/t-scanf.c                   |    2 +-
+ contrib/sendmail/libsm/t-sem.c                     |    4 +-
+ contrib/sendmail/libsm/vfprintf.c                  |    9 +-
+ contrib/sendmail/libsm/vfscanf.c                   |    4 +-
+ contrib/sendmail/libsmdb/Makefile                  |    2 +
+ contrib/sendmail/libsmdb/Makefile.m4               |    2 +-
+ contrib/sendmail/libsmdb/smcdb.c                   |  575 +++++++++
+ contrib/sendmail/libsmdb/smdb.c                    |  183 +--
+ contrib/sendmail/libsmdb/smdb1.c                   |   16 +-
+ contrib/sendmail/libsmdb/smdb2.c                   |  107 +-
+ contrib/sendmail/libsmdb/smndbm.c                  |    1 -
+ contrib/sendmail/libsmutil/Makefile                |    2 +
+ contrib/sendmail/libsmutil/cf.c                    |    4 +-
+ contrib/sendmail/libsmutil/safefile.c              |   35 +-
+ contrib/sendmail/mail.local/Makefile               |    2 +
+ contrib/sendmail/mail.local/mail.local.c           |  130 +-
+ contrib/sendmail/mailstats/Makefile                |    2 +
+ contrib/sendmail/mailstats/mailstats.c             |    2 +-
+ contrib/sendmail/makemap/Makefile                  |    2 +
+ contrib/sendmail/makemap/Makefile.m4               |    1 +
+ contrib/sendmail/makemap/makemap.8                 |   15 +-
+ contrib/sendmail/makemap/makemap.c                 |  316 +++--
+ contrib/sendmail/praliases/Makefile                |    2 +
+ contrib/sendmail/praliases/praliases.c             |    8 +-
+ contrib/sendmail/rmail/Makefile                    |    2 +
+ contrib/sendmail/rmail/rmail.c                     |    2 +-
+ contrib/sendmail/smrsh/Makefile                    |    2 +
+ contrib/sendmail/smrsh/smrsh.c                     |   48 +-
+ contrib/sendmail/src/Makefile                      |    4 +-
+ contrib/sendmail/src/Makefile.m4                   |    4 +-
+ contrib/sendmail/src/README                        |   30 +-
+ contrib/sendmail/src/TRACEFLAGS                    |   15 +-
+ contrib/sendmail/src/alias.c                       |   30 +-
+ contrib/sendmail/src/arpadate.c                    |    6 +-
+ contrib/sendmail/src/bf.c                          |   10 +-
+ contrib/sendmail/src/collect.c                     |   31 +-
+ contrib/sendmail/src/conf.c                        |  718 +++++++----
+ contrib/sendmail/src/conf.h                        |   90 +-
+ contrib/sendmail/src/control.c                     |    7 +-
+ contrib/sendmail/src/daemon.c                      |  452 ++++---
+ contrib/sendmail/src/daemon.h                      |    4 +-
+ contrib/sendmail/src/deliver.c                     |  660 +++++++---
+ contrib/sendmail/src/domain.c                      |  739 +++++++++--
+ contrib/sendmail/src/envelope.c                    |   47 +-
+ contrib/sendmail/src/err.c                         |   64 +-
+ contrib/sendmail/src/headers.c                     |   87 +-
+ contrib/sendmail/src/macro.c                       |   42 +-
+ contrib/sendmail/src/main.c                        |  224 +++-
+ contrib/sendmail/src/map.c                         | 1176 ++++++++++++-----
+ contrib/sendmail/src/map.h                         |   33 +-
+ contrib/sendmail/src/mci.c                         |   87 +-
+ contrib/sendmail/src/milter.c                      |  256 ++--
+ contrib/sendmail/src/mime.c                        |   16 +-
+ contrib/sendmail/src/parseaddr.c                   |   62 +-
+ contrib/sendmail/src/queue.c                       |  362 ++++--
+ contrib/sendmail/src/ratectrl.c                    |  512 +++++---
+ contrib/sendmail/src/ratectrl.h                    |  128 ++
+ contrib/sendmail/src/readcf.c                      |  383 ++++--
+ contrib/sendmail/src/recipient.c                   |   29 +-
+ contrib/sendmail/src/sasl.c                        |    8 +-
+ contrib/sendmail/src/savemail.c                    |   97 +-
+ contrib/sendmail/src/sendmail.h                    |  631 ++++-----
+ contrib/sendmail/src/sfsasl.c                      |   49 +-
+ contrib/sendmail/src/sfsasl.h                      |    4 +-
+ contrib/sendmail/src/sm_resolve.c                  | 1340 ++++++++++++++++++--
+ contrib/sendmail/src/sm_resolve.h                  |   72 +-
+ contrib/sendmail/src/srvrsmtp.c                    |  638 +++++++---
+ contrib/sendmail/src/stab.c                        |   27 +-
+ contrib/sendmail/src/timers.c                      |    2 +-
+ contrib/sendmail/src/tls.c                         | 1317 ++++++++++++++-----
+ contrib/sendmail/src/tls.h                         |  237 ++++
+ contrib/sendmail/src/tlsh.c                        |  263 ++++
+ contrib/sendmail/src/udb.c                         |   59 +-
+ contrib/sendmail/src/usersmtp.c                    |  178 ++-
+ contrib/sendmail/src/util.c                        |   72 +-
+ contrib/sendmail/src/version.c                     |    4 +-
+ contrib/sendmail/test/Results                      |    2 +-
+ contrib/sendmail/vacation/Makefile                 |    2 +
+ contrib/sendmail/vacation/vacation.c               |   20 +-
+ crypto/openssh/sshd.c                              |    2 +-
+ crypto/openssh/version.h                           |    2 +-
+ etc/sendmail/freebsd.mc                            |    2 +-
+ etc/sendmail/freebsd.submit.mc                     |    2 +-
+ lib/libc/gen/tcsetattr.3                           |   21 +-
+ lib/libmd/Makefile                                 |    2 -
+ lib/libsm/Makefile                                 |    2 +-
+ lib/libsmdb/Makefile                               |    2 +-
+ sys/i386/i386/mp_machdep.c                         |    7 +-
+ sys/mips/atheros/ar71xx_wdog.c                     |   50 +-
+ sys/modules/dtb/allwinner/Makefile                 |    1 +
+ usr.bin/xinstall/install.1                         |    8 +-
+ usr.bin/xinstall/xinstall.c                        |    2 +-
+ usr.sbin/sendmail/Makefile                         |    4 +-
+ 246 files changed, 13150 insertions(+), 4966 deletions(-)
+ create mode 100644 contrib/sendmail/cf/feature/blocklist_recipients.m4
+ create mode 100644 contrib/sendmail/cf/feature/check_cert_altnames.m4
+ create mode 100644 contrib/sendmail/cf/feature/tls_failures.m4
+ create mode 100644 contrib/sendmail/include/sm/notify.h
+ create mode 100644 contrib/sendmail/libsm/notify.c
+ create mode 100644 contrib/sendmail/libsm/t-notify.c
+ create mode 100644 contrib/sendmail/libsmdb/smcdb.c
+ create mode 100644 contrib/sendmail/src/ratectrl.h
+ create mode 100644 contrib/sendmail/src/tls.h
+ create mode 100644 contrib/sendmail/src/tlsh.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f72fa7aa6c41..86872f13797f  hardened/current/master -> hardened/current/master        
+remote:    5ba5819cd592..6bf873096414  github/freebsd/current/master -> github/freebsd/current/master
+remote: Gitea: Internal Server Error        
+remote: Failed to Update: hardenedbsd/hardenedbsd Branch: hardened/current/master Error: newCommit.CommitsBeforeUntil: packfile not found        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f72fa7aa6c41..86872f13797f  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
