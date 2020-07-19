@@ -1,0 +1,91 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:rF/Pqgek1p+z8nb/OsdRiDncgxtiGcD+t/zTgM4Jf4c.
+Please contact your system administrator.
+Add correct host key in /home/github-sync/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/github-sync/.ssh/known_hosts:2
+ECDSA host key for git-01.md.hardenedbsd.org has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 006be28bd683 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/contrib/dev/acpica/changes.txt                 | 47 ++++++++++++++++++++++
+ sys/contrib/dev/acpica/compiler/aslerror.c         |  2 +-
+ sys/contrib/dev/acpica/compiler/aslexternal.c      |  8 ++++
+ sys/contrib/dev/acpica/compiler/aslload.c          | 10 ++---
+ sys/contrib/dev/acpica/compiler/aslmethod.c        | 12 ++++++
+ sys/contrib/dev/acpica/compiler/aslxref.c          |  4 +-
+ .../dev/acpica/components/executer/exprep.c        |  4 --
+ .../dev/acpica/components/utilities/utdelete.c     |  6 +--
+ .../dev/acpica/components/utilities/utids.c        |  2 +-
+ sys/contrib/dev/acpica/include/acpixf.h            |  2 +-
+ sys/contrib/dev/acpica/include/actypes.h           |  2 +-
+ 11 files changed, 80 insertions(+), 19 deletions(-)
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:rF/Pqgek1p+z8nb/OsdRiDncgxtiGcD+t/zTgM4Jf4c.
+Please contact your system administrator.
+Add correct host key in /home/github-sync/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/github-sync/.ssh/known_hosts:2
+ECDSA host key for git-01.md.hardenedbsd.org has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is ahead of 'origin/hardened/current/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 9167a158fffa Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
