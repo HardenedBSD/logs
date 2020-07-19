@@ -1,0 +1,100 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/kern/kern_proc.c
+Auto-merging sys/conf/kern.opts.mk
+CONFLICT (content): Merge conflict in sys/conf/kern.opts.mk
+Auto-merging lib/libifconfig/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/conf/kern.opts.mk
+index 32356c7d56da,c63589ec9db0..000000000000
+--- a/sys/conf/kern.opts.mk
++++ b/sys/conf/kern.opts.mk
+@@@ -42,6 -42,8 +42,11 @@@ __DEFAULT_YES_OPTIONS = 
+      MODULE_DRM2 \
+      NETGRAPH \
+      PF \
+++<<<<<<< HEAD
+++=======
++     REPRODUCIBLE_BUILD \
++     SCTP_SUPPORT \
+++>>>>>>> freebsd/12-stable/master
+      SOURCELESS_HOST \
+      SOURCELESS_UCODE \
+      TESTS \
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libifconfig/Makefile
+	modified:   lib/libifconfig/libifconfig.h
+	new file:   lib/libifconfig/libifconfig_bridge.c
+	modified:   sbin/ifconfig/ifbridge.c
+	modified:   sbin/ipfw/ipfw2.c
+	modified:   sys/compat/linuxkpi/common/src/linux_current.c
+	modified:   sys/conf/config.mk
+	modified:   sys/dev/mlx5/mlx5_core/mlx5_eq.c
+	modified:   sys/kern/kern_proc.c
+	modified:   sys/net/if_bridgevar.h
+	modified:   sys/netinet/sctp_crc32.c
+	modified:   sys/netinet/sctp_pcb.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/conf/kern.opts.mk
+
+HEAD is now at 072ef659f464 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 072ef659f464 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====

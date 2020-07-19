@@ -1,0 +1,208 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging sysutils/lsof/Makefile
+Auto-merging shells/bash/Makefile
+CONFLICT (content): Merge conflict in shells/bash/Makefile
+Auto-merging security/gnupg/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc shells/bash/Makefile
+index 1a689c72d656,d0c01a31d7b3..000000000000
+--- a/shells/bash/Makefile
++++ b/shells/bash/Makefile
+@@@ -22,15 -22,14 +22,21 @@@ COMMENT=		GNU Project's Bourne Again SH
+  LICENSE=		GPLv3+
+  LICENSE_FILE=		${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +# STATIC option requires special hardening treatment, see below.
+ +USE_HARDENING=		safestack
+ +
+ +OPTIONS_DEFINE=		FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
+++=======
++ OPTIONS_DEFINE=		FDESCFS PORTS_READLINE HELP NLS STATIC SYSBASHRC \
++ 			SYSLOG DOCS
+++>>>>>>> freebsd/master
+  FDESCFS_DESC=		Enable use of /dev/fd
+  HELP_DESC=		Enable builtin help
++ PORTS_READLINE_DESC=	libreadline from ports instead of bundled one
+  SYSBASHRC_DESC=		Enable system-wide rc files
+  
+- OPTIONS_DEFAULT=	HELP
++ OPTIONS_DEFAULT=	HELP PORTS_READLINE
+  
+  USES=			bison cpe iconv makeinfo pathfix localbase
+  GNU_CONFIGURE=		yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   audio/gmsynth-lv2/Makefile
+	modified:   audio/gmsynth-lv2/distinfo
+	modified:   comms/kermit/Makefile
+	modified:   comms/kermit/distinfo
+	modified:   devel/Makefile
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/llvm10/Makefile
+	modified:   devel/llvm90/Makefile
+	modified:   devel/msgpack/Makefile
+	modified:   devel/p5-autobox-Transform/Makefile
+	new file:   devel/py-outcome/Makefile
+	new file:   devel/py-outcome/distinfo
+	new file:   devel/py-outcome/pkg-descr
+	modified:   games/abstreet/Makefile
+	modified:   games/abstreet/distinfo
+	modified:   games/abstreet/pkg-plist
+	modified:   lang/gcc11-devel/Makefile
+	modified:   lang/gcc11-devel/distinfo
+	modified:   lang/go/Makefile
+	modified:   lang/go/distinfo
+	modified:   lang/python-doc-html/distinfo
+	modified:   math/calc/Makefile
+	modified:   net-mgmt/ndoutils/Makefile
+	modified:   net-mgmt/ndoutils/pkg-descr
+	modified:   net-mgmt/zabbix5-frontend/Makefile
+	modified:   net-mgmt/zabbix5-java/Makefile
+	modified:   net-mgmt/zabbix5-server/Makefile
+	modified:   net-mgmt/zabbix5-server/distinfo
+	modified:   net-mgmt/zabbix5-server/pkg-plist.frontend
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   news/nzbhydra2/Makefile
+	modified:   news/nzbhydra2/distinfo
+	modified:   news/nzbhydra2/files/nzbhydra2.in
+	renamed:    news/nzbhydra2/files/nzbhydra2wrapper.py.in -> news/nzbhydra2/files/nzbhydra2wrapperPy3.py.in
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/gnupg/Makefile
+	modified:   security/gnupg1/Makefile
+	modified:   sysutils/goaccess/Makefile
+	modified:   sysutils/goaccess/pkg-plist
+	modified:   sysutils/lsof/Makefile
+	modified:   sysutils/lsof/files/patch-dialects_freebsd_dproc.c
+	modified:   sysutils/z/Makefile
+	modified:   www/cpp-httplib/Makefile
+	modified:   www/cpp-httplib/distinfo
+	modified:   www/rubygem-roda/Makefile
+	modified:   www/rubygem-roda/distinfo
+	modified:   x11/Makefile
+	modified:   x11/libxfce4menu/Makefile
+	modified:   x11/libxfce4menu/files/patch-libxfce4kbd-private_xfce-shortcuts-grabber.c
+	new file:   x11/wdm/Makefile
+	new file:   x11/wdm/distinfo
+	new file:   x11/wdm/files/patch-change_wm
+	new file:   x11/wdm/files/patch-configs__wdm-config.in
+	new file:   x11/wdm/files/patch-src__wdm__session.c
+	new file:   x11/wdm/files/wdm.pam
+	new file:   x11/wdm/pkg-descr
+	new file:   x11/wdm/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   shells/bash/Makefile
+
+
+It took 3.27 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at be753c85abcc Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.17 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at be753c85abcc Merge remote-tracking branch 'freebsd/master'
+==== END: master ====

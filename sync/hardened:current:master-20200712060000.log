@@ -1,0 +1,201 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/bsdinstall/scripts/netconfig_ipv4
+CONFLICT (content): Merge conflict in usr.sbin/bsdinstall/scripts/netconfig_ipv4
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.sbin/bsdinstall/scripts/netconfig_ipv4
+index 37151d50dd81,2acd9029d150..000000000000
+--- a/usr.sbin/bsdinstall/scripts/netconfig_ipv4
++++ b/usr.sbin/bsdinstall/scripts/netconfig_ipv4
+@@@ -50,11 -50,11 +50,16 @@@ dialog --backtitle 'HardenedBSD Install
+  if [ $? -eq $DIALOG_OK ]; then
+  	if [ ! -z $BSDINSTALL_CONFIGCURRENT ]; then
+  		ifconfig $INTERFACE up
+++<<<<<<< HEAD
+ +		dialog --backtitle 'HardenedBSD Installer' --infobox "Acquiring DHCP lease..." 0 0
+ +		err=$( dhclient $INTERFACE 2>&1 )
+++=======
++ 		dialog --backtitle 'FreeBSD Installer' --infobox "Acquiring DHCP lease..." 0 0
++ 		err=$( pkill -F /var/run/dhclient/dhclient.${INTERFACE}.pid; dhclient $INTERFACE 2>&1 )
+++>>>>>>> freebsd/current/master
+  		if [ $? -ne 0 ]; then
+  			f_dprintf "%s" "$err"
+ -			dialog --backtitle 'FreeBSD Installer' --msgbox "DHCP lease acquisition failed." 0 0
+ +			dialog --backtitle 'HardenedBSD Installer' --msgbox "DHCP lease acquisition failed." 0 0
+  			exec $0 ${INTERFACE} "${IFCONFIG_PREFIX}"
+  		fi
+  	fi
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/bmake/ChangeLog
+	modified:   contrib/bmake/FILES
+	modified:   contrib/bmake/VERSION
+	modified:   contrib/bmake/arch.c
+	modified:   contrib/bmake/buf.c
+	modified:   contrib/bmake/compat.c
+	modified:   contrib/bmake/cond.c
+	modified:   contrib/bmake/configure
+	modified:   contrib/bmake/configure.in
+	modified:   contrib/bmake/dir.c
+	modified:   contrib/bmake/filemon/filemon_dev.c
+	modified:   contrib/bmake/for.c
+	modified:   contrib/bmake/hash.c
+	modified:   contrib/bmake/hash.h
+	modified:   contrib/bmake/job.c
+	modified:   contrib/bmake/job.h
+	modified:   contrib/bmake/lst.lib/lstAppend.c
+	modified:   contrib/bmake/lst.lib/lstAtEnd.c
+	modified:   contrib/bmake/lst.lib/lstAtFront.c
+	modified:   contrib/bmake/lst.lib/lstClose.c
+	modified:   contrib/bmake/lst.lib/lstConcat.c
+	modified:   contrib/bmake/lst.lib/lstDatum.c
+	modified:   contrib/bmake/lst.lib/lstDeQueue.c
+	modified:   contrib/bmake/lst.lib/lstDupl.c
+	modified:   contrib/bmake/lst.lib/lstEnQueue.c
+	modified:   contrib/bmake/lst.lib/lstFind.c
+	modified:   contrib/bmake/lst.lib/lstFindFrom.c
+	modified:   contrib/bmake/lst.lib/lstFirst.c
+	modified:   contrib/bmake/lst.lib/lstForEach.c
+	modified:   contrib/bmake/lst.lib/lstForEachFrom.c
+	modified:   contrib/bmake/lst.lib/lstInit.c
+	modified:   contrib/bmake/lst.lib/lstInsert.c
+	modified:   contrib/bmake/lst.lib/lstIsAtEnd.c
+	modified:   contrib/bmake/lst.lib/lstIsEmpty.c
+	modified:   contrib/bmake/lst.lib/lstLast.c
+	modified:   contrib/bmake/lst.lib/lstNext.c
+	modified:   contrib/bmake/lst.lib/lstOpen.c
+	modified:   contrib/bmake/lst.lib/lstPrev.c
+	modified:   contrib/bmake/lst.lib/lstRemove.c
+	modified:   contrib/bmake/lst.lib/lstReplace.c
+	modified:   contrib/bmake/lst.lib/lstSucc.c
+	modified:   contrib/bmake/main.c
+	modified:   contrib/bmake/make.c
+	modified:   contrib/bmake/make.h
+	modified:   contrib/bmake/make_malloc.c
+	modified:   contrib/bmake/meta.c
+	modified:   contrib/bmake/meta.h
+	modified:   contrib/bmake/mk/ChangeLog
+	modified:   contrib/bmake/mk/FILES
+	modified:   contrib/bmake/mk/dirdeps.mk
+	modified:   contrib/bmake/mk/gendirdeps.mk
+	modified:   contrib/bmake/mk/host-target.mk
+	modified:   contrib/bmake/mk/install-mk
+	modified:   contrib/bmake/mk/mkopt.sh
+	modified:   contrib/bmake/mk/sys/AIX.mk
+	modified:   contrib/bmake/mk/sys/Darwin.mk
+	modified:   contrib/bmake/mk/sys/Generic.mk
+	modified:   contrib/bmake/mk/sys/HP-UX.mk
+	modified:   contrib/bmake/mk/sys/IRIX.mk
+	modified:   contrib/bmake/mk/sys/Linux.mk
+	modified:   contrib/bmake/mk/sys/NetBSD.mk
+	modified:   contrib/bmake/mk/sys/OSF1.mk
+	modified:   contrib/bmake/mk/sys/OpenBSD.mk
+	modified:   contrib/bmake/mk/sys/SunOS.mk
+	modified:   contrib/bmake/mk/sys/UnixWare.mk
+	modified:   contrib/bmake/nonints.h
+	modified:   contrib/bmake/parse.c
+	modified:   contrib/bmake/str.c
+	modified:   contrib/bmake/suff.c
+	modified:   contrib/bmake/targ.c
+	modified:   contrib/bmake/trace.c
+	modified:   contrib/bmake/unit-tests/Makefile
+	modified:   contrib/bmake/unit-tests/cond-short.exp
+	modified:   contrib/bmake/unit-tests/cond-short.mk
+	modified:   contrib/bmake/unit-tests/modmatch.mk
+	modified:   contrib/bmake/unit-tests/modmisc.exp
+	modified:   contrib/bmake/unit-tests/modmisc.mk
+	modified:   contrib/bmake/unit-tests/modorder.exp
+	modified:   contrib/bmake/unit-tests/modorder.mk
+	modified:   contrib/bmake/unit-tests/sysv.exp
+	modified:   contrib/bmake/unit-tests/sysv.mk
+	modified:   contrib/bmake/unit-tests/varmisc.exp
+	modified:   contrib/bmake/unit-tests/varmisc.mk
+	modified:   contrib/bmake/util.c
+	modified:   contrib/bmake/var.c
+	modified:   lib/libc/sys/procctl.2
+	modified:   libexec/getty/ttys.5
+	modified:   sbin/ping/ping.c
+	modified:   sbin/reboot/boot_i386.8
+	modified:   share/man/man4/nmdm.4
+	modified:   share/man/man4/uart.4
+	modified:   share/man/man4/ucom.4
+	modified:   share/man/man5/periodic.conf.5
+	modified:   share/man/man5/rc.conf.5
+	modified:   share/man/man7/Makefile
+	new file:   share/man/man7/orders.7
+	modified:   share/man/man9/sx.9
+	modified:   sys/arm/broadcom/bcm2835/bcm2838_pci.c
+	modified:   sys/arm/mv/mvebu_gpio.c
+	modified:   sys/dev/extres/clk/clk.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   usr.bin/bmake/Makefile.config
+	modified:   usr.bin/bmake/config.h
+	modified:   usr.bin/bmake/unit-tests/Makefile
+	modified:   usr.sbin/bsdinstall/scripts/umount
+	modified:   usr.sbin/nscd/parser.c
+	new file:   usr.sbin/periodic/etc/daily/221.backup-gpart
+	modified:   usr.sbin/periodic/periodic.conf
+	modified:   usr.sbin/ppp/ppp.8
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.sbin/bsdinstall/scripts/netconfig_ipv4
+
+HEAD is now at 50997231a6b9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 50997231a6b9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
