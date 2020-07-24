@@ -1,0 +1,80 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/x86/mp_x86.c
+Merge made by the 'recursive' strategy.
+ sbin/camcontrol/camcontrol.c |  83 ++++++++++-
+ sys/arm/allwinner/aw_mmc.c   |  21 ++-
+ sys/cam/mmc/mmc_da.c         |  11 ++
+ sys/cam/mmc/mmc_xpt.c        |   7 +-
+ sys/dev/mmc/host/dwmmc.c     | 323 ++++++++++++++++++++++++++++++++++++++++++-
+ sys/dev/mmc/host/dwmmc_var.h |   9 ++
+ sys/kern/kern_lock.c         |   1 +
+ sys/kern/subr_pctrie.c       | 274 ++++++++++++++++++++++++++----------
+ sys/kern/vfs_bio.c           |  38 +++--
+ sys/kern/vfs_subr.c          |  33 ++++-
+ sys/sys/buf.h                |   4 +
+ sys/sys/pctrie.h             |  14 ++
+ sys/x86/include/x86_smp.h    |   2 +-
+ sys/x86/x86/local_apic.c     | 106 +++++++-------
+ sys/x86/x86/mp_x86.c         |  73 +++++++---
+ usr.sbin/rwhod/rwhod.8       |   9 --
+ 16 files changed, 804 insertions(+), 204 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ff1d9e1783c4..4c49ee6a415b  hardened/current/master -> hardened/current/master        
+remote:    92664b44e96a..8b38cf7ab430  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ff1d9e1783c4..4c49ee6a415b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
