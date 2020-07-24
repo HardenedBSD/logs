@@ -1,0 +1,798 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging usr.bin/clang/llvm-ar/Makefile
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+CONFLICT (content): Merge conflict in tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging targets/pseudo/bootstrap-tools/Makefile
+CONFLICT (content): Merge conflict in targets/pseudo/bootstrap-tools/Makefile
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Auto-merging lib/clang/libllvm/Makefile
+Auto-merging lib/clang/liblldb/Makefile
+Auto-merging etc/mtree/BSD.usr.dist
+Removing contrib/llvm-project/llvm/lib/Target/X86/X86RetpolineThunks.cpp
+Auto-merging contrib/llvm-project/clang/lib/Driver/SanitizerArgs.cpp
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+CONFLICT (content): Merge conflict in Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc Makefile.inc1
+index 685a06fa8a17,f13c84f0d5a4..000000000000
+--- a/Makefile.inc1
++++ b/Makefile.inc1
+@@@ -659,9 -659,9 +659,15 @@@ BSARGS= 	DESTDIR= 
+  		MK_HTML=no NO_LINT=yes MK_MAN=no \
+  		-DNO_PIC MK_PROFILE=no -DNO_SHARED \
+  		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no \
+++<<<<<<< HEAD
+ +		MK_CLANG_EXTRAS=yes MK_CLANG_FULL=no \
+ +		MK_LLDB=no MK_TESTS=no \
+ +		MK_INCLUDES=yes MK_CFI=no MK_RETPOLINE=no
+++=======
++ 		MK_CLANG_EXTRAS=no MK_CLANG_FORMAT=no MK_CLANG_FULL=no \
++ 		MK_LLDB=no MK_RETPOLINE=no MK_TESTS=no \
++ 		MK_INCLUDES=yes
+++>>>>>>> freebsd/12-stable/master
+  
+  BMAKE=		\
+  		${BMAKEENV} ${MAKE} ${WORLD_FLAGS} -f Makefile.inc1 \
+@@@ -680,8 -680,8 +686,13 @@@ TMAKE=		
+  		SSP_CFLAGS= \
+  		-DNO_LINT \
+  		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no \
+++<<<<<<< HEAD
+ +		MK_CLANG_EXTRAS=yes MK_CLANG_FULL=no \
+ +		MK_LLDB=no MK_TESTS=no MK_CFI=no MK_RETPOLINE=no
+++=======
++ 		MK_CLANG_EXTRAS=no MK_CLANG_FORMAT=no MK_CLANG_FULL=no \
++ 		MK_LLDB=no MK_RETPOLINE=no MK_TESTS=no
+++>>>>>>> freebsd/12-stable/master
+  
+  # cross-tools stage
+  # TOOLS_PREFIX set in BMAKE
+@@@ -2445,7 -2444,8 +2456,12 @@@ NXBMAKEARGS+= 
+  	-DNO_CPU_CFLAGS \
+  	-DNO_PIC \
+  	SSP_CFLAGS= \
+++<<<<<<< HEAD
+ +	MK_CLANG_EXTRAS=yes \
+++=======
++ 	MK_CLANG_EXTRAS=no \
++ 	MK_CLANG_FORMAT=no \
+++>>>>>>> freebsd/12-stable/master
+  	MK_CLANG_FULL=no \
+  	MK_CTF=no \
+  	MK_DEBUG_FILES=no \
+diff --cc share/mk/src.opts.mk
+index d9354589d4ba,b3856b7cf36d..000000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -197,14 -197,11 +197,19 @@@ __DEFAULT_NO_OPTIONS = 
+      BEARSSL \
+      BSD_CRTBEGIN \
+      BSD_GREP \
+++<<<<<<< HEAD
+ +    BSD_GREP_FASTMATCH \
+ +    DEVD_PIE \
+++=======
++     CLANG_EXTRAS \
++     CLANG_FORMAT \
+++>>>>>>> freebsd/12-stable/master
+      DTRACE_TESTS \
+ +    FREEBSD_UPDATE \
+      GNU_GREP_COMPAT \
+      HESIOD \
+ +    LIB32 \
+ +    LIBRESSL \
+      LIBSOFT \
+      LLVM_ASSERTIONS \
+      LOADER_FIREWIRE \
+@@@ -600,35 -556,17 +605,36 @@@ MK_LLD:=	n
+  MK_LLDB:=	no
+  .endif
+  
+ +.if ${MK_LOADER_VERIEXEC} == "no"
+ +MK_LOADER_VERIEXEC_PASS_MANIFEST := no
+ +.endif
+ +
+  .if ${MK_CLANG} == "no"
+  MK_CLANG_EXTRAS:= no
++ MK_CLANG_FORMAT:= no
+  MK_CLANG_FULL:= no
+  MK_LLVM_COV:= no
+ +MK_SAFESTACK:=	no
+  .endif
+  
+ -.if ${MK_LOADER_VERIEXEC} == "no"
+ -MK_LOADER_VERIEXEC_PASS_MANIFEST := no
+ +.if ${MK_LLD_IS_LD} == "no" || ${MK_LLD_BOOTSTRAP} == "no"
+ +MK_CFI:=	no
+ +MK_RETPOLINE:=	no
+  .endif
+  
+ +.if ${MK_LIBRESSL} == "no"
+ +MK_OPENNTPD:=	no
+ +.endif
+ +
+ +.if ${MK_OPENNTPD} != "no"
+ +MK_NTP:=	no
+ +.endif
+ +
+ +.if ${MK_NTP} != "no"
+ +MK_OPENNTPD:=	no
+ +.endif
+ +
+ +
+  #
+  # MK_* options whose default value depends on another option.
+  #
+diff --cc targets/pseudo/bootstrap-tools/Makefile
+index db198b224c2d,d860a50836b1..000000000000
+--- a/targets/pseudo/bootstrap-tools/Makefile
++++ b/targets/pseudo/bootstrap-tools/Makefile
+@@@ -43,7 -43,7 +43,11 @@@ BSARGS= 	DESTDIR= 
+  		MK_HTML=no NO_LINT=yes MK_MAN=no \
+  		-DNO_PIC MK_PROFILE=no -DNO_SHARED \
+  		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no \
+++<<<<<<< HEAD
+ +		MK_CLANG_EXTRAS=yes MK_CLANG_FULL=no \
+++=======
++ 		MK_CLANG_EXTRAS=no MK_CLANG_FORMAT=no MK_CLANG_FULL=no \
+++>>>>>>> freebsd/12-stable/master
+  		MK_LLDB=no MK_TESTS=no \
+  		MK_INCLUDES=yes
+  
+diff --cc tools/build/mk/OptionalObsoleteFiles.inc
+index 25d3d721f6e1,0b6cda40e3bc..000000000000
+--- a/tools/build/mk/OptionalObsoleteFiles.inc
++++ b/tools/build/mk/OptionalObsoleteFiles.inc
+@@@ -1323,675 -1324,273 +1324,945 @@@ OLD_FILES+=usr/bin/llvm-objdum
+  OLD_FILES+=usr/bin/llvm-ranlib
+  OLD_FILES+=usr/bin/llvm-symbolizer
+  OLD_FILES+=usr/bin/llvm-tblgen
+++<<<<<<< HEAD
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/allocator_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/asan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/common_interface_defs.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/coverage_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/dfsan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/esan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/hwasan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/linux_syscall_hooks.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/lsan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/msan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/netbsd_syscall_hooks.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/scudo_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/tsan_interface.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sanitizer/tsan_interface_atomic.h
+ +OLD_DIRS+=usr/lib/clang/8.0.1/include/sanitizer
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_builtin_vars.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_cmath.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_complex_builtins.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_device_functions.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_intrinsics.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_libdevice_declares.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_math_forward_declares.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__clang_cuda_runtime_wrapper.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__stddef_max_align_t.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__wmmintrin_aes.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/__wmmintrin_pclmul.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/adxintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/altivec.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/ammintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/arm64intr.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/arm_acle.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/arm_fp16.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/arm_neon.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/armintr.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx2intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512bitalgintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512bwintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512cdintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512dqintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512erintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512fintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512ifmaintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512ifmavlintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512pfintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vbmi2intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vbmiintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vbmivlintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vlbitalgintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vlbwintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vlcdintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vldqintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vlintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vlvbmi2intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vlvnniintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vnniintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vpopcntdqintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avx512vpopcntdqvlintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/avxintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/bmi2intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/bmiintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/cetintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/cldemoteintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/clflushoptintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/clwbintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/clzerointrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/cpuid.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/emmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/f16cintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/fma4intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/fmaintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/fxsrintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/gfniintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/htmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/htmxlintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/ia32intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/immintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/invpcidintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/lwpintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/lzcntintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/mm3dnow.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/mm_malloc.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/mmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/module.modulemap
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/movdirintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/msa.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/mwaitxintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/nmmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/opencl-c.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/pconfigintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/pkuintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/pmmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/popcntintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/prfchwintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/ptwriteintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/rdseedintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/rtmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/s390intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/sgxintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/shaintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/smmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/tbmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/tmmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/vadefs.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/vaesintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/vecintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/vpclmulqdqintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/waitpkgintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/wbnoinvdintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/wmmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/x86intrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xmmintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xopintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xsavecintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xsaveintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xsaveoptintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xsavesintrin.h
+ +OLD_FILES+=usr/lib/clang/8.0.1/include/xtestintrin.h
+ +OLD_DIRS+=usr/lib/clang/8.0.1/include
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan-i386.so
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan-preinit-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan-preinit-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan-x86_64.so
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan_cxx-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.asan_cxx-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.cfi-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.msan-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.msan-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.msan_cxx-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.msan_cxx-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.profile-arm.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.profile-armhf.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.profile-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.profile-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.safestack-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.safestack-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.stats-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.stats-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.stats_client-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.stats_client-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.tsan-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.tsan_cxx-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.ubsan_minimal-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.ubsan_minimal-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.ubsan_standalone-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.ubsan_standalone-x86_64.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.ubsan_standalone_cxx-i386.a
+ +OLD_FILES+=usr/lib/clang/8.0.1/lib/freebsd/libclang_rt.ubsan_standalone_cxx-x86_64.a
+ +OLD_DIRS+=usr/lib/clang/8.0.1/lib/freebsd
+ +OLD_DIRS+=usr/lib/clang/8.0.1/lib
+ +OLD_DIRS+=usr/lib/clang/8.0.1
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/cuda_wrappers/algorithm
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/cuda_wrappers/complex
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/cuda_wrappers/new
+ +OLD_DIRS+=usr/lib/clang/9.0.1/include/cuda_wrappers
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/openmp_wrappers/__clang_openmp_math.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/openmp_wrappers/__clang_openmp_math_declares.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/openmp_wrappers/cmath
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/openmp_wrappers/math.h
+ +OLD_DIRS+=usr/lib/clang/9.0.1/include/openmp_wrappers
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ppc_wrappers/emmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ppc_wrappers/mm_malloc.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ppc_wrappers/mmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ppc_wrappers/xmmintrin.h
+ +OLD_DIRS+=usr/lib/clang/9.0.1/include/ppc_wrappers
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/allocator_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/asan_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/common_interface_defs.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/coverage_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/dfsan_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/hwasan_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/linux_syscall_hooks.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/lsan_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/msan_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/netbsd_syscall_hooks.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/scudo_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/tsan_interface.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sanitizer/tsan_interface_atomic.h
+ +OLD_DIRS+=usr/lib/clang/9.0.1/include/sanitizer
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_builtin_vars.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_cmath.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_complex_builtins.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_device_functions.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_intrinsics.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_libdevice_declares.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_math_forward_declares.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__clang_cuda_runtime_wrapper.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__stddef_max_align_t.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__wmmintrin_aes.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/__wmmintrin_pclmul.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/adxintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/altivec.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ammintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/arm64intr.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/arm_acle.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/arm_fp16.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/arm_neon.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/armintr.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx2intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512bf16intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512bitalgintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512bwintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512cdintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512dqintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512erintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512fintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512ifmaintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512ifmavlintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512pfintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vbmi2intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vbmiintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vbmivlintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlbf16intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlbitalgintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlbwintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlcdintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vldqintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlvbmi2intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlvnniintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vlvp2intersectintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vnniintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vp2intersectintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vpopcntdqintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avx512vpopcntdqvlintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/avxintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/bmi2intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/bmiintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/cetintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/cldemoteintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/clflushoptintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/clwbintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/clzerointrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/cpuid.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/emmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/enqcmdintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/f16cintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/float.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/fma4intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/fmaintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/fxsrintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/gfniintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/htmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/htmxlintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ia32intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/immintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/inttypes.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/invpcidintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/iso646.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/limits.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/lwpintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/lzcntintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/mm3dnow.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/mm_malloc.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/mmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/module.modulemap
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/movdirintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/msa.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/mwaitxintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/nmmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/opencl-c-base.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/opencl-c.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/pconfigintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/pkuintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/pmmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/popcntintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/prfchwintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/ptwriteintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/rdseedintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/rtmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/s390intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/sgxintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/shaintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/smmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stdalign.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stdarg.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stdatomic.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stdbool.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stddef.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stdint.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/stdnoreturn.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/tbmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/tgmath.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/tmmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/unwind.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/vadefs.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/vaesintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/varargs.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/vecintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/vpclmulqdqintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/waitpkgintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/wbnoinvdintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/wmmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/x86intrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xmmintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xopintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xsavecintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xsaveintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xsaveoptintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xsavesintrin.h
+ +OLD_FILES+=usr/lib/clang/9.0.1/include/xtestintrin.h
+ +OLD_DIRS+=usr/lib/clang/9.0.1/include
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-aarch64.so
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-arm.so
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-armhf.so
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-i386.so
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-preinit-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-preinit-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-preinit-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-preinit-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-preinit-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan-x86_64.so
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan_cxx-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan_cxx-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan_cxx-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan_cxx-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.asan_cxx-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi_diag-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi_diag-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi_diag-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi_diag-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.cfi_diag-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.dd-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.dd-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.fuzzer-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.fuzzer-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.fuzzer_no_main-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.fuzzer_no_main-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.msan-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.msan-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.msan_cxx-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.msan_cxx-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-powerpc.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-powerpc64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.profile-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.safestack-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.safestack-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.safestack-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats_client-aarch64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats_client-arm.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats_client-armhf.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats_client-i386.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.stats_client-x86_64.a
+ +OLD_FILES+=usr/lib/clang/9.0.1/lib/freebsd/libclang_rt.tsan-aarch64.a
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   UPDATING
+	modified:   contrib/llvm-project/FREEBSD-Xlist
+	modified:   contrib/llvm-project/clang/include/clang/AST/DeclBase.h
+	modified:   contrib/llvm-project/clang/include/clang/Basic/Attr.td
+	modified:   contrib/llvm-project/clang/include/clang/Driver/Options.td
+	modified:   contrib/llvm-project/clang/lib/AST/DeclBase.cpp
+	modified:   contrib/llvm-project/clang/lib/AST/ExprConstant.cpp
+	modified:   contrib/llvm-project/clang/lib/AST/RawCommentList.cpp
+	modified:   contrib/llvm-project/clang/lib/Basic/Targets/PPC.h
+	modified:   contrib/llvm-project/clang/lib/CodeGen/CodeGenModule.cpp
+	modified:   contrib/llvm-project/clang/lib/CodeGen/TargetInfo.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/SanitizerArgs.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChain.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Arch/RISCV.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Arch/X86.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Clang.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Darwin.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Gnu.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Gnu.h
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Hurd.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Hurd.h
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Linux.cpp
+	modified:   contrib/llvm-project/clang/lib/Driver/ToolChains/Linux.h
+	modified:   contrib/llvm-project/clang/lib/Format/TokenAnnotator.cpp
+	modified:   contrib/llvm-project/clang/lib/Frontend/CompilerInvocation.cpp
+	modified:   contrib/llvm-project/clang/lib/Sema/SemaTemplate.cpp
+	modified:   contrib/llvm-project/clang/lib/Sema/SemaTemplateInstantiate.cpp
+	modified:   contrib/llvm-project/clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
+	modified:   contrib/llvm-project/clang/lib/Sema/TreeTransform.h
+	modified:   contrib/llvm-project/clang/lib/Tooling/Syntax/Tokens.cpp
+	modified:   contrib/llvm-project/clang/utils/TableGen/ClangAttrEmitter.cpp
+	new file:   contrib/llvm-project/compiler-rt/lib/builtins/riscv/int_mul_impl.inc
+	new file:   contrib/llvm-project/compiler-rt/lib/builtins/riscv/muldi3.S
+	modified:   contrib/llvm-project/compiler-rt/lib/builtins/riscv/mulsi3.S
+	modified:   contrib/llvm-project/compiler-rt/lib/profile/GCDAProfiling.c
+	modified:   contrib/llvm-project/libcxx/include/array
+	modified:   contrib/llvm-project/lld/COFF/Chunks.h
+	modified:   contrib/llvm-project/lld/COFF/DLL.cpp
+	modified:   contrib/llvm-project/lld/COFF/MarkLive.cpp
+	modified:   contrib/llvm-project/lld/ELF/Driver.cpp
+	modified:   contrib/llvm-project/lld/ELF/InputSection.cpp
+	modified:   contrib/llvm-project/lld/ELF/InputSection.h
+	modified:   contrib/llvm-project/lld/ELF/OutputSections.cpp
+	modified:   contrib/llvm-project/lld/ELF/ScriptLexer.cpp
+	modified:   contrib/llvm-project/lld/ELF/ScriptParser.cpp
+	modified:   contrib/llvm-project/lld/ELF/Writer.cpp
+	modified:   contrib/llvm-project/lldb/include/lldb/lldb-enumerations.h
+	modified:   contrib/llvm-project/lldb/source/Core/CoreProperties.td
+	modified:   contrib/llvm-project/llvm/include/llvm/Analysis/ValueLattice.h
+	renamed:    contrib/llvm-project/llvm/lib/Target/Hexagon/RDFGraph.h -> contrib/llvm-project/llvm/include/llvm/CodeGen/RDFGraph.h
+	renamed:    contrib/llvm-project/llvm/lib/Target/Hexagon/RDFLiveness.h -> contrib/llvm-project/llvm/include/llvm/CodeGen/RDFLiveness.h
+	renamed:    contrib/llvm-project/llvm/lib/Target/Hexagon/RDFRegisters.h -> contrib/llvm-project/llvm/include/llvm/CodeGen/RDFRegisters.h
+	modified:   contrib/llvm-project/llvm/include/llvm/DebugInfo/CodeView/GlobalTypeTableBuilder.h
+	modified:   contrib/llvm-project/llvm/include/llvm/IR/IntrinsicsPowerPC.td
+	modified:   contrib/llvm-project/llvm/include/llvm/Support/AArch64TargetParser.def
+	modified:   contrib/llvm-project/llvm/include/llvm/Support/ManagedStatic.h
+	modified:   contrib/llvm-project/llvm/include/llvm/Target/TargetSelectionDAG.td
+	modified:   contrib/llvm-project/llvm/lib/Analysis/LazyValueInfo.cpp
+	modified:   contrib/llvm-project/llvm/lib/Analysis/ValueLattice.cpp
+	modified:   contrib/llvm-project/llvm/lib/CodeGen/BranchFolding.cpp
+	modified:   contrib/llvm-project/llvm/lib/CodeGen/MachineSink.cpp
+	renamed:    contrib/llvm-project/llvm/lib/Target/Hexagon/RDFGraph.cpp -> contrib/llvm-project/llvm/lib/CodeGen/RDFGraph.cpp
+	renamed:    contrib/llvm-project/llvm/lib/Target/Hexagon/RDFLiveness.cpp -> contrib/llvm-project/llvm/lib/CodeGen/RDFLiveness.cpp
+	renamed:    contrib/llvm-project/llvm/lib/Target/Hexagon/RDFRegisters.cpp -> contrib/llvm-project/llvm/lib/CodeGen/RDFRegisters.cpp
+	modified:   contrib/llvm-project/llvm/lib/CodeGen/SelectionDAG/DAGCombiner.cpp
+	modified:   contrib/llvm-project/llvm/lib/CodeGen/SelectionDAG/FastISel.cpp
+	modified:   contrib/llvm-project/llvm/lib/CodeGen/SelectionDAG/LegalizeIntegerTypes.cpp
+	modified:   contrib/llvm-project/llvm/lib/CodeGen/SelectionDAG/TargetLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp
+	modified:   contrib/llvm-project/llvm/lib/DebugInfo/CodeView/TypeStreamMerger.cpp
+	modified:   contrib/llvm-project/llvm/lib/DebugInfo/PDB/Native/TpiStreamBuilder.cpp
+	modified:   contrib/llvm-project/llvm/lib/LTO/LTO.cpp
+	modified:   contrib/llvm-project/llvm/lib/MC/MCObjectFileInfo.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64BranchTargets.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64FrameLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedA53.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedA57.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedCyclone.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedExynosM3.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedExynosM4.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedExynosM5.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedFalkor.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedKryo.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedThunderX.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedThunderX2T99.td
+	new file:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedThunderX3T110.td
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64Subtarget.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/AArch64/AArch64Subtarget.h
+	modified:   contrib/llvm-project/llvm/lib/Target/ARM/MCTargetDesc/ARMAsmBackend.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/BPF/BPFISelDAGToDAG.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/BPF/BPFMISimplifyPatchable.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/BPF/BTFDebug.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/Hexagon/HexagonOptAddrMode.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/Hexagon/HexagonRDFOpt.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/Hexagon/RDFCopy.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/Hexagon/RDFCopy.h
+	modified:   contrib/llvm-project/llvm/lib/Target/Hexagon/RDFDeadCode.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/Hexagon/RDFDeadCode.h
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/P9InstrResources.td
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPC.td
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCAsmPrinter.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCISelLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCISelLowering.h
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCInstrAltivec.td
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCInstrInfo.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCInstrVSX.td
+	modified:   contrib/llvm-project/llvm/lib/Target/PowerPC/PPCSubtarget.h
+	modified:   contrib/llvm-project/llvm/lib/Target/RISCV/RISCVFrameLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+	new file:   contrib/llvm-project/llvm/lib/Target/X86/ImmutableGraph.h
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86.h
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86.td
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86AsmPrinter.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86FastISel.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86FrameLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86ISelDAGToDAG.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86ISelLowering.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86ISelLowering.h
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86IndirectBranchTracking.cpp
+	new file:   contrib/llvm-project/llvm/lib/Target/X86/X86IndirectThunks.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86InstrCompiler.td
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86InstrControl.td
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86InstrInfo.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86InstrInfo.td
+	new file:   contrib/llvm-project/llvm/lib/Target/X86/X86LoadValueInjectionLoadHardening.cpp
+	new file:   contrib/llvm-project/llvm/lib/Target/X86/X86LoadValueInjectionRetHardening.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86MCInstLower.cpp
+	deleted:    contrib/llvm-project/llvm/lib/Target/X86/X86RetpolineThunks.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86Subtarget.h
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86TargetMachine.cpp
+	modified:   contrib/llvm-project/llvm/lib/Target/X86/X86TargetMachine.h
+	modified:   contrib/llvm-project/llvm/lib/Transforms/Coroutines/CoroSplit.cpp
+	modified:   contrib/llvm-project/llvm/lib/Transforms/IPO/GlobalOpt.cpp
+	modified:   contrib/llvm-project/llvm/lib/Transforms/InstCombine/InstCombineAddSub.cpp
+	modified:   contrib/llvm-project/llvm/lib/Transforms/Instrumentation/GCOVProfiling.cpp
+	modified:   contrib/llvm-project/llvm/lib/Transforms/Scalar/IndVarSimplify.cpp
+	modified:   contrib/llvm-project/llvm/lib/Transforms/Scalar/SimplifyCFGPass.cpp
+	modified:   contrib/llvm-project/llvm/lib/Transforms/Utils/ValueMapper.cpp
+	new file:   contrib/llvm-project/llvm/tools/llvm-dwp/DWPError.cpp
+	new file:   contrib/llvm-project/llvm/tools/llvm-dwp/DWPError.h
+	new file:   contrib/llvm-project/llvm/tools/llvm-dwp/DWPStringPool.h
+	new file:   contrib/llvm-project/llvm/tools/llvm-dwp/llvm-dwp.cpp
+	modified:   contrib/llvm-project/llvm/tools/llvm-objcopy/ELF/Object.cpp
+	modified:   contrib/llvm-project/llvm/tools/llvm-objcopy/llvm-objcopy.cpp
+	new file:   contrib/llvm-project/llvm/tools/llvm-size/llvm-size.cpp
+	new file:   contrib/llvm-project/llvm/tools/llvm-strings/llvm-strings.cpp
+	modified:   etc/mtree/BSD.debug.dist
+	modified:   etc/mtree/BSD.usr.dist
+	modified:   lib/clang/freebsd_cc_version.h
+	modified:   lib/clang/headers/Makefile
+	modified:   lib/clang/include/VCSVersion.inc
+	modified:   lib/clang/include/clang/Basic/Version.inc
+	modified:   lib/clang/include/clang/Config/config.h
+	modified:   lib/clang/include/lld/Common/Version.inc
+	modified:   lib/clang/include/lldb/Host/Config.h
+	modified:   lib/clang/include/llvm/Config/config.h
+	modified:   lib/clang/include/llvm/Config/llvm-config.h
+	modified:   lib/clang/include/llvm/Support/VCSRevision.h
+	modified:   lib/clang/libclang/Makefile
+	new file:   lib/clang/liblldb/LLDBWrapLua.cpp
+	modified:   lib/clang/liblldb/Makefile
+	modified:   lib/clang/libllvm/Makefile
+	modified:   lib/libclang_rt/Makefile.inc
+	modified:   sbin/mount_nfs/mount_nfs.8
+	modified:   share/man/man4/iwm.4
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/zfs_ctldir.c
+	modified:   sys/geom/eli/g_eli.c
+	modified:   sys/net/if_bridge.c
+	modified:   sys/sys/param.h
+	modified:   targets/pseudo/clang/Makefile.depend
+	modified:   tests/sys/geom/class/eli/Makefile
+	new file:   tests/sys/geom/class/eli/reentrancy_test.sh
+	new file:   tools/build/options/WITH_CLANG_FORMAT
+	modified:   usr.bin/clang/Makefile
+	modified:   usr.bin/clang/bugpoint/bugpoint.1
+	modified:   usr.bin/clang/clang/clang.1
+	modified:   usr.bin/clang/llc/llc.1
+	modified:   usr.bin/clang/lldb/Makefile
+	modified:   usr.bin/clang/lldb/lldb.1
+	modified:   usr.bin/clang/lli/lli.1
+	modified:   usr.bin/clang/llvm-ar/Makefile
+	modified:   usr.bin/clang/llvm-ar/llvm-ar.1
+	new file:   usr.bin/clang/llvm-ar/llvm-ranlib.1
+	modified:   usr.bin/clang/llvm-as/llvm-as.1
+	modified:   usr.bin/clang/llvm-bcanalyzer/llvm-bcanalyzer.1
+	modified:   usr.bin/clang/llvm-cov/llvm-cov.1
+	modified:   usr.bin/clang/llvm-cxxfilt/Makefile
+	new file:   usr.bin/clang/llvm-cxxfilt/llvm-cxxfilt.1
+	modified:   usr.bin/clang/llvm-diff/llvm-diff.1
+	modified:   usr.bin/clang/llvm-dis/llvm-dis.1
+	modified:   usr.bin/clang/llvm-dwarfdump/llvm-dwarfdump.1
+	new file:   usr.bin/clang/llvm-dwp/Makefile
+	modified:   usr.bin/clang/llvm-extract/llvm-extract.1
+	modified:   usr.bin/clang/llvm-link/llvm-link.1
+	modified:   usr.bin/clang/llvm-mca/llvm-mca.1
+	modified:   usr.bin/clang/llvm-nm/llvm-nm.1
+	modified:   usr.bin/clang/llvm-objcopy/Makefile
+	new file:   usr.bin/clang/llvm-objcopy/llvm-objcopy.1
+	modified:   usr.bin/clang/llvm-objdump/llvm-objdump.1
+	modified:   usr.bin/clang/llvm-pdbutil/llvm-pdbutil.1
+	modified:   usr.bin/clang/llvm-profdata/llvm-profdata.1
+	new file:   usr.bin/clang/llvm-size/Makefile
+	new file:   usr.bin/clang/llvm-size/llvm-size.1
+	new file:   usr.bin/clang/llvm-strings/Makefile
+	new file:   usr.bin/clang/llvm-strings/llvm-strings.1
+	modified:   usr.bin/clang/llvm-symbolizer/Makefile
+	new file:   usr.bin/clang/llvm-symbolizer/llvm-addr2line.1
+	modified:   usr.bin/clang/llvm-symbolizer/llvm-symbolizer.1
+	modified:   usr.bin/clang/llvm-tblgen/llvm-tblgen.1
+	modified:   usr.bin/clang/opt/opt.1
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   Makefile.inc1
+	both modified:   share/mk/src.opts.mk
+	both modified:   targets/pseudo/bootstrap-tools/Makefile
+	both modified:   tools/build/mk/OptionalObsoleteFiles.inc
+
+HEAD is now at 99b2a3df8c14 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 99b2a3df8c14 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
