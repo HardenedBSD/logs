@@ -1,0 +1,331 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 17 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 99b2a3df8c14..cef0375246a2
+Fast-forward
+ Makefile.inc1                                      |    11 +-
+ ObsoleteFiles.inc                                  |   252 +-
+ UPDATING                                           |     6 +
+ bin/csh/csh.login                                  |     3 -
+ bin/csh/dot.cshrc                                  |     1 -
+ bin/sh/parser.c                                    |    83 +-
+ bin/sh/profile                                     |     4 -
+ bin/sh/sh.1                                        |     2 +
+ contrib/ipfilter/man/ipfstat.8                     |    10 +-
+ contrib/ipfilter/tools/ipfstat.c                   |    77 +-
+ contrib/llvm-project/FREEBSD-Xlist                 |    12 +-
+ .../clang/include/clang/AST/DeclBase.h             |     9 +-
+ .../llvm-project/clang/include/clang/Basic/Attr.td |     2 +-
+ .../clang/include/clang/Driver/Options.td          |    14 +
+ contrib/llvm-project/clang/lib/AST/DeclBase.cpp    |     5 +-
+ .../llvm-project/clang/lib/AST/ExprConstant.cpp    |    23 +-
+ .../llvm-project/clang/lib/AST/RawCommentList.cpp  |     2 +-
+ contrib/llvm-project/clang/lib/Basic/Targets/PPC.h |     3 +-
+ .../clang/lib/CodeGen/CodeGenModule.cpp            |    11 +-
+ .../llvm-project/clang/lib/CodeGen/TargetInfo.cpp  |    85 +-
+ .../clang/lib/Driver/SanitizerArgs.cpp             |     3 +-
+ .../llvm-project/clang/lib/Driver/ToolChain.cpp    |     9 +-
+ .../clang/lib/Driver/ToolChains/Arch/RISCV.cpp     |     5 +-
+ .../clang/lib/Driver/ToolChains/Arch/X86.cpp       |    23 +
+ .../clang/lib/Driver/ToolChains/Clang.cpp          |    13 +
+ .../clang/lib/Driver/ToolChains/Darwin.cpp         |     1 +
+ .../clang/lib/Driver/ToolChains/Gnu.cpp            |    20 +-
+ .../llvm-project/clang/lib/Driver/ToolChains/Gnu.h |     6 +
+ .../clang/lib/Driver/ToolChains/Hurd.cpp           |     8 +-
+ .../clang/lib/Driver/ToolChains/Hurd.h             |     6 +-
+ .../clang/lib/Driver/ToolChains/Linux.cpp          |     5 +
+ .../clang/lib/Driver/ToolChains/Linux.h            |     4 +-
+ .../clang/lib/Format/TokenAnnotator.cpp            |    52 +-
+ .../clang/lib/Frontend/CompilerInvocation.cpp      |    13 +-
+ .../llvm-project/clang/lib/Sema/SemaTemplate.cpp   |     8 +-
+ .../clang/lib/Sema/SemaTemplateInstantiate.cpp     |     2 +-
+ .../clang/lib/Sema/SemaTemplateInstantiateDecl.cpp |     2 +-
+ .../llvm-project/clang/lib/Sema/TreeTransform.h    |    98 +-
+ .../clang/lib/Tooling/Syntax/Tokens.cpp            |   320 +-
+ .../clang/utils/TableGen/ClangAttrEmitter.cpp      |     3 +
+ .../lib/builtins/riscv/int_mul_impl.inc            |    31 +
+ .../compiler-rt/lib/builtins/riscv/muldi3.S        |    11 +
+ .../compiler-rt/lib/builtins/riscv/mulsi3.S        |    23 +-
+ .../compiler-rt/lib/profile/GCDAProfiling.c        |    54 +-
+ contrib/llvm-project/libcxx/include/array          |     2 +-
+ contrib/llvm-project/lld/COFF/Chunks.h             |    10 +-
+ contrib/llvm-project/lld/COFF/DLL.cpp              |    16 +-
+ contrib/llvm-project/lld/COFF/MarkLive.cpp         |     6 +-
+ contrib/llvm-project/lld/ELF/Driver.cpp            |    13 +-
+ contrib/llvm-project/lld/ELF/InputSection.cpp      |     3 +-
+ contrib/llvm-project/lld/ELF/InputSection.h        |     4 +
+ contrib/llvm-project/lld/ELF/OutputSections.cpp    |     8 +-
+ contrib/llvm-project/lld/ELF/ScriptLexer.cpp       |     6 +-
+ contrib/llvm-project/lld/ELF/ScriptParser.cpp      |     1 +
+ contrib/llvm-project/lld/ELF/Writer.cpp            |    27 +-
+ .../lldb/include/lldb/lldb-enumerations.h          |     2 +-
+ .../lldb/source/Core/CoreProperties.td             |     2 +-
+ .../llvm/include/llvm/Analysis/ValueLattice.h      |   162 +-
+ .../Hexagon => include/llvm/CodeGen}/RDFGraph.h    |     0
+ .../Hexagon => include/llvm/CodeGen}/RDFLiveness.h |     0
+ .../llvm/CodeGen}/RDFRegisters.h                   |     0
+ .../DebugInfo/CodeView/GlobalTypeTableBuilder.h    |     5 +
+ .../llvm/include/llvm/IR/IntrinsicsPowerPC.td      |     3 +
+ .../include/llvm/Support/AArch64TargetParser.def   |     4 +
+ .../llvm/include/llvm/Support/ManagedStatic.h      |     4 +-
+ .../llvm/include/llvm/Target/TargetSelectionDAG.td |     9 +
+ .../llvm/lib/Analysis/LazyValueInfo.cpp            |    12 +-
+ .../llvm/lib/Analysis/ValueLattice.cpp             |     6 +-
+ .../llvm/lib/CodeGen/BranchFolding.cpp             |    18 +-
+ .../llvm-project/llvm/lib/CodeGen/MachineSink.cpp  |    30 +-
+ .../lib/{Target/Hexagon => CodeGen}/RDFGraph.cpp   |    10 +-
+ .../{Target/Hexagon => CodeGen}/RDFLiveness.cpp    |     6 +-
+ .../{Target/Hexagon => CodeGen}/RDFRegisters.cpp   |     2 +-
+ .../llvm/lib/CodeGen/SelectionDAG/DAGCombiner.cpp  |    25 +-
+ .../llvm/lib/CodeGen/SelectionDAG/FastISel.cpp     |    17 +-
+ .../CodeGen/SelectionDAG/LegalizeIntegerTypes.cpp  |    14 +-
+ .../lib/CodeGen/SelectionDAG/TargetLowering.cpp    |    26 +-
+ .../DebugInfo/CodeView/MergingTypeTableBuilder.cpp |     4 +-
+ .../lib/DebugInfo/CodeView/TypeStreamMerger.cpp    |    24 +-
+ .../lib/DebugInfo/PDB/Native/TpiStreamBuilder.cpp  |    10 +-
+ contrib/llvm-project/llvm/lib/LTO/LTO.cpp          |    28 +-
+ .../llvm-project/llvm/lib/MC/MCObjectFileInfo.cpp  |    12 +-
+ .../llvm/lib/Target/AArch64/AArch64.td             |    26 +
+ .../lib/Target/AArch64/AArch64BranchTargets.cpp    |    12 +-
+ .../lib/Target/AArch64/AArch64FrameLowering.cpp    |   101 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedA53.td     |     3 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedA57.td     |     3 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedCyclone.td |     3 +-
+ .../lib/Target/AArch64/AArch64SchedExynosM3.td     |     3 +-
+ .../lib/Target/AArch64/AArch64SchedExynosM4.td     |     3 +-
+ .../lib/Target/AArch64/AArch64SchedExynosM5.td     |     3 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedFalkor.td  |     4 +-
+ .../llvm/lib/Target/AArch64/AArch64SchedKryo.td    |     4 +-
+ .../lib/Target/AArch64/AArch64SchedThunderX.td     |     4 +-
+ .../lib/Target/AArch64/AArch64SchedThunderX2T99.td |     4 +-
+ .../Target/AArch64/AArch64SchedThunderX3T110.td    |  1997 +
+ .../llvm/lib/Target/AArch64/AArch64Subtarget.cpp   |    11 +
+ .../llvm/lib/Target/AArch64/AArch64Subtarget.h     |     3 +-
+ .../lib/Target/ARM/MCTargetDesc/ARMAsmBackend.cpp  |    20 +-
+ .../llvm/lib/Target/BPF/BPFISelDAGToDAG.cpp        |     2 +-
+ .../llvm/lib/Target/BPF/BPFMISimplifyPatchable.cpp |    13 +-
+ .../llvm-project/llvm/lib/Target/BPF/BTFDebug.cpp  |    32 +
+ .../llvm/lib/Target/Hexagon/HexagonOptAddrMode.cpp |     6 +-
+ .../llvm/lib/Target/Hexagon/HexagonRDFOpt.cpp      |     6 +-
+ .../llvm/lib/Target/Hexagon/RDFCopy.cpp            |     6 +-
+ .../llvm-project/llvm/lib/Target/Hexagon/RDFCopy.h |     6 +-
+ .../llvm/lib/Target/Hexagon/RDFDeadCode.cpp        |     4 +-
+ .../llvm/lib/Target/Hexagon/RDFDeadCode.h          |     4 +-
+ .../llvm/lib/Target/PowerPC/P9InstrResources.td    |     1 +
+ .../llvm-project/llvm/lib/Target/PowerPC/PPC.td    |     6 +-
+ .../llvm/lib/Target/PowerPC/PPCAsmPrinter.cpp      |     7 +-
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.cpp    |    37 +-
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.h      |     2 +-
+ .../llvm/lib/Target/PowerPC/PPCInstrAltivec.td     |     4 +
+ .../llvm/lib/Target/PowerPC/PPCInstrInfo.cpp       |     4 +
+ .../llvm/lib/Target/PowerPC/PPCInstrVSX.td         |    17 +
+ .../llvm/lib/Target/PowerPC/PPCSubtarget.h         |     2 +
+ .../llvm/lib/Target/RISCV/RISCVFrameLowering.cpp   |     4 +-
+ .../llvm/lib/Target/RISCV/RISCVISelLowering.cpp    |    34 +
+ .../llvm/lib/Target/X86/ImmutableGraph.h           |   446 +
+ contrib/llvm-project/llvm/lib/Target/X86/X86.h     |     8 +-
+ contrib/llvm-project/llvm/lib/Target/X86/X86.td    |    16 +
+ .../llvm/lib/Target/X86/X86AsmPrinter.cpp          |    46 +-
+ .../llvm/lib/Target/X86/X86FastISel.cpp            |     4 +-
+ .../llvm/lib/Target/X86/X86FrameLowering.cpp       |    10 +-
+ .../llvm/lib/Target/X86/X86ISelDAGToDAG.cpp        |     2 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.cpp        |   110 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.h          |     4 +-
+ .../lib/Target/X86/X86IndirectBranchTracking.cpp   |    34 +-
+ .../llvm/lib/Target/X86/X86IndirectThunks.cpp      |   364 +
+ .../llvm/lib/Target/X86/X86InstrCompiler.td        |    16 +-
+ .../llvm/lib/Target/X86/X86InstrControl.td         |    22 +-
+ .../llvm/lib/Target/X86/X86InstrInfo.cpp           |     2 +
+ .../llvm/lib/Target/X86/X86InstrInfo.td            |     4 +-
+ .../X86/X86LoadValueInjectionLoadHardening.cpp     |   900 +
+ .../X86/X86LoadValueInjectionRetHardening.cpp      |   143 +
+ .../llvm/lib/Target/X86/X86MCInstLower.cpp         |     8 +-
+ .../llvm/lib/Target/X86/X86RetpolineThunks.cpp     |   286 -
+ .../llvm/lib/Target/X86/X86Subtarget.h             |    27 +-
+ .../llvm/lib/Target/X86/X86TargetMachine.cpp       |    11 +-
+ .../llvm/lib/Target/X86/X86TargetMachine.h         |     4 +
+ .../llvm/lib/Transforms/Coroutines/CoroSplit.cpp   |     5 +-
+ .../llvm/lib/Transforms/IPO/GlobalOpt.cpp          |    16 +-
+ .../Transforms/InstCombine/InstCombineAddSub.cpp   |     2 +-
+ .../Transforms/Instrumentation/GCOVProfiling.cpp   |   140 +-
+ .../llvm/lib/Transforms/Scalar/IndVarSimplify.cpp  |    94 +-
+ .../llvm/lib/Transforms/Scalar/SimplifyCFGPass.cpp |    15 +
+ .../llvm/lib/Transforms/Utils/ValueMapper.cpp      |     3 +-
+ .../llvm-project/llvm/tools/llvm-dwp/DWPError.cpp  |     3 +
+ .../llvm-project/llvm/tools/llvm-dwp/DWPError.h    |    23 +
+ .../llvm/tools/llvm-dwp/DWPStringPool.h            |    56 +
+ .../llvm-project/llvm/tools/llvm-dwp/llvm-dwp.cpp  |   749 +
+ .../llvm/tools/llvm-objcopy/ELF/Object.cpp         |    19 +-
+ .../llvm/tools/llvm-objcopy/llvm-objcopy.cpp       |    24 +-
+ .../llvm/tools/llvm-size/llvm-size.cpp             |   894 +
+ .../llvm/tools/llvm-strings/llvm-strings.cpp       |   120 +
+ etc/mtree/BSD.debug.dist                           |     2 +-
+ etc/mtree/BSD.usr.dist                             |     2 +-
+ lib/clang/freebsd_cc_version.h                     |     2 +-
+ lib/clang/headers/Makefile                         |     2 +-
+ lib/clang/include/VCSVersion.inc                   |     8 +-
+ lib/clang/include/clang/Basic/Version.inc          |     6 +-
+ lib/clang/include/clang/Config/config.h            |     2 +-
+ lib/clang/include/lld/Common/Version.inc           |     4 +-
+ lib/clang/include/lldb/Host/Config.h               |     2 +-
+ lib/clang/include/llvm/Config/config.h             |     4 +-
+ lib/clang/include/llvm/Config/llvm-config.h        |     4 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |     2 +-
+ lib/clang/libclang/Makefile                        |     4 +-
+ lib/clang/liblldb/LLDBWrapLua.cpp                  | 71334 +++++++++++++++++++
+ lib/clang/liblldb/Makefile                         |    18 +
+ lib/clang/libllvm/Makefile                         |     7 +-
+ lib/libc/amd64/string/memcmp.S                     |   223 +-
+ lib/libclang_rt/Makefile.inc                       |     2 +-
+ sbin/mount_nfs/mount_nfs.8                         |    11 +-
+ share/man/man4/iwm.4                               |     6 +
+ share/mk/src.opts.mk                               |     2 +
+ share/skel/dot.cshrc                               |     1 -
+ share/skel/dot.profile                             |     4 +-
+ share/skel/dot.shrc                                |     8 +-
+ sys/amd64/amd64/pmap.c                             |    42 +-
+ sys/amd64/amd64/support.S                          |   241 +-
+ .../opensolaris/uts/common/fs/zfs/sys/zfs_acl.h    |     3 +
+ .../opensolaris/uts/common/fs/zfs/zfs_acl.c        |    35 +
+ .../opensolaris/uts/common/fs/zfs/zfs_ctldir.c     |     3 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |     5 +
+ sys/fs/devfs/devfs_devs.c                          |     3 +
+ sys/fs/devfs/devfs_int.h                           |     2 +
+ sys/geom/eli/g_eli.c                               |     3 +
+ sys/kern/kern_conf.c                               |    20 +-
+ sys/kern/kern_thread.c                             |     8 +
+ sys/kern/subr_witness.c                            |     1 +
+ sys/kern/vfs_cache.c                               |   378 +-
+ sys/net/if_bridge.c                                |    46 +-
+ sys/sys/param.h                                    |     2 +-
+ targets/pseudo/bootstrap-tools/Makefile            |     2 +-
+ targets/pseudo/clang/Makefile.depend               |     5 +-
+ tests/sys/geom/class/eli/Makefile                  |     1 +
+ tests/sys/geom/class/eli/reentrancy_test.sh        |    69 +
+ tools/build/mk/OptionalObsoleteFiles.inc           |   952 +-
+ tools/build/options/WITH_CLANG_FORMAT              |     2 +
+ usr.bin/clang/Makefile                             |     8 +-
+ usr.bin/clang/bugpoint/bugpoint.1                  |     8 +-
+ usr.bin/clang/clang/clang.1                        |    37 +-
+ usr.bin/clang/llc/llc.1                            |    34 +-
+ usr.bin/clang/lldb/Makefile                        |     1 +
+ usr.bin/clang/lldb/lldb.1                          |    72 +-
+ usr.bin/clang/lli/lli.1                            |     9 +-
+ usr.bin/clang/llvm-ar/Makefile                     |     1 +
+ usr.bin/clang/llvm-ar/llvm-ar.1                    |   530 +-
+ usr.bin/clang/llvm-ar/llvm-ranlib.1                |    52 +
+ usr.bin/clang/llvm-as/llvm-as.1                    |     8 +-
+ usr.bin/clang/llvm-bcanalyzer/llvm-bcanalyzer.1    |     8 +-
+ usr.bin/clang/llvm-cov/llvm-cov.1                  |    60 +-
+ usr.bin/clang/llvm-cxxfilt/Makefile                |     1 -
+ usr.bin/clang/llvm-cxxfilt/llvm-cxxfilt.1          |   117 +
+ usr.bin/clang/llvm-diff/llvm-diff.1                |     6 +-
+ usr.bin/clang/llvm-dis/llvm-dis.1                  |     8 +-
+ usr.bin/clang/llvm-dwarfdump/llvm-dwarfdump.1      |    90 +-
+ usr.bin/clang/llvm-dwp/Makefile                    |    12 +
+ usr.bin/clang/llvm-extract/llvm-extract.1          |     8 +-
+ usr.bin/clang/llvm-link/llvm-link.1                |     8 +-
+ usr.bin/clang/llvm-mca/llvm-mca.1                  |   529 +-
+ usr.bin/clang/llvm-nm/llvm-nm.1                    |   278 +-
+ usr.bin/clang/llvm-objcopy/Makefile                |     1 -
+ usr.bin/clang/llvm-objcopy/llvm-objcopy.1          |   721 +
+ usr.bin/clang/llvm-objdump/llvm-objdump.1          |     7 +-
+ usr.bin/clang/llvm-pdbutil/llvm-pdbutil.1          |     6 +-
+ usr.bin/clang/llvm-profdata/llvm-profdata.1        |   104 +-
+ usr.bin/clang/llvm-size/Makefile                   |     8 +
+ usr.bin/clang/llvm-size/llvm-size.1                |   275 +
+ usr.bin/clang/llvm-strings/Makefile                |     8 +
+ usr.bin/clang/llvm-strings/llvm-strings.1          |   179 +
+ usr.bin/clang/llvm-symbolizer/Makefile             |     3 +
+ usr.bin/clang/llvm-symbolizer/llvm-addr2line.1     |    66 +
+ usr.bin/clang/llvm-symbolizer/llvm-symbolizer.1    |   459 +-
+ usr.bin/clang/llvm-tblgen/llvm-tblgen.1            |    11 +-
+ usr.bin/clang/opt/opt.1                            |     6 +-
+ 238 files changed, 83301 insertions(+), 2818 deletions(-)
+ create mode 100644 contrib/llvm-project/compiler-rt/lib/builtins/riscv/int_mul_impl.inc
+ create mode 100644 contrib/llvm-project/compiler-rt/lib/builtins/riscv/muldi3.S
+ rename contrib/llvm-project/llvm/{lib/Target/Hexagon => include/llvm/CodeGen}/RDFGraph.h (100%)
+ rename contrib/llvm-project/llvm/{lib/Target/Hexagon => include/llvm/CodeGen}/RDFLiveness.h (100%)
+ rename contrib/llvm-project/llvm/{lib/Target/Hexagon => include/llvm/CodeGen}/RDFRegisters.h (100%)
+ rename contrib/llvm-project/llvm/lib/{Target/Hexagon => CodeGen}/RDFGraph.cpp (99%)
+ rename contrib/llvm-project/llvm/lib/{Target/Hexagon => CodeGen}/RDFLiveness.cpp (99%)
+ rename contrib/llvm-project/llvm/lib/{Target/Hexagon => CodeGen}/RDFRegisters.cpp (99%)
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/AArch64/AArch64SchedThunderX3T110.td
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/ImmutableGraph.h
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86IndirectThunks.cpp
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86LoadValueInjectionLoadHardening.cpp
+ create mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86LoadValueInjectionRetHardening.cpp
+ delete mode 100644 contrib/llvm-project/llvm/lib/Target/X86/X86RetpolineThunks.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/DWPError.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/DWPError.h
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/DWPStringPool.h
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-dwp/llvm-dwp.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-size/llvm-size.cpp
+ create mode 100644 contrib/llvm-project/llvm/tools/llvm-strings/llvm-strings.cpp
+ create mode 100644 lib/clang/liblldb/LLDBWrapLua.cpp
+ create mode 100755 tests/sys/geom/class/eli/reentrancy_test.sh
+ create mode 100644 tools/build/options/WITH_CLANG_FORMAT
+ create mode 100644 usr.bin/clang/llvm-ar/llvm-ranlib.1
+ create mode 100644 usr.bin/clang/llvm-cxxfilt/llvm-cxxfilt.1
+ create mode 100644 usr.bin/clang/llvm-dwp/Makefile
+ create mode 100644 usr.bin/clang/llvm-objcopy/llvm-objcopy.1
+ create mode 100644 usr.bin/clang/llvm-size/Makefile
+ create mode 100644 usr.bin/clang/llvm-size/llvm-size.1
+ create mode 100644 usr.bin/clang/llvm-strings/Makefile
+ create mode 100644 usr.bin/clang/llvm-strings/llvm-strings.1
+ create mode 100644 usr.bin/clang/llvm-symbolizer/llvm-addr2line.1
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: hardened/12-stable/master ====
