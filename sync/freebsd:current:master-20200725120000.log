@@ -1,0 +1,114 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 046d7a8e66cb..c47144815373
+Fast-forward
+ share/man/man9/swi.9                               |  11 +-
+ sys/amd64/amd64/apic_vector.S                      |  10 +
+ sys/amd64/amd64/mp_machdep.c                       |   4 +
+ sys/amd64/include/smp.h                            |   1 +
+ sys/cddl/compat/opensolaris/kern/opensolaris_vfs.c |   3 +
+ .../opensolaris/uts/common/fs/zfs/sys/zfs_znode.h  |   2 +
+ .../opensolaris/uts/common/fs/zfs/zfs_acl.c        |   3 +
+ .../opensolaris/uts/common/fs/zfs/zfs_vfsops.c     |   3 +
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |  49 ++
+ .../opensolaris/uts/common/fs/zfs/zfs_znode.c      | 100 ++-
+ sys/conf/files.x86                                 |   2 +-
+ .../iommu/intel_gas.c => dev/iommu/iommu_gas.c}    |   0
+ sys/fs/tmpfs/tmpfs.h                               |   3 +
+ sys/fs/tmpfs/tmpfs_subr.c                          |  22 +-
+ sys/fs/tmpfs/tmpfs_vfsops.c                        |   2 +
+ sys/fs/tmpfs/tmpfs_vnops.c                         |  57 +-
+ sys/fs/tmpfs/tmpfs_vnops.h                         |   1 +
+ sys/i386/i386/apic_vector.s                        |  17 +
+ sys/i386/i386/mp_machdep.c                         |   4 +
+ sys/kern/kern_clock.c                              |   1 +
+ sys/kern/kern_descrip.c                            |  29 +-
+ sys/kern/kern_intr.c                               |  34 +-
+ sys/kern/vfs_cache.c                               | 868 +++++++++++++++++++++
+ sys/kern/vfs_lookup.c                              | 251 +++---
+ sys/kern/vfs_mount.c                               |  55 +-
+ sys/kern/vfs_subr.c                                | 427 +++++++++-
+ sys/kern/vnode_if.src                              |  25 +
+ sys/security/mac/mac_framework.h                   |   3 +-
+ sys/sys/_seqc.h                                    |  11 +
+ sys/sys/filedesc.h                                 |   1 +
+ sys/sys/interrupt.h                                |   4 +-
+ sys/sys/mount.h                                    |   1 +
+ sys/sys/namei.h                                    |   6 +
+ sys/sys/seqc.h                                     |  51 +-
+ sys/sys/vnode.h                                    |  56 ++
+ sys/ufs/ffs/ffs_vfsops.c                           |  22 +-
+ sys/ufs/ffs/ffs_vnops.c                            |   8 +-
+ sys/ufs/ufs/inode.h                                |  10 +
+ sys/ufs/ufs/ufs_acl.c                              |  13 +-
+ sys/ufs/ufs/ufs_vnops.c                            | 101 ++-
+ sys/x86/include/apicvar.h                          |   3 +-
+ sys/x86/include/x86_smp.h                          |   2 +
+ sys/x86/x86/mp_x86.c                               |  11 +
+ sys/x86/xen/xen_apic.c                             |  11 +
+ 44 files changed, 2065 insertions(+), 233 deletions(-)
+ rename sys/{x86/iommu/intel_gas.c => dev/iommu/iommu_gas.c} (100%)
+ create mode 100644 sys/sys/_seqc.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    046d7a8e66cb..c47144815373  freebsd/current/master -> freebsd/current/master        
+remote:    e00369fe4456..b45a701b025d  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   046d7a8e66cb..c47144815373  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
