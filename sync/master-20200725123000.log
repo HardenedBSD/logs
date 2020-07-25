@@ -47,3 +47,607 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/mattermost-server/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+Removing sysutils/nomad/files/patch-vendor_github.com_docker_docker_pkg_mount_mountinfo__freebsd.go
+Auto-merging security/softether/Makefile
+Auto-merging security/softether-devel/Makefile
+Auto-merging net/frr7/Makefile
+Removing net/dshell/pkg-plist
+Removing net/dshell/pkg-message
+Removing net/dshell/pkg-descr
+Removing net/dshell/files/patch-Makefile
+Removing net/dshell/distinfo
+Removing net/dshell/Makefile
+Auto-merging net/Makefile
+Removing math/suitesparse/files/patch-SLIP__LU_Source_slip__internal.h
+Removing math/suitesparse/files/patch-SLIP__LU_Lib_Makefile
+Auto-merging math/suitesparse/Makefile
+Removing mail/postfix-current/files/patch-src_tls_tls__certkey.c
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging graphics/netpbm/Makefile
+Removing devel/valgrind-devel/files/patch-include__vki__vki-freebsd.h
+Removing devel/valgrind-devel/files/patch-coregrind-m_syswrap-syswrap-amd64-freebsd.c
+Removing devel/valgrind-devel/files/patch-configure.ac
+Removing devel/valgrind-devel/files/patch-VEX_auxprogs_genoffsets.c
+Removing devel/valgrind-devel/files/missing_fcntls.patch
+Removing devel/valgrind-devel/files/kldload_syscalls.patch
+Removing devel/valgrind-devel/files/jail_syscalls.patch
+Removing devel/valgrind-devel/files/extra-patch-ino64
+Removing devel/valgrind-devel/files/accept4_syscall.patch
+Auto-merging devel/valgrind-devel/Makefile
+CONFLICT (content): Merge conflict in devel/valgrind-devel/Makefile
+Removing devel/rubygem-tty-prompt/files/patch-gemspec
+Auto-merging databases/rocksdb/Makefile
+Removing databases/postgresql94-server/pkg-plist-server
+Removing databases/postgresql94-server/pkg-plist-pltcl
+Removing databases/postgresql94-server/pkg-plist-plpython
+Removing databases/postgresql94-server/pkg-plist-plperl
+Removing databases/postgresql94-server/pkg-plist-contrib
+Removing databases/postgresql94-server/pkg-plist-client
+Removing databases/postgresql94-server/pkg-install-server
+Removing databases/postgresql94-server/pkg-descr
+Removing databases/postgresql94-server/files/postgresql.in
+Removing databases/postgresql94-server/files/pkgIndex.tcl.in
+Removing databases/postgresql94-server/files/pkg-message-server.in
+Removing databases/postgresql94-server/files/pkg-message-pltcl.in
+Removing databases/postgresql94-server/files/pkg-message-plpython.in
+Removing databases/postgresql94-server/files/pkg-message-plperl.in
+Removing databases/postgresql94-server/files/pkg-message-contrib.in
+Removing databases/postgresql94-server/files/pkg-message-client.in
+Removing databases/postgresql94-server/files/patch-src_backend_utils_misc_postgresql.conf.sample
+Removing databases/postgresql94-server/files/patch-src-backend-Makefile
+Removing databases/postgresql94-server/files/patch-src-Makefile.shlib
+Removing databases/postgresql94-server/files/patch-doc-src-sgml-Makefile
+Removing databases/postgresql94-server/files/patch-doc-Makefile
+Removing databases/postgresql94-server/files/dot.profile.in
+Removing databases/postgresql94-server/files/dot.cshrc.in
+Removing databases/postgresql94-server/files/502.pgsql.in
+Removing databases/postgresql94-server/distinfo
+Removing databases/postgresql94-server/Makefile
+Removing databases/postgresql94-pltcl/Makefile
+Removing databases/postgresql94-plpython/Makefile
+Removing databases/postgresql94-plperl/Makefile
+Removing databases/postgresql94-pgtcl/Makefile
+Removing databases/postgresql94-docs/Makefile
+Removing databases/postgresql94-contrib/pkg-descr
+Removing databases/postgresql94-contrib/Makefile
+Removing databases/postgresql94-client/Makefile
+Auto-merging databases/postgis23/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/valgrind-devel/Makefile
+index 64921d952479,d30c6e29196f..000000000000
+--- a/devel/valgrind-devel/Makefile
++++ b/devel/valgrind-devel/Makefile
+@@@ -2,48 -2,26 +2,44 @@@
+  # $FreeBSD$
+  
+  PORTNAME=	valgrind
+- PORTVERSION=	3.10.1.20160113
++ PORTVERSION=	3.17.0.g20200723
+  DISTVERSIONPREFIX=	freebsd-
+- PORTREVISION=	7
++ #PORTREVISION=	0
+  PORTEPOCH=	1
+  CATEGORIES=	devel
+- MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
+- 		http://mirror.shatow.net/freebsd/${PORTNAME}/
+  PKGNAMESUFFIX=	-devel
+  
+- MAINTAINER=	zeising@FreeBSD.org
++ MAINTAINER=	pjfloyd@wanadoo.fr
+  COMMENT=	Memory debugging and profiling tool
+  
+- BB_COMMIT=	ce1acb28953f
+- BB_ACCOUNT=	stass
+- BB_PROJECT=	valgrind-freebsd
+- 
+  LICENSE=	GPLv2
+  
+- CONFLICTS=	valgrind-[0-9]*
+- 
+- ONLY_FOR_ARCHS=	i386 amd64
+- 
+- LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
++ ONLY_FOR_ARCHS=	amd64 i386
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +OPTIONS_DEFINE=		DOCS MANPAGES MPI
+ +OPTIONS_DEFINE_amd64=	32BIT
+ +OPTIONS_DEFAULT=	MANPAGES
+ +.if exists(${LIB32_PATH})
+ +OPTIONS_DEFAULT_amd64=	32BIT
+ +.endif
+ +32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
+ +MPI_DESC=	Enable build of MPI wrappers
+ +
+ +DOCS_BUILD_DEPENDS=    docbook-xsl>=0:textproc/docbook-xsl \
+ +                       xsltproc:textproc/libxslt
+ +MANPAGES_BUILD_DEPENDS=        docbook-xsl>=0:textproc/docbook-xsl \
+ +                       xsltproc:textproc/libxslt
+++=======
++ DOCS_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
++ 		xsltproc:textproc/libxslt
++ MANPAGES_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
++ 		xsltproc:textproc/libxslt
+++>>>>>>> freebsd/master
+  MPI_LIB_DEPENDS=	libmpich.so:net/mpich
+  
+- OPTIONS_SUB=	yes
+  USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
+  USE_PERL5=	build
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   .gitauthors
+	modified:   MOVED
+	modified:   Mk/Uses/pgsql.mk
+	modified:   Mk/bsd.default-versions.mk
+	modified:   archivers/p5-Compress-Raw-Bzip2/Makefile
+	modified:   archivers/p5-Compress-Raw-Bzip2/distinfo
+	modified:   archivers/p5-Compress-Raw-Lzma/Makefile
+	modified:   archivers/p5-Compress-Raw-Lzma/distinfo
+	modified:   archivers/p5-Compress-Raw-Zlib/Makefile
+	modified:   archivers/p5-Compress-Raw-Zlib/distinfo
+	modified:   archivers/p5-IO-Compress-Lzf/Makefile
+	modified:   archivers/p5-IO-Compress-Lzf/distinfo
+	modified:   archivers/p5-IO-Compress-Lzma/Makefile
+	modified:   archivers/p5-IO-Compress-Lzma/distinfo
+	modified:   archivers/p5-IO-Compress-Lzop/Makefile
+	modified:   archivers/p5-IO-Compress-Lzop/distinfo
+	modified:   archivers/p5-IO-Compress/Makefile
+	modified:   archivers/p5-IO-Compress/distinfo
+	modified:   astro/kstars/Makefile
+	modified:   astro/kstars/distinfo
+	modified:   astro/kstars/pkg-plist
+	modified:   audio/ncspot/Makefile
+	modified:   audio/ncspot/distinfo
+	modified:   cad/cura/Makefile
+	new file:   cad/cura/files/patch-plugins_USBPrinting_USBPrinterOutputDeviceManager.py
+	modified:   cad/gtkwave/Makefile
+	modified:   cad/gtkwave/distinfo
+	modified:   databases/Makefile
+	modified:   databases/cassandra4/Makefile
+	modified:   databases/couchdb3/Makefile
+	modified:   databases/kyotocabinet/Makefile
+	modified:   databases/kyotocabinet/distinfo
+	modified:   databases/kyotocabinet/pkg-descr
+	modified:   databases/kyototycoon/Makefile
+	modified:   databases/kyototycoon/pkg-descr
+	modified:   databases/mongodb44/Makefile
+	modified:   databases/mongodb44/distinfo
+	modified:   databases/p5-KyotoCabinet/Makefile
+	modified:   databases/p5-KyotoCabinet/pkg-descr
+	modified:   databases/p5-TokyoCabinet/Makefile
+	modified:   databases/p5-TokyoCabinet/pkg-descr
+	modified:   databases/p5-tokyotyrant/Makefile
+	modified:   databases/p5-tokyotyrant/pkg-descr
+	modified:   databases/pg_citus/Makefile
+	modified:   databases/pg_citus/distinfo
+	modified:   databases/pg_reorg/Makefile
+	modified:   databases/pgespresso/Makefile
+	modified:   databases/postgis23/Makefile
+	modified:   databases/postgis24/Makefile
+	modified:   databases/postgresql-plv8js/Makefile
+	deleted:    databases/postgresql94-client/Makefile
+	deleted:    databases/postgresql94-contrib/Makefile
+	deleted:    databases/postgresql94-contrib/pkg-descr
+	deleted:    databases/postgresql94-docs/Makefile
+	deleted:    databases/postgresql94-pgtcl/Makefile
+	deleted:    databases/postgresql94-plperl/Makefile
+	deleted:    databases/postgresql94-plpython/Makefile
+	deleted:    databases/postgresql94-pltcl/Makefile
+	deleted:    databases/postgresql94-server/Makefile
+	deleted:    databases/postgresql94-server/distinfo
+	deleted:    databases/postgresql94-server/files/502.pgsql.in
+	deleted:    databases/postgresql94-server/files/dot.cshrc.in
+	deleted:    databases/postgresql94-server/files/dot.profile.in
+	deleted:    databases/postgresql94-server/files/patch-doc-Makefile
+	deleted:    databases/postgresql94-server/files/patch-doc-src-sgml-Makefile
+	deleted:    databases/postgresql94-server/files/patch-src-Makefile.shlib
+	deleted:    databases/postgresql94-server/files/patch-src-backend-Makefile
+	deleted:    databases/postgresql94-server/files/patch-src_backend_utils_misc_postgresql.conf.sample
+	deleted:    databases/postgresql94-server/files/pkg-message-client.in
+	deleted:    databases/postgresql94-server/files/pkg-message-contrib.in
+	deleted:    databases/postgresql94-server/files/pkg-message-plperl.in
+	deleted:    databases/postgresql94-server/files/pkg-message-plpython.in
+	deleted:    databases/postgresql94-server/files/pkg-message-pltcl.in
+	deleted:    databases/postgresql94-server/files/pkg-message-server.in
+	deleted:    databases/postgresql94-server/files/pkgIndex.tcl.in
+	deleted:    databases/postgresql94-server/files/postgresql.in
+	deleted:    databases/postgresql94-server/pkg-descr
+	deleted:    databases/postgresql94-server/pkg-install-server
+	deleted:    databases/postgresql94-server/pkg-plist-client
+	deleted:    databases/postgresql94-server/pkg-plist-contrib
+	deleted:    databases/postgresql94-server/pkg-plist-plperl
+	deleted:    databases/postgresql94-server/pkg-plist-plpython
+	deleted:    databases/postgresql94-server/pkg-plist-pltcl
+	deleted:    databases/postgresql94-server/pkg-plist-server
+	modified:   databases/py-kyotocabinet/Makefile
+	modified:   databases/py-kyotocabinet/pkg-descr
+	modified:   databases/qdbm-plus/Makefile
+	modified:   databases/qdbm-plus/pkg-descr
+	modified:   databases/qdbm/Makefile
+	modified:   databases/qdbm/pkg-descr
+	modified:   databases/rocksdb/Makefile
+	modified:   databases/rocksdb/distinfo
+	modified:   databases/ruby-qdbm/Makefile
+	modified:   databases/ruby-qdbm/pkg-descr
+	modified:   databases/ruby-tokyocabinet/Makefile
+	modified:   databases/ruby-tokyocabinet/pkg-descr
+	modified:   databases/tokyocabinet/Makefile
+	modified:   databases/tokyocabinet/pkg-descr
+	modified:   databases/tokyotyrant/Makefile
+	modified:   databases/tokyotyrant/pkg-descr
+	modified:   deskutils/menumaker/Makefile
+	modified:   deskutils/menumaker/distinfo
+	modified:   deskutils/menumaker/files/patch-configure
+	modified:   deskutils/zim/Makefile
+	modified:   deskutils/zim/distinfo
+	modified:   devel/check/Makefile
+	modified:   devel/check/distinfo
+	modified:   devel/gitaly/Makefile
+	modified:   devel/gitaly/distinfo
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	modified:   devel/jetbrains-clion/Makefile
+	modified:   devel/jetbrains-clion/distinfo
+	modified:   devel/nspr/Makefile
+	modified:   devel/nspr/distinfo
+	modified:   devel/p5-Log-Dispatch/Makefile
+	modified:   devel/p5-Log-Dispatch/distinfo
+	modified:   devel/p5-Log-Log4perl/Makefile
+	modified:   devel/p5-Log-Log4perl/distinfo
+	modified:   devel/p5-Moose/Makefile
+	modified:   devel/p5-Moose/distinfo
+	modified:   devel/p5-Syntax-Keyword-Try/Makefile
+	modified:   devel/p5-Syntax-Keyword-Try/distinfo
+	modified:   devel/py-arrow/Makefile
+	modified:   devel/py-arrow/distinfo
+	modified:   devel/py-arrow/pkg-descr
+	modified:   devel/py-graphene-django/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-libcst/Makefile
+	modified:   devel/py-libcst/distinfo
+	modified:   devel/py-marshmallow/Makefile
+	modified:   devel/py-marshmallow/distinfo
+	modified:   devel/py-oslo.config/Makefile
+	modified:   devel/py-oslo.config/distinfo
+	modified:   devel/py-oslo.messaging/Makefile
+	modified:   devel/py-oslo.messaging/distinfo
+	modified:   devel/py-oslo.utils/Makefile
+	modified:   devel/py-oslo.utils/distinfo
+	modified:   devel/py-tooz/Makefile
+	modified:   devel/py-tooz/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudfront/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudfront/distinfo
+	modified:   devel/rubygem-aws-sdk-codebuild/Makefile
+	modified:   devel/rubygem-aws-sdk-codebuild/distinfo
+	modified:   devel/rubygem-aws-sdk-codeguruprofiler/Makefile
+	modified:   devel/rubygem-aws-sdk-codeguruprofiler/distinfo
+	modified:   devel/rubygem-aws-sdk-configservice/Makefile
+	modified:   devel/rubygem-aws-sdk-configservice/distinfo
+	modified:   devel/rubygem-aws-sdk-core/Makefile
+	modified:   devel/rubygem-aws-sdk-core/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-directconnect/Makefile
+	modified:   devel/rubygem-aws-sdk-directconnect/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-fms/Makefile
+	modified:   devel/rubygem-aws-sdk-fms/distinfo
+	modified:   devel/rubygem-aws-sdk-frauddetector/Makefile
+	modified:   devel/rubygem-aws-sdk-frauddetector/distinfo
+	modified:   devel/rubygem-aws-sdk-fsx/Makefile
+	modified:   devel/rubygem-aws-sdk-fsx/distinfo
+	modified:   devel/rubygem-aws-sdk-glue/Makefile
+	modified:   devel/rubygem-aws-sdk-glue/distinfo
+	modified:   devel/rubygem-aws-sdk-groundstation/Makefile
+	modified:   devel/rubygem-aws-sdk-groundstation/distinfo
+	modified:   devel/rubygem-aws-sdk-lightsail/Makefile
+	modified:   devel/rubygem-aws-sdk-lightsail/distinfo
+	modified:   devel/rubygem-aws-sdk-medialive/Makefile
+	modified:   devel/rubygem-aws-sdk-medialive/distinfo
+	modified:   devel/rubygem-aws-sdk-quicksight/Makefile
+	modified:   devel/rubygem-aws-sdk-quicksight/distinfo
+	modified:   devel/rubygem-aws-sdk-rds/Makefile
+	modified:   devel/rubygem-aws-sdk-rds/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-s3/Makefile
+	modified:   devel/rubygem-aws-sdk-s3/distinfo
+	modified:   devel/rubygem-aws-sdk-workspaces/Makefile
+	modified:   devel/rubygem-aws-sdk-workspaces/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-azure_mgmt_appconfiguration/Makefile
+	modified:   devel/rubygem-azure_mgmt_appconfiguration/distinfo
+	modified:   devel/rubygem-azure_mgmt_cdn/Makefile
+	modified:   devel/rubygem-azure_mgmt_cdn/distinfo
+	modified:   devel/rubygem-azure_mgmt_hdinsight/Makefile
+	modified:   devel/rubygem-azure_mgmt_hdinsight/distinfo
+	modified:   devel/rubygem-azure_mgmt_iot_central/Makefile
+	modified:   devel/rubygem-azure_mgmt_iot_central/distinfo
+	modified:   devel/rubygem-azure_mgmt_kusto/Makefile
+	modified:   devel/rubygem-azure_mgmt_kusto/distinfo
+	modified:   devel/rubygem-azure_mgmt_operational_insights/Makefile
+	modified:   devel/rubygem-azure_mgmt_operational_insights/distinfo
+	modified:   devel/rubygem-azure_mgmt_reservations/Makefile
+	modified:   devel/rubygem-azure_mgmt_reservations/distinfo
+	modified:   devel/rubygem-azure_sdk/Makefile
+	modified:   devel/rubygem-azure_sdk/distinfo
+	modified:   devel/rubygem-bootsnap/Makefile
+	modified:   devel/rubygem-bootsnap/distinfo
+	modified:   devel/rubygem-ddtrace/Makefile
+	modified:   devel/rubygem-ddtrace/distinfo
+	modified:   devel/rubygem-jasmine-core/Makefile
+	modified:   devel/rubygem-jasmine-core/distinfo
+	modified:   devel/rubygem-sidekiq/Makefile
+	modified:   devel/rubygem-sidekiq/distinfo
+	modified:   devel/rubygem-tty-prompt/Makefile
+	modified:   devel/rubygem-tty-prompt/distinfo
+	deleted:    devel/rubygem-tty-prompt/files/patch-gemspec
+	modified:   devel/rubygem-xdg/Makefile
+	modified:   devel/rubygem-xdg/distinfo
+	modified:   devel/valgrind-devel/distinfo
+	deleted:    devel/valgrind-devel/files/accept4_syscall.patch
+	deleted:    devel/valgrind-devel/files/extra-patch-ino64
+	deleted:    devel/valgrind-devel/files/jail_syscalls.patch
+	deleted:    devel/valgrind-devel/files/kldload_syscalls.patch
+	deleted:    devel/valgrind-devel/files/missing_fcntls.patch
+	deleted:    devel/valgrind-devel/files/patch-VEX_auxprogs_genoffsets.c
+	deleted:    devel/valgrind-devel/files/patch-configure.ac
+	deleted:    devel/valgrind-devel/files/patch-coregrind-m_syswrap-syswrap-amd64-freebsd.c
+	deleted:    devel/valgrind-devel/files/patch-include__vki__vki-freebsd.h
+	modified:   devel/valgrind-devel/pkg-plist
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   french/aster/files/patch-as_setup.py
+	modified:   graphics/colmap/Makefile
+	modified:   graphics/colmap/distinfo
+	modified:   graphics/colmap/pkg-plist
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   graphics/netpbm/Makefile
+	modified:   graphics/netpbm/distinfo
+	modified:   graphics/p5-feedgnuplot/Makefile
+	modified:   graphics/p5-feedgnuplot/distinfo
+	modified:   java/icedtea-web/Makefile
+	modified:   java/icedtea-web/pkg-plist
+	modified:   java/openjdk14/Makefile
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/go-devel/Makefile
+	modified:   lang/go-devel/distinfo
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   mail/libvmime/Makefile
+	modified:   mail/libvmime/files/patch-CMakeLists.txt
+	modified:   mail/p5-Mail-Transport/Makefile
+	modified:   mail/p5-Mail-Transport/distinfo
+	modified:   mail/postfix-current/Makefile
+	modified:   mail/postfix-current/distinfo
+	deleted:    mail/postfix-current/files/patch-src_tls_tls__certkey.c
+	modified:   mail/postfix/Makefile
+	modified:   mail/postfix/distinfo
+	modified:   math/py-jax/Makefile
+	modified:   math/py-jax/distinfo
+	modified:   math/suitesparse/Makefile
+	modified:   math/suitesparse/distinfo
+	deleted:    math/suitesparse/files/patch-SLIP__LU_Lib_Makefile
+	deleted:    math/suitesparse/files/patch-SLIP__LU_Source_slip__internal.h
+	modified:   math/suitesparse/pkg-plist
+	modified:   misc/p5-Geo-Coder-Google/Makefile
+	modified:   misc/p5-Geo-Coder-Google/distinfo
+	modified:   misc/patchutils/Makefile
+	modified:   multimedia/gmmlib/Makefile
+	modified:   multimedia/gmmlib/distinfo
+	modified:   net-im/libaccounts-glib/files/patch-meson.build
+	modified:   net-im/libaccounts-glib/files/patch-meson__options.txt
+	modified:   net-mgmt/check_ssl_cert/Makefile
+	modified:   net-mgmt/check_ssl_cert/distinfo
+	modified:   net-mgmt/ettercap/pkg-descr
+	modified:   net/Makefile
+	deleted:    net/dshell/Makefile
+	deleted:    net/dshell/distinfo
+	deleted:    net/dshell/files/patch-Makefile
+	deleted:    net/dshell/pkg-descr
+	deleted:    net/dshell/pkg-message
+	deleted:    net/dshell/pkg-plist
+	modified:   net/frr7/Makefile
+	new file:   net/frr7/files/patch-lib_zlog.c
+	modified:   net/liveMedia/Makefile
+	modified:   net/liveMedia/distinfo
+	modified:   net/py-GeoIP2/Makefile
+	modified:   net/py-maxminddb/Makefile
+	modified:   net/py-zeroconf/Makefile
+	modified:   net/py-zeroconf/distinfo
+	modified:   net/rubygem-fog-vsphere/Makefile
+	modified:   net/rubygem-fog-vsphere/distinfo
+	modified:   net/rubygem-google-cloud-bigtable/Makefile
+	modified:   net/rubygem-google-cloud-bigtable/distinfo
+	modified:   net/rubygem-google-cloud-env/Makefile
+	modified:   net/rubygem-google-cloud-env/distinfo
+	modified:   net/rubygem-google-cloud-pubsub/Makefile
+	modified:   net/rubygem-google-cloud-pubsub/distinfo
+	modified:   science/py-asdf/Makefile
+	modified:   science/py-asdf/distinfo
+	modified:   security/ca_root_nss/Makefile
+	modified:   security/ca_root_nss/distinfo
+	modified:   security/denyhosts/Makefile
+	new file:   security/denyhosts/files/patch-DenyHosts-report.py
+	modified:   security/nss/Makefile
+	modified:   security/nss/distinfo
+	modified:   security/openfortivpn/Makefile
+	modified:   security/p5-GnuPG-Interface/Makefile
+	modified:   security/p5-GnuPG-Interface/distinfo
+	modified:   security/softether-devel/Makefile
+	new file:   security/softether-devel/files/patch-increase-nat-sessions
+	modified:   security/softether/Makefile
+	new file:   security/softether/files/patch-increase-nat-sessions
+	modified:   security/softether5/Makefile
+	modified:   security/softether5/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   security/xca/Makefile
+	modified:   sysutils/Makefile
+	modified:   sysutils/bastille/Makefile
+	modified:   sysutils/bastille/distinfo
+	modified:   sysutils/bastille/pkg-plist
+	modified:   sysutils/go-btfs/Makefile
+	modified:   sysutils/go-btfs/distinfo
+	modified:   sysutils/iichid/Makefile
+	modified:   sysutils/iichid/distinfo
+	modified:   sysutils/iichid/pkg-message
+	modified:   sysutils/mate-power-manager/Makefile
+	modified:   sysutils/mate-power-manager/pkg-descr
+	modified:   sysutils/nomad/Makefile
+	modified:   sysutils/nomad/distinfo
+	new file:   sysutils/nomad/files/patch-command_agent_host_freebsd.go
+	new file:   sysutils/nomad/files/patch-command_agent_host_unix.go
+	deleted:    sysutils/nomad/files/patch-vendor_github.com_docker_docker_pkg_mount_mountinfo__freebsd.go
+	new file:   sysutils/openshift-install-devel/Makefile
+	new file:   sysutils/openshift-install-devel/distinfo
+	new file:   sysutils/openshift-install-devel/files/assets_vfsdata.go
+	renamed:    sysutils/openshift-install/pkg-descr -> sysutils/openshift-install-devel/pkg-descr
+	renamed:    sysutils/openshift-install/Makefile -> sysutils/openshift-install45/Makefile
+	renamed:    sysutils/openshift-install/distinfo -> sysutils/openshift-install45/distinfo
+	renamed:    sysutils/openshift-install/files/assets_vfsdata.go -> sysutils/openshift-install45/files/assets_vfsdata.go
+	new file:   sysutils/openshift-install45/pkg-descr
+	new file:   sysutils/openshift-install46/Makefile
+	new file:   sysutils/openshift-install46/distinfo
+	new file:   sysutils/openshift-install46/files/assets_vfsdata.go
+	new file:   sysutils/openshift-install46/pkg-descr
+	modified:   sysutils/parallel/Makefile
+	modified:   sysutils/parallel/distinfo
+	modified:   textproc/asciidoc/Makefile
+	modified:   textproc/asciidoc/distinfo
+	modified:   textproc/estraier/Makefile
+	modified:   textproc/estraier/pkg-descr
+	modified:   textproc/p5-String-Util/Makefile
+	modified:   textproc/p5-String-Util/distinfo
+	modified:   textproc/p5-String-Util/pkg-plist
+	modified:   textproc/py-ftfy/Makefile
+	modified:   textproc/py-ftfy/distinfo
+	modified:   textproc/tokyodystopia/Makefile
+	modified:   textproc/tokyodystopia/pkg-descr
+	modified:   www/Makefile
+	modified:   www/cliqz/Makefile
+	modified:   www/cliqz/distinfo
+	modified:   www/cliqz/files/patch-addon-search
+	modified:   www/cliqz/files/patch-bug1288587
+	modified:   www/cliqz/files/patch-bug1618914
+	modified:   www/cliqz/files/patch-bug1640982
+	modified:   www/cliqz/files/patch-cliqz__env.sh
+	new file:   www/cliqz/files/patch-freebsd11.3
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/gitlab-ce/distinfo
+	modified:   www/gitlab-ce/pkg-plist
+	modified:   www/mattermost-server/Makefile
+	modified:   www/mattermost-server/distinfo
+	deleted:    www/mattermost-server/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+	modified:   www/mattermost-server/pkg-plist
+	modified:   www/mattermost-webapp/Makefile
+	modified:   www/mattermost-webapp/distinfo
+	modified:   www/mattermost-webapp/pkg-plist
+	modified:   www/minio-client/Makefile
+	modified:   www/minio-client/distinfo
+	modified:   www/nginx/Makefile
+	modified:   www/nginx/Makefile.extmod
+	modified:   www/nginx/distinfo
+	modified:   www/p5-Catalyst-Manual/Makefile
+	modified:   www/p5-Catalyst-Manual/distinfo
+	modified:   www/p5-Catalyst-Manual/pkg-plist
+	modified:   www/p5-Catalyst-View-TT/Makefile
+	modified:   www/p5-Catalyst-View-TT/distinfo
+	modified:   www/py-google-api-core/Makefile
+	modified:   www/py-google-api-core/distinfo
+	modified:   www/py-google-cloud-bigtable/Makefile
+	modified:   www/py-google-cloud-bigtable/distinfo
+	modified:   www/py-google-cloud-bigtable/pkg-descr
+	modified:   www/py-google-cloud-datastore/Makefile
+	modified:   www/py-google-cloud-datastore/distinfo
+	modified:   www/py-wagtail/Makefile
+	modified:   www/py-wagtail/distinfo
+	modified:   www/rt50/Makefile
+	modified:   www/tokyopromenade/Makefile
+	modified:   www/tokyopromenade/pkg-descr
+	modified:   x11-clocks/xfce4-timer-plugin/Makefile
+	modified:   x11-clocks/xfce4-timer-plugin/distinfo
+	modified:   x11-clocks/xfce4-timer-plugin/pkg-plist
+	modified:   x11-fonts/sudo-font/Makefile
+	modified:   x11-fonts/sudo-font/distinfo
+	modified:   x11-wm/hikari/Makefile
+	modified:   x11-wm/hikari/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/valgrind-devel/Makefile
+
+
+It took 3.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ee29eecae410 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ee29eecae410 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
