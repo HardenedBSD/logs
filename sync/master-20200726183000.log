@@ -47,3 +47,114 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging cad/alliance/Makefile
+CONFLICT (content): Merge conflict in cad/alliance/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc cad/alliance/Makefile
+index 7c20fc7a1340,67d5001890a9..000000000000
+--- a/cad/alliance/Makefile
++++ b/cad/alliance/Makefile
+@@@ -22,11 -22,8 +22,16 @@@ BROKEN_aarch64=		fails to link: collect
+  BUILD_DEPENDS=	convert:graphics/ImageMagick7 \
+  		fig2dev:print/transfig
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		autoreconf:build compiler:c++0x gmake libtool motif \
+ +		tar:bz2 xorg
+ +USE_GCC=	any
+++=======
++ USES=		autoreconf:build gmake libtool motif tar:bz2 xorg
++ USE_GCC=	yes
+++>>>>>>> freebsd/master
+  USE_TEX=	dvipsk:build latex:build
+  USE_XORG=	ice sm x11 xext xt
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   UPDATING
+	new file:   cad/alliance/files/patch-nero_src_MDRGrid.cpp
+	modified:   mail/postfix-current/Makefile
+	modified:   mail/postfix-current/distinfo
+	modified:   mail/postfix/Makefile
+	modified:   mail/postfix/distinfo
+	modified:   net-mgmt/librenms/Makefile
+	modified:   net-mgmt/librenms/files/librenms.in
+	modified:   net-mgmt/librenms/files/patch-.env.example
+	modified:   net-mgmt/librenms/files/pkg-message.in
+	modified:   net/mediatomb/Makefile
+	modified:   science/netcdf-fortran/Makefile
+	modified:   security/arirang/Makefile
+	modified:   sysutils/minikube/Makefile
+	modified:   sysutils/minikube/distinfo
+	modified:   www/groupoffice/Makefile
+	modified:   www/groupoffice/distinfo
+	modified:   www/groupoffice/pkg-plist
+	modified:   www/kannel/Makefile
+	modified:   x11-drivers/xf86-video-amdgpu/Makefile
+	modified:   x11-drivers/xf86-video-ati/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   cad/alliance/Makefile
+
+
+It took 3.24 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at d6a91a6c7d6c Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.07 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at d6a91a6c7d6c Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
