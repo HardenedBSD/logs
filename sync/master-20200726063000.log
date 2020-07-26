@@ -1,0 +1,546 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 174 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating ee29eecae410..b8d27e7825e5
+Fast-forward
+ .gitauthors                                        |    1 +
+ MOVED                                              |   10 +
+ Mk/Uses/pgsql.mk                                   |    2 +-
+ Mk/bsd.default-versions.mk                         |    2 +-
+ archivers/p5-Compress-Raw-Bzip2/Makefile           |    2 +-
+ archivers/p5-Compress-Raw-Bzip2/distinfo           |    6 +-
+ archivers/p5-Compress-Raw-Lzma/Makefile            |    2 +-
+ archivers/p5-Compress-Raw-Lzma/distinfo            |    6 +-
+ archivers/p5-Compress-Raw-Zlib/Makefile            |    2 +-
+ archivers/p5-Compress-Raw-Zlib/distinfo            |    6 +-
+ archivers/p5-IO-Compress-Lzf/Makefile              |    2 +-
+ archivers/p5-IO-Compress-Lzf/distinfo              |    6 +-
+ archivers/p5-IO-Compress-Lzma/Makefile             |    2 +-
+ archivers/p5-IO-Compress-Lzma/distinfo             |    6 +-
+ archivers/p5-IO-Compress-Lzop/Makefile             |    2 +-
+ archivers/p5-IO-Compress-Lzop/distinfo             |    6 +-
+ archivers/p5-IO-Compress/Makefile                  |    2 +-
+ archivers/p5-IO-Compress/distinfo                  |    6 +-
+ astro/kstars/Makefile                              |    3 +-
+ astro/kstars/distinfo                              |    6 +-
+ astro/kstars/pkg-plist                             |   26 +-
+ audio/ncspot/Makefile                              |   29 +-
+ audio/ncspot/distinfo                              |   40 +-
+ cad/cura/Makefile                                  |    2 +-
+ ...ns_USBPrinting_USBPrinterOutputDeviceManager.py |   14 +
+ cad/gtkwave/Makefile                               |    2 +-
+ cad/gtkwave/distinfo                               |    6 +-
+ databases/Makefile                                 |    8 -
+ databases/cassandra4/Makefile                      |    8 +-
+ databases/couchdb3/Makefile                        |    2 +-
+ databases/kyotocabinet/Makefile                    |    8 +-
+ databases/kyotocabinet/distinfo                    |    6 +-
+ databases/kyotocabinet/pkg-descr                   |    2 +-
+ databases/kyototycoon/Makefile                     |    2 +-
+ databases/kyototycoon/pkg-descr                    |    2 +-
+ databases/mongodb44/Makefile                       |    2 +-
+ databases/mongodb44/distinfo                       |    6 +-
+ databases/p5-KyotoCabinet/Makefile                 |    2 +-
+ databases/p5-KyotoCabinet/pkg-descr                |    2 +-
+ databases/p5-TokyoCabinet/Makefile                 |    2 +-
+ databases/p5-TokyoCabinet/pkg-descr                |    2 +-
+ databases/p5-tokyotyrant/Makefile                  |    2 +-
+ databases/p5-tokyotyrant/pkg-descr                 |    2 +-
+ databases/pg_citus/Makefile                        |    2 +-
+ databases/pg_citus/distinfo                        |    6 +-
+ databases/pg_reorg/Makefile                        |    4 +-
+ databases/pgespresso/Makefile                      |    4 +-
+ databases/postgis23/Makefile                       |    4 +-
+ databases/postgis24/Makefile                       |    4 +-
+ databases/postgresql-plv8js/Makefile               |    4 +-
+ databases/postgresql94-client/Makefile             |   21 -
+ databases/postgresql94-contrib/Makefile            |   29 -
+ databases/postgresql94-contrib/pkg-descr           |   23 -
+ databases/postgresql94-docs/Makefile               |   10 -
+ databases/postgresql94-pgtcl/Makefile              |   14 -
+ databases/postgresql94-plperl/Makefile             |   12 -
+ databases/postgresql94-plpython/Makefile           |   11 -
+ databases/postgresql94-pltcl/Makefile              |   10 -
+ databases/postgresql94-server/Makefile             |   28 -
+ databases/postgresql94-server/distinfo             |    5 -
+ databases/postgresql94-server/files/502.pgsql.in   |  116 -
+ databases/postgresql94-server/files/dot.cshrc.in   |   11 -
+ databases/postgresql94-server/files/dot.profile.in |   22 -
+ .../postgresql94-server/files/patch-doc-Makefile   |   28 -
+ .../files/patch-doc-src-sgml-Makefile              |   20 -
+ .../files/patch-src-Makefile.shlib                 |   11 -
+ .../files/patch-src-backend-Makefile               |   11 -
+ ...h-src_backend_utils_misc_postgresql.conf.sample |   20 -
+ .../files/pkg-message-client.in                    |   38 -
+ .../files/pkg-message-contrib.in                   |    9 -
+ .../files/pkg-message-plperl.in                    |    9 -
+ .../files/pkg-message-plpython.in                  |    9 -
+ .../postgresql94-server/files/pkg-message-pltcl.in |    9 -
+ .../files/pkg-message-server.in                    |   69 -
+ .../postgresql94-server/files/pkgIndex.tcl.in      |    4 -
+ databases/postgresql94-server/files/postgresql.in  |  117 -
+ databases/postgresql94-server/pkg-descr            |   23 -
+ databases/postgresql94-server/pkg-install-server   |   27 -
+ databases/postgresql94-server/pkg-plist-client     |  953 --------
+ databases/postgresql94-server/pkg-plist-contrib    |  208 --
+ databases/postgresql94-server/pkg-plist-plperl     |    8 -
+ databases/postgresql94-server/pkg-plist-plpython   |   12 -
+ databases/postgresql94-server/pkg-plist-pltcl      |   12 -
+ databases/postgresql94-server/pkg-plist-server     |  758 -------
+ databases/py-kyotocabinet/Makefile                 |    2 +-
+ databases/py-kyotocabinet/pkg-descr                |    2 +-
+ databases/qdbm-plus/Makefile                       |    2 +-
+ databases/qdbm-plus/pkg-descr                      |    2 +-
+ databases/qdbm/Makefile                            |    2 +-
+ databases/qdbm/pkg-descr                           |    2 +-
+ databases/rocksdb/Makefile                         |    2 +-
+ databases/rocksdb/distinfo                         |    6 +-
+ databases/ruby-qdbm/Makefile                       |    2 +-
+ databases/ruby-qdbm/pkg-descr                      |    2 +-
+ databases/ruby-tokyocabinet/Makefile               |    2 +-
+ databases/ruby-tokyocabinet/pkg-descr              |    2 +-
+ databases/tokyocabinet/Makefile                    |    2 +-
+ databases/tokyocabinet/pkg-descr                   |    2 +-
+ databases/tokyotyrant/Makefile                     |    2 +-
+ databases/tokyotyrant/pkg-descr                    |    2 +-
+ deskutils/menumaker/Makefile                       |    6 +-
+ deskutils/menumaker/distinfo                       |    6 +-
+ deskutils/menumaker/files/patch-configure          |    6 +-
+ deskutils/zim/Makefile                             |    2 +-
+ deskutils/zim/distinfo                             |    6 +-
+ devel/check/Makefile                               |    2 +-
+ devel/check/distinfo                               |    6 +-
+ devel/gitaly/Makefile                              |    4 +-
+ devel/gitaly/distinfo                              |    6 +-
+ devel/jenkins/Makefile                             |    2 +-
+ devel/jenkins/distinfo                             |    6 +-
+ devel/jetbrains-clion/Makefile                     |    2 +-
+ devel/jetbrains-clion/distinfo                     |    6 +-
+ devel/nspr/Makefile                                |    2 +-
+ devel/nspr/distinfo                                |    6 +-
+ devel/p5-Log-Dispatch/Makefile                     |    2 +-
+ devel/p5-Log-Dispatch/distinfo                     |    6 +-
+ devel/p5-Log-Log4perl/Makefile                     |    6 +-
+ devel/p5-Log-Log4perl/distinfo                     |    6 +-
+ devel/p5-Moose/Makefile                            |    2 +-
+ devel/p5-Moose/distinfo                            |    6 +-
+ devel/p5-Syntax-Keyword-Try/Makefile               |    2 +-
+ devel/p5-Syntax-Keyword-Try/distinfo               |    6 +-
+ devel/pecl-eio/Makefile                            |    6 +-
+ devel/pecl-eio/distinfo                            |    6 +-
+ devel/pecl-eio/files/patch-libeio__ecb.h           |   26 -
+ devel/py-arrow/Makefile                            |    2 +-
+ devel/py-arrow/distinfo                            |    6 +-
+ devel/py-arrow/pkg-descr                           |    2 +-
+ devel/py-graphene-django/distinfo                  |    2 +-
+ devel/py-hypothesis/Makefile                       |    2 +-
+ devel/py-hypothesis/distinfo                       |    6 +-
+ devel/py-libcst/Makefile                           |    4 +-
+ devel/py-libcst/distinfo                           |    6 +-
+ devel/py-marshmallow/Makefile                      |    2 +-
+ devel/py-marshmallow/distinfo                      |    6 +-
+ devel/py-oslo.config/Makefile                      |   10 +-
+ devel/py-oslo.config/distinfo                      |    6 +-
+ devel/py-oslo.messaging/Makefile                   |    2 +-
+ devel/py-oslo.messaging/distinfo                   |    6 +-
+ devel/py-oslo.utils/Makefile                       |    3 +-
+ devel/py-oslo.utils/distinfo                       |    6 +-
+ devel/py-tooz/Makefile                             |    3 +-
+ devel/py-tooz/distinfo                             |    6 +-
+ devel/rubygem-aws-partitions/Makefile              |    2 +-
+ devel/rubygem-aws-partitions/distinfo              |    6 +-
+ devel/rubygem-aws-sdk-cloudfront/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-cloudfront/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-codebuild/Makefile           |    2 +-
+ devel/rubygem-aws-sdk-codebuild/distinfo           |    6 +-
+ devel/rubygem-aws-sdk-codeguruprofiler/Makefile    |    2 +-
+ devel/rubygem-aws-sdk-codeguruprofiler/distinfo    |    6 +-
+ devel/rubygem-aws-sdk-configservice/Makefile       |    2 +-
+ devel/rubygem-aws-sdk-configservice/distinfo       |    6 +-
+ devel/rubygem-aws-sdk-core/Makefile                |    2 +-
+ devel/rubygem-aws-sdk-core/distinfo                |    6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |    2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |    6 +-
+ devel/rubygem-aws-sdk-directconnect/Makefile       |    2 +-
+ devel/rubygem-aws-sdk-directconnect/distinfo       |    6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-fms/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-fms/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-frauddetector/Makefile       |    2 +-
+ devel/rubygem-aws-sdk-frauddetector/distinfo       |    6 +-
+ devel/rubygem-aws-sdk-fsx/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-fsx/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-glue/Makefile                |    2 +-
+ devel/rubygem-aws-sdk-glue/distinfo                |    6 +-
+ devel/rubygem-aws-sdk-groundstation/Makefile       |    2 +-
+ devel/rubygem-aws-sdk-groundstation/distinfo       |    6 +-
+ devel/rubygem-aws-sdk-lightsail/Makefile           |    2 +-
+ devel/rubygem-aws-sdk-lightsail/distinfo           |    6 +-
+ devel/rubygem-aws-sdk-medialive/Makefile           |    2 +-
+ devel/rubygem-aws-sdk-medialive/distinfo           |    6 +-
+ devel/rubygem-aws-sdk-quicksight/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-quicksight/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-rds/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-rds/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-s3/Makefile                  |    2 +-
+ devel/rubygem-aws-sdk-s3/distinfo                  |    6 +-
+ devel/rubygem-aws-sdk-workspaces/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-workspaces/distinfo          |    6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |    2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |    6 +-
+ devel/rubygem-azure_mgmt_appconfiguration/Makefile |    2 +-
+ devel/rubygem-azure_mgmt_appconfiguration/distinfo |    6 +-
+ devel/rubygem-azure_mgmt_cdn/Makefile              |    2 +-
+ devel/rubygem-azure_mgmt_cdn/distinfo              |    6 +-
+ devel/rubygem-azure_mgmt_hdinsight/Makefile        |    2 +-
+ devel/rubygem-azure_mgmt_hdinsight/distinfo        |    6 +-
+ devel/rubygem-azure_mgmt_iot_central/Makefile      |    2 +-
+ devel/rubygem-azure_mgmt_iot_central/distinfo      |    6 +-
+ devel/rubygem-azure_mgmt_kusto/Makefile            |    2 +-
+ devel/rubygem-azure_mgmt_kusto/distinfo            |    6 +-
+ .../Makefile                                       |    2 +-
+ .../distinfo                                       |    6 +-
+ devel/rubygem-azure_mgmt_reservations/Makefile     |    2 +-
+ devel/rubygem-azure_mgmt_reservations/distinfo     |    6 +-
+ devel/rubygem-azure_sdk/Makefile                   |   16 +-
+ devel/rubygem-azure_sdk/distinfo                   |    6 +-
+ devel/rubygem-bootsnap/Makefile                    |    2 +-
+ devel/rubygem-bootsnap/distinfo                    |    6 +-
+ devel/rubygem-ddtrace/Makefile                     |    2 +-
+ devel/rubygem-ddtrace/distinfo                     |    6 +-
+ devel/rubygem-jasmine-core/Makefile                |    2 +-
+ devel/rubygem-jasmine-core/distinfo                |    6 +-
+ devel/rubygem-sidekiq/Makefile                     |    2 +-
+ devel/rubygem-sidekiq/distinfo                     |    6 +-
+ devel/rubygem-tty-prompt/Makefile                  |    8 +-
+ devel/rubygem-tty-prompt/distinfo                  |    6 +-
+ devel/rubygem-tty-prompt/files/patch-gemspec       |   15 -
+ devel/rubygem-xdg/Makefile                         |    2 +-
+ devel/rubygem-xdg/distinfo                         |    6 +-
+ devel/valgrind-devel/Makefile                      |   63 +-
+ devel/valgrind-devel/distinfo                      |    5 +-
+ devel/valgrind-devel/files/accept4_syscall.patch   |   56 -
+ devel/valgrind-devel/files/extra-patch-ino64       |  241 --
+ devel/valgrind-devel/files/jail_syscalls.patch     |   87 -
+ devel/valgrind-devel/files/kldload_syscalls.patch  |  127 --
+ devel/valgrind-devel/files/missing_fcntls.patch    |   54 -
+ .../files/patch-VEX_auxprogs_genoffsets.c          |   11 -
+ devel/valgrind-devel/files/patch-configure.ac      |   21 -
+ ...tch-coregrind-m_syswrap-syswrap-amd64-freebsd.c |   30 -
+ .../files/patch-include__vki__vki-freebsd.h        |   34 -
+ devel/valgrind-devel/pkg-plist                     |   47 +-
+ emulators/citra/Makefile                           |    4 +-
+ emulators/citra/distinfo                           |    6 +-
+ emulators/rpcs3/Makefile                           |    4 +-
+ emulators/rpcs3/distinfo                           |    6 +-
+ emulators/yuzu/Makefile                            |    4 +-
+ emulators/yuzu/distinfo                            |    6 +-
+ french/aster/files/patch-as_setup.py               |    9 +-
+ graphics/colmap/Makefile                           |    7 +-
+ graphics/colmap/distinfo                           |   10 +-
+ graphics/colmap/pkg-plist                          |   19 +
+ graphics/mesa-devel/Makefile                       |    6 +-
+ graphics/mesa-devel/distinfo                       |   10 +-
+ graphics/netpbm/Makefile                           |    5 +-
+ graphics/netpbm/distinfo                           |    6 +-
+ graphics/p5-feedgnuplot/Makefile                   |    2 +-
+ graphics/p5-feedgnuplot/distinfo                   |    6 +-
+ java/icedtea-web/Makefile                          |    6 +-
+ java/icedtea-web/pkg-plist                         |   10 +-
+ java/openjdk14/Makefile                            |    6 +-
+ lang/gcc8-devel/Makefile                           |    2 +-
+ lang/gcc8-devel/distinfo                           |    6 +-
+ lang/go-devel/Makefile                             |    4 +-
+ lang/go-devel/distinfo                             |    6 +-
+ lang/intel-compute-runtime/Makefile                |    2 +-
+ lang/intel-compute-runtime/distinfo                |    4 +-
+ mail/libvmime/Makefile                             |    3 -
+ mail/libvmime/files/patch-CMakeLists.txt           |    9 +
+ mail/p5-Mail-Transport/Makefile                    |    2 +-
+ mail/p5-Mail-Transport/distinfo                    |    6 +-
+ mail/postfix-current/Makefile                      |    9 +-
+ mail/postfix-current/distinfo                      |    6 +-
+ .../files/patch-src_tls_tls__certkey.c             |   11 -
+ mail/postfix/Makefile                              |    2 +-
+ mail/postfix/distinfo                              |    6 +-
+ math/py-jax/Makefile                               |    2 +-
+ math/py-jax/distinfo                               |    6 +-
+ math/suitesparse/Makefile                          |    7 +-
+ math/suitesparse/distinfo                          |    6 +-
+ math/suitesparse/files/patch-SLIP__LU_Lib_Makefile |   11 -
+ .../files/patch-SLIP__LU_Source_slip__internal.h   |   16 -
+ math/suitesparse/pkg-plist                         |    6 +-
+ misc/p5-Geo-Coder-Google/Makefile                  |    9 +-
+ misc/p5-Geo-Coder-Google/distinfo                  |    6 +-
+ misc/patchutils/Makefile                           |    6 +-
+ multimedia/gmmlib/Makefile                         |    2 +-
+ multimedia/gmmlib/distinfo                         |    6 +-
+ net-im/libaccounts-glib/files/patch-meson.build    |    9 +-
+ .../files/patch-meson__options.txt                 |    5 +-
+ net-mgmt/check_ssl_cert/Makefile                   |    2 +-
+ net-mgmt/check_ssl_cert/distinfo                   |    6 +-
+ net-mgmt/ettercap/pkg-descr                        |    2 +-
+ net-mgmt/librenms/Makefile                         |    1 +
+ .../files/patch-LibreNMS_Validations_Python.php    |   14 +-
+ net-mgmt/librenms/files/pkg-message.in             |    4 +
+ net/Makefile                                       |    1 -
+ net/dshell/Makefile                                |   78 -
+ net/dshell/distinfo                                |    3 -
+ net/dshell/files/patch-Makefile                    |   20 -
+ net/dshell/pkg-descr                               |   12 -
+ net/dshell/pkg-message                             |   12 -
+ net/dshell/pkg-plist                               |  188 --
+ net/frr7/Makefile                                  |    1 +
+ net/frr7/files/patch-lib_zlog.c                    |   16 +
+ net/liveMedia/Makefile                             |    2 +-
+ net/liveMedia/distinfo                             |    6 +-
+ net/py-GeoIP2/Makefile                             |    2 +-
+ net/py-maxminddb/Makefile                          |    2 +-
+ net/py-zeroconf/Makefile                           |    4 +-
+ net/py-zeroconf/distinfo                           |    6 +-
+ net/rubygem-fog-vsphere/Makefile                   |    2 +-
+ net/rubygem-fog-vsphere/distinfo                   |    6 +-
+ net/rubygem-google-cloud-bigtable/Makefile         |    2 +-
+ net/rubygem-google-cloud-bigtable/distinfo         |    6 +-
+ net/rubygem-google-cloud-env/Makefile              |    2 +-
+ net/rubygem-google-cloud-env/distinfo              |    6 +-
+ net/rubygem-google-cloud-pubsub/Makefile           |    2 +-
+ net/rubygem-google-cloud-pubsub/distinfo           |    6 +-
+ science/py-asdf/Makefile                           |    6 +-
+ science/py-asdf/distinfo                           |    6 +-
+ security/ca_root_nss/Makefile                      |    2 +-
+ security/ca_root_nss/distinfo                      |    6 +-
+ security/denyhosts/Makefile                        |    1 +
+ security/denyhosts/files/patch-DenyHosts-report.py |   25 +
+ security/nss/Makefile                              |    2 +-
+ security/nss/distinfo                              |    6 +-
+ security/openfortivpn/Makefile                     |    5 +-
+ security/p5-GnuPG-Interface/Makefile               |    3 +-
+ security/p5-GnuPG-Interface/distinfo               |    5 +-
+ security/softether-devel/Makefile                  |    2 +-
+ .../files/patch-increase-nat-sessions              |   11 +
+ security/softether/Makefile                        |    2 +-
+ .../softether/files/patch-increase-nat-sessions    |   11 +
+ security/softether5/Makefile                       |    5 +-
+ security/softether5/distinfo                       |    4 +-
+ security/vuxml/vuln.xml                            |   40 +
+ security/xca/Makefile                              |    2 +
+ sysutils/Makefile                                  |    4 +-
+ sysutils/bastille/Makefile                         |    4 +-
+ sysutils/bastille/distinfo                         |    6 +-
+ sysutils/bastille/pkg-plist                        |    2 +
+ sysutils/eksctl/Makefile                           |  272 ++-
+ sysutils/eksctl/distinfo                           |  532 +++--
+ sysutils/go-btfs/Makefile                          |   18 +-
+ sysutils/go-btfs/distinfo                          |   30 +-
+ sysutils/iichid/Makefile                           |   23 +-
+ sysutils/iichid/distinfo                           |    6 +-
+ sysutils/iichid/pkg-message                        |    6 +
+ sysutils/mate-power-manager/Makefile               |    2 +-
+ sysutils/mate-power-manager/pkg-descr              |    2 +-
+ sysutils/nomad/Makefile                            |    2 +-
+ sysutils/nomad/distinfo                            |    6 +-
+ .../files/patch-command_agent_host_freebsd.go      |   53 +
+ .../nomad/files/patch-command_agent_host_unix.go   |    9 +
+ ...m_docker_docker_pkg_mount_mountinfo__freebsd.go |   11 -
+ sysutils/openshift-install-devel/Makefile          |  323 +++
+ sysutils/openshift-install-devel/distinfo          |  511 +++++
+ .../files/assets_vfsdata.go                        | 2300 ++++++++++++++++++++
+ .../pkg-descr                                      |    0
+ .../Makefile                                       |   22 +-
+ .../distinfo                                       |    2 +-
+ .../files/assets_vfsdata.go                        |  580 ++---
+ sysutils/openshift-install45/pkg-descr             |    3 +
+ sysutils/openshift-install46/Makefile              |  323 +++
+ sysutils/openshift-install46/distinfo              |  511 +++++
+ .../openshift-install46/files/assets_vfsdata.go    | 2300 ++++++++++++++++++++
+ sysutils/openshift-install46/pkg-descr             |    3 +
+ sysutils/parallel/Makefile                         |    2 +-
+ sysutils/parallel/distinfo                         |    6 +-
+ textproc/asciidoc/Makefile                         |    2 +-
+ textproc/asciidoc/distinfo                         |    6 +-
+ textproc/estraier/Makefile                         |    2 +-
+ textproc/estraier/pkg-descr                        |    2 +-
+ textproc/p5-String-Util/Makefile                   |    8 +-
+ textproc/p5-String-Util/distinfo                   |    6 +-
+ textproc/p5-String-Util/pkg-plist                  |    1 -
+ textproc/py-ftfy/Makefile                          |    4 +-
+ textproc/py-ftfy/distinfo                          |    6 +-
+ textproc/tokyodystopia/Makefile                    |    2 +-
+ textproc/tokyodystopia/pkg-descr                   |    2 +-
+ www/Makefile                                       |    2 +-
+ www/cliqz/Makefile                                 |   21 +-
+ www/cliqz/distinfo                                 |   10 +-
+ www/cliqz/files/patch-addon-search                 |   25 +-
+ www/cliqz/files/patch-bug1288587                   |   57 +-
+ www/cliqz/files/patch-bug1618914                   |   23 +-
+ www/cliqz/files/patch-bug1640982                   |    2 +
+ www/cliqz/files/patch-cliqz__env.sh                |   12 +-
+ www/cliqz/files/patch-freebsd11.3                  |   61 +
+ www/gitlab-ce/Makefile                             |    4 +-
+ www/gitlab-ce/distinfo                             |    6 +-
+ www/gitlab-ce/pkg-plist                            |    7 +-
+ www/mattermost-server/Makefile                     |    2 +-
+ www/mattermost-server/distinfo                     |    6 +-
+ ...golang.org_x_sys_unix_ztypes__freebsd__arm64.go |   24 -
+ www/mattermost-server/pkg-plist                    |    1 +
+ www/mattermost-webapp/Makefile                     |    2 +-
+ www/mattermost-webapp/distinfo                     |    6 +-
+ www/mattermost-webapp/pkg-plist                    |  198 +-
+ www/minio-client/Makefile                          |   45 +-
+ www/minio-client/distinfo                          |   82 +-
+ www/nginx/Makefile                                 |    2 +-
+ www/nginx/Makefile.extmod                          |    2 +-
+ www/nginx/distinfo                                 |    6 +-
+ www/p5-Catalyst-Manual/Makefile                    |    2 +-
+ www/p5-Catalyst-Manual/distinfo                    |    6 +-
+ www/p5-Catalyst-Manual/pkg-plist                   |    2 +
+ www/p5-Catalyst-View-TT/Makefile                   |    6 +-
+ www/p5-Catalyst-View-TT/distinfo                   |    5 +-
+ www/py-google-api-core/Makefile                    |    4 +-
+ www/py-google-api-core/distinfo                    |    6 +-
+ www/py-google-cloud-bigtable/Makefile              |    2 +-
+ www/py-google-cloud-bigtable/distinfo              |    6 +-
+ www/py-google-cloud-bigtable/pkg-descr             |    3 +-
+ www/py-google-cloud-datastore/Makefile             |    2 +-
+ www/py-google-cloud-datastore/distinfo             |    6 +-
+ www/py-wagtail/Makefile                            |    2 +-
+ www/py-wagtail/distinfo                            |    6 +-
+ www/rt50/Makefile                                  |    2 +
+ www/tokyopromenade/Makefile                        |    2 +-
+ www/tokyopromenade/pkg-descr                       |    2 +-
+ x11-clocks/xfce4-timer-plugin/Makefile             |    3 +-
+ x11-clocks/xfce4-timer-plugin/distinfo             |    6 +-
+ x11-clocks/xfce4-timer-plugin/pkg-plist            |    3 +
+ x11-fonts/iosevka/Makefile                         |    2 +-
+ x11-fonts/iosevka/distinfo                         |   86 +-
+ x11-fonts/sudo-font/Makefile                       |    3 +-
+ x11-fonts/sudo-font/distinfo                       |    6 +-
+ x11-wm/hikari/Makefile                             |    3 +-
+ x11-wm/hikari/distinfo                             |    6 +-
+ 418 files changed, 8380 insertions(+), 5497 deletions(-)
+ create mode 100644 cad/cura/files/patch-plugins_USBPrinting_USBPrinterOutputDeviceManager.py
+ delete mode 100644 databases/postgresql94-client/Makefile
+ delete mode 100644 databases/postgresql94-contrib/Makefile
+ delete mode 100644 databases/postgresql94-contrib/pkg-descr
+ delete mode 100644 databases/postgresql94-docs/Makefile
+ delete mode 100644 databases/postgresql94-pgtcl/Makefile
+ delete mode 100644 databases/postgresql94-plperl/Makefile
+ delete mode 100644 databases/postgresql94-plpython/Makefile
+ delete mode 100644 databases/postgresql94-pltcl/Makefile
+ delete mode 100644 databases/postgresql94-server/Makefile
+ delete mode 100644 databases/postgresql94-server/distinfo
+ delete mode 100644 databases/postgresql94-server/files/502.pgsql.in
+ delete mode 100644 databases/postgresql94-server/files/dot.cshrc.in
+ delete mode 100644 databases/postgresql94-server/files/dot.profile.in
+ delete mode 100644 databases/postgresql94-server/files/patch-doc-Makefile
+ delete mode 100644 databases/postgresql94-server/files/patch-doc-src-sgml-Makefile
+ delete mode 100644 databases/postgresql94-server/files/patch-src-Makefile.shlib
+ delete mode 100644 databases/postgresql94-server/files/patch-src-backend-Makefile
+ delete mode 100644 databases/postgresql94-server/files/patch-src_backend_utils_misc_postgresql.conf.sample
+ delete mode 100644 databases/postgresql94-server/files/pkg-message-client.in
+ delete mode 100644 databases/postgresql94-server/files/pkg-message-contrib.in
+ delete mode 100644 databases/postgresql94-server/files/pkg-message-plperl.in
+ delete mode 100644 databases/postgresql94-server/files/pkg-message-plpython.in
+ delete mode 100644 databases/postgresql94-server/files/pkg-message-pltcl.in
+ delete mode 100644 databases/postgresql94-server/files/pkg-message-server.in
+ delete mode 100644 databases/postgresql94-server/files/pkgIndex.tcl.in
+ delete mode 100644 databases/postgresql94-server/files/postgresql.in
+ delete mode 100644 databases/postgresql94-server/pkg-descr
+ delete mode 100644 databases/postgresql94-server/pkg-install-server
+ delete mode 100644 databases/postgresql94-server/pkg-plist-client
+ delete mode 100644 databases/postgresql94-server/pkg-plist-contrib
+ delete mode 100644 databases/postgresql94-server/pkg-plist-plperl
+ delete mode 100644 databases/postgresql94-server/pkg-plist-plpython
+ delete mode 100644 databases/postgresql94-server/pkg-plist-pltcl
+ delete mode 100644 databases/postgresql94-server/pkg-plist-server
+ delete mode 100644 devel/pecl-eio/files/patch-libeio__ecb.h
+ delete mode 100644 devel/rubygem-tty-prompt/files/patch-gemspec
+ delete mode 100644 devel/valgrind-devel/files/accept4_syscall.patch
+ delete mode 100644 devel/valgrind-devel/files/extra-patch-ino64
+ delete mode 100644 devel/valgrind-devel/files/jail_syscalls.patch
+ delete mode 100644 devel/valgrind-devel/files/kldload_syscalls.patch
+ delete mode 100644 devel/valgrind-devel/files/missing_fcntls.patch
+ delete mode 100644 devel/valgrind-devel/files/patch-VEX_auxprogs_genoffsets.c
+ delete mode 100644 devel/valgrind-devel/files/patch-configure.ac
+ delete mode 100644 devel/valgrind-devel/files/patch-coregrind-m_syswrap-syswrap-amd64-freebsd.c
+ delete mode 100644 devel/valgrind-devel/files/patch-include__vki__vki-freebsd.h
+ delete mode 100644 mail/postfix-current/files/patch-src_tls_tls__certkey.c
+ delete mode 100644 math/suitesparse/files/patch-SLIP__LU_Lib_Makefile
+ delete mode 100644 math/suitesparse/files/patch-SLIP__LU_Source_slip__internal.h
+ delete mode 100644 net/dshell/Makefile
+ delete mode 100644 net/dshell/distinfo
+ delete mode 100644 net/dshell/files/patch-Makefile
+ delete mode 100644 net/dshell/pkg-descr
+ delete mode 100644 net/dshell/pkg-message
+ delete mode 100644 net/dshell/pkg-plist
+ create mode 100644 net/frr7/files/patch-lib_zlog.c
+ create mode 100644 security/denyhosts/files/patch-DenyHosts-report.py
+ create mode 100644 security/softether-devel/files/patch-increase-nat-sessions
+ create mode 100644 security/softether/files/patch-increase-nat-sessions
+ create mode 100644 sysutils/nomad/files/patch-command_agent_host_freebsd.go
+ create mode 100644 sysutils/nomad/files/patch-command_agent_host_unix.go
+ delete mode 100644 sysutils/nomad/files/patch-vendor_github.com_docker_docker_pkg_mount_mountinfo__freebsd.go
+ create mode 100644 sysutils/openshift-install-devel/Makefile
+ create mode 100644 sysutils/openshift-install-devel/distinfo
+ create mode 100644 sysutils/openshift-install-devel/files/assets_vfsdata.go
+ rename sysutils/{openshift-install => openshift-install-devel}/pkg-descr (100%)
+ rename sysutils/{openshift-install => openshift-install45}/Makefile (97%)
+ rename sysutils/{openshift-install => openshift-install45}/distinfo (99%)
+ rename sysutils/{openshift-install => openshift-install45}/files/assets_vfsdata.go (87%)
+ create mode 100644 sysutils/openshift-install45/pkg-descr
+ create mode 100644 sysutils/openshift-install46/Makefile
+ create mode 100644 sysutils/openshift-install46/distinfo
+ create mode 100644 sysutils/openshift-install46/files/assets_vfsdata.go
+ create mode 100644 sysutils/openshift-install46/pkg-descr
+ create mode 100644 www/cliqz/files/patch-freebsd11.3
+ delete mode 100644 www/mattermost-server/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
