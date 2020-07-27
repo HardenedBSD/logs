@@ -62,3 +62,128 @@ remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-p
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    61537431152d..2ca086991d25  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/xpra/files/patch-xpra_scripts_config.py
+Removing x11/xpra/files/patch-xpra_platform_xposix_paths.py
+Removing sysutils/conky/files/patch-src_core.cc
+Removing net/neatvnc/files/patch-default-target
+Removing databases/sqliteodbc-sqlite2/Makefile
+Removing comms/dump1090/files/patch-Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ comms/dump1090/Makefile                            |  11 +-
+ comms/dump1090/distinfo                            |   5 +-
+ comms/dump1090/files/patch-Makefile                |  21 ---
+ databases/Makefile                                 |   1 -
+ databases/sqliteodbc-sqlite2/Makefile              |  19 ---
+ devel/aml/Makefile                                 |  10 +-
+ devel/aml/distinfo                                 |   6 +-
+ devel/ioncube/Makefile                             |   3 +-
+ devel/ioncube/distinfo                             |  10 +-
+ devel/py-jedi/Makefile                             |   6 +-
+ devel/py-jedi/distinfo                             |   6 +-
+ devel/py-selectors2/Makefile                       |   2 +-
+ devel/py-selectors2/distinfo                       |   6 +-
+ finance/gnucash-docs/Makefile                      |   2 +-
+ finance/gnucash-docs/distinfo                      |   6 +-
+ finance/gnucash/Makefile                           |   2 +-
+ finance/gnucash/distinfo                           |   6 +-
+ finance/gnucash/pkg-plist                          |  15 ++-
+ games/dMagnetic/Makefile                           |   8 +-
+ games/dMagnetic/distinfo                           |   6 +-
+ games/dMagnetic/pkg-plist                          |   4 +-
+ games/rockdodger/Makefile                          |   2 +-
+ games/rockdodger/distinfo                          |   6 +-
+ games/widelands/Makefile                           |   9 +-
+ games/widelands/distinfo                           |   6 +-
+ games/widelands/files/patch-CMakeLists.txt         |  25 ++--
+ .../widelands/files/patch-cmake_WlFunctions.cmake  |   4 +-
+ .../files/patch-src_game__io_game_preload_packet.h |  11 ++
+ games/widelands/files/patch-src_wui_savegamedata.h |  10 ++
+ games/widelands/files/patch-xdg_CMakeLists.txt     |  27 ++++
+ games/widelands/pkg-plist                          |  57 ++------
+ net/neatvnc/Makefile                               |   9 +-
+ net/neatvnc/distinfo                               |   6 +-
+ net/neatvnc/files/patch-default-target             |  20 ---
+ net/wayvnc/Makefile                                |  19 ++-
+ net/wayvnc/distinfo                                |   8 +-
+ security/py-gssapi/Makefile                        |   2 +-
+ security/py-gssapi/distinfo                        |   6 +-
+ sysutils/conky/Makefile                            |   3 +-
+ sysutils/conky/distinfo                            |   6 +-
+ sysutils/conky/files/patch-src_core.cc             |  11 --
+ x11-themes/matcha-gtk-themes/Makefile              |   2 +-
+ x11-themes/matcha-gtk-themes/distinfo              |   6 +-
+ x11-wm/xfce4-wm/Makefile                           |   4 +-
+ x11-wm/xfce4-wm/distinfo                           |   6 +-
+ x11-wm/xfce4-wm/files/patch-gpid-long              |  50 +++++++
+ x11-wm/xfce4-wm/pkg-plist                          |   1 +
+ x11/xpra/Makefile                                  |  11 +-
+ x11/xpra/distinfo                                  |   6 +-
+ x11/xpra/files/patch-scripts_xpra                  |  13 +-
+ x11/xpra/files/patch-xpra_platform_xposix_paths.py |  17 ---
+ x11/xpra/files/patch-xpra_scripts_config.py        |  10 --
+ x11/xpra/pkg-plist                                 | 145 ++++++++++++++++-----
+ 54 files changed, 372 insertions(+), 302 deletions(-)
+ delete mode 100644 comms/dump1090/files/patch-Makefile
+ delete mode 100644 databases/sqliteodbc-sqlite2/Makefile
+ create mode 100644 games/widelands/files/patch-src_game__io_game_preload_packet.h
+ create mode 100644 games/widelands/files/patch-src_wui_savegamedata.h
+ create mode 100644 games/widelands/files/patch-xdg_CMakeLists.txt
+ delete mode 100644 net/neatvnc/files/patch-default-target
+ delete mode 100644 sysutils/conky/files/patch-src_core.cc
+ create mode 100644 x11-wm/xfce4-wm/files/patch-gpid-long
+ delete mode 100644 x11/xpra/files/patch-xpra_platform_xposix_paths.py
+ delete mode 100644 x11/xpra/files/patch-xpra_scripts_config.py
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    2ca086991d25..e06bf79fb694  master -> master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   2ca086991d25..e06bf79fb694  master -> master
+==== END: master ====
