@@ -1,0 +1,140 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 40 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating d6a91a6c7d6c..83f92323fb4f
+Fast-forward
+ UPDATING                                           |  12 ++
+ astro/mkgmap/Makefile                              |   2 +-
+ astro/mkgmap/distinfo                              |   6 +-
+ audio/asunder/Makefile                             |   3 +-
+ cad/alliance/Makefile                              |   6 +-
+ cad/alliance/files/patch-nero_src_MDRGrid.cpp      |  21 +++
+ databases/ldb20/Makefile                           |   2 +-
+ databases/ldb20/pkg-descr                          |   2 +-
+ devel/rinutils/distinfo                            |   2 -
+ devel/rust-analyzer/Makefile                       |  55 ++----
+ devel/rust-analyzer/distinfo                       | 108 ++++--------
+ editors/Makefile                                   |   1 +
+ editors/nvi-devel/Makefile                         |   5 +-
+ editors/nvi2/Makefile                              |  52 ++++++
+ editors/nvi2/distinfo                              |   3 +
+ editors/nvi2/pkg-descr                             |  12 ++
+ games/black-hole-solver/Makefile                   |   2 +-
+ lang/janet/Makefile                                |   2 +-
+ lang/janet/distinfo                                |   6 +-
+ mail/dovecot-fts-xapian/Makefile                   |   3 +-
+ mail/dovecot-fts-xapian/distinfo                   |   6 +-
+ mail/mailfromd/Makefile                            |  11 +-
+ mail/mailfromd/distinfo                            |   6 +-
+ mail/mailfromd/pkg-plist                           |   2 +
+ mail/postfix-current/Makefile                      |   2 +-
+ mail/postfix-current/distinfo                      |   6 +-
+ mail/postfix/Makefile                              |   2 +-
+ mail/postfix/distinfo                              |   6 +-
+ .../kodi-addon-inputstream.adaptive-devel/Makefile |   6 +-
+ .../kodi-addon-peripheral.joystick-devel/Makefile  |   6 +-
+ .../kodi-addon-vfs.libarchive-devel/Makefile       |   6 +-
+ multimedia/kodi-devel/Makefile                     |   5 +-
+ multimedia/kodi-devel/distinfo                     |   6 +-
+ net-mgmt/librenms/Makefile                         |   6 +-
+ net-mgmt/librenms/files/librenms.in                |   5 +-
+ net-mgmt/librenms/files/patch-.env.example         |   5 +-
+ net-mgmt/librenms/files/pkg-message.in             |   5 +
+ net/ipxe/Makefile                                  |   5 +-
+ net/ipxe/distinfo                                  |   6 +-
+ net/ipxe/files/patch-Makefile.housekeeping         |  15 --
+ net/mediatomb/Makefile                             |   1 +
+ net/savvycan/Makefile                              |   2 +
+ print/R-cran-tinytex/Makefile                      |   2 +-
+ print/R-cran-tinytex/distinfo                      |   6 +-
+ science/netcdf-fortran/Makefile                    |   7 +
+ security/arirang/Makefile                          |   2 +-
+ security/trezord/Makefile                          |   2 +-
+ security/trezord/distinfo                          |   6 +-
+ security/vuxml/vuln.xml                            |  38 +++++
+ sysutils/minikube/Makefile                         |  94 ++++++-----
+ sysutils/minikube/distinfo                         | 184 ++++++++++++---------
+ sysutils/rsyncrypto/Makefile                       |  24 ++-
+ sysutils/rsyncrypto/distinfo                       |   5 +-
+ sysutils/xjobs/Makefile                            |   2 +-
+ sysutils/xjobs/distinfo                            |   6 +-
+ textproc/lowdown/Makefile                          |   2 +-
+ textproc/lowdown/distinfo                          |   6 +-
+ www/ddgr/Makefile                                  |   4 +-
+ www/ddgr/distinfo                                  |   6 +-
+ www/gohugo/Makefile                                |   6 +-
+ www/gohugo/distinfo                                |  10 +-
+ www/groupoffice/Makefile                           |   2 +-
+ www/groupoffice/distinfo                           |   6 +-
+ www/groupoffice/pkg-plist                          | 146 ++++++++--------
+ www/kannel/Makefile                                |   1 +
+ www/kcgi/Makefile                                  |   3 +-
+ www/kcgi/distinfo                                  |   6 +-
+ www/minio/Makefile                                 |   6 +-
+ www/minio/distinfo                                 |  10 +-
+ www/squid/Makefile                                 |   3 +-
+ www/squid/distinfo                                 |   6 +-
+ www/squid/files/patch-configure                    |  30 ++--
+ ...rectory__userip_ext__edirectory__userip__acl.cc |  15 --
+ ...external_kerberos__ldap__group_support__krb5.cc |  19 ---
+ www/squid/files/patch-src_security_Handshake.cc    | 147 ++++++++++++++++
+ www/squid/files/squid.in                           |  24 +++
+ x11-drivers/xf86-video-amdgpu/Makefile             |   4 +-
+ x11-drivers/xf86-video-ati/Makefile                |   4 +-
+ x11-wm/i3/Makefile                                 |   2 +-
+ x11-wm/i3/distinfo                                 |   6 +-
+ 80 files changed, 767 insertions(+), 510 deletions(-)
+ create mode 100644 cad/alliance/files/patch-nero_src_MDRGrid.cpp
+ create mode 100644 editors/nvi2/Makefile
+ create mode 100644 editors/nvi2/distinfo
+ create mode 100644 editors/nvi2/pkg-descr
+ delete mode 100644 net/ipxe/files/patch-Makefile.housekeeping
+ delete mode 100644 www/squid/files/patch-src_acl_external_eDirectory__userip_ext__edirectory__userip__acl.cc
+ delete mode 100644 www/squid/files/patch-src_acl_external_kerberos__ldap__group_support__krb5.cc
+ create mode 100644 www/squid/files/patch-src_security_Handshake.cc
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
