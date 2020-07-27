@@ -1,0 +1,108 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating c4b16d0606ac..d9c99b9bb369
+Fast-forward
+ .../pmu-events/arch/x86/amdfam17h/cache.json       | 332 --------------------
+ lib/libpmc/pmu-events/arch/x86/amdfam17h/core.json | 127 --------
+ .../arch/x86/amdfam17h/floating-point.json         | 196 ------------
+ .../pmu-events/arch/x86/amdfam17h/memory.json      | 226 --------------
+ .../pmu-events/arch/x86/amdfam17h/other.json       |  51 ---
+ lib/libpmc/pmu-events/arch/x86/amdzen1/branch.json |  23 ++
+ lib/libpmc/pmu-events/arch/x86/amdzen1/cache.json  | 294 ++++++++++++++++++
+ lib/libpmc/pmu-events/arch/x86/amdzen1/core.json   | 125 ++++++++
+ .../x86/{amdfam17h => amdzen1}/data-fabric.json    |   0
+ .../arch/x86/amdzen1/floating-point.json           | 224 ++++++++++++++
+ .../arch/x86/{amdfam17h => amdzen1}/l3cache.json   |   0
+ lib/libpmc/pmu-events/arch/x86/amdzen1/memory.json | 184 +++++++++++
+ lib/libpmc/pmu-events/arch/x86/amdzen1/other.json  |  56 ++++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/branch.json |  52 ++++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/cache.json  | 338 ++++++++++++++++++++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/core.json   | 130 ++++++++
+ .../arch/x86/amdzen2/floating-point.json           | 140 +++++++++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/memory.json | 341 +++++++++++++++++++++
+ lib/libpmc/pmu-events/arch/x86/amdzen2/other.json  | 115 +++++++
+ lib/libpmc/pmu-events/arch/x86/mapfile.csv         |   9 +-
+ sys/net/iflib.c                                    |  51 ++-
+ sys/net/iflib.h                                    |   5 +
+ 22 files changed, 2072 insertions(+), 947 deletions(-)
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/cache.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/core.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/floating-point.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/memory.json
+ delete mode 100644 lib/libpmc/pmu-events/arch/x86/amdfam17h/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/branch.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/core.json
+ rename lib/libpmc/pmu-events/arch/x86/{amdfam17h => amdzen1}/data-fabric.json (100%)
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/floating-point.json
+ rename lib/libpmc/pmu-events/arch/x86/{amdfam17h => amdzen1}/l3cache.json (100%)
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen1/other.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/branch.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/cache.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/core.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/floating-point.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/memory.json
+ create mode 100644 lib/libpmc/pmu-events/arch/x86/amdzen2/other.json
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    c4b16d0606ac..d9c99b9bb369  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/hardenedbsd/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   c4b16d0606ac..d9c99b9bb369  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
