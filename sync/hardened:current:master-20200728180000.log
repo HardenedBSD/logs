@@ -1,0 +1,116 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 13 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating d84510e9840e..19f1873e7c05
+Fast-forward
+ bin/ps/ps.c                                     |  11 +-
+ cddl/lib/Makefile                               |   9 +-
+ cddl/lib/libdtrace/Makefile                     |   3 -
+ cddl/lib/libzpool/Makefile                      |   2 -
+ etc/mtree/BSD.usr.dist                          |   4 -
+ release/sparc64/mkisoimages.sh                  |  86 ------
+ release/sparc64/sparc64.conf                    |  10 -
+ rescue/rescue/Makefile                          |   4 -
+ sbin/init/ttys.sparc64                          |  54 ----
+ sys/arm/broadcom/bcm2835/bcm2835_cpufreq.c      | 359 ++++++++++--------------
+ sys/arm/broadcom/bcm2835/bcm2835_firmware.c     |   5 +-
+ sys/arm/broadcom/bcm2835/bcm2835_firmware.h     | 164 +++++++++++
+ sys/arm/broadcom/bcm2835/bcm2835_mbox.c         |  14 +-
+ sys/arm/broadcom/bcm2835/bcm2835_mbox_prop.h    |  58 ----
+ sys/arm/broadcom/bcm2835/bcm2835_sdhci.c        |  36 ++-
+ sys/conf/files                                  |   4 +
+ sys/dev/virtio/pci/virtio_pci.c                 |  37 +--
+ sys/kern/kern_dump.c                            |   6 +-
+ sys/modules/esp/Makefile                        |   2 +-
+ sys/modules/uart/Makefile                       |   2 +-
+ usr.sbin/bsdinstall/partedit/partedit_sparc64.c |  84 ------
+ usr.sbin/kldxref/ef_sparc64.c                   |  71 -----
+ 22 files changed, 401 insertions(+), 624 deletions(-)
+ delete mode 100644 release/sparc64/mkisoimages.sh
+ delete mode 100644 release/sparc64/sparc64.conf
+ delete mode 100644 sbin/init/ttys.sparc64
+ delete mode 100644 usr.sbin/bsdinstall/partedit/partedit_sparc64.c
+ delete mode 100644 usr.sbin/kldxref/ef_sparc64.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/openbsm/CREDITS                     |  3 +++
+ contrib/openbsm/bin/auditd/auditd.c         |  2 +-
+ contrib/openbsm/bin/auditdistd/auditdistd.c |  2 +-
+ contrib/openbsm/bin/auditdistd/proto_tls.c  |  4 ++--
+ contrib/openbsm/libauditd/auditd_lib.c      |  2 +-
+ contrib/openbsm/libbsm/au_control.3         |  2 +-
+ contrib/openbsm/libbsm/au_domain.3          |  2 +-
+ contrib/openbsm/libbsm/au_errno.3           |  2 +-
+ contrib/openbsm/libbsm/au_socket_type.3     |  2 +-
+ contrib/openbsm/man/audit.log.5             |  6 ++---
+ contrib/openbsm/man/getaudit.2              |  3 ++-
+ contrib/openbsm/sys/bsm/audit.h             |  8 +++----
+ share/man/man3/siginfo.3                    | 35 ++++++++++++++---------------
+ sys/dev/iommu/busdma_iommu.c                |  8 +++----
+ sys/dev/iommu/iommu.h                       | 12 +++++++++-
+ sys/dev/ntb/ntb_hw/ntb_hw_intel.c           |  2 +-
+ sys/dev/ntb/ntb_hw/ntb_hw_plx.c             |  2 +-
+ sys/vm/vm_page.h                            |  7 +++++-
+ sys/x86/include/bus_dma.h                   |  4 ++--
+ sys/x86/iommu/intel_ctx.c                   |  8 ++++---
+ sys/x86/iommu/intel_dmar.h                  | 13 ++---------
+ sys/x86/iommu/intel_drv.c                   | 13 +++++------
+ sys/x86/x86/busdma_machdep.c                |  4 ++--
+ 23 files changed, 77 insertions(+), 69 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    19f1873e7c05..581aa1cf9a0b  hardened/current/master -> hardened/current/master        
+remote:    2883892953ea..9568fd4404ad  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   19f1873e7c05..581aa1cf9a0b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
