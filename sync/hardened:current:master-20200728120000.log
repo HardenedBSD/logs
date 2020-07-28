@@ -1,0 +1,98 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing usr.sbin/kldxref/ef_sparc64.c
+Removing usr.sbin/bsdinstall/partedit/partedit_sparc64.c
+Auto-merging sys/conf/files
+CONFLICT (modify/delete): sbin/init/ttys.sparc64 deleted in freebsd/current/master and modified in HEAD. Version HEAD of sbin/init/ttys.sparc64 left in tree.
+Auto-merging rescue/rescue/Makefile
+Removing release/sparc64/sparc64.conf
+Removing release/sparc64/mkisoimages.sh
+Auto-merging etc/mtree/BSD.usr.dist
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+* Unmerged path sbin/init/ttys.sparc64
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   bin/ps/ps.c
+	modified:   cddl/lib/Makefile
+	modified:   cddl/lib/libdtrace/Makefile
+	modified:   cddl/lib/libzpool/Makefile
+	modified:   etc/mtree/BSD.usr.dist
+	deleted:    release/sparc64/mkisoimages.sh
+	deleted:    release/sparc64/sparc64.conf
+	modified:   rescue/rescue/Makefile
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_cpufreq.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_firmware.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_firmware.h
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_mbox.c
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_mbox_prop.h
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_sdhci.c
+	modified:   sys/conf/files
+	modified:   sys/dev/virtio/pci/virtio_pci.c
+	modified:   sys/kern/kern_dump.c
+	modified:   sys/modules/esp/Makefile
+	modified:   sys/modules/uart/Makefile
+	deleted:    usr.sbin/bsdinstall/partedit/partedit_sparc64.c
+	deleted:    usr.sbin/kldxref/ef_sparc64.c
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by them: sbin/init/ttys.sparc64
+
+HEAD is now at d84510e9840e Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at d84510e9840e Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
