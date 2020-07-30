@@ -47,3 +47,682 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Removing www/chromium/files/patch-ui_message__center_public_cpp_message__center__constants.h
+Removing www/chromium/files/patch-third__party_zlib_BUILD.gn
+Removing www/chromium/files/patch-third__party_yasm_yasm__assemble.gni
+Removing www/chromium/files/patch-third__party_skia_third__party_vulkanmemoryallocator_include_vk__mem__alloc.h
+Removing www/chromium/files/patch-net_base_features.cc
+Removing www/chromium/files/patch-media_webrtc_webrtc__switches.cc
+Removing www/chromium/files/patch-media_blink_webmediaplayer__impl.cc
+Removing www/chromium/files/patch-content_browser_media_media__internals.cc
+Removing www/chromium/files/patch-chrome_browser_extensions_install__signer.cc
+Removing www/chromium/files/patch-base_test_generate__fontconfig__caches.cc
+Removing www/chromium/files/patch-base_test_fontconfig__util__linux.cc
+Auto-merging www/chromium/Makefile
+Auto-merging security/suricata/Makefile
+Auto-merging security/Makefile
+Removing math/pdal/files/patch-cmake_modules_FindLASzip.cmake
+Removing lang/rust/files/patch-src_bootstrap_native.rs
+Removing lang/nim/files/patch-install.sh
+Removing java/openjdk8/files/patch-hotspot_src_cpu_ppc_vm_sharedRuntime__ppc.cpp
+Removing databases/sqlitebrowser/files/patch-src_grammar_Sqlite3Lexer.hpp
+Removing databases/sqlitebrowser/files/patch-cmake_FindQScintilla.cmake
+Auto-merging databases/postgis23/Makefile
+Removing databases/pointcloud/files/patch-pgsql_pc__inout.c
+Removing databases/pointcloud/files/patch-pgsql_pc__access.c
+Merge made by the 'recursive' strategy.
+ Mk/Uses/cargo.mk                                   |    2 +-
+ astro/xearth/files/freebsd.committers.markers      |  198 +---
+ audio/Makefile                                     |    1 +
+ audio/ncspot/Makefile                              |    1 +
+ audio/py-gtts/Makefile                             |   43 +
+ audio/py-gtts/distinfo                             |    3 +
+ audio/py-gtts/pkg-descr                            |   13 +
+ audio/spotify-tui/Makefile                         |    1 +
+ audio/spotifyd/Makefile                            |    2 +-
+ benchmarks/hyperfine/Makefile                      |    2 +-
+ cad/Makefile                                       |    1 +
+ cad/NASTRAN-95/Makefile                            |    6 +-
+ cad/NASTRAN-95/pkg-descr                           |    2 +-
+ cad/py-ezdxf/Makefile                              |   33 +
+ cad/py-ezdxf/distinfo                              |    3 +
+ cad/py-ezdxf/pkg-descr                             |    7 +
+ databases/pgrouting/Makefile                       |    3 +-
+ databases/pgrouting/distinfo                       |    6 +-
+ databases/pgrouting/pkg-plist                      |   19 +-
+ databases/pointcloud/Makefile                      |    3 +-
+ databases/pointcloud/distinfo                      |    6 +-
+ .../pointcloud/files/patch-pgsql_pc__access.c      |   26 -
+ databases/pointcloud/files/patch-pgsql_pc__inout.c |   11 -
+ databases/pointcloud/pkg-plist                     |   13 +-
+ databases/postgis23/Makefile                       |    3 +-
+ databases/postgis23/distinfo                       |    6 +-
+ databases/postgis23/pkg-plist                      |    8 +
+ databases/sqlitebrowser/Makefile                   |    9 +-
+ databases/sqlitebrowser/distinfo                   |    6 +-
+ .../files/patch-cmake_FindQScintilla.cmake         |   27 -
+ .../files/patch-src_grammar_Sqlite3Lexer.hpp       |   10 -
+ deskutils/freeplane/Makefile                       |    2 +-
+ deskutils/freeplane/distinfo                       |    6 +-
+ deskutils/freeplane/pkg-plist                      |    2 +-
+ deskutils/just/Makefile                            |    1 +
+ devel/bingrep/Makefile                             |    2 +-
+ devel/cargo-c/Makefile                             |    1 +
+ devel/cdecl/Makefile                               |    2 +-
+ devel/cdecl/distinfo                               |    6 +-
+ devel/desed/Makefile                               |    2 +-
+ devel/dtool/Makefile                               |    2 +-
+ devel/gbump/Makefile                               |    2 +-
+ devel/git-absorb/Makefile                          |    2 +-
+ devel/git-delta/Makefile                           |    2 +-
+ devel/gitui/Makefile                               |    1 +
+ devel/interactive_rebase_tool/Makefile             |    2 +-
+ devel/p5-DateTime-HiRes/Makefile                   |    2 +-
+ devel/p5-DateTime-HiRes/distinfo                   |    6 +-
+ devel/pijul/Makefile                               |    2 +-
+ devel/racer/Makefile                               |    1 +
+ devel/rust-analyzer/Makefile                       |    1 +
+ devel/rust-bindgen/Makefile                        |    2 +-
+ devel/rust-cbindgen/Makefile                       |    2 +-
+ devel/sccache/Makefile                             |    2 +-
+ devel/sentry-cli/Makefile                          |    2 +-
+ devel/tokei/Makefile                               |    2 +-
+ dns/doh-proxy/Makefile                             |    2 +-
+ dns/subfinder/Makefile                             |    2 +-
+ dns/subfinder/distinfo                             |    6 +-
+ editors/kak-lsp/Makefile                           |    2 +-
+ editors/parinfer-rust/Makefile                     |    2 +-
+ editors/xi-core/Makefile                           |    2 +-
+ editors/xi-term/Makefile                           |    2 +-
+ games/abstreet/Makefile                            |    2 +-
+ games/dose-response/Makefile                       |    2 +-
+ games/genact/Makefile                              |    2 +-
+ games/jaggedalliance2/Makefile                     |    2 +-
+ games/py-mnemosyne/Makefile                        |   13 +-
+ games/veloren/Makefile                             |    2 +-
+ graphics/ikona/Makefile                            |    2 +-
+ graphics/librsvg2-rust/Makefile                    |    2 +-
+ graphics/pastel/Makefile                           |    2 +-
+ graphics/rx/Makefile                               |    2 +-
+ graphics/svgbob/Makefile                           |    2 +-
+ graphics/viu/Makefile                              |    2 +-
+ java/icedtea-web/Makefile                          |    2 +-
+ ...h-hotspot_src_cpu_ppc_vm_sharedRuntime__ppc.cpp |   14 -
+ lang/Makefile                                      |    1 +
+ lang/bsh/Makefile                                  |    3 +-
+ lang/nim/Makefile                                  |   35 +-
+ lang/nim/distinfo                                  |    6 +-
+ lang/nim/files/patch-install.sh                    |   70 --
+ lang/nim/pkg-plist                                 | 1104 ++++++++++++--------
+ lang/rust-bootstrap/Makefile                       |    2 +-
+ lang/rust-bootstrap/distinfo                       |    6 +-
+ lang/rust/Makefile                                 |    2 +-
+ lang/rust/distinfo                                 |    6 +-
+ lang/rust/files/patch-src_bootstrap_lib.rs         |   28 +
+ lang/rust/files/patch-src_bootstrap_native.rs      |   34 -
+ lang/spidermonkey68/Makefile                       |   78 ++
+ lang/spidermonkey68/distinfo                       |    3 +
+ .../files/patch-js_public_TypeDecls.h              |   26 +
+ lang/spidermonkey68/pkg-descr                      |    3 +
+ lang/spidermonkey68/pkg-plist                      |  213 ++++
+ mail/thunderbird/Makefile                          |    1 +
+ math/Makefile                                      |    1 +
+ math/ensmallen/Makefile                            |    3 +-
+ math/ensmallen/distinfo                            |    6 +-
+ math/pdal/Makefile                                 |   61 +-
+ math/pdal/distinfo                                 |    6 +-
+ .../files/patch-cmake_modules_FindLASzip.cmake     |   11 -
+ math/pdal/pkg-plist                                |  184 ++--
+ math/py-kiwisolver/Makefile                        |    4 +-
+ math/py-kiwisolver/distinfo                        |    6 +-
+ math/py-pdal/Makefile                              |   34 +
+ math/py-pdal/distinfo                              |    3 +
+ math/py-pdal/pkg-descr                             |    8 +
+ misc/broot/Makefile                                |    1 +
+ misc/openhantek/Makefile                           |   10 +-
+ misc/openhantek/distinfo                           |    6 +-
+ misc/ruut/Makefile                                 |    1 +
+ multimedia/librav1e/Makefile                       |    2 +-
+ multimedia/rav1e/Makefile                          |    2 +-
+ multimedia/termplay/Makefile                       |    2 +-
+ net-im/fractal/Makefile                            |    2 +-
+ net-mgmt/librenms/Makefile                         |    2 +-
+ net-mgmt/librenms/files/patch-config.php.default   |   29 +-
+ net-p2p/openethereum/Makefile                      |    2 +-
+ net/findomain/Makefile                             |    1 +
+ net/proby/Makefile                                 |    2 +-
+ net/rabbiteer/Makefile                             |    2 +-
+ net/routinator/Makefile                            |    2 +-
+ science/py-moltemplate/Makefile                    |    2 +-
+ science/py-moltemplate/distinfo                    |    6 +-
+ security/Makefile                                  |    1 +
+ security/acmed/Makefile                            |    2 +-
+ security/cargo-audit/Makefile                      |    2 +-
+ security/cloak/Makefile                            |    2 +-
+ security/py-gtts-token/Makefile                    |   28 +
+ security/py-gtts-token/distinfo                    |    3 +
+ security/py-gtts-token/pkg-descr                   |    4 +
+ security/suricata/Makefile                         |    2 +-
+ security/vuxml/vuln.xml                            |    2 +-
+ security/wazuh-agent/Makefile                      |    3 +
+ security/wazuh-agent/files/wazuh-agent.in          |   62 ++
+ security/wazuh-agent/pkg-message                   |    8 +
+ shells/ion/Makefile                                |    2 +-
+ shells/starship/Makefile                           |    2 +-
+ sysutils/dua-cli/Makefile                          |    1 +
+ sysutils/exa/Makefile                              |    2 +-
+ sysutils/fd/Makefile                               |    2 +-
+ sysutils/flowgger/Makefile                         |    2 +-
+ sysutils/fselect/Makefile                          |    2 +-
+ sysutils/fusefs-sandboxfs/Makefile                 |    2 +-
+ sysutils/hexyl/Makefile                            |    2 +-
+ sysutils/lsd/Makefile                              |    2 +-
+ sysutils/onefetch/Makefile                         |    2 +-
+ sysutils/potnet/Makefile                           |    2 +-
+ sysutils/rsfetch/Makefile                          |    2 +-
+ sysutils/tealdeer/Makefile                         |    2 +-
+ sysutils/vector/Makefile                           |    2 +-
+ sysutils/zoxide/Makefile                           |    2 +-
+ textproc/Makefile                                  |    1 +
+ textproc/bat/Makefile                              |    2 +-
+ textproc/py-googletrans/Makefile                   |   22 +
+ textproc/py-googletrans/distinfo                   |    3 +
+ textproc/py-googletrans/pkg-descr                  |   13 +
+ textproc/ripgrep/Makefile                          |    2 +-
+ textproc/sd/Makefile                               |    2 +-
+ textproc/sonic/Makefile                            |    2 +-
+ textproc/xsv-rs/Makefile                           |    2 +-
+ www/chromium/Makefile                              |   15 +-
+ www/chromium/distinfo                              |   10 +-
+ ...__allocator_page__allocator__internals__posix.h |    2 +-
+ www/chromium/files/patch-BUILD.gn                  |   16 +-
+ ...atch-apps_app__restore__service__browsertest.cc |    4 +-
+ www/chromium/files/patch-base_BUILD.gn             |   18 +-
+ ...tch-base_allocator_allocator__shim__unittest.cc |   10 +-
+ ...tition__allocator_partition__alloc__unittest.cc |    4 +-
+ www/chromium/files/patch-base_cpu.cc               |   10 +-
+ .../files/patch-base_debug_debugger__posix.cc      |    6 +-
+ www/chromium/files/patch-base_debug_elf__reader.cc |    8 +-
+ .../files/patch-base_debug_proc__maps__linux.cc    |   20 +-
+ ...tch-base_files_file__path__watcher__unittest.cc |   10 +-
+ www/chromium/files/patch-base_files_file__util.h   |    4 +-
+ .../files/patch-base_files_file__util__unittest.cc |    6 +-
+ www/chromium/files/patch-base_logging__unittest.cc |    4 +-
+ ...mory_platform__shared__memory__region__posix.cc |   10 +-
+ .../files/patch-base_path__service__unittest.cc    |    4 +-
+ www/chromium/files/patch-base_process_memory.cc    |    6 +-
+ .../files/patch-base_process_process__linux.cc     |    8 +-
+ .../files/patch-base_process_process__metrics.cc   |   10 +-
+ .../patch-base_process_process__metrics__posix.cc  |    4 +-
+ ...ofiler_stack__sampling__profiler__test__util.cc |   11 +
+ ...profiler_stack__sampling__profiler__unittest.cc |    4 +-
+ .../files/patch-base_security__unittest.cc         |    4 +-
+ .../files/patch-base_synchronization_lock__impl.h  |    4 +-
+ .../files/patch-base_system_sys__info__freebsd.cc  |   42 +-
+ www/chromium/files/patch-base_test_BUILD.gn        |   15 +
+ .../patch-base_test_fontconfig__util__linux.cc     |  406 -------
+ ...patch-base_test_generate__fontconfig__caches.cc |   17 -
+ .../patch-base_test_launcher_test__launcher.cc     |    4 +-
+ .../patch-base_test_test__file__util__posix.cc     |    4 +-
+ ...e_threading_scoped__blocking__call__unittest.cc |   11 +
+ ...-base_threading_thread__task__runner__handle.cc |    4 +-
+ .../files/patch-build_config_compiler_BUILD.gn     |   33 +-
+ .../files/patch-build_config_compiler_compiler.gni |   13 +-
+ www/chromium/files/patch-cc_BUILD.gn               |    6 +-
+ ...patch-cc_layers_scrollbar__layer__impl__base.cc |    4 +-
+ .../files/patch-cc_test_layer__tree__test.cc       |   11 +
+ www/chromium/files/patch-cc_test_pixel__test.cc    |   11 +
+ .../files/patch-cc_trees_frame__rate__estimator.cc |   11 +
+ .../files/patch-cc_trees_property__tree.cc         |    4 +-
+ www/chromium/files/patch-chrome_app_BUILD.gn       |    4 +-
+ .../patch-chrome_app_chrome__main__delegate.cc     |   50 +-
+ .../files/patch-chrome_app_chromium__strings.grd   |    8 +-
+ .../patch-chrome_app_generated__resources.grd      |    8 +-
+ .../patch-chrome_app_google__chrome__strings.grd   |    8 +-
+ .../files/patch-chrome_app_settings__strings.grdp  |    6 +-
+ www/chromium/files/patch-chrome_browser_BUILD.gn   |    8 +-
+ .../files/patch-chrome_browser_about__flags.cc     |   93 +-
+ ...browser_background_background__mode__manager.cc |    4 +-
+ .../patch-chrome_browser_browser__resources.grd    |    4 +-
+ ..._browser_chrome__browser__interface__binders.cc |    8 +-
+ .../patch-chrome_browser_chrome__browser__main.cc  |   18 +-
+ ...-chrome_browser_chrome__browser__main__posix.cc |    6 +-
+ ...ome_browser_chrome__content__browser__client.cc |   34 +-
+ ...rome_browser_chrome__content__browser__client.h |    4 +-
+ ...custom__handlers_protocol__handler__registry.cc |    4 +-
+ ...download_chrome__download__manager__delegate.cc |    6 +-
+ ...hrome_browser_download_download__item__model.cc |    6 +-
+ ...atch-chrome_browser_download_download__prefs.cc |   22 +-
+ ...patch-chrome_browser_download_download__prefs.h |   12 +-
+ ...atch-chrome_browser_download_download__query.cc |    4 +-
+ ...wser_download_download__shelf__context__menu.cc |    4 +-
+ .../files/patch-chrome_browser_extensions_BUILD.gn |    4 +-
+ ...se__reporting__private_device__info__fetcher.cc |    6 +-
+ ...api_erp_chrome_desktop_report_request_helper.cc |    2 +-
+ ...n__action_browser__action__interactive__test.cc |   11 +
+ ...s_api_runtime_chrome__runtime__api__delegate.cc |    4 +-
+ ...gging__private_webrtc__logging__private__api.cc |   10 +-
+ ..._browser__context__keyed__service__factories.cc |    4 +-
+ ...ch-chrome_browser_extensions_install__signer.cc |   18 -
+ .../patch-chrome_browser_flag__descriptions.cc     |   14 +-
+ .../patch-chrome_browser_flag__descriptions.h      |   14 +-
+ ...dia__galleries_media__file__system__registry.cc |    4 +-
+ ...covery_discovery__network__list__wifi__linux.cc |   19 +-
+ ...ser_media_webrtc_webrtc__logging__controller.cc |   10 +-
+ .../files/patch-chrome_browser_memory__details.cc  |    4 +-
+ ...chrome__browser__main__extra__parts__metrics.cc |    6 +-
+ ...ser_metrics_chrome__metrics__service__client.cc |    6 +-
+ ...er_metrics_process__memory__metrics__emitter.cc |   16 +-
+ ...rowser_net_system__network__context__manager.cc |   12 +-
+ ...d__manager_chrome__password__manager__client.cc |    4 +-
+ ...r_password__manager_password__store__factory.cc |    4 +-
+ ...atch-chrome_browser_pdf_pdf__extension__test.cc |   11 +
+ ...rformance__monitor_process__metrics__history.cc |    8 +-
+ ...erformance__monitor_process__metrics__history.h |    4 +-
+ ...onfiguration__policy__handler__list__factory.cc |    6 +-
+ .../patch-chrome_browser_prefs_browser__prefs.cc   |    6 +-
+ ...hrome__browser__main__extra__parts__profiles.cc |    8 +-
+ ..._browser_profiles_profile__attributes__entry.cc |    4 +-
+ ...r__context__menu_render__view__context__menu.cc |    8 +-
+ ..._appearance__page_appearance__browser__proxy.js |   30 +-
+ ...settings_appearance__page_appearance__page.html |   10 +-
+ ...s_settings_appearance__page_appearance__page.js |    8 +-
+ ..._incident__reporting_incident__handler__util.cc |    7 +-
+ ...o__self_send__tab__to__self__client__service.cc |    4 +-
+ ...ser_sharing_shared__clipboard_feature__flags.cc |    6 +-
+ ...wser_sharing_shared__clipboard_feature__flags.h |    4 +-
+ ...tch-chrome_browser_sync_chrome__sync__client.cc |   10 +-
+ ...tegration_single__client__wallet__sync__test.cc |   11 +
+ ...hrome_browser_themes_theme__service__factory.cc |    8 +-
+ .../files/patch-chrome_browser_ui_BUILD.gn         |    4 +-
+ ...rome_browser_ui_browser__command__controller.cc |   10 +-
+ ...browser_ui_startup_startup__browser__creator.cc |    8 +-
+ .../files/patch-chrome_browser_ui_tab__helpers.cc  |    4 +-
+ ...chrome_browser_ui_test_test__browser__dialog.cc |   11 +
+ ...tch-chrome_browser_ui_test_test__browser__ui.cc |   20 +
+ ...ui_views_bookmarks_bookmark__bar__view__test.cc |   11 +
+ ...owser_ui_views_download_download__item__view.cc |    6 +-
+ ...chrome_browser_ui_views_frame_browser__frame.cc |    8 +-
+ ...-chrome_browser_ui_views_frame_browser__view.cc |    4 +-
+ ..._browser_ui_views_tabs_tab__drag__controller.cc |    8 +-
+ .../patch-chrome_browser_ui_webui_about__ui.cc     |    6 +-
+ ...i_webui_chrome__web__ui__controller__factory.cc |   12 +-
+ ...tings_settings__localized__strings__provider.cc |    4 +-
+ www/chromium/files/patch-chrome_common_BUILD.gn    |    4 +-
+ .../patch-chrome_common_channel__info__posix.cc    |    6 +-
+ .../files/patch-chrome_common_chrome__features.cc  |    4 +-
+ .../files/patch-chrome_common_chrome__features.h   |    4 +-
+ .../files/patch-chrome_common_chrome__switches.cc  |    4 +-
+ .../files/patch-chrome_common_chrome__switches.h   |    4 +-
+ .../patch-chrome_common_extensions_command.cc      |    4 +-
+ .../files/patch-chrome_common_features.gni         |    4 +-
+ ...ch-chrome_common_media_cdm__host__file__path.cc |    4 +-
+ .../files/patch-chrome_common_pref__names.cc       |   12 +-
+ .../files/patch-chrome_common_pref__names.h        |   16 +-
+ .../patch-chrome_common_webui__url__constants.cc   |   12 +-
+ .../patch-chrome_common_webui__url__constants.h    |   10 +-
+ ...e_renderer_chrome__content__renderer__client.cc |    4 +-
+ www/chromium/files/patch-chrome_test_BUILD.gn      |    6 +-
+ ...atch-chrome_test_base_chrome__test__launcher.cc |   11 +-
+ ...-chrome_test_base_in__process__browser__test.cc |    8 +-
+ ...ch-chrome_test_base_testing__browser__process.h |    4 +-
+ ...e_test_chromedriver_key__converter__unittest.cc |   10 +-
+ ...est_chromedriver_server_chromedriver__server.cc |   11 +
+ ...hromecast_browser_cast__browser__main__parts.cc |   12 +-
+ ...ecast_browser_cast__content__browser__client.cc |    4 +-
+ ...omecast_media_base_default__monotonic__clock.cc |   23 +
+ www/chromium/files/patch-components_BUILD.gn       |    9 +-
+ ...t_renderer_password__form__conversion__utils.cc |    4 +-
+ ..._autofill_core_browser_autofill__experiments.cc |    4 +-
+ ...ll_core_browser_autofill__external__delegate.cc |    4 +-
+ ...utofill_core_browser_personal__data__manager.cc |    6 +-
+ ...ill_core_common_autofill__payments__features.cc |    4 +-
+ .../patch-components_crash_core_common_BUILD.gn    |   16 +-
+ ...nts_feature__engagement_public_feature__list.cc |    6 +-
+ ...ents_feature__engagement_public_feature__list.h |   10 +-
+ .../files/patch-components_metrics_BUILD.gn        |    4 +-
+ .../files/patch-components_metrics_metrics__log.cc |    4 +-
+ ...patch-components_neterror_resources_neterror.js |    4 +-
+ ...rator_browser_network__session__configurator.cc |    4 +-
+ ...cy_core_browser_policy__pref__mapping__test.cc} |    6 +-
+ ...policy_core_common_cloud_cloud__policy__util.cc |   10 +-
+ .../patch-components_policy_core_common_schema.cc  |    4 +-
+ ...ponents_policy_resources_policy__templates.json |   20 +-
+ ...onents_policy_tools_generate__policy__source.py |   30 +-
+ ..._formatter_spoof__checks_idn__spoof__checker.cc |    4 +-
+ ...display__embedder_skia__output__device__dawn.cc |   10 +-
+ ...e__sinks_root__compositor__frame__sink__impl.cc |    4 +-
+ ...me__sinks_root__compositor__frame__sink__impl.h |    4 +-
+ ...tch-components_viz_test_mock__display__client.h |    6 +-
+ ...atch-content_app_content__main__runner__impl.cc |   18 +-
+ www/chromium/files/patch-content_browser_BUILD.gn  |    4 +-
+ .../patch-content_browser_browser__main__loop.cc   |    8 +-
+ ...wser_devtools_protocol_system__info__handler.cc |   12 +-
+ ...patch-content_browser_gpu_gpu__process__host.cc |   13 +-
+ ...patch-content_browser_media_media__internals.cc |   11 -
+ ...r_renderer__host_render__process__host__impl.cc |   21 +-
+ ...er_renderer__host_render__process__host__impl.h |    4 +-
+ ...wser_renderer__host_render__view__host__impl.cc |    4 +-
+ ...derer__host_render__widget__host__view__aura.cc |   20 +-
+ ...ent_browser_scheduler_responsiveness_watcher.cc |    6 +-
+ ...patch-content_browser_utility__process__host.cc |   13 +-
+ ...rowser_webui_shared__resources__data__source.cc |   15 +-
+ www/chromium/files/patch-content_common_BUILD.gn   |    4 +-
+ .../files/patch-content_common_user__agent.cc      |    6 +-
+ www/chromium/files/patch-content_gpu_gpu__main.cc  |   16 +-
+ .../patch-content_gpu_gpu__sandbox__hook__linux.cc |   25 +-
+ ...h-content_public_app_content__main__delegate.cc |    4 +-
+ .../files/patch-content_public_common_BUILD.gn     |    4 +-
+ ...t_public_common_common__param__traits__macros.h |    4 +-
+ ...atch-content_public_common_content__features.cc |    6 +-
+ ...atch-content_public_common_content__switches.cc |    4 +-
+ ...patch-content_public_common_content__switches.h |    4 +-
+ ...atch-content_public_test_browser__test__base.cc |    8 +-
+ www/chromium/files/patch-content_renderer_BUILD.gn |    4 +-
+ ..._renderer_media_audio_audio__device__factory.cc |    4 +-
+ ...patch-content_renderer_render__process__impl.cc |    4 +-
+ .../patch-content_renderer_render__thread__impl.cc |   27 +-
+ ...ent_renderer_renderer__blink__platform__impl.cc |   12 +-
+ www/chromium/files/patch-content_shell_BUILD.gn    |   14 +-
+ ...nt_shell_browser_shell__browser__main__parts.cc |    6 +-
+ ...rowser_web__test_web__test__browser__context.cc |    4 +-
+ ...er_web__test_web__test__browser__main__parts.cc |    4 +-
+ ...r_web__test_web__test__browser__main__runner.cc |   11 +
+ ...ntent_shell_renderer_web__test_test__runner.cc} |   14 +-
+ www/chromium/files/patch-content_test_BUILD.gn     |    4 +-
+ .../patch-content_test_content__test__suite.cc     |    6 +-
+ www/chromium/files/patch-content_utility_BUILD.gn  |    4 +-
+ ...i_declarative__webrequest_webrequest__action.cc |    4 +-
+ ..._browser_api_web__request_form__data__parser.cc |    4 +-
+ ..._browser__context__keyed__service__factories.cc |   10 +-
+ ...tensions_common_api___permission__features.json |    6 +-
+ .../files/patch-extensions_common_image__util.cc   |    4 +-
+ ...ensions_renderer_bindings_api__binding__util.cc |    4 +-
+ ...__buffer_common_gpu__memory__buffer__support.cc |    6 +-
+ ..._buffer_service_external__vk__image__backing.cc |   60 +-
+ ...vice_external__vk__image__gl__representation.cc |    4 +-
+ ...patch-gpu_command__buffer_tests_webgpu__test.cc |   20 +
+ .../files/patch-gpu_config_gpu__control__list.cc   |    6 +-
+ ...-gpu_ipc_common_gpu__memory__buffer__support.cc |   12 +-
+ .../files/patch-gpu_ipc_service_gpu__init.cc       |   30 +-
+ .../patch-gpu_ipc_service_gpu__watchdog__thread.h  |    6 +-
+ .../patch-gpu_vulkan_vulkan__function__pointers.cc |   16 +-
+ .../patch-gpu_vulkan_vulkan__function__pointers.h  |   55 +-
+ www/chromium/files/patch-headless_BUILD.gn         |   28 +-
+ ...b_browser_headless__content__browser__client.cc |    8 +-
+ ..._browser_headless__request__context__manager.cc |    6 +-
+ ...adless_lib_headless__content__main__delegate.cc |   12 +-
+ ...eadless_lib_headless__content__main__delegate.h |    4 +-
+ www/chromium/files/patch-media_BUILD.gn            |    4 +-
+ .../patch-media_audio_audio__input__device.cc      |    4 +-
+ .../files/patch-media_base_media__switches.cc      |   13 +-
+ www/chromium/files/patch-media_base_video__frame.h |   12 +-
+ .../patch-media_blink_webmediaplayer__impl.cc      |   15 -
+ www/chromium/files/patch-media_media__options.gni  |    4 +-
+ ...media_mojo_mojom_video__frame__mojom__traits.cc |    8 +-
+ ...media_mojo_services_gpu__mojo__media__client.cc |    6 +-
+ .../files/patch-media_webrtc_webrtc__switches.cc   |   11 -
+ ...ch-mojo_public_js_mojo__bindings__resources.grd |    6 +-
+ www/chromium/files/patch-net_BUILD.gn              |    8 +-
+ www/chromium/files/patch-net_base_features.cc      |   11 -
+ .../files/patch-net_cert_cert__verifier.cc         |   11 +
+ .../files/patch-net_cert_cert__verify__proc.cc     |   11 +
+ .../files/patch-net_cert_cert__verify__proc.h      |   11 +
+ .../patch-net_nqe_network__quality__estimator.cc   |    4 +-
+ ...ution_configured__proxy__resolution__service.cc |    4 +-
+ ...t_socket_unix__domain__client__socket__posix.cc |    4 +-
+ ..._tools_cert__verify__tool_cert__verify__tool.cc |   13 +-
+ .../files/patch-net_url__request_url__fetcher.cc   |    8 +-
+ .../files/patch-net_url__request_url__fetcher.h    |    4 +-
+ ...patch-net_url__request_url__request__context.cc |    4 +-
+ ..._url__request_url__request__context__builder.cc |    6 +-
+ .../files/patch-pdf_pdfium_pdfium__engine.cc       |   14 +-
+ .../files/patch-ppapi_proxy_file__io__resource.cc  |    6 +-
+ .../files/patch-remoting_host_host__main.cc        |    6 +-
+ .../patch-remoting_host_remoting__me2me__host.cc   |   29 +-
+ .../patch-remoting_test_it2me__standalone__host.cc |   11 +
+ ...-remoting_test_it2me__standalone__host__main.cc |   39 +
+ ...tch-sandbox_linux_services_libc__interceptor.cc |    4 +-
+ www/chromium/files/patch-services_audio_BUILD.gn   |    4 +-
+ ...ices_device_geolocation_location__arbitrator.cc |    8 +-
+ .../files/patch-services_device_usb_BUILD.gn       |    6 +-
+ www/chromium/files/patch-services_network_BUILD.gn |    4 +-
+ .../patch-services_network_network__context.cc     |    4 +-
+ ..._cpp_cert__verifier_cert__verifier__creation.cc |   11 +
+ ...p_memory__instrumentation_os__metrics__linux.cc |   14 +-
+ .../patch-services_tracing_public_cpp_BUILD.gn     |   11 +
+ ...ices_tracing_public_cpp_perfetto_trace__time.cc |    4 +-
+ ...p_stack__sampling_tracing__sampler__profiler.cc |    4 +-
+ .../patch-skia_ext_SkMemory__new__handler.cpp      |    6 +-
+ .../files/patch-third__party_angle_BUILD.gn        |    4 +-
+ ...tch-third__party_angle_src_libANGLE_Display.cpp |    4 +-
+ ..._third__party_vulkan-loader_src_loader_loader.c |    4 +-
+ ...blink_renderer_controller_blink__initializer.cc |    8 +-
+ ...link_renderer_core_exported_web__frame__test.cc |   20 +
+ ...nderer_core_html_forms_internal__popup__menu.cc |    4 +-
+ ...arty_blink_renderer_core_layout_layout__view.cc |    6 +-
+ ...party_blink_renderer_core_paint_paint__layer.cc |    4 +-
+ ..._mediastream_processed__local__audio__source.cc |    4 +-
+ ...peerconnection_webrtc__audio__renderer__test.cc |   11 +
+ ...odules_webaudio_audio__worklet__thread__test.cc |   11 +
+ ...h-third__party_blink_renderer_platform_BUILD.gn |    4 +-
+ ...ty_blink_renderer_platform_fonts_font__cache.cc |    6 +-
+ ...rty_blink_renderer_platform_fonts_font__cache.h |   10 +-
+ ...nk_renderer_platform_fonts_font__description.cc |    4 +-
+ ...latform_fonts_shaping_harfbuzz__shaper__test.cc |   11 +
+ ...nderer_platform_fonts_skia_font__cache__skia.cc |   10 +-
+ ...tform_graphics_image__frame__generator__test.cc |   19 +
+ ...er_platform_graphics_video__frame__submitter.cc |    4 +-
+ ...-third__party_crashpad_crashpad_client_BUILD.gn |    4 +-
+ ..._crashpad_crashpad_util_misc_capture__context.h |    6 +-
+ ..._googletest_include_gtest_internal_gtest-port.h |   19 +
+ ...d__party_googletest_src_googletest_src_gtest.cc |    4 +-
+ ...tch-third__party_leveldatabase_env__chromium.cc |    4 +-
+ ...fetto_include_perfetto_ext_base_thread__utils.h |   12 +
+ ...ch-third__party_perfetto_src_base_subprocess.cc |    6 +-
+ ...party_perfetto_src_base_thread__task__runner.cc |   15 +-
+ ...etto_src_tracing_core_tracing__service__impl.cc |    4 +-
+ ..._vulkanmemoryallocator_include_vk__mem__alloc.h |   11 -
+ .../patch-third__party_webrtc_rtc__base_network.cc |    4 +-
+ ...ty_webrtc_rtc__base_physical__socket__server.cc |   12 +-
+ .../patch-third__party_yasm_yasm__assemble.gni     |  157 ---
+ .../files/patch-third__party_zlib_BUILD.gn         |   20 -
+ ...s.c => patch-third__party_zlib_cpu__features.c} |   15 +-
+ www/chromium/files/patch-tools_gn_build_gen.py     |    6 +-
+ ...ols_json__schema__compiler_feature__compiler.py |   18 +-
+ .../files/patch-ui_aura_test_aura__test__helper.cc |   20 +
+ ...agdrop_os__exchange__data__provider__factory.cc |   22 +-
+ ...-ui_base_ime_init_input__method__initializer.cc |   12 +-
+ .../files/patch-ui_base_ui__base__features.cc      |   17 +-
+ .../files/patch-ui_base_ui__base__features.h       |    4 +-
+ .../files/patch-ui_compositor_compositor.cc        |    6 +-
+ .../files/patch-ui_compositor_compositor.h         |    8 +-
+ ...vents_devices_x11_device__data__manager__x11.cc |    6 +-
+ www/chromium/files/patch-ui_gfx_BUILD.gn           |    4 +-
+ .../files/patch-ui_gfx_font__render__params.h      |   12 +-
+ .../files/patch-ui_gfx_native__pixmap__handle.cc   |   16 +-
+ www/chromium/files/patch-ui_gfx_render__text.cc    |    4 +-
+ www/chromium/files/patch-ui_gfx_x_BUILD.gn         |   11 +
+ www/chromium/files/patch-ui_gfx_x_gen__xproto.py   |   13 +
+ www/chromium/files/patch-ui_gl_BUILD.gn            |    4 +-
+ .../files/patch-ui_gl_generate__bindings.py        |    4 +-
+ .../files/patch-ui_gtk_print__dialog__gtk.cc       |    4 +-
+ ..._center_public_cpp_message__center__constants.h |   11 -
+ .../patch-ui_native__theme_native__theme__base.cc  |    4 +-
+ .../patch-ui_strings_app__locale__settings.grd     |    4 +-
+ ..._views_bubble_bubble__dialog__delegate__view.cc |    6 +-
+ .../files/patch-ui_views_controls_label.cc         |    6 +-
+ .../patch-ui_views_controls_textfield_textfield.cc |   18 +-
+ .../patch-ui_views_examples_widget__example.cc     |   14 +-
+ ...__aura_desktop__window__tree__host__platform.cc |    4 +-
+ .../patch-ui_views_widget_native__widget__aura.cc  |   11 +-
+ .../patch-ui_views_window_dialog__delegate.cc      |    4 +-
+ www/chromium/files/patch-v8_BUILD.gn               |    8 +-
+ www/chromium/files/patch-v8_src_api_api.cc         |    4 +-
+ .../patch-v8_src_base_platform_platform-freebsd.cc |   12 +-
+ www/chromium/files/patch-weblayer_BUILD.gn         |    4 +-
+ ...h-weblayer_app_content__main__delegate__impl.cc |    4 +-
+ ...-weblayer_browser_browser__main__parts__impl.cc |    6 +-
+ ...layer_browser_content__browser__client__impl.cc |   13 +-
+ ...blayer_browser_content__browser__client__impl.h |   12 +-
+ ...er_browser_system__network__context__manager.cc |    8 +-
+ www/chromium/pkg-plist                             |   53 +-
+ www/cliqz/Makefile                                 |    1 +
+ www/ffsend/Makefile                                |    2 +-
+ www/firefox-esr/Makefile                           |    1 +
+ www/firefox/Makefile                               |    1 +
+ www/geckodriver/Makefile                           |    2 +-
+ www/jwt-cli/Makefile                               |    2 +-
+ www/miniserve/Makefile                             |    1 +
+ www/monolith/Makefile                              |    1 +
+ www/newsboat/Makefile                              |    2 +-
+ www/nextcloud-appointments/Makefile                |    4 +-
+ www/nextcloud-appointments/distinfo                |    6 +-
+ www/nextcloud-forms/Makefile                       |    2 +-
+ www/nextcloud-forms/distinfo                       |    6 +-
+ www/varnish-modules/Makefile                       |   12 +-
+ www/varnish-modules/distinfo                       |    6 +-
+ www/varnish-modules/files/patch-src_Makefile.am    |   20 +-
+ www/varnish-modules/pkg-plist                      |    4 -
+ www/websocat/Makefile                              |    2 +-
+ www/ytdl/Makefile                                  |   12 +-
+ www/ytdl/distinfo                                  |   26 +-
+ www/zola/Makefile                                  |    2 +-
+ x11/admiral/Makefile                               |    2 +-
+ x11/alacritty/Makefile                             |    2 +-
+ x11/squeekboard/Makefile                           |    2 +-
+ 520 files changed, 3554 insertions(+), 3178 deletions(-)
+ create mode 100644 audio/py-gtts/Makefile
+ create mode 100644 audio/py-gtts/distinfo
+ create mode 100644 audio/py-gtts/pkg-descr
+ create mode 100644 cad/py-ezdxf/Makefile
+ create mode 100644 cad/py-ezdxf/distinfo
+ create mode 100644 cad/py-ezdxf/pkg-descr
+ delete mode 100644 databases/pointcloud/files/patch-pgsql_pc__access.c
+ delete mode 100644 databases/pointcloud/files/patch-pgsql_pc__inout.c
+ delete mode 100644 databases/sqlitebrowser/files/patch-cmake_FindQScintilla.cmake
+ delete mode 100644 databases/sqlitebrowser/files/patch-src_grammar_Sqlite3Lexer.hpp
+ delete mode 100644 java/openjdk8/files/patch-hotspot_src_cpu_ppc_vm_sharedRuntime__ppc.cpp
+ delete mode 100644 lang/nim/files/patch-install.sh
+ create mode 100644 lang/rust/files/patch-src_bootstrap_lib.rs
+ delete mode 100644 lang/rust/files/patch-src_bootstrap_native.rs
+ create mode 100644 lang/spidermonkey68/Makefile
+ create mode 100644 lang/spidermonkey68/distinfo
+ create mode 100644 lang/spidermonkey68/files/patch-js_public_TypeDecls.h
+ create mode 100644 lang/spidermonkey68/pkg-descr
+ create mode 100644 lang/spidermonkey68/pkg-plist
+ delete mode 100644 math/pdal/files/patch-cmake_modules_FindLASzip.cmake
+ create mode 100644 math/py-pdal/Makefile
+ create mode 100644 math/py-pdal/distinfo
+ create mode 100644 math/py-pdal/pkg-descr
+ create mode 100644 security/py-gtts-token/Makefile
+ create mode 100644 security/py-gtts-token/distinfo
+ create mode 100644 security/py-gtts-token/pkg-descr
+ create mode 100644 security/wazuh-agent/files/wazuh-agent.in
+ create mode 100644 security/wazuh-agent/pkg-message
+ create mode 100644 textproc/py-googletrans/Makefile
+ create mode 100644 textproc/py-googletrans/distinfo
+ create mode 100644 textproc/py-googletrans/pkg-descr
+ create mode 100644 www/chromium/files/patch-base_profiler_stack__sampling__profiler__test__util.cc
+ create mode 100644 www/chromium/files/patch-base_test_BUILD.gn
+ delete mode 100644 www/chromium/files/patch-base_test_fontconfig__util__linux.cc
+ delete mode 100644 www/chromium/files/patch-base_test_generate__fontconfig__caches.cc
+ create mode 100644 www/chromium/files/patch-base_threading_scoped__blocking__call__unittest.cc
+ create mode 100644 www/chromium/files/patch-cc_test_layer__tree__test.cc
+ create mode 100644 www/chromium/files/patch-cc_test_pixel__test.cc
+ create mode 100644 www/chromium/files/patch-cc_trees_frame__rate__estimator.cc
+ create mode 100644 www/chromium/files/patch-chrome_browser_extensions_api_extension__action_browser__action__interactive__test.cc
+ delete mode 100644 www/chromium/files/patch-chrome_browser_extensions_install__signer.cc
+ create mode 100644 www/chromium/files/patch-chrome_browser_pdf_pdf__extension__test.cc
+ create mode 100644 www/chromium/files/patch-chrome_browser_sync_test_integration_single__client__wallet__sync__test.cc
+ create mode 100644 www/chromium/files/patch-chrome_browser_ui_test_test__browser__dialog.cc
+ create mode 100644 www/chromium/files/patch-chrome_browser_ui_test_test__browser__ui.cc
+ create mode 100644 www/chromium/files/patch-chrome_browser_ui_views_bookmarks_bookmark__bar__view__test.cc
+ create mode 100644 www/chromium/files/patch-chrome_test_chromedriver_server_chromedriver__server.cc
+ create mode 100644 www/chromium/files/patch-chromecast_media_base_default__monotonic__clock.cc
+ rename www/chromium/files/{patch-chrome_browser_policy_policy__prefs__browsertest.cc => patch-components_policy_core_browser_policy__pref__mapping__test.cc} (51%)
+ delete mode 100644 www/chromium/files/patch-content_browser_media_media__internals.cc
+ create mode 100644 www/chromium/files/patch-content_shell_browser_web__test_web__test__browser__main__runner.cc
+ rename www/chromium/files/{patch-content_shell_test__runner_test__runner.cc => patch-content_shell_renderer_web__test_test__runner.cc} (71%)
+ create mode 100644 www/chromium/files/patch-gpu_command__buffer_tests_webgpu__test.cc
+ delete mode 100644 www/chromium/files/patch-media_blink_webmediaplayer__impl.cc
+ delete mode 100644 www/chromium/files/patch-media_webrtc_webrtc__switches.cc
+ delete mode 100644 www/chromium/files/patch-net_base_features.cc
+ create mode 100644 www/chromium/files/patch-net_cert_cert__verifier.cc
+ create mode 100644 www/chromium/files/patch-net_cert_cert__verify__proc.cc
+ create mode 100644 www/chromium/files/patch-net_cert_cert__verify__proc.h
+ create mode 100644 www/chromium/files/patch-remoting_test_it2me__standalone__host.cc
+ create mode 100644 www/chromium/files/patch-remoting_test_it2me__standalone__host__main.cc
+ create mode 100644 www/chromium/files/patch-services_network_public_cpp_cert__verifier_cert__verifier__creation.cc
+ create mode 100644 www/chromium/files/patch-services_tracing_public_cpp_BUILD.gn
+ create mode 100644 www/chromium/files/patch-third__party_blink_renderer_core_exported_web__frame__test.cc
+ create mode 100644 www/chromium/files/patch-third__party_blink_renderer_modules_peerconnection_webrtc__audio__renderer__test.cc
+ create mode 100644 www/chromium/files/patch-third__party_blink_renderer_modules_webaudio_audio__worklet__thread__test.cc
+ create mode 100644 www/chromium/files/patch-third__party_blink_renderer_platform_fonts_shaping_harfbuzz__shaper__test.cc
+ create mode 100644 www/chromium/files/patch-third__party_blink_renderer_platform_graphics_image__frame__generator__test.cc
+ create mode 100644 www/chromium/files/patch-third__party_googletest_src_googletest_include_gtest_internal_gtest-port.h
+ create mode 100644 www/chromium/files/patch-third__party_perfetto_include_perfetto_ext_base_thread__utils.h
+ delete mode 100644 www/chromium/files/patch-third__party_skia_third__party_vulkanmemoryallocator_include_vk__mem__alloc.h
+ delete mode 100644 www/chromium/files/patch-third__party_yasm_yasm__assemble.gni
+ delete mode 100644 www/chromium/files/patch-third__party_zlib_BUILD.gn
+ rename www/chromium/files/{patch-third_party_zlib_cpu__features.c => patch-third__party_zlib_cpu__features.c} (82%)
+ create mode 100644 www/chromium/files/patch-ui_aura_test_aura__test__helper.cc
+ create mode 100644 www/chromium/files/patch-ui_gfx_x_BUILD.gn
+ create mode 100644 www/chromium/files/patch-ui_gfx_x_gen__xproto.py
+ delete mode 100644 www/chromium/files/patch-ui_message__center_public_cpp_message__center__constants.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    58098bb5a4a0..792e5cb1e632  master -> master
+remote:    5dbf9647d410..58098bb5a4a0  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   58098bb5a4a0..792e5cb1e632  master -> master
+==== END: master ====
