@@ -1,0 +1,149 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/modules/Makefile
+Removing sys/arm/ti/ti_hwmods.h
+Removing sys/arm/ti/ti_hwmods.c
+Removing sys/arm/ti/am335x/am335x_usbss.c
+Removing sys/arm/ti/am335x/am335x_prcm.c
+Merge made by the 'recursive' strategy.
+ sys/arm/ti/am335x/am3359_cppi41.c  | 192 ++++++++
+ sys/arm/ti/am335x/am335x_dmtimer.c |  84 +++-
+ sys/arm/ti/am335x/am335x_dmtpps.c  | 114 ++++-
+ sys/arm/ti/am335x/am335x_dmtreg.h  |  12 +
+ sys/arm/ti/am335x/am335x_gpio.c    |   1 +
+ sys/arm/ti/am335x/am335x_lcd.c     |  33 +-
+ sys/arm/ti/am335x/am335x_musb.c    |  71 ++-
+ sys/arm/ti/am335x/am335x_prcm.c    | 884 -------------------------------------
+ sys/arm/ti/am335x/am335x_pwmss.c   |  68 +--
+ sys/arm/ti/am335x/am335x_rtc.c     |   6 +-
+ sys/arm/ti/am335x/am335x_scm.c     |  44 +-
+ sys/arm/ti/am335x/am335x_usb_phy.c | 121 +++++
+ sys/arm/ti/am335x/am335x_usbss.c   | 226 ----------
+ sys/arm/ti/am335x/files.am335x     |   4 +-
+ sys/arm/ti/clk/clock_common.c      | 152 +++++++
+ sys/arm/ti/clk/clock_common.h      |  43 ++
+ sys/arm/ti/clk/ti_clk_clkctrl.c    | 219 +++++++++
+ sys/arm/ti/clk/ti_clk_clkctrl.h    |  43 ++
+ sys/arm/ti/clk/ti_clk_dpll.c       | 341 ++++++++++++++
+ sys/arm/ti/clk/ti_clk_dpll.h       |  97 ++++
+ sys/arm/ti/clk/ti_clkctrl.c        | 353 +++++++++++++++
+ sys/arm/ti/clk/ti_divider_clock.c  | 264 +++++++++++
+ sys/arm/ti/clk/ti_dpll_clock.c     | 375 ++++++++++++++++
+ sys/arm/ti/clk/ti_gate_clock.c     | 266 +++++++++++
+ sys/arm/ti/clk/ti_mux_clock.c      | 249 +++++++++++
+ sys/arm/ti/cpsw/if_cpsw.c          |  28 +-
+ sys/arm/ti/files.ti                |  13 +-
+ sys/arm/ti/omap4/files.omap4       |   2 +-
+ sys/arm/ti/ti_adc.c                |   7 +-
+ sys/arm/ti/ti_edma3.c              |  13 +-
+ sys/arm/ti/ti_gpio.c               |  82 +++-
+ sys/arm/ti/ti_hwmods.c             | 214 ---------
+ sys/arm/ti/ti_hwmods.h             |  37 --
+ sys/arm/ti/ti_i2c.c                |  20 +-
+ sys/arm/ti/ti_mbox.c               |   9 +-
+ sys/arm/ti/ti_omap4_cm.c           | 151 +++++++
+ sys/arm/ti/ti_omap4_cm.h           |  34 ++
+ sys/arm/ti/ti_pinmux.c             |   2 +
+ sys/arm/ti/ti_prcm.c               | 534 +++++++++++-----------
+ sys/arm/ti/ti_prcm.h               | 208 +--------
+ sys/arm/ti/ti_prm.c                | 210 +++++++++
+ sys/arm/ti/ti_prm.h                |  38 ++
+ sys/arm/ti/ti_pruss.c              |  96 +++-
+ sys/arm/ti/ti_scm.c                | 205 ++++-----
+ sys/arm/ti/ti_scm_syscon.c         | 294 ++++++++++++
+ sys/arm/ti/ti_sdhci.c              |  63 +--
+ sys/arm/ti/ti_sdma.c               |  19 +-
+ sys/arm/ti/ti_spi.c                |  24 +-
+ sys/arm/ti/ti_sysc.c               | 534 +++++++++++++++++++++-
+ sys/arm/ti/ti_sysc.h               |  43 ++
+ sys/arm/ti/ti_wdt.c                |   2 +-
+ sys/arm/ti/usb/omap_ehci.c         |   1 -
+ sys/arm/ti/usb/omap_host.c         |   9 +-
+ sys/arm/ti/usb/omap_tll.c          |   8 +-
+ sys/dev/uart/uart_dev_ti8250.c     |  17 +-
+ sys/modules/Makefile               |   2 +-
+ usr.bin/diff/tests/diff_test.sh    |   4 +-
+ usr.bin/sed/tests/sed2_test.sh     |   8 +-
+ 58 files changed, 5001 insertions(+), 2192 deletions(-)
+ create mode 100644 sys/arm/ti/am335x/am3359_cppi41.c
+ delete mode 100644 sys/arm/ti/am335x/am335x_prcm.c
+ create mode 100644 sys/arm/ti/am335x/am335x_usb_phy.c
+ delete mode 100644 sys/arm/ti/am335x/am335x_usbss.c
+ create mode 100644 sys/arm/ti/clk/clock_common.c
+ create mode 100644 sys/arm/ti/clk/clock_common.h
+ create mode 100644 sys/arm/ti/clk/ti_clk_clkctrl.c
+ create mode 100644 sys/arm/ti/clk/ti_clk_clkctrl.h
+ create mode 100644 sys/arm/ti/clk/ti_clk_dpll.c
+ create mode 100644 sys/arm/ti/clk/ti_clk_dpll.h
+ create mode 100644 sys/arm/ti/clk/ti_clkctrl.c
+ create mode 100644 sys/arm/ti/clk/ti_divider_clock.c
+ create mode 100644 sys/arm/ti/clk/ti_dpll_clock.c
+ create mode 100644 sys/arm/ti/clk/ti_gate_clock.c
+ create mode 100644 sys/arm/ti/clk/ti_mux_clock.c
+ delete mode 100644 sys/arm/ti/ti_hwmods.c
+ delete mode 100644 sys/arm/ti/ti_hwmods.h
+ create mode 100644 sys/arm/ti/ti_omap4_cm.c
+ create mode 100644 sys/arm/ti/ti_omap4_cm.h
+ create mode 100644 sys/arm/ti/ti_prm.c
+ create mode 100644 sys/arm/ti/ti_prm.h
+ create mode 100644 sys/arm/ti/ti_scm_syscon.c
+ create mode 100644 sys/arm/ti/ti_sysc.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    feffb2f0b255..57de22b6fa09  hardened/current/master -> hardened/current/master        
+remote:    cb6991c162b5..2d5005c693f4  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   feffb2f0b255..57de22b6fa09  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
