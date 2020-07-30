@@ -76,3 +76,301 @@ remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-p
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    5d04f02c899c..588de83c6a37  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-toolkits/qwt6/files/patch-src_qwt__painter__command.h
+Auto-merging security/Makefile
+Auto-merging net/Makefile
+Removing emulators/mame/files/patch-3rdparty_genie_src_host_scripts.c
+Removing emulators/mame/files/patch-3rdparty_bx_tests_readerwriter__test.cpp
+Removing emulators/mame/files/patch-3rdparty_bx_src_thread.cpp
+Removing emulators/mame/files/patch-3rdparty_bx_src_mutex.cpp
+Removing emulators/mame/files/patch-3rdparty_bx_include_bx_readerwriter.h
+Removing emulators/mame/files/patch-3rdparty_bx_include_bx_platform.h
+Removing emulators/mame/files/patch-3rdparty_bx_include_bx_inline_readerwriter.inl
+Removing emulators/mame/files/patch-3rdparty_bx_include_bx_inline_endian.inl
+Auto-merging emulators/mame/Makefile
+CONFLICT (content): Merge conflict in emulators/mame/Makefile
+Auto-merging devel/bison/Makefile
+CONFLICT (content): Merge conflict in devel/bison/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/bison/Makefile
+index 06239f7ab020,6df05a8f9779..000000000000
+--- a/devel/bison/Makefile
++++ b/devel/bison/Makefile
+@@@ -16,11 -16,6 +16,14 @@@ LICENSE_FILE=	${WRKSRC}/COPYIN
+  BUILD_DEPENDS=	${RUN_DEPENDS}
+  RUN_DEPENDS=	m4>=1.4.16,1:devel/m4
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +OPTIONS_DEFINE=	DOCS EXAMPLES NLS
+ +OPTIONS_SUB=	yes
+ +
+++=======
+++>>>>>>> freebsd/master
+  USES=		charsetfix compiler:c11 localbase makeinfo perl5 tar:xz
+  USE_PERL5=	build
+  
+diff --cc emulators/mame/Makefile
+index 870bddac1489,2e331a9b49c7..000000000000
+--- a/emulators/mame/Makefile
++++ b/emulators/mame/Makefile
+@@@ -20,9 -20,7 +20,13 @@@ LIB_DEPENDS=	libFLAC.so:audio/flac 
+  		libpugixml.so:textproc/pugixml
+  RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		compiler:c++14-lang gl gmake jpeg pkgconfig \
+++=======
++ USES=		compiler:c++14-lang gl gmake jpeg localbase pkgconfig \
+++>>>>>>> freebsd/master
+  		python:2.7,build qt:5 sdl shebangfix xorg
+  
+  USE_GITHUB=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   astro/xearth/files/freebsd.committers.markers
+	modified:   benchmarks/Makefile
+	new file:   benchmarks/rubygem-benchmark/Makefile
+	new file:   benchmarks/rubygem-benchmark/distinfo
+	new file:   benchmarks/rubygem-benchmark/pkg-descr
+	modified:   converters/p5-Encode/Makefile
+	modified:   converters/p5-Encode/distinfo
+	modified:   databases/ateam_mysql57_ldap_auth/Makefile
+	modified:   databases/pgmodeler/Makefile
+	modified:   databases/pgmodeler/distinfo
+	modified:   databases/pgmodeler/pkg-plist
+	modified:   databases/plpgsql_check/Makefile
+	modified:   databases/plpgsql_check/distinfo
+	modified:   databases/py-mycli/Makefile
+	modified:   databases/py-mycli/distinfo
+	modified:   devel/Makefile
+	modified:   devel/check/Makefile
+	new file:   devel/check/files/patch-src-check.c
+	new file:   devel/check/files/patch-src-check.h.in
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	modified:   devel/lua-luarocks/Makefile
+	modified:   devel/lua-luarocks/pkg-descr
+	modified:   devel/p5-DateTime-HiRes/Makefile
+	modified:   devel/p5-DateTime-HiRes/distinfo
+	modified:   devel/p5-DateTime-HiRes/pkg-plist
+	modified:   devel/p5-Minion/Makefile
+	modified:   devel/p5-Minion/distinfo
+	new file:   devel/py-curtsies/files/patch-setup.py
+	modified:   devel/py-google-crc32c/Makefile
+	modified:   devel/py-graphene-django/Makefile
+	modified:   devel/py-graphene-django/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-oslo.vmware/Makefile
+	modified:   devel/py-oslo.vmware/distinfo
+	modified:   devel/py-xdis/Makefile
+	modified:   devel/py-xdis/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudwatch/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudwatch/distinfo
+	modified:   devel/rubygem-aws-sdk-core/Makefile
+	modified:   devel/rubygem-aws-sdk-core/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-frauddetector/Makefile
+	modified:   devel/rubygem-aws-sdk-frauddetector/distinfo
+	modified:   devel/rubygem-aws-sdk-fsx/Makefile
+	modified:   devel/rubygem-aws-sdk-fsx/distinfo
+	modified:   devel/rubygem-aws-sdk-kendra/Makefile
+	modified:   devel/rubygem-aws-sdk-kendra/distinfo
+	modified:   devel/rubygem-aws-sdk-macie2/Makefile
+	modified:   devel/rubygem-aws-sdk-macie2/distinfo
+	modified:   devel/rubygem-aws-sdk-mediaconnect/Makefile
+	modified:   devel/rubygem-aws-sdk-mediaconnect/distinfo
+	modified:   devel/rubygem-aws-sdk-mediapackage/Makefile
+	modified:   devel/rubygem-aws-sdk-mediapackage/distinfo
+	modified:   devel/rubygem-aws-sdk-mq/Makefile
+	modified:   devel/rubygem-aws-sdk-mq/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-s3/Makefile
+	modified:   devel/rubygem-aws-sdk-s3/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	new file:   devel/rubygem-date/Makefile
+	new file:   devel/rubygem-date/distinfo
+	new file:   devel/rubygem-date/pkg-descr
+	new file:   devel/rubygem-delegate/Makefile
+	new file:   devel/rubygem-delegate/distinfo
+	new file:   devel/rubygem-delegate/pkg-descr
+	new file:   devel/rubygem-english/Makefile
+	new file:   devel/rubygem-english/distinfo
+	new file:   devel/rubygem-english/pkg-descr
+	new file:   devel/rubygem-etc/Makefile
+	new file:   devel/rubygem-etc/distinfo
+	new file:   devel/rubygem-etc/pkg-descr
+	new file:   devel/rubygem-ffi-libarchive/Makefile
+	new file:   devel/rubygem-ffi-libarchive/distinfo
+	new file:   devel/rubygem-ffi-libarchive/pkg-descr
+	new file:   devel/rubygem-fileutils/Makefile
+	new file:   devel/rubygem-fileutils/distinfo
+	new file:   devel/rubygem-fileutils/pkg-descr
+	modified:   devel/rubygem-google-api-client/Makefile
+	modified:   devel/rubygem-google-api-client/distinfo
+	modified:   devel/rubygem-i18n/Makefile
+	modified:   devel/rubygem-i18n/distinfo
+	modified:   devel/rubygem-jira-ruby/Makefile
+	modified:   devel/rubygem-jira-ruby/distinfo
+	modified:   devel/rubygem-oj/Makefile
+	modified:   devel/rubygem-oj/distinfo
+	new file:   devel/rubygem-singleton/Makefile
+	new file:   devel/rubygem-singleton/distinfo
+	new file:   devel/rubygem-singleton/pkg-descr
+	new file:   devel/rubygem-timeout/Makefile
+	new file:   devel/rubygem-timeout/distinfo
+	new file:   devel/rubygem-timeout/pkg-descr
+	new file:   devel/rubygem-zlib/Makefile
+	new file:   devel/rubygem-zlib/distinfo
+	new file:   devel/rubygem-zlib/pkg-descr
+	modified:   emulators/mame/distinfo
+	deleted:    emulators/mame/files/patch-3rdparty_bx_include_bx_inline_endian.inl
+	deleted:    emulators/mame/files/patch-3rdparty_bx_include_bx_inline_readerwriter.inl
+	deleted:    emulators/mame/files/patch-3rdparty_bx_include_bx_platform.h
+	deleted:    emulators/mame/files/patch-3rdparty_bx_include_bx_readerwriter.h
+	deleted:    emulators/mame/files/patch-3rdparty_bx_src_mutex.cpp
+	deleted:    emulators/mame/files/patch-3rdparty_bx_src_thread.cpp
+	deleted:    emulators/mame/files/patch-3rdparty_bx_tests_readerwriter__test.cpp
+	deleted:    emulators/mame/files/patch-3rdparty_genie_src_host_scripts.c
+	modified:   emulators/mame/pkg-plist
+	modified:   emulators/mess/pkg-plist
+	modified:   ftp/wmget/Makefile
+	modified:   ftp/wmget/pkg-descr
+	modified:   games/ltris/Makefile
+	modified:   games/ltris/distinfo
+	modified:   german/mythes/Makefile
+	modified:   german/mythes/distinfo
+	modified:   java/icedtea-web/Makefile
+	modified:   java/icedtea-web/pkg-plist
+	modified:   misc/patchutils/Makefile
+	modified:   misc/patchutils/pkg-plist
+	modified:   net/Makefile
+	modified:   net/rubygem-google-cloud-pubsub/Makefile
+	modified:   net/rubygem-google-cloud-pubsub/distinfo
+	new file:   net/rubygem-train-core/Makefile
+	new file:   net/rubygem-train-core/distinfo
+	new file:   net/rubygem-train-core/pkg-descr
+	new file:   net/rubygem-train-winrm/Makefile
+	new file:   net/rubygem-train-winrm/distinfo
+	new file:   net/rubygem-train-winrm/pkg-descr
+	new file:   net/rubygem-train/Makefile
+	new file:   net/rubygem-train/distinfo
+	new file:   net/rubygem-train/files/patch-train.gemspec
+	new file:   net/rubygem-train/pkg-descr
+	modified:   polish/hunspell/Makefile
+	modified:   polish/hunspell/distinfo
+	modified:   security/Makefile
+	new file:   security/py-cert-human/Makefile
+	new file:   security/py-cert-human/distinfo
+	new file:   security/py-cert-human/pkg-descr
+	modified:   shells/bash-completion/Makefile
+	modified:   shells/bash-completion/distinfo
+	modified:   shells/bash-completion/pkg-plist
+	modified:   sysutils/Makefile
+	modified:   sysutils/openshift-install-devel/Makefile
+	modified:   sysutils/openshift-install45/Makefile
+	modified:   sysutils/openshift-install46/Makefile
+	new file:   sysutils/rubygem-chef-utils/Makefile
+	new file:   sysutils/rubygem-chef-utils/distinfo
+	new file:   sysutils/rubygem-chef-utils/pkg-descr
+	new file:   sysutils/rubygem-chef-vault/Makefile
+	new file:   sysutils/rubygem-chef-vault/distinfo
+	new file:   sysutils/rubygem-chef-vault/pkg-descr
+	modified:   textproc/minify/Makefile
+	modified:   textproc/minify/distinfo
+	modified:   www/Makefile
+	modified:   www/p5-HTTP-BrowserDetect/Makefile
+	modified:   www/p5-HTTP-BrowserDetect/distinfo
+	modified:   www/py-feedgenerator/Makefile
+	new file:   www/py-feedgenerator/files/patch-setup.py
+	modified:   www/py-feedgenerator/pkg-descr
+	modified:   www/py-google-cloud-bigtable/Makefile
+	modified:   www/py-google-cloud-bigtable/distinfo
+	modified:   www/py-google-cloud-storage/Makefile
+	modified:   www/py-google-cloud-storage/distinfo
+	modified:   www/py-google-resumable-media/Makefile
+	modified:   www/py-google-resumable-media/distinfo
+	modified:   www/py-starlette/Makefile
+	modified:   www/py-starlette/distinfo
+	new file:   www/rubygem-cgi/Makefile
+	new file:   www/rubygem-cgi/distinfo
+	new file:   www/rubygem-cgi/pkg-descr
+	modified:   x11-toolkits/qwt6/Makefile
+	modified:   x11-toolkits/qwt6/distinfo
+	deleted:    x11-toolkits/qwt6/files/patch-src_qwt__painter__command.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/bison/Makefile
+	both modified:   emulators/mame/Makefile
+
+
+It took 3.31 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 588de83c6a37 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.21 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 588de83c6a37 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
