@@ -1,0 +1,140 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing sys/modules/rp/Makefile
+Removing sys/modules/rc/Makefile
+Removing sys/dev/rp/rpvar.h
+Removing sys/dev/rp/rpreg.h
+Removing sys/dev/rp/rp_pci.c
+Removing sys/dev/rp/rp_isa.c
+Removing sys/dev/rp/rp.c
+Removing sys/dev/rc/rcreg.h
+Removing sys/dev/rc/rc.c
+Removing sys/dev/cy/cyvar.h
+Removing sys/dev/cy/cyreg.h
+Removing sys/dev/cy/cy_pci.c
+Removing sys/dev/cy/cy_isa.c
+Removing sys/dev/cy/cy.c
+Auto-merging sys/conf/files
+Removing share/man/man4/rp.4
+Removing share/man/man4/rc.4
+Removing share/man/man4/cy.4
+Auto-merging share/man/man4/Makefile
+Auto-merging ObsoleteFiles.inc
+Merge made by the 'recursive' strategy.
+ ObsoleteFiles.inc                                  |    5 +
+ RELNOTES                                           |    4 +
+ UPDATING                                           |    7 +
+ contrib/netbsd-tests/lib/libc/regex/data/meta.in   |    4 +-
+ contrib/netbsd-tests/lib/libc/regex/data/subexp.in |    2 +-
+ lib/libc/regex/Symbol.map                          |    5 +-
+ lib/libc/regex/regcomp.c                           |  119 +-
+ share/man/man4/Makefile                            |    3 -
+ share/man/man4/cy.4                                |  257 ---
+ share/man/man4/rc.4                                |  124 --
+ share/man/man4/rp.4                                |  195 --
+ sys/conf/files                                     |    7 -
+ sys/dev/cy/cy.c                                    | 2242 --------------------
+ sys/dev/cy/cy_isa.c                                |  152 --
+ sys/dev/cy/cy_pci.c                                |  194 --
+ sys/dev/cy/cyreg.h                                 |   77 -
+ sys/dev/cy/cyvar.h                                 |   38 -
+ sys/dev/iommu/iommu.h                              |    8 -
+ sys/dev/iommu/iommu_gas.c                          |    8 +-
+ sys/dev/ntb/ntb_hw/ntb_hw_intel.c                  |    2 +
+ sys/dev/ntb/ntb_hw/ntb_hw_plx.c                    |    2 +
+ sys/dev/rc/rc.c                                    | 1314 ------------
+ sys/dev/rc/rcreg.h                                 |   72 -
+ sys/dev/rp/rp.c                                    | 1113 ----------
+ sys/dev/rp/rp_isa.c                                |  508 -----
+ sys/dev/rp/rp_pci.c                                |  368 ----
+ sys/dev/rp/rpreg.h                                 | 1033 ---------
+ sys/dev/rp/rpvar.h                                 |   76 -
+ sys/fs/nfsserver/nfs_nfsdport.c                    |   76 +-
+ sys/kern/uipc_socket.c                             |   11 +-
+ sys/kern/uipc_usrreq.c                             |    3 +-
+ sys/modules/rc/Makefile                            |    8 -
+ sys/modules/rp/Makefile                            |    8 -
+ sys/x86/iommu/intel_ctx.c                          |   10 +-
+ sys/x86/iommu/intel_drv.c                          |   16 +-
+ sys/x86/iommu/intel_idpgtbl.c                      |    4 +-
+ sys/x86/iommu/intel_intrmap.c                      |   11 +-
+ sys/x86/iommu/intel_qi.c                           |   12 +-
+ sys/x86/iommu/intel_quirks.c                       |   14 +-
+ sys/x86/iommu/intel_utils.c                        |    6 +-
+ 40 files changed, 255 insertions(+), 7863 deletions(-)
+ delete mode 100644 share/man/man4/cy.4
+ delete mode 100644 share/man/man4/rc.4
+ delete mode 100644 share/man/man4/rp.4
+ delete mode 100644 sys/dev/cy/cy.c
+ delete mode 100644 sys/dev/cy/cy_isa.c
+ delete mode 100644 sys/dev/cy/cy_pci.c
+ delete mode 100644 sys/dev/cy/cyreg.h
+ delete mode 100644 sys/dev/cy/cyvar.h
+ delete mode 100644 sys/dev/rc/rc.c
+ delete mode 100644 sys/dev/rc/rcreg.h
+ delete mode 100644 sys/dev/rp/rp.c
+ delete mode 100644 sys/dev/rp/rp_isa.c
+ delete mode 100644 sys/dev/rp/rp_pci.c
+ delete mode 100644 sys/dev/rp/rpreg.h
+ delete mode 100644 sys/dev/rp/rpvar.h
+ delete mode 100644 sys/modules/rc/Makefile
+ delete mode 100644 sys/modules/rp/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    72078bfb0fec..a5c2a142798a  hardened/current/master -> hardened/current/master        
+remote:    b84f9756ca91..eefbd8dde676  github/freebsd/current/master -> github/freebsd/current/master        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   72078bfb0fec..a5c2a142798a  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
