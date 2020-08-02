@@ -55,3 +55,143 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/dmenu/files/patch-dmenu.c
+Auto-merging x11/dmenu/Makefile
+Removing textproc/sigil/files/patch-local-content
+Removing net-im/purple-discord/files/patch-Makefile
+Merge made by the 'recursive' strategy.
+ audio/fasttracker2/Makefile                        |   2 +-
+ audio/fasttracker2/distinfo                        |   6 +-
+ audio/libopenmpt/Makefile                          |   2 +-
+ audio/libopenmpt/distinfo                          |   6 +-
+ audio/sound-juicer/Makefile                        |   3 +-
+ databases/mariadb105-server/Makefile               |   2 +-
+ databases/mariadb105-server/files/mysql-server.in  |   2 +-
+ devel/py-cfgv/Makefile                             |   2 +-
+ devel/py-cfgv/distinfo                             |   6 +-
+ java/visualvm/Makefile                             |   9 +-
+ java/visualvm/distinfo                             |   6 +-
+ java/visualvm/pkg-plist                            | 321 +++++++++++----------
+ math/e-antic/files/patch-e-antic_e-antic.h         |  13 +
+ math/e-antic/files/patch-e-antic_poly__extra.h     |  28 ++
+ math/e-antic/files/patch-nf__elem_mul.c            |  11 +
+ math/e-antic/files/patch-nf__elem_reduce.c         |  11 +
+ math/nfft/Makefile                                 |  19 +-
+ math/nfft/distinfo                                 |   6 +-
+ math/nfft/pkg-plist                                |   4 +-
+ math/py-gmpy2-devel/Makefile                       |   2 +-
+ math/py-gmpy2-devel/distinfo                       |   6 +-
+ math/py-gmpy2-devel/pkg-plist                      |  10 +-
+ multimedia/libmatroska/Makefile                    |   2 +-
+ multimedia/libmatroska/distinfo                    |   6 +-
+ net-im/ejabberd/Makefile                           |  45 ++-
+ net-im/ejabberd/distinfo                           |  90 +++---
+ net-im/ejabberd/files/patch-ejabberdctl.template   |  10 +-
+ net-im/ejabberd/pkg-plist                          |   2 +
+ net-im/purple-discord/Makefile                     |   4 +-
+ net-im/purple-discord/distinfo                     |   6 +-
+ net-im/purple-discord/files/patch-Makefile         |  11 -
+ net-p2p/xmrig/Makefile                             |   2 +-
+ net-p2p/xmrig/distinfo                             |   6 +-
+ net/echoping/Makefile                              |   9 +-
+ net/echoping/distinfo                              |   6 +-
+ net/google-cloud-sdk/Makefile                      |   2 +-
+ net/google-cloud-sdk/distinfo                      |   6 +-
+ net/nng/Makefile                                   |   2 +-
+ net/nng/distinfo                                   |   6 +-
+ .../patch-src_platform_posix_posix__ipcconn.c      |  11 +
+ net/py-GeoIP2/Makefile                             |   2 +-
+ net/py-GeoIP2/distinfo                             |   6 +-
+ net/py-maxminddb/Makefile                          |   2 +-
+ net/py-maxminddb/distinfo                          |   6 +-
+ security/acme.sh/Makefile                          |   2 +-
+ security/acme.sh/files/patch-acme.sh               |  19 ++
+ sysutils/consul/Makefile                           |   2 +-
+ sysutils/consul/distinfo                           |   6 +-
+ sysutils/consul/files/consul.in                    |  46 +--
+ sysutils/py-borgmatic/Makefile                     |   2 +-
+ sysutils/py-borgmatic/distinfo                     |   6 +-
+ textproc/consul-template/Makefile                  |   6 +-
+ textproc/consul-template/distinfo                  |   6 +-
+ textproc/consul-template/files/consul-template.in  |   2 +-
+ textproc/py-wtf-peewee/Makefile                    |   2 +-
+ textproc/py-wtf-peewee/distinfo                    |   6 +-
+ textproc/sigil/Makefile                            |   3 +-
+ textproc/sigil/distinfo                            |   6 +-
+ textproc/sigil/files/patch-local-content           |  12 -
+ textproc/sigil/pkg-plist                           |   4 +-
+ www/nextcloud-tasks/Makefile                       |   2 +-
+ www/nextcloud-tasks/distinfo                       |   6 +-
+ www/nextcloud-tasks/pkg-plist                      |   4 +-
+ www/threejs/Makefile                               |   2 +-
+ www/threejs/distinfo                               |   6 +-
+ www/threejs/pkg-plist                              |   2 +
+ x11/dmenu/Makefile                                 |  48 +--
+ x11/dmenu/distinfo                                 |   6 +-
+ x11/dmenu/files/patch-config.mk                    |  15 +
+ x11/dmenu/files/patch-dmenu.c                      |  11 -
+ 70 files changed, 523 insertions(+), 428 deletions(-)
+ create mode 100644 math/e-antic/files/patch-e-antic_e-antic.h
+ create mode 100644 math/e-antic/files/patch-e-antic_poly__extra.h
+ create mode 100644 math/e-antic/files/patch-nf__elem_mul.c
+ create mode 100644 math/e-antic/files/patch-nf__elem_reduce.c
+ delete mode 100644 net-im/purple-discord/files/patch-Makefile
+ create mode 100644 net/nng/files/patch-src_platform_posix_posix__ipcconn.c
+ create mode 100644 security/acme.sh/files/patch-acme.sh
+ delete mode 100644 textproc/sigil/files/patch-local-content
+ create mode 100644 x11/dmenu/files/patch-config.mk
+ delete mode 100644 x11/dmenu/files/patch-dmenu.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d1528c1e5048..7ada3f28b63a  master -> master        
+remote:    844a08117073..d1528c1e5048  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d1528c1e5048..7ada3f28b63a  master -> master
+==== END: master ====
