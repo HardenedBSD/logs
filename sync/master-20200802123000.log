@@ -47,3 +47,175 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-wm/xfce4-wm/files/patch-gpid-long
+Removing security/oidentd/files/patch-oidentd_masq.conf.5
+Removing security/oidentd/files/patch-oidentd.conf.5
+Removing security/oidentd/files/patch-oidentd.8
+Auto-merging security/oidentd/Makefile
+Auto-merging net/vinagre/Makefile
+Removing lang/smlnj/files/do-patch-smlnj-lib_JSON_json-stream-printer.sml
+Removing lang/smlnj/files/do-patch-smlnj-lib_JSON_json-parser.sml
+Removing lang/smlnj/files/do-patch-base_system_Basis_Implementation_date.sml
+Removing lang/smlnj/files/do-patch-asdl_config_check__smlnj__heap__suffix.m4
+Auto-merging irc/inspircd/Makefile
+Removing databases/mdbtools/files/patch-src__sql__Makefile.am
+Merge made by the 'recursive' strategy.
+ astro/xearth/files/freebsd.committers.markers      |   2 +-
+ audio/exhale/Makefile                              |   6 +-
+ audio/exhale/distinfo                              |   6 +-
+ databases/mdbtools/Makefile                        |  24 ++-
+ databases/mdbtools/distinfo                        |   5 +-
+ .../mdbtools/files/patch-src__sql__Makefile.am     |   8 -
+ databases/mdbtools/pkg-descr                       |   1 +
+ databases/mdbtools/pkg-plist                       |  29 ++-
+ databases/pecl-couchbase/Makefile                  |   5 +-
+ databases/pecl-couchbase/distinfo                  |   6 +-
+ deskutils/calibre/Makefile                         |   2 +-
+ deskutils/calibre/distinfo                         |   6 +-
+ deskutils/calibre/pkg-plist                        |   1 +
+ devel/jetbrains-phpstorm/Makefile                  |   4 +-
+ devel/jetbrains-phpstorm/distinfo                  |   6 +-
+ devel/jetbrains-phpstorm/pkg-plist                 | 236 ++++++++++++---------
+ devel/libgsf/Makefile                              |  10 +-
+ devel/libgsf/pkg-plist                             |  92 ++++----
+ devel/py-hvac/Makefile                             |   2 +-
+ devel/py-hvac/distinfo                             |   6 +-
+ devel/py-tblib/Makefile                            |   2 +-
+ devel/py-tblib/distinfo                            |   6 +-
+ devel/py-tblib/pkg-descr                           |   6 +-
+ irc/inspircd/Makefile                              |   4 +-
+ irc/inspircd/distinfo                              |   6 +-
+ irc/inspircd/files/patch-make_template_main.mk     |  12 +-
+ irc/inspircd/pkg-plist                             |   5 +-
+ lang/smlnj/Makefile                                |  17 +-
+ lang/smlnj/distinfo                                |  98 ++++-----
+ lang/smlnj/files/do-patch-asdl_config.sh           |  13 ++
+ ...patch-asdl_config_check__smlnj__heap__suffix.m4 |  10 -
+ .../files/do-patch-asdl_src_asdlgen_Makefile.in    |  28 +--
+ .../do-patch-base_runtime_objs_mk.amd64-freebsd    |   8 +-
+ .../do-patch-base_runtime_objs_mk.x86-freebsd      |   6 +-
+ ...patch-base_system_Basis_Implementation_date.sml |  11 -
+ .../files/do-patch-smlnj-lib_JSON_json-parser.sml  | 102 ---------
+ ...do-patch-smlnj-lib_JSON_json-stream-printer.sml |  25 ---
+ lang/smlnj/files/patch-config_install.sh           |  20 +-
+ lang/smlnj/pkg-plist                               |  15 +-
+ mail/isbg/Makefile                                 |  17 +-
+ mail/isbg/distinfo                                 |   5 +-
+ mail/roundcube-contextmenu/Makefile                |   4 +-
+ mail/roundcube-contextmenu/distinfo                |   6 +-
+ net-im/telepathy-farstream/Makefile                |   4 +-
+ .../patch-tools_glib-client-marshaller-gen.py      |  33 +++
+ .../files/patch-tools_glib-ginterface-gen.py       |  19 ++
+ .../files/patch-tools_libglibcodegen.py            |  17 ++
+ net-mgmt/py-snmp_passpersist/Makefile              |  18 +-
+ net-mgmt/py-snmp_passpersist/distinfo              |   6 +-
+ net/appkonference/Makefile                         |   2 +-
+ net/appkonference/distinfo                         |   5 +-
+ net/cloudflared/Makefile                           |   2 +-
+ net/cloudflared/distinfo                           |   6 +-
+ net/vinagre/Makefile                               |  11 +-
+ net/yaz/Makefile                                   |   3 +-
+ net/yaz/distinfo                                   |   6 +-
+ net/yaz/pkg-plist                                  |   2 +
+ security/acme.sh/Makefile                          |   1 +
+ security/acme.sh/pkg-plist                         |  13 ++
+ security/oidentd/Makefile                          |   9 +-
+ security/oidentd/distinfo                          |   6 +-
+ security/oidentd/files/patch-doc_oidentd.8         |  36 ++++
+ security/oidentd/files/patch-doc_oidentd.conf.5    |  18 ++
+ .../oidentd/files/patch-doc_oidentd__masq.conf.5   |  18 ++
+ security/oidentd/files/patch-oidentd.8             |  34 ---
+ security/oidentd/files/patch-oidentd.conf.5        |  38 ----
+ security/oidentd/files/patch-oidentd_masq.conf.5   |  11 -
+ security/snort2pfcd/Makefile                       |   4 +-
+ security/snort2pfcd/distinfo                       |   6 +-
+ sysutils/di/Makefile                               |   2 +-
+ sysutils/di/distinfo                               |   6 +-
+ sysutils/duplicity/Makefile                        |   2 +-
+ sysutils/duplicity/distinfo                        |   6 +-
+ sysutils/py-rdiff-backup/Makefile                  |   2 +-
+ sysutils/py-rdiff-backup/distinfo                  |   6 +-
+ textproc/gtk-doc/Makefile                          |   7 +-
+ x11-fonts/Makefile                                 |   1 +
+ x11-fonts/libertinus/Makefile                      |  25 +++
+ x11-fonts/libertinus/distinfo                      |   3 +
+ x11-fonts/libertinus/pkg-descr                     |   6 +
+ x11-fonts/libertinus/pkg-plist                     |  14 ++
+ x11-wm/xfce4-wm/Makefile                           |   2 +-
+ x11-wm/xfce4-wm/distinfo                           |   6 +-
+ x11-wm/xfce4-wm/files/patch-gpid-long              |  50 -----
+ 84 files changed, 670 insertions(+), 679 deletions(-)
+ delete mode 100644 databases/mdbtools/files/patch-src__sql__Makefile.am
+ create mode 100644 lang/smlnj/files/do-patch-asdl_config.sh
+ delete mode 100644 lang/smlnj/files/do-patch-asdl_config_check__smlnj__heap__suffix.m4
+ delete mode 100644 lang/smlnj/files/do-patch-base_system_Basis_Implementation_date.sml
+ delete mode 100644 lang/smlnj/files/do-patch-smlnj-lib_JSON_json-parser.sml
+ delete mode 100644 lang/smlnj/files/do-patch-smlnj-lib_JSON_json-stream-printer.sml
+ create mode 100644 net-im/telepathy-farstream/files/patch-tools_glib-client-marshaller-gen.py
+ create mode 100644 net-im/telepathy-farstream/files/patch-tools_glib-ginterface-gen.py
+ create mode 100644 net-im/telepathy-farstream/files/patch-tools_libglibcodegen.py
+ create mode 100644 security/oidentd/files/patch-doc_oidentd.8
+ create mode 100644 security/oidentd/files/patch-doc_oidentd.conf.5
+ create mode 100644 security/oidentd/files/patch-doc_oidentd__masq.conf.5
+ delete mode 100644 security/oidentd/files/patch-oidentd.8
+ delete mode 100644 security/oidentd/files/patch-oidentd.conf.5
+ delete mode 100644 security/oidentd/files/patch-oidentd_masq.conf.5
+ create mode 100644 x11-fonts/libertinus/Makefile
+ create mode 100644 x11-fonts/libertinus/distinfo
+ create mode 100644 x11-fonts/libertinus/pkg-descr
+ create mode 100644 x11-fonts/libertinus/pkg-plist
+ delete mode 100644 x11-wm/xfce4-wm/files/patch-gpid-long
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    335154419a06..844a08117073  master -> master        
+remote:    c30804b0ab4b..335154419a06  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   335154419a06..844a08117073  master -> master
+==== END: master ====
