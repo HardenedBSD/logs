@@ -47,3 +47,296 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Auto-merging security/suricata/Makefile
+Auto-merging lang/sbcl/Makefile
+Auto-merging editors/nano/Makefile
+Auto-merging devel/arm-elf-binutils/Makefile
+Removing biology/kallisto/files/patch-src_CMakeLists.txt
+Auto-merging Mk/bsd.port.mk
+Merge made by the 'recursive' strategy.
+ Mk/Scripts/qa.sh                                   |   2 +-
+ {Tools/scripts => Mk/Scripts}/sed_checked.sh       |   2 +-
+ Mk/Uses/cargo.mk                                   |   2 +-
+ Mk/bsd.default-versions.mk                         |   2 +-
+ Mk/bsd.port.mk                                     |   2 +-
+ UPDATING                                           |   8 +
+ audio/ncspot/Makefile                              |   2 +-
+ audio/spotify-tui/Makefile                         |   2 +-
+ audio/spotifyd/Makefile                            |   2 +-
+ benchmarks/hyperfine/Makefile                      |   2 +-
+ biology/kallisto/Makefile                          |  19 +-
+ biology/kallisto/distinfo                          |   6 +-
+ biology/kallisto/files/patch-CMakeLists.txt        |  30 +-
+ .../kallisto/files/patch-ext_htslib_configure.ac   |  11 +
+ biology/kallisto/files/patch-src_CMakeLists.txt    |  26 --
+ converters/cl-babel-sbcl/Makefile                  |   2 +-
+ databases/p5-DBIx-SearchBuilder/Makefile           |   3 +-
+ databases/p5-DBIx-SearchBuilder/distinfo           |   5 +-
+ databases/pg_stat_kcache/Makefile                  |   3 +-
+ databases/pg_stat_kcache/distinfo                  |   6 +-
+ databases/pg_stat_kcache/pkg-plist                 |   4 +
+ deskutils/just/Makefile                            |   2 +-
+ devel/arm-elf-binutils/Makefile                    |   4 +-
+ devel/arm-elf-binutils/distinfo                    |   6 +-
+ devel/aws-c-event-stream/Makefile                  |   2 +-
+ devel/aws-c-event-stream/distinfo                  |   6 +-
+ devel/aws-sdk-cpp/Makefile                         |   2 +-
+ devel/aws-sdk-cpp/distinfo                         |   6 +-
+ devel/aws-sdk-cpp/pkg-plist                        | 307 +++++++++++++++++-
+ devel/bingrep/Makefile                             |   2 +-
+ devel/cargo-c/Makefile                             |   2 +-
+ devel/cl-alexandria-sbcl/Makefile                  |   2 +-
+ devel/cl-infix-sbcl/Makefile                       |   2 +-
+ devel/cl-port-sbcl/Makefile                        |   2 +-
+ devel/cl-split-sequence-sbcl/Makefile              |   2 +-
+ devel/cl-trivial-features-sbcl/Makefile            |   2 +-
+ devel/cl-trivial-gray-streams-sbcl/Makefile        |   2 +-
+ devel/desed/Makefile                               |   2 +-
+ devel/dtool/Makefile                               |   2 +-
+ devel/gbump/Makefile                               |   2 +-
+ devel/git-absorb/Makefile                          |   2 +-
+ devel/git-delta/Makefile                           |   2 +-
+ devel/gitui/Makefile                               |   2 +-
+ devel/interactive_rebase_tool/Makefile             |   2 +-
+ devel/pijul/Makefile                               |   2 +-
+ devel/racer/Makefile                               |   2 +-
+ devel/rust-analyzer/Makefile                       |  46 ++-
+ devel/rust-analyzer/distinfo                       |  92 +++---
+ devel/rust-bindgen/Makefile                        |   2 +-
+ devel/rust-cbindgen/Makefile                       |   2 +-
+ devel/sccache/Makefile                             |   2 +-
+ devel/sentry-cli/Makefile                          |   2 +-
+ devel/tokei/Makefile                               |   2 +-
+ dns/bind9-devel/Makefile                           |   4 +-
+ dns/bind9-devel/distinfo                           |   6 +-
+ .../files/extrapatch-bind-min-override-ttl         |  12 +-
+ dns/doh-proxy/Makefile                             |   2 +-
+ editors/kak-lsp/Makefile                           |   2 +-
+ editors/nano/Makefile                              |   2 +-
+ editors/nano/distinfo                              |   6 +-
+ editors/nano/pkg-plist                             |  20 +-
+ editors/parinfer-rust/Makefile                     |   2 +-
+ editors/xi-core/Makefile                           |   2 +-
+ editors/xi-term/Makefile                           |   2 +-
+ games/abstreet/Makefile                            |   2 +-
+ games/dose-response/Makefile                       |   2 +-
+ games/genact/Makefile                              |   2 +-
+ games/jaggedalliance2/Makefile                     |   2 +-
+ games/veloren/Makefile                             |   2 +-
+ graphics/ikona/Makefile                            |   2 +-
+ graphics/librsvg2-rust/Makefile                    |   2 +-
+ graphics/pastel/Makefile                           |   2 +-
+ graphics/rx/Makefile                               |   2 +-
+ graphics/svgbob/Makefile                           |   2 +-
+ graphics/viu/Makefile                              |   2 +-
+ java/icedtea-web/Makefile                          |   2 +-
+ java/openjdk8/files/extra-patch-ppc64-elfv2        |  11 -
+ lang/erlang-runtime21/Makefile                     |   2 +-
+ lang/erlang-runtime21/distinfo                     |   6 +-
+ lang/libhx/Makefile                                |  12 +-
+ lang/libhx/distinfo                                |   6 +-
+ lang/libhx/pkg-plist                               |   4 +-
+ lang/perl5-devel/Makefile                          |   2 +-
+ lang/perl5-devel/distinfo                          |   6 +-
+ lang/perl5-devel/files/patch-perl.c                |   4 +-
+ .../files/patch-t_porting_customized.dat           |   6 +-
+ lang/perl5-devel/pkg-plist                         |   4 +-
+ lang/rust-bootstrap/Makefile                       |   2 +-
+ lang/rust-bootstrap/distinfo                       |   6 +-
+ lang/rust/Makefile                                 |  10 +-
+ lang/rust/distinfo                                 |   6 +-
+ lang/rust/files/patch-src_bootstrap_native.rs      |  27 ++
+ lang/sbcl/Makefile                                 |   2 +-
+ lang/sbcl/distinfo                                 |  10 +-
+ lang/spidermonkey68/Makefile                       |   1 +
+ mail/thunderbird/Makefile                          |   2 +-
+ math/maxima/Makefile                               |   2 +-
+ misc/broot/Makefile                                |   2 +-
+ misc/ruut/Makefile                                 |   2 +-
+ multimedia/intel-media-sdk/Makefile                |   3 +-
+ multimedia/intel-media-sdk/distinfo                |   6 +-
+ multimedia/librav1e/Makefile                       |   2 +-
+ multimedia/rav1e/Makefile                          |   2 +-
+ multimedia/termplay/Makefile                       |   2 +-
+ net-im/fractal/Makefile                            |   2 +-
+ net-im/gloox/Makefile                              |   2 +-
+ net-im/gloox/distinfo                              |   6 +-
+ net-im/gloox/pkg-plist                             |   4 +-
+ net-mgmt/py-napalm/Makefile                        |   2 +-
+ net-mgmt/py-napalm/distinfo                        |   6 +-
+ net-p2p/openethereum/Makefile                      |   2 +-
+ net/findomain/Makefile                             |   2 +-
+ net/proby/Makefile                                 |   2 +-
+ net/rabbiteer/Makefile                             |   2 +-
+ net/routinator/Makefile                            |   2 +-
+ security/acmed/Makefile                            |   2 +-
+ security/aws-iam-authenticator/Makefile            |  62 ++--
+ security/aws-iam-authenticator/distinfo            | 122 +++----
+ security/cargo-audit/Makefile                      |   2 +-
+ security/cl-md5-sbcl/Makefile                      |   2 +-
+ security/cloak/Makefile                            |   2 +-
+ security/py-pyelliptic/Makefile                    |   8 +-
+ security/py-pyelliptic/distinfo                    |   6 +-
+ security/py-pyelliptic/pkg-descr                   |   2 +-
+ security/ssl-admin/pkg-descr                       |   2 +-
+ security/suricata/Makefile                         |   2 +-
+ shells/ion/Makefile                                |   2 +-
+ shells/starship/Makefile                           |   2 +-
+ sysutils/Makefile                                  |   1 +
+ sysutils/dua-cli/Makefile                          |   2 +-
+ sysutils/eksctl/Makefile                           |  30 +-
+ sysutils/eksctl/distinfo                           |  22 +-
+ sysutils/exa/Makefile                              |   2 +-
+ sysutils/fd/Makefile                               |   2 +-
+ sysutils/flowgger/Makefile                         |   2 +-
+ sysutils/fselect/Makefile                          |   2 +-
+ sysutils/fusefs-sandboxfs/Makefile                 |   2 +-
+ sysutils/hexyl/Makefile                            |   2 +-
+ sysutils/kops/Makefile                             | 183 ++++++-----
+ sysutils/kops/distinfo                             | 352 +++++++++++----------
+ sysutils/lsd/Makefile                              |   2 +-
+ sysutils/mstflint-lite/Makefile                    |  14 +
+ sysutils/mstflint-lite/pkg-descr                   |   8 +
+ sysutils/mstflint-lite/pkg-plist                   |  12 +
+ sysutils/mstflint/Makefile                         |  87 ++++-
+ sysutils/mstflint/distinfo                         |   6 +-
+ .../mstflint/files/extrat-LITE-patch-Makefile.am   |  16 +
+ .../files/extrat-LITE-patch-cmdif_Makefile.am      |  23 ++
+ .../files/extrat-LITE-patch-common_Makefile.am     |  11 +
+ .../files/extrat-LITE-patch-dev_mgt_Makefile.am    |  16 +
+ .../files/extrat-LITE-patch-mlxconfig_Makefile.am  |  16 +
+ .../files/extrat-LITE-patch-mlxreg_Makefile.am     |  11 +
+ .../extrat-LITE-patch-mtcr_freebsd_Makefile.am     |   8 +
+ .../files/extrat-LITE-patch-reg_access_Makefile.am |  12 +
+ .../extrat-LITE-patch-tools_layouts_Makefile.am    |  11 +
+ sysutils/mstflint/files/extrat-patch-configure.ac  |  36 +++
+ .../files/extrat-patch-mlxarchive_Makefile.am      |  26 ++
+ .../extrat-patch-mlxarchive_mlxarchive_mfa2.cpp    |  29 ++
+ .../files/extrat-patch-mlxfwupdate_Makefile.am     |  38 +++
+ .../extrat-patch-mlxfwupdate_server_request.cpp    |  23 ++
+ sysutils/mstflint/files/patch-configure.ac         |  65 ++++
+ .../mstflint/files/patch-mlxfwupdate_Makefile.am   |  11 +
+ .../files/patch-mlxfwupdate_cmd__line__params.cpp  |  14 +
+ sysutils/mstflint/pkg-plist                        |  57 ++++
+ sysutils/onefetch/Makefile                         |   2 +-
+ sysutils/pam_mount/Makefile                        |   2 +-
+ sysutils/parkverbot/Makefile                       |   1 +
+ sysutils/potnet/Makefile                           |   2 +-
+ sysutils/py-liquidctl/Makefile                     |   3 +-
+ sysutils/py-liquidctl/distinfo                     |   6 +-
+ sysutils/py-ranger/Makefile                        |   9 +-
+ sysutils/py-ranger/distinfo                        |   8 +-
+ .../files/patch-ranger_ext_img__display.py         |  19 +-
+ sysutils/rsfetch/Makefile                          |   2 +-
+ sysutils/tealdeer/Makefile                         |   2 +-
+ sysutils/vector/Makefile                           |   2 +-
+ sysutils/zoxide/Makefile                           |   2 +-
+ textproc/bat/Makefile                              |   2 +-
+ textproc/cl-meta-sbcl/Makefile                     |   2 +-
+ textproc/cl-ppcre-sbcl/Makefile                    |   2 +-
+ textproc/ripgrep/Makefile                          |   2 +-
+ textproc/sd/Makefile                               |   1 +
+ textproc/sonic/Makefile                            |   2 +-
+ textproc/xsv-rs/Makefile                           |   2 +-
+ www/cl-lml-sbcl/Makefile                           |   2 +-
+ www/cliqz/Makefile                                 |   2 +-
+ www/ffsend/Makefile                                |   2 +-
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox/Makefile                               |   2 +-
+ www/geckodriver/Makefile                           |   2 +-
+ www/gobuffalo/Makefile                             |   4 +-
+ www/gobuffalo/distinfo                             |  10 +-
+ www/jwt-cli/Makefile                               |   2 +-
+ www/miniserve/Makefile                             |   2 +-
+ www/monolith/Makefile                              |   2 +-
+ www/newsboat/Makefile                              |   2 +-
+ www/varnish-ip2location/Makefile                   |   4 -
+ www/varnish-ip2proxy/Makefile                      |   4 -
+ www/websocat/Makefile                              |   2 +-
+ www/zola/Makefile                                  |   2 +-
+ x11-wm/stumpwm/Makefile                            |   2 +-
+ x11/admiral/Makefile                               |   2 +-
+ x11/alacritty/Makefile                             |   1 +
+ x11/cl-clx-sbcl/Makefile                           |   2 +-
+ x11/squeekboard/Makefile                           |   2 +-
+ 205 files changed, 1655 insertions(+), 767 deletions(-)
+ rename {Tools/scripts => Mk/Scripts}/sed_checked.sh (65%)
+ create mode 100644 biology/kallisto/files/patch-ext_htslib_configure.ac
+ delete mode 100644 biology/kallisto/files/patch-src_CMakeLists.txt
+ create mode 100644 lang/rust/files/patch-src_bootstrap_native.rs
+ create mode 100644 sysutils/mstflint-lite/Makefile
+ create mode 100644 sysutils/mstflint-lite/pkg-descr
+ create mode 100644 sysutils/mstflint-lite/pkg-plist
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-cmdif_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-common_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-dev_mgt_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-mlxconfig_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-mlxreg_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-mtcr_freebsd_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-reg_access_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-LITE-patch-tools_layouts_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-patch-configure.ac
+ create mode 100644 sysutils/mstflint/files/extrat-patch-mlxarchive_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-patch-mlxarchive_mlxarchive_mfa2.cpp
+ create mode 100644 sysutils/mstflint/files/extrat-patch-mlxfwupdate_Makefile.am
+ create mode 100644 sysutils/mstflint/files/extrat-patch-mlxfwupdate_server_request.cpp
+ create mode 100644 sysutils/mstflint/files/patch-configure.ac
+ create mode 100644 sysutils/mstflint/files/patch-mlxfwupdate_Makefile.am
+ create mode 100644 sysutils/mstflint/files/patch-mlxfwupdate_cmd__line__params.cpp
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    93d0d742ff6e..29a6bfa3888b  master -> master        
+remote:    0df811d520e3..93d0d742ff6e  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   93d0d742ff6e..29a6bfa3888b  master -> master
+==== END: master ====
