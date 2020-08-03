@@ -51,3 +51,257 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/Makefile
+Auto-merging net/Makefile
+Removing misc/freebsd-doc-zh_tw/pkg-plist.ps
+Removing misc/freebsd-doc-zh_cn/pkg-plist.ps
+Removing misc/freebsd-doc-tr/pkg-plist.ps
+Removing misc/freebsd-doc-ru/pkg-plist.ps
+Removing misc/freebsd-doc-pt/pkg-plist.ps
+Removing misc/freebsd-doc-pl/pkg-plist.ps
+Removing misc/freebsd-doc-nl/pkg-plist.ps
+Removing misc/freebsd-doc-mn/pkg-plist.ps
+Removing misc/freebsd-doc-ko/pkg-plist.ps
+Removing misc/freebsd-doc-ja/pkg-plist.ps
+Removing misc/freebsd-doc-it/pkg-plist.ps
+Removing misc/freebsd-doc-hu/pkg-plist.ps
+Removing misc/freebsd-doc-fr/pkg-plist.ps
+Removing misc/freebsd-doc-es/pkg-plist.ps
+Removing misc/freebsd-doc-en/pkg-plist.ps
+Removing misc/freebsd-doc-el/pkg-plist.ps
+Removing misc/freebsd-doc-de/pkg-plist.ps
+Removing misc/freebsd-doc-da/pkg-plist.ps
+Removing misc/freebsd-doc-bn/pkg-plist.ps
+Removing math/e-antic/files/patch-nf__elem_reduce.c
+Removing math/e-antic/files/patch-nf__elem_mul.c
+Removing math/e-antic/files/patch-e-antic_poly__extra.h
+Removing math/e-antic/files/patch-e-antic_e-antic.h
+Auto-merging editors/emacs/Makefile
+Removing biology/bcftools/files/patch-prob1.c
+Merge made by the 'recursive' strategy.
+ audio/fmit/Makefile                                |   2 +-
+ audio/fmit/distinfo                                |   6 +-
+ biology/bcftools/Makefile                          |  39 ++-
+ biology/bcftools/distinfo                          |   6 +-
+ biology/bcftools/files/patch-Makefile              |  57 ++--
+ biology/bcftools/files/patch-prob1.c               |  15 -
+ biology/bcftools/files/patch-test_test.pl          |  23 +-
+ biology/bcftools/pkg-plist                         |   9 +
+ biology/cufflinks/Makefile                         |   1 +
+ biology/htslib/Makefile                            |  16 +-
+ biology/htslib/distinfo                            |   6 +-
+ biology/htslib/files/patch-Makefile                |  54 ++--
+ biology/htslib/files/patch-hfile__libcurl.c        |  65 ++++-
+ biology/htslib/pkg-plist                           |   3 +-
+ biology/jellyfish/Makefile                         |   2 +-
+ biology/pbbam/Makefile                             |   2 +-
+ biology/samtools/Makefile                          |  12 +-
+ biology/samtools/distinfo                          |   6 +-
+ biology/samtools/files/patch-Makefile              |  30 +-
+ biology/samtools/files/patch-test_test.pl          |  10 +-
+ biology/samtools/pkg-plist                         |  31 ++-
+ biology/tabixpp/Makefile                           |   1 +
+ biology/vcflib/Makefile                            |   1 +
+ biology/vt/Makefile                                |   3 +-
+ biology/vt/files/patch-bcf__ordered__writer.cpp    |  20 ++
+ biology/vt/files/patch-discover.cpp                |  11 +
+ biology/vt/files/patch-genotype.cpp                |  11 +
+ biology/vt/files/patch-read__filter.cpp            |  18 ++
+ databases/sqlite3/Makefile                         |   2 +-
+ devel/Makefile                                     |   1 +
+ devel/bbparse/Makefile                             |  47 ++++
+ devel/bbparse/distinfo                             |   3 +
+ devel/bbparse/pkg-descr                            |   4 +
+ devel/py-pymisp/Makefile                           |   2 +-
+ devel/py-pymisp/distinfo                           |   6 +-
+ editors/emacs/Makefile                             |   2 +-
+ editors/emacs/files/patch-lisp_net_tramp-sh.el     |  19 ++
+ graphics/qiv/Makefile                              |  12 +-
+ graphics/qiv/distinfo                              |   5 +-
+ graphics/qiv/files/patch-Makefile                  |   8 +-
+ math/Makefile                                      |   1 +
+ math/e-antic/Makefile                              |   2 +-
+ math/e-antic/distinfo                              |   6 +-
+ math/e-antic/files/patch-e-antic_e-antic.h         |  13 -
+ math/e-antic/files/patch-e-antic_poly__extra.h     |  28 --
+ math/e-antic/files/patch-nf__elem_mul.c            |  11 -
+ math/e-antic/files/patch-nf__elem_reduce.c         |  11 -
+ math/gh-bc/Makefile                                |   2 +-
+ math/gh-bc/distinfo                                |   6 +-
+ math/py-or-tools/Makefile                          |  51 ++++
+ math/py-or-tools/distinfo                          |   3 +
+ math/py-or-tools/files/patch-cmake_python.cmake    |  11 +
+ .../files/patch-ortools_python_setup.py.in         |  12 +
+ .../files/patch-ortools_util_fp__utils.h           |  11 +
+ .../py-or-tools/files/patch-ortools_util_zvector.h |  14 +
+ math/py-or-tools/files/patch-tools_setup.py.in     |  13 +
+ math/py-or-tools/pkg-descr                         |   3 +
+ math/py-or-tools/pkg-plist                         |  40 +++
+ misc/freebsd-doc-all/Makefile                      |   2 +-
+ misc/freebsd-doc-bn/Makefile                       |   2 +-
+ misc/freebsd-doc-bn/pkg-plist.ps                   |   1 -
+ misc/freebsd-doc-da/pkg-plist.ps                   |   1 -
+ misc/freebsd-doc-de/pkg-plist.ps                   |  14 -
+ misc/freebsd-doc-el/pkg-plist.ps                   |  14 -
+ misc/freebsd-doc-en/Makefile                       |   7 +-
+ misc/freebsd-doc-en/distinfo                       |   6 +-
+ misc/freebsd-doc-en/pkg-plist.ps                   |  43 ---
+ misc/freebsd-doc-es/pkg-plist.ps                   |  21 --
+ misc/freebsd-doc-fr/pkg-plist.ps                   |  19 --
+ misc/freebsd-doc-hu/pkg-plist.ps                   |   7 -
+ misc/freebsd-doc-it/pkg-plist.ps                   |   2 -
+ misc/freebsd-doc-ja/Makefile                       |   2 +-
+ misc/freebsd-doc-ja/pkg-plist.html-common          |   1 +
+ misc/freebsd-doc-ja/pkg-plist.ps                   |  10 -
+ misc/freebsd-doc-ko/Makefile                       |   2 +-
+ misc/freebsd-doc-ko/pkg-plist.ps                   |   3 -
+ misc/freebsd-doc-mn/pkg-plist.ps                   |   1 -
+ misc/freebsd-doc-nl/pkg-plist.ps                   |   6 -
+ misc/freebsd-doc-pl/pkg-plist.ps                   |   3 -
+ misc/freebsd-doc-pt/pkg-plist.ps                   |  40 ---
+ misc/freebsd-doc-ru/pkg-plist.ps                   |  21 --
+ misc/freebsd-doc-tr/pkg-plist.ps                   |   1 -
+ misc/freebsd-doc-zh_cn/Makefile                    |   2 +-
+ misc/freebsd-doc-zh_cn/pkg-plist.ps                |   9 -
+ misc/freebsd-doc-zh_tw/Makefile                    |   2 +-
+ misc/freebsd-doc-zh_tw/pkg-plist.ps                |  14 -
+ .../files/patch-modules_x11__out_x11__out.c        |  17 ++
+ net/Makefile                                       |   2 +
+ net/read_bbrlog/Makefile                           |  38 +++
+ net/read_bbrlog/distinfo                           |   3 +
+ net/read_bbrlog/pkg-descr                          |   4 +
+ net/tcplog_dumper/Makefile                         |  33 +++
+ net/tcplog_dumper/distinfo                         |   3 +
+ net/tcplog_dumper/pkg-descr                        |   4 +
+ science/afni/Makefile                              |   2 +-
+ science/afni/distinfo                              |   6 +-
+ science/afni/pkg-plist                             |   2 +
+ security/Makefile                                  |   2 +
+ security/py-coincurve/Makefile                     |  27 ++
+ security/py-coincurve/distinfo                     |   3 +
+ security/py-coincurve/pkg-descr                    |   5 +
+ security/py-merkletools/Makefile                   |  21 ++
+ security/py-merkletools/distinfo                   |   3 +
+ security/py-merkletools/pkg-descr                  |   4 +
+ security/sssd/Makefile                             |   2 +-
+ .../files/patch-src_external_pac__responder.m4     |   5 +-
+ security/sssd/pkg-plist                            |   2 +
+ security/zeronet/Makefile                          |  11 +-
+ sysutils/openshift-install45/Makefile              | 102 +++----
+ sysutils/openshift-install45/distinfo              | 184 +++++-------
+ textproc/py-parso/Makefile                         |   2 +-
+ textproc/py-parso/distinfo                         |   6 +-
+ www/ffsend/Makefile                                | 157 ++++++-----
+ www/ffsend/distinfo                                | 310 +++++++++++----------
+ www/nextcloud-circles/Makefile                     |   2 +-
+ www/nextcloud-circles/distinfo                     |   6 +-
+ www/nextcloud-circles/pkg-plist                    |   1 +
+ 117 files changed, 1149 insertions(+), 885 deletions(-)
+ delete mode 100644 biology/bcftools/files/patch-prob1.c
+ create mode 100644 biology/vt/files/patch-bcf__ordered__writer.cpp
+ create mode 100644 biology/vt/files/patch-discover.cpp
+ create mode 100644 biology/vt/files/patch-genotype.cpp
+ create mode 100644 biology/vt/files/patch-read__filter.cpp
+ create mode 100644 devel/bbparse/Makefile
+ create mode 100644 devel/bbparse/distinfo
+ create mode 100644 devel/bbparse/pkg-descr
+ create mode 100644 editors/emacs/files/patch-lisp_net_tramp-sh.el
+ delete mode 100644 math/e-antic/files/patch-e-antic_e-antic.h
+ delete mode 100644 math/e-antic/files/patch-e-antic_poly__extra.h
+ delete mode 100644 math/e-antic/files/patch-nf__elem_mul.c
+ delete mode 100644 math/e-antic/files/patch-nf__elem_reduce.c
+ create mode 100644 math/py-or-tools/Makefile
+ create mode 100644 math/py-or-tools/distinfo
+ create mode 100644 math/py-or-tools/files/patch-cmake_python.cmake
+ create mode 100644 math/py-or-tools/files/patch-ortools_python_setup.py.in
+ create mode 100644 math/py-or-tools/files/patch-ortools_util_fp__utils.h
+ create mode 100644 math/py-or-tools/files/patch-ortools_util_zvector.h
+ create mode 100644 math/py-or-tools/files/patch-tools_setup.py.in
+ create mode 100644 math/py-or-tools/pkg-descr
+ create mode 100644 math/py-or-tools/pkg-plist
+ delete mode 100644 misc/freebsd-doc-bn/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-da/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-de/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-el/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-en/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-es/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-fr/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-hu/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-it/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-ja/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-ko/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-mn/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-nl/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-pl/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-pt/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-ru/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-tr/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-zh_cn/pkg-plist.ps
+ delete mode 100644 misc/freebsd-doc-zh_tw/pkg-plist.ps
+ create mode 100644 multimedia/gpac-libgpac/files/patch-modules_x11__out_x11__out.c
+ create mode 100644 net/read_bbrlog/Makefile
+ create mode 100644 net/read_bbrlog/distinfo
+ create mode 100644 net/read_bbrlog/pkg-descr
+ create mode 100644 net/tcplog_dumper/Makefile
+ create mode 100644 net/tcplog_dumper/distinfo
+ create mode 100644 net/tcplog_dumper/pkg-descr
+ create mode 100644 security/py-coincurve/Makefile
+ create mode 100644 security/py-coincurve/distinfo
+ create mode 100644 security/py-coincurve/pkg-descr
+ create mode 100644 security/py-merkletools/Makefile
+ create mode 100644 security/py-merkletools/distinfo
+ create mode 100644 security/py-merkletools/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    2367f13b66fb..6a1ddee72209  master -> master        
+remote:    29a6bfa3888b..2367f13b66fb  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   2367f13b66fb..6a1ddee72209  master -> master
+==== END: master ====
