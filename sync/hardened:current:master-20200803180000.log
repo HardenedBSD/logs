@@ -1,0 +1,170 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/bc/Makefile.in                      |   2 +-
+ contrib/bc/NEWS.md                          |  19 ++
+ contrib/bc/README.md                        |   8 +-
+ contrib/bc/include/bc.h                     |   3 -
+ contrib/bc/include/vm.h                     |  18 +-
+ contrib/bc/manuals/bc.1.md.in               |  26 +-
+ contrib/bc/manuals/bc/A.1                   |  35 +--
+ contrib/bc/manuals/bc/A.1.md                |  26 +-
+ contrib/bc/manuals/bc/E.1                   |  35 +--
+ contrib/bc/manuals/bc/E.1.md                |  26 +-
+ contrib/bc/manuals/bc/EH.1                  |  35 +--
+ contrib/bc/manuals/bc/EH.1.md               |  26 +-
+ contrib/bc/manuals/bc/EHN.1                 |  35 +--
+ contrib/bc/manuals/bc/EHN.1.md              |  26 +-
+ contrib/bc/manuals/bc/EHNP.1                |  35 +--
+ contrib/bc/manuals/bc/EHNP.1.md             |  26 +-
+ contrib/bc/manuals/bc/EHP.1                 |  35 +--
+ contrib/bc/manuals/bc/EHP.1.md              |  26 +-
+ contrib/bc/manuals/bc/EN.1                  |  35 +--
+ contrib/bc/manuals/bc/EN.1.md               |  26 +-
+ contrib/bc/manuals/bc/ENP.1                 |  35 +--
+ contrib/bc/manuals/bc/ENP.1.md              |  26 +-
+ contrib/bc/manuals/bc/EP.1                  |  35 +--
+ contrib/bc/manuals/bc/EP.1.md               |  26 +-
+ contrib/bc/manuals/bc/H.1                   |  35 +--
+ contrib/bc/manuals/bc/H.1.md                |  26 +-
+ contrib/bc/manuals/bc/HN.1                  |  35 +--
+ contrib/bc/manuals/bc/HN.1.md               |  26 +-
+ contrib/bc/manuals/bc/HNP.1                 |  35 +--
+ contrib/bc/manuals/bc/HNP.1.md              |  26 +-
+ contrib/bc/manuals/bc/HP.1                  |  35 +--
+ contrib/bc/manuals/bc/HP.1.md               |  26 +-
+ contrib/bc/manuals/bc/N.1                   |  35 +--
+ contrib/bc/manuals/bc/N.1.md                |  26 +-
+ contrib/bc/manuals/bc/NP.1                  |  35 +--
+ contrib/bc/manuals/bc/NP.1.md               |  26 +-
+ contrib/bc/manuals/bc/P.1                   |  35 +--
+ contrib/bc/manuals/bc/P.1.md                |  26 +-
+ contrib/bc/manuals/dc.1.md.in               |  12 +-
+ contrib/bc/manuals/dc/A.1                   |  17 +-
+ contrib/bc/manuals/dc/A.1.md                |  12 +-
+ contrib/bc/manuals/dc/E.1                   |  17 +-
+ contrib/bc/manuals/dc/E.1.md                |  12 +-
+ contrib/bc/manuals/dc/EH.1                  |  17 +-
+ contrib/bc/manuals/dc/EH.1.md               |  12 +-
+ contrib/bc/manuals/dc/EHN.1                 |  17 +-
+ contrib/bc/manuals/dc/EHN.1.md              |  12 +-
+ contrib/bc/manuals/dc/EHNP.1                |  17 +-
+ contrib/bc/manuals/dc/EHNP.1.md             |  12 +-
+ contrib/bc/manuals/dc/EHP.1                 |  17 +-
+ contrib/bc/manuals/dc/EHP.1.md              |  12 +-
+ contrib/bc/manuals/dc/EN.1                  |  17 +-
+ contrib/bc/manuals/dc/EN.1.md               |  12 +-
+ contrib/bc/manuals/dc/ENP.1                 |  17 +-
+ contrib/bc/manuals/dc/ENP.1.md              |  12 +-
+ contrib/bc/manuals/dc/EP.1                  |  17 +-
+ contrib/bc/manuals/dc/EP.1.md               |  12 +-
+ contrib/bc/manuals/dc/H.1                   |  17 +-
+ contrib/bc/manuals/dc/H.1.md                |  12 +-
+ contrib/bc/manuals/dc/HN.1                  |  17 +-
+ contrib/bc/manuals/dc/HN.1.md               |  12 +-
+ contrib/bc/manuals/dc/HNP.1                 |  17 +-
+ contrib/bc/manuals/dc/HNP.1.md              |  12 +-
+ contrib/bc/manuals/dc/HP.1                  |  17 +-
+ contrib/bc/manuals/dc/HP.1.md               |  12 +-
+ contrib/bc/manuals/dc/N.1                   |  17 +-
+ contrib/bc/manuals/dc/N.1.md                |  12 +-
+ contrib/bc/manuals/dc/NP.1                  |  17 +-
+ contrib/bc/manuals/dc/NP.1.md               |  12 +-
+ contrib/bc/manuals/dc/P.1                   |  17 +-
+ contrib/bc/manuals/dc/P.1.md                |  12 +-
+ contrib/bc/src/args.c                       |  14 +-
+ contrib/bc/src/bc/bc.c                      |   2 +-
+ contrib/bc/src/bc/parse.c                   |  18 +-
+ contrib/bc/src/dc/dc.c                      |   2 +-
+ contrib/bc/src/vm.c                         |  74 ++---
+ contrib/bc/tests/bc/all.txt                 |   2 +
+ contrib/bc/tests/bc/misc6.txt               |   1 +
+ contrib/bc/tests/bc/misc6_results.txt       |   1 +
+ contrib/bc/tests/bc/misc7.txt               |   1 +
+ contrib/bc/tests/bc/misc7_results.txt       |   1 +
+ contrib/bc/tests/bc/stdin1.txt              |   2 +
+ contrib/bc/tests/bc/stdin1_results.txt      |   1 +
+ contrib/bc/tests/bc/stdin2.txt              |   1 +
+ contrib/bc/tests/bc/stdin2_results.txt      |   3 +
+ etc/mtree/BSD.tests.dist                    |   2 +
+ lib/libc/gen/setmode.c                      |   9 +-
+ lib/ncurses/ncurses/Makefile                |   2 +-
+ sys/arm/broadcom/bcm2835/bcm2835_firmware.c |  24 +-
+ sys/arm/broadcom/bcm2835/raspberrypi_gpio.c | 457 ++++++++++++++++++++++++++++
+ sys/conf/files.arm64                        |   1 +
+ sys/dev/fdt/simplebus.c                     |   6 +-
+ sys/dev/fdt/simplebus.h                     |   5 +
+ sys/kern/subr_smp.c                         |   2 +-
+ usr.bin/gh-bc/Makefile                      |   3 +
+ usr.bin/gh-bc/tests/Makefile                |  67 ++++
+ usr.sbin/nmtree/Makefile                    |   6 +
+ 97 files changed, 1301 insertions(+), 934 deletions(-)
+ create mode 120000 contrib/bc/tests/bc/misc6.txt
+ create mode 120000 contrib/bc/tests/bc/misc6_results.txt
+ create mode 120000 contrib/bc/tests/bc/misc7.txt
+ create mode 120000 contrib/bc/tests/bc/misc7_results.txt
+ create mode 100644 contrib/bc/tests/bc/stdin1.txt
+ create mode 100644 contrib/bc/tests/bc/stdin1_results.txt
+ create mode 100644 contrib/bc/tests/bc/stdin2.txt
+ create mode 100644 contrib/bc/tests/bc/stdin2_results.txt
+ create mode 100644 sys/arm/broadcom/bcm2835/raspberrypi_gpio.c
+ create mode 100644 usr.bin/gh-bc/tests/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ecee18d9c01b..c5447e167b6e  hardened/current/master -> hardened/current/master        
+remote:    e3d6727b7d25..0c0e28623935  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ecee18d9c01b..c5447e167b6e  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
