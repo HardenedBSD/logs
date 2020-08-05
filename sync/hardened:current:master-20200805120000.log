@@ -1,0 +1,102 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 4a6914c79074..e7ee74598b98
+Fast-forward
+ sys/compat/linuxkpi/common/include/linux/bitops.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/netinet6/in6_proto.c
+Merge made by the 'recursive' strategy.
+ cddl/contrib/opensolaris/cmd/zinject/translate.c   |   4 +-
+ .../contrib/opensolaris/lib/libzfs/common/libzfs.h |   2 +
+ .../opensolaris/lib/libzfs/common/libzfs_pool.c    |  40 +++++-
+ .../lib/libzfs_core/common/libzfs_core.c           |  24 +++-
+ .../lib/libzfs_core/common/libzfs_core.h           |   4 +-
+ contrib/bc/Makefile.in                             |   2 +-
+ contrib/bc/NEWS.md                                 |   8 ++
+ contrib/bc/locales/zh_CN.GB18030.msg               |   9 +-
+ contrib/bc/locales/zh_CN.GB2312.msg                |   9 +-
+ contrib/bc/locales/zh_CN.GBK.msg                   |   9 +-
+ contrib/bc/locales/zh_CN.UTF-8.msg                 |  13 +-
+ contrib/bc/locales/zh_CN.eucCN.msg                 |   9 +-
+ contrib/bc/src/program.c                           |   7 +-
+ contrib/bc/src/vm.c                                |   2 +-
+ sbin/ipfw/nat64clat.c                              |   3 +
+ sbin/ipfw/nat64stl.c                               |   3 +
+ share/dtrace/mbuf.d                                |  68 +++++----
+ share/man/man4/gpiokeys.4                          | 152 ++++++++++++++++++++
+ share/man/man7/build.7                             |   9 +-
+ share/man/man7/environ.7                           |  74 ++++++++--
+ sys/arm64/conf/GENERIC                             |   1 +
+ .../opensolaris/uts/common/fs/zfs/sys/vdev.h       |   4 +-
+ .../opensolaris/uts/common/fs/zfs/sys/vdev_impl.h  |  26 +++-
+ .../contrib/opensolaris/uts/common/fs/zfs/vdev.c   |   2 +-
+ .../opensolaris/uts/common/fs/zfs/vdev_label.c     | 158 +++++++++++++++++++--
+ .../opensolaris/uts/common/fs/zfs/zfs_ioctl.c      |  66 ++++++++-
+ .../contrib/opensolaris/uts/common/sys/fs/zfs.h    |   4 +-
+ sys/kern/kern_mbuf.c                               |   1 +
+ sys/kern/uipc_mbuf.c                               |   7 +
+ sys/kern/vfs_cache.c                               |   2 +-
+ sys/netinet6/in6_proto.c                           |   2 +-
+ sys/riscv/conf/GENERIC                             |   1 +
+ sys/sys/mbuf.h                                     |   1 +
+ 33 files changed, 617 insertions(+), 109 deletions(-)
+ create mode 100644 share/man/man4/gpiokeys.4
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e7ee74598b98..d46ac2bc90f4  hardened/current/master -> hardened/current/master        
+remote:    6da63d396d3e..771fe4d31498  github/freebsd/current/master -> github/freebsd/current/master
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e7ee74598b98..d46ac2bc90f4  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
