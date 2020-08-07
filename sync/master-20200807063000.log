@@ -1,0 +1,226 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/racoon2/files/patch-spmd-Makefile.in
+Removing security/racoon2/files/patch-samples_rc.d_Makefile.in
+Removing security/racoon2/files/patch-samples_hook_ikesa-up.d_Makefile.in
+Removing security/racoon2/files/patch-samples_hook_child-up.d_Makefile.in
+Removing security/racoon2/files/patch-samples_hook_child-down.d_Makefile.in
+Removing security/racoon2/files/patch-samples_hook_Makefile.in
+Removing security/racoon2/files/patch-samples_Makefile.in
+Removing security/racoon2/files/patch-samples-rc.d-spmd.in
+Removing security/racoon2/files/patch-samples-rc.d-kinkd.in
+Removing security/racoon2/files/patch-samples-rc.d-iked.in
+Removing security/racoon2/files/patch-pskgen-Makefile.in
+Removing security/racoon2/files/patch-lib-cftoken.l
+Removing security/racoon2/files/patch-kinkd-Makefile.in
+Removing security/racoon2/files/patch-configure
+Auto-merging security/racoon2/Makefile
+CONFLICT (content): Merge conflict in security/racoon2/Makefile
+Auto-merging editors/vim/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc security/racoon2/Makefile
+index 1a10fde82010,3cd20f6865d9..000000000000
+--- a/security/racoon2/Makefile
++++ b/security/racoon2/Makefile
+@@@ -19,16 -18,15 +18,21 @@@ USE_GITHUB=     ye
+  GH_ACCOUNT=     zoulasc
+  GH_TAGNAME=     ${HASH}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		autoreconf:build perl5 tar:tgz ssl
+++=======
++ USES=		autoreconf libtool:build perl5 tar:tgz ssl
+++>>>>>>> freebsd/master
+  CONFIGURE_ARGS+=	--enable-natt \
+- 			--prefix=${PREFIX}
++ 			--prefix=${STAGEDIR}/${PREFIX}
+  
+  GNU_CONFIGURE=	yes
+- CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5
++ CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5 \
++ 		STAGEDIR=${STAGEDIR} PREFIX=${PREFIX}
+  
+- # MAKE_ENV=	DESTDIR=${DESTDIR}
++ MAKE_ENV=	STAGEDIR=${STAGEDIR} PREFIX=${PREFIX}
+  
+  CFLAGS=		-DHAVE_CONFIG_H
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   astro/swe/Makefile
+	modified:   astro/swe/distinfo
+	modified:   biology/py-gtfparse/Makefile
+	modified:   biology/py-gtfparse/distinfo
+	modified:   cad/Makefile
+	new file:   cad/horizon-eda/Makefile
+	new file:   cad/horizon-eda/distinfo
+	new file:   cad/horizon-eda/files/patch-Makefile
+	new file:   cad/horizon-eda/pkg-descr
+	new file:   cad/horizon-eda/pkg-plist
+	modified:   databases/freetds-devel/Makefile
+	modified:   databases/freetds-devel/distinfo
+	modified:   devel/nlohmann-json/Makefile
+	modified:   devel/nlohmann-json/distinfo
+	modified:   devel/notcurses/Makefile
+	modified:   devel/notcurses/distinfo
+	modified:   devel/notcurses/pkg-plist
+	modified:   editors/vim/Makefile
+	modified:   editors/vim/distinfo
+	modified:   net-im/purple-plugin-pack/Makefile
+	modified:   net-im/purple-plugin-pack/distinfo
+	modified:   net-p2p/bitcoin/Makefile
+	modified:   net-p2p/bitcoin/distinfo
+	modified:   net/kea/Makefile
+	modified:   net/kea/distinfo
+	modified:   net/kea/pkg-plist
+	modified:   net/xrdp/Makefile
+	modified:   security/racoon2/distinfo
+	new file:   security/racoon2/files/patch-Makefile.am
+	deleted:    security/racoon2/files/patch-configure
+	new file:   security/racoon2/files/patch-configure.ac
+	deleted:    security/racoon2/files/patch-kinkd-Makefile.in
+	deleted:    security/racoon2/files/patch-lib-cftoken.l
+	deleted:    security/racoon2/files/patch-pskgen-Makefile.in
+	deleted:    security/racoon2/files/patch-samples-rc.d-iked.in
+	deleted:    security/racoon2/files/patch-samples-rc.d-kinkd.in
+	deleted:    security/racoon2/files/patch-samples-rc.d-spmd.in
+	new file:   security/racoon2/files/patch-samples_Makefile.am
+	deleted:    security/racoon2/files/patch-samples_Makefile.in
+	deleted:    security/racoon2/files/patch-samples_hook_Makefile.in
+	deleted:    security/racoon2/files/patch-samples_hook_child-down.d_Makefile.in
+	deleted:    security/racoon2/files/patch-samples_hook_child-up.d_Makefile.in
+	deleted:    security/racoon2/files/patch-samples_hook_ikesa-up.d_Makefile.in
+	new file:   security/racoon2/files/patch-samples_init.d_Makefile.am
+	new file:   security/racoon2/files/patch-samples_rc.d_Makefile.am
+	deleted:    security/racoon2/files/patch-samples_rc.d_Makefile.in
+	deleted:    security/racoon2/files/patch-spmd-Makefile.in
+	modified:   security/racoon2/pkg-plist
+	modified:   security/tpm2-tools/Makefile
+	modified:   security/tpm2-tools/distinfo
+	modified:   security/tpm2-tss/Makefile
+	modified:   security/tpm2-tss/distinfo
+	modified:   security/tpm2-tss/pkg-plist
+	modified:   sysutils/Makefile
+	new file:   sysutils/bashtop/Makefile
+	new file:   sysutils/bashtop/distinfo
+	new file:   sysutils/bashtop/pkg-descr
+	modified:   sysutils/rtsx-kmod/Makefile
+	modified:   sysutils/rtsx-kmod/distinfo
+	modified:   textproc/groonga/Makefile
+	modified:   textproc/groonga/distinfo
+	modified:   textproc/groonga/pkg-plist
+	modified:   www/rubygem-html2haml/Makefile
+	modified:   www/rubygem-html2haml/pkg-descr
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   security/racoon2/Makefile
+
+
+It took 3.40 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at eec03f05832e Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.02 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at eec03f05832e Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
