@@ -1,0 +1,222 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 30 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating eec03f05832e..81c38858c3a2
+Fast-forward
+ astro/swe/Makefile                                 |    2 +-
+ astro/swe/distinfo                                 |    6 +-
+ biology/diamond/Makefile                           |    2 +-
+ biology/diamond/distinfo                           |    6 +-
+ .../diamond/files/patch-src_util_system_system.cpp |   45 +
+ biology/py-gtfparse/Makefile                       |    3 +-
+ biology/py-gtfparse/distinfo                       |    6 +-
+ cad/Makefile                                       |    1 +
+ cad/horizon-eda/Makefile                           |   41 +
+ cad/horizon-eda/distinfo                           |    5 +
+ cad/horizon-eda/files/patch-Makefile               |   11 +
+ cad/horizon-eda/pkg-descr                          |    5 +
+ cad/horizon-eda/pkg-plist                          |    9 +
+ databases/clickhouse/Makefile                      |  189 +-
+ databases/clickhouse/distinfo                      |  152 +-
+ databases/clickhouse/pkg-descr                     |    2 +-
+ databases/clickhouse/pkg-plist                     | 1881 +++++++++++++++++++-
+ databases/freetds-devel/Makefile                   |    2 +-
+ databases/freetds-devel/distinfo                   |    6 +-
+ deskutils/xfce4-tumbler/Makefile                   |    3 +-
+ deskutils/xfce4-tumbler/distinfo                   |    6 +-
+ devel/gsoap/Makefile                               |    2 +-
+ devel/gsoap/distinfo                               |    6 +-
+ devel/nlohmann-json/Makefile                       |    2 +-
+ devel/nlohmann-json/distinfo                       |    6 +-
+ devel/notcurses/Makefile                           |    5 +-
+ devel/notcurses/distinfo                           |    6 +-
+ devel/notcurses/pkg-plist                          |    1 -
+ devel/py-hypothesmith/Makefile                     |    2 +-
+ devel/py-hypothesmith/distinfo                     |    6 +-
+ devel/py-hypothesmith/files/patch-setup.py         |   14 -
+ devel/tllist/Makefile                              |    2 +-
+ devel/tllist/distinfo                              |    6 +-
+ devel/tllist/pkg-descr                             |    2 +-
+ editors/vim/Makefile                               |    2 +-
+ editors/vim/distinfo                               |    6 +-
+ mail/gmime30/Makefile                              |    8 +-
+ mail/gmime30/pkg-plist                             |    4 +-
+ net-im/purple-plugin-pack/Makefile                 |   13 +-
+ net-im/purple-plugin-pack/distinfo                 |    6 +-
+ net-p2p/bitcoin/Makefile                           |   10 +-
+ net-p2p/bitcoin/distinfo                           |    6 +-
+ net/kea/Makefile                                   |    2 +-
+ net/kea/distinfo                                   |    6 +-
+ net/kea/pkg-plist                                  |   12 +-
+ net/ndpi/Makefile                                  |    5 +-
+ net/ndpi/distinfo                                  |    6 +-
+ net/ntopng/Makefile                                |    5 +-
+ net/ntopng/distinfo                                |    6 +-
+ net/xrdp/Makefile                                  |    2 +
+ security/p5-PGP-Sign/Makefile                      |    2 +-
+ security/p5-PGP-Sign/distinfo                      |    6 +-
+ security/racoon2/Makefile                          |   52 +-
+ security/racoon2/distinfo                          |    6 +-
+ security/racoon2/files/patch-Makefile.am           |   10 +
+ security/racoon2/files/patch-configure             |   19 -
+ security/racoon2/files/patch-configure.ac          |   34 +
+ security/racoon2/files/patch-kinkd-Makefile.in     |   36 -
+ security/racoon2/files/patch-lib-cftoken.l         |   11 -
+ security/racoon2/files/patch-pskgen-Makefile.in    |   11 -
+ security/racoon2/files/patch-samples-rc.d-iked.in  |   27 -
+ security/racoon2/files/patch-samples-rc.d-kinkd.in |   15 -
+ security/racoon2/files/patch-samples-rc.d-spmd.in  |   14 -
+ security/racoon2/files/patch-samples_Makefile.am   |   11 +
+ security/racoon2/files/patch-samples_Makefile.in   |   33 -
+ .../racoon2/files/patch-samples_hook_Makefile.in   |   45 -
+ .../patch-samples_hook_child-down.d_Makefile.in    |   17 -
+ .../patch-samples_hook_child-up.d_Makefile.in      |   19 -
+ .../patch-samples_hook_ikesa-up.d_Makefile.in      |   13 -
+ .../racoon2/files/patch-samples_init.d_Makefile.am |    8 +
+ .../racoon2/files/patch-samples_rc.d_Makefile.am   |    9 +
+ .../racoon2/files/patch-samples_rc.d_Makefile.in   |   19 -
+ security/racoon2/files/patch-spmd-Makefile.in      |   89 -
+ security/racoon2/pkg-plist                         |   13 +-
+ security/tpm2-tools/Makefile                       |    2 +-
+ security/tpm2-tools/distinfo                       |    6 +-
+ security/tpm2-tss/Makefile                         |    3 +-
+ security/tpm2-tss/distinfo                         |    6 +-
+ security/tpm2-tss/pkg-plist                        |    2 +
+ sysutils/Makefile                                  |    1 +
+ sysutils/bashtop/Makefile                          |   27 +
+ sysutils/bashtop/distinfo                          |    3 +
+ sysutils/bashtop/pkg-descr                         |    4 +
+ sysutils/rtsx-kmod/Makefile                        |    2 +-
+ sysutils/rtsx-kmod/distinfo                        |    6 +-
+ textproc/groonga/Makefile                          |    2 +-
+ textproc/groonga/distinfo                          |    6 +-
+ textproc/groonga/pkg-plist                         |    1 +
+ www/rubygem-html2haml/Makefile                     |    2 +-
+ www/rubygem-html2haml/pkg-descr                    |    2 +-
+ x11/wob/Makefile                                   |    5 +-
+ x11/wob/distinfo                                   |    8 +-
+ 92 files changed, 2490 insertions(+), 659 deletions(-)
+ create mode 100644 biology/diamond/files/patch-src_util_system_system.cpp
+ create mode 100644 cad/horizon-eda/Makefile
+ create mode 100644 cad/horizon-eda/distinfo
+ create mode 100644 cad/horizon-eda/files/patch-Makefile
+ create mode 100644 cad/horizon-eda/pkg-descr
+ create mode 100644 cad/horizon-eda/pkg-plist
+ delete mode 100644 devel/py-hypothesmith/files/patch-setup.py
+ create mode 100644 security/racoon2/files/patch-Makefile.am
+ delete mode 100644 security/racoon2/files/patch-configure
+ create mode 100644 security/racoon2/files/patch-configure.ac
+ delete mode 100644 security/racoon2/files/patch-kinkd-Makefile.in
+ delete mode 100644 security/racoon2/files/patch-lib-cftoken.l
+ delete mode 100644 security/racoon2/files/patch-pskgen-Makefile.in
+ delete mode 100644 security/racoon2/files/patch-samples-rc.d-iked.in
+ delete mode 100644 security/racoon2/files/patch-samples-rc.d-kinkd.in
+ delete mode 100644 security/racoon2/files/patch-samples-rc.d-spmd.in
+ create mode 100644 security/racoon2/files/patch-samples_Makefile.am
+ delete mode 100644 security/racoon2/files/patch-samples_Makefile.in
+ delete mode 100644 security/racoon2/files/patch-samples_hook_Makefile.in
+ delete mode 100644 security/racoon2/files/patch-samples_hook_child-down.d_Makefile.in
+ delete mode 100644 security/racoon2/files/patch-samples_hook_child-up.d_Makefile.in
+ delete mode 100644 security/racoon2/files/patch-samples_hook_ikesa-up.d_Makefile.in
+ create mode 100644 security/racoon2/files/patch-samples_init.d_Makefile.am
+ create mode 100644 security/racoon2/files/patch-samples_rc.d_Makefile.am
+ delete mode 100644 security/racoon2/files/patch-samples_rc.d_Makefile.in
+ delete mode 100644 security/racoon2/files/patch-spmd-Makefile.in
+ create mode 100644 sysutils/bashtop/Makefile
+ create mode 100644 sysutils/bashtop/distinfo
+ create mode 100644 sysutils/bashtop/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
