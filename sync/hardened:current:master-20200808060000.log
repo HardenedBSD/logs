@@ -1,0 +1,130 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/grep/Makefile
+CONFLICT (content): Merge conflict in usr.bin/grep/Makefile
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.bin/grep/Makefile
+index 7a690665e9e1,418889047052..000000000000
+--- a/usr.bin/grep/Makefile
++++ b/usr.bin/grep/Makefile
+@@@ -4,9 -4,7 +4,13 @@@
+  
+  .include <src.opts.mk>
+  
+++<<<<<<< HEAD
+ +NOCFI=	yes
+ +
+ +.if ${MK_BSD_GREP} == "yes"
+++=======
++ .if ${MK_BSD_GREP} == "yes" || defined(BOOTSTRAPPING)
+++>>>>>>> freebsd/current/master
+  PROG=	grep
+  MAN1=	grep.1 zgrep.1
+  .else
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   UPDATING
+	modified:   cddl/contrib/opensolaris/lib/libctf/common/ctf_lib.c
+	modified:   cddl/contrib/opensolaris/tools/ctf/cvt/ctftools.h
+	modified:   lib/libc/locale/mbsrtowcs.3
+	modified:   lib/libc/locale/setlocale.3
+	modified:   lib/libc/stdio/tmpnam.3
+	modified:   share/man/man9/Makefile
+	modified:   share/man/man9/VOP_ATTRIB.9
+	modified:   sys/cam/mmc/mmc_da.c
+	modified:   sys/cddl/compat/opensolaris/sys/assfail.h
+	modified:   sys/cddl/compat/opensolaris/sys/stat.h
+	modified:   sys/cddl/compat/opensolaris/sys/time.h
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dbuf.c
+	modified:   sys/cddl/contrib/opensolaris/uts/common/fs/zfs/sys/dmu.h
+	modified:   sys/cddl/contrib/opensolaris/uts/common/sys/sysmacros.h
+	modified:   sys/compat/linuxkpi/common/include/linux/radix-tree.h
+	modified:   sys/compat/linuxkpi/common/src/linux_compat.c
+	modified:   sys/compat/linuxkpi/common/src/linux_radix.c
+	modified:   sys/dev/acpica/acpi_apei.c
+	modified:   sys/dev/pci/pci.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.h
+	modified:   sys/kern/subr_bus.c
+	modified:   sys/kern/subr_epoch.c
+	modified:   sys/kern/vfs_default.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/kern/vfs_syscalls.c
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/kern/vnode_if.src
+	modified:   sys/powerpc/aim/mmu_radix.c
+	modified:   sys/security/audit/audit_arg.c
+	modified:   sys/sys/vnode.h
+	modified:   sys/ufs/ufs/ufs_vnops.c
+	modified:   tools/build/Makefile
+	modified:   usr.bin/grep/grep.1
+	modified:   usr.bin/script/script.c
+	modified:   usr.sbin/makefs/msdos/msdosfs_vnops.c
+	modified:   usr.sbin/tzsetup/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/grep/Makefile
+
+HEAD is now at a4ad18edf669 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a4ad18edf669 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
