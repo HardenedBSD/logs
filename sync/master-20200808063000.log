@@ -47,3 +47,150 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/pssh/files/patch-psshlib_manager.py
+Removing security/pssh/files/patch-psshlib_cli.py
+Auto-merging net/rsync/Makefile
+CONFLICT (content): Merge conflict in net/rsync/Makefile
+Removing mail/dbmail/files/patch-src_dm__misc.c
+Removing mail/dbmail/files/patch-src_dm__imapsession.c
+Auto-merging lang/gcc8-devel/Makefile
+Removing games/ufoai/files/patch-src__libs__vorbis__config.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/rsync/Makefile
+index 138d9a084a69,35bafb99b6eb..000000000000
+--- a/net/rsync/Makefile
++++ b/net/rsync/Makefile
+@@@ -14,12 -16,12 +16,19 @@@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX
+  MAINTAINER=	rodrigo@FreeBSD.org
+  COMMENT=	Network file distribution/synchronization utility
+  
+- LICENSE=	GPLv3
++ LICENSE=	GPLv3+
++ LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +LIB_DEPENDS=    libxxhash.so:devel/xxhash \
+ +		libzstd.so:archivers/zstd
+++=======
++ LIB_DEPENDS=	libxxhash.so:devel/xxhash \
++ 		libzstd.so:archivers/zstd \
++ 		liblz4.so:archivers/liblz4
+++>>>>>>> freebsd/master
+  
+  USES=		cpe shebangfix ssl
+  SHEBANG_FILES=	support/rrsync
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   benchmarks/hey/Makefile
+	modified:   benchmarks/hey/distinfo
+	modified:   games/ufoai/Makefile
+	deleted:    games/ufoai/files/patch-src__libs__vorbis__config.h
+	modified:   games/ufoai/pkg-plist
+	modified:   graphics/tiled/Makefile
+	modified:   graphics/tiled/distinfo
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/go-devel/Makefile
+	modified:   lang/go-devel/distinfo
+	modified:   mail/dbmail/Makefile
+	modified:   mail/dbmail/distinfo
+	deleted:    mail/dbmail/files/patch-src_dm__imapsession.c
+	deleted:    mail/dbmail/files/patch-src_dm__misc.c
+	modified:   mail/dbmail/pkg-plist
+	modified:   net-mgmt/netdata/Makefile
+	modified:   net-mgmt/seafile-server/Makefile.include
+	modified:   net/realtek-re-kmod/Makefile
+	modified:   security/pssh/Makefile
+	modified:   security/pssh/distinfo
+	deleted:    security/pssh/files/patch-psshlib_cli.py
+	deleted:    security/pssh/files/patch-psshlib_manager.py
+	modified:   security/pssh/files/patch-psshlib_psshutil.py
+	modified:   security/pssh/pkg-descr
+	modified:   sysutils/isomaster/Makefile
+	modified:   sysutils/isomaster/distinfo
+	modified:   sysutils/istio/Makefile
+	modified:   sysutils/istio/distinfo
+	modified:   sysutils/istio/pkg-plist
+	modified:   textproc/dwdiff/Makefile
+	modified:   textproc/dwdiff/distinfo
+	modified:   textproc/hevea/Makefile
+	modified:   textproc/hevea/distinfo
+	modified:   textproc/p5-PDF-Table/Makefile
+	modified:   textproc/p5-PDF-Table/distinfo
+	modified:   www/coppermine/Makefile
+	modified:   www/coppermine/distinfo
+	modified:   www/coppermine/pkg-plist
+	modified:   www/py-djangorestframework311/Makefile
+	modified:   www/py-djangorestframework311/distinfo
+	modified:   www/py-seafdav/distinfo
+	modified:   www/py-seafobj/distinfo
+	modified:   www/seahub/distinfo
+	modified:   www/seahub/pkg-plist
+	modified:   x11-toolkits/p5-Gtk3-SimpleList/Makefile
+	modified:   x11-toolkits/p5-Gtk3-SimpleList/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/rsync/Makefile
+
+
+It took 3.39 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 81c38858c3a2 HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.31 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 81c38858c3a2 HBSD: Resolve merge conflict
+==== END: master ====
