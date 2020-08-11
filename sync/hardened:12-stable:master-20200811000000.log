@@ -1,0 +1,91 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/vm/vm_map.c
+CONFLICT (content): Merge conflict in sys/vm/vm_map.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/vm/vm_map.c
+index 235579506ec5,f63342d95369..000000000000
+--- a/sys/vm/vm_map.c
++++ b/sys/vm/vm_map.c
+@@@ -3840,6 -3931,9 +3840,12 @@@ vmspace_fork(struct vmspace *vm1, vm_oo
+  		return (NULL);
+  	}
+  
+++<<<<<<< HEAD
+++=======
++ 	new_map->anon_loc = old_map->anon_loc;
++ 	new_map->flags |= old_map->flags & (MAP_ASLR | MAP_ASLR_IGNSTART);
++ 
+++>>>>>>> freebsd/12-stable/master
+  	old_entry = old_map->header.next;
+  
+  	while (old_entry != &old_map->header) {
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/dev/mpr/mpr_sas.c
+	modified:   sys/dev/mps/mps_sas.c
+	modified:   sys/net/iflib.c
+	modified:   usr.sbin/yp_mkdb/yp_mkdb.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/vm/vm_map.c
+
+HEAD is now at 522a26c3d8ae Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 522a26c3d8ae Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
