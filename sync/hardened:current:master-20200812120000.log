@@ -1,0 +1,133 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 28 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 19e78dd27a35..d194a1496f94
+Fast-forward
+ Makefile.inc1                                      |  14 +-
+ .../opensolaris/lib/libdtrace/common/mkerrno.sh    |  16 +-
+ .../opensolaris/lib/libdtrace/common/mkerrtags.sh  |  38 +-
+ .../opensolaris/lib/libdtrace/common/mknames.sh    |  38 +-
+ .../opensolaris/lib/libdtrace/common/mksignal.sh   |  16 +-
+ libexec/rc/rc.d/ipfilter                           |   1 +
+ libexec/rc/rc.d/ipmon                              |   2 +-
+ libexec/rc/rc.d/ipnat                              |   1 -
+ libexec/rc/rc.d/netif                              |   2 +-
+ libexec/rc/rc.d/netwait                            |   2 +-
+ libexec/rc/rc.d/securelevel                        |   2 +-
+ release/packages/generate-ucl.sh                   |   2 +-
+ sbin/ipfw/ipfw.8                                   |  33 +-
+ sbin/ipfw/ipfw2.c                                  |  20 +-
+ share/mk/bsd.linker.mk                             |   3 +
+ share/mk/src.opts.mk                               |   8 +
+ share/mk/sys.mk                                    |   1 +
+ stand/i386/loader/Makefile                         |   2 +-
+ sys/compat/linuxkpi/common/include/linux/bitops.h  |  10 +-
+ sys/compat/linuxkpi/common/include/linux/sched.h   |   5 +-
+ sys/compat/linuxkpi/common/src/linux_rcu.c         |  18 +-
+ sys/compat/netbsd/dvcfg.h                          |  67 --
+ sys/conf/kern.pre.mk                               |   4 +
+ sys/dev/usb/misc/cp2112.c                          | 680 ++++++++++++---------
+ sys/fs/devfs/devfs.h                               |   5 +
+ sys/fs/devfs/devfs_devs.c                          |   6 +-
+ sys/fs/devfs/devfs_int.h                           |   3 +
+ sys/fs/devfs/devfs_vnops.c                         | 160 ++++-
+ sys/fs/nfsclient/nfs_clcomsubs.c                   |   2 +-
+ sys/kern/kern_conf.c                               |  30 +-
+ sys/kern/kern_proc.c                               |   4 +-
+ sys/kern/tty.c                                     |   4 +-
+ sys/kern/vfs_subr.c                                | 247 +-------
+ sys/kern/vfs_syscalls.c                            |   4 +-
+ sys/modules/linux/Makefile                         |   4 +-
+ sys/modules/linux64/Makefile                       |   2 +-
+ sys/netpfil/ipfw/ip_fw2.c                          |  18 +-
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/smp.h                                      |   2 +-
+ sys/sys/vnode.h                                    |   9 +-
+ sys/vm/vm_meter.c                                  |   3 +
+ sys/vm/vm_page.c                                   |   2 +-
+ sys/vm/vm_page.h                                   |   1 +
+ sys/vm/vm_pageout.c                                | 214 ++++++-
+ sys/vm/vm_pagequeue.h                              |   9 +
+ tools/build/Makefile                               |   6 +
+ tools/debugscripts/kgdb                            |  67 --
+ usr.bin/script/script.c                            |  19 +-
+ usr.bin/tput/tput.1                                |  63 +-
+ usr.sbin/pwd_mkdb/bootstrap/pwd.h                  |   2 +-
+ 50 files changed, 997 insertions(+), 876 deletions(-)
+ delete mode 100644 sys/compat/netbsd/dvcfg.h
+ delete mode 100644 tools/debugscripts/kgdb
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging share/man/man4/Makefile
+Merge made by the 'recursive' strategy.
+ lib/libpmc/libpmc.c         | 22 +++++++++++
+ share/man/man4/Makefile     |  2 +
+ share/man/man4/cp2112.4     | 87 +++++++++++++++++++++++++++++++++++++++++
+ sys/arm/allwinner/aw_cir.c  | 52 +++++++++++++++----------
+ sys/arm64/include/armreg.h  | 15 ++++++--
+ sys/dev/gpio/gpiokeys.c     | 94 +++++++++++++++++++++++++++++++++------------
+ sys/dev/hwpmc/hwpmc_arm64.c | 24 +++++++++---
+ sys/dev/hwpmc/pmc_events.h  | 43 ++++++++++++++++++---
+ sys/net/iflib.c             | 86 +++++++++++++++++++++++------------------
+ sys/net/iflib.h             |  4 +-
+ sys/sys/pmc.h               |  3 +-
+ 11 files changed, 332 insertions(+), 100 deletions(-)
+ create mode 100644 share/man/man4/cp2112.4
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d194a1496f94..ad4a7e4d1205  hardened/current/master -> hardened/current/master        
+remote:    d32c2c12355e..5bb0b4a5490c  github/freebsd/current/master -> github/freebsd/current/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d194a1496f94..ad4a7e4d1205  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
