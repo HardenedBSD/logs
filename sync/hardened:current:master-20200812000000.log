@@ -1,0 +1,145 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing tools/debugscripts/kgdb
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/kern_proc.c
+Removing sys/compat/netbsd/dvcfg.h
+Auto-merging sys/compat/linuxkpi/common/include/linux/bitops.h
+CONFLICT (content): Merge conflict in sys/compat/linuxkpi/common/include/linux/bitops.h
+Auto-merging share/mk/sys.mk
+Auto-merging share/mk/src.opts.mk
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/compat/linuxkpi/common/include/linux/bitops.h
+index 64b0ca57a7c7,1bcbd681203c..000000000000
+--- a/sys/compat/linuxkpi/common/include/linux/bitops.h
++++ b/sys/compat/linuxkpi/common/include/linux/bitops.h
+@@@ -275,13 -278,6 +278,16 @@@ find_next_zero_bit(const unsigned long 
+  #define	test_bit(i, a)							\
+      !!(READ_ONCE(((volatile const unsigned long *)(a))[BIT_WORD(i)]) & BIT_MASK(i))
+  
+++<<<<<<< HEAD
+ +static inline void
+ +clear_bit_unlock(long bit, volatile unsigned long *var)
+ +{
+ +	atomic_thread_fence_rel();
+ +	clear_bit(bit, var);
+ +}
+ +
+++=======
+++>>>>>>> freebsd/current/master
+  static inline int
+  test_and_clear_bit(long bit, volatile unsigned long *var)
+  {
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/mkerrno.sh
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/mkerrtags.sh
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/mknames.sh
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/mksignal.sh
+	modified:   libexec/rc/rc.d/ipfilter
+	modified:   libexec/rc/rc.d/ipmon
+	modified:   libexec/rc/rc.d/ipnat
+	modified:   libexec/rc/rc.d/netif
+	modified:   libexec/rc/rc.d/netwait
+	modified:   libexec/rc/rc.d/securelevel
+	modified:   release/packages/generate-ucl.sh
+	modified:   sbin/ipfw/ipfw.8
+	modified:   sbin/ipfw/ipfw2.c
+	modified:   share/mk/bsd.linker.mk
+	modified:   share/mk/src.opts.mk
+	modified:   share/mk/sys.mk
+	modified:   stand/i386/loader/Makefile
+	modified:   sys/compat/linuxkpi/common/include/linux/sched.h
+	modified:   sys/compat/linuxkpi/common/src/linux_rcu.c
+	deleted:    sys/compat/netbsd/dvcfg.h
+	modified:   sys/conf/kern.pre.mk
+	modified:   sys/fs/devfs/devfs.h
+	modified:   sys/fs/devfs/devfs_devs.c
+	modified:   sys/fs/devfs/devfs_int.h
+	modified:   sys/fs/devfs/devfs_vnops.c
+	modified:   sys/kern/kern_conf.c
+	modified:   sys/kern/kern_proc.c
+	modified:   sys/kern/tty.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/kern/vfs_syscalls.c
+	modified:   sys/modules/linux/Makefile
+	modified:   sys/modules/linux64/Makefile
+	modified:   sys/netpfil/ipfw/ip_fw2.c
+	modified:   sys/sys/param.h
+	modified:   sys/sys/smp.h
+	modified:   sys/sys/vnode.h
+	modified:   sys/vm/vm_meter.c
+	modified:   sys/vm/vm_page.c
+	modified:   sys/vm/vm_page.h
+	modified:   sys/vm/vm_pageout.c
+	modified:   sys/vm/vm_pagequeue.h
+	modified:   tools/build/Makefile
+	deleted:    tools/debugscripts/kgdb
+	modified:   usr.bin/script/script.c
+	modified:   usr.bin/tput/tput.1
+	modified:   usr.sbin/pwd_mkdb/bootstrap/pwd.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/compat/linuxkpi/common/include/linux/bitops.h
+
+HEAD is now at 19e78dd27a35 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 19e78dd27a35 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
