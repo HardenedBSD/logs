@@ -47,3 +47,265 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing science/afni/files/patch-netcdf-3.5.0_src_configure
+Auto-merging editors/emacs/Makefile
+CONFLICT (content): Merge conflict in editors/emacs/Makefile
+Auto-merging editors/emacs-devel/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc editors/emacs/Makefile
+index 53c24ce1372f,429eb9d202bb..000000000000
+--- a/editors/emacs/Makefile
++++ b/editors/emacs/Makefile
+@@@ -25,7 -24,7 +24,11 @@@ COMMENT+=	(Canna Japanese input flavor
+  LICENSE=	GPLv3+
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ LIB_DEPENDS=	libgmp.so:math/gmp
+++>>>>>>> freebsd/master
+  
+  FLAVORS=			full canna nox
+  canna_PKGNAMESUFFIX=		-canna
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/emacs.mk
+	modified:   UPDATING
+	modified:   archivers/zutils/Makefile
+	modified:   archivers/zutils/distinfo
+	modified:   audio/emms/Makefile
+	new file:   audio/opustags/files/patch-src_opus.cc
+	modified:   benchmarks/fio/Makefile
+	modified:   benchmarks/fio/distinfo
+	modified:   cad/dinotrace/Makefile
+	modified:   cad/gtkwave/Makefile
+	modified:   cad/gtkwave/distinfo
+	modified:   cad/verilog-mode.el/Makefile
+	modified:   comms/xlog/Makefile
+	modified:   comms/xlog/distinfo
+	modified:   databases/bbdb/Makefile
+	modified:   databases/gnats4/Makefile
+	modified:   deskutils/howm/Makefile
+	modified:   devel/aws-sdk-cpp/Makefile
+	modified:   devel/aws-sdk-cpp/distinfo
+	modified:   devel/aws-sdk-cpp/pkg-plist
+	modified:   devel/cask/Makefile
+	modified:   devel/cdialog/Makefile
+	modified:   devel/cdialog/distinfo
+	modified:   devel/cdialog/pkg-plist
+	modified:   devel/clojure-cider/Makefile
+	modified:   devel/dash.el/Makefile
+	modified:   devel/distel/Makefile
+	modified:   devel/epl.el/Makefile
+	modified:   devel/eric6/bsd.eric6.mk
+	modified:   devel/eric6/distinfo
+	modified:   devel/es-eric6/distinfo
+	modified:   devel/ghub/Makefile
+	modified:   devel/git-modes/Makefile
+	modified:   devel/magit-popup/Makefile
+	modified:   devel/magit/Makefile
+	modified:   devel/p5-Sepia/Makefile
+	modified:   devel/pkg-info.el/Makefile
+	modified:   devel/psvn/Makefile
+	modified:   devel/py-repoze.tm2/Makefile
+	modified:   devel/py-zope.generations/Makefile
+	modified:   devel/sigar/files/patch-src_os_darwin_darwin__sigar.c
+	modified:   devel/tablist/Makefile
+	modified:   devel/treepy.el/Makefile
+	modified:   editors/apel/Makefile
+	modified:   editors/emacs-devel/Makefile
+	modified:   editors/emacs/distinfo
+	new file:   editors/emacs/pkg-message
+	modified:   editors/emacs/pkg-plist
+	modified:   editors/flim/Makefile
+	modified:   editors/paredit-mode.el/Makefile
+	modified:   editors/psgml/Makefile
+	modified:   editors/semi/Makefile
+	modified:   editors/slime/Makefile
+	modified:   editors/tamago/Makefile
+	modified:   editors/web-mode/Makefile
+	modified:   editors/with-editor/Makefile
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   games/easyrpg-player/Makefile
+	new file:   games/easyrpg-player/files/patch-builds_cmake_Modules_FindHarfbuzz.cmake
+	modified:   german/eric6/distinfo
+	modified:   graphics/akira/Makefile
+	modified:   graphics/akira/distinfo
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   graphics/rubygem-png/pkg-descr
+	modified:   graphics/xface.el/Makefile
+	modified:   irc/riece/Makefile
+	modified:   japanese/boiled-mozc/Makefile
+	modified:   japanese/cp5022x-el/Makefile
+	modified:   japanese/ddskk/Makefile
+	modified:   japanese/lookup/Makefile
+	modified:   japanese/migemo.el/Makefile
+	modified:   japanese/mozc-el/Makefile
+	modified:   japanese/navi2ch/Makefile
+	modified:   japanese/yc.el/Makefile
+	modified:   lang/alchemist.el/Makefile
+	modified:   lang/clojure-mode.el/Makefile
+	modified:   lang/csharp-mode.el/Makefile
+	modified:   lang/elixir-mode.el/Makefile
+	modified:   lang/gcc11-devel/Makefile
+	modified:   lang/gcc11-devel/distinfo
+	new file:   lang/gcc11-devel/files/patch-gcc-value-range.h
+	modified:   lang/haskell-mode.el/Makefile
+	modified:   lang/php-mode.el/Makefile
+	modified:   lang/spidermonkey68/Makefile
+	modified:   lang/tuareg-mode.el/Makefile
+	modified:   mail/Makefile
+	modified:   mail/anubis/Makefile
+	modified:   mail/c-sig/Makefile
+	modified:   mail/mailest/Makefile
+	modified:   mail/mew/Makefile
+	modified:   mail/mu4e-maildirs/Makefile
+	modified:   mail/mu4e/Makefile
+	modified:   mail/notmuch-emacs/Makefile
+	modified:   mail/notmuch/Makefile
+	modified:   mail/notmuch/distinfo
+	modified:   mail/notmuch/files/patch-configure
+	modified:   mail/notmuch/files/patch-contrib_notmuch-mutt_Makefile
+	modified:   mail/notmuch/pkg-plist
+	modified:   mail/py-afew/Makefile
+	modified:   mail/py-afew/distinfo
+	new file:   mail/py-notmuch2/Makefile
+	new file:   mail/py-notmuch2/pkg-descr
+	modified:   mail/wanderlust/Makefile
+	modified:   mail/x-face-e21/Makefile
+	modified:   mail/xcite/Makefile
+	modified:   math/coq/Makefile
+	modified:   math/ess/Makefile
+	modified:   math/librsb/Makefile
+	modified:   math/librsb/distinfo
+	modified:   math/librsb/pkg-plist
+	modified:   math/mathgl/Makefile
+	modified:   math/octave-forge-sparsersb/Makefile
+	modified:   math/octave-forge-sparsersb/distinfo
+	modified:   math/py-libpoly/Makefile
+	modified:   misc/biblesync/Makefile
+	modified:   misc/elscreen/Makefile
+	modified:   misc/xiphos/Makefile
+	modified:   net-im/jabber.el/Makefile
+	modified:   net-mgmt/librenms/Makefile
+	modified:   net-mgmt/librenms/distinfo
+	modified:   net-mgmt/librenms/files/patch-includes_common.php
+	modified:   net-mgmt/netdata/Makefile
+	modified:   net-mgmt/netdata/distinfo
+	modified:   net-mgmt/netdata/files/patch-collectors_python.d.plugin_Makefile.am
+	modified:   net-mgmt/netdata/pkg-plist
+	modified:   net/gnu-radius/Makefile
+	modified:   net/tramp/Makefile
+	modified:   print/a2ps/Makefile
+	modified:   print/auctex/Makefile
+	modified:   print/hyperlatex/Makefile
+	modified:   print/pdf-tools/Makefile
+	modified:   print/yatex/Makefile
+	modified:   russian/eric6/distinfo
+	modified:   science/afni/Makefile
+	modified:   science/afni/distinfo
+	modified:   science/afni/files/patch-Makefile.INCLUDE
+	deleted:    science/afni/files/patch-netcdf-3.5.0_src_configure
+	modified:   science/afni/pkg-plist
+	modified:   security/starttls/Makefile
+	modified:   sysutils/bpytop/Makefile
+	modified:   sysutils/bpytop/distinfo
+	modified:   sysutils/bsdisks/Makefile
+	modified:   sysutils/bsdisks/distinfo
+	modified:   sysutils/bsdisks/pkg-plist
+	modified:   sysutils/helm/Makefile
+	modified:   sysutils/helm/distinfo
+	modified:   sysutils/lr/Makefile
+	modified:   sysutils/puppet-mode.el/Makefile
+	modified:   sysutils/yadm/Makefile
+	modified:   sysutils/yadm/distinfo
+	modified:   textproc/dictem/Makefile
+	modified:   textproc/dictionary/Makefile
+	modified:   textproc/doc-mode.el/Makefile
+	modified:   textproc/ibus-el/Makefile
+	modified:   textproc/markdown-mode.el/Makefile
+	modified:   textproc/muse/Makefile
+	modified:   textproc/uim-el/Makefile
+	modified:   textproc/xml-lite.el/Makefile
+	modified:   textproc/yaml-mode.el/Makefile
+	modified:   www/emacs-w3m/Makefile
+	modified:   x11-fonts/font-alias/Makefile
+	modified:   x11-fonts/font-alias/distinfo
+	modified:   x11-fonts/font-misc-ethiopic/Makefile
+	modified:   x11-fonts/font-misc-ethiopic/distinfo
+	modified:   x11-fonts/font-misc-ethiopic/pkg-plist
+	modified:   x11-fonts/iosevka/Makefile
+	modified:   x11-fonts/iosevka/distinfo
+	modified:   x11-fonts/iosevka/pkg-plist
+	modified:   x11-toolkits/gtk-layer-shell/Makefile
+	modified:   x11-toolkits/gtk-layer-shell/distinfo
+	modified:   x11-toolkits/gtk-layer-shell/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   editors/emacs/Makefile
+
+
+It took 3.28 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1d6a93e00ea4 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.04 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1d6a93e00ea4 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
