@@ -47,3 +47,148 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/openldap24-server/files/patch-libraries_liblmdb_mdb.c
+Removing mail/dovecot/files/patch-src_lib-master_master-service.c
+Auto-merging graphics/poppler/Makefile
+Auto-merging graphics/gimp-app/Makefile
+Auto-merging graphics/cimg/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   2 +-
+ cad/PrusaSlicer/Makefile                           |   2 +-
+ devel/Makefile                                     |   2 +
+ devel/kio-extras/Makefile                          |   1 +
+ devel/opengrok/Makefile                            | 112 +++++--
+ devel/opengrok/distinfo                            |   6 +-
+ devel/opengrok/files/patch-doc_logging.properties  |  11 +
+ devel/opengrok/pkg-descr                           |   2 +-
+ devel/opengrok/pkg-message                         |   8 +
+ devel/opengrok/pkg-plist                           | 345 ++++++++++++++-------
+ devel/py-blessed/Makefile                          |  23 ++
+ devel/py-blessed/distinfo                          |   3 +
+ devel/py-blessed/pkg-descr                         |   5 +
+ devel/py-enlighten/Makefile                        |  22 ++
+ devel/py-enlighten/distinfo                        |   3 +
+ devel/py-enlighten/pkg-descr                       |   6 +
+ devel/py-ordereddict/Makefile                      |   4 +-
+ devel/synfig/Makefile                              |   2 +-
+ editors/calligra/Makefile                          |   2 +-
+ games/pink-pony/Makefile                           |   2 +-
+ graphics/alembic/Makefile                          |   2 +-
+ graphics/ampasCTL/Makefile                         |   2 +-
+ graphics/blender/Makefile                          |   1 +
+ graphics/cimg/Makefile                             |   2 +-
+ graphics/enblend/Makefile                          |   2 +-
+ graphics/exrtools/Makefile                         |   2 +-
+ graphics/fyre/Makefile                             |   2 +-
+ graphics/gegl/Makefile                             |   2 +-
+ graphics/gimp-app/Makefile                         |   2 +-
+ graphics/gimp-gmic-plugin/Makefile                 |   2 +-
+ graphics/gmic/Makefile                             |   2 +-
+ graphics/gstreamer1-plugins-openexr/Makefile       |   2 +-
+ graphics/hdr_tools/Makefile                        |   2 +-
+ graphics/hugin/Makefile                            |   2 +-
+ graphics/kf5-kimageformats/Makefile                |   1 +
+ graphics/krita/Makefile                            |   2 +-
+ graphics/luminance-qt5/Makefile                    |   2 +-
+ graphics/nvidia-texture-tools/Makefile             |   2 +-
+ graphics/openimageio/Makefile                      |   2 +-
+ graphics/openshadinglanguage/Makefile              |   2 +-
+ graphics/pixie/Makefile                            |   2 +-
+ graphics/poppler/Makefile                          |   4 +-
+ graphics/poppler/distinfo                          |   6 +-
+ graphics/py-openexr/Makefile                       |   2 +-
+ graphics/py-openimageio/Makefile                   |   2 +-
+ graphics/simpleviewer/Makefile                     |   2 +-
+ graphics/synfigstudio/Makefile                     |   2 +-
+ graphics/vigra/Makefile                            |   2 +-
+ graphics/vips/Makefile                             |   2 +-
+ graphics/yafaray/Makefile                          |   1 +
+ mail/dovecot-pigeonhole/Makefile                   |   2 +-
+ mail/dovecot-pigeonhole/distinfo                   |   6 +-
+ mail/dovecot/Makefile                              |   5 +-
+ mail/dovecot/distinfo                              |   6 +-
+ mail/dovecot/files/patch-configure                 |   6 +-
+ ...patch-src_lib-fts_fts-filter-stemmer-snowball.c |   2 +-
+ .../files/patch-src_lib-master_master-service.c    |  11 -
+ .../patch-src_plugins_fts-lucene_SnowballFilter.h  |   3 +-
+ .../patch-src_plugins_fts-solr_solr-connection.c   |   6 +-
+ mail/dovecot/pkg-plist                             |   3 +
+ math/curv/Makefile                                 |   2 +-
+ misc/openvdb/Makefile                              |   2 +-
+ misc/py-kartograph/Makefile                        |   6 +-
+ misc/py-toil/Makefile                              |  12 +-
+ misc/py-toil/distinfo                              |   6 +-
+ net/openldap24-server/Makefile                     |   4 +-
+ net/openldap24-server/distinfo                     |   6 +-
+ .../files/patch-libraries_liblmdb_mdb.c            |  14 -
+ net/openldap24-server/pkg-plist.client             |   1 +
+ security/vuxml/vuln.xml                            |  45 +++
+ 70 files changed, 532 insertions(+), 242 deletions(-)
+ create mode 100644 devel/opengrok/files/patch-doc_logging.properties
+ create mode 100644 devel/opengrok/pkg-message
+ create mode 100644 devel/py-blessed/Makefile
+ create mode 100644 devel/py-blessed/distinfo
+ create mode 100644 devel/py-blessed/pkg-descr
+ create mode 100644 devel/py-enlighten/Makefile
+ create mode 100644 devel/py-enlighten/distinfo
+ create mode 100644 devel/py-enlighten/pkg-descr
+ delete mode 100644 mail/dovecot/files/patch-src_lib-master_master-service.c
+ delete mode 100644 net/openldap24-server/files/patch-libraries_liblmdb_mdb.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: Auto packing the repository in background for optimum performance.        
+remote: See "git help gc" for manual housekeeping.        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    3cbb1627fd8a..90d7365259b8  master -> master
+remote:    6bf96dfd38ab..3cbb1627fd8a  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   3cbb1627fd8a..90d7365259b8  master -> master
+==== END: master ====
