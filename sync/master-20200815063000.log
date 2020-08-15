@@ -73,3 +73,149 @@ new files yourself (see 'git help status').
 nothing to commit, working tree clean
 HEAD is now at f9fec866cb80 Merge remote-tracking branch 'freebsd/master'
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 12 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:rF/Pqgek1p+z8nb/OsdRiDncgxtiGcD+t/zTgM4Jf4c.
+Please contact your system administrator.
+Add correct host key in /home/github-sync/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/github-sync/.ssh/known_hosts:2
+ECDSA host key for git-01.md.hardenedbsd.org has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at f9fec866cb80 Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing textproc/libebml/files/patch-ebml__EbmlBinary.h
+Auto-merging editors/emacs-devel/Makefile
+Removing devel/treepy.el/files/patch-97d955be198ead6380706704cbe0005fffaccf64
+Merge made by the 'recursive' strategy.
+ audio/Makefile                                     |   1 +
+ audio/squeezelite/Makefile                         |  57 ++++++
+ audio/squeezelite/distinfo                         |   3 +
+ audio/squeezelite/files/patch-Makefile             |  28 +++
+ audio/squeezelite/files/patch-decode.c             |  15 ++
+ audio/squeezelite/files/patch-main.c               |  11 ++
+ audio/squeezelite/files/patch-squeezelite.h        |  34 ++++
+ audio/squeezelite/pkg-descr                        |   3 +
+ devel/qconf/Makefile                               |   3 +-
+ devel/qconf/distinfo                               |   6 +-
+ devel/qconf/pkg-descr                              |   2 +-
+ devel/treepy.el/Makefile                           |   3 +-
+ devel/treepy.el/distinfo                           |   6 +-
+ .../patch-97d955be198ead6380706704cbe0005fffaccf64 |  37 ----
+ editors/emacs-devel/Makefile                       |   4 +-
+ editors/emacs-devel/distinfo                       |   6 +-
+ editors/emacs-devel/pkg-plist                      |  13 +-
+ editors/jove/Makefile                              |   2 +-
+ games/homura/Makefile                              |   5 +-
+ lang/php-mode.el/Makefile                          |   3 +-
+ lang/php-mode.el/distinfo                          |   6 +-
+ lang/php-mode.el/files/patch-Makefile              |   8 +-
+ math/R-cran-haven/pkg-descr                        |   2 +-
+ net-mgmt/py-pyzabbix/Makefile                      |   2 +-
+ net-mgmt/py-pyzabbix/distinfo                      |   6 +-
+ net-mgmt/py-pyzabbix/pkg-descr                     |   2 +-
+ net/kafka/Makefile                                 |  15 +-
+ net/kafka/distinfo                                 |   6 +-
+ net/kafka/files/kafka.in                           |  35 +++-
+ net/kafka/files/kafka_connect.in                   |  39 ++--
+ net/kafka/pkg-plist                                |  18 +-
+ net/onedrive/Makefile                              |   4 +-
+ net/onedrive/distinfo                              |   6 +-
+ net/onedrive/files/patch-Makefile.in               |  13 +-
+ net/onedrive/pkg-plist                             |   1 +
+ sysutils/onefetch/Makefile                         | 109 +++++++----
+ sysutils/onefetch/distinfo                         | 218 +++++++++++++--------
+ textproc/libebml/Makefile                          |   7 +-
+ textproc/libebml/distinfo                          |   6 +-
+ textproc/libebml/files/patch-ebml__EbmlBinary.h    |  10 -
+ www/Makefile                                       |   1 +
+ www/gwsocket/Makefile                              |  66 +++++++
+ www/gwsocket/distinfo                              |   5 +
+ www/gwsocket/files/gwsocket.conf                   |  42 ++++
+ www/gwsocket/files/gwsocket.in                     | 138 +++++++++++++
+ www/gwsocket/files/pkg-message.in                  |  26 +++
+ www/gwsocket/files/sample.html                     |  43 ++++
+ www/gwsocket/pkg-descr                             |   4 +
+ www/gwsocket/pkg-plist                             |   6 +
+ www/mod_pagespeed/Makefile                         |   3 +-
+ 50 files changed, 824 insertions(+), 265 deletions(-)
+ create mode 100644 audio/squeezelite/Makefile
+ create mode 100644 audio/squeezelite/distinfo
+ create mode 100644 audio/squeezelite/files/patch-Makefile
+ create mode 100644 audio/squeezelite/files/patch-decode.c
+ create mode 100644 audio/squeezelite/files/patch-main.c
+ create mode 100644 audio/squeezelite/files/patch-squeezelite.h
+ create mode 100644 audio/squeezelite/pkg-descr
+ delete mode 100644 devel/treepy.el/files/patch-97d955be198ead6380706704cbe0005fffaccf64
+ delete mode 100644 textproc/libebml/files/patch-ebml__EbmlBinary.h
+ create mode 100644 www/gwsocket/Makefile
+ create mode 100644 www/gwsocket/distinfo
+ create mode 100644 www/gwsocket/files/gwsocket.conf
+ create mode 100644 www/gwsocket/files/gwsocket.in
+ create mode 100644 www/gwsocket/files/pkg-message.in
+ create mode 100644 www/gwsocket/files/sample.html
+ create mode 100644 www/gwsocket/pkg-descr
+ create mode 100644 www/gwsocket/pkg-plist
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:rF/Pqgek1p+z8nb/OsdRiDncgxtiGcD+t/zTgM4Jf4c.
+Please contact your system administrator.
+Add correct host key in /home/github-sync/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/github-sync/.ssh/known_hosts:2
+ECDSA host key for git-01.md.hardenedbsd.org has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 29 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e24ebb7f2432 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
