@@ -47,3 +47,244 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/conlecterm/files/patch-gtk2hs-buildtools-0.13.5.0_c2hs_toplevel_C2HSConfig.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_Utils_Patterns.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_TypeCheck_Sanity.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_TypeCheck_Monad.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_Parser_ParserUtils.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_Parser_NoPat.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_Parser_NoInclude.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_ModuleSystem_Monad.hs
+Removing security/hs-cryptol/files/patch-src_Cryptol_Eval_Monad.hs
+Auto-merging lang/ghc/Makefile
+Removing devel/hs-cpphs/files/patch-cpphs.cabal
+Removing audio/hydrogen/files/patch-src_gui_src_SplashScreen.cpp
+Merge made by the 'recursive' strategy.
+ audio/hydrogen/Makefile                            |   6 +-
+ audio/hydrogen/distinfo                            |   6 +-
+ audio/hydrogen/files/patch-CMakeLists.txt          |  13 +-
+ .../hydrogen/files/patch-data_i18n_CMakeLists.txt  |   8 +
+ .../files/patch-src_gui_src_SplashScreen.cpp       |  11 --
+ audio/hydrogen/pkg-plist                           |   9 +-
+ cad/opensta/Makefile                               |   1 +
+ cad/opensta/files/patch-CMakeLists.txt             |  18 +-
+ converters/hs-aeson-pretty/Makefile                |  17 +-
+ converters/hs-aeson-pretty/distinfo                |  36 +++-
+ deskutils/hs-arbtt/Makefile                        |  41 ++---
+ deskutils/hs-arbtt/distinfo                        |  42 ++---
+ deskutils/zanshin/files/patch-git_4850c0           |  61 ++++++
+ devel/Makefile                                     |   1 +
+ devel/cmake-doc/Makefile                           |   2 +-
+ devel/cmake-gui/Makefile                           |   3 +-
+ devel/cmake/Makefile                               |   3 +-
+ devel/cmake/distinfo                               |   6 +-
+ devel/cmake/pkg-plist                              |  58 +++++-
+ devel/cmakedoc/Makefile                            |  21 +++
+ devel/cmakedoc/distinfo                            |   3 +
+ devel/cmakedoc/pkg-descr                           |   5 +
+ devel/folly/files/patch-CMakeLists.txt             |  15 ++
+ .../patch-folly_experimental_symbolizer_Dwarf.cpp  |   4 +-
+ .../files/patch-folly_memory_detail_MallocImpl.h   |   6 +-
+ devel/hs-ShellCheck/Makefile                       |  17 +-
+ devel/hs-ShellCheck/distinfo                       |  26 ++-
+ devel/hs-cabal-install/Makefile                    |  23 +--
+ devel/hs-cabal-install/distinfo                    |  36 ++--
+ .../files/patch-Distribution_Client_Sandbox.hs     |   8 +
+ devel/hs-cabal-install/files/patch-bootstrap.sh    |  13 +-
+ .../files/patch-cabal-install.cabal                |  11 ++
+ .../files/patch-ed25519.cabal.hackage              |  11 ++
+ devel/hs-cpphs/Makefile                            |   5 +-
+ devel/hs-cpphs/distinfo                            |   8 +-
+ devel/hs-cpphs/files/patch-cpphs.cabal             |  18 --
+ devel/hs-darcs/Makefile                            |   5 +-
+ devel/hs-darcs/distinfo                            |  10 +-
+ devel/hs-ghc-events/Makefile                       |   3 +-
+ devel/hs-ghc-events/distinfo                       |   6 +-
+ devel/hs-git-annex/Makefile                        |  60 +++---
+ devel/hs-git-annex/distinfo                        | 114 ++++++------
+ devel/hs-haddock/Makefile                          |   7 +-
+ devel/hs-haddock/distinfo                          |  16 +-
+ devel/hs-hlint/Makefile                            |  13 +-
+ devel/hs-hlint/distinfo                            |  28 +--
+ devel/hs-hoogle/Makefile                           |  66 ++++---
+ devel/hs-hoogle/distinfo                           | 130 +++++++------
+ devel/hs-hpack/Makefile                            |  33 ++--
+ devel/hs-hpack/distinfo                            |  64 ++++---
+ devel/hs-mueval/Makefile                           |   7 +-
+ devel/hs-mueval/distinfo                           |  12 +-
+ devel/hs-profiteur/Makefile                        |  13 +-
+ devel/hs-profiteur/distinfo                        |  26 +--
+ devel/hs-shake/Makefile                            |  10 +-
+ devel/hs-shake/distinfo                            |  18 +-
+ devel/hs-spago/Makefile                            |  31 ++--
+ devel/hs-spago/distinfo                            |  52 +++---
+ devel/hs-threadscope/Makefile                      |  18 +-
+ devel/hs-threadscope/distinfo                      |  32 ++--
+ devel/hs-threadscope/files/patch-threadscope.cabal |  11 ++
+ devel/kms-cmake-utils/Makefile                     |   3 +-
+ devel/stack/Makefile                               |  92 +++++-----
+ devel/stack/distinfo                               | 190 ++++++++++---------
+ emulators/virtualbox-ose-kmod/Makefile             |   1 +
+ games/hedgewars-server/Makefile                    |  20 +-
+ games/hedgewars-server/distinfo                    |  52 ++++--
+ games/hs-scroll/Makefile                           |   4 +-
+ games/hs-scroll/distinfo                           |   4 +-
+ .../qgis-ltr/files/patch-src_core_CMakeLists.txt   |  13 ++
+ graphics/qgis/files/patch-src_core_CMakeLists.txt  |  14 ++
+ lang/elm/Makefile                                  |  13 +-
+ lang/elm/distinfo                                  |  26 ++-
+ lang/ghc/Makefile                                  |   8 +-
+ lang/ghc/distinfo                                  |   6 +-
+ .../extra-patch-libraries_ghc-prim_cbits_atomic.c  |  20 ++
+ lang/purescript/Makefile                           |   3 +-
+ lang/purescript/distinfo                           |   4 -
+ lang/purescript/files/patch-app_Command_REPL.hs    |  33 ++++
+ math/hs-Agda/Makefile                              |  27 +--
+ math/hs-Agda/distinfo                              |  44 +++--
+ multimedia/libmatroska/Makefile                    |   8 +-
+ multimedia/libmatroska/distinfo                    |   6 +-
+ multimedia/py-gstreamer/pkg-descr                  |   2 +-
+ net-im/matterhorn/Makefile                         |  44 +++--
+ net-im/matterhorn/distinfo                         |  90 ++++-----
+ net-im/matterhorn/files/patch-matterhorn.cabal     |  11 ++
+ net-mgmt/icinga2/Makefile                          |  38 ++--
+ net-mgmt/icinga2/distinfo                          |   6 +-
+ net-mgmt/icinga2/files/patch-CMakeLists.txt        |  18 +-
+ .../icinga2/files/patch-itl_command-plugins.conf   |   4 +-
+ .../icinga2/files/patch-lib_checker_CMakeLists.txt |   4 +-
+ .../icinga2/files/patch-lib_compat_CMakeLists.txt  |   4 +-
+ .../files/patch-lib_db__ido__mysql_CMakeLists.txt  |   4 +-
+ .../files/patch-lib_db__ido__pgsql_CMakeLists.txt  |   4 +-
+ .../files/patch-lib_icingadb_CMakeLists.txt        |  11 ++
+ .../files/patch-lib_livestatus_CMakeLists.txt      |   4 +-
+ .../files/patch-lib_notification_CMakeLists.txt    |   4 +-
+ .../files/patch-lib_perfdata_CMakeLists.txt        |   4 +-
+ net-mgmt/icinga2/pkg-plist                         |   7 +-
+ net-mgmt/icingaweb2-module-ipl/Makefile            |   3 +-
+ net-mgmt/icingaweb2-module-ipl/distinfo            |   6 +-
+ net-mgmt/icingaweb2-module-ipl/pkg-plist           |  81 +++++++-
+ net-p2p/libtorrent-rasterbar/Makefile              |   1 +
+ .../patch-cmake_Modules_GeneratePkgConfig.cmake    |  14 ++
+ security/hs-cryptol/Makefile                       |  83 +++++++--
+ security/hs-cryptol/distinfo                       | 194 +++++++++++++++++---
+ .../files/patch-src_Cryptol_Eval_Monad.hs          |  23 ---
+ .../files/patch-src_Cryptol_ModuleSystem_Monad.hs  |  19 --
+ .../files/patch-src_Cryptol_Parser_NoInclude.hs    |  10 -
+ .../files/patch-src_Cryptol_Parser_NoPat.hs        |  10 -
+ .../files/patch-src_Cryptol_Parser_ParserUtils.hs  |  10 -
+ .../files/patch-src_Cryptol_TypeCheck_Monad.hs     |  18 --
+ .../files/patch-src_Cryptol_TypeCheck_Sanity.hs    |  10 -
+ .../files/patch-src_Cryptol_Utils_Patterns.hs      |  24 ---
+ sysutils/hs-cputype/Makefile                       |  11 +-
+ sysutils/hs-cputype/distinfo                       |  16 +-
+ sysutils/hs-cputype/pkg-descr                      |   2 +-
+ textproc/hs-lhs2tex/Makefile                       |   7 +-
+ textproc/hs-lhs2tex/distinfo                       |  12 +-
+ textproc/hs-pandoc-citeproc/Makefile               |  97 +++++-----
+ textproc/hs-pandoc-citeproc/distinfo               | 204 ++++++++++-----------
+ textproc/hs-pandoc-crossref/Makefile               |  56 +++---
+ textproc/hs-pandoc-crossref/distinfo               | 130 ++++++-------
+ textproc/hs-pandoc/Makefile                        |  81 ++++----
+ textproc/hs-pandoc/distinfo                        | 164 ++++++++++-------
+ textproc/hs-yaml/Makefile                          |  19 +-
+ textproc/hs-yaml/distinfo                          |  38 ++--
+ www/hs-DAV/Makefile                                |  58 +++---
+ www/hs-DAV/distinfo                                | 108 ++++++-----
+ www/hs-postgrest/Makefile                          |   4 +-
+ www/hs-wai-app-static/Makefile                     |  53 +++---
+ www/hs-wai-app-static/distinfo                     | 102 +++++++----
+ www/hs-yesod-bin/Makefile                          |  75 ++++----
+ www/hs-yesod-bin/distinfo                          | 152 ++++++++-------
+ x11-wm/hs-xmonad/Makefile                          |   6 +-
+ x11-wm/hs-xmonad/distinfo                          |  10 +-
+ x11/conlecterm/Makefile                            |  76 ++++----
+ x11/conlecterm/distinfo                            |  54 ++++--
+ ...buildtools-0.13.5.0_c2hs_toplevel_C2HSConfig.hs |  22 ---
+ x11/hs-xmobar/Makefile                             |  23 +--
+ x11/hs-xmobar/distinfo                             |  30 ++-
+ x11/hs-xmobar/files/patch-xmobar.cabal             |  11 ++
+ 143 files changed, 2508 insertions(+), 1826 deletions(-)
+ create mode 100644 audio/hydrogen/files/patch-data_i18n_CMakeLists.txt
+ delete mode 100644 audio/hydrogen/files/patch-src_gui_src_SplashScreen.cpp
+ create mode 100644 deskutils/zanshin/files/patch-git_4850c0
+ create mode 100644 devel/cmakedoc/Makefile
+ create mode 100644 devel/cmakedoc/distinfo
+ create mode 100644 devel/cmakedoc/pkg-descr
+ create mode 100644 devel/folly/files/patch-CMakeLists.txt
+ create mode 100644 devel/hs-cabal-install/files/patch-Distribution_Client_Sandbox.hs
+ create mode 100644 devel/hs-cabal-install/files/patch-cabal-install.cabal
+ create mode 100644 devel/hs-cabal-install/files/patch-ed25519.cabal.hackage
+ delete mode 100644 devel/hs-cpphs/files/patch-cpphs.cabal
+ create mode 100644 devel/hs-threadscope/files/patch-threadscope.cabal
+ create mode 100644 graphics/qgis/files/patch-src_core_CMakeLists.txt
+ create mode 100644 lang/ghc/files/extra-patch-libraries_ghc-prim_cbits_atomic.c
+ create mode 100644 lang/purescript/files/patch-app_Command_REPL.hs
+ create mode 100644 net-im/matterhorn/files/patch-matterhorn.cabal
+ create mode 100644 net-mgmt/icinga2/files/patch-lib_icingadb_CMakeLists.txt
+ create mode 100644 net-p2p/libtorrent-rasterbar/files/patch-cmake_Modules_GeneratePkgConfig.cmake
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_Eval_Monad.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_ModuleSystem_Monad.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_Parser_NoInclude.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_Parser_NoPat.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_Parser_ParserUtils.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_TypeCheck_Monad.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_TypeCheck_Sanity.hs
+ delete mode 100644 security/hs-cryptol/files/patch-src_Cryptol_Utils_Patterns.hs
+ delete mode 100644 x11/conlecterm/files/patch-gtk2hs-buildtools-0.13.5.0_c2hs_toplevel_C2HSConfig.hs
+ create mode 100644 x11/hs-xmobar/files/patch-xmobar.cabal
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d0f25f9f1e52..ab1391efbab5  master -> master
+remote:    dc3681adafe9..d0f25f9f1e52  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d0f25f9f1e52..ab1391efbab5  master -> master
+==== END: master ====
