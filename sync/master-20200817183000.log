@@ -47,3 +47,598 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11-wm/dwm/Makefile
+Removing www/py-cherrypy/files/patch-python38
+Removing textproc/libstaroffice/files/patch-src_lib_StarObjectSmallGraphic.cxx
+Removing textproc/libstaroffice/files/patch-src_lib_STOFFSpreadsheetListener.hxx
+Removing textproc/libstaroffice/files/patch-src_lib_STOFFOLEParser.cxx
+Removing sysutils/intel-pcm/files/patch-pci.cpp
+Removing sysutils/intel-pcm/files/patch-cpucounters.cpp
+Removing sysutils/intel-pcm/files/patch-Makefile
+Removing net/rsync/files/extrapatch-acl
+Auto-merging net/rsync/Makefile
+Removing lang/ghc/files865/wrap.c
+Removing lang/ghc/files865/patch-ppc64
+Removing lang/ghc/files865/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+Removing lang/ghc/files865/patch-ghc.mk
+Removing lang/ghc/files865/patch-configure.ac
+Removing lang/ghc/files865/extra-patch-aclocal.m4
+Removing lang/ghc/files865/build.mk.in
+Removing lang/ghc/files864/wrap.c
+Removing lang/ghc/files864/patch-ppc64
+Removing lang/ghc/files864/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+Removing lang/ghc/files864/patch-ghc.mk
+Removing lang/ghc/files864/patch-configure.ac
+Removing lang/ghc/files864/extra-patch-aclocal.m4
+Removing lang/ghc/files864/build.mk.in
+Removing lang/ghc/files863/wrap.c
+Removing lang/ghc/files863/patch-ppc64
+Removing lang/ghc/files863/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+Removing lang/ghc/files863/patch-ghc.mk
+Removing lang/ghc/files863/patch-configure.ac
+Removing lang/ghc/files863/extra-patch-aclocal.m4
+Removing lang/ghc/files863/build.mk.in
+Removing lang/ghc/files862/wrap.c
+Removing lang/ghc/files862/patch-ppc64
+Removing lang/ghc/files862/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+Removing lang/ghc/files862/patch-ghc.mk
+Removing lang/ghc/files862/patch-configure.ac
+Removing lang/ghc/files862/extra-patch-aclocal.m4
+Removing lang/ghc/files862/build.mk.in
+Removing lang/ghc/files844/wrap.c
+Removing lang/ghc/files844/patch-rts_posix_OSMem.c
+Removing lang/ghc/files844/patch-llvm-targets
+Removing lang/ghc/files844/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+Removing lang/ghc/files844/patch-ghc.mk
+Removing lang/ghc/files844/patch-fix-build-on-arm
+Removing lang/ghc/files844/patch-configure.ac
+Removing lang/ghc/files844/patch-configure
+Removing lang/ghc/files844/extra-patch-aclocal.m4
+Removing lang/ghc/files844/build.mk.in
+Removing lang/ghc/files843/wrap.c
+Removing lang/ghc/files843/patch-llvm-targets
+Removing lang/ghc/files843/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+Removing lang/ghc/files843/patch-ghc.mk
+Removing lang/ghc/files843/patch-configure.ac
+Removing lang/ghc/files843/patch-configure
+Removing lang/ghc/files843/extra-patch-aclocal.m4
+Removing lang/ghc/files843/build.mk.in
+Auto-merging lang/ghc/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging graphics/mahotas/Makefile
+Auto-merging editors/libreoffice/Makefile
+CONFLICT (content): Merge conflict in editors/libreoffice/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc editors/libreoffice/Makefile
+index cb2b9b72e17a,088414a34e3e..000000000000
+--- a/editors/libreoffice/Makefile
++++ b/editors/libreoffice/Makefile
+@@@ -107,18 -111,15 +111,22 @@@ SHEBANG_GLOB=	*.p
+  
+  GNU_CONFIGURE=	yes
+  USE_GL=		gl glew glu
++ USE_GNOME=	glib20
+  USE_OPENLDAP=	yes
+  USE_PERL5=	build
+- USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
+- USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
+- 		jpeg mysql:client \
+- 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz \
+- 		xorg
++ USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
++ USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
++ 		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
++ 		pkgconfig python shebangfix shared-mime-info ssl tar:xz xorg
+  
+++<<<<<<< HEAD
+ +PAGEEXEC_DISABLE=	lib/libreoffice/program/soffice.bin
+ +MPROTECT_DISABLE=	lib/libreoffice/program/soffice.bin
+ +
+ +OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
+++=======
++ OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
+++>>>>>>> freebsd/master
+  OPTIONS_DEFAULT=	CUPS MMEDIA
+  OPTIONS_DEFAULT_FreeBSD_12=	QT5
+  OPTIONS_DEFAULT_FreeBSD_13=	QT5
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   arabic/libreoffice/distinfo
+	modified:   audio/jamulus/Makefile
+	modified:   audio/jamulus/distinfo
+	modified:   audio/libaudec/Makefile
+	modified:   audio/libaudec/distinfo
+	modified:   audio/libaudec/pkg-descr
+	modified:   benchmarks/iperf3/Makefile
+	modified:   benchmarks/iperf3/distinfo
+	modified:   cad/k40-whisperer/Makefile
+	modified:   cad/k40-whisperer/distinfo
+	new file:   cad/py-cadquery/Makefile
+	new file:   cad/py-cadquery/distinfo
+	new file:   cad/py-cadquery/files/patch-setup.py
+	new file:   cad/py-cadquery/pkg-descr
+	new file:   cad/py-cq-editor/Makefile
+	new file:   cad/py-cq-editor/distinfo
+	new file:   cad/py-cq-editor/pkg-descr
+	new file:   cad/py-ocp/Makefile
+	new file:   cad/py-ocp/distinfo
+	new file:   cad/py-ocp/files/patch-FindOpenCascade.cmake
+	new file:   cad/py-ocp/files/patch-OCCT_OpenGl__HaltonSampler.hxx
+	new file:   cad/py-ocp/files/patch-Standard.cpp
+	new file:   cad/py-ocp/pkg-descr
+	modified:   chinese/libreoffice-zh_CN/distinfo
+	modified:   chinese/libreoffice-zh_TW/distinfo
+	modified:   databases/postgresql-libpqxx/Makefile
+	modified:   databases/postgresql-libpqxx/distinfo
+	modified:   databases/postgresql-libpqxx/pkg-plist
+	modified:   databases/py-asyncpg/Makefile
+	modified:   databases/py-asyncpg/distinfo
+	modified:   databases/sqlite3/Makefile
+	modified:   deskutils/kdepim/pkg-descr
+	modified:   devel/Makefile
+	new file:   devel/athens/Makefile
+	new file:   devel/athens/distinfo
+	new file:   devel/athens/files/patch-vendor_github.com_mattn_go-ieproxy_proxyMiddleman__unix.go
+	new file:   devel/athens/pkg-descr
+	modified:   devel/jenkins-lts/Makefile
+	modified:   devel/jenkins-lts/distinfo
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/distinfo
+	modified:   devel/ncurses/pkg-plist
+	modified:   devel/p5-Data-Unixish/Makefile
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_avg.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_bool.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_cat.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_centerpad.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_chain.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_cond.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_count.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_date.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_grep.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_head.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_indent.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_join.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_lc.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_lcfirst.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_lins.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_linum.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_lpad.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_ltrim.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_map.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_num.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_pick.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_rand.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_randstr.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_rev.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_rins.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_rpad.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_rtrim.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_shuf.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_sort.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_splice.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_split.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_sprintf.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_sprintfn.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_subsort.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_sum.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_tail.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_trim.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_trunc.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_uc.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_ucfirst.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_wc.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_wrap.pm
+	new file:   devel/p5-Data-Unixish/files/patch-lib_Data_Unixish_yes.pm
+	modified:   devel/php-composer/Makefile
+	modified:   devel/php-composer/distinfo
+	modified:   devel/py-identify/Makefile
+	modified:   devel/py-identify/distinfo
+	modified:   devel/py-jsmin/Makefile
+	new file:   devel/py-statgrab/Makefile
+	new file:   devel/py-statgrab/distinfo
+	new file:   devel/py-statgrab/pkg-descr
+	new file:   devel/py-urwid-readline/Makefile
+	new file:   devel/py-urwid-readline/distinfo
+	new file:   devel/py-urwid-readline/pkg-descr
+	modified:   devel/py-urwid/Makefile
+	modified:   devel/py-urwid/distinfo
+	modified:   devel/rubygem-racc/Makefile
+	modified:   devel/rubygem-racc/distinfo
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-bind-min-override-ttl
+	modified:   editors/Makefile
+	modified:   editors/featherpad/Makefile
+	modified:   editors/featherpad/distinfo
+	modified:   editors/featherpad/pkg-plist
+	modified:   editors/libreoffice-af/distinfo
+	modified:   editors/libreoffice-am/distinfo
+	modified:   editors/libreoffice-as/distinfo
+	modified:   editors/libreoffice-ast/distinfo
+	modified:   editors/libreoffice-be/distinfo
+	modified:   editors/libreoffice-bg/distinfo
+	modified:   editors/libreoffice-bn/distinfo
+	modified:   editors/libreoffice-bn_IN/distinfo
+	modified:   editors/libreoffice-bo/distinfo
+	modified:   editors/libreoffice-br/distinfo
+	modified:   editors/libreoffice-brx/distinfo
+	modified:   editors/libreoffice-bs/distinfo
+	modified:   editors/libreoffice-ca/distinfo
+	modified:   editors/libreoffice-ca_valencia/distinfo
+	new file:   editors/libreoffice-ckb/Makefile
+	new file:   editors/libreoffice-ckb/distinfo
+	modified:   editors/libreoffice-cs/distinfo
+	modified:   editors/libreoffice-cy/distinfo
+	modified:   editors/libreoffice-da/distinfo
+	modified:   editors/libreoffice-dgo/distinfo
+	modified:   editors/libreoffice-dsb/distinfo
+	modified:   editors/libreoffice-dz/distinfo
+	modified:   editors/libreoffice-el/distinfo
+	modified:   editors/libreoffice-en_GB/distinfo
+	modified:   editors/libreoffice-en_ZA/distinfo
+	modified:   editors/libreoffice-eo/distinfo
+	modified:   editors/libreoffice-es/distinfo
+	modified:   editors/libreoffice-et/distinfo
+	modified:   editors/libreoffice-eu/distinfo
+	modified:   editors/libreoffice-fa/distinfo
+	modified:   editors/libreoffice-fi/distinfo
+	new file:   editors/libreoffice-fur/Makefile
+	new file:   editors/libreoffice-fur/distinfo
+	modified:   editors/libreoffice-fy/distinfo
+	modified:   editors/libreoffice-ga/distinfo
+	modified:   editors/libreoffice-gd/distinfo
+	modified:   editors/libreoffice-gl/distinfo
+	modified:   editors/libreoffice-gu/distinfo
+	modified:   editors/libreoffice-gug/distinfo
+	modified:   editors/libreoffice-hi/distinfo
+	modified:   editors/libreoffice-hr/distinfo
+	modified:   editors/libreoffice-hsb/distinfo
+	modified:   editors/libreoffice-i18n/Makefile
+	modified:   editors/libreoffice-id/distinfo
+	modified:   editors/libreoffice-is/distinfo
+	modified:   editors/libreoffice-it/distinfo
+	modified:   editors/libreoffice-ka/distinfo
+	modified:   editors/libreoffice-kab/distinfo
+	modified:   editors/libreoffice-kk/distinfo
+	modified:   editors/libreoffice-km/distinfo
+	modified:   editors/libreoffice-kmr_Latn/distinfo
+	modified:   editors/libreoffice-kn/distinfo
+	modified:   editors/libreoffice-kok/distinfo
+	modified:   editors/libreoffice-ks/distinfo
+	modified:   editors/libreoffice-lb/distinfo
+	modified:   editors/libreoffice-lo/distinfo
+	modified:   editors/libreoffice-lt/distinfo
+	modified:   editors/libreoffice-lv/distinfo
+	modified:   editors/libreoffice-mai/distinfo
+	modified:   editors/libreoffice-mk/distinfo
+	modified:   editors/libreoffice-ml/distinfo
+	modified:   editors/libreoffice-mn/distinfo
+	modified:   editors/libreoffice-mni/distinfo
+	modified:   editors/libreoffice-mr/distinfo
+	modified:   editors/libreoffice-my/distinfo
+	modified:   editors/libreoffice-nb/distinfo
+	modified:   editors/libreoffice-ne/distinfo
+	modified:   editors/libreoffice-nl/distinfo
+	modified:   editors/libreoffice-nn/distinfo
+	modified:   editors/libreoffice-nr/distinfo
+	modified:   editors/libreoffice-nso/distinfo
+	modified:   editors/libreoffice-oc/distinfo
+	modified:   editors/libreoffice-om/distinfo
+	modified:   editors/libreoffice-or/distinfo
+	modified:   editors/libreoffice-pa_IN/distinfo
+	modified:   editors/libreoffice-ro/distinfo
+	modified:   editors/libreoffice-rw/distinfo
+	modified:   editors/libreoffice-sa_IN/distinfo
+	modified:   editors/libreoffice-sat/distinfo
+	modified:   editors/libreoffice-sd/distinfo
+	modified:   editors/libreoffice-si/distinfo
+	modified:   editors/libreoffice-sid/distinfo
+	modified:   editors/libreoffice-sk/distinfo
+	modified:   editors/libreoffice-sl/distinfo
+	modified:   editors/libreoffice-sq/distinfo
+	modified:   editors/libreoffice-sr/distinfo
+	modified:   editors/libreoffice-sr_Latn/distinfo
+	modified:   editors/libreoffice-ss/distinfo
+	modified:   editors/libreoffice-st/distinfo
+	modified:   editors/libreoffice-sv/distinfo
+	modified:   editors/libreoffice-sw_TZ/distinfo
+	modified:   editors/libreoffice-szl/distinfo
+	modified:   editors/libreoffice-ta/distinfo
+	modified:   editors/libreoffice-te/distinfo
+	modified:   editors/libreoffice-tg/distinfo
+	modified:   editors/libreoffice-th/distinfo
+	modified:   editors/libreoffice-tn/distinfo
+	modified:   editors/libreoffice-tr/distinfo
+	modified:   editors/libreoffice-ts/distinfo
+	modified:   editors/libreoffice-tt/distinfo
+	modified:   editors/libreoffice-ug/distinfo
+	modified:   editors/libreoffice-uz/distinfo
+	modified:   editors/libreoffice-ve/distinfo
+	modified:   editors/libreoffice-vec/distinfo
+	modified:   editors/libreoffice-xh/distinfo
+	modified:   editors/libreoffice-zu/distinfo
+	modified:   editors/libreoffice/Makefile.common
+	modified:   editors/libreoffice/Makefile.i18n
+	modified:   editors/libreoffice/distinfo
+	new file:   editors/libreoffice/files/patch-basic_source_classes_sbxmod.cxx
+	new file:   editors/libreoffice/files/patch-basic_source_runtime_methods.cxx
+	modified:   editors/libreoffice/files/patch-bridges_source_cpp__uno_gcc3__linux__aarch64_cpp2uno.cxx
+	new file:   editors/libreoffice/files/patch-desktop_source_app_app.cxx
+	new file:   editors/libreoffice/files/patch-libreofficekit_qa_gtktiledviewer_gtv-lok-dialog.cxx
+	new file:   editors/libreoffice/files/patch-libreofficekit_qa_gtktiledviewer_gtv-main-toolbar.cxx
+	modified:   editors/libreoffice/files/patch-vcl_qt5_Qt5Frame.cxx
+	modified:   editors/libreoffice/files/patch-vcl_source_app_svapp.cxx
+	new file:   editors/libreoffice6/Makefile
+	new file:   editors/libreoffice6/Makefile.common
+	new file:   editors/libreoffice6/Makefile.i18n
+	new file:   editors/libreoffice6/distinfo
+	new file:   editors/libreoffice6/files/patch-Makefile.in
+	renamed:    editors/libreoffice/files/patch-aarch64-gcc3_linux_aarch64 -> editors/libreoffice6/files/patch-aarch64-gcc3_linux_aarch64
+	new file:   editors/libreoffice6/files/patch-bin_distro-install-desktop-integration
+	new file:   editors/libreoffice6/files/patch-bridges_source_cpp__uno_gcc3__linux__aarch64_cpp2uno.cxx
+	new file:   editors/libreoffice6/files/patch-bridges_source_cpp__uno_gcc3__linux__intel_except.cxx
+	new file:   editors/libreoffice6/files/patch-configure
+	new file:   editors/libreoffice6/files/patch-configure.aarch64
+	renamed:    editors/libreoffice/files/patch-cxa_exception -> editors/libreoffice6/files/patch-cxa_exception
+	new file:   editors/libreoffice6/files/patch-desktop_unx_source_pagein.c
+	new file:   editors/libreoffice6/files/patch-include_LibreOfficeKit_LibreOfficeKitInit.h
+	new file:   editors/libreoffice6/files/patch-officecfg_registry_schema_org_openoffice_Office_Common.xcs
+	new file:   editors/libreoffice6/files/patch-powerpc
+	new file:   editors/libreoffice6/files/patch-sal_osl_unx_system.hxx
+	new file:   editors/libreoffice6/files/patch-sal_osl_unx_thread.cxx
+	new file:   editors/libreoffice6/files/patch-sal_osl_unx_uunxapi.cxx
+	new file:   editors/libreoffice6/files/patch-shell_source_unix_exec_shellexec.cxx
+	new file:   editors/libreoffice6/files/patch-solenv_gbuild_UnpackedTarball.mk
+	new file:   editors/libreoffice6/files/patch-solenv_gbuild_platform_FREEBSD__AARCH64__GCC.mk
+	new file:   editors/libreoffice6/files/patch-solenv_gbuild_platform_unxgcc.mk
+	new file:   editors/libreoffice6/files/patch-svtools_source_svrtf_parrtf.cxx
+	new file:   editors/libreoffice6/files/patch-sysui_desktop_share_create_tree.sh
+	new file:   editors/libreoffice6/files/patch-ucb_source_ucp_webdav_DateTimeHelper.cxx
+	new file:   editors/libreoffice6/files/patch-vcl_Executable__visualbackendtest.mk
+	new file:   editors/libreoffice6/files/patch-vcl_qt5_Qt5Frame.cxx
+	new file:   editors/libreoffice6/files/patch-vcl_qt5_Qt5Instance.cxx
+	new file:   editors/libreoffice6/files/patch-vcl_source_app_salplug.cxx
+	new file:   editors/libreoffice6/files/patch-vcl_source_app_svapp.cxx
+	new file:   editors/libreoffice6/files/patch-vcl_unx_generic_app_geninst.cxx
+	new file:   editors/libreoffice6/pkg-descr
+	new file:   editors/libreoffice6/pkg-descr.i18n
+	modified:   editors/nvi2/Makefile
+	new file:   editors/nvi2/files/patch-CMakeLists.txt
+	modified:   french/libreoffice/distinfo
+	modified:   ftp/lftp/Makefile
+	modified:   ftp/lftp/distinfo
+	modified:   games/duel/Makefile
+	modified:   games/eduke32/distinfo
+	modified:   german/libreoffice/distinfo
+	modified:   graphics/librsvg2-rust/Makefile
+	modified:   graphics/mahotas/Makefile
+	modified:   graphics/pymorph/Makefile
+	modified:   hebrew/libreoffice/distinfo
+	modified:   hungarian/libreoffice/distinfo
+	modified:   japanese/libreoffice/distinfo
+	modified:   korean/libreoffice/distinfo
+	modified:   lang/erlang-runtime22/Makefile
+	modified:   lang/erlang-runtime22/distinfo
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/ghc/Makefile
+	modified:   lang/ghc/distinfo
+	renamed:    lang/ghc/files865/patch-utils_iserv_ghc.mk -> lang/ghc/files/patch-utils_iserv_ghc.mk
+	deleted:    lang/ghc/files843/build.mk.in
+	deleted:    lang/ghc/files843/extra-patch-aclocal.m4
+	deleted:    lang/ghc/files843/patch-configure
+	deleted:    lang/ghc/files843/patch-configure.ac
+	deleted:    lang/ghc/files843/patch-ghc.mk
+	deleted:    lang/ghc/files843/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+	deleted:    lang/ghc/files843/patch-llvm-targets
+	deleted:    lang/ghc/files843/wrap.c
+	deleted:    lang/ghc/files844/build.mk.in
+	deleted:    lang/ghc/files844/extra-patch-aclocal.m4
+	deleted:    lang/ghc/files844/patch-configure
+	deleted:    lang/ghc/files844/patch-configure.ac
+	deleted:    lang/ghc/files844/patch-fix-build-on-arm
+	deleted:    lang/ghc/files844/patch-ghc.mk
+	deleted:    lang/ghc/files844/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+	deleted:    lang/ghc/files844/patch-llvm-targets
+	deleted:    lang/ghc/files844/patch-rts_posix_OSMem.c
+	deleted:    lang/ghc/files844/wrap.c
+	deleted:    lang/ghc/files862/build.mk.in
+	deleted:    lang/ghc/files862/extra-patch-aclocal.m4
+	deleted:    lang/ghc/files862/patch-configure.ac
+	deleted:    lang/ghc/files862/patch-ghc.mk
+	deleted:    lang/ghc/files862/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+	deleted:    lang/ghc/files862/patch-ppc64
+	deleted:    lang/ghc/files862/wrap.c
+	deleted:    lang/ghc/files863/build.mk.in
+	deleted:    lang/ghc/files863/extra-patch-aclocal.m4
+	deleted:    lang/ghc/files863/patch-configure.ac
+	deleted:    lang/ghc/files863/patch-ghc.mk
+	deleted:    lang/ghc/files863/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+	deleted:    lang/ghc/files863/patch-ppc64
+	deleted:    lang/ghc/files863/wrap.c
+	deleted:    lang/ghc/files864/build.mk.in
+	deleted:    lang/ghc/files864/extra-patch-aclocal.m4
+	deleted:    lang/ghc/files864/patch-configure.ac
+	deleted:    lang/ghc/files864/patch-ghc.mk
+	deleted:    lang/ghc/files864/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+	deleted:    lang/ghc/files864/patch-ppc64
+	deleted:    lang/ghc/files864/wrap.c
+	deleted:    lang/ghc/files865/build.mk.in
+	deleted:    lang/ghc/files865/extra-patch-aclocal.m4
+	deleted:    lang/ghc/files865/patch-configure.ac
+	deleted:    lang/ghc/files865/patch-ghc.mk
+	deleted:    lang/ghc/files865/patch-libraries__Cabal__Cabal__Distribution__Simple__Program__Builtin.hs
+	deleted:    lang/ghc/files865/patch-ppc64
+	deleted:    lang/ghc/files865/wrap.c
+	modified:   lang/ghc/pkg-plist
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   lang/perl5-devel/files/patch-t_porting_customized.dat
+	modified:   lang/perl5-devel/pkg-plist
+	modified:   mail/coolmail/Makefile
+	modified:   mail/mailutils/Makefile
+	modified:   mail/mailutils/distinfo
+	modified:   mail/mailutils/pkg-plist
+	modified:   math/R-cran-Zelig/Makefile
+	modified:   math/R-cran-Zelig/pkg-descr
+	modified:   multimedia/php-pHash/Makefile
+	modified:   net-im/scli/Makefile
+	modified:   net-im/scli/distinfo
+	new file:   net-im/scli/pkg-message
+	modified:   net-mgmt/netdata-go/Makefile
+	modified:   net-mgmt/netdata-go/distinfo
+	modified:   net-mgmt/netdata-go/pkg-plist
+	modified:   net/ceph14/Makefile
+	modified:   net/ceph14/distinfo
+	modified:   net/ceph14/files/file-git_version
+	new file:   net/ceph14/files/patch-src_msg_async_frames_v2.cc.diff
+	new file:   net/ceph14/files/patch-src_rgw_rgw_lc.cc.diff
+	new file:   net/ceph14/files/patch-src_rgw_rgw_main.cc.diff
+	modified:   net/ceph14/pkg-plist
+	modified:   net/clash/Makefile
+	modified:   net/clash/distinfo
+	modified:   net/eternalterminal/Makefile
+	modified:   net/haproxy-devel/Makefile
+	modified:   net/haproxy-devel/distinfo
+	modified:   net/iplog/Makefile
+	modified:   net/libfabric/Makefile
+	modified:   net/libfabric/distinfo
+	modified:   net/libfabric/pkg-plist
+	modified:   net/lualdap/Makefile
+	modified:   net/rsync/Makefile
+	modified:   net/rsync/distinfo
+	deleted:    net/rsync/files/extrapatch-acl
+	modified:   news/sabnzbdplus/Makefile
+	modified:   news/sabnzbdplus/distinfo
+	modified:   news/sabnzbdplus/files/patch-SABnzbd.py
+	modified:   news/sabnzbdplus/pkg-plist
+	modified:   polish/libreoffice/distinfo
+	modified:   portuguese/libreoffice-pt_BR/distinfo
+	modified:   portuguese/libreoffice/distinfo
+	modified:   russian/libreoffice/distinfo
+	modified:   science/code_saturne/Makefile
+	modified:   science/py-chainer-chemistry/Makefile
+	modified:   science/py-chainer-chemistry/distinfo
+	modified:   science/tinker/Makefile
+	modified:   science/tinker/distinfo
+	modified:   science/tinker/files/patch-make_Makefile
+	modified:   science/tinker/pkg-plist
+	modified:   security/libfido2/Makefile
+	modified:   security/py-ecdsa/Makefile
+	modified:   security/py-ecdsa/distinfo
+	modified:   security/py-pyotp/Makefile
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/Makefile
+	modified:   sysutils/intel-pcm/Makefile
+	modified:   sysutils/intel-pcm/distinfo
+	deleted:    sysutils/intel-pcm/files/patch-Makefile
+	deleted:    sysutils/intel-pcm/files/patch-cpucounters.cpp
+	deleted:    sysutils/intel-pcm/files/patch-pci.cpp
+	modified:   sysutils/intel-pcm/pkg-plist
+	modified:   sysutils/kubectl/Makefile
+	modified:   sysutils/kubectl/distinfo
+	modified:   sysutils/minikube/Makefile
+	modified:   sysutils/minikube/distinfo
+	new file:   sysutils/p5-Proc-ProcessTable-ncps/Makefile
+	new file:   sysutils/p5-Proc-ProcessTable-ncps/distinfo
+	new file:   sysutils/p5-Proc-ProcessTable-ncps/pkg-descr
+	modified:   sysutils/rsyncrypto/Makefile
+	modified:   textproc/libstaroffice/Makefile
+	modified:   textproc/libstaroffice/distinfo
+	deleted:    textproc/libstaroffice/files/patch-src_lib_STOFFOLEParser.cxx
+	deleted:    textproc/libstaroffice/files/patch-src_lib_STOFFSpreadsheetListener.hxx
+	deleted:    textproc/libstaroffice/files/patch-src_lib_StarObjectSmallGraphic.cxx
+	modified:   textproc/libstaroffice/pkg-plist
+	modified:   textproc/libwps/Makefile
+	modified:   textproc/libwps/distinfo
+	modified:   textproc/libwps/pkg-plist
+	modified:   ukrainian/libreoffice/distinfo
+	modified:   vietnamese/libreoffice/distinfo
+	modified:   www/cpp-httplib/Makefile
+	modified:   www/cpp-httplib/distinfo
+	modified:   www/minio/Makefile
+	modified:   www/minio/distinfo
+	modified:   www/osrm-backend/Makefile
+	modified:   www/osrm-backend/distinfo
+	modified:   www/p5-HTTP-Entity-Parser/Makefile
+	modified:   www/p5-HTTP-Entity-Parser/distinfo
+	modified:   www/py-cherrypy/Makefile
+	modified:   www/py-cherrypy/distinfo
+	deleted:    www/py-cherrypy/files/patch-python38
+	modified:   www/twms/Makefile
+	modified:   www/webpy/Makefile
+	modified:   www/webpy/distinfo
+	modified:   x11-fonts/iosevka/Makefile
+	modified:   x11-fonts/iosevka/distinfo
+	modified:   x11-fonts/iosevka/pkg-descr
+	modified:   x11-wm/dwm/Makefile
+	modified:   x11/conlecterm/Makefile
+	modified:   x11/conlecterm/distinfo
+	modified:   x11/libX11/Makefile
+	modified:   x11/libX11/distinfo
+	modified:   x11/nezd/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   editors/libreoffice/Makefile
+
+
+It took 3.35 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ab1391efbab5 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.07 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ab1391efbab5 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
