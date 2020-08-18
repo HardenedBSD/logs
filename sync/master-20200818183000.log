@@ -121,3 +121,133 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-drivers/xf86-video-intel/files/patch-src_sna_sna__video.c
+Removing x11-drivers/xf86-video-intel/files/patch-src_sna_sna__threads.c
+Removing x11-drivers/xf86-video-intel/files/patch-src_sna_kgem.c
+Removing net/openvswitch/files/patch-configure
+Auto-merging net/openvswitch/Makefile
+Removing mail/getmail/pkg-plist
+Auto-merging lang/ghc/Makefile
+Merge made by the 'recursive' strategy.
+ devel/cxxopts/Makefile                             |    3 +-
+ devel/cxxopts/distinfo                             |    6 +-
+ dns/amass/Makefile                                 |   42 +-
+ dns/amass/distinfo                                 |   84 +-
+ java/icedtea-web/Makefile                          |    3 +-
+ lang/ghc/Makefile                                  |   17 +-
+ lang/ghc/files/fixup-plist.hs                      |   32 +
+ lang/ghc/pkg-plist                                 | 6015 +++++++++++++++++---
+ mail/Makefile                                      |    1 +
+ mail/getmail/Makefile                              |   18 +-
+ mail/getmail/pkg-plist                             |   52 -
+ mail/getmail6/Makefile                             |   41 +
+ mail/getmail6/distinfo                             |    3 +
+ mail/getmail6/files/patch-setup.py                 |   40 +
+ mail/getmail6/pkg-descr                            |   20 +
+ mail/getmail6/pkg-message                          |    9 +
+ math/py-python-igraph/Makefile                     |   14 +-
+ math/py-python-igraph/distinfo                     |    5 +-
+ .../files/patch-vendor_source_igraph_bootstrap.sh  |   11 +
+ math/py-python-igraph/pkg-descr                    |    2 +-
+ net/openvswitch/Makefile                           |   12 +-
+ net/openvswitch/distinfo                           |    6 +-
+ net/openvswitch/files/patch-configure              |   13 -
+ net/openvswitch/pkg-plist                          |   44 +-
+ security/vuxml/vuln.xml                            |   31 +
+ ...com_godbus_dbus_transport__unixcred__freebsd.go |    4 +-
+ sysutils/i7z/Makefile                              |    2 +-
+ sysutils/i7z/distinfo                              |    6 +-
+ sysutils/openzfs-kmod/Makefile                     |    4 +-
+ sysutils/openzfs-kmod/distinfo                     |    6 +-
+ sysutils/openzfs/Makefile                          |    4 +-
+ sysutils/openzfs/distinfo                          |    6 +-
+ sysutils/openzfs/pkg-plist                         |    2 +
+ sysutils/watchman/Makefile                         |    2 +
+ .../files/patch-dom_media_flac_FlacDecoder.cpp     |    2 +-
+ x11-drivers/xf86-video-amdgpu/Makefile             |    3 +
+ x11-drivers/xf86-video-amdgpu/distinfo             |    4 +-
+ x11-drivers/xf86-video-intel/Makefile              |   62 +-
+ x11-drivers/xf86-video-intel/distinfo              |    6 +-
+ .../files/patch-benchmarks_dri3-swap.c             |   25 +
+ x11-drivers/xf86-video-intel/files/patch-hyphen    |   24 +
+ .../files/patch-src_intel__device.c                |   17 +-
+ .../xf86-video-intel/files/patch-src_intel__list.h |  133 +-
+ .../xf86-video-intel/files/patch-src_sna_kgem.c    |   12 -
+ .../files/patch-src_sna_sna__threads.c             |   12 -
+ .../files/patch-src_sna_sna__video.c               |   19 -
+ .../files/patch-test_present-speed.c               |   99 +
+ x11-drivers/xf86-video-intel/pkg-plist             |   12 +-
+ .../xf86-video-openchrome/files/patch-edb4657.c    |   41 +
+ 49 files changed, 5959 insertions(+), 1072 deletions(-)
+ create mode 100644 lang/ghc/files/fixup-plist.hs
+ delete mode 100644 mail/getmail/pkg-plist
+ create mode 100644 mail/getmail6/Makefile
+ create mode 100644 mail/getmail6/distinfo
+ create mode 100644 mail/getmail6/files/patch-setup.py
+ create mode 100644 mail/getmail6/pkg-descr
+ create mode 100644 mail/getmail6/pkg-message
+ create mode 100644 math/py-python-igraph/files/patch-vendor_source_igraph_bootstrap.sh
+ delete mode 100644 net/openvswitch/files/patch-configure
+ create mode 100644 x11-drivers/xf86-video-intel/files/patch-benchmarks_dri3-swap.c
+ create mode 100644 x11-drivers/xf86-video-intel/files/patch-hyphen
+ delete mode 100644 x11-drivers/xf86-video-intel/files/patch-src_sna_kgem.c
+ delete mode 100644 x11-drivers/xf86-video-intel/files/patch-src_sna_sna__threads.c
+ delete mode 100644 x11-drivers/xf86-video-intel/files/patch-src_sna_sna__video.c
+ create mode 100644 x11-drivers/xf86-video-intel/files/patch-test_present-speed.c
+ create mode 100644 x11-drivers/xf86-video-openchrome/files/patch-edb4657.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    af3389e6e992..94e7d792d112  master -> master        
+remote:    eb8ebc1f9102..af3389e6e992  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   af3389e6e992..94e7d792d112  master -> master
+==== END: master ====
