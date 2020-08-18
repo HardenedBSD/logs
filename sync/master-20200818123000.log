@@ -47,3 +47,143 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Auto-merging games/openttd/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/Makefile
+index f098d26e466e,d67e2a3175c2..000000000000
+--- a/ports-mgmt/pkg/Makefile
++++ b/ports-mgmt/pkg/Makefile
+@@@ -1,8 -1,7 +1,12 @@@
+  # $FreeBSD$
+  
+  PORTNAME=	pkg
+++<<<<<<< HEAD
+ +DISTVERSION=	1.14.6
+ +PORTREVISION=	1
+++=======
++ DISTVERSION=	1.14.7
+++>>>>>>> freebsd/master
+  _PKG_VERSION=	${DISTVERSION}
+  CATEGORIES=	ports-mgmt
+  #MASTER_SITES=	\
+diff --cc ports-mgmt/pkg/distinfo
+index 89ef4ecba0ea,28ef0cd9f271..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1593776872
+ +SHA256 (HardenedBSD-pkg-962ad56d8fbc89edfe87a1a2fde7c0fb5ace15de_GL0.tar.gz) = ba5f05e7b4fedc18e16a334432859bcd098379faf68025544cd3f63b05c94c16
+ +SIZE (HardenedBSD-pkg-962ad56d8fbc89edfe87a1a2fde7c0fb5ace15de_GL0.tar.gz) = 3407565
+++=======
++ TIMESTAMP = 1597738923
++ SHA256 (freebsd-pkg-1.14.7_GH0.tar.gz) = 5d1089c8944928ffc85fefe5fcf7204a9e8b72e988f34eb641aba26f38ef48a2
++ SIZE (freebsd-pkg-1.14.7_GH0.tar.gz) = 3406609
+++>>>>>>> freebsd/master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   benchmarks/fio/Makefile
+	modified:   benchmarks/fio/distinfo
+	modified:   devel/Makefile
+	modified:   devel/cmake/Makefile
+	modified:   devel/libunwind/Makefile
+	modified:   devel/libunwind/distinfo
+	modified:   devel/mage/Makefile
+	modified:   devel/mage/distinfo
+	new file:   devel/string_theory/Makefile
+	new file:   devel/string_theory/distinfo
+	new file:   devel/string_theory/pkg-descr
+	new file:   devel/string_theory/pkg-plist
+	modified:   games/jaggedalliance2/Makefile
+	modified:   games/jaggedalliance2/distinfo
+	modified:   games/jaggedalliance2/pkg-plist
+	modified:   games/openttd/Makefile
+	modified:   games/openttd/distinfo
+	new file:   graphics/gdal/files/patch-configure
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   lang/perl5.32/Makefile
+	modified:   multimedia/py-gstreamer1/pkg-descr
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   ports-mgmt/pkg-devel/distinfo
+	modified:   print/lilypond-devel/Makefile
+	modified:   print/lilypond-devel/distinfo
+	modified:   print/lilypond-devel/files/patch-Documentation_GNUmakefile
+	modified:   print/lilypond-devel/files/patch-config.make.in
+	modified:   print/lilypond-devel/pkg-plist
+	modified:   security/step-certificates/Makefile
+	modified:   security/step-certificates/distinfo
+	modified:   shells/elvish/Makefile
+	modified:   shells/elvish/distinfo
+	modified:   www/browsh/Makefile
+	modified:   www/gohugo/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/Makefile
+	both modified:   ports-mgmt/pkg/distinfo
+
+
+It took 3.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at eb8ebc1f9102 HBSD: security/softether: fix LibreSSL build correctly this time
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.04 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at eb8ebc1f9102 HBSD: security/softether: fix LibreSSL build correctly this time
+==== END: master ====
