@@ -1,0 +1,198 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing sys/modules/usb/ufm/Makefile
+Auto-merging sys/kern/vfs_mount.c
+CONFLICT (content): Merge conflict in sys/kern/vfs_mount.c
+Removing sys/dev/usb/misc/ufm.c
+Auto-merging sys/conf/files
+Auto-merging sys/conf/NOTES
+Removing share/man/man4/ufm.4
+Auto-merging share/man/man4/Makefile
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/kern/vfs_mount.c
+index 4d5d11b7c8de,78b81f6eb3b8..000000000000
+--- a/sys/kern/vfs_mount.c
++++ b/sys/kern/vfs_mount.c
+@@@ -2478,56 -2472,32 +2478,67 @@@ mount_devctl_event(const char *type, st
+  	buf = malloc(DEVCTL_LEN, M_MOUNT, M_NOWAIT);
+  	if (buf == NULL)
+  		return;
+ -	sbuf_new(&sb, buf, DEVCTL_LEN, SBUF_FIXEDLEN);
+ -	sbuf_cpy(&sb, "mount-point=\"");
+ +	if (sbuf_new(&sb, buf, DEVCTL_LEN, SBUF_FIXEDLEN) == NULL) {
+ +		free(buf, M_MOUNT);
+ +		return;
+ +	}
+ +	if (sbuf_cpy(&sb, "mount-point=\"") == -1) {
+ +		goto err;
+ +	}
+  	devctl_safe_quote_sb(&sb, sfp->f_mntonname);
+ -	sbuf_cat(&sb, "\" mount-dev=\"");
+ +	if (sbuf_cat(&sb, "\" mount-dev=\"") == -1) {
+ +		goto err;
+ +	}
+  	devctl_safe_quote_sb(&sb, sfp->f_mntfromname);
+ -	sbuf_cat(&sb, "\" mount-type=\"");
+ +	if (sbuf_cat(&sb, "\" mount-type=\"") == -1) {
+ +		goto err;
+ +	}
+  	devctl_safe_quote_sb(&sb, sfp->f_fstypename);
+ -	sbuf_cat(&sb, "\" fsid=0x");
+ +	if (sbuf_cat(&sb, "\" fsid=0x") == -1) {
+ +		goto err;
+ +	}
+  	cp = (const uint8_t *)&sfp->f_fsid.val[0];
+ -	for (int i = 0; i < sizeof(sfp->f_fsid); i++)
+ -		sbuf_printf(&sb, "%02x", cp[i]);
+ -	sbuf_printf(&sb, " owner=%u flags=\"", sfp->f_owner);
+ +	for (int i = 0; i < sizeof(sfp->f_fsid); i++) {
+ +		if (sbuf_printf(&sb, "%02x", cp[i]) == -1) {
+ +			goto err;
+ +		}
+ +	}
+ +	if (sbuf_printf(&sb, " owner=%u flags=\"", sfp->f_owner) == -1) {
+ +		goto err;
+ +	}
+  	for (fp = optnames; fp->o_opt != 0; fp++) {
+  		if ((mp->mnt_flag & fp->o_opt) != 0) {
+ -			sbuf_cat(&sb, fp->o_name);
+ -			sbuf_putc(&sb, ';');
+ +			if (sbuf_cat(&sb, fp->o_name) == -1) {
+ +				goto err;
+ +			}
+ +			if (sbuf_putc(&sb, ';') == -1) {
+ +				goto err;
+ +			}
+  		}
+  	}
+++<<<<<<< HEAD
+ +	if (sbuf_putc(&sb, '"') == -1) {
+ +		goto err;
+ +	}
+ +	dev_vfs_event_mntopt(&sb, "opt", mp->mnt_opt);
+ +	if (donew)
+ +		dev_vfs_event_mntopt(&sb, "optnew", mp->mnt_optnew);
+ +	if (sbuf_finish(&sb) == -1) {
+ +		goto err;
+ +	}
+ +
+ +	devctl_notify("VFS", "FS", type, sbuf_data(&sb));
+ +err:
+++=======
++ 	sbuf_putc(&sb, '"');
++ 	mount_devctl_event_mntopt(&sb, "opt", mp->mnt_opt);
++ 	if (donew)
++ 		mount_devctl_event_mntopt(&sb, "optnew", mp->mnt_optnew);
++ 	sbuf_finish(&sb);
++ 
++ 	if (sbuf_error(&sb) == 0)
++ 		devctl_notify("VFS", "FS", type, sbuf_data(&sb));
+++>>>>>>> freebsd/current/master
+  	sbuf_delete(&sb);
+  	free(buf, M_MOUNT);
+  }
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/dt_link.c
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/dt_strtab.c
+	modified:   cddl/contrib/opensolaris/lib/libdtrace/common/dt_strtab.h
+	modified:   cddl/usr.sbin/dtrace/tests/tools/exclude.sh
+	modified:   share/man/man4/Makefile
+	modified:   share/man/man4/an.4
+	modified:   share/man/man4/ata.4
+	modified:   share/man/man4/cmx.4
+	modified:   share/man/man4/fdc.4
+	modified:   share/man/man4/ndis.4
+	modified:   share/man/man4/ng_bt3c.4
+	modified:   share/man/man4/pccard.4
+	modified:   share/man/man4/puc.4
+	modified:   share/man/man4/uart.4
+	deleted:    share/man/man4/ufm.4
+	modified:   share/man/man4/wi.4
+	modified:   share/man/man9/zone.9
+	modified:   stand/i386/zfsboot/zfsboot.c
+	modified:   sys/conf/NOTES
+	modified:   sys/conf/files
+	modified:   sys/dev/an/if_an_pccard.c
+	modified:   sys/dev/ata/ata-card.c
+	modified:   sys/dev/cmx/cmx_pccard.c
+	modified:   sys/dev/fdc/fdc_pccard.c
+	modified:   sys/dev/if_ndis/if_ndis_pccard.c
+	modified:   sys/dev/puc/puc_pccard.c
+	modified:   sys/dev/uart/uart_bus_pccard.c
+	modified:   sys/dev/usb/controller/xhci.c
+	deleted:    sys/dev/usb/misc/ufm.c
+	modified:   sys/dev/wi/if_wi_pccard.c
+	modified:   sys/kern/subr_bus.c
+	modified:   sys/modules/usb/Makefile
+	deleted:    sys/modules/usb/ufm/Makefile
+	modified:   sys/netgraph/bluetooth/drivers/bt3c/ng_bt3c_pccard.c
+	modified:   sys/netpfil/ipfw/ip_fw2.c
+	modified:   sys/sys/bus.h
+	new file:   sys/sys/devctl.h
+	modified:   usr.sbin/kldxref/ef.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/kern/vfs_mount.c
+
+HEAD is now at cbcc90b094dc Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at cbcc90b094dc Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
