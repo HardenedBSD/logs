@@ -1,0 +1,139 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 27 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 83c79107310b..09d8dcc60d21
+Fast-forward
+ Mk/Uses/qt-dist.mk                                 |   4 +-
+ Mk/Uses/qt.mk                                      |  10 +-
+ biology/hyphy/Makefile                             |   2 +-
+ biology/hyphy/distinfo                             |   6 +-
+ biology/paml/files/patch-src_paml.h                |  14 +
+ comms/qico/files/patch-src_binkp.h                 |  11 +
+ devel/distcc/Makefile                              | 174 +++++----
+ devel/distcc/distinfo                              |   6 +-
+ devel/distcc/files/patch-Makefile.in               |  26 ++
+ devel/distcc/files/patch-configure.ac              |  17 -
+ devel/distcc/files/patch-src_dparent.c             |  20 -
+ devel/distcc/files/pkg-message.in                  |   8 +
+ devel/distcc/pkg-descr                             |   2 +-
+ devel/libffi/Makefile                              |   6 +-
+ devel/libffi/distinfo                              |   6 +-
+ devel/libffi/files/patch-configure                 |  23 ++
+ devel/libffi321/Makefile                           |   2 +-
+ devel/libffi321/files/patch-configure              |  32 +-
+ devel/libffi321/files/patch-src__arm__ffi.c        |  12 +-
+ devel/libffi321/files/patch-src__mips__ffi.c       |   8 +-
+ devel/libffi321/files/patch-src__mips__ffitarget.h |   6 +-
+ devel/qt5/distinfo                                 |   6 +-
+ devel/tinygo/Makefile                              |   2 +-
+ devel/tinygo/distinfo                              |   6 +-
+ devel/tinygo/files/patch-Makefile                  |   8 +-
+ dns/adns/Makefile                                  |   7 +-
+ dns/adns/distinfo                                  |   6 +-
+ dns/adns/files/patch-client-Makefile.in            |  14 -
+ dns/adns/files/patch-configure                     |  11 -
+ dns/adns/files/patch-configure.in                  |  11 -
+ dns/adns/files/patch-dynamic-Makefile.in           |  16 -
+ dns/adns/files/patch-regress-Makefile.in           |  11 -
+ dns/adns/files/patch-src-Makefile.in               |  16 -
+ dns/adns/pkg-plist                                 |   1 +
+ irc/znc-push/Makefile                              |  15 +-
+ irc/znc-push/distinfo                              |   6 +-
+ .../patch-lib_erl__interface_src_misc_ei__portio.h |  11 +
+ misc/lf/Makefile                                   |   2 +-
+ misc/lf/distinfo                                   |   6 +-
+ misc/pinfo/files/patch-parse_config.h              |  11 +
+ multimedia/pipewire/Makefile                       |   2 +-
+ multimedia/pipewire/distinfo                       |   6 +-
+ multimedia/pipewire/pkg-plist                      |   2 +-
+ multimedia/ustreamer/Makefile                      |   4 +-
+ multimedia/ustreamer/distinfo                      |   6 +-
+ multimedia/ustreamer/pkg-descr                     |   2 +-
+ net-mgmt/rancid3/files/patch-bin_hpuifilter.c      |  33 ++
+ net-mgmt/rancid3/files/patch-bin_par.c             |  11 +
+ net-mgmt/rancid3/files/patch-configure             |   4 +-
+ net-mgmt/rancid3/files/patch-etc__Makefile.in      |   4 +-
+ net/quagga/Makefile                                |   6 +-
+ science/afni/Makefile                              |   2 +-
+ science/afni/distinfo                              |   6 +-
+ security/vuxml/vuln.xml                            | 141 ++++++-
+ textproc/elasticsearch6/Makefile                   |   2 +-
+ textproc/elasticsearch6/distinfo                   |   6 +-
+ www/py-wfuzz/Makefile                              |   2 +-
+ www/py-wfuzz/distinfo                              |   6 +-
+ x11-toolkits/Makefile                              |   2 +
+ x11-toolkits/qt5-quick3d/Makefile                  |  16 +
+ x11-toolkits/qt5-quick3d/pkg-descr                 |   7 +
+ x11-toolkits/qt5-quick3d/pkg-plist                 | 409 +++++++++++++++++++++
+ x11-toolkits/qt5-quicktimeline/Makefile            |  16 +
+ x11-toolkits/qt5-quicktimeline/pkg-descr           |   7 +
+ x11-toolkits/qt5-quicktimeline/pkg-plist           |   3 +
+ 65 files changed, 975 insertions(+), 291 deletions(-)
+ create mode 100644 biology/paml/files/patch-src_paml.h
+ create mode 100644 comms/qico/files/patch-src_binkp.h
+ create mode 100644 devel/distcc/files/patch-Makefile.in
+ delete mode 100644 devel/distcc/files/patch-configure.ac
+ delete mode 100644 devel/distcc/files/patch-src_dparent.c
+ create mode 100644 devel/libffi/files/patch-configure
+ delete mode 100644 dns/adns/files/patch-client-Makefile.in
+ delete mode 100644 dns/adns/files/patch-configure
+ delete mode 100644 dns/adns/files/patch-configure.in
+ delete mode 100644 dns/adns/files/patch-dynamic-Makefile.in
+ delete mode 100644 dns/adns/files/patch-regress-Makefile.in
+ delete mode 100644 dns/adns/files/patch-src-Makefile.in
+ create mode 100644 lang/erlang/files/patch-lib_erl__interface_src_misc_ei__portio.h
+ create mode 100644 misc/pinfo/files/patch-parse_config.h
+ create mode 100644 net-mgmt/rancid3/files/patch-bin_hpuifilter.c
+ create mode 100644 net-mgmt/rancid3/files/patch-bin_par.c
+ create mode 100644 x11-toolkits/qt5-quick3d/Makefile
+ create mode 100644 x11-toolkits/qt5-quick3d/pkg-descr
+ create mode 100644 x11-toolkits/qt5-quick3d/pkg-plist
+ create mode 100644 x11-toolkits/qt5-quicktimeline/Makefile
+ create mode 100644 x11-toolkits/qt5-quicktimeline/pkg-descr
+ create mode 100644 x11-toolkits/qt5-quicktimeline/pkg-plist
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
