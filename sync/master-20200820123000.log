@@ -47,3 +47,160 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/quagga/Makefile
+CONFLICT (content): Merge conflict in net/quagga/Makefile
+Removing dns/adns/files/patch-src-Makefile.in
+Removing dns/adns/files/patch-regress-Makefile.in
+Removing dns/adns/files/patch-dynamic-Makefile.in
+Removing dns/adns/files/patch-configure.in
+Removing dns/adns/files/patch-configure
+Removing dns/adns/files/patch-client-Makefile.in
+Removing devel/distcc/files/patch-src_dparent.c
+Removing devel/distcc/files/patch-configure.ac
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/quagga/Makefile
+index 8a2856196d0d,10561ce1bfb9..000000000000
+--- a/net/quagga/Makefile
++++ b/net/quagga/Makefile
+@@@ -15,16 -15,13 +15,23 @@@ LICENSE_FILE=	${WRKSRC}/COPYIN
+  
+  BUILD_DEPENDS=	gawk:lang/gawk
+  
+++<<<<<<< HEAD
+ +CONFLICTS=	frr5 frr6 frr7 openbgpd pimd zebra
+ +
+ +# Quagga uses shared libraries as plugins, but
+ +# does not fail with safestack as no port depends
+ +# on these internal library plugins:
+ +USE_HARDENING=	safestack
+ +
+++=======
+++>>>>>>> freebsd/master
+  USES=		compiler:c11 cpe gmake libtool makeinfo \
+  		perl5 readline ssl
++ 
++ CONFLICTS=	frr5 frr6 frr7 openbgpd pimd zebra
++ 
+  GNU_CONFIGURE=	yes
++ CFLAGS+=	-fcommon
+  INSTALL_TARGET=	install-strip
+  USE_LDCONFIG=	yes
+  USE_PERL5=	build
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/qt-dist.mk
+	modified:   Mk/Uses/qt.mk
+	new file:   comms/qico/files/patch-src_binkp.h
+	modified:   devel/distcc/Makefile
+	modified:   devel/distcc/distinfo
+	new file:   devel/distcc/files/patch-Makefile.in
+	deleted:    devel/distcc/files/patch-configure.ac
+	deleted:    devel/distcc/files/patch-src_dparent.c
+	modified:   devel/distcc/files/pkg-message.in
+	modified:   devel/distcc/pkg-descr
+	modified:   devel/libffi/Makefile
+	modified:   devel/libffi/distinfo
+	new file:   devel/libffi/files/patch-configure
+	modified:   devel/libffi321/Makefile
+	modified:   devel/libffi321/files/patch-configure
+	modified:   devel/libffi321/files/patch-src__arm__ffi.c
+	modified:   devel/libffi321/files/patch-src__mips__ffi.c
+	modified:   devel/libffi321/files/patch-src__mips__ffitarget.h
+	modified:   devel/qt5/distinfo
+	modified:   devel/tinygo/Makefile
+	modified:   devel/tinygo/distinfo
+	modified:   devel/tinygo/files/patch-Makefile
+	modified:   dns/adns/Makefile
+	modified:   dns/adns/distinfo
+	deleted:    dns/adns/files/patch-client-Makefile.in
+	deleted:    dns/adns/files/patch-configure
+	deleted:    dns/adns/files/patch-configure.in
+	deleted:    dns/adns/files/patch-dynamic-Makefile.in
+	deleted:    dns/adns/files/patch-regress-Makefile.in
+	deleted:    dns/adns/files/patch-src-Makefile.in
+	modified:   dns/adns/pkg-plist
+	new file:   lang/erlang/files/patch-lib_erl__interface_src_misc_ei__portio.h
+	new file:   misc/pinfo/files/patch-parse_config.h
+	modified:   multimedia/pipewire/Makefile
+	modified:   multimedia/pipewire/distinfo
+	modified:   multimedia/pipewire/pkg-plist
+	new file:   net-mgmt/rancid3/files/patch-bin_hpuifilter.c
+	new file:   net-mgmt/rancid3/files/patch-bin_par.c
+	modified:   net-mgmt/rancid3/files/patch-configure
+	modified:   net-mgmt/rancid3/files/patch-etc__Makefile.in
+	modified:   science/afni/Makefile
+	modified:   science/afni/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   textproc/elasticsearch6/Makefile
+	modified:   textproc/elasticsearch6/distinfo
+	modified:   x11-toolkits/Makefile
+	new file:   x11-toolkits/qt5-quick3d/Makefile
+	new file:   x11-toolkits/qt5-quick3d/pkg-descr
+	new file:   x11-toolkits/qt5-quick3d/pkg-plist
+	new file:   x11-toolkits/qt5-quicktimeline/Makefile
+	new file:   x11-toolkits/qt5-quicktimeline/pkg-descr
+	new file:   x11-toolkits/qt5-quicktimeline/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/quagga/Makefile
+
+
+It took 3.25 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 83c79107310b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.27 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 83c79107310b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
