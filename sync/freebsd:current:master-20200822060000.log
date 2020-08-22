@@ -1,0 +1,104 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=1&verb=git-upload-pack": dial tcp 127.0.0.1:3000: connect: connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 46302cef9dcb After the clang/llvm version 11 import LLD_VERSION is no longer used upstream so Version.inc now only defines LLD_VERSION_STRING.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 46302cef9dcb..095847037891
+Fast-forward
+ UPDATING                         |   5 +
+ sys/conf/files                   |  35 ++
+ sys/kern/vfs_cache.c             |  27 +-
+ sys/kern/vfs_lookup.c            |   5 +
+ sys/modules/krpc/Makefile        |  36 +-
+ sys/net/route/route_tables.c     |   1 +
+ sys/rpc/auth.h                   |   4 +
+ sys/rpc/clnt_bck.c               |  22 +-
+ sys/rpc/clnt_rc.c                |  24 ++
+ sys/rpc/clnt_vc.c                | 225 +++++++++++-
+ sys/rpc/krpc.h                   |  15 +
+ sys/rpc/rpc_generic.c            | 110 +++++-
+ sys/rpc/rpcsec_tls.h             |   7 +-
+ sys/rpc/rpcsec_tls/auth_tls.c    | 169 +++++++++
+ sys/rpc/rpcsec_tls/rpctls_impl.c | 727 +++++++++++++++++++++++++++++++++++++++
+ sys/rpc/rpcsec_tls/rpctlscd.x    |  72 ++++
+ sys/rpc/rpcsec_tls/rpctlssd.x    |  74 ++++
+ sys/rpc/svc.h                    |   8 +
+ sys/rpc/svc_auth.c               |  29 ++
+ sys/rpc/svc_vc.c                 | 153 +++++++-
+ sys/sys/param.h                  |   2 +-
+ 21 files changed, 1724 insertions(+), 26 deletions(-)
+ create mode 100644 sys/rpc/rpcsec_tls/auth_tls.c
+ create mode 100644 sys/rpc/rpcsec_tls/rpctls_impl.c
+ create mode 100644 sys/rpc/rpcsec_tls/rpctlscd.x
+ create mode 100644 sys/rpc/rpcsec_tls/rpctlssd.x
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=2&verb=git-receive-pack": dial tcp 127.0.0.1:3000: connect: connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/master
+Your branch is ahead of 'origin/freebsd/current/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 095847037891 Fix tinderbox build after r364465
+==== END: freebsd/current/master ====
