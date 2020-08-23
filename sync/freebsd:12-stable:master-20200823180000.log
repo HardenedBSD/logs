@@ -1,0 +1,120 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 938ac12761a3..4eb3013efc53
+Fast-forward
+ contrib/netbsd-tests/usr.bin/grep/t_grep.sh |  89 +++++++++
+ share/man/man4/linux.4                      | 111 +++++------
+ share/man/man5/linprocfs.5                  |   3 +-
+ share/man/man5/linsysfs.5                   |   5 +-
+ sys/amd64/acpica/acpi_machdep.c             | 111 ++---------
+ sys/amd64/linux/linux_dummy.c               |  22 ++-
+ sys/amd64/linux/linux_proto.h               |  49 ++++-
+ sys/amd64/linux/linux_ptrace.c              | 285 +++++++++++++++++++++++++---
+ sys/amd64/linux/linux_syscall.h             |   9 +
+ sys/amd64/linux/linux_syscalls.c            |  18 +-
+ sys/amd64/linux/linux_sysent.c              |  18 +-
+ sys/amd64/linux/linux_systrace_args.c       |  94 ++++++++-
+ sys/amd64/linux/linux_sysvec.c              |   6 +-
+ sys/amd64/linux/syscalls.master             |  22 +--
+ sys/amd64/linux32/linux32_dummy.c           |  11 +-
+ sys/amd64/linux32/linux32_proto.h           |   8 +-
+ sys/amd64/linux32/linux32_sysent.c          |   2 +-
+ sys/amd64/linux32/linux32_systrace_args.c   |  26 ++-
+ sys/amd64/linux32/linux32_sysvec.c          |   6 +-
+ sys/amd64/linux32/syscalls.master           |   7 +-
+ sys/arm64/linux/linux_dummy.c               |  10 +-
+ sys/arm64/linux/linux_proto.h               |   4 +-
+ sys/arm64/linux/linux_systrace_args.c       |   4 +-
+ sys/arm64/linux/linux_sysvec.c              |   3 +-
+ sys/arm64/linux/syscalls.master             |   4 +-
+ sys/compat/linux/linux_emul.h               |   3 +
+ sys/compat/linux/linux_file.c               |  20 ++
+ sys/compat/linux/linux_misc.c               | 138 ++++++++++++--
+ sys/compat/linux/linux_misc.h               |   8 +-
+ sys/compat/linux/linux_util.c               |   8 +-
+ sys/compat/linux/linux_util.h               |   2 +-
+ sys/i386/acpica/acpi_machdep.c              | 109 ++---------
+ sys/i386/linux/linux_dummy.c                |  11 +-
+ sys/i386/linux/linux_proto.h                |   8 +-
+ sys/i386/linux/linux_sysent.c               |   2 +-
+ sys/i386/linux/linux_systrace_args.c        |  26 ++-
+ sys/i386/linux/linux_sysvec.c               |   6 +-
+ sys/i386/linux/syscalls.master              |   7 +-
+ sys/netinet/sctp_asconf.c                   |   2 +-
+ sys/netinet/sctp_bsd_addr.c                 |  17 --
+ sys/netinet/sctp_constants.h                |  15 +-
+ sys/netinet/sctp_indata.c                   |  45 ++---
+ sys/netinet/sctp_output.c                   |  11 +-
+ sys/netinet/sctp_pcb.c                      |  66 ++-----
+ sys/netinet/sctp_ss_functions.c             |   9 +
+ sys/netinet/sctp_structs.h                  |   1 -
+ sys/netinet/sctp_var.h                      |   2 -
+ sys/netinet/sctputil.c                      |  71 ++++++-
+ sys/netinet/sctputil.h                      |   3 +
+ usr.bin/grep/zgrep.1                        |  24 ++-
+ usr.bin/grep/zgrep.sh                       |  50 +++--
+ 51 files changed, 1071 insertions(+), 520 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    938ac12761a3..4eb3013efc53  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   938ac12761a3..4eb3013efc53  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
