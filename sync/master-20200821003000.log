@@ -1,0 +1,164 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Auto-merging net/libwebsockets/Makefile
+CONFLICT (content): Merge conflict in net/libwebsockets/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/libwebsockets/Makefile
+index a808764a3636,2321d5c60aee..000000000000
+--- a/net/libwebsockets/Makefile
++++ b/net/libwebsockets/Makefile
+@@@ -25,12 -24,10 +24,17 @@@ CMAKE_ARGS=	-DLWS_WITHOUT_TESTAPPS=ON 
+  		-DLWS_WITHOUT_TEST_SERVER=ON \
+  		-DLWS_WITHOUT_TEST_SERVER_EXTPOLL=ON \
+  		-DLWS_WITHOUT_TEST_PING=ON \
+++<<<<<<< HEAD
+ +		-DLWS_WITHOUT_TEST_ECHO=ON \
+ +		-DLWS_WITHOUT_TEST_CLIENT=ON \
+ +		-DLWS_WITHOUT_TEST_FRAGGLE=ON \
+ +		-DLWS_HAVE_X509_VERIFY_PARAM_set1_host=0
+++=======
++ 		-DLWS_WITHOUT_TEST_CLIENT=ON
+++>>>>>>> freebsd/master
+  
+- OPTIONS_DEFINE=	HTTP2 HTTP_PROXY IPV6 LIBEV LIBUV UNIX_SOCK WEBSERVER PLUGINS
++ OPTIONS_DEFINE=	HTTP2 HTTP_PROXY IPV6 LIBEV LIBUV UNIX_SOCK WEBSERVER PLUGINS \
++ 		SOCKS5
+  OPTIONS_DEFAULT=HTTP2 LIBUV
+  OPTIONS_SUB=	yes
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/p5-Gearman/Makefile
+	modified:   devel/p5-Gearman/distinfo
+	new file:   devel/p5-Gearman/pkg-plist
+	modified:   devel/simdjson/Makefile
+	modified:   devel/simdjson/distinfo
+	modified:   devel/simdjson/pkg-plist
+	modified:   lang/erlang/Makefile
+	modified:   misc/py-gluonnlp/Makefile
+	modified:   misc/py-gluonnlp/distinfo
+	new file:   net/bird/files/patch-sysdep_unix_krt.h
+	new file:   net/bird2/files/patch-nest_route.h
+	modified:   net/libwebsockets/distinfo
+	modified:   net/libwebsockets/pkg-plist
+	modified:   net/mlvpn/Makefile
+	modified:   security/gnupg1/Makefile
+	modified:   shells/44bsd-csh/Makefile
+	modified:   sysutils/heirloom/Makefile
+	modified:   sysutils/yadm/Makefile
+	new file:   sysutils/yadm/files/patch-yadm
+	modified:   www/node/Makefile
+	modified:   www/node/distinfo
+	modified:   www/node/files/patch-tools_genv8constants.py
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/libwebsockets/Makefile
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 09d8dcc60d21 HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.01 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 09d8dcc60d21 HBSD: Resolve merge conflict
+==== END: master ====
