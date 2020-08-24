@@ -1,0 +1,153 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 34 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating cecb05fffc36..4e6ca7049001
+Fast-forward
+ Makefile.inc1                               |  10 +-
+ lib/libcompiler_rt/Makefile.inc             |   1 -
+ lib/libgcc_eh/Makefile                      |   1 +
+ lib/libgcc_eh/Makefile.inc                  |   1 -
+ lib/libprocstat/Makefile                    |   2 -
+ secure/caroot/blacklisted/Makefile          |   2 +-
+ secure/caroot/trusted/Makefile              |   2 +-
+ stand/userboot/userboot/Makefile            |   1 -
+ sys/amd64/acpica/acpi_wakecode.S            |  13 +-
+ sys/amd64/amd64/cpu_switch.S                |   5 +-
+ sys/amd64/amd64/efirt_machdep.c             |  47 +-
+ sys/amd64/amd64/elf_machdep.c               | 124 ++++-
+ sys/amd64/amd64/genassym.c                  |   9 +-
+ sys/amd64/amd64/locore.S                    |  63 ++-
+ sys/amd64/amd64/mp_machdep.c                |  40 +-
+ sys/amd64/amd64/mpboot.S                    |  27 +-
+ sys/amd64/amd64/pmap.c                      | 787 +++++++++++++++++++++++-----
+ sys/amd64/amd64/vm_machdep.c                | 115 +++-
+ sys/amd64/include/md_var.h                  |   2 +
+ sys/amd64/include/param.h                   |   6 +
+ sys/amd64/include/pmap.h                    |  72 ++-
+ sys/amd64/include/proc.h                    |   2 +
+ sys/amd64/include/vmm.h                     |   1 +
+ sys/amd64/include/vmparam.h                 |  31 +-
+ sys/amd64/linux/linux_sysvec.c              |   8 +-
+ sys/amd64/vmm/amd/svm.c                     |   2 +-
+ sys/amd64/vmm/intel/vmx.c                   |  14 +-
+ sys/amd64/vmm/vmm_instruction_emul.c        |   6 +-
+ sys/arm/arm/elf_machdep.c                   |   6 +-
+ sys/arm64/arm64/elf32_machdep.c             |   8 +-
+ sys/cddl/dev/dtrace/amd64/dtrace_subr.c     |   3 +-
+ sys/compat/linprocfs/linprocfs.c            |   8 +-
+ sys/compat/linux/linux_getcwd.c             |   2 +-
+ sys/dev/filemon/filemon_wrapper.c           |   3 +-
+ sys/dev/hwpmc/hwpmc_mod.c                   |   2 +-
+ sys/fs/fdescfs/fdesc_vnops.c                |   2 +-
+ sys/fs/procfs/procfs.c                      |   2 +-
+ sys/fs/procfs/procfs_map.c                  |   2 +-
+ sys/kern/imgact_elf.c                       |  29 +-
+ sys/kern/kern_exec.c                        |   3 +-
+ sys/kern/kern_proc.c                        |   8 +-
+ sys/kern/kern_sharedpage.c                  |  18 +
+ sys/kern/kern_sig.c                         |   4 +-
+ sys/kern/subr_bus.c                         |   6 +-
+ sys/kern/sys_process.c                      |   2 +-
+ sys/kern/vfs_cache.c                        | 306 ++++++++---
+ sys/kern/vfs_lookup.c                       |  79 ++-
+ sys/kern/vfs_subr.c                         |  67 ++-
+ sys/kern/vfs_vnops.c                        |   2 +-
+ sys/net80211/ieee80211.c                    |  77 ++-
+ sys/netgraph/bluetooth/drivers/ubt/ng_ubt.c |   1 +
+ sys/powerpc/powerpc/elf64_machdep.c         |  12 +-
+ sys/security/audit/audit_bsm_klib.c         |   2 +-
+ sys/sys/elf_common.h                        |   1 +
+ sys/sys/imgact_elf.h                        |   3 +-
+ sys/sys/namei.h                             |  20 +-
+ sys/sys/sysent.h                            |   1 +
+ sys/sys/vnode.h                             |   8 +-
+ sys/vm/vm_object.c                          |   2 +-
+ sys/x86/acpica/acpi_wakeup.c                |  22 +-
+ sys/x86/include/procctl.h                   |  11 +-
+ sys/x86/include/specialreg.h                |   1 +
+ usr.bin/elfctl/elfctl.c                     |   1 +
+ usr.bin/proccontrol/proccontrol.1           |   3 +
+ usr.bin/proccontrol/proccontrol.c           |  56 +-
+ usr.sbin/bhyve/gdb.c                        |   3 +-
+ usr.sbin/bhyve/pci_nvme.c                   |   7 +
+ usr.sbin/crunch/crunchgen/crunched_main.c   | 180 +++++--
+ usr.sbin/makefs/msdos/msdosfs_vnops.c       |   6 +-
+ 69 files changed, 1873 insertions(+), 500 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/bsdinstall/scripts/docsinstall
+Auto-merging sys/amd64/amd64/initcpu.c
+Merge made by the 'recursive' strategy.
+ sys/amd64/amd64/initcpu.c               |  6 ++-
+ sys/dev/rtwn/if_rtwn.c                  | 10 ++--
+ sys/dev/usb/wlan/if_rsu.c               |  3 +-
+ sys/i386/i386/initcpu.c                 |  6 ++-
+ sys/net/iflib.c                         | 43 ++++++++++------
+ sys/net80211/ieee80211.c                | 89 +++++++++++++++++++--------------
+ sys/net80211/ieee80211_regdomain.c      | 34 ++++++++++---
+ sys/net80211/ieee80211_var.h            |  4 ++
+ sys/powerpc/powerpc/elf_common.c        | 17 ++++++-
+ usr.sbin/bsdinstall/bsdinstall.8        |  2 +-
+ usr.sbin/bsdinstall/scripts/docsinstall |  4 +-
+ 11 files changed, 149 insertions(+), 69 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4e6ca7049001..cd22cb7fc48c  hardened/current/master -> hardened/current/master        
+remote:    62ff0585ad87..5685a977d17e  github/freebsd/current/master -> github/freebsd/current/master
+remote: . Processing 1 references        
+remote: Gitea: Internal Server Error        
+remote: Unable to contact gitea: Post "http://localhost:3000/api/internal/hook/post-receive/hardenedbsd/hardenedbsd": read tcp 172.16.1.72:62559->172.16.1.72:3000: i/o timeout        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4e6ca7049001..cd22cb7fc48c  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
