@@ -1,0 +1,117 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 4eb3013efc53..e264f93da6db
+Fast-forward
+ lib/libc/sys/sendfile.2                            |    9 +
+ .../linux/{linux_locore.s => linux_locore.asm}     |    0
+ sys/amd64/linux/linux_sysvec.c                     |    4 -
+ .../{linux32_locore.s => linux32_locore.asm}       |    0
+ sys/amd64/linux32/linux32_sysvec.c                 |    4 -
+ .../linux/{linux_locore.s => linux_locore.asm}     |    0
+ sys/arm64/linux/linux_sysvec.c                     |    4 -
+ sys/cam/ctl/ctl_frontend_ioctl.c                   |    6 +-
+ sys/compat/linux/linux.c                           |    3 +
+ sys/compat/linux/linux.h                           |    3 +
+ sys/compat/linux/linux_common.c                    |    4 +
+ sys/compat/linux/linux_file.c                      |    2 +-
+ sys/compat/linux/linux_futex.c                     |   30 +-
+ sys/compat/linux/linux_futex.h                     |    3 -
+ sys/compat/linux/linux_ioctl.c                     |   10 +
+ sys/compat/linux/linux_ioctl.h                     |    3 +-
+ sys/compat/linux/linux_stats.c                     |   27 +
+ sys/conf/files.amd64                               |    2 +-
+ sys/conf/files.i386                                |    2 +-
+ .../linux/{linux_locore.s => linux_locore.asm}     |    0
+ sys/i386/linux/linux_sysvec.c                      |    1 -
+ sys/kern/kern_sendfile.c                           |    8 +
+ sys/modules/linux64/Makefile                       |    2 +-
+ sys/netinet/sctp_asconf.c                          |   33 +-
+ sys/netinet/sctp_asconf.h                          |    2 +-
+ sys/netinet/sctp_auth.c                            |    5 -
+ sys/netinet/sctp_cc_functions.c                    |    4 +-
+ sys/netinet/sctp_constants.h                       |   18 +-
+ sys/netinet/sctp_indata.c                          |  153 +--
+ sys/netinet/sctp_indata.h                          |    3 +
+ sys/netinet/sctp_input.c                           |  369 +-----
+ sys/netinet/sctp_lock_bsd.h                        |  560 +++++----
+ sys/netinet/sctp_os.h                              |    1 -
+ sys/netinet/sctp_os_bsd.h                          |    2 +
+ sys/netinet/sctp_output.c                          |  102 +-
+ sys/netinet/sctp_output.h                          |    6 -
+ sys/netinet/sctp_pcb.c                             |   53 +-
+ sys/netinet/sctp_pcb.h                             |   12 +-
+ sys/netinet/sctp_structs.h                         |   14 +-
+ sys/netinet/sctp_sysctl.c                          |    7 -
+ sys/netinet/sctp_sysctl.h                          |    9 -
+ sys/netinet/sctp_timer.c                           |   72 +-
+ sys/netinet/sctp_timer.h                           |   16 +-
+ sys/netinet/sctp_usrreq.c                          |   70 +-
+ sys/netinet/sctputil.c                             | 1307 +++++++++++---------
+ sys/netinet/sctputil.h                             |   19 +-
+ sys/netinet6/sctp6_usrreq.c                        |   14 -
+ 47 files changed, 1372 insertions(+), 1606 deletions(-)
+ rename sys/amd64/linux/{linux_locore.s => linux_locore.asm} (100%)
+ rename sys/amd64/linux32/{linux32_locore.s => linux32_locore.asm} (100%)
+ rename sys/arm64/linux/{linux_locore.s => linux_locore.asm} (100%)
+ rename sys/i386/linux/{linux_locore.s => linux_locore.asm} (100%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4eb3013efc53..e264f93da6db  freebsd/12-stable/master -> freebsd/12-stable/master
+remote: . Processing 1 references        
+remote: Gitea: Internal Server Error        
+remote: Unable to contact gitea: Post "http://localhost:3000/api/internal/hook/post-receive/hardenedbsd/hardenedbsd": read tcp 172.16.1.72:14125->172.16.1.72:3000: i/o timeout        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4eb3013efc53..e264f93da6db  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
