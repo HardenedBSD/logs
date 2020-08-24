@@ -1,0 +1,132 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 17 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating c545e68b6fe0..c33254990a1b
+Fast-forward
+ databases/postgresql-jdbc/Makefile                 |   2 +-
+ databases/postgresql-jdbc/distinfo                 |   6 +-
+ deskutils/plan/files/patch-holiday.c               |  11 ++
+ devel/fossil/Makefile                              |   2 +-
+ devel/fossil/distinfo                              |   6 +-
+ graphics/qgis/Makefile                             |  10 +-
+ graphics/qgis/distinfo                             |  12 +-
+ graphics/qgis/files/patch-cmake_FindPyQt5.py       |  11 ++
+ graphics/qgis/files/patch-cmake_FindSIP.py         |   9 ++
+ graphics/qgis/files/patch-src_core_CMakeLists.txt  |  14 --
+ graphics/sane-backends/Makefile                    |  23 ++--
+ graphics/sane-backends/distinfo                    |   6 +-
+ .../sane-backends/files/patch-backend_Makefile.in  |   8 +-
+ .../sane-backends/files/patch-backend_epsonds.c    |  11 --
+ .../files/patch-backend_genesys_low.cpp            |  19 ---
+ .../files/patch-backend_pixma_pixma__bjnp.c        |  21 ---
+ .../files/patch-backend_ricoh2__buffer.c           |  11 --
+ .../files/patch-backend_umax__pp__low.c            |  13 --
+ graphics/sane-backends/files/patch-backend_v4l.c   |  22 ---
+ graphics/sane-backends/files/patch-configure       |   8 +-
+ .../sane-backends/files/patch-tools_sane-desc.c    |  13 --
+ graphics/sane-backends/pkg-plist                   |   5 +
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ lang/nim/Makefile                                  |   1 +
+ lang/nim/files/patch-compiler_docgen.nim           |  11 ++
+ lang/rust-nightly/Makefile                         |   4 +-
+ lang/rust-nightly/distinfo                         |   6 +-
+ .../files/patch-vendor_openssl-sys_build_main.rs   |  21 ---
+ misc/shared-mime-info/Makefile                     |  35 +++--
+ misc/shared-mime-info/distinfo                     |   8 +-
+ .../files/patch-src_xdgmime_src_Makefile           |   9 ++
+ .../files/patch-update-mime-database.c             |  21 ---
+ misc/shared-mime-info/pkg-plist                    | 150 +++++++++++----------
+ net-p2p/xmrig/Makefile                             |   2 +-
+ net-p2p/xmrig/distinfo                             |   6 +-
+ net/liveMedia/Makefile                             |   2 +-
+ net/liveMedia/distinfo                             |   6 +-
+ sysutils/cbsd/Makefile                             |   2 +-
+ sysutils/cbsd/distinfo                             |   6 +-
+ www/miniflux/Makefile                              |  17 ++-
+ www/miniflux/distinfo                              |  34 ++++-
+ www/webkit2-gtk3/files/patch-git_c3cf651           |  77 +++++++++++
+ 43 files changed, 353 insertions(+), 316 deletions(-)
+ create mode 100644 deskutils/plan/files/patch-holiday.c
+ create mode 100644 graphics/qgis/files/patch-cmake_FindPyQt5.py
+ create mode 100644 graphics/qgis/files/patch-cmake_FindSIP.py
+ delete mode 100644 graphics/qgis/files/patch-src_core_CMakeLists.txt
+ delete mode 100644 graphics/sane-backends/files/patch-backend_epsonds.c
+ delete mode 100644 graphics/sane-backends/files/patch-backend_genesys_low.cpp
+ delete mode 100644 graphics/sane-backends/files/patch-backend_pixma_pixma__bjnp.c
+ delete mode 100644 graphics/sane-backends/files/patch-backend_ricoh2__buffer.c
+ delete mode 100644 graphics/sane-backends/files/patch-backend_umax__pp__low.c
+ delete mode 100644 graphics/sane-backends/files/patch-backend_v4l.c
+ delete mode 100644 graphics/sane-backends/files/patch-tools_sane-desc.c
+ create mode 100644 lang/nim/files/patch-compiler_docgen.nim
+ delete mode 100644 lang/rust-nightly/files/patch-vendor_openssl-sys_build_main.rs
+ create mode 100644 misc/shared-mime-info/files/patch-src_xdgmime_src_Makefile
+ delete mode 100644 misc/shared-mime-info/files/patch-update-mime-database.c
+ create mode 100644 www/webkit2-gtk3/files/patch-git_c3cf651
+==== merge branches ====
+==== merge github/master branch ====
+Updating c33254990a1b..2643ea236250
+Fast-forward
+ emulators/dosbox-staging/Makefile                  |  2 +-
+ emulators/dosbox-staging/distinfo                  |  6 ++---
+ graphics/libavif/Makefile                          | 12 +++------
+ graphics/libavif/distinfo                          |  2 ++
+ graphics/libavif/files/mime.xml                    | 19 --------------
+ ...rfetto_src_tracing_core_virtual__destructors.cc | 29 ++++++++++++++++++++++
+ 6 files changed, 38 insertions(+), 32 deletions(-)
+ delete mode 100644 graphics/libavif/files/mime.xml
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_perfetto_src_tracing_core_virtual__destructors.cc
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    c33254990a1b..2643ea236250  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    52f9a8cabaa4..2643ea236250  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c33254990a1b..2643ea236250  master -> master
+==== END: master ====
