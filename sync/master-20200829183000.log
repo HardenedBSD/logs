@@ -47,3 +47,197 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing science/votca/files/patch-csg-manual_manual.tex
+Auto-merging net/mpd5/Makefile
+Auto-merging multimedia/mpc-qt/Makefile
+Removing math/saga/files/patch-src_tools_projection_pj__proj4_globe__gores.cpp
+Removing math/saga/files/patch-src_tools_imagery_imagery__opencv_opencv.h
+Removing graphics/qgis-ltr/files/patch-src_analysis_interpolation_qgsinterpolator.h
+Removing databases/mariadb105-server/files/patch-storage_perfschema_my__thread.h
+Removing databases/mariadb105-server/files/patch-MDEV-15961
+Removing databases/mariadb103-server/files/patch-storage_rocksdb_build__rocksdb.cmake
+Removing databases/mariadb103-server/files/patch-MDEV-15961
+Removing databases/mariadb103-client/files/patch-MDEV-15961
+Auto-merging cad/gmsh/Makefile
+Removing astro/foxtrotgps/files/patch-src_tracks.c
+Merge made by the 'recursive' strategy.
+ Mk/Uses/linux.mk                                   |   2 +
+ astro/foxtrotgps/Makefile                          |  24 ++--
+ astro/foxtrotgps/distinfo                          |   5 +-
+ astro/foxtrotgps/files/patch-src_gps__functions.c  |   9 --
+ astro/foxtrotgps/files/patch-src_tracks.c          | 123 --------------------
+ astro/foxtrotgps/pkg-plist                         |   1 +
+ audio/fasttracker2/Makefile                        |   2 +-
+ audio/fasttracker2/distinfo                        |   6 +-
+ cad/gmsh/Makefile                                  |   1 +
+ databases/Makefile                                 |   1 +
+ databases/mariadb103-client/files/patch-MDEV-15961 |  50 ---------
+ databases/mariadb103-client/pkg-plist              |   8 +-
+ databases/mariadb103-server/Makefile               |  44 ++++----
+ databases/mariadb103-server/distinfo               |   6 +-
+ databases/mariadb103-server/files/patch-MDEV-15961 |  50 ---------
+ .../files/patch-cmake_install__layout.cmake        |  13 +++
+ .../patch-storage_rocksdb_build__rocksdb.cmake     |  13 ---
+ databases/mariadb103-server/pkg-plist              |  12 +-
+ databases/mariadb105-server/Makefile               |   6 +-
+ databases/mariadb105-server/distinfo               |   6 +-
+ databases/mariadb105-server/files/patch-MDEV-15961 |  54 ---------
+ .../files/patch-storage_perfschema_my__thread.h    |  13 ---
+ databases/p5-DBD-MariaDB/Makefile                  |  37 ++++++
+ databases/p5-DBD-MariaDB/distinfo                  |   3 +
+ databases/p5-DBD-MariaDB/pkg-descr                 |   8 ++
+ databases/p5-DBD-MariaDB/pkg-plist                 |   6 +
+ devel/ninja/Makefile                               |   2 +-
+ devel/ninja/distinfo                               |   6 +-
+ graphics/Makefile                                  |   1 +
+ graphics/linux-c7-librsvg2/Makefile                |  20 ++++
+ graphics/linux-c7-librsvg2/distinfo                |   7 ++
+ graphics/linux-c7-librsvg2/pkg-plist.amd64         |  18 +++
+ graphics/linux-c7-librsvg2/pkg-plist.i386          |  12 ++
+ graphics/qgis-ltr/Makefile                         | 124 ++++++++++++---------
+ graphics/qgis-ltr/distinfo                         |  14 ++-
+ graphics/qgis-ltr/files/patch-CMakeLists.txt       |  19 ++++
+ graphics/qgis-ltr/files/patch-cmake_FindPyQt5.py   |  81 ++++++++++++++
+ graphics/qgis-ltr/files/patch-cmake_FindQGIS.cmake |  20 ++++
+ .../files/patch-cmake_FindQtQmlTools.cmake         |  16 +++
+ graphics/qgis-ltr/files/patch-cmake_FindQwt.cmake  |  10 ++
+ graphics/qgis-ltr/files/patch-cmake_FindSIP.cmake  |  17 +++
+ graphics/qgis-ltr/files/patch-cmake_FindSIP.py     |  47 ++++++++
+ .../qgis-ltr/files/patch-cmake_SIPMacros.cmake     |  15 +++
+ ...ch-src_analysis_interpolation_qgsinterpolator.h |  10 --
+ .../qgis-ltr/files/patch-src_core_CMakeLists.txt   |  17 +--
+ graphics/qgis-ltr/pkg-plist                        |   5 +-
+ lang/sagittarius-scheme/Makefile                   |   3 +-
+ lang/sagittarius-scheme/distinfo                   |   6 +-
+ lang/sagittarius-scheme/pkg-plist                  |  77 +++++++++++++
+ math/saga/Makefile                                 |   4 +-
+ math/saga/distinfo                                 |   6 +-
+ .../patch-src_saga__core_saga__gui_dlg__about.cpp  |  69 +++++++++++-
+ ...atch-src_tools_imagery_imagery__opencv_opencv.h |  12 --
+ ...src_tools_projection_pj__proj4_globe__gores.cpp |  11 --
+ math/saga/pkg-plist                                |   7 +-
+ multimedia/mpc-qt/Makefile                         |   4 +-
+ multimedia/mpc-qt/distinfo                         |   4 +-
+ multimedia/mpc-qt/pkg-descr                        |   2 +-
+ net-im/chatterino2/Makefile                        |   2 +-
+ net/easysoap/Makefile                              |  16 +--
+ net/easysoap/files/patch-src__SOAPSSLContext.cpp   |   2 +-
+ net/isc-dhcp44-server/files/patch-129b7e40.c       |  88 +++++++++++++++
+ net/mpd5/Makefile                                  |   2 +-
+ net/mpd5/files/mpd5.in                             |   1 -
+ science/paraview/files/patch-c83b583c.c            |  22 ++++
+ science/py-dlib/Makefile                           |  10 +-
+ science/py-dlib/pkg-plist                          |   6 +-
+ science/votca/Makefile                             |  16 +--
+ science/votca/distinfo                             |  34 +++---
+ science/votca/files/patch-csg-manual_manual.tex    |  12 --
+ science/votca/pkg-plist                            |  53 +++++----
+ sysutils/rtsx-kmod/Makefile                        |   2 +-
+ sysutils/rtsx-kmod/distinfo                        |   6 +-
+ textproc/Makefile                                  |   1 +
+ textproc/linux-c7-libcroco/Makefile                |  22 ++++
+ textproc/linux-c7-libcroco/distinfo                |   7 ++
+ textproc/linux-c7-libcroco/pkg-plist.amd64         |  10 ++
+ textproc/linux-c7-libcroco/pkg-plist.i386          |   8 ++
+ textproc/ugrep/Makefile                            |   2 +-
+ textproc/ugrep/distinfo                            |   6 +-
+ ...rfetto_src_tracing_core_virtual__destructors.cc |  28 +++++
+ x11-toolkits/linux-c7-gtk3/Makefile                |   7 +-
+ x11-wm/cage/pkg-descr                              |   2 +-
+ x11/lightdm-gtk-greeter/Makefile                   |   8 +-
+ x11/lightdm-gtk-greeter/distinfo                   |   6 +-
+ x11/lightdm-gtk-greeter/pkg-descr                  |   2 +-
+ x11/wofi/Makefile                                  |   2 +-
+ x11/wofi/distinfo                                  |   6 +-
+ x11/wofi/pkg-plist                                 |   1 +
+ 89 files changed, 954 insertions(+), 605 deletions(-)
+ delete mode 100644 astro/foxtrotgps/files/patch-src_tracks.c
+ delete mode 100644 databases/mariadb103-client/files/patch-MDEV-15961
+ delete mode 100644 databases/mariadb103-server/files/patch-MDEV-15961
+ create mode 100644 databases/mariadb103-server/files/patch-cmake_install__layout.cmake
+ delete mode 100644 databases/mariadb103-server/files/patch-storage_rocksdb_build__rocksdb.cmake
+ delete mode 100644 databases/mariadb105-server/files/patch-MDEV-15961
+ delete mode 100644 databases/mariadb105-server/files/patch-storage_perfschema_my__thread.h
+ create mode 100644 databases/p5-DBD-MariaDB/Makefile
+ create mode 100644 databases/p5-DBD-MariaDB/distinfo
+ create mode 100644 databases/p5-DBD-MariaDB/pkg-descr
+ create mode 100644 databases/p5-DBD-MariaDB/pkg-plist
+ create mode 100644 graphics/linux-c7-librsvg2/Makefile
+ create mode 100644 graphics/linux-c7-librsvg2/distinfo
+ create mode 100644 graphics/linux-c7-librsvg2/pkg-plist.amd64
+ create mode 100644 graphics/linux-c7-librsvg2/pkg-plist.i386
+ create mode 100644 graphics/qgis-ltr/files/patch-CMakeLists.txt
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_FindPyQt5.py
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_FindQGIS.cmake
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_FindQtQmlTools.cmake
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_FindQwt.cmake
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_FindSIP.cmake
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_FindSIP.py
+ create mode 100644 graphics/qgis-ltr/files/patch-cmake_SIPMacros.cmake
+ delete mode 100644 graphics/qgis-ltr/files/patch-src_analysis_interpolation_qgsinterpolator.h
+ delete mode 100644 math/saga/files/patch-src_tools_imagery_imagery__opencv_opencv.h
+ delete mode 100644 math/saga/files/patch-src_tools_projection_pj__proj4_globe__gores.cpp
+ create mode 100644 net/isc-dhcp44-server/files/patch-129b7e40.c
+ create mode 100644 science/paraview/files/patch-c83b583c.c
+ delete mode 100644 science/votca/files/patch-csg-manual_manual.tex
+ create mode 100644 textproc/linux-c7-libcroco/Makefile
+ create mode 100644 textproc/linux-c7-libcroco/distinfo
+ create mode 100644 textproc/linux-c7-libcroco/pkg-plist.amd64
+ create mode 100644 textproc/linux-c7-libcroco/pkg-plist.i386
+ create mode 100644 www/iridium/files/patch-third__party_perfetto_src_tracing_core_virtual__destructors.cc
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    0f473ff85c43..27c172258a72  master -> master        
+remote:    e8a71c36dfd4..0f473ff85c43  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   0f473ff85c43..27c172258a72  master -> master
+==== END: master ====
