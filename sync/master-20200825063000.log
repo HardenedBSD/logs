@@ -1,0 +1,432 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Updating 229c03bf3b3d..709dc7a70d89
+Fast-forward
+ archivers/gcpio/Makefile                           |   2 +-
+ audio/codec2/Makefile                              |   1 +
+ audio/codec2/files/patch-CMakeLists.txt            |  22 +--
+ audio/codec2/files/patch-src__freedv_api.c         |  18 +--
+ audio/codec2/files/patch-src_codec2__ofdm.h        |  14 ++
+ audio/codec2/files/patch-src_ofdm__demod.c         |  11 ++
+ .../codec2/files/patch-src_ofdm__get__test__bits.c |  11 ++
+ audio/codec2/files/patch-src_ofdm__mod.c           |  10 ++
+ .../codec2/files/patch-src_ofdm__put__test__bits.c |  11 ++
+ audio/fasttracker2/Makefile                        |   2 +-
+ audio/fasttracker2/distinfo                        |   6 +-
+ audio/xoscope/Makefile                             |  10 +-
+ audio/xoscope/files/patch-com__gtk.c               |  11 ++
+ audio/xoscope/files/patch-com__gtk.h               |  11 ++
+ audio/xoscope/files/patch-display.c                |  19 +++
+ audio/xoscope/files/patch-gr__gtk.c                |  12 ++
+ benchmarks/Makefile                                |   1 +
+ benchmarks/flowgrind/Makefile                      |   3 +
+ benchmarks/flowgrind/distinfo                      |   4 +-
+ benchmarks/mangohud/Makefile                       |  47 ++++++
+ benchmarks/mangohud/distinfo                       |   3 +
+ benchmarks/mangohud/files/patch-include_elfhacks.h |  19 +++
+ benchmarks/mangohud/files/patch-meson.build        |  20 +++
+ benchmarks/mangohud/files/patch-src_elfhacks.cpp   |  29 ++++
+ benchmarks/mangohud/files/patch-src_meson.build    |  29 ++++
+ benchmarks/mangohud/pkg-descr                      |   4 +
+ comms/echolinux/Makefile                           |  13 +-
+ comms/echolinux/files/patch-echogui_servercode.c   |  15 +-
+ comms/echolinux/files/patch-echogui_testgui.c      |   4 +-
+ comms/echolinux/files/patch-echogui_testgui__cb.c  |  29 ++++
+ .../echolinux/files/patch-echogui_testgui__main.c  |  32 ++++
+ comms/echolinux/files/patch-echogui_testgui_cb.c   |  11 --
+ comms/echolinux/files/patch-echogui_testgui_main.c |  11 --
+ comms/echolinux/files/patch-echogui_threadFuncs.c  |  18 +++
+ comms/echolinux/files/patch-echolinux_control.c    |  62 ++++++++
+ comms/echolinux/files/patch-echolinux_rtpacket.c   |  13 +-
+ comms/echolinux/files/patch-echolinux_vox.c        | 111 +++++++++++++
+ comms/xdx/Makefile                                 |  15 +-
+ comms/xdx/files/patch-src_Makefile.in              |  15 ++
+ comms/xdx/files/patch-src_gui.c                    |  10 ++
+ comms/xdx/files/patch-src_gui.h                    |  11 ++
+ databases/Makefile                                 |   1 +
+ databases/postgresql-jdbc/Makefile                 |   2 +-
+ databases/postgresql-jdbc/distinfo                 |   6 +-
+ databases/rubygem-redis-namespace17/Makefile       |  25 +++
+ databases/rubygem-redis-namespace17/distinfo       |   3 +
+ databases/rubygem-redis-namespace17/pkg-descr      |   5 +
+ devel/Makefile                                     |   4 +
+ ...rfetto_src_tracing_core_virtual__destructors.cc |  28 ++++
+ devel/ncurses/Makefile                             |   2 +-
+ devel/ncurses/distinfo                             |   6 +-
+ devel/nspr/Makefile                                |   2 +-
+ devel/nspr/distinfo                                |   6 +-
+ devel/py-identify/Makefile                         |   2 +-
+ devel/py-identify/distinfo                         |   6 +-
+ devel/py-nodeenv/Makefile                          |   2 +-
+ devel/py-nodeenv/distinfo                          |   6 +-
+ devel/py-pyinquirer/Makefile                       |  22 +++
+ devel/py-pyinquirer/distinfo                       |   3 +
+ devel/py-pyinquirer/pkg-descr                      |   8 +
+ devel/radare2/Makefile                             |   2 +-
+ devel/radare2/distinfo                             |   6 +-
+ devel/radare2/pkg-plist                            |  22 ++-
+ devel/rubygem-ecma-re-validator/Makefile           |  24 +++
+ devel/rubygem-ecma-re-validator/distinfo           |   3 +
+ devel/rubygem-ecma-re-validator/pkg-descr          |   3 +
+ devel/rubygem-hana/Makefile                        |  20 +++
+ devel/rubygem-hana/distinfo                        |   3 +
+ devel/rubygem-hana/pkg-descr                       |   3 +
+ devel/rubygem-json_schemer/Makefile                |  25 +++
+ devel/rubygem-json_schemer/distinfo                |   3 +
+ devel/rubygem-json_schemer/pkg-descr               |   6 +
+ devel/rust-analyzer/Makefile                       |  29 ++--
+ devel/rust-analyzer/distinfo                       |  60 +++----
+ dns/bind-tools/pkg-plist-devel                     |  16 +-
+ dns/bind9-devel/Makefile                           |   7 +-
+ dns/bind9-devel/distinfo                           |   6 +-
+ .../files/extrapatch-bind-min-override-ttl         |  12 +-
+ dns/bind9-devel/pkg-plist                          |  17 +-
+ editors/apel/Makefile                              |   5 +-
+ editors/apel/distinfo                              |   6 +-
+ editors/apel/files/patch-APEL-MK                   |  11 --
+ editors/apel/files/patch-pccl-20.el                |  14 --
+ emulators/citra-qt5/Makefile                       |   2 +-
+ emulators/citra/Makefile                           |   4 +-
+ emulators/citra/distinfo                           |   4 +-
+ emulators/rpcs3/Makefile                           |   4 +-
+ emulators/rpcs3/distinfo                           |   6 +-
+ emulators/yuzu/Makefile                            |   8 +-
+ emulators/yuzu/distinfo                            |  14 +-
+ games/cockatrice/Makefile                          |   5 +-
+ games/cockatrice/distinfo                          |   6 +-
+ games/cockatrice/files/patch-CMakeLists.txt        |  12 ++
+ .../files/patch-cockatrice_src_arrowitem.h         |  10 --
+ ...tch-cockatrice_src_replay__timeline__widget.cpp |  10 --
+ games/openjk/Makefile                              |   5 +-
+ games/openjk/distinfo                              |   6 +-
+ .../files/patch-CMakeModules_InstallConfig.cmake   |   4 +-
+ graphics/drm-legacy-kmod/Makefile                  |   7 +-
+ graphics/drm-legacy-kmod/distinfo                  |   6 +-
+ graphics/mesa-devel/Makefile                       |   4 +-
+ graphics/mesa-devel/distinfo                       |   6 +-
+ irc/eggdrop-devel/Makefile                         |   4 +-
+ irc/eggdrop-devel/distinfo                         |   6 +-
+ japanese/anthy/Makefile                            |   2 +-
+ japanese/anthy/files/patch-src-util_anthy.el       |  11 ++
+ lang/intel-compute-runtime/Makefile                |   2 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ lang/libobjc2/Makefile                             |  20 +--
+ lang/libobjc2/distinfo                             |   6 +-
+ ...patch-extlibs_gc-cvs_include_private_gc__priv.h |  11 ++
+ lang/mosh/files/patch-extlibs_gc-cvs_os__dep.c     |  11 ++
+ lang/perl5-devel/Makefile                          |   2 +-
+ lang/perl5-devel/distinfo                          |   6 +-
+ lang/perl5-devel/files/patch-Configure             |   8 +-
+ .../files/patch-t_porting_customized.dat           |  10 +-
+ lang/perl5-devel/pkg-plist                         |   2 +
+ lang/perl5-devel/version.mk                        |   2 +-
+ mail/isoqlog/Makefile                              |   1 +
+ mail/thunderbird/Makefile                          |   2 +-
+ mail/thunderbird/files/patch-cubeb-oss             |   7 +-
+ math/galculator/Makefile                           |   1 +
+ math/galculator/files/patch-src_config__file.c     |  10 ++
+ multimedia/gmmlib/Makefile                         |   2 +-
+ multimedia/gmmlib/distinfo                         |   6 +-
+ multimedia/libva-intel-media-driver/Makefile       |   4 +-
+ multimedia/libva-intel-media-driver/distinfo       |  10 +-
+ .../libva-intel-media-driver/files/patch-libva-2.8 |  56 -------
+ multimedia/vmaf/Makefile                           |   6 +-
+ multimedia/vmaf/distinfo                           |   6 +-
+ multimedia/vmaf/pkg-plist                          |   2 +
+ net-im/matterbridge/Makefile                       |   2 +-
+ net-im/matterbridge/distinfo                       |   6 +-
+ net-mgmt/ipv6calc/Makefile                         |   1 +
+ net-mgmt/pmacct/files/patch-src_nfacctd.c          |  11 ++
+ net-mgmt/pmacct/files/patch-src_pmacctd.c          |  11 ++
+ net-mgmt/pmacct/files/patch-src_pmbgpd.c           |  11 ++
+ net-mgmt/pmacct/files/patch-src_pmbmpd.c           |  11 ++
+ net-mgmt/pmacct/files/patch-src_pmtelemetryd.c     |  11 ++
+ net-mgmt/pmacct/files/patch-src_sfacctd.c          |  11 ++
+ net/Makefile                                       |   1 +
+ net/go-bapu/Makefile                               |   2 -
+ net/netatalk3/files/patch-etc_afpd_directory.h     |  25 ++-
+ net/rubygem-gitlab-fog-azure-rm/Makefile           |  26 +++
+ net/rubygem-gitlab-fog-azure-rm/distinfo           |   3 +
+ net/rubygem-gitlab-fog-azure-rm/pkg-descr          |   4 +
+ net/rubygem-uri_template/Makefile                  |  20 +++
+ net/rubygem-uri_template/distinfo                  |   3 +
+ net/rubygem-uri_template/pkg-descr                 |   4 +
+ net/syncthing/Makefile                             |   1 +
+ net/syncthing/files/patch-syncthing_lib_api_api.go |  47 ++++++
+ .../files/patch-syncthing_lib_api_api__test.go     |  38 +++++
+ .../patch-syncthing_lib_connections_service.go     |  15 ++
+ .../files/patch-syncthing_lib_tlsutil_tlsutil.go   |  10 ++
+ print/foomatic-filters/Makefile                    |  32 ++--
+ print/foomatic-filters/files/patch-foomaticrip.c   |  13 +-
+ print/foomatic-filters/files/patch-options.c       |  21 +++
+ science/lammps/Makefile                            |   2 +-
+ science/lammps/distinfo                            |   6 +-
+ security/ca_root_nss/Makefile                      |   2 +-
+ security/ca_root_nss/distinfo                      |   6 +-
+ security/libgpg-error/Makefile                     |   2 +-
+ security/libgpg-error/distinfo                     |   6 +-
+ security/libgpg-error/pkg-plist                    |   2 +-
+ security/medusa/Makefile                           |   1 +
+ security/nss/Makefile                              |   2 +-
+ security/nss/distinfo                              |   6 +-
+ security/openconnect/Makefile                      |   3 +-
+ security/openconnect/distinfo                      |   6 +-
+ security/openconnect/pkg-plist                     |   2 +
+ security/openvpn-auth-ldap/Makefile                |   2 +-
+ shells/bash/Makefile                               |   5 +-
+ shells/bash/files/patch-doc_bash.1                 |  35 +++-
+ sysutils/bsdisks/Makefile                          |   4 +-
+ sysutils/bsdisks/distinfo                          |   6 +-
+ sysutils/openzfs-kmod/Makefile                     |   4 +-
+ sysutils/openzfs-kmod/distinfo                     |   6 +-
+ sysutils/openzfs/Makefile                          |   4 +-
+ sysutils/openzfs/distinfo                          |   6 +-
+ sysutils/openzfs/pkg-plist                         |   8 +
+ sysutils/rubygem-bolt/Makefile                     |   2 +-
+ sysutils/rubygem-bolt/distinfo                     |   6 +-
+ textproc/qr/Makefile                               |   1 +
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox-esr/files/patch-cubeb-oss              |   7 +-
+ www/firefox-esr/pkg-message                        |  14 +-
+ www/firefox/Makefile                               |   2 +-
+ www/firefox/files/patch-cubeb-oss                  |   7 +-
+ www/firefox/pkg-message                            |  14 +-
+ ...golang.org_x_sys_unix_ztypes__freebsd__arm64.go |  11 --
+ www/minio/Makefile                                 |  20 +--
+ www/minio/distinfo                                 |  38 ++---
+ www/nginx/Makefile                                 |   2 +-
+ www/nginx/Makefile.extmod                          |   5 +-
+ .../extra-patch-nginx_upstream_check_module-config |  32 ----
+ www/nginx/pkg-plist                                |   1 -
+ x11-drivers/xf86-video-geode/Makefile              |   3 +
+ .../xf86-video-geode/files/patch-src_geode.h       |  34 ++++
+ .../xf86-video-geode/files/patch-src_gx__video.c   |  11 ++
+ .../xf86-video-geode/files/patch-src_lx__driver.c  |  11 ++
+ .../xf86-video-geode/files/patch-src_panel.c       |  11 ++
+ .../xf86-video-geode/files/patch-src_panel_panel.c |  11 ++
+ x11-toolkits/wlroots/Makefile                      |   2 +-
+ x11-toolkits/wlroots/distinfo                      |   4 +-
+ x11-wm/wmakerconf/Makefile                         |   4 +-
+ x11-wm/wmakerconf/files/patch-configure            |  38 +++++
+ x11/radare-cutter/Makefile                         |  14 +-
+ x11/radare-cutter/distinfo                         |   8 +-
+ x11/radare-cutter/files/patch-lib__radare2.pri     |  13 --
+ .../files/patch-widgets_ColorPicker.cpp            |  10 --
+ .../files/patch-widgets_ColorThemeListView.cpp     |  10 --
+ x11/radare-cutter/pkg-plist                        | 176 +++++++++++++++++++++
+ 212 files changed, 1862 insertions(+), 615 deletions(-)
+ create mode 100644 audio/codec2/files/patch-src_codec2__ofdm.h
+ create mode 100644 audio/codec2/files/patch-src_ofdm__demod.c
+ create mode 100644 audio/codec2/files/patch-src_ofdm__get__test__bits.c
+ create mode 100644 audio/codec2/files/patch-src_ofdm__mod.c
+ create mode 100644 audio/codec2/files/patch-src_ofdm__put__test__bits.c
+ create mode 100644 audio/xoscope/files/patch-com__gtk.c
+ create mode 100644 audio/xoscope/files/patch-com__gtk.h
+ create mode 100644 audio/xoscope/files/patch-display.c
+ create mode 100644 audio/xoscope/files/patch-gr__gtk.c
+ create mode 100644 benchmarks/mangohud/Makefile
+ create mode 100644 benchmarks/mangohud/distinfo
+ create mode 100644 benchmarks/mangohud/files/patch-include_elfhacks.h
+ create mode 100644 benchmarks/mangohud/files/patch-meson.build
+ create mode 100644 benchmarks/mangohud/files/patch-src_elfhacks.cpp
+ create mode 100644 benchmarks/mangohud/files/patch-src_meson.build
+ create mode 100644 benchmarks/mangohud/pkg-descr
+ create mode 100644 comms/echolinux/files/patch-echogui_testgui__cb.c
+ create mode 100644 comms/echolinux/files/patch-echogui_testgui__main.c
+ delete mode 100644 comms/echolinux/files/patch-echogui_testgui_cb.c
+ delete mode 100644 comms/echolinux/files/patch-echogui_testgui_main.c
+ create mode 100644 comms/echolinux/files/patch-echogui_threadFuncs.c
+ create mode 100644 comms/echolinux/files/patch-echolinux_control.c
+ create mode 100644 comms/echolinux/files/patch-echolinux_vox.c
+ create mode 100644 comms/xdx/files/patch-src_Makefile.in
+ create mode 100644 comms/xdx/files/patch-src_gui.c
+ create mode 100644 comms/xdx/files/patch-src_gui.h
+ create mode 100644 databases/rubygem-redis-namespace17/Makefile
+ create mode 100644 databases/rubygem-redis-namespace17/distinfo
+ create mode 100644 databases/rubygem-redis-namespace17/pkg-descr
+ create mode 100644 devel/electron7/files/patch-third__party_perfetto_src_tracing_core_virtual__destructors.cc
+ create mode 100644 devel/py-pyinquirer/Makefile
+ create mode 100644 devel/py-pyinquirer/distinfo
+ create mode 100644 devel/py-pyinquirer/pkg-descr
+ create mode 100644 devel/rubygem-ecma-re-validator/Makefile
+ create mode 100644 devel/rubygem-ecma-re-validator/distinfo
+ create mode 100644 devel/rubygem-ecma-re-validator/pkg-descr
+ create mode 100644 devel/rubygem-hana/Makefile
+ create mode 100644 devel/rubygem-hana/distinfo
+ create mode 100644 devel/rubygem-hana/pkg-descr
+ create mode 100644 devel/rubygem-json_schemer/Makefile
+ create mode 100644 devel/rubygem-json_schemer/distinfo
+ create mode 100644 devel/rubygem-json_schemer/pkg-descr
+ delete mode 100644 editors/apel/files/patch-APEL-MK
+ delete mode 100644 editors/apel/files/patch-pccl-20.el
+ create mode 100644 games/cockatrice/files/patch-CMakeLists.txt
+ delete mode 100644 games/cockatrice/files/patch-cockatrice_src_arrowitem.h
+ delete mode 100644 games/cockatrice/files/patch-cockatrice_src_replay__timeline__widget.cpp
+ create mode 100644 japanese/anthy/files/patch-src-util_anthy.el
+ create mode 100644 lang/mosh/files/patch-extlibs_gc-cvs_include_private_gc__priv.h
+ create mode 100644 lang/mosh/files/patch-extlibs_gc-cvs_os__dep.c
+ create mode 100644 math/galculator/files/patch-src_config__file.c
+ delete mode 100644 multimedia/libva-intel-media-driver/files/patch-libva-2.8
+ create mode 100644 net-mgmt/pmacct/files/patch-src_nfacctd.c
+ create mode 100644 net-mgmt/pmacct/files/patch-src_pmacctd.c
+ create mode 100644 net-mgmt/pmacct/files/patch-src_pmbgpd.c
+ create mode 100644 net-mgmt/pmacct/files/patch-src_pmbmpd.c
+ create mode 100644 net-mgmt/pmacct/files/patch-src_pmtelemetryd.c
+ create mode 100644 net-mgmt/pmacct/files/patch-src_sfacctd.c
+ create mode 100644 net/rubygem-gitlab-fog-azure-rm/Makefile
+ create mode 100644 net/rubygem-gitlab-fog-azure-rm/distinfo
+ create mode 100644 net/rubygem-gitlab-fog-azure-rm/pkg-descr
+ create mode 100644 net/rubygem-uri_template/Makefile
+ create mode 100644 net/rubygem-uri_template/distinfo
+ create mode 100644 net/rubygem-uri_template/pkg-descr
+ create mode 100644 net/syncthing/files/patch-syncthing_lib_api_api.go
+ create mode 100644 net/syncthing/files/patch-syncthing_lib_api_api__test.go
+ create mode 100644 net/syncthing/files/patch-syncthing_lib_connections_service.go
+ create mode 100644 net/syncthing/files/patch-syncthing_lib_tlsutil_tlsutil.go
+ create mode 100644 print/foomatic-filters/files/patch-options.c
+ delete mode 100644 www/miniflux/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+ delete mode 100644 www/nginx/files/extra-patch-nginx_upstream_check_module-config
+ create mode 100644 x11-drivers/xf86-video-geode/files/patch-src_geode.h
+ create mode 100644 x11-drivers/xf86-video-geode/files/patch-src_gx__video.c
+ create mode 100644 x11-drivers/xf86-video-geode/files/patch-src_lx__driver.c
+ create mode 100644 x11-drivers/xf86-video-geode/files/patch-src_panel.c
+ create mode 100644 x11-drivers/xf86-video-geode/files/patch-src_panel_panel.c
+ create mode 100644 x11-wm/wmakerconf/files/patch-configure
+ delete mode 100644 x11/radare-cutter/files/patch-lib__radare2.pri
+ delete mode 100644 x11/radare-cutter/files/patch-widgets_ColorPicker.cpp
+ delete mode 100644 x11/radare-cutter/files/patch-widgets_ColorThemeListView.cpp
+ create mode 100644 x11/radare-cutter/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    229c03bf3b3d..709dc7a70d89  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    2643ea236250..709dc7a70d89  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   229c03bf3b3d..709dc7a70d89  master -> master
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging lang/gcc9-devel/Makefile
+Merge made by the 'recursive' strategy.
+ databases/cego/Makefile                            |  2 +-
+ databases/cego/distinfo                            |  6 ++---
+ databases/py-swift/Makefile                        |  1 +
+ databases/py-swift/pkg-descr                       |  2 +-
+ ...rfetto_src_tracing_core_virtual__destructors.cc | 28 ++++++++++++++++++++++
+ games/gnugo/files/patch-engine_liberty.h           | 13 ++++++++++
+ games/gnugo/files/patch-engine_unconditional.c     | 13 ++++++++++
+ lang/gcc9-devel/Makefile                           |  2 +-
+ lang/gcc9-devel/distinfo                           |  6 ++---
+ lang/libobjc2/Makefile                             |  8 +++----
+ lang/libobjc2/distinfo                             |  8 ++++---
+ lang/libobjc2/pkg-plist                            |  1 +
+ sysutils/bpytop/Makefile                           |  2 +-
+ sysutils/bpytop/distinfo                           |  6 ++---
+ 14 files changed, 78 insertions(+), 20 deletions(-)
+ create mode 100644 devel/electron6/files/patch-third__party_perfetto_src_tracing_core_virtual__destructors.cc
+ create mode 100644 games/gnugo/files/patch-engine_liberty.h
+ create mode 100644 games/gnugo/files/patch-engine_unconditional.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    709dc7a70d89..01a9d59cba2f  master -> master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   709dc7a70d89..01a9d59cba2f  master -> master
+==== END: master ====

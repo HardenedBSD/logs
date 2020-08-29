@@ -1,0 +1,259 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 98fc807137f1..5ef0bd68b515
+Fast-forward
+ Makefile                                           |    2 +-
+ Makefile.inc1                                      |  162 +-
+ contrib/lua/src/luaconf.h.dist                     |   10 +-
+ lib/libc/gen/arc4random.h                          |    4 +-
+ lib/libcapsicum/capsicum_helpers.h                 |   12 +-
+ lib/liblua/luaconf.h                               |    1 +
+ sbin/newfs_msdos/Makefile                          |    1 +
+ share/man/man4/netdump.4                           |    3 +-
+ share/man/man5/style.Makefile.5                    |    4 +-
+ share/mk/bsd.sys.mk                                |   13 +
+ sys/conf/kern.mk                                   |   16 +
+ sys/conf/kern.post.mk                              |    4 +-
+ sys/kern/kern_jail.c                               |    2 +-
+ sys/kern/kern_priv.c                               |   52 +
+ sys/kern/vfs_subr.c                                |   20 +-
+ sys/modules/cloudabi32/Makefile                    |    2 +-
+ sys/modules/cloudabi64/Makefile                    |    2 +-
+ sys/modules/linux/Makefile                         |    2 +-
+ sys/modules/linux64/Makefile                       |    2 +-
+ sys/net/iflib.c                                    |   50 +-
+ sys/netinet/tcp_input.c                            |    3 +-
+ sys/netinet/tcp_stacks/rack.c                      |    3 +-
+ sys/sys/priv.h                                     |    2 +
+ sys/vm/vm_page.c                                   |   11 +-
+ tools/build/Makefile                               |  200 ++-
+ tools/build/bootstrap-m4/Makefile                  |   27 +
+ tools/build/bootstrap-m4/inittokenizer.c           | 1850 ++++++++++++++++++++
+ tools/build/cross-build/capsicum_stubs.c           |   67 +
+ tools/build/cross-build/closefrom.c                |  192 ++
+ tools/build/cross-build/fake_chflags/Makefile      |    7 +
+ tools/build/cross-build/fake_chflags/chflags       |   42 +
+ tools/build/cross-build/fake_sysctl.c              |   58 +
+ tools/build/cross-build/fgetln_fallback.c          |   84 +
+ tools/build/cross-build/fgetwln_fallback.c         |   93 +
+ tools/build/cross-build/include/common/db.h        |   42 +
+ tools/build/cross-build/include/common/getopt.h    |   53 +
+ tools/build/cross-build/include/common/grp.h       |   61 +
+ tools/build/cross-build/include/common/libcasper.h |   42 +
+ tools/build/cross-build/include/common/libelf.h    |   44 +
+ tools/build/cross-build/include/common/libutil.h   |   44 +
+ .../cross-build/include/common/machine/endian.h    |   40 +
+ tools/build/cross-build/include/common/netconfig.h |   43 +
+ tools/build/cross-build/include/common/netdb.h     |   41 +
+ tools/build/cross-build/include/common/osreldate.h |   40 +
+ tools/build/cross-build/include/common/pwd.h       |   60 +
+ tools/build/cross-build/include/common/string.h    |   45 +
+ .../build/cross-build/include/common/sys/_iovec.h  |   38 +
+ tools/build/cross-build/include/common/sys/_null.h |   44 +
+ .../build/cross-build/include/common/sys/_types.h  |   49 +
+ tools/build/cross-build/include/common/sys/cdefs.h |  278 +++
+ tools/build/cross-build/include/common/sys/ctype.h |   39 +
+ .../build/cross-build/include/common/sys/limits.h  |   41 +
+ tools/build/cross-build/include/common/sys/mman.h  |   48 +
+ tools/build/cross-build/include/common/sys/param.h |   65 +
+ .../build/cross-build/include/common/sys/stdint.h  |   43 +
+ .../build/cross-build/include/common/sys/sysctl.h  |   46 +
+ tools/build/cross-build/include/common/sys/types.h |   71 +
+ tools/build/cross-build/include/common/sys/uio.h   |   51 +
+ tools/build/cross-build/include/common/unistd.h    |   57 +
+ .../include/linux/__unused_workaround_end.h        |   42 +
+ .../include/linux/__unused_workaround_start.h      |   42 +
+ tools/build/cross-build/include/linux/ctype.h      |   51 +
+ tools/build/cross-build/include/linux/endian.h     |   54 +
+ tools/build/cross-build/include/linux/errno.h      |   47 +
+ tools/build/cross-build/include/linux/fcntl.h      |   65 +
+ tools/build/cross-build/include/linux/libutil.h    |   78 +
+ tools/build/cross-build/include/linux/limits.h     |  114 ++
+ .../cross-build/include/linux/nbtool_config.h      |   49 +
+ tools/build/cross-build/include/linux/netdb.h      |   48 +
+ tools/build/cross-build/include/linux/regex.h      |   41 +
+ tools/build/cross-build/include/linux/resolv.h     |   44 +
+ tools/build/cross-build/include/linux/signal.h     |   43 +
+ tools/build/cross-build/include/linux/stdio.h      |   49 +
+ tools/build/cross-build/include/linux/stdlib.h     |   76 +
+ tools/build/cross-build/include/linux/string.h     |   63 +
+ tools/build/cross-build/include/linux/sys/disk.h   |   41 +
+ tools/build/cross-build/include/linux/sys/endian.h |  182 ++
+ tools/build/cross-build/include/linux/sys/filio.h  |   42 +
+ tools/build/cross-build/include/linux/sys/ioccom.h |   39 +
+ tools/build/cross-build/include/linux/sys/mount.h  |   40 +
+ tools/build/cross-build/include/linux/sys/param.h  |   52 +
+ tools/build/cross-build/include/linux/sys/stat.h   |   61 +
+ tools/build/cross-build/include/linux/sys/sysctl.h |   42 +
+ tools/build/cross-build/include/linux/sys/time.h   |   45 +
+ tools/build/cross-build/include/linux/sys/ttycom.h |   43 +
+ tools/build/cross-build/include/linux/sys/types.h  |   44 +
+ tools/build/cross-build/include/linux/sys/ucred.h  |   38 +
+ tools/build/cross-build/include/linux/time.h       |   55 +
+ tools/build/cross-build/include/linux/unistd.h     |  105 ++
+ tools/build/cross-build/include/linux/wctype.h     |   43 +
+ tools/build/cross-build/include/mac/libutil.h      |   52 +
+ .../build/cross-build/include/mac/nbtool_config.h  |   49 +
+ tools/build/cross-build/include/mac/signal.h       |   44 +
+ tools/build/cross-build/include/mac/stdlib.h       |   50 +
+ tools/build/cross-build/include/mac/string.h       |   57 +
+ tools/build/cross-build/include/mac/sys/_types.h   |   45 +
+ tools/build/cross-build/include/mac/sys/endian.h   |  194 ++
+ tools/build/cross-build/include/mac/sys/stat.h     |   53 +
+ tools/build/cross-build/include/mac/sys/time.h     |   46 +
+ tools/build/cross-build/include/mac/unistd.h       |   56 +
+ tools/build/cross-build/local-link.h               |   38 +
+ tools/build/cross-build/progname.c                 |   53 +
+ tools/build/libc-bootstrap/libc_private.h          |   40 +
+ tools/build/libc-bootstrap/namespace.h             |   52 +
+ tools/build/libc-bootstrap/un-namespace.h          |   40 +
+ tools/build/mk/Makefile.boot                       |   68 +
+ tools/build/mk/Makefile.boot.pre                   |   12 +
+ tools/build/mk/bsd.lib.mk                          |    3 +
+ tools/build/mk/bsd.prog.mk                         |    1 +
+ usr.bin/m4/Makefile                                |   14 +-
+ usr.sbin/makefs/Makefile                           |    1 +
+ 111 files changed, 7061 insertions(+), 113 deletions(-)
+ create mode 100644 tools/build/bootstrap-m4/Makefile
+ create mode 100644 tools/build/bootstrap-m4/inittokenizer.c
+ create mode 100644 tools/build/cross-build/capsicum_stubs.c
+ create mode 100644 tools/build/cross-build/closefrom.c
+ create mode 100644 tools/build/cross-build/fake_chflags/Makefile
+ create mode 100644 tools/build/cross-build/fake_chflags/chflags
+ create mode 100644 tools/build/cross-build/fake_sysctl.c
+ create mode 100644 tools/build/cross-build/fgetln_fallback.c
+ create mode 100644 tools/build/cross-build/fgetwln_fallback.c
+ create mode 100644 tools/build/cross-build/include/common/db.h
+ create mode 100644 tools/build/cross-build/include/common/getopt.h
+ create mode 100644 tools/build/cross-build/include/common/grp.h
+ create mode 100644 tools/build/cross-build/include/common/libcasper.h
+ create mode 100644 tools/build/cross-build/include/common/libelf.h
+ create mode 100644 tools/build/cross-build/include/common/libutil.h
+ create mode 100644 tools/build/cross-build/include/common/machine/endian.h
+ create mode 100644 tools/build/cross-build/include/common/netconfig.h
+ create mode 100644 tools/build/cross-build/include/common/netdb.h
+ create mode 100644 tools/build/cross-build/include/common/osreldate.h
+ create mode 100644 tools/build/cross-build/include/common/pwd.h
+ create mode 100644 tools/build/cross-build/include/common/string.h
+ create mode 100644 tools/build/cross-build/include/common/sys/_iovec.h
+ create mode 100644 tools/build/cross-build/include/common/sys/_null.h
+ create mode 100644 tools/build/cross-build/include/common/sys/_types.h
+ create mode 100644 tools/build/cross-build/include/common/sys/cdefs.h
+ create mode 100644 tools/build/cross-build/include/common/sys/ctype.h
+ create mode 100644 tools/build/cross-build/include/common/sys/limits.h
+ create mode 100644 tools/build/cross-build/include/common/sys/mman.h
+ create mode 100644 tools/build/cross-build/include/common/sys/param.h
+ create mode 100644 tools/build/cross-build/include/common/sys/stdint.h
+ create mode 100644 tools/build/cross-build/include/common/sys/sysctl.h
+ create mode 100644 tools/build/cross-build/include/common/sys/types.h
+ create mode 100644 tools/build/cross-build/include/common/sys/uio.h
+ create mode 100644 tools/build/cross-build/include/common/unistd.h
+ create mode 100644 tools/build/cross-build/include/linux/__unused_workaround_end.h
+ create mode 100644 tools/build/cross-build/include/linux/__unused_workaround_start.h
+ create mode 100644 tools/build/cross-build/include/linux/ctype.h
+ create mode 100644 tools/build/cross-build/include/linux/endian.h
+ create mode 100644 tools/build/cross-build/include/linux/errno.h
+ create mode 100644 tools/build/cross-build/include/linux/fcntl.h
+ create mode 100644 tools/build/cross-build/include/linux/libutil.h
+ create mode 100644 tools/build/cross-build/include/linux/limits.h
+ create mode 100644 tools/build/cross-build/include/linux/nbtool_config.h
+ create mode 100644 tools/build/cross-build/include/linux/netdb.h
+ create mode 100644 tools/build/cross-build/include/linux/regex.h
+ create mode 100644 tools/build/cross-build/include/linux/resolv.h
+ create mode 100644 tools/build/cross-build/include/linux/signal.h
+ create mode 100644 tools/build/cross-build/include/linux/stdio.h
+ create mode 100644 tools/build/cross-build/include/linux/stdlib.h
+ create mode 100644 tools/build/cross-build/include/linux/string.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/disk.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/endian.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/filio.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/ioccom.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/mount.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/param.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/stat.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/sysctl.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/time.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/ttycom.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/types.h
+ create mode 100644 tools/build/cross-build/include/linux/sys/ucred.h
+ create mode 100644 tools/build/cross-build/include/linux/time.h
+ create mode 100644 tools/build/cross-build/include/linux/unistd.h
+ create mode 100644 tools/build/cross-build/include/linux/wctype.h
+ create mode 100644 tools/build/cross-build/include/mac/libutil.h
+ create mode 100644 tools/build/cross-build/include/mac/nbtool_config.h
+ create mode 100644 tools/build/cross-build/include/mac/signal.h
+ create mode 100644 tools/build/cross-build/include/mac/stdlib.h
+ create mode 100644 tools/build/cross-build/include/mac/string.h
+ create mode 100644 tools/build/cross-build/include/mac/sys/_types.h
+ create mode 100644 tools/build/cross-build/include/mac/sys/endian.h
+ create mode 100644 tools/build/cross-build/include/mac/sys/stat.h
+ create mode 100644 tools/build/cross-build/include/mac/sys/time.h
+ create mode 100644 tools/build/cross-build/include/mac/unistd.h
+ create mode 100644 tools/build/cross-build/local-link.h
+ create mode 100644 tools/build/cross-build/progname.c
+ create mode 100644 tools/build/libc-bootstrap/libc_private.h
+ create mode 100644 tools/build/libc-bootstrap/namespace.h
+ create mode 100644 tools/build/libc-bootstrap/un-namespace.h
+ create mode 100644 tools/build/mk/Makefile.boot.pre
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    98fc807137f1..5ef0bd68b515  freebsd/current/master -> freebsd/current/master        
+remote:    5e8b5c65c7de..252760a5c27d  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Gitea: Internal Server Error        
+remote: Unable to contact gitea: Post "http://localhost:3000/api/internal/hook/post-receive/hardenedbsd/hardenedbsd": read tcp 172.16.1.72:46325->172.16.1.72:3000: i/o timeout        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   98fc807137f1..5ef0bd68b515  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
