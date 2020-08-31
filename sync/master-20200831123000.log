@@ -47,3 +47,170 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/squid/files/patch-src_security_Handshake.cc
+Auto-merging www/squid/Makefile
+Removing net-mgmt/monitoring-plugins/pkg-help
+Auto-merging editors/nano/Makefile
+Removing archivers/xarchiver/files/patch-src_tar.c
+Removing archivers/xarchiver/files/patch-src_bzip2.c
+Merge made by the 'recursive' strategy.
+ .gitauthors                                        |   1 +
+ archivers/xarchiver/Makefile                       |  22 ++-
+ archivers/xarchiver/distinfo                       |   6 +-
+ archivers/xarchiver/files/patch-src_bzip2.c        |  17 ---
+ archivers/xarchiver/files/patch-src_gzip__et__al.c |  38 +++++
+ archivers/xarchiver/files/patch-src_main.c         |  25 ++++
+ archivers/xarchiver/files/patch-src_tar.c          |  56 -------
+ archivers/xarchiver/files/patch-src_window.c       |  20 +--
+ archivers/xarchiver/pkg-plist                      |   9 ++
+ databases/p5-Bucardo/Makefile                      |  13 +-
+ devel/gitolite/Makefile                            |  27 ++--
+ devel/py-gs_api_client/Makefile                    |   2 +-
+ devel/py-gs_api_client/distinfo                    |   6 +-
+ devel/taskflow/Makefile                            |   2 +-
+ dns/bind9-devel/Makefile                           |   4 +-
+ dns/bind9-devel/distinfo                           |   6 +-
+ editors/nano/Makefile                              |   6 +-
+ editors/nano/distinfo                              |   6 +-
+ games/battletanks/Makefile                         |   6 +-
+ games/battletanks/files/patch-SConstruct           |  56 ++++++-
+ graphics/Makefile                                  |   1 +
+ graphics/geeqie-devel/Makefile                     |  94 ++++++++++++
+ graphics/geeqie-devel/distinfo                     |   3 +
+ graphics/geeqie-devel/files/patch-Makefile.am      |  22 +++
+ graphics/geeqie-devel/files/patch-configure.ac     |  29 ++++
+ graphics/geeqie-devel/pkg-descr                    |  15 ++
+ graphics/geeqie-devel/pkg-plist                    |  66 +++++++++
+ graphics/geeqie/Makefile                           |   2 +
+ .../pgplot/files/patch-pgdispd_updatelgtitle.c     |  19 +++
+ lang/cbmbasic/Makefile                             |   2 +
+ lang/cbmbasic/files/patch-Makefile                 |  14 ++
+ lang/perl5-devel/Makefile                          |   2 +-
+ lang/perl5-devel/distinfo                          |   6 +-
+ lang/racket-minimal/Makefile                       |  21 ++-
+ lang/racket-minimal/distinfo                       |   6 +-
+ lang/racket-minimal/pkg-plist                      |   4 +
+ lang/racket/Makefile                               |   7 +-
+ lang/racket/distinfo                               |   6 +-
+ lang/racket/pkg-plist                              | 109 +++++++++-----
+ mail/bulk_mailer/Makefile                          |   9 +-
+ mail/policyd2/Makefile                             |  30 ++--
+ math/faiss/Makefile                                |   3 +
+ math/hs-Agda/Makefile                              |   2 +
+ math/universal/Makefile                            |   7 +-
+ math/universal/distinfo                            |   6 +-
+ math/universal/pkg-plist                           |   6 +-
+ net-im/chatterino2/Makefile                        |  10 +-
+ net-im/chatterino2/distinfo                        |  22 +--
+ net-im/chatterino2/files/patch-chatterino.pro      |  19 +++
+ net-mgmt/lg/Makefile                               |  12 +-
+ net-mgmt/monitoring-plugins/Makefile               | 165 ++++++++++-----------
+ .../files/extra-patch-dig-to-drill.diff            |   4 +-
+ net-mgmt/monitoring-plugins/pkg-help               |  18 ---
+ net-mgmt/monitoring-plugins/pkg-plist              |   2 +-
+ net-mgmt/nagios-plugins/Makefile                   |  17 +--
+ .../files/extra-patch-dig-to-drill.diff            |   4 +-
+ net-mgmt/nagios-plugins/pkg-plist                  |   2 +-
+ net/cloudflared/Makefile                           |   2 +-
+ net/cloudflared/distinfo                           |   6 +-
+ net/isc-dhcp44-server/Makefile                     |   8 +-
+ net/nbdkit/pkg-plist                               |   1 +
+ net/openmpi/Makefile                               |   2 +-
+ net/openmpi/distinfo                               |   6 +-
+ net/openmpi/pkg-plist                              |   8 +-
+ net/rubygem-epp-client-afnic/Makefile              |   3 +-
+ net/rubygem-epp-client-base/Makefile               |   1 -
+ net/rubygem-epp-client-rgp/Makefile                |   1 -
+ net/rubygem-epp-client-secdns/Makefile             |   1 -
+ net/rubygem-epp-client-smallregistry/Makefile      |   3 +-
+ net/vtun/Makefile                                  |  21 +--
+ net/vtun/pkg-plist                                 |   8 -
+ security/py-acme-tiny/Makefile                     |   7 +-
+ security/wolfssl/pkg-plist                         |  11 --
+ sysutils/bpytop/Makefile                           |   2 +
+ sysutils/bpytop/pkg-plist                          |   1 +
+ sysutils/munin-common/Makefile                     |   2 +-
+ sysutils/munin-contrib/Makefile                    |  18 ++-
+ sysutils/munin-master/Makefile                     |  26 ++--
+ sysutils/munin-node/Makefile                       |  70 +++++----
+ sysutils/py-borgmatic/Makefile                     |   2 +-
+ sysutils/py-borgmatic/distinfo                     |   6 +-
+ sysutils/tmux/Makefile                             |   2 +-
+ textproc/ydiff/Makefile                            |   4 +-
+ www/py-lektor/Makefile                             |   3 +-
+ www/py-lektor/distinfo                             |   6 +-
+ www/squid/Makefile                                 |  27 ++--
+ www/squid/distinfo                                 |   6 +-
+ www/squid/files/patch-src_security_Handshake.cc    | 147 ------------------
+ 88 files changed, 863 insertions(+), 642 deletions(-)
+ delete mode 100644 archivers/xarchiver/files/patch-src_bzip2.c
+ create mode 100644 archivers/xarchiver/files/patch-src_gzip__et__al.c
+ create mode 100644 archivers/xarchiver/files/patch-src_main.c
+ delete mode 100644 archivers/xarchiver/files/patch-src_tar.c
+ create mode 100644 graphics/geeqie-devel/Makefile
+ create mode 100644 graphics/geeqie-devel/distinfo
+ create mode 100644 graphics/geeqie-devel/files/patch-Makefile.am
+ create mode 100644 graphics/geeqie-devel/files/patch-configure.ac
+ create mode 100644 graphics/geeqie-devel/pkg-descr
+ create mode 100644 graphics/geeqie-devel/pkg-plist
+ create mode 100644 graphics/pgplot/files/patch-pgdispd_updatelgtitle.c
+ create mode 100644 lang/cbmbasic/files/patch-Makefile
+ create mode 100644 net-im/chatterino2/files/patch-chatterino.pro
+ delete mode 100644 net-mgmt/monitoring-plugins/pkg-help
+ delete mode 100644 www/squid/files/patch-src_security_Handshake.cc
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    330960240826..193c19c4bc6d  master -> master        
+remote:    c86244faa5d0..330960240826  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   330960240826..193c19c4bc6d  master -> master
+==== END: master ====
