@@ -1,0 +1,80 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: No route to host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 81a3060a04a1 MFC r364994: dhclient: improve error handling parsing option 119
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 81a3060a04a1..587059d7f195
+Fast-forward
+ share/man/man4/sdhci.4                    |  4 ++--
+ sys/amd64/linux/linux_dummy.c             |  1 -
+ sys/amd64/linux/linux_proto.h             |  7 ++++++-
+ sys/amd64/linux/linux_sysent.c            |  2 +-
+ sys/amd64/linux/linux_systrace_args.c     | 34 ++++++++++++++++++++++++++++++-
+ sys/amd64/linux/syscalls.master           |  3 ++-
+ sys/amd64/linux32/linux32_dummy.c         |  1 -
+ sys/amd64/linux32/linux32_proto.h         |  7 ++++++-
+ sys/amd64/linux32/linux32_sysent.c        |  2 +-
+ sys/amd64/linux32/linux32_systrace_args.c | 34 ++++++++++++++++++++++++++++++-
+ sys/amd64/linux32/syscalls.master         |  3 ++-
+ sys/arm64/linux/linux_dummy.c             |  1 -
+ sys/arm64/linux/linux_proto.h             |  7 ++++++-
+ sys/arm64/linux/linux_sysent.c            |  2 +-
+ sys/arm64/linux/linux_systrace_args.c     | 34 ++++++++++++++++++++++++++++++-
+ sys/arm64/linux/syscalls.master           |  9 +++++++-
+ sys/compat/linux/linux_file.c             | 14 +++++++++++++
+ sys/dev/sdhci/sdhci_pci.c                 |  3 +++
+ sys/i386/linux/linux_dummy.c              |  1 -
+ sys/i386/linux/linux_proto.h              |  7 ++++++-
+ sys/i386/linux/linux_sysent.c             |  2 +-
+ sys/i386/linux/linux_systrace_args.c      | 34 ++++++++++++++++++++++++++++++-
+ sys/i386/linux/syscalls.master            |  3 ++-
+ 23 files changed, 193 insertions(+), 22 deletions(-)
+ssh: connect to host git-01.md.hardenedbsd.org port 22: No route to host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/12-stable/master
+Your branch is ahead of 'origin/freebsd/12-stable/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 587059d7f195 MFC r364779: sdhci(4): Recognize the Texas Instruments PCIxx12 card reader.
+==== END: freebsd/12-stable/master ====
