@@ -1,0 +1,394 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/tinyproxy/files/patch-configure.ac
+Removing www/tinyproxy/files/patch-Makefile.am
+Auto-merging www/tinyproxy/Makefile
+CONFLICT (content): Merge conflict in www/tinyproxy/Makefile
+Removing sysutils/squashfs-tools/files/patch-squashfs-tools_pseudo.c
+Removing security/denyhosts/files/patch-DenyHosts-report.py
+Auto-merging security/Makefile
+Auto-merging net/proxychains/Makefile
+Removing dns/libpsl/files/patch-configure.ac
+Removing dns/libpsl/files/patch-Makefile.am
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc www/tinyproxy/Makefile
+index ebf0ef6f1bc8,eba14197e076..000000000000
+--- a/www/tinyproxy/Makefile
++++ b/www/tinyproxy/Makefile
+@@@ -12,14 -13,7 +13,18 @@@ COMMENT=	Small, efficient HTTP proxy se
+  LICENSE=	GPLv2
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +OPTIONS_DEFINE=	REVERSE TRANSPARENT XHEADER
+ +REVERSE_DESC=		Reverse proxy support
+ +TRANSPARENT_DESC=	Transparent proxy support
+ +XHEADER_DESC=		X-Tinyproxy header
+ +
+ +USES=		autoreconf gmake
+++=======
++ USES=		gmake tar:xz
+++>>>>>>> freebsd/master
+  
+  CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+  		--program-transform-name=""
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   archivers/py-brotli/Makefile
+	modified:   archivers/py-brotli/distinfo
+	modified:   astro/roadmap/Makefile
+	modified:   astro/saoimage/Makefile
+	modified:   audio/cdplay/Makefile
+	modified:   audio/ghostess/Makefile
+	modified:   audio/gimmix/Makefile
+	modified:   audio/jamin/Makefile
+	modified:   audio/ksmp3play/Makefile
+	modified:   audio/musicbox-tag-editor/Makefile
+	modified:   audio/nspmod/Makefile
+	modified:   audio/shout/Makefile
+	modified:   audio/toolame/Makefile
+	modified:   audio/wmrecord/Makefile
+	modified:   biology/grappa/Makefile
+	modified:   biology/lagan/Makefile
+	modified:   biology/phylip/Makefile
+	modified:   cad/transcalc/Makefile
+	modified:   cad/varkon/Makefile
+	modified:   comms/efax/Makefile
+	modified:   comms/seyon/Makefile
+	modified:   converters/shftool/Makefile
+	modified:   converters/vda2fbd/Makefile
+	modified:   databases/Makefile
+	modified:   databases/mysql-connector-c/pkg-descr
+	new file:   databases/py-python-binary-memcached/Makefile
+	new file:   databases/py-python-binary-memcached/distinfo
+	new file:   databases/py-python-binary-memcached/pkg-descr
+	modified:   deskutils/logjam/Makefile
+	modified:   deskutils/todo/Makefile
+	modified:   deskutils/todo/distinfo
+	modified:   devel/Makefile
+	modified:   devel/buildtool/Makefile
+	modified:   devel/check/Makefile
+	modified:   devel/check/distinfo
+	modified:   devel/editline/Makefile
+	modified:   devel/editline/distinfo
+	modified:   devel/github-backup-utils/Makefile
+	modified:   devel/github-backup-utils/distinfo
+	modified:   devel/jetbrains-clion/Makefile
+	modified:   devel/jetbrains-clion/distinfo
+	modified:   devel/jetbrains-clion/pkg-plist
+	modified:   devel/jetbrains-phpstorm/Makefile
+	modified:   devel/jetbrains-phpstorm/distinfo
+	modified:   devel/jetbrains-phpstorm/pkg-plist
+	modified:   devel/libinotify/Makefile
+	modified:   devel/libinotify/distinfo
+	modified:   devel/libphonenumber/Makefile
+	modified:   devel/libphonenumber/distinfo
+	modified:   devel/libunwind/Makefile
+	new file:   devel/libunwind/files/patch-llvm11
+	modified:   devel/openzz/Makefile
+	modified:   devel/p5-Type-Tiny/Makefile
+	modified:   devel/p5-Type-Tiny/distinfo
+	modified:   devel/py-cmd2/Makefile
+	modified:   devel/py-cmd2/distinfo
+	modified:   devel/py-datadog/Makefile
+	modified:   devel/py-datadog/distinfo
+	modified:   devel/py-dateutils/Makefile
+	modified:   devel/py-dateutils/distinfo
+	new file:   devel/py-dateutils/files/LICENSE
+	modified:   devel/py-ddtrace/Makefile
+	modified:   devel/py-ddtrace/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-oslo.log/Makefile
+	modified:   devel/py-oslo.log/distinfo
+	modified:   devel/py-oslo.messaging/Makefile
+	modified:   devel/py-oslo.messaging/distinfo
+	modified:   devel/py-pipx/Makefile
+	modified:   devel/py-pipx/distinfo
+	modified:   devel/pyrex/Makefile
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	new file:   devel/rubygem-aws-sdk-appflow/Makefile
+	new file:   devel/rubygem-aws-sdk-appflow/distinfo
+	new file:   devel/rubygem-aws-sdk-appflow/pkg-descr
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-gamelift/Makefile
+	modified:   devel/rubygem-aws-sdk-gamelift/distinfo
+	modified:   devel/rubygem-aws-sdk-mediaconvert/Makefile
+	modified:   devel/rubygem-aws-sdk-mediaconvert/distinfo
+	modified:   devel/rubygem-aws-sdk-redshift/Makefile
+	modified:   devel/rubygem-aws-sdk-redshift/distinfo
+	modified:   devel/rubygem-aws-sdk-resources/Makefile
+	modified:   devel/rubygem-aws-sdk-resources/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-route53resolver/Makefile
+	modified:   devel/rubygem-aws-sdk-route53resolver/distinfo
+	modified:   devel/rubygem-aws-sdk-s3/Makefile
+	modified:   devel/rubygem-aws-sdk-s3/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-grape_logging/Makefile
+	modified:   devel/rubygem-grape_logging/distinfo
+	modified:   devel/rubygem-json_schemer/Makefile
+	modified:   devel/rubygem-oj/Makefile
+	modified:   devel/rubygem-oj/distinfo
+	modified:   devel/rubygem-sentry-raven/Makefile
+	modified:   devel/rubygem-sentry-raven/distinfo
+	modified:   devel/rubygem-stringio/Makefile
+	modified:   devel/rubygem-stringio/distinfo
+	modified:   devel/sourcenav/Makefile
+	modified:   dns/checkdns/Makefile
+	modified:   dns/inadyn-mt/Makefile
+	modified:   dns/libpsl/Makefile
+	modified:   dns/libpsl/distinfo
+	deleted:    dns/libpsl/files/patch-Makefile.am
+	new file:   dns/libpsl/files/patch-Makefile.in
+	new file:   dns/libpsl/files/patch-configure
+	deleted:    dns/libpsl/files/patch-configure.ac
+	modified:   editors/gate/Makefile
+	modified:   editors/thoteditor/Makefile
+	modified:   emulators/cinc/Makefile
+	modified:   emulators/dtcyber/Makefile
+	modified:   emulators/e-uae/Makefile
+	modified:   finance/wmstock/Makefile
+	modified:   ftp/frox/Makefile
+	modified:   ftp/jftpgw/Makefile
+	modified:   ftp/ncftp3/Makefile
+	modified:   ftp/pftpd/Makefile
+	modified:   ftp/pureadmin/Makefile
+	modified:   ftp/wzdftpd/Makefile
+	modified:   games/bomberinstinct/Makefile
+	modified:   games/bygfoot/Makefile
+	modified:   games/cavezofphear/Makefile
+	modified:   games/cosmo/Makefile
+	modified:   games/cre/Makefile
+	modified:   games/drm/Makefile
+	modified:   games/ezquake/Makefile
+	modified:   games/vms-empire/Makefile
+	modified:   graphics/gstreamer1-plugins-opencv/pkg-plist
+	modified:   irc/hybserv/Makefile
+	modified:   irc/xaric/Makefile
+	modified:   mail/crm114/Makefile
+	modified:   mail/elmo/Makefile
+	modified:   math/py-statsmodels/Makefile
+	modified:   math/py-statsmodels/distinfo
+	modified:   math/py-statsmodels/pkg-plist
+	modified:   misc/cave/Makefile
+	modified:   misc/colortail/Makefile
+	modified:   misc/colortail/distinfo
+	modified:   misc/floatator/Makefile
+	modified:   misc/py-eemeter/Makefile
+	modified:   misc/py-orange3-timeseries/Makefile
+	new file:   multimedia/gstreamer1-plugins-bad/files/patch-git_a0cd455d
+	modified:   multimedia/msdl/Makefile
+	modified:   multimedia/transcode/Makefile
+	modified:   net-mgmt/ettercap/Makefile
+	modified:   net-mgmt/ettercap/distinfo
+	modified:   net/drive/Makefile
+	modified:   net/drive/distinfo
+	modified:   net/librsync/Makefile
+	modified:   net/librsync/distinfo
+	modified:   net/proxychains/Makefile
+	new file:   net/proxychains/files/patch-proxychains_core.c
+	new file:   net/proxychains/files/patch-proxychains_core.h
+	modified:   net/py-smart-open/Makefile
+	modified:   net/py-smart-open/distinfo
+	modified:   net/rubygem-fog-aws/Makefile
+	modified:   net/rubygem-fog-aws/distinfo
+	modified:   net/rubygem-google-cloud-storage/Makefile
+	modified:   net/rubygem-google-cloud-storage/distinfo
+	new file:   net/vinagre/files/patch-plugins_vnc_vinagre-vnc-connection.c
+	new file:   net/vinagre/files/patch-plugins_vnc_vinagre-vnc-connection.h
+	modified:   net/wireguard/Makefile
+	modified:   net/wireguard/distinfo
+	modified:   security/Makefile
+	modified:   security/bugs/Makefile
+	modified:   security/denyhosts/Makefile
+	modified:   security/denyhosts/distinfo
+	deleted:    security/denyhosts/files/patch-DenyHosts-report.py
+	modified:   security/denyhosts/files/patch-daemon-control-dist
+	modified:   security/denyhosts/files/patch-denyhosts.conf
+	modified:   security/denyhosts/files/patch-setup.py
+	modified:   security/dmitry/Makefile
+	modified:   security/doorman/Makefile
+	modified:   security/op/Makefile
+	modified:   security/py-google-auth/Makefile
+	modified:   security/py-google-auth/distinfo
+	new file:   security/py-uhashring/Makefile
+	new file:   security/py-uhashring/distinfo
+	new file:   security/py-uhashring/pkg-descr
+	modified:   security/rubygem-omniauth-oauth2-generic/Makefile
+	modified:   security/rubygem-omniauth-oauth2-generic/distinfo
+	modified:   security/totp-cli/Makefile
+	modified:   security/totp-cli/distinfo
+	modified:   shells/bash-completion/Makefile
+	modified:   shells/bash-completion/pkg-plist
+	modified:   shells/esh/Makefile
+	modified:   sysutils/cpu/Makefile
+	modified:   sysutils/dsbdriverd/Makefile
+	modified:   sysutils/dsbdriverd/distinfo
+	modified:   sysutils/dsbdriverd/files/dsbdriverd.in
+	modified:   sysutils/squashfs-tools/Makefile
+	renamed:    sysutils/squashfs-tools/files/patch-squashfs-tools_Makefile -> sysutils/squashfs-tools/files/patch-Makefile
+	modified:   sysutils/squashfs-tools/files/patch-action.c
+	new file:   sysutils/squashfs-tools/files/patch-pseudo.c
+	deleted:    sysutils/squashfs-tools/files/patch-squashfs-tools_pseudo.c
+	renamed:    sysutils/squashfs-tools/files/patch-squashfs-tools_unsquashfs.c -> sysutils/squashfs-tools/files/patch-unsquashfs.c
+	modified:   sysutils/usbhid-dump/Makefile
+	modified:   sysutils/usbhid-dump/distinfo
+	modified:   textproc/asciidoc/Makefile
+	modified:   textproc/asciidoc/distinfo
+	modified:   textproc/minify/Makefile
+	modified:   textproc/minify/distinfo
+	modified:   textproc/rubygem-loofah/Makefile
+	modified:   textproc/rubygem-loofah/distinfo
+	modified:   textproc/sift/Makefile
+	modified:   textproc/sift/distinfo
+	modified:   www/Makefile
+	modified:   www/libnghttp2/Makefile
+	modified:   www/libnghttp2/distinfo
+	modified:   www/nghttp2/Makefile
+	modified:   www/nghttp2/distinfo
+	new file:   www/py-forcediphttpsadapter/Makefile
+	new file:   www/py-forcediphttpsadapter/distinfo
+	new file:   www/py-forcediphttpsadapter/pkg-descr
+	modified:   www/py-google-cloud-storage/Makefile
+	modified:   www/py-google-cloud-storage/distinfo
+	modified:   www/py-httpx/Makefile
+	modified:   www/tinyproxy/distinfo
+	deleted:    www/tinyproxy/files/patch-Makefile.am
+	new file:   www/tinyproxy/files/patch-Makefile.in
+	new file:   www/tinyproxy/files/patch-configure
+	deleted:    www/tinyproxy/files/patch-configure.ac
+	new file:   www/tinyproxy/files/patch-etc-Makefile.in
+	modified:   www/tinyproxy/files/patch-src-main.c
+	new file:   x11-fm/nemo/files/patch-libnemo-private_nemo-global-preferences.c
+	new file:   x11-fm/nemo/files/patch-libnemo-private_nemo-global-preferences.h
+	modified:   x11-fonts/ots/Makefile
+	modified:   x11-fonts/ots/distinfo
+	modified:   x11/bricons/Makefile
+	modified:   x11/tycoon/Makefile
+	modified:   x11/wmmatrix/Makefile
+	modified:   x11/wmxss/Makefile
+	modified:   x11/xbanner/Makefile
+	modified:   x11/xgrab/Makefile
+	modified:   x11/xmascot/Makefile
+	modified:   x11/xmon/Makefile
+	modified:   x11/xnee/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   www/tinyproxy/Makefile
+
+
+It took 3.69 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 77265849469b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.00 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 77265849469b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====

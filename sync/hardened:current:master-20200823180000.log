@@ -1,0 +1,287 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/x86/include/specialreg.h
+Auto-merging sys/sys/sysent.h
+Auto-merging sys/sys/imgact_elf.h
+Auto-merging sys/sys/elf_common.h
+Auto-merging sys/powerpc/powerpc/elf64_machdep.c
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging sys/arm/arm/elf_machdep.c
+Auto-merging sys/amd64/linux/linux_sysvec.c
+CONFLICT (content): Merge conflict in sys/amd64/linux/linux_sysvec.c
+Auto-merging sys/amd64/include/vmparam.h
+CONFLICT (content): Merge conflict in sys/amd64/include/vmparam.h
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging sys/amd64/amd64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/amd64/amd64/elf_machdep.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/amd64/amd64/elf_machdep.c
+index 7cd2ed8e500b,3182d1758b18..000000000000
+--- a/sys/amd64/amd64/elf_machdep.c
++++ b/sys/amd64/amd64/elf_machdep.c
+@@@ -67,10 -64,10 +67,17 @@@ struct sysentvec elf64_freebsd_sysvec_l
+  	.sv_imgact_try	= NULL,
+  	.sv_minsigstksz	= MINSIGSTKSZ,
+  	.sv_minuser	= VM_MIN_ADDRESS,
+++<<<<<<< HEAD
+ +	.sv_maxuser	= VM_MAXUSER_ADDRESS,
+ +	.sv_usrstack	= USRSTACK,
+ +	.sv_psstrings	= PS_STRINGS,
+ +	.sv_stackprot	= VM_PROT_READ | VM_PROT_WRITE,
+++=======
++ 	.sv_maxuser	= VM_MAXUSER_ADDRESS_LA48,
++ 	.sv_usrstack	= USRSTACK_LA48,
++ 	.sv_psstrings	= PS_STRINGS_LA48,
++ 	.sv_stackprot	= VM_PROT_ALL,
+++>>>>>>> freebsd/current/master
+  	.sv_copyout_auxargs = __elfN(freebsd_copyout_auxargs),
+  	.sv_copyout_strings	= exec_copyout_strings,
+  	.sv_setregs	= exec_setregs,
+@@@ -86,12 -83,59 +93,62 @@@
+  	.sv_schedtail	= NULL,
+  	.sv_thread_detach = NULL,
+  	.sv_trap	= NULL,
+ +	.sv_pax_aslr_init = pax_aslr_init_vmspace,
+ +#if !defined(PAX_ASLR)
+  	.sv_stackgap	= elf64_stackgap,
+ +#endif
+  };
+- INIT_SYSENTVEC(elf64_sysvec, &elf64_freebsd_sysvec);
++ 
++ struct sysentvec elf64_freebsd_sysvec_la57 = {
++ 	.sv_size	= SYS_MAXSYSCALL,
++ 	.sv_table	= sysent,
++ 	.sv_errsize	= 0,
++ 	.sv_errtbl	= NULL,
++ 	.sv_transtrap	= NULL,
++ 	.sv_fixup	= __elfN(freebsd_fixup),
++ 	.sv_sendsig	= sendsig,
++ 	.sv_sigcode	= sigcode,
++ 	.sv_szsigcode	= &szsigcode,
++ 	.sv_name	= "FreeBSD ELF64",
++ 	.sv_coredump	= __elfN(coredump),
++ 	.sv_imgact_try	= NULL,
++ 	.sv_minsigstksz	= MINSIGSTKSZ,
++ 	.sv_minuser	= VM_MIN_ADDRESS,
++ 	.sv_maxuser	= VM_MAXUSER_ADDRESS_LA57,
++ 	.sv_usrstack	= USRSTACK_LA57,
++ 	.sv_psstrings	= PS_STRINGS_LA57,
++ 	.sv_stackprot	= VM_PROT_ALL,
++ 	.sv_copyout_auxargs = __elfN(freebsd_copyout_auxargs),
++ 	.sv_copyout_strings	= exec_copyout_strings,
++ 	.sv_setregs	= exec_setregs,
++ 	.sv_fixlimit	= NULL,
++ 	.sv_maxssiz	= NULL,
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_ASLR | SV_LP64 | SV_SHP |
++ 			    SV_TIMEKEEP,
++ 	.sv_set_syscall_retval = cpu_set_syscall_retval,
++ 	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
++ 	.sv_syscallnames = syscallnames,
++ 	.sv_shared_page_base = SHAREDPAGE_LA57,
++ 	.sv_shared_page_len = PAGE_SIZE,
++ 	.sv_schedtail	= NULL,
++ 	.sv_thread_detach = NULL,
++ 	.sv_trap	= NULL,
++ 	.sv_stackgap	= elf64_stackgap,
++ };
++ 
++ static void
++ amd64_init_sysvecs(void *arg)
++ {
++ 	amd64_lower_shared_page(&elf64_freebsd_sysvec_la48);
++ 	if (la57) {
++ 		exec_sysvec_init(&elf64_freebsd_sysvec_la57);
++ 		exec_sysvec_init_secondary(&elf64_freebsd_sysvec_la57,
++ 		    &elf64_freebsd_sysvec_la48);
++ 	} else {
++ 		exec_sysvec_init(&elf64_freebsd_sysvec_la48);
++ 	}
++ }
++ SYSINIT(elf64_sysvec, SI_SUB_EXEC, SI_ORDER_ANY, amd64_init_sysvecs, NULL);
+  
+  void
+  amd64_lower_shared_page(struct sysentvec *sv)
+diff --cc sys/amd64/include/vmparam.h
+index c52d49053df4,64eed5760357..000000000000
+--- a/sys/amd64/include/vmparam.h
++++ b/sys/amd64/include/vmparam.h
+@@@ -169,29 -169,35 +169,41 @@@
+   * 0xffffffff80000000                        KERNBASE
+   */
+  
+- #define	VM_MIN_KERNEL_ADDRESS	KVADDR(KPML4BASE, 0, 0, 0)
+- #define	VM_MAX_KERNEL_ADDRESS	KVADDR(KPML4BASE + NKPML4E - 1, \
++ #define	VM_MIN_KERNEL_ADDRESS	KV4ADDR(KPML4BASE, 0, 0, 0)
++ #define	VM_MAX_KERNEL_ADDRESS	KV4ADDR(KPML4BASE + NKPML4E - 1, \
+  					NPDPEPG-1, NPDEPG-1, NPTEPG-1)
+  
+- #define	DMAP_MIN_ADDRESS	KVADDR(DMPML4I, 0, 0, 0)
+- #define	DMAP_MAX_ADDRESS	KVADDR(DMPML4I + NDMPML4E, 0, 0, 0)
++ #define	DMAP_MIN_ADDRESS	KV4ADDR(DMPML4I, 0, 0, 0)
++ #define	DMAP_MAX_ADDRESS	KV4ADDR(DMPML4I + NDMPML4E, 0, 0, 0)
+  
+- #define	LARGEMAP_MIN_ADDRESS	KVADDR(LMSPML4I, 0, 0, 0)
+- #define	LARGEMAP_MAX_ADDRESS	KVADDR(LMEPML4I + 1, 0, 0, 0)
++ #define	LARGEMAP_MIN_ADDRESS	KV4ADDR(LMSPML4I, 0, 0, 0)
++ #define	LARGEMAP_MAX_ADDRESS	KV4ADDR(LMEPML4I + 1, 0, 0, 0)
+  
+- #define	KERNBASE		KVADDR(KPML4I, KPDPI, 0, 0)
++ #define	KERNBASE		KV4ADDR(KPML4I, KPDPI, 0, 0)
+  
+- #define	UPT_MAX_ADDRESS		KVADDR(PML4PML4I, PML4PML4I, PML4PML4I, PML4PML4I)
+- #define	UPT_MIN_ADDRESS		KVADDR(PML4PML4I, 0, 0, 0)
++ #define	UPT_MAX_ADDRESS		KV4ADDR(PML4PML4I, PML4PML4I, PML4PML4I, PML4PML4I)
++ #define	UPT_MIN_ADDRESS		KV4ADDR(PML4PML4I, 0, 0, 0)
+  
+- #define	VM_MAXUSER_ADDRESS	UVADDR(NUPML4E, 0, 0, 0)
++ #define	VM_MAXUSER_ADDRESS_LA57	UVADDR(NUPML5E, 0, 0, 0, 0)
++ #define	VM_MAXUSER_ADDRESS_LA48	UVADDR(0, NUP4ML4E, 0, 0, 0)
++ #define	VM_MAXUSER_ADDRESS	VM_MAXUSER_ADDRESS_LA57
+  
+++<<<<<<< HEAD
+ +#define	SHAREDPAGE		(VM_MAXUSER_ADDRESS - PAGE_SIZE)
+ +#define	SHAREDPAGE_GUARD	(4 * PAGE_SIZE)
+ +#define	USRSTACK		(SHAREDPAGE - SHAREDPAGE_GUARD)
+++=======
++ #define	SHAREDPAGE_LA57		(VM_MAXUSER_ADDRESS_LA57 - PAGE_SIZE)
++ #define	SHAREDPAGE_LA48		(VM_MAXUSER_ADDRESS_LA48 - PAGE_SIZE)
++ #define	USRSTACK_LA57		SHAREDPAGE_LA57
++ #define	USRSTACK_LA48		SHAREDPAGE_LA48
++ #define	USRSTACK		USRSTACK_LA48
++ #define	PS_STRINGS_LA57		(USRSTACK_LA57 - sizeof(struct ps_strings))
++ #define	PS_STRINGS_LA48		(USRSTACK_LA48 - sizeof(struct ps_strings))
+++>>>>>>> freebsd/current/master
+  
+  #define	VM_MAX_ADDRESS		UPT_MAX_ADDRESS
+ -#define	VM_MIN_ADDRESS		(0)
+ +#define	VM_MIN_ADDRESS		(65536)
+  
+  /*
+   * XXX Allowing dmaplimit == 0 is a temporary workaround for vt(4) efifb's
+diff --cc sys/amd64/linux/linux_sysvec.c
+index d95fa5b63d5d,bb80f324868c..000000000000
+--- a/sys/amd64/linux/linux_sysvec.c
++++ b/sys/amd64/linux/linux_sysvec.c
+@@@ -742,10 -739,10 +742,17 @@@ struct sysentvec elf_linux_sysvec = 
+  	.sv_imgact_try	= linux_exec_imgact_try,
+  	.sv_minsigstksz	= LINUX_MINSIGSTKSZ,
+  	.sv_minuser	= VM_MIN_ADDRESS,
+++<<<<<<< HEAD
+ +	.sv_maxuser	= VM_MAXUSER_ADDRESS,
+ +	.sv_usrstack	= USRSTACK,
+ +	.sv_psstrings	= PS_STRINGS,
+ +	.sv_stackprot	= VM_PROT_READ | VM_PROT_WRITE,
+++=======
++ 	.sv_maxuser	= VM_MAXUSER_ADDRESS_LA48,
++ 	.sv_usrstack	= USRSTACK_LA48,
++ 	.sv_psstrings	= PS_STRINGS_LA48,
++ 	.sv_stackprot	= VM_PROT_ALL,
+++>>>>>>> freebsd/current/master
+  	.sv_copyout_auxargs = linux_copyout_auxargs,
+  	.sv_copyout_strings = linux_copyout_strings,
+  	.sv_setregs	= linux_exec_setregs,
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/amd64/acpica/acpi_wakecode.S
+	modified:   sys/amd64/amd64/cpu_switch.S
+	modified:   sys/amd64/amd64/efirt_machdep.c
+	modified:   sys/amd64/amd64/genassym.c
+	modified:   sys/amd64/amd64/locore.S
+	modified:   sys/amd64/amd64/mp_machdep.c
+	modified:   sys/amd64/amd64/mpboot.S
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/amd64/amd64/vm_machdep.c
+	modified:   sys/amd64/include/md_var.h
+	modified:   sys/amd64/include/param.h
+	modified:   sys/amd64/include/pmap.h
+	modified:   sys/amd64/include/proc.h
+	modified:   sys/amd64/include/vmm.h
+	modified:   sys/amd64/vmm/amd/svm.c
+	modified:   sys/amd64/vmm/intel/vmx.c
+	modified:   sys/amd64/vmm/vmm_instruction_emul.c
+	modified:   sys/arm/arm/elf_machdep.c
+	modified:   sys/arm64/arm64/elf32_machdep.c
+	modified:   sys/cddl/dev/dtrace/amd64/dtrace_subr.c
+	modified:   sys/kern/imgact_elf.c
+	modified:   sys/kern/kern_sharedpage.c
+	modified:   sys/kern/subr_bus.c
+	modified:   sys/kern/vfs_lookup.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/netgraph/bluetooth/drivers/ubt/ng_ubt.c
+	modified:   sys/powerpc/powerpc/elf64_machdep.c
+	modified:   sys/sys/elf_common.h
+	modified:   sys/sys/imgact_elf.h
+	modified:   sys/sys/namei.h
+	modified:   sys/sys/sysent.h
+	modified:   sys/x86/acpica/acpi_wakeup.c
+	modified:   sys/x86/include/procctl.h
+	modified:   sys/x86/include/specialreg.h
+	modified:   usr.bin/elfctl/elfctl.c
+	modified:   usr.bin/proccontrol/proccontrol.1
+	modified:   usr.bin/proccontrol/proccontrol.c
+	modified:   usr.sbin/bhyve/gdb.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/amd64/amd64/elf_machdep.c
+	both modified:   sys/amd64/include/vmparam.h
+	both modified:   sys/amd64/linux/linux_sysvec.c
+
+HEAD is now at cecb05fffc36 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at cecb05fffc36 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====

@@ -1,0 +1,371 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/radare-cutter/files/patch-widgets_ColorThemeListView.cpp
+Removing x11/radare-cutter/files/patch-widgets_ColorPicker.cpp
+Removing x11/radare-cutter/files/patch-lib__radare2.pri
+Removing www/nginx/files/extra-patch-nginx_upstream_check_module-config
+Removing www/miniflux/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Auto-merging shells/bash/Makefile
+Auto-merging print/foomatic-filters/Makefile
+CONFLICT (content): Merge conflict in print/foomatic-filters/Makefile
+Auto-merging net/Makefile
+Auto-merging net-mgmt/ipv6calc/Makefile
+Removing games/cockatrice/files/patch-cockatrice_src_replay__timeline__widget.cpp
+Removing games/cockatrice/files/patch-cockatrice_src_arrowitem.h
+Removing editors/apel/files/patch-pccl-20.el
+Removing editors/apel/files/patch-APEL-MK
+Removing comms/echolinux/files/patch-echogui_testgui_main.c
+Removing comms/echolinux/files/patch-echogui_testgui_cb.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc print/foomatic-filters/Makefile
+index 6f799cecac4b,090991d890ab..000000000000
+--- a/print/foomatic-filters/Makefile
++++ b/print/foomatic-filters/Makefile
+@@@ -32,18 -30,19 +30,34 @@@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALB
+  CPPFLAGS+=	-I${LOCALBASE}/include
+  LDFLAGS+=	-L${LOCALBASE}/lib
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +OPTIONS_DEFINE=			A2PS DBUS CUPS_IMAGE MPAGE
+ +OPTIONS_RADIO=			ENSCRIPT
+ +OPTIONS_RADIO_ENSCRIPT=		ENSCRIPT_A4 ENSCRIPT_LETTER ENSCRIPT_LETTERDJ
+ +OPTIONS_DEFAULT=		A2PS CUPS_IMAGE DBUS ENSCRIPT_A4 MPAGE
+ +CUPS_IMAGE_DESC=		Install cups image utilities
+ +A2PS_DESC=			Install a2ps convertor
+ +ENSCRIPT_A4_DESC=		Install enscript convertor (A4)
+ +ENSCRIPT_LETTER_DESC=		Install enscript convertor (letter)
+ +ENSCRIPT_LETTERDJ_DESC=		Install enscript convertor (letterdj)
+ +MPAGE_DESC=			Print multiple pages per sheet of paper
+++=======
++ CONFLICTS=	cups-filters-[0-9]*
++ 
++ OPTIONS_DEFINE=		A2PS CUPS_IMAGE DBUS MPAGE
++ OPTIONS_DEFAULT=	A2PS CUPS_IMAGE DBUS ENSCRIPT_A4 MPAGE
++ OPTIONS_RADIO=		ENSCRIPT
++ OPTIONS_RADIO_ENSCRIPT=	ENSCRIPT_A4 ENSCRIPT_LETTER ENSCRIPT_LETTERDJ
++ 
++ A2PS_DESC=		Install a2ps convertor
++ CUPS_IMAGE_DESC=	Install cups image utilities
++ ENSCRIPT_A4_DESC=	Install enscript convertor (A4)
++ ENSCRIPT_LETTERDJ_DESC=	Install enscript convertor (letterdj)
++ ENSCRIPT_LETTER_DESC=	Install enscript convertor (letter)
++ MPAGE_DESC=		Print multiple pages per sheet of paper
+++>>>>>>> freebsd/master
+  
+  A2PS_RUN_DEPENDS=		a2ps:print/a2ps
+  CUPS_IMAGE_LIB_DEPENDS=		libcupsimage.so:print/cups
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   archivers/gcpio/Makefile
+	modified:   audio/codec2/Makefile
+	modified:   audio/codec2/files/patch-CMakeLists.txt
+	modified:   audio/codec2/files/patch-src__freedv_api.c
+	new file:   audio/codec2/files/patch-src_codec2__ofdm.h
+	new file:   audio/codec2/files/patch-src_ofdm__demod.c
+	new file:   audio/codec2/files/patch-src_ofdm__get__test__bits.c
+	new file:   audio/codec2/files/patch-src_ofdm__mod.c
+	new file:   audio/codec2/files/patch-src_ofdm__put__test__bits.c
+	modified:   audio/fasttracker2/Makefile
+	modified:   audio/fasttracker2/distinfo
+	modified:   audio/xoscope/Makefile
+	new file:   audio/xoscope/files/patch-com__gtk.c
+	new file:   audio/xoscope/files/patch-com__gtk.h
+	new file:   audio/xoscope/files/patch-display.c
+	new file:   audio/xoscope/files/patch-gr__gtk.c
+	modified:   benchmarks/Makefile
+	modified:   benchmarks/flowgrind/Makefile
+	modified:   benchmarks/flowgrind/distinfo
+	new file:   benchmarks/mangohud/Makefile
+	new file:   benchmarks/mangohud/distinfo
+	new file:   benchmarks/mangohud/files/patch-include_elfhacks.h
+	new file:   benchmarks/mangohud/files/patch-meson.build
+	new file:   benchmarks/mangohud/files/patch-src_elfhacks.cpp
+	new file:   benchmarks/mangohud/files/patch-src_meson.build
+	new file:   benchmarks/mangohud/pkg-descr
+	modified:   comms/echolinux/Makefile
+	modified:   comms/echolinux/files/patch-echogui_servercode.c
+	modified:   comms/echolinux/files/patch-echogui_testgui.c
+	new file:   comms/echolinux/files/patch-echogui_testgui__cb.c
+	new file:   comms/echolinux/files/patch-echogui_testgui__main.c
+	deleted:    comms/echolinux/files/patch-echogui_testgui_cb.c
+	deleted:    comms/echolinux/files/patch-echogui_testgui_main.c
+	new file:   comms/echolinux/files/patch-echogui_threadFuncs.c
+	new file:   comms/echolinux/files/patch-echolinux_control.c
+	modified:   comms/echolinux/files/patch-echolinux_rtpacket.c
+	new file:   comms/echolinux/files/patch-echolinux_vox.c
+	modified:   comms/xdx/Makefile
+	new file:   comms/xdx/files/patch-src_Makefile.in
+	new file:   comms/xdx/files/patch-src_gui.c
+	new file:   comms/xdx/files/patch-src_gui.h
+	modified:   databases/Makefile
+	modified:   databases/postgresql-jdbc/Makefile
+	modified:   databases/postgresql-jdbc/distinfo
+	new file:   databases/rubygem-redis-namespace17/Makefile
+	new file:   databases/rubygem-redis-namespace17/distinfo
+	new file:   databases/rubygem-redis-namespace17/pkg-descr
+	modified:   devel/Makefile
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/distinfo
+	modified:   devel/nspr/Makefile
+	modified:   devel/nspr/distinfo
+	modified:   devel/py-nodeenv/Makefile
+	modified:   devel/py-nodeenv/distinfo
+	new file:   devel/py-pyinquirer/Makefile
+	new file:   devel/py-pyinquirer/distinfo
+	new file:   devel/py-pyinquirer/pkg-descr
+	modified:   devel/radare2/Makefile
+	modified:   devel/radare2/distinfo
+	modified:   devel/radare2/pkg-plist
+	new file:   devel/rubygem-ecma-re-validator/Makefile
+	new file:   devel/rubygem-ecma-re-validator/distinfo
+	new file:   devel/rubygem-ecma-re-validator/pkg-descr
+	new file:   devel/rubygem-hana/Makefile
+	new file:   devel/rubygem-hana/distinfo
+	new file:   devel/rubygem-hana/pkg-descr
+	new file:   devel/rubygem-json_schemer/Makefile
+	new file:   devel/rubygem-json_schemer/distinfo
+	new file:   devel/rubygem-json_schemer/pkg-descr
+	modified:   devel/rust-analyzer/Makefile
+	modified:   devel/rust-analyzer/distinfo
+	modified:   dns/bind-tools/pkg-plist-devel
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-bind-min-override-ttl
+	modified:   dns/bind9-devel/pkg-plist
+	modified:   editors/apel/Makefile
+	modified:   editors/apel/distinfo
+	deleted:    editors/apel/files/patch-APEL-MK
+	deleted:    editors/apel/files/patch-pccl-20.el
+	modified:   emulators/citra-qt5/Makefile
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   games/cockatrice/Makefile
+	modified:   games/cockatrice/distinfo
+	new file:   games/cockatrice/files/patch-CMakeLists.txt
+	deleted:    games/cockatrice/files/patch-cockatrice_src_arrowitem.h
+	deleted:    games/cockatrice/files/patch-cockatrice_src_replay__timeline__widget.cpp
+	modified:   games/openjk/Makefile
+	modified:   games/openjk/distinfo
+	modified:   games/openjk/files/patch-CMakeModules_InstallConfig.cmake
+	modified:   graphics/drm-legacy-kmod/Makefile
+	modified:   graphics/drm-legacy-kmod/distinfo
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   irc/eggdrop-devel/Makefile
+	modified:   irc/eggdrop-devel/distinfo
+	modified:   japanese/anthy/Makefile
+	new file:   japanese/anthy/files/patch-src-util_anthy.el
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   lang/libobjc2/Makefile
+	modified:   lang/libobjc2/distinfo
+	new file:   lang/mosh/files/patch-extlibs_gc-cvs_include_private_gc__priv.h
+	new file:   lang/mosh/files/patch-extlibs_gc-cvs_os__dep.c
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   lang/perl5-devel/files/patch-Configure
+	modified:   lang/perl5-devel/files/patch-t_porting_customized.dat
+	modified:   lang/perl5-devel/pkg-plist
+	modified:   lang/perl5-devel/version.mk
+	modified:   mail/isoqlog/Makefile
+	modified:   mail/thunderbird/Makefile
+	modified:   mail/thunderbird/files/patch-cubeb-oss
+	modified:   math/galculator/Makefile
+	new file:   math/galculator/files/patch-src_config__file.c
+	modified:   multimedia/gmmlib/Makefile
+	modified:   multimedia/gmmlib/distinfo
+	modified:   multimedia/vmaf/Makefile
+	modified:   multimedia/vmaf/distinfo
+	modified:   multimedia/vmaf/pkg-plist
+	modified:   net-im/matterbridge/Makefile
+	modified:   net-im/matterbridge/distinfo
+	modified:   net-mgmt/ipv6calc/Makefile
+	new file:   net-mgmt/pmacct/files/patch-src_nfacctd.c
+	new file:   net-mgmt/pmacct/files/patch-src_pmacctd.c
+	new file:   net-mgmt/pmacct/files/patch-src_pmbgpd.c
+	new file:   net-mgmt/pmacct/files/patch-src_pmbmpd.c
+	new file:   net-mgmt/pmacct/files/patch-src_pmtelemetryd.c
+	new file:   net-mgmt/pmacct/files/patch-src_sfacctd.c
+	modified:   net/Makefile
+	modified:   net/go-bapu/Makefile
+	modified:   net/netatalk3/files/patch-etc_afpd_directory.h
+	new file:   net/rubygem-gitlab-fog-azure-rm/Makefile
+	new file:   net/rubygem-gitlab-fog-azure-rm/distinfo
+	new file:   net/rubygem-gitlab-fog-azure-rm/pkg-descr
+	new file:   net/rubygem-uri_template/Makefile
+	new file:   net/rubygem-uri_template/distinfo
+	new file:   net/rubygem-uri_template/pkg-descr
+	modified:   net/syncthing/Makefile
+	new file:   net/syncthing/files/patch-syncthing_lib_api_api.go
+	new file:   net/syncthing/files/patch-syncthing_lib_api_api__test.go
+	new file:   net/syncthing/files/patch-syncthing_lib_connections_service.go
+	new file:   net/syncthing/files/patch-syncthing_lib_tlsutil_tlsutil.go
+	modified:   print/foomatic-filters/files/patch-foomaticrip.c
+	new file:   print/foomatic-filters/files/patch-options.c
+	modified:   science/lammps/Makefile
+	modified:   science/lammps/distinfo
+	modified:   security/ca_root_nss/Makefile
+	modified:   security/ca_root_nss/distinfo
+	modified:   security/medusa/Makefile
+	modified:   security/nss/Makefile
+	modified:   security/nss/distinfo
+	modified:   security/openconnect/Makefile
+	modified:   security/openconnect/distinfo
+	modified:   security/openconnect/pkg-plist
+	modified:   security/openvpn-auth-ldap/Makefile
+	modified:   shells/bash/Makefile
+	modified:   shells/bash/files/patch-doc_bash.1
+	modified:   sysutils/bsdisks/Makefile
+	modified:   sysutils/bsdisks/distinfo
+	modified:   sysutils/openzfs-kmod/Makefile
+	modified:   sysutils/openzfs-kmod/distinfo
+	modified:   sysutils/openzfs/Makefile
+	modified:   sysutils/openzfs/distinfo
+	modified:   sysutils/openzfs/pkg-plist
+	modified:   sysutils/rubygem-bolt/Makefile
+	modified:   sysutils/rubygem-bolt/distinfo
+	modified:   textproc/qr/Makefile
+	modified:   www/firefox-esr/Makefile
+	modified:   www/firefox-esr/files/patch-cubeb-oss
+	modified:   www/firefox-esr/pkg-message
+	modified:   www/firefox/Makefile
+	modified:   www/firefox/files/patch-cubeb-oss
+	modified:   www/firefox/pkg-message
+	deleted:    www/miniflux/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+	modified:   www/nginx/Makefile
+	modified:   www/nginx/Makefile.extmod
+	deleted:    www/nginx/files/extra-patch-nginx_upstream_check_module-config
+	modified:   www/nginx/pkg-plist
+	modified:   x11-drivers/xf86-video-geode/Makefile
+	new file:   x11-drivers/xf86-video-geode/files/patch-src_geode.h
+	new file:   x11-drivers/xf86-video-geode/files/patch-src_gx__video.c
+	new file:   x11-drivers/xf86-video-geode/files/patch-src_lx__driver.c
+	new file:   x11-drivers/xf86-video-geode/files/patch-src_panel.c
+	new file:   x11-drivers/xf86-video-geode/files/patch-src_panel_panel.c
+	modified:   x11-toolkits/wlroots/Makefile
+	modified:   x11-toolkits/wlroots/distinfo
+	modified:   x11/radare-cutter/Makefile
+	modified:   x11/radare-cutter/distinfo
+	deleted:    x11/radare-cutter/files/patch-lib__radare2.pri
+	deleted:    x11/radare-cutter/files/patch-widgets_ColorPicker.cpp
+	deleted:    x11/radare-cutter/files/patch-widgets_ColorThemeListView.cpp
+	new file:   x11/radare-cutter/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   print/foomatic-filters/Makefile
+
+
+It took 3.07 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 229c03bf3b3d Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.99 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 229c03bf3b3d Merge remote-tracking branch 'freebsd/master'
+==== END: master ====

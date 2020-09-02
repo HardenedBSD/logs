@@ -1,0 +1,124 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 25 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 0091ec578ee7..26bd8c4f8802
+Fast-forward
+ Makefile.inc1                                      |    4 +-
+ Makefile.libcompat                                 |    6 +-
+ lib/clang/llvm.build.mk                            |    2 +-
+ libexec/rc/rc.conf                                 |    4 +-
+ libexec/rc/rc.d/Makefile                           |    3 +-
+ libexec/rc/rc.d/SERVERS                            |    2 +-
+ libexec/rc/rc.d/abi                                |   62 -
+ libexec/rc/rc.d/linux                              |   60 +
+ libexec/rc/rc.d/localpkg                           |    2 +-
+ libexec/rc/rc.d/sysvipc                            |   26 +
+ share/man/man4/Makefile                            |    2 +
+ share/man/man4/cp2112.4                            |   87 ++
+ share/man/man4/gpiokeys.4                          |  152 ++
+ share/man/man4/gre.4                               |   11 +-
+ share/man/man4/linux.4                             |    9 +-
+ share/zoneinfo/Makefile                            |    2 +
+ sys/arm/allwinner/aw_cir.c                         |   14 +-
+ sys/arm/allwinner/clkng/ccu_sun8i_r.c              |    2 +-
+ sys/cam/cam_xpt.c                                  |   41 +-
+ sys/cam/cam_xpt.h                                  |    2 -
+ sys/cam/scsi/scsi_da.c                             |    1 +
+ .../opensolaris/uts/common/fs/zfs/dmu_objset.c     |    6 +
+ .../opensolaris/uts/common/fs/zfs/dmu_send.c       |    8 +
+ .../opensolaris/uts/common/fs/zfs/dsl_dataset.c    |   23 +-
+ .../opensolaris/uts/common/fs/zfs/dsl_destroy.c    |   15 +
+ .../opensolaris/uts/common/fs/zfs/dsl_dir.c        |    2 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/spa.c    |   34 +-
+ .../opensolaris/uts/common/fs/zfs/sys/spa_impl.h   |    3 +
+ .../opensolaris/uts/common/fs/zfs/sys/zvol.h       |   10 +-
+ .../opensolaris/uts/common/fs/zfs/zfs_ioctl.c      |   56 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/zvol.c   |  129 +-
+ sys/conf/files                                     |    1 +
+ sys/conf/newvers.sh                                |    4 +-
+ sys/dev/e1000/if_em.c                              |    5 +
+ sys/dev/iicbus/mux/iicmux.c                        |    2 +-
+ sys/dev/usb/misc/cp2112.c                          | 1459 ++++++++++++++++++++
+ sys/modules/usb/Makefile                           |    1 +
+ sys/modules/usb/cp2112/Makefile                    |   37 +
+ usr.sbin/tzsetup/tzsetup.c                         |   37 +-
+ 39 files changed, 2132 insertions(+), 194 deletions(-)
+ delete mode 100755 libexec/rc/rc.d/abi
+ create mode 100755 libexec/rc/rc.d/linux
+ create mode 100755 libexec/rc/rc.d/sysvipc
+ create mode 100644 share/man/man4/cp2112.4
+ create mode 100644 share/man/man4/gpiokeys.4
+ create mode 100644 sys/dev/usb/misc/cp2112.c
+ create mode 100644 sys/modules/usb/cp2112/Makefile
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ release/tools/vmimage.subr                |   5 +
+ sys/arm64/rockchip/clk/rk3328_cru.c       | 385 ++++++++++++++++++++++++++++++
+ sys/arm64/rockchip/clk/rk_clk_composite.c |  57 ++++-
+ sys/arm64/rockchip/clk/rk_clk_composite.h |   1 +
+ sys/kern/uipc_socket.c                    |   2 +
+ usr.sbin/fifolog/lib/fifolog_write_poll.c |   8 +
+ 6 files changed, 456 insertions(+), 2 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    26bd8c4f8802..2fa30ff800be  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    c6127abe26a3..25c05a164053  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   26bd8c4f8802..2fa30ff800be  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====

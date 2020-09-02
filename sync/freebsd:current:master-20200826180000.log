@@ -1,0 +1,131 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is ahead of 'origin/freebsd/current/master' by 30 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating ac70c3a8f0d2..dc4a79386bdd
+Fast-forward
+ UPDATING                                           |     2 +-
+ cddl/lib/libzfs/Makefile                           |     6 -
+ cddl/lib/libzpool/Makefile                         |    49 +-
+ cddl/sbin/zpool/Makefile                           |     1 +
+ crypto/openssl/crypto/aes/asm/aesni-mb-x86_64.pl   |     2 +-
+ crypto/openssl/crypto/aes/asm/aesni-sha1-x86_64.pl |     2 +-
+ .../openssl/crypto/aes/asm/aesni-sha256-x86_64.pl  |     2 +-
+ crypto/openssl/crypto/bn/asm/rsaz-avx2.pl          |     2 +-
+ crypto/openssl/crypto/bn/asm/rsaz-x86_64.pl        |     2 +-
+ crypto/openssl/crypto/bn/asm/x86_64-mont.pl        |     2 +-
+ crypto/openssl/crypto/bn/asm/x86_64-mont5.pl       |     2 +-
+ crypto/openssl/crypto/chacha/asm/chacha-x86.pl     |     2 +-
+ crypto/openssl/crypto/chacha/asm/chacha-x86_64.pl  |     2 +-
+ crypto/openssl/crypto/ec/asm/ecp_nistz256-avx2.pl  |     2 +-
+ .../openssl/crypto/ec/asm/ecp_nistz256-x86_64.pl   |     2 +-
+ crypto/openssl/crypto/ec/asm/x25519-x86_64.pl      |     2 +-
+ .../openssl/crypto/modes/asm/aesni-gcm-x86_64.pl   |     2 +-
+ crypto/openssl/crypto/modes/asm/ghash-x86_64.pl    |     2 +-
+ crypto/openssl/crypto/poly1305/asm/poly1305-x86.pl |     2 +-
+ .../openssl/crypto/poly1305/asm/poly1305-x86_64.pl |     2 +-
+ crypto/openssl/crypto/sha/asm/sha1-586.pl          |     2 +-
+ crypto/openssl/crypto/sha/asm/sha1-mb-x86_64.pl    |     2 +-
+ crypto/openssl/crypto/sha/asm/sha1-x86_64.pl       |     2 +-
+ crypto/openssl/crypto/sha/asm/sha256-586.pl        |     2 +-
+ crypto/openssl/crypto/sha/asm/sha256-mb-x86_64.pl  |     2 +-
+ crypto/openssl/crypto/sha/asm/sha512-x86_64.pl     |     2 +-
+ libexec/rc/rc.d/mountcritlocal                     |     2 +-
+ secure/lib/libcrypto/amd64/aesni-gcm-x86_64.S      |   784 +-
+ secure/lib/libcrypto/amd64/aesni-mb-x86_64.S       |   965 ++
+ secure/lib/libcrypto/amd64/aesni-sha1-x86_64.S     |  1350 ++-
+ secure/lib/libcrypto/amd64/aesni-sha256-x86_64.S   |  4376 +++++++
+ secure/lib/libcrypto/amd64/chacha-x86_64.S         |  1026 ++
+ secure/lib/libcrypto/amd64/ecp_nistz256-x86_64.S   |  2503 +++-
+ secure/lib/libcrypto/amd64/ghash-x86_64.S          |   475 +-
+ secure/lib/libcrypto/amd64/poly1305-x86_64.S       |  1785 +++
+ secure/lib/libcrypto/amd64/rsaz-avx2.S             |  1749 ++-
+ secure/lib/libcrypto/amd64/rsaz-x86_64.S           |   664 ++
+ secure/lib/libcrypto/amd64/sha1-mb-x86_64.S        |  4315 +++++++
+ secure/lib/libcrypto/amd64/sha1-x86_64.S           |  2829 +++++
+ secure/lib/libcrypto/amd64/sha256-mb-x86_64.S      |  4672 ++++++++
+ secure/lib/libcrypto/amd64/sha256-x86_64.S         |  2369 ++++
+ secure/lib/libcrypto/amd64/sha512-x86_64.S         |  3660 ++++++
+ secure/lib/libcrypto/amd64/x25519-x86_64.S         |   390 +-
+ secure/lib/libcrypto/amd64/x86_64-mont.S           |   380 +
+ secure/lib/libcrypto/amd64/x86_64-mont5.S          |  1365 +++
+ secure/lib/libcrypto/i386/chacha-x86.S             |   960 ++
+ secure/lib/libcrypto/i386/poly1305-x86.S           |  1110 ++
+ secure/lib/libcrypto/i386/sha1-586.S               |  6222 +++++++---
+ secure/lib/libcrypto/i386/sha256-586.S             | 11930 +++++++++++++------
+ share/man/man9/sbuf.9                              |     7 +-
+ stand/libsa/zfs/Makefile.inc                       |     4 +-
+ sys/dev/sec/sec.c                                  |     2 +-
+ sys/fs/fuse/fuse_vnops.c                           |     3 +-
+ sys/opencrypto/cryptodev.c                         |   261 +-
+ sys/sys/mount.h                                    |     3 +
+ usr.bin/lockf/lockf.1                              |    12 +-
+ usr.bin/lockf/lockf.c                              |     9 +-
+ usr.sbin/jail/config.c                             |     3 +-
+ 58 files changed, 50170 insertions(+), 6117 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: Auto packing the repository in background for optimum performance.        
+remote: See "git help gc" for manual housekeeping.        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5f8e5db99058..dc4a79386bdd  freebsd/current/master -> freebsd/current/master
+remote:    9f5633fd12ca..997909b037ad  github/hardened/12-stable/master -> github/hardened/12-stable/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5f8e5db99058..dc4a79386bdd  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====

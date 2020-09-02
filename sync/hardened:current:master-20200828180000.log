@@ -1,0 +1,150 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/NOTES
+Auto-merging sys/amd64/conf/NOTES
+Auto-merging stand/defs.mk
+Auto-merging share/mk/src.libnames.mk
+Auto-merging lib/Makefile
+Merge made by the 'recursive' strategy.
+ bin/sh/main.c                                      |   1 +
+ bin/sh/tests/execution/Makefile                    |   1 +
+ bin/sh/tests/execution/bg13.0                      |  16 +
+ bin/sh/trap.c                                      |  10 +-
+ bin/sh/trap.h                                      |   1 +
+ lib/Makefile                                       |   1 +
+ lib/libmemstat/memstat_uma.c                       |   5 +-
+ lib/libnetmap/Makefile                             |  16 +
+ lib/libnetmap/libnetmap.h                          | 660 +++++++++++++++++
+ lib/libnetmap/nmctx-pthreads.c                     |  47 ++
+ lib/libnetmap/nmctx.c                              | 111 +++
+ lib/libnetmap/nmport.c                             | 810 +++++++++++++++++++++
+ lib/libnetmap/nmreq.c                              | 684 +++++++++++++++++
+ share/mk/bsd.libnames.mk                           |   1 +
+ share/mk/src.libnames.mk                           |   2 +
+ stand/defs.mk                                      |   5 +
+ sys/amd64/conf/NOTES                               |   1 +
+ sys/arm/allwinner/clkng/aw_clk_nm.c                |   4 +
+ sys/arm64/conf/NOTES                               |   5 +
+ sys/conf/NOTES                                     |   3 +-
+ sys/contrib/openzfs/META                           |   8 +-
+ sys/contrib/openzfs/NEWS                           |   2 +-
+ sys/contrib/openzfs/cmd/zpool/zpool_main.c         |   9 +-
+ sys/contrib/openzfs/include/libzfs_impl.h          |   1 +
+ sys/contrib/openzfs/include/sys/fs/zfs.h           |   8 +-
+ .../lib/libspl/include/os/freebsd/sys/mount.h      |   6 +-
+ sys/contrib/openzfs/lib/libzfs/libzfs_sendrecv.c   |  38 +-
+ sys/contrib/openzfs/lib/libzfs/libzfs_util.c       |  10 +
+ sys/contrib/openzfs/man/man1/arcstat.1             |   2 +-
+ sys/contrib/openzfs/man/man1/cstyle.1              |   2 +-
+ sys/contrib/openzfs/man/man1/raidz_test.1          |   2 +-
+ sys/contrib/openzfs/man/man1/zhack.1               |   2 +-
+ sys/contrib/openzfs/man/man1/ztest.1               |   2 +-
+ .../openzfs/man/man5/spl-module-parameters.5       |   4 +-
+ sys/contrib/openzfs/man/man5/vdev_id.conf.5        |   2 +-
+ sys/contrib/openzfs/man/man5/zfs-events.5          |   2 +-
+ .../openzfs/man/man5/zfs-module-parameters.5       |  20 +-
+ sys/contrib/openzfs/man/man5/zpool-features.5      |   2 +-
+ sys/contrib/openzfs/man/man8/fsck.zfs.8            |   2 +-
+ sys/contrib/openzfs/man/man8/mount.zfs.8           |   2 +-
+ sys/contrib/openzfs/man/man8/vdev_id.8             |   2 +-
+ sys/contrib/openzfs/man/man8/zed.8.in              |   2 +-
+ .../openzfs/man/man8/zfs-mount-generator.8.in      |   2 +-
+ sys/contrib/openzfs/man/man8/zfs.8                 |  36 +
+ sys/contrib/openzfs/man/man8/zinject.8             |   2 +-
+ sys/contrib/openzfs/man/man8/zpool-iostat.8        |   4 +-
+ sys/contrib/openzfs/man/man8/zpool.8               |  37 +-
+ sys/contrib/openzfs/man/man8/zstreamdump.8         |   2 +-
+ sys/contrib/openzfs/module/Makefile.bsd            |   2 +-
+ sys/contrib/openzfs/module/lua/setjmp/setjmp_ppc.S |  10 +-
+ .../openzfs/module/os/linux/zfs/zfs_ctldir.c       |  19 +
+ sys/contrib/openzfs/module/zcommon/zfs_fletcher.c  |   2 +-
+ sys/contrib/openzfs/module/zfs/arc.c               |  27 +-
+ sys/contrib/openzfs/module/zfs/dmu.c               |   1 +
+ sys/contrib/openzfs/module/zfs/dnode_sync.c        |  14 +-
+ sys/contrib/openzfs/module/zfs/dsl_dir.c           |  23 +-
+ sys/contrib/openzfs/module/zfs/sa.c                |   1 -
+ sys/contrib/openzfs/module/zfs/spa.c               |   3 +-
+ sys/contrib/openzfs/module/zfs/vdev_raidz_math.c   |   2 +-
+ sys/contrib/openzfs/module/zstd/Makefile.in        |   3 +
+ sys/contrib/openzfs/tests/runfiles/common.run      |   2 +-
+ .../functional/cli_root/zfs_receive/Makefile.am    |   1 +
+ .../cli_root/zfs_receive/zfs_receive_new_props.ksh |  77 ++
+ sys/dev/mn/if_mn.c                                 |   2 +-
+ sys/dev/speaker/spkr.c                             |   8 +-
+ sys/dev/usb/usb_request.c                          |   7 +-
+ sys/netinet/sctp_output.c                          |  47 +-
+ sys/sys/errno.h                                    |   2 +-
+ sys/sys/systm.h                                    |   1 -
+ sys/sys/time.h                                     |   4 +-
+ sys/vm/uma_int.h                                   |   8 +-
+ sys/vm/vm_pageout.c                                |   4 +-
+ 72 files changed, 2748 insertions(+), 119 deletions(-)
+ create mode 100644 bin/sh/tests/execution/bg13.0
+ create mode 100644 lib/libnetmap/Makefile
+ create mode 100644 lib/libnetmap/libnetmap.h
+ create mode 100644 lib/libnetmap/nmctx-pthreads.c
+ create mode 100644 lib/libnetmap/nmctx.c
+ create mode 100644 lib/libnetmap/nmport.c
+ create mode 100644 lib/libnetmap/nmreq.c
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_new_props.ksh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f1e87dcecf88..bd394de39d40  hardened/current/master -> hardened/current/master        
+remote:    9e8acab6af57..8e717655c515  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f1e87dcecf88..bd394de39d40  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

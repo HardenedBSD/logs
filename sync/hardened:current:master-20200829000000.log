@@ -1,0 +1,109 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing sys/net/route/shared.h
+Removing secure/caroot/trusted/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+Removing secure/caroot/trusted/Symantec_Class_2_Public_Primary_Certification_Authority_-_G4.pem
+Removing secure/caroot/trusted/Symantec_Class_1_Public_Primary_Certification_Authority_-_G4.pem
+Removing secure/caroot/trusted/Staat_der_Nederlanden_Root_CA_-_G2.pem
+Removing secure/caroot/trusted/LuxTrust_Global_Root_2.pem
+Removing secure/caroot/trusted/AddTrust_Low-Value_Services_Root.pem
+Removing secure/caroot/trusted/AddTrust_External_Root.pem
+Merge made by the 'recursive' strategy.
+ secure/caroot/trusted/AddTrust_External_Root.pem   |  99 ------
+ .../trusted/AddTrust_Low-Value_Services_Root.pem   |  98 ------
+ secure/caroot/trusted/LuxTrust_Global_Root_2.pem   | 141 --------
+ ...crosoft_ECC_Root_Certificate_Authority_2017.pem |  68 ++++
+ ...crosoft_RSA_Root_Certificate_Authority_2017.pem | 136 ++++++++
+ .../trusted/Staat_der_Nederlanden_Root_CA_-_G2.pem | 137 --------
+ ...Public_Primary_Certification_Authority_-_G4.pem |  68 ----
+ ...Public_Primary_Certification_Authority_-_G4.pem |  68 ----
+ ...Public_Primary_Certification_Authority_-_G3.pem |  87 -----
+ secure/caroot/trusted/certSIGN_Root_CA_G2.pem      | 132 ++++++++
+ secure/caroot/trusted/e-Szigno_Root_CA_2017.pem    |  65 ++++
+ sys/net/radix_mpath.c                              |   1 -
+ sys/net/route.c                                    |   1 -
+ sys/net/route/nhop.c                               |   1 -
+ sys/net/route/nhop_ctl.c                           |  20 +-
+ sys/net/route/route_ctl.c                          | 368 ++++++++++++++-------
+ sys/net/route/route_helpers.c                      |   1 -
+ sys/net/route/route_var.h                          |  60 +++-
+ sys/net/route/shared.h                             |  79 -----
+ sys/net/rtsock.c                                   |   1 -
+ sys/netinet/in_fib.c                               |   1 -
+ sys/netinet/in_rmx.c                               |   1 -
+ sys/netinet6/in6_fib.c                             |   1 -
+ sys/netinet6/in6_rmx.c                             |   1 -
+ 24 files changed, 705 insertions(+), 930 deletions(-)
+ delete mode 100644 secure/caroot/trusted/AddTrust_External_Root.pem
+ delete mode 100644 secure/caroot/trusted/AddTrust_Low-Value_Services_Root.pem
+ delete mode 100644 secure/caroot/trusted/LuxTrust_Global_Root_2.pem
+ create mode 100644 secure/caroot/trusted/Microsoft_ECC_Root_Certificate_Authority_2017.pem
+ create mode 100644 secure/caroot/trusted/Microsoft_RSA_Root_Certificate_Authority_2017.pem
+ delete mode 100644 secure/caroot/trusted/Staat_der_Nederlanden_Root_CA_-_G2.pem
+ delete mode 100644 secure/caroot/trusted/Symantec_Class_1_Public_Primary_Certification_Authority_-_G4.pem
+ delete mode 100644 secure/caroot/trusted/Symantec_Class_2_Public_Primary_Certification_Authority_-_G4.pem
+ delete mode 100644 secure/caroot/trusted/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+ create mode 100644 secure/caroot/trusted/certSIGN_Root_CA_G2.pem
+ create mode 100644 secure/caroot/trusted/e-Szigno_Root_CA_2017.pem
+ delete mode 100644 sys/net/route/shared.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    bd394de39d40..985411e17f95  hardened/current/master -> hardened/current/master        
+remote:    8e717655c515..03fb2b6f1ee4  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   bd394de39d40..985411e17f95  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

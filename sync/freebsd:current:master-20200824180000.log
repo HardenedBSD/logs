@@ -1,0 +1,255 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 5685a977d17e..5516d1e1e327
+Fast-forward
+ Makefile.inc1                                      |     2 +-
+ RELNOTES                                           |     5 +
+ UPDATING                                           |     6 +
+ .../clang/include/clang/Basic/TargetOptions.h      |     4 +
+ .../clang/include/clang/Driver/Options.td          |     2 +-
+ contrib/llvm-project/clang/lib/AST/ASTContext.cpp  |     3 +-
+ contrib/llvm-project/clang/lib/Basic/Targets.cpp   |    11 +-
+ .../clang/lib/Basic/Targets/OSTargets.h            |     5 +
+ contrib/llvm-project/clang/lib/Basic/Targets/PPC.h |     4 +-
+ .../llvm-project/clang/lib/Basic/Targets/Sparc.cpp |     5 +
+ .../clang/lib/Basic/Targets/WebAssembly.cpp        |    60 +-
+ .../clang/lib/Basic/Targets/WebAssembly.h          |     6 +-
+ .../clang/lib/CodeGen/CGOpenMPRuntimeNVPTX.cpp     |     6 +-
+ .../clang/lib/Driver/ToolChains/Arch/AArch64.cpp   |     4 +-
+ .../clang/lib/Driver/ToolChains/Arch/X86.cpp       |     6 +-
+ .../clang/lib/Driver/ToolChains/Clang.cpp          |     6 +-
+ .../llvm-project/libunwind/src/AddressSpace.hpp    |     6 +-
+ contrib/llvm-project/lld/docs/ReleaseNotes.rst     |    13 +-
+ contrib/llvm-project/lld/docs/conf.py              |     2 +-
+ .../llvm-project/llvm/include/llvm/MC/MCDwarf.h    |    15 +-
+ .../lib/CodeGen/AsmPrinter/AsmPrinterDwarf.cpp     |     1 +
+ .../llvm/lib/Support/X86TargetParser.cpp           |    39 +-
+ .../lib/Target/AArch64/AArch64FrameLowering.cpp    |   134 +-
+ .../llvm/lib/Target/AArch64/AArch64FrameLowering.h |     7 +
+ .../lib/Target/AArch64/AArch64ISelLowering.cpp     |    38 +-
+ .../lib/Target/AArch64/AArch64RegisterInfo.cpp     |    25 +-
+ .../llvm/lib/Target/AArch64/AArch64RegisterInfo.h  |     3 +
+ .../llvm/lib/Target/AArch64/AArch64RegisterInfo.td |     3 +
+ .../llvm/lib/Target/AArch64/AArch64SVEInstrInfo.td |     2 +-
+ .../llvm/lib/Target/AArch64/AArch64StackOffset.h   |    12 +
+ .../llvm/lib/Target/AArch64/SVEIntrinsicOpts.cpp   |     2 +-
+ .../llvm/lib/Target/RISCV/RISCVInstrInfo.cpp       |    21 +-
+ .../llvm/lib/Target/RISCV/RISCVInstrInfo.td        |     4 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.cpp        |    14 +-
+ .../llvm/lib/Transforms/IPO/GlobalOpt.cpp          |    14 +-
+ .../InstCombine/InstCombineMulDivRem.cpp           |     6 +-
+ contrib/llvm-project/openmp/runtime/src/kmp.h      |     8 +-
+ .../openmp/runtime/src/kmp_csupport.cpp            |    22 +-
+ .../openmp/runtime/src/kmp_gsupport.cpp            |     8 +-
+ contrib/llvm-project/openmp/runtime/src/kmp_os.h   |    12 +
+ .../openmp/runtime/src/kmp_runtime.cpp             |    36 +-
+ contrib/sqlite3/Makefile.am                        |     2 +-
+ contrib/sqlite3/Makefile.in                        |     2 +-
+ contrib/sqlite3/configure                          |    20 +-
+ contrib/sqlite3/configure.ac                       |     2 +-
+ contrib/sqlite3/shell.c                            |  1618 +-
+ contrib/sqlite3/sqlite3.c                          | 19228 ++++++++++---------
+ contrib/sqlite3/sqlite3.h                          |  1378 +-
+ contrib/sqlite3/sqlite3rc.h                        |     3 +
+ contrib/sqlite3/tea/configure                      |    18 +-
+ contrib/sqlite3/tea/configure.ac                   |     2 +-
+ contrib/unbound/.github/FUNDING.yml                |    12 +-
+ contrib/unbound/.travis.yml                        |   342 +-
+ contrib/unbound/Makefile.in                        |   124 +-
+ contrib/unbound/README-Travis.md                   |   278 +
+ contrib/unbound/acx_python.m4                      |     5 +
+ contrib/unbound/cachedb/cachedb.c                  |     5 +-
+ contrib/unbound/cachedb/cachedb.h                  |     2 +-
+ contrib/unbound/cachedb/redis.c                    |    59 +-
+ contrib/unbound/config.guess                       |   895 +-
+ contrib/unbound/config.h.in                        |    23 +-
+ contrib/unbound/config.sub                         |  2620 +--
+ contrib/unbound/configure                          |   224 +-
+ contrib/unbound/configure.ac                       |    86 +-
+ contrib/unbound/contrib/aaaa-filter-iterator.patch |    14 +-
+ contrib/unbound/contrib/android/15-android.conf    |    37 +
+ contrib/unbound/contrib/android/install_expat.sh   |    51 +
+ contrib/unbound/contrib/android/install_ndk.sh     |    60 +
+ contrib/unbound/contrib/android/install_openssl.sh |    44 +
+ contrib/unbound/contrib/android/install_tools.sh   |     6 +
+ contrib/unbound/contrib/android/setenv_android.sh  |   203 +
+ contrib/unbound/contrib/fastrpz.patch              |   122 +-
+ contrib/unbound/contrib/ios/15-ios.conf            |    41 +
+ contrib/unbound/contrib/ios/install_expat.sh       |    56 +
+ contrib/unbound/contrib/ios/install_openssl.sh     |    52 +
+ contrib/unbound/contrib/ios/install_tools.sh       |     8 +
+ contrib/unbound/contrib/ios/openssl.patch          |    48 +
+ contrib/unbound/contrib/ios/setenv_ios.sh          |   274 +
+ contrib/unbound/contrib/libunbound.pc.in           |     3 +-
+ contrib/unbound/contrib/unbound.service.in         |     2 +-
+ contrib/unbound/daemon/acl_list.c                  |     2 +-
+ contrib/unbound/daemon/daemon.c                    |     6 +-
+ contrib/unbound/daemon/remote.c                    |    18 +-
+ contrib/unbound/daemon/unbound.c                   |    10 +
+ contrib/unbound/daemon/worker.c                    |    44 +-
+ contrib/unbound/dns64/dns64.c                      |     2 +-
+ contrib/unbound/dnstap/dnstap.c                    |    90 +-
+ contrib/unbound/dnstap/dnstap.h                    |    22 +-
+ contrib/unbound/dnstap/dnstap.m4                   |     9 +-
+ contrib/unbound/dnstap/dnstap_fstrm.c              |   236 +
+ contrib/unbound/dnstap/dnstap_fstrm.h              |   194 +
+ contrib/unbound/dnstap/dtstream.c                  |  2128 ++
+ contrib/unbound/dnstap/dtstream.h                  |   341 +
+ contrib/unbound/dnstap/unbound-dnstap-socket.c     |  1594 ++
+ contrib/unbound/doc/Changelog                      |   324 +
+ contrib/unbound/doc/README                         |     2 +-
+ contrib/unbound/doc/example.conf.in                |    71 +-
+ contrib/unbound/doc/libunbound.3.in                |     4 +-
+ contrib/unbound/doc/unbound-anchor.8.in            |     5 +-
+ contrib/unbound/doc/unbound-checkconf.8.in         |     2 +-
+ contrib/unbound/doc/unbound-control.8.in           |     2 +-
+ contrib/unbound/doc/unbound-host.1.in              |     2 +-
+ contrib/unbound/doc/unbound.8.in                   |     4 +-
+ contrib/unbound/doc/unbound.conf.5.in              |   157 +-
+ contrib/unbound/dynlibmod/dynlibmod.c              |   301 +
+ contrib/unbound/dynlibmod/dynlibmod.h              |   139 +
+ contrib/unbound/dynlibmod/examples/helloworld.c    |   130 +
+ contrib/unbound/edns-subnet/subnetmod.c            |    29 +-
+ contrib/unbound/edns-subnet/subnetmod.h            |     7 +
+ contrib/unbound/iterator/iter_utils.c              |    57 +
+ contrib/unbound/iterator/iterator.c                |    11 +-
+ contrib/unbound/iterator/iterator.h                |     5 +-
+ contrib/unbound/libunbound/libworker.c             |    28 +-
+ contrib/unbound/libunbound/unbound.h               |     1 +
+ contrib/unbound/respip/respip.c                    |    41 +-
+ contrib/unbound/services/authzone.c                |    63 +-
+ contrib/unbound/services/authzone.h                |     9 +-
+ contrib/unbound/services/listen_dnsport.c          |    90 +-
+ contrib/unbound/services/listen_dnsport.h          |     9 +-
+ contrib/unbound/services/localzone.c               |     2 +-
+ contrib/unbound/services/mesh.c                    |   107 +-
+ contrib/unbound/services/modstack.c                |     9 +
+ contrib/unbound/services/outside_network.c         |   121 +-
+ contrib/unbound/services/outside_network.h         |    14 +-
+ contrib/unbound/services/rpz.c                     |    33 +-
+ contrib/unbound/services/rpz.h                     |     8 +-
+ contrib/unbound/sldns/parseutil.c                  |     2 +-
+ contrib/unbound/smallapp/unbound-anchor.c          |    35 +-
+ contrib/unbound/smallapp/unbound-checkconf.c       |   154 +-
+ .../unbound/smallapp/unbound-control-setup.sh.in   |   209 +-
+ contrib/unbound/smallapp/unbound-control.c         |    12 +
+ contrib/unbound/smallapp/worker_cb.c               |    16 +
+ contrib/unbound/util/config_file.c                 |    43 +-
+ contrib/unbound/util/config_file.h                 |    25 +
+ contrib/unbound/util/configlexer.lex               |    77 +-
+ contrib/unbound/util/configparser.y                |   155 +-
+ contrib/unbound/util/fptr_wlist.c                  |    57 +
+ contrib/unbound/util/iana_ports.inc                |     3 +
+ contrib/unbound/util/mini_event.h                  |     2 +
+ contrib/unbound/util/net_help.c                    |   159 +-
+ contrib/unbound/util/net_help.h                    |    38 +-
+ contrib/unbound/util/netevent.c                    |    59 +-
+ contrib/unbound/util/netevent.h                    |    18 +-
+ contrib/unbound/util/shm_side/shm_main.c           |     4 +
+ contrib/unbound/util/ub_event.c                    |     4 +-
+ contrib/unbound/validator/val_secalgo.c            |     5 +
+ contrib/unbound/validator/val_sigcrypt.c           |     2 +-
+ lib/clang/include/VCSVersion.inc                   |     8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |     2 +-
+ sbin/devd/devd.conf.5                              |     4 +
+ share/mk/src.opts.mk                               |     3 +-
+ sys/dev/netmap/netmap.c                            |     6 +-
+ sys/kern/subr_bus.c                                |     6 +-
+ sys/kern/subr_witness.c                            |     1 -
+ sys/kern/vfs_cache.c                               |     2 -
+ sys/net/route.c                                    |    13 +-
+ sys/net/route/route_ctl.c                          |    28 +-
+ sys/net/route/route_var.h                          |    13 -
+ sys/net/rtsock.c                                   |    30 +-
+ tools/build/Makefile                               |     6 +-
+ usr.bin/w/w.1                                      |    41 +-
+ usr.sbin/gstat/gstat.c                             |     5 +-
+ usr.sbin/unbound/config.h                          |     4 +-
+ 163 files changed, 23547 insertions(+), 12738 deletions(-)
+ create mode 100644 contrib/sqlite3/sqlite3rc.h
+ create mode 100644 contrib/unbound/README-Travis.md
+ create mode 100644 contrib/unbound/contrib/android/15-android.conf
+ create mode 100755 contrib/unbound/contrib/android/install_expat.sh
+ create mode 100755 contrib/unbound/contrib/android/install_ndk.sh
+ create mode 100755 contrib/unbound/contrib/android/install_openssl.sh
+ create mode 100755 contrib/unbound/contrib/android/install_tools.sh
+ create mode 100755 contrib/unbound/contrib/android/setenv_android.sh
+ create mode 100644 contrib/unbound/contrib/ios/15-ios.conf
+ create mode 100755 contrib/unbound/contrib/ios/install_expat.sh
+ create mode 100755 contrib/unbound/contrib/ios/install_openssl.sh
+ create mode 100755 contrib/unbound/contrib/ios/install_tools.sh
+ create mode 100644 contrib/unbound/contrib/ios/openssl.patch
+ create mode 100755 contrib/unbound/contrib/ios/setenv_ios.sh
+ create mode 100644 contrib/unbound/dnstap/dnstap_fstrm.c
+ create mode 100644 contrib/unbound/dnstap/dnstap_fstrm.h
+ create mode 100644 contrib/unbound/dnstap/dtstream.c
+ create mode 100644 contrib/unbound/dnstap/dtstream.h
+ create mode 100644 contrib/unbound/dnstap/unbound-dnstap-socket.c
+ create mode 100644 contrib/unbound/dynlibmod/dynlibmod.c
+ create mode 100644 contrib/unbound/dynlibmod/dynlibmod.h
+ create mode 100644 contrib/unbound/dynlibmod/examples/helloworld.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5685a977d17e..5516d1e1e327  freebsd/current/master -> freebsd/current/master        
+remote:    60f6cbe1b45b..6f004cd942c9  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5685a977d17e..5516d1e1e327  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====

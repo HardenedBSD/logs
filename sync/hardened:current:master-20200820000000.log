@@ -1,0 +1,107 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/mount.h
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging share/man/man4/Makefile
+Auto-merging lib/clang/llvm.build.mk
+CONFLICT (content): Merge conflict in lib/clang/llvm.build.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc lib/clang/llvm.build.mk
+index 7266ce80309a,ef271e85bf3f..000000000000
+--- a/lib/clang/llvm.build.mk
++++ b/lib/clang/llvm.build.mk
+@@@ -107,4 -107,7 +107,11 @@@ CXXFLAGS+=	-fno-exception
+  CXXFLAGS+=	-fno-rtti
+  CXXFLAGS.clang+= -stdlib=libc++
+  
+++<<<<<<< HEAD
+ +NOCFI=		yes
+++=======
++ .if ${MACHINE_ARCH:Mmips64}
++ STATIC_CFLAGS+= -mxgot
++ STATIC_CXXFLAGS+= -mxgot
++ .endif
+++>>>>>>> freebsd/current/master
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   cddl/contrib/opensolaris/lib/libzfs/common/libzfs_sendrecv.c
+	modified:   sbin/devd/devd.conf.5
+	modified:   sbin/mount/mount.c
+	modified:   share/man/man4/Makefile
+	modified:   share/man/man4/ipfirewall.4
+	new file:   share/man/man4/kcov.4
+	modified:   stand/libsa/environment.c
+	modified:   sys/amd64/acpica/acpi_machdep.c
+	modified:   sys/arm64/acpica/acpi_machdep.c
+	modified:   sys/dev/acpica/acpi_apei.c
+	modified:   sys/i386/acpica/acpi_machdep.c
+	modified:   sys/kern/uipc_socket.c
+	modified:   sys/kern/vfs_mount.c
+	modified:   sys/netinet/tcp_output.c
+	modified:   sys/netinet/tcp_stacks/bbr.c
+	modified:   sys/netinet/tcp_stacks/rack.c
+	modified:   sys/sys/mount.h
+	modified:   sys/sys/socket.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lib/clang/llvm.build.mk
+
+HEAD is now at f0ee794e00da Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at f0ee794e00da Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====

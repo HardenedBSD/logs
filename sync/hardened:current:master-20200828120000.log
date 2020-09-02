@@ -1,0 +1,228 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 103 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 086691bf539e..2b6c17703b67
+Fast-forward
+ Makefile.inc1                                      |    10 +
+ UPDATING                                           |    11 +-
+ bin/date/date.1                                    |     5 +-
+ cddl/lib/libzfs/Makefile                           |    22 +-
+ cddl/lib/libzpool/Makefile                         |    51 +-
+ cddl/sbin/zpool/Makefile                           |     1 +
+ crypto/openssl/crypto/aes/asm/aesni-mb-x86_64.pl   |     2 +-
+ crypto/openssl/crypto/aes/asm/aesni-sha1-x86_64.pl |     2 +-
+ .../openssl/crypto/aes/asm/aesni-sha256-x86_64.pl  |     2 +-
+ crypto/openssl/crypto/bn/asm/rsaz-avx2.pl          |     2 +-
+ crypto/openssl/crypto/bn/asm/rsaz-x86_64.pl        |     2 +-
+ crypto/openssl/crypto/bn/asm/x86_64-mont.pl        |     2 +-
+ crypto/openssl/crypto/bn/asm/x86_64-mont5.pl       |     2 +-
+ crypto/openssl/crypto/chacha/asm/chacha-x86.pl     |     2 +-
+ crypto/openssl/crypto/chacha/asm/chacha-x86_64.pl  |     2 +-
+ crypto/openssl/crypto/ec/asm/ecp_nistz256-avx2.pl  |     2 +-
+ .../openssl/crypto/ec/asm/ecp_nistz256-x86_64.pl   |     2 +-
+ crypto/openssl/crypto/ec/asm/x25519-x86_64.pl      |     2 +-
+ .../openssl/crypto/modes/asm/aesni-gcm-x86_64.pl   |     2 +-
+ crypto/openssl/crypto/modes/asm/ghash-x86_64.pl    |     2 +-
+ crypto/openssl/crypto/poly1305/asm/poly1305-x86.pl |     2 +-
+ .../openssl/crypto/poly1305/asm/poly1305-x86_64.pl |     2 +-
+ crypto/openssl/crypto/sha/asm/sha1-586.pl          |     2 +-
+ crypto/openssl/crypto/sha/asm/sha1-mb-x86_64.pl    |     2 +-
+ crypto/openssl/crypto/sha/asm/sha1-x86_64.pl       |     2 +-
+ crypto/openssl/crypto/sha/asm/sha256-586.pl        |     2 +-
+ crypto/openssl/crypto/sha/asm/sha256-mb-x86_64.pl  |     2 +-
+ crypto/openssl/crypto/sha/asm/sha512-x86_64.pl     |     2 +-
+ lib/Makefile                                       |     4 +-
+ lib/libbe/Makefile                                 |     3 -
+ lib/libcompiler_rt/Makefile.inc                    |     6 -
+ lib/libgcc_eh/Makefile.inc                         |     5 +-
+ libexec/rc/rc.d/Makefile                           |     1 +
+ libexec/rc/rc.d/zfs                                |     7 -
+ libexec/rc/rc.d/zpool                              |    31 +
+ libexec/rc/rc.d/zvol                               |     2 +-
+ release/Makefile                                   |    11 +-
+ release/Makefile.azure                             |     2 +-
+ release/Makefile.ec2                               |    30 +-
+ release/Makefile.gce                               |     3 +-
+ release/Makefile.inc1                              |    32 +
+ release/Makefile.mirrors                           |    27 +-
+ release/Makefile.vagrant                           |     2 +-
+ release/release.conf.sample                        |    26 +-
+ release/release.sh                                 |    85 +-
+ release/scripts/relnotes-search.sh                 |   133 -
+ secure/lib/libcrypto/amd64/aesni-gcm-x86_64.S      |   784 +-
+ secure/lib/libcrypto/amd64/aesni-mb-x86_64.S       |   965 ++
+ secure/lib/libcrypto/amd64/aesni-sha1-x86_64.S     |  1350 ++-
+ secure/lib/libcrypto/amd64/aesni-sha256-x86_64.S   |  4376 +++++++
+ secure/lib/libcrypto/amd64/chacha-x86_64.S         |  1026 ++
+ secure/lib/libcrypto/amd64/ecp_nistz256-x86_64.S   |  2503 +++-
+ secure/lib/libcrypto/amd64/ghash-x86_64.S          |   475 +-
+ secure/lib/libcrypto/amd64/poly1305-x86_64.S       |  1785 +++
+ secure/lib/libcrypto/amd64/rsaz-avx2.S             |  1749 ++-
+ secure/lib/libcrypto/amd64/rsaz-x86_64.S           |   664 ++
+ secure/lib/libcrypto/amd64/sha1-mb-x86_64.S        |  4315 +++++++
+ secure/lib/libcrypto/amd64/sha1-x86_64.S           |  2829 +++++
+ secure/lib/libcrypto/amd64/sha256-mb-x86_64.S      |  4672 ++++++++
+ secure/lib/libcrypto/amd64/sha256-x86_64.S         |  2369 ++++
+ secure/lib/libcrypto/amd64/sha512-x86_64.S         |  3660 ++++++
+ secure/lib/libcrypto/amd64/x25519-x86_64.S         |   390 +-
+ secure/lib/libcrypto/amd64/x86_64-mont.S           |   380 +
+ secure/lib/libcrypto/amd64/x86_64-mont5.S          |  1365 +++
+ secure/lib/libcrypto/i386/chacha-x86.S             |   960 ++
+ secure/lib/libcrypto/i386/poly1305-x86.S           |  1110 ++
+ secure/lib/libcrypto/i386/sha1-586.S               |  6222 +++++++---
+ secure/lib/libcrypto/i386/sha256-586.S             | 11930 +++++++++++++------
+ share/man/man4/sdhci.4                             |     4 +-
+ share/man/man9/bitset.9                            |    20 +-
+ share/man/man9/crypto_buffer.9                     |    24 +-
+ share/man/man9/crypto_request.9                    |    18 +-
+ share/man/man9/sbuf.9                              |     7 +-
+ share/mk/bsd.compiler.mk                           |     7 +-
+ share/mk/bsd.linker.mk                             |     7 +-
+ share/mk/bsd.sys.mk                                |     3 +-
+ share/mk/src.libnames.mk                           |     2 +-
+ stand/libsa/stand.h                                |     5 +
+ stand/libsa/zfs/Makefile.inc                       |     4 +-
+ stand/libsa/zfs/zfsimpl.c                          |     1 +
+ stand/userboot/userboot/main.c                     |     2 +-
+ sys/arm/ti/ti_sdhci.c                              |     1 +
+ sys/arm64/acpica/acpi_machdep.c                    |    37 +-
+ sys/arm64/arm64/identcpu.c                         |     7 +
+ sys/arm64/arm64/mp_machdep.c                       |     7 +
+ sys/arm64/include/vmparam.h                        |     4 +-
+ sys/cam/cam_xpt_internal.h                         |     2 +-
+ sys/cddl/contrib/opensolaris/common/lz4/lz4.c      |     4 +-
+ sys/compat/linuxkpi/common/include/linux/xarray.h  |    94 +
+ sys/compat/linuxkpi/common/src/linux_xarray.c      |   391 +
+ sys/conf/files                                     |     2 +
+ sys/conf/kern.mk                                   |     3 +-
+ sys/conf/kern.pre.mk                               |     2 +-
+ .../openzfs/include/os/freebsd/spl/sys/acl_impl.h  |     2 -
+ .../openzfs/include/os/freebsd/spl/sys/cmn_err.h   |     2 -
+ .../openzfs/include/os/freebsd/spl/sys/extdirent.h |     2 -
+ .../openzfs/include/os/freebsd/spl/sys/list.h      |     2 -
+ .../openzfs/include/os/freebsd/spl/sys/list_impl.h |     2 -
+ .../openzfs/include/os/freebsd/spl/sys/zmod.h      |     2 -
+ sys/contrib/openzfs/module/os/freebsd/spl/list.c   |     2 -
+ sys/crypto/ccp/ccp.c                               |     4 +
+ sys/dev/asmc/asmc.c                                |     8 +-
+ sys/dev/cxgbe/crypto/t4_crypto.c                   |     4 +
+ sys/dev/fdc/fdc.c                                  |     4 +-
+ sys/dev/sdhci/sdhci_pci.c                          |     3 +
+ sys/dev/sec/sec.c                                  |     3 +
+ sys/dev/sound/pci/ich.c                            |     7 +-
+ sys/fs/fuse/fuse_vnops.c                           |     3 +-
+ sys/fs/nfs/nfs_commonkrpc.c                        |     2 +
+ sys/fs/nfs/nfsdport.h                              |     3 +
+ sys/fs/nfs/nfsport.h                               |     1 +
+ sys/fs/nfsclient/nfs_clkrpc.c                      |    14 +-
+ sys/fs/nfsclient/nfs_clvfsops.c                    |    35 +-
+ sys/fs/nfsclient/nfsmount.h                        |     4 +
+ sys/fs/nfsserver/nfs_nfsdkrpc.c                    |    18 +
+ sys/fs/nfsserver/nfs_nfsdport.c                    |    22 +
+ sys/fs/nfsserver/nfs_nfsdserv.c                    |     5 +
+ sys/fs/nfsserver/nfs_nfsdsubs.c                    |    19 +-
+ sys/geom/eli/g_eli.c                               |    11 +
+ sys/geom/eli/g_eli_privacy.c                       |    65 +-
+ sys/kern/kern_shutdown.c                           |     8 +-
+ sys/kern/subr_bus_dma.c                            |     5 +
+ sys/kern/subr_vmem.c                               |    63 +-
+ sys/kern/subr_witness.c                            |     2 +-
+ sys/kern/tty.c                                     |     3 +
+ sys/kern/tty_ttydisc.c                             |    32 +-
+ sys/kern/vfs_cache.c                               |   655 +-
+ sys/kern/vfs_lookup.c                              |    10 +
+ sys/kern/vfs_mount.c                               |     9 +-
+ sys/modules/linuxkpi/Makefile                      |     3 +-
+ sys/modules/zfs/Makefile                           |     6 +-
+ sys/opencrypto/criov.c                             |   215 +-
+ sys/opencrypto/crypto.c                            |    22 +-
+ sys/opencrypto/cryptodev.c                         |   262 +-
+ sys/opencrypto/cryptodev.h                         |    52 +-
+ sys/opencrypto/cryptosoft.c                        |     4 +
+ sys/sys/bitset.h                                   |    19 +-
+ sys/sys/mount.h                                    |     3 +
+ sys/vm/vm_kern.c                                   |    18 +-
+ sys/vm/vm_pageout.c                                |    63 +-
+ .../tests/cli_root/zpool_clear/zpool_clear_test.sh |     1 +
+ tools/build/depend-cleanup.sh                      |    13 +
+ usr.bin/calendar/calendars/calendar.holiday        |     2 +-
+ usr.bin/lockf/lockf.1                              |    12 +-
+ usr.bin/lockf/lockf.c                              |     9 +-
+ usr.sbin/bsdinstall/scripts/config                 |     8 +-
+ usr.sbin/efibootmgr/efibootmgr.8                   |     9 +-
+ usr.sbin/efibootmgr/efibootmgr.c                   |    84 +-
+ usr.sbin/jail/config.c                             |    18 +-
+ usr.sbin/rtsold/dump.c                             |     2 +
+ usr.sbin/rtsold/rtsol.c                            |    25 +-
+ usr.sbin/rtsold/rtsold.8                           |    22 +-
+ usr.sbin/rtsold/rtsold.c                           |    28 +-
+ usr.sbin/rtsold/rtsold.h                           |     3 +
+ 154 files changed, 52186 insertions(+), 6844 deletions(-)
+ create mode 100755 libexec/rc/rc.d/zpool
+ create mode 100644 release/Makefile.inc1
+ delete mode 100755 release/scripts/relnotes-search.sh
+ create mode 100644 sys/compat/linuxkpi/common/include/linux/xarray.h
+ create mode 100644 sys/compat/linuxkpi/common/src/linux_xarray.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/sys/systm.h | 2 --
+ 1 file changed, 2 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    2b6c17703b67..f1e87dcecf88  hardened/current/master -> hardened/current/master        
+remote:    13f6b9d84d01..9e8acab6af57  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   2b6c17703b67..f1e87dcecf88  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
