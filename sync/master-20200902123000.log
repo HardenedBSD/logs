@@ -47,3 +47,125 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/mdns-repeater/Makefile
+CONFLICT (content): Merge conflict in net/mdns-repeater/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net/mdns-repeater/Makefile
+index 71bc2bebf78b,7e85cb1dc607..000000000000
+--- a/net/mdns-repeater/Makefile
++++ b/net/mdns-repeater/Makefile
+@@@ -12,7 -10,8 +10,12 @@@ COMMENT=	Multicast DNS repeater to re-b
+  
+  LICENSE=	GPLv2
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+++=======
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	kennylevinsen
+++>>>>>>> freebsd/master
+  
+  USE_RC_SUBR=	mdns-repeater
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   databases/percona57-client/files/patch-cmake_build__configurations_compiler__options.cmake
+	modified:   databases/percona57-pam-for-mysql/files/patch-cmake_build__configurations_compiler__options.cmake
+	modified:   databases/percona57-server/Makefile
+	modified:   databases/percona57-server/distinfo
+	modified:   databases/percona57-server/files/patch-cmake_build__configurations_compiler__options.cmake
+	modified:   databases/percona57-server/files/patch-storage_rocksdb_CMakeLists.txt
+	modified:   devel/mimalloc/Makefile
+	modified:   devel/mimalloc/distinfo
+	modified:   finance/R-cran-TTR/Makefile
+	modified:   finance/R-cran-TTR/distinfo
+	modified:   graphics/py-fiona/Makefile
+	modified:   graphics/py-fiona/distinfo
+	modified:   graphics/py-geopandas/Makefile
+	modified:   graphics/py-geopandas/distinfo
+	modified:   lang/solidity/Makefile
+	modified:   lang/solidity/distinfo
+	modified:   math/py-pdal/Makefile
+	modified:   math/py-pdal/distinfo
+	modified:   misc/broot/Makefile
+	modified:   misc/broot/distinfo
+	modified:   net/mdns-repeater/distinfo
+	modified:   net/mdns-repeater/pkg-descr
+	modified:   security/libp11/Makefile
+	modified:   security/libp11/files/patch-configure.ac
+	modified:   security/libp11/pkg-plist
+	modified:   security/pam_p11/Makefile
+	modified:   sysutils/Makefile
+	new file:   sysutils/ansible-iocage/Makefile
+	new file:   sysutils/ansible-iocage/distinfo
+	new file:   sysutils/ansible-iocage/patch-iocage
+	new file:   sysutils/ansible-iocage/pkg-descr
+	new file:   sysutils/ansible-kld/Makefile
+	new file:   sysutils/ansible-kld/distinfo
+	new file:   sysutils/ansible-kld/pkg-descr
+	modified:   x11-fonts/libertinus/Makefile
+	modified:   x11-fonts/libertinus/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net/mdns-repeater/Makefile
+
+
+It took 3.44 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 48efbfb99ac0 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 48efbfb99ac0 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
