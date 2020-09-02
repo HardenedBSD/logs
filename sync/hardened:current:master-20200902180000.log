@@ -1,0 +1,112 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/kern/kern_mib.c
+Auto-merging sys/arm64/arm64/pmap.c
+Auto-merging sys/amd64/amd64/pmap.c
+Merge made by the 'recursive' strategy.
+ UPDATING                           |  8 +++--
+ lib/libbe/tests/be_create.sh       |  5 +++
+ lib/libc/gen/elf_utils.c           |  2 +-
+ lib/libc/stdlib/strfmon.c          |  2 +-
+ lib/libc/sys/mincore.2             | 28 +++++++++++++--
+ lib/libc/tests/sys/sendfile_test.c | 12 +++----
+ sbin/bectl/tests/bectl_test.sh     |  5 +++
+ sbin/init/init.c                   | 22 ++----------
+ sbin/kldstat/kldstat.8             | 74 +++++++++++++++++++++++++++++++++++++-
+ sbin/sysctl/sysctl.c               | 25 +++++++++++++
+ share/man/man4/ltc430x.4           | 39 +++++++++++++++++---
+ share/man/man4/mem.4               | 74 ++++++++++++++++++++++++++++----------
+ sys/amd64/amd64/mem.c              |  3 +-
+ sys/amd64/amd64/pmap.c             | 25 +++++++++++--
+ sys/amd64/include/memdev.h         |  2 +-
+ sys/arm/arm/mem.c                  |  7 ++++
+ sys/arm/arm/pmap-v6.c              |  2 +-
+ sys/arm/include/memdev.h           |  2 +-
+ sys/arm64/arm64/mem.c              |  7 ++++
+ sys/arm64/arm64/pmap.c             |  2 +-
+ sys/arm64/include/memdev.h         |  2 +-
+ sys/dev/drm2/drm_os_freebsd.h      | 10 ++++--
+ sys/dev/iicbus/mux/ltc430x.c       | 41 +++++++++++++++++++--
+ sys/dev/mem/memdev.c               | 45 +++++++++++++++++++++++
+ sys/i386/i386/mem.c                |  3 +-
+ sys/i386/i386/pmap.c               |  2 +-
+ sys/i386/include/memdev.h          |  2 +-
+ sys/kern/kern_mib.c                |  8 ++---
+ sys/kern/vfs_subr.c                | 11 +-----
+ sys/mips/include/memdev.h          |  2 +-
+ sys/mips/mips/mem.c                |  7 ++++
+ sys/powerpc/aim/mmu_radix.c        |  2 +-
+ sys/powerpc/include/memdev.h       |  2 +-
+ sys/powerpc/powerpc/mem.c          |  3 +-
+ sys/riscv/include/memdev.h         |  2 +-
+ sys/riscv/riscv/mem.c              |  7 ++++
+ sys/riscv/riscv/pmap.c             |  2 +-
+ sys/sys/memrange.h                 | 14 ++++++++
+ sys/sys/mman.h                     |  3 +-
+ sys/sys/vnode.h                    |  6 +++-
+ sys/vm/vm_mmap.c                   |  2 ++
+ sys/vm/vm_page.c                   |  9 ++---
+ usr.bin/nfsstat/nfsstat.c          |  2 +-
+ 43 files changed, 431 insertions(+), 102 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    6210dc070533..7c7385a4e3f0  hardened/current/master -> hardened/current/master        
+remote:    a879b8fc67d9..6a10e058a4dd  github/freebsd/current/master -> github/freebsd/current/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   6210dc070533..7c7385a4e3f0  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
