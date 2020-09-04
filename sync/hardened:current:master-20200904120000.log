@@ -1,0 +1,131 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tests/sys/kern/kern_copyin.c
+CONFLICT (content): Merge conflict in tests/sys/kern/kern_copyin.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc tests/sys/kern/kern_copyin.c
+index 0410e824b865,ed4225361ec3..000000000000
+--- a/tests/sys/kern/kern_copyin.c
++++ b/tests/sys/kern/kern_copyin.c
+@@@ -1,6 -1,5 +1,10 @@@
+  /*-
+++<<<<<<< HEAD
+ + * Copyright (c) 2016 Oliver Pinter <op@hardenedbsd.org>
+ + * Copyright (c) 2015 The FreeBSD Foundation
+++=======
++  * Copyright (c) 2015, 2020 The FreeBSD Foundation
+++>>>>>>> freebsd/current/master
+   * All rights reserved.
+   *
+   * This software was developed by Konstantin Belousov <kib@FreeBSD.org>
+@@@ -32,10 -31,8 +36,15 @@@
+  __FBSDID("$FreeBSD$");
+  
+  #include <sys/param.h>
+++<<<<<<< HEAD
+ +#ifdef HARDENEDBSD
+ +#include <sys/mman.h>
+ +#endif
+ +#include <sys/stat.h>
+++=======
++ #include <sys/exec.h>
++ #include <sys/sysctl.h>
+++>>>>>>> freebsd/current/master
+  #include <errno.h>
+  #include <limits.h>
+  #include <stdio.h>
+@@@ -63,23 -87,9 +99,27 @@@ ATF_TC_WITHOUT_HEAD(kern_copyin)
+  ATF_TC_BODY(kern_copyin, tc)
+  {
+  	char template[] = "copyin.XXXXXX";
+++<<<<<<< HEAD
+ +#ifdef HARDENEDBSD
+ +	/*
+ +	 * On HardenedBSD, the last page not always mapped in contrast
+ +	 * to FreeBSD, where the last page always mapped as shared page.
+ +	 * 
+ +	 * To fix this test, which expects the existence of the last page
+ +	 * just map them in at the test start, and unmap them at the end.
+ +	 */
+ +	void *last_page = (void *)(VM_MAXUSER_ADDRESS - PAGE_SIZE);
+ +	void *p;
+ +
+ +	p = mmap(last_page, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_ANON | MAP_EXCL | MAP_FIXED, -1, 0);
+ +	ATF_REQUIRE(last_page != MAP_FAILED);
+ +	ATF_REQUIRE(p == last_page);
+ +#endif
+++=======
++ 	uintptr_t maxuser;
+++>>>>>>> freebsd/current/master
+  
+- #ifdef __mips__
++ #if defined(__mips__)
+  	/*
+  	 * MIPS has different VM layout: the UVA map on mips ends the
+  	 * highest mapped entry at the VM_MAXUSER_ADDRESS - PAGE_SIZE,
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   usr.bin/fortune/datfiles/freebsd-tips
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   tests/sys/kern/kern_copyin.c
+
+HEAD is now at 13dfb1117572 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 13dfb1117572 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
