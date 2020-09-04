@@ -47,3 +47,231 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Removing textproc/angle-grinder/files/patch-cargo-crates_terminal__size-0.1.10_src_unix.rs
+Removing security/samhain/files/patch-configure
+Removing net/ntp-devel/pkg-plist
+Removing net/ntp-devel/pkg-descr
+Removing net/ntp-devel/files/pkg-message.in
+Removing net/ntp-devel/files/patch-sntp_sntp.mdoc.in
+Removing net/ntp-devel/files/patch-sntp_m4_ntp__rlimit.m4
+Removing net/ntp-devel/files/patch-ntpd_ntpd.c
+Removing net/ntp-devel/files/patch-ntpd__refclock__ripencc.c
+Removing net/ntp-devel/files/patch-ntpd__refclock__mx4200.c
+Removing net/ntp-devel/files/patch-ntpd__ntp.conf.html
+Removing net/ntp-devel/files/patch-ntpd__ntp.conf.5man
+Removing net/ntp-devel/distinfo
+Removing net/ntp-devel/Makefile.inc
+Removing net/ntp-devel/Makefile
+Auto-merging net/Makefile
+Auto-merging net-mgmt/rate/Makefile
+Removing net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_widgets_input__fields.h
+Removing net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_effects_animation__value.h
+Removing net-im/telegram-desktop/files/patch-Telegram_cmake_lib__tgvoip.cmake
+Removing net-im/telegram-desktop/files/patch-Telegram_SourceFiles_core_update__checker.cpp
+Removing multimedia/w_scan/pkg-descr
+Removing multimedia/w_scan/files/patch-si__types.h
+Removing multimedia/w_scan/files/patch-char-coding.c
+Removing multimedia/w_scan/distinfo
+Removing multimedia/w_scan/Makefile
+Removing mail/postfix-policyd-spf-python/pkg-descr
+Removing mail/postfix-policyd-spf-python/files/pkg-message.in
+Removing mail/postfix-policyd-spf-python/files/patch-setup.py
+Removing mail/postfix-policyd-spf-python/distinfo
+Removing mail/postfix-policyd-spf-python/Makefile
+Removing graphics/py-pyembree/pkg-descr
+Removing graphics/py-pyembree/distinfo
+Removing graphics/py-pyembree/Makefile
+Removing games/asteroid/pkg-plist
+Removing games/asteroid/pkg-descr
+Removing games/asteroid/distinfo
+Removing games/asteroid/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   5 +
+ devel/cargo-generate/Makefile                      |   5 +-
+ devel/cargo-generate/distinfo                      |   4 +-
+ devel/cargo-generate/files/patch-Cargo.toml        |  12 +
+ devel/gitaly/Makefile                              |   4 +-
+ devel/gitaly/distinfo                              |   6 +-
+ devel/libuv/Makefile                               |   4 +-
+ devel/libuv/distinfo                               |   6 +-
+ devel/py-qtconsole/Makefile                        |   2 +-
+ devel/py-qtconsole/distinfo                        |   6 +-
+ devel/pyside2-tools/Makefile                       |   6 +-
+ devel/pyside2/Makefile                             |   9 +-
+ devel/pyside2/pkg-plist                            |  20 +-
+ games/Makefile                                     |   2 +-
+ games/NBlood/Makefile                              |  41 ++
+ games/NBlood/distinfo                              |   3 +
+ games/NBlood/pkg-descr                             |   4 +
+ games/asteroid/Makefile                            |  38 --
+ games/asteroid/distinfo                            |   2 -
+ games/asteroid/pkg-descr                           |  21 -
+ games/asteroid/pkg-plist                           |  12 -
+ graphics/Makefile                                  |   1 -
+ graphics/kphotoalbum/Makefile                      |   8 +-
+ graphics/py-pyembree/Makefile                      |  32 --
+ graphics/py-pyembree/distinfo                      |   3 -
+ graphics/py-pyembree/pkg-descr                     |   3 -
+ lang/intel-compute-runtime/Makefile                |   3 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ mail/Makefile                                      |   1 -
+ mail/getmail6/Makefile                             |   2 +-
+ mail/getmail6/distinfo                             |   6 +-
+ mail/getmail6/files/patch-setup.py                 |  22 +-
+ mail/postfix-policyd-spf-python/Makefile           |  58 --
+ mail/postfix-policyd-spf-python/distinfo           |   3 -
+ .../files/patch-setup.py                           |  17 -
+ .../files/pkg-message.in                           |  37 --
+ mail/postfix-policyd-spf-python/pkg-descr          |   4 -
+ math/pdal/Makefile                                 |   5 +-
+ math/py-yt/Makefile                                |  16 +-
+ multimedia/Makefile                                |   1 -
+ multimedia/w_scan/Makefile                         |  37 --
+ multimedia/w_scan/distinfo                         |   3 -
+ multimedia/w_scan/files/patch-char-coding.c        |  35 --
+ multimedia/w_scan/files/patch-si__types.h          |  10 -
+ multimedia/w_scan/pkg-descr                        |   7 -
+ net-im/telegram-desktop/Makefile                   |   2 +-
+ ...h-Telegram_SourceFiles_core_update__checker.cpp |  22 -
+ .../files/patch-Telegram_cmake_lib__tgvoip.cmake   |  20 -
+ ...-Telegram_lib__ui_ui_effects_animation__value.h |  11 -
+ ...tch-Telegram_lib__ui_ui_widgets_input__fields.h |  10 -
+ net-mgmt/rate/Makefile                             |   2 +-
+ net-mgmt/rate/files/patch-rate__abusers.c          |  10 +
+ net-mgmt/rate/files/patch-rate__sta.c              |  10 +
+ net-mgmt/triton-guesttools/Makefile                |   3 +
+ net/Makefile                                       |   1 -
+ net/ntp-devel/Makefile                             |  96 ----
+ net/ntp-devel/Makefile.inc                         | 168 ------
+ net/ntp-devel/distinfo                             |   3 -
+ net/ntp-devel/files/patch-ntpd__ntp.conf.5man      |  36 --
+ net/ntp-devel/files/patch-ntpd__ntp.conf.html      |  20 -
+ net/ntp-devel/files/patch-ntpd__refclock__mx4200.c |  28 -
+ .../files/patch-ntpd__refclock__ripencc.c          |  38 --
+ net/ntp-devel/files/patch-ntpd_ntpd.c              |  48 --
+ net/ntp-devel/files/patch-sntp_m4_ntp__rlimit.m4   |  11 -
+ net/ntp-devel/files/patch-sntp_sntp.mdoc.in        |  11 -
+ net/ntp-devel/files/pkg-message.in                 |  13 -
+ net/ntp-devel/pkg-descr                            |  18 -
+ net/ntp-devel/pkg-plist                            | 501 ----------------
+ security/lego/Makefile                             |  66 +--
+ security/lego/distinfo                             | 112 ++--
+ security/samhain/Makefile                          |  10 +-
+ security/samhain/distinfo                          |   6 +-
+ security/samhain/files/patch-configure             |  16 -
+ security/samhain/pkg-plist                         |   3 +-
+ security/vuxml/vuln.xml                            |   3 +-
+ textproc/angle-grinder/Makefile                    | 321 +++++------
+ textproc/angle-grinder/distinfo                    | 638 ++++++++++-----------
+ ...-cargo-crates_terminal__size-0.1.10_src_unix.rs |  11 -
+ www/gitlab-ce/Makefile                             |   4 +-
+ www/gitlab-ce/distinfo                             |   6 +-
+ www/mod_setenvifplus/Makefile                      |   2 +-
+ www/mod_setenvifplus/distinfo                      |   6 +-
+ www/nginx/Makefile                                 |   6 +-
+ www/nginx/Makefile.extmod                          |   2 +-
+ www/nginx/distinfo                                 |  10 +-
+ www/node/Makefile                                  |   4 +-
+ www/node/distinfo                                  |   6 +-
+ 87 files changed, 733 insertions(+), 2113 deletions(-)
+ create mode 100644 devel/cargo-generate/files/patch-Cargo.toml
+ create mode 100644 games/NBlood/Makefile
+ create mode 100644 games/NBlood/distinfo
+ create mode 100644 games/NBlood/pkg-descr
+ delete mode 100644 games/asteroid/Makefile
+ delete mode 100644 games/asteroid/distinfo
+ delete mode 100644 games/asteroid/pkg-descr
+ delete mode 100644 games/asteroid/pkg-plist
+ delete mode 100644 graphics/py-pyembree/Makefile
+ delete mode 100644 graphics/py-pyembree/distinfo
+ delete mode 100644 graphics/py-pyembree/pkg-descr
+ delete mode 100644 mail/postfix-policyd-spf-python/Makefile
+ delete mode 100644 mail/postfix-policyd-spf-python/distinfo
+ delete mode 100644 mail/postfix-policyd-spf-python/files/patch-setup.py
+ delete mode 100644 mail/postfix-policyd-spf-python/files/pkg-message.in
+ delete mode 100644 mail/postfix-policyd-spf-python/pkg-descr
+ delete mode 100644 multimedia/w_scan/Makefile
+ delete mode 100644 multimedia/w_scan/distinfo
+ delete mode 100644 multimedia/w_scan/files/patch-char-coding.c
+ delete mode 100644 multimedia/w_scan/files/patch-si__types.h
+ delete mode 100644 multimedia/w_scan/pkg-descr
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_SourceFiles_core_update__checker.cpp
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_cmake_lib__tgvoip.cmake
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_effects_animation__value.h
+ delete mode 100644 net-im/telegram-desktop/files/patch-Telegram_lib__ui_ui_widgets_input__fields.h
+ create mode 100644 net-mgmt/rate/files/patch-rate__abusers.c
+ create mode 100644 net-mgmt/rate/files/patch-rate__sta.c
+ delete mode 100644 net/ntp-devel/Makefile
+ delete mode 100644 net/ntp-devel/Makefile.inc
+ delete mode 100644 net/ntp-devel/distinfo
+ delete mode 100644 net/ntp-devel/files/patch-ntpd__ntp.conf.5man
+ delete mode 100644 net/ntp-devel/files/patch-ntpd__ntp.conf.html
+ delete mode 100644 net/ntp-devel/files/patch-ntpd__refclock__mx4200.c
+ delete mode 100644 net/ntp-devel/files/patch-ntpd__refclock__ripencc.c
+ delete mode 100644 net/ntp-devel/files/patch-ntpd_ntpd.c
+ delete mode 100644 net/ntp-devel/files/patch-sntp_m4_ntp__rlimit.m4
+ delete mode 100644 net/ntp-devel/files/patch-sntp_sntp.mdoc.in
+ delete mode 100644 net/ntp-devel/files/pkg-message.in
+ delete mode 100644 net/ntp-devel/pkg-descr
+ delete mode 100644 net/ntp-devel/pkg-plist
+ delete mode 100644 security/samhain/files/patch-configure
+ delete mode 100644 textproc/angle-grinder/files/patch-cargo-crates_terminal__size-0.1.10_src_unix.rs
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: Auto packing the repository in background for optimum performance.        
+remote: See "git help gc" for manual housekeeping.        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    4e0122c5a8df..0bdeefe60add  master -> master        
+remote:    9ce32ee82280..4e0122c5a8df  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   4e0122c5a8df..0bdeefe60add  master -> master
+==== END: master ====
