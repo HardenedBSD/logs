@@ -1,0 +1,212 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tests/sys/kern/kern_copyin.c
+CONFLICT (content): Merge conflict in tests/sys/kern/kern_copyin.c
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Removing sys/contrib/openzfs/module/os/freebsd/zfs/spa_stats.c
+Removing sys/contrib/dev/ice/ice-1.3.9.0.pkg
+Auto-merging sys/conf/files
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc tests/sys/kern/kern_copyin.c
+index 0410e824b865,b77360e928fd..000000000000
+--- a/tests/sys/kern/kern_copyin.c
++++ b/tests/sys/kern/kern_copyin.c
+@@@ -1,6 -1,5 +1,10 @@@
+  /*-
+++<<<<<<< HEAD
+ + * Copyright (c) 2016 Oliver Pinter <op@hardenedbsd.org>
+ + * Copyright (c) 2015 The FreeBSD Foundation
+++=======
++  * Copyright (c) 2015, 2020 The FreeBSD Foundation
+++>>>>>>> freebsd/current/master
+   * All rights reserved.
+   *
+   * This software was developed by Konstantin Belousov <kib@FreeBSD.org>
+@@@ -32,10 -31,8 +36,15 @@@
+  __FBSDID("$FreeBSD$");
+  
+  #include <sys/param.h>
+++<<<<<<< HEAD
+ +#ifdef HARDENEDBSD
+ +#include <sys/mman.h>
+ +#endif
+ +#include <sys/stat.h>
+++=======
++ #include <sys/exec.h>
++ #include <sys/sysctl.h>
+++>>>>>>> freebsd/current/master
+  #include <errno.h>
+  #include <limits.h>
+  #include <stdio.h>
+@@@ -63,23 -88,9 +100,27 @@@ ATF_TC_WITHOUT_HEAD(kern_copyin)
+  ATF_TC_BODY(kern_copyin, tc)
+  {
+  	char template[] = "copyin.XXXXXX";
+++<<<<<<< HEAD
+ +#ifdef HARDENEDBSD
+ +	/*
+ +	 * On HardenedBSD, the last page not always mapped in contrast
+ +	 * to FreeBSD, where the last page always mapped as shared page.
+ +	 * 
+ +	 * To fix this test, which expects the existence of the last page
+ +	 * just map them in at the test start, and unmap them at the end.
+ +	 */
+ +	void *last_page = (void *)(VM_MAXUSER_ADDRESS - PAGE_SIZE);
+ +	void *p;
+ +
+ +	p = mmap(last_page, PAGE_SIZE, PROT_READ | PROT_WRITE, MAP_ANON | MAP_EXCL | MAP_FIXED, -1, 0);
+ +	ATF_REQUIRE(last_page != MAP_FAILED);
+ +	ATF_REQUIRE(p == last_page);
+ +#endif
+++=======
++ 	uintptr_t maxuser;
+++>>>>>>> freebsd/current/master
+  
+- #ifdef __mips__
++ #if defined(__mips__)
+  	/*
+  	 * MIPS has different VM layout: the UVA map on mips ends the
+  	 * highest mapped entry at the VM_MAXUSER_ADDRESS - PAGE_SIZE,
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libbe/be.c
+	modified:   libexec/rc/rc.d/zpool
+	modified:   libexec/rc/rc.d/zvol
+	modified:   libexec/rtld-elf/map_object.c
+	modified:   libexec/rtld-elf/riscv/rtld_start.S
+	modified:   sys/cam/cam_sim.c
+	modified:   sys/conf/files
+	modified:   sys/conf/files.amd64
+	modified:   sys/conf/files.arm64
+	modified:   sys/contrib/dev/ice/README
+	new file:   sys/contrib/dev/ice/ice-1.3.16.0.pkg
+	deleted:    sys/contrib/dev/ice/ice-1.3.9.0.pkg
+	modified:   sys/contrib/openzfs/cmd/zfs/zfs_main.c
+	modified:   sys/contrib/openzfs/config/kernel-global_page_state.m4
+	modified:   sys/contrib/openzfs/config/zfs-build.m4
+	modified:   sys/contrib/openzfs/etc/systemd/system-generators/zfs-mount-generator.in
+	modified:   sys/contrib/openzfs/etc/systemd/system/zfs-mount.service.in
+	modified:   sys/contrib/openzfs/include/libzfs.h
+	modified:   sys/contrib/openzfs/include/libzfs_impl.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/cred.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/zone.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/zfs/sys/Makefile.am
+	renamed:    sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_vfsops.h -> sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_vfsops_os.h
+	modified:   sys/contrib/openzfs/include/os/linux/kernel/linux/page_compat.h
+	modified:   sys/contrib/openzfs/include/os/linux/spl/sys/vmsystm.h
+	modified:   sys/contrib/openzfs/include/os/linux/zfs/sys/Makefile.am
+	renamed:    sys/contrib/openzfs/include/os/linux/zfs/sys/zfs_vfsops.h -> sys/contrib/openzfs/include/os/linux/zfs/sys/zfs_vfsops_os.h
+	modified:   sys/contrib/openzfs/include/sys/Makefile.am
+	new file:   sys/contrib/openzfs/include/sys/zfs_vfsops.h
+	modified:   sys/contrib/openzfs/lib/libspl/Makefile.am
+	modified:   sys/contrib/openzfs/lib/libspl/include/limits.h
+	modified:   sys/contrib/openzfs/lib/libspl/include/zone.h
+	new file:   sys/contrib/openzfs/lib/libspl/os/freebsd/zone.c
+	renamed:    sys/contrib/openzfs/lib/libspl/zone.c -> sys/contrib/openzfs/lib/libspl/os/linux/zone.c
+	modified:   sys/contrib/openzfs/lib/libzfs/libzfs_changelist.c
+	modified:   sys/contrib/openzfs/lib/libzfs/libzfs_dataset.c
+	modified:   sys/contrib/openzfs/lib/libzpool/kernel.c
+	modified:   sys/contrib/openzfs/man/man8/zfs-rename.8
+	modified:   sys/contrib/openzfs/module/avl/avl.c
+	modified:   sys/contrib/openzfs/module/nvpair/nvpair.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/spl/spl_kstat.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/spl/spl_zone.c
+	deleted:    sys/contrib/openzfs/module/os/freebsd/zfs/spa_stats.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_vfsops.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zvol_os.c
+	modified:   sys/contrib/openzfs/module/os/linux/spl/spl-kstat.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/Makefile.in
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/arc_os.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zfs_vfsops.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zpl_super.c
+	modified:   sys/contrib/openzfs/module/zfs/Makefile.in
+	modified:   sys/contrib/openzfs/module/zfs/arc.c
+	modified:   sys/contrib/openzfs/module/zfs/dsl_dir.c
+	modified:   sys/contrib/openzfs/module/zfs/spa.c
+	modified:   sys/contrib/openzfs/module/zfs/spa_config.c
+	renamed:    sys/contrib/openzfs/module/os/linux/zfs/spa_stats.c -> sys/contrib/openzfs/module/zfs/spa_stats.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_indirect.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_raidz.c
+	modified:   sys/contrib/openzfs/module/zfs/zfs_fm.c
+	modified:   sys/contrib/openzfs/module/zfs/zfs_ioctl.c
+	modified:   sys/contrib/openzfs/module/zfs/zio.c
+	modified:   sys/contrib/openzfs/tests/runfiles/common.run
+	modified:   sys/contrib/openzfs/tests/zfs-tests/include/tunables.cfg
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_rename/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_rename/zfs_rename_mountpoint.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_rename/zfs_rename_nounmount.ksh
+	modified:   sys/dev/usb/storage/umass.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/kern/uipc_ktls.c
+	modified:   sys/kern/vfs_hash.c
+	modified:   sys/modules/ice_ddp/Makefile
+	modified:   sys/modules/zfs/Makefile
+	modified:   sys/netinet/tcp_stacks/bbr.c
+	modified:   sys/riscv/riscv/genassym.c
+	modified:   sys/rpc/svc.c
+	modified:   usr.bin/fortune/datfiles/freebsd-tips
+	modified:   usr.bin/script/script.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   tests/sys/kern/kern_copyin.c
+
+HEAD is now at 13dfb1117572 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 13dfb1117572 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
