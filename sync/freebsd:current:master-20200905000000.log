@@ -1,0 +1,143 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 8d1532df8033..fda96f32db8e
+Fast-forward
+ lib/libbe/be.c                                     |   7 +-
+ libexec/rc/rc.d/zpool                              |   4 +-
+ libexec/rc/rc.d/zvol                               |   1 -
+ libexec/rtld-elf/riscv/rtld_start.S                |   5 +-
+ sys/conf/files                                     |   2 +-
+ sys/contrib/openzfs/cmd/zfs/zfs_main.c             |  45 ++--
+ .../openzfs/config/kernel-global_page_state.m4     |   9 -
+ sys/contrib/openzfs/config/zfs-build.m4            |  64 +++--
+ .../system-generators/zfs-mount-generator.in       |  35 ++-
+ .../etc/systemd/system/zfs-mount.service.in        |   1 -
+ sys/contrib/openzfs/include/libzfs.h               |  14 +-
+ sys/contrib/openzfs/include/libzfs_impl.h          |   4 +
+ .../openzfs/include/os/freebsd/spl/sys/cred.h      |   2 +-
+ .../openzfs/include/os/freebsd/spl/sys/zone.h      |   9 +-
+ .../openzfs/include/os/freebsd/zfs/sys/Makefile.am |   2 +-
+ .../zfs/sys/{zfs_vfsops.h => zfs_vfsops_os.h}      |   1 -
+ .../include/os/linux/kernel/linux/page_compat.h    |  25 --
+ .../openzfs/include/os/linux/spl/sys/vmsystm.h     |  11 -
+ .../openzfs/include/os/linux/zfs/sys/Makefile.am   |   2 +-
+ .../zfs/sys/{zfs_vfsops.h => zfs_vfsops_os.h}      |   0
+ sys/contrib/openzfs/include/sys/Makefile.am        |   1 +
+ sys/contrib/openzfs/include/sys/zfs_vfsops.h       |  35 +++
+ sys/contrib/openzfs/lib/libspl/Makefile.am         |   7 +-
+ sys/contrib/openzfs/lib/libspl/include/limits.h    |   5 +
+ sys/contrib/openzfs/lib/libspl/include/zone.h      |   9 -
+ sys/contrib/openzfs/lib/libspl/os/freebsd/zone.c   |  46 ++++
+ .../openzfs/lib/libspl/{ => os/linux}/zone.c       |  31 ---
+ sys/contrib/openzfs/lib/libzfs/libzfs_changelist.c |   8 +-
+ sys/contrib/openzfs/lib/libzfs/libzfs_dataset.c    |  32 ++-
+ sys/contrib/openzfs/lib/libzpool/kernel.c          |   6 +
+ sys/contrib/openzfs/man/man8/zfs-rename.8          |  34 ++-
+ sys/contrib/openzfs/module/avl/avl.c               |   3 +
+ sys/contrib/openzfs/module/nvpair/nvpair.c         |   9 +
+ .../openzfs/module/os/freebsd/spl/spl_kstat.c      | 278 +++++++++++++++++----
+ .../openzfs/module/os/freebsd/spl/spl_zone.c       |   6 -
+ .../openzfs/module/os/freebsd/zfs/spa_stats.c      | 114 ---------
+ .../openzfs/module/os/freebsd/zfs/zfs_vfsops.c     | 193 --------------
+ .../openzfs/module/os/freebsd/zfs/zvol_os.c        |  22 +-
+ .../openzfs/module/os/linux/spl/spl-kstat.c        |   4 +
+ .../openzfs/module/os/linux/zfs/Makefile.in        |   1 -
+ sys/contrib/openzfs/module/os/linux/zfs/arc_os.c   |   3 +-
+ .../openzfs/module/os/linux/zfs/zfs_vfsops.c       |  10 +
+ .../openzfs/module/os/linux/zfs/zpl_super.c        |  20 ++
+ sys/contrib/openzfs/module/zfs/Makefile.in         |   1 +
+ sys/contrib/openzfs/module/zfs/arc.c               |   7 +-
+ sys/contrib/openzfs/module/zfs/dsl_dir.c           |   6 +-
+ sys/contrib/openzfs/module/zfs/spa.c               |   3 +-
+ sys/contrib/openzfs/module/zfs/spa_config.c        |   3 +-
+ .../openzfs/module/{os/linux => }/zfs/spa_stats.c  |  28 +--
+ sys/contrib/openzfs/module/zfs/vdev.c              |   7 +-
+ sys/contrib/openzfs/module/zfs/vdev_indirect.c     |   6 +-
+ sys/contrib/openzfs/module/zfs/vdev_raidz.c        |   2 +-
+ sys/contrib/openzfs/module/zfs/zfs_fm.c            |   2 +-
+ sys/contrib/openzfs/module/zfs/zfs_ioctl.c         |   3 +-
+ sys/contrib/openzfs/module/zfs/zio.c               |  14 +-
+ sys/contrib/openzfs/tests/runfiles/common.run      |   2 +-
+ .../openzfs/tests/zfs-tests/include/tunables.cfg   |   4 +-
+ .../functional/cli_root/zfs_rename/Makefile.am     |   3 +-
+ .../cli_root/zfs_rename/zfs_rename_mountpoint.ksh  |   4 +-
+ .../cli_root/zfs_rename/zfs_rename_nounmount.ksh   |  93 +++++++
+ sys/kern/uipc_ktls.c                               |  15 --
+ sys/kern/vfs_hash.c                                |   1 +
+ sys/netinet/tcp_stacks/bbr.c                       |  25 --
+ sys/riscv/riscv/genassym.c                         |   2 +-
+ sys/rpc/svc.c                                      |   2 +
+ 65 files changed, 726 insertions(+), 627 deletions(-)
+ rename sys/contrib/openzfs/include/os/freebsd/zfs/sys/{zfs_vfsops.h => zfs_vfsops_os.h} (98%)
+ rename sys/contrib/openzfs/include/os/linux/zfs/sys/{zfs_vfsops.h => zfs_vfsops_os.h} (100%)
+ create mode 100644 sys/contrib/openzfs/include/sys/zfs_vfsops.h
+ create mode 100644 sys/contrib/openzfs/lib/libspl/os/freebsd/zone.c
+ rename sys/contrib/openzfs/lib/libspl/{ => os/linux}/zone.c (65%)
+ delete mode 100644 sys/contrib/openzfs/module/os/freebsd/zfs/spa_stats.c
+ rename sys/contrib/openzfs/module/{os/linux => }/zfs/spa_stats.c (97%)
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_rename/zfs_rename_nounmount.ksh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    8d1532df8033..fda96f32db8e  freebsd/current/master -> freebsd/current/master
+remote:    7292e95d3299..1188bc839285  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   8d1532df8033..fda96f32db8e  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
