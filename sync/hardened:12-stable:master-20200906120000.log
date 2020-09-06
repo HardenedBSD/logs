@@ -1,0 +1,112 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/modules/Makefile
+Auto-merging sys/conf/files.amd64
+Auto-merging sys/conf/files
+Auto-merging share/man/man4/Makefile
+Merge made by the 'recursive' strategy.
+ share/man/man4/Makefile                        |    3 +
+ share/man/man4/ena.4                           |   96 +-
+ share/man/man4/sume.4                          |   98 +
+ sys/conf/files                                 |    4 +
+ sys/conf/files.amd64                           |    1 +
+ sys/contrib/ena-com/ena_com.c                  |  824 +++----
+ sys/contrib/ena-com/ena_com.h                  |  289 +--
+ sys/contrib/ena-com/ena_defs/ena_admin_defs.h  |  651 ++++--
+ sys/contrib/ena-com/ena_defs/ena_common_defs.h |    8 +-
+ sys/contrib/ena-com/ena_defs/ena_eth_io_defs.h |  251 +--
+ sys/contrib/ena-com/ena_defs/ena_gen_info.h    |    6 +-
+ sys/contrib/ena-com/ena_defs/ena_regs_defs.h   |  209 +-
+ sys/contrib/ena-com/ena_eth_com.c              |  272 +--
+ sys/contrib/ena-com/ena_eth_com.h              |  134 +-
+ sys/contrib/ena-com/ena_plat.h                 |   81 +-
+ sys/dev/drm/drm.h                              |    4 +-
+ sys/dev/drm2/drm_os_freebsd.c                  |    2 +
+ sys/dev/drm2/drm_os_freebsd.h                  |   10 +-
+ sys/dev/ena/ena.c                              | 2731 +++++++++++-------------
+ sys/dev/ena/ena.h                              |  198 +-
+ sys/dev/ena/ena_datapath.c                     | 1125 ++++++++++
+ sys/dev/ena/ena_datapath.h                     |   42 +
+ sys/dev/ena/ena_netmap.c                       | 1092 ++++++++++
+ sys/dev/ena/ena_netmap.h                       |   60 +
+ sys/dev/ena/ena_sysctl.c                       |  225 +-
+ sys/dev/ena/ena_sysctl.h                       |    7 +-
+ sys/dev/sume/adapter.h                         |  242 +++
+ sys/dev/sume/if_sume.c                         | 1602 ++++++++++++++
+ sys/modules/Makefile                           |    2 +
+ sys/modules/ena/Makefile                       |    5 +-
+ sys/modules/sume/Makefile                      |    9 +
+ 31 files changed, 7574 insertions(+), 2709 deletions(-)
+ create mode 100644 share/man/man4/sume.4
+ create mode 100644 sys/dev/ena/ena_datapath.c
+ create mode 100644 sys/dev/ena/ena_datapath.h
+ create mode 100644 sys/dev/ena/ena_netmap.c
+ create mode 100644 sys/dev/ena/ena_netmap.h
+ create mode 100644 sys/dev/sume/adapter.h
+ create mode 100644 sys/dev/sume/if_sume.c
+ create mode 100644 sys/modules/sume/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    87f3b136ce4f..728980f5ceb4  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    5e27d5843ac0..ca0200965b9a  github/freebsd/12-stable/master -> github/freebsd/12-stable/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   87f3b136ce4f..728980f5ceb4  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
