@@ -1,0 +1,88 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ share/man/man9/malloc.9                         |  11 +-
+ sys/arm/allwinner/aw_if_dwc.c                   |   2 +-
+ sys/arm/amlogic/aml8726/aml8726_if_dwc.c        |   2 +-
+ sys/arm64/conf/GENERIC                          |   1 +
+ sys/arm64/rockchip/if_dwc_rk.c                  | 540 +++++++++++++++++++++---
+ sys/compat/linuxkpi/common/include/linux/slab.h |   6 +
+ sys/conf/files.arm64                            |   1 +
+ sys/dev/altera/dwc/if_dwc_socfpga.c             | 113 +++++
+ sys/dev/dwc/if_dwc.c                            | 404 ++++++++++++------
+ sys/dev/dwc/if_dwc.h                            |   9 +-
+ sys/dev/dwc/if_dwc_if.m                         |  16 +-
+ sys/dev/dwc/if_dwcvar.h                         |   4 +-
+ sys/kern/kern_malloc.c                          |  35 ++
+ sys/net/if.c                                    |  47 +++
+ sys/net/if_var.h                                |  13 +-
+ sys/sys/malloc.h                                |   1 +
+ sys/vm/memguard.c                               |   6 +
+ sys/vm/memguard.h                               |   2 +
+ 18 files changed, 1015 insertions(+), 198 deletions(-)
+ create mode 100644 sys/dev/altera/dwc/if_dwc_socfpga.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    728980f5ceb4..1975bcd8a32a  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    ca0200965b9a..11b537fc0ed8  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   728980f5ceb4..1975bcd8a32a  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
