@@ -47,3 +47,158 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+Auto-merging net-im/mcabber/Makefile
+CONFLICT (content): Merge conflict in net-im/mcabber/Makefile
+Removing editors/texstudio/files/patch-src_texstudio.cpp
+Removing audio/opusfile/files/ftime.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc net-im/mcabber/Makefile
+index 2e666f416034,b883bd1024a9..000000000000
+--- a/net-im/mcabber/Makefile
++++ b/net-im/mcabber/Makefile
+@@@ -25,7 -24,8 +24,12 @@@ GNU_CONFIGURE=	ye
+  CONFIGURE_ARGS=	--disable-hgcset
+  INSTALL_TARGET=	install-strip
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	cfi safestack
+++=======
++ PORTDATA=	*
++ PORTEXAMPLES=	*
+++>>>>>>> freebsd/master
+  
+  OPTIONS_DEFINE=		EXAMPLES GPGME OTR IDN
+  OPTIONS_DEFAULT=	IDN
+diff --cc ports-mgmt/pkg/distinfo
+index fa7fa2e82a58,106452bba1fa..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1597775639
+ +SHA256 (HardenedBSD-pkg-682e423e30c4037074642ba6473739bc4172bf2c_GL0.tar.gz) = fbf03061cb19c3778c4871efc04f8715db9833c4b3ffe2d4b6eaa161d2c3572f
+ +SIZE (HardenedBSD-pkg-682e423e30c4037074642ba6473739bc4172bf2c_GL0.tar.gz) = 3407594
+++=======
++ TIMESTAMP = 1599494005
++ SHA256 (freebsd-pkg-1.15.1_GH0.tar.gz) = d6ecbbe2a82c649e658e9e812963650086f134c97bf9769c9fbf2325b3e3b8d9
++ SIZE (freebsd-pkg-1.15.1_GH0.tar.gz) = 3822727
+++>>>>>>> freebsd/master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   astro/josm/Makefile
+	modified:   astro/josm/distinfo
+	modified:   astro/mkgmap/Makefile
+	modified:   astro/mkgmap/distinfo
+	modified:   audio/fasttracker2/Makefile
+	modified:   audio/fasttracker2/distinfo
+	modified:   audio/opusfile/Makefile
+	modified:   audio/opusfile/distinfo
+	deleted:    audio/opusfile/files/ftime.c
+	modified:   audio/opusfile/pkg-descr
+	modified:   audio/opusfile/pkg-plist
+	modified:   databases/adminer/Makefile
+	modified:   databases/adminer/distinfo
+	modified:   devel/robin-map/Makefile
+	modified:   devel/robin-map/distinfo
+	modified:   dns/bind9-devel/Makefile
+	modified:   dns/bind9-devel/distinfo
+	modified:   dns/bind9-devel/files/extrapatch-bind-min-override-ttl
+	modified:   editors/texstudio/Makefile
+	modified:   editors/texstudio/distinfo
+	deleted:    editors/texstudio/files/patch-src_texstudio.cpp
+	modified:   ftp/py-aioftp/Makefile
+	modified:   ftp/py-aioftp/distinfo
+	modified:   graphics/libfpx/files/patch-warnings
+	modified:   lang/perl5-devel/Makefile
+	modified:   lang/perl5-devel/distinfo
+	modified:   lang/perl5-devel/files/patch-cpan_ExtUtils-Install_lib_ExtUtils_Install.pm
+	modified:   lang/perl5-devel/files/patch-t_porting_customized.dat
+	modified:   net-im/mcabber/distinfo
+	modified:   net-im/mcabber/pkg-plist
+	modified:   net/py-siosocks/Makefile
+	modified:   net/py-siosocks/distinfo
+	modified:   ports-mgmt/pkg/Makefile
+	modified:   print/cups-filters/Makefile
+	modified:   print/cups-filters/distinfo
+	modified:   print/cups-filters/pkg-plist
+	modified:   print/hplip-plugin/Makefile
+	modified:   print/hplip-plugin/distinfo
+	modified:   print/hplip/Makefile
+	modified:   print/hplip/distinfo
+	modified:   print/hplip/files/patch-installer_dcheck.py
+	modified:   print/hplip/pkg-plist
+	modified:   textproc/dikt/Makefile
+	modified:   www/rubygem-haml/Makefile
+	modified:   www/rubygem-haml/pkg-descr
+	modified:   x11/Makefile
+	new file:   x11/glcapsviewer/Makefile
+	new file:   x11/glcapsviewer/distinfo
+	new file:   x11/glcapsviewer/pkg-descr
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   net-im/mcabber/Makefile
+	both modified:   ports-mgmt/pkg/distinfo
+
+
+It took 3.10 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 747cdf8086f6 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.19 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 747cdf8086f6 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
