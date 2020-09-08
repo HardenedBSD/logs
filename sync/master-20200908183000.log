@@ -47,3 +47,227 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/Makefile
+Auto-merging net/Makefile
+Auto-merging multimedia/obs-studio/Makefile
+Removing editors/neovim-qt/files/patch-src_gui_shellwidget_shellwidget.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/Makefile
+index 2a21ca72764e,da8246afdb6e..000000000000
+--- a/ports-mgmt/pkg/Makefile
++++ b/ports-mgmt/pkg/Makefile
+@@@ -1,7 -1,7 +1,11 @@@
+  # $FreeBSD$
+  
+  PORTNAME=	pkg
+++<<<<<<< HEAD
+ +DISTVERSION=	1.14.7
+++=======
++ DISTVERSION=	1.15.3
+++>>>>>>> freebsd/master
+  _PKG_VERSION=	${DISTVERSION}
+  CATEGORIES=	ports-mgmt
+  #MASTER_SITES=	\
+diff --cc ports-mgmt/pkg/distinfo
+index fa7fa2e82a58,2aaf180955f0..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1597775639
+ +SHA256 (HardenedBSD-pkg-682e423e30c4037074642ba6473739bc4172bf2c_GL0.tar.gz) = fbf03061cb19c3778c4871efc04f8715db9833c4b3ffe2d4b6eaa161d2c3572f
+ +SIZE (HardenedBSD-pkg-682e423e30c4037074642ba6473739bc4172bf2c_GL0.tar.gz) = 3407594
+++=======
++ TIMESTAMP = 1599592906
++ SHA256 (freebsd-pkg-1.15.3_GH0.tar.gz) = 058af35d06d4718e98047d4c247ca2c16659d955292151dc3e481c67bf5cefa3
++ SIZE (freebsd-pkg-1.15.3_GH0.tar.gz) = 3822796
+++>>>>>>> freebsd/master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   biology/gatk/distinfo
+	modified:   databases/rubygem-redis/Makefile
+	modified:   databases/rubygem-redis/distinfo
+	modified:   devel/Makefile
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/folly/files/patch-CMakeLists.txt
+	new file:   devel/folly/files/patch-folly_detail_AtFork.h
+	modified:   devel/folly/pkg-plist
+	modified:   devel/p5-Module-CPANfile/Makefile
+	modified:   devel/p5-Perl-PrereqScanner-NotQuiteLite/Makefile
+	modified:   devel/p5-Perl-PrereqScanner-NotQuiteLite/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-medikit/Makefile
+	new file:   devel/py-medikit/files/patch-setup.py
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-ec2/Makefile
+	modified:   devel/rubygem-aws-sdk-ec2/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-azure_key_vault/Makefile
+	modified:   devel/rubygem-azure_key_vault/distinfo
+	modified:   devel/rubygem-azure_mgmt_appconfiguration/Makefile
+	modified:   devel/rubygem-azure_mgmt_appconfiguration/distinfo
+	modified:   devel/rubygem-azure_mgmt_container_service/Makefile
+	modified:   devel/rubygem-azure_mgmt_container_service/distinfo
+	modified:   devel/rubygem-azure_mgmt_data_factory/Makefile
+	modified:   devel/rubygem-azure_mgmt_data_factory/distinfo
+	new file:   devel/rubygem-azure_mgmt_hybrid_compute/Makefile
+	new file:   devel/rubygem-azure_mgmt_hybrid_compute/distinfo
+	new file:   devel/rubygem-azure_mgmt_hybrid_compute/pkg-descr
+	modified:   devel/rubygem-azure_mgmt_mariadb/Makefile
+	modified:   devel/rubygem-azure_mgmt_mariadb/distinfo
+	modified:   devel/rubygem-azure_mgmt_mysql/Makefile
+	modified:   devel/rubygem-azure_mgmt_mysql/distinfo
+	modified:   devel/rubygem-azure_mgmt_netapp/Makefile
+	modified:   devel/rubygem-azure_mgmt_netapp/distinfo
+	modified:   devel/rubygem-azure_mgmt_network/Makefile
+	modified:   devel/rubygem-azure_mgmt_network/distinfo
+	modified:   devel/rubygem-azure_mgmt_operational_insights/Makefile
+	modified:   devel/rubygem-azure_mgmt_operational_insights/distinfo
+	modified:   devel/rubygem-azure_mgmt_subscriptions/Makefile
+	modified:   devel/rubygem-azure_mgmt_subscriptions/distinfo
+	modified:   devel/rubygem-azure_sdk/Makefile
+	modified:   devel/rubygem-azure_sdk/distinfo
+	modified:   devel/rubygem-azure_sdk/files/patch-gemspec
+	modified:   devel/rubygem-nio4r/Makefile
+	modified:   devel/rubygem-nio4r/distinfo
+	modified:   devel/rubygem-sidekiq/Makefile
+	modified:   devel/rubygem-sidekiq/distinfo
+	modified:   editors/neovim-qt/Makefile
+	modified:   editors/neovim-qt/distinfo
+	deleted:    editors/neovim-qt/files/patch-src_gui_shellwidget_shellwidget.cpp
+	modified:   games/jumpnbump/Makefile
+	modified:   graphics/blender/Makefile
+	new file:   graphics/blender/files/patch-build_files_cmake_Modules_FindPythonLibsUnix.cmake
+	modified:   graphics/gdal/Makefile
+	modified:   math/octave/Makefile
+	modified:   math/py-flax/Makefile
+	modified:   math/py-flax/distinfo
+	modified:   math/qhull5/Makefile
+	modified:   multimedia/mkvtoolnix/Makefile
+	modified:   multimedia/mkvtoolnix/distinfo
+	modified:   multimedia/obs-studio/Makefile
+	modified:   net/Makefile
+	modified:   net/dpdk/Makefile
+	modified:   net/dpdk/distinfo
+	modified:   net/haproxy/Makefile
+	modified:   net/haproxy/distinfo
+	new file:   net/mvfst/Makefile
+	new file:   net/mvfst/distinfo
+	new file:   net/mvfst/pkg-descr
+	new file:   net/mvfst/pkg-plist
+	new file:   net/p5-URI-cpan/Makefile
+	new file:   net/p5-URI-cpan/distinfo
+	new file:   net/p5-URI-cpan/pkg-descr
+	new file:   net/p5-URI-cpan/pkg-plist
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	new file:   net/wangle/Makefile
+	new file:   net/wangle/distinfo
+	new file:   net/wangle/files/patch-acceptor_TransportInfo.cpp
+	new file:   net/wangle/pkg-descr
+	new file:   net/wangle/pkg-plist
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   sysutils/libudisks/Makefile
+	modified:   sysutils/libudisks/distinfo
+	modified:   sysutils/libudisks/pkg-plist
+	modified:   textproc/Makefile
+	new file:   textproc/p5-String-TtyLength/Makefile
+	new file:   textproc/p5-String-TtyLength/distinfo
+	new file:   textproc/p5-String-TtyLength/pkg-descr
+	new file:   textproc/p5-String-TtyLength/pkg-plist
+	modified:   textproc/p5-Text-Table-Tiny/Makefile
+	modified:   textproc/p5-Text-Table-Tiny/distinfo
+	modified:   textproc/py-cloud_sptheme/Makefile
+	modified:   textproc/py-cloud_sptheme/distinfo
+	modified:   textproc/py-cloud_sptheme/pkg-descr
+	modified:   www/Makefile
+	modified:   www/node/Makefile
+	modified:   www/node/distinfo
+	modified:   www/node/files/patch-deps_openssl_openssl-cl__no__asm.gypi
+	modified:   www/node/files/patch-deps_openssl_openssl__no__asm.gypi
+	modified:   www/node/pkg-plist
+	new file:   www/proxygen/Makefile
+	new file:   www/proxygen/distinfo
+	new file:   www/proxygen/files/patch-proxygen_httpserver_CMakeLists.txt
+	new file:   www/proxygen/files/patch-proxygen_lib_CMakeLists.txt
+	new file:   www/proxygen/pkg-descr
+	new file:   www/proxygen/pkg-plist
+	modified:   www/rubygem-protocol-http2/Makefile
+	modified:   www/rubygem-protocol-http2/distinfo
+	new file:   www/rubygem-protocol-http2/files/patch-gemspec
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/Makefile
+	both modified:   ports-mgmt/pkg/distinfo
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 17a11bd19571 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.30 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 17a11bd19571 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
