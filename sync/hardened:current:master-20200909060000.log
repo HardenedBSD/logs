@@ -1,0 +1,294 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/vi/Makefile
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/arm64/arm64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm64/arm64/elf_machdep.c
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Removing contrib/nvi/docs/man/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/arm64/arm64/elf_machdep.c
+index 2e40e281b493,b00521ea5840..000000000000
+--- a/sys/arm64/arm64/elf_machdep.c
++++ b/sys/arm64/arm64/elf_machdep.c
+@@@ -94,7 -93,7 +95,11 @@@ static struct sysentvec elf64_freebsd_s
+  	.sv_thread_detach = NULL,
+  	.sv_trap	= NULL,
+  	.sv_hwcap	= &elf_hwcap,
+++<<<<<<< HEAD
+ +	.sv_pax_aslr_init = pax_aslr_init_vmspace,
+++=======
++ 	.sv_hwcap2	= &elf_hwcap2,
+++>>>>>>> freebsd/current/master
+  };
+  INIT_SYSENTVEC(elf64_sysvec, &elf64_freebsd_sysvec);
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/elftoolchain/libelf/_libelf_config.h
+	new file:   contrib/nvi/.gitignore
+	new file:   contrib/nvi/CMakeLists.txt
+	modified:   contrib/nvi/LICENSE
+	modified:   contrib/nvi/README
+	modified:   contrib/nvi/catalog/Makefile
+	modified:   contrib/nvi/catalog/README
+	modified:   contrib/nvi/catalog/dump.c
+	new file:   contrib/nvi/catalog/tr_TR.ISO8859-9.base
+	new file:   contrib/nvi/catalog/tr_TR.ISO8859-9.owner
+	new file:   contrib/nvi/catalog/tr_TR.UTF-8.base
+	new file:   contrib/nvi/catalog/tr_TR.UTF-8.owner
+	modified:   contrib/nvi/cl/README.signal
+	modified:   contrib/nvi/cl/cl.h
+	modified:   contrib/nvi/cl/cl_funcs.c
+	modified:   contrib/nvi/cl/cl_main.c
+	modified:   contrib/nvi/cl/cl_read.c
+	modified:   contrib/nvi/cl/cl_screen.c
+	modified:   contrib/nvi/cl/cl_term.c
+	modified:   contrib/nvi/common/args.h
+	modified:   contrib/nvi/common/common.h
+	modified:   contrib/nvi/common/conv.c
+	modified:   contrib/nvi/common/conv.h
+	modified:   contrib/nvi/common/cut.c
+	modified:   contrib/nvi/common/cut.h
+	modified:   contrib/nvi/common/delete.c
+	modified:   contrib/nvi/common/encoding.c
+	modified:   contrib/nvi/common/exf.c
+	modified:   contrib/nvi/common/exf.h
+	modified:   contrib/nvi/common/extern.h
+	modified:   contrib/nvi/common/gs.h
+	modified:   contrib/nvi/common/key.c
+	modified:   contrib/nvi/common/key.h
+	modified:   contrib/nvi/common/line.c
+	modified:   contrib/nvi/common/log.c
+	modified:   contrib/nvi/common/log.h
+	modified:   contrib/nvi/common/main.c
+	modified:   contrib/nvi/common/mark.c
+	modified:   contrib/nvi/common/mark.h
+	modified:   contrib/nvi/common/mem.h
+	modified:   contrib/nvi/common/msg.c
+	modified:   contrib/nvi/common/msg.h
+	modified:   contrib/nvi/common/multibyte.h
+	modified:   contrib/nvi/common/options.c
+	modified:   contrib/nvi/common/options.h
+	modified:   contrib/nvi/common/options_def.h
+	modified:   contrib/nvi/common/options_f.c
+	modified:   contrib/nvi/common/put.c
+	modified:   contrib/nvi/common/recover.c
+	modified:   contrib/nvi/common/screen.c
+	modified:   contrib/nvi/common/screen.h
+	modified:   contrib/nvi/common/search.c
+	modified:   contrib/nvi/common/seq.c
+	modified:   contrib/nvi/common/seq.h
+	modified:   contrib/nvi/common/util.c
+	modified:   contrib/nvi/common/util.h
+	deleted:    contrib/nvi/docs/man/Makefile
+	modified:   contrib/nvi/ex/ex.c
+	modified:   contrib/nvi/ex/ex.h
+	modified:   contrib/nvi/ex/ex_abbrev.c
+	modified:   contrib/nvi/ex/ex_append.c
+	modified:   contrib/nvi/ex/ex_args.c
+	modified:   contrib/nvi/ex/ex_argv.c
+	modified:   contrib/nvi/ex/ex_at.c
+	modified:   contrib/nvi/ex/ex_bang.c
+	modified:   contrib/nvi/ex/ex_cd.c
+	modified:   contrib/nvi/ex/ex_cmd.c
+	modified:   contrib/nvi/ex/ex_cscope.c
+	modified:   contrib/nvi/ex/ex_delete.c
+	modified:   contrib/nvi/ex/ex_display.c
+	modified:   contrib/nvi/ex/ex_edit.c
+	modified:   contrib/nvi/ex/ex_equal.c
+	modified:   contrib/nvi/ex/ex_file.c
+	modified:   contrib/nvi/ex/ex_filter.c
+	modified:   contrib/nvi/ex/ex_global.c
+	modified:   contrib/nvi/ex/ex_init.c
+	modified:   contrib/nvi/ex/ex_join.c
+	modified:   contrib/nvi/ex/ex_map.c
+	modified:   contrib/nvi/ex/ex_mark.c
+	modified:   contrib/nvi/ex/ex_mkexrc.c
+	modified:   contrib/nvi/ex/ex_move.c
+	modified:   contrib/nvi/ex/ex_open.c
+	modified:   contrib/nvi/ex/ex_preserve.c
+	modified:   contrib/nvi/ex/ex_print.c
+	modified:   contrib/nvi/ex/ex_put.c
+	modified:   contrib/nvi/ex/ex_quit.c
+	modified:   contrib/nvi/ex/ex_read.c
+	modified:   contrib/nvi/ex/ex_screen.c
+	modified:   contrib/nvi/ex/ex_script.c
+	modified:   contrib/nvi/ex/ex_set.c
+	modified:   contrib/nvi/ex/ex_shell.c
+	modified:   contrib/nvi/ex/ex_shift.c
+	modified:   contrib/nvi/ex/ex_source.c
+	modified:   contrib/nvi/ex/ex_stop.c
+	modified:   contrib/nvi/ex/ex_subst.c
+	modified:   contrib/nvi/ex/ex_tag.c
+	modified:   contrib/nvi/ex/ex_txt.c
+	modified:   contrib/nvi/ex/ex_undo.c
+	modified:   contrib/nvi/ex/ex_usage.c
+	modified:   contrib/nvi/ex/ex_util.c
+	modified:   contrib/nvi/ex/ex_version.c
+	modified:   contrib/nvi/ex/ex_visual.c
+	modified:   contrib/nvi/ex/ex_write.c
+	modified:   contrib/nvi/ex/ex_yank.c
+	modified:   contrib/nvi/ex/ex_z.c
+	modified:   contrib/nvi/ex/extern.h
+	modified:   contrib/nvi/ex/script.h
+	modified:   contrib/nvi/ex/tag.h
+	modified:   contrib/nvi/ex/version.h
+	new file:   contrib/nvi/files/config.h.in
+	new file:   contrib/nvi/files/pathnames.h.in
+	new file:   contrib/nvi/files/recover.in
+	renamed:    contrib/nvi/docs/man/vi.1 -> contrib/nvi/man/vi.1
+	modified:   contrib/nvi/vi/getc.c
+	modified:   contrib/nvi/vi/v_at.c
+	modified:   contrib/nvi/vi/v_ch.c
+	modified:   contrib/nvi/vi/v_cmd.c
+	modified:   contrib/nvi/vi/v_delete.c
+	modified:   contrib/nvi/vi/v_ex.c
+	modified:   contrib/nvi/vi/v_increment.c
+	modified:   contrib/nvi/vi/v_init.c
+	modified:   contrib/nvi/vi/v_itxt.c
+	modified:   contrib/nvi/vi/v_left.c
+	modified:   contrib/nvi/vi/v_mark.c
+	modified:   contrib/nvi/vi/v_match.c
+	modified:   contrib/nvi/vi/v_paragraph.c
+	modified:   contrib/nvi/vi/v_put.c
+	modified:   contrib/nvi/vi/v_redraw.c
+	modified:   contrib/nvi/vi/v_replace.c
+	modified:   contrib/nvi/vi/v_right.c
+	modified:   contrib/nvi/vi/v_screen.c
+	modified:   contrib/nvi/vi/v_scroll.c
+	modified:   contrib/nvi/vi/v_search.c
+	modified:   contrib/nvi/vi/v_section.c
+	modified:   contrib/nvi/vi/v_sentence.c
+	modified:   contrib/nvi/vi/v_status.c
+	modified:   contrib/nvi/vi/v_txt.c
+	modified:   contrib/nvi/vi/v_ulcase.c
+	modified:   contrib/nvi/vi/v_undo.c
+	modified:   contrib/nvi/vi/v_util.c
+	modified:   contrib/nvi/vi/v_word.c
+	modified:   contrib/nvi/vi/v_xchar.c
+	modified:   contrib/nvi/vi/v_yank.c
+	modified:   contrib/nvi/vi/v_z.c
+	modified:   contrib/nvi/vi/v_zexit.c
+	modified:   contrib/nvi/vi/vi.c
+	modified:   contrib/nvi/vi/vi.h
+	modified:   contrib/nvi/vi/vs_line.c
+	modified:   contrib/nvi/vi/vs_msg.c
+	modified:   contrib/nvi/vi/vs_refresh.c
+	modified:   contrib/nvi/vi/vs_relative.c
+	modified:   contrib/nvi/vi/vs_smap.c
+	modified:   contrib/nvi/vi/vs_split.c
+	modified:   lib/libc/tests/resolv/resolv_test.c
+	modified:   lib/libc/tests/stdlib/dynthr_mod/dynthr_mod.c
+	modified:   libexec/Makefile
+	renamed:    usr.sbin/portsnap/phttpget/Makefile -> libexec/phttpget/Makefile
+	renamed:    usr.sbin/portsnap/phttpget/Makefile.depend -> libexec/phttpget/Makefile.depend
+	renamed:    usr.sbin/portsnap/phttpget/phttpget.8 -> libexec/phttpget/phttpget.8
+	renamed:    usr.sbin/portsnap/phttpget/phttpget.c -> libexec/phttpget/phttpget.c
+	modified:   share/mk/src.opts.mk
+	modified:   stand/libofw/ofw_memory.c
+	modified:   sys/arm64/arm64/identcpu.c
+	modified:   sys/arm64/include/md_var.h
+	modified:   sys/crypto/armv8/armv8_crypto.c
+	modified:   sys/dev/hifn/hifn7751.c
+	modified:   sys/dev/ksyms/ksyms.c
+	modified:   sys/dev/safe/safe.c
+	modified:   sys/dev/xen/gntdev/gntdev.c
+	modified:   sys/geom/part/g_part.c
+	modified:   sys/geom/part/g_part_gpt.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/link_elf.c
+	modified:   sys/kern/link_elf_obj.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/libkern/gsb_crc32.c
+	modified:   sys/modules/zfs/Makefile
+	modified:   sys/net/route/route_tables.c
+	modified:   sys/powerpc/aim/aim_machdep.c
+	modified:   sys/powerpc/powernv/xive.c
+	modified:   sys/powerpc/powerpc/cpu.c
+	modified:   sys/powerpc/powerpc/intr_machdep.c
+	modified:   sys/sys/syscallsubr.h
+	modified:   sys/vm/phys_pager.c
+	modified:   sys/vm/uma_core.c
+	modified:   sys/vm/vm_domainset.c
+	modified:   sys/vm/vm_domainset.h
+	modified:   sys/vm/vm_glue.c
+	modified:   sys/vm/vm_mmap.c
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vm_object.h
+	modified:   sys/vm/vm_page.c
+	modified:   sys/vm/vm_pageout.h
+	modified:   sys/vm/vm_pager.h
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	modified:   usr.bin/vi/Makefile
+	modified:   usr.bin/vi/catalog/Makefile
+	modified:   usr.bin/vi/config.h
+	modified:   usr.bin/vi/pathnames.h
+	modified:   usr.sbin/certctl/certctl.sh
+	modified:   usr.sbin/portsnap/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/arm64/arm64/elf_machdep.c
+
+HEAD is now at 67bd482784aa HBSD: Teach the build infrastructure to properly handle -O*
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 67bd482784aa HBSD: Teach the build infrastructure to properly handle -O*
+==== END: hardened/current/master ====
