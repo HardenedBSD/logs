@@ -536,3 +536,157 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/syncthing/files/patch-syncthing_lib_tlsutil_tlsutil.go
+Removing net/syncthing/files/patch-syncthing_lib_connections_service.go
+Removing net/syncthing/files/patch-syncthing_lib_api_api__test.go
+Removing net/syncthing/files/patch-syncthing_lib_api_api.go
+Removing net/syncthing/files/patch-syncthing_build.go
+Removing net/syncthing/files/patch-gopsutil_aarch64
+Merge made by the 'recursive' strategy.
+ devel/gitlab-runner/Makefile                       |   6 +-
+ devel/gitlab-runner/distinfo                       |   6 +-
+ devel/libunwind/Makefile                           |  17 +-
+ devel/libunwind/files/patch-powerpc64              | 465 +++++++++++++++++++++
+ devel/libunwind/pkg-plist                          |  12 +-
+ devel/p5-Log-Log4perl/Makefile                     |   6 +-
+ devel/p5-Log-Log4perl/distinfo                     |   6 +-
+ devel/p5-Perl-Tidy/Makefile                        |   2 +-
+ devel/p5-Perl-Tidy/distinfo                        |   6 +-
+ devel/p5-Test2-Harness/Makefile                    |   2 +-
+ devel/p5-Test2-Harness/distinfo                    |   6 +-
+ devel/py-azure-core/Makefile                       |   2 +-
+ devel/py-azure-core/distinfo                       |   6 +-
+ devel/py-hypothesis/Makefile                       |   2 +-
+ devel/py-hypothesis/distinfo                       |   6 +-
+ devel/py-jupyterlab/Makefile                       |   2 +-
+ devel/py-jupyterlab/distinfo                       |   6 +-
+ devel/py-openstacksdk/Makefile                     |  10 +-
+ devel/py-openstacksdk/distinfo                     |   6 +-
+ devel/py-osc-lib/Makefile                          |   2 +-
+ devel/py-osc-lib/distinfo                          |   6 +-
+ devel/py-pip/Makefile                              |   2 +-
+ devel/py-pip/distinfo                              |   6 +-
+ devel/py-pycadf/Makefile                           |   2 +-
+ devel/py-pycadf/distinfo                           |   6 +-
+ devel/rubygem-aws-sdk-apigatewayv2/Makefile        |   2 +-
+ devel/rubygem-aws-sdk-apigatewayv2/distinfo        |   6 +-
+ devel/rubygem-aws-sdk-codebuild/Makefile           |   2 +-
+ devel/rubygem-aws-sdk-codebuild/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ devel/rubygem-aws-sdk-quicksight/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-quicksight/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-ddtrace/Makefile                     |   2 +-
+ devel/rubygem-ddtrace/distinfo                     |   6 +-
+ games/crispy-doom/Makefile                         |   5 +-
+ games/crispy-doom/distinfo                         |   6 +-
+ games/mt_gtk_client/Makefile                       |   1 +
+ lang/gcc10-devel/Makefile                          |   2 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ lang/lua52/files/patch-src__luaconf.h              |  19 +
+ math/py-jax/Makefile                               |   2 +-
+ math/py-jax/distinfo                               |   6 +-
+ misc/rubygem-octicons/Makefile                     |   2 +-
+ misc/rubygem-octicons/distinfo                     |   6 +-
+ net-mgmt/py-msrest/Makefile                        |   2 +-
+ net-mgmt/py-msrest/distinfo                        |   6 +-
+ net/p5-Net-Ping/Makefile                           |   4 +-
+ net/p5-Net-Ping/distinfo                           |   6 +-
+ net/syncthing/Makefile                             |  12 +-
+ net/syncthing/distinfo                             |  10 +-
+ net/syncthing/files/patch-gopsutil_aarch64         | 407 ------------------
+ net/syncthing/files/patch-syncthing_build.go       |  11 -
+ net/syncthing/files/patch-syncthing_lib_api_api.go |  47 ---
+ .../files/patch-syncthing_lib_api_api__test.go     |  38 --
+ .../patch-syncthing_lib_connections_service.go     |  15 -
+ .../files/patch-syncthing_lib_tlsutil_tlsutil.go   |  10 -
+ news/newsx/Makefile                                |   1 +
+ sysutils/minikube/Makefile                         |  37 +-
+ sysutils/minikube/distinfo                         |  68 ++-
+ textproc/rubygem-rouge/Makefile                    |   2 +-
+ textproc/rubygem-rouge/distinfo                    |   6 +-
+ www/gitlab-pages/Makefile                          |   5 +-
+ www/gitlab-pages/distinfo                          |   6 +-
+ www/py-notebook/Makefile                           |   2 +-
+ www/py-notebook/distinfo                           |   6 +-
+ x11-fonts/sourcesanspro-ttf/Makefile               |   2 +-
+ x11-fonts/sourcesanspro-ttf/distinfo               |   6 +-
+ x11-fonts/sourcesanspro-ttf/pkg-plist              |  24 +-
+ x11-toolkits/girara/Makefile                       |   6 +-
+ x11-toolkits/girara/distinfo                       |   6 +-
+ x11-toolkits/girara/pkg-plist                      |   2 +
+ 82 files changed, 720 insertions(+), 760 deletions(-)
+ create mode 100644 devel/libunwind/files/patch-powerpc64
+ create mode 100644 lang/lua52/files/patch-src__luaconf.h
+ delete mode 100644 net/syncthing/files/patch-gopsutil_aarch64
+ delete mode 100644 net/syncthing/files/patch-syncthing_build.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_api_api.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_api_api__test.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_connections_service.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_tlsutil_tlsutil.go
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    1b7394be09f0..085396a77e14  master -> master        
+remote:    b983d2857a93..1b7394be09f0  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   1b7394be09f0..085396a77e14  master -> master
+==== END: master ====
