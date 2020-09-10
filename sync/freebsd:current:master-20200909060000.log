@@ -1,0 +1,237 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 953094c4e862..4305fae23e1d
+Fast-forward
+ contrib/nvi/.gitignore                    |   9 +
+ contrib/nvi/CMakeLists.txt                | 190 +++++++++++++++++++
+ contrib/nvi/LICENSE                       |   4 -
+ contrib/nvi/README                        |  10 +-
+ contrib/nvi/catalog/Makefile              |   9 +-
+ contrib/nvi/catalog/README                |   2 -
+ contrib/nvi/catalog/dump.c                |   5 +-
+ contrib/nvi/catalog/tr_TR.ISO8859-9.base  | 304 ++++++++++++++++++++++++++++++
+ contrib/nvi/catalog/tr_TR.ISO8859-9.owner |   1 +
+ contrib/nvi/catalog/tr_TR.UTF-8.base      | 304 ++++++++++++++++++++++++++++++
+ contrib/nvi/catalog/tr_TR.UTF-8.owner     |   1 +
+ contrib/nvi/cl/README.signal              |   2 -
+ contrib/nvi/cl/cl.h                       |   2 -
+ contrib/nvi/cl/cl_funcs.c                 |   4 -
+ contrib/nvi/cl/cl_main.c                  |  65 ++-----
+ contrib/nvi/cl/cl_read.c                  |   4 -
+ contrib/nvi/cl/cl_screen.c                |  62 +++---
+ contrib/nvi/cl/cl_term.c                  |  25 ++-
+ contrib/nvi/common/args.h                 |   2 -
+ contrib/nvi/common/common.h               |  11 +-
+ contrib/nvi/common/conv.c                 |  13 +-
+ contrib/nvi/common/conv.h                 |   2 -
+ contrib/nvi/common/cut.c                  |  34 +---
+ contrib/nvi/common/cut.h                  |   2 -
+ contrib/nvi/common/delete.c               |  28 ++-
+ contrib/nvi/common/encoding.c             |   4 -
+ contrib/nvi/common/exf.c                  | 106 +++--------
+ contrib/nvi/common/exf.h                  |   2 -
+ contrib/nvi/common/extern.h               |   1 -
+ contrib/nvi/common/gs.h                   |   4 -
+ contrib/nvi/common/key.c                  |  61 ++----
+ contrib/nvi/common/key.h                  |  12 +-
+ contrib/nvi/common/line.c                 |  60 ++----
+ contrib/nvi/common/log.c                  |  61 ++----
+ contrib/nvi/common/log.h                  |   2 -
+ contrib/nvi/common/main.c                 |  76 +++-----
+ contrib/nvi/common/mark.c                 |  35 +---
+ contrib/nvi/common/mark.h                 |   2 -
+ contrib/nvi/common/mem.h                  |  51 ++---
+ contrib/nvi/common/msg.c                  |  55 ++----
+ contrib/nvi/common/msg.h                  |   2 -
+ contrib/nvi/common/multibyte.h            |  36 +++-
+ contrib/nvi/common/options.c              |  66 ++-----
+ contrib/nvi/common/options.h              |   2 -
+ contrib/nvi/common/options_def.h          | 137 +++++++-------
+ contrib/nvi/common/options_f.c            |  94 ++-------
+ contrib/nvi/common/put.c                  |  12 +-
+ contrib/nvi/common/recover.c              |  68 ++-----
+ contrib/nvi/common/screen.c               |  28 +--
+ contrib/nvi/common/screen.h               |   2 -
+ contrib/nvi/common/search.c               |  41 +---
+ contrib/nvi/common/seq.c                  |  65 ++-----
+ contrib/nvi/common/seq.h                  |   2 -
+ contrib/nvi/common/util.c                 |  76 ++------
+ contrib/nvi/common/util.h                 |   2 -
+ contrib/nvi/docs/man/Makefile             |  16 --
+ contrib/nvi/ex/ex.c                       |  11 +-
+ contrib/nvi/ex/ex.h                       |   2 -
+ contrib/nvi/ex/ex_abbrev.c                |   4 -
+ contrib/nvi/ex/ex_append.c                |   4 -
+ contrib/nvi/ex/ex_args.c                  |   9 +-
+ contrib/nvi/ex/ex_argv.c                  |   8 +-
+ contrib/nvi/ex/ex_at.c                    |  10 +-
+ contrib/nvi/ex/ex_bang.c                  |  11 +-
+ contrib/nvi/ex/ex_cd.c                    |   4 -
+ contrib/nvi/ex/ex_cmd.c                   |   4 -
+ contrib/nvi/ex/ex_cscope.c                |  63 +++----
+ contrib/nvi/ex/ex_delete.c                |   4 -
+ contrib/nvi/ex/ex_display.c               |   4 -
+ contrib/nvi/ex/ex_edit.c                  |   4 -
+ contrib/nvi/ex/ex_equal.c                 |   4 -
+ contrib/nvi/ex/ex_file.c                  |   4 -
+ contrib/nvi/ex/ex_filter.c                |   5 +-
+ contrib/nvi/ex/ex_global.c                |  14 +-
+ contrib/nvi/ex/ex_init.c                  |  17 +-
+ contrib/nvi/ex/ex_join.c                  |   4 -
+ contrib/nvi/ex/ex_map.c                   |   4 -
+ contrib/nvi/ex/ex_mark.c                  |   4 -
+ contrib/nvi/ex/ex_mkexrc.c                |   4 -
+ contrib/nvi/ex/ex_move.c                  |   4 -
+ contrib/nvi/ex/ex_open.c                  |   4 -
+ contrib/nvi/ex/ex_preserve.c              |   4 -
+ contrib/nvi/ex/ex_print.c                 |   6 +-
+ contrib/nvi/ex/ex_put.c                   |   4 -
+ contrib/nvi/ex/ex_quit.c                  |   4 -
+ contrib/nvi/ex/ex_read.c                  |   7 +-
+ contrib/nvi/ex/ex_screen.c                |   4 -
+ contrib/nvi/ex/ex_script.c                |  11 +-
+ contrib/nvi/ex/ex_set.c                   |   4 -
+ contrib/nvi/ex/ex_shell.c                 |   4 -
+ contrib/nvi/ex/ex_shift.c                 |  33 +++-
+ contrib/nvi/ex/ex_source.c                |   9 +-
+ contrib/nvi/ex/ex_stop.c                  |   4 -
+ contrib/nvi/ex/ex_subst.c                 |  28 +--
+ contrib/nvi/ex/ex_tag.c                   |  41 ++--
+ contrib/nvi/ex/ex_txt.c                   |  12 +-
+ contrib/nvi/ex/ex_undo.c                  |   4 -
+ contrib/nvi/ex/ex_usage.c                 |   7 +-
+ contrib/nvi/ex/ex_util.c                  |   4 -
+ contrib/nvi/ex/ex_version.c               |   4 -
+ contrib/nvi/ex/ex_visual.c                |   4 -
+ contrib/nvi/ex/ex_write.c                 |   4 -
+ contrib/nvi/ex/ex_yank.c                  |   4 -
+ contrib/nvi/ex/ex_z.c                     |   4 -
+ contrib/nvi/ex/extern.h                   |   1 +
+ contrib/nvi/ex/script.h                   |   2 -
+ contrib/nvi/ex/tag.h                      |   2 -
+ contrib/nvi/ex/version.h                  |   2 +-
+ contrib/nvi/files/config.h.in             |  17 ++
+ contrib/nvi/files/pathnames.h.in          |  26 +++
+ contrib/nvi/files/recover.in              |  53 ++++++
+ contrib/nvi/{docs => }/man/vi.1           |  53 ++++--
+ contrib/nvi/vi/getc.c                     |   4 -
+ contrib/nvi/vi/v_at.c                     |   4 -
+ contrib/nvi/vi/v_ch.c                     |  13 +-
+ contrib/nvi/vi/v_cmd.c                    |   4 -
+ contrib/nvi/vi/v_delete.c                 |   4 -
+ contrib/nvi/vi/v_ex.c                     |   4 -
+ contrib/nvi/vi/v_increment.c              |   4 -
+ contrib/nvi/vi/v_init.c                   |  25 +--
+ contrib/nvi/vi/v_itxt.c                   |   4 -
+ contrib/nvi/vi/v_left.c                   |   4 -
+ contrib/nvi/vi/v_mark.c                   |   4 -
+ contrib/nvi/vi/v_match.c                  |   9 +-
+ contrib/nvi/vi/v_paragraph.c              |   9 +-
+ contrib/nvi/vi/v_put.c                    |   4 -
+ contrib/nvi/vi/v_redraw.c                 |   4 -
+ contrib/nvi/vi/v_replace.c                |   4 -
+ contrib/nvi/vi/v_right.c                  |   4 -
+ contrib/nvi/vi/v_screen.c                 |   4 -
+ contrib/nvi/vi/v_scroll.c                 |   8 +-
+ contrib/nvi/vi/v_search.c                 |   4 -
+ contrib/nvi/vi/v_section.c                |   4 -
+ contrib/nvi/vi/v_sentence.c               |   6 +-
+ contrib/nvi/vi/v_status.c                 |   4 -
+ contrib/nvi/vi/v_txt.c                    |  97 ++++------
+ contrib/nvi/vi/v_ulcase.c                 |   4 -
+ contrib/nvi/vi/v_undo.c                   |   4 -
+ contrib/nvi/vi/v_util.c                   |   4 -
+ contrib/nvi/vi/v_word.c                   |   4 -
+ contrib/nvi/vi/v_xchar.c                  |   4 -
+ contrib/nvi/vi/v_yank.c                   |   4 -
+ contrib/nvi/vi/v_z.c                      |   4 -
+ contrib/nvi/vi/v_zexit.c                  |   4 -
+ contrib/nvi/vi/vi.c                       |  12 +-
+ contrib/nvi/vi/vi.h                       |   4 +-
+ contrib/nvi/vi/vs_line.c                  |   4 -
+ contrib/nvi/vi/vs_msg.c                   |  17 +-
+ contrib/nvi/vi/vs_refresh.c               |  11 +-
+ contrib/nvi/vi/vs_relative.c              |   4 -
+ contrib/nvi/vi/vs_smap.c                  |   4 -
+ contrib/nvi/vi/vs_split.c                 |  10 +-
+ usr.bin/vi/Makefile                       |   5 +-
+ usr.bin/vi/catalog/Makefile               |   2 +-
+ usr.bin/vi/config.h                       |   8 +-
+ usr.bin/vi/pathnames.h                    |   1 -
+ usr.sbin/certctl/certctl.sh               |  61 ++++--
+ 157 files changed, 1616 insertions(+), 1646 deletions(-)
+ create mode 100644 contrib/nvi/.gitignore
+ create mode 100644 contrib/nvi/CMakeLists.txt
+ create mode 100644 contrib/nvi/catalog/tr_TR.ISO8859-9.base
+ create mode 100644 contrib/nvi/catalog/tr_TR.ISO8859-9.owner
+ create mode 100644 contrib/nvi/catalog/tr_TR.UTF-8.base
+ create mode 100644 contrib/nvi/catalog/tr_TR.UTF-8.owner
+ delete mode 100644 contrib/nvi/docs/man/Makefile
+ create mode 100644 contrib/nvi/files/config.h.in
+ create mode 100644 contrib/nvi/files/pathnames.h.in
+ create mode 100644 contrib/nvi/files/recover.in
+ rename contrib/nvi/{docs => }/man/vi.1 (98%)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    953094c4e862..4305fae23e1d  freebsd/current/master -> freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   953094c4e862..4305fae23e1d  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====

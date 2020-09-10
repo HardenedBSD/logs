@@ -1,0 +1,101 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating c0b46c5d9f65..67bd482784aa
+Fast-forward
+ share/mk/bsd.lib.mk  | 3 +++
+ share/mk/bsd.prog.mk | 3 +++
+ share/mk/sys.mk      | 6 +-----
+ sys/conf/kern.mk     | 3 +++
+ sys/conf/kmod.mk     | 3 +++
+ 5 files changed, 13 insertions(+), 5 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/arm64/arm64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm64/arm64/elf_machdep.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/arm64/arm64/elf_machdep.c
+index 2e40e281b493,b00521ea5840..000000000000
+--- a/sys/arm64/arm64/elf_machdep.c
++++ b/sys/arm64/arm64/elf_machdep.c
+@@@ -94,7 -93,7 +95,11 @@@ static struct sysentvec elf64_freebsd_s
+  	.sv_thread_detach = NULL,
+  	.sv_trap	= NULL,
+  	.sv_hwcap	= &elf_hwcap,
+++<<<<<<< HEAD
+ +	.sv_pax_aslr_init = pax_aslr_init_vmspace,
+++=======
++ 	.sv_hwcap2	= &elf_hwcap2,
+++>>>>>>> freebsd/current/master
+  };
+  INIT_SYSENTVEC(elf64_sysvec, &elf64_freebsd_sysvec);
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/arm64/arm64/identcpu.c
+	modified:   sys/arm64/include/md_var.h
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/libkern/gsb_crc32.c
+	modified:   sys/modules/zfs/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/arm64/arm64/elf_machdep.c
+
+HEAD is now at 67bd482784aa HBSD: Teach the build infrastructure to properly handle -O*
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 67bd482784aa HBSD: Teach the build infrastructure to properly handle -O*
+==== END: hardened/current/master ====

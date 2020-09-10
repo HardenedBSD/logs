@@ -1,0 +1,120 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/vm/vm_unix.c
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/vm/vm_map.h
+Auto-merging sys/vm/vm_map.c
+CONFLICT (content): Merge conflict in sys/vm/vm_map.c
+Auto-merging sys/amd64/amd64/pmap.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/vm/vm_map.c
+index f7035c06553e,c20005ae64cf..000000000000
+--- a/sys/vm/vm_map.c
++++ b/sys/vm/vm_map.c
+@@@ -1575,12 -1561,12 +1577,19 @@@ vm_map_insert(vm_map_t map, vm_object_
+  	KASSERT(object != kernel_object ||
+  	    (cow & MAP_COPY_ON_WRITE) == 0,
+  	    ("vm_map_insert: kernel object and COW"));
+++<<<<<<< HEAD
+ +	KASSERT(object == NULL || (cow & MAP_NOFAULT) == 0,
+ +	    ("vm_map_insert: paradoxical MAP_NOFAULT request"));
+ +#ifndef PAX_NOEXEC
+++=======
++ 	KASSERT(object == NULL || (cow & MAP_NOFAULT) == 0 ||
++ 	    (cow & MAP_SPLIT_BOUNDARY_MASK) != 0,
++ 	    ("vm_map_insert: paradoxical MAP_NOFAULT request, obj %p cow %#x",
++ 	    object, cow));
+++>>>>>>> freebsd/current/master
+  	KASSERT((prot & ~max) == 0,
+  	    ("prot %#x is not subset of max_prot %#x", prot, max));
+ +#endif
+  
+  	/*
+  	 * Check that the start and end points are not bogus.
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   bin/cp/utils.c
+	modified:   lib/libc/sys/Symbol.map
+	modified:   lib/libc/sys/shm_open.c
+	modified:   lib/libsysdecode/mkioctls
+	modified:   sbin/ping6/ping6.8
+	modified:   sbin/ping6/ping6.c
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/kern/kern_umtx.c
+	modified:   sys/kern/uipc_shm.c
+	modified:   sys/net/route/route_ctl.c
+	modified:   sys/net/route/route_tables.c
+	modified:   sys/net/route/route_var.h
+	modified:   sys/netinet/cc/cc.h
+	modified:   sys/powerpc/powernv/opal_dev.c
+	modified:   sys/sys/filio.h
+	modified:   sys/sys/mman.h
+	modified:   sys/vm/pmap.h
+	modified:   sys/vm/vm_fault.c
+	modified:   sys/vm/vm_map.h
+	modified:   sys/vm/vm_mmap.c
+	modified:   sys/vm/vm_unix.c
+	modified:   usr.bin/posixshmcontrol/posixshmcontrol.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/vm/vm_map.c
+
+HEAD is now at 9eb0d24cffe7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 9eb0d24cffe7 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====

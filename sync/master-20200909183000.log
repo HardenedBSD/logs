@@ -1,0 +1,692 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 127 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 17a11bd19571..1b7394be09f0
+Fast-forward
+ GIDs                                               |    2 +-
+ MOVED                                              |    9 +-
+ UIDs                                               |    2 +-
+ astro/opencpn/Makefile                             |   17 +-
+ astro/opencpn/distinfo                             |    6 +-
+ astro/opencpn/files/patch-CMakeLists.txt           |   27 +-
+ astro/opencpn/files/patch-cmake_TargetSetup.cmake  |   20 +
+ .../files/patch-include_zeroconf-detail.hpp        |   18 +
+ .../files/patch-libs_easywsclient_easywsclient.cpp |   10 +
+ .../files/patch-libs_wxservdisc_wxServDisc.cpp     |   14 +
+ astro/opencpn/files/patch-src_chart1.cpp           |   12 +-
+ .../opencpn/files/patch-src_routemanagerdialog.cpp |   68 -
+ astro/opencpn/pkg-plist                            |   32 +-
+ audio/drumkv1-lv2/Makefile                         |    2 +-
+ audio/drumkv1-lv2/distinfo                         |    6 +-
+ audio/gtick/Makefile                               |    9 +-
+ audio/gtick/distinfo                               |    5 +-
+ audio/gtick/files/patch-src-optionlexer.l          |   11 -
+ audio/padthv1-lv2/Makefile                         |    3 +-
+ audio/padthv1-lv2/distinfo                         |    6 +-
+ audio/samplv1-lv2/Makefile                         |    2 +-
+ audio/samplv1-lv2/distinfo                         |    6 +-
+ audio/synthv1-lv2/Makefile                         |    2 +-
+ audio/synthv1-lv2/distinfo                         |    6 +-
+ benchmarks/flops/Makefile                          |    4 +-
+ benchmarks/flops/distinfo                          |    5 +-
+ biology/gatk/distinfo                              |    6 +-
+ cad/kicad-devel/Makefile                           |   11 +-
+ cad/kicad-devel/Makefile.git_rev                   |    4 +-
+ cad/kicad-devel/distinfo                           |    6 +-
+ cad/kicad-devel/files/newVersion.sh                |   24 +-
+ cad/kicad-devel/pkg-plist                          |    9 +-
+ comms/flmsg/Makefile                               |    2 +-
+ comms/flmsg/distinfo                               |    6 +-
+ converters/R-cran-jsonlite/Makefile                |    2 +-
+ converters/R-cran-jsonlite/distinfo                |    6 +-
+ databases/memcached/Makefile                       |   34 +-
+ databases/memcached/distinfo                       |    6 +-
+ databases/rubygem-redis/Makefile                   |    2 +-
+ databases/rubygem-redis/distinfo                   |    6 +-
+ devel/Makefile                                     |    1 +
+ ...ch-adb_client_transport__mdns__unsupported.cpp} |    2 +-
+ devel/cargo-c/Makefile                             |   15 +-
+ devel/cargo-c/distinfo                             |   30 +-
+ devel/cpprestsdk/Makefile                          |   18 +-
+ devel/cpprestsdk/distinfo                          |    6 +-
+ devel/cpprestsdk/files/patch-git_6b2e048001        |   34 -
+ devel/cpprestsdk/files/patch-git_70c1b14f39        |   36 -
+ .../files/patch-include_pplx_pplxlinux.h           |   12 -
+ devel/cpprestsdk/files/patch-z-boost-1.70          |   62 -
+ devel/cpprestsdk/pkg-plist                         |   11 +-
+ devel/efl/Makefile                                 |  307 +-
+ devel/efl/distinfo                                 |   10 +-
+ devel/efl/files/patch-configure.ac                 |   28 -
+ devel/efl/files/patch-m4_efl.m4                    |   11 -
+ devel/efl/files/patch-src_Makefile.am              |   11 -
+ .../patch-src_bin_elementary_test__ui__clock.c     |  141 -
+ devel/efl/files/patch-src_lib_evas_Evas__GL.h      |   14 -
+ devel/efl/pkg-plist                                | 3467 --------------------
+ devel/folly/Makefile                               |    4 +-
+ devel/folly/distinfo                               |    6 +-
+ devel/folly/files/patch-CMakeLists.txt             |   13 +-
+ devel/folly/files/patch-folly_detail_AtFork.h      |   11 +
+ devel/folly/pkg-plist                              |    1 +
+ devel/gocheese/Makefile                            |    4 +-
+ devel/gocheese/distinfo                            |    6 +-
+ devel/jenkins/Makefile                             |    2 +-
+ devel/jenkins/distinfo                             |    6 +-
+ devel/ncurses/Makefile                             |    2 +-
+ devel/ncurses/distinfo                             |    6 +-
+ devel/p5-Module-CPANfile/Makefile                  |    3 +-
+ devel/p5-Perl-PrereqScanner-NotQuiteLite/Makefile  |    5 +-
+ devel/p5-Perl-PrereqScanner-NotQuiteLite/distinfo  |    6 +-
+ devel/py-btest/Makefile                            |    2 +-
+ devel/py-btest/distinfo                            |    6 +-
+ devel/py-hypothesis/Makefile                       |    2 +-
+ devel/py-hypothesis/distinfo                       |    6 +-
+ devel/py-libzfs/Makefile                           |    6 +-
+ devel/py-libzfs/distinfo                           |    6 +-
+ devel/py-medikit/Makefile                          |    3 -
+ devel/py-medikit/files/patch-setup.py              |   11 +
+ devel/py-oci/Makefile                              |    2 +-
+ devel/py-oci/distinfo                              |    6 +-
+ devel/py-oci/pkg-descr                             |    7 +-
+ devel/py-validators/Makefile                       |    2 +-
+ devel/py-validators/distinfo                       |    6 +-
+ devel/py-wlc/Makefile                              |    2 +-
+ devel/py-wlc/distinfo                              |    6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |    2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |    6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |    6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |    2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |    6 +-
+ devel/rubygem-azure_key_vault/Makefile             |    2 +-
+ devel/rubygem-azure_key_vault/distinfo             |    6 +-
+ devel/rubygem-azure_mgmt_appconfiguration/Makefile |    2 +-
+ devel/rubygem-azure_mgmt_appconfiguration/distinfo |    6 +-
+ .../rubygem-azure_mgmt_container_service/Makefile  |    2 +-
+ .../rubygem-azure_mgmt_container_service/distinfo  |    6 +-
+ devel/rubygem-azure_mgmt_data_factory/Makefile     |    2 +-
+ devel/rubygem-azure_mgmt_data_factory/distinfo     |    6 +-
+ devel/rubygem-azure_mgmt_hybrid_compute/Makefile   |   21 +
+ devel/rubygem-azure_mgmt_hybrid_compute/distinfo   |    3 +
+ devel/rubygem-azure_mgmt_hybrid_compute/pkg-descr  |    4 +
+ devel/rubygem-azure_mgmt_mariadb/Makefile          |    2 +-
+ devel/rubygem-azure_mgmt_mariadb/distinfo          |    6 +-
+ devel/rubygem-azure_mgmt_mysql/Makefile            |    2 +-
+ devel/rubygem-azure_mgmt_mysql/distinfo            |    6 +-
+ devel/rubygem-azure_mgmt_netapp/Makefile           |    2 +-
+ devel/rubygem-azure_mgmt_netapp/distinfo           |    6 +-
+ devel/rubygem-azure_mgmt_network/Makefile          |    2 +-
+ devel/rubygem-azure_mgmt_network/distinfo          |    6 +-
+ .../Makefile                                       |    2 +-
+ .../distinfo                                       |    6 +-
+ devel/rubygem-azure_mgmt_subscriptions/Makefile    |    2 +-
+ devel/rubygem-azure_mgmt_subscriptions/distinfo    |    6 +-
+ devel/rubygem-azure_sdk/Makefile                   |   23 +-
+ devel/rubygem-azure_sdk/distinfo                   |    6 +-
+ devel/rubygem-azure_sdk/files/patch-gemspec        |    6 +-
+ devel/rubygem-nio4r/Makefile                       |    2 +-
+ devel/rubygem-nio4r/distinfo                       |    6 +-
+ devel/rubygem-omniauth_crowd/Makefile              |    3 +-
+ devel/rubygem-sidekiq/Makefile                     |    2 +-
+ devel/rubygem-sidekiq/distinfo                     |    6 +-
+ devel/slibtool/Makefile                            |    2 +-
+ devel/slibtool/distinfo                            |    6 +-
+ devel/slibtool/files/patch-sofort_ccenv_ccenv.sh   |   11 -
+ devel/sonarqube-community/Makefile                 |    2 +-
+ devel/sonarqube-community/distinfo                 |    6 +-
+ editors/neovim-qt/Makefile                         |    4 +-
+ editors/neovim-qt/distinfo                         |    6 +-
+ .../patch-src_gui_shellwidget_shellwidget.cpp      |    8 -
+ games/funnyboat/Makefile                           |   23 +-
+ games/funnyboat/distinfo                           |    5 +-
+ games/funnyboat/files/funnyboat.sh.in              |    3 +
+ games/funnyboat/files/funnyboat_.in                |   16 -
+ games/funnyboat/pkg-descr                          |    3 +-
+ games/funnyboat/pkg-plist                          |   50 -
+ games/jumpnbump/Makefile                           |    6 +-
+ games/xboing/files/patch-Imakefile                 |   10 +-
+ games/xboing/files/patch-LINUXaudio.c              |   10 +-
+ games/xboing/files/patch-ball.c                    |    4 +-
+ games/xboing/files/patch-bonus.c                   |  383 +--
+ games/xboing/files/patch-debian                    |  153 -
+ games/xboing/files/patch-demo.c                    |   20 +
+ games/xboing/files/patch-editor.c                  |   44 +
+ games/xboing/files/patch-file.c                    |   47 +
+ games/xboing/files/patch-highscore.c               |   51 +-
+ games/xboing/files/patch-init.c                    |   22 +-
+ games/xboing/files/patch-inst.c                    |   11 +
+ games/xboing/files/patch-intro.c                   |   11 +
+ games/xboing/files/patch-keys.c                    |   11 +
+ games/xboing/files/patch-main.c                    |   11 +
+ games/xboing/files/patch-misc.c                    |  201 ++
+ games/xboing/files/patch-presents.c                |  152 +
+ games/xboing/files/patch-preview.c                 |   20 +
+ games/xboing/files/patch-xboing.man                |   14 +-
+ graphics/blender/Makefile                          |    1 +
+ ...ld_files_cmake_Modules_FindPythonLibsUnix.cmake |   11 +
+ graphics/cloudcompare/Makefile                     |    1 +
+ graphics/gdal/Makefile                             |    2 +-
+ irc/ircd-hybrid/Makefile                           |    2 +-
+ irc/ircd-hybrid/distinfo                           |    6 +-
+ irc/ircd-hybrid/pkg-plist                          |    2 +
+ lang/kotlin/Makefile                               |    2 +-
+ lang/kotlin/distinfo                               |    6 +-
+ lang/kotlin/pkg-plist                              |   20 +-
+ mail/exim/Makefile                                 |    2 +-
+ ...ing-of-local_part_data-in-docs-and-debug-output |   54 +
+ ...-z0028-Fix-readsocket-eol-replacement.-Bug-2630 |  216 ++
+ ...9-Taint-fix-off-by-one-in-is_tainted-.-Bug-2634 |   51 +
+ ...30-Build-ifdef-guard-for-EXPERIMENTAL_QUEUEFILE |   32 +
+ ...1-Taint-fix-off-by-one-in-is_tainted-.-Bug-2634 |   28 +
+ ...ch-z0032-DANE-force-SNI-to-use-domain.-Bug-2265 |  102 +
+ ...E-Fix-2-rcpt-message-diff-domins-case.-Bug-2265 |  217 ++
+ mail/exim/files/patch-z0034-Fix-non-DANE-build     |   92 +
+ ...patch-z0035-DANE-Fix-2-messages-from-queue-case |  525 +++
+ mail/exim/files/patch-z0036-Fix-non-DANE-build     |  114 +
+ mail/exim/options                                  |    1 +
+ mail/libdkim/Makefile                              |   11 +-
+ mail/libdkim/files/patch-dkimsign.cpp              |  119 +
+ mail/libdkim/files/patch-dkimsign.h                |   21 +
+ mail/libdkim/files/patch-dkimverify.cpp            |   85 +
+ mail/libdkim/files/patch-dkimverify.h              |   13 +
+ mail/libdkim/pkg-descr                             |    4 +-
+ math/R-cran-quantreg/Makefile                      |    2 +-
+ math/R-cran-quantreg/distinfo                      |    6 +-
+ math/octave/Makefile                               |    4 +-
+ math/py-flax/Makefile                              |    2 +-
+ math/py-flax/distinfo                              |    6 +-
+ math/py-pdal/Makefile                              |    2 +-
+ math/qhull5/Makefile                               |    3 +
+ misc/openhab2/Makefile                             |   11 +-
+ misc/openhab2/pkg-plist                            |   17 +-
+ misc/urh/Makefile                                  |    2 +-
+ misc/urh/distinfo                                  |    6 +-
+ multimedia/librav1e/Makefile                       |    2 +-
+ multimedia/mkvtoolnix/Makefile                     |    6 +-
+ multimedia/mkvtoolnix/distinfo                     |    6 +-
+ multimedia/obs-studio/Makefile                     |    3 +
+ multimedia/rage/Makefile                           |    3 +-
+ multimedia/rage/distinfo                           |    6 +-
+ multimedia/rage/pkg-plist                          |    2 +-
+ multimedia/rav1e/Makefile                          |  145 +-
+ multimedia/rav1e/distinfo                          |  284 +-
+ net-im/matterbridge/Makefile                       |    2 +-
+ net-im/matterbridge/distinfo                       |    6 +-
+ net-mgmt/netdata-go/Makefile                       |   13 +-
+ net-mgmt/netdata-go/distinfo                       |   20 +-
+ net-mgmt/netdata-go/pkg-plist                      |    1 +
+ net-mgmt/virt-viewer/pkg-plist                     |    1 +
+ net/Makefile                                       |    3 +
+ net/dpdk/Makefile                                  |    6 +-
+ net/dpdk/distinfo                                  |    6 +-
+ net/enet/Makefile                                  |    4 +-
+ net/enet/distinfo                                  |    6 +-
+ net/enet/pkg-plist                                 |    2 +-
+ net/google-cloud-sdk/Makefile                      |    2 +-
+ net/google-cloud-sdk/distinfo                      |    6 +-
+ net/gscloud/Makefile                               |   54 +-
+ net/gscloud/distinfo                               |  104 +-
+ net/haproxy/Makefile                               |    2 +-
+ net/haproxy/distinfo                               |    6 +-
+ net/mvfst/Makefile                                 |   30 +
+ net/mvfst/distinfo                                 |    3 +
+ net/mvfst/pkg-descr                                |    9 +
+ net/mvfst/pkg-plist                                |  151 +
+ net/p5-URI-cpan/Makefile                           |   26 +
+ net/p5-URI-cpan/distinfo                           |    3 +
+ net/p5-URI-cpan/pkg-descr                          |    3 +
+ net/p5-URI-cpan/pkg-plist                          |   12 +
+ net/py-h11/Makefile                                |    2 +-
+ net/py-h11/distinfo                                |    6 +-
+ net/rsocket-cpp/Makefile                           |    3 +-
+ net/rsocket-cpp/distinfo                           |    6 +-
+ net/wangle/Makefile                                |   41 +
+ net/wangle/distinfo                                |    3 +
+ net/wangle/files/patch-acceptor_TransportInfo.cpp  |   19 +
+ net/wangle/pkg-descr                               |    6 +
+ net/wangle/pkg-plist                               |  110 +
+ science/R-cran-etm/Makefile                        |    3 +-
+ science/R-cran-etm/distinfo                        |    6 +-
+ science/dvc/Makefile                               |    2 +-
+ security/fizz/Makefile                             |    3 +-
+ security/fizz/distinfo                             |    6 +-
+ security/nss/files/patch-bug1659256                |  105 +
+ security/py-zkg/Makefile                           |    4 +-
+ security/py-zkg/distinfo                           |    6 +-
+ security/samhain/pkg-plist                         |    1 +
+ security/snort2pfcd/Makefile                       |    2 +-
+ security/snort2pfcd/distinfo                       |    6 +-
+ security/step-certificates/Makefile                |    8 +-
+ security/step-certificates/distinfo                |   18 +-
+ security/step-cli/Makefile                         |    8 +-
+ security/step-cli/distinfo                         |   18 +-
+ security/vuxml/vuln.xml                            |   45 +
+ sysutils/Makefile                                  |    2 +
+ sysutils/evisum/Makefile                           |   21 +
+ sysutils/evisum/distinfo                           |    3 +
+ sysutils/evisum/files/patch-src_bin_meson.build    |    8 +
+ sysutils/evisum/pkg-descr                          |    3 +
+ sysutils/evisum/pkg-plist                          |   19 +
+ sysutils/libudisks/Makefile                        |    2 +-
+ sysutils/libudisks/distinfo                        |    6 +-
+ sysutils/libudisks/pkg-plist                       |    2 +-
+ sysutils/loganalyzer/Makefile                      |   57 +
+ sysutils/loganalyzer/distinfo                      |    3 +
+ sysutils/loganalyzer/pkg-descr                     |   13 +
+ sysutils/loganalyzer/pkg-plist                     |  575 ++++
+ sysutils/seatd/Makefile                            |    6 +-
+ sysutils/seatd/distinfo                            |    8 +-
+ textproc/Makefile                                  |    1 +
+ textproc/p5-String-TtyLength/Makefile              |   24 +
+ textproc/p5-String-TtyLength/distinfo              |    3 +
+ textproc/p5-String-TtyLength/pkg-descr             |    6 +
+ textproc/p5-String-TtyLength/pkg-plist             |    2 +
+ textproc/p5-Text-Table-Tiny/Makefile               |    5 +-
+ textproc/p5-Text-Table-Tiny/distinfo               |    6 +-
+ textproc/py-cloud_sptheme/Makefile                 |   15 +-
+ textproc/py-cloud_sptheme/distinfo                 |    6 +-
+ textproc/py-cloud_sptheme/pkg-descr                |    2 +-
+ textproc/py-texttable/Makefile                     |    2 +-
+ textproc/py-texttable/distinfo                     |    6 +-
+ www/Makefile                                       |    1 +
+ www/beehive/Makefile                               |   64 +-
+ www/beehive/distinfo                               |   60 +-
+ www/beehive/files/beehive.in                       |   76 +
+ ...ub.com_flashmob_go-guerrilla_guerrilla__unix.go |    9 +
+ www/beehive/pkg-plist                              |    2 +
+ www/cpp-httplib/Makefile                           |    2 +-
+ www/cpp-httplib/distinfo                           |    6 +-
+ www/minio/Makefile                                 |    4 +-
+ www/minio/distinfo                                 |    6 +-
+ www/mod_http2/Makefile                             |    2 +-
+ www/mod_http2/distinfo                             |    6 +-
+ www/node/Makefile                                  |   10 +-
+ www/node/distinfo                                  |    6 +-
+ .../patch-deps_openssl_openssl-cl__no__asm.gypi    |    4 +-
+ .../files/patch-deps_openssl_openssl__no__asm.gypi |    4 +-
+ www/node/pkg-plist                                 |   15 +
+ www/p5-HTML-Gumbo/Makefile                         |    2 +
+ www/proxygen/Makefile                              |   38 +
+ www/proxygen/distinfo                              |    3 +
+ .../files/patch-proxygen_httpserver_CMakeLists.txt |   13 +
+ .../files/patch-proxygen_lib_CMakeLists.txt        |   13 +
+ www/proxygen/pkg-descr                             |    8 +
+ www/proxygen/pkg-plist                             |  227 ++
+ www/rubygem-protocol-http2/Makefile                |    2 +-
+ www/rubygem-protocol-http2/distinfo                |    6 +-
+ www/rubygem-protocol-http2/files/patch-gemspec     |   11 +
+ www/trac-fivestarvote/Makefile                     |    2 +
+ www/trac-fivestarvote/pkg-descr                    |    2 +-
+ x11-servers/Xfstt/Makefile                         |    2 +-
+ x11-servers/Xfstt/distinfo                         |    6 +-
+ x11-wm/Makefile                                    |    8 -
+ x11-wm/e-module-alarm/Makefile                     |   34 -
+ x11-wm/e-module-alarm/distinfo                     |    2 -
+ x11-wm/e-module-alarm/pkg-descr                    |    3 -
+ x11-wm/e-module-alarm/pkg-plist                    |   37 -
+ x11-wm/e-module-cpu/Makefile                       |   28 -
+ x11-wm/e-module-cpu/distinfo                       |    2 -
+ x11-wm/e-module-cpu/pkg-descr                      |    5 -
+ x11-wm/e-module-cpu/pkg-plist                      |   37 -
+ x11-wm/e-module-deskshow/Makefile                  |   24 -
+ x11-wm/e-module-deskshow/distinfo                  |    2 -
+ x11-wm/e-module-deskshow/pkg-descr                 |    3 -
+ x11-wm/e-module-deskshow/pkg-plist                 |    4 -
+ x11-wm/e-module-everything-places/Makefile         |   28 -
+ x11-wm/e-module-everything-places/distinfo         |    2 -
+ x11-wm/e-module-everything-places/pkg-descr        |    3 -
+ x11-wm/e-module-everything-places/pkg-plist        |   22 -
+ x11-wm/e-module-mem/Makefile                       |   29 -
+ x11-wm/e-module-mem/distinfo                       |    2 -
+ x11-wm/e-module-mem/files/patch-src-e_mod_main.c   |   16 -
+ .../e-module-mem/files/patch-src-machdep_freebsd.c |   50 -
+ x11-wm/e-module-mem/pkg-descr                      |    5 -
+ x11-wm/e-module-mem/pkg-plist                      |   35 -
+ x11-wm/e-module-rmb/Makefile                       |   25 -
+ x11-wm/e-module-rmb/distinfo                       |    2 -
+ x11-wm/e-module-rmb/pkg-descr                      |    3 -
+ x11-wm/e-module-rmb/pkg-plist                      |    4 -
+ x11-wm/e-module-wlan/Makefile                      |   36 -
+ x11-wm/e-module-wlan/distinfo                      |    2 -
+ x11-wm/e-module-wlan/pkg-descr                     |    3 -
+ x11-wm/e-module-wlan/pkg-plist                     |   37 -
+ x11-wm/e-modules/Makefile                          |   40 -
+ x11-wm/e-modules/pkg-descr                         |    3 -
+ x11-wm/enlightenment/Makefile                      |   60 +-
+ x11-wm/enlightenment/distinfo                      |    6 +-
+ x11-wm/enlightenment/files/patch-8392fc47.c        |   35 -
+ ...src_modules_sysinfo_cpuclock_cpuclock__sysctl.c |   10 -
+ x11-wm/enlightenment/pkg-descr                     |    3 +-
+ x11-wm/enlightenment/pkg-plist                     |   70 +-
+ x11-wm/hikari/Makefile                             |    8 +-
+ x11-wm/hikari/distinfo                             |    6 +-
+ x11/arandr/Makefile                                |    3 +-
+ x11/terminology/Makefile                           |    2 +-
+ x11/terminology/distinfo                           |    6 +-
+ x11/terminology/pkg-plist                          |    4 +
+ 362 files changed, 5542 insertions(+), 6113 deletions(-)
+ create mode 100644 astro/opencpn/files/patch-cmake_TargetSetup.cmake
+ create mode 100644 astro/opencpn/files/patch-include_zeroconf-detail.hpp
+ create mode 100644 astro/opencpn/files/patch-libs_easywsclient_easywsclient.cpp
+ create mode 100644 astro/opencpn/files/patch-libs_wxservdisc_wxServDisc.cpp
+ delete mode 100644 astro/opencpn/files/patch-src_routemanagerdialog.cpp
+ delete mode 100644 audio/gtick/files/patch-src-optionlexer.l
+ rename devel/android-tools-adb/files/{patch-adb_transport__mdns__unsupported.cpp => patch-adb_client_transport__mdns__unsupported.cpp} (94%)
+ delete mode 100644 devel/cpprestsdk/files/patch-git_6b2e048001
+ delete mode 100644 devel/cpprestsdk/files/patch-git_70c1b14f39
+ delete mode 100644 devel/cpprestsdk/files/patch-include_pplx_pplxlinux.h
+ delete mode 100644 devel/cpprestsdk/files/patch-z-boost-1.70
+ delete mode 100644 devel/efl/files/patch-configure.ac
+ delete mode 100644 devel/efl/files/patch-m4_efl.m4
+ delete mode 100644 devel/efl/files/patch-src_Makefile.am
+ delete mode 100644 devel/efl/files/patch-src_bin_elementary_test__ui__clock.c
+ delete mode 100644 devel/efl/files/patch-src_lib_evas_Evas__GL.h
+ delete mode 100644 devel/efl/pkg-plist
+ create mode 100644 devel/folly/files/patch-folly_detail_AtFork.h
+ create mode 100644 devel/py-medikit/files/patch-setup.py
+ create mode 100644 devel/rubygem-azure_mgmt_hybrid_compute/Makefile
+ create mode 100644 devel/rubygem-azure_mgmt_hybrid_compute/distinfo
+ create mode 100644 devel/rubygem-azure_mgmt_hybrid_compute/pkg-descr
+ delete mode 100644 devel/slibtool/files/patch-sofort_ccenv_ccenv.sh
+ delete mode 100644 editors/neovim-qt/files/patch-src_gui_shellwidget_shellwidget.cpp
+ create mode 100644 games/funnyboat/files/funnyboat.sh.in
+ delete mode 100644 games/funnyboat/files/funnyboat_.in
+ delete mode 100644 games/funnyboat/pkg-plist
+ delete mode 100644 games/xboing/files/patch-debian
+ create mode 100644 games/xboing/files/patch-demo.c
+ create mode 100644 games/xboing/files/patch-editor.c
+ create mode 100644 games/xboing/files/patch-file.c
+ create mode 100644 games/xboing/files/patch-inst.c
+ create mode 100644 games/xboing/files/patch-intro.c
+ create mode 100644 games/xboing/files/patch-keys.c
+ create mode 100644 games/xboing/files/patch-main.c
+ create mode 100644 games/xboing/files/patch-misc.c
+ create mode 100644 games/xboing/files/patch-presents.c
+ create mode 100644 games/xboing/files/patch-preview.c
+ create mode 100644 graphics/blender/files/patch-build_files_cmake_Modules_FindPythonLibsUnix.cmake
+ create mode 100644 mail/exim/files/patch-z0027-Fix-spelling-of-local_part_data-in-docs-and-debug-output
+ create mode 100644 mail/exim/files/patch-z0028-Fix-readsocket-eol-replacement.-Bug-2630
+ create mode 100644 mail/exim/files/patch-z0029-Taint-fix-off-by-one-in-is_tainted-.-Bug-2634
+ create mode 100644 mail/exim/files/patch-z0030-Build-ifdef-guard-for-EXPERIMENTAL_QUEUEFILE
+ create mode 100644 mail/exim/files/patch-z0031-Taint-fix-off-by-one-in-is_tainted-.-Bug-2634
+ create mode 100644 mail/exim/files/patch-z0032-DANE-force-SNI-to-use-domain.-Bug-2265
+ create mode 100644 mail/exim/files/patch-z0033-DANE-Fix-2-rcpt-message-diff-domins-case.-Bug-2265
+ create mode 100644 mail/exim/files/patch-z0034-Fix-non-DANE-build
+ create mode 100644 mail/exim/files/patch-z0035-DANE-Fix-2-messages-from-queue-case
+ create mode 100644 mail/exim/files/patch-z0036-Fix-non-DANE-build
+ create mode 100644 mail/libdkim/files/patch-dkimsign.cpp
+ create mode 100644 mail/libdkim/files/patch-dkimsign.h
+ create mode 100644 mail/libdkim/files/patch-dkimverify.cpp
+ create mode 100644 mail/libdkim/files/patch-dkimverify.h
+ create mode 100644 net/mvfst/Makefile
+ create mode 100644 net/mvfst/distinfo
+ create mode 100644 net/mvfst/pkg-descr
+ create mode 100644 net/mvfst/pkg-plist
+ create mode 100644 net/p5-URI-cpan/Makefile
+ create mode 100644 net/p5-URI-cpan/distinfo
+ create mode 100644 net/p5-URI-cpan/pkg-descr
+ create mode 100644 net/p5-URI-cpan/pkg-plist
+ create mode 100644 net/wangle/Makefile
+ create mode 100644 net/wangle/distinfo
+ create mode 100644 net/wangle/files/patch-acceptor_TransportInfo.cpp
+ create mode 100644 net/wangle/pkg-descr
+ create mode 100644 net/wangle/pkg-plist
+ create mode 100644 security/nss/files/patch-bug1659256
+ create mode 100644 sysutils/evisum/Makefile
+ create mode 100644 sysutils/evisum/distinfo
+ create mode 100644 sysutils/evisum/files/patch-src_bin_meson.build
+ create mode 100644 sysutils/evisum/pkg-descr
+ create mode 100644 sysutils/evisum/pkg-plist
+ create mode 100644 sysutils/loganalyzer/Makefile
+ create mode 100644 sysutils/loganalyzer/distinfo
+ create mode 100644 sysutils/loganalyzer/pkg-descr
+ create mode 100644 sysutils/loganalyzer/pkg-plist
+ create mode 100644 textproc/p5-String-TtyLength/Makefile
+ create mode 100644 textproc/p5-String-TtyLength/distinfo
+ create mode 100644 textproc/p5-String-TtyLength/pkg-descr
+ create mode 100644 textproc/p5-String-TtyLength/pkg-plist
+ create mode 100644 www/beehive/files/beehive.in
+ create mode 100644 www/beehive/files/patch-vendor_github.com_flashmob_go-guerrilla_guerrilla__unix.go
+ create mode 100644 www/beehive/pkg-plist
+ create mode 100644 www/proxygen/Makefile
+ create mode 100644 www/proxygen/distinfo
+ create mode 100644 www/proxygen/files/patch-proxygen_httpserver_CMakeLists.txt
+ create mode 100644 www/proxygen/files/patch-proxygen_lib_CMakeLists.txt
+ create mode 100644 www/proxygen/pkg-descr
+ create mode 100644 www/proxygen/pkg-plist
+ create mode 100644 www/rubygem-protocol-http2/files/patch-gemspec
+ delete mode 100644 x11-wm/e-module-alarm/Makefile
+ delete mode 100644 x11-wm/e-module-alarm/distinfo
+ delete mode 100644 x11-wm/e-module-alarm/pkg-descr
+ delete mode 100644 x11-wm/e-module-alarm/pkg-plist
+ delete mode 100644 x11-wm/e-module-cpu/Makefile
+ delete mode 100644 x11-wm/e-module-cpu/distinfo
+ delete mode 100644 x11-wm/e-module-cpu/pkg-descr
+ delete mode 100644 x11-wm/e-module-cpu/pkg-plist
+ delete mode 100644 x11-wm/e-module-deskshow/Makefile
+ delete mode 100644 x11-wm/e-module-deskshow/distinfo
+ delete mode 100644 x11-wm/e-module-deskshow/pkg-descr
+ delete mode 100644 x11-wm/e-module-deskshow/pkg-plist
+ delete mode 100644 x11-wm/e-module-everything-places/Makefile
+ delete mode 100644 x11-wm/e-module-everything-places/distinfo
+ delete mode 100644 x11-wm/e-module-everything-places/pkg-descr
+ delete mode 100644 x11-wm/e-module-everything-places/pkg-plist
+ delete mode 100644 x11-wm/e-module-mem/Makefile
+ delete mode 100644 x11-wm/e-module-mem/distinfo
+ delete mode 100644 x11-wm/e-module-mem/files/patch-src-e_mod_main.c
+ delete mode 100644 x11-wm/e-module-mem/files/patch-src-machdep_freebsd.c
+ delete mode 100644 x11-wm/e-module-mem/pkg-descr
+ delete mode 100644 x11-wm/e-module-mem/pkg-plist
+ delete mode 100644 x11-wm/e-module-rmb/Makefile
+ delete mode 100644 x11-wm/e-module-rmb/distinfo
+ delete mode 100644 x11-wm/e-module-rmb/pkg-descr
+ delete mode 100644 x11-wm/e-module-rmb/pkg-plist
+ delete mode 100644 x11-wm/e-module-wlan/Makefile
+ delete mode 100644 x11-wm/e-module-wlan/distinfo
+ delete mode 100644 x11-wm/e-module-wlan/pkg-descr
+ delete mode 100644 x11-wm/e-module-wlan/pkg-plist
+ delete mode 100644 x11-wm/e-modules/Makefile
+ delete mode 100644 x11-wm/e-modules/pkg-descr
+ delete mode 100644 x11-wm/enlightenment/files/patch-8392fc47.c
+ delete mode 100644 x11-wm/enlightenment/files/patch-src_modules_sysinfo_cpuclock_cpuclock__sysctl.c
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/syncthing/files/patch-syncthing_lib_tlsutil_tlsutil.go
+Removing net/syncthing/files/patch-syncthing_lib_connections_service.go
+Removing net/syncthing/files/patch-syncthing_lib_api_api__test.go
+Removing net/syncthing/files/patch-syncthing_lib_api_api.go
+Removing net/syncthing/files/patch-syncthing_build.go
+Removing net/syncthing/files/patch-gopsutil_aarch64
+Merge made by the 'recursive' strategy.
+ devel/gitlab-runner/Makefile                       |   6 +-
+ devel/gitlab-runner/distinfo                       |   6 +-
+ devel/libunwind/Makefile                           |  17 +-
+ devel/libunwind/files/patch-powerpc64              | 465 +++++++++++++++++++++
+ devel/libunwind/pkg-plist                          |  12 +-
+ devel/p5-Log-Log4perl/Makefile                     |   6 +-
+ devel/p5-Log-Log4perl/distinfo                     |   6 +-
+ devel/p5-Perl-Tidy/Makefile                        |   2 +-
+ devel/p5-Perl-Tidy/distinfo                        |   6 +-
+ devel/p5-Test2-Harness/Makefile                    |   2 +-
+ devel/p5-Test2-Harness/distinfo                    |   6 +-
+ devel/py-azure-core/Makefile                       |   2 +-
+ devel/py-azure-core/distinfo                       |   6 +-
+ devel/py-hypothesis/Makefile                       |   2 +-
+ devel/py-hypothesis/distinfo                       |   6 +-
+ devel/py-jupyterlab/Makefile                       |   2 +-
+ devel/py-jupyterlab/distinfo                       |   6 +-
+ devel/py-openstacksdk/Makefile                     |  10 +-
+ devel/py-openstacksdk/distinfo                     |   6 +-
+ devel/py-osc-lib/Makefile                          |   2 +-
+ devel/py-osc-lib/distinfo                          |   6 +-
+ devel/py-pip/Makefile                              |   2 +-
+ devel/py-pip/distinfo                              |   6 +-
+ devel/py-pycadf/Makefile                           |   2 +-
+ devel/py-pycadf/distinfo                           |   6 +-
+ devel/rubygem-aws-sdk-apigatewayv2/Makefile        |   2 +-
+ devel/rubygem-aws-sdk-apigatewayv2/distinfo        |   6 +-
+ devel/rubygem-aws-sdk-codebuild/Makefile           |   2 +-
+ devel/rubygem-aws-sdk-codebuild/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ devel/rubygem-aws-sdk-quicksight/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-quicksight/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-ddtrace/Makefile                     |   2 +-
+ devel/rubygem-ddtrace/distinfo                     |   6 +-
+ games/crispy-doom/Makefile                         |   5 +-
+ games/crispy-doom/distinfo                         |   6 +-
+ games/mt_gtk_client/Makefile                       |   1 +
+ lang/gcc10-devel/Makefile                          |   2 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ lang/lua52/files/patch-src__luaconf.h              |  19 +
+ math/py-jax/Makefile                               |   2 +-
+ math/py-jax/distinfo                               |   6 +-
+ misc/rubygem-octicons/Makefile                     |   2 +-
+ misc/rubygem-octicons/distinfo                     |   6 +-
+ net-mgmt/py-msrest/Makefile                        |   2 +-
+ net-mgmt/py-msrest/distinfo                        |   6 +-
+ net/p5-Net-Ping/Makefile                           |   4 +-
+ net/p5-Net-Ping/distinfo                           |   6 +-
+ net/syncthing/Makefile                             |  12 +-
+ net/syncthing/distinfo                             |  10 +-
+ net/syncthing/files/patch-gopsutil_aarch64         | 407 ------------------
+ net/syncthing/files/patch-syncthing_build.go       |  11 -
+ net/syncthing/files/patch-syncthing_lib_api_api.go |  47 ---
+ .../files/patch-syncthing_lib_api_api__test.go     |  38 --
+ .../patch-syncthing_lib_connections_service.go     |  15 -
+ .../files/patch-syncthing_lib_tlsutil_tlsutil.go   |  10 -
+ news/newsx/Makefile                                |   1 +
+ sysutils/minikube/Makefile                         |  37 +-
+ sysutils/minikube/distinfo                         |  68 ++-
+ textproc/rubygem-rouge/Makefile                    |   2 +-
+ textproc/rubygem-rouge/distinfo                    |   6 +-
+ www/gitlab-pages/Makefile                          |   5 +-
+ www/gitlab-pages/distinfo                          |   6 +-
+ www/py-notebook/Makefile                           |   2 +-
+ www/py-notebook/distinfo                           |   6 +-
+ x11-fonts/sourcesanspro-ttf/Makefile               |   2 +-
+ x11-fonts/sourcesanspro-ttf/distinfo               |   6 +-
+ x11-fonts/sourcesanspro-ttf/pkg-plist              |  24 +-
+ x11-toolkits/girara/Makefile                       |   6 +-
+ x11-toolkits/girara/distinfo                       |   6 +-
+ x11-toolkits/girara/pkg-plist                      |   2 +
+ 82 files changed, 720 insertions(+), 760 deletions(-)
+ create mode 100644 devel/libunwind/files/patch-powerpc64
+ create mode 100644 lang/lua52/files/patch-src__luaconf.h
+ delete mode 100644 net/syncthing/files/patch-gopsutil_aarch64
+ delete mode 100644 net/syncthing/files/patch-syncthing_build.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_api_api.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_api_api__test.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_connections_service.go
+ delete mode 100644 net/syncthing/files/patch-syncthing_lib_tlsutil_tlsutil.go
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    1b7394be09f0..085396a77e14  master -> master        
+remote:    b983d2857a93..1b7394be09f0  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   1b7394be09f0..085396a77e14  master -> master
+==== END: master ====

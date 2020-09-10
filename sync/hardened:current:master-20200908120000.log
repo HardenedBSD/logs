@@ -1,0 +1,120 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 14 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating f59b2df9657c..7f854c76378e
+Fast-forward
+ Makefile.inc1                         | 28 ++++++++-------
+ Makefile.libcompat                    |  4 +--
+ lib/libc/powerpc/Makefile.inc         |  2 --
+ lib/libc/powerpc/sys/Makefile.inc     |  1 +
+ lib/libc/powerpc/sys/__vdso_gettc.c   | 68 +++++++++++++++++++++++++++++++++++
+ lib/libc/powerpc64/Makefile.inc       |  2 --
+ lib/libc/powerpc64/sys/Makefile.inc   |  1 +
+ lib/libc/powerpc64/sys/__vdso_gettc.c | 65 +++++++++++++++++++++++++++++++++
+ lib/libc/powerpcspe/Makefile.inc      |  1 -
+ libexec/rtld-elf/rtld.c               |  2 +-
+ share/man/man5/src.conf.5             |  4 ++-
+ share/mk/src.opts.mk                  |  1 +
+ sys/cam/mmc/mmc_da.c                  | 12 ++++---
+ sys/conf/kern.pre.mk                  |  9 ++---
+ sys/dev/usb/net/if_axge.c             |  1 +
+ sys/dev/usb/usbdevs                   |  1 +
+ sys/kern/imgact_elf.c                 | 14 +++++---
+ sys/powerpc/include/vdso.h            |  2 ++
+ sys/powerpc/powerpc/clock.c           | 39 +++++++++++++++++---
+ sys/powerpc/powerpc/elf32_machdep.c   |  3 +-
+ sys/powerpc/powerpc/elf64_machdep.c   |  6 ++--
+ sys/vm/vm_object.c                    | 20 +++++++++--
+ tools/build/depend-cleanup.sh         |  2 --
+ tools/build/options/WITHOUT_CLEAN     |  2 ++
+ 24 files changed, 243 insertions(+), 47 deletions(-)
+ create mode 100644 lib/libc/powerpc/sys/__vdso_gettc.c
+ create mode 100644 lib/libc/powerpc64/sys/__vdso_gettc.c
+ create mode 100644 tools/build/options/WITHOUT_CLEAN
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/kern.opts.mk
+Merge made by the 'recursive' strategy.
+ sbin/rcorder/rcorder.8         |  42 ++-
+ sbin/rcorder/rcorder.c         | 361 +++++++++++++++++++++++--
+ sys/arm64/conf/GENERIC         |   1 +
+ sys/arm64/include/elf.h        |  42 +--
+ sys/conf/files.arm64           |   7 +-
+ sys/conf/kern.opts.mk          |   4 -
+ sys/dev/gpio/pl061.c           | 580 +++++++++++++++++++++++++++++++++++++++++
+ sys/dev/gpio/pl061.h           |  59 +++++
+ sys/dev/gpio/pl061_acpi.c      | 103 ++++++++
+ sys/dev/gpio/pl061_fdt.c       |  97 +++++++
+ sys/dev/xilinx/axidma.c        |   2 +-
+ sys/net/if.c                   |   5 +
+ sys/net/if_epair.c             |  10 +-
+ sys/riscv/riscv/db_disasm.c    |   4 +-
+ sys/riscv/riscv/intr_machdep.c |   8 +-
+ sys/riscv/riscv/pmap.c         |   2 +-
+ sys/riscv/riscv/sbi.c          |   4 +-
+ sys/riscv/riscv/trap.c         |   4 +-
+ sys/sys/param.h                |   2 +-
+ usr.bin/sort/file.c            |   2 +-
+ 20 files changed, 1271 insertions(+), 68 deletions(-)
+ create mode 100644 sys/dev/gpio/pl061.c
+ create mode 100644 sys/dev/gpio/pl061.h
+ create mode 100644 sys/dev/gpio/pl061_acpi.c
+ create mode 100644 sys/dev/gpio/pl061_fdt.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    7f854c76378e..c0b46c5d9f65  hardened/current/master -> hardened/current/master        
+remote:    bf702b9cb01e..b571f343ee35  github/freebsd/current/master -> github/freebsd/current/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   7f854c76378e..c0b46c5d9f65  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

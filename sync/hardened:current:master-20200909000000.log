@@ -1,0 +1,135 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/arm64/arm64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm64/arm64/elf_machdep.c
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/arm64/arm64/elf_machdep.c
+index 2e40e281b493,b00521ea5840..000000000000
+--- a/sys/arm64/arm64/elf_machdep.c
++++ b/sys/arm64/arm64/elf_machdep.c
+@@@ -94,7 -93,7 +95,11 @@@ static struct sysentvec elf64_freebsd_s
+  	.sv_thread_detach = NULL,
+  	.sv_trap	= NULL,
+  	.sv_hwcap	= &elf_hwcap,
+++<<<<<<< HEAD
+ +	.sv_pax_aslr_init = pax_aslr_init_vmspace,
+++=======
++ 	.sv_hwcap2	= &elf_hwcap2,
+++>>>>>>> freebsd/current/master
+  };
+  INIT_SYSENTVEC(elf64_sysvec, &elf64_freebsd_sysvec);
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/elftoolchain/libelf/_libelf_config.h
+	modified:   lib/libc/tests/resolv/resolv_test.c
+	modified:   lib/libc/tests/stdlib/dynthr_mod/dynthr_mod.c
+	modified:   libexec/Makefile
+	renamed:    usr.sbin/portsnap/phttpget/Makefile -> libexec/phttpget/Makefile
+	renamed:    usr.sbin/portsnap/phttpget/Makefile.depend -> libexec/phttpget/Makefile.depend
+	renamed:    usr.sbin/portsnap/phttpget/phttpget.8 -> libexec/phttpget/phttpget.8
+	renamed:    usr.sbin/portsnap/phttpget/phttpget.c -> libexec/phttpget/phttpget.c
+	modified:   share/mk/src.opts.mk
+	modified:   stand/libofw/ofw_memory.c
+	modified:   sys/arm64/arm64/identcpu.c
+	modified:   sys/arm64/include/md_var.h
+	modified:   sys/crypto/armv8/armv8_crypto.c
+	modified:   sys/dev/hifn/hifn7751.c
+	modified:   sys/dev/ksyms/ksyms.c
+	modified:   sys/dev/safe/safe.c
+	modified:   sys/dev/xen/gntdev/gntdev.c
+	modified:   sys/geom/part/g_part.c
+	modified:   sys/geom/part/g_part_gpt.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/link_elf.c
+	modified:   sys/kern/link_elf_obj.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/libkern/gsb_crc32.c
+	modified:   sys/modules/zfs/Makefile
+	modified:   sys/net/route/route_tables.c
+	modified:   sys/powerpc/aim/aim_machdep.c
+	modified:   sys/powerpc/powernv/xive.c
+	modified:   sys/powerpc/powerpc/cpu.c
+	modified:   sys/powerpc/powerpc/intr_machdep.c
+	modified:   sys/sys/syscallsubr.h
+	modified:   sys/vm/phys_pager.c
+	modified:   sys/vm/uma_core.c
+	modified:   sys/vm/vm_domainset.c
+	modified:   sys/vm/vm_domainset.h
+	modified:   sys/vm/vm_glue.c
+	modified:   sys/vm/vm_mmap.c
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vm_object.h
+	modified:   sys/vm/vm_page.c
+	modified:   sys/vm/vm_pageout.h
+	modified:   sys/vm/vm_pager.h
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	modified:   usr.sbin/portsnap/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/arm64/arm64/elf_machdep.c
+
+HEAD is now at 67bd482784aa HBSD: Teach the build infrastructure to properly handle -O*
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 67bd482784aa HBSD: Teach the build infrastructure to properly handle -O*
+==== END: hardened/current/master ====
