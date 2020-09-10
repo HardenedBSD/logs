@@ -1,0 +1,141 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 32 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 9eb0d24cffe7..9d8e6e37b0b1
+Fast-forward
+ .clang-format                                      |   6 +-
+ ObsoleteFiles.inc                                  |   3 +
+ bin/cp/utils.c                                     |  31 +-
+ lib/libc/sys/Symbol.map                            |   2 +
+ lib/libc/sys/shm_open.c                            | 115 +++++-
+ lib/libsysdecode/mkioctls                          |   1 +
+ sbin/ping6/ping6.8                                 |   7 +-
+ sbin/ping6/ping6.c                                 |  17 +-
+ share/man/man9/Makefile                            |   1 -
+ share/man/man9/vm_map.9                            |   1 -
+ share/man/man9/vm_map_create.9                     |  66 ----
+ share/misc/committers-ports.dot                    |   4 +
+ stand/efi/loader/arch/arm64/ldscript.arm64         |   1 +
+ sys/amd64/amd64/pmap.c                             | 122 +++++-
+ sys/arm64/include/intr.h                           |   1 +
+ sys/contrib/dev/ice/ice-1.3.16.0.pkg               | Bin 18570 -> 659716 bytes
+ .../openzfs/lib/libzfs/os/freebsd/libzfs_compat.c  |   9 +
+ sys/dev/gpio/ofw_gpiobus.c                         |   6 +-
+ sys/dev/gpio/pl061.c                               |  12 +-
+ sys/dev/gpio/pl061_acpi.c                          |   7 +-
+ sys/dev/iommu/iommu.h                              |   1 +
+ sys/kern/kern_umtx.c                               |   2 +-
+ sys/kern/uipc_shm.c                                | 423 ++++++++++++++++++++-
+ sys/net/route/route_ctl.c                          | 355 +++++++++++------
+ sys/net/route/route_tables.c                       |   4 +-
+ sys/net/route/route_var.h                          |   9 +-
+ sys/netinet/cc/cc.h                                |   2 +-
+ sys/powerpc/powernv/opal_dev.c                     |  17 +-
+ sys/sys/filio.h                                    |   3 +
+ sys/sys/mman.h                                     |  23 +-
+ sys/vm/pmap.h                                      |   1 +
+ sys/vm/vm_fault.c                                  |  74 +++-
+ sys/vm/vm_map.c                                    | 270 +++++++++----
+ sys/vm/vm_map.h                                    |   9 +
+ sys/vm/vm_mmap.c                                   |  24 +-
+ sys/vm/vm_unix.c                                   |   2 +-
+ sys/x86/iommu/intel_ctx.c                          |  15 +-
+ sys/x86/iommu/intel_dmar.h                         |   1 -
+ usr.bin/posixshmcontrol/posixshmcontrol.c          |  74 +++-
+ 39 files changed, 1363 insertions(+), 358 deletions(-)
+ delete mode 100644 share/man/man9/vm_map_create.9
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                                      |  2 +-
+ cddl/lib/drti/Makefile                             |  1 -
+ cddl/lib/libctf/Makefile                           |  1 -
+ cddl/lib/libdtrace/Makefile                        |  1 -
+ cddl/usr.bin/ctfconvert/Makefile                   |  1 -
+ cddl/usr.bin/ctfdump/Makefile                      |  1 -
+ cddl/usr.bin/ctfmerge/Makefile                     |  1 -
+ cddl/usr.sbin/dtrace/Makefile                      |  1 -
+ cddl/usr.sbin/lockstat/Makefile                    |  1 -
+ cddl/usr.sbin/plockstat/Makefile                   |  1 -
+ cddl/usr.sbin/zfsd/Makefile.common                 |  1 -
+ contrib/netbsd-tests/lib/libexecinfo/t_backtrace.c |  6 +-
+ contrib/netbsd-tests/lib/librt/t_sem.c             |  3 +-
+ kerberos5/include/config.h                         |  2 +-
+ lib/libc/sys/shm_open.c                            | 26 +++---
+ lib/libcompiler_rt/Makefile.inc                    |  3 +-
+ lib/libproc/Makefile                               |  1 -
+ sys/dev/usb/net/if_urndis.c                        |  3 +
+ sys/kern/uipc_shm.c                                | 25 +++---
+ sys/powerpc/include/asm.h                          | 37 +++++++++
+ tests/sys/kern/memfd_test.c                        | 15 ++++
+ tests/sys/netinet/Makefile                         |  2 +-
+ tests/sys/netinet/fibs.sh                          | 73 +++++++++++++++++
+ tests/sys/netinet6/Makefile                        |  3 +-
+ tests/sys/netinet6/fibs6.sh                        | 92 ++++++++++++++++++++++
+ tools/build/mk/Makefile.boot                       |  3 +
+ usr.bin/mandoc/Makefile                            |  2 +
+ usr.bin/sort/bwstring.c                            | 14 ++--
+ usr.sbin/crunch/crunchgen/crunched_main.c          |  8 +-
+ usr.sbin/crunch/crunchgen/crunchgen.c              |  7 +-
+ 30 files changed, 287 insertions(+), 50 deletions(-)
+ create mode 100755 tests/sys/netinet/fibs.sh
+ create mode 100755 tests/sys/netinet6/fibs6.sh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    9d8e6e37b0b1..06eaf46bd062  hardened/current/master -> hardened/current/master        
+remote:    d0a461d47027..495106755d56  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   9d8e6e37b0b1..06eaf46bd062  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
