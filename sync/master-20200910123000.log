@@ -1,0 +1,145 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 23 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating df1edf4ce7eb..44516c805b5a
+Fast-forward
+ MOVED                                              |   1 +
+ audio/libsndfile/Makefile                          |  16 +-
+ audio/libsndfile/distinfo                          |   6 +-
+ audio/libsndfile/files/patch-CMakeLists.txt        |  13 -
+ .../files/patch-cmake_SndFileChecks.cmake          |  14 -
+ devel/mercurial/Makefile                           |   1 +
+ devel/mercurial/files/extra-patch-authormapsuffix  |  26 +-
+ devel/py-grpcio-tools/Makefile                     |   2 +-
+ devel/py-grpcio-tools/distinfo                     |   6 +-
+ devel/py-grpcio/Makefile                           |   4 +-
+ devel/py-grpcio/distinfo                           |   6 +-
+ emulators/open-vm-tools/Makefile                   |   5 +-
+ emulators/open-vm-tools/distinfo                   |   6 +-
+ ...tch-services_plugins_dndcp_copyPasteCompatX11.c |  16 -
+ games/ldmud/Makefile                               |   9 +-
+ games/ldmud/files/patch-pkg-openssl.c              |  63 +++
+ lang/go/Makefile                                   |   2 +-
+ lang/go/distinfo                                   |   6 +-
+ math/R-cran-Amelia/Makefile                        |   3 +-
+ math/R-cran-Amelia/pkg-descr                       |   2 +-
+ math/R-cran-quantreg/Makefile                      |   2 +-
+ math/R-cran-quantreg/distinfo                      |   6 +-
+ math/R-cran-xts/Makefile                           |   3 +-
+ math/R-cran-xts/distinfo                           |   6 +-
+ misc/R-cran-xfun/Makefile                          |   2 +-
+ misc/R-cran-xfun/distinfo                          |   6 +-
+ net-p2p/dclib/Makefile                             |   9 +-
+ net-p2p/dclib/files/patch-dclib_core_cssl.cpp      |  96 ++++
+ net/Makefile                                       |   1 -
+ net/frr6/Makefile                                  |  96 ----
+ net/frr6/distinfo                                  |   3 -
+ net/frr6/files/frr.in                              | 164 ------
+ net/frr6/files/patch-Makefile.am                   |  11 -
+ net/frr6/files/patch-bgpd_bgp__routemap.c          |  16 -
+ net/frr6/files/patch-bgpd_bgpd.c                   |  61 --
+ net/frr6/files/patch-configure.ac                  |  11 -
+ net/frr6/files/patch-ospfd_ospf__vty.c             | 110 ----
+ net/frr6/files/patch-zebra_ioctl.c                 |  13 -
+ net/frr6/files/watchfrr.in                         |  33 --
+ net/frr6/pkg-descr                                 |   5 -
+ net/frr6/pkg-message                               |  13 -
+ net/frr6/pkg-plist                                 | 167 ------
+ net/frr7/Makefile                                  |   2 +-
+ net/quagga/Makefile                                |   2 +-
+ net/storj/Makefile                                 |   2 +-
+ net/storj/Makefile.deps                            |   6 +-
+ net/storj/distinfo                                 |  18 +-
+ security/sslsniffer/Makefile                       |   9 +-
+ security/sslsniffer/files/patch-sslsniffer.c       |  26 +
+ sysutils/logstash7/Makefile                        |   2 +-
+ sysutils/logstash7/distinfo                        |   6 +-
+ textproc/R-cran-stringi/Makefile                   |   3 +-
+ textproc/R-cran-stringi/distinfo                   |   6 +-
+ textproc/elasticsearch7/Makefile                   |   2 +-
+ textproc/elasticsearch7/distinfo                   |   6 +-
+ textproc/kibana7/Makefile                          |   4 +-
+ textproc/kibana7/distinfo                          |   6 +-
+ .../files/patch-src_setup__node__env_index.js      |  11 -
+ ..._setup__node__env_prebuilt__dev__only__entry.js |   9 +
+ www/mattermost-server/Makefile                     |   2 +-
+ www/mattermost-server/distinfo                     |   6 +-
+ www/mattermost-server/pkg-plist                    |   1 +
+ www/mattermost-webapp/Makefile                     |   2 +-
+ www/mattermost-webapp/distinfo                     |   6 +-
+ www/mattermost-webapp/pkg-plist                    | 624 +++++++++++----------
+ www/py-httpcore/Makefile                           |   2 +-
+ www/py-httpcore/files/patch-setup.py               |  11 +
+ www/py-uvicorn/Makefile                            |   2 +-
+ www/py-uvicorn/files/patch-setup.py                |  13 +
+ x11-wm/treewm/Makefile                             |   4 +-
+ 70 files changed, 649 insertions(+), 1185 deletions(-)
+ delete mode 100644 audio/libsndfile/files/patch-CMakeLists.txt
+ delete mode 100644 audio/libsndfile/files/patch-cmake_SndFileChecks.cmake
+ delete mode 100644 emulators/open-vm-tools/files/patch-services_plugins_dndcp_copyPasteCompatX11.c
+ create mode 100644 games/ldmud/files/patch-pkg-openssl.c
+ create mode 100644 net-p2p/dclib/files/patch-dclib_core_cssl.cpp
+ delete mode 100644 net/frr6/Makefile
+ delete mode 100644 net/frr6/distinfo
+ delete mode 100644 net/frr6/files/frr.in
+ delete mode 100644 net/frr6/files/patch-Makefile.am
+ delete mode 100644 net/frr6/files/patch-bgpd_bgp__routemap.c
+ delete mode 100644 net/frr6/files/patch-bgpd_bgpd.c
+ delete mode 100644 net/frr6/files/patch-configure.ac
+ delete mode 100644 net/frr6/files/patch-ospfd_ospf__vty.c
+ delete mode 100644 net/frr6/files/patch-zebra_ioctl.c
+ delete mode 100644 net/frr6/files/watchfrr.in
+ delete mode 100644 net/frr6/pkg-descr
+ delete mode 100644 net/frr6/pkg-message
+ delete mode 100644 net/frr6/pkg-plist
+ create mode 100644 security/sslsniffer/files/patch-sslsniffer.c
+ delete mode 100644 textproc/kibana7/files/patch-src_setup__node__env_index.js
+ create mode 100644 textproc/kibana7/files/patch-src_setup__node__env_prebuilt__dev__only__entry.js
+ create mode 100644 www/py-httpcore/files/patch-setup.py
+ create mode 100644 www/py-uvicorn/files/patch-setup.py
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
