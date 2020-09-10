@@ -1,0 +1,523 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 799a90250bd2..0bb2d7e17cc8
+Fast-forward
+ MAINTAINERS                                        |    2 +
+ lib/lib80211/lib80211_regdomain.c                  |    2 +-
+ lib/lib80211/lib80211_regdomain.h                  |    8 +-
+ lib/lib80211/regdomain.xml                         |   68 +
+ sbin/ifconfig/ifieee80211.c                        |  131 +-
+ share/man/man4/ath.4                               |   16 +-
+ share/man/man4/net80211.4                          |   12 +-
+ share/man/man4/run.4                               |    4 +-
+ sys/amd64/conf/GENERIC                             |    1 +
+ sys/amd64/conf/NOTES                               |    4 +
+ sys/conf/files.amd64                               |   46 +
+ sys/conf/files.arm64                               |   47 +
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300.h        |   20 +-
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300_ani.c    |   83 +-
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300_eeprom.c |   28 +
+ .../dev/ath/ath_hal/ar9300/ar9300_freebsd.c        |   11 +-
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300_misc.c   |   12 +-
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300_phy.c    |   14 +
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300_reset.c  |   11 +-
+ .../dev/ath/ath_hal/ar9300/ar9300_stub_funcs.c     |    2 +-
+ .../dev/ath/ath_hal/ar9300/ar9300_stub_funcs.h     |    2 +-
+ sys/contrib/dev/ath/ath_hal/ar9300/ar9300eep.h     |   10 +-
+ .../dev/ath/ath_hal/ar9300/ar9300template_ap121.h  |    5 +
+ .../ath/ath_hal/ar9300/ar9300template_aphrodite.h  |    5 +
+ .../dev/ath/ath_hal/ar9300/ar9300template_cus157.h |    5 +
+ .../ath/ath_hal/ar9300/ar9300template_generic.h    |    5 +
+ .../dev/ath/ath_hal/ar9300/ar9300template_hb112.h  |    5 +
+ .../dev/ath/ath_hal/ar9300/ar9300template_hb116.h  |    5 +
+ .../ath/ath_hal/ar9300/ar9300template_osprey_k31.h |    5 +
+ .../dev/ath/ath_hal/ar9300/ar9300template_wasp_2.h |    6 +
+ .../dev/ath/ath_hal/ar9300/ar9300template_xb112.h  |    5 +
+ .../dev/ath/ath_hal/ar9300/ar9300template_xb113.h  |    5 +
+ sys/contrib/dev/ice/LICENSE                        |   41 +
+ sys/contrib/dev/ice/README                         |  197 +
+ sys/contrib/dev/ice/ice-1.3.9.0.pkg                |  Bin 0 -> 639236 bytes
+ sys/dev/an/if_an.c                                 |    2 +-
+ sys/dev/ath/ah_osdep.c                             |    1 -
+ sys/dev/ath/ah_osdep_ar5210.c                      |    1 -
+ sys/dev/ath/ah_osdep_ar5211.c                      |    1 -
+ sys/dev/ath/ah_osdep_ar5212.c                      |    1 -
+ sys/dev/ath/ah_osdep_ar5416.c                      |    1 -
+ sys/dev/ath/ah_osdep_ar9300.c                      |    1 -
+ sys/dev/ath/ath_dfs/null/dfs_null.c                |    2 +-
+ sys/dev/ath/ath_hal/ah.c                           |    5 +-
+ sys/dev/ath/ath_hal/ah.h                           |   23 +-
+ sys/dev/ath/ath_hal/ah_eeprom_9287.c               |    9 +-
+ sys/dev/ath/ath_hal/ah_eeprom_9287.h               |    1 -
+ sys/dev/ath/ath_hal/ah_eeprom_v14.c                |    8 +-
+ sys/dev/ath/ath_hal/ah_eeprom_v3.c                 |    6 +-
+ sys/dev/ath/ath_hal/ah_eeprom_v3.h                 |    1 -
+ sys/dev/ath/ath_hal/ah_eeprom_v4k.c                |    6 +-
+ sys/dev/ath/ath_hal/ah_internal.h                  |    1 -
+ sys/dev/ath/ath_hal/ah_regdomain.c                 |    4 +-
+ sys/dev/ath/ath_hal/ah_regdomain/ah_rd_domains.h   |    1 -
+ sys/dev/ath/ath_hal/ah_regdomain/ah_rd_freqbands.h |    3 +-
+ sys/dev/ath/ath_hal/ah_soc.h                       |    8 +-
+ sys/dev/ath/ath_hal/ar5210/ar5210.h                |    2 +-
+ sys/dev/ath/ath_hal/ar5210/ar5210_recv.c           |    3 +-
+ sys/dev/ath/ath_hal/ar5210/ar5210_reset.c          |    1 -
+ sys/dev/ath/ath_hal/ar5211/ar5211.h                |    2 +-
+ sys/dev/ath/ath_hal/ar5211/ar5211_keycache.c       |    1 -
+ sys/dev/ath/ath_hal/ar5211/ar5211_misc.c           |    1 -
+ sys/dev/ath/ath_hal/ar5211/ar5211_phy.c            |    1 -
+ sys/dev/ath/ath_hal/ar5211/ar5211_recv.c           |    3 +-
+ sys/dev/ath/ath_hal/ar5211/ar5211_xmit.c           |    2 -
+ sys/dev/ath/ath_hal/ar5211/ar5211phy.h             |    1 -
+ sys/dev/ath/ath_hal/ar5211/ar5211reg.h             |    1 -
+ sys/dev/ath/ath_hal/ar5212/ar2316.c                |    4 +-
+ sys/dev/ath/ath_hal/ar5212/ar2317.c                |    4 +-
+ sys/dev/ath/ath_hal/ar5212/ar2413.c                |    4 +-
+ sys/dev/ath/ath_hal/ar5212/ar2425.c                |    5 +-
+ sys/dev/ath/ath_hal/ar5212/ar5111.c                |    1 -
+ sys/dev/ath/ath_hal/ar5212/ar5112.c                |    4 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212.h                |    2 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212_ani.c            |    4 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212_interrupts.c     |    1 -
+ sys/dev/ath/ath_hal/ar5212/ar5212_keycache.c       |    1 -
+ sys/dev/ath/ath_hal/ar5212/ar5212_misc.c           |    3 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212_phy.c            |    1 -
+ sys/dev/ath/ath_hal/ar5212/ar5212_recv.c           |    9 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212_reset.c          |    4 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212_xmit.c           |    5 +-
+ sys/dev/ath/ath_hal/ar5212/ar5212phy.h             |    1 -
+ sys/dev/ath/ath_hal/ar5212/ar5413.c                |    5 +-
+ sys/dev/ath/ath_hal/ar5312/ar5312_eeprom.c         |    3 +-
+ sys/dev/ath/ath_hal/ar5312/ar5312_gpio.c           |    1 -
+ sys/dev/ath/ath_hal/ar5312/ar5312_interrupts.c     |    1 -
+ sys/dev/ath/ath_hal/ar5312/ar5312_reset.c          |    4 +-
+ sys/dev/ath/ath_hal/ar5312/ar5312reg.h             |    2 -
+ sys/dev/ath/ath_hal/ar5312/ar5315_gpio.c           |    1 -
+ sys/dev/ath/ath_hal/ar5416/ar2133.c                |    6 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416.h                |    5 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_ani.c            |    3 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_attach.c         |    5 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_beacon.c         |    2 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_cal.c            |    4 -
+ sys/dev/ath/ath_hal/ar5416/ar5416_cal.h            |    2 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_gpio.c           |    2 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_power.c          |    2 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_recv.c           |   11 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_reset.c          |   27 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416_spectral.c       |    1 -
+ sys/dev/ath/ath_hal/ar5416/ar5416_xmit.c           |   16 +-
+ sys/dev/ath/ath_hal/ar5416/ar5416desc.h            |    1 -
+ sys/dev/ath/ath_hal/ar5416/ar5416reg.h             |    2 -
+ sys/dev/ath/ath_hal/ar9001/ar9130_attach.c         |    3 +-
+ sys/dev/ath/ath_hal/ar9001/ar9160_attach.c         |    2 +-
+ sys/dev/ath/ath_hal/ar9002/ar9280_attach.c         |    3 +-
+ sys/dev/ath/ath_hal/ar9002/ar9280_olc.c            |    2 -
+ sys/dev/ath/ath_hal/ar9002/ar9285.c                |    1 -
+ sys/dev/ath/ath_hal/ar9002/ar9285_attach.c         |    4 +-
+ sys/dev/ath/ath_hal/ar9002/ar9285_btcoex.c         |    2 -
+ sys/dev/ath/ath_hal/ar9002/ar9285_diversity.c      |    2 +-
+ sys/dev/ath/ath_hal/ar9002/ar9285_reset.c          |    2 +-
+ sys/dev/ath/ath_hal/ar9002/ar9287_attach.c         |    3 +-
+ sys/dev/ath/ath_hal/ar9002/ar9287_cal.c            |    3 +-
+ sys/dev/ath/ath_hal/ar9002/ar9287_reset.c          |    1 -
+ sys/dev/ath/ath_rate/amrr/amrr.c                   |   21 +-
+ sys/dev/ath/ath_rate/onoe/onoe.c                   |   20 +-
+ sys/dev/ath/ath_rate/sample/sample.c               |  521 +-
+ sys/dev/ath/ath_rate/sample/sample.h               |   13 +-
+ sys/dev/ath/ath_rate/sample/tx_schedules.h         |   36 +-
+ sys/dev/ath/if_ath.c                               |  161 +-
+ sys/dev/ath/if_ath_ahb.c                           |    3 +-
+ sys/dev/ath/if_ath_beacon.c                        |    1 -
+ sys/dev/ath/if_ath_beacon.h                        |    1 -
+ sys/dev/ath/if_ath_btcoex.c                        |    3 +-
+ sys/dev/ath/if_ath_dfs.c                           |    1 -
+ sys/dev/ath/if_ath_drv.c                           |    1 -
+ sys/dev/ath/if_ath_ioctl.c                         |    2 -
+ sys/dev/ath/if_ath_led.c                           |    1 -
+ sys/dev/ath/if_ath_lna_div.c                       |    3 +-
+ sys/dev/ath/if_ath_misc.h                          |    6 +-
+ sys/dev/ath/if_ath_pci.c                           |    3 +-
+ sys/dev/ath/if_ath_pci_devlist.h                   |    2 -
+ sys/dev/ath/if_ath_rate.c                          |    1 -
+ sys/dev/ath/if_ath_rx.c                            |   48 +-
+ sys/dev/ath/if_ath_rx_edma.c                       |   51 +-
+ sys/dev/ath/if_ath_spectral.c                      |    3 +-
+ sys/dev/ath/if_ath_sysctl.c                        |   12 +-
+ sys/dev/ath/if_ath_tx.c                            |  140 +-
+ sys/dev/ath/if_ath_tx.h                            |    1 -
+ sys/dev/ath/if_ath_tx_edma.c                       |    5 +-
+ sys/dev/ath/if_ath_tx_ht.c                         |   24 +-
+ sys/dev/ath/if_athioctl.h                          |    1 -
+ sys/dev/ath/if_athrate.h                           |   20 +-
+ sys/dev/ath/if_athvar.h                            |    9 +-
+ sys/dev/bwi/bwimac.c                               |    2 +-
+ sys/dev/bwi/bwiphy.c                               |    3 +-
+ sys/dev/bwi/bwirf.c                                |    2 +-
+ sys/dev/bwi/if_bwi.c                               |   15 +-
+ sys/dev/bwi/if_bwi_pci.c                           |    3 +-
+ sys/dev/bwi/if_bwireg.h                            |    1 -
+ sys/dev/bwn/if_bwn.c                               |   19 +-
+ sys/dev/bwn/if_bwn_pci.c                           |    2 -
+ sys/dev/bwn/if_bwn_pcivar.h                        |    1 -
+ sys/dev/bwn/if_bwn_phy_g.c                         |    1 -
+ sys/dev/bwn/if_bwnvar.h                            |    1 -
+ sys/dev/ice/ice_adminq_cmd.h                       | 2968 ++++++
+ sys/dev/ice/ice_alloc.h                            |   50 +
+ sys/dev/ice/ice_bitops.h                           |  407 +
+ sys/dev/ice/ice_common.c                           | 4895 ++++++++++
+ sys/dev/ice/ice_common.h                           |  285 +
+ sys/dev/ice/ice_common_sysctls.h                   |  100 +
+ sys/dev/ice/ice_common_txrx.h                      |  424 +
+ sys/dev/ice/ice_controlq.c                         | 1227 +++
+ sys/dev/ice/ice_controlq.h                         |  125 +
+ sys/dev/ice/ice_dcb.c                              | 1697 ++++
+ sys/dev/ice/ice_dcb.h                              |  271 +
+ sys/dev/ice/ice_devids.h                           |   78 +
+ sys/dev/ice/ice_drv_info.h                         |  195 +
+ sys/dev/ice/ice_features.h                         |   91 +
+ sys/dev/ice/ice_flex_pipe.c                        | 5630 ++++++++++++
+ sys/dev/ice/ice_flex_pipe.h                        |  131 +
+ sys/dev/ice/ice_flex_type.h                        |  734 ++
+ sys/dev/ice/ice_flow.c                             | 2228 +++++
+ sys/dev/ice/ice_flow.h                             |  383 +
+ sys/dev/ice/ice_hw_autogen.h                       | 9480 ++++++++++++++++++++
+ sys/dev/ice/ice_iflib.h                            |  294 +
+ sys/dev/ice/ice_iflib_recovery_txrx.c              |  188 +
+ sys/dev/ice/ice_iflib_sysctls.h                    |   45 +
+ sys/dev/ice/ice_iflib_txrx.c                       |  401 +
+ sys/dev/ice/ice_lan_tx_rx.h                        | 2355 +++++
+ sys/dev/ice/ice_lib.c                              | 8000 +++++++++++++++++
+ sys/dev/ice/ice_lib.h                              |  811 ++
+ sys/dev/ice/ice_nvm.c                              | 1303 +++
+ sys/dev/ice/ice_nvm.h                              |  143 +
+ sys/dev/ice/ice_opts.h                             |   48 +
+ sys/dev/ice/ice_osdep.c                            |  409 +
+ sys/dev/ice/ice_osdep.h                            |  521 ++
+ sys/dev/ice/ice_protocol_type.h                    |  307 +
+ sys/dev/ice/ice_resmgr.c                           |  228 +
+ sys/dev/ice/ice_resmgr.h                           |  111 +
+ sys/dev/ice/ice_rss.h                              |  117 +
+ sys/dev/ice/ice_sbq_cmd.h                          |  121 +
+ sys/dev/ice/ice_sched.c                            | 5541 ++++++++++++
+ sys/dev/ice/ice_sched.h                            |  225 +
+ sys/dev/ice/ice_sriov.c                            |  193 +
+ sys/dev/ice/ice_sriov.h                            |   48 +
+ sys/dev/ice/ice_status.h                           |   75 +
+ sys/dev/ice/ice_strings.c                          | 1034 +++
+ sys/dev/ice/ice_switch.c                           | 4126 +++++++++
+ sys/dev/ice/ice_switch.h                           |  468 +
+ sys/dev/ice/ice_type.h                             | 1072 +++
+ sys/dev/ice/if_ice_iflib.c                         | 2874 ++++++
+ sys/dev/ice/virtchnl.h                             |  923 ++
+ sys/dev/ice/virtchnl_inline_ipsec.h                |  449 +
+ sys/dev/iwm/if_iwm.c                               |   10 +-
+ sys/dev/iwn/if_iwn.c                               |   17 +-
+ sys/dev/mwl/if_mwl.c                               |   17 +-
+ sys/dev/mwl/if_mwl_pci.c                           |    4 +-
+ sys/dev/mwl/mwlreg.h                               |   16 +-
+ sys/dev/otus/if_otus.c                             |  497 +-
+ sys/dev/otus/if_otusreg.h                          |   48 +-
+ sys/dev/rtwn/if_rtwn.c                             |   10 +-
+ sys/dev/rtwn/if_rtwn_beacon.c                      |    1 -
+ sys/dev/rtwn/if_rtwn_calib.c                       |    1 -
+ sys/dev/rtwn/if_rtwn_cam.c                         |    1 -
+ sys/dev/rtwn/if_rtwn_efuse.c                       |    1 -
+ sys/dev/rtwn/if_rtwn_fw.c                          |    1 -
+ sys/dev/rtwn/if_rtwn_fw.h                          |    1 -
+ sys/dev/rtwn/if_rtwn_ridx.h                        |    1 -
+ sys/dev/rtwn/if_rtwn_rx.c                          |   33 +-
+ sys/dev/rtwn/if_rtwn_rx.h                          |    1 -
+ sys/dev/rtwn/if_rtwn_task.c                        |    1 -
+ sys/dev/rtwn/if_rtwn_tx.c                          |    1 -
+ sys/dev/rtwn/if_rtwnreg.h                          |    3 -
+ sys/dev/rtwn/if_rtwnvar.h                          |    4 -
+ sys/dev/rtwn/pci/rtwn_pci_attach.c                 |    2 -
+ sys/dev/rtwn/pci/rtwn_pci_reg.c                    |    1 -
+ sys/dev/rtwn/pci/rtwn_pci_rx.c                     |    1 -
+ sys/dev/rtwn/pci/rtwn_pci_tx.c                     |    1 -
+ sys/dev/rtwn/pci/rtwn_pci_var.h                    |    1 -
+ sys/dev/rtwn/rtl8188e/pci/r88ee.h                  |    3 -
+ sys/dev/rtwn/rtl8188e/pci/r88ee_reg.h              |    1 -
+ sys/dev/rtwn/rtl8188e/r88e.h                       |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_beacon.c                |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_calib.c                 |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_chan.c                  |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_fw.c                    |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_init.c                  |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_led.c                   |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_priv.h                  |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_reg.h                   |    3 -
+ sys/dev/rtwn/rtl8188e/r88e_rf.c                    |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_rom.c                   |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_rx.c                    |    1 -
+ sys/dev/rtwn/rtl8188e/r88e_tx.c                    |    1 -
+ sys/dev/rtwn/rtl8188e/usb/r88eu.h                  |    2 -
+ sys/dev/rtwn/rtl8188e/usb/r88eu_attach.c           |    1 -
+ sys/dev/rtwn/rtl8188e/usb/r88eu_init.c             |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce.h                  |    2 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_attach.c           |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_calib.c            |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_fw.c               |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_init.c             |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_priv.h             |    2 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_reg.h              |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_rx.c               |    1 -
+ sys/dev/rtwn/rtl8192c/pci/r92ce_tx.c               |    1 -
+ sys/dev/rtwn/rtl8192c/r92c.h                       |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_attach.c                |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_beacon.c                |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_calib.c                 |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_chan.c                  |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_fw.c                    |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_init.c                  |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_priv.h                  |    3 -
+ sys/dev/rtwn/rtl8192c/r92c_reg.h                   |    4 -
+ sys/dev/rtwn/rtl8192c/r92c_rf.c                    |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_rom.c                   |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_rx.c                    |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_tx.c                    |    1 -
+ sys/dev/rtwn/rtl8192c/r92c_tx_desc.h               |    1 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu.h                  |    2 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_attach.c           |    1 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_init.c             |    1 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_led.c              |    1 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_priv.h             |    3 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_reg.h              |    2 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_rx.c               |    1 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_tx.c               |    1 -
+ sys/dev/rtwn/rtl8192c/usb/r92cu_tx_desc.h          |    2 +-
+ sys/dev/rtwn/rtl8192e/r92e.h                       |    1 -
+ sys/dev/rtwn/rtl8192e/r92e_chan.c                  |    1 -
+ sys/dev/rtwn/rtl8192e/r92e_priv.h                  |    2 -
+ sys/dev/rtwn/rtl8192e/usb/r92eu.h                  |    1 -
+ sys/dev/rtwn/rtl8812a/r12a.h                       |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_beacon.c                |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_calib.c                 |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_caps.c                  |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_chan.c                  |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_fw.c                    |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_fw_cmd.h                |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_init.c                  |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_led.c                   |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_priv.h                  |    3 -
+ sys/dev/rtwn/rtl8812a/r12a_reg.h                   |    3 -
+ sys/dev/rtwn/rtl8812a/r12a_rf.c                    |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_rom.c                   |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_rx.c                    |    1 -
+ sys/dev/rtwn/rtl8812a/r12a_tx.c                    |    2 -
+ sys/dev/rtwn/rtl8812a/r12a_tx_desc.h               |    1 -
+ sys/dev/rtwn/rtl8812a/usb/r12au.h                  |    1 -
+ sys/dev/rtwn/rtl8812a/usb/r12au_attach.c           |    1 -
+ sys/dev/rtwn/rtl8812a/usb/r12au_init.c             |    1 -
+ sys/dev/rtwn/rtl8812a/usb/r12au_rx.c               |    1 -
+ sys/dev/rtwn/rtl8812a/usb/r12au_tx.c               |    1 -
+ sys/dev/rtwn/rtl8821a/r21a.h                       |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_beacon.c                |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_calib.c                 |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_chan.c                  |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_fw.c                    |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_init.c                  |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_led.c                   |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_priv.h                  |    3 -
+ sys/dev/rtwn/rtl8821a/r21a_reg.h                   |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_rom.c                   |    1 -
+ sys/dev/rtwn/rtl8821a/r21a_rx.c                    |    1 -
+ sys/dev/rtwn/rtl8821a/usb/r21au.h                  |    1 -
+ sys/dev/rtwn/rtl8821a/usb/r21au_attach.c           |    1 -
+ sys/dev/rtwn/rtl8821a/usb/r21au_dfs.c              |    1 -
+ sys/dev/rtwn/rtl8821a/usb/r21au_init.c             |    2 -
+ sys/dev/rtwn/usb/rtwn_usb_attach.c                 |    1 -
+ sys/dev/rtwn/usb/rtwn_usb_attach.h                 |    1 +
+ sys/dev/rtwn/usb/rtwn_usb_ep.c                     |    1 -
+ sys/dev/rtwn/usb/rtwn_usb_reg.c                    |    1 -
+ sys/dev/rtwn/usb/rtwn_usb_tx.c                     |    2 -
+ sys/dev/usb/usbdevs                                |    1 +
+ sys/dev/usb/wlan/if_rsu.c                          |   36 +-
+ sys/dev/usb/wlan/if_run.c                          |  186 +-
+ sys/dev/usb/wlan/if_runreg.h                       |    7 +-
+ sys/dev/usb/wlan/if_runvar.h                       |    7 +-
+ sys/dev/usb/wlan/if_zyd.c                          |   51 +-
+ sys/dev/virtio/block/virtio_blk.c                  |   72 +-
+ sys/dev/virtio/block/virtio_blk.h                  |   83 +-
+ sys/dev/wi/if_wavelan_ieee.h                       |    8 -
+ sys/dev/wi/if_wi.c                                 |   52 +-
+ sys/dev/wi/if_wi_macio.c                           |    1 -
+ sys/dev/wi/if_wi_pccard.c                          |    1 -
+ sys/dev/wi/if_wi_pci.c                             |    3 +-
+ sys/dev/wpi/if_wpireg.h                            |    5 -
+ sys/dev/wtap/if_wtap.c                             |   14 +-
+ sys/kern/kern_jail.c                               |    6 +-
+ sys/modules/Makefile                               |    9 +
+ sys/modules/ice/Makefile                           |   15 +
+ sys/modules/ice_ddp/Makefile                       |    6 +
+ sys/net80211/_ieee80211.h                          |   22 +-
+ sys/net80211/ieee80211.c                           |  201 +-
+ sys/net80211/ieee80211.h                           |    2 +
+ sys/net80211/ieee80211_adhoc.c                     |   27 +-
+ sys/net80211/ieee80211_amrr.c                      |   22 +-
+ sys/net80211/ieee80211_ddb.c                       |   34 +-
+ sys/net80211/ieee80211_freebsd.c                   |   26 +-
+ sys/net80211/ieee80211_freebsd.h                   |    5 +-
+ sys/net80211/ieee80211_hostap.c                    |   38 +-
+ sys/net80211/ieee80211_ht.c                        |  489 +-
+ sys/net80211/ieee80211_ht.h                        |   18 +-
+ sys/net80211/ieee80211_input.h                     |    3 +-
+ sys/net80211/ieee80211_ioctl.c                     |   82 +-
+ sys/net80211/ieee80211_ioctl.h                     |    5 +
+ sys/net80211/ieee80211_node.c                      |  187 +-
+ sys/net80211/ieee80211_node.h                      |    6 +-
+ sys/net80211/ieee80211_output.c                    |  191 +-
+ sys/net80211/ieee80211_phy.h                       |   15 +
+ sys/net80211/ieee80211_power.c                     |    2 +-
+ sys/net80211/ieee80211_proto.c                     |  542 +-
+ sys/net80211/ieee80211_proto.h                     |   11 +-
+ sys/net80211/ieee80211_regdomain.c                 |   34 +-
+ sys/net80211/ieee80211_scan_sta.c                  |    8 +-
+ sys/net80211/ieee80211_scan_sw.c                   |   55 +-
+ sys/net80211/ieee80211_sta.c                       |  106 +-
+ sys/net80211/ieee80211_sta.h                       |    9 +-
+ sys/net80211/ieee80211_var.h                       |   78 +-
+ sys/net80211/ieee80211_vht.c                       |   54 +-
+ sys/net80211/ieee80211_vht.h                       |    2 +-
+ sys/netinet/cc/cc_dctcp.c                          |    1 -
+ sys/netinet/tcp_hostcache.c                        |    4 +-
+ sys/netinet/tcp_input.c                            |    9 +-
+ sys/netinet/tcp_output.c                           |    1 +
+ sys/netinet/tcp_stacks/rack.c                      |   31 +-
+ sys/netinet/tcp_stacks/rack_bbr_common.c           |    3 +-
+ sys/netinet/tcp_syncache.c                         |    3 +-
+ sys/netinet/tcp_var.h                              |    1 +
+ sys/riscv/riscv/machdep.c                          |    4 +-
+ sys/sys/param.h                                    |    2 +-
+ sys/sys/priv.h                                     |    6 +-
+ tools/kerneldoc/subsys/Doxyfile-dev_ice            |   21 +
+ tools/tools/ath/Makefile                           |    2 +-
+ tools/tools/ath/ath_ee_9300_print/main.c           |  278 +
+ tools/tools/ath/athani/Makefile                    |   23 +
+ tools/tools/ath/athani/main.c                      |  226 +
+ tools/tools/ath/athratestats/main.c                |   43 +-
+ tools/tools/net80211/wlanstats/main.c              |    2 +-
+ tools/tools/net80211/wlanstats/wlanstats.c         |   10 +-
+ usr.sbin/bhyve/block_if.c                          |    8 +-
+ usr.sbin/bhyve/pci_virtio_block.c                  |  149 +-
+ 397 files changed, 68739 insertions(+), 1829 deletions(-)
+ create mode 100644 sys/contrib/dev/ice/LICENSE
+ create mode 100644 sys/contrib/dev/ice/README
+ create mode 100644 sys/contrib/dev/ice/ice-1.3.9.0.pkg
+ create mode 100644 sys/dev/ice/ice_adminq_cmd.h
+ create mode 100644 sys/dev/ice/ice_alloc.h
+ create mode 100644 sys/dev/ice/ice_bitops.h
+ create mode 100644 sys/dev/ice/ice_common.c
+ create mode 100644 sys/dev/ice/ice_common.h
+ create mode 100644 sys/dev/ice/ice_common_sysctls.h
+ create mode 100644 sys/dev/ice/ice_common_txrx.h
+ create mode 100644 sys/dev/ice/ice_controlq.c
+ create mode 100644 sys/dev/ice/ice_controlq.h
+ create mode 100644 sys/dev/ice/ice_dcb.c
+ create mode 100644 sys/dev/ice/ice_dcb.h
+ create mode 100644 sys/dev/ice/ice_devids.h
+ create mode 100644 sys/dev/ice/ice_drv_info.h
+ create mode 100644 sys/dev/ice/ice_features.h
+ create mode 100644 sys/dev/ice/ice_flex_pipe.c
+ create mode 100644 sys/dev/ice/ice_flex_pipe.h
+ create mode 100644 sys/dev/ice/ice_flex_type.h
+ create mode 100644 sys/dev/ice/ice_flow.c
+ create mode 100644 sys/dev/ice/ice_flow.h
+ create mode 100644 sys/dev/ice/ice_hw_autogen.h
+ create mode 100644 sys/dev/ice/ice_iflib.h
+ create mode 100644 sys/dev/ice/ice_iflib_recovery_txrx.c
+ create mode 100644 sys/dev/ice/ice_iflib_sysctls.h
+ create mode 100644 sys/dev/ice/ice_iflib_txrx.c
+ create mode 100644 sys/dev/ice/ice_lan_tx_rx.h
+ create mode 100644 sys/dev/ice/ice_lib.c
+ create mode 100644 sys/dev/ice/ice_lib.h
+ create mode 100644 sys/dev/ice/ice_nvm.c
+ create mode 100644 sys/dev/ice/ice_nvm.h
+ create mode 100644 sys/dev/ice/ice_opts.h
+ create mode 100644 sys/dev/ice/ice_osdep.c
+ create mode 100644 sys/dev/ice/ice_osdep.h
+ create mode 100644 sys/dev/ice/ice_protocol_type.h
+ create mode 100644 sys/dev/ice/ice_resmgr.c
+ create mode 100644 sys/dev/ice/ice_resmgr.h
+ create mode 100644 sys/dev/ice/ice_rss.h
+ create mode 100644 sys/dev/ice/ice_sbq_cmd.h
+ create mode 100644 sys/dev/ice/ice_sched.c
+ create mode 100644 sys/dev/ice/ice_sched.h
+ create mode 100644 sys/dev/ice/ice_sriov.c
+ create mode 100644 sys/dev/ice/ice_sriov.h
+ create mode 100644 sys/dev/ice/ice_status.h
+ create mode 100644 sys/dev/ice/ice_strings.c
+ create mode 100644 sys/dev/ice/ice_switch.c
+ create mode 100644 sys/dev/ice/ice_switch.h
+ create mode 100644 sys/dev/ice/ice_type.h
+ create mode 100644 sys/dev/ice/if_ice_iflib.c
+ create mode 100644 sys/dev/ice/virtchnl.h
+ create mode 100644 sys/dev/ice/virtchnl_inline_ipsec.h
+ create mode 100644 sys/modules/ice/Makefile
+ create mode 100644 sys/modules/ice_ddp/Makefile
+ create mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_ice
+ create mode 100644 tools/tools/ath/athani/Makefile
+ create mode 100644 tools/tools/ath/athani/main.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    799a90250bd2..0bb2d7e17cc8  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   799a90250bd2..0bb2d7e17cc8  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
