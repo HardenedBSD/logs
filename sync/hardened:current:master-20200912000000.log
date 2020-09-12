@@ -1,0 +1,122 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing tools/regression/geom/Ref/disk.sun.da1.xml
+Removing tools/regression/geom/Ref/disk.sun.da0.xml
+Removing tools/regression/geom/Ref/disk.pc98.wdc0.xml
+Removing tools/regression/geom/Ref/disk.alpha2.da0.xml
+Removing tools/regression/geom/Ref/disk.alpha.da0.xml
+Removing tools/regression/geom/Data/disk.sun.da1.xml
+Removing tools/regression/geom/Data/disk.sun.da0.xml
+Removing tools/regression/geom/Data/disk.pc98.wdc0.xml
+Removing tools/regression/geom/Data/disk.alpha2.da0.xml
+Removing tools/regression/geom/Data/disk.alpha.da0.xml
+Removing tools/regression/geom/ConfCmp/a2d.conf
+Removing tools/regression/geom/ConfCmp/a2c.conf
+Removing tools/regression/geom/ConfCmp/a2b.conf
+Removing tools/regression/geom/ConfCmp/a2a.conf
+Removing tools/regression/geom/ConfCmp/a2.conf
+Auto-merging sys/conf/newvers.sh
+CONFLICT (content): Merge conflict in sys/conf/newvers.sh
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/conf/newvers.sh
+index d657034cb50b,683a979f943d..000000000000
+--- a/sys/conf/newvers.sh
++++ b/sys/conf/newvers.sh
+@@@ -54,7 -54,7 +54,11 @@@
+  
+  TYPE="FreeBSD"
+  REVISION="13.0"
+++<<<<<<< HEAD
+ +BRANCH=${BRANCH_OVERRIDE:-CURRENT}-HBSD
+++=======
++ BRANCH="${BRANCH_OVERRIDE:-CURRENT}"
+++>>>>>>> freebsd/current/master
+  RELEASE="${REVISION}-${BRANCH}"
+  VERSION="${TYPE} ${RELEASE}"
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/dev/mps/mps.c
+	modified:   sys/dev/mps/mps_pci.c
+	modified:   sys/dev/mps/mps_user.c
+	modified:   sys/dev/usb/net/if_ure.c
+	modified:   sys/dev/usb/net/if_urereg.h
+	modified:   sys/modules/usb/ure/Makefile
+	deleted:    tools/regression/geom/ConfCmp/a2.conf
+	deleted:    tools/regression/geom/ConfCmp/a2a.conf
+	deleted:    tools/regression/geom/ConfCmp/a2b.conf
+	deleted:    tools/regression/geom/ConfCmp/a2c.conf
+	deleted:    tools/regression/geom/ConfCmp/a2d.conf
+	deleted:    tools/regression/geom/Data/disk.alpha.da0.xml
+	deleted:    tools/regression/geom/Data/disk.alpha2.da0.xml
+	deleted:    tools/regression/geom/Data/disk.pc98.wdc0.xml
+	deleted:    tools/regression/geom/Data/disk.sun.da0.xml
+	deleted:    tools/regression/geom/Data/disk.sun.da1.xml
+	deleted:    tools/regression/geom/Ref/disk.alpha.da0.xml
+	deleted:    tools/regression/geom/Ref/disk.alpha2.da0.xml
+	deleted:    tools/regression/geom/Ref/disk.pc98.wdc0.xml
+	deleted:    tools/regression/geom/Ref/disk.sun.da0.xml
+	deleted:    tools/regression/geom/Ref/disk.sun.da1.xml
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/conf/newvers.sh
+
+HEAD is now at a8ec53b1748f Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a8ec53b1748f Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
