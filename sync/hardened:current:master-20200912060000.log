@@ -1,0 +1,112 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 7 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating a8ec53b1748f..49a488fe738c
+Fast-forward
+ share/mk/bsd.lib.mk                            |   3 -
+ share/mk/bsd.prog.mk                           |   3 -
+ share/mk/sys.mk                                |   6 +-
+ sys/conf/kern.mk                               |   3 -
+ sys/conf/kmod.mk                               |   3 -
+ sys/conf/newvers.sh                            |   2 +-
+ sys/dev/mps/mps.c                              | 104 ++--
+ sys/dev/mps/mps_pci.c                          |  14 +-
+ sys/dev/mps/mps_user.c                         |  17 +-
+ sys/dev/usb/net/if_ure.c                       | 672 ++++++++++++++++++++++---
+ sys/dev/usb/net/if_urereg.h                    |  53 +-
+ sys/modules/usb/ure/Makefile                   |   2 +-
+ tools/regression/geom/ConfCmp/a2.conf          | 207 --------
+ tools/regression/geom/ConfCmp/a2a.conf         | 207 --------
+ tools/regression/geom/ConfCmp/a2b.conf         | 207 --------
+ tools/regression/geom/ConfCmp/a2c.conf         | 206 --------
+ tools/regression/geom/ConfCmp/a2d.conf         | 211 --------
+ tools/regression/geom/Data/disk.alpha.da0.xml  |  33 --
+ tools/regression/geom/Data/disk.alpha2.da0.xml |  33 --
+ tools/regression/geom/Data/disk.pc98.wdc0.xml  |  75 ---
+ tools/regression/geom/Data/disk.sun.da0.xml    |  33 --
+ tools/regression/geom/Data/disk.sun.da1.xml    |  33 --
+ tools/regression/geom/Ref/disk.alpha.da0.xml   |   7 -
+ tools/regression/geom/Ref/disk.alpha2.da0.xml  |   5 -
+ tools/regression/geom/Ref/disk.pc98.wdc0.xml   |   8 -
+ tools/regression/geom/Ref/disk.sun.da0.xml     |   6 -
+ tools/regression/geom/Ref/disk.sun.da1.xml     |   9 -
+ 27 files changed, 701 insertions(+), 1461 deletions(-)
+ delete mode 100644 tools/regression/geom/ConfCmp/a2.conf
+ delete mode 100644 tools/regression/geom/ConfCmp/a2a.conf
+ delete mode 100644 tools/regression/geom/ConfCmp/a2b.conf
+ delete mode 100644 tools/regression/geom/ConfCmp/a2c.conf
+ delete mode 100644 tools/regression/geom/ConfCmp/a2d.conf
+ delete mode 100644 tools/regression/geom/Data/disk.alpha.da0.xml
+ delete mode 100644 tools/regression/geom/Data/disk.alpha2.da0.xml
+ delete mode 100644 tools/regression/geom/Data/disk.pc98.wdc0.xml
+ delete mode 100644 tools/regression/geom/Data/disk.sun.da0.xml
+ delete mode 100644 tools/regression/geom/Data/disk.sun.da1.xml
+ delete mode 100644 tools/regression/geom/Ref/disk.alpha.da0.xml
+ delete mode 100644 tools/regression/geom/Ref/disk.alpha2.da0.xml
+ delete mode 100644 tools/regression/geom/Ref/disk.pc98.wdc0.xml
+ delete mode 100644 tools/regression/geom/Ref/disk.sun.da0.xml
+ delete mode 100644 tools/regression/geom/Ref/disk.sun.da1.xml
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/sys/cdefs.h          |  2 ++
+ sys/x86/x86/local_apic.c | 16 +++++++++++++---
+ 2 files changed, 15 insertions(+), 3 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    49a488fe738c..4f97bb4fc336  hardened/current/master -> hardened/current/master        
+remote:    b17c2310fc30..8ccfe3808ba0  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   49a488fe738c..4f97bb4fc336  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
