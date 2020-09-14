@@ -53,3 +53,374 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-themes/kf5-qqc2-desktop-style/files/patch-git-1f0f210ad1d8286ba7a8254664489f922cbba0c3
+Auto-merging security/Makefile
+Auto-merging net/asterisk13/Makefile
+Removing emulators/qemu-user-static/files/patch-configure
+Removing emulators/qemu-user-static-devel/files/patch-configure
+Removing emulators/jzintv/files/patch-src_Makefile.freebsd
+Removing emulators/jzintv/files/patch-src-imasm-parser.cpp
+Removing emulators/jzintv/files/patch-src-gif-gif_enc.h
+Removing emulators/jzintv/files/patch-src-gif-gif_enc.c
+Removing emulators/jzintv/files/patch-src-asm-frasmdat.h
+Merge made by the 'recursive' strategy.
+ Mk/Uses/kde.mk                                     |   2 +-
+ archivers/kf5-karchive/Makefile                    |   1 -
+ archivers/kf5-karchive/distinfo                    |   6 +-
+ archivers/p5-Archive-Tar-Wrapper/Makefile          |   2 +-
+ archivers/p5-Archive-Tar-Wrapper/distinfo          |   6 +-
+ audio/zrythm/Makefile                              |   5 +-
+ audio/zrythm/distinfo                              |   6 +-
+ audio/zrythm/pkg-plist                             |  38 +-
+ cad/Makefile                                       |   1 +
+ cad/openroad/Makefile                              |  49 ++
+ cad/openroad/distinfo                              |  15 +
+ cad/openroad/files/patch-src_CMakeLists.txt        |  20 +
+ cad/openroad/files/patch-src_OpenDB_CMakeLists.txt |  11 +
+ .../files/patch-src_OpenSTA_CMakeLists.txt         |  11 +
+ .../files/patch-src_flute3_etc_MakeDatVar.tcl      |  11 +
+ .../files/patch-src_gui_src_scriptWidget.cpp       |  11 +
+ cad/openroad/pkg-descr                             |   4 +
+ cad/openroad/pkg-plist                             | 217 +++++++
+ databases/py-tableschema/Makefile                  |   3 +-
+ databases/py-tableschema/distinfo                  |   6 +-
+ devel/Makefile                                     |   5 +
+ devel/kf5-extra-cmake-modules/distinfo             |   6 +-
+ devel/kf5-extra-cmake-modules/pkg-plist            |   1 +
+ devel/kf5-kapidox/Makefile                         |   6 +-
+ devel/kf5-kapidox/distinfo                         |   6 +-
+ devel/kf5-kapidox/pkg-plist                        |  15 +-
+ devel/kf5-kauth/distinfo                           |   6 +-
+ devel/kf5-kbookmarks/distinfo                      |   6 +-
+ devel/kf5-kcmutils/distinfo                        |   6 +-
+ devel/kf5-kcmutils/pkg-plist                       |   2 +
+ devel/kf5-kconfig/Makefile                         |   1 -
+ devel/kf5-kconfig/distinfo                         |   6 +-
+ devel/kf5-kcoreaddons/Makefile                     |   2 -
+ devel/kf5-kcoreaddons/distinfo                     |   6 +-
+ devel/kf5-kcrash/distinfo                          |   6 +-
+ devel/kf5-kdbusaddons/Makefile                     |   1 -
+ devel/kf5-kdbusaddons/distinfo                     |   6 +-
+ devel/kf5-kdeclarative/distinfo                    |   6 +-
+ devel/kf5-kdeclarative/pkg-plist                   |   1 +
+ devel/kf5-kdoctools/distinfo                       |   6 +-
+ devel/kf5-kfilemetadata/distinfo                   |   6 +-
+ devel/kf5-ki18n/distinfo                           |   6 +-
+ devel/kf5-kidletime/distinfo                       |   6 +-
+ devel/kf5-kio/Makefile                             |   2 +-
+ devel/kf5-kio/distinfo                             |   6 +-
+ devel/kf5-kio/pkg-plist                            |  25 +-
+ devel/kf5-kitemmodels/distinfo                     |   6 +-
+ devel/kf5-knewstuff/distinfo                       |   6 +-
+ devel/kf5-knotifications/distinfo                  |   6 +-
+ devel/kf5-knotifyconfig/distinfo                   |   6 +-
+ devel/kf5-kpackage/distinfo                        |   6 +-
+ devel/kf5-kparts/distinfo                          |   6 +-
+ devel/kf5-kpeople/distinfo                         |   6 +-
+ devel/kf5-kpty/distinfo                            |   6 +-
+ devel/kf5-kservice/distinfo                        |   6 +-
+ devel/kf5-ktexteditor/distinfo                     |   6 +-
+ devel/kf5-kunitconversion/distinfo                 |   6 +-
+ devel/kf5-solid/distinfo                           |   6 +-
+ devel/kf5-threadweaver/distinfo                    |   6 +-
+ devel/kronosnet/Makefile                           |   2 +-
+ devel/kronosnet/distinfo                           |   6 +-
+ devel/kronosnet/pkg-plist                          |   5 +-
+ devel/meson/Makefile                               |   5 +-
+ devel/meson/distinfo                               |   6 +-
+ devel/p5-ColorThemeBase-Static/Makefile            |  26 +
+ devel/p5-ColorThemeBase-Static/distinfo            |   3 +
+ devel/p5-ColorThemeBase-Static/pkg-descr           |   4 +
+ devel/p5-ColorThemeBase-Static/pkg-plist           |  14 +
+ devel/p5-ColorThemeUtil-ANSI/Makefile              |  26 +
+ devel/p5-ColorThemeUtil-ANSI/distinfo              |   3 +
+ devel/p5-ColorThemeUtil-ANSI/pkg-descr             |   4 +
+ devel/p5-ColorThemeUtil-ANSI/pkg-plist             |   2 +
+ devel/p5-Module-Load-Util/Makefile                 |  25 +
+ devel/p5-Module-Load-Util/distinfo                 |   3 +
+ devel/p5-Module-Load-Util/pkg-descr                |   3 +
+ devel/p5-Module-Load-Util/pkg-plist                |   2 +
+ devel/p5-Regexp-Pattern-Perl/Makefile              |  22 +
+ devel/p5-Regexp-Pattern-Perl/distinfo              |   3 +
+ devel/p5-Regexp-Pattern-Perl/pkg-descr             |   3 +
+ devel/p5-Regexp-Pattern-Perl/pkg-plist             |   4 +
+ devel/pecl-ast/Makefile                            |   2 +-
+ devel/pecl-ast/distinfo                            |   6 +-
+ devel/py-fsspec/Makefile                           |   2 +-
+ devel/py-fsspec/distinfo                           |   6 +-
+ devel/py-hypothesis/Makefile                       |   2 +-
+ devel/py-hypothesis/distinfo                       |   6 +-
+ devel/py-nosexcover/Makefile                       |  20 +
+ devel/py-nosexcover/distinfo                       |   3 +
+ devel/py-nosexcover/pkg-descr                      |   5 +
+ devel/py-pint/Makefile                             |   6 +-
+ devel/py-pint/distinfo                             |   6 +-
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-jbuilder-rails5/Makefile             |   2 +-
+ devel/rubygem-jbuilder-rails5/distinfo             |   6 +-
+ devel/rubygem-jbuilder-rails50/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails50/distinfo            |   6 +-
+ devel/rubygem-jbuilder-rails52/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails52/distinfo            |   6 +-
+ devel/rubygem-jbuilder-rails60/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails60/distinfo            |   6 +-
+ devel/rubygem-reline/Makefile                      |   2 +-
+ devel/rubygem-reline/distinfo                      |   6 +-
+ devel/rubygem-sprockets-rails-rails4/Makefile      |   2 +-
+ devel/rubygem-sprockets-rails-rails4/distinfo      |   6 +-
+ devel/rubygem-sprockets-rails-rails5/Makefile      |   4 +-
+ devel/rubygem-sprockets-rails-rails5/distinfo      |   6 +-
+ devel/rubygem-sprockets-rails-rails50/Makefile     |   4 +-
+ devel/rubygem-sprockets-rails-rails50/distinfo     |   6 +-
+ devel/rubygem-sprockets-rails-rails52/Makefile     |   2 +-
+ devel/rubygem-sprockets-rails-rails52/distinfo     |   6 +-
+ devel/rubygem-sprockets-rails-rails60/Makefile     |   2 +-
+ devel/rubygem-sprockets-rails-rails60/distinfo     |   6 +-
+ devel/slibtool/Makefile                            |   2 +-
+ devel/slibtool/distinfo                            |   6 +-
+ dns/kf5-kdnssd/distinfo                            |   6 +-
+ dns/p5-Net-DNS/Makefile                            |   2 +-
+ dns/p5-Net-DNS/distinfo                            |   6 +-
+ emulators/jzintv/Makefile                          |  26 +-
+ emulators/jzintv/distinfo                          |   7 +-
+ emulators/jzintv/files/Makefile.freebsd_sdl2       |  87 +++
+ emulators/jzintv/files/patch-src-asm-frasmdat.h    |  11 -
+ emulators/jzintv/files/patch-src-gif-gif_enc.c     |  11 -
+ emulators/jzintv/files/patch-src-gif-gif_enc.h     |  11 -
+ emulators/jzintv/files/patch-src-imasm-parser.cpp  |  20 -
+ emulators/jzintv/files/patch-src_Makefile.freebsd  |  43 --
+ emulators/jzintv/pkg-plist                         | 712 ++++++++++++++-------
+ emulators/qemu-user-static-devel/Makefile          |   4 +-
+ emulators/qemu-user-static-devel/distinfo          |   6 +-
+ .../qemu-user-static-devel/files/patch-configure   |  52 --
+ emulators/qemu-user-static/Makefile                |   3 +-
+ emulators/qemu-user-static/distinfo                |   6 +-
+ emulators/qemu-user-static/files/patch-configure   |  52 --
+ ftp/tftp-hpa/Makefile                              |  16 +-
+ ftp/tftp-hpa/files/patch-tftp_tftp.c               |  11 +
+ ftp/tftp-hpa/files/patch-tftpd_tftpd.c             |  31 +
+ graphics/kf5-kimageformats/distinfo                |   6 +-
+ graphics/kf5-kplotting/distinfo                    |   6 +-
+ graphics/kf5-kquickcharts/distinfo                 |   6 +-
+ graphics/kf5-prison/distinfo                       |   6 +-
+ lang/groovy/Makefile                               |   2 +-
+ lang/groovy/distinfo                               |  10 +-
+ lang/kf5-kross/distinfo                            |   6 +-
+ math/adept/Makefile                                |  11 +-
+ math/adept/distinfo                                |   6 +-
+ math/adept/pkg-plist                               |   5 +
+ math/arb/Makefile                                  |   4 +-
+ math/cliquer/Makefile                              |   2 +-
+ math/cliquer/distinfo                              |   6 +-
+ math/g2o/Makefile                                  |   4 +-
+ math/g2o/pkg-descr                                 |   2 +-
+ math/libxlsxwriter/Makefile                        |   2 +-
+ math/libxlsxwriter/distinfo                        |   6 +-
+ math/rankwidth/Makefile                            |   2 +-
+ math/rankwidth/distinfo                            |   6 +-
+ misc/kf5-purpose/distinfo                          |   6 +-
+ misc/py-tqdm/Makefile                              |   2 +-
+ misc/py-tqdm/distinfo                              |   6 +-
+ multimedia/kf5-kmediaplayer/distinfo               |   6 +-
+ net/asterisk13/Makefile                            |   1 +
+ net/asterisk13/files/asterisk.in                   |  25 +-
+ net/asterisk16/Makefile                            |   1 +
+ net/asterisk16/files/asterisk.in                   |  25 +-
+ net/kf5-kcalendarcore/distinfo                     |   6 +-
+ net/kf5-kcontacts/distinfo                         |   6 +-
+ net/kf5-kdav/distinfo                              |   6 +-
+ net/kf5-kdav/pkg-plist                             |   1 +
+ net/kf5-kholidays/distinfo                         |   6 +-
+ net/kf5-kxmlrpcclient/distinfo                     |   6 +-
+ net/kf5-syndication/distinfo                       |   6 +-
+ net/measurement-kit/Makefile                       |   2 +-
+ net/measurement-kit/distinfo                       |   6 +-
+ net/wireshark/files/patch-libssh                   |  29 +
+ security/Makefile                                  |   1 +
+ security/kf5-kdesu/distinfo                        |   6 +-
+ security/pam_pkcs11/Makefile                       | 100 +++
+ security/pam_pkcs11/distinfo                       |   3 +
+ security/pam_pkcs11/files/pkg-message.in           |   8 +
+ security/pam_pkcs11/pkg-descr                      |  18 +
+ security/pam_pkcs11/pkg-plist                      |  26 +
+ sysutils/bpytop/Makefile                           |   2 +-
+ sysutils/bpytop/distinfo                           |   6 +-
+ sysutils/debhelper/Makefile                        |   2 +-
+ sysutils/debhelper/distinfo                        |   6 +-
+ sysutils/kf5-baloo/distinfo                        |   6 +-
+ sysutils/kf5-kwallet/distinfo                      |   6 +-
+ sysutils/kf5-kwallet/pkg-plist                     |   8 +-
+ sysutils/wmtop/Makefile                            |   3 +-
+ textproc/kf5-kcodecs/Makefile                      |   1 -
+ textproc/kf5-kcodecs/distinfo                      |   6 +-
+ textproc/kf5-sonnet/distinfo                       |   6 +-
+ textproc/kf5-syntax-highlighting/distinfo          |   6 +-
+ textproc/lowdown/Makefile                          |   2 +-
+ textproc/lowdown/distinfo                          |   6 +-
+ textproc/lowdown/pkg-plist                         |   2 +
+ textproc/mdocml/Makefile                           |   4 +-
+ textproc/p5-String-TtyLength/Makefile              |   4 +-
+ textproc/p5-String-TtyLength/distinfo              |   6 +-
+ textproc/p5-Text-ANSITable/Makefile                |  13 +-
+ textproc/p5-Text-ANSITable/distinfo                |   6 +-
+ textproc/p5-Text-ANSITable/pkg-plist               |  12 +-
+ www/kf5-kdewebkit/distinfo                         |   6 +-
+ www/kf5-khtml/distinfo                             |   6 +-
+ www/kf5-kjs/distinfo                               |   6 +-
+ www/kf5-kjsembed/distinfo                          |   6 +-
+ www/rubygem-webmock/Makefile                       |   2 +-
+ www/rubygem-webmock/distinfo                       |   6 +-
+ x11-clocks/wmtimer/Makefile                        |   2 +-
+ x11-clocks/wmtimer/files/patch-display             |  21 +
+ x11-clocks/wmtimer/pkg-descr                       |   2 +-
+ x11-themes/kf5-breeze-icons/distinfo               |   6 +-
+ x11-themes/kf5-breeze-icons/pkg-plist              | 170 +++++
+ x11-themes/kf5-kemoticons/distinfo                 |   6 +-
+ x11-themes/kf5-kiconthemes/distinfo                |   6 +-
+ x11-themes/kf5-oxygen-icons5/distinfo              |   6 +-
+ x11-themes/kf5-qqc2-desktop-style/distinfo         |   6 +-
+ ...ch-git-1f0f210ad1d8286ba7a8254664489f922cbba0c3 |  45 --
+ x11-toolkits/kf5-attica/Makefile                   |   1 -
+ x11-toolkits/kf5-attica/distinfo                   |   6 +-
+ x11-toolkits/kf5-kcompletion/distinfo              |   6 +-
+ x11-toolkits/kf5-kconfigwidgets/distinfo           |   6 +-
+ x11-toolkits/kf5-kdesignerplugin/distinfo          |   6 +-
+ x11-toolkits/kf5-kguiaddons/distinfo               |   6 +-
+ x11-toolkits/kf5-kirigami2/distinfo                |   6 +-
+ x11-toolkits/kf5-kirigami2/pkg-plist               |   1 -
+ x11-toolkits/kf5-kitemviews/distinfo               |   6 +-
+ x11-toolkits/kf5-kjobwidgets/distinfo              |   6 +-
+ x11-toolkits/kf5-ktextwidgets/distinfo             |   6 +-
+ x11-toolkits/kf5-kwidgetsaddons/distinfo           |   6 +-
+ x11-toolkits/kf5-kwidgetsaddons/pkg-plist          |   2 +
+ x11-toolkits/kf5-kxmlgui/distinfo                  |   6 +-
+ x11-toolkits/vte3/Makefile                         |  12 +-
+ x11-toolkits/vte3/distinfo                         |   6 +-
+ x11-toolkits/vte3/pkg-plist                        |  37 +-
+ x11/gnome-shell/Makefile                           |   5 +
+ x11/kf5-frameworkintegration/distinfo              |   6 +-
+ x11/kf5-kactivities-stats/distinfo                 |   6 +-
+ x11/kf5-kactivities/distinfo                       |   6 +-
+ x11/kf5-kded/distinfo                              |   6 +-
+ x11/kf5-kdelibs4support/distinfo                   |   6 +-
+ x11/kf5-kglobalaccel/distinfo                      |   6 +-
+ x11/kf5-kinit/distinfo                             |   6 +-
+ x11/kf5-krunner/distinfo                           |   6 +-
+ x11/kf5-krunner/pkg-plist                          |   1 +
+ x11/kf5-kwayland/Makefile                          |   1 -
+ x11/kf5-kwayland/distinfo                          |   6 +-
+ x11/kf5-kwindowsystem/distinfo                     |   6 +-
+ x11/kf5-kwindowsystem/pkg-plist                    |   4 +-
+ x11/kf5-plasma-framework/distinfo                  |   6 +-
+ x11/kf5-plasma-framework/pkg-plist                 |  17 +-
+ 256 files changed, 2185 insertions(+), 991 deletions(-)
+ create mode 100644 cad/openroad/Makefile
+ create mode 100644 cad/openroad/distinfo
+ create mode 100644 cad/openroad/files/patch-src_CMakeLists.txt
+ create mode 100644 cad/openroad/files/patch-src_OpenDB_CMakeLists.txt
+ create mode 100644 cad/openroad/files/patch-src_OpenSTA_CMakeLists.txt
+ create mode 100644 cad/openroad/files/patch-src_flute3_etc_MakeDatVar.tcl
+ create mode 100644 cad/openroad/files/patch-src_gui_src_scriptWidget.cpp
+ create mode 100644 cad/openroad/pkg-descr
+ create mode 100644 cad/openroad/pkg-plist
+ create mode 100644 devel/p5-ColorThemeBase-Static/Makefile
+ create mode 100644 devel/p5-ColorThemeBase-Static/distinfo
+ create mode 100644 devel/p5-ColorThemeBase-Static/pkg-descr
+ create mode 100644 devel/p5-ColorThemeBase-Static/pkg-plist
+ create mode 100644 devel/p5-ColorThemeUtil-ANSI/Makefile
+ create mode 100644 devel/p5-ColorThemeUtil-ANSI/distinfo
+ create mode 100644 devel/p5-ColorThemeUtil-ANSI/pkg-descr
+ create mode 100644 devel/p5-ColorThemeUtil-ANSI/pkg-plist
+ create mode 100644 devel/p5-Module-Load-Util/Makefile
+ create mode 100644 devel/p5-Module-Load-Util/distinfo
+ create mode 100644 devel/p5-Module-Load-Util/pkg-descr
+ create mode 100644 devel/p5-Module-Load-Util/pkg-plist
+ create mode 100644 devel/p5-Regexp-Pattern-Perl/Makefile
+ create mode 100644 devel/p5-Regexp-Pattern-Perl/distinfo
+ create mode 100644 devel/p5-Regexp-Pattern-Perl/pkg-descr
+ create mode 100644 devel/p5-Regexp-Pattern-Perl/pkg-plist
+ create mode 100644 devel/py-nosexcover/Makefile
+ create mode 100644 devel/py-nosexcover/distinfo
+ create mode 100644 devel/py-nosexcover/pkg-descr
+ create mode 100644 emulators/jzintv/files/Makefile.freebsd_sdl2
+ delete mode 100644 emulators/jzintv/files/patch-src-asm-frasmdat.h
+ delete mode 100644 emulators/jzintv/files/patch-src-gif-gif_enc.c
+ delete mode 100644 emulators/jzintv/files/patch-src-gif-gif_enc.h
+ delete mode 100644 emulators/jzintv/files/patch-src-imasm-parser.cpp
+ delete mode 100644 emulators/jzintv/files/patch-src_Makefile.freebsd
+ delete mode 100644 emulators/qemu-user-static-devel/files/patch-configure
+ delete mode 100644 emulators/qemu-user-static/files/patch-configure
+ create mode 100644 ftp/tftp-hpa/files/patch-tftp_tftp.c
+ create mode 100644 ftp/tftp-hpa/files/patch-tftpd_tftpd.c
+ create mode 100644 net/wireshark/files/patch-libssh
+ create mode 100644 security/pam_pkcs11/Makefile
+ create mode 100644 security/pam_pkcs11/distinfo
+ create mode 100644 security/pam_pkcs11/files/pkg-message.in
+ create mode 100644 security/pam_pkcs11/pkg-descr
+ create mode 100644 security/pam_pkcs11/pkg-plist
+ create mode 100644 x11-clocks/wmtimer/files/patch-display
+ delete mode 100644 x11-themes/kf5-qqc2-desktop-style/files/patch-git-1f0f210ad1d8286ba7a8254664489f922cbba0c3
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    8aa1f4908e16..88dcb2d6e6ca  master -> master        
+remote:    e3ff1adafcee..8aa1f4908e16  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   8aa1f4908e16..88dcb2d6e6ca  master -> master
+==== END: master ====
