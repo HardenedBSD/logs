@@ -1,0 +1,122 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 530276669730..bec3bbb2d8c3
+Fast-forward
+ Makefile.inc1                        |  26 ----
+ sbin/newfs/mkfs.c                    |  24 +--
+ sbin/pfctl/tests/pfctl_test.sh       |   7 +-
+ share/man/man9/bus_dma.9             |  51 +++++-
+ sys/arm/arm/busdma_machdep.c         |  33 +---
+ sys/arm64/arm64/busdma_machdep.c     |  33 +---
+ sys/dev/gpio/pl061.c                 |   5 +
+ sys/dev/mpr/mpr.c                    |  52 +++----
+ sys/dev/mpr/mpr_pci.c                |   2 +-
+ sys/dev/mpr/mpr_user.c               |   8 +-
+ sys/dev/mps/mps.c                    |  45 +++---
+ sys/dev/mps/mps_pci.c                |   2 +-
+ sys/dev/mps/mps_user.c               |   7 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c     |   8 +-
+ sys/kern/subr_bus_dma.c              |  85 ++++++++++
+ sys/mips/mips/busdma_machdep.c       |  33 +---
+ sys/powerpc/powerpc/bus_machdep.c    | 290 ++++++++++++++++++++---------------
+ sys/powerpc/powerpc/busdma_machdep.c |  33 +---
+ sys/riscv/riscv/busdma_machdep.c     |  33 +---
+ sys/sys/bus_dma.h                    |  69 ++++++++-
+ sys/sys/param.h                      |   2 +-
+ sys/x86/x86/busdma_machdep.c         |  33 +---
+ 22 files changed, 447 insertions(+), 434 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/kern_racct.c
+Auto-merging sys/conf/newvers.sh
+CONFLICT (content): Merge conflict in sys/conf/newvers.sh
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/conf/newvers.sh
+index 7d296d1aeca0,8e41fcfa94a3..000000000000
+--- a/sys/conf/newvers.sh
++++ b/sys/conf/newvers.sh
+@@@ -54,7 -54,10 +54,14 @@@
+  
+  TYPE="FreeBSD"
+  REVISION="13.0"
+++<<<<<<< HEAD
+ +BRANCH="${BRANCH_OVERRIDE:-CURRENT}-HBSD"
+++=======
++ BRANCH="CURRENT"
++ if [ -n "${BRANCH_OVERRIDE}" ]; then
++ 	BRANCH=${BRANCH_OVERRIDE}
++ fi
+++>>>>>>> freebsd/current/master
+  RELEASE="${REVISION}-${BRANCH}"
+  VERSION="${TYPE} ${RELEASE}"
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libbe/tests/be_create.sh
+	modified:   sbin/bectl/tests/bectl_test.sh
+	modified:   sys/dev/mlx5/mlx5_en/mlx5_en_main.c
+	modified:   sys/geom/geom_event.c
+	modified:   sys/kern/kern_racct.c
+	modified:   sys/kern/subr_trap.c
+	modified:   sys/powerpc/powerpc/cpu.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/conf/newvers.sh
+
+HEAD is now at bec3bbb2d8c3 HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at bec3bbb2d8c3 HBSD: Resolve merge conflict
+==== END: hardened/current/master ====
