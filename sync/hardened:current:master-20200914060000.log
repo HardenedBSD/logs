@@ -1,0 +1,131 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging Makefile.inc1
+CONFLICT (content): Merge conflict in Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc Makefile.inc1
+index ef4d13198b74,99d1204da5c6..000000000000
+--- a/Makefile.inc1
++++ b/Makefile.inc1
+@@@ -985,32 -983,6 +985,35 @@@ _sanity_check: .PHONY .MAK
+  _cleanobj_fast_depend_hack: .PHONY
+  	@echo ">>> Deleting stale dependencies...";
+  	sh ${.CURDIR}/tools/build/depend-cleanup.sh ${OBJTOP}
+++<<<<<<< HEAD
+ +# Date      SVN Rev  Syscalls/Changes
+ +# Syscall stubs rewritten in C and obsolete MD assembly implementations
+ +# 20191009  r353340  removal of opensolaris_atomic.S (also r353381)
+ +.for f in opensolaris_atomic
+ +	@if [ -e "${OBJTOP}/cddl/lib/libzpool/.depend.${f}.o" ] && \
+ +	    egrep -qw 'opensolaris_atomic\.S' ${OBJTOP}/cddl/lib/libzpool/.depend.${f}.o; then \
+ +		echo "Removing stale dependencies for opensolaris_atomic"; \
+ +		rm -f ${OBJTOP}/cddl/lib/libzpool/.depend.${f}.* \
+ +		   ${LIBCOMPAT:D${LIBCOMPAT_OBJTOP}/cddl/lib/libzpool/.depend.${f}.*}; \
+ +	fi
+ +.endfor
+ +# 20190925  r352689  removal of obsolete i386 memchr.S
+ +.for f in memchr
+ +	@if [ -e "${OBJTOP}/lib/libc/.depend.${f}.o" ] && \
+ +	    egrep -qw 'i386/string/memchr\.S' ${OBJTOP}/lib/libc/.depend.${f}.o; then \
+ +		echo "Removing stale dependencies for memchr"; \
+ +		rm -f ${OBJTOP}/lib/libc/.depend.${f}.*; \
+ +	fi
+ +.if defined(_LIBCOMPAT)
+ +	@if [ -e "${LIBCOMPAT_OBJTOP}/lib/libc/.depend.${f}.o" ] && \
+ +	    egrep -qw 'i386/string/memchr\.S' ${LIBCOMPAT_OBJTOP}/lib/libc/.depend.${f}.o; then \
+ +		echo "Removing stale dependencies for memchr"; \
+ +		rm -f ${LIBCOMPAT_OBJTOP}/lib/libc/.depend.${f}.*; \
+ +	fi
+ +.endif
+ +.endfor
+++=======
+++>>>>>>> freebsd/current/master
+  
+  _worldtmp: .PHONY
+  	@echo
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sbin/newfs/mkfs.c
+	modified:   sbin/pfctl/tests/pfctl_test.sh
+	modified:   share/man/man9/bus_dma.9
+	modified:   sys/arm/arm/busdma_machdep.c
+	modified:   sys/arm64/arm64/busdma_machdep.c
+	modified:   sys/dev/gpio/pl061.c
+	modified:   sys/dev/mpr/mpr.c
+	modified:   sys/dev/mpr/mpr_pci.c
+	modified:   sys/dev/mpr/mpr_user.c
+	modified:   sys/dev/mps/mps.c
+	modified:   sys/dev/mps/mps_pci.c
+	modified:   sys/dev/mps/mps_user.c
+	modified:   sys/fs/nfsserver/nfs_nfsdstate.c
+	modified:   sys/kern/subr_bus_dma.c
+	modified:   sys/mips/mips/busdma_machdep.c
+	modified:   sys/powerpc/powerpc/bus_machdep.c
+	modified:   sys/powerpc/powerpc/busdma_machdep.c
+	modified:   sys/riscv/riscv/busdma_machdep.c
+	modified:   sys/sys/bus_dma.h
+	modified:   sys/sys/param.h
+	modified:   sys/x86/x86/busdma_machdep.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   Makefile.inc1
+
+HEAD is now at 530276669730 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 530276669730 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
