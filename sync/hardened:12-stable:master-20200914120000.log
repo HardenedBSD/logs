@@ -1,0 +1,136 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 18 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 05c68bfc733a..bb3aa127a139
+Fast-forward
+ UPDATING                                           |     12 +
+ cddl/contrib/opensolaris/cmd/zfs/zfs.8             |     12 +-
+ cddl/contrib/opensolaris/cmd/zpool/zpool.8         |      9 +
+ contrib/jemalloc/FREEBSD-diffs                     |      2 +-
+ contrib/jemalloc/doc/jemalloc.3                    |      2 +-
+ .../jemalloc/include/jemalloc/jemalloc_FreeBSD.h   |      2 +-
+ .../llvm-project/compiler-rt/lib/builtins/atomic.c |      4 +-
+ include/unistd.h                                   |      2 +-
+ lib/libc/gen/Symbol.map                            |      2 +-
+ lib/libc/gen/getlogin.c                            |     12 +-
+ lib/libc/stdlib/jemalloc/Makefile.inc              |      2 +-
+ lib/libc/sys/getlogin.2                            |      4 +-
+ lib/libcompiler_rt/Makefile.inc                    |     24 +-
+ libexec/Makefile                                   |      5 +
+ {usr.sbin/portsnap => libexec}/phttpget/Makefile   |      2 -
+ .../portsnap => libexec}/phttpget/Makefile.depend  |      0
+ {usr.sbin/portsnap => libexec}/phttpget/phttpget.8 |      0
+ {usr.sbin/portsnap => libexec}/phttpget/phttpget.c |      0
+ libexec/rtld-elf/rtld.c                            |     12 +-
+ share/man/man5/make.conf.5                         |      6 -
+ share/man/man5/src.conf.5                          | 111526 +++++++++++++++++-
+ share/mk/src.opts.mk                               |      6 +-
+ .../compat/opensolaris/kern/opensolaris_kstat.c    |     49 +-
+ sys/cddl/compat/opensolaris/sys/kstat.h            |     11 +
+ sys/cddl/contrib/opensolaris/common/zfs/zfs_prop.c |      4 +-
+ .../contrib/opensolaris/common/zfs/zpool_prop.c    |      4 +-
+ .../contrib/opensolaris/uts/common/Makefile.files  |      1 +
+ .../opensolaris/uts/common/fs/zfs/dataset_kstats.c |    185 +
+ .../contrib/opensolaris/uts/common/fs/zfs/spa.c    |      3 +
+ .../uts/common/fs/zfs/sys/dataset_kstats.h         |     59 +
+ .../opensolaris/uts/common/fs/zfs/sys/zfs_vfsops.h |      3 +
+ .../opensolaris/uts/common/fs/zfs/zfs_vfsops.c     |      4 +
+ .../opensolaris/uts/common/fs/zfs/zfs_vnops.c      |     13 +-
+ .../contrib/opensolaris/uts/common/fs/zfs/zvol.c   |     24 +
+ .../contrib/opensolaris/uts/common/sys/fs/zfs.h    |      3 +-
+ sys/dev/ixl/i40e_prototype.h                       |      2 -
+ sys/dev/ixl/ixl_pf_main.c                          |     26 +-
+ sys/geom/part/g_part.c                             |      6 +-
+ sys/geom/part/g_part_gpt.c                         |      7 +-
+ sys/net/if.c                                       |      4 +
+ sys/net/if_epair.c                                 |     10 +-
+ sys/sys/param.h                                    |      2 +-
+ .../zfs/tests/cli_root/zpool_get/zpool_get.cfg     |      1 +
+ tools/build/mk/OptionalObsoleteFiles.inc           |      7 +-
+ tools/build/options/WITHOUT_CAROOT                 |      3 +
+ tools/build/options/WITHOUT_MALLOC_PRODUCTION      |      4 +
+ tools/build/options/WITH_MALLOC_PRODUCTION         |      4 +
+ usr.sbin/certctl/certctl.sh                        |     61 +-
+ usr.sbin/ntp/ntpd/ntp.conf                         |      4 +-
+ usr.sbin/portsnap/Makefile                         |      2 +-
+ 50 files changed, 110241 insertions(+), 1911 deletions(-)
+ rename {usr.sbin/portsnap => libexec}/phttpget/Makefile (74%)
+ rename {usr.sbin/portsnap => libexec}/phttpget/Makefile.depend (100%)
+ rename {usr.sbin/portsnap => libexec}/phttpget/phttpget.8 (100%)
+ rename {usr.sbin/portsnap => libexec}/phttpget/phttpget.c (100%)
+ create mode 100644 sys/cddl/contrib/opensolaris/uts/common/fs/zfs/dataset_kstats.c
+ create mode 100644 sys/cddl/contrib/opensolaris/uts/common/fs/zfs/sys/dataset_kstats.h
+ create mode 100644 tools/build/options/WITHOUT_CAROOT
+ create mode 100644 tools/build/options/WITHOUT_MALLOC_PRODUCTION
+ create mode 100644 tools/build/options/WITH_MALLOC_PRODUCTION
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging libexec/rtld-elf/rtld.c
+Merge made by the 'recursive' strategy.
+ libexec/rtld-elf/rtld.c |  2 +-
+ sys/kern/imgact_elf.c   | 14 +++++++++-----
+ sys/vm/vm_object.c      | 23 +++++++++++++++++++----
+ 3 files changed, 29 insertions(+), 10 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    bb3aa127a139..08985410835c  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    31e5df027649..82c2c105c72d  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   bb3aa127a139..08985410835c  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
