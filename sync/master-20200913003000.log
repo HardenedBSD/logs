@@ -1,0 +1,212 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/firefox/files/patch-bug1504834_comment7
+Auto-merging www/firefox/Makefile
+Auto-merging shells/zsh/Makefile
+Removing net/kea/files/patch-src_bin_keactrl_keactrl.in
+Removing graphics/oidn/files/patch-cmake_install.cmake
+Removing emulators/qemu-devel/files/pcap-patch-qapi_net.json
+Removing emulators/qemu-devel/files/pcap-patch-net_net.c
+Removing emulators/qemu-devel/files/pcap-patch-net_clients.h
+Removing emulators/qemu-devel/files/patch-qemu-doc.texi
+Removing emulators/qemu-devel/files/patch-include_qemu_atomic.h
+Removing emulators/qemu-devel/files/patch-include_net_net.h
+Removing emulators/qemu-devel/files/patch-Makefile
+Auto-merging emulators/qemu-devel/Makefile
+CONFLICT (content): Merge conflict in emulators/qemu-devel/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc emulators/qemu-devel/Makefile
+index 5dc3c39afda1,4d94d10a2cad..000000000000
+--- a/emulators/qemu-devel/Makefile
++++ b/emulators/qemu-devel/Makefile
+@@@ -14,9 -12,8 +12,14 @@@ COMMENT=	QEMU CPU Emulator - developmen
+  
+  LICENSE=	GPLv2
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
+++=======
++ ONLY_FOR_ARCHS=	amd64 powerpc powerpc64
++ IGNORE_FreeBSD_11=	Unable to produce Position Independent Code
+++>>>>>>> freebsd/master
+  
+  LIB_DEPENDS=	libnettle.so:security/nettle \
+  		libfontconfig.so:x11-fonts/fontconfig \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   archivers/R-cran-zip/Makefile
+	modified:   archivers/R-cran-zip/distinfo
+	modified:   databases/pgsphere/Makefile
+	new file:   databases/pgsphere/files/patch-path.c
+	new file:   databases/pgsphere/files/patch-polygon.c
+	modified:   databases/py-pg8000/Makefile
+	modified:   databases/py-pg8000/distinfo
+	modified:   devel/ispc/Makefile
+	new file:   devel/ispc/files/patch-CMakeLists.txt
+	modified:   dns/knot2/Makefile
+	modified:   dns/knot2/distinfo
+	modified:   emulators/qemu-devel/distinfo
+	deleted:    emulators/qemu-devel/files/patch-Makefile
+	modified:   emulators/qemu-devel/files/patch-configure
+	new file:   emulators/qemu-devel/files/patch-docs_system_qemu-cpu-models.rst
+	deleted:    emulators/qemu-devel/files/patch-include_net_net.h
+	deleted:    emulators/qemu-devel/files/patch-include_qemu_atomic.h
+	deleted:    emulators/qemu-devel/files/patch-qemu-doc.texi
+	deleted:    emulators/qemu-devel/files/pcap-patch-net_clients.h
+	deleted:    emulators/qemu-devel/files/pcap-patch-net_net.c
+	deleted:    emulators/qemu-devel/files/pcap-patch-qapi_net.json
+	modified:   emulators/qemu-devel/pkg-plist
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   games/easyrpg-player/Makefile
+	modified:   games/easyrpg-player/distinfo
+	modified:   graphics/glx-utils/Makefile
+	modified:   graphics/glx-utils/distinfo
+	modified:   graphics/oidn/Makefile
+	modified:   graphics/oidn/distinfo
+	deleted:    graphics/oidn/files/patch-cmake_install.cmake
+	new file:   graphics/oidn/files/patch-cmake_oidn__install.cmake
+	modified:   graphics/oidn/files/patch-common_thread.cpp
+	modified:   graphics/oidn/files/patch-common_thread.h
+	new file:   graphics/oidn/files/patch-mkl-dnn_src_common_memory__debug.cpp
+	new file:   graphics/oidn/files/patch-mkl-dnn_src_common_utils.cpp
+	modified:   graphics/oidn/pkg-descr
+	modified:   graphics/oidn/pkg-plist
+	modified:   misc/qtchooser/Makefile
+	modified:   misc/qtchooser/pkg-message
+	modified:   multimedia/libgav1/Makefile
+	modified:   multimedia/libva-intel-media-driver/Makefile
+	modified:   multimedia/libva-utils/Makefile
+	modified:   multimedia/libva-utils/distinfo
+	modified:   multimedia/libva/Makefile
+	modified:   multimedia/libva/distinfo
+	modified:   multimedia/libva/pkg-plist
+	modified:   net/kea/Makefile
+	modified:   net/kea/distinfo
+	deleted:    net/kea/files/patch-src_bin_keactrl_keactrl.in
+	modified:   net/kea/pkg-plist
+	modified:   shells/zsh/Makefile
+	new file:   shells/zsh/files/extra-patch-Src_Modules_curses__keys.awk
+	modified:   www/firefox/Makefile
+	deleted:    www/firefox/files/patch-bug1504834_comment7
+	new file:   www/firefox/files/patch-bug1602730_comment5
+	modified:   www/ilias6/Makefile
+	modified:   www/ilias6/distinfo
+	modified:   www/tdiary/Makefile
+	modified:   www/tdiary/distinfo
+	modified:   www/tdiary/files/patch-Gemfile
+	modified:   www/tdiary/pkg-plist
+	new file:   x11-fm/rox-filer/files/patch-ROX-Filer_src_session.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   emulators/qemu-devel/Makefile
+
+
+It took 3.21 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 6bf0f7e3e278 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 6bf0f7e3e278 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====

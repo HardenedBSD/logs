@@ -1,0 +1,225 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Updating 3207c7e711c8..ae48e4360dbe
+Fast-forward
+ .../files/patch-scripts_mysqld__safe.txt           | 19 +++++++++++++++++
+ devel/libical/Makefile                             |  3 +--
+ devel/libical/distinfo                             |  6 +++---
+ devel/libical/pkg-plist                            | 22 ++++++++------------
+ emulators/rtc/Makefile                             |  2 +-
+ math/lrslib/Makefile                               | 22 ++++++++++----------
+ math/lrslib/distinfo                               |  6 +++---
+ math/lrslib/pkg-plist                              | 24 ++++++++--------------
+ math/rumur/Makefile                                |  2 +-
+ math/rumur/distinfo                                |  6 +++---
+ science/jmol/Makefile                              |  2 +-
+ science/jmol/distinfo                              |  6 +++---
+ security/highwayhash/Makefile                      |  5 ++++-
+ security/highwayhash/distinfo                      |  6 +++---
+ 14 files changed, 70 insertions(+), 61 deletions(-)
+ create mode 100644 databases/mysql57-server/files/patch-scripts_mysqld__safe.txt
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    3207c7e711c8..ae48e4360dbe  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    c3d014bc43b4..ae48e4360dbe  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   3207c7e711c8..ae48e4360dbe  master -> master
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-wm/icewm/files/patch-src_misc.cc
+Removing news/nn/pkg-install
+Auto-merging news/nn/Makefile
+CONFLICT (content): Merge conflict in news/nn/Makefile
+Removing news/diablo/pkg-install
+Removing mail/smtptrapd/pkg-install
+Auto-merging lang/sbcl/Makefile
+Removing graphics/piglit/files/patch-tests_spec_oes__geometry__shader_sso__validation_user-defined-gs-input-not-in-block.shader__test
+Removing graphics/piglit/files/patch-tests_spec_oes__geometry__shader_sso__validation_user-defined-gs-input-in-block.shader__test
+Removing graphics/piglit/files/patch-tests_egl_egl-context-priority.c
+Removing graphics/piglit/files/patch-CMakeLists.txt
+Removing graphics/drm-current-kmod/files/patch-drivers_gpu_drm_i915_i915__request.c
+Removing graphics/colord/pkg-install
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc news/nn/Makefile
+index 41851978e216,958902382b8c..000000000000
+--- a/news/nn/Makefile
++++ b/news/nn/Makefile
+@@@ -12,10 -12,10 +12,14 @@@ COMMENT=	Menu based USENET newsreade
+  
+  BROKEN_aarch64=	Fails to link: missing sbrk
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+++=======
++ SUB_FILES=	pkg-message
+++>>>>>>> freebsd/master
+  
+  USES=		tar:Z
+- MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf" LDFLAGS="${LDFLAGS} -s"
++ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf -fcommon" LDFLAGS="${LDFLAGS} -s"
+  
+  pre-patch:
+  	@${CP} ${WRKSRC}/config.h-dist ${WRKSRC}/config.h.unparsed
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   converters/cl-babel-sbcl/Makefile
+	modified:   devel/cl-alexandria-sbcl/Makefile
+	modified:   devel/cl-infix-sbcl/Makefile
+	modified:   devel/cl-port-sbcl/Makefile
+	modified:   devel/cl-split-sequence-sbcl/Makefile
+	modified:   devel/cl-trivial-features-sbcl/Makefile
+	modified:   devel/cl-trivial-gray-streams-sbcl/Makefile
+	deleted:    graphics/colord/pkg-install
+	modified:   graphics/colord/pkg-plist
+	modified:   graphics/drm-current-kmod/Makefile
+	modified:   graphics/drm-current-kmod/distinfo
+	deleted:    graphics/drm-current-kmod/files/patch-drivers_gpu_drm_i915_i915__request.c
+	modified:   graphics/drm-devel-kmod/Makefile
+	modified:   graphics/drm-devel-kmod/distinfo
+	modified:   graphics/drm-kmod/Makefile
+	modified:   graphics/gpu-firmware-kmod/Makefile
+	modified:   graphics/gpu-firmware-kmod/distinfo
+	modified:   graphics/gpu-firmware-kmod/pkg-plist
+	modified:   graphics/piglit/Makefile
+	modified:   graphics/piglit/distinfo
+	deleted:    graphics/piglit/files/patch-CMakeLists.txt
+	deleted:    graphics/piglit/files/patch-tests_egl_egl-context-priority.c
+	deleted:    graphics/piglit/files/patch-tests_spec_oes__geometry__shader_sso__validation_user-defined-gs-input-in-block.shader__test
+	deleted:    graphics/piglit/files/patch-tests_spec_oes__geometry__shader_sso__validation_user-defined-gs-input-not-in-block.shader__test
+	modified:   graphics/piglit/files/pkg-message.in
+	modified:   graphics/piglit/pkg-plist
+	modified:   lang/sbcl/Makefile
+	modified:   lang/sbcl/distinfo
+	modified:   mail/smtptrapd/Makefile
+	deleted:    mail/smtptrapd/pkg-install
+	modified:   math/maxima/Makefile
+	deleted:    news/diablo/pkg-install
+	modified:   news/diablo/pkg-plist
+	new file:   news/nn/files/nntp_domain.dist
+	new file:   news/nn/files/nntp_server.dist
+	new file:   news/nn/files/pkg-message.in
+	deleted:    news/nn/pkg-install
+	modified:   news/nn/pkg-plist
+	modified:   security/cl-md5-sbcl/Makefile
+	modified:   security/py-pysha3/Makefile
+	modified:   security/py-pysha3/pkg-descr
+	modified:   textproc/cl-meta-sbcl/Makefile
+	modified:   textproc/cl-ppcre-sbcl/Makefile
+	modified:   www/cl-lml-sbcl/Makefile
+	modified:   x11-wm/icewm/Makefile
+	modified:   x11-wm/icewm/distinfo
+	deleted:    x11-wm/icewm/files/patch-src_misc.cc
+	modified:   x11-wm/icewm/pkg-plist
+	modified:   x11-wm/stumpwm/Makefile
+	modified:   x11/cl-clx-sbcl/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   news/nn/Makefile
+
+
+It took 3.42 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ae48e4360dbe Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.96 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ae48e4360dbe Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
