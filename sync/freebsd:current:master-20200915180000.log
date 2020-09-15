@@ -1,0 +1,95 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 3b15cad9c1db..e12efc2c9e43
+Fast-forward
+ libexec/ftpd/ftpd.c                |  15 +-
+ share/man/man5/src.conf.5          |   8 +-
+ sys/amd64/amd64/vm_machdep.c       |   2 +-
+ sys/amd64/linux/linux_sysvec.c     |   5 +
+ sys/amd64/linux32/linux32_sysvec.c |  16 +-
+ sys/amd64/vmm/amd/svm.c            | 106 ++++---
+ sys/amd64/vmm/amd/vmcb.h           |  13 +-
+ sys/amd64/vmm/intel/vmx.c          |   4 +
+ sys/arm/arm/vm_machdep.c           |   2 +-
+ sys/arm64/arm64/vm_machdep.c       |   2 +-
+ sys/arm64/linux/linux_sysvec.c     |   7 +
+ sys/dev/e1000/if_em.c              |   2 +-
+ sys/dev/e1000/if_em.h              |   5 +
+ sys/i386/i386/vm_machdep.c         |   2 +-
+ sys/i386/linux/linux_sysvec.c      |  17 +-
+ sys/kern/uipc_usrreq.c             | 557 ++++++++++++++++++-------------------
+ sys/powerpc/aim/moea64_native.c    |   4 +-
+ sys/powerpc/powerpc/exec_machdep.c |   2 +-
+ sys/powerpc/powerpc/in_cksum.c     |   3 +-
+ sys/sys/unpcb.h                    |  45 +--
+ tools/build/options/WITHOUT_GH_BC  |   6 +
+ tools/build/options/WITH_GH_BC     |   6 +
+ usr.sbin/certctl/certctl.sh        |   4 +-
+ 23 files changed, 464 insertions(+), 369 deletions(-)
+ create mode 100644 tools/build/options/WITHOUT_GH_BC
+ create mode 100644 tools/build/options/WITH_GH_BC
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    3b15cad9c1db..e12efc2c9e43  freebsd/current/master -> freebsd/current/master        
+remote:    1827b766e544..b7ec444dab79  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   3b15cad9c1db..e12efc2c9e43  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
