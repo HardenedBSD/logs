@@ -47,3 +47,135 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/Makefile
+Removing cad/opensta/pkg-plist
+Removing cad/opensta/pkg-descr
+Removing cad/opensta/files/patch-cmake_FindTCL.cmake
+Removing cad/opensta/files/patch-CMakeLists.txt
+Removing cad/opensta/distinfo
+Removing cad/opensta/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ astro/siril/Makefile                               |   2 +-
+ biology/canu/Makefile                              |  23 +-
+ biology/canu/distinfo                              |   6 +-
+ .../canu/files/patch-pipelines_canu_Execution.pm   |  24 +-
+ biology/canu/pkg-plist                             |  11 +-
+ cad/Makefile                                       |   1 -
+ cad/opensta/Makefile                               |  29 --
+ cad/opensta/distinfo                               |   3 -
+ cad/opensta/files/patch-CMakeLists.txt             |  19 -
+ cad/opensta/files/patch-cmake_FindTCL.cmake        |  20 --
+ cad/opensta/pkg-descr                              |  13 -
+ cad/opensta/pkg-plist                              | 122 -------
+ databases/mongodb44/Makefile                       |   2 +-
+ databases/mongodb44/distinfo                       |   6 +-
+ emulators/rpcs3/Makefile                           |   4 +-
+ emulators/rpcs3/distinfo                           |   6 +-
+ emulators/yuzu/Makefile                            |   4 +-
+ emulators/yuzu/distinfo                            |   6 +-
+ graphics/mesa-devel/Makefile                       |   4 +-
+ graphics/mesa-devel/distinfo                       |   6 +-
+ graphics/sekrit-twc-zimg/Makefile                  |   2 +-
+ graphics/sekrit-twc-zimg/distinfo                  |   6 +-
+ graphics/sekrit-twc-zimg/files/patch-neon          |  33 ++
+ graphics/sekrit-twc-zimg/files/patch-no-extra-deps |  29 +-
+ lang/Makefile                                      |   1 +
+ lang/spidermonkey78/Makefile                       |  83 +++++
+ lang/spidermonkey78/distinfo                       |   3 +
+ .../files/patch-js_public_TypeDecls.h              |  27 ++
+ lang/spidermonkey78/pkg-descr                      |   3 +
+ lang/spidermonkey78/pkg-plist                      | 247 +++++++++++++
+ multimedia/aegisub/Makefile                        |   2 +-
+ multimedia/aegisub/files/patch-ffms-2.40           | 397 +++++++++++++++++++++
+ multimedia/ffms2/Makefile                          |  10 +-
+ multimedia/ffms2/distinfo                          |   6 +-
+ multimedia/x264/Makefile                           |   2 +-
+ security/Makefile                                  |   1 +
+ security/heaan/Makefile                            |  48 +++
+ security/heaan/distinfo                            |   3 +
+ security/heaan/files/patch-makefile                |  19 +
+ security/heaan/files/patch-src_subdir.mk           |  11 +
+ security/heaan/pkg-descr                           |   8 +
+ security/heaan/pkg-plist                           |  17 +
+ security/intel-ipsec-mb/Makefile                   |  11 +-
+ security/intel-ipsec-mb/distinfo                   |   6 +-
+ x11/nwg-launchers/Makefile                         |   5 +-
+ x11/nwg-launchers/distinfo                         |   8 +-
+ 47 files changed, 995 insertions(+), 305 deletions(-)
+ delete mode 100644 cad/opensta/Makefile
+ delete mode 100644 cad/opensta/distinfo
+ delete mode 100644 cad/opensta/files/patch-CMakeLists.txt
+ delete mode 100644 cad/opensta/files/patch-cmake_FindTCL.cmake
+ delete mode 100644 cad/opensta/pkg-descr
+ delete mode 100644 cad/opensta/pkg-plist
+ create mode 100644 graphics/sekrit-twc-zimg/files/patch-neon
+ create mode 100644 lang/spidermonkey78/Makefile
+ create mode 100644 lang/spidermonkey78/distinfo
+ create mode 100644 lang/spidermonkey78/files/patch-js_public_TypeDecls.h
+ create mode 100644 lang/spidermonkey78/pkg-descr
+ create mode 100644 lang/spidermonkey78/pkg-plist
+ create mode 100644 multimedia/aegisub/files/patch-ffms-2.40
+ create mode 100644 security/heaan/Makefile
+ create mode 100644 security/heaan/distinfo
+ create mode 100644 security/heaan/files/patch-makefile
+ create mode 100644 security/heaan/files/patch-src_subdir.mk
+ create mode 100644 security/heaan/pkg-descr
+ create mode 100644 security/heaan/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    88dcb2d6e6ca..b0da8e5879bd  master -> master        
+remote:    8aa1f4908e16..88dcb2d6e6ca  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   88dcb2d6e6ca..b0da8e5879bd  master -> master
+==== END: master ====
