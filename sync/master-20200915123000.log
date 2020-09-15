@@ -52,3 +52,156 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox/Makefile
+Removing www/firefox-esr/files/patch-cubeb-sndio
+Removing www/firefox-esr/files/patch-cubeb-dlopen
+Removing www/firefox-esr/files/patch-bug726479
+Removing www/firefox-esr/files/patch-bug1624128
+Auto-merging www/firefox-esr/Makefile
+CONFLICT (content): Merge conflict in www/firefox-esr/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc www/firefox-esr/Makefile
+index af89e8be4ede,390a92302335..000000000000
+--- a/www/firefox-esr/Makefile
++++ b/www/firefox-esr/Makefile
+@@@ -14,17 -13,15 +13,23 @@@ DISTFILES=	${DISTNAME}esr.source${EXTRA
+  MAINTAINER=	gecko@FreeBSD.org
+  COMMENT=	Web browser based on the browser portion of Mozilla
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
+ +		nss>=3.52.1:security/nss \
+ +		icu>=63.1,1:devel/icu \
+++=======
++ BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
++ 		nss>=3.56:security/nss \
++ 		icu>=67.1,1:devel/icu \
+++>>>>>>> freebsd/master
+  		libevent>=2.1.8:devel/libevent \
+- 		harfbuzz>=2.4.0:print/harfbuzz \
+- 		graphite2>=1.3.13:graphics/graphite2 \
++ 		harfbuzz>=2.6.6:print/harfbuzz \
++ 		graphite2>=1.3.14:graphics/graphite2 \
+  		png>=1.6.35:graphics/png \
+- 		libvpx>=1.5.0:multimedia/libvpx \
+- 		sqlite3>=3.28.0:databases/sqlite3 \
++ 		libvpx>=1.8.2:multimedia/libvpx \
++ 		py${PYTHON3_DEFAULT:S/.//}-sqlite3>0:databases/py-sqlite3@py${PYTHON3_DEFAULT:S/.//} \
+  		v4l_compat>0:multimedia/v4l_compat \
+  		autoconf-2.13:devel/autoconf213 \
+  		nasm:devel/nasm \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   benchmarks/netperf/Makefile
+	modified:   devel/efl/Makefile
+	modified:   devel/intel-graphics-compiler/Makefile
+	modified:   devel/intel-graphics-compiler/distinfo
+	modified:   net/ooni-mini/Makefile
+	modified:   net/ooni-mini/distinfo
+	modified:   security/clamav/Makefile
+	modified:   security/clamav/distinfo
+	modified:   security/clamav/pkg-plist
+	modified:   security/maltrail/Makefile
+	modified:   security/maltrail/distinfo
+	modified:   security/maltrail/pkg-plist
+	modified:   www/firefox-esr/distinfo
+	modified:   www/firefox-esr/files/patch-addon-search
+	new file:   www/firefox-esr/files/patch-bug1269654_comment5
+	modified:   www/firefox-esr/files/patch-bug1288587
+	new file:   www/firefox-esr/files/patch-bug1504834_comment10
+	new file:   www/firefox-esr/files/patch-bug1504834_comment5
+	new file:   www/firefox-esr/files/patch-bug1504834_comment9
+	new file:   www/firefox-esr/files/patch-bug1550891
+	new file:   www/firefox-esr/files/patch-bug1602730_comment5
+	new file:   www/firefox-esr/files/patch-bug1612181_comment1
+	new file:   www/firefox-esr/files/patch-bug1612184
+	modified:   www/firefox-esr/files/patch-bug1618914
+	deleted:    www/firefox-esr/files/patch-bug1624128
+	new file:   www/firefox-esr/files/patch-bug1626236
+	new file:   www/firefox-esr/files/patch-bug1628567
+	new file:   www/firefox-esr/files/patch-bug1640982
+	new file:   www/firefox-esr/files/patch-bug1659612
+	deleted:    www/firefox-esr/files/patch-bug726479
+	modified:   www/firefox-esr/files/patch-bug847568
+	deleted:    www/firefox-esr/files/patch-cubeb-dlopen
+	modified:   www/firefox-esr/files/patch-cubeb-oss
+	deleted:    www/firefox-esr/files/patch-cubeb-sndio
+	modified:   www/firefox-esr/files/patch-dom_media_flac_FlacDecoder.cpp
+	new file:   www/firefox-esr/files/patch-freebsd11.3
+	modified:   www/firefox-esr/files/patch-gfx_skia_skia_src_core_SkCpu.cpp
+	modified:   www/firefox/Makefile
+	modified:   www/radicale/Makefile
+	modified:   www/radicale/distinfo
+	modified:   x11/Makefile
+	new file:   x11/havoc/Makefile
+	new file:   x11/havoc/distinfo
+	new file:   x11/havoc/files/patch-Makefile
+	new file:   x11/havoc/files/patch-havoc.cfg
+	new file:   x11/havoc/files/pkg-message.in
+	new file:   x11/havoc/pkg-descr
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   www/firefox-esr/Makefile
+
+
+It took 3.22 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at c399211f513a HBSD: Fix handling of symlinks in ports-mgmt/pkg
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.39 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c399211f513a HBSD: Fix handling of symlinks in ports-mgmt/pkg
+==== END: master ====
