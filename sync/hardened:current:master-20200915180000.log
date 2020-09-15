@@ -1,0 +1,169 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/powerpc/powerpc/exec_machdep.c
+Auto-merging sys/i386/linux/linux_sysvec.c
+CONFLICT (content): Merge conflict in sys/i386/linux/linux_sysvec.c
+Auto-merging sys/arm64/linux/linux_sysvec.c
+Auto-merging sys/amd64/linux32/linux32_sysvec.c
+Auto-merging sys/amd64/linux/linux_sysvec.c
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 97fab350ff50,7bc040906de2..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -699,7 -667,13 +699,17 @@@ Set to buil
+  .Xr gdb 1 .
+  .Pp
+  This is a default setting on
+++<<<<<<< HEAD
+ +amd64/amd64, arm/armv6, arm/armv7, mips/mips, mips/mips64, powerpc/powerpc and powerpc/powerpc64.
+++=======
++ amd64/amd64, arm/armv6, arm/armv7, i386/i386, mips/mips, mips/mips64, powerpc/powerpc and powerpc/powerpc64.
++ .It Va WITHOUT_GH_BC
++ Do not install the enhanced
++ .Xr bc
++ and
++ .Xr dc
++ programs instead of the traditional FreeBSD versions.
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_GNU_DIFF
+  Set to not build GNU
+  .Xr diff3 1 .
+diff --cc sys/i386/linux/linux_sysvec.c
+index ffffe10c40e1,69d9ca97c526..000000000000
+--- a/sys/i386/linux/linux_sysvec.c
++++ b/sys/i386/linux/linux_sysvec.c
+@@@ -833,6 -844,41 +846,44 @@@ linux_get_machine(const char **dst
+  	}
+  }
+  
+++<<<<<<< HEAD
+++=======
++ struct sysentvec linux_sysvec = {
++ 	.sv_size	= LINUX_SYS_MAXSYSCALL,
++ 	.sv_table	= linux_sysent,
++ 	.sv_errsize	= ELAST + 1,
++ 	.sv_errtbl	= linux_errtbl,
++ 	.sv_transtrap	= linux_translate_traps,
++ 	.sv_fixup	= linux_fixup,
++ 	.sv_sendsig	= linux_sendsig,
++ 	.sv_sigcode	= &_binary_linux_locore_o_start,
++ 	.sv_szsigcode	= &linux_szsigcode,
++ 	.sv_name	= "Linux a.out",
++ 	.sv_coredump	= NULL,
++ 	.sv_imgact_try	= linux_exec_imgact_try,
++ 	.sv_minsigstksz	= LINUX_MINSIGSTKSZ,
++ 	.sv_minuser	= VM_MIN_ADDRESS,
++ 	.sv_maxuser	= VM_MAXUSER_ADDRESS,
++ 	.sv_usrstack	= LINUX_USRSTACK,
++ 	.sv_psstrings	= PS_STRINGS,
++ 	.sv_stackprot	= VM_PROT_ALL,
++ 	.sv_copyout_strings = exec_copyout_strings,
++ 	.sv_setregs	= linux_exec_setregs,
++ 	.sv_fixlimit	= NULL,
++ 	.sv_maxssiz	= NULL,
++ 	.sv_flags	= SV_ABI_LINUX | SV_AOUT | SV_IA32 | SV_ILP32,
++ 	.sv_set_syscall_retval = linux_set_syscall_retval,
++ 	.sv_fetch_syscall_args = linux_fetch_syscall_args,
++ 	.sv_syscallnames = NULL,
++ 	.sv_shared_page_base = LINUX_SHAREDPAGE,
++ 	.sv_shared_page_len = PAGE_SIZE,
++ 	.sv_schedtail	= linux_schedtail,
++ 	.sv_thread_detach = linux_thread_detach,
++ 	.sv_trap	= NULL,
++ };
++ INIT_SYSENTVEC(aout_sysvec, &linux_sysvec);
++ 
+++>>>>>>> freebsd/current/master
+  struct sysentvec elf_linux_sysvec = {
+  	.sv_size	= LINUX_SYS_MAXSYSCALL,
+  	.sv_table	= linux_sysent,
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   libexec/ftpd/ftpd.c
+	modified:   sys/amd64/amd64/vm_machdep.c
+	modified:   sys/amd64/linux/linux_sysvec.c
+	modified:   sys/amd64/linux32/linux32_sysvec.c
+	modified:   sys/amd64/vmm/amd/svm.c
+	modified:   sys/amd64/vmm/amd/vmcb.h
+	modified:   sys/amd64/vmm/intel/vmx.c
+	modified:   sys/arm/arm/vm_machdep.c
+	modified:   sys/arm64/arm64/vm_machdep.c
+	modified:   sys/arm64/linux/linux_sysvec.c
+	modified:   sys/dev/e1000/if_em.c
+	modified:   sys/dev/e1000/if_em.h
+	modified:   sys/i386/i386/vm_machdep.c
+	modified:   sys/kern/uipc_usrreq.c
+	modified:   sys/powerpc/aim/moea64_native.c
+	modified:   sys/powerpc/powerpc/exec_machdep.c
+	modified:   sys/powerpc/powerpc/in_cksum.c
+	modified:   sys/sys/unpcb.h
+	new file:   tools/build/options/WITHOUT_GH_BC
+	new file:   tools/build/options/WITH_GH_BC
+	modified:   usr.sbin/certctl/certctl.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+	both modified:   sys/i386/linux/linux_sysvec.c
+
+HEAD is now at 0dbfd76f8b0c Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 0dbfd76f8b0c Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
