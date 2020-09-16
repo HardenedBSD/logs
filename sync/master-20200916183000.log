@@ -47,3 +47,182 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-drivers/xf86-video-ati-legacy/pkg-plist
+Removing x11-drivers/xf86-video-ati-legacy/pkg-descr
+Removing x11-drivers/xf86-video-ati-legacy/distinfo
+Removing x11-drivers/xf86-video-ati-legacy/Makefile
+Auto-merging www/node12/Makefile
+Auto-merging www/node10/Makefile
+Auto-merging www/node/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ databases/grass7/Makefile                          |   2 +-
+ databases/pecl-rrd/Makefile                        |   1 -
+ databases/pecl-rrd/files/patch-rrd.c               |  25 +
+ devel/dconf-editor/Makefile                        |   2 +-
+ devel/dconf-editor/distinfo                        |   6 +-
+ devel/dconf-editor/pkg-plist                       |   4 +
+ java/intellij/Makefile                             |   4 +-
+ java/intellij/distinfo                             |   6 +-
+ lang/gcc10-devel/Makefile                          |   2 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ mail/pflogsumm/Makefile                            |   1 +
+ mail/pflogsumm/files/patch-pflogsumm.pl            |  11 +
+ security/vuxml/vuln.xml                            |  56 ++
+ sysutils/rubygem-bolt/Makefile                     |   2 +-
+ sysutils/rubygem-bolt/distinfo                     |   6 +-
+ sysutils/rubygem-facter/Makefile                   |   2 +-
+ sysutils/rubygem-facter/distinfo                   |   6 +-
+ sysutils/rubygem-puppetfile-resolver/Makefile      |   2 +-
+ sysutils/rubygem-puppetfile-resolver/distinfo      |   6 +-
+ www/Makefile                                       |   1 +
+ www/deno/Makefile                                  | 359 ++++++++++++
+ www/deno/distinfo                                  | 601 +++++++++++++++++++++
+ www/deno/files/extrapatch-clang10                  |  13 +
+ .../patch-cargo-crates_ring-0.16.15_Cargo.toml     |  11 +
+ .../patch-cargo-crates_ring-0.16.15_src_cpu.rs     | 116 ++++
+ .../files/patch-cargo-crates_rusty__v8_build.rs    |  13 +
+ ...ch-cargo-crates_rusty__v8_build_config_BUILD.gn |  30 +
+ ...go-crates_rusty__v8_build_config_BUILDCONFIG.gn |  48 ++
+ ...crates_rusty__v8_build_config_compiler_BUILD.gn |  99 ++++
+ ...es_rusty__v8_build_config_compiler_compiler.gni |  11 +
+ ...argo-crates_rusty__v8_build_config_features.gni |  11 +
+ ...es_rusty__v8_build_config_freetype_freetype.gni |   9 +
+ ...go-crates_rusty__v8_build_config_linux_BUILD.gn |  11 +
+ ...ates_rusty__v8_build_config_linux_pkg-config.py |  26 +
+ ...cargo-crates_rusty__v8_build_config_sysroot.gni |  14 +
+ ...go-crates_rusty__v8_build_detect__host__arch.py |  11 +
+ ...cargo-crates_rusty__v8_build_gn__run__binary.py |  11 +
+ ...h-cargo-crates_rusty__v8_build_linux_chrome.map |  29 +
+ ...go-crates_rusty__v8_build_linux_libpci_BUILD.gn |  53 ++
+ ...crates_rusty__v8_build_linux_unbundle_libusb.gn |  27 +
+ ...__v8_build_linux_unbundle_replace__gn__files.py |  10 +
+ ...es_rusty__v8_build_toolchain_gcc__toolchain.gni |  48 ++
+ ...y__v8_build_toolchain_get__concurrent__links.py |  17 +
+ ...crates_rusty__v8_build_toolchain_linux_BUILD.gn |  10 +
+ ...sty__v8_buildtools_third__party_libc++_BUILD.gn |  11 +
+ .../files/patch-cargo-crates_rusty__v8_v8_BUILD.gn |  32 ++
+ ...ch-cargo-crates_rusty__v8_v8_include_v8config.h |  21 +
+ .../patch-cargo-crates_rusty__v8_v8_src_api_api.cc |  11 +
+ ...patch-cargo-crates_rusty__v8_v8_src_base_cpu.cc |  18 +
+ ...ty__v8_v8_src_base_platform_platform-freebsd.cc |  13 +
+ ...usty__v8_v8_src_base_platform_platform-posix.cc |  24 +
+ www/deno/files/patch-cli_ops_tty.rs                |  11 +
+ www/deno/files/patch-cli_upgrade.rs                |  11 +
+ ...tch-crates_rusty__v8_third__party_zlib_BUILD.gn |  20 +
+ ...tes_rusty__v8_third__party_zlib_cpu__features.c |  48 ++
+ www/deno/pkg-descr                                 |   7 +
+ www/node/Makefile                                  |   2 +-
+ www/node/distinfo                                  |   6 +-
+ www/node10/Makefile                                |   2 +-
+ www/node10/distinfo                                |   6 +-
+ www/node12/Makefile                                |   2 +-
+ www/node12/distinfo                                |   6 +-
+ www/phpmyfaq/Makefile                              |   2 +-
+ www/phpmyfaq/distinfo                              |   6 +-
+ www/phpmyfaq/pkg-plist                             | 272 +++++++++-
+ x11-drivers/Makefile                               |   1 -
+ x11-drivers/xf86-video-ati-legacy/Makefile         |  37 --
+ x11-drivers/xf86-video-ati-legacy/distinfo         |   3 -
+ x11-drivers/xf86-video-ati-legacy/pkg-descr        |   2 -
+ x11-drivers/xf86-video-ati-legacy/pkg-plist        |   5 -
+ 71 files changed, 2207 insertions(+), 112 deletions(-)
+ create mode 100644 databases/pecl-rrd/files/patch-rrd.c
+ create mode 100644 mail/pflogsumm/files/patch-pflogsumm.pl
+ create mode 100644 www/deno/Makefile
+ create mode 100644 www/deno/distinfo
+ create mode 100644 www/deno/files/extrapatch-clang10
+ create mode 100644 www/deno/files/patch-cargo-crates_ring-0.16.15_Cargo.toml
+ create mode 100644 www/deno/files/patch-cargo-crates_ring-0.16.15_src_cpu.rs
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build.rs
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_BUILDCONFIG.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_compiler_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_compiler_compiler.gni
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_features.gni
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_freetype_freetype.gni
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_linux_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_linux_pkg-config.py
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_config_sysroot.gni
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_detect__host__arch.py
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_gn__run__binary.py
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_linux_chrome.map
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_linux_libpci_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_linux_unbundle_libusb.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_linux_unbundle_replace__gn__files.py
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_toolchain_gcc__toolchain.gni
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_toolchain_get__concurrent__links.py
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_build_toolchain_linux_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_buildtools_third__party_libc++_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_v8_BUILD.gn
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_v8_include_v8config.h
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_v8_src_api_api.cc
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_v8_src_base_cpu.cc
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_v8_src_base_platform_platform-freebsd.cc
+ create mode 100644 www/deno/files/patch-cargo-crates_rusty__v8_v8_src_base_platform_platform-posix.cc
+ create mode 100644 www/deno/files/patch-cli_ops_tty.rs
+ create mode 100644 www/deno/files/patch-cli_upgrade.rs
+ create mode 100644 www/deno/files/patch-crates_rusty__v8_third__party_zlib_BUILD.gn
+ create mode 100644 www/deno/files/patch-crates_rusty__v8_third__party_zlib_cpu__features.c
+ create mode 100644 www/deno/pkg-descr
+ delete mode 100644 x11-drivers/xf86-video-ati-legacy/Makefile
+ delete mode 100644 x11-drivers/xf86-video-ati-legacy/distinfo
+ delete mode 100644 x11-drivers/xf86-video-ati-legacy/pkg-descr
+ delete mode 100644 x11-drivers/xf86-video-ati-legacy/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    3d5d5a24c1d5..8ad602692f05  master -> master        
+remote:    61f2fa98b861..3d5d5a24c1d5  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   3d5d5a24c1d5..8ad602692f05  master -> master
+==== END: master ====
