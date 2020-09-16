@@ -1,0 +1,139 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 20 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 0dbfd76f8b0c..902b66563801
+Fast-forward
+ libexec/ftpd/ftpd.c                |    15 +-
+ share/man/man5/src.conf.5          | 97255 ++++++++++++++++++++++++++++++++++-
+ sys/amd64/amd64/vm_machdep.c       |     2 +-
+ sys/amd64/linux/linux_sysvec.c     |     5 +
+ sys/amd64/linux32/linux32_sysvec.c |    16 +-
+ sys/amd64/vmm/amd/svm.c            |   106 +-
+ sys/amd64/vmm/amd/vmcb.h           |    13 +-
+ sys/amd64/vmm/intel/vmx.c          |     4 +
+ sys/arm/arm/vm_machdep.c           |     2 +-
+ sys/arm64/arm64/vm_machdep.c       |     2 +-
+ sys/arm64/linux/linux_sysvec.c     |     7 +
+ sys/dev/e1000/if_em.c              |     2 +-
+ sys/dev/e1000/if_em.h              |     5 +
+ sys/i386/i386/vm_machdep.c         |     2 +-
+ sys/i386/linux/linux_sysvec.c      |    15 +-
+ sys/kern/uipc_usrreq.c             |   557 +-
+ sys/powerpc/aim/moea64_native.c    |     4 +-
+ sys/powerpc/powerpc/exec_machdep.c |     2 +-
+ sys/powerpc/powerpc/in_cksum.c     |     3 +-
+ sys/sys/unpcb.h                    |    45 +-
+ tools/build/options/WITHOUT_GH_BC  |     6 +
+ tools/build/options/WITH_GH_BC     |     6 +
+ usr.sbin/certctl/certctl.sh        |     4 +-
+ 23 files changed, 96127 insertions(+), 1951 deletions(-)
+ create mode 100644 tools/build/options/WITHOUT_GH_BC
+ create mode 100644 tools/build/options/WITH_GH_BC
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Auto-merging sys/fs/tmpfs/tmpfs_subr.c
+Auto-merging sys/fs/tmpfs/tmpfs.h
+CONFLICT (content): Merge conflict in sys/fs/tmpfs/tmpfs.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/fs/tmpfs/tmpfs.h
+index 171de32fcefb,5b966635c486..000000000000
+--- a/sys/fs/tmpfs/tmpfs.h
++++ b/sys/fs/tmpfs/tmpfs.h
+@@@ -309,12 -287,7 +309,16 @@@ struct tmpfs_node 
+  			 * a position within the file is accessed.
+  			 */
+  			vm_object_t		tn_aobj;	/* (c) */
+++<<<<<<< HEAD
+ +
+ +			/*
+ +			 * The extended attributes list, which may be
+ +			 * empty.
+ +			 */
+ +			struct tmpfs_extattr_list_head	 tn_extattr_list; /* (i) */
+++=======
++ 			struct tmpfs_mount	*tn_tmp;	/* (c) */
+++>>>>>>> freebsd/current/master
+  		} tn_reg;
+  	} tn_spec;	/* (v) */
+  };
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_file_os.c
+	modified:   sys/fs/nfs/nfsdport.h
+	modified:   sys/fs/nfsserver/nfs_nfsdstate.c
+	modified:   sys/fs/tmpfs/tmpfs_subr.c
+	modified:   sys/fs/tmpfs/tmpfs_vfsops.c
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/uipc_usrreq.c
+	modified:   sys/kern/vfs_default.c
+	modified:   sys/kern/vfs_subr.c
+	modified:   sys/kern/vfs_syscalls.c
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/kern/vnode_if.src
+	modified:   sys/sys/file.h
+	modified:   sys/sys/vnode.h
+	modified:   sys/ufs/ffs/ffs_alloc.c
+	modified:   sys/ufs/ufs/ufs_vnops.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/fs/tmpfs/tmpfs.h
+
+HEAD is now at 902b66563801 HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 902b66563801 HBSD: Resolve merge conflict
+==== END: hardened/current/master ====
