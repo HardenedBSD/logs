@@ -1,0 +1,137 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Auto-merging sys/fs/tmpfs/tmpfs_subr.c
+Auto-merging sys/fs/tmpfs/tmpfs.h
+Merge made by the 'recursive' strategy.
+ .../clang/include/clang/AST/ASTContext.h           |  16 ++
+ .../include/clang/Basic/DiagnosticSemaKinds.td     |   7 +-
+ contrib/llvm-project/clang/lib/AST/ASTContext.cpp  | 113 +++++++++++
+ contrib/llvm-project/clang/lib/AST/DeclBase.cpp    |   7 +
+ .../llvm-project/clang/lib/AST/ItaniumMangle.cpp   |   2 +-
+ contrib/llvm-project/clang/lib/Basic/Targets.cpp   |   4 -
+ .../llvm-project/clang/lib/CodeGen/CGDebugInfo.cpp |  46 +++--
+ .../clang/lib/CodeGen/CGOpenMPRuntime.cpp          | 214 ++++++++------------
+ .../clang/lib/CodeGen/CGOpenMPRuntime.h            |  12 +-
+ .../clang/lib/CodeGen/CGOpenMPRuntimeNVPTX.cpp     |  61 ++++--
+ .../clang/lib/CodeGen/CodeGenTypes.cpp             |  51 +----
+ .../clang/lib/Driver/ToolChains/Arch/Sparc.cpp     |   9 +-
+ .../clang/lib/Driver/ToolChains/Clang.cpp          |  16 +-
+ .../clang/lib/Driver/ToolChains/OpenBSD.cpp        |  67 +++++--
+ .../clang/lib/Driver/ToolChains/OpenBSD.h          |  16 +-
+ .../clang/lib/Format/TokenAnnotator.cpp            |  20 +-
+ .../clang/lib/Frontend/InitHeaderSearch.cpp        |   2 +
+ contrib/llvm-project/clang/lib/Headers/altivec.h   | 178 +++++++++++------
+ .../llvm-project/clang/lib/Sema/SemaChecking.cpp   |   5 +
+ .../clang/lib/Sema/SemaTemplateInstantiateDecl.cpp |   7 +
+ contrib/llvm-project/clang/lib/Sema/SemaType.cpp   |   5 +-
+ .../clang/lib/Serialization/ASTReaderDecl.cpp      |   2 +-
+ .../StaticAnalyzer/Checkers/CastValueChecker.cpp   | 138 ++++++++++---
+ .../clang/lib/StaticAnalyzer/Core/DynamicType.cpp  |  13 ++
+ .../compiler-rt/lib/builtins/clear_cache.c         |   4 +-
+ .../compiler-rt/lib/builtins/cpu_model.c           |   2 +-
+ .../compiler-rt/lib/profile/GCDAProfiling.c        |  19 +-
+ .../sanitizer_platform_limits_netbsd.h             |   6 +
+ .../llvm-project/libunwind/src/AddressSpace.hpp    |   7 +-
+ contrib/llvm-project/lld/COFF/Writer.cpp           |   3 +
+ contrib/llvm-project/lld/ELF/DWARF.cpp             |  22 ++-
+ contrib/llvm-project/lld/ELF/DWARF.h               |   4 +
+ contrib/llvm-project/lld/ELF/LinkerScript.cpp      |  13 +-
+ contrib/llvm-project/lld/ELF/LinkerScript.h        |   4 +
+ contrib/llvm-project/lld/ELF/OutputSections.cpp    |   6 +-
+ contrib/llvm-project/lld/ELF/SyntheticSections.cpp |  50 ++---
+ .../llvm-project/lld/docs/ELF/linker_script.rst    |  19 ++
+ contrib/llvm-project/lld/docs/ReleaseNotes.rst     | 133 ++++++++++++-
+ .../include/llvm/Analysis/InstructionSimplify.h    |   6 +
+ .../include/llvm/Frontend/OpenMP/OMPIRBuilder.h    |  11 +-
+ .../llvm-project/llvm/include/llvm/IR/IRBuilder.h  |  14 +-
+ .../llvm/lib/Analysis/InstructionSimplify.cpp      |  87 ++++-----
+ .../llvm/lib/CodeGen/AsmPrinter/CodeViewDebug.cpp  |  13 +-
+ .../llvm/lib/CodeGen/AsmPrinter/DwarfUnit.cpp      |   6 +-
+ .../llvm/lib/CodeGen/MachineCopyPropagation.cpp    |   4 +-
+ .../llvm-project/llvm/lib/CodeGen/RegAllocFast.cpp | 217 +++++++++++++--------
+ .../llvm/lib/CodeGen/SelectionDAG/FastISel.cpp     |   6 +
+ .../CodeGen/SelectionDAG/SelectionDAGBuilder.cpp   |   4 +-
+ .../lib/CodeGen/SelectionDAG/TargetLowering.cpp    |  29 ++-
+ .../llvm/lib/CodeGen/TargetLoweringBase.cpp        |   5 +-
+ .../llvm/lib/Frontend/OpenMP/OMPIRBuilder.cpp      |  62 +++---
+ contrib/llvm-project/llvm/lib/IR/IRBuilder.cpp     |  13 +-
+ .../llvm-project/llvm/lib/IR/LegacyPassManager.cpp |  87 ---------
+ .../lib/Target/AArch64/AArch64FrameLowering.cpp    |   7 +-
+ .../llvm/lib/Target/AArch64/SVEInstrFormats.td     |   2 +-
+ .../llvm/lib/Target/AMDGPU/SIFoldOperands.cpp      |  44 ++---
+ .../lib/Target/AMDGPU/Utils/AMDGPUBaseInfo.cpp     |  13 ++
+ .../llvm/lib/Target/AMDGPU/Utils/AMDGPUBaseInfo.h  |   3 +
+ .../llvm/lib/Target/PowerPC/PPCBoolRetToInt.cpp    |  15 +-
+ .../llvm/lib/Target/PowerPC/PPCISelLowering.cpp    |  13 +-
+ .../llvm/lib/Target/PowerPC/PPCMIPeephole.cpp      |   2 +
+ .../Target/WebAssembly/WebAssemblyISelLowering.cpp |   4 +-
+ .../Transforms/InstCombine/InstCombineSelect.cpp   |  55 +++---
+ lib/clang/include/VCSVersion.inc                   |   8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |   2 +-
+ sys/fs/tmpfs/tmpfs.h                               |  22 ++-
+ sys/fs/tmpfs/tmpfs_fifoops.c                       |   3 +-
+ sys/fs/tmpfs/tmpfs_subr.c                          |  69 ++++---
+ sys/fs/tmpfs/tmpfs_vnops.c                         |  31 +--
+ 69 files changed, 1351 insertions(+), 809 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    8db6fda3b7f7..48ffa2852578  hardened/current/master -> hardened/current/master        
+remote:    daa9b93ad3d8..c3e989ed1685  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   8db6fda3b7f7..48ffa2852578  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
