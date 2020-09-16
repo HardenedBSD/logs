@@ -1,0 +1,93 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 902b66563801..562eb05b3904
+Fast-forward
+ share/misc/pci_vendors                             | 283 ++++++++++++++++++---
+ .../openzfs/module/os/freebsd/zfs/zfs_file_os.c    |   2 +-
+ sys/fs/nfs/nfsdport.h                              |   2 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c                   |   5 +-
+ sys/fs/tmpfs/tmpfs.h                               |   7 +-
+ sys/fs/tmpfs/tmpfs_subr.c                          |  38 +--
+ sys/fs/tmpfs/tmpfs_vfsops.c                        |   3 +
+ sys/fs/tmpfs/tmpfs_vnops.c                         |  86 ++++++-
+ sys/kern/kern_descrip.c                            |   9 +
+ sys/kern/subr_bus.c                                |   2 +-
+ sys/kern/uipc_usrreq.c                             |   5 +-
+ sys/kern/vfs_default.c                             |   8 +
+ sys/kern/vfs_subr.c                                |   9 +
+ sys/kern/vfs_syscalls.c                            |  11 +-
+ sys/kern/vfs_vnops.c                               |  34 ++-
+ sys/kern/vnode_if.src                              |  11 +
+ sys/sys/devctl.h                                   |   2 +-
+ sys/sys/file.h                                     |   1 +
+ sys/sys/vnode.h                                    |   5 +-
+ sys/ufs/ffs/ffs_alloc.c                            |   2 +-
+ sys/ufs/ufs/ufs_vnops.c                            |  17 ++
+ 21 files changed, 433 insertions(+), 109 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/netbsd-tests/fs/tmpfs/t_times.sh | 8 ++++++++
+ sys/conf/ldscript.kmod.amd64             | 4 ++++
+ sys/net/ieee8023ad_lacp.c                | 1 +
+ sys/net/if_media.h                       | 3 +++
+ 4 files changed, 16 insertions(+)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    562eb05b3904..8db6fda3b7f7  hardened/current/master -> hardened/current/master        
+remote:    1b4334bc0db0..daa9b93ad3d8  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   562eb05b3904..8db6fda3b7f7  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
