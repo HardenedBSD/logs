@@ -1,0 +1,144 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 30 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating ee346620c457..b624f2b2968a
+Fast-forward
+ accessibility/accerciser/Makefile                  |   2 +-
+ accessibility/orca/Makefile                        |   2 +-
+ audio/alsa-utils/Makefile                          |   4 +-
+ audio/goobox/Makefile                              |  11 +-
+ audio/goobox/distinfo                              |   6 +-
+ audio/goobox/pkg-plist                             |  18 ++-
+ audio/sound-juicer/Makefile                        |  21 +--
+ audio/sound-juicer/distinfo                        |   6 +-
+ audio/sound-juicer/files/patch-meson.build         |  11 ++
+ audio/sound-juicer/pkg-plist                       |  39 ++----
+ audio/zrythm/Makefile                              |   3 +-
+ audio/zrythm/distinfo                              |   6 +-
+ audio/zrythm/files/patch-meson.build               |  26 ----
+ audio/zrythm/pkg-plist                             |  17 ++-
+ databases/cego/Makefile                            |   2 +-
+ databases/cego/distinfo                            |   6 +-
+ deskutils/baobab/Makefile                          |   2 +-
+ deskutils/baobab/distinfo                          |   6 +-
+ deskutils/baobab/pkg-plist                         |  15 +++
+ deskutils/gnome-documents/Makefile                 |   4 +-
+ deskutils/gnome-documents/distinfo                 |   6 +-
+ deskutils/gnome-documents/files/patch-meson.build  |  13 ++
+ deskutils/gnome-documents/pkg-plist                |  27 +---
+ deskutils/gnome-screenshot/Makefile                |   7 +-
+ deskutils/gnome-screenshot/distinfo                |   6 +-
+ deskutils/gnome-screenshot/files/extra-patch-intel |  20 ---
+ .../gnome-screenshot/files/patch-src_meson.build   |  11 --
+ deskutils/gnome-screenshot/pkg-plist               |   5 +-
+ deskutils/py-paperless/Makefile                    |   2 +-
+ deskutils/py-paperless/files/paperless.7.in        | 148 +++++++++++----------
+ devel/lfcxml/Makefile                              |   2 +-
+ devel/lfcxml/distinfo                              |   6 +-
+ devel/liblouis/Makefile                            |   2 +-
+ devel/liblouis/distinfo                            |   6 +-
+ devel/liblouis/pkg-plist                           |  19 ++-
+ devel/py-proselint/Makefile                        |   3 +-
+ devel/py-proselint/pkg-descr                       |   2 +-
+ devel/py-twilio/Makefile                           |   2 +-
+ devel/py-twilio/distinfo                           |   6 +-
+ games/genact/Makefile                              |  28 ++--
+ games/genact/distinfo                              |  56 +++++---
+ graphics/graphene/Makefile                         |   6 +-
+ graphics/graphene/distinfo                         |   6 +-
+ graphics/graphene/pkg-plist                        |   2 +-
+ graphics/mesa-dri/Makefile                         |  13 +-
+ graphics/mesa-dri/Makefile.common                  |   4 +-
+ graphics/mesa-libs/Makefile                        |  10 +-
+ graphics/mesa-libs/pkg-plist                       |  14 +-
+ japanese/libskk/Makefile                           |   2 +-
+ lang/swi-pl/files/patch-packages_ssl_cryptolib.c   |  20 ---
+ net-im/fractal/Makefile                            |   4 +-
+ print/tex-luatex/Makefile                          |   2 +
+ sysutils/afflib/files/patch-lib_aftest.cpp         |  11 --
+ sysutils/afflib/files/patch-lib_crypto.cpp         |  11 --
+ sysutils/afflib/files/patch-tools_aff__bom.cpp     |  11 --
+ sysutils/afflib/files/patch-tools_affverify.cpp    |  11 --
+ sysutils/afflib/files/patch-tools_hashextent.h     |  11 --
+ textproc/yelp-tools/Makefile                       |  11 +-
+ textproc/yelp-tools/distinfo                       |   6 +-
+ textproc/yelp-tools/pkg-plist                      |   7 +
+ textproc/yelp-xsl/Makefile                         |   4 +-
+ textproc/yelp-xsl/distinfo                         |   6 +-
+ x11-toolkits/Makefile                              |   1 +
+ x11-toolkits/libdazzle/Makefile                    |   2 +-
+ x11-toolkits/libdazzle/distinfo                    |   6 +-
+ x11-toolkits/libhandy/Makefile                     |  10 +-
+ x11-toolkits/libhandy/distinfo                     |   6 +-
+ x11-toolkits/libhandy/pkg-descr                    |   2 +-
+ x11-toolkits/libhandy/pkg-plist                    | 103 +++++++-------
+ x11-toolkits/libhandy0/Makefile                    |  28 ++++
+ x11-toolkits/libhandy0/distinfo                    |   3 +
+ x11-toolkits/libhandy0/pkg-descr                   |   4 +
+ x11-toolkits/libhandy0/pkg-plist                   |  46 +++++++
+ x11/phosh/Makefile                                 |   3 +-
+ x11/yelp/Makefile                                  |  12 +-
+ x11/yelp/distinfo                                  |   6 +-
+ x11/yelp/pkg-plist                                 |   3 +
+ 77 files changed, 510 insertions(+), 481 deletions(-)
+ create mode 100644 audio/sound-juicer/files/patch-meson.build
+ delete mode 100644 audio/zrythm/files/patch-meson.build
+ create mode 100644 deskutils/gnome-documents/files/patch-meson.build
+ delete mode 100644 deskutils/gnome-screenshot/files/extra-patch-intel
+ delete mode 100644 deskutils/gnome-screenshot/files/patch-src_meson.build
+ delete mode 100644 lang/swi-pl/files/patch-packages_ssl_cryptolib.c
+ delete mode 100644 sysutils/afflib/files/patch-lib_aftest.cpp
+ delete mode 100644 sysutils/afflib/files/patch-lib_crypto.cpp
+ delete mode 100644 sysutils/afflib/files/patch-tools_aff__bom.cpp
+ delete mode 100644 sysutils/afflib/files/patch-tools_affverify.cpp
+ delete mode 100644 sysutils/afflib/files/patch-tools_hashextent.h
+ create mode 100644 x11-toolkits/libhandy0/Makefile
+ create mode 100644 x11-toolkits/libhandy0/distinfo
+ create mode 100644 x11-toolkits/libhandy0/pkg-descr
+ create mode 100644 x11-toolkits/libhandy0/pkg-plist
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
