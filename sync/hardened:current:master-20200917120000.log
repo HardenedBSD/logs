@@ -1,0 +1,193 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 1ecf67212ad2..1da9e0e222d1
+Fast-forward
+ sys/fs/tmpfs/tmpfs_vnops.c | 1 +
+ 1 file changed, 1 insertion(+)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/sysent.h
+Auto-merging sys/riscv/riscv/elf_machdep.c
+Auto-merging sys/powerpc/powerpc/elf64_machdep.c
+Auto-merging sys/powerpc/powerpc/elf32_machdep.c
+Auto-merging sys/mips/mips/freebsd32_machdep.c
+Auto-merging sys/mips/mips/elf_machdep.c
+Auto-merging sys/kern/init_main.c
+CONFLICT (modify/delete): sys/kern/imgact_aout.c deleted in HEAD and modified in freebsd/current/master. Version freebsd/current/master of sys/kern/imgact_aout.c left in tree.
+Auto-merging sys/i386/linux/linux_sysvec.c
+CONFLICT (content): Merge conflict in sys/i386/linux/linux_sysvec.c
+Auto-merging sys/i386/i386/elf_machdep.c
+Auto-merging sys/compat/ia32/ia32_sysvec.c
+Auto-merging sys/arm64/linux/linux_sysvec.c
+Auto-merging sys/arm64/arm64/elf_machdep.c
+Auto-merging sys/arm/arm/elf_machdep.c
+Auto-merging sys/amd64/linux32/linux32_sysvec.c
+Auto-merging sys/amd64/linux/linux_sysvec.c
+Auto-merging sys/amd64/amd64/elf_machdep.c
+Auto-merging share/mk/sys.mk
+Auto-merging share/mk/bsd.lib.mk
+CONFLICT (content): Merge conflict in share/mk/bsd.lib.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/bsd.lib.mk
+index aaed47e2db2e,f1bc3bf836d7..000000000000
+--- a/share/mk/bsd.lib.mk
++++ b/share/mk/bsd.lib.mk
+@@@ -364,6 -357,19 +356,22 @@@ lib${LIB_PRIVATE}${LIB}_nossp_pic.a: ${
+  
+  .endif # !defined(INTERNALLIB)
+  
+++<<<<<<< HEAD
+++=======
++ .if defined(INTERNALLIB) && ${MK_PIE} != "no"
++ PIEOBJS+=	${OBJS:.o=.pieo}
++ DEPENDOBJS+=	${PIEOBJS}
++ CLEANFILES+=	${PIEOBJS}
++ 
++ _LIBS+=		lib${LIB_PRIVATE}${LIB}_pie.a
++ 
++ lib${LIB_PRIVATE}${LIB}_pie.a: ${PIEOBJS}
++ 	@${ECHO} building pie ${LIB} library
++ 	@rm -f ${.TARGET}
++ 	${AR} ${ARFLAGS} ${.TARGET} ${PIEOBJS} ${ARADD}
++ .endif
++ 
+++>>>>>>> freebsd/current/master
+  .if defined(_SKIP_BUILD)
+  all:
+  .else
+diff --cc sys/i386/linux/linux_sysvec.c
+index 389768ecd64d,f788a20ec974..000000000000
+--- a/sys/i386/linux/linux_sysvec.c
++++ b/sys/i386/linux/linux_sysvec.c
+@@@ -846,6 -844,39 +846,42 @@@ linux_get_machine(const char **dst
+  	}
+  }
+  
+++<<<<<<< HEAD
+++=======
++ struct sysentvec linux_sysvec = {
++ 	.sv_size	= LINUX_SYS_MAXSYSCALL,
++ 	.sv_table	= linux_sysent,
++ 	.sv_transtrap	= linux_translate_traps,
++ 	.sv_fixup	= linux_fixup,
++ 	.sv_sendsig	= linux_sendsig,
++ 	.sv_sigcode	= &_binary_linux_locore_o_start,
++ 	.sv_szsigcode	= &linux_szsigcode,
++ 	.sv_name	= "Linux a.out",
++ 	.sv_coredump	= NULL,
++ 	.sv_imgact_try	= linux_exec_imgact_try,
++ 	.sv_minsigstksz	= LINUX_MINSIGSTKSZ,
++ 	.sv_minuser	= VM_MIN_ADDRESS,
++ 	.sv_maxuser	= VM_MAXUSER_ADDRESS,
++ 	.sv_usrstack	= LINUX_USRSTACK,
++ 	.sv_psstrings	= PS_STRINGS,
++ 	.sv_stackprot	= VM_PROT_ALL,
++ 	.sv_copyout_strings = exec_copyout_strings,
++ 	.sv_setregs	= linux_exec_setregs,
++ 	.sv_fixlimit	= NULL,
++ 	.sv_maxssiz	= NULL,
++ 	.sv_flags	= SV_ABI_LINUX | SV_AOUT | SV_IA32 | SV_ILP32,
++ 	.sv_set_syscall_retval = linux_set_syscall_retval,
++ 	.sv_fetch_syscall_args = linux_fetch_syscall_args,
++ 	.sv_syscallnames = NULL,
++ 	.sv_shared_page_base = LINUX_SHAREDPAGE,
++ 	.sv_shared_page_len = PAGE_SIZE,
++ 	.sv_schedtail	= linux_schedtail,
++ 	.sv_thread_detach = linux_thread_detach,
++ 	.sv_trap	= NULL,
++ };
++ INIT_SYSENTVEC(aout_sysvec, &linux_sysvec);
++ 
+++>>>>>>> freebsd/current/master
+  struct sysentvec elf_linux_sysvec = {
+  	.sv_size	= LINUX_SYS_MAXSYSCALL,
+  	.sv_table	= linux_sysent,
+* Unmerged path sys/kern/imgact_aout.c
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   share/mk/sys.mk
+	modified:   sys/amd64/amd64/elf_machdep.c
+	modified:   sys/amd64/linux/linux_sysvec.c
+	modified:   sys/amd64/linux32/linux32_sysvec.c
+	modified:   sys/arm/arm/elf_machdep.c
+	modified:   sys/arm64/arm64/elf32_machdep.c
+	modified:   sys/arm64/arm64/elf_machdep.c
+	modified:   sys/arm64/linux/linux_sysvec.c
+	modified:   sys/compat/ia32/ia32_sysvec.c
+	modified:   sys/compat/linux/linux.h
+	modified:   sys/compat/linux/linux_errno.c
+	modified:   sys/compat/linux/linux_ioctl.c
+	modified:   sys/compat/linux/linux_ioctl.h
+	modified:   sys/compat/linux/linux_socket.c
+	modified:   sys/i386/i386/elf_machdep.c
+	modified:   sys/kern/init_main.c
+	modified:   sys/mips/mips/elf_machdep.c
+	modified:   sys/mips/mips/freebsd32_machdep.c
+	new file:   sys/modules/dtb/sifive/Makefile
+	modified:   sys/powerpc/powerpc/elf32_machdep.c
+	modified:   sys/powerpc/powerpc/elf64_machdep.c
+	modified:   sys/riscv/riscv/elf_machdep.c
+	modified:   sys/sys/sysent.h
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	both modified:   share/mk/bsd.lib.mk
+	both modified:   sys/i386/linux/linux_sysvec.c
+	deleted by us:   sys/kern/imgact_aout.c
+
+HEAD is now at 1da9e0e222d1 HBSD: Unlock tmpfs node on error
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 1da9e0e222d1 HBSD: Unlock tmpfs node on error
+==== END: hardened/current/master ====
