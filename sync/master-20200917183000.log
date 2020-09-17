@@ -1,0 +1,175 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 15 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 9fab15ec50cb..24186b8cab0d
+Fast-forward
+ benchmarks/stress-ng/Makefile                      |   2 +-
+ benchmarks/stress-ng/distinfo                      |   6 +-
+ devel/Makefile                                     |   1 +
+ devel/got/Makefile                                 |  26 ++
+ devel/got/distinfo                                 |   3 +
+ devel/got/files/openbsd-compat/Makefile            |  12 +
+ devel/got/files/openbsd-compat/endian.h            |   6 +
+ devel/got/files/openbsd-compat/freezero.c          |  25 ++
+ devel/got/files/openbsd-compat/getdtablecount.c    |  58 ++++
+ devel/got/files/openbsd-compat/imsg-buffer.c       | 309 +++++++++++++++++++++
+ devel/got/files/openbsd-compat/imsg.c              | 302 ++++++++++++++++++++
+ devel/got/files/openbsd-compat/imsg.h              | 113 ++++++++
+ devel/got/files/openbsd-compat/recallocarray.c     |  80 ++++++
+ devel/got/files/openbsd-compat/sha1.h              |  14 +
+ devel/got/files/openbsd-compat/stdlib.h            |   9 +
+ devel/got/files/openbsd-compat/sys/cdefs.h         |   8 +
+ devel/got/files/openbsd-compat/sys/queue.h         | 119 ++++++++
+ devel/got/files/openbsd-compat/unistd.h            |  14 +
+ devel/got/files/openbsd-compat/util.h              |  19 ++
+ devel/got/files/patch-Makefile                     |   8 +
+ devel/got/files/patch-Makefile.inc                 |  16 ++
+ devel/got/files/patch-got_Makefile                 |  13 +
+ devel/got/files/patch-got_got.c                    |  53 ++++
+ devel/got/files/patch-lib_object__create.c         |  44 +++
+ devel/got/files/patch-lib_utf8.c                   |  11 +
+ devel/got/files/patch-lib_worktree.c               |  50 ++++
+ devel/got/files/patch-libexec_Makefile.inc         |  12 +
+ .../patch-libexec_got-index-pack_got-index-pack.c  |  11 +
+ ...libexec_got-read-gotconfig_got-read-gotconfig.c |  11 +
+ .../files/patch-libexec_got-read-gotconfig_parse.y |  59 ++++
+ devel/got/files/patch-regress_Makefile             |   8 +
+ devel/got/files/patch-regress_cmdline_Makefile     |  10 +
+ devel/got/files/patch-regress_cmdline_commit.sh    |  13 +
+ devel/got/files/patch-regress_cmdline_common.sh    |  52 ++++
+ devel/got/files/patch-regress_cmdline_import.sh    |  38 +++
+ devel/got/files/patch-regress_cmdline_rm.sh        |  20 ++
+ devel/got/files/patch-regress_delta_Makefile       |  12 +
+ devel/got/files/patch-regress_fetch_Makefile       |  12 +
+ devel/got/files/patch-regress_idset_Makefile       |  12 +
+ devel/got/files/patch-regress_path_Makefile        |  12 +
+ devel/got/files/patch-tog_Makefile                 |  11 +
+ devel/got/files/patch-tog_tog.c                    |  11 +
+ devel/got/pkg-descr                                |   9 +
+ devel/got/pkg-plist                                |  17 ++
+ editors/pluma/Makefile                             |   4 +-
+ editors/pluma/distinfo                             |   6 +-
+ editors/pluma/pkg-plist                            |   3 +-
+ games/atomix/Makefile                              |   8 +-
+ games/atomix/distinfo                              |   6 +-
+ games/atomix/pkg-plist                             | 141 +++++-----
+ .../patch-builds_cmake_Modules_FindHarfbuzz.cmake  |  17 --
+ games/libgnome-games-support/Makefile              |   6 +-
+ games/libgnome-games-support/distinfo              |   6 +-
+ games/libgnome-games-support/pkg-plist             |   6 +-
+ graphics/eom/Makefile                              |   2 +-
+ graphics/eom/distinfo                              |   6 +-
+ graphics/gegl/Makefile                             |   8 +-
+ graphics/gegl/distinfo                             |   6 +-
+ graphics/gnome-video-effects/Makefile              |   9 +-
+ graphics/gnome-video-effects/distinfo              |   6 +-
+ graphics/libchamplain/Makefile                     |   7 +-
+ graphics/libchamplain/distinfo                     |   6 +-
+ .../files/patch-champlain-gtk_Makefile.in          |  32 ---
+ graphics/libchamplain/pkg-plist                    | 168 +++--------
+ lang/spidermonkey78/Makefile                       |   1 +
+ sysutils/rubygem-puppetserver-ca/Makefile          |   3 +-
+ www/nginx/Makefile                                 |   2 +-
+ x11-toolkits/Makefile                              |   1 +
+ x11-toolkits/guile-gnome-platform/Makefile         | 179 ++++++++++++
+ x11-toolkits/guile-gnome-platform/distinfo         |   3 +
+ .../guile-gnome-platform/files/patch-configure.ac  | 161 +++++++++++
+ .../files/patch-glib_bin_Makefile.am               |  17 ++
+ x11-toolkits/guile-gnome-platform/pkg-descr        |   7 +
+ x11-toolkits/guile-gnome-platform/pkg-plist        | 186 +++++++++++++
+ 74 files changed, 2370 insertions(+), 294 deletions(-)
+ create mode 100644 devel/got/Makefile
+ create mode 100644 devel/got/distinfo
+ create mode 100644 devel/got/files/openbsd-compat/Makefile
+ create mode 100644 devel/got/files/openbsd-compat/endian.h
+ create mode 100644 devel/got/files/openbsd-compat/freezero.c
+ create mode 100644 devel/got/files/openbsd-compat/getdtablecount.c
+ create mode 100644 devel/got/files/openbsd-compat/imsg-buffer.c
+ create mode 100644 devel/got/files/openbsd-compat/imsg.c
+ create mode 100644 devel/got/files/openbsd-compat/imsg.h
+ create mode 100644 devel/got/files/openbsd-compat/recallocarray.c
+ create mode 100644 devel/got/files/openbsd-compat/sha1.h
+ create mode 100644 devel/got/files/openbsd-compat/stdlib.h
+ create mode 100644 devel/got/files/openbsd-compat/sys/cdefs.h
+ create mode 100644 devel/got/files/openbsd-compat/sys/queue.h
+ create mode 100644 devel/got/files/openbsd-compat/unistd.h
+ create mode 100644 devel/got/files/openbsd-compat/util.h
+ create mode 100644 devel/got/files/patch-Makefile
+ create mode 100644 devel/got/files/patch-Makefile.inc
+ create mode 100644 devel/got/files/patch-got_Makefile
+ create mode 100644 devel/got/files/patch-got_got.c
+ create mode 100644 devel/got/files/patch-lib_object__create.c
+ create mode 100644 devel/got/files/patch-lib_utf8.c
+ create mode 100644 devel/got/files/patch-lib_worktree.c
+ create mode 100644 devel/got/files/patch-libexec_Makefile.inc
+ create mode 100644 devel/got/files/patch-libexec_got-index-pack_got-index-pack.c
+ create mode 100644 devel/got/files/patch-libexec_got-read-gotconfig_got-read-gotconfig.c
+ create mode 100644 devel/got/files/patch-libexec_got-read-gotconfig_parse.y
+ create mode 100644 devel/got/files/patch-regress_Makefile
+ create mode 100644 devel/got/files/patch-regress_cmdline_Makefile
+ create mode 100644 devel/got/files/patch-regress_cmdline_commit.sh
+ create mode 100644 devel/got/files/patch-regress_cmdline_common.sh
+ create mode 100644 devel/got/files/patch-regress_cmdline_import.sh
+ create mode 100644 devel/got/files/patch-regress_cmdline_rm.sh
+ create mode 100644 devel/got/files/patch-regress_delta_Makefile
+ create mode 100644 devel/got/files/patch-regress_fetch_Makefile
+ create mode 100644 devel/got/files/patch-regress_idset_Makefile
+ create mode 100644 devel/got/files/patch-regress_path_Makefile
+ create mode 100644 devel/got/files/patch-tog_Makefile
+ create mode 100644 devel/got/files/patch-tog_tog.c
+ create mode 100644 devel/got/pkg-descr
+ create mode 100644 devel/got/pkg-plist
+ delete mode 100644 games/easyrpg-player/files/patch-builds_cmake_Modules_FindHarfbuzz.cmake
+ delete mode 100644 graphics/libchamplain/files/patch-champlain-gtk_Makefile.in
+ create mode 100644 x11-toolkits/guile-gnome-platform/Makefile
+ create mode 100644 x11-toolkits/guile-gnome-platform/distinfo
+ create mode 100644 x11-toolkits/guile-gnome-platform/files/patch-configure.ac
+ create mode 100644 x11-toolkits/guile-gnome-platform/files/patch-glib_bin_Makefile.am
+ create mode 100644 x11-toolkits/guile-gnome-platform/pkg-descr
+ create mode 100644 x11-toolkits/guile-gnome-platform/pkg-plist
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
