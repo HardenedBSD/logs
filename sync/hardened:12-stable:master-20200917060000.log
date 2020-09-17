@@ -1,0 +1,177 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging usr.sbin/iscsid/Makefile
+CONFLICT (content): Merge conflict in usr.sbin/iscsid/Makefile
+Auto-merging sys/vm/vm_unix.c
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/vm/vm_map.h
+Auto-merging sys/vm/vm_map.c
+CONFLICT (content): Merge conflict in sys/vm/vm_map.c
+Auto-merging sys/conf/files
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/vm/vm_map.c
+index f66c27cbcbf6,d0319c2e2bfd..000000000000
+--- a/sys/vm/vm_map.c
++++ b/sys/vm/vm_map.c
+@@@ -1772,6 -1759,34 +1776,37 @@@ out
+  	return (result);
+  }
+  
+++<<<<<<< HEAD
+++=======
++ static const int aslr_pages_rnd_64[2] = {0x1000, 0x10};
++ static const int aslr_pages_rnd_32[2] = {0x100, 0x4};
++ 
++ static int cluster_anon = 1;
++ SYSCTL_INT(_vm, OID_AUTO, cluster_anon, CTLFLAG_RW,
++     &cluster_anon, 0,
++     "Cluster anonymous mappings: 0 = no, 1 = yes if no hint, 2 = always");
++ 
++ static bool
++ clustering_anon_allowed(vm_offset_t addr)
++ {
++ 
++ 	switch (cluster_anon) {
++ 	case 0:
++ 		return (false);
++ 	case 1:
++ 		return (addr == 0);
++ 	case 2:
++ 	default:
++ 		return (true);
++ 	}
++ }
++ 
++ static long aslr_restarts;
++ SYSCTL_LONG(_vm, OID_AUTO, aslr_restarts, CTLFLAG_RD,
++     &aslr_restarts, 0,
++     "Number of aslr failures");
++ 
+++>>>>>>> freebsd/12-stable/master
+  /*
+   * Searches for the specified amount of free space in the given map with the
+   * specified alignment.  Performs an address-ordered, first-fit search from
+diff --cc usr.sbin/iscsid/Makefile
+index 19070bb3c6ce,4b6f1572446e..000000000000
+--- a/usr.sbin/iscsid/Makefile
++++ b/usr.sbin/iscsid/Makefile
+@@@ -11,7 -11,6 +11,11 @@@ MAN=		iscsid.
+  
+  LIBADD=		md util
+  
+++<<<<<<< HEAD
+ +
+ +WARNS=		6
+++=======
++ WARNS?=		6
+++>>>>>>> freebsd/12-stable/master
+  
+  .include <bsd.prog.mk>
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/libarchive/test_utils/test_main.c
+	modified:   contrib/netbsd-tests/lib/libexecinfo/t_backtrace.c
+	modified:   contrib/netbsd-tests/lib/librt/t_sem.c
+	modified:   gnu/usr.bin/gperf/Makefile
+	modified:   lib/libc++/Makefile
+	modified:   lib/libc/stdlib/strfmon.c
+	modified:   lib/libc/tests/resolv/resolv_test.c
+	modified:   lib/libc/tests/stdlib/dynthr_mod/dynthr_mod.c
+	modified:   lib/libcxxrt/Makefile
+	modified:   lib/libopenbsd/Makefile
+	modified:   lib/libsqlite3/Makefile
+	modified:   lib/libucl/Makefile
+	modified:   lib/libzstd/Makefile
+	modified:   libexec/dma/dma-mbox-create/Makefile
+	modified:   libexec/dma/dmagent/Makefile
+	modified:   sbin/gvinum/Makefile
+	modified:   sbin/tunefs/Makefile
+	modified:   stand/efi/boot1/Makefile
+	modified:   stand/efi/gptboot/Makefile
+	modified:   stand/liblua/Makefile
+	modified:   sys/conf/files
+	modified:   sys/sys/mman.h
+	modified:   sys/sys/param.h
+	modified:   sys/vm/phys_pager.c
+	modified:   sys/vm/vm_map.h
+	modified:   sys/vm/vm_mmap.c
+	modified:   sys/vm/vm_object.c
+	modified:   sys/vm/vm_object.h
+	modified:   sys/vm/vm_pager.h
+	modified:   sys/vm/vm_unix.c
+	modified:   usr.bin/bmake/Makefile.inc
+	modified:   usr.bin/iscsictl/Makefile
+	modified:   usr.bin/localedef/Makefile
+	modified:   usr.bin/m4/Makefile
+	modified:   usr.bin/users/Makefile
+	modified:   usr.bin/zstd/Makefile
+	modified:   usr.sbin/autofs/Makefile
+	modified:   usr.sbin/crunch/crunchgen/crunched_main.c
+	modified:   usr.sbin/crunch/crunchgen/crunchgen.1
+	modified:   usr.sbin/crunch/crunchgen/crunchgen.c
+	modified:   usr.sbin/uefisign/Makefile
+	modified:   usr.sbin/ypldap/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/vm/vm_map.c
+	both modified:   usr.sbin/iscsid/Makefile
+
+HEAD is now at 6f80262b0db9 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 6f80262b0db9 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
