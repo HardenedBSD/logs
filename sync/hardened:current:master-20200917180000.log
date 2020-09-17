@@ -1,0 +1,132 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 7 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 1da9e0e222d1..96d73fd1c176
+Fast-forward
+ share/mk/bsd.lib.mk                 | 14 ++------
+ share/mk/sys.mk                     |  2 +-
+ sys/amd64/amd64/elf_machdep.c       |  4 ---
+ sys/amd64/linux/linux_sysvec.c      |  4 +--
+ sys/amd64/linux32/linux32_sysvec.c  |  4 +--
+ sys/arm/arm/elf_machdep.c           |  2 --
+ sys/arm64/arm64/elf32_machdep.c     |  2 --
+ sys/arm64/arm64/elf_machdep.c       |  2 --
+ sys/arm64/linux/linux_sysvec.c      |  4 +--
+ sys/compat/ia32/ia32_sysvec.c       |  2 --
+ sys/compat/linux/linux.h            |  2 ++
+ sys/compat/linux/linux_errno.c      | 15 ++++++++
+ sys/compat/linux/linux_ioctl.c      |  4 +++
+ sys/compat/linux/linux_ioctl.h      |  1 +
+ sys/compat/linux/linux_socket.c     | 68 +++++++++++++++----------------------
+ sys/i386/i386/elf_machdep.c         |  2 --
+ sys/i386/linux/linux_sysvec.c       |  4 +--
+ sys/kern/init_main.c                |  2 --
+ sys/mips/mips/elf_machdep.c         |  2 --
+ sys/mips/mips/freebsd32_machdep.c   |  2 --
+ sys/modules/dtb/sifive/Makefile     |  6 ++++
+ sys/powerpc/powerpc/elf32_machdep.c |  2 --
+ sys/powerpc/powerpc/elf64_machdep.c |  4 ---
+ sys/riscv/riscv/elf_machdep.c       |  2 --
+ sys/sys/sysent.h                    |  4 ---
+ 25 files changed, 63 insertions(+), 97 deletions(-)
+ create mode 100644 sys/modules/dtb/sifive/Makefile
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/bsdinstall/scripts/config
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ .cirrus.yml                                        |   8 +-
+ Makefile.inc1                                      |  15 +-
+ .../llvm-project/clang/include/clang/Basic/Attr.td |   8 +
+ .../clang/include/clang/Basic/Builtins.def         |   1 +
+ .../clang/include/clang/Basic/IdentifierTable.h    |  12 -
+ .../llvm-project/clang/include/clang/Sema/Sema.h   |   2 +
+ contrib/llvm-project/clang/lib/AST/Decl.cpp        |  28 +-
+ contrib/llvm-project/clang/lib/Headers/intrin.h    | 145 ++--
+ contrib/llvm-project/clang/lib/Sema/SemaDecl.cpp   | 119 ++--
+ contrib/llvm-project/clang/lib/Sema/SemaExpr.cpp   |   1 +
+ contrib/llvm-project/clang/lib/Sema/SemaLookup.cpp |   7 +-
+ .../clang/lib/Serialization/ASTReader.cpp          |  12 +-
+ .../clang/lib/Serialization/ASTWriter.cpp          |   6 +-
+ .../llvm/lib/Target/X86/X86ISelDAGToDAG.cpp        |   1 +
+ lib/libpmc/pmu-events/jevents.c                    |   2 +
+ share/man/man7/arch.7                              |  33 +-
+ share/man/man9/EVENTHANDLER.9                      |   2 +-
+ share/man/man9/OF_node_from_xref.9                 |   2 +-
+ share/man/man9/VOP_INACTIVE.9                      |   2 +-
+ share/man/man9/bus_dma.9                           |  30 +-
+ share/man/man9/crypto_buffer.9                     |   7 +-
+ share/man/man9/domainset.9                         |  11 +-
+ share/man/man9/ieee80211.9                         |   2 +-
+ share/man/man9/mbuf.9                              |   4 +-
+ share/man/man9/pwmbus.9                            |   6 +-
+ share/man/man9/rmlock.9                            |  10 +-
+ share/man/man9/socket.9                            |   2 +-
+ share/man/man9/tcp_functions.9                     |   5 +-
+ share/man/man9/ucred.9                             |   1 -
+ sys/kern/subr_bus.c                                |  41 +-
+ sys/vm/vm_pageout.c                                |   9 +-
+ tests/sys/posixshm/posixshm_test.c                 | 727 +++++++++++++++++++++
+ usr.sbin/bhyvectl/bhyvectl.c                       |  49 +-
+ usr.sbin/bsdinstall/scripts/config                 |   3 -
+ usr.sbin/makefs/cd9660/cd9660_eltorito.c           |   4 +-
+ usr.sbin/makefs/makefs.8                           |   5 +-
+ 36 files changed, 1006 insertions(+), 316 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    96d73fd1c176..5f2ba64cbf6b  hardened/current/master -> hardened/current/master        
+remote:    21fd74540ca1..21e0dc5a166f  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   96d73fd1c176..5f2ba64cbf6b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
