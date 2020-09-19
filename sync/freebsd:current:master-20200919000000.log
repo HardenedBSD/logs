@@ -1,0 +1,233 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 5dbeb4d01fa2..a5a28bfda192
+Fast-forward
+ cddl/lib/libzpool/Makefile                         |   1 +
+ .../EE_Certification_Centre_Root_CA.pem            |   0
+ .../{trusted => blacklisted}/Taiwan_GRCA.pem       |   0
+ .../Trustwave_Global_Certification_Authority.pem   | 135 ++++++++
+ ...ave_Global_ECC_P256_Certification_Authority.pem |  62 ++++
+ ...ave_Global_ECC_P384_Certification_Authority.pem |  68 ++++
+ sys/contrib/openzfs/META                           |   2 +-
+ sys/contrib/openzfs/cmd/mount_zfs/mount_zfs.c      |   1 +
+ sys/contrib/openzfs/cmd/zdb/zdb.c                  |   8 -
+ sys/contrib/openzfs/cmd/zfs/zfs_main.c             |   1 +
+ sys/contrib/openzfs/cmd/zgenhostid/.gitignore      |   1 +
+ sys/contrib/openzfs/cmd/zgenhostid/Makefile.am     |   6 +-
+ sys/contrib/openzfs/cmd/zgenhostid/zgenhostid      |  61 ----
+ sys/contrib/openzfs/cmd/zgenhostid/zgenhostid.c    | 152 +++++++++
+ sys/contrib/openzfs/cmd/zpool/zpool_main.c         |   8 +
+ sys/contrib/openzfs/config/deb.am                  |   2 +-
+ sys/contrib/openzfs/config/find_system_library.m4  |   5 +
+ sys/contrib/openzfs/config/rpm.am                  |  14 +-
+ sys/contrib/openzfs/config/zfs-build.m4            |   7 +-
+ sys/contrib/openzfs/configure.ac                   |   2 +
+ .../contrib/dracut/90zfs/module-setup.sh.in        |   9 +-
+ .../openzfs/contrib/dracut/90zfs/parse-zfs.sh.in   |   6 +-
+ sys/contrib/openzfs/include/Makefile.am            |   1 +
+ sys/contrib/openzfs/include/libzfs.h               |   4 +-
+ sys/contrib/openzfs/include/libzfs_core.h          |   2 +-
+ sys/contrib/openzfs/include/libzfsbootenv.h        |  41 +++
+ .../openzfs/include/os/freebsd/spl/sys/ccompile.h  |   5 +-
+ .../openzfs/include/os/freebsd/spl/sys/condvar.h   |  10 +-
+ .../openzfs/include/os/freebsd/zfs/sys/Makefile.am |   1 +
+ .../include/os/freebsd/zfs/sys/zfs_bootenv_os.h    |  29 ++
+ .../include/os/freebsd/zfs/sys/zfs_context_os.h    |   6 +-
+ .../include/os/freebsd/zfs/sys/zfs_vfsops_os.h     |  65 +++-
+ .../include/os/linux/kernel/linux/mod_compat.h     |   2 +
+ .../openzfs/include/os/linux/spl/sys/condvar.h     |   7 +
+ .../openzfs/include/os/linux/zfs/sys/Makefile.am   |   1 +
+ .../include/os/linux/zfs/sys/zfs_bootenv_os.h      |  29 ++
+ sys/contrib/openzfs/include/sys/Makefile.am        |   1 +
+ sys/contrib/openzfs/include/sys/dsl_synctask.h     |   4 +-
+ sys/contrib/openzfs/include/sys/fm/fs/zfs.h        |   5 +
+ sys/contrib/openzfs/include/sys/fm/util.h          |   3 +
+ sys/contrib/openzfs/include/sys/fs/zfs.h           |   4 +-
+ sys/contrib/openzfs/include/sys/spa.h              |   6 +-
+ sys/contrib/openzfs/include/sys/vdev.h             |   3 +-
+ sys/contrib/openzfs/include/sys/vdev_impl.h        |  11 +-
+ sys/contrib/openzfs/include/sys/zfs_bootenv.h      |  53 +++
+ sys/contrib/openzfs/include/sys/zfs_context.h      |  10 +-
+ sys/contrib/openzfs/include/sys/zfs_ioctl.h        |   2 +-
+ sys/contrib/openzfs/include/sys/zio.h              |   4 +-
+ sys/contrib/openzfs/lib/Makefile.am                |   6 +-
+ sys/contrib/openzfs/lib/libefi/rdwr_efi.c          | 159 +++++++--
+ sys/contrib/openzfs/lib/libshare/os/linux/nfs.c    |   1 +
+ .../lib/libspl/include/os/freebsd/sys/stat.h       |   3 +
+ sys/contrib/openzfs/lib/libzfs/libzfs.pc.in        |   4 +-
+ sys/contrib/openzfs/lib/libzfs/libzfs_dataset.c    |   5 +-
+ sys/contrib/openzfs/lib/libzfs/libzfs_pool.c       |  24 +-
+ sys/contrib/openzfs/lib/libzfs/libzfs_sendrecv.c   |   1 +
+ sys/contrib/openzfs/lib/libzfs/libzfs_util.c       |   3 +
+ .../openzfs/lib/libzfs/os/linux/libzfs_pool_os.c   |   3 -
+ sys/contrib/openzfs/lib/libzfs_core/libzfs_core.c  |   8 +-
+ .../openzfs/lib/libzfs_core/libzfs_core.pc.in      |   4 +-
+ sys/contrib/openzfs/lib/libzfsbootenv/.gitignore   |   1 +
+ sys/contrib/openzfs/lib/libzfsbootenv/Makefile.am  |  32 ++
+ .../openzfs/lib/libzfsbootenv/libzfsbootenv.pc.in  |  12 +
+ .../openzfs/lib/libzfsbootenv/lzbe_device.c        | 164 ++++++++++
+ sys/contrib/openzfs/lib/libzfsbootenv/lzbe_pair.c  | 347 ++++++++++++++++++++
+ sys/contrib/openzfs/lib/libzfsbootenv/lzbe_util.c  |  39 +++
+ sys/contrib/openzfs/lib/libzpool/Makefile.am       |   7 +
+ sys/contrib/openzfs/lib/libzutil/Makefile.am       |   1 +
+ .../openzfs/man/man5/zfs-module-parameters.5       |  61 +++-
+ sys/contrib/openzfs/man/man8/zfs-rename.8          |   9 +-
+ sys/contrib/openzfs/man/man8/zfsprops.8            |  16 +-
+ sys/contrib/openzfs/man/man8/zgenhostid.8          |  71 ++--
+ sys/contrib/openzfs/man/man8/zpoolprops.8          |   2 +-
+ .../openzfs/module/os/freebsd/zfs/kmod_core.c      |   1 -
+ .../openzfs/module/os/freebsd/zfs/sysctl_os.c      |   1 +
+ .../openzfs/module/os/freebsd/zfs/vdev_file.c      |  14 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_file_os.c    |   5 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_vfsops.c     |  18 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_vnops.c      |  16 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_znode.c      |   2 +-
+ .../openzfs/module/os/linux/spl/spl-condvar.c      |  44 +++
+ .../openzfs/module/os/linux/zfs/vdev_disk.c        |  22 +-
+ .../openzfs/module/os/linux/zfs/vdev_file.c        |  22 +-
+ sys/contrib/openzfs/module/os/linux/zfs/zfs_acl.c  |   2 +-
+ .../openzfs/module/os/linux/zfs/zfs_vfsops.c       |   4 +-
+ .../openzfs/module/os/linux/zfs/zpl_super.c        |   8 +-
+ .../openzfs/module/os/linux/zfs/zpl_xattr.c        |  16 +-
+ sys/contrib/openzfs/module/zcommon/zfs_prop.c      |  11 +-
+ sys/contrib/openzfs/module/zfs/arc.c               |  30 +-
+ sys/contrib/openzfs/module/zfs/dbuf.c              |   2 +-
+ sys/contrib/openzfs/module/zfs/dmu_redact.c        |  33 +-
+ sys/contrib/openzfs/module/zfs/dnode.c             |  25 +-
+ sys/contrib/openzfs/module/zfs/dsl_scan.c          |   1 +
+ sys/contrib/openzfs/module/zfs/dsl_synctask.c      |  16 +-
+ sys/contrib/openzfs/module/zfs/fm.c                |  14 +-
+ sys/contrib/openzfs/module/zfs/metaslab.c          |   1 +
+ sys/contrib/openzfs/module/zfs/mmp.c               |  22 +-
+ sys/contrib/openzfs/module/zfs/range_tree.c        |   1 +
+ sys/contrib/openzfs/module/zfs/spa.c               |  42 ++-
+ sys/contrib/openzfs/module/zfs/spa_config.c        |   8 +-
+ sys/contrib/openzfs/module/zfs/spa_history.c       |   5 +-
+ sys/contrib/openzfs/module/zfs/txg.c               |  12 +-
+ sys/contrib/openzfs/module/zfs/vdev.c              | 103 +++---
+ sys/contrib/openzfs/module/zfs/vdev_indirect.c     |  16 +-
+ sys/contrib/openzfs/module/zfs/vdev_initialize.c   |   5 +-
+ sys/contrib/openzfs/module/zfs/vdev_label.c        | 114 +++++--
+ sys/contrib/openzfs/module/zfs/vdev_mirror.c       |   2 +-
+ sys/contrib/openzfs/module/zfs/vdev_raidz.c        |  35 +-
+ sys/contrib/openzfs/module/zfs/vdev_rebuild.c      |  14 +-
+ sys/contrib/openzfs/module/zfs/vdev_removal.c      |   9 +-
+ sys/contrib/openzfs/module/zfs/vdev_trim.c         |   7 +-
+ sys/contrib/openzfs/module/zfs/zfs_fm.c            | 361 ++++++++++++++++++++-
+ sys/contrib/openzfs/module/zfs/zfs_ioctl.c         |  23 +-
+ sys/contrib/openzfs/module/zfs/zio.c               |  42 +--
+ sys/contrib/openzfs/module/zfs/zthr.c              |  20 +-
+ sys/contrib/openzfs/rpm/generic/zfs.spec.in        |   1 +
+ sys/contrib/openzfs/scripts/zfs-tests.sh           |   2 +-
+ sys/contrib/openzfs/tests/runfiles/common.run      |   2 +-
+ .../zfs-tests/cmd/libzfs_input_check/Makefile.am   |   7 +
+ .../cmd/libzfs_input_check/libzfs_input_check.c    |   7 +-
+ .../openzfs/tests/zfs-tests/include/commands.cfg   |   1 +
+ .../openzfs/tests/zfs-tests/include/tunables.cfg   |   2 +
+ .../tests/functional/acl/posix/posix_001_pos.ksh   |   4 +-
+ .../tests/functional/acl/posix/posix_002_pos.ksh   |   4 +-
+ .../zfs-tests/tests/functional/acl/posix/setup.ksh |   2 +-
+ .../functional/cli_root/zpool_add/add-o_ashift.ksh |  25 +-
+ .../cli_root/zpool_add/add_prop_ashift.ksh         |  10 +
+ .../cli_root/zpool_attach/attach-o_ashift.ksh      |  10 +
+ .../cli_root/zpool_create/zpool_create_021_pos.ksh |   2 +-
+ .../cli_root/zpool_create/zpool_create_022_pos.ksh |   2 +-
+ .../functional/cli_root/zpool_events/.gitignore    |   1 +
+ .../functional/cli_root/zpool_events/Makefile.am   |  14 +-
+ .../functional/cli_root/zpool_events/ereports.c    | 174 ++++++++++
+ .../zpool_events/zpool_events_duplicates.ksh       | 155 +++++++++
+ .../cli_root/zpool_replace/replace-o_ashift.ksh    |  10 +
+ .../cli_root/zpool_replace/replace_prop_ashift.ksh |  10 +
+ .../cli_root/zpool_set/zpool_set_ashift.ksh        |  10 +
+ .../tests/functional/cli_user/misc/misc.cfg        |   8 +-
+ .../tests/functional/history/history_002_pos.ksh   |   4 +-
+ .../tests/functional/rsend/rsend_012_pos.ksh       |   2 +-
+ sys/fs/nfsserver/nfs_nfsdstate.c                   |   5 +-
+ usr.sbin/freebsd-update/freebsd-update.sh          |   9 +-
+ 142 files changed, 2948 insertions(+), 527 deletions(-)
+ rename secure/caroot/{trusted => blacklisted}/EE_Certification_Centre_Root_CA.pem (100%)
+ rename secure/caroot/{trusted => blacklisted}/Taiwan_GRCA.pem (100%)
+ create mode 100644 secure/caroot/trusted/Trustwave_Global_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/Trustwave_Global_ECC_P256_Certification_Authority.pem
+ create mode 100644 secure/caroot/trusted/Trustwave_Global_ECC_P384_Certification_Authority.pem
+ create mode 100644 sys/contrib/openzfs/cmd/zgenhostid/.gitignore
+ delete mode 100755 sys/contrib/openzfs/cmd/zgenhostid/zgenhostid
+ create mode 100644 sys/contrib/openzfs/cmd/zgenhostid/zgenhostid.c
+ create mode 100644 sys/contrib/openzfs/include/libzfsbootenv.h
+ create mode 100644 sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_bootenv_os.h
+ create mode 100644 sys/contrib/openzfs/include/os/linux/zfs/sys/zfs_bootenv_os.h
+ create mode 100644 sys/contrib/openzfs/include/sys/zfs_bootenv.h
+ create mode 100644 sys/contrib/openzfs/lib/libzfsbootenv/.gitignore
+ create mode 100644 sys/contrib/openzfs/lib/libzfsbootenv/Makefile.am
+ create mode 100644 sys/contrib/openzfs/lib/libzfsbootenv/libzfsbootenv.pc.in
+ create mode 100644 sys/contrib/openzfs/lib/libzfsbootenv/lzbe_device.c
+ create mode 100644 sys/contrib/openzfs/lib/libzfsbootenv/lzbe_pair.c
+ create mode 100644 sys/contrib/openzfs/lib/libzfsbootenv/lzbe_util.c
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_events/.gitignore
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_events/ereports.c
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_events/zpool_events_duplicates.ksh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5dbeb4d01fa2..a5a28bfda192  freebsd/current/master -> freebsd/current/master        
+remote:    38aca4c33883..a61947820fe1  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5dbeb4d01fa2..a5a28bfda192  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
