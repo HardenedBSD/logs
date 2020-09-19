@@ -1,0 +1,98 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing tools/build/cross-build/include/common/sys/uio.h
+Auto-merging sys/amd64/amd64/pmap.c
+Merge made by the 'recursive' strategy.
+ .cirrus.yml                                        |   1 +
+ cddl/lib/libspl/Makefile                           |   6 +-
+ share/man/man7/crypto.7                            |   8 +-
+ share/man/man8/diskless.8                          |  10 +-
+ share/man/man9/bus_space.9                         | 149 ++++++++++++++++++++-
+ sys/amd64/amd64/pmap.c                             | 112 +++++++++-------
+ sys/arm/include/bus.h                              |  27 ++++
+ sys/arm64/arm64/bus_machdep.c                      |  22 +++
+ sys/arm64/arm64/bus_space_asm.S                    |  82 +++++++++++-
+ sys/arm64/arm64/trap.c                             |  45 +++++++
+ sys/arm64/include/bus.h                            |  38 ++++++
+ sys/arm64/include/md_var.h                         |   9 ++
+ sys/arm64/rockchip/rk_pcie.c                       |  55 +++-----
+ sys/kern/subr_csan.c                               |  30 +++++
+ sys/mips/include/bus.h                             |  27 ++++
+ sys/powerpc/include/bus.h                          |  27 ++++
+ sys/riscv/include/bus.h                            |  27 ++++
+ sys/sys/_cscan_bus.h                               |  21 ++-
+ sys/sys/bus.h                                      |  16 +++
+ sys/tools/bus_macro.sh                             |   3 +-
+ sys/x86/include/bus.h                              |  25 ++++
+ tools/build/cross-build/include/common/string.h    |   4 +
+ tools/build/cross-build/include/common/sys/cdefs.h |   8 ++
+ tools/build/cross-build/include/common/sys/uio.h   |  51 -------
+ tools/build/cross-build/include/linux/sys/stat.h   |   3 +
+ tools/build/cross-build/include/mac/sys/_types.h   |   2 +
+ tools/build/mk/Makefile.boot                       |   1 -
+ tools/build/options/WITH_LOADER_FIREWIRE           |   4 +-
+ tools/build/options/WITH_LOADER_VERBOSE            |   1 -
+ tools/build/options/WITH_NVME                      |   1 -
+ 30 files changed, 664 insertions(+), 151 deletions(-)
+ delete mode 100644 tools/build/cross-build/include/common/sys/uio.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e0bd69ef18b7..4ca32e270c50  hardened/current/master -> hardened/current/master        
+remote:    a5a28bfda192..8e6c3975ecbd  github/freebsd/current/master -> github/freebsd/current/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e0bd69ef18b7..4ca32e270c50  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
