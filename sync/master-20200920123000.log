@@ -47,3 +47,167 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/polkit/files/patch-src_polkitbackend_polkitbackendjsauthority.cpp
+Auto-merging sysutils/polkit/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Auto-merging audio/goobox/Makefile
+Merge made by the 'recursive' strategy.
+ astro/sextractor/Makefile                          |   5 +-
+ astro/sextractor/files/patch-src_analyse.c         |  20 ++
+ astro/sextractor/files/patch-src_catout.c          |  10 +
+ astro/sextractor/files/patch-src_clean.c           |  11 +
+ astro/sextractor/files/patch-src_clean.h           |  11 +
+ astro/sextractor/files/patch-src_define.h          |  14 +
+ astro/sextractor/files/patch-src_extract.h         |  11 +
+ astro/sextractor/files/patch-src_filter.c          |  11 +
+ astro/sextractor/files/patch-src_filter.h          |  11 +
+ astro/sextractor/files/patch-src_fits_fitscat.h    |  18 +
+ astro/sextractor/files/patch-src_globals.h         |  30 ++
+ astro/sextractor/files/patch-src_plist.h           |  11 +
+ astro/sextractor/files/patch-src_prefs.h           |  11 +
+ astro/sextractor/files/patch-src_psf.h             |  15 +
+ astro/sextractor/files/patch-src_retina.h          |  11 +
+ astro/sextractor/files/patch-src_scan.c            |  12 +
+ astro/sextractor/files/patch-src_sexhead1.h        |  13 +
+ astro/sextractor/files/patch-src_som.h             |  11 +
+ audio/amsynth/Makefile                             |   2 +-
+ audio/amsynth/distinfo                             |   6 +-
+ audio/amsynth/pkg-plist                            |   2 +
+ audio/goobox/Makefile                              |   1 -
+ audio/ncpamixer/Makefile                           |   2 +-
+ devel/arm-none-eabi-gdb/Makefile                   |   2 +-
+ devel/got/Makefile                                 |   2 +-
+ devel/got/files/openbsd-compat/sys/queue.h         | 144 ++------
+ devel/got/files/patch-lib_utf8.c                   |   1 +
+ devel/rust-analyzer/Makefile                       |  30 +-
+ devel/rust-analyzer/distinfo                       |  62 ++--
+ graphics/gnome-video-effects/Makefile              |   2 +-
+ graphics/heimer/Makefile                           |   2 +-
+ graphics/heimer/distinfo                           |   6 +-
+ graphics/librsvg2-rust/Makefile                    |   3 +-
+ graphics/librsvg2-rust/distinfo                    |   6 +-
+ graphics/libspng/Makefile                          |   2 +-
+ graphics/libspng/distinfo                          |   6 +-
+ graphics/minder/Makefile                           |   2 +-
+ graphics/minder/distinfo                           |   6 +-
+ graphics/minder/pkg-plist                          |   1 +
+ graphics/poppler-glib/Makefile                     |   2 +-
+ lang/gcc9-devel/Makefile                           |   2 +-
+ lang/gcc9-devel/distinfo                           |   6 +-
+ lang/nim/Makefile                                  |   2 +-
+ lang/silq/Makefile                                 |   2 +-
+ net-im/libstrophe/Makefile                         |   2 +-
+ net-im/libstrophe/distinfo                         |   6 +-
+ net-mgmt/aircrack-ng/Makefile                      |   2 +-
+ net/libnpupnp/Makefile                             |   2 +-
+ security/pcsc-tools/Makefile                       |   2 +-
+ security/pcsc-tools/distinfo                       |   6 +-
+ security/vuxml/vuln.xml                            |  39 +++
+ sysutils/fluent-bit/Makefile                       |   2 +-
+ sysutils/fluent-bit/distinfo                       |   6 +-
+ sysutils/loganalyzer/Makefile                      |   1 -
+ sysutils/memtester/Makefile                        |   1 +
+ sysutils/memtester/files/patch-tests.c             |  19 ++
+ sysutils/memtester/files/patch-types.h             |  16 +
+ sysutils/polkit/Makefile                           |   4 +-
+ sysutils/polkit/distinfo                           |   6 +-
+ ...-src_polkitbackend_polkitbackendjsauthority.cpp |  11 -
+ sysutils/polkit/pkg-plist                          |   1 +
+ sysutils/tlsdate/Makefile                          |   2 +-
+ sysutils/tlsdate/files/patch-src_tlsdate.h         |  11 +
+ textproc/yelp-tools/Makefile                       |   2 +-
+ www/miniserve/Makefile                             | 184 ++++++-----
+ www/miniserve/distinfo                             | 368 ++++++++++++---------
+ www/nginx-full/Makefile                            |   2 +-
+ www/nginx/Makefile.extmod                          |   1 +
+ www/nginx/files/extra-patch-nchan-store-private.h  |  10 +
+ www/youtube_dl/Makefile                            |   2 +-
+ www/youtube_dl/distinfo                            |   6 +-
+ x11-fonts/cascadia-code/Makefile                   |   2 +-
+ x11-fonts/cascadia-code/distinfo                   |   6 +-
+ x11/lavalauncher/Makefile                          |   3 +
+ x11/lavalauncher/distinfo                          |   2 +
+ 75 files changed, 788 insertions(+), 479 deletions(-)
+ create mode 100644 astro/sextractor/files/patch-src_analyse.c
+ create mode 100644 astro/sextractor/files/patch-src_catout.c
+ create mode 100644 astro/sextractor/files/patch-src_clean.c
+ create mode 100644 astro/sextractor/files/patch-src_clean.h
+ create mode 100644 astro/sextractor/files/patch-src_define.h
+ create mode 100644 astro/sextractor/files/patch-src_extract.h
+ create mode 100644 astro/sextractor/files/patch-src_filter.c
+ create mode 100644 astro/sextractor/files/patch-src_filter.h
+ create mode 100644 astro/sextractor/files/patch-src_fits_fitscat.h
+ create mode 100644 astro/sextractor/files/patch-src_globals.h
+ create mode 100644 astro/sextractor/files/patch-src_plist.h
+ create mode 100644 astro/sextractor/files/patch-src_prefs.h
+ create mode 100644 astro/sextractor/files/patch-src_psf.h
+ create mode 100644 astro/sextractor/files/patch-src_retina.h
+ create mode 100644 astro/sextractor/files/patch-src_scan.c
+ create mode 100644 astro/sextractor/files/patch-src_sexhead1.h
+ create mode 100644 astro/sextractor/files/patch-src_som.h
+ create mode 100644 sysutils/memtester/files/patch-tests.c
+ create mode 100644 sysutils/memtester/files/patch-types.h
+ delete mode 100644 sysutils/polkit/files/patch-src_polkitbackend_polkitbackendjsauthority.cpp
+ create mode 100644 sysutils/tlsdate/files/patch-src_tlsdate.h
+ create mode 100644 www/nginx/files/extra-patch-nchan-store-private.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    c3a51a6a33e5..826f2bd04811  master -> master        
+remote:    a47e7a1df207..c3a51a6a33e5  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c3a51a6a33e5..826f2bd04811  master -> master
+==== END: master ====
