@@ -2527,3 +2527,143 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/Makefile
+Removing net/spoofer/files/patch-common-util.cc
+Removing net/samba411/files/patch-lib_util_util__paths.c
+Removing net/samba410/files/patch-lib_util_util__paths.c
+Auto-merging net/Makefile
+Merge made by the 'recursive' strategy.
+ devel/nextpnr/Makefile                             |   8 +-
+ devel/nextpnr/distinfo                             |   8 +-
+ editors/micro/Makefile                             |  39 +-
+ editors/micro/distinfo                             |  16 +-
+ ...thub.com_zyedidia_pty_ztypes__freebsd__arm64.go |   8 +-
+ games/wmtictactoe/Makefile                         |   9 +-
+ net/Makefile                                       |   1 +
+ net/libnpupnp/Makefile                             |  31 ++
+ net/libnpupnp/distinfo                             |   5 +
+ net/libnpupnp/pkg-descr                            |   4 +
+ net/libnpupnp/pkg-plist                            |  12 +
+ net/samba410/Makefile                              |  44 +-
+ net/samba410/distinfo                              |   6 +-
+ net/samba410/files/patch-lib_util_util__paths.c    |  15 -
+ net/samba410/files/patch-third__party_wscript      |  10 +
+ net/samba411/Makefile                              |  44 +-
+ net/samba411/distinfo                              |   6 +-
+ net/samba411/files/patch-lib_util_util__paths.c    |  15 -
+ net/samba411/files/patch-lib_util_wscript__build   |  24 +-
+ net/samba411/files/patch-third__party_wscript      |  10 +
+ net/samba411/pkg-plist                             |   3 +
+ net/spoofer/Makefile                               |   3 +-
+ net/spoofer/distinfo                               |   6 +-
+ net/spoofer/files/patch-common-util.cc             |  14 -
+ net/spoofer/pkg-descr                              |   2 +-
+ security/Makefile                                  |   2 +
+ security/py-sequoia/Makefile                       |  33 ++
+ security/py-sequoia/distinfo                       |   3 +
+ security/py-sequoia/files/patch-Makefile           |  12 +
+ security/py-sequoia/files/patch-setup.py           |  11 +
+ security/py-sequoia/pkg-descr                      |   4 +
+ security/sequoia/Makefile                          | 338 +++++++++++++
+ security/sequoia/distinfo                          | 549 +++++++++++++++++++++
+ security/sequoia/files/patch-Makefile              |  11 +
+ security/sequoia/files/patch-ffi_Makefile          |  11 +
+ security/sequoia/files/patch-openpgp-ffi_Makefile  |  11 +
+ security/sequoia/files/patch-sop_Makefile          |  12 +
+ security/sequoia/files/patch-sqv_Makefile          |  12 +
+ security/sequoia/files/patch-store_Makefile        |  12 +
+ security/sequoia/files/patch-tool_Makefile         |  12 +
+ security/sequoia/files/sequoia-openpgp.pc.in       |  11 +
+ security/sequoia/files/sequoia.pc.in               |  11 +
+ security/sequoia/pkg-descr                         |   4 +
+ security/sequoia/pkg-plist                         |  29 ++
+ security/vuxml/vuln.xml                            |  35 ++
+ textproc/py-pygments/Makefile                      |   2 +-
+ textproc/py-pygments/distinfo                      |   6 +-
+ 47 files changed, 1334 insertions(+), 140 deletions(-)
+ create mode 100644 net/libnpupnp/Makefile
+ create mode 100644 net/libnpupnp/distinfo
+ create mode 100644 net/libnpupnp/pkg-descr
+ create mode 100644 net/libnpupnp/pkg-plist
+ delete mode 100644 net/samba410/files/patch-lib_util_util__paths.c
+ create mode 100644 net/samba410/files/patch-third__party_wscript
+ delete mode 100644 net/samba411/files/patch-lib_util_util__paths.c
+ create mode 100644 net/samba411/files/patch-third__party_wscript
+ delete mode 100644 net/spoofer/files/patch-common-util.cc
+ create mode 100644 security/py-sequoia/Makefile
+ create mode 100644 security/py-sequoia/distinfo
+ create mode 100644 security/py-sequoia/files/patch-Makefile
+ create mode 100644 security/py-sequoia/files/patch-setup.py
+ create mode 100644 security/py-sequoia/pkg-descr
+ create mode 100644 security/sequoia/Makefile
+ create mode 100644 security/sequoia/distinfo
+ create mode 100644 security/sequoia/files/patch-Makefile
+ create mode 100644 security/sequoia/files/patch-ffi_Makefile
+ create mode 100644 security/sequoia/files/patch-openpgp-ffi_Makefile
+ create mode 100644 security/sequoia/files/patch-sop_Makefile
+ create mode 100644 security/sequoia/files/patch-sqv_Makefile
+ create mode 100644 security/sequoia/files/patch-store_Makefile
+ create mode 100644 security/sequoia/files/patch-tool_Makefile
+ create mode 100644 security/sequoia/files/sequoia-openpgp.pc.in
+ create mode 100644 security/sequoia/files/sequoia.pc.in
+ create mode 100644 security/sequoia/pkg-descr
+ create mode 100644 security/sequoia/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    cd80c39e8cc9..a47e7a1df207  master -> master        
+remote:    eb5800b019da..cd80c39e8cc9  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   cd80c39e8cc9..a47e7a1df207  master -> master
+==== END: master ====
