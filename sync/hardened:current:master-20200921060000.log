@@ -1,0 +1,175 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/netinet6/in6_src.c
+CONFLICT (content): Merge conflict in sys/netinet6/in6_src.c
+Auto-merging sys/netinet6/in6_proto.c
+CONFLICT (content): Merge conflict in sys/netinet6/in6_proto.c
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging stand/loader.mk
+Auto-merging stand/i386/zfsboot/Makefile
+Auto-merging stand/efi/loader/Makefile
+Auto-merging stand/defaults/loader.conf
+Auto-merging share/mk/src.libnames.mk
+Auto-merging rescue/rescue/Makefile
+Auto-merging libexec/rc/rc.conf
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/netinet6/in6_proto.c
+index 461dbbf626c5,21b7d660676f..000000000000
+--- a/sys/netinet6/in6_proto.c
++++ b/sys/netinet6/in6_proto.c
+@@@ -70,8 -70,6 +70,11 @@@ __FBSDID("$FreeBSD$")
+  #include "opt_ipsec.h"
+  #include "opt_ipstealth.h"
+  #include "opt_sctp.h"
+++<<<<<<< HEAD
+ +#include "opt_mpath.h"
+ +#include "opt_pax.h"
+++=======
+++>>>>>>> freebsd/current/master
+  #include "opt_route.h"
+  
+  #include <sys/param.h>
+diff --cc sys/netinet6/in6_src.c
+index 04ca715911ec,7a756030f01c..000000000000
+--- a/sys/netinet6/in6_src.c
++++ b/sys/netinet6/in6_src.c
+@@@ -67,9 -67,6 +67,12 @@@ __FBSDID("$FreeBSD$")
+  
+  #include "opt_inet.h"
+  #include "opt_inet6.h"
+++<<<<<<< HEAD
+ +#include "opt_mpath.h"
+ +#include "opt_pax.h"
+ +
+++=======
+++>>>>>>> freebsd/current/master
+  #include <sys/param.h>
+  #include <sys/systm.h>
+  #include <sys/lock.h>
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   cddl/lib/Makefile
+	new file:   cddl/lib/libzfsbootenv/Makefile
+	modified:   cddl/lib/libzpool/Makefile
+	modified:   contrib/nvi/common/common.h
+	modified:   lib/libbe/Makefile
+	modified:   lib/libbe/be.c
+	modified:   lib/libbe/be.h
+	modified:   lib/libbe/be_impl.h
+	modified:   lib/libbe/be_info.c
+	modified:   lib/libbe/libbe.3
+	modified:   libexec/rc/rc.conf
+	modified:   libexec/rc/rc.d/zfsbe
+	modified:   rescue/rescue/Makefile
+	modified:   sbin/bectl/Makefile
+	modified:   sbin/bectl/bectl.8
+	modified:   sbin/bectl/bectl.c
+	modified:   sbin/bectl/bectl_list.c
+	modified:   sbin/reboot/nextboot.8
+	modified:   sbin/reboot/nextboot.sh
+	modified:   sbin/zfsbootcfg/Makefile
+	modified:   sbin/zfsbootcfg/zfsbootcfg.8
+	modified:   sbin/zfsbootcfg/zfsbootcfg.c
+	modified:   share/man/man5/rc.conf.5
+	modified:   share/mk/bsd.libnames.mk
+	modified:   share/mk/src.libnames.mk
+	modified:   stand/common/bootstrap.h
+	new file:   stand/common/nvstore.c
+	modified:   stand/defaults/loader.conf
+	modified:   stand/efi/boot1/Makefile
+	modified:   stand/efi/boot1/zfs_module.c
+	modified:   stand/efi/loader/Makefile
+	modified:   stand/efi/loader/main.c
+	modified:   stand/forth/support.4th
+	modified:   stand/i386/gptzfsboot/Makefile
+	modified:   stand/i386/loader/Makefile
+	modified:   stand/i386/loader/main.c
+	modified:   stand/i386/zfsboot/Makefile
+	modified:   stand/i386/zfsboot/zfsboot.c
+	modified:   stand/libsa/zfs/Makefile.inc
+	modified:   stand/libsa/zfs/libzfs.h
+	modified:   stand/libsa/zfs/nvlist.c
+	modified:   stand/libsa/zfs/zfs.c
+	modified:   stand/libsa/zfs/zfsimpl.c
+	modified:   stand/loader.mk
+	modified:   stand/lua/config.lua
+	modified:   stand/userboot/test/test.c
+	modified:   stand/userboot/userboot.h
+	modified:   stand/userboot/userboot/Makefile
+	modified:   stand/userboot/userboot/main.c
+	modified:   stand/userboot/userboot/userboot_disk.c
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/cddl/boot/zfs/zfsimpl.h
+	modified:   sys/net/route/nhop_ctl.c
+	modified:   sys/net/route/nhop_utils.c
+	modified:   sys/net/route/route_var.h
+	modified:   sys/netinet/in_proto.c
+	modified:   sys/sys/atomic_common.h
+	modified:   tools/tools/zfsboottest/zfsboottest.c
+	modified:   usr.bin/grep/file.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/netinet6/in6_proto.c
+	both modified:   sys/netinet6/in6_src.c
+
+HEAD is now at c8b3afefd1c9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at c8b3afefd1c9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
