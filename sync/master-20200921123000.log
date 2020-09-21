@@ -47,3 +47,219 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/Makefile
+Removing devel/got/files/patch-regress_cmdline_commit.sh
+Removing devel/got/files/patch-libexec_got-read-gotconfig_got-read-gotconfig.c
+Removing devel/got/files/patch-lib_utf8.c
+Removing deskutils/flameshot/files/patch-src_tools_arrow_arrowtool.h
+Removing deskutils/flameshot/files/patch-src_third-party_Qt-Color-Widgets_src_color__wheel.cpp
+Removing comms/lirc/files/patch-daemons__Makefile.in
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/Makefile
+index 1f307a8f153c,137dc66df734..000000000000
+--- a/ports-mgmt/pkg/Makefile
++++ b/ports-mgmt/pkg/Makefile
+@@@ -1,8 -1,7 +1,12 @@@
+  # $FreeBSD$
+  
+  PORTNAME=	pkg
+++<<<<<<< HEAD
+ +DISTVERSION=	1.15
+ +PORTREVISION=	1
+++=======
++ DISTVERSION=	1.15.5
+++>>>>>>> freebsd/master
+  _PKG_VERSION=	${DISTVERSION}
+  CATEGORIES=	ports-mgmt
+  #MASTER_SITES=	\
+diff --cc ports-mgmt/pkg/distinfo
+index 636c7af1c34e,89f7069e79e9..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1600185651
+ +SHA256 (HardenedBSD-pkg-cec7452832a0d52a2cb9f34fcc8c7beb187fd9cc_GL0.tar.gz) = e4190c05220ef1185a5ed6b248288aa0fb292bd82556c4e5dd306dc5c95248a3
+ +SIZE (HardenedBSD-pkg-cec7452832a0d52a2cb9f34fcc8c7beb187fd9cc_GL0.tar.gz) = 3824305
+++=======
++ TIMESTAMP = 1600699940
++ SHA256 (freebsd-pkg-1.15.5_GH0.tar.gz) = 00131769cff602dc48e69c5d967c40103e633eac0be03d1c54704aa5717f3782
++ SIZE (freebsd-pkg-1.15.5_GH0.tar.gz) = 3823370
+++>>>>>>> freebsd/master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/python.mk
+	modified:   benchmarks/Makefile
+	new file:   benchmarks/filebench/Makefile
+	new file:   benchmarks/filebench/distinfo
+	new file:   benchmarks/filebench/pkg-descr
+	new file:   benchmarks/filebench/pkg-plist
+	modified:   benchmarks/forkbomb/Makefile
+	modified:   comms/lirc/Makefile
+	modified:   comms/lirc/files/patch-configure.ac
+	renamed:    comms/lirc/files/patch-daemons-Makefile.am -> comms/lirc/files/patch-daemons_Makefile.am
+	new file:   comms/lirc/files/patch-daemons_Makefile.in
+	deleted:    comms/lirc/files/patch-daemons__Makefile.in
+	renamed:    comms/lirc/files/patch-daemons__dump_config.c -> comms/lirc/files/patch-daemons_dump__config.c
+	renamed:    comms/lirc/files/patch-daemons__hw-types.c -> comms/lirc/files/patch-daemons_hw-types.c
+	new file:   comms/lirc/files/patch-daemons_hw__bte.c
+	new file:   comms/lirc/files/patch-daemons_hw__creative.c
+	renamed:    comms/lirc/files/patch-daemons__hw_default.c -> comms/lirc/files/patch-daemons_hw__default.c
+	renamed:    comms/lirc/files/patch-daemons__hw_devinput.c -> comms/lirc/files/patch-daemons_hw__devinput.c
+	new file:   comms/lirc/files/patch-daemons_hw__ea65.c
+	renamed:    comms/lirc/files/patch-daemons__hw_hiddev.c -> comms/lirc/files/patch-daemons_hw__hiddev.c
+	new file:   comms/lirc/files/patch-daemons_hw__irman.c
+	new file:   comms/lirc/files/patch-daemons_hw__livedrive__common.c
+	new file:   comms/lirc/files/patch-daemons_hw__silitek.c
+	renamed:    comms/lirc/files/patch-daemons__hw_srm7500libusb.c -> comms/lirc/files/patch-daemons_hw__srm7500libusb.c
+	renamed:    comms/lirc/files/patch-daemons__ir_remote.c -> comms/lirc/files/patch-daemons_ir__remote.c
+	renamed:    comms/lirc/files/patch-daemons__lircd.c -> comms/lirc/files/patch-daemons_lircd.c
+	renamed:    comms/lirc/files/patch-daemons__lircmd.c -> comms/lirc/files/patch-daemons_lircmd.c
+	renamed:    comms/lirc/files/patch-drivers__lirc.h -> comms/lirc/files/patch-drivers_lirc.h
+	renamed:    comms/lirc/files/patch-tools__irsend.c -> comms/lirc/files/patch-tools_irsend.c
+	modified:   comms/xastir/Makefile
+	modified:   comms/xastir/distinfo
+	modified:   comms/xastir/pkg-plist
+	modified:   deskutils/flameshot/Makefile
+	modified:   deskutils/flameshot/distinfo
+	new file:   deskutils/flameshot/files/patch-data_dbus_org.flameshot.Flameshot.service.in
+	deleted:    deskutils/flameshot/files/patch-src_third-party_Qt-Color-Widgets_src_color__wheel.cpp
+	deleted:    deskutils/flameshot/files/patch-src_tools_arrow_arrowtool.h
+	modified:   deskutils/flameshot/pkg-plist
+	modified:   devel/bpython/Makefile
+	modified:   devel/got/Makefile
+	modified:   devel/got/distinfo
+	modified:   devel/got/files/patch-got_got.c
+	deleted:    devel/got/files/patch-lib_utf8.c
+	deleted:    devel/got/files/patch-libexec_got-read-gotconfig_got-read-gotconfig.c
+	modified:   devel/got/files/patch-libexec_got-read-gotconfig_parse.y
+	deleted:    devel/got/files/patch-regress_cmdline_commit.sh
+	modified:   devel/got/files/patch-regress_cmdline_common.sh
+	modified:   devel/intel-graphics-compiler/Makefile
+	modified:   devel/intel-graphics-compiler/distinfo
+	modified:   devel/intel-graphics-compiler/files/patch-unix
+	modified:   devel/py-lineedit/Makefile
+	modified:   devel/py-loguru/Makefile
+	modified:   devel/py-loguru/distinfo
+	modified:   devel/py-mdv/Makefile
+	modified:   devel/py-pudb/Makefile
+	modified:   devel/py-pyface/Makefile
+	modified:   devel/py-readme_renderer/Makefile
+	modified:   devel/tortoisehg/Makefile
+	modified:   devel/viewvc/Makefile
+	modified:   emulators/virtualbox-ose/Makefile
+	new file:   emulators/virtualbox-ose/files/patch-src-VBox-Devices-Storage-DrvHostBase-freebsd.cpp
+	modified:   graphics/birdfont/Makefile
+	modified:   graphics/py-traitsui/Makefile
+	modified:   mail/Makefile
+	new file:   mail/mailman3/Makefile
+	new file:   mail/mailman3/distinfo
+	new file:   mail/mailman3/files/mailman.in
+	new file:   mail/mailman3/files/patch-src_mailman_config_mailman.cfg
+	new file:   mail/mailman3/files/patch-src_mailman_config_mhonarc.cfg
+	new file:   mail/mailman3/files/patch-src_mailman_config_postfix.cfg
+	new file:   mail/mailman3/files/patch-src_mailman_config_schema.cfg
+	new file:   mail/mailman3/files/patch-src_mailman_config_tests_test__configuration.py
+	new file:   mail/mailman3/files/patch-src_mailman_core_initialize.py
+	new file:   mail/mailman3/files/patch-src_mailman_rest_tests_test__systemconf.py
+	new file:   mail/mailman3/files/patch-src_mailman_testing_mhonarc.cfg
+	new file:   mail/mailman3/files/patch-src_mailman_tests_test__configfile.py
+	new file:   mail/mailman3/pkg-descr
+	new file:   mail/mailman3/pkg-message
+	modified:   misc/openhab2-addons/Makefile
+	modified:   misc/openhab2-addons/distinfo
+	modified:   misc/openhab2/Makefile
+	modified:   misc/openhab2/distinfo
+	modified:   net-im/signal-cli/Makefile
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   ports-mgmt/pkg-devel/distinfo
+	modified:   sysutils/mog/Makefile
+	modified:   textproc/Makefile
+	new file:   textproc/bibclean/Makefile
+	new file:   textproc/bibclean/distinfo
+	new file:   textproc/bibclean/files/patch-Makefile.in
+	new file:   textproc/bibclean/pkg-descr
+	new file:   textproc/bibclean/pkg-plist
+	modified:   textproc/libxmlbird/Makefile
+	modified:   textproc/libxmlbird/distinfo
+	modified:   textproc/py-jsx-lexer/Makefile
+	modified:   textproc/py-pygments/Makefile
+	modified:   textproc/py-rst2html5/Makefile
+	modified:   textproc/py-sphinx18/Makefile
+	modified:   www/py-WebError/Makefile
+	modified:   www/py-grip/Makefile
+	modified:   www/py-pelican/Makefile
+	modified:   www/searx/Makefile
+	modified:   www/trac-devel/Makefile
+	modified:   www/trac/Makefile
+	modified:   x11/waybar/Makefile
+	modified:   x11/waybar/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/Makefile
+	both modified:   ports-mgmt/pkg/distinfo
+
+
+It took 3.47 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 36a3bf67197e Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 36a3bf67197e Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
