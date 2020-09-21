@@ -1,0 +1,141 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 9 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating c8b3afefd1c9..ad84ec218f84
+Fast-forward
+ Makefile.inc1                           |    8 +-
+ cddl/lib/Makefile                       |    3 +
+ cddl/lib/libzfsbootenv/Makefile         |   33 +
+ cddl/lib/libzpool/Makefile              |    1 +
+ contrib/nvi/common/common.h             |    2 +-
+ lib/libbe/Makefile                      |    4 +-
+ lib/libbe/be.c                          |   69 +-
+ lib/libbe/be.h                          |    1 +
+ lib/libbe/be_impl.h                     |    1 +
+ lib/libbe/be_info.c                     |   11 +
+ lib/libbe/libbe.3                       |   26 +-
+ libexec/rc/rc.conf                      |    1 +
+ libexec/rc/rc.d/zfsbe                   |   18 +
+ rescue/rescue/Makefile                  |    2 +-
+ sbin/bectl/Makefile                     |    1 +
+ sbin/bectl/bectl.8                      |   19 +-
+ sbin/bectl/bectl.c                      |   22 +-
+ sbin/bectl/bectl_list.c                 |    7 +-
+ sbin/reboot/nextboot.8                  |    7 +-
+ sbin/reboot/nextboot.sh                 |   21 +-
+ sbin/zfsbootcfg/Makefile                |    7 +-
+ sbin/zfsbootcfg/zfsbootcfg.8            |  103 ++-
+ sbin/zfsbootcfg/zfsbootcfg.c            |  298 ++++--
+ share/man/man5/rc.conf.5                |    8 +-
+ share/mk/bsd.libnames.mk                |    1 +
+ share/mk/src.libnames.mk                |    5 +-
+ stand/common/bootstrap.h                |   31 +
+ stand/common/nvstore.c                  |  310 +++++++
+ stand/defaults/loader.conf              |    1 -
+ stand/efi/boot1/Makefile                |    4 +-
+ stand/efi/boot1/zfs_module.c            |    2 +-
+ stand/efi/loader/Makefile               |    2 +
+ stand/efi/loader/main.c                 |    8 +-
+ stand/forth/support.4th                 |   13 +-
+ stand/i386/gptzfsboot/Makefile          |    4 +-
+ stand/i386/loader/Makefile              |    5 +
+ stand/i386/loader/main.c                |   12 +
+ stand/i386/zfsboot/Makefile             |    4 +-
+ stand/i386/zfsboot/zfsboot.c            |   17 +-
+ stand/libsa/zfs/Makefile.inc            |    4 +-
+ stand/libsa/zfs/libzfs.h                |   52 +-
+ stand/libsa/zfs/nvlist.c                | 1494 +++++++++++++++++++++++++------
+ stand/libsa/zfs/zfs.c                   |  864 +++++++++++++++---
+ stand/libsa/zfs/zfsimpl.c               |  370 +++++++-
+ stand/loader.mk                         |    2 +-
+ stand/lua/config.lua                    |   11 +-
+ stand/userboot/test/test.c              |   25 +-
+ stand/userboot/userboot.h               |    6 +
+ stand/userboot/userboot/Makefile        |    5 +-
+ stand/userboot/userboot/main.c          |   33 +-
+ stand/userboot/userboot/userboot_disk.c |   18 +-
+ sys/amd64/amd64/pmap.c                  |   14 +-
+ sys/cddl/boot/zfs/zfsimpl.h             |   41 +-
+ sys/net/route/nhop_ctl.c                |    7 -
+ sys/net/route/nhop_utils.c              |    1 -
+ sys/net/route/route_var.h               |    1 -
+ sys/netinet/in_proto.c                  |    1 -
+ sys/netinet6/in6_proto.c                |    1 -
+ sys/netinet6/in6_src.c                  |    2 -
+ sys/sys/atomic_common.h                 |    2 +-
+ tools/tools/zfsboottest/zfsboottest.c   |    2 +-
+ usr.bin/grep/file.c                     |    8 +-
+ 62 files changed, 3306 insertions(+), 750 deletions(-)
+ create mode 100644 cddl/lib/libzfsbootenv/Makefile
+ create mode 100644 stand/common/nvstore.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/kernel.h
+Merge made by the 'recursive' strategy.
+ share/man/man9/Makefile       |  3 ++
+ share/man/man9/getenv.9       | 48 ++++++++++++++++++++++++--
+ sys/arm/allwinner/aw_usbphy.c | 78 +++++++++++++++++++++----------------------
+ sys/kern/kern_environment.c   | 67 +++++++++++++++++++++++++++++++++++++
+ sys/sys/kernel.h              | 19 +++++++++++
+ sys/sys/systm.h               |  3 ++
+ 6 files changed, 177 insertions(+), 41 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ad84ec218f84..e5cc96d4ae3d  hardened/current/master -> hardened/current/master        
+remote:    5942f048f5c5..930cbdcee293  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ad84ec218f84..e5cc96d4ae3d  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
