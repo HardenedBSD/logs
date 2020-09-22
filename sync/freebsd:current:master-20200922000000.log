@@ -1,0 +1,124 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating e7e84950bd83..c237cd7b4ca5
+Fast-forward
+ .clang-format                                      |   1 +
+ lib/libkvm/kvm_minidump_aarch64.c                  |  20 ++--
+ lib/libkvm/kvm_minidump_amd64.c                    |  27 +++--
+ lib/libkvm/kvm_minidump_arm.c                      |  16 ++-
+ lib/libkvm/kvm_minidump_i386.c                     |  16 ++-
+ lib/libkvm/kvm_minidump_mips.c                     |  16 ++-
+ lib/libkvm/kvm_minidump_powerpc64.c                |  14 ++-
+ lib/libkvm/kvm_minidump_riscv.c                    |  20 ++--
+ lib/libkvm/kvm_private.c                           |  86 ++++++++++++++--
+ lib/libkvm/kvm_private.h                           |  11 ++-
+ share/man/man9/bitset.9                            |  10 +-
+ stand/common/reloc_elf.c                           |  11 ++-
+ sys/amd64/amd64/minidump_machdep.c                 |  79 +++++----------
+ sys/amd64/include/md_var.h                         |   1 -
+ sys/amd64/include/minidump.h                       |   3 +-
+ sys/amd64/include/vmparam.h                        |   5 +
+ sys/arm/arm/minidump_machdep.c                     |  99 +++++++------------
+ sys/arm/include/md_var.h                           |   4 -
+ sys/arm/include/minidump.h                         |   3 +-
+ sys/arm/include/vmparam.h                          |   5 +
+ sys/arm64/arm64/minidump_machdep.c                 |  80 +++++----------
+ sys/arm64/arm64/pmap.c                             | 110 ++++++++++++++++-----
+ sys/arm64/include/md_var.h                         |   4 -
+ sys/arm64/include/minidump.h                       |   3 +-
+ sys/arm64/include/vmparam.h                        |   5 +
+ sys/contrib/vchiq/interface/vchiq_arm/vchiq_core.c |  10 +-
+ sys/contrib/vchiq/interface/vchiq_arm/vchiq_core.h |  20 ++--
+ sys/dev/cxgbe/t4_sge.c                             |  23 ++++-
+ sys/i386/i386/minidump_machdep.c                   |  27 -----
+ sys/i386/i386/minidump_machdep_base.c              |  55 +++++------
+ sys/i386/include/md_var.h                          |   1 -
+ sys/i386/include/minidump.h                        |   3 +-
+ sys/i386/include/vmparam.h                         |   5 +
+ sys/mips/include/md_var.h                          |   4 -
+ sys/mips/include/minidump.h                        |   3 +-
+ sys/mips/include/vmparam.h                         |   5 +
+ sys/mips/mips/minidump_machdep.c                   |  85 +++++-----------
+ sys/powerpc/include/md_var.h                       |   5 -
+ sys/powerpc/include/minidump.h                     |   3 +-
+ sys/powerpc/include/vmparam.h                      |  12 +++
+ sys/powerpc/powerpc/minidump_machdep.c             |  98 +++++-------------
+ sys/riscv/include/md_var.h                         |   4 -
+ sys/riscv/include/minidump.h                       |   3 +-
+ sys/riscv/include/vmparam.h                        |   5 +
+ sys/riscv/riscv/minidump_machdep.c                 |  86 +++++-----------
+ sys/sys/bitset.h                                   |   7 +-
+ sys/sys/cpuset.h                                   |   2 +-
+ sys/sys/domainset.h                                |   2 +-
+ sys/vm/vm_page.c                                   |  19 ++--
+ sys/vm/vm_page.h                                   |  65 ++++++++++++
+ sys/vm/vm_phys.h                                   |   8 +-
+ sys/vm/vm_reserv.c                                 |  71 ++++++++++---
+ sys/x86/include/x86_var.h                          |   3 -
+ usr.bin/calendar/calendars/calendar.history        |   1 -
+ 54 files changed, 706 insertions(+), 578 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e7e84950bd83..c237cd7b4ca5  freebsd/current/master -> freebsd/current/master        
+remote:    376ec4bdd3e5..ec4de619f457  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e7e84950bd83..c237cd7b4ca5  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
