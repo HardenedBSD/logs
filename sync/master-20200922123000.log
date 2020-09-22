@@ -1,0 +1,515 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Updating 36a3bf67197e..23b92f872f0a
+Fast-forward
+ MOVED                                              |    1 -
+ Mk/Uses/python.mk                                  |    2 +
+ Mk/bsd.default-versions.mk                         |    4 +-
+ audio/alo-lv2/Makefile                             |    2 +-
+ audio/beatslash-lv2/Makefile                       |    5 +-
+ audio/beatslash-lv2/files/patch-wscript            |   11 +-
+ audio/beatslash-lv2/pkg-descr                      |    2 +-
+ audio/csound/Makefile                              |    8 +-
+ audio/gsequencer/Makefile                          |    2 +-
+ audio/gsequencer/distinfo                          |    6 +-
+ audio/jamulus/Makefile                             |    4 +-
+ audio/jamulus/distinfo                             |    6 +-
+ benchmarks/Makefile                                |    1 +
+ benchmarks/filebench/Makefile                      |   24 +
+ benchmarks/filebench/distinfo                      |    3 +
+ benchmarks/filebench/pkg-descr                     |   10 +
+ benchmarks/filebench/pkg-plist                     |   79 ++
+ benchmarks/forkbomb/Makefile                       |    3 +
+ biology/freebayes/Makefile                         |    2 +-
+ biology/freebayes/files/patch-SeqLib_bwa_rle.h     |   11 +
+ .../freebayes/files/patch-SeqLib_fermi-lite_rle.h  |   11 +
+ biology/gmap/Makefile                              |   25 +-
+ biology/gmap/distinfo                              |    5 +-
+ biology/gmap/pkg-plist                             |   14 +-
+ comms/lirc/Makefile                                |   10 +-
+ comms/lirc/files/patch-configure.ac                |  115 +-
+ ...emons-Makefile.am => patch-daemons_Makefile.am} |    2 +-
+ comms/lirc/files/patch-daemons_Makefile.in         | 1363 ++++++++++++++++++++
+ comms/lirc/files/patch-daemons__Makefile.in        |   11 -
+ ..._dump_config.c => patch-daemons_dump__config.c} |    6 +-
+ ...aemons__hw-types.c => patch-daemons_hw-types.c} |    2 +-
+ comms/lirc/files/patch-daemons_hw__bte.c           |   13 +
+ comms/lirc/files/patch-daemons_hw__creative.c      |   17 +
+ ...s__hw_default.c => patch-daemons_hw__default.c} |    2 +-
+ ..._hw_devinput.c => patch-daemons_hw__devinput.c} |    8 +-
+ comms/lirc/files/patch-daemons_hw__ea65.c          |   13 +
+ ...ons__hw_hiddev.c => patch-daemons_hw__hiddev.c} |   10 +-
+ comms/lirc/files/patch-daemons_hw__irman.c         |   15 +
+ .../files/patch-daemons_hw__livedrive__common.c    |   13 +
+ comms/lirc/files/patch-daemons_hw__silitek.c       |   14 +
+ ...0libusb.c => patch-daemons_hw__srm7500libusb.c} |    2 +-
+ ...ons__ir_remote.c => patch-daemons_ir__remote.c} |    4 +-
+ ...atch-daemons__lircd.c => patch-daemons_lircd.c} |    6 +-
+ ...ch-daemons__lircmd.c => patch-daemons_lircmd.c} |    4 +-
+ ...{patch-drivers__lirc.h => patch-drivers_lirc.h} |    9 +-
+ ...{patch-tools__irsend.c => patch-tools_irsend.c} |    8 +-
+ comms/xastir/Makefile                              |   13 +-
+ comms/xastir/distinfo                              |    6 +-
+ comms/xastir/pkg-plist                             |    4 +-
+ converters/wkhtmltopdf/Makefile                    |    3 +-
+ .../files/patch-mkspecs_common_gcc-base.conf       |   11 +
+ databases/postgresql-libpqxx/Makefile              |    2 +-
+ databases/postgresql-libpqxx/distinfo              |    6 +-
+ databases/postgresql-libpqxx/pkg-plist             |    3 +
+ databases/py-fdb/Makefile                          |    7 +-
+ databases/py-fdb/pkg-descr                         |    2 +-
+ deskutils/Makefile                                 |    1 +
+ deskutils/dstask/Makefile                          |   39 +
+ deskutils/dstask/distinfo                          |    3 +
+ deskutils/dstask/pkg-descr                         |   21 +
+ deskutils/flameshot/Makefile                       |    8 +-
+ deskutils/flameshot/distinfo                       |    6 +-
+ ...ch-data_dbus_org.flameshot.Flameshot.service.in |    7 +
+ ...ird-party_Qt-Color-Widgets_src_color__wheel.cpp |   10 -
+ .../files/patch-src_tools_arrow_arrowtool.h        |   10 -
+ deskutils/flameshot/pkg-plist                      |   21 +-
+ devel/bpython/Makefile                             |    3 +-
+ devel/cpp2py/Makefile                              |   18 +-
+ devel/cpp2py/distinfo                              |    8 +-
+ devel/cpp2py/files/patch-c++_cpp2py_CMakeLists.txt |    8 +
+ devel/cpp2py/pkg-plist                             |    3 +-
+ devel/efivar/Makefile                              |    2 +-
+ devel/folly/Makefile                               |    1 +
+ devel/gn/Makefile                                  |    1 +
+ devel/gn/files/patch-build_gen.py                  |    4 +-
+ devel/gn/files/patch-src_gn_version.h              |   18 +
+ devel/got/Makefile                                 |    3 +-
+ devel/got/distinfo                                 |    6 +-
+ devel/got/files/patch-got_got.c                    |   10 +-
+ devel/got/files/patch-lib_utf8.c                   |   12 -
+ ...libexec_got-read-gotconfig_got-read-gotconfig.c |   11 -
+ .../files/patch-libexec_got-read-gotconfig_parse.y |   38 +-
+ devel/got/files/patch-regress_cmdline_commit.sh    |   13 -
+ devel/got/files/patch-regress_cmdline_common.sh    |   20 -
+ devel/intel-graphics-compiler/Makefile             |    4 +-
+ devel/intel-graphics-compiler/distinfo             |   10 +-
+ devel/intel-graphics-compiler/files/patch-unix     |   25 +-
+ devel/libcbor/Makefile                             |    4 +-
+ devel/libcbor/distinfo                             |    6 +-
+ devel/libcbor/files/patch-src-CMakeLists.txt       |   12 +-
+ devel/libcbor/pkg-plist                            |    2 +-
+ devel/libruin/Makefile                             |    2 +-
+ devel/libruin/files/patch-src_scheme.h             |   28 +
+ devel/libsml/Makefile                              |    1 +
+ .../files/patch-test_src_sml__boolean__test.c      |   11 +
+ .../files/patch-test_src_sml__buffer__test.c       |   11 +
+ .../libsml/files/patch-test_src_sml__file__test.c  |   11 +
+ ...st_src_sml__get__profile__pack__request__test.c |   11 +
+ .../libsml/files/patch-test_src_sml__list__test.c  |   11 +
+ .../files/patch-test_src_sml__message__test.c      |   11 +
+ .../files/patch-test_src_sml__number__test.c       |   11 +
+ .../patch-test_src_sml__octet__string__test.c      |   11 +
+ .../patch-test_src_sml__open__request__test.c      |   11 +
+ .../files/patch-test_src_sml__status__test.c       |   11 +
+ .../libsml/files/patch-test_src_sml__time__test.c  |   11 +
+ .../libsml/files/patch-test_src_sml__tree__test.c  |   11 +
+ .../libsml/files/patch-test_src_sml__value__test.c |   11 +
+ devel/ncc/Makefile                                 |    2 +-
+ devel/ncc/files/patch-dbstree.C                    |   10 +
+ devel/ncurses/Makefile                             |    2 +-
+ devel/ncurses/distinfo                             |    6 +-
+ devel/p5-Module-CoreList/Makefile                  |    2 +-
+ devel/p5-Module-CoreList/distinfo                  |    6 +-
+ devel/p5-Test-Simple/Makefile                      |    2 +-
+ devel/p5-Test-Simple/distinfo                      |    6 +-
+ devel/py-hypothesis/Makefile                       |    2 +-
+ devel/py-hypothesis/distinfo                       |    6 +-
+ devel/py-lineedit/Makefile                         |    3 +-
+ devel/py-loguru/Makefile                           |    2 +-
+ devel/py-loguru/distinfo                           |    6 +-
+ devel/py-mdv/Makefile                              |    3 +-
+ devel/py-pudb/Makefile                             |    3 +-
+ devel/py-pyface/Makefile                           |    5 +-
+ devel/py-readme_renderer/Makefile                  |    3 +-
+ devel/py-xarray/Makefile                           |    2 +-
+ devel/py-xarray/distinfo                           |    6 +-
+ devel/radare2/Makefile                             |    4 +-
+ devel/radare2/distinfo                             |    6 +-
+ devel/raylib/Makefile                              |    9 +-
+ devel/rubygem-aws-partitions/Makefile              |    2 +-
+ devel/rubygem-aws-partitions/distinfo              |    6 +-
+ devel/rubygem-aws-sdk-apigateway/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-apigateway/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-apigatewayv2/Makefile        |    2 +-
+ devel/rubygem-aws-sdk-apigatewayv2/distinfo        |    6 +-
+ devel/rubygem-aws-sdk-cloudfront/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-cloudfront/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-codestarconnections/Makefile |    2 +-
+ devel/rubygem-aws-sdk-codestarconnections/distinfo |    6 +-
+ devel/rubygem-aws-sdk-comprehend/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-comprehend/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-connect/Makefile             |    2 +-
+ devel/rubygem-aws-sdk-connect/distinfo             |    6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |    2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |    6 +-
+ devel/rubygem-aws-sdk-dlm/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-dlm/distinfo                 |    6 +-
+ .../rubygem-aws-sdk-elasticsearchservice/Makefile  |    2 +-
+ .../rubygem-aws-sdk-elasticsearchservice/distinfo  |    6 +-
+ devel/rubygem-aws-sdk-greengrass/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-greengrass/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-kendra/Makefile              |    2 +-
+ devel/rubygem-aws-sdk-kendra/distinfo              |    6 +-
+ devel/rubygem-aws-sdk-medialive/Makefile           |    2 +-
+ devel/rubygem-aws-sdk-medialive/distinfo           |    6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-servicecatalog/Makefile      |    2 +-
+ devel/rubygem-aws-sdk-servicecatalog/distinfo      |    6 +-
+ devel/rubygem-aws-sdk-ssm/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-ssm/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk-ssoadmin/Makefile            |    2 +-
+ devel/rubygem-aws-sdk-ssoadmin/distinfo            |    6 +-
+ .../Makefile                                       |    2 +-
+ .../distinfo                                       |    6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |    2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |    6 +-
+ devel/rubygem-devise-rails5/Makefile               |    2 +-
+ devel/rubygem-devise-rails5/distinfo               |    6 +-
+ devel/rubygem-devise-rails52/Makefile              |    2 +-
+ devel/rubygem-devise-rails52/distinfo              |    6 +-
+ devel/rubygem-devise-rails60/Makefile              |    2 +-
+ devel/rubygem-devise-rails60/distinfo              |    6 +-
+ devel/rubygem-devise/Makefile                      |    2 +-
+ devel/rubygem-devise/distinfo                      |    6 +-
+ devel/rubygem-fog-core/Makefile                    |    2 +-
+ devel/rubygem-fog-core/distinfo                    |    6 +-
+ devel/rubygem-google-api-client/Makefile           |    2 +-
+ devel/rubygem-google-api-client/distinfo           |    6 +-
+ devel/rubygem-tty-table/Makefile                   |   11 +-
+ devel/rubygem-tty-table/distinfo                   |    6 +-
+ devel/rubygem-tty-table/files/patch-gemspec        |   14 -
+ devel/rubygem-tty/Makefile                         |    4 +-
+ devel/rubygem-tty/files/patch-gemspec              |    9 +-
+ devel/rust-cbindgen/Makefile                       |    2 +-
+ devel/rust-cbindgen/distinfo                       |    6 +-
+ devel/tortoisehg/Makefile                          |    5 +-
+ devel/viewvc/Makefile                              |    4 +-
+ emulators/citra/Makefile                           |    4 +-
+ emulators/citra/distinfo                           |    6 +-
+ emulators/cpmtools2/Makefile                       |    6 +-
+ emulators/cpmtools2/distinfo                       |    5 +-
+ emulators/cpmtools2/pkg-plist                      |    1 +
+ emulators/rpcs3/Makefile                           |    4 +-
+ emulators/rpcs3/distinfo                           |    6 +-
+ emulators/virtualbox-ose/Makefile                  |    2 +-
+ ...rc-VBox-Devices-Storage-DrvHostBase-freebsd.cpp |   11 +
+ emulators/yuzu/Makefile                            |    4 +-
+ emulators/yuzu/distinfo                            |    6 +-
+ ftp/curlie/Makefile                                |    6 +-
+ ftp/curlie/distinfo                                |    6 +-
+ games/cdogs-sdl/Makefile                           |   20 +-
+ games/cdogs-sdl/distinfo                           |    6 +-
+ games/cdogs-sdl/files/patch-CMakeLists.txt         |    4 +-
+ games/cdogs-sdl/files/patch-src_cdogs_enet_unix.c  |   11 -
+ games/cdogs-sdl/pkg-plist                          |   60 +-
+ graphics/birdfont/Makefile                         |    1 +
+ graphics/mesa-devel/Makefile                       |    4 +-
+ graphics/mesa-devel/distinfo                       |    6 +-
+ graphics/py-traitsui/Makefile                      |    5 +-
+ graphics/rubygem-image_processing/Makefile         |    2 +-
+ graphics/rubygem-image_processing/distinfo         |    6 +-
+ japanese/ajaxzip2-data/Makefile                    |    2 +-
+ japanese/ajaxzip2-data/distinfo                    |   10 +-
+ japanese/zipcodes/Makefile                         |    2 +-
+ japanese/zipcodes/distinfo                         |   10 +-
+ lang/kotlin/Makefile                               |    2 +-
+ lang/kotlin/distinfo                               |    6 +-
+ lang/luajit-openresty/Makefile                     |    6 +-
+ lang/luajit-openresty/distinfo                     |    6 +-
+ lang/spidermonkey78/Makefile                       |    3 +-
+ mail/Makefile                                      |    2 +
+ mail/getmail/Makefile                              |   44 +
+ mail/getmail/distinfo                              |    3 +
+ mail/getmail/files/patch-setup.py                  |   42 +
+ mail/getmail/pkg-descr                             |   20 +
+ mail/getmail/pkg-message                           |   14 +
+ mail/mailman3/Makefile                             |   43 +
+ mail/mailman3/distinfo                             |    3 +
+ mail/mailman3/files/mailman.in                     |   47 +
+ .../files/patch-src_mailman_config_mailman.cfg     |   24 +
+ .../files/patch-src_mailman_config_mhonarc.cfg     |    8 +
+ .../files/patch-src_mailman_config_postfix.cfg     |   11 +
+ .../files/patch-src_mailman_config_schema.cfg      |   20 +
+ ...src_mailman_config_tests_test__configuration.py |   17 +
+ .../files/patch-src_mailman_core_initialize.py     |   19 +
+ ...atch-src_mailman_rest_tests_test__systemconf.py |   11 +
+ .../files/patch-src_mailman_testing_mhonarc.cfg    |    8 +
+ .../patch-src_mailman_tests_test__configfile.py    |   24 +
+ mail/mailman3/pkg-descr                            |    8 +
+ mail/mailman3/pkg-message                          |    8 +
+ math/R-cran-forecast/Makefile                      |    3 +-
+ math/R-cran-forecast/distinfo                      |    6 +-
+ math/flann/files/patch-src_cpp_CMakeLists.txt      |   30 +-
+ math/geogram/Makefile                              |    1 +
+ math/libxsmm/Makefile                              |    6 +-
+ math/libxsmm/distinfo                              |    6 +-
+ math/libxsmm/files/patch-Makefile                  |   15 +-
+ math/libxsmm/pkg-plist                             |  291 ++---
+ math/octomap/Makefile                              |    2 +-
+ misc/openhab2-addons/Makefile                      |    2 +-
+ misc/openhab2-addons/distinfo                      |    6 +-
+ misc/openhab2/Makefile                             |    4 +-
+ misc/openhab2/distinfo                             |    6 +-
+ multimedia/py-PySceneDetect/Makefile               |    2 +-
+ multimedia/py-PySceneDetect/distinfo               |    6 +-
+ multimedia/x265/files/patch-source_encoder_api.cpp |   44 +
+ net-im/signal-cli/Makefile                         |    2 +
+ net-p2p/sonarr-devel/Makefile                      |    2 +-
+ net-p2p/sonarr-devel/distinfo                      |    6 +-
+ net/google-cloud-sdk/Makefile                      |    2 +-
+ net/google-cloud-sdk/distinfo                      |    6 +-
+ net/goreplay/Makefile                              |    9 +-
+ net/goreplay/distinfo                              |   20 +-
+ net/goreplay/files/patch-size_size.go              |   11 +
+ ports-mgmt/pkg-devel/Makefile                      |    4 +-
+ ports-mgmt/pkg-devel/distinfo                      |    6 +-
+ ports-mgmt/pkg_jail/Makefile                       |    2 +-
+ ports-mgmt/pkg_jail/distinfo                       |    6 +-
+ print/pnm2ppa/Makefile                             |   13 +-
+ print/pnm2ppa/files/patch-docs__en__pnm2ppa.1      |   10 +-
+ print/pnm2ppa/files/patch-pnm2ppa.c                |   10 +
+ print/pnm2ppa/files/patch-pnm2ppa.conf             |    8 +-
+ print/pnm2ppa/files/patch-ppa__syslog.h            |   11 +
+ print/pnm2ppa/files/patch-text-en.h                |    4 +-
+ science/jmol/Makefile                              |    2 +-
+ science/jmol/distinfo                              |    6 +-
+ science/luscus/Makefile                            |    2 +
+ security/ca_root_nss/Makefile                      |    2 +-
+ security/ca_root_nss/distinfo                      |    6 +-
+ security/nextcloud-passman/Makefile                |    5 +-
+ security/nextcloud-passman/distinfo                |    6 +-
+ security/nextcloud-passman/pkg-plist               |   68 +
+ security/nss/Makefile                              |    2 +-
+ security/nss/distinfo                              |    6 +-
+ security/nss/files/patch-bug1659256                |  105 --
+ .../files/patch-src_addagent_main.c                |   18 +
+ .../files/patch-src_addagent_manage__agents.h      |    8 +
+ .../files/patch-src_client-agent_agentd.c          |   19 +
+ .../files/patch-src_client-agent_agentd.h          |   11 +
+ .../files/patch-src_client-agent_config.c          |   12 +
+ .../files/patch-src_os__net_os__net.c              |   10 +
+ security/ossec-hids/version.mk                     |    2 +-
+ security/py-scrypt/Makefile                        |    2 +-
+ security/py-scrypt/distinfo                        |    6 +-
+ security/vuxml/vuln.xml                            |   33 +
+ sysutils/bpytop/Makefile                           |    2 +-
+ sysutils/bpytop/distinfo                           |    6 +-
+ sysutils/mog/Makefile                              |    4 +-
+ sysutils/openzfs-kmod/Makefile                     |    4 +-
+ sysutils/openzfs-kmod/distinfo                     |    6 +-
+ sysutils/openzfs/Makefile                          |    4 +-
+ sysutils/openzfs/distinfo                          |    6 +-
+ sysutils/openzfs/pkg-plist                         |   48 +-
+ textproc/Makefile                                  |    1 +
+ textproc/bibclean/Makefile                         |   18 +
+ textproc/bibclean/distinfo                         |    3 +
+ textproc/bibclean/files/patch-Makefile.in          |   29 +
+ textproc/bibclean/pkg-descr                        |    6 +
+ textproc/bibclean/pkg-plist                        |    7 +
+ textproc/libxmlbird/Makefile                       |    2 +-
+ textproc/libxmlbird/distinfo                       |    6 +-
+ textproc/py-jsx-lexer/Makefile                     |    3 +-
+ textproc/py-pygments-25/Makefile                   |    2 +
+ textproc/py-pygments/Makefile                      |    4 +-
+ textproc/py-pygments/distinfo                      |    6 +-
+ textproc/py-rst2html5/Makefile                     |    4 +-
+ textproc/py-sphinx18/Makefile                      |    4 +-
+ textproc/rubygem-autoprefixer-rails/Makefile       |    2 +-
+ textproc/rubygem-autoprefixer-rails/distinfo       |    6 +-
+ www/ffsend/Makefile                                |  135 +-
+ www/ffsend/distinfo                                |  266 ++--
+ www/minio/Makefile                                 |   10 +-
+ www/minio/distinfo                                 |   18 +-
+ www/nextcloud-appointments/Makefile                |    2 +-
+ www/nextcloud-appointments/distinfo                |    6 +-
+ www/nginx/Makefile                                 |    1 -
+ www/p5-HTTP-CookieJar/Makefile                     |    2 +-
+ www/p5-HTTP-CookieJar/distinfo                     |    5 +-
+ www/py-WebError/Makefile                           |    3 +-
+ www/py-django-debug-toolbar/Makefile               |    7 +-
+ www/py-django-debug-toolbar/distinfo               |    6 +-
+ www/py-django-debug-toolbar/pkg-descr              |    1 -
+ www/py-grip/Makefile                               |    4 +-
+ www/py-pelican/Makefile                            |    3 +-
+ www/py-pysmartdl/Makefile                          |    2 +-
+ www/py-pysmartdl/distinfo                          |    6 +-
+ www/searx/Makefile                                 |    3 +-
+ www/trac-devel/Makefile                            |    3 +-
+ www/trac/Makefile                                  |    3 +-
+ www/w3m/Makefile                                   |    1 +
+ .../files/patch-scripts_w3mman_w3mman2html.cgi.in  |   11 +
+ x11-fonts/py-ufolint/Makefile                      |    4 +-
+ x11-fonts/py-ufolint/distinfo                      |    6 +-
+ x11-servers/xwayland-devel/Makefile                |    4 +-
+ x11-servers/xwayland-devel/distinfo                |    6 +-
+ x11-servers/xwayland-devel/pkg-message             |   16 -
+ x11/nwg-launchers/Makefile                         |    2 +-
+ x11/nwg-launchers/distinfo                         |    6 +-
+ x11/phosh/Makefile                                 |   17 +-
+ x11/phosh/distinfo                                 |    6 +-
+ x11/phosh/files/patch-no-libnm                     |   28 +-
+ x11/phosh/pkg-plist                                |   45 +
+ x11/radare-cutter/Makefile                         |    2 +-
+ x11/radare-cutter/distinfo                         |    6 +-
+ x11/radare-cutter/pkg-plist                        |    5 +-
+ x11/waybar/Makefile                                |    3 +-
+ x11/waybar/distinfo                                |    6 +-
+ 358 files changed, 3904 insertions(+), 1291 deletions(-)
+ create mode 100644 benchmarks/filebench/Makefile
+ create mode 100644 benchmarks/filebench/distinfo
+ create mode 100644 benchmarks/filebench/pkg-descr
+ create mode 100644 benchmarks/filebench/pkg-plist
+ create mode 100644 biology/freebayes/files/patch-SeqLib_bwa_rle.h
+ create mode 100644 biology/freebayes/files/patch-SeqLib_fermi-lite_rle.h
+ rename comms/lirc/files/{patch-daemons-Makefile.am => patch-daemons_Makefile.am} (86%)
+ create mode 100644 comms/lirc/files/patch-daemons_Makefile.in
+ delete mode 100644 comms/lirc/files/patch-daemons__Makefile.in
+ rename comms/lirc/files/{patch-daemons__dump_config.c => patch-daemons_dump__config.c} (87%)
+ rename comms/lirc/files/{patch-daemons__hw-types.c => patch-daemons_hw-types.c} (89%)
+ create mode 100644 comms/lirc/files/patch-daemons_hw__bte.c
+ create mode 100644 comms/lirc/files/patch-daemons_hw__creative.c
+ rename comms/lirc/files/{patch-daemons__hw_default.c => patch-daemons_hw__default.c} (97%)
+ rename comms/lirc/files/{patch-daemons__hw_devinput.c => patch-daemons_hw__devinput.c} (89%)
+ create mode 100644 comms/lirc/files/patch-daemons_hw__ea65.c
+ rename comms/lirc/files/{patch-daemons__hw_hiddev.c => patch-daemons_hw__hiddev.c} (92%)
+ create mode 100644 comms/lirc/files/patch-daemons_hw__irman.c
+ create mode 100644 comms/lirc/files/patch-daemons_hw__livedrive__common.c
+ create mode 100644 comms/lirc/files/patch-daemons_hw__silitek.c
+ rename comms/lirc/files/{patch-daemons__hw_srm7500libusb.c => patch-daemons_hw__srm7500libusb.c} (89%)
+ rename comms/lirc/files/{patch-daemons__ir_remote.c => patch-daemons_ir__remote.c} (70%)
+ rename comms/lirc/files/{patch-daemons__lircd.c => patch-daemons_lircd.c} (80%)
+ rename comms/lirc/files/{patch-daemons__lircmd.c => patch-daemons_lircmd.c} (74%)
+ rename comms/lirc/files/{patch-drivers__lirc.h => patch-drivers_lirc.h} (84%)
+ rename comms/lirc/files/{patch-tools__irsend.c => patch-tools_irsend.c} (60%)
+ create mode 100644 converters/wkhtmltopdf/files/patch-mkspecs_common_gcc-base.conf
+ create mode 100644 deskutils/dstask/Makefile
+ create mode 100644 deskutils/dstask/distinfo
+ create mode 100644 deskutils/dstask/pkg-descr
+ create mode 100644 deskutils/flameshot/files/patch-data_dbus_org.flameshot.Flameshot.service.in
+ delete mode 100644 deskutils/flameshot/files/patch-src_third-party_Qt-Color-Widgets_src_color__wheel.cpp
+ delete mode 100644 deskutils/flameshot/files/patch-src_tools_arrow_arrowtool.h
+ create mode 100644 devel/cpp2py/files/patch-c++_cpp2py_CMakeLists.txt
+ create mode 100644 devel/gn/files/patch-src_gn_version.h
+ delete mode 100644 devel/got/files/patch-lib_utf8.c
+ delete mode 100644 devel/got/files/patch-libexec_got-read-gotconfig_got-read-gotconfig.c
+ delete mode 100644 devel/got/files/patch-regress_cmdline_commit.sh
+ create mode 100644 devel/libruin/files/patch-src_scheme.h
+ create mode 100644 devel/libsml/files/patch-test_src_sml__boolean__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__buffer__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__file__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__get__profile__pack__request__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__list__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__message__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__number__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__octet__string__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__open__request__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__status__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__time__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__tree__test.c
+ create mode 100644 devel/libsml/files/patch-test_src_sml__value__test.c
+ create mode 100644 devel/ncc/files/patch-dbstree.C
+ delete mode 100644 devel/rubygem-tty-table/files/patch-gemspec
+ create mode 100644 emulators/virtualbox-ose/files/patch-src-VBox-Devices-Storage-DrvHostBase-freebsd.cpp
+ delete mode 100644 games/cdogs-sdl/files/patch-src_cdogs_enet_unix.c
+ create mode 100644 mail/getmail/Makefile
+ create mode 100644 mail/getmail/distinfo
+ create mode 100644 mail/getmail/files/patch-setup.py
+ create mode 100644 mail/getmail/pkg-descr
+ create mode 100644 mail/getmail/pkg-message
+ create mode 100644 mail/mailman3/Makefile
+ create mode 100644 mail/mailman3/distinfo
+ create mode 100644 mail/mailman3/files/mailman.in
+ create mode 100644 mail/mailman3/files/patch-src_mailman_config_mailman.cfg
+ create mode 100644 mail/mailman3/files/patch-src_mailman_config_mhonarc.cfg
+ create mode 100644 mail/mailman3/files/patch-src_mailman_config_postfix.cfg
+ create mode 100644 mail/mailman3/files/patch-src_mailman_config_schema.cfg
+ create mode 100644 mail/mailman3/files/patch-src_mailman_config_tests_test__configuration.py
+ create mode 100644 mail/mailman3/files/patch-src_mailman_core_initialize.py
+ create mode 100644 mail/mailman3/files/patch-src_mailman_rest_tests_test__systemconf.py
+ create mode 100644 mail/mailman3/files/patch-src_mailman_testing_mhonarc.cfg
+ create mode 100644 mail/mailman3/files/patch-src_mailman_tests_test__configfile.py
+ create mode 100644 mail/mailman3/pkg-descr
+ create mode 100644 mail/mailman3/pkg-message
+ create mode 100644 multimedia/x265/files/patch-source_encoder_api.cpp
+ create mode 100644 net/goreplay/files/patch-size_size.go
+ create mode 100644 print/pnm2ppa/files/patch-pnm2ppa.c
+ create mode 100644 print/pnm2ppa/files/patch-ppa__syslog.h
+ delete mode 100644 security/nss/files/patch-bug1659256
+ create mode 100644 security/ossec-hids-local/files/patch-src_addagent_main.c
+ create mode 100644 security/ossec-hids-local/files/patch-src_addagent_manage__agents.h
+ create mode 100644 security/ossec-hids-local/files/patch-src_client-agent_agentd.c
+ create mode 100644 security/ossec-hids-local/files/patch-src_client-agent_agentd.h
+ create mode 100644 security/ossec-hids-local/files/patch-src_client-agent_config.c
+ create mode 100644 security/ossec-hids-local/files/patch-src_os__net_os__net.c
+ create mode 100644 textproc/bibclean/Makefile
+ create mode 100644 textproc/bibclean/distinfo
+ create mode 100644 textproc/bibclean/files/patch-Makefile.in
+ create mode 100644 textproc/bibclean/pkg-descr
+ create mode 100644 textproc/bibclean/pkg-plist
+ create mode 100644 www/w3m/files/patch-scripts_w3mman_w3mman2html.cgi.in
+ delete mode 100644 x11-servers/xwayland-devel/pkg-message
+ create mode 100644 x11/phosh/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    36a3bf67197e..23b92f872f0a  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    22f7b74667b2..23b92f872f0a  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   36a3bf67197e..23b92f872f0a  master -> master
+==== END: master ====
