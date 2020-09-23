@@ -1,0 +1,319 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 92 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating ef525bb01be5..a3258090d6fa
+Fast-forward
+ audio/ardour6/Makefile                             |   2 +
+ audio/guitarix-lv2/Makefile                        |   4 +-
+ audio/guitarix-lv2/distinfo                        |   2 +-
+ databases/rocksdb/files/patch-clang10              | 145 +++++
+ deskutils/dstask/Makefile                          |   2 +-
+ deskutils/dstask/distinfo                          |   6 +-
+ deskutils/ultralist/Makefile                       |   2 +-
+ deskutils/ultralist/distinfo                       |   6 +-
+ deskutils/ultralist/files/patch-ultralist_app.go   |  11 +
+ devel/gindent/Makefile                             |  23 +-
+ devel/gindent/distinfo                             |   5 +-
+ devel/gindent/files/patch-doc_Makefile.in          |  17 -
+ devel/gindent/files/patch-src_args.c               |  61 +-
+ devel/gindent/files/patch-src_indent.h             |   4 +-
+ devel/gindent/files/patch-src_output.c             |   6 +-
+ devel/gindent/pkg-plist                            |  15 +-
+ devel/glib20/Makefile                              |  99 ++-
+ devel/glib20/distinfo                              |   6 +-
+ devel/glib20/files/extra-gobject_gdbscripts        |  22 -
+ devel/glib20/files/patch-config.h.in               |  12 -
+ devel/glib20/files/patch-configure                 |  16 -
+ .../glib20/files/patch-docs_reference_Makefile.in  |  11 -
+ devel/glib20/files/patch-gio_gthreadedresolver.c   |  12 -
+ .../glib20/files/patch-gio_kqueue-kqueue-missing.c |  93 ---
+ devel/glib20/files/patch-gio_kqueue_Makefile.in    |  87 ---
+ .../files/patch-gio_kqueue_gkqueuefilemonitor.c    | 463 --------------
+ .../glib20/files/patch-gio_kqueue_kqueue-helper.c  | 409 -------------
+ .../glib20/files/patch-gio_kqueue_kqueue-helper.h  |  40 --
+ devel/glib20/files/patch-glib_gconvert.c           |  14 -
+ devel/glib20/files/patch-glib_gfileutils.c         |  14 +
+ devel/glib20/files/patch-glib_gutils.c             |  29 +-
+ .../glib20/files/patch-glib_libcharset_Makefile.in |  11 -
+ devel/glib20/files/patch-keyfile                   | 668 ---------------------
+ devel/glib20/pkg-plist                             |   9 +-
+ devel/golangci-lint/Makefile                       |  36 +-
+ devel/golangci-lint/distinfo                       |  70 +--
+ devel/jna/Makefile                                 |   2 +-
+ devel/luv/Makefile                                 |   9 +-
+ devel/p5-CPAN-Perl-Releases/Makefile               |   2 +-
+ devel/p5-CPAN-Perl-Releases/distinfo               |   6 +-
+ devel/p5-FFI-Platypus/Makefile                     |   2 +-
+ devel/p5-FFI-Platypus/distinfo                     |   6 +-
+ devel/p5-Test2-Harness/Makefile                    |   2 +-
+ devel/p5-Test2-Harness/distinfo                    |   6 +-
+ devel/py-Jinja2/Makefile                           |   4 +-
+ devel/py-Jinja2/distinfo                           |   6 +-
+ devel/py-check-manifest/Makefile                   |   2 +-
+ devel/py-check-manifest/distinfo                   |   6 +-
+ devel/py-hypothesis/Makefile                       |   2 +-
+ devel/py-hypothesis/distinfo                       |   6 +-
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-cloudwatchevents/Makefile    |   2 +-
+ devel/rubygem-aws-sdk-cloudwatchevents/distinfo    |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-eventbridge/Makefile         |   2 +-
+ devel/rubygem-aws-sdk-eventbridge/distinfo         |   6 +-
+ devel/rubygem-aws-sdk-glue/Makefile                |   2 +-
+ devel/rubygem-aws-sdk-glue/distinfo                |   6 +-
+ devel/rubygem-aws-sdk-iotsitewise/Makefile         |   2 +-
+ devel/rubygem-aws-sdk-iotsitewise/distinfo         |   6 +-
+ devel/rubygem-aws-sdk-rds/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-rds/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-resourcegroups/Makefile      |   2 +-
+ devel/rubygem-aws-sdk-resourcegroups/distinfo      |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ devel/rubygem-fog-core/Makefile                    |   2 +-
+ devel/rubygem-fog-core/distinfo                    |   6 +-
+ devel/universal-ctags/Makefile                     |  57 +-
+ devel/universal-ctags/distinfo                     |   6 +-
+ dns/bind911/Makefile                               |   2 +-
+ dns/bind911/distinfo                               |   6 +-
+ dns/bind916/Makefile                               |   2 +-
+ dns/bind916/distinfo                               |   6 +-
+ dns/bind916/files/extrapatch-bind-min-override-ttl |  14 +-
+ dns/bind916/files/extrapatch-bind-tools            |   8 +-
+ dns/bind916/files/patch-configure                  |   8 +-
+ dns/dnstracer/Makefile                             |  17 +-
+ dns/dnstracer/distinfo                             |   5 +-
+ dns/dnstracer/files/patch-Makefile                 |  29 +
+ dns/dnstracer/files/patch-configure.in             |  15 -
+ editors/emacs/Makefile                             |   2 +-
+ editors/neovim/Makefile                            |   3 +-
+ games/freeminer/Makefile                           |   7 +-
+ games/minetest/Makefile                            |   6 +-
+ games/quake2max/files/patch-Makefile               |  15 +-
+ games/solarus/Makefile                             |   8 +
+ graphics/jasper/Makefile                           |   2 +-
+ graphics/jasper/distinfo                           |   6 +-
+ graphics/qgis/Makefile                             |  57 +-
+ graphics/qgis/distinfo                             |  12 +-
+ graphics/vv/Makefile                               |   9 +-
+ java/openjfx8-devel/Makefile                       |   2 +
+ lang/gcc11-devel/Makefile                          |   2 +-
+ lang/gcc11-devel/distinfo                          |   6 +-
+ lang/mmix/Makefile                                 |   1 +
+ lang/mmix/files/patch-mmix-config.w                |  11 +
+ lang/ratfor/Makefile                               |   7 +-
+ lang/ratfor/files/patch-Makefile                   |   9 +-
+ mail/mboxgrep/Makefile                             |   4 +-
+ mail/mboxgrep/files/patch-noredundancy             |  16 -
+ mail/mboxgrep/files/patch-src_Makefile.in          |  28 +
+ mail/mboxgrep/files/patch-src_main.c               |  23 +
+ mail/mboxgrep/files/patch-src_mboxgrep.h           |  35 ++
+ .../mboxgrep/files/{patch-md5 => patch-src_scan.c} |  86 +--
+ mail/mboxgrep/files/patch-src_scan.h               |  13 +
+ mail/rspamd-devel/Makefile                         |  15 +-
+ mail/rspamd/Makefile                               |  14 +-
+ mail/spamguard/Makefile                            |   2 +
+ mail/spamguard/files/patch-Makefile.am             |   6 +-
+ mail/spamguard/files/patch-config.h.in             |  19 +
+ mail/spamguard/files/patch-functions.c             |  31 +
+ mail/spamguard/files/patch-functions.h             |  13 +
+ mail/spamguard/files/patch-hash.c                  |  20 +
+ mail/spamguard/files/patch-hash.h                  |  20 +
+ mail/spamguard/files/patch-loadconfig.c            |  28 +
+ mail/spamguard/files/patch-loadconfig.h            |  42 ++
+ mail/spamguard/files/patch-main.c                  |  14 +
+ mail/spamguard/files/patch-parser.c                |  11 +
+ mail/spamguard/files/patch-qsheff__parser.c        |  23 +
+ math/flann/Makefile                                |   4 +
+ math/lrslib/Makefile                               |   2 +-
+ math/oleo/Makefile                                 |   5 +-
+ math/oleo/files/patch-src_posixtm.y                |  14 +-
+ misc/openmvg/Makefile                              |   4 +-
+ misc/wmjulia/Makefile                              |  11 +-
+ misc/wmjulia/files/patch-wmgeneral_wmgeneral.c     |  12 +
+ misc/wmjulia/files/patch-wmgeneral_wmgeneral.h     |  15 +
+ .../{patch-Makefile => patch-wmjulia_Makefile}     |  12 +-
+ net-im/dino/Makefile                               |   2 +
+ net-im/zoom/Makefile                               |   5 +-
+ net-im/zoom/distinfo                               |   6 +-
+ net-im/zoom/pkg-plist                              |  16 +-
+ net-mgmt/fastnetmon/Makefile                       |   6 +-
+ .../files/extra-patch-src_fast__library.h          |  11 +
+ ...atch-src_netflow__plugin_netflow__collector.cpp |  11 +
+ net-p2p/mldonkey/Makefile                          |   2 +-
+ net-p2p/monero-cli/Makefile                        |   2 +-
+ net/mrtparse/Makefile                              |  12 +-
+ net/mrtparse/distinfo                              |   6 +-
+ net/neatvnc/Makefile                               |   2 +-
+ net/neatvnc/distinfo                               |   6 +-
+ net/phpldapadmin/Makefile                          |  19 +-
+ net/phpldapadmin/distinfo                          |   5 +-
+ .../files/extra-patch-lib__PageRender.php          |  42 --
+ .../files/patch-config__config.php.example         |  20 -
+ net/phpldapadmin/files/patch-lib__PageRender.php   |  29 -
+ .../files/patch-lib__TemplateRender.php            |  11 -
+ net/phpldapadmin/files/patch-lib__ds_ldap.php      |  30 -
+ net/phpldapadmin/files/patch-lib__ds_ldap_pla.php  |  11 -
+ net/phpldapadmin/files/patch-lib__functions.php    | 124 ----
+ ports-mgmt/modules2tuple/Makefile                  |   2 +-
+ ports-mgmt/modules2tuple/distinfo                  |   6 +-
+ print/py-font-v/Makefile                           |   2 +-
+ print/py-font-v/distinfo                           |   6 +-
+ print/py-fonttools/Makefile                        |   2 +-
+ print/py-fonttools/distinfo                        |   6 +-
+ security/hashcat/Makefile                          |   2 +-
+ security/snort3/Makefile                           |   7 +-
+ sysutils/ah-tty/Makefile                           |   4 +-
+ sysutils/e2fsprogs/Makefile                        |  26 +-
+ sysutils/e2fsprogs/pkg-install                     |  59 +-
+ sysutils/e2fsprogs/pkg-message                     |   5 +
+ sysutils/e2fsprogs/pkg-plist                       |   2 +
+ sysutils/lttng-tools/Makefile                      |   2 +-
+ sysutils/reggae/Makefile                           |   7 +-
+ sysutils/reggae/distinfo                           |   6 +-
+ sysutils/reggae/files/reggae_pf.in                 |  39 ++
+ sysutils/reggae/pkg-plist                          |   3 +
+ sysutils/xen-tools/Makefile                        |   6 +-
+ sysutils/xen-tools/pkg-plist                       |   2 +-
+ textproc/csvq/Makefile                             |   8 +-
+ textproc/csvq/distinfo                             |  14 +-
+ textproc/rubygem-autoprefixer-rails/Makefile       |   2 +-
+ textproc/rubygem-autoprefixer-rails/distinfo       |   6 +-
+ textproc/ugrep/Makefile                            |   2 +-
+ textproc/ugrep/distinfo                            |   6 +-
+ www/Makefile                                       |   1 +
+ www/groupoffice/Makefile                           |   2 +-
+ www/groupoffice/distinfo                           |   6 +-
+ www/groupoffice/pkg-plist                          |   5 +-
+ www/p5-libwww/Makefile                             |   4 +-
+ www/p5-libwww/distinfo                             |   6 +-
+ www/py-cssselect/Makefile                          |   4 +-
+ www/py-cssselect/distinfo                          |   6 +-
+ www/py-django-contact-form/Makefile                |   4 +-
+ www/py-django-contact-form/distinfo                |   6 +-
+ www/py-django-debug-toolbar/Makefile               |   2 +-
+ www/py-django-debug-toolbar/distinfo               |   6 +-
+ www/py-fqdn/Makefile                               |  23 +
+ www/py-fqdn/distinfo                               |   3 +
+ www/py-fqdn/pkg-descr                              |   4 +
+ www/py-google-cloud-storage/Makefile               |   5 +-
+ www/py-google-cloud-storage/distinfo               |   6 +-
+ www/tomcat-devel/Makefile                          |   2 +-
+ www/tomcat-devel/distinfo                          |   6 +-
+ www/tomcat-devel/pkg-plist                         |  12 +-
+ www/tomcat7/Makefile                               |   2 +-
+ www/tomcat7/distinfo                               |   6 +-
+ www/tomcat7/pkg-plist                              |   9 -
+ www/tomcat85/Makefile                              |   2 +-
+ www/tomcat85/distinfo                              |   6 +-
+ www/tomcat85/pkg-plist                             |  12 +-
+ www/tomcat9/Makefile                               |   2 +-
+ www/tomcat9/distinfo                               |   6 +-
+ www/tomcat9/pkg-plist                              |  12 +-
+ www/trafficserver/Makefile                         |   8 +-
+ www/trafficserver/pkg-plist                        |   2 +-
+ x11-themes/plata-theme/Makefile                    |   2 +
+ 215 files changed, 1395 insertions(+), 2868 deletions(-)
+ create mode 100644 databases/rocksdb/files/patch-clang10
+ create mode 100644 deskutils/ultralist/files/patch-ultralist_app.go
+ delete mode 100644 devel/gindent/files/patch-doc_Makefile.in
+ delete mode 100644 devel/glib20/files/extra-gobject_gdbscripts
+ delete mode 100644 devel/glib20/files/patch-config.h.in
+ delete mode 100644 devel/glib20/files/patch-configure
+ delete mode 100644 devel/glib20/files/patch-docs_reference_Makefile.in
+ delete mode 100644 devel/glib20/files/patch-gio_gthreadedresolver.c
+ delete mode 100644 devel/glib20/files/patch-gio_kqueue-kqueue-missing.c
+ delete mode 100644 devel/glib20/files/patch-gio_kqueue_Makefile.in
+ delete mode 100644 devel/glib20/files/patch-gio_kqueue_gkqueuefilemonitor.c
+ delete mode 100644 devel/glib20/files/patch-gio_kqueue_kqueue-helper.c
+ delete mode 100644 devel/glib20/files/patch-gio_kqueue_kqueue-helper.h
+ delete mode 100644 devel/glib20/files/patch-glib_gconvert.c
+ create mode 100644 devel/glib20/files/patch-glib_gfileutils.c
+ delete mode 100644 devel/glib20/files/patch-glib_libcharset_Makefile.in
+ delete mode 100644 devel/glib20/files/patch-keyfile
+ create mode 100644 dns/dnstracer/files/patch-Makefile
+ delete mode 100644 dns/dnstracer/files/patch-configure.in
+ create mode 100644 lang/mmix/files/patch-mmix-config.w
+ delete mode 100644 mail/mboxgrep/files/patch-noredundancy
+ create mode 100644 mail/mboxgrep/files/patch-src_Makefile.in
+ create mode 100644 mail/mboxgrep/files/patch-src_main.c
+ create mode 100644 mail/mboxgrep/files/patch-src_mboxgrep.h
+ rename mail/mboxgrep/files/{patch-md5 => patch-src_scan.c} (65%)
+ create mode 100644 mail/mboxgrep/files/patch-src_scan.h
+ create mode 100644 mail/spamguard/files/patch-config.h.in
+ create mode 100644 mail/spamguard/files/patch-functions.c
+ create mode 100644 mail/spamguard/files/patch-functions.h
+ create mode 100644 mail/spamguard/files/patch-hash.c
+ create mode 100644 mail/spamguard/files/patch-hash.h
+ create mode 100644 mail/spamguard/files/patch-loadconfig.c
+ create mode 100644 mail/spamguard/files/patch-loadconfig.h
+ create mode 100644 mail/spamguard/files/patch-main.c
+ create mode 100644 mail/spamguard/files/patch-parser.c
+ create mode 100644 mail/spamguard/files/patch-qsheff__parser.c
+ create mode 100644 misc/wmjulia/files/patch-wmgeneral_wmgeneral.c
+ create mode 100644 misc/wmjulia/files/patch-wmgeneral_wmgeneral.h
+ rename misc/wmjulia/files/{patch-Makefile => patch-wmjulia_Makefile} (90%)
+ create mode 100644 net-mgmt/fastnetmon/files/extra-patch-src_fast__library.h
+ create mode 100644 net-mgmt/fastnetmon/files/extra-patch-src_netflow__plugin_netflow__collector.cpp
+ delete mode 100644 net/phpldapadmin/files/extra-patch-lib__PageRender.php
+ delete mode 100644 net/phpldapadmin/files/patch-config__config.php.example
+ delete mode 100644 net/phpldapadmin/files/patch-lib__PageRender.php
+ delete mode 100644 net/phpldapadmin/files/patch-lib__TemplateRender.php
+ delete mode 100644 net/phpldapadmin/files/patch-lib__ds_ldap.php
+ delete mode 100644 net/phpldapadmin/files/patch-lib__ds_ldap_pla.php
+ delete mode 100644 net/phpldapadmin/files/patch-lib__functions.php
+ create mode 100644 sysutils/reggae/files/reggae_pf.in
+ create mode 100644 www/py-fqdn/Makefile
+ create mode 100644 www/py-fqdn/distinfo
+ create mode 100644 www/py-fqdn/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
