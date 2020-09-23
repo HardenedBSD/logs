@@ -1,0 +1,160 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating bf46cee7e059..051d253d8b80
+Fast-forward
+ Makefile                                 |   2 +-
+ Makefile.inc1                            |   1 +
+ bin/cp/Makefile                          |   5 +
+ bin/cp/tests/Makefile                    |   7 +
+ bin/cp/tests/cp_test.sh                  |  64 +++++++
+ etc/mtree/BSD.tests.dist                 |   2 +
+ lib/csu/Makefile                         |   4 +-
+ lib/libc/Makefile                        |   4 +-
+ lib/libc/powerpc/softfloat/powerpc-gcc.h |   4 +
+ lib/libc/powerpc64/arith.h               |   5 +
+ lib/libc/powerpc64/string/Makefile.inc   |  11 +-
+ lib/libc/sys/access.2                    |   9 +-
+ lib/libc/sys/chflags.2                   |   9 +-
+ lib/libc/sys/chmod.2                     |   9 +-
+ lib/libc/sys/chown.2                     |   9 +-
+ lib/libc/sys/fhlink.2                    |   9 +-
+ lib/libc/sys/getfh.2                     |   9 +-
+ lib/libc/sys/link.2                      |   9 +-
+ lib/libc/sys/open.2                      |  38 +++-
+ lib/libc/sys/stat.2                      |   9 +-
+ lib/libc/sys/unlink.2                    |   9 +-
+ lib/libc/sys/utimensat.2                 |   9 +-
+ lib/libkvm/kvm_powerpc64.c               |  70 +++++--
+ lib/libkvm/kvm_private.h                 |  10 +
+ lib/libsqlite3/Makefile                  |   4 +
+ libexec/rtld-elf/Makefile                |   4 +-
+ libexec/rtld-elf/rtld-libc/Makefile.inc  |   4 +-
+ release/powerpc/powerpc64le.conf         |  10 +
+ share/man/man4/devctl.4                  |  18 +-
+ share/man/man7/arch.7                    |  10 +-
+ share/man/man9/Makefile                  |   3 +
+ share/man/man9/devctl_notify.9           |  78 ++++++++
+ share/man/man9/devctl_process_running.9  |  60 ++++++
+ share/man/man9/devctl_safe_quote_sb.9    |  57 ++++++
+ share/mk/bsd.cpu.mk                      |   2 +-
+ share/mk/bsd.endian.mk                   |   1 +
+ share/mk/local.meta.sys.mk               |   2 +-
+ share/mk/src.opts.mk                     |   6 +-
+ share/mk/sys.mk                          |   2 +-
+ stand/defs.mk                            |   8 +-
+ stand/ficl/ficl.h                        |   2 +-
+ stand/i386/zfsboot/Makefile              |   2 +-
+ stand/libsa/Makefile                     |   2 +-
+ sys/amd64/amd64/pmap.c                   |  77 +++-----
+ sys/conf/files.powerpc                   |  44 ++---
+ sys/conf/kern.mk                         |   3 +-
+ sys/conf/ldscript.powerpc64le            | 180 ++++++++++++++++++
+ sys/conf/options.powerpc                 |   2 +
+ sys/kern/vfs_lookup.c                    |  41 +++-
+ sys/kern/vfs_syscalls.c                  |  99 ++++++----
+ sys/kern/vfs_vnops.c                     |  39 ++--
+ sys/modules/Makefile                     |   2 +-
+ sys/powerpc/aim/aim_machdep.c            |   6 +
+ sys/powerpc/aim/locore64.S               |   6 +-
+ sys/powerpc/aim/moea64_native.c          |  42 ++++-
+ sys/powerpc/aim/trap_subr64.S            |  13 ++
+ sys/powerpc/conf/GENERIC64               |   1 +
+ sys/powerpc/conf/GENERIC64LE             | 253 +++++++++++++++++++++++++
+ sys/powerpc/conf/NOTES                   |   1 +
+ sys/powerpc/include/asm.h                |   3 +
+ sys/powerpc/include/param.h              |   4 +
+ sys/powerpc/include/spr.h                |   1 +
+ sys/powerpc/ofw/ofw_machdep.c            |   6 +-
+ sys/powerpc/ofw/ofw_real.c               | 308 ++++++++++++++++---------------
+ sys/powerpc/ofw/ofwcall64.S              |  30 +++
+ sys/powerpc/powernv/opal.c               |   2 +-
+ sys/powerpc/powernv/opal_console.c       |  10 +-
+ sys/powerpc/powernv/opal_dev.c           |   2 +-
+ sys/powerpc/powernv/opal_hmi.c           |   2 +-
+ sys/powerpc/powernv/opal_pci.c           |   6 +-
+ sys/powerpc/powernv/opalcall.S           |  30 +++
+ sys/powerpc/powernv/platform_powernv.c   |   4 +
+ sys/powerpc/powernv/xive.c               |  13 ++
+ sys/powerpc/powerpc/cpu_subr64.S         |   4 +
+ sys/powerpc/pseries/phyp-hvcall.h        |   7 +
+ sys/powerpc/pseries/phyp_console.c       |  10 +-
+ sys/powerpc/pseries/phyp_vscsi.c         |  71 +++----
+ sys/powerpc/pseries/platform_chrp.c      |  24 ++-
+ sys/sys/fcntl.h                          |   6 +
+ sys/sys/namei.h                          |   4 +-
+ sys/sys/param.h                          |   2 +-
+ usr.sbin/ntp/config.h                    |   8 +-
+ 82 files changed, 1556 insertions(+), 402 deletions(-)
+ create mode 100644 bin/cp/tests/Makefile
+ create mode 100755 bin/cp/tests/cp_test.sh
+ create mode 100644 release/powerpc/powerpc64le.conf
+ create mode 100644 share/man/man9/devctl_notify.9
+ create mode 100644 share/man/man9/devctl_process_running.9
+ create mode 100644 share/man/man9/devctl_safe_quote_sb.9
+ create mode 100644 sys/conf/ldscript.powerpc64le
+ create mode 100644 sys/powerpc/conf/GENERIC64LE
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    bf46cee7e059..051d253d8b80  freebsd/current/master -> freebsd/current/master        
+remote:    984b12520102..8d330c9c79b8  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   bf46cee7e059..051d253d8b80  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
