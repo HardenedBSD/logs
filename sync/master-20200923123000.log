@@ -47,3 +47,305 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/phpldapadmin/files/patch-lib__functions.php
+Removing net/phpldapadmin/files/patch-lib__ds_ldap_pla.php
+Removing net/phpldapadmin/files/patch-lib__ds_ldap.php
+Removing net/phpldapadmin/files/patch-lib__TemplateRender.php
+Removing net/phpldapadmin/files/patch-lib__PageRender.php
+Removing net/phpldapadmin/files/patch-config__config.php.example
+Removing net/phpldapadmin/files/extra-patch-lib__PageRender.php
+Auto-merging math/oleo/Makefile
+Removing mail/mboxgrep/files/patch-noredundancy
+Removing dns/dnstracer/files/patch-configure.in
+Auto-merging dns/dnstracer/Makefile
+CONFLICT (content): Merge conflict in dns/dnstracer/Makefile
+Auto-merging dns/bind911/Makefile
+Removing devel/glib20/files/patch-keyfile
+Removing devel/glib20/files/patch-glib_libcharset_Makefile.in
+Removing devel/glib20/files/patch-glib_gconvert.c
+Removing devel/glib20/files/patch-gio_kqueue_kqueue-helper.h
+Removing devel/glib20/files/patch-gio_kqueue_kqueue-helper.c
+Removing devel/glib20/files/patch-gio_kqueue_gkqueuefilemonitor.c
+Removing devel/glib20/files/patch-gio_kqueue_Makefile.in
+Removing devel/glib20/files/patch-gio_kqueue-kqueue-missing.c
+Removing devel/glib20/files/patch-gio_gthreadedresolver.c
+Removing devel/glib20/files/patch-docs_reference_Makefile.in
+Removing devel/glib20/files/patch-configure
+Removing devel/glib20/files/patch-config.h.in
+Removing devel/glib20/files/extra-gobject_gdbscripts
+Removing devel/gindent/files/patch-doc_Makefile.in
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc dns/dnstracer/Makefile
+index b258c814dd74,c6ebbadd0963..000000000000
+--- a/dns/dnstracer/Makefile
++++ b/dns/dnstracer/Makefile
+@@@ -13,16 -12,12 +12,17 @@@ COMMENT=	Trace a chain of DNS servers t
+  LICENSE=	BSD2CLAUSE
+  LICENSE_FILE=	${WRKSRC}/LICENSE
+  
+- USES=		gmake autoreconf
+- GNU_CONFIGURE=	yes
++ USES=		perl5 tar:bz2
++ USE_PERL5=	build
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+++=======
++ MAKE_ARGS=	VERSION="${PORTVERSION}"
++ WRKSRC=		${WRKDIR}/${PORTNAME}
+++>>>>>>> freebsd/master
+  PLIST_FILES=	bin/dnstracer \
+- 		man/man8/dnstracer.8.gz
+- 
+- OPTIONS_DEFINE=		IPV6
+- 
+- IPV6_CONFIGURE_ENABLE=	ipv6
++ 		share/man/man8/dnstracer.8.gz
+  
+  .include <bsd.port.mk>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/ardour6/Makefile
+	modified:   audio/guitarix-lv2/Makefile
+	modified:   audio/guitarix-lv2/distinfo
+	new file:   databases/rocksdb/files/patch-clang10
+	modified:   deskutils/dstask/Makefile
+	modified:   deskutils/dstask/distinfo
+	modified:   deskutils/ultralist/Makefile
+	modified:   deskutils/ultralist/distinfo
+	new file:   deskutils/ultralist/files/patch-ultralist_app.go
+	modified:   devel/gindent/Makefile
+	modified:   devel/gindent/distinfo
+	deleted:    devel/gindent/files/patch-doc_Makefile.in
+	modified:   devel/gindent/files/patch-src_args.c
+	modified:   devel/gindent/files/patch-src_indent.h
+	modified:   devel/gindent/files/patch-src_output.c
+	modified:   devel/gindent/pkg-plist
+	modified:   devel/glib20/Makefile
+	modified:   devel/glib20/distinfo
+	deleted:    devel/glib20/files/extra-gobject_gdbscripts
+	deleted:    devel/glib20/files/patch-config.h.in
+	deleted:    devel/glib20/files/patch-configure
+	deleted:    devel/glib20/files/patch-docs_reference_Makefile.in
+	deleted:    devel/glib20/files/patch-gio_gthreadedresolver.c
+	deleted:    devel/glib20/files/patch-gio_kqueue-kqueue-missing.c
+	deleted:    devel/glib20/files/patch-gio_kqueue_Makefile.in
+	deleted:    devel/glib20/files/patch-gio_kqueue_gkqueuefilemonitor.c
+	deleted:    devel/glib20/files/patch-gio_kqueue_kqueue-helper.c
+	deleted:    devel/glib20/files/patch-gio_kqueue_kqueue-helper.h
+	deleted:    devel/glib20/files/patch-glib_gconvert.c
+	new file:   devel/glib20/files/patch-glib_gfileutils.c
+	modified:   devel/glib20/files/patch-glib_gutils.c
+	deleted:    devel/glib20/files/patch-glib_libcharset_Makefile.in
+	deleted:    devel/glib20/files/patch-keyfile
+	modified:   devel/glib20/pkg-plist
+	modified:   devel/golangci-lint/Makefile
+	modified:   devel/golangci-lint/distinfo
+	modified:   devel/luv/Makefile
+	modified:   devel/p5-CPAN-Perl-Releases/Makefile
+	modified:   devel/p5-CPAN-Perl-Releases/distinfo
+	modified:   devel/p5-FFI-Platypus/Makefile
+	modified:   devel/p5-FFI-Platypus/distinfo
+	modified:   devel/p5-Test2-Harness/Makefile
+	modified:   devel/p5-Test2-Harness/distinfo
+	modified:   devel/py-Jinja2/Makefile
+	modified:   devel/py-Jinja2/distinfo
+	modified:   devel/py-check-manifest/Makefile
+	modified:   devel/py-check-manifest/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-cloudwatchevents/Makefile
+	modified:   devel/rubygem-aws-sdk-cloudwatchevents/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-eventbridge/Makefile
+	modified:   devel/rubygem-aws-sdk-eventbridge/distinfo
+	modified:   devel/rubygem-aws-sdk-glue/Makefile
+	modified:   devel/rubygem-aws-sdk-glue/distinfo
+	modified:   devel/rubygem-aws-sdk-iotsitewise/Makefile
+	modified:   devel/rubygem-aws-sdk-iotsitewise/distinfo
+	modified:   devel/rubygem-aws-sdk-rds/Makefile
+	modified:   devel/rubygem-aws-sdk-rds/distinfo
+	modified:   devel/rubygem-aws-sdk-resourcegroups/Makefile
+	modified:   devel/rubygem-aws-sdk-resourcegroups/distinfo
+	modified:   devel/rubygem-aws-sdk-resourcegroupstaggingapi/Makefile
+	modified:   devel/rubygem-aws-sdk-resourcegroupstaggingapi/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-fog-core/Makefile
+	modified:   devel/rubygem-fog-core/distinfo
+	modified:   devel/universal-ctags/Makefile
+	modified:   devel/universal-ctags/distinfo
+	modified:   dns/bind911/Makefile
+	modified:   dns/bind911/distinfo
+	modified:   dns/bind916/Makefile
+	modified:   dns/bind916/distinfo
+	modified:   dns/bind916/files/extrapatch-bind-min-override-ttl
+	modified:   dns/bind916/files/extrapatch-bind-tools
+	modified:   dns/bind916/files/patch-configure
+	modified:   dns/dnstracer/distinfo
+	new file:   dns/dnstracer/files/patch-Makefile
+	deleted:    dns/dnstracer/files/patch-configure.in
+	modified:   editors/neovim/Makefile
+	modified:   games/freeminer/Makefile
+	modified:   games/minetest/Makefile
+	modified:   games/solarus/Makefile
+	modified:   graphics/jasper/Makefile
+	modified:   graphics/jasper/distinfo
+	modified:   graphics/qgis/Makefile
+	modified:   graphics/qgis/distinfo
+	modified:   java/openjfx8-devel/Makefile
+	modified:   lang/gcc11-devel/Makefile
+	modified:   lang/gcc11-devel/distinfo
+	modified:   lang/mmix/Makefile
+	new file:   lang/mmix/files/patch-mmix-config.w
+	modified:   lang/ratfor/Makefile
+	modified:   lang/ratfor/files/patch-Makefile
+	modified:   mail/mboxgrep/Makefile
+	deleted:    mail/mboxgrep/files/patch-noredundancy
+	new file:   mail/mboxgrep/files/patch-src_Makefile.in
+	new file:   mail/mboxgrep/files/patch-src_main.c
+	new file:   mail/mboxgrep/files/patch-src_mboxgrep.h
+	renamed:    mail/mboxgrep/files/patch-md5 -> mail/mboxgrep/files/patch-src_scan.c
+	new file:   mail/mboxgrep/files/patch-src_scan.h
+	modified:   mail/spamguard/Makefile
+	modified:   mail/spamguard/files/patch-Makefile.am
+	new file:   mail/spamguard/files/patch-config.h.in
+	new file:   mail/spamguard/files/patch-functions.c
+	new file:   mail/spamguard/files/patch-functions.h
+	new file:   mail/spamguard/files/patch-hash.c
+	new file:   mail/spamguard/files/patch-hash.h
+	new file:   mail/spamguard/files/patch-loadconfig.c
+	new file:   mail/spamguard/files/patch-loadconfig.h
+	new file:   mail/spamguard/files/patch-main.c
+	new file:   mail/spamguard/files/patch-parser.c
+	new file:   mail/spamguard/files/patch-qsheff__parser.c
+	modified:   math/lrslib/Makefile
+	modified:   math/oleo/Makefile
+	modified:   math/oleo/files/patch-src_posixtm.y
+	modified:   misc/wmjulia/Makefile
+	new file:   misc/wmjulia/files/patch-wmgeneral_wmgeneral.c
+	new file:   misc/wmjulia/files/patch-wmgeneral_wmgeneral.h
+	renamed:    misc/wmjulia/files/patch-Makefile -> misc/wmjulia/files/patch-wmjulia_Makefile
+	modified:   net-im/dino/Makefile
+	modified:   net/mrtparse/Makefile
+	modified:   net/mrtparse/distinfo
+	modified:   net/phpldapadmin/Makefile
+	modified:   net/phpldapadmin/distinfo
+	deleted:    net/phpldapadmin/files/extra-patch-lib__PageRender.php
+	deleted:    net/phpldapadmin/files/patch-config__config.php.example
+	deleted:    net/phpldapadmin/files/patch-lib__PageRender.php
+	deleted:    net/phpldapadmin/files/patch-lib__TemplateRender.php
+	deleted:    net/phpldapadmin/files/patch-lib__ds_ldap.php
+	deleted:    net/phpldapadmin/files/patch-lib__ds_ldap_pla.php
+	deleted:    net/phpldapadmin/files/patch-lib__functions.php
+	modified:   ports-mgmt/modules2tuple/Makefile
+	modified:   ports-mgmt/modules2tuple/distinfo
+	modified:   print/py-font-v/Makefile
+	modified:   print/py-font-v/distinfo
+	modified:   print/py-fonttools/Makefile
+	modified:   print/py-fonttools/distinfo
+	modified:   sysutils/ah-tty/Makefile
+	modified:   sysutils/e2fsprogs/Makefile
+	modified:   sysutils/e2fsprogs/pkg-install
+	modified:   sysutils/e2fsprogs/pkg-message
+	modified:   sysutils/e2fsprogs/pkg-plist
+	modified:   sysutils/reggae/Makefile
+	modified:   sysutils/reggae/distinfo
+	new file:   sysutils/reggae/files/reggae_pf.in
+	modified:   sysutils/reggae/pkg-plist
+	modified:   sysutils/xen-tools/Makefile
+	modified:   sysutils/xen-tools/pkg-plist
+	modified:   textproc/csvq/Makefile
+	modified:   textproc/csvq/distinfo
+	modified:   textproc/rubygem-autoprefixer-rails/Makefile
+	modified:   textproc/rubygem-autoprefixer-rails/distinfo
+	modified:   textproc/ugrep/Makefile
+	modified:   textproc/ugrep/distinfo
+	modified:   www/Makefile
+	modified:   www/groupoffice/Makefile
+	modified:   www/groupoffice/distinfo
+	modified:   www/groupoffice/pkg-plist
+	modified:   www/p5-libwww/Makefile
+	modified:   www/p5-libwww/distinfo
+	modified:   www/py-cssselect/Makefile
+	modified:   www/py-cssselect/distinfo
+	modified:   www/py-django-contact-form/Makefile
+	modified:   www/py-django-contact-form/distinfo
+	modified:   www/py-django-debug-toolbar/Makefile
+	modified:   www/py-django-debug-toolbar/distinfo
+	new file:   www/py-fqdn/Makefile
+	new file:   www/py-fqdn/distinfo
+	new file:   www/py-fqdn/pkg-descr
+	modified:   www/py-google-cloud-storage/Makefile
+	modified:   www/py-google-cloud-storage/distinfo
+	modified:   x11-themes/plata-theme/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   dns/dnstracer/Makefile
+
+
+It took 3.03 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ef525bb01be5 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.15 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ef525bb01be5 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
