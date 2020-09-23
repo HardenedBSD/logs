@@ -1,0 +1,196 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/modules/Makefile
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/conf/kern.mk
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging stand/libsa/Makefile
+CONFLICT (content): Merge conflict in stand/libsa/Makefile
+Auto-merging stand/i386/zfsboot/Makefile
+CONFLICT (content): Merge conflict in stand/i386/zfsboot/Makefile
+Auto-merging stand/defs.mk
+Auto-merging share/mk/sys.mk
+Auto-merging share/mk/src.opts.mk
+Auto-merging libexec/rtld-elf/rtld-libc/Makefile.inc
+Auto-merging libexec/rtld-elf/Makefile
+Auto-merging Makefile.inc1
+Auto-merging Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc stand/i386/zfsboot/Makefile
+index 4b4e8a0b2321,7e362b43a39c..000000000000
+--- a/stand/i386/zfsboot/Makefile
++++ b/stand/i386/zfsboot/Makefile
+@@@ -81,7 -81,7 +81,11 @@@ zfsboot.ld: zfsboot.ldr zfsboot.bin ${B
+  	    -o ${.TARGET} -P 1 zfsboot.bin
+  
+  zfsboot.ldr:
+++<<<<<<< HEAD
+ +	touch ${.TARGET}
+++=======
++ 	:> ${.TARGET}
+++>>>>>>> freebsd/current/master
+  
+  zfsboot.bin: zfsboot.out
+  	${OBJCOPY} -S -O binary zfsboot.out ${.TARGET}
+diff --cc stand/libsa/Makefile
+index fb2a9dc23e60,63cd46a9c54e..000000000000
+--- a/stand/libsa/Makefile
++++ b/stand/libsa/Makefile
+@@@ -122,7 -122,7 +122,11 @@@ beforedepend
+  	ln -sf ${SRCTOP}/include/arpa/inet.h arpa/inet.h; \
+  	ln -sf ${SRCTOP}/include/arpa/tftp.h arpa/tftp.h; \
+  	for i in _time.h _strings.h _string.h; do \
+++<<<<<<< HEAD
+ +		[ -f xlocale/$$i ] || touch xlocale/$$i; \
+++=======
++ 		[ -f xlocale/$$i ] || :> xlocale/$$i; \
+++>>>>>>> freebsd/current/master
+  	done; \
+  	for i in ${STAND_H_INC}; do \
+  		ln -sf ${SASRC}/stand.h $$i; \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile
+	modified:   Makefile.inc1
+	modified:   bin/cp/Makefile
+	new file:   bin/cp/tests/Makefile
+	new file:   bin/cp/tests/cp_test.sh
+	modified:   etc/mtree/BSD.tests.dist
+	modified:   lib/csu/Makefile
+	modified:   lib/libc/Makefile
+	modified:   lib/libc/powerpc/softfloat/powerpc-gcc.h
+	modified:   lib/libc/powerpc64/arith.h
+	modified:   lib/libc/powerpc64/string/Makefile.inc
+	modified:   lib/libc/sys/access.2
+	modified:   lib/libc/sys/chflags.2
+	modified:   lib/libc/sys/chmod.2
+	modified:   lib/libc/sys/chown.2
+	modified:   lib/libc/sys/fhlink.2
+	modified:   lib/libc/sys/getfh.2
+	modified:   lib/libc/sys/link.2
+	modified:   lib/libc/sys/open.2
+	modified:   lib/libc/sys/stat.2
+	modified:   lib/libc/sys/unlink.2
+	modified:   lib/libc/sys/utimensat.2
+	modified:   lib/libkvm/kvm_powerpc64.c
+	modified:   lib/libkvm/kvm_private.h
+	modified:   lib/libsqlite3/Makefile
+	modified:   libexec/rtld-elf/Makefile
+	modified:   libexec/rtld-elf/rtld-libc/Makefile.inc
+	new file:   release/powerpc/powerpc64le.conf
+	modified:   share/man/man4/devctl.4
+	modified:   share/man/man7/arch.7
+	modified:   share/man/man9/Makefile
+	new file:   share/man/man9/devctl_notify.9
+	new file:   share/man/man9/devctl_process_running.9
+	new file:   share/man/man9/devctl_safe_quote_sb.9
+	modified:   share/mk/bsd.cpu.mk
+	modified:   share/mk/bsd.endian.mk
+	modified:   share/mk/local.meta.sys.mk
+	modified:   share/mk/src.opts.mk
+	modified:   share/mk/sys.mk
+	modified:   stand/defs.mk
+	modified:   stand/ficl/ficl.h
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/conf/files.powerpc
+	modified:   sys/conf/kern.mk
+	new file:   sys/conf/ldscript.powerpc64le
+	modified:   sys/conf/options.powerpc
+	modified:   sys/kern/vfs_lookup.c
+	modified:   sys/kern/vfs_syscalls.c
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/modules/Makefile
+	modified:   sys/powerpc/aim/aim_machdep.c
+	modified:   sys/powerpc/aim/locore64.S
+	modified:   sys/powerpc/aim/moea64_native.c
+	modified:   sys/powerpc/aim/trap_subr64.S
+	modified:   sys/powerpc/conf/GENERIC64
+	new file:   sys/powerpc/conf/GENERIC64LE
+	modified:   sys/powerpc/conf/NOTES
+	modified:   sys/powerpc/include/asm.h
+	modified:   sys/powerpc/include/param.h
+	modified:   sys/powerpc/include/spr.h
+	modified:   sys/powerpc/ofw/ofw_machdep.c
+	modified:   sys/powerpc/ofw/ofw_real.c
+	modified:   sys/powerpc/ofw/ofwcall64.S
+	modified:   sys/powerpc/powernv/opal.c
+	modified:   sys/powerpc/powernv/opal_console.c
+	modified:   sys/powerpc/powernv/opal_dev.c
+	modified:   sys/powerpc/powernv/opal_hmi.c
+	modified:   sys/powerpc/powernv/opal_pci.c
+	modified:   sys/powerpc/powernv/opalcall.S
+	modified:   sys/powerpc/powernv/platform_powernv.c
+	modified:   sys/powerpc/powernv/xive.c
+	modified:   sys/powerpc/powerpc/cpu_subr64.S
+	modified:   sys/powerpc/pseries/phyp-hvcall.h
+	modified:   sys/powerpc/pseries/phyp_console.c
+	modified:   sys/powerpc/pseries/phyp_vscsi.c
+	modified:   sys/powerpc/pseries/platform_chrp.c
+	modified:   sys/sys/fcntl.h
+	modified:   sys/sys/namei.h
+	modified:   sys/sys/param.h
+	modified:   usr.sbin/ntp/config.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   stand/i386/zfsboot/Makefile
+	both modified:   stand/libsa/Makefile
+
+HEAD is now at a6465ce9308c Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a6465ce9308c Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
