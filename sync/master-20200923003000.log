@@ -47,3 +47,463 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/sudo/Makefile
+Auto-merging security/Makefile
+Removing science/crf++/files/patch-feature__index.cpp
+Auto-merging science/crf++/Makefile
+CONFLICT (content): Merge conflict in science/crf++/Makefile
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/Makefile
+Removing net/openmdns/files/patch-compat
+Auto-merging net/honeyd/Makefile
+Auto-merging net/frr7/Makefile
+Removing deskutils/cal/files/patch-makefile.unx
+Removing deskutils/cal/files/patch-cal.c
+Removing deskutils/cal/files/patch-cal.1
+Removing chinese/librime/files/patch-boost-1.69
+Removing chinese/librime/files/patch-CMakeLists.txt
+Removing cad/calculix/files/patch-cgx__2.17_src_pickFunktions.c
+Auto-merging cad/calculix/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/Makefile
+index 1f307a8f153c,a0a393c33c34..000000000000
+--- a/ports-mgmt/pkg/Makefile
++++ b/ports-mgmt/pkg/Makefile
+@@@ -1,8 -1,7 +1,12 @@@
+  # $FreeBSD$
+  
+  PORTNAME=	pkg
+++<<<<<<< HEAD
+ +DISTVERSION=	1.15
+ +PORTREVISION=	1
+++=======
++ DISTVERSION=	1.15.6
+++>>>>>>> freebsd/master
+  _PKG_VERSION=	${DISTVERSION}
+  CATEGORIES=	ports-mgmt
+  #MASTER_SITES=	\
+diff --cc ports-mgmt/pkg/distinfo
+index 636c7af1c34e,a2d3df99b3e4..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1600185651
+ +SHA256 (HardenedBSD-pkg-cec7452832a0d52a2cb9f34fcc8c7beb187fd9cc_GL0.tar.gz) = e4190c05220ef1185a5ed6b248288aa0fb292bd82556c4e5dd306dc5c95248a3
+ +SIZE (HardenedBSD-pkg-cec7452832a0d52a2cb9f34fcc8c7beb187fd9cc_GL0.tar.gz) = 3824305
+++=======
++ TIMESTAMP = 1600783979
++ SHA256 (freebsd-pkg-1.15.6_GH0.tar.gz) = 4eee06572571f98505dae106bfaf49620bdc5a0a10a121fb61323da117287034
++ SIZE (freebsd-pkg-1.15.6_GH0.tar.gz) = 3823359
+++>>>>>>> freebsd/master
+diff --cc science/crf++/Makefile
+index 8bc31cf0d1c8,4c2bf27f4037..000000000000
+--- a/science/crf++/Makefile
++++ b/science/crf++/Makefile
+@@@ -11,11 -14,26 +14,33 @@@ PATCHFILES=	15.patch:-p1:pr 
+  MAINTAINER=	ports@FreeBSD.org
+  COMMENT=	Yet Another CRF toolkit
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +GNU_CONFIGURE=	yes
+ +INSTALL_TARGET=	install-strip
+++=======
++ LICENSE=	BSD3CLAUSE LGPL21+
++ LICENSE_COMB=	dual
++ LICENS_BSD3CLAUSE=	${WRKSRC}/BSD
++ LICENS_LGPLv21+ =	${WRKSRC}/LGPL
++ 
+++>>>>>>> freebsd/master
+  USES=		libtool
++ USE_GITHUB=	yes
++ GH_ACCOUNT=	taku910
++ GH_PROJECT=	crfpp
++ GH_TAGNAME=	1dc92a606f874a4fe52603803364cc1d90f952fb
+  USE_LDCONFIG=	yes
++ GNU_CONFIGURE=	yes
++ INSTALL_TARGET=	install-strip
++ 
++ PORTEXAMPLES=	JapaneseNE basenp chunking seg
++ 
++ OPTIONS_DEFINE=	EXAMPLES
++ 
++ post-install-EXAMPLES-on:
++ 	@${MKDIR} ${STAGEDIR}${EXAPLESDIR}
++ 	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+  
+  .include <bsd.port.mk>
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   UPDATING
+	modified:   audio/cantata/Makefile
+	modified:   audio/cantata/distinfo
+	modified:   audio/musicpd/Makefile
+	modified:   audio/musicpd/distinfo
+	modified:   cad/calculix-ccx/Makefile
+	modified:   cad/calculix-ccx/files/patch-Makefile
+	modified:   cad/calculix-ccx/pkg-message
+	modified:   cad/calculix/Makefile
+	modified:   cad/calculix/distinfo
+	deleted:    cad/calculix/files/patch-cgx__2.17_src_pickFunktions.c
+	modified:   cad/calculix/files/patch-cgx__VER_src_Makefile
+	modified:   cad/calculix/pkg-plist
+	modified:   chinese/librime/Makefile
+	modified:   chinese/librime/distinfo
+	deleted:    chinese/librime/files/patch-CMakeLists.txt
+	deleted:    chinese/librime/files/patch-boost-1.69
+	modified:   chinese/librime/pkg-plist
+	modified:   databases/Makefile
+	modified:   databases/iowow/Makefile
+	modified:   databases/iowow/distinfo
+	modified:   databases/iowow/pkg-plist
+	new file:   databases/ldb21/Makefile
+	new file:   databases/ldb21/distinfo
+	new file:   databases/ldb21/files/man/ldb.3
+	new file:   databases/ldb21/files/man/ldbadd.1
+	new file:   databases/ldb21/files/man/ldbdel.1
+	new file:   databases/ldb21/files/man/ldbedit.1
+	new file:   databases/ldb21/files/man/ldbmodify.1
+	new file:   databases/ldb21/files/man/ldbrename.1
+	new file:   databases/ldb21/files/man/ldbsearch.1
+	new file:   databases/ldb21/files/patch-buildtools_wafsamba_samba__autoconf.py
+	new file:   databases/ldb21/files/patch-buildtools_wafsamba_samba__install.py
+	new file:   databases/ldb21/files/patch-buildtools_wafsamba_wscript
+	new file:   databases/ldb21/files/patch-ldb__mdb_ldb_mdb.c
+	new file:   databases/ldb21/files/patch-ldb_key_value__ldb_kv_cache.c
+	new file:   databases/ldb21/files/patch-lib_replace_wscript
+	new file:   databases/ldb21/files/patch-wscript
+	new file:   databases/ldb21/pkg-descr
+	new file:   databases/ldb22/Makefile
+	new file:   databases/ldb22/distinfo
+	new file:   databases/ldb22/files/man/ldb.3
+	new file:   databases/ldb22/files/man/ldbadd.1
+	new file:   databases/ldb22/files/man/ldbdel.1
+	new file:   databases/ldb22/files/man/ldbedit.1
+	new file:   databases/ldb22/files/man/ldbmodify.1
+	new file:   databases/ldb22/files/man/ldbrename.1
+	new file:   databases/ldb22/files/man/ldbsearch.1
+	new file:   databases/ldb22/files/patch-buildtools_wafsamba_samba__autoconf.py
+	new file:   databases/ldb22/files/patch-buildtools_wafsamba_samba__install.py
+	new file:   databases/ldb22/files/patch-buildtools_wafsamba_wscript
+	new file:   databases/ldb22/files/patch-ldb_key_value__ldb_kv_cache.c
+	new file:   databases/ldb22/files/patch-lib_replace_wscript
+	new file:   databases/ldb22/files/patch-wscript
+	new file:   databases/ldb22/pkg-descr
+	modified:   databases/lmdb/Makefile
+	new file:   databases/lmdb/files/lmdb.pc.in
+	modified:   databases/lmdb/pkg-plist
+	modified:   deskutils/cal/Makefile
+	modified:   deskutils/cal/distinfo
+	deleted:    deskutils/cal/files/patch-cal.1
+	deleted:    deskutils/cal/files/patch-cal.c
+	deleted:    deskutils/cal/files/patch-makefile.unx
+	modified:   deskutils/cal/pkg-descr
+	modified:   deskutils/cal/pkg-plist
+	modified:   deskutils/gnome-screenshot/Makefile
+	modified:   devel/Makefile
+	modified:   devel/R-cran-vcd/Makefile
+	modified:   devel/R-cran-vcd/distinfo
+	modified:   devel/efl/Makefile
+	modified:   devel/gitlab-runner/Makefile
+	modified:   devel/gitlab-runner/distinfo
+	modified:   devel/jenkins-lts/Makefile
+	modified:   devel/jenkins-lts/distinfo
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	modified:   devel/libpru/Makefile
+	modified:   devel/libpru/distinfo
+	new file:   devel/libpru/files/patch-ti-pru.c
+	modified:   devel/libtuntap/Makefile
+	new file:   devel/libtuntap/files/patch-private.h
+	new file:   devel/libtuntap/files/patch-tuntap.c
+	modified:   devel/linux_libusb/Makefile
+	modified:   devel/pructl/Makefile
+	modified:   devel/pructl/distinfo
+	new file:   devel/rubygem-awrence/Makefile
+	new file:   devel/rubygem-awrence/distinfo
+	new file:   devel/rubygem-awrence/pkg-descr
+	new file:   devel/rubygem-cbor/Makefile
+	new file:   devel/rubygem-cbor/distinfo
+	new file:   devel/rubygem-cbor/pkg-descr
+	modified:   devel/rubygem-irb/Makefile
+	modified:   devel/rubygem-irb/distinfo
+	modified:   editors/hexcurse/Makefile
+	new file:   editors/hexcurse/files/patch-include_hex.h
+	new file:   editors/hexcurse/files/patch-src_file.c
+	renamed:    editors/hexcurse/files/patch-getopt.c -> editors/hexcurse/files/patch-src_getopt.c
+	modified:   emulators/gngb/Makefile
+	new file:   emulators/gngb/files/patch-src_emu.c
+	new file:   emulators/gngb/files/patch-src_emu.h
+	new file:   emulators/gngb/files/patch-src_interrupt.c
+	new file:   emulators/gngb/files/patch-src_interrupt.h
+	new file:   emulators/gngb/files/patch-src_main.c
+	modified:   emulators/gngb/files/patch-src_memory.c
+	new file:   emulators/gngb/files/patch-src_menu.c
+	new file:   emulators/gngb/files/patch-src_menu.h
+	new file:   emulators/gngb/files/patch-src_message.c
+	new file:   emulators/gngb/files/patch-src_message.h
+	new file:   emulators/gngb/files/patch-src_rom.c
+	new file:   emulators/gngb/files/patch-src_rom.h
+	new file:   emulators/gngb/files/patch-src_serial.c
+	new file:   emulators/gngb/files/patch-src_serial.h
+	new file:   emulators/gngb/files/patch-src_sgb.c
+	new file:   emulators/gngb/files/patch-src_sgb.h
+	new file:   emulators/gngb/files/patch-src_sound.c
+	new file:   emulators/gngb/files/patch-src_sound.h
+	new file:   emulators/gngb/files/patch-src_video__std.c
+	new file:   emulators/gngb/files/patch-src_video__std.h
+	new file:   emulators/gngb/files/patch-src_video__yuv.c
+	new file:   emulators/gngb/files/patch-src_video__yuv.h
+	new file:   emulators/gngb/files/patch-src_vram.c
+	new file:   emulators/gngb/files/patch-src_vram.h
+	modified:   finance/beancount/Makefile
+	modified:   finance/beancount/distinfo
+	modified:   finance/beancount/pkg-descr
+	modified:   finance/fava/Makefile
+	modified:   finance/fava/distinfo
+	modified:   ftp/wput/Makefile
+	new file:   ftp/wput/files/patch-src_wput.c
+	new file:   ftp/wput/files/patch-src_wput.h
+	modified:   games/spacezero/Makefile
+	new file:   games/spacezero/files/patch-include_snow.h
+	new file:   games/spacezero/files/patch-src_snow.c
+	new file:   games/spacezero/files/patch-src_spacecomm.c
+	modified:   graphics/R-cran-shape/Makefile
+	modified:   graphics/R-cran-shape/distinfo
+	modified:   graphics/py-open3d-python/Makefile
+	modified:   graphics/vkd3d/Makefile
+	modified:   graphics/vkd3d/distinfo
+	modified:   graphics/vkd3d/pkg-plist
+	modified:   graphics/xournalpp/Makefile
+	modified:   graphics/xournalpp/distinfo
+	modified:   graphics/xournalpp/pkg-plist
+	modified:   lang/ccl/Makefile
+	new file:   lang/ccl/files/patch-lisp-kernel_area.h
+	new file:   lang/ccl/files/patch-lisp-kernel_gc-common.c
+	new file:   lang/ccl/files/patch-lisp-kernel_gc.h
+	new file:   lang/ccl/files/patch-lisp-kernel_pmcl-kernel.c
+	new file:   lang/ccl/files/patch-lisp-kernel_threads.h
+	modified:   lang/silq/Makefile
+	modified:   lang/silq/distinfo
+	modified:   mail/thunderbird/Makefile
+	modified:   math/Makefile
+	modified:   math/R-cran-backports/Makefile
+	modified:   math/R-cran-backports/distinfo
+	modified:   math/R-cran-deldir/Makefile
+	modified:   math/R-cran-deldir/distinfo
+	modified:   math/R-cran-sf/Makefile
+	modified:   math/R-cran-sf/distinfo
+	new file:   math/barvinok/Makefile
+	new file:   math/barvinok/distinfo
+	new file:   math/barvinok/pkg-descr
+	new file:   math/barvinok/pkg-plist
+	modified:   math/geogram/Makefile
+	modified:   math/labplot/Makefile
+	modified:   math/labplot/distinfo
+	new file:   math/labplot/files/patch-git_4255438c
+	modified:   math/labplot/pkg-plist
+	modified:   math/lrslib/Makefile
+	modified:   misc/adios2/Makefile
+	modified:   misc/glow/Makefile
+	modified:   misc/openmvg/Makefile
+	modified:   misc/window/Makefile
+	new file:   misc/window/files/patch-alias.h
+	new file:   misc/window/files/patch-context.c
+	new file:   misc/window/files/patch-context.h
+	new file:   misc/window/files/patch-defs.h
+	new file:   misc/window/files/patch-main.c
+	new file:   misc/window/files/patch-mystring.h
+	new file:   misc/window/files/patch-string.c
+	new file:   misc/window/files/patch-tt.h
+	new file:   misc/window/files/patch-ttgeneric.c
+	new file:   misc/window/files/patch-var.h
+	new file:   misc/window/files/patch-ww.h
+	new file:   misc/window/files/patch-wwinit.c
+	new file:   misc/window/files/patch-xx.c
+	new file:   misc/window/files/patch-xx.h
+	modified:   net-im/zoom/Makefile
+	modified:   net-im/zoom/pkg-plist
+	modified:   net/aget/Makefile
+	new file:   net/aget/files/patch-Download.c
+	new file:   net/aget/files/patch-Head.c
+	new file:   net/aget/files/patch-Misc.h
+	new file:   net/aget/files/patch-Signal.h
+	new file:   net/aget/files/patch-main.c
+	modified:   net/frr7/Makefile
+	modified:   net/frr7/files/patch-Makefile.am
+	new file:   net/frr7/files/patch-tools_frr-reload.py
+	new file:   net/frr7/files/patch-vtysh_vtysh.c
+	modified:   net/gnu-radius/Makefile
+	new file:   net/gnu-radius/files/patch-gnu_argp-ba.c
+	modified:   net/honeyd/Makefile
+	modified:   net/honeyd/files/patch-personality.c
+	new file:   net/honeyd/files/patch-personality.h
+	new file:   net/honeyd/files/patch-stats.h
+	new file:   net/honeyd/files/patch-tagging.h
+	modified:   net/openmdns/Makefile
+	modified:   net/openmdns/files/mdnsd.in
+	deleted:    net/openmdns/files/patch-compat
+	new file:   net/openmdns/files/patch-mdnsctl_mdnsctl.c
+	new file:   net/openmdns/files/patch-mdnsd_control.c
+	new file:   net/openmdns/files/patch-mdnsd_control.h
+	new file:   net/openmdns/files/patch-mdnsd_mdns.c
+	new file:   net/openmdns/files/patch-mdnsd_mdns.h
+	new file:   net/openmdns/files/patch-mdnsd_mdnsd.c
+	new file:   net/openmdns/files/patch-mdnsd_mdnsd.h
+	modified:   net/rtg/Makefile
+	modified:   net/rtg/files/patch-src_rtg.h
+	modified:   net/rtg/files/patch-src_rtgplot.c
+	modified:   net/rtg/files/patch-src_rtgpoll.c
+	new file:   net/rtg/files/patch-src_rtgsnmp.c
+	modified:   net/sniproxy/Makefile
+	new file:   net/sniproxy/files/patch-src_http.h
+	new file:   net/sniproxy/files/patch-src_tls.h
+	modified:   net/sniproxy/pkg-descr
+	modified:   net/uget/Makefile
+	new file:   net/uget/files/patch-ui-gtk_UgtkBanner.h
+	modified:   ports-mgmt/caronade/Makefile
+	modified:   ports-mgmt/caronade/distinfo
+	modified:   ports-mgmt/caronade/pkg-plist
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   ports-mgmt/pkg-devel/distinfo
+	modified:   science/afni/Makefile
+	modified:   science/afni/distinfo
+	modified:   science/crf++/distinfo
+	new file:   science/crf++/files/patch-common.h
+	deleted:    science/crf++/files/patch-feature__index.cpp
+	modified:   science/crf++/pkg-descr
+	modified:   security/Makefile
+	modified:   security/R-cran-openssl/Makefile
+	modified:   security/R-cran-openssl/distinfo
+	modified:   security/pwman/Makefile
+	modified:   security/pwman/files/patch-src__pwman.h
+	new file:   security/pwman/files/patch-src_actions.c
+	new file:   security/rubygem-android_key_attestation/Makefile
+	new file:   security/rubygem-android_key_attestation/distinfo
+	new file:   security/rubygem-android_key_attestation/pkg-descr
+	new file:   security/rubygem-cose/Makefile
+	new file:   security/rubygem-cose/distinfo
+	new file:   security/rubygem-cose/pkg-descr
+	new file:   security/rubygem-omniauth-atlassian-oauth2/Makefile
+	new file:   security/rubygem-omniauth-atlassian-oauth2/distinfo
+	new file:   security/rubygem-omniauth-atlassian-oauth2/pkg-descr
+	new file:   security/rubygem-openssl-signature_algorithm/Makefile
+	new file:   security/rubygem-openssl-signature_algorithm/distinfo
+	new file:   security/rubygem-openssl-signature_algorithm/pkg-descr
+	new file:   security/rubygem-safety_net_attestation/Makefile
+	new file:   security/rubygem-safety_net_attestation/distinfo
+	new file:   security/rubygem-safety_net_attestation/pkg-descr
+	new file:   security/rubygem-tpm-key_attestation/Makefile
+	new file:   security/rubygem-tpm-key_attestation/distinfo
+	new file:   security/rubygem-tpm-key_attestation/pkg-descr
+	new file:   security/rubygem-webauthn/Makefile
+	new file:   security/rubygem-webauthn/distinfo
+	new file:   security/rubygem-webauthn/pkg-descr
+	modified:   security/sudo/Makefile
+	modified:   security/sudo/distinfo
+	modified:   security/sudo/pkg-plist
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/cbsd/Makefile
+	new file:   sysutils/cbsd/files/extra-patch-Makefile
+	new file:   sysutils/cbsd/files/extra-patch-sudoexec_initenv
+	modified:   sysutils/logtool/Makefile
+	new file:   sysutils/logtool/files/patch-src_ansi.c
+	new file:   sysutils/logtool/files/patch-src_gethost.c
+	renamed:    sysutils/logtool/files/patch-src__includes.h -> sysutils/logtool/files/patch-src_includes.h
+	new file:   sysutils/logtool/files/patch-src_logtool.h
+	new file:   sysutils/logtool/files/patch-src_mod__iptables.c
+	new file:   sysutils/logtool/files/patch-src_mod__snort.c
+	new file:   sysutils/logtool/files/patch-src_mods.h
+	new file:   sysutils/logtool/files/patch-src_parser.c
+	new file:   sysutils/logtool/files/patch-src_readconf.c
+	modified:   sysutils/xsysstats/Makefile
+	new file:   sysutils/xsysstats/files/LICENSE
+	modified:   sysutils/xsysstats/files/patch-Makefile.in
+	new file:   sysutils/xsysstats/files/patch-porting.c
+	modified:   sysutils/xsysstats/files/patch-xsysstats.c
+	modified:   sysutils/xsysstats/files/patch-xsysstats.h
+	modified:   textproc/R-cran-bibtex/Makefile
+	modified:   textproc/R-cran-bibtex/distinfo
+	modified:   textproc/libsass/Makefile
+	modified:   textproc/libsass/distinfo
+	modified:   textproc/sassc/Makefile
+	modified:   textproc/sassc/distinfo
+	modified:   www/minio/Makefile
+	modified:   www/minio/distinfo
+	modified:   www/py-pafy/Makefile
+	modified:   www/py-pafy/distinfo
+	modified:   www/py-pafy/pkg-descr
+	modified:   x11/9menu/Makefile
+	modified:   x11/9menu/distinfo
+	modified:   x11/9menu/pkg-descr
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/Makefile
+	both modified:   ports-mgmt/pkg/distinfo
+	both modified:   science/crf++/Makefile
+
+
+It took 3.16 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 23b92f872f0a HBSD: ports-mgmt/pkg: resolve merge conflict
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.30 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 23b92f872f0a HBSD: ports-mgmt/pkg: resolve merge conflict
+==== END: master ====
