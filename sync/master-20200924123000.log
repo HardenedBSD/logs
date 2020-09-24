@@ -47,3 +47,240 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging sysutils/tracker/Makefile
+CONFLICT (content): Merge conflict in sysutils/tracker/Makefile
+Removing security/py-angr/files/patch-setup.py
+Removing security/py-angr/files/patch-native_log.c
+Removing security/py-angr/files/patch-native_Makefile
+Removing games/jfsw/files/patch-src-jnstub.c
+Removing games/jfsw/files/patch-src-grpscan.h
+Removing games/jfsw/files/patch-src-gamedefs.h
+Removing games/jfsw/files/patch-jfbuild-src-sdlayer.c
+Removing games/jfsw/files/patch-jfbuild-src-kplib.c
+Removing games/jfsw/files/patch-jfbuild-Makefile
+Removing games/jfsw/files/patch-jfaudiolib-src-driver_fluidsynth.c
+Removing games/jfsw/files/patch-jfaudiolib-Makefile.shared
+Removing games/jfsw/files/patch-jfaudiolib-Makefile
+Removing devel/py-cle/files/patch-setup.py
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc sysutils/tracker/Makefile
+index 665a31d9c26f,a86375ee680e..000000000000
+--- a/sysutils/tracker/Makefile
++++ b/sysutils/tracker/Makefile
+@@@ -21,18 -20,18 +20,26 @@@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-
+  
+  PORTSCOUT=	limitw:1,even
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		compiler:c++11-lib gettext gmake gnome libtool localbase \
+ +		pathfix pkgconfig python:3.4+,build shebangfix sqlite tar:xz
+ +USE_GNOME=	glib20 intltool introspection:build libxml2 
+++=======
++ USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
++ 		pkgconfig python:3.4+,build sqlite tar:xz
++ USE_GNOME=	glib20 introspection:build libxml2
+++>>>>>>> freebsd/master
+  USE_LDCONFIG=	yes
+- GNU_CONFIGURE=	yes
+  INSTALLS_ICONS=	yes
+- CONFIGURE_ARGS=	--disable-static \
+- 		--disable-network-manager \
+- 		--with-bash-completion-dir=no
+- INSTALL_TARGET=	install-strip
++ MESON_ARGS=	-Ddocs=false \
++ 		-Dman=true \
++ 		-Dnetwork_manager=disabled \
++ 		-Dstemmer=disabled \
++ 		-Dbash_completion=true \
++ 		-Dbash_completion_dir=${PREFIX}/etc/bash_completion.d \
++ 		-Dsystemd_user_services=false
+  GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
+  		org.freedesktop.Tracker.FTS.gschema.xml \
+  		org.freedesktop.Tracker.Store.gschema.xml \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/pgsql.mk
+	modified:   converters/fribidi/Makefile
+	modified:   converters/fribidi/distinfo
+	modified:   converters/fribidi/pkg-plist
+	modified:   converters/p5-Text-Bidi/Makefile
+	modified:   converters/p5-Text-Bidi/distinfo
+	modified:   databases/Makefile
+	modified:   databases/postgresql10-docs/Makefile
+	modified:   databases/postgresql10-plperl/Makefile
+	modified:   databases/postgresql10-plpython/Makefile
+	modified:   databases/postgresql10-pltcl/Makefile
+	modified:   databases/postgresql10-server/Makefile
+	modified:   databases/postgresql11-docs/Makefile
+	modified:   databases/postgresql11-plperl/Makefile
+	modified:   databases/postgresql11-plpython/Makefile
+	modified:   databases/postgresql11-pltcl/Makefile
+	modified:   databases/postgresql11-server/Makefile
+	modified:   databases/postgresql12-server/Makefile
+	new file:   databases/postgresql13-client/Makefile
+	new file:   databases/postgresql13-contrib/Makefile
+	new file:   databases/postgresql13-contrib/pkg-descr
+	new file:   databases/postgresql13-docs/Makefile
+	new file:   databases/postgresql13-pgtcl/Makefile
+	new file:   databases/postgresql13-plperl/Makefile
+	new file:   databases/postgresql13-plpython/Makefile
+	new file:   databases/postgresql13-plpython/pkg-descr
+	new file:   databases/postgresql13-pltcl/Makefile
+	new file:   databases/postgresql13-server/Makefile
+	new file:   databases/postgresql13-server/distinfo
+	new file:   databases/postgresql13-server/files/502.pgsql.in
+	new file:   databases/postgresql13-server/files/dot.cshrc.in
+	new file:   databases/postgresql13-server/files/dot.profile.in
+	new file:   databases/postgresql13-server/files/patch-doc-Makefile
+	new file:   databases/postgresql13-server/files/patch-doc-src-sgml-Makefile
+	new file:   databases/postgresql13-server/files/patch-src-Makefile.shlib
+	new file:   databases/postgresql13-server/files/patch-src-backend-Makefile
+	new file:   databases/postgresql13-server/files/patch-src_backend_utils_misc_postgresql.conf.sample
+	new file:   databases/postgresql13-server/files/pkg-message-client.in
+	new file:   databases/postgresql13-server/files/pkg-message-contrib.in
+	new file:   databases/postgresql13-server/files/pkg-message-plperl.in
+	new file:   databases/postgresql13-server/files/pkg-message-plpython.in
+	new file:   databases/postgresql13-server/files/pkg-message-pltcl.in
+	new file:   databases/postgresql13-server/files/pkg-message-server.in
+	new file:   databases/postgresql13-server/files/pkgIndex.tcl.in
+	new file:   databases/postgresql13-server/files/postgresql.in
+	new file:   databases/postgresql13-server/pkg-descr
+	new file:   databases/postgresql13-server/pkg-install-server
+	new file:   databases/postgresql13-server/pkg-plist-client
+	new file:   databases/postgresql13-server/pkg-plist-contrib
+	new file:   databases/postgresql13-server/pkg-plist-plperl
+	new file:   databases/postgresql13-server/pkg-plist-plpython
+	new file:   databases/postgresql13-server/pkg-plist-pltcl
+	new file:   databases/postgresql13-server/pkg-plist-server
+	modified:   databases/postgresql95-docs/Makefile
+	modified:   databases/postgresql95-plperl/Makefile
+	modified:   databases/postgresql95-plpython/Makefile
+	modified:   databases/postgresql95-pltcl/Makefile
+	modified:   databases/postgresql95-server/Makefile
+	modified:   databases/postgresql96-docs/Makefile
+	modified:   databases/postgresql96-plperl/Makefile
+	modified:   databases/postgresql96-plpython/Makefile
+	modified:   databases/postgresql96-pltcl/Makefile
+	modified:   databases/postgresql96-server/Makefile
+	modified:   devel/Makefile
+	modified:   devel/py-archinfo/Makefile
+	modified:   devel/py-archinfo/distinfo
+	modified:   devel/py-cle/Makefile
+	modified:   devel/py-cle/distinfo
+	deleted:    devel/py-cle/files/patch-setup.py
+	new file:   devel/py-cppheaderparser/Makefile
+	new file:   devel/py-cppheaderparser/distinfo
+	new file:   devel/py-cppheaderparser/pkg-descr
+	modified:   emulators/virtualbox-ose-kmod/Makefile
+	modified:   emulators/virtualbox-ose/Makefile
+	modified:   emulators/virtualbox-ose/files/patch-src_VBox_Runtime_r0drv_freebsd_memobj-r0drv-freebsd.c
+	modified:   emulators/virtualbox-ose/files/patch-src_VBox_Runtime_r0drv_freebsd_the-freebsd-kernel.h
+	modified:   games/jfsw/Makefile
+	modified:   games/jfsw/distinfo
+	modified:   games/jfsw/files/patch-Makefile
+	deleted:    games/jfsw/files/patch-jfaudiolib-Makefile
+	deleted:    games/jfsw/files/patch-jfaudiolib-Makefile.shared
+	deleted:    games/jfsw/files/patch-jfaudiolib-src-driver_fluidsynth.c
+	deleted:    games/jfsw/files/patch-jfbuild-Makefile
+	new file:   games/jfsw/files/patch-jfbuild-kenbuild-bstub.c
+	new file:   games/jfsw/files/patch-jfbuild-kenbuild-game.c
+	deleted:    games/jfsw/files/patch-jfbuild-src-kplib.c
+	deleted:    games/jfsw/files/patch-jfbuild-src-sdlayer.c
+	new file:   games/jfsw/files/patch-jfbuild-src-sdlayer2.c
+	modified:   games/jfsw/files/patch-src-game.c
+	deleted:    games/jfsw/files/patch-src-gamedefs.h
+	deleted:    games/jfsw/files/patch-src-grpscan.h
+	deleted:    games/jfsw/files/patch-src-jnstub.c
+	modified:   math/py-claripy/Makefile
+	modified:   math/py-claripy/distinfo
+	modified:   net-p2p/xmrig/Makefile
+	modified:   net-p2p/xmrig/distinfo
+	modified:   security/py-ailment/Makefile
+	modified:   security/py-ailment/distinfo
+	modified:   security/py-angr/Makefile
+	new file:   security/py-angr/Makefile.version
+	modified:   security/py-angr/distinfo
+	deleted:    security/py-angr/files/patch-native_Makefile
+	deleted:    security/py-angr/files/patch-native_log.c
+	deleted:    security/py-angr/files/patch-setup.py
+	modified:   security/py-pyvex/Makefile
+	modified:   security/py-pyvex/distinfo
+	modified:   security/py-pyvex/files/patch-pyvex__c_Makefile
+	modified:   sysutils/tracker-miners/Makefile
+	modified:   sysutils/tracker-miners/distinfo
+	modified:   sysutils/tracker-miners/pkg-plist
+	modified:   sysutils/tracker/distinfo
+	new file:   sysutils/tracker/files/patch-src_tracker-store_tracker-dbus.vala
+	modified:   sysutils/tracker/pkg-plist
+	modified:   www/elgg/Makefile
+	modified:   www/elgg/distinfo
+	modified:   www/elgg/pkg-plist
+	modified:   x11-toolkits/vte3/Makefile
+	modified:   x11-toolkits/vte3/distinfo
+	modified:   x11-toolkits/vte3/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sysutils/tracker/Makefile
+
+
+It took 3.09 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 49fd905ea667 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.96 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 49fd905ea667 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
