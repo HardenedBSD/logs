@@ -239,3 +239,171 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/minio-client/files/patch-pkg_disk_stat__freebsd.go
+Removing www/minio-client/files/patch-cmd__client-fs_freebsd.go
+Auto-merging security/sudo/Makefile
+Auto-merging ports-mgmt/pkg/Makefile
+Removing net/wireshark/files/patch-libssh
+Auto-merging net/wireshark/Makefile
+Removing dns/dnsmasq-devel/pkg-plist
+Removing dns/dnsmasq-devel/pkg-descr
+Removing dns/dnsmasq-devel/files/pkg-message.in
+Removing dns/dnsmasq-devel/files/dnsmasq.in
+Removing dns/dnsmasq-devel/distinfo
+Removing dns/dnsmasq-devel/Makefile
+Removing devel/got/files/openbsd-compat/unistd.h
+Removing devel/got/files/openbsd-compat/sys/cdefs.h
+Removing devel/got/files/openbsd-compat/stdlib.h
+Removing devel/got/files/openbsd-compat/libgen.h
+Auto-merging audio/csound/Makefile
+CONFLICT (content): Merge conflict in audio/csound/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc audio/csound/Makefile
+index 9590cc332fb8,5c8918dafe8e..000000000000
+--- a/audio/csound/Makefile
++++ b/audio/csound/Makefile
+@@@ -20,9 -21,7 +21,13 @@@ BUILD_DEPENDS=	boost-libs>0:devel/boost
+  LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
+  		libsndfile.so:audio/libsndfile
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		alias bison cmake compiler:c++11-lib eigen:3 localbase ncurses python:2.7
+++=======
++ USES=		alias bison cmake compiler:c++11-lib eigen:3 localbase ncurses python
+++>>>>>>> freebsd/master
+  USE_GITHUB=	yes
+  USE_LDCONFIG=	yes
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   archivers/py-lzma/Makefile
+	modified:   biology/Makefile
+	modified:   biology/hmmer/Makefile
+	modified:   biology/infernal/Makefile
+	new file:   biology/py-biom-format/Makefile
+	new file:   biology/py-biom-format/distinfo
+	new file:   biology/py-biom-format/pkg-descr
+	modified:   databases/sqlrelay/Makefile
+	modified:   devel/efl/Makefile
+	modified:   devel/got/Makefile
+	modified:   devel/got/files/openbsd-compat/basename.c
+	modified:   devel/got/files/openbsd-compat/dirname.c
+	modified:   devel/got/files/openbsd-compat/imsg-buffer.c
+	modified:   devel/got/files/openbsd-compat/imsg.c
+	deleted:    devel/got/files/openbsd-compat/libgen.h
+	renamed:    devel/got/files/openbsd-compat/sys/queue.h -> devel/got/files/openbsd-compat/openbsd-compat.h
+	deleted:    devel/got/files/openbsd-compat/stdlib.h
+	deleted:    devel/got/files/openbsd-compat/sys/cdefs.h
+	deleted:    devel/got/files/openbsd-compat/unistd.h
+	modified:   devel/libunwind/Makefile
+	modified:   devel/py-backports.shutil_get_terminal_size/Makefile
+	modified:   devel/py-selectors2/Makefile
+	modified:   dns/Makefile
+	deleted:    dns/dnsmasq-devel/Makefile
+	deleted:    dns/dnsmasq-devel/distinfo
+	deleted:    dns/dnsmasq-devel/files/dnsmasq.in
+	deleted:    dns/dnsmasq-devel/files/pkg-message.in
+	deleted:    dns/dnsmasq-devel/pkg-descr
+	deleted:    dns/dnsmasq-devel/pkg-plist
+	modified:   games/vvvvvv/Makefile
+	modified:   graphics/drm-current-kmod/Makefile
+	modified:   graphics/drm-devel-kmod/Makefile
+	modified:   graphics/nvidia-texture-tools/Makefile
+	modified:   graphics/vv/Makefile
+	modified:   lang/spidermonkey60/Makefile
+	modified:   lang/spidermonkey68/Makefile
+	modified:   mail/mboxgrep/Makefile
+	modified:   math/clrng/Makefile
+	modified:   math/gmp/Makefile
+	modified:   math/libflame/Makefile
+	modified:   misc/vxl/Makefile
+	modified:   misc/vxl/pkg-descr
+	modified:   net/wireshark/Makefile
+	modified:   net/wireshark/distinfo
+	deleted:    net/wireshark/files/patch-libssh
+	modified:   net/wireshark/pkg-plist
+	modified:   ports-mgmt/pkg/Makefile
+	modified:   security/cracklib/Makefile
+	modified:   security/highwayhash/Makefile
+	modified:   security/libdecaf/Makefile
+	modified:   security/sudo/Makefile
+	modified:   security/sudo/distinfo
+	modified:   sysutils/ipfs-go/Makefile
+	modified:   sysutils/ipfs-go/distinfo
+	modified:   sysutils/nomad/Makefile
+	modified:   sysutils/nomad/distinfo
+	modified:   textproc/pup/Makefile
+	modified:   textproc/pup/distinfo
+	modified:   www/minio-client/Makefile
+	modified:   www/minio-client/distinfo
+	deleted:    www/minio-client/files/patch-cmd__client-fs_freebsd.go
+	deleted:    www/minio-client/files/patch-pkg_disk_stat__freebsd.go
+	modified:   www/minio/Makefile
+	modified:   www/minio/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   audio/csound/Makefile
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1f1ee1c73a9a HBSD: Resolve merge conflicts
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.97 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1f1ee1c73a9a HBSD: Resolve merge conflicts
+==== END: master ====
