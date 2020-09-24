@@ -47,3 +47,179 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11-fm/caja/files/patch-src_file-manager_fm-properties-window.c
+Removing x11-fm/caja/files/patch-libcaja-private_caja-global-preferences.h
+Removing x11-fm/caja/files/patch-libcaja-private_caja-global-preferences.c
+Removing x11-fm/caja/files/patch-eel_eel-background.c
+Auto-merging www/squid3/Makefile
+Auto-merging science/crf++/Makefile
+Removing net/sniffit/files/patch-sniffit.0.3.7.c
+Removing net/sniffit/files/patch-sn_structs.h
+Removing net/sniffit/files/patch-sn_interface.c
+Removing net/sniffit/files/patch-sn_data.h
+Removing net/sniffit/files/patch-sn_analyse.c
+Removing net/sniffit/files/patch-Makefile.in
+Removing misc/libiio/files/patch-CMakeLists.txt
+Merge made by the 'recursive' strategy.
+ archivers/gcab/Makefile                            |  7 +-
+ archivers/gcab/distinfo                            |  6 +-
+ archivers/gcab/pkg-plist                           | 22 +-----
+ audio/alsa-lib/Makefile                            | 11 +--
+ comms/xastir/Makefile                              |  3 +-
+ deskutils/caja-extensions/Makefile                 |  2 +-
+ deskutils/caja-extensions/distinfo                 |  6 +-
+ deskutils/caja-extensions/pkg-plist                |  1 -
+ deskutils/flameshot/Makefile                       |  2 +-
+ deskutils/flameshot/distinfo                       |  6 +-
+ devel/rust-analyzer/Makefile                       | 20 +++---
+ devel/rust-analyzer/distinfo                       | 42 ++++++------
+ editors/diakonos/Makefile                          | 22 +++---
+ editors/diakonos/distinfo                          |  5 +-
+ editors/diakonos/pkg-descr                         |  2 +-
+ editors/diakonos/pkg-plist                         | 23 ++++---
+ editors/neovim/Makefile                            |  2 +-
+ graphics/epstool/Makefile                          | 25 ++++---
+ graphics/epstool/distinfo                          |  5 +-
+ graphics/epstool/pkg-descr                         |  5 +-
+ graphics/geeqie/Makefile                           |  2 +-
+ graphics/geeqie/files/patch-src_bar__exif.h        | 13 ++++
+ lang/janet/Makefile                                |  2 +-
+ lang/janet/distinfo                                |  6 +-
+ mail/thunderbird/Makefile                          |  4 +-
+ mail/thunderbird/distinfo                          |  6 +-
+ math/octomap/Makefile                              |  4 +-
+ math/octomap/distinfo                              |  6 +-
+ misc/libiio/Makefile                               |  2 +-
+ misc/libiio/distinfo                               |  6 +-
+ misc/libiio/files/patch-CMakeLists.txt             | 20 ------
+ misc/libiio/pkg-plist                              |  4 +-
+ misc/ncnn/Makefile                                 |  2 +-
+ misc/ncnn/distinfo                                 |  6 +-
+ misc/py-xgboost/Makefile                           |  2 +-
+ misc/py-xgboost/distinfo                           |  6 +-
+ misc/py-xgboost/files/patch-CMakeLists.txt         | 30 ++++++---
+ misc/snakemake/Makefile                            |  2 +-
+ misc/snakemake/distinfo                            |  6 +-
+ misc/xgboost/Makefile                              |  2 +-
+ misc/xgboost/distinfo                              |  6 +-
+ misc/xgboost/files/patch-CMakeLists.txt            | 30 ++++++---
+ net/libmateweather/Makefile                        |  2 +-
+ net/libmateweather/distinfo                        |  6 +-
+ net/scamper/Makefile                               | 19 +++++-
+ net/scamper/distinfo                               |  6 +-
+ net/scamper/pkg-plist                              |  4 ++
+ net/sniffit/Makefile                               | 33 +++++----
+ net/sniffit/distinfo                               |  5 +-
+ net/sniffit/files/patch-Makefile.in                | 17 -----
+ net/sniffit/files/patch-sn_analyse.c               | 37 ----------
+ net/sniffit/files/patch-sn_data.h                  | 15 -----
+ net/sniffit/files/patch-sn_interface.c             |  7 --
+ net/sniffit/files/patch-sn_structs.h               | 11 ---
+ net/sniffit/files/patch-sniffit.0.3.7.c            | 78 ----------------------
+ net/sniffit/files/patch-src_sn__data.h             | 24 +++++++
+ net/sniffit/files/patch-src_sn__interface.c        | 20 ++++++
+ .../{patch-sn_resolv.c => patch-src_sn__resolv.c}  |  4 +-
+ net/sniffit/pkg-plist                              | 10 ++-
+ science/crf++/Makefile                             |  4 +-
+ security/cargo-audit/Makefile                      |  5 +-
+ security/cargo-audit/distinfo                      | 12 ++--
+ sysutils/conan/Makefile                            |  2 +-
+ sysutils/conan/distinfo                            |  6 +-
+ sysutils/siegfried/Makefile                        |  2 +-
+ sysutils/siegfried/distinfo                        |  6 +-
+ sysutils/synergy-1/Makefile                        | 10 +--
+ sysutils/synergy-1/distinfo                        | 10 +--
+ sysutils/synergy-1/files/patch-CMakeLists.txt      | 23 +++++++
+ textproc/re-flex/Makefile                          |  6 +-
+ textproc/re-flex/distinfo                          |  6 +-
+ www/orangehrm/Makefile                             |  2 +-
+ www/orangehrm/distinfo                             |  6 +-
+ www/py-internetarchive/Makefile                    |  3 +-
+ www/py-internetarchive/distinfo                    |  6 +-
+ www/squid3/Makefile                                |  2 +
+ x11-fm/caja/Makefile                               |  3 +-
+ x11-fm/caja/distinfo                               |  6 +-
+ x11-fm/caja/files/patch-eel_eel-background.c       | 29 --------
+ ...patch-libcaja-private_caja-global-preferences.c | 22 ------
+ ...patch-libcaja-private_caja-global-preferences.h | 32 ---------
+ .../patch-src_file-manager_fm-properties-window.c  | 26 --------
+ x11-fm/caja/pkg-plist                              |  9 +++
+ x11-fonts/cascadia-code/Makefile                   |  2 +-
+ x11-fonts/cascadia-code/distinfo                   |  6 +-
+ x11/babl/Makefile                                  |  9 +--
+ 86 files changed, 382 insertions(+), 555 deletions(-)
+ create mode 100644 graphics/geeqie/files/patch-src_bar__exif.h
+ delete mode 100644 misc/libiio/files/patch-CMakeLists.txt
+ delete mode 100644 net/sniffit/files/patch-Makefile.in
+ delete mode 100644 net/sniffit/files/patch-sn_analyse.c
+ delete mode 100644 net/sniffit/files/patch-sn_data.h
+ delete mode 100644 net/sniffit/files/patch-sn_interface.c
+ delete mode 100644 net/sniffit/files/patch-sn_structs.h
+ delete mode 100644 net/sniffit/files/patch-sniffit.0.3.7.c
+ create mode 100644 net/sniffit/files/patch-src_sn__data.h
+ create mode 100644 net/sniffit/files/patch-src_sn__interface.c
+ rename net/sniffit/files/{patch-sn_resolv.c => patch-src_sn__resolv.c} (71%)
+ create mode 100644 sysutils/synergy-1/files/patch-CMakeLists.txt
+ delete mode 100644 x11-fm/caja/files/patch-eel_eel-background.c
+ delete mode 100644 x11-fm/caja/files/patch-libcaja-private_caja-global-preferences.c
+ delete mode 100644 x11-fm/caja/files/patch-libcaja-private_caja-global-preferences.h
+ delete mode 100644 x11-fm/caja/files/patch-src_file-manager_fm-properties-window.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    811a61bebb39..49fd905ea667  master -> master        
+remote:    5f275d114c98..811a61bebb39  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   811a61bebb39..49fd905ea667  master -> master
+==== END: master ====
