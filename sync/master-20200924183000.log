@@ -1,0 +1,241 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 19 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 49fd905ea667..1f1ee1c73a9a
+Fast-forward
+ Mk/Uses/pgsql.mk                                   |    2 +-
+ Mk/bsd.sites.mk                                    |    2 +-
+ audio/lvtk/Makefile                                |    9 +-
+ audio/lvtk/distinfo                                |    6 +-
+ audio/lvtk/pkg-plist                               |   38 +-
+ converters/fribidi/Makefile                        |   14 +-
+ converters/fribidi/distinfo                        |    5 +-
+ converters/fribidi/pkg-plist                       |   10 +-
+ converters/p5-Text-Bidi/Makefile                   |    2 +-
+ converters/p5-Text-Bidi/distinfo                   |    6 +-
+ databases/Makefile                                 |    8 +
+ databases/postgresql10-docs/Makefile               |    2 +-
+ databases/postgresql10-plperl/Makefile             |    2 +-
+ databases/postgresql10-plpython/Makefile           |    2 +-
+ databases/postgresql10-pltcl/Makefile              |    2 +-
+ databases/postgresql10-server/Makefile             |    3 +-
+ databases/postgresql11-docs/Makefile               |    2 +-
+ databases/postgresql11-plperl/Makefile             |    2 +-
+ databases/postgresql11-plpython/Makefile           |    2 +-
+ databases/postgresql11-pltcl/Makefile              |    2 +-
+ databases/postgresql11-server/Makefile             |    3 +-
+ databases/postgresql12-server/Makefile             |  300 +---
+ databases/postgresql13-client/Makefile             |   21 +
+ databases/postgresql13-contrib/Makefile            |   41 +
+ databases/postgresql13-contrib/pkg-descr           |   23 +
+ databases/postgresql13-docs/Makefile               |   46 +
+ databases/postgresql13-pgtcl/Makefile              |   11 +
+ databases/postgresql13-plperl/Makefile             |   27 +
+ databases/postgresql13-plpython/Makefile           |   27 +
+ databases/postgresql13-plpython/pkg-descr          |    6 +
+ databases/postgresql13-pltcl/Makefile              |   32 +
+ databases/postgresql13-server/Makefile             |  321 ++++
+ databases/postgresql13-server/distinfo             |    3 +
+ databases/postgresql13-server/files/502.pgsql.in   |  116 ++
+ databases/postgresql13-server/files/dot.cshrc.in   |   11 +
+ databases/postgresql13-server/files/dot.profile.in |   22 +
+ .../postgresql13-server/files/patch-doc-Makefile   |    9 +
+ .../files/patch-doc-src-sgml-Makefile              |   41 +
+ .../files/patch-src-Makefile.shlib                 |   11 +
+ .../files/patch-src-backend-Makefile               |   11 +
+ ...h-src_backend_utils_misc_postgresql.conf.sample |   21 +
+ .../files/pkg-message-client.in                    |   38 +
+ .../files/pkg-message-contrib.in                   |    9 +
+ .../files/pkg-message-plperl.in                    |    9 +
+ .../files/pkg-message-plpython.in                  |    9 +
+ .../postgresql13-server/files/pkg-message-pltcl.in |    9 +
+ .../files/pkg-message-server.in                    |   69 +
+ .../postgresql13-server/files/pkgIndex.tcl.in      |    4 +
+ databases/postgresql13-server/files/postgresql.in  |  117 ++
+ databases/postgresql13-server/pkg-descr            |   23 +
+ databases/postgresql13-server/pkg-install-server   |   25 +
+ databases/postgresql13-server/pkg-plist-client     | 1235 ++++++++++++++++
+ databases/postgresql13-server/pkg-plist-contrib    |  239 +++
+ databases/postgresql13-server/pkg-plist-plperl     |   24 +
+ databases/postgresql13-server/pkg-plist-plpython   |   44 +
+ databases/postgresql13-server/pkg-plist-pltcl      |    6 +
+ databases/postgresql13-server/pkg-plist-server     | 1528 ++++++++++++++++++++
+ databases/postgresql95-docs/Makefile               |    2 +-
+ databases/postgresql95-plperl/Makefile             |    2 +-
+ databases/postgresql95-plpython/Makefile           |    2 +-
+ databases/postgresql95-pltcl/Makefile              |    2 +-
+ databases/postgresql95-server/Makefile             |    2 +-
+ databases/postgresql96-docs/Makefile               |    2 +-
+ databases/postgresql96-plperl/Makefile             |    2 +-
+ databases/postgresql96-plpython/Makefile           |    2 +-
+ databases/postgresql96-pltcl/Makefile              |    2 +-
+ databases/postgresql96-server/Makefile             |    2 +-
+ devel/Makefile                                     |    1 +
+ devel/gdcm/Makefile                                |    2 +
+ devel/py-archinfo/Makefile                         |   21 +-
+ devel/py-archinfo/distinfo                         |   10 +-
+ devel/py-cle/Makefile                              |   20 +-
+ devel/py-cle/distinfo                              |   12 +-
+ devel/py-cle/files/patch-setup.py                  |   10 -
+ devel/py-cppheaderparser/Makefile                  |   25 +
+ devel/py-cppheaderparser/distinfo                  |    3 +
+ devel/py-cppheaderparser/pkg-descr                 |    4 +
+ emulators/virtualbox-ose-kmod/Makefile             |    2 +-
+ emulators/virtualbox-ose/Makefile                  |    2 +-
+ ...ox_Runtime_r0drv_freebsd_memobj-r0drv-freebsd.c |   73 +-
+ ...VBox_Runtime_r0drv_freebsd_the-freebsd-kernel.h |   10 +-
+ games/jfsw/Makefile                                |   26 +-
+ games/jfsw/distinfo                                |   18 +-
+ games/jfsw/files/patch-Makefile                    |   32 +-
+ games/jfsw/files/patch-jfaudiolib-Makefile         |   17 -
+ games/jfsw/files/patch-jfaudiolib-Makefile.shared  |   26 -
+ .../files/patch-jfaudiolib-src-driver_fluidsynth.c |   15 -
+ games/jfsw/files/patch-jfbuild-Makefile            |   15 -
+ games/jfsw/files/patch-jfbuild-kenbuild-bstub.c    |   17 +
+ games/jfsw/files/patch-jfbuild-kenbuild-game.c     |   17 +
+ games/jfsw/files/patch-jfbuild-src-kplib.c         |   13 -
+ games/jfsw/files/patch-jfbuild-src-sdlayer.c       |   21 -
+ games/jfsw/files/patch-jfbuild-src-sdlayer2.c      |   13 +
+ games/jfsw/files/patch-src-game.c                  |    7 +-
+ games/jfsw/files/patch-src-gamedefs.h              |   14 -
+ games/jfsw/files/patch-src-grpscan.h               |   13 -
+ games/jfsw/files/patch-src-jnstub.c                |   15 -
+ math/py-claripy/Makefile                           |   16 +-
+ math/py-claripy/distinfo                           |    8 +-
+ net-p2p/xmrig/Makefile                             |    2 +-
+ net-p2p/xmrig/distinfo                             |    6 +-
+ security/py-ailment/Makefile                       |   22 +-
+ security/py-ailment/distinfo                       |   12 +-
+ security/py-angr/Makefile                          |   62 +-
+ security/py-angr/Makefile.version                  |    4 +
+ security/py-angr/distinfo                          |   20 +-
+ security/py-angr/files/patch-native_Makefile       |   24 -
+ security/py-angr/files/patch-native_log.c          |   24 -
+ security/py-angr/files/patch-setup.py              |   11 -
+ security/py-pyvex/Makefile                         |   11 +-
+ security/py-pyvex/distinfo                         |   14 +-
+ security/py-pyvex/files/patch-pyvex__c_Makefile    |   17 +-
+ sysutils/fluent-bit/Makefile                       |    2 +-
+ sysutils/fluent-bit/distinfo                       |    6 +-
+ .../fluent-bit/files/patch-src__flb_strptime_c     |   46 +
+ sysutils/ntfy/Makefile                             |    5 +-
+ sysutils/ntfy/distinfo                             |    6 +-
+ sysutils/tracker-miners/Makefile                   |   11 +-
+ sysutils/tracker-miners/distinfo                   |    6 +-
+ sysutils/tracker-miners/pkg-plist                  |   39 +-
+ sysutils/tracker/Makefile                          |   30 +-
+ sysutils/tracker/distinfo                          |    6 +-
+ .../patch-src_tracker-store_tracker-dbus.vala      |   11 +
+ sysutils/tracker/pkg-plist                         |  132 +-
+ www/elgg/Makefile                                  |    2 +-
+ www/elgg/distinfo                                  |    6 +-
+ www/elgg/pkg-plist                                 |  231 +--
+ x11-toolkits/ntk/Makefile                          |   12 +-
+ x11-toolkits/ntk/distinfo                          |    6 +-
+ x11-toolkits/vte3/Makefile                         |   28 +-
+ x11-toolkits/vte3/distinfo                         |    6 +-
+ x11-toolkits/vte3/pkg-plist                        |   37 +-
+ 132 files changed, 4866 insertions(+), 1121 deletions(-)
+ create mode 100644 databases/postgresql13-client/Makefile
+ create mode 100644 databases/postgresql13-contrib/Makefile
+ create mode 100644 databases/postgresql13-contrib/pkg-descr
+ create mode 100644 databases/postgresql13-docs/Makefile
+ create mode 100644 databases/postgresql13-pgtcl/Makefile
+ create mode 100644 databases/postgresql13-plperl/Makefile
+ create mode 100644 databases/postgresql13-plpython/Makefile
+ create mode 100644 databases/postgresql13-plpython/pkg-descr
+ create mode 100644 databases/postgresql13-pltcl/Makefile
+ create mode 100644 databases/postgresql13-server/Makefile
+ create mode 100644 databases/postgresql13-server/distinfo
+ create mode 100644 databases/postgresql13-server/files/502.pgsql.in
+ create mode 100644 databases/postgresql13-server/files/dot.cshrc.in
+ create mode 100644 databases/postgresql13-server/files/dot.profile.in
+ create mode 100644 databases/postgresql13-server/files/patch-doc-Makefile
+ create mode 100644 databases/postgresql13-server/files/patch-doc-src-sgml-Makefile
+ create mode 100644 databases/postgresql13-server/files/patch-src-Makefile.shlib
+ create mode 100644 databases/postgresql13-server/files/patch-src-backend-Makefile
+ create mode 100644 databases/postgresql13-server/files/patch-src_backend_utils_misc_postgresql.conf.sample
+ create mode 100644 databases/postgresql13-server/files/pkg-message-client.in
+ create mode 100644 databases/postgresql13-server/files/pkg-message-contrib.in
+ create mode 100644 databases/postgresql13-server/files/pkg-message-plperl.in
+ create mode 100644 databases/postgresql13-server/files/pkg-message-plpython.in
+ create mode 100644 databases/postgresql13-server/files/pkg-message-pltcl.in
+ create mode 100644 databases/postgresql13-server/files/pkg-message-server.in
+ create mode 100644 databases/postgresql13-server/files/pkgIndex.tcl.in
+ create mode 100644 databases/postgresql13-server/files/postgresql.in
+ create mode 100644 databases/postgresql13-server/pkg-descr
+ create mode 100644 databases/postgresql13-server/pkg-install-server
+ create mode 100644 databases/postgresql13-server/pkg-plist-client
+ create mode 100644 databases/postgresql13-server/pkg-plist-contrib
+ create mode 100644 databases/postgresql13-server/pkg-plist-plperl
+ create mode 100644 databases/postgresql13-server/pkg-plist-plpython
+ create mode 100644 databases/postgresql13-server/pkg-plist-pltcl
+ create mode 100644 databases/postgresql13-server/pkg-plist-server
+ delete mode 100644 devel/py-cle/files/patch-setup.py
+ create mode 100644 devel/py-cppheaderparser/Makefile
+ create mode 100644 devel/py-cppheaderparser/distinfo
+ create mode 100644 devel/py-cppheaderparser/pkg-descr
+ delete mode 100644 games/jfsw/files/patch-jfaudiolib-Makefile
+ delete mode 100644 games/jfsw/files/patch-jfaudiolib-Makefile.shared
+ delete mode 100644 games/jfsw/files/patch-jfaudiolib-src-driver_fluidsynth.c
+ delete mode 100644 games/jfsw/files/patch-jfbuild-Makefile
+ create mode 100644 games/jfsw/files/patch-jfbuild-kenbuild-bstub.c
+ create mode 100644 games/jfsw/files/patch-jfbuild-kenbuild-game.c
+ delete mode 100644 games/jfsw/files/patch-jfbuild-src-kplib.c
+ delete mode 100644 games/jfsw/files/patch-jfbuild-src-sdlayer.c
+ create mode 100644 games/jfsw/files/patch-jfbuild-src-sdlayer2.c
+ delete mode 100644 games/jfsw/files/patch-src-gamedefs.h
+ delete mode 100644 games/jfsw/files/patch-src-grpscan.h
+ delete mode 100644 games/jfsw/files/patch-src-jnstub.c
+ create mode 100644 security/py-angr/Makefile.version
+ delete mode 100644 security/py-angr/files/patch-native_Makefile
+ delete mode 100644 security/py-angr/files/patch-native_log.c
+ delete mode 100644 security/py-angr/files/patch-setup.py
+ create mode 100644 sysutils/fluent-bit/files/patch-src__flb_strptime_c
+ create mode 100644 sysutils/tracker/files/patch-src_tracker-store_tracker-dbus.vala
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
