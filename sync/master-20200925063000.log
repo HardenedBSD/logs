@@ -47,3 +47,280 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Removing www/minio-client/files/patch-pkg_disk_stat__freebsd.go
+Removing www/minio-client/files/patch-cmd__client-fs_freebsd.go
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Removing shells/poshinit/pkg-descr
+Removing shells/poshinit/distinfo
+Auto-merging security/sudo/Makefile
+Auto-merging ports-mgmt/pkg/Makefile
+Removing net/wireshark/files/patch-libssh
+Auto-merging net/wireshark/Makefile
+Removing dns/dnsmasq-devel/pkg-plist
+Removing dns/dnsmasq-devel/pkg-descr
+Removing dns/dnsmasq-devel/files/pkg-message.in
+Removing dns/dnsmasq-devel/files/dnsmasq.in
+Removing dns/dnsmasq-devel/distinfo
+Removing dns/dnsmasq-devel/Makefile
+Removing devel/got/files/openbsd-compat/unistd.h
+Removing devel/got/files/openbsd-compat/sys/cdefs.h
+Removing devel/got/files/openbsd-compat/stdlib.h
+Removing devel/got/files/openbsd-compat/libgen.h
+Auto-merging audio/csound/Makefile
+CONFLICT (content): Merge conflict in audio/csound/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc audio/csound/Makefile
+index 9590cc332fb8,5c8918dafe8e..000000000000
+--- a/audio/csound/Makefile
++++ b/audio/csound/Makefile
+@@@ -20,9 -21,7 +21,13 @@@ BUILD_DEPENDS=	boost-libs>0:devel/boost
+  LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
+  		libsndfile.so:audio/libsndfile
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		alias bison cmake compiler:c++11-lib eigen:3 localbase ncurses python:2.7
+++=======
++ USES=		alias bison cmake compiler:c++11-lib eigen:3 localbase ncurses python
+++>>>>>>> freebsd/master
+  USE_GITHUB=	yes
+  USE_LDCONFIG=	yes
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   UPDATING
+	modified:   archivers/py-lzma/Makefile
+	modified:   audio/wavegain/Makefile
+	modified:   audio/wavegain/files/patch-audio.c
+	new file:   audio/wavegain/files/patch-audio.h
+	new file:   audio/wavegain/files/patch-main.c
+	new file:   audio/wavegain/files/patch-misc.c
+	modified:   audio/wavegain/files/patch-wavegain.c
+	modified:   biology/Makefile
+	modified:   biology/hmmer/Makefile
+	modified:   biology/infernal/Makefile
+	modified:   biology/ncbi-cxx-toolkit/Makefile
+	modified:   biology/ncbi-cxx-toolkit/distinfo
+	modified:   biology/ncbi-cxx-toolkit/pkg-descr
+	new file:   biology/py-biom-format/Makefile
+	new file:   biology/py-biom-format/distinfo
+	new file:   biology/py-biom-format/pkg-descr
+	modified:   biology/py-scikit-bio/Makefile
+	modified:   cad/openroad/Makefile
+	modified:   cad/spice/Makefile
+	modified:   converters/zbase32/Makefile
+	modified:   databases/sqlite3/Makefile
+	modified:   databases/sqlrelay/Makefile
+	modified:   devel/Makefile
+	modified:   devel/efl/Makefile
+	modified:   devel/got/Makefile
+	modified:   devel/got/files/openbsd-compat/basename.c
+	modified:   devel/got/files/openbsd-compat/dirname.c
+	modified:   devel/got/files/openbsd-compat/imsg-buffer.c
+	modified:   devel/got/files/openbsd-compat/imsg.c
+	deleted:    devel/got/files/openbsd-compat/libgen.h
+	renamed:    devel/got/files/openbsd-compat/sys/queue.h -> devel/got/files/openbsd-compat/openbsd-compat.h
+	deleted:    devel/got/files/openbsd-compat/stdlib.h
+	deleted:    devel/got/files/openbsd-compat/sys/cdefs.h
+	deleted:    devel/got/files/openbsd-compat/unistd.h
+	modified:   devel/libunwind/Makefile
+	modified:   devel/py-Jinja2/Makefile
+	modified:   devel/py-PEAK-Rules/Makefile
+	modified:   devel/py-backports.shutil_get_terminal_size/Makefile
+	modified:   devel/py-bullet3/Makefile
+	modified:   devel/py-bullet3/distinfo
+	modified:   devel/py-bullet3/pkg-descr
+	modified:   devel/py-darcsver/Makefile
+	new file:   devel/py-genson/Makefile
+	new file:   devel/py-genson/distinfo
+	new file:   devel/py-genson/pkg-descr
+	modified:   devel/py-repoze.what/Makefile
+	modified:   devel/py-selectors2/Makefile
+	modified:   devel/py-zope.testbrowser/Makefile
+	modified:   devel/py-zope.testbrowser/distinfo
+	modified:   devel/sonarqube-community/Makefile
+	modified:   devel/sonarqube-community/distinfo
+	modified:   devel/staf/Makefile
+	modified:   devel/staf/pkg-plist
+	modified:   dns/Makefile
+	deleted:    dns/dnsmasq-devel/Makefile
+	deleted:    dns/dnsmasq-devel/distinfo
+	deleted:    dns/dnsmasq-devel/files/dnsmasq.in
+	deleted:    dns/dnsmasq-devel/files/pkg-message.in
+	deleted:    dns/dnsmasq-devel/pkg-descr
+	deleted:    dns/dnsmasq-devel/pkg-plist
+	modified:   emulators/citra-qt5/Makefile
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/yuzu-qt5/Makefile
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   games/vvvvvv/Makefile
+	modified:   graphics/cairo/Makefile
+	modified:   graphics/cairo/pkg-plist
+	modified:   graphics/drm-current-kmod/Makefile
+	modified:   graphics/drm-devel-kmod/Makefile
+	modified:   graphics/facedetect/Makefile
+	modified:   graphics/facedetect/files/patch-facedetect
+	modified:   graphics/mapserver/Makefile
+	modified:   graphics/nvidia-texture-tools/Makefile
+	modified:   graphics/vv/Makefile
+	modified:   lang/spidermonkey60/Makefile
+	modified:   lang/spidermonkey68/Makefile
+	modified:   mail/mboxgrep/Makefile
+	modified:   mail/thunderbird/Makefile
+	modified:   mail/thunderbird/distinfo
+	modified:   mail/thunderbird/files/patch-cubeb-oss
+	modified:   math/clrng/Makefile
+	modified:   math/gmp/Makefile
+	modified:   math/libflame/Makefile
+	modified:   math/py-hdmedians/Makefile
+	modified:   math/py-hdmedians/distinfo
+	modified:   misc/concourse/Makefile
+	modified:   misc/concourse/distinfo
+	modified:   misc/ezc3d/Makefile
+	modified:   misc/ezc3d/distinfo
+	modified:   misc/vxl/Makefile
+	modified:   misc/vxl/pkg-descr
+	modified:   net/freeradius3/Makefile
+	modified:   net/freeradius3/pkg-plist
+	modified:   net/ntpsec/Makefile
+	modified:   net/wireshark/Makefile
+	modified:   net/wireshark/distinfo
+	deleted:    net/wireshark/files/patch-libssh
+	modified:   net/wireshark/pkg-plist
+	modified:   ports-mgmt/pkg/Makefile
+	modified:   science/py-scimath/Makefile
+	modified:   science/py-scimath/distinfo
+	modified:   security/cracklib/Makefile
+	modified:   security/highwayhash/Makefile
+	modified:   security/libdecaf/Makefile
+	modified:   security/snort2pfcd/Makefile
+	modified:   security/snort2pfcd/distinfo
+	modified:   security/sudo/Makefile
+	modified:   security/sudo/distinfo
+	modified:   shells/Makefile
+	deleted:    shells/poshinit/distinfo
+	deleted:    shells/poshinit/pkg-descr
+	renamed:    shells/poshinit/Makefile -> shells/switchBashZsh/Makefile
+	new file:   shells/switchBashZsh/distinfo
+	new file:   shells/switchBashZsh/pkg-descr
+	modified:   sysutils/bacula9-docs/Makefile
+	modified:   sysutils/bacula9-docs/distinfo
+	modified:   sysutils/bacula9-server/Makefile
+	modified:   sysutils/bacula9-server/distinfo
+	modified:   sysutils/hexpeek/Makefile
+	modified:   sysutils/hexpeek/files/patch-Makefile
+	modified:   sysutils/hexpeek/files/patch-test_Makefile
+	new file:   sysutils/hexpeek/files/patch-test_base_Makefile
+	modified:   sysutils/ipfs-go/Makefile
+	modified:   sysutils/ipfs-go/distinfo
+	modified:   sysutils/nomad/Makefile
+	modified:   sysutils/nomad/distinfo
+	modified:   sysutils/pnscan/Makefile
+	modified:   sysutils/pnscan/distinfo
+	modified:   sysutils/pnscan/pkg-descr
+	modified:   sysutils/pwol/Makefile
+	modified:   sysutils/pwol/distinfo
+	modified:   sysutils/pwol/pkg-descr
+	modified:   textproc/Makefile
+	modified:   textproc/R-cran-openxlsx/Makefile
+	modified:   textproc/R-cran-openxlsx/distinfo
+	modified:   textproc/pup/Makefile
+	modified:   textproc/pup/distinfo
+	new file:   textproc/py-pallets-sphinx-themes/Makefile
+	new file:   textproc/py-pallets-sphinx-themes/distinfo
+	new file:   textproc/py-pallets-sphinx-themes/pkg-descr
+	new file:   textproc/py-sphinx-issues/Makefile
+	new file:   textproc/py-sphinx-issues/distinfo
+	new file:   textproc/py-sphinx-issues/pkg-descr
+	new file:   textproc/py-sphinxcontrib-log-cabinet/Makefile
+	new file:   textproc/py-sphinxcontrib-log-cabinet/distinfo
+	new file:   textproc/py-sphinxcontrib-log-cabinet/pkg-descr
+	modified:   www/firefox-esr/Makefile
+	modified:   www/firefox-esr/files/patch-cubeb-oss
+	modified:   www/firefox/Makefile
+	modified:   www/firefox/files/patch-cubeb-oss
+	modified:   www/minio-client/Makefile
+	modified:   www/minio-client/distinfo
+	deleted:    www/minio-client/files/patch-cmd__client-fs_freebsd.go
+	deleted:    www/minio-client/files/patch-pkg_disk_stat__freebsd.go
+	modified:   www/minio/Makefile
+	modified:   www/minio/distinfo
+	modified:   www/node/Makefile
+	modified:   www/node/distinfo
+	modified:   www/py-freenit/Makefile
+	modified:   www/py-freenit/distinfo
+	modified:   x11/rofi/Makefile
+	modified:   x11/rofi/distinfo
+	modified:   x11/rofi/pkg-plist
+	modified:   x11/slick-greeter/Makefile
+	modified:   x11/slick-greeter/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   audio/csound/Makefile
+
+
+It took 3.31 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1f1ee1c73a9a HBSD: Resolve merge conflicts
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1f1ee1c73a9a HBSD: Resolve merge conflicts
+==== END: master ====
