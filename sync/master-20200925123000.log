@@ -1,0 +1,283 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 87 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 1f1ee1c73a9a..5ba95f95093b
+Fast-forward
+ MOVED                                              |   4 +-
+ UPDATING                                           |  12 ++
+ archivers/py-lzma/Makefile                         |   2 +-
+ audio/csound/Makefile                              |   3 +-
+ audio/wavegain/Makefile                            |   4 +-
+ audio/wavegain/files/patch-audio.c                 |  11 +-
+ audio/wavegain/files/patch-audio.h                 |  11 ++
+ audio/wavegain/files/patch-main.c                  |  44 +++++
+ audio/wavegain/files/patch-misc.c                  |  12 ++
+ audio/wavegain/files/patch-wavegain.c              |  21 ++-
+ biology/Makefile                                   |   1 +
+ biology/hmmer/Makefile                             |   2 +-
+ biology/infernal/Makefile                          |   2 +-
+ biology/ncbi-cxx-toolkit/Makefile                  |  19 +-
+ biology/ncbi-cxx-toolkit/distinfo                  |   6 +-
+ biology/ncbi-cxx-toolkit/pkg-descr                 |   2 +-
+ biology/py-biom-format/Makefile                    |  34 ++++
+ biology/py-biom-format/distinfo                    |   3 +
+ biology/py-biom-format/pkg-descr                   |  19 ++
+ biology/py-scikit-bio/Makefile                     |   9 +-
+ cad/openroad/Makefile                              |   2 +
+ cad/spice/Makefile                                 |   2 +
+ converters/zbase32/Makefile                        |   3 +
+ databases/sqlite3/Makefile                         |   1 +
+ databases/sqlrelay/Makefile                        |   2 +-
+ devel/Makefile                                     |   1 +
+ devel/efl/Makefile                                 |   6 +-
+ devel/got/Makefile                                 |   7 +-
+ devel/got/distinfo                                 |   6 +-
+ devel/got/files/openbsd-compat/basename.c          |   2 +
+ devel/got/files/openbsd-compat/dirname.c           |   2 +
+ devel/got/files/openbsd-compat/imsg-buffer.c       |   2 +
+ devel/got/files/openbsd-compat/imsg.c              |   2 +
+ devel/got/files/openbsd-compat/libgen.h            |  10 --
+ .../{sys/queue.h => openbsd-compat.h}              |  47 ++++-
+ devel/got/files/openbsd-compat/stdlib.h            |   9 -
+ devel/got/files/openbsd-compat/sys/cdefs.h         |   8 -
+ devel/got/files/openbsd-compat/unistd.h            |  14 --
+ devel/got/files/patch-got_got.c                    |  12 +-
+ devel/got/files/patch-lib_object__create.c         |  10 +-
+ devel/got/files/patch-lib_worktree.c               |  12 +-
+ .../patch-libexec_got-index-pack_got-index-pack.c  |   4 +-
+ .../files/patch-libexec_got-read-gotconfig_parse.y |   8 +-
+ devel/got/files/patch-tog_tog.c                    |   4 +-
+ devel/libunwind/Makefile                           |   7 +-
+ devel/linux_libusb/Makefile                        |   4 +-
+ devel/py-Jinja2/Makefile                           |  11 +-
+ devel/py-PEAK-Rules/Makefile                       |   3 +
+ devel/py-archinfo/distinfo                         |   8 +-
+ .../py-backports.shutil_get_terminal_size/Makefile |   3 +
+ devel/py-bullet3/Makefile                          |   2 +-
+ devel/py-bullet3/distinfo                          |   6 +-
+ devel/py-bullet3/pkg-descr                         |   2 +-
+ devel/py-cle/distinfo                              |   6 +-
+ devel/py-darcsver/Makefile                         |   3 +
+ devel/py-genson/Makefile                           |  24 +++
+ devel/py-genson/distinfo                           |   3 +
+ devel/py-genson/pkg-descr                          |   7 +
+ devel/py-repoze.what/Makefile                      |   3 +
+ devel/py-selectors2/Makefile                       |   3 +
+ devel/py-zope.testbrowser/Makefile                 |   4 +-
+ devel/py-zope.testbrowser/distinfo                 |   5 +-
+ devel/sonarqube-community/Makefile                 |  12 +-
+ devel/sonarqube-community/distinfo                 |  22 +--
+ devel/staf/Makefile                                |  83 +--------
+ devel/staf/pkg-plist                               |  24 ---
+ dns/Makefile                                       |   1 -
+ dns/dnsmasq-devel/Makefile                         | 151 ----------------
+ dns/dnsmasq-devel/distinfo                         |   3 -
+ dns/dnsmasq-devel/files/dnsmasq.in                 |  99 ----------
+ dns/dnsmasq-devel/files/pkg-message.in             |  12 --
+ dns/dnsmasq-devel/pkg-descr                        |  14 --
+ dns/dnsmasq-devel/pkg-plist                        |  18 --
+ emulators/citra-qt5/Makefile                       |   2 +-
+ emulators/citra/Makefile                           |   4 +-
+ emulators/citra/distinfo                           |   4 +-
+ emulators/yuzu-qt5/Makefile                        |   2 +-
+ emulators/yuzu/Makefile                            |   4 +-
+ emulators/yuzu/distinfo                            |   4 +-
+ games/jfsw/files/patch-jfbuild-src-sdlayer2.c      |  13 --
+ games/vvvvvv/Makefile                              |   2 +-
+ graphics/cairo/Makefile                            |  11 +-
+ graphics/cairo/pkg-plist                           |   1 +
+ graphics/drm-current-kmod/Makefile                 |   4 +-
+ graphics/drm-devel-kmod/Makefile                   |   4 +-
+ graphics/facedetect/Makefile                       |  11 +-
+ graphics/facedetect/files/patch-facedetect         |  39 +++-
+ graphics/mapserver/Makefile                        |   2 +-
+ graphics/nvidia-texture-tools/Makefile             |   2 +-
+ graphics/vv/Makefile                               |   4 +-
+ lang/spidermonkey60/Makefile                       |   3 +
+ lang/spidermonkey68/Makefile                       |   3 +
+ mail/mboxgrep/Makefile                             |   5 +-
+ mail/thunderbird/Makefile                          |   5 +-
+ mail/thunderbird/distinfo                          |   6 +-
+ mail/thunderbird/files/patch-cubeb-oss             | 199 ++++++++++++---------
+ math/clrng/Makefile                                |   2 +-
+ math/gmp/Makefile                                  |   2 +-
+ math/libflame/Makefile                             |   2 +-
+ math/py-claripy/distinfo                           |   6 +-
+ math/py-hdmedians/Makefile                         |   2 +-
+ math/py-hdmedians/distinfo                         |   6 +-
+ misc/concourse/Makefile                            |   2 -
+ misc/concourse/distinfo                            |   6 +-
+ misc/ezc3d/Makefile                                |   2 +-
+ misc/ezc3d/distinfo                                |   6 +-
+ misc/vxl/Makefile                                  |   7 +-
+ misc/vxl/pkg-descr                                 |   2 +-
+ net/freeradius3/Makefile                           |  14 +-
+ net/freeradius3/pkg-plist                          |  10 +-
+ net/ntpsec/Makefile                                |   6 +
+ net/wireshark/Makefile                             |   2 +-
+ net/wireshark/distinfo                             |   6 +-
+ net/wireshark/files/patch-libssh                   |  29 ---
+ net/wireshark/pkg-plist                            |   4 +-
+ ports-mgmt/pkg/Makefile                            |   1 +
+ science/py-scimath/Makefile                        |   9 +-
+ science/py-scimath/distinfo                        |   5 +-
+ security/cracklib/Makefile                         |  22 ---
+ security/highwayhash/Makefile                      |   5 +-
+ security/libdecaf/Makefile                         |   4 +-
+ security/py-ailment/distinfo                       |   6 +-
+ security/py-angr/Makefile                          |   7 +-
+ security/py-angr/Makefile.version                  |   2 +-
+ security/py-angr/distinfo                          |  16 +-
+ security/py-pyvex/distinfo                         |  10 +-
+ security/snort2pfcd/Makefile                       |   2 +-
+ security/snort2pfcd/distinfo                       |   6 +-
+ security/sudo/Makefile                             |   2 +-
+ security/sudo/distinfo                             |   6 +-
+ shells/Makefile                                    |   2 +-
+ shells/poshinit/distinfo                           |   3 -
+ shells/poshinit/pkg-descr                          |  16 --
+ shells/{poshinit => switchBashZsh}/Makefile        |   4 +-
+ shells/switchBashZsh/distinfo                      |   3 +
+ shells/switchBashZsh/pkg-descr                     |  17 ++
+ sysutils/bacula9-docs/Makefile                     |   2 +-
+ sysutils/bacula9-docs/distinfo                     |   6 +-
+ sysutils/bacula9-server/Makefile                   |   2 +-
+ sysutils/bacula9-server/distinfo                   |   6 +-
+ sysutils/debootstrap/Makefile                      |   5 +-
+ sysutils/debootstrap/distinfo                      |   6 +-
+ .../{patch-scripts-bionic => patch-scripts-gutsy}  |   4 +-
+ sysutils/debootstrap/pkg-plist                     |   5 +
+ sysutils/hexpeek/Makefile                          |   5 +-
+ sysutils/hexpeek/files/patch-Makefile              |  21 ++-
+ sysutils/hexpeek/files/patch-test_Makefile         |  25 ++-
+ sysutils/hexpeek/files/patch-test_base_Makefile    |  11 ++
+ sysutils/ipfs-go/Makefile                          |  12 +-
+ sysutils/ipfs-go/distinfo                          |   6 +-
+ sysutils/nomad/Makefile                            |   2 +-
+ sysutils/nomad/distinfo                            |   6 +-
+ sysutils/pnscan/Makefile                           |   3 +-
+ sysutils/pnscan/distinfo                           |   6 +-
+ sysutils/pnscan/pkg-descr                          |   3 -
+ sysutils/pwol/Makefile                             |   3 +-
+ sysutils/pwol/distinfo                             |   6 +-
+ sysutils/pwol/pkg-descr                            |  14 +-
+ textproc/Makefile                                  |   3 +
+ textproc/R-cran-openxlsx/Makefile                  |   2 +-
+ textproc/R-cran-openxlsx/distinfo                  |   6 +-
+ textproc/pup/Makefile                              |  37 ++--
+ textproc/pup/distinfo                              |  22 ++-
+ textproc/py-pallets-sphinx-themes/Makefile         |  23 +++
+ textproc/py-pallets-sphinx-themes/distinfo         |   3 +
+ textproc/py-pallets-sphinx-themes/pkg-descr        |  11 ++
+ textproc/py-sphinx-issues/Makefile                 |  21 +++
+ textproc/py-sphinx-issues/distinfo                 |   3 +
+ textproc/py-sphinx-issues/pkg-descr                |   5 +
+ textproc/py-sphinxcontrib-log-cabinet/Makefile     |  23 +++
+ textproc/py-sphinxcontrib-log-cabinet/distinfo     |   3 +
+ textproc/py-sphinxcontrib-log-cabinet/pkg-descr    |   6 +
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox-esr/files/patch-cubeb-oss              | 199 ++++++++++++---------
+ www/firefox/Makefile                               |   2 +-
+ www/firefox/files/patch-cubeb-oss                  | 199 ++++++++++++---------
+ www/minio-client/Makefile                          |  14 +-
+ www/minio-client/distinfo                          |  26 +--
+ .../files/patch-cmd__client-fs_freebsd.go          |  90 ----------
+ .../files/patch-pkg_disk_stat__freebsd.go          |  68 -------
+ www/minio/Makefile                                 |   4 +-
+ www/minio/distinfo                                 |   6 +-
+ www/node/Makefile                                  |   2 +-
+ www/node/distinfo                                  |   6 +-
+ www/py-freenit/Makefile                            |   2 +-
+ www/py-freenit/distinfo                            |   6 +-
+ x11/rofi/Makefile                                  |   3 +-
+ x11/rofi/distinfo                                  |   6 +-
+ x11/rofi/pkg-plist                                 |   1 +
+ x11/slick-greeter/Makefile                         |   9 +-
+ x11/slick-greeter/pkg-plist                        | 178 +++++++++---------
+ 191 files changed, 1304 insertions(+), 1384 deletions(-)
+ create mode 100644 audio/wavegain/files/patch-audio.h
+ create mode 100644 audio/wavegain/files/patch-main.c
+ create mode 100644 audio/wavegain/files/patch-misc.c
+ create mode 100644 biology/py-biom-format/Makefile
+ create mode 100644 biology/py-biom-format/distinfo
+ create mode 100644 biology/py-biom-format/pkg-descr
+ delete mode 100644 devel/got/files/openbsd-compat/libgen.h
+ rename devel/got/files/openbsd-compat/{sys/queue.h => openbsd-compat.h} (59%)
+ delete mode 100644 devel/got/files/openbsd-compat/stdlib.h
+ delete mode 100644 devel/got/files/openbsd-compat/sys/cdefs.h
+ delete mode 100644 devel/got/files/openbsd-compat/unistd.h
+ create mode 100644 devel/py-genson/Makefile
+ create mode 100644 devel/py-genson/distinfo
+ create mode 100644 devel/py-genson/pkg-descr
+ delete mode 100644 dns/dnsmasq-devel/Makefile
+ delete mode 100644 dns/dnsmasq-devel/distinfo
+ delete mode 100644 dns/dnsmasq-devel/files/dnsmasq.in
+ delete mode 100644 dns/dnsmasq-devel/files/pkg-message.in
+ delete mode 100644 dns/dnsmasq-devel/pkg-descr
+ delete mode 100644 dns/dnsmasq-devel/pkg-plist
+ delete mode 100644 games/jfsw/files/patch-jfbuild-src-sdlayer2.c
+ delete mode 100644 net/wireshark/files/patch-libssh
+ delete mode 100644 shells/poshinit/distinfo
+ delete mode 100644 shells/poshinit/pkg-descr
+ rename shells/{poshinit => switchBashZsh}/Makefile (92%)
+ create mode 100644 shells/switchBashZsh/distinfo
+ create mode 100644 shells/switchBashZsh/pkg-descr
+ rename sysutils/debootstrap/files/{patch-scripts-bionic => patch-scripts-gutsy} (85%)
+ create mode 100644 sysutils/hexpeek/files/patch-test_base_Makefile
+ create mode 100644 textproc/py-pallets-sphinx-themes/Makefile
+ create mode 100644 textproc/py-pallets-sphinx-themes/distinfo
+ create mode 100644 textproc/py-pallets-sphinx-themes/pkg-descr
+ create mode 100644 textproc/py-sphinx-issues/Makefile
+ create mode 100644 textproc/py-sphinx-issues/distinfo
+ create mode 100644 textproc/py-sphinx-issues/pkg-descr
+ create mode 100644 textproc/py-sphinxcontrib-log-cabinet/Makefile
+ create mode 100644 textproc/py-sphinxcontrib-log-cabinet/distinfo
+ create mode 100644 textproc/py-sphinxcontrib-log-cabinet/pkg-descr
+ delete mode 100644 www/minio-client/files/patch-cmd__client-fs_freebsd.go
+ delete mode 100644 www/minio-client/files/patch-pkg_disk_stat__freebsd.go
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
