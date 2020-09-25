@@ -281,3 +281,221 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/zeitgeist/files/patch-libzeitgeist_where-clause.vala
+Removing sysutils/zeitgeist/files/patch-libzeitgeist_timestamp.vala
+Auto-merging security/strongswan/Makefile
+Removing net-im/corebird/pkg-plist
+Removing net-im/corebird/pkg-descr
+Removing net-im/corebird/distinfo
+Removing net-im/corebird/Makefile
+Removing lang/vala/files/patch-vapi_libpq.vapi
+Removing lang/vala/files/patch-vapi_glib-2.0.vapi
+Removing devel/py-pyqi/pkg-descr
+Removing devel/py-pyqi/distinfo
+Removing devel/py-pyqi/Makefile
+Merge made by the 'recursive' strategy.
+ GIDs                                               |   2 +-
+ MOVED                                              |   2 +
+ astro/wmglobe/Makefile                             |   3 +-
+ astro/wmglobe/files/patch-src_myconvert.c          |  20 +
+ astro/wmglobe/files/patch-src_rend.c               |  23 +
+ astro/wmglobe/files/patch-src_wmglobe.c            |  29 +
+ astro/wmglobe/files/patch-src_wmglobe.h            | 141 ++++
+ astro/wmglobe/files/patch-src_wmgutil.c            |  40 +
+ databases/evolution-data-server/Makefile           |   2 +-
+ databases/postgresql10-contrib/Makefile            |   2 +-
+ databases/postgresql11-contrib/Makefile            |   2 +-
+ databases/postgresql12-contrib/Makefile            |   2 +-
+ databases/postgresql13-contrib/Makefile            |   4 +-
+ databases/postgresql95-contrib/Makefile            |   2 +-
+ deskutils/gnome-calendar/Makefile                  |   2 +-
+ deskutils/gnome-clocks/Makefile                    |   1 +
+ deskutils/gnome-contacts/Makefile                  |   8 +-
+ deskutils/gnome-contacts/distinfo                  |   6 +-
+ .../files/patch-src_contacts-window.vala           |  14 +
+ deskutils/gnome-contacts/pkg-plist                 |   8 +-
+ deskutils/gnome-initial-setup/Makefile             |   2 +-
+ deskutils/gnome-weather/Makefile                   |   1 +
+ devel/Makefile                                     |   1 -
+ devel/anjuta/Makefile                              |  15 +-
+ devel/anjuta/pkg-plist                             |   4 -
+ devel/dee/Makefile                                 |  11 +-
+ ...1.2.7-deprecated-g_type_class_add_private.patch | 915 +++++++++++++++++++++
+ devel/dee/files/vapi-skip-properties.patch         |  15 +
+ devel/py-Jinja2/Makefile                           |   2 +-
+ devel/py-pyqi/Makefile                             |  20 -
+ devel/py-pyqi/distinfo                             |   3 -
+ devel/py-pyqi/pkg-descr                            |   5 -
+ devel/rinutils/Makefile                            |   2 +-
+ devel/rinutils/distinfo                            |   8 +-
+ editors/elementary-code/Makefile                   |   3 +-
+ games/gnome-chess/Makefile                         |   4 +-
+ games/gnome-chess/distinfo                         |   6 +-
+ games/gnome-chess/pkg-plist                        | 268 +++---
+ graphics/py-glooey/Makefile                        |   2 +-
+ graphics/py-glooey/distinfo                        |   6 +-
+ lang/vala/Makefile                                 |   6 +-
+ lang/vala/distinfo                                 |   6 +-
+ lang/vala/files/patch-vapi_glib-2.0.vapi           |  11 -
+ lang/vala/files/patch-vapi_libpq.vapi              |  14 -
+ lang/vala/pkg-plist                                | 129 +--
+ mail/evolution/Makefile                            |   2 +-
+ mail/geary/Makefile                                |   8 +-
+ mail/geary/distinfo                                |   6 +-
+ mail/geary/pkg-plist                               |   8 +-
+ math/brial/Makefile                                |   3 +-
+ math/brial/distinfo                                |   6 +-
+ math/brial/pkg-plist                               |   8 +-
+ math/py-brial/Makefile                             |   2 +-
+ math/py-brial/distinfo                             |   6 +-
+ misc/vifm/Makefile                                 |   6 +-
+ misc/vifm/distinfo                                 |   6 +-
+ misc/vifm/pkg-plist                                |   4 +-
+ multimedia/libva-utils/Makefile                    |   2 +-
+ multimedia/libva-utils/distinfo                    |   6 +-
+ multimedia/libva/distinfo                          |  20 +-
+ net-im/Makefile                                    |   1 -
+ net-im/corebird/Makefile                           |  59 --
+ net-im/corebird/distinfo                           |   3 -
+ net-im/corebird/pkg-descr                          |   4 -
+ net-im/corebird/pkg-plist                          |  49 --
+ net-im/dino/Makefile                               |   2 -
+ net-im/sayaka/Makefile                             |   2 +
+ net/grilo-plugins/Makefile                         |   4 +-
+ net/grilo-plugins/distinfo                         |   6 +-
+ net/grilo-plugins/pkg-plist                        |  11 +-
+ net/grilo/Makefile                                 |   6 +-
+ net/grilo/distinfo                                 |   6 +-
+ net/grilo/pkg-plist                                |   7 +-
+ net/libdmapsharing/Makefile                        |   5 +-
+ net/libdmapsharing/distinfo                        |   6 +-
+ net/libdmapsharing/pkg-plist                       |  39 +-
+ net/libgweather/Makefile                           |   2 +-
+ net/libgweather/distinfo                           |   6 +-
+ net/libgweather/pkg-plist                          |   4 +-
+ net/py-uritemplate/Makefile                        |   4 +-
+ net/py-uritemplate/distinfo                        |   6 +-
+ net/py-uritemplate/pkg-descr                       |   2 +-
+ print/cups-filters/Makefile                        |   3 +-
+ print/cups-filters/distinfo                        |   6 +-
+ security/libnitrokey/Makefile                      |  12 +-
+ security/libnitrokey/distinfo                      |   6 +-
+ security/libnitrokey/pkg-plist                     |   2 +-
+ security/py-fail2ban/files/fail2ban.in             |   2 +
+ security/strongswan/Makefile                       |  10 +-
+ security/strongswan/distinfo                       |   6 +-
+ sysutils/Makefile                                  |   1 +
+ sysutils/gnome-settings-daemon/Makefile            |   2 +-
+ sysutils/helm/Makefile                             |   4 +-
+ sysutils/helm/distinfo                             |   6 +-
+ sysutils/kubectl/Makefile                          |   2 +-
+ sysutils/kubectl/distinfo                          |   6 +-
+ sysutils/minikube/Makefile                         |   4 +-
+ sysutils/minikube/distinfo                         |   6 +-
+ sysutils/nix/Makefile                              | 114 +++
+ sysutils/nix/distinfo                              |   3 +
+ sysutils/nix/files/add-nixbld-users                |  23 +
+ .../files/patch-src_libexpr_primops_fetchGit.cc    |  19 +
+ sysutils/nix/files/patch-src_libstore_build.cc     |  29 +
+ .../patch-src_libstore_s3-binary-cache-store.cc    | 104 +++
+ sysutils/nix/files/pkg-message.in                  |  29 +
+ sysutils/nix/pkg-descr                             |  14 +
+ sysutils/nix/pkg-plist                             | 129 +++
+ sysutils/zeitgeist/Makefile                        |   3 +-
+ sysutils/zeitgeist/distinfo                        |   6 +-
+ .../files/patch-libzeitgeist_timestamp.vala        |  12 -
+ .../files/patch-libzeitgeist_where-clause.vala     |  11 -
+ sysutils/zeitgeist/pkg-plist                       |  10 +-
+ textproc/ibus/Makefile                             |   1 +
+ textproc/ibus/files/patch-ui_gtk3_application.vala |  20 +
+ www/py-paste/Makefile                              |   8 +-
+ www/py-paste/distinfo                              |   6 +-
+ 116 files changed, 2062 insertions(+), 656 deletions(-)
+ create mode 100644 astro/wmglobe/files/patch-src_myconvert.c
+ create mode 100644 astro/wmglobe/files/patch-src_rend.c
+ create mode 100644 astro/wmglobe/files/patch-src_wmglobe.c
+ create mode 100644 astro/wmglobe/files/patch-src_wmglobe.h
+ create mode 100644 astro/wmglobe/files/patch-src_wmgutil.c
+ create mode 100644 deskutils/gnome-contacts/files/patch-src_contacts-window.vala
+ create mode 100644 devel/dee/files/dee-1.2.7-deprecated-g_type_class_add_private.patch
+ create mode 100644 devel/dee/files/vapi-skip-properties.patch
+ delete mode 100644 devel/py-pyqi/Makefile
+ delete mode 100644 devel/py-pyqi/distinfo
+ delete mode 100644 devel/py-pyqi/pkg-descr
+ delete mode 100644 lang/vala/files/patch-vapi_glib-2.0.vapi
+ delete mode 100644 lang/vala/files/patch-vapi_libpq.vapi
+ delete mode 100644 net-im/corebird/Makefile
+ delete mode 100644 net-im/corebird/distinfo
+ delete mode 100644 net-im/corebird/pkg-descr
+ delete mode 100644 net-im/corebird/pkg-plist
+ create mode 100644 sysutils/nix/Makefile
+ create mode 100644 sysutils/nix/distinfo
+ create mode 100644 sysutils/nix/files/add-nixbld-users
+ create mode 100644 sysutils/nix/files/patch-src_libexpr_primops_fetchGit.cc
+ create mode 100644 sysutils/nix/files/patch-src_libstore_build.cc
+ create mode 100644 sysutils/nix/files/patch-src_libstore_s3-binary-cache-store.cc
+ create mode 100644 sysutils/nix/files/pkg-message.in
+ create mode 100644 sysutils/nix/pkg-descr
+ create mode 100644 sysutils/nix/pkg-plist
+ delete mode 100644 sysutils/zeitgeist/files/patch-libzeitgeist_timestamp.vala
+ delete mode 100644 sysutils/zeitgeist/files/patch-libzeitgeist_where-clause.vala
+ create mode 100644 textproc/ibus/files/patch-ui_gtk3_application.vala
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    5ba95f95093b..649690756706  master -> master        
+remote:    1f1ee1c73a9a..5ba95f95093b  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   5ba95f95093b..649690756706  master -> master
+==== END: master ====
