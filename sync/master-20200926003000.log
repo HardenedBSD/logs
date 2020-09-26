@@ -47,3 +47,194 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing misc/libsolv/files/patch-CMakeLists.txt
+Removing misc/freebsd-release-manifests/files/MANIFESTS/sparc64-sparc64-12.2-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpcspe-12.2-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc64-12.2-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc-12.2-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/i386-i386-12.2-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/arm64-aarch64-12.2-BETA2
+Removing misc/freebsd-release-manifests/files/MANIFESTS/amd64-amd64-12.2-BETA2
+Merge made by the 'recursive' strategy.
+ devel/Makefile                                     |   1 +
+ devel/util-linux/Makefile                          |  40 +++++
+ devel/util-linux/distinfo                          |   3 +
+ devel/util-linux/files/patch-Makefile.am           |  19 +++
+ devel/util-linux/pkg-descr                         |   3 +
+ devel/util-linux/pkg-plist                         | 162 +++++++++++++++++++++
+ emulators/rpcs3/Makefile                           |   4 +-
+ emulators/rpcs3/distinfo                           |   6 +-
+ emulators/yuzu-qt5/Makefile                        |   2 +-
+ emulators/yuzu/Makefile                            |   6 +-
+ emulators/yuzu/distinfo                            |   6 +-
+ finance/R-cran-lmtest/Makefile                     |   3 +-
+ finance/R-cran-lmtest/distinfo                     |   6 +-
+ games/heroes/Makefile                              |  34 +++--
+ games/heroes/files/patch-configure                 |  10 +-
+ games/heroes/files/patch-src__menus.c              |   6 +-
+ games/heroes/files/patch-src_hedlite.c             |  36 ++---
+ games/heroes/files/patch-src_persona.h             |  13 ++
+ games/wesnoth/Makefile                             |   2 +-
+ games/wesnoth/distinfo                             |   6 +-
+ games/wesnoth/pkg-plist                            |   2 +
+ graphics/mapyrus/Makefile                          |   4 +-
+ graphics/mapyrus/distinfo                          |   6 +-
+ graphics/mesa-devel/Makefile                       |   6 +-
+ graphics/mesa-devel/distinfo                       |   6 +-
+ misc/Makefile                                      |   2 +
+ misc/freebsd-release-manifests/Makefile            |   2 +-
+ .../files/MANIFESTS/amd64-amd64-12.2-BETA2         |   9 --
+ .../files/MANIFESTS/amd64-amd64-12.2-BETA3         |   9 ++
+ .../files/MANIFESTS/arm64-aarch64-12.2-BETA2       |   7 -
+ .../files/MANIFESTS/arm64-aarch64-12.2-BETA3       |   7 +
+ .../files/MANIFESTS/i386-i386-12.2-BETA2           |   7 -
+ .../files/MANIFESTS/i386-i386-12.2-BETA3           |   7 +
+ .../files/MANIFESTS/powerpc-powerpc-12.2-BETA2     |   7 -
+ .../files/MANIFESTS/powerpc-powerpc-12.2-BETA3     |   7 +
+ .../files/MANIFESTS/powerpc-powerpc64-12.2-BETA2   |   9 --
+ .../files/MANIFESTS/powerpc-powerpc64-12.2-BETA3   |   9 ++
+ .../files/MANIFESTS/powerpc-powerpcspe-12.2-BETA2  |   7 -
+ .../files/MANIFESTS/powerpc-powerpcspe-12.2-BETA3  |   7 +
+ .../files/MANIFESTS/sparc64-sparc64-12.2-BETA2     |   7 -
+ misc/freebsd-release-manifests/pkg-plist           |  13 +-
+ misc/libmodulemd/Makefile                          |  28 ++++
+ misc/libmodulemd/distinfo                          |   3 +
+ misc/libmodulemd/files/patch-meson.build           |  22 +++
+ misc/libmodulemd/pkg-descr                         |   3 +
+ misc/libmodulemd/pkg-plist                         |  31 ++++
+ misc/librepo/Makefile                              |  43 ++++++
+ misc/librepo/distinfo                              |   3 +
+ misc/librepo/files/patch-CMakeLists.txt            |  27 ++++
+ misc/librepo/files/patch-librepo_CMakeLists.txt    |  19 +++
+ misc/librepo/files/patch-librepo_checksum.c        |  11 ++
+ misc/librepo/files/patch-librepo_downloader.c      |  23 +++
+ misc/librepo/files/patch-librepo_librepo.pc.cmake  |  11 ++
+ misc/librepo/files/patch-tests_test__checksum.c    |  11 ++
+ misc/librepo/files/xattr.c                         |  32 ++++
+ misc/librepo/files/xattr.h                         |   4 +
+ misc/librepo/pkg-descr                             |   4 +
+ misc/librepo/pkg-plist                             |  28 ++++
+ misc/libsolv/Makefile                              |  50 ++++++-
+ misc/libsolv/distinfo                              |   6 +-
+ misc/libsolv/files/patch-CMakeLists.txt            |  11 --
+ misc/libsolv/pkg-descr                             |   2 +-
+ misc/libsolv/pkg-plist                             |  40 +++--
+ sysutils/Makefile                                  |   1 +
+ sysutils/libdnf/Makefile                           |  47 ++++++
+ sysutils/libdnf/distinfo                           |   3 +
+ sysutils/libdnf/files/patch-CMakeLists.txt         |  22 +++
+ sysutils/libdnf/files/patch-libdnf_hy-iutil.cpp    |  12 ++
+ sysutils/libdnf/files/patch-libdnf_hy-util.cpp     |  15 ++
+ sysutils/libdnf/pkg-descr                          |   5 +
+ sysutils/libdnf/pkg-plist                          | 107 ++++++++++++++
+ sysutils/rubygem-bolt/Makefile                     |   2 +-
+ sysutils/rubygem-bolt/distinfo                     |   6 +-
+ sysutils/rubygem-bolt/files/patch-bolt.gemspec     |  29 ++--
+ sysutils/rubygem-facter/Makefile                   |   2 +-
+ sysutils/rubygem-facter/distinfo                   |   6 +-
+ x11-servers/xwayland-devel/Makefile                |   4 +-
+ x11-servers/xwayland-devel/distinfo                |   6 +-
+ 78 files changed, 997 insertions(+), 190 deletions(-)
+ create mode 100644 devel/util-linux/Makefile
+ create mode 100644 devel/util-linux/distinfo
+ create mode 100644 devel/util-linux/files/patch-Makefile.am
+ create mode 100644 devel/util-linux/pkg-descr
+ create mode 100644 devel/util-linux/pkg-plist
+ create mode 100644 games/heroes/files/patch-src_persona.h
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/amd64-amd64-12.2-BETA2
+ create mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/amd64-amd64-12.2-BETA3
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/arm64-aarch64-12.2-BETA2
+ create mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/arm64-aarch64-12.2-BETA3
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/i386-i386-12.2-BETA2
+ create mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/i386-i386-12.2-BETA3
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc-12.2-BETA2
+ create mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc-12.2-BETA3
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc64-12.2-BETA2
+ create mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpc64-12.2-BETA3
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpcspe-12.2-BETA2
+ create mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/powerpc-powerpcspe-12.2-BETA3
+ delete mode 100644 misc/freebsd-release-manifests/files/MANIFESTS/sparc64-sparc64-12.2-BETA2
+ create mode 100644 misc/libmodulemd/Makefile
+ create mode 100644 misc/libmodulemd/distinfo
+ create mode 100644 misc/libmodulemd/files/patch-meson.build
+ create mode 100644 misc/libmodulemd/pkg-descr
+ create mode 100644 misc/libmodulemd/pkg-plist
+ create mode 100644 misc/librepo/Makefile
+ create mode 100644 misc/librepo/distinfo
+ create mode 100644 misc/librepo/files/patch-CMakeLists.txt
+ create mode 100644 misc/librepo/files/patch-librepo_CMakeLists.txt
+ create mode 100644 misc/librepo/files/patch-librepo_checksum.c
+ create mode 100644 misc/librepo/files/patch-librepo_downloader.c
+ create mode 100644 misc/librepo/files/patch-librepo_librepo.pc.cmake
+ create mode 100644 misc/librepo/files/patch-tests_test__checksum.c
+ create mode 100644 misc/librepo/files/xattr.c
+ create mode 100644 misc/librepo/files/xattr.h
+ create mode 100644 misc/librepo/pkg-descr
+ create mode 100644 misc/librepo/pkg-plist
+ delete mode 100644 misc/libsolv/files/patch-CMakeLists.txt
+ create mode 100644 sysutils/libdnf/Makefile
+ create mode 100644 sysutils/libdnf/distinfo
+ create mode 100644 sysutils/libdnf/files/patch-CMakeLists.txt
+ create mode 100644 sysutils/libdnf/files/patch-libdnf_hy-iutil.cpp
+ create mode 100644 sysutils/libdnf/files/patch-libdnf_hy-util.cpp
+ create mode 100644 sysutils/libdnf/pkg-descr
+ create mode 100644 sysutils/libdnf/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    57d671ed215a..016717a149a2  master -> master        
+remote:    649690756706..57d671ed215a  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   57d671ed215a..016717a149a2  master -> master
+==== END: master ====
