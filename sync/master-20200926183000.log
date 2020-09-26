@@ -47,3 +47,187 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/gnome-terminal/files/patch-src_Makefile.in
+Removing x11/gnome-terminal/files/patch-config.h.in
+Auto-merging sysutils/nut/Makefile
+Removing graphics/gnome-color-manager/files/patch-gentoo_00878b
+Removing graphics/evince-lite/pkg-descr
+Removing graphics/evince-lite/Makefile
+Removing devel/gnome-builder/files/patch-src_libide_meson.build
+Removing deskutils/nextcloudclient/files/patch-src_gui_owncloudgui.cpp
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    1 +
+ audio/liblo/Makefile                               |    2 +-
+ audio/lsp-plugins-lv2/Makefile                     |    2 +-
+ audio/ocp/Makefile                                 |    2 +-
+ audio/vgmplay/Makefile                             |    3 +-
+ audio/wavplay/Makefile                             |    4 +-
+ audio/xmcd/Makefile                                |   15 +-
+ cad/cura-engine/Makefile                           |    7 +-
+ cad/cura-engine/distinfo                           |    6 +-
+ cad/cura/Makefile                                  |   13 +-
+ cad/cura/distinfo                                  |    6 +-
+ cad/cura/files/patch-cura__app.py                  |    2 +-
+ ...ns_USBPrinting_USBPrinterOutputDeviceManager.py |    6 +-
+ cad/cura/pkg-plist                                 | 1054 +++++++++++++++++---
+ cad/fdm_materials/Makefile                         |    5 +-
+ cad/fdm_materials/distinfo                         |    6 +-
+ cad/fdm_materials/pkg-plist                        |   10 +-
+ cad/netgen/Makefile                                |    2 +-
+ cad/netgen/distinfo                                |    6 +-
+ cad/netgen/pkg-plist                               |    2 +
+ cad/uranium/Makefile                               |    6 +-
+ cad/uranium/distinfo                               |    6 +-
+ cad/uranium/pkg-plist                              |    2 +
+ deskutils/gnome-tweaks/Makefile                    |    3 +-
+ deskutils/gnome-tweaks/distinfo                    |    6 +-
+ deskutils/gnome-tweaks/pkg-plist                   |   23 +-
+ .../files/patch-src_gui_owncloudgui.cpp            |   11 -
+ devel/apache-commons-io/Makefile                   |    2 +-
+ devel/apache-commons-io/distinfo                   |    6 +-
+ devel/gnome-builder/Makefile                       |   35 +-
+ devel/gnome-builder/distinfo                       |    6 +-
+ .../files/patch-src_libide_meson.build             |   10 -
+ devel/gnome-builder/pkg-plist                      | 1029 +++++++++++++------
+ devel/linux_libusb/Makefile                        |   12 +-
+ devel/py-RPyC/Makefile                             |    6 +-
+ devel/py-RPyC/distinfo                             |    6 +-
+ graphics/Makefile                                  |    1 -
+ graphics/evince-lite/Makefile                      |   18 -
+ graphics/evince-lite/pkg-descr                     |    8 -
+ graphics/evince/Makefile                           |   79 +-
+ graphics/evince/distinfo                           |    6 +-
+ graphics/evince/pkg-plist                          |  267 +----
+ .../pkg-plist => evince/pkg-plist-lite}            |  263 +----
+ graphics/gnome-color-manager/Makefile              |    6 +-
+ graphics/gnome-color-manager/distinfo              |    6 +-
+ .../gnome-color-manager/files/patch-gentoo_00878b  |   42 -
+ graphics/gnome-color-manager/pkg-plist             |   45 +-
+ graphics/libansilove/Makefile                      |    2 +-
+ graphics/libansilove/distinfo                      |    6 +-
+ graphics/sk1libs/Makefile                          |    2 +-
+ graphics/uniconvertor/Makefile                     |    2 +-
+ graphics/vips/Makefile                             |    9 +-
+ graphics/vips/pkg-plist                            |    2 -
+ graphics/yed/Makefile                              |    2 +-
+ graphics/yed/distinfo                              |    6 +-
+ math/matio/Makefile                                |    2 +-
+ math/matio/distinfo                                |    6 +-
+ math/matio/pkg-plist                               |    4 +-
+ math/octave-forge-dicom/Makefile                   |    3 +-
+ math/octave-forge-dicom/distinfo                   |    6 +-
+ math/scilab/Makefile                               |    2 +-
+ ...tch-modules_matio_src_cpp_GetSparseVariable.cpp |   20 +
+ misc/iio-oscilloscope/Makefile                     |    1 +
+ multimedia/smplayer/pkg-descr                      |    2 +-
+ net-mgmt/nagvis/Makefile                           |    2 +-
+ net-mgmt/nagvis/distinfo                           |    6 +-
+ net/cloudflared/Makefile                           |    2 +-
+ net/cloudflared/distinfo                           |    6 +-
+ net/glusterfs/Makefile                             |   28 +-
+ net/glusterfs/files/patch-configure.ac             |   14 +
+ .../files/patch-libglusterfs_src_Makefile.am       |    5 +-
+ .../files/patch-libglusterfs_src_common-utils.c    |   31 +-
+ .../patch-libglusterfs_src_glusterfs_syscall.h     |   16 +
+ .../files/patch-libglusterfs_src_libglusterfs.sym  |   11 +
+ .../files/patch-libglusterfs_src_syscall.c         |   64 +-
+ net/glusterfs/files/patch-mount_glusterfs.in       |    4 +-
+ .../patch-xlators_mgmt_glusterd_src_Makefile.am    |   17 +-
+ ...atch-xlators_mgmt_glusterd_src_glusterd-utils.c |  115 +++
+ net/glusterfs/pkg-plist                            |  134 +--
+ net/libarcus/Makefile                              |    6 +-
+ net/libarcus/distinfo                              |    6 +-
+ net/libcharon/Makefile                             |    4 +-
+ net/libcharon/distinfo                             |    6 +-
+ net/ooni-probe-cli/Makefile                        |   35 +-
+ net/ooni-probe-cli/distinfo                        |   72 +-
+ net/py-trio/Makefile                               |    3 +-
+ net/py-trio/distinfo                               |    6 +-
+ print/py-preppy/Makefile                           |    2 +-
+ science/kst2/Makefile                              |    2 +-
+ sysutils/nut-devel/Makefile                        |    2 +-
+ sysutils/nut-devel/pkg-plist                       |   20 +-
+ sysutils/nut/Makefile                              |    2 +-
+ sysutils/nut/pkg-plist                             |   20 +-
+ x11-toolkits/libwnck3/Makefile                     |   20 +-
+ x11-toolkits/libwnck3/distinfo                     |    6 +-
+ .../libwnck3/files/patch-libwnck_libwnck-3.map     |   11 +
+ x11-toolkits/libwnck3/pkg-plist                    |   44 -
+ x11/gnome-terminal/Makefile                        |    9 +-
+ x11/gnome-terminal/distinfo                        |    6 +-
+ x11/gnome-terminal/files/patch-config.h.in         |   12 -
+ x11/gnome-terminal/files/patch-src_Makefile.in     |   14 -
+ x11/gnome-terminal/pkg-plist                       |   51 +-
+ 102 files changed, 2451 insertions(+), 1504 deletions(-)
+ delete mode 100644 deskutils/nextcloudclient/files/patch-src_gui_owncloudgui.cpp
+ delete mode 100644 devel/gnome-builder/files/patch-src_libide_meson.build
+ delete mode 100644 graphics/evince-lite/Makefile
+ delete mode 100644 graphics/evince-lite/pkg-descr
+ rename graphics/{evince-lite/pkg-plist => evince/pkg-plist-lite} (92%)
+ delete mode 100644 graphics/gnome-color-manager/files/patch-gentoo_00878b
+ create mode 100644 math/scilab/files/patch-modules_matio_src_cpp_GetSparseVariable.cpp
+ create mode 100644 net/glusterfs/files/patch-libglusterfs_src_glusterfs_syscall.h
+ create mode 100644 net/glusterfs/files/patch-libglusterfs_src_libglusterfs.sym
+ create mode 100644 net/glusterfs/files/patch-xlators_mgmt_glusterd_src_glusterd-utils.c
+ create mode 100644 x11-toolkits/libwnck3/files/patch-libwnck_libwnck-3.map
+ delete mode 100644 x11/gnome-terminal/files/patch-config.h.in
+ delete mode 100644 x11/gnome-terminal/files/patch-src_Makefile.in
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    c0789adc31e1..78002e08c43b  master -> master        
+remote:    0b5359952715..c0789adc31e1  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c0789adc31e1..78002e08c43b  master -> master
+==== END: master ====
