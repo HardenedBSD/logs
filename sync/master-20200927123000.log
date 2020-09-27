@@ -47,3 +47,146 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/pulledpork/files/patch-etc_pulledpork.conf
+Removing security/pulledpork/files/patch-etc_modifysid.conf
+Removing security/pulledpork/files/patch-README.md
+Auto-merging graphics/opencolorio/Makefile
+Removing devel/got/files/patch-lib_worktree.c
+Merge made by the 'recursive' strategy.
+ astro/mkgmap/Makefile                              |   2 +-
+ astro/mkgmap/distinfo                              |   6 +-
+ deskutils/go-for-it/Makefile                       |   2 +-
+ devel/Makefile                                     |   2 +
+ devel/got/Makefile                                 |   1 +
+ devel/got/files/openbsd-compat/Makefile            |   1 +
+ devel/got/files/openbsd-compat/open.c              |  65 ++
+ devel/got/files/openbsd-compat/openbsd-compat.h    |   9 +
+ devel/got/files/patch-got_got.c                    |  18 -
+ devel/got/files/patch-lib_object__create.c         |   9 -
+ devel/got/files/patch-lib_worktree.c               |  50 --
+ devel/linux_libusb/Makefile                        |  22 +-
+ .../files/patch-tools_clang_lib_Basic_Targets.cpp  |  11 +
+ devel/py-cson/Makefile                             |  24 +
+ devel/py-cson/distinfo                             |   3 +
+ devel/py-cson/pkg-descr                            |   3 +
+ devel/py-speg/Makefile                             |  18 +
+ devel/py-speg/distinfo                             |   3 +
+ devel/py-speg/pkg-descr                            |   3 +
+ graphics/opencolorio/Makefile                      |  14 +-
+ graphics/opencolorio/pkg-plist                     | 111 ---
+ graphics/qgis-ltr/Makefile                         |  49 +-
+ graphics/qgis-ltr/distinfo                         |  12 +-
+ graphics/qgis-ltr/pkg-plist                        |   9 +
+ lang/erlang-runtime21/Makefile                     |   1 +
+ mail/pecl-mailparse/Makefile                       |   2 +-
+ mail/pecl-mailparse/distinfo                       |   6 +-
+ math/asymptote/Makefile                            |  23 +-
+ math/asymptote/distinfo                            |   6 +-
+ math/asymptote/files/patch-xstream.h               |  28 +-
+ math/asymptote/pkg-plist                           | 181 ++---
+ misc/librepo/Makefile                              |   2 +-
+ misc/librepo/files/patch-librepo_downloader.c      |  11 +-
+ misc/librepo/files/patch-librepo_yum.c             |  15 +
+ net/pecl-oauth2/Makefile                           |   2 +-
+ net/pecl-oauth2/distinfo                           |   6 +-
+ science/silo/Makefile                              |   4 +-
+ science/silo/files/patch-configure                 |  11 +
+ science/silo/files/patch-python3                   | 768 +++++++++++++++++++++
+ science/silo/files/patch-python3.8                 |  45 ++
+ security/pulledpork/Makefile                       |   8 +-
+ security/pulledpork/distinfo                       |   6 +-
+ security/pulledpork/files/patch-README.md          | 253 -------
+ security/pulledpork/files/patch-etc_modifysid.conf |  23 -
+ .../pulledpork/files/patch-etc_pulledpork.conf     |  34 -
+ security/pulledpork/files/patch-pulledpork.pl      | 144 +---
+ security/pulledpork/files/pkg-message.in           |   6 +-
+ security/pulledpork/pkg-plist                      |   4 +-
+ security/py-sequoia/Makefile                       |   2 +-
+ sysutils/bpytop/Makefile                           |   2 +-
+ sysutils/bpytop/distinfo                           |   6 +-
+ sysutils/dnf/Makefile                              |   6 +
+ sysutils/dnf/pkg-plist                             |   2 +
+ sysutils/ttyd/Makefile                             |   2 +-
+ textproc/py-rich/Makefile                          |   2 +-
+ textproc/py-rich/distinfo                          |   6 +-
+ www/cgicc/Makefile                                 |  14 +-
+ www/py-yarl/Makefile                               |   2 +-
+ www/py-yarl/distinfo                               |   6 +-
+ x11/rofi-calc/Makefile                             |   2 +-
+ x11/rofi-calc/distinfo                             |   6 +-
+ 61 files changed, 1218 insertions(+), 876 deletions(-)
+ create mode 100644 devel/got/files/openbsd-compat/open.c
+ delete mode 100644 devel/got/files/patch-lib_worktree.c
+ create mode 100644 devel/llvm80/files/patch-tools_clang_lib_Basic_Targets.cpp
+ create mode 100644 devel/py-cson/Makefile
+ create mode 100644 devel/py-cson/distinfo
+ create mode 100644 devel/py-cson/pkg-descr
+ create mode 100644 devel/py-speg/Makefile
+ create mode 100644 devel/py-speg/distinfo
+ create mode 100644 devel/py-speg/pkg-descr
+ create mode 100644 misc/librepo/files/patch-librepo_yum.c
+ create mode 100644 science/silo/files/patch-configure
+ create mode 100644 science/silo/files/patch-python3
+ create mode 100644 science/silo/files/patch-python3.8
+ delete mode 100644 security/pulledpork/files/patch-README.md
+ delete mode 100644 security/pulledpork/files/patch-etc_modifysid.conf
+ delete mode 100644 security/pulledpork/files/patch-etc_pulledpork.conf
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    bcfde7973715..effb0ee163e4  master -> master
+remote:    918d55501cfd..bcfde7973715  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   bcfde7973715..effb0ee163e4  master -> master
+==== END: master ====
