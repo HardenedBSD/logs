@@ -681,3 +681,91 @@ new files yourself (see 'git help status').
 nothing to commit, working tree clean
 HEAD is now at f4e10d237737 HBSD: www/trafficserver: resolve merge conflict
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 118 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at f4e10d237737 HBSD: www/trafficserver: resolve merge conflict
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/seahorse/files/patch-configure
+Merge made by the 'recursive' strategy.
+ astro/siril/Makefile                               |  26 +-
+ astro/siril/distinfo                               |   6 +-
+ astro/siril/pkg-plist                              |  31 +-
+ databases/mongodb36/Makefile                       |   2 +-
+ databases/mongodb36/distinfo                       |   6 +-
+ devel/gsettings-desktop-schemas/Makefile           |  12 +-
+ devel/gsettings-desktop-schemas/distinfo           |   6 +-
+ .../files/patch-meson.build                        |  11 +
+ devel/gsettings-desktop-schemas/pkg-plist          |   1 +
+ devel/libconfuse/Makefile                          |  19 +-
+ devel/libconfuse/distinfo                          |   6 +-
+ devel/libconfuse/pkg-plist                         |   3 +
+ mail/getmail6/Makefile                             |   3 -
+ mail/roundcube/Makefile                            |   2 +-
+ mail/roundcube/distinfo                            |   6 +-
+ net/glib-networking/Makefile                       |   4 +-
+ net/glib-networking/distinfo                       |   6 +-
+ net/glib-networking/pkg-plist                      |   1 +
+ news/sabnzbdplus/Makefile                          |  12 +-
+ news/sabnzbdplus/distinfo                          |   6 +-
+ security/gnome-keyring/Makefile                    |   8 +-
+ security/gnome-keyring/distinfo                    |   6 +-
+ security/gnome-keyring/pkg-plist                   |   5 +
+ security/seahorse/Makefile                         |  31 +-
+ security/seahorse/distinfo                         |   6 +-
+ security/seahorse/files/patch-configure            |  31 --
+ security/seahorse/pkg-plist                        | 317 +++++++++++++++++++--
+ security/vuxml/vuln.xml                            |  34 +++
+ www/mediawiki134/Makefile                          |   3 +-
+ www/mediawiki134/distinfo                          |   6 +-
+ x11-themes/gnome-backgrounds/Makefile              |   2 +-
+ x11-themes/gnome-backgrounds/distinfo              |   6 +-
+ x11-themes/gnome-backgrounds/pkg-plist             | 112 +-------
+ 33 files changed, 465 insertions(+), 271 deletions(-)
+ create mode 100644 devel/gsettings-desktop-schemas/files/patch-meson.build
+ delete mode 100644 security/seahorse/files/patch-configure
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 133 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 6d4fc6fffd60 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
