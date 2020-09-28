@@ -59,3 +59,316 @@ remote: Processed 1 references in total
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    f4e10d237737..6d4fc6fffd60  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/py-ssh-audit/files/patch-ssh-audit.py
+Auto-merging net/freerdp/Makefile
+Removing net-im/spectral/files/patch-CMakeLists.txt
+Auto-merging multimedia/mpv/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Auto-merging games/openrct2/Makefile
+Removing emulators/dolphin-emu/files/patch-Vulkan.txt
+Removing emulators/dolphin-emu/files/patch-Source_Core_DolphinQt_Config_Mapping_MappingIndicator.cpp
+Removing emulators/dolphin-emu/files/patch-Externals_glslang_glslang_Include_PoolAlloc.h
+Auto-merging Mk/bsd.port.mk
+Merge made by the 'recursive' strategy.
+ Mk/Uses/python.mk                                  |   2 +-
+ Mk/bsd.port.mk                                     |   7 +-
+ accessibility/feedbackd/Makefile                   |   2 +-
+ audio/ardour/Makefile                              |   2 +-
+ audio/fasttracker2/Makefile                        |   2 +-
+ audio/fasttracker2/distinfo                        |   6 +-
+ benchmarks/fio/Makefile                            |   2 +-
+ benchmarks/fio/distinfo                            |   6 +-
+ comms/lirc/Makefile                                |   2 +-
+ comms/svxlink/Makefile                             |   2 +-
+ deskutils/Makefile                                 |   1 +
+ deskutils/mate-indicator-applet/Makefile           |  34 +++++
+ deskutils/mate-indicator-applet/distinfo           |   3 +
+ deskutils/mate-indicator-applet/pkg-descr          |   7 +
+ deskutils/mate-indicator-applet/pkg-plist          | 147 +++++++++++++++++++++
+ deskutils/ydotool/Makefile                         |   2 +-
+ devel/cmake-doc/Makefile                           |   2 +-
+ devel/cmake-gui/Makefile                           |   2 +-
+ devel/cmake/Makefile                               |   2 +-
+ devel/cmake/distinfo                               |   6 +-
+ devel/evdev-proto/Makefile                         |   2 +-
+ devel/evdev-proto/distinfo                         |  18 +--
+ devel/evemu/Makefile                               |   2 +-
+ devel/libevdev/Makefile                            |   2 +-
+ devel/libevdevplus/Makefile                        |   1 +
+ devel/libgudev/Makefile                            |   2 +-
+ devel/libgudev/distinfo                            |   6 +-
+ devel/libgudev/pkg-plist                           |   2 +-
+ devel/libmtdev/Makefile                            |   2 +-
+ devel/libudev-devd/Makefile                        |   1 +
+ devel/libuinputplus/Makefile                       |   1 +
+ devel/ncurses/Makefile                             |   2 +-
+ devel/ncurses/distinfo                             |   6 +-
+ devel/py-evdev/Makefile                            |   2 +-
+ devel/py-pygit2/Makefile                           |   2 +-
+ devel/py-pygit2/distinfo                           |   6 +-
+ devel/sdl20/Makefile                               |   2 +-
+ devel/vulkan-tools/Makefile                        |   2 +-
+ devel/wf-config/Makefile                           |   1 +
+ emulators/dolphin-emu/Makefile                     |  17 ++-
+ emulators/dolphin-emu/distinfo                     |   6 +-
+ emulators/dolphin-emu/files/patch-CMakeLists.txt   |   6 +-
+ ...h-Externals_glslang_glslang_Include_PoolAlloc.h |  26 ----
+ .../patch-Source-Core-DolphinQt-CMakeLists.txt     |   6 +-
+ ...e_DolphinQt_Config_Mapping_MappingIndicator.cpp |  10 --
+ emulators/dolphin-emu/files/patch-Vulkan.txt       |  24 ----
+ emulators/dolphin-emu/pkg-plist                    |  26 ++++
+ emulators/mesen/Makefile                           |   2 +-
+ emulators/rpcs3/Makefile                           |   1 +
+ games/flightgear/Makefile                          |   1 +
+ games/minecraft-server/Makefile                    |  28 ++--
+ games/minecraft-server/distinfo                    |   6 +-
+ games/openrct2/Makefile                            |   6 +-
+ games/openrct2/distinfo                            |  10 +-
+ games/retroarch/Makefile                           |   1 +
+ graphics/colord-gtk/Makefile                       |  41 ++----
+ graphics/colord-gtk/distinfo                       |   5 +-
+ graphics/colord-gtk/pkg-plist                      |   3 +-
+ graphics/gstreamer1-plugins-gl/Makefile            |   2 +-
+ graphics/gstreamer1-plugins-vulkan/Makefile        |   2 +-
+ graphics/pho/Makefile                              |   3 +-
+ graphics/pho/distinfo                              |   5 +-
+ graphics/py-scikit-image/Makefile                  |   7 +-
+ graphics/py-scikit-image/distinfo                  |   6 +-
+ java/apache-commons-dbcp/Makefile                  |   3 +-
+ java/apache-commons-dbcp/distinfo                  |   6 +-
+ lang/gcc9-devel/Makefile                           |   2 +-
+ lang/gcc9-devel/distinfo                           |   6 +-
+ lang/gjs/Makefile                                  |  23 ++--
+ lang/gjs/distinfo                                  |   6 +-
+ lang/gjs/files/patch-gjs_jsapi-class.h             |  16 +++
+ lang/gjs/files/patch-gjs_jsapi-util-args.h         |  11 ++
+ lang/gjs/pkg-plist                                 |   3 +-
+ math/py-PyWavelets/Makefile                        |  12 +-
+ math/py-PyWavelets/distinfo                        |   6 +-
+ multimedia/dvb-apps/Makefile                       |   2 +-
+ multimedia/gstreamer/Makefile                      |   3 +
+ multimedia/kdenlive/Makefile                       |   1 +
+ multimedia/kodi-addon-peripheral-joystick/Makefile |   1 +
+ .../kodi-addon-peripheral.joystick-devel/Makefile  |   2 +-
+ multimedia/kodi-devel/Makefile                     |   2 +-
+ multimedia/lives/Makefile                          |   2 +-
+ multimedia/mpv/Makefile                            |   2 +-
+ multimedia/mythtv-frontend/Makefile                |   2 +-
+ multimedia/mythtv/Makefile                         |   2 +-
+ net-im/spectral/Makefile                           |   2 +-
+ net-im/spectral/files/patch-CMakeLists.txt         |  38 ------
+ net-im/telepathy-gabble/Makefile                   |   2 +-
+ net-im/telepathy-gabble/distinfo                   |   1 +
+ net-im/telepathy-gabble/files/patch-Makefile.in    |   6 +-
+ .../files/patch-lib_gibber_gibber-unix-transport.c |   8 +-
+ .../files/patch-tools_c-constants-gen.py           |  24 ++++
+ .../files/patch-tools_glib-client-gen.py           |  23 ++++
+ .../patch-tools_glib-client-marshaller-gen.py      |  37 ++++++
+ .../files/patch-tools_glib-errors-str-gen.py       |  23 ++++
+ .../files/patch-tools_glib-ginterface-gen.py       |  63 +++++++++
+ .../files/patch-tools_glib-gtypes-generator.py     |  19 +++
+ .../files/patch-tools_glib-interfaces-gen.py       |  19 +++
+ .../files/patch-tools_gobject-foo.py               |   8 ++
+ .../files/patch-tools_libglibcodegen.py            |  25 ++++
+ .../files/patch-tools_libtpcodegen.py              |  14 ++
+ .../files/patch-tools_make-release-mail.py         |  39 ++++++
+ .../files/patch-tools_manager-file.py              |  77 +++++++++++
+ .../files/patch-tools_xincludator.py               |  32 +++++
+ net-im/telepathy-glib/Makefile                     |   2 +-
+ net-im/telepathy-idle/Makefile                     |   2 +-
+ .../files/patch-tools_glib-ginterface-gen.py       |  56 ++++++++
+ .../files/patch-tools_libglibcodegen.py            |  17 +++
+ net-im/telepathy-logger/Makefile                   |   3 +-
+ net-im/telepathy-logger/files/patch-configure      |   6 +-
+ .../files/patch-tools_c-constants-gen.py           |  39 ++++++
+ .../files/patch-tools_glib-client-gen.py           |  54 ++++++++
+ .../patch-tools_glib-client-marshaller-gen.py      |  36 +++++
+ .../files/patch-tools_glib-ginterface-gen.py       |  67 ++++++++++
+ .../files/patch-tools_glib-gtypes-generator.py     |  41 ++++++
+ .../files/patch-tools_glib-interfaces-gen.py       |  40 ++++++
+ .../files/patch-tools_libglibcodegen.py            |  17 +++
+ .../files/patch-tools_libtpcodegen.py              |  58 ++++++++
+ .../files/patch-tools_xincludator.py               |  37 ++++++
+ net-im/telepathy-mission-control/Makefile          |  10 +-
+ net-im/telepathy-mission-control/distinfo          |   5 +-
+ net-im/telepathy-mission-control/pkg-plist         |  46 ++++---
+ net-im/telepathy-salut/Makefile                    |   2 +-
+ .../files/patch-lib_gibber_gibber-bytestream-oob.h |   4 +-
+ .../files/patch-lib_gibber_gibber-muc-connection.c |   4 +-
+ .../files/patch-lib_gibber_gibber-tcp-transport.c  |   4 +-
+ .../files/patch-lib_gibber_gibber-unix-transport.c |  29 ++--
+ .../patch-tools_glib-client-marshaller-gen.py      |  35 +++++
+ .../files/patch-tools_glib-ginterface-gen.py       |  38 ++++++
+ .../files/patch-tools_glib-signals-marshal-gen.py  |  16 +++
+ .../files/patch-tools_libglibcodegen.py            |  32 +++++
+ .../files/patch-tools_make-release-mail.py         |  19 +++
+ net-im/uTox/Makefile                               |   1 +
+ net/freerdp/Makefile                               |   2 +-
+ net/py-s3cmd/Makefile                              |  15 ++-
+ net/wayvnc/Makefile                                |  12 +-
+ net/wayvnc/distinfo                                |   8 +-
+ net/wlvncc/Makefile                                |   1 +
+ science/py-openpiv/Makefile                        |   2 +-
+ science/py-openpiv/distinfo                        |   6 +-
+ security/py-ssh-audit/Makefile                     |   2 +-
+ security/py-ssh-audit/distinfo                     |   6 +-
+ security/py-ssh-audit/files/patch-ssh-audit.py     |  19 ---
+ security/teleport/Makefile                         |   6 +-
+ security/teleport/distinfo                         |  10 +-
+ security/vuxml/vuln.xml                            |  33 +++++
+ sysutils/bpytop/Makefile                           |   2 +-
+ sysutils/bpytop/distinfo                           |   6 +-
+ sysutils/evhz/Makefile                             |   1 +
+ sysutils/jstest-gtk/Makefile                       |   2 +-
+ sysutils/netevent/Makefile                         |   2 +-
+ textproc/Makefile                                  |   1 +
+ textproc/apache-solr/Makefile                      |   2 +-
+ textproc/apache-solr/distinfo                      |   6 +-
+ textproc/gnugrep/Makefile                          |  11 +-
+ textproc/gnugrep/distinfo                          |   6 +-
+ textproc/p5-Spreadsheet-Read/Makefile              |   2 +-
+ textproc/p5-Spreadsheet-Read/distinfo              |   6 +-
+ textproc/wikiman/Makefile                          |  67 ++++++++++
+ textproc/wikiman/distinfo                          |   3 +
+ textproc/wikiman/pkg-descr                         |   9 ++
+ textproc/wikiman/pkg-plist                         |  12 ++
+ www/mediawiki131/Makefile                          |   2 +-
+ www/mediawiki131/distinfo                          |   6 +-
+ www/minio/Makefile                                 |   6 +-
+ www/minio/distinfo                                 |  10 +-
+ www/qt5-webengine/Makefile                         |   2 +-
+ x11-drivers/xf86-input-evdev/Makefile              |   2 +-
+ x11-drivers/xf86-input-libinput/Makefile           |   1 +
+ x11-drivers/xf86-input-synaptics/Makefile          |   2 +-
+ x11-drivers/xf86-input-wacom/Makefile              |   2 +-
+ x11-fonts/sudo-font/Makefile                       |   2 +-
+ x11-fonts/sudo-font/distinfo                       |   6 +-
+ x11-servers/xwayland-devel/Makefile                |   1 +
+ x11-servers/xwayland/Makefile                      |   1 +
+ x11-toolkits/qt5-gamepad/Makefile                  |   1 +
+ x11-toolkits/qt5-gui/Makefile                      |   1 +
+ x11-toolkits/wlroots/Makefile                      |   1 +
+ x11-wm/cage/Makefile                               |   1 +
+ x11-wm/hikari/Makefile                             |   1 +
+ x11-wm/phoc/Makefile                               |   1 +
+ x11-wm/plasma5-kwin/Makefile                       |   1 +
+ x11-wm/sway/Makefile                               |   1 +
+ x11-wm/wayfire/Makefile                            |   1 +
+ x11/kf5-kwayland/Makefile                          |   1 +
+ x11/lavalauncher/Makefile                          |   1 +
+ x11/libinput/Makefile                              |   6 +-
+ x11/libinput/distinfo                              |   6 +-
+ x11/libinput/files/patch-src_evdev.c               |   8 +-
+ x11/libinput/pkg-plist                             |   6 +
+ x11/libwacom/Makefile                              |   8 +-
+ x11/libwacom/distinfo                              |   6 +-
+ x11/libwacom/pkg-plist                             |   9 ++
+ x11/plasma5-kwayland-integration/Makefile          |   1 +
+ x11/slurp/Makefile                                 |   2 +-
+ x11/virtboard/Makefile                             |   1 +
+ x11/wcm/Makefile                                   |   1 +
+ x11/wev/Makefile                                   |   2 +-
+ 198 files changed, 1758 insertions(+), 456 deletions(-)
+ create mode 100644 deskutils/mate-indicator-applet/Makefile
+ create mode 100644 deskutils/mate-indicator-applet/distinfo
+ create mode 100644 deskutils/mate-indicator-applet/pkg-descr
+ create mode 100644 deskutils/mate-indicator-applet/pkg-plist
+ delete mode 100644 emulators/dolphin-emu/files/patch-Externals_glslang_glslang_Include_PoolAlloc.h
+ delete mode 100644 emulators/dolphin-emu/files/patch-Source_Core_DolphinQt_Config_Mapping_MappingIndicator.cpp
+ delete mode 100644 emulators/dolphin-emu/files/patch-Vulkan.txt
+ create mode 100644 lang/gjs/files/patch-gjs_jsapi-class.h
+ create mode 100644 lang/gjs/files/patch-gjs_jsapi-util-args.h
+ delete mode 100644 net-im/spectral/files/patch-CMakeLists.txt
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_c-constants-gen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_glib-client-gen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_glib-client-marshaller-gen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_glib-errors-str-gen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_glib-ginterface-gen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_glib-gtypes-generator.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_glib-interfaces-gen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_gobject-foo.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_libglibcodegen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_libtpcodegen.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_make-release-mail.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_manager-file.py
+ create mode 100644 net-im/telepathy-gabble/files/patch-tools_xincludator.py
+ create mode 100644 net-im/telepathy-idle/files/patch-tools_glib-ginterface-gen.py
+ create mode 100644 net-im/telepathy-idle/files/patch-tools_libglibcodegen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_c-constants-gen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_glib-client-gen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_glib-client-marshaller-gen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_glib-ginterface-gen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_glib-gtypes-generator.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_glib-interfaces-gen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_libglibcodegen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_libtpcodegen.py
+ create mode 100644 net-im/telepathy-logger/files/patch-tools_xincludator.py
+ create mode 100644 net-im/telepathy-salut/files/patch-tools_glib-client-marshaller-gen.py
+ create mode 100644 net-im/telepathy-salut/files/patch-tools_glib-ginterface-gen.py
+ create mode 100644 net-im/telepathy-salut/files/patch-tools_glib-signals-marshal-gen.py
+ create mode 100644 net-im/telepathy-salut/files/patch-tools_libglibcodegen.py
+ create mode 100644 net-im/telepathy-salut/files/patch-tools_make-release-mail.py
+ delete mode 100644 security/py-ssh-audit/files/patch-ssh-audit.py
+ create mode 100644 textproc/wikiman/Makefile
+ create mode 100644 textproc/wikiman/distinfo
+ create mode 100644 textproc/wikiman/pkg-descr
+ create mode 100644 textproc/wikiman/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6d4fc6fffd60..66dd19ab7230  master -> master        
+remote:    f4e10d237737..6d4fc6fffd60  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6d4fc6fffd60..66dd19ab7230  master -> master
+==== END: master ====
