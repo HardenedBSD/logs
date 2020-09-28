@@ -47,3 +47,445 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/trafficserver/Makefile
+CONFLICT (content): Merge conflict in www/trafficserver/Makefile
+Auto-merging www/node12/Makefile
+Auto-merging www/node10/Makefile
+Auto-merging www/node/Makefile
+Removing sysutils/memtester/files/patch-types.h
+Removing sysutils/memtester/files/patch-tests.c
+Removing net/tigervnc-server/files/patch-unix_vncserver
+Removing net/tigervnc-server/files/patch-cmake_BuildPackages.cmake
+Removing net/tigervnc-server/files/patch-CMakeLists.txt
+Auto-merging net/tigervnc-server/Makefile.common.mk
+Auto-merging net/Makefile
+Auto-merging multimedia/avidemux/Makefile.common
+Auto-merging math/R/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging graphics/gimp-app/Makefile
+Removing games/supertuxkart/files/patch-cmake-FindFribidi.cmake
+Auto-merging editors/vim/Makefile
+Removing devel/gobject-introspection/files/patch-tests_Makefile.in
+Auto-merging Mk/bsd.port.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc www/trafficserver/Makefile
+index d3e6f6303ac1,27c337bb7c42..000000000000
+--- a/www/trafficserver/Makefile
++++ b/www/trafficserver/Makefile
+@@@ -12,9 -12,7 +12,13 @@@ COMMENT=	Fast, scalable and extensible 
+  
+  LICENSE=	APACHE20
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +ONLY_FOR_ARCHS=	amd64 powerpc64
+++=======
++ ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+++>>>>>>> freebsd/master
+  
+  LIB_DEPENDS=	libcurl.so:ftp/curl \
+  		libhwloc.so:devel/hwloc \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/samba.mk
+	modified:   Mk/bsd.default-versions.mk
+	modified:   Mk/bsd.port.mk
+	modified:   biology/libsbml/Makefile
+	modified:   databases/postgresql13-server/Makefile
+	modified:   databases/postgresql13-server/pkg-plist-server
+	modified:   databases/rubygem-pg/Makefile
+	modified:   deskutils/peaclock/Makefile
+	modified:   deskutils/peaclock/distinfo
+	modified:   devel/Makefile
+	modified:   devel/gettext-msghack/Makefile
+	modified:   devel/gettext-msghack/distinfo
+	modified:   devel/gettext-msghack/pkg-descr
+	modified:   devel/gobject-introspection/Makefile
+	modified:   devel/gobject-introspection/distinfo
+	deleted:    devel/gobject-introspection/files/patch-tests_Makefile.in
+	new file:   devel/gobject-introspection/files/patch-tools_meson.build
+	modified:   devel/gobject-introspection/pkg-plist
+	modified:   devel/jsoncpp/Makefile
+	modified:   devel/jsoncpp/distinfo
+	modified:   devel/p5-Rinci/Makefile
+	modified:   devel/p5-Rinci/distinfo
+	modified:   devel/py-argcomplete/Makefile
+	new file:   devel/py-argcomplete/files/patch-setup.py
+	new file:   devel/py-azure-appconfiguration/Makefile
+	new file:   devel/py-azure-appconfiguration/distinfo
+	new file:   devel/py-azure-appconfiguration/pkg-descr
+	new file:   devel/py-azure-keyvault-administration/Makefile
+	new file:   devel/py-azure-keyvault-administration/distinfo
+	new file:   devel/py-azure-keyvault-administration/pkg-descr
+	modified:   devel/py-azure-mgmt-apimanagement/Makefile
+	modified:   devel/py-azure-mgmt-apimanagement/distinfo
+	modified:   devel/py-azure-mgmt-appconfiguration/Makefile
+	modified:   devel/py-azure-mgmt-appconfiguration/distinfo
+	modified:   devel/py-azure-mgmt-authorization/Makefile
+	modified:   devel/py-azure-mgmt-authorization/distinfo
+	modified:   devel/py-azure-mgmt-compute/Makefile
+	modified:   devel/py-azure-mgmt-compute/distinfo
+	modified:   devel/py-azure-mgmt-containerservice/Makefile
+	modified:   devel/py-azure-mgmt-containerservice/distinfo
+	modified:   devel/py-azure-mgmt-cosmosdb/Makefile
+	modified:   devel/py-azure-mgmt-cosmosdb/distinfo
+	modified:   devel/py-azure-mgmt-eventhub/Makefile
+	modified:   devel/py-azure-mgmt-eventhub/distinfo
+	modified:   devel/py-azure-mgmt-keyvault/Makefile
+	modified:   devel/py-azure-mgmt-keyvault/distinfo
+	modified:   devel/py-azure-mgmt-network/Makefile
+	modified:   devel/py-azure-mgmt-network/distinfo
+	modified:   devel/py-azure-mgmt-rdbms/Makefile
+	modified:   devel/py-azure-mgmt-rdbms/distinfo
+	modified:   devel/py-azure-mgmt-servicefabric/Makefile
+	modified:   devel/py-azure-mgmt-servicefabric/distinfo
+	modified:   devel/py-azure-mgmt-sql/Makefile
+	modified:   devel/py-azure-mgmt-sql/distinfo
+	modified:   devel/py-azure-mgmt-storage/Makefile
+	modified:   devel/py-azure-mgmt-storage/distinfo
+	modified:   devel/py-backports.csv/Makefile
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-ptpython/Makefile
+	modified:   devel/py-ptpython/distinfo
+	modified:   devel/py-subprocess32/Makefile
+	modified:   devel/py-subprocess32/distinfo
+	modified:   devel/py-subprocess32/pkg-descr
+	modified:   devel/py-timelib/Makefile
+	modified:   devel/py-timelib/distinfo
+	modified:   devel/py-tinyarray/Makefile
+	modified:   devel/py-tinyarray/distinfo
+	modified:   devel/ruby-build/Makefile
+	modified:   devel/ruby-build/distinfo
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-backup/Makefile
+	modified:   devel/rubygem-aws-sdk-backup/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-costexplorer/Makefile
+	modified:   devel/rubygem-aws-sdk-costexplorer/distinfo
+	modified:   devel/rubygem-aws-sdk-quicksight/Makefile
+	modified:   devel/rubygem-aws-sdk-quicksight/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-translate/Makefile
+	modified:   devel/rubygem-aws-sdk-translate/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   dns/Makefile
+	new file:   dns/rubygem-google-cloud-dns/Makefile
+	new file:   dns/rubygem-google-cloud-dns/distinfo
+	new file:   dns/rubygem-google-cloud-dns/pkg-descr
+	new file:   dns/rubygem-zonefile/Makefile
+	new file:   dns/rubygem-zonefile/distinfo
+	new file:   dns/rubygem-zonefile/pkg-descr
+	modified:   editors/neovim/Makefile
+	modified:   editors/o/Makefile
+	modified:   editors/o/distinfo
+	modified:   editors/vim/Makefile
+	modified:   emulators/higan/Makefile
+	modified:   games/openspades/Makefile
+	modified:   games/supertuxkart/Makefile
+	modified:   games/supertuxkart/distinfo
+	deleted:    games/supertuxkart/files/patch-cmake-FindFribidi.cmake
+	modified:   games/supertuxkart/pkg-plist
+	modified:   graphics/evince/Makefile
+	modified:   graphics/evince/pkg-plist
+	modified:   graphics/gimp-app/Makefile
+	modified:   graphics/xournalpp/Makefile
+	modified:   graphics/xournalpp/distinfo
+	modified:   graphics/xournalpp/pkg-plist
+	modified:   java/eclipse/Makefile
+	modified:   java/netty/Makefile
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/squeak/Makefile
+	modified:   mail/rspamd-devel/Makefile
+	modified:   mail/rspamd/Makefile
+	modified:   math/R/Makefile
+	modified:   math/gau2grid/Makefile
+	modified:   math/libRmath/Makefile
+	modified:   multimedia/aegisub/Makefile
+	modified:   multimedia/avidemux-plugins/Makefile
+	modified:   multimedia/avidemux-plugins/pkg-plist
+	modified:   multimedia/avidemux-qt5/Makefile
+	modified:   multimedia/avidemux-qt5/pkg-plist
+	modified:   multimedia/avidemux/Makefile
+	modified:   multimedia/avidemux/Makefile.common
+	modified:   multimedia/avidemux/distinfo
+	modified:   multimedia/avidemux/files/patch-avidemux_core-ffmpeg_package-patches-configure.patch
+	modified:   multimedia/avidemux/pkg-plist
+	modified:   multimedia/gstreamer-ffmpeg/Makefile
+	modified:   multimedia/handbrake/Makefile
+	modified:   net-im/ruqola/Makefile
+	modified:   net-im/ruqola/distinfo
+	modified:   net-im/ruqola/pkg-plist
+	modified:   net-mgmt/fastnetmon/Makefile
+	modified:   net/Makefile
+	modified:   net/drive/Makefile
+	modified:   net/drive/distinfo
+	modified:   net/gssdp/Makefile
+	modified:   net/gupnp-av/Makefile
+	modified:   net/gupnp/Makefile
+	modified:   net/neatvnc/Makefile
+	modified:   net/neatvnc/distinfo
+	modified:   net/samba410/Makefile
+	new file:   net/samba413/Makefile
+	new file:   net/samba413/distinfo
+	new file:   net/samba413/files/0001-Zfs-provision-1.patch
+	new file:   net/samba413/files/README.FreeBSD.in
+	new file:   net/samba413/files/man/ctdb-script.options.5
+	new file:   net/samba413/files/man/ctdb-statistics.7
+	new file:   net/samba413/files/man/ctdb-tunables.7
+	new file:   net/samba413/files/man/ctdb.1
+	new file:   net/samba413/files/man/ctdb.7
+	new file:   net/samba413/files/man/ctdb.conf.5
+	new file:   net/samba413/files/man/ctdb.sysconfig.5
+	new file:   net/samba413/files/man/ctdb_diagnostics.1
+	new file:   net/samba413/files/man/ctdbd.1
+	new file:   net/samba413/files/man/ctdbd_wrapper.1
+	new file:   net/samba413/files/man/gentest.1
+	new file:   net/samba413/files/man/ldbadd.1
+	new file:   net/samba413/files/man/ldbdel.1
+	new file:   net/samba413/files/man/ldbedit.1
+	new file:   net/samba413/files/man/ldbmodify.1
+	new file:   net/samba413/files/man/ldbrename.1
+	new file:   net/samba413/files/man/ldbsearch.1
+	new file:   net/samba413/files/man/locktest.1
+	new file:   net/samba413/files/man/ltdbtool.1
+	new file:   net/samba413/files/man/masktest.1
+	new file:   net/samba413/files/man/mdfind.1
+	new file:   net/samba413/files/man/ndrdump.1
+	new file:   net/samba413/files/man/nmblookup.1
+	new file:   net/samba413/files/man/nmblookup4.1
+	new file:   net/samba413/files/man/ntlm_auth.1
+	new file:   net/samba413/files/man/ntlm_auth4.1
+	new file:   net/samba413/files/man/oLschema2ldif.1
+	new file:   net/samba413/files/man/onnode.1
+	new file:   net/samba413/files/man/ping_pong.1
+	new file:   net/samba413/files/man/regdiff.1
+	new file:   net/samba413/files/man/regpatch.1
+	new file:   net/samba413/files/man/regshell.1
+	new file:   net/samba413/files/man/regtree.1
+	new file:   net/samba413/files/man/samba-gpupdate.8
+	new file:   net/samba413/files/man/smbtorture.1
+	new file:   net/samba413/files/man/talloc.3
+	new file:   net/samba413/files/man/tdbbackup.8
+	new file:   net/samba413/files/man/tdbdump.8
+	new file:   net/samba413/files/man/tdbrestore.8
+	new file:   net/samba413/files/man/tdbtool.8
+	new file:   net/samba413/files/man/vfs_freebsd.8
+	new file:   net/samba413/files/patch-bind
+	new file:   net/samba413/files/patch-buildtools_scripts_abi__gen.sh
+	new file:   net/samba413/files/patch-buildtools_wafsamba_samba__autoconf.py
+	new file:   net/samba413/files/patch-buildtools_wafsamba_samba__install.py
+	new file:   net/samba413/files/patch-buildtools_wafsamba_wafsamba.py
+	new file:   net/samba413/files/patch-buildtools_wafsamba_wscript
+	new file:   net/samba413/files/patch-ctdb_wscript
+	new file:   net/samba413/files/patch-dwrap
+	new file:   net/samba413/files/patch-dynconfig_wscript
+	new file:   net/samba413/files/patch-examples_pdb_wscript__build
+	new file:   net/samba413/files/patch-lib_ldb_ldb__key__value_ldb__kv__cache.c
+	new file:   net/samba413/files/patch-lib_ldb_wscript
+	new file:   net/samba413/files/patch-lib_replace_wscript
+	new file:   net/samba413/files/patch-lib_talloc_talloc.c
+	new file:   net/samba413/files/patch-lib_talloc_wscript
+	new file:   net/samba413/files/patch-lib_tdb_wscript
+	new file:   net/samba413/files/patch-lib_util_wscript__build
+	new file:   net/samba413/files/patch-listen-backlog
+	new file:   net/samba413/files/patch-mdns
+	new file:   net/samba413/files/patch-nsswitch_wscript__build
+	new file:   net/samba413/files/patch-source3_include_includes.h
+	new file:   net/samba413/files/patch-source3_lib_sysquotas__4B.c
+	new file:   net/samba413/files/patch-source3_lib_util.c
+	new file:   net/samba413/files/patch-source3_librpc_crypto_gse.c
+	new file:   net/samba413/files/patch-source3_modules_vfs__fruit.c
+	new file:   net/samba413/files/patch-source3_modules_vfs__streams__xattr.c
+	new file:   net/samba413/files/patch-source3_modules_vfs__virusfilter__utils.c
+	new file:   net/samba413/files/patch-source3_registry_tests_test__regfio.c
+	new file:   net/samba413/files/patch-source3_smbd_quotas.c
+	new file:   net/samba413/files/patch-source3_smbd_utmp.c
+	new file:   net/samba413/files/patch-source3_torture_cmd__vfs.c
+	new file:   net/samba413/files/patch-source3_utils_net.c
+	new file:   net/samba413/files/patch-source3_utils_net__time.c
+	new file:   net/samba413/files/patch-source3_winbindd_wscript__build
+	new file:   net/samba413/files/patch-source3_wscript
+	new file:   net/samba413/files/patch-source3_wscript__build
+	new file:   net/samba413/files/patch-source4_heimdal_lib_roken_rand.c
+	new file:   net/samba413/files/patch-source4_kdc_kdc-service-mit.c
+	new file:   net/samba413/files/patch-third__party_wscript
+	new file:   net/samba413/files/patch-vfs_freebsd
+	new file:   net/samba413/files/pkg-message.in
+	new file:   net/samba413/files/samba_server.in
+	new file:   net/samba413/pkg-descr
+	new file:   net/samba413/pkg-plist
+	modified:   net/tigervnc-server/Makefile
+	modified:   net/tigervnc-server/Makefile.common.mk
+	modified:   net/tigervnc-server/distinfo
+	deleted:    net/tigervnc-server/files/patch-CMakeLists.txt
+	deleted:    net/tigervnc-server/files/patch-cmake_BuildPackages.cmake
+	new file:   net/tigervnc-server/files/patch-release_CMakeLists.txt
+	deleted:    net/tigervnc-server/files/patch-unix_vncserver
+	new file:   net/tigervnc-server/files/patch-unix_vncserver_vncsession.c
+	modified:   net/tigervnc-server/pkg-plist
+	modified:   net/tigervnc-viewer/Makefile
+	modified:   security/botan2/Makefile
+	modified:   security/cryptopp/Makefile
+	modified:   security/nss/Makefile
+	modified:   security/p5-PGP/Makefile
+	modified:   security/py-acme/Makefile
+	modified:   security/py-acme/distinfo
+	modified:   security/py-acme/version.mk
+	modified:   security/py-certbot-apache/distinfo
+	modified:   security/py-certbot-dns-cloudflare/distinfo
+	modified:   security/py-certbot-dns-cloudxns/distinfo
+	modified:   security/py-certbot-dns-digitalocean/distinfo
+	modified:   security/py-certbot-dns-dnsimple/distinfo
+	modified:   security/py-certbot-dns-dnsmadeeasy/distinfo
+	modified:   security/py-certbot-dns-gehirn/distinfo
+	modified:   security/py-certbot-dns-google/distinfo
+	modified:   security/py-certbot-dns-linode/distinfo
+	modified:   security/py-certbot-dns-luadns/distinfo
+	modified:   security/py-certbot-dns-nsone/distinfo
+	modified:   security/py-certbot-dns-ovh/distinfo
+	modified:   security/py-certbot-dns-rfc2136/distinfo
+	modified:   security/py-certbot-dns-route53/distinfo
+	modified:   security/py-certbot-dns-sakuracloud/distinfo
+	modified:   security/py-certbot-nginx/distinfo
+	modified:   security/py-certbot/distinfo
+	modified:   security/py-google-auth/Makefile
+	modified:   security/py-google-auth/distinfo
+	modified:   security/totp-cli/Makefile
+	modified:   security/totp-cli/distinfo
+	modified:   sysutils/accounts-qml-module/Makefile
+	modified:   sysutils/gnome-control-center/Makefile
+	modified:   sysutils/mackerel-agent/Makefile
+	modified:   sysutils/mackerel-agent/distinfo
+	modified:   sysutils/memtester/Makefile
+	modified:   sysutils/memtester/distinfo
+	deleted:    sysutils/memtester/files/patch-tests.c
+	deleted:    sysutils/memtester/files/patch-types.h
+	modified:   sysutils/parallel/Makefile
+	modified:   sysutils/parallel/distinfo
+	modified:   sysutils/parallel/pkg-plist
+	modified:   sysutils/py-azure-cli-core/Makefile
+	modified:   sysutils/py-azure-cli-core/distinfo
+	modified:   sysutils/py-azure-cli/Makefile
+	modified:   sysutils/py-azure-cli/distinfo
+	modified:   textproc/Makefile
+	modified:   textproc/minify/Makefile
+	modified:   textproc/minify/distinfo
+	modified:   textproc/rubygem-raabro/Makefile
+	modified:   textproc/rubygem-raabro/distinfo
+	modified:   textproc/sift/Makefile
+	modified:   textproc/sift/distinfo
+	new file:   textproc/translate-toolkit/Makefile
+	new file:   textproc/translate-toolkit/distinfo
+	new file:   textproc/translate-toolkit/files/patch-requirements-optional.txt
+	new file:   textproc/translate-toolkit/files/patch-tools-pocompendium
+	new file:   textproc/translate-toolkit/files/patch-tools-pomigrate2
+	new file:   textproc/translate-toolkit/files/patch-tools-popuretext
+	new file:   textproc/translate-toolkit/files/patch-tools-poreencode
+	new file:   textproc/translate-toolkit/pkg-descr
+	new file:   textproc/translate-toolkit/pkg-plist
+	modified:   textproc/yq/Makefile
+	modified:   textproc/yq/distinfo
+	modified:   www/cpp-httplib/Makefile
+	modified:   www/cpp-httplib/distinfo
+	modified:   www/node/Makefile
+	modified:   www/node10/Makefile
+	modified:   www/node12/Makefile
+	modified:   www/npm-node10/Makefile
+	modified:   www/npm-node12/Makefile
+	modified:   www/npm/Makefile
+	modified:   www/npm/distinfo
+	modified:   www/npm/pkg-plist
+	modified:   www/p5-Mojolicious/Makefile
+	modified:   www/p5-Mojolicious/distinfo
+	modified:   www/p5-libwww/Makefile
+	modified:   www/p5-libwww/distinfo
+	modified:   www/py-bokeh/Makefile
+	modified:   www/py-bokeh/distinfo
+	modified:   www/py-bokeh/pkg-message
+	modified:   www/py-django-dpaste/Makefile
+	new file:   www/py-django-dpaste/files/patch-setup.cfg
+	modified:   www/py-google-cloud-datastore/Makefile
+	modified:   www/py-google-cloud-datastore/distinfo
+	modified:   www/py-google-cloud-storage/Makefile
+	modified:   www/py-google-cloud-storage/distinfo
+	modified:   www/py-httpx/Makefile
+	modified:   www/py-httpx/distinfo
+	modified:   www/rubygem-em-websocket/Makefile
+	modified:   www/rubygem-em-websocket/distinfo
+	modified:   x11-fonts/iosevka/Makefile
+	modified:   x11-fonts/iosevka/distinfo
+	modified:   x11-toolkits/rubygem-uh/Makefile
+	modified:   x11-toolkits/rubygem-uh/distinfo
+	modified:   x11/gnome-terminal/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   www/trafficserver/Makefile
+
+
+It took 3.33 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at effb0ee163e4 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.46 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at effb0ee163e4 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
