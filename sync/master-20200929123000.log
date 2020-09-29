@@ -47,3 +47,371 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/gnome-shell/files/patch-js_ui_screenShield.js
+Removing x11/gnome-shell/files/patch-js_misc_loginManager.js
+Removing x11-wm/mutter/files/patch-src_core_main.c
+Removing x11-wm/mutter/files/patch-src_compositor_compositor.c
+Removing x11-fm/nautilus/files/patch-src_meson.build
+Removing x11-fm/nautilus/files/patch-data_meson.build
+Removing textproc/meld/files/patch-setup.py
+Removing sysutils/gnome-control-center/files/patch-panels_user-accounts_um-utils.c
+Removing sysutils/gnome-control-center/files/patch-panels_info_info-overview.ui
+Removing net/tigervnc-server/files/patch-unix_xserver_hw_vnc_xvnc.c
+Auto-merging net/Makefile
+Removing net-im/farstream/files/patch-11dde55cbaf5179e8e1885cf1483e538a8d5a4a9
+Removing multimedia/totem/files/patch-src_meson.build
+Removing multimedia/cheese/files/patch-config.h.in
+Auto-merging lang/sbcl/Makefile
+Removing lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-posix_dirent.d
+Removing lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-posix-sys_types.d
+Removing lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-posix-sys_stat.d
+Removing lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-freebsd-sys_mount.d
+Removing lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-freebsd-sys_event.d
+Removing deskutils/gnome-photos/files/patch-configure
+Removing deskutils/gnome-contacts/files/patch-src_contacts-window.vala
+Merge made by the 'recursive' strategy.
+ archivers/file-roller/Makefile                     |    1 +
+ converters/cl-babel-sbcl/Makefile                  |    2 +-
+ databases/evolution-data-server/Makefile           |    9 +-
+ databases/evolution-data-server/distinfo           |    6 +-
+ databases/evolution-data-server/pkg-plist          |  100 +-
+ deskutils/bijiben/Makefile                         |    9 +-
+ deskutils/bijiben/distinfo                         |    6 +-
+ deskutils/bijiben/pkg-plist                        |  122 ++-
+ deskutils/gnome-calendar/Makefile                  |    6 +-
+ deskutils/gnome-calendar/distinfo                  |    6 +-
+ deskutils/gnome-calendar/pkg-plist                 |   14 +-
+ deskutils/gnome-clocks/Makefile                    |    8 +-
+ deskutils/gnome-clocks/distinfo                    |    6 +-
+ deskutils/gnome-clocks/pkg-plist                   |   49 +-
+ deskutils/gnome-contacts/Makefile                  |    4 +-
+ deskutils/gnome-contacts/distinfo                  |    6 +-
+ .../files/patch-src_contacts-window.vala           |   14 -
+ deskutils/gnome-contacts/pkg-plist                 |    3 +
+ deskutils/gnome-documents/Makefile                 |    1 +
+ deskutils/gnome-font-viewer/Makefile               |    1 +
+ deskutils/gnome-initial-setup/Makefile             |    2 +-
+ deskutils/gnome-maps/Makefile                      |    7 +-
+ deskutils/gnome-maps/distinfo                      |    6 +-
+ deskutils/gnome-maps/pkg-plist                     |   25 +-
+ deskutils/gnome-photos/Makefile                    |   13 +-
+ deskutils/gnome-photos/distinfo                    |    6 +-
+ deskutils/gnome-photos/files/patch-configure       |   61 --
+ deskutils/gnome-photos/pkg-plist                   |   77 +-
+ deskutils/gnome-sound-recorder/Makefile            |    9 +-
+ deskutils/gnome-sound-recorder/distinfo            |    6 +-
+ deskutils/gnome-sound-recorder/pkg-plist           |  118 +--
+ deskutils/gnome-todo/Makefile                      |    2 +-
+ .../files/patch-plugins_eds_gtd-eds-autoptr_h      |   15 +
+ .../files/patch-plugins_eds_gtd-provider-eds_c     |   36 +
+ .../files/patch-plugins_eds_gtd-task-eds_c         |  441 ++++++++
+ .../files/patch-plugins_eds_gtd-task-list-eds_c    |   71 ++
+ .../gnome-todo/files/patch-plugins_eds_meson_build |   19 +
+ deskutils/gnome-tweaks/Makefile                    |    1 +
+ deskutils/gnome-weather/Makefile                   |   14 +-
+ deskutils/gnome-weather/distinfo                   |    6 +-
+ deskutils/gnome-weather/pkg-plist                  |   25 +-
+ deskutils/nautilus-actions/Makefile                |    2 +-
+ devel/cl-alexandria-sbcl/Makefile                  |    2 +-
+ devel/cl-infix-sbcl/Makefile                       |    2 +-
+ devel/cl-port-sbcl/Makefile                        |    2 +-
+ devel/cl-split-sequence-sbcl/Makefile              |    2 +-
+ devel/cl-trivial-features-sbcl/Makefile            |    2 +-
+ devel/cl-trivial-gray-streams-sbcl/Makefile        |    2 +-
+ devel/devhelp/Makefile                             |   22 +-
+ devel/devhelp/distinfo                             |    6 +-
+ devel/devhelp/pkg-plist                            |  132 ++-
+ devel/shfmt/Makefile                               |    6 +-
+ devel/shfmt/distinfo                               |   12 +-
+ editors/gedit-plugins/Makefile                     |   41 +-
+ editors/gedit-plugins/distinfo                     |    6 +-
+ editors/gedit-plugins/pkg-plist                    |  311 ++----
+ editors/gedit/Makefile                             |   33 +-
+ editors/gedit/distinfo                             |    6 +-
+ editors/gedit/pkg-plist                            |  258 ++---
+ editors/gnome-latex/Makefile                       |    5 +-
+ editors/gnome-latex/distinfo                       |    6 +-
+ editors/gnome-latex/pkg-plist                      |   24 +-
+ finance/electrum/Makefile                          |    1 +
+ finance/gnucash-docs/Makefile                      |    2 +-
+ finance/gnucash-docs/distinfo                      |    6 +-
+ finance/gnucash/Makefile                           |    2 +-
+ finance/gnucash/distinfo                           |    6 +-
+ finance/gnucash/pkg-plist                          |  100 +-
+ games/aisleriot/Makefile                           |    3 +-
+ games/aisleriot/distinfo                           |    6 +-
+ games/five-or-more/Makefile                        |   16 +-
+ games/five-or-more/distinfo                        |    6 +-
+ games/five-or-more/pkg-plist                       |  384 +------
+ graphics/colord/Makefile                           |   15 +-
+ graphics/colord/pkg-plist                          |    1 +
+ graphics/eog/Makefile                              |    2 +-
+ graphics/evince/Makefile                           |    1 +
+ graphics/ptex/Makefile                             |    2 +-
+ irc/polari/Makefile                                |    5 +-
+ irc/polari/distinfo                                |    6 +-
+ irc/polari/pkg-plist                               |  311 +++---
+ lang/ldc/Makefile                                  |   65 +-
+ lang/ldc/distinfo                                  |   18 +-
+ ...ntime-druntime-src-core-sys-freebsd-sys_event.d |   14 -
+ ...ntime-druntime-src-core-sys-freebsd-sys_mount.d |   13 -
+ ...-runtime-druntime-src-core-sys-posix-sys_stat.d |   58 --
+ ...runtime-druntime-src-core-sys-posix-sys_types.d |   21 -
+ ...12-runtime-druntime-src-core-sys-posix_dirent.d |   21 -
+ lang/ldc/files/patch-cmake_Modules_FindLLVM.cmake  |   11 +
+ lang/ldc/files/patch-driver_linker-gcc.cpp         |   11 +
+ lang/ldc/files/patch-driver_targetmachine.cpp      |   13 +
+ .../patch-ltsmaster_cmake_Modules_FindLLVM.cmake   |   12 +
+ lang/ldc/files/patch-runtime_CMakeLists.txt        |   11 +
+ lang/ldc/pkg-descr                                 |    6 +-
+ lang/ldc/pkg-plist                                 |   98 +-
+ lang/sbcl/Makefile                                 |    2 +-
+ lang/sbcl/distinfo                                 |   10 +-
+ mail/evolution-ews/Makefile                        |    8 +-
+ mail/evolution-ews/distinfo                        |    6 +-
+ mail/evolution-ews/pkg-plist                       |   11 +
+ mail/evolution/Makefile                            |    8 +-
+ mail/evolution/distinfo                            |    6 +-
+ mail/evolution/pkg-plist                           |  389 +++++--
+ mail/mailagent/pkg-plist                           |    4 +-
+ mail/rspamd-devel/Makefile                         |    8 +-
+ mail/rspamd-devel/distinfo                         |    6 +-
+ mail/rspamd-devel/pkg-plist                        |   22 +-
+ math/maxima/Makefile                               |    2 +-
+ multimedia/cheese/Makefile                         |   31 +-
+ multimedia/cheese/distinfo                         |    6 +-
+ multimedia/cheese/files/patch-config.h.in          |   12 -
+ multimedia/cheese/pkg-plist                        |   87 +-
+ multimedia/jmref/Makefile                          |   16 +-
+ multimedia/jmref/files/patch-Makefile              |    6 +-
+ .../jmref/files/patch-ldecod_inc_configfile.h      |   11 +
+ multimedia/jmref/files/patch-ldecod_inc_defines.h  |   22 +
+ .../jmref/files/patch-ldecod_src_configfile.c      |   12 +
+ multimedia/jmref/files/patch-ldecod_src_ldecod.c   |   11 +
+ .../jmref/files/patch-lencod_inc_configfile.h      |   11 +
+ multimedia/jmref/files/patch-lencod_inc_defines.h  |  118 +++
+ multimedia/jmref/files/patch-lencod_inc_global.h   |   11 +
+ .../jmref/files/patch-lencod_src_configfile.c      |   12 +
+ multimedia/jmref/files/patch-lencod_src_rdopt.c    |   11 +
+ multimedia/totem-pl-parser/Makefile                |    2 +-
+ multimedia/totem-pl-parser/distinfo                |    6 +-
+ .../files/patch-totem-plparser.pc.in               |   10 +-
+ multimedia/totem-pl-parser/pkg-plist               |    7 +-
+ multimedia/totem/Makefile                          |    7 +-
+ multimedia/totem/distinfo                          |    6 +-
+ multimedia/totem/files/patch-src_meson.build       |   21 -
+ multimedia/totem/pkg-plist                         | 1072 ++++++++++++++------
+ net-im/farstream/Makefile                          |    3 +-
+ net-im/farstream/distinfo                          |    8 +-
+ .../patch-11dde55cbaf5179e8e1885cf1483e538a8d5a4a9 |   56 -
+ net-im/farstream/pkg-plist                         |   42 +-
+ net-im/folks/Makefile                              |   26 +-
+ net-im/folks/distinfo                              |    6 +-
+ net-im/folks/pkg-plist                             |   21 +-
+ net-mgmt/arpwatch/pkg-plist                        |    4 +-
+ net/Makefile                                       |    1 +
+ net/py-aiohttp-socks/Makefile                      |    2 +
+ net/py-python-socks/Makefile                       |   22 +
+ net/py-python-socks/distinfo                       |    3 +
+ net/py-python-socks/pkg-descr                      |    7 +
+ .../files/patch-unix_xserver_hw_vnc_xvnc.c         |   18 -
+ security/cl-md5-sbcl/Makefile                      |    2 +-
+ security/libsecret/Makefile                        |    3 +-
+ security/libsecret/distinfo                        |    6 +-
+ security/libsecret/pkg-plist                       |    6 +
+ security/p5-Crypt-Perl/Makefile                    |    4 +-
+ security/p5-Crypt-Perl/distinfo                    |    6 +-
+ security/p5-Crypt-Perl/pkg-plist                   |    2 +
+ sysutils/brasero/Makefile                          |    1 +
+ sysutils/gnome-control-center/Makefile             |   16 +-
+ sysutils/gnome-control-center/distinfo             |    6 +-
+ .../files/patch-panels_info_info-overview.ui       |   11 -
+ .../files/patch-panels_keyboard_meson.build        |    6 +-
+ ... patch-panels_user-accounts_cc-realm-manager.c} |   10 +-
+ .../files/patch-panels_user-accounts_meson.build   |    6 +-
+ .../files/patch-panels_user-accounts_um-utils.c    |   19 -
+ .../files/patch-shell_meson.build                  |   20 +-
+ sysutils/gnome-control-center/pkg-plist            |   75 +-
+ sysutils/gnome-settings-daemon/Makefile            |   28 +-
+ sysutils/gnome-settings-daemon/distinfo            |    6 +-
+ sysutils/gnome-settings-daemon/pkg-plist           |   18 +-
+ sysutils/gnome-system-monitor/Makefile             |   13 +-
+ sysutils/gnome-system-monitor/distinfo             |    6 +-
+ sysutils/gnome-system-monitor/pkg-plist            |   82 ++
+ sysutils/go-btfs/Makefile                          |  110 +-
+ sysutils/go-btfs/distinfo                          |  216 ++--
+ textproc/cl-meta-sbcl/Makefile                     |    2 +-
+ textproc/cl-ppcre-sbcl/Makefile                    |    2 +-
+ textproc/meld/Makefile                             |    4 +-
+ textproc/meld/distinfo                             |    6 +-
+ textproc/meld/files/patch-setup.py                 |   17 -
+ textproc/meld/pkg-plist                            |   87 +-
+ textproc/p5-JSON-Validator/Makefile                |    8 +-
+ textproc/p5-JSON-Validator/distinfo                |    6 +-
+ www/cl-lml-sbcl/Makefile                           |    2 +-
+ www/deno/Makefile                                  |    5 +-
+ www/deno/distinfo                                  |    6 +-
+ www/epiphany/Makefile                              |    2 +-
+ www/ffsend/Makefile                                |   20 +-
+ www/ffsend/distinfo                                |   38 +-
+ www/gnome-user-share/Makefile                      |    2 +-
+ x11-fm/nautilus-python/Makefile                    |    1 +
+ x11-fm/nautilus/Makefile                           |    7 +-
+ x11-fm/nautilus/distinfo                           |    6 +-
+ x11-fm/nautilus/files/patch-data_meson.build       |   28 -
+ x11-fm/nautilus/files/patch-src_meson.build        |   50 -
+ x11-fm/nautilus/pkg-plist                          |   10 +-
+ x11-fm/nemo/Makefile                               |    2 +-
+ x11-fonts/comic-neue/Makefile                      |   14 +-
+ x11-fonts/comic-neue/distinfo                      |    6 +-
+ x11-toolkits/Makefile                              |    1 +
+ x11-toolkits/amtk/Makefile                         |   23 +
+ x11-toolkits/amtk/distinfo                         |    3 +
+ x11-toolkits/amtk/pkg-descr                        |    5 +
+ x11-toolkits/amtk/pkg-plist                        |   79 ++
+ x11-toolkits/libdazzle/Makefile                    |    2 +-
+ x11-toolkits/libdazzle/distinfo                    |    6 +-
+ x11-toolkits/tepl/Makefile                         |   15 +-
+ x11-toolkits/tepl/distinfo                         |    6 +-
+ x11-toolkits/tepl/pkg-plist                        |  189 ++--
+ x11-wm/metacity/Makefile                           |   11 +-
+ x11-wm/metacity/distinfo                           |    6 +-
+ x11-wm/metacity/pkg-plist                          |  130 +--
+ x11-wm/mutter/Makefile                             |   42 +-
+ x11-wm/mutter/distinfo                             |    6 +-
+ x11-wm/mutter/files/patch-meson.build              |   25 +
+ x11-wm/mutter/files/patch-src_backends_meta-egl.c  |    8 +-
+ .../mutter/files/patch-src_compositor_compositor.c |   23 -
+ x11-wm/mutter/files/patch-src_core_main.c          |   23 -
+ x11-wm/mutter/pkg-plist                            |  548 +++++-----
+ x11-wm/phoc/Makefile                               |    2 +-
+ x11-wm/stumpwm/Makefile                            |    2 +-
+ x11/cinnamon-screensaver/Makefile                  |    2 +-
+ x11/cinnamon/Makefile                              |    2 +-
+ x11/cl-clx-sbcl/Makefile                           |    2 +-
+ x11/gdm/Makefile                                   |    4 +-
+ x11/gnome-desktop/Makefile                         |   20 +-
+ x11/gnome-desktop/distinfo                         |    6 +-
+ x11/gnome-desktop/pkg-plist                        |   41 +-
+ x11/gnome-session/Makefile                         |    6 +-
+ x11/gnome-session/distinfo                         |    6 +-
+ x11/gnome-session/pkg-plist                        |    3 +
+ x11/gnome-shell-extensions/Makefile                |   14 +-
+ x11/gnome-shell-extensions/distinfo                |    6 +-
+ x11/gnome-shell-extensions/pkg-plist               |   27 +-
+ x11/gnome-shell/Makefile                           |   33 +-
+ x11/gnome-shell/distinfo                           |    6 +-
+ .../files/patch-js_misc_loginManager.js            |  134 ---
+ x11/gnome-shell/files/patch-js_ui_screenShield.js  |   21 -
+ x11/gnome-shell/pkg-plist                          |   35 +-
+ x11/gnome-terminal/Makefile                        |    1 +
+ x11/phosh/Makefile                                 |    2 +-
+ x11/squeekboard/Makefile                           |    2 +-
+ 237 files changed, 4381 insertions(+), 3827 deletions(-)
+ delete mode 100644 deskutils/gnome-contacts/files/patch-src_contacts-window.vala
+ delete mode 100644 deskutils/gnome-photos/files/patch-configure
+ create mode 100644 deskutils/gnome-todo/files/patch-plugins_eds_gtd-eds-autoptr_h
+ create mode 100644 deskutils/gnome-todo/files/patch-plugins_eds_gtd-provider-eds_c
+ create mode 100644 deskutils/gnome-todo/files/patch-plugins_eds_gtd-task-eds_c
+ create mode 100644 deskutils/gnome-todo/files/patch-plugins_eds_gtd-task-list-eds_c
+ create mode 100644 deskutils/gnome-todo/files/patch-plugins_eds_meson_build
+ delete mode 100644 lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-freebsd-sys_event.d
+ delete mode 100644 lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-freebsd-sys_mount.d
+ delete mode 100644 lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-posix-sys_stat.d
+ delete mode 100644 lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-posix-sys_types.d
+ delete mode 100644 lang/ldc/files/fbsd12-runtime-druntime-src-core-sys-posix_dirent.d
+ create mode 100644 lang/ldc/files/patch-cmake_Modules_FindLLVM.cmake
+ create mode 100644 lang/ldc/files/patch-driver_linker-gcc.cpp
+ create mode 100644 lang/ldc/files/patch-driver_targetmachine.cpp
+ create mode 100644 lang/ldc/files/patch-ltsmaster_cmake_Modules_FindLLVM.cmake
+ create mode 100644 lang/ldc/files/patch-runtime_CMakeLists.txt
+ delete mode 100644 multimedia/cheese/files/patch-config.h.in
+ create mode 100644 multimedia/jmref/files/patch-ldecod_inc_configfile.h
+ create mode 100644 multimedia/jmref/files/patch-ldecod_inc_defines.h
+ create mode 100644 multimedia/jmref/files/patch-ldecod_src_configfile.c
+ create mode 100644 multimedia/jmref/files/patch-ldecod_src_ldecod.c
+ create mode 100644 multimedia/jmref/files/patch-lencod_inc_configfile.h
+ create mode 100644 multimedia/jmref/files/patch-lencod_inc_defines.h
+ create mode 100644 multimedia/jmref/files/patch-lencod_inc_global.h
+ create mode 100644 multimedia/jmref/files/patch-lencod_src_configfile.c
+ create mode 100644 multimedia/jmref/files/patch-lencod_src_rdopt.c
+ delete mode 100644 multimedia/totem/files/patch-src_meson.build
+ delete mode 100644 net-im/farstream/files/patch-11dde55cbaf5179e8e1885cf1483e538a8d5a4a9
+ create mode 100644 net/py-python-socks/Makefile
+ create mode 100644 net/py-python-socks/distinfo
+ create mode 100644 net/py-python-socks/pkg-descr
+ delete mode 100644 net/tigervnc-server/files/patch-unix_xserver_hw_vnc_xvnc.c
+ delete mode 100644 sysutils/gnome-control-center/files/patch-panels_info_info-overview.ui
+ rename sysutils/gnome-control-center/files/{patch-panels_user-accounts_um-realm-manager.c => patch-panels_user-accounts_cc-realm-manager.c} (74%)
+ delete mode 100644 sysutils/gnome-control-center/files/patch-panels_user-accounts_um-utils.c
+ delete mode 100644 textproc/meld/files/patch-setup.py
+ delete mode 100644 x11-fm/nautilus/files/patch-data_meson.build
+ delete mode 100644 x11-fm/nautilus/files/patch-src_meson.build
+ create mode 100644 x11-toolkits/amtk/Makefile
+ create mode 100644 x11-toolkits/amtk/distinfo
+ create mode 100644 x11-toolkits/amtk/pkg-descr
+ create mode 100644 x11-toolkits/amtk/pkg-plist
+ create mode 100644 x11-wm/mutter/files/patch-meson.build
+ delete mode 100644 x11-wm/mutter/files/patch-src_compositor_compositor.c
+ delete mode 100644 x11-wm/mutter/files/patch-src_core_main.c
+ delete mode 100644 x11/gnome-shell/files/patch-js_misc_loginManager.js
+ delete mode 100644 x11/gnome-shell/files/patch-js_ui_screenShield.js
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    fe4debb60e52..cff5f0aa479f  master -> master        
+remote:    20928dbc04c2..fe4debb60e52  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   fe4debb60e52..cff5f0aa479f  master -> master
+==== END: master ====
