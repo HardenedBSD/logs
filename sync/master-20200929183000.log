@@ -47,3 +47,353 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/gnome3-lite/Makefile
+Auto-merging security/racoon2/Makefile
+Removing net/mtr/files/patch-packet-probe_unix.c
+Removing net/mtr/files/patch-packet-probe.c
+Auto-merging net/mtr/Makefile
+Auto-merging math/spar/Makefile
+CONFLICT (content): Merge conflict in math/spar/Makefile
+Removing irc/konversation/files/patch-src_viewer_viewtree.cpp
+Removing irc/konversation/files/patch-gentoo-kf5-5.61-headers
+Removing graphics/py-gimp/pkg-plist
+Removing graphics/py-gimp/Makefile
+Removing devel/py-argcomplete/files/patch-setup.py
+Removing devel/llvm-devel/files/patch-openmp_libomptarget_src_omptarget.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc math/spar/Makefile
+index d48de18c7809,c84a85d70f57..000000000000
+--- a/math/spar/Makefile
++++ b/math/spar/Makefile
+@@@ -10,7 -10,8 +10,12 @@@ MASTER_SITES=	SF/${PORTNAME}/Spar/${POR
+  MAINTAINER=	ports@FreeBSD.org
+  COMMENT=	Modular math parser
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+++=======
++ LICENSE=        GPLv2
++ LICENSE_FILE=   ${WRKSRC}/COPYING
+++>>>>>>> freebsd/master
+  
+  USES=		dos2unix libtool ncurses readline
+  DOS2UNIX_FILES=	lib/randist/rand.c
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   UPDATING
+	modified:   astro/py-spacetrack/Makefile
+	modified:   astro/py-spacetrack/distinfo
+	modified:   astro/stellarium/Makefile
+	modified:   astro/stellarium/distinfo
+	modified:   astro/stellarium/pkg-plist
+	modified:   audio/ardour6/Makefile
+	modified:   audio/ardour6/distinfo
+	new file:   audio/ardour6/files/patch-wscript
+	modified:   audio/ardour6/pkg-plist
+	modified:   audio/beatslash-lv2/Makefile
+	modified:   audio/libsndfile/Makefile
+	modified:   audio/libsndfile/distinfo
+	new file:   audio/libsndfile/files/patch-CMakeLists.txt
+	modified:   audio/libsndfile/pkg-plist
+	modified:   biology/libsbml/Makefile
+	new file:   biology/libsbml/files/patch-CMakeLists.txt
+	modified:   databases/postgresql-plproxy/Makefile
+	modified:   databases/postgresql-plproxy/distinfo
+	modified:   databases/postgresql-plproxy/pkg-plist
+	modified:   databases/postgresql-tds_fdw/Makefile
+	modified:   databases/postgresql-tds_fdw/distinfo
+	modified:   databases/py-rb/Makefile
+	modified:   databases/py-rb/distinfo
+	modified:   databases/py-tableschema/Makefile
+	modified:   databases/py-tableschema/distinfo
+	modified:   databases/rubygem-dalli/Makefile
+	modified:   databases/rubygem-dalli/distinfo
+	modified:   databases/rubygem-flipper-active_record/Makefile
+	modified:   databases/rubygem-flipper-active_record/distinfo
+	modified:   deskutils/clipmenu/Makefile
+	modified:   devel/Makefile
+	modified:   devel/awscli/Makefile
+	modified:   devel/awscli/distinfo
+	modified:   devel/libfmt/Makefile
+	modified:   devel/libfmt/distinfo
+	modified:   devel/libfmt/pkg-descr
+	modified:   devel/libuv/Makefile
+	modified:   devel/libuv/distinfo
+	modified:   devel/llvm-devel/Makefile
+	modified:   devel/llvm-devel/Makefile.COMMANDS
+	modified:   devel/llvm-devel/Makefile.snapshot
+	modified:   devel/llvm-devel/distinfo
+	new file:   devel/llvm-devel/files/patch-lldb_source_Plugins_Process_FreeBSD_RegisterContextPOSIXProcessMonitor__arm.cpp
+	new file:   devel/llvm-devel/files/patch-lldb_source_Plugins_Process_FreeBSD_RegisterContextPOSIXProcessMonitor__arm.h
+	deleted:    devel/llvm-devel/files/patch-openmp_libomptarget_src_omptarget.cpp
+	modified:   devel/llvm-devel/pkg-plist
+	modified:   devel/lua-luarocks/Makefile
+	modified:   devel/lua-luarocks/distinfo
+	modified:   devel/p5-File-Temp/Makefile
+	modified:   devel/p5-File-Temp/distinfo
+	modified:   devel/p5-Test2-Harness/Makefile
+	modified:   devel/p5-Test2-Harness/distinfo
+	modified:   devel/p5-Type-Tiny-XS/Makefile
+	modified:   devel/p5-Type-Tiny-XS/distinfo
+	modified:   devel/py-argcomplete/Makefile
+	modified:   devel/py-argcomplete/distinfo
+	deleted:    devel/py-argcomplete/files/patch-setup.py
+	modified:   devel/py-botocore/Makefile
+	modified:   devel/py-botocore/distinfo
+	modified:   devel/py-dask/Makefile
+	modified:   devel/py-dask/distinfo
+	modified:   devel/py-fsspec/Makefile
+	modified:   devel/py-fsspec/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	modified:   devel/py-ptpython/Makefile
+	modified:   devel/py-ptpython/distinfo
+	modified:   devel/py-tabulator/Makefile
+	modified:   devel/py-tabulator/distinfo
+	modified:   devel/py-tartiflette-aiohttp/Makefile
+	modified:   devel/py-tartiflette-aiohttp/distinfo
+	modified:   devel/redo/Makefile
+	modified:   devel/reproc/Makefile
+	modified:   devel/reproc/distinfo
+	modified:   devel/reproc/pkg-plist
+	modified:   devel/rubygem-aws-partitions/Makefile
+	modified:   devel/rubygem-aws-partitions/distinfo
+	modified:   devel/rubygem-aws-sdk-amplify/Makefile
+	modified:   devel/rubygem-aws-sdk-amplify/distinfo
+	modified:   devel/rubygem-aws-sdk-batch/Makefile
+	modified:   devel/rubygem-aws-sdk-batch/distinfo
+	modified:   devel/rubygem-aws-sdk-configservice/Makefile
+	modified:   devel/rubygem-aws-sdk-configservice/distinfo
+	modified:   devel/rubygem-aws-sdk-core/Makefile
+	modified:   devel/rubygem-aws-sdk-core/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-eks/Makefile
+	modified:   devel/rubygem-aws-sdk-eks/distinfo
+	modified:   devel/rubygem-aws-sdk-frauddetector/Makefile
+	modified:   devel/rubygem-aws-sdk-frauddetector/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk-s3/Makefile
+	modified:   devel/rubygem-aws-sdk-s3/distinfo
+	modified:   devel/rubygem-aws-sdk-savingsplans/Makefile
+	modified:   devel/rubygem-aws-sdk-savingsplans/distinfo
+	modified:   devel/rubygem-aws-sdk-synthetics/Makefile
+	modified:   devel/rubygem-aws-sdk-synthetics/distinfo
+	modified:   devel/rubygem-aws-sdk-textract/Makefile
+	modified:   devel/rubygem-aws-sdk-textract/distinfo
+	modified:   devel/rubygem-aws-sdk-transcribeservice/Makefile
+	modified:   devel/rubygem-aws-sdk-transcribeservice/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	new file:   devel/rubygem-azure_mgmt_automanage/Makefile
+	new file:   devel/rubygem-azure_mgmt_automanage/distinfo
+	new file:   devel/rubygem-azure_mgmt_automanage/pkg-descr
+	new file:   devel/rubygem-azure_mgmt_digitaltwins/Makefile
+	new file:   devel/rubygem-azure_mgmt_digitaltwins/distinfo
+	new file:   devel/rubygem-azure_mgmt_digitaltwins/pkg-descr
+	modified:   devel/rubygem-azure_mgmt_hybrid_compute/Makefile
+	modified:   devel/rubygem-azure_mgmt_storage/Makefile
+	modified:   devel/rubygem-azure_mgmt_storage/distinfo
+	modified:   devel/rubygem-azure_sdk/Makefile
+	modified:   devel/rubygem-azure_sdk/distinfo
+	modified:   devel/rubygem-flipper-active_support_cache_store/Makefile
+	modified:   devel/rubygem-flipper-active_support_cache_store/distinfo
+	modified:   devel/rubygem-flipper-ui/Makefile
+	modified:   devel/rubygem-flipper-ui/distinfo
+	modified:   devel/rubygem-flipper-ui/files/patch-gemspec
+	modified:   devel/rubygem-flipper/Makefile
+	modified:   devel/rubygem-flipper/distinfo
+	modified:   devel/rubygem-google-api-client/Makefile
+	modified:   devel/rubygem-google-api-client/distinfo
+	modified:   devel/rubygem-parser/Makefile
+	modified:   devel/rubygem-parser/distinfo
+	modified:   devel/rubygem-readline-ext/Makefile
+	modified:   devel/rubygem-readline-ext/distinfo
+	new file:   devel/rubygem-rubocop-ast/Makefile
+	new file:   devel/rubygem-rubocop-ast/distinfo
+	new file:   devel/rubygem-rubocop-ast/pkg-descr
+	modified:   devel/rubygem-sentry-raven/Makefile
+	modified:   devel/rubygem-sentry-raven/distinfo
+	modified:   devel/rubygem-sidekiq-unique-jobs/Makefile
+	modified:   devel/rubygem-sidekiq-unique-jobs/distinfo
+	modified:   devel/rubygem-tty-logger/Makefile
+	modified:   devel/rubygem-tty-logger/distinfo
+	modified:   graphics/Makefile
+	modified:   graphics/ansilove/Makefile
+	modified:   graphics/gimp/Makefile
+	modified:   graphics/libansilove/Makefile
+	deleted:    graphics/py-gimp/Makefile
+	deleted:    graphics/py-gimp/pkg-plist
+	modified:   irc/konversation/Makefile
+	modified:   irc/konversation/distinfo
+	deleted:    irc/konversation/files/patch-gentoo-kf5-5.61-headers
+	deleted:    irc/konversation/files/patch-src_viewer_viewtree.cpp
+	modified:   irc/konversation/pkg-plist
+	modified:   lang/ficl/Makefile
+	new file:   lang/ficl/files/LICENSE.txt
+	new file:   lang/ficl/files/patch-ficlplatform_unix.h
+	modified:   lang/ficl/files/patch-vm.c
+	modified:   lang/gcc11-devel/Makefile
+	modified:   lang/gcc11-devel/distinfo
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   lang/intercal/Makefile
+	new file:   lang/intercal/files/patch-src_perpet.c
+	modified:   lang/snobol4/Makefile
+	modified:   lang/snobol4/pkg-plist
+	new file:   math/spar/files/patch-lib_sl__version.h
+	modified:   misc/iselect/Makefile
+	new file:   misc/iselect/files/patch-iselect__browse.h
+	modified:   misc/p5-Geo-Address-Formatter/Makefile
+	modified:   misc/p5-Geo-Address-Formatter/distinfo
+	modified:   misc/py-tqdm/Makefile
+	modified:   misc/py-tqdm/distinfo
+	modified:   misc/viz/Makefile
+	modified:   misc/viz/files/patch-viz.c
+	new file:   misc/viz/files/patch-viz.h
+	modified:   net/mopd/Makefile
+	new file:   net/mopd/files/LICENSE.txt
+	renamed:    net/mopd/files/patch-device.c -> net/mopd/files/patch-common_device.c
+	renamed:    net/mopd/files/patch-file.c -> net/mopd/files/patch-common_file.c
+	new file:   net/mopd/files/patch-common_loop-bsd.c
+	renamed:    net/mopd/files/patch-pf.c -> net/mopd/files/patch-common_pf.c
+	renamed:    net/mopd/files/patch-put.c -> net/mopd/files/patch-common_put.c
+	new file:   net/mopd/files/patch-mopchk_Makefile
+	new file:   net/mopd/files/patch-mopchk_mopchk.c
+	new file:   net/mopd/files/patch-mopd_Makefile
+	new file:   net/mopd/files/patch-mopd_mopd.c
+	renamed:    net/mopd/files/patch-process.c -> net/mopd/files/patch-mopd_process.c
+	new file:   net/mopd/files/patch-mopprobe_Makefile
+	new file:   net/mopd/files/patch-mopprobe_mopprobe.c
+	new file:   net/mopd/files/patch-moptrace_Makefile
+	new file:   net/mopd/files/patch-moptrace_moptrace.c
+	new file:   net/mopd/files/patch-otherOS_Makefile
+	new file:   net/mopd/files/patch-otherOS_loop.c
+	renamed:    net/mopd/files/patch-pf-snit.c -> net/mopd/files/patch-otherOS_pf-snit.c
+	modified:   net/mtr/Makefile
+	modified:   net/mtr/distinfo
+	deleted:    net/mtr/files/patch-packet-probe.c
+	deleted:    net/mtr/files/patch-packet-probe_unix.c
+	modified:   net/py-smart-open/Makefile
+	modified:   net/py-smart-open/distinfo
+	modified:   net/rubygem-opennebula/Makefile
+	modified:   net/rubygem-opennebula/distinfo
+	modified:   print/py-fontbakery/Makefile
+	modified:   print/py-fontbakery/distinfo
+	modified:   security/racoon2/Makefile
+	modified:   sysutils/ncdu/Makefile
+	modified:   sysutils/ncdu/pkg-descr
+	modified:   sysutils/openzfs-kmod/Makefile
+	modified:   sysutils/openzfs-kmod/distinfo
+	modified:   sysutils/openzfs/Makefile
+	modified:   sysutils/openzfs/distinfo
+	modified:   sysutils/syslog-ng327/Makefile
+	modified:   sysutils/syslog-ng327/files/pkg-message.in
+	modified:   sysutils/syslog-ng327/files/syslog-ng.in
+	modified:   sysutils/syslog-ng328/Makefile
+	modified:   sysutils/syslog-ng328/files/pkg-message.in
+	modified:   sysutils/syslog-ng328/files/syslog-ng.in
+	modified:   sysutils/syslog-ng329/Makefile
+	new file:   sysutils/syslog-ng329/files/patch-modules_afsocket_socket-options.c
+	modified:   sysutils/syslog-ng329/files/pkg-message.in
+	modified:   sysutils/syslog-ng329/files/syslog-ng.in
+	modified:   textproc/idnits/Makefile
+	modified:   textproc/idnits/distinfo
+	modified:   textproc/p5-Lingua-Stem/Makefile
+	modified:   textproc/p5-Lingua-Stem/distinfo
+	modified:   textproc/p5-Unicode-Collate/Makefile
+	modified:   textproc/p5-Unicode-Collate/distinfo
+	modified:   textproc/rubygem-raabro/Makefile
+	modified:   textproc/rubygem-raabro/distinfo
+	modified:   textproc/translate-toolkit/Makefile
+	modified:   textproc/translate-toolkit/pkg-plist
+	modified:   www/nginx-devel/Makefile
+	modified:   www/nginx-devel/Makefile.extmod
+	modified:   www/nginx-devel/distinfo
+	modified:   www/py-bokeh/Makefile
+	modified:   www/py-boto3/Makefile
+	modified:   www/py-boto3/distinfo
+	modified:   www/py-flask-marshmallow/Makefile
+	modified:   www/py-flask-marshmallow/distinfo
+	modified:   www/py-google-cloud-speech/Makefile
+	modified:   www/py-google-cloud-speech/distinfo
+	modified:   www/py-httpx/Makefile
+	modified:   www/py-httpx/distinfo
+	modified:   www/zola/Makefile
+	modified:   www/zola/distinfo
+	modified:   x11-fonts/cascadia-code/Makefile
+	modified:   x11-fonts/cascadia-code/pkg-descr
+	modified:   x11/Makefile
+	modified:   x11/gnome-terminal/Makefile
+	modified:   x11/gnome-terminal/distinfo
+	modified:   x11/gnome-terminal/pkg-plist
+	deleted:    x11/gnome3-lite/Makefile
+	modified:   x11/gnome3/Makefile
+	renamed:    x11/gnome3-lite/pkg-descr -> x11/gnome3/pkg-descr-lite
+	renamed:    x11/gnome3-lite/pkg-message -> x11/gnome3/pkg-message-lite
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   math/spar/Makefile
+
+
+It took 2.96 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at cff5f0aa479f Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.15 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at cff5f0aa479f Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
