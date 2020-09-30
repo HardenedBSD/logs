@@ -1,0 +1,87 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is up to date with 'origin/freebsd/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating b3982152c127..d3213824223d
+Fast-forward
+ bin/cp/Makefile                       |   5 ++
+ bin/cp/tests/Makefile                 |   7 ++
+ bin/cp/tests/cp_test.sh               |  64 +++++++++++++++++
+ etc/mtree/BSD.tests.dist              |   2 +
+ sys/compat/cloudabi/cloudabi_proc.c   |   2 +-
+ sys/compat/freebsd32/freebsd32_misc.c |   4 +-
+ sys/compat/linux/linux_emul.c         |   2 +-
+ sys/dev/cxgbe/adapter.h               |   4 ++
+ sys/dev/cxgbe/t4_main.c               |   4 +-
+ sys/dev/cxgbe/t4_sge.c                | 126 ++++++++++++++++++++++++++++++----
+ sys/dev/cxgbe/tom/t4_cpl_io.c         |   8 +++
+ sys/kern/kern_exec.c                  |  37 ++++++----
+ sys/sys/imgact.h                      |   1 +
+ sys/sys/syscallsubr.h                 |   3 +-
+ usr.bin/xargs/xargs.1                 |  18 ++---
+ usr.bin/xargs/xargs.c                 |  19 ++++-
+ 16 files changed, 263 insertions(+), 43 deletions(-)
+ create mode 100644 bin/cp/tests/Makefile
+ create mode 100755 bin/cp/tests/cp_test.sh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    b3982152c127..d3213824223d  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b3982152c127..d3213824223d  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
