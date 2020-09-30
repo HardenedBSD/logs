@@ -358,3 +358,144 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/reptyr/files/patch-platform_freebsd_freebsd.c
+Removing sysutils/reptyr/files/patch-git_308f600
+Auto-merging security/Makefile
+Removing net/scapy/files/patch-i386
+Merge made by the 'recursive' strategy.
+ databases/freetds-devel/Makefile                   |   2 +-
+ databases/freetds-devel/distinfo                   |   6 +-
+ databases/freetds/Makefile                         |   2 +-
+ databases/freetds/distinfo                         |   6 +-
+ devel/abseil/Makefile                              |  10 +-
+ devel/abseil/distinfo                              |   8 +-
+ devel/abseil/pkg-plist                             |  29 ++-
+ devel/lazygit/Makefile                             |   2 +-
+ devel/lazygit/distinfo                             |   6 +-
+ emulators/Makefile                                 |   1 +
+ emulators/qemu42/Makefile                          | 166 ++++++++++++++
+ emulators/qemu42/distinfo                          |   3 +
+ emulators/qemu42/files/patch-Makefile              |  42 ++++
+ emulators/qemu42/files/patch-configure             | 213 +++++++++++++++++
+ .../patch-disas_libvixl_vixl_a64_disasm-a64.cc     |  11 +
+ emulators/qemu42/files/patch-include_net_net.h     |  13 ++
+ emulators/qemu42/files/patch-include_qemu_atomic.h |  54 +++++
+ emulators/qemu42/files/patch-net_tap-bsd.c         |  10 +
+ emulators/qemu42/files/patch-qemu-doc.texi         |  21 ++
+ emulators/qemu42/files/pcap-patch-net_clients.h    |  13 ++
+ emulators/qemu42/files/pcap-patch-net_net.c        | 251 +++++++++++++++++++++
+ emulators/qemu42/files/pcap-patch-qapi_net.json    |  56 +++++
+ emulators/qemu42/files/qemu-ifdown.sample          |   2 +
+ emulators/qemu42/files/qemu-ifup.sample            |   2 +
+ emulators/qemu42/pkg-descr                         |  19 ++
+ emulators/qemu42/pkg-message                       | 188 +++++++++++++++
+ emulators/qemu42/pkg-plist                         | 175 ++++++++++++++
+ net/libdaq/Makefile                                |   2 +-
+ net/libdaq/distinfo                                |   6 +-
+ net/scapy/Makefile                                 |   6 +-
+ net/scapy/distinfo                                 |   6 +-
+ net/scapy/files/patch-i386                         |  50 ----
+ security/Makefile                                  |   2 +
+ security/digestpp/Makefile                         |  27 +++
+ security/digestpp/distinfo                         |   3 +
+ security/digestpp/pkg-descr                        |   6 +
+ security/digestpp/pkg-plist                        |  58 +++++
+ security/hash/Makefile                             |  26 +++
+ security/hash/distinfo                             |   3 +
+ security/hash/pkg-descr                            |   4 +
+ security/hash/pkg-plist                            |  39 ++++
+ security/snort3/Makefile                           |   2 +-
+ security/snort3/distinfo                           |   6 +-
+ security/snort3/pkg-plist                          |   9 +-
+ sysutils/reptyr/Makefile                           |   5 +-
+ sysutils/reptyr/distinfo                           |   5 +-
+ sysutils/reptyr/files/patch-git_308f600            |  36 ---
+ .../reptyr/files/patch-platform_freebsd_freebsd.c  |  16 --
+ 48 files changed, 1472 insertions(+), 156 deletions(-)
+ create mode 100644 emulators/qemu42/Makefile
+ create mode 100644 emulators/qemu42/distinfo
+ create mode 100644 emulators/qemu42/files/patch-Makefile
+ create mode 100644 emulators/qemu42/files/patch-configure
+ create mode 100644 emulators/qemu42/files/patch-disas_libvixl_vixl_a64_disasm-a64.cc
+ create mode 100644 emulators/qemu42/files/patch-include_net_net.h
+ create mode 100644 emulators/qemu42/files/patch-include_qemu_atomic.h
+ create mode 100644 emulators/qemu42/files/patch-net_tap-bsd.c
+ create mode 100644 emulators/qemu42/files/patch-qemu-doc.texi
+ create mode 100644 emulators/qemu42/files/pcap-patch-net_clients.h
+ create mode 100644 emulators/qemu42/files/pcap-patch-net_net.c
+ create mode 100644 emulators/qemu42/files/pcap-patch-qapi_net.json
+ create mode 100644 emulators/qemu42/files/qemu-ifdown.sample
+ create mode 100644 emulators/qemu42/files/qemu-ifup.sample
+ create mode 100644 emulators/qemu42/pkg-descr
+ create mode 100644 emulators/qemu42/pkg-message
+ create mode 100644 emulators/qemu42/pkg-plist
+ delete mode 100644 net/scapy/files/patch-i386
+ create mode 100644 security/digestpp/Makefile
+ create mode 100644 security/digestpp/distinfo
+ create mode 100644 security/digestpp/pkg-descr
+ create mode 100644 security/digestpp/pkg-plist
+ create mode 100644 security/hash/Makefile
+ create mode 100644 security/hash/distinfo
+ create mode 100644 security/hash/pkg-descr
+ create mode 100644 security/hash/pkg-plist
+ delete mode 100644 sysutils/reptyr/files/patch-git_308f600
+ delete mode 100644 sysutils/reptyr/files/patch-platform_freebsd_freebsd.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    8924561ba8b8..e7ec1e33b142  master -> master        
+remote:    cff5f0aa479f..8924561ba8b8  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   8924561ba8b8..e7ec1e33b142  master -> master
+==== END: master ====
