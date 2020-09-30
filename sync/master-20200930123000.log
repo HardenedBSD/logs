@@ -47,3 +47,273 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/gnome-menus/files/patch-util_Makefile.in
+Removing x11/gnome-menus/files/patch-layout_gnome-applications.menu
+Removing x11/gnome-menus/files/KDE.directory
+Removing sysutils/system-tools-backends/pkg-plist
+Removing sysutils/system-tools-backends/pkg-descr
+Removing sysutils/system-tools-backends/files/patch-dispatcher_main.c
+Removing sysutils/system-tools-backends/files/patch-Utils_Platform.pm
+Removing sysutils/system-tools-backends/distinfo
+Removing sysutils/system-tools-backends/Makefile
+Removing net/libproxy-gnome2/pkg-plist
+Removing net/libproxy-gnome2/pkg-descr
+Removing net/libproxy-gnome2/Makefile
+Auto-merging net/Makefile
+Removing multimedia/py-gstreamer/pkg-plist
+Removing multimedia/py-gstreamer/pkg-descr
+Removing multimedia/py-gstreamer/distinfo
+Removing multimedia/py-gstreamer/Makefile
+Auto-merging Mk/bsd.port.mk
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    3 +
+ Mk/bsd.gstreamer.mk                                |   12 -
+ Mk/bsd.port.mk                                     |    4 +-
+ audio/praat/Makefile                               |    4 +-
+ audio/praat/distinfo                               |    6 +-
+ cad/kicad-doc/Makefile                             |    2 +-
+ cad/kicad-doc/distinfo                             |    6 +-
+ cad/kicad-library-footprints/Makefile              |    2 +-
+ cad/kicad-library-footprints/distinfo              |    6 +-
+ cad/kicad-library-footprints/pkg-plist             |  211 +-
+ cad/kicad-library-packages3d/Makefile              |    2 +-
+ cad/kicad-library-packages3d/distinfo              |    6 +-
+ cad/kicad-library-packages3d/pkg-plist             |  174 +-
+ cad/kicad-library-symbols/Makefile                 |    2 +-
+ cad/kicad-library-symbols/distinfo                 |    6 +-
+ cad/kicad-library-symbols/pkg-plist                |    2 +
+ cad/kicad-library-templates/Makefile               |    2 +-
+ cad/kicad-library-templates/distinfo               |    6 +-
+ cad/kicad-library-templates/pkg-plist              |   16 +
+ cad/kicad/Makefile                                 |    3 +-
+ cad/kicad/distinfo                                 |    6 +-
+ cad/kicad/pkg-plist                                |    1 -
+ comms/gnuradio/Makefile                            |    3 +-
+ deskutils/nextcloudclient/Makefile                 |   10 +-
+ devel/gogs/Makefile                                |    4 +-
+ devel/gogs/distinfo                                |   10 +-
+ devel/libnotify/Makefile                           |    5 +-
+ devel/libsigc++20/Makefile                         |   15 +-
+ devel/libsigc++20/distinfo                         |    6 +-
+ devel/libsigc++20/pkg-plist                        |  638 ----
+ devel/p5-DateTime-Format-Natural/Makefile          |    2 +-
+ devel/p5-DateTime-Format-Natural/distinfo          |    6 +-
+ dns/gdnsd2/Makefile                                |    2 +-
+ dns/gdnsd2/distinfo                                |    6 +-
+ finance/py-pycoin/Makefile                         |    3 +-
+ finance/py-pycoin/distinfo                         |    6 +-
+ games/lincity/Makefile                             |    6 +-
+ games/lincity/files/patch-ldsvgui.c                |   13 +
+ games/lincity/files/patch-main.c                   |   15 +
+ games/lincity/files/patch-screen.h                 |   11 +
+ games/luola/Makefile                               |    2 +-
+ games/nettoe/Makefile                              |    6 +-
+ games/nettoe/files/patch-src_game.h                |   14 +
+ games/nettoe/files/patch-src_misc.c                |   13 +
+ games/nlarn/Makefile                               |    3 +-
+ games/nlarn/files/patch-inc_nlarn.h                |   10 +
+ games/nlarn/files/patch-inc_position.h             |   11 +
+ games/phlipple/Makefile                            |   11 +-
+ games/phlipple/files/patch-src_engine.h            |   11 +
+ games/pioneers/Makefile                            |    5 +-
+ games/pioneers/files/patch-common_game.h           |   11 +
+ games/polyglot/Makefile                            |    2 +-
+ games/polyglot/files/patch-pgheader.h              |   13 +
+ games/prboom-plus/Makefile                         |   16 +-
+ games/prboom-plus/files/patch-src_doomstat.c       |   11 +
+ games/prboom-plus/files/patch-src_gl__intern.h     |   22 +
+ games/prboom-plus/files/patch-src_gl__light.c      |   11 +
+ games/prboom/Makefile                              |    6 +-
+ games/prboom/files/patch-src_gl__intern.h          |   10 +
+ games/prboom/files/patch-src_gl__main.c            |   11 +
+ games/tenebrae/Makefile                            |    9 +-
+ games/tenebrae/files/patch-cd_linux.c              |   28 +-
+ games/tenebrae/files/patch-common.c                |    6 +-
+ games/tenebrae/files/patch-common.h                |    6 +-
+ games/tenebrae/files/patch-gl_common.c             |    6 +-
+ games/tenebrae/files/patch-gl_vidlinuxglx.c        |    8 +-
+ games/tenebrae/files/patch-glquake.h               |   26 +-
+ .../tenebrae/files/patch-linux__Makefile.i386linux |   23 +-
+ games/tenebrae/files/patch-net.h                   |    6 +-
+ games/tenebrae/files/patch-quakeasm.h              |    6 +-
+ games/tenebrae/files/patch-quakedef.h              |    6 +-
+ games/tenebrae/files/patch-snd_sdl.c               |    8 +-
+ games/tenebrae/files/patch-sys_dosa.s              |    6 +-
+ games/tenebrae/files/patch-sys_linux.c             |    6 +-
+ games/tenebrae/files/patch-sys_uxfindfirst.c       |    6 +-
+ games/tetrinet/Makefile                            |    9 +-
+ games/tetrinet/files/patch-server.c                |   20 +
+ games/tetrinet/files/patch-tetrinet.c              |   11 +
+ games/tetrinet/files/patch-tetris.h                |   11 +
+ games/tetrinet/files/patch-tty.c                   |   29 +
+ math/gnumeric/Makefile                             |    5 +-
+ math/gnumeric/distinfo                             |    6 +-
+ math/wxmaxima/Makefile                             |    8 +-
+ math/wxmaxima/files/patch-src_Version.h.cin        |   11 +
+ math/xldlas/Makefile                               |    7 +-
+ math/xldlas/files/patch-Makefile                   |    8 +-
+ math/xldlas/files/patch-setstate.c                 |   30 +-
+ math/xldlas/files/patch-xldlas.c                   |   11 +
+ math/xldlas/files/patch-xldlas.h                   |  752 +++-
+ misc/gnome-devel-docs/Makefile                     |    5 +-
+ misc/gnome-devel-docs/distinfo                     |    6 +-
+ misc/gnome-devel-docs/pkg-plist                    | 1055 +++++-
+ misc/gnome-user-docs/Makefile                      |    4 +-
+ misc/gnome-user-docs/distinfo                      |    6 +-
+ misc/gnome-user-docs/pkg-plist                     | 2455 ++++++++++---
+ multimedia/Makefile                                |    1 -
+ multimedia/cheese/Makefile                         |    5 +-
+ multimedia/py-gstreamer/Makefile                   |   53 -
+ multimedia/py-gstreamer/distinfo                   |    2 -
+ multimedia/py-gstreamer/pkg-descr                  |   10 -
+ multimedia/py-gstreamer/pkg-plist                  |   67 -
+ multimedia/shotcut/Makefile                        |    2 +-
+ multimedia/shotcut/distinfo                        |    6 +-
+ multimedia/shotcut/pkg-plist                       |   18 +-
+ net/Makefile                                       |    1 -
+ net/gnome-online-accounts/Makefile                 |    7 +-
+ net/gnome-online-accounts/distinfo                 |    6 +-
+ net/gnome-online-accounts/pkg-plist                |  294 +-
+ net/libproxy-gnome2/Makefile                       |   16 -
+ net/libproxy-gnome2/pkg-descr                      |    8 -
+ net/libproxy-gnome2/pkg-plist                      |    2 -
+ net/libproxy/Makefile                              |    2 +-
+ net/py-avahi/Makefile                              |    4 +-
+ science/afni/Makefile                              |    2 +-
+ science/afni/distinfo                              |    6 +-
+ science/afni/pkg-plist                             |    1 +
+ security/aws-vault/Makefile                        |   10 +-
+ security/aws-vault/distinfo                        |   18 +-
+ sysutils/Makefile                                  |    1 -
+ sysutils/system-tools-backends/Makefile            |   31 -
+ sysutils/system-tools-backends/distinfo            |    2 -
+ .../files/patch-Utils_Platform.pm                  |   20 -
+ .../files/patch-dispatcher_main.c                  |   11 -
+ sysutils/system-tools-backends/pkg-descr           |    4 -
+ sysutils/system-tools-backends/pkg-plist           |  101 -
+ www/epiphany/files/patch-lib_ephy-flatpak-utils.c  |   56 +
+ www/nginx-devel/Makefile                           |    1 +
+ www/nginx-devel/Makefile.extmod                    |    1 +
+ ...ra-patch-nchan-store-redis-redis_lua_commands.h |   12 +
+ www/py-urlgrabber/Makefile                         |    4 +-
+ www/sahi/Makefile                                  |   22 +-
+ www/vertx/Makefile                                 |    9 +-
+ x11-fm/sushi/Makefile                              |   14 +-
+ x11-fm/sushi/distinfo                              |    6 +-
+ x11-fm/sushi/pkg-plist                             |   27 +-
+ x11-themes/adwaita-icon-theme/Makefile             |    7 +-
+ x11-themes/adwaita-icon-theme/distinfo             |    6 +-
+ x11-themes/adwaita-icon-theme/pkg-plist            | 3610 ++++++++++----------
+ x11-toolkits/gtksourceview4/Makefile               |    7 +-
+ x11-toolkits/gtksourceview4/distinfo               |    6 +-
+ x11-toolkits/gtksourceview4/pkg-plist              |  121 +-
+ x11-toolkits/p5-Gnome2-Canvas/Makefile             |    6 +-
+ x11-toolkits/p5-Gnome2-Canvas/distinfo             |    5 +-
+ x11/gnome-menus/Makefile                           |   17 +-
+ x11/gnome-menus/distinfo                           |    5 +-
+ x11/gnome-menus/files/KDE.directory                |    5 -
+ .../files/patch-layout_gnome-applications.menu     |  273 --
+ x11/gnome-menus/files/patch-util_Makefile.in       |   10 -
+ x11/gnome-menus/pkg-plist                          |  224 +-
+ x11/gnome-pie/Makefile                             |   10 +-
+ x11/gnome-pie/files/patch-src_actions_action.vala  |   11 +
+ 151 files changed, 6740 insertions(+), 4493 deletions(-)
+ create mode 100644 games/lincity/files/patch-ldsvgui.c
+ create mode 100644 games/lincity/files/patch-main.c
+ create mode 100644 games/lincity/files/patch-screen.h
+ create mode 100644 games/nettoe/files/patch-src_game.h
+ create mode 100644 games/nettoe/files/patch-src_misc.c
+ create mode 100644 games/nlarn/files/patch-inc_nlarn.h
+ create mode 100644 games/nlarn/files/patch-inc_position.h
+ create mode 100644 games/phlipple/files/patch-src_engine.h
+ create mode 100644 games/pioneers/files/patch-common_game.h
+ create mode 100644 games/polyglot/files/patch-pgheader.h
+ create mode 100644 games/prboom-plus/files/patch-src_doomstat.c
+ create mode 100644 games/prboom-plus/files/patch-src_gl__intern.h
+ create mode 100644 games/prboom-plus/files/patch-src_gl__light.c
+ create mode 100644 games/prboom/files/patch-src_gl__intern.h
+ create mode 100644 games/prboom/files/patch-src_gl__main.c
+ create mode 100644 games/tetrinet/files/patch-server.c
+ create mode 100644 games/tetrinet/files/patch-tetrinet.c
+ create mode 100644 games/tetrinet/files/patch-tetris.h
+ create mode 100644 games/tetrinet/files/patch-tty.c
+ create mode 100644 math/wxmaxima/files/patch-src_Version.h.cin
+ create mode 100644 math/xldlas/files/patch-xldlas.c
+ delete mode 100644 multimedia/py-gstreamer/Makefile
+ delete mode 100644 multimedia/py-gstreamer/distinfo
+ delete mode 100644 multimedia/py-gstreamer/pkg-descr
+ delete mode 100644 multimedia/py-gstreamer/pkg-plist
+ delete mode 100644 net/libproxy-gnome2/Makefile
+ delete mode 100644 net/libproxy-gnome2/pkg-descr
+ delete mode 100644 net/libproxy-gnome2/pkg-plist
+ delete mode 100644 sysutils/system-tools-backends/Makefile
+ delete mode 100644 sysutils/system-tools-backends/distinfo
+ delete mode 100644 sysutils/system-tools-backends/files/patch-Utils_Platform.pm
+ delete mode 100644 sysutils/system-tools-backends/files/patch-dispatcher_main.c
+ delete mode 100644 sysutils/system-tools-backends/pkg-descr
+ delete mode 100644 sysutils/system-tools-backends/pkg-plist
+ create mode 100644 www/epiphany/files/patch-lib_ephy-flatpak-utils.c
+ create mode 100644 www/nginx-devel/files/extra-patch-nchan-store-redis-redis_lua_commands.h
+ delete mode 100644 x11/gnome-menus/files/KDE.directory
+ delete mode 100644 x11/gnome-menus/files/patch-layout_gnome-applications.menu
+ delete mode 100644 x11/gnome-menus/files/patch-util_Makefile.in
+ create mode 100644 x11/gnome-pie/files/patch-src_actions_action.vala
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    43b789ecedde..71df11947732  master -> master        
+remote:    6e6dd62ee1f5..43b789ecedde  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   43b789ecedde..71df11947732  master -> master
+==== END: master ====
