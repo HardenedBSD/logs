@@ -1,0 +1,159 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 1cbf8b63317b..eb9a32cdde7c
+Fast-forward
+ bin/cp/Makefile                          |   5 ++
+ bin/cp/tests/Makefile                    |   7 ++
+ bin/cp/tests/cp_test.sh                  |  64 ++++++++++++++++
+ etc/mtree/BSD.tests.dist                 |   2 +
+ sbin/nvmecontrol/firmware.c              |  20 +++--
+ sbin/nvmecontrol/identify_ext.c          |   9 +++
+ sys/compat/cloudabi/cloudabi_proc.c      |   2 +-
+ sys/compat/freebsd32/freebsd32_misc.c    |   4 +-
+ sys/compat/linux/linux_emul.c            |   2 +-
+ sys/contrib/ipfilter/netinet/ip_proxy.h  |   2 +-
+ sys/dev/cxgbe/adapter.h                  |   4 +
+ sys/dev/cxgbe/t4_main.c                  |   4 +-
+ sys/dev/cxgbe/t4_sge.c                   | 126 +++++++++++++++++++++++++++----
+ sys/dev/cxgbe/tom/t4_cpl_io.c            |   8 ++
+ sys/kern/kern_exec.c                     |  37 +++++----
+ sys/sys/imgact.h                         |   1 +
+ sys/sys/syscallsubr.h                    |   3 +-
+ usr.bin/xargs/xargs.1                    |  18 ++---
+ usr.bin/xargs/xargs.c                    |  19 ++++-
+ usr.sbin/bsdconfig/share/media/ftp.subr  |  13 ----
+ usr.sbin/bsdinstall/scripts/mirrorselect |  92 +++++-----------------
+ 21 files changed, 304 insertions(+), 138 deletions(-)
+ create mode 100644 bin/cp/tests/Makefile
+ create mode 100755 bin/cp/tests/cp_test.sh
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/vm/vm_phys.c
+CONFLICT (content): Merge conflict in sys/vm/vm_phys.c
+Auto-merging sys/kern/kern_time.c
+CONFLICT (content): Merge conflict in sys/kern/kern_time.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc sys/kern/kern_time.c
+index a4cd43709750,9c37ae6a2771..000000000000
+--- a/sys/kern/kern_time.c
++++ b/sys/kern/kern_time.c
+@@@ -255,10 -255,8 +255,12 @@@ voi
+  kern_thread_cputime(struct thread *targettd, struct timespec *ats)
+  {
+  	uint64_t runtime, curtime, switchtime;
+- 	struct proc *p;
+  
+  	if (targettd == NULL) { /* current thread */
+++<<<<<<< HEAD
+ +		p = curthread->td_proc;
+++=======
+++>>>>>>> freebsd/12-stable/master
+  		critical_enter();
+  		switchtime = PCPU_GET(switchtime);
+  		curtime = cpu_ticks();
+@@@ -266,7 -264,7 +268,11 @@@
+  		critical_exit();
+  		runtime += curtime - switchtime;
+  	} else {
+++<<<<<<< HEAD
+ +		p = targettd->td_proc;
+++=======
++ 		PROC_LOCK_ASSERT(targettd->td_proc, MA_OWNED);
+++>>>>>>> freebsd/12-stable/master
+  		thread_lock(targettd);
+  		runtime = targettd->td_runtime;
+  		thread_unlock(targettd);
+diff --cc sys/vm/vm_phys.c
+index 77e3f757f46e,7fb92cb06220..000000000000
+--- a/sys/vm/vm_phys.c
++++ b/sys/vm/vm_phys.c
+@@@ -131,13 -131,16 +131,22 @@@ CTASSERT(VM_LOWMEM_BOUNDARY < VM_DMA32_
+  #endif
+  
+  static int sysctl_vm_phys_free(SYSCTL_HANDLER_ARGS);
+- SYSCTL_OID(_vm, OID_AUTO, phys_free, CTLTYPE_STRING | CTLFLAG_RD,
+-     NULL, 0, sysctl_vm_phys_free, "A", "Phys Free Info");
++ SYSCTL_OID(_vm, OID_AUTO, phys_free,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_MPSAFE, NULL, 0,
++     sysctl_vm_phys_free, "A",
++     "Phys Free Info");
+  
+  static int sysctl_vm_phys_segs(SYSCTL_HANDLER_ARGS);
+++<<<<<<< HEAD
+ +SYSCTL_OID(_vm, OID_AUTO, phys_segs, CTLTYPE_STRING | CTLFLAG_RD |
+ +    CTLFLAG_ROOTONLY,
+ +    NULL, 0, sysctl_vm_phys_segs, "A", "Phys Seg Info");
+++=======
++ SYSCTL_OID(_vm, OID_AUTO, phys_segs,
++     CTLTYPE_STRING | CTLFLAG_RD | CTLFLAG_MPSAFE, NULL, 0,
++     sysctl_vm_phys_segs, "A",
++     "Phys Seg Info");
+++>>>>>>> freebsd/12-stable/master
+  
+  #ifdef NUMA
+  static int sysctl_vm_phys_locality(SYSCTL_HANDLER_ARGS);
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sys/vm/vm_reserv.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/kern/kern_time.c
+	both modified:   sys/vm/vm_phys.c
+
+HEAD is now at eb9a32cdde7c HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at eb9a32cdde7c HBSD: Resolve merge conflict
+==== END: hardened/12-stable/master ====
