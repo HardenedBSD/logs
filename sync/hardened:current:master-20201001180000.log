@@ -1,0 +1,102 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/amd64/vmm/x86.c
+Merge made by the 'recursive' strategy.
+ contrib/bc/Makefile.in                             |   2 +-
+ contrib/bc/NEWS.md                                 |   8 ++
+ contrib/bc/include/bc.h                            |   4 +
+ contrib/bc/release.sh                              |   1 +
+ contrib/bc/src/data.c                              |   4 +-
+ contrib/bc/src/num.c                               |   5 +-
+ contrib/bc/src/program.c                           |   2 +-
+ contrib/llvm-project/lld/docs/ReleaseNotes.rst     |  14 --
+ contrib/llvm-project/llvm/include/llvm-c/Core.h    |  22 +++-
+ .../llvm/include/llvm/ADT/SmallPtrSet.h            |   3 +
+ .../llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp     |   2 +-
+ .../llvm/lib/CodeGen/GlobalISel/CallLowering.cpp   |  12 +-
+ .../lib/CodeGen/GlobalISel/LegalizerHelper.cpp     |   5 +-
+ .../llvm/lib/CodeGen/PHIEliminationUtils.cpp       |  44 ++++---
+ .../CodeGen/SelectionDAG/SelectionDAGBuilder.cpp   |  30 +----
+ .../lib/CodeGen/SelectionDAG/TargetLowering.cpp    |  22 +++-
+ contrib/llvm-project/llvm/lib/IR/Core.cpp          |  13 ++
+ contrib/llvm-project/llvm/lib/IR/Globals.cpp       |   3 +-
+ contrib/llvm-project/llvm/lib/Support/APFloat.cpp  |  15 +++
+ .../Target/AArch64/GISel/AArch64CallLowering.cpp   |   9 +-
+ .../llvm/lib/Target/AMDGPU/AMDGPUCallLowering.cpp  |   8 +-
+ lib/clang/include/VCSVersion.inc                   |   8 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |   2 +-
+ lib/libc/gen/Makefile.inc                          |   3 +-
+ lib/libc/gen/auxv.c                                |  32 +++--
+ lib/libc/net/Makefile.inc                          |   3 +-
+ lib/libmd/Makefile                                 |  12 +-
+ sys/amd64/vmm/amd/svm.c                            |   7 +-
+ sys/amd64/vmm/intel/vmx.c                          |  12 +-
+ sys/amd64/vmm/x86.c                                |  74 ++++++-----
+ sys/amd64/vmm/x86.h                                |   4 +-
+ sys/crypto/skein/amd64/skein_block_asm.S           |  18 +--
+ sys/dev/ichsmb/ichsmb_pci.c                        | 142 +++++++++++++--------
+ sys/kern/subr_syscall.c                            |  11 +-
+ usr.sbin/bhyve/pci_ahci.c                          |   2 +-
+ usr.sbin/ctld/ctld.c                               |  24 ++--
+ 36 files changed, 338 insertions(+), 244 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    70865ad41e6f..f3c85ff92133  hardened/current/master -> hardened/current/master
+remote:    2ff5c2552ac5..3c1e65dae908  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   70865ad41e6f..f3c85ff92133  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
