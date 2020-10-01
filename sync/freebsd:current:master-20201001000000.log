@@ -1,0 +1,173 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 45fda0e128b6..7ee7f8a82a00
+Fast-forward
+ cddl/Makefile.inc                                  |  2 --
+ gnu/usr.bin/dialog/Makefile                        |  2 --
+ lib/googletest/Makefile.inc                        |  2 --
+ lib/libcam/tests/Makefile                          |  2 --
+ lib/libcrypt/tests/Makefile                        |  1 -
+ lib/libiconv_modules/Makefile.inc                  |  1 -
+ lib/libkvm/Makefile                                |  2 --
+ lib/libkvm/tests/Makefile                          |  2 --
+ lib/libpathconv/tests/Makefile                     |  1 -
+ lib/libproc/tests/Makefile                         |  1 -
+ lib/libsbuf/tests/Makefile                         |  2 --
+ libexec/Makefile.inc                               |  1 -
+ libexec/getty/Makefile                             |  1 -
+ libexec/rtld-elf/Makefile                          |  1 -
+ libexec/rtld-elf/tests/libpythagoras/Makefile      |  1 -
+ libexec/tftpd/tests/Makefile                       |  1 -
+ sbin/decryptcore/Makefile                          |  2 --
+ sbin/pfilctl/Makefile                              |  1 -
+ sbin/ping/tests/Makefile                           |  2 --
+ sbin/recoverdisk/Makefile                          |  2 --
+ sys/fs/nfsclient/nfs_clvnops.c                     | 26 ++++++++++------------
+ sys/kern/vfs_vnops.c                               | 14 ++++++++++--
+ sys/teken/demo/Makefile                            |  2 --
+ sys/teken/libteken/Makefile                        |  1 -
+ sys/teken/stress/Makefile                          |  2 --
+ tests/sys/Makefile.inc                             |  2 --
+ tests/sys/aio/Makefile                             |  2 --
+ tests/sys/audit/Makefile                           |  2 --
+ tests/sys/auditpipe/Makefile                       |  1 -
+ tests/sys/capsicum/Makefile                        |  2 --
+ tests/sys/devrandom/Makefile                       |  1 -
+ tests/sys/fs/fusefs/Makefile                       |  2 --
+ tests/sys/kern/pipe/Makefile                       |  2 --
+ tests/sys/mqueue/Makefile                          |  2 --
+ tests/sys/net/Makefile                             |  2 --
+ tests/sys/netinet/Makefile                         |  2 --
+ tests/sys/netmap/Makefile                          |  2 --
+ tests/sys/opencrypto/Makefile                      |  2 --
+ tests/sys/pjdfstest/pjdfstest/Makefile             |  2 --
+ tools/regression/aio/aiop/Makefile                 |  2 --
+ tools/regression/bpf/bpf_filter/Makefile           |  1 -
+ tools/regression/doat/Makefile                     |  1 -
+ tools/regression/geom_gpt/Makefile                 |  2 --
+ tools/regression/include/stdatomic/Makefile        |  1 -
+ tools/regression/netinet/ipbroadcast/Makefile      |  2 --
+ tools/regression/rpcsec_gss/Makefile               |  1 -
+ tools/regression/sockets/accept_fd_leak/Makefile   |  1 -
+ tools/regression/sockets/accf_data_attach/Makefile |  1 -
+ tools/regression/sockets/fstat/Makefile            |  1 -
+ tools/regression/sockets/kqueue/Makefile           |  1 -
+ tools/regression/sockets/listen_backlog/Makefile   |  1 -
+ tools/regression/sockets/listen_kqueue/Makefile    |  1 -
+ tools/regression/sockets/listenclose/Makefile      |  1 -
+ tools/regression/sockets/pr_atomic/Makefile        |  1 -
+ tools/regression/sockets/reconnect/Makefile        |  1 -
+ tools/regression/sockets/rtsocket/Makefile         |  1 -
+ tools/regression/sockets/sblock/Makefile           |  1 -
+ tools/regression/sockets/sendfile/Makefile         |  1 -
+ tools/regression/sockets/shutdown/Makefile         |  1 -
+ tools/regression/sockets/sigpipe/Makefile          |  1 -
+ tools/regression/sockets/so_setfib/Makefile        |  1 -
+ tools/regression/sockets/udp_pingpong/Makefile     |  1 -
+ tools/regression/sockets/unix_bindconnect/Makefile |  1 -
+ tools/regression/sockets/unix_close_race/Makefile  |  1 -
+ tools/regression/sockets/unix_gc/Makefile          |  1 -
+ tools/regression/sockets/unix_sendtorace/Makefile  |  1 -
+ tools/regression/sockets/unix_socket/Makefile      |  1 -
+ tools/regression/sockets/unix_sorflush/Makefile    |  1 -
+ tools/regression/sockets/zerosend/Makefile         |  1 -
+ tools/test/auxinfo/Makefile                        |  1 -
+ tools/test/iconv/posix/Makefile                    |  2 --
+ tools/test/malloc/Makefile                         |  1 -
+ tools/test/net/Makefile                            |  1 -
+ tools/test/netfibs/Makefile                        |  1 -
+ tools/test/ptrace/Makefile                         |  1 -
+ tools/tools/aac/Makefile                           |  1 -
+ tools/tools/cfi/Makefile                           |  1 -
+ tools/tools/find-sb/Makefile                       |  1 -
+ tools/tools/fixwhite/Makefile                      |  1 -
+ tools/tools/gensnmpdef/Makefile                    |  2 --
+ tools/tools/ifpifa/Makefile                        |  1 -
+ tools/tools/ioat/Makefile                          |  2 --
+ tools/tools/iwi/Makefile                           |  1 -
+ tools/tools/ncpus/Makefile                         |  1 -
+ tools/tools/pciroms/Makefile                       |  2 --
+ tools/tools/syscall_timing/Makefile                |  2 --
+ tools/tools/tscdrift/Makefile                      |  1 -
+ tools/tools/vt/mkkfont/Makefile                    |  4 ++--
+ usr.bin/dpv/Makefile                               |  2 --
+ usr.bin/getconf/tests/Makefile                     |  2 --
+ usr.bin/mkimg/Makefile                             |  2 --
+ usr.bin/posixshmcontrol/Makefile                   |  1 -
+ usr.bin/proccontrol/Makefile                       |  1 -
+ usr.bin/protect/Makefile                           |  1 -
+ usr.sbin/bsdinstall/distextract/Makefile           |  1 -
+ usr.sbin/bsdinstall/distfetch/Makefile             |  1 -
+ usr.sbin/bsnmpd/tools/Makefile.inc                 |  2 --
+ usr.sbin/ctld/Makefile                             |  1 -
+ usr.sbin/iovctl/Makefile                           |  2 --
+ usr.sbin/mlx5tool/Makefile                         |  1 -
+ usr.sbin/pw/tests/Makefile                         |  1 -
+ 101 files changed, 26 insertions(+), 153 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: Auto packing the repository in background for optimum performance.        
+remote: See "git help gc" for manual housekeeping.        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    45fda0e128b6..7ee7f8a82a00  freebsd/current/master -> freebsd/current/master        
+remote:    21121a124847..d12f446fd6e0  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   45fda0e128b6..7ee7f8a82a00  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
