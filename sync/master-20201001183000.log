@@ -47,3 +47,147 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging multimedia/obs-studio/Makefile
+Auto-merging Mk/bsd.port.mk
+Merge made by the 'recursive' strategy.
+ CHANGES                                            |  20 ++
+ Keywords/sample.ucl                                |  64 ++--
+ Mk/bsd.port.mk                                     |   2 +-
+ devel/concurrencykit/files/patch-configure         |  13 +-
+ devel/libnaji/Makefile                             |   4 +
+ devel/libnaji/files/patch-naji__db.c               |  11 +
+ devel/libnaji/files/patch-naji__len.c              |  11 +
+ devel/pyotherside-qt5/Makefile                     |   3 +-
+ devel/pyotherside-qt5/distinfo                     |   6 +-
+ emulators/wine/Makefile                            |   6 +-
+ graphics/ida/Makefile                              |   1 +
+ graphics/ida/files/patch-idaconfig.h               |  11 +
+ graphics/ida/files/patch-viewer.c                  |  11 +
+ graphics/multican/Makefile                         |   2 +-
+ graphics/multican/files/patch-usbio.c              |  10 +
+ graphics/multican/files/patch-usbio.h              |   9 +
+ graphics/seexpr/Makefile                           |  12 +-
+ graphics/seexpr/distinfo                           |   6 +-
+ graphics/seexpr/pkg-plist                          |  16 +-
+ math/brial/Makefile                                |   2 +-
+ math/brial/distinfo                                |   6 +-
+ math/brial/pkg-plist                               |   8 +-
+ math/gkmap/Makefile                                |  11 +-
+ math/py-brial/Makefile                             |   2 +-
+ math/py-brial/distinfo                             |   6 +-
+ misc/najitool/Makefile                             |   5 +-
+ multimedia/gnome-mplayer/Makefile                  |  37 ++-
+ multimedia/gnome-mplayer/files/patch-src_common.h  | 350 +++++++++++++++++++++
+ .../gnome-mplayer/files/patch-src_dbus-interface.h |   9 +
+ multimedia/gnome-mplayer/files/patch-src_gui.c     | 240 ++++++++++++++
+ multimedia/gnome-mplayer/files/patch-src_gui.h     | 101 ++++++
+ .../gnome-mplayer/files/patch-src_playlist.h       |  13 +
+ multimedia/obs-studio/Makefile                     |   4 +-
+ net-im/icmpchat/Makefile                           |   1 +
+ net-im/icmpchat/files/patch-sendicmp.c             |  11 +
+ net-im/icmpchat/files/patch-sendicmp.h             |  10 +
+ net-mgmt/mbrowse/Makefile                          |  15 +-
+ net-mgmt/mbrowse/files/patch-src_callbacks.c       |  11 +
+ net-mgmt/openlldp/Makefile                         |   2 +-
+ net-mgmt/openlldp/files/patch-src_lldp__neighbor.c |  16 +
+ net-mgmt/openlldp/files/patch-src_lldp__neighbor.h |  26 ++
+ security/teleport/Makefile                         |   2 +-
+ security/teleport/distinfo                         |   6 +-
+ sysutils/ganglia-monitor-core/Makefile             |  26 +-
+ sysutils/ganglia-monitor-core/distinfo             |   6 +-
+ .../files/patch-gmetad_Makefile.in                 |   6 +-
+ .../files/patch-gmetad_conf.c.in                   |  10 +-
+ .../patch-gmond_modules_conf.d_modpython.conf.in   |   6 +-
+ .../files/patch-gmond_modules_python_Makefile.in   |   6 +-
+ .../files/patch-lib_default__conf.h.in             |   6 +-
+ .../files/patch-libmetrics_freebsd_metrics.c       |   6 +-
+ sysutils/ganglia-monitor-core/pkg-plist            |   3 -
+ sysutils/rubygem-bolt/Makefile                     |   2 +-
+ sysutils/rubygem-bolt/distinfo                     |   6 +-
+ sysutils/rubygem-facter/Makefile                   |   2 +-
+ sysutils/rubygem-facter/distinfo                   |   6 +-
+ textproc/html2text/Makefile                        |  34 +-
+ textproc/html2text/distinfo                        |   6 +-
+ textproc/html2text/files/patch-configure           |  34 ++
+ textproc/html2text/pkg-descr                       |   2 +-
+ www/caddy/Makefile                                 |  69 ++--
+ www/caddy/distinfo                                 | 132 ++++----
+ www/threejs/Makefile                               |   2 +-
+ www/threejs/distinfo                               |   6 +-
+ www/threejs/pkg-plist                              | 105 +++++--
+ 65 files changed, 1287 insertions(+), 306 deletions(-)
+ create mode 100644 devel/libnaji/files/patch-naji__db.c
+ create mode 100644 devel/libnaji/files/patch-naji__len.c
+ create mode 100644 graphics/ida/files/patch-idaconfig.h
+ create mode 100644 graphics/ida/files/patch-viewer.c
+ create mode 100644 graphics/multican/files/patch-usbio.c
+ create mode 100644 multimedia/gnome-mplayer/files/patch-src_common.h
+ create mode 100644 multimedia/gnome-mplayer/files/patch-src_dbus-interface.h
+ create mode 100644 multimedia/gnome-mplayer/files/patch-src_gui.c
+ create mode 100644 multimedia/gnome-mplayer/files/patch-src_gui.h
+ create mode 100644 multimedia/gnome-mplayer/files/patch-src_playlist.h
+ create mode 100644 net-im/icmpchat/files/patch-sendicmp.c
+ create mode 100644 net-im/icmpchat/files/patch-sendicmp.h
+ create mode 100644 net-mgmt/mbrowse/files/patch-src_callbacks.c
+ create mode 100644 net-mgmt/openlldp/files/patch-src_lldp__neighbor.c
+ create mode 100644 net-mgmt/openlldp/files/patch-src_lldp__neighbor.h
+ create mode 100644 textproc/html2text/files/patch-configure
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    dbeb481d22c4..d97714143290  master -> master        
+remote:    bf479b1caecd..dbeb481d22c4  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   dbeb481d22c4..d97714143290  master -> master
+==== END: master ====
