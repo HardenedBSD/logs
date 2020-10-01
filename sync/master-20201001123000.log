@@ -47,3 +47,143 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/ngrep/Makefile
+Removing misc/orville-write/files/patch-lib_common.c
+Merge made by the 'recursive' strategy.
+ Mk/Uses/gnome.mk                                   |   2 +-
+ archivers/php-brotli/Makefile                      |   2 +-
+ archivers/php-brotli/distinfo                      |   6 +-
+ devel/ghidra/Makefile                              |  71 ++--
+ devel/libvirt/Makefile                             |   6 +-
+ devel/libvirt/distinfo                             |   6 +-
+ devel/libvirt/pkg-plist                            |   1 +
+ devel/py-libvirt/Makefile                          |   2 +-
+ devel/py-libvirt/distinfo                          |   6 +-
+ games/xcowsay/Makefile                             |   2 +-
+ games/xcowsay/distinfo                             |   6 +-
+ lang/python-doc-html/distinfo                      |  18 +-
+ lang/python38/Makefile.version                     |   2 +-
+ lang/python38/distinfo                             |   6 +-
+ lang/python38/pkg-plist                            |   4 +-
+ mail/rspamd/Makefile                               |   4 +-
+ mail/rspamd/distinfo                               |   6 +-
+ mail/rspamd/pkg-plist                              |  22 +-
+ math/gh-bc/Makefile                                |   2 +-
+ math/gh-bc/distinfo                                |   6 +-
+ misc/orville-write/Makefile                        |   1 +
+ misc/orville-write/files/patch-amin.c              |  10 +-
+ misc/orville-write/files/patch-getutent.c          |  18 +-
+ misc/orville-write/files/patch-getutent.h          |   4 +-
+ misc/orville-write/files/patch-helpers.c           |  18 +-
+ misc/orville-write/files/patch-huh.c               |   8 +-
+ misc/orville-write/files/patch-lib__common.c       |  28 ++
+ .../{patch-lib_common.h => patch-lib__common.h}    |  13 +-
+ misc/orville-write/files/patch-lib_common.c        |  19 --
+ misc/orville-write/files/patch-mesg.c              |  28 +-
+ .../files/{patch-wrt_him.c => patch-wrt__him.c}    |  28 +-
+ misc/orville-write/files/patch-wrt__main.c         |  11 +
+ .../files/{patch-wrt_me.c => patch-wrt__me.c}      |   8 +-
+ misc/orville-write/files/patch-wrttmp.h            |   6 +-
+ net/ngrep/Makefile                                 |   2 +-
+ net/ngrep/files/patch-fix-ipv6                     |  39 +++
+ net/tableutil/Makefile                             |   4 +
+ net/tableutil/files/LICENSE.txt                    |  13 +
+ net/tableutil/files/patch-conf__variable.h         |   9 +
+ news/nzbhydra2/Makefile                            |   2 +-
+ news/nzbhydra2/distinfo                            |   6 +-
+ textproc/Makefile                                  |   1 +
+ textproc/mdbook/Makefile                           | 204 ++++++++++++
+ textproc/mdbook/distinfo                           | 361 +++++++++++++++++++++
+ textproc/mdbook/pkg-descr                          |   4 +
+ textproc/p5-Text-CSV_XS/Makefile                   |   6 +-
+ textproc/p5-Text-CSV_XS/distinfo                   |   6 +-
+ www/Makefile                                       |   1 +
+ www/mediawiki131/Makefile                          |   2 +-
+ www/mediawiki133/Makefile                          |   5 +-
+ www/mediawiki134/Makefile                          |   2 +-
+ www/mediawiki135/Makefile                          |  70 ++++
+ www/mediawiki135/distinfo                          |   3 +
+ www/mediawiki135/files/pkg-message.in              |  15 +
+ www/mediawiki135/pkg-descr                         |   6 +
+ www/nginx-devel/Makefile                           |   2 +-
+ www/nginx-devel/Makefile.extmod                    |   3 +-
+ .../files/extra-patch-nchan-store-private.h        |  10 +
+ x11-themes/matcha-gtk-themes/Makefile              |   2 +-
+ x11-themes/matcha-gtk-themes/distinfo              |   6 +-
+ 60 files changed, 979 insertions(+), 185 deletions(-)
+ create mode 100644 misc/orville-write/files/patch-lib__common.c
+ rename misc/orville-write/files/{patch-lib_common.h => patch-lib__common.h} (50%)
+ delete mode 100644 misc/orville-write/files/patch-lib_common.c
+ rename misc/orville-write/files/{patch-wrt_him.c => patch-wrt__him.c} (88%)
+ create mode 100644 misc/orville-write/files/patch-wrt__main.c
+ rename misc/orville-write/files/{patch-wrt_me.c => patch-wrt__me.c} (81%)
+ create mode 100644 net/ngrep/files/patch-fix-ipv6
+ create mode 100644 net/tableutil/files/LICENSE.txt
+ create mode 100644 net/tableutil/files/patch-conf__variable.h
+ create mode 100644 textproc/mdbook/Makefile
+ create mode 100644 textproc/mdbook/distinfo
+ create mode 100644 textproc/mdbook/pkg-descr
+ create mode 100644 www/mediawiki135/Makefile
+ create mode 100644 www/mediawiki135/distinfo
+ create mode 100644 www/mediawiki135/files/pkg-message.in
+ create mode 100644 www/mediawiki135/pkg-descr
+ create mode 100644 www/nginx-devel/files/extra-patch-nchan-store-private.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    bf479b1caecd..dbeb481d22c4  master -> master        
+remote:    4963f50603a8..bf479b1caecd  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   bf479b1caecd..dbeb481d22c4  master -> master
+==== END: master ====
