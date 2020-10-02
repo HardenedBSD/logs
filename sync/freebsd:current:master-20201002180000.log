@@ -1,0 +1,134 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating db2dd358d310..88d21a5afef3
+Fast-forward
+ lib/libc/locale/newlocale.3                        |  17 +-
+ lib/libc/locale/xlocale.c                          |   4 +
+ share/man/man9/Makefile                            |   1 +
+ share/man/man9/backlight.9                         |  77 +++++
+ stand/man/loader.8                                 |   4 +-
+ sys/amd64/conf/NOTES                               |   1 +
+ sys/arm/conf/NOTES                                 |   3 +
+ sys/arm64/conf/NOTES                               |   3 +
+ .../linuxkpi/common/include/linux/backlight.h      |  94 +++++++
+ sys/compat/linuxkpi/common/include/linux/device.h  |   4 +
+ sys/compat/linuxkpi/common/include/linux/dmi.h     |  46 +++
+ sys/compat/linuxkpi/common/include/linux/fs.h      |   2 +-
+ .../common/include/linux/mod_devicetable.h         |  72 +++++
+ sys/compat/linuxkpi/common/src/linux_dmi.c         | 140 ++++++++++
+ sys/compat/linuxkpi/common/src/linux_kmod.c        |   1 +
+ sys/compat/linuxkpi/common/src/linux_pci.c         |  83 ++++++
+ sys/conf/files                                     |   5 +
+ sys/conf/kmod.mk                                   |   1 +
+ sys/dev/backlight/backlight.c                      | 170 +++++++++++
+ sys/dev/backlight/backlight.h                      |  33 +++
+ sys/dev/backlight/backlight_if.m                   |  66 +++++
+ sys/dev/flash/mx25l.c                              |   1 +
+ sys/dev/pwm/pwm_backlight.c                        | 311 +++++++++++++++++++++
+ sys/i386/conf/NOTES                                |   2 +
+ sys/kern/imgact_elf.c                              |  93 ++++--
+ sys/modules/Makefile                               |   1 +
+ sys/modules/backlight/Makefile                     |  13 +
+ sys/modules/linuxkpi/Makefile                      |   1 +
+ sys/modules/pwm/Makefile                           |   8 +-
+ sys/modules/pwm/pwm_backlight/Makefile             |  15 +
+ sys/powerpc/conf/NOTES                             |   3 +
+ sys/sys/backlight.h                                |  61 ++++
+ sys/sys/param.h                                    |   2 +-
+ sys/vm/uma_core.c                                  |  84 ++++--
+ sys/vm/vm_fault.c                                  |   6 +
+ sys/vm/vm_map.h                                    |   7 +-
+ sys/vm/vm_pageout.c                                |  15 +-
+ tests/sys/fs/fusefs/allow_other.cc                 |   2 +-
+ tests/sys/fs/fusefs/create.cc                      |  14 +-
+ tests/sys/fs/fusefs/default_permissions.cc         |   4 +-
+ tests/sys/fs/fusefs/flush.cc                       |   8 +-
+ tests/sys/fs/fusefs/open.cc                        |   4 +-
+ tests/sys/fs/fusefs/opendir.cc                     |   2 +-
+ tests/sys/fs/fusefs/release.cc                     |  12 +-
+ tests/sys/fs/fusefs/releasedir.cc                  |   2 +-
+ tests/sys/fs/fusefs/write.cc                       |  62 ++--
+ usr.bin/Makefile                                   |   1 +
+ usr.bin/backlight/Makefile                         |   6 +
+ usr.bin/backlight/backlight.8                      |  95 +++++++
+ usr.bin/backlight/backlight.c                      | 220 +++++++++++++++
+ 50 files changed, 1767 insertions(+), 115 deletions(-)
+ create mode 100644 share/man/man9/backlight.9
+ create mode 100644 sys/compat/linuxkpi/common/include/linux/backlight.h
+ create mode 100644 sys/compat/linuxkpi/common/include/linux/dmi.h
+ create mode 100644 sys/compat/linuxkpi/common/include/linux/mod_devicetable.h
+ create mode 100644 sys/compat/linuxkpi/common/src/linux_dmi.c
+ create mode 100644 sys/dev/backlight/backlight.c
+ create mode 100644 sys/dev/backlight/backlight.h
+ create mode 100644 sys/dev/backlight/backlight_if.m
+ create mode 100644 sys/dev/pwm/pwm_backlight.c
+ create mode 100644 sys/modules/backlight/Makefile
+ create mode 100644 sys/modules/pwm/pwm_backlight/Makefile
+ create mode 100644 sys/sys/backlight.h
+ create mode 100644 usr.bin/backlight/Makefile
+ create mode 100644 usr.bin/backlight/backlight.8
+ create mode 100644 usr.bin/backlight/backlight.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    db2dd358d310..88d21a5afef3  freebsd/current/master -> freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   db2dd358d310..88d21a5afef3  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
