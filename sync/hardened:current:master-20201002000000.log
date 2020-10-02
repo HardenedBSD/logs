@@ -1,0 +1,136 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/netbsd-tests/fs/h_funcs.subr               |   2 +-
+ contrib/netbsd-tests/lib/libc/sys/t_getitimer.c    |   6 +-
+ contrib/netbsd-tests/usr.bin/grep/t_grep.sh        |  19 ++
+ sys/amd64/vmm/amd/amdvi_priv.h                     |   0
+ sys/amd64/vmm/amd/ivrs_drv.c                       |   0
+ sys/contrib/openzfs/.github/CONTRIBUTING.md        | 345 +++++++++++++++++++++
+ sys/contrib/openzfs/cmd/zfs/zfs_main.c             |  16 +-
+ .../openzfs/config/kernel-config-defined.m4        |   2 +-
+ sys/contrib/openzfs/config/kernel-objtool.m4       |   5 +-
+ sys/contrib/openzfs/configure.ac                   |   1 +
+ sys/contrib/openzfs/contrib/initramfs/scripts/zfs  | 167 +++++-----
+ .../contrib/intel_qat/patch/0001-cryptohash.diff   |  17 +
+ .../contrib/intel_qat/patch/0001-pci_aer.diff      |  20 ++
+ .../contrib/intel_qat/patch/0001-timespec.diff     |  35 +++
+ .../openzfs/contrib/intel_qat/patch/LICENSE        |  30 ++
+ sys/contrib/openzfs/contrib/intel_qat/readme.md    |  27 ++
+ .../openzfs/include/os/freebsd/spl/sys/kstat.h     |  18 ++
+ .../include/os/freebsd/spl/sys/procfs_list.h       |  13 +-
+ .../openzfs/include/os/freebsd/spl/sys/simd_x86.h  |  16 +-
+ .../openzfs/include/os/linux/spl/sys/procfs_list.h |   1 +
+ sys/contrib/openzfs/include/sys/frame.h            |   3 +-
+ sys/contrib/openzfs/include/sys/lua/luaconf.h      |   4 -
+ sys/contrib/openzfs/include/sys/zfs_context.h      |   1 +
+ sys/contrib/openzfs/include/sys/zstd/zstd.h        |   1 +
+ sys/contrib/openzfs/lib/libshare/os/freebsd/nfs.c  |  36 ++-
+ sys/contrib/openzfs/lib/libshare/os/linux/nfs.c    |  71 +++--
+ sys/contrib/openzfs/lib/libzpool/kernel.c          |   1 +
+ sys/contrib/openzfs/man/man8/zfs-userspace.8       |  15 +-
+ sys/contrib/openzfs/man/man8/zpool-remove.8        |   2 +
+ sys/contrib/openzfs/module/lua/llimits.h           |   9 -
+ .../openzfs/module/os/freebsd/spl/spl_kstat.c      | 289 ++++++++++-------
+ .../module/os/freebsd/spl/spl_procfs_list.c        |  86 ++++-
+ .../openzfs/module/os/freebsd/spl/spl_taskq.c      |   4 +
+ .../openzfs/module/os/freebsd/zfs/kmod_core.c      |   4 +-
+ .../openzfs/module/os/freebsd/zfs/sysctl_os.c      |  17 +-
+ .../module/os/freebsd/zfs/zfs_ioctl_compat.c       |   4 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_vfsops.c     |   4 +
+ .../openzfs/module/os/freebsd/zfs/zio_crypt.c      | 221 +++++--------
+ .../openzfs/module/os/linux/spl/spl-procfs-list.c  |  22 +-
+ .../openzfs/module/os/linux/zfs/vdev_disk.c        |  10 +
+ .../openzfs/module/os/linux/zfs/zfs_debug.c        |   1 +
+ sys/contrib/openzfs/module/zfs/arc.c               |  10 +
+ sys/contrib/openzfs/module/zfs/dbuf_stats.c        |   3 +-
+ sys/contrib/openzfs/module/zfs/dmu_send.c          |  15 +-
+ sys/contrib/openzfs/module/zfs/dnode.c             |   6 +-
+ sys/contrib/openzfs/module/zfs/dsl_crypt.c         |   6 +-
+ sys/contrib/openzfs/module/zfs/spa_misc.c          |   1 +
+ sys/contrib/openzfs/module/zfs/spa_stats.c         |  26 +-
+ sys/contrib/openzfs/module/zfs/zfs_log.c           |  23 +-
+ sys/contrib/openzfs/module/zstd/zfs_zstd.c         |  20 +-
+ sys/contrib/openzfs/tests/runfiles/common.run      |   2 +-
+ .../openzfs/tests/zfs-tests/cmd/Makefile.am        |   1 +
+ .../openzfs/tests/zfs-tests/cmd/badsend/.gitignore |   1 +
+ .../tests/zfs-tests/cmd/badsend/Makefile.am        |  11 +
+ .../openzfs/tests/zfs-tests/cmd/badsend/badsend.c  | 136 ++++++++
+ .../openzfs/tests/zfs-tests/include/commands.cfg   |   3 +-
+ .../zfs-tests/tests/functional/rsend/Makefile.am   |   1 +
+ .../tests/functional/rsend/send_invalid.ksh        |  52 ++++
+ usr.bin/grep/zgrep.sh                              |  17 +-
+ 59 files changed, 1376 insertions(+), 503 deletions(-)
+ mode change 100755 => 100644 sys/amd64/vmm/amd/amdvi_priv.h
+ mode change 100755 => 100644 sys/amd64/vmm/amd/ivrs_drv.c
+ create mode 100644 sys/contrib/openzfs/.github/CONTRIBUTING.md
+ create mode 100644 sys/contrib/openzfs/contrib/intel_qat/patch/0001-cryptohash.diff
+ create mode 100644 sys/contrib/openzfs/contrib/intel_qat/patch/0001-pci_aer.diff
+ create mode 100644 sys/contrib/openzfs/contrib/intel_qat/patch/0001-timespec.diff
+ create mode 100644 sys/contrib/openzfs/contrib/intel_qat/patch/LICENSE
+ create mode 100644 sys/contrib/openzfs/contrib/intel_qat/readme.md
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/cmd/badsend/.gitignore
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/cmd/badsend/Makefile.am
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/cmd/badsend/badsend.c
+ create mode 100644 sys/contrib/openzfs/tests/zfs-tests/tests/functional/rsend/send_invalid.ksh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f3c85ff92133..6cd47f03ede8  hardened/current/master -> hardened/current/master        
+remote:    3c1e65dae908..a3bbb67b61eb  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f3c85ff92133..6cd47f03ede8  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
