@@ -47,3 +47,134 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Merge made by the 'recursive' strategy.
+ CHANGES                                            |   2 +-
+ audio/py-sounddevice/Makefile                      |   2 +-
+ audio/py-sounddevice/distinfo                      |   6 +-
+ devel/desed/Makefile                               |  48 +++++----
+ devel/desed/distinfo                               |  96 +++++++++++-------
+ devel/py-toolz/Makefile                            |   2 +-
+ devel/py-toolz/distinfo                            |   6 +-
+ devel/taskflow/Makefile                            |   2 +-
+ devel/taskflow/distinfo                            |   6 +-
+ devel/taskflow/pkg-plist                           |  15 +++
+ graphics/photoflare/Makefile                       |   2 +-
+ graphics/photoflare/distinfo                       |   6 +-
+ graphics/photoflare/pkg-plist                      |   1 +
+ math/deal.ii/Makefile                              |  14 ++-
+ math/deal.ii/distinfo                              |   6 +-
+ math/deal.ii/pkg-plist                             | 107 +++++++++++++--------
+ math/py-arviz/Makefile                             |   6 +-
+ math/py-arviz/distinfo                             |   6 +-
+ math/xtensor/Makefile                              |   2 +-
+ math/xtensor/distinfo                              |   6 +-
+ math/xtensor/pkg-plist                             |   7 ++
+ misc/snakemake/Makefile                            |   2 +-
+ misc/snakemake/distinfo                            |   6 +-
+ multimedia/ustreamer/Makefile                      |   2 +-
+ multimedia/ustreamer/distinfo                      |   6 +-
+ net-im/prosody/Makefile                            |   3 +-
+ net-im/prosody/distinfo                            |   6 +-
+ net-im/prosody/pkg-plist                           |   2 +
+ net/tightvnc/Makefile                              |   3 +
+ security/honeytrap/Makefile                        |  40 ++++----
+ security/honeytrap/distinfo                        |   6 +-
+ security/honeytrap/files/honeytrap.in              |  85 ++++++++++++----
+ security/honeytrap/files/{etc => }/honeytrap.toml  |   0
+ security/honeytrap/files/patch-cmd_constants.go    |  21 ++++
+ ...sor_pkg_sentry_platform_kvm_bluepill__unsafe.go |  11 +++
+ ...isor_pkg_sentry_platform_kvm_machine__unsafe.go |  11 +++
+ ...kg_sentry_platform_ptrace_subprocess__unsafe.go |  11 +++
+ ...isor.dev_gvisor_pkg_sentry_vfs_mount__unsafe.go |  11 +++
+ ...or_gvisor.dev_gvisor_pkg_sleep_sleep__unsafe.go |  11 +++
+ ...visor_pkg_sync_downgradable__rwmutex__unsafe.go |  11 +++
+ ...r_gvisor.dev_gvisor_pkg_sync_memmove__unsafe.go |  11 +++
+ ...or_gvisor.dev_gvisor_pkg_sync_tmutex__unsafe.go |  11 +++
+ ...pip_link_rawfile_blockingpoll__yield__unsafe.go |  11 +++
+ ...dor_gvisor.dev_gvisor_pkg_tcpip_time__unsafe.go |  11 +++
+ sysutils/mstflint/Makefile                         |   8 +-
+ sysutils/mstflint/distinfo                         |   6 +-
+ .../mstflint/files/extrat-LITE-patch-Makefile.am   |   8 +-
+ sysutils/mstflint/files/patch-configure.ac         |  60 +-----------
+ sysutils/mstflint/pkg-plist                        |  28 ++++++
+ sysutils/py-azure-cli-core/Makefile                |   2 +-
+ sysutils/py-azure-cli-core/distinfo                |   6 +-
+ sysutils/py-azure-cli/Makefile                     |   2 +-
+ sysutils/py-azure-cli/distinfo                     |   6 +-
+ www/luakit-devel/Makefile                          |   4 +-
+ www/luakit-devel/distinfo                          |   6 +-
+ www/py-tuir/Makefile                               |  13 +--
+ www/uwebsockets/Makefile                           |   2 +-
+ www/uwebsockets/distinfo                           |   6 +-
+ 58 files changed, 522 insertions(+), 275 deletions(-)
+ rename security/honeytrap/files/{etc => }/honeytrap.toml (100%)
+ create mode 100644 security/honeytrap/files/patch-cmd_constants.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sentry_platform_kvm_bluepill__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sentry_platform_kvm_machine__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sentry_platform_ptrace_subprocess__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sentry_vfs_mount__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sleep_sleep__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sync_downgradable__rwmutex__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sync_memmove__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_sync_tmutex__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_tcpip_link_rawfile_blockingpoll__yield__unsafe.go
+ create mode 100644 security/honeytrap/files/patch-vendor_gvisor.dev_gvisor_pkg_tcpip_time__unsafe.go
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d97714143290..75fa4a585280  master -> master        
+remote:    dbeb481d22c4..d97714143290  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d97714143290..75fa4a585280  master -> master
+==== END: master ====
