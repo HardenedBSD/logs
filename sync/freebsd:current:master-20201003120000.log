@@ -1,0 +1,122 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 074c2d672557..36625fd9ccd5
+Fast-forward
+ share/man/man4/netmap.4                |   4 +-
+ sys/conf/NOTES                         |   4 +-
+ sys/conf/files                         |   6 +-
+ sys/conf/options                       |   1 +
+ sys/kern/kern_ktrace.c                 |   3 +
+ sys/kern/subr_trap.c                   |   7 +-
+ sys/modules/pwm/pwm_backlight/Makefile |   1 +
+ sys/net/netmap_user.h                  |  12 +-
+ sys/net/radix.c                        |   4 -
+ sys/net/route.c                        |   1 -
+ sys/net/route.h                        |   5 +
+ sys/net/route/mpath_ctl.c              | 165 +++++++
+ sys/net/route/nhgrp.c                  | 344 ++++++++++++++
+ sys/net/route/nhgrp_ctl.c              | 788 +++++++++++++++++++++++++++++++++
+ sys/net/route/nhgrp_var.h              |  72 +++
+ sys/net/route/nhop.c                   |   8 +-
+ sys/net/route/nhop.h                   |  37 +-
+ sys/net/route/nhop_ctl.c               |   7 +
+ sys/net/route/nhop_var.h               |  11 +-
+ sys/net/route/route_ctl.c              | 277 +++++++++---
+ sys/net/route/route_ctl.h              |  18 +
+ sys/net/route/route_helpers.c          | 164 +++++++
+ sys/net/route/route_var.h              |  80 +++-
+ sys/net/rtsock.c                       | 113 ++++-
+ sys/netinet/in.c                       |  10 -
+ sys/netinet/in_fib.c                   |  59 +--
+ sys/netinet/in_rmx.c                   |   5 -
+ sys/netinet/ip_output.c                |   5 -
+ sys/netinet6/in6_fib.c                 |  55 +--
+ sys/netinet6/in6_rmx.c                 |   5 -
+ sys/netinet6/nd6.c                     |   5 +
+ sys/riscv/riscv/trap.c                 |  19 +-
+ sys/sys/socket.h                       |   1 +
+ tools/tools/netmap/Makefile            |   8 +-
+ tools/tools/netmap/bridge.c            |   4 +-
+ tools/tools/netmap/ctrs.h              |   6 +-
+ tools/tools/netmap/lb.c                |  39 +-
+ tools/tools/netmap/nmreplay.c          |  33 +-
+ tools/tools/netmap/pkt-gen.8           |   2 +-
+ tools/tools/netmap/pkt-gen.c           |  25 +-
+ tools/tools/netmap/pkt_hash.c          |  52 +--
+ usr.bin/netstat/Makefile               |   2 +-
+ usr.bin/netstat/common.h               |  17 +
+ usr.bin/netstat/main.c                 |  14 +-
+ usr.bin/netstat/netstat.h              |   1 +
+ usr.bin/netstat/nhgrp.c                | 355 +++++++++++++++
+ usr.bin/netstat/nhops.c                |  44 +-
+ 47 files changed, 2550 insertions(+), 348 deletions(-)
+ create mode 100644 sys/net/route/mpath_ctl.c
+ create mode 100644 sys/net/route/nhgrp.c
+ create mode 100644 sys/net/route/nhgrp_ctl.c
+ create mode 100644 sys/net/route/nhgrp_var.h
+ create mode 100644 usr.bin/netstat/nhgrp.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    074c2d672557..36625fd9ccd5  freebsd/current/master -> freebsd/current/master        
+remote:    cdcc06b285c4..2f77b95247f4  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   074c2d672557..36625fd9ccd5  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
