@@ -783,3 +783,295 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/nmap/Makefile
+Auto-merging net/frr7/Makefile
+Auto-merging net/Makefile
+Removing net-p2p/c-lightning/files/patch-plugins_keysend.c
+Removing converters/yj/files/patch-go.sum
+Removing converters/yj/files/patch-go.mod
+Merge made by the 'recursive' strategy.
+ Mk/Uses/pyqt.mk                                    | 227 +++++++++------------
+ audio/cadence/Makefile                             |   2 +-
+ audio/carla/Makefile                               |   2 +-
+ audio/picard/Makefile                              |   1 +
+ biology/py-ete3/Makefile                           |   1 +
+ cad/openscad-devel/Makefile                        |   2 +-
+ cad/openscad/Makefile                              |   2 +-
+ cad/py-cq-editor/Makefile                          |   1 +
+ cad/py-pyfda/Makefile                              |   2 +-
+ comms/Makefile                                     |   1 +
+ comms/gnuradio/Makefile                            |   2 +-
+ comms/nanovna-saver/Makefile                       |   2 +-
+ comms/py-qt5-sensors/Makefile                      |  34 +++
+ comms/py-qt5-sensors/pkg-descr                     |   4 +
+ comms/py-qt5-sensors/pkg-plist                     |  24 +++
+ comms/py-qt5-serialport/Makefile                   |   6 +-
+ converters/yj/Makefile                             |   8 +-
+ converters/yj/distinfo                             |  14 +-
+ converters/yj/files/patch-go.mod                   |  14 --
+ converters/yj/files/patch-go.sum                   |  10 -
+ converters/yj/files/patch-toml_encoder.go          |  11 +
+ databases/py-qt5-sql/Makefile                      |   4 +-
+ databases/sqlitebrowser/Makefile                   |   1 +
+ deskutils/calibre/Makefile                         |   2 +-
+ deskutils/notification-daemon/Makefile             |  24 ++-
+ .../files/org.freedesktop.Notifications.service.in |   5 +
+ deskutils/notification-daemon/pkg-descr            |   2 +-
+ deskutils/notification-daemon/pkg-plist            |   1 +
+ deskutils/treeline/Makefile                        |   1 +
+ devel/Makefile                                     |   4 +
+ devel/bmake/Makefile                               |   4 +
+ devel/bmake/files/extrapatch-unit-tests_Makefile   |  11 +
+ devel/desed/Makefile                               |   5 +-
+ devel/desed/distinfo                               |   6 +-
+ devel/eric6/Makefile                               |   1 +
+ devel/git-cola/Makefile                            |   1 +
+ devel/py-qt5-core/Makefile                         |   2 +-
+ devel/py-qt5-core/pkg-plist                        |   2 +-
+ devel/py-qt5-dbus/Makefile                         |   6 +-
+ devel/py-qt5-dbussupport/Makefile                  |   7 +-
+ devel/py-qt5-designer/Makefile                     |   6 +-
+ devel/py-qt5-designerplugin/Makefile               |   3 +-
+ devel/py-qt5-help/Makefile                         |   4 +-
+ devel/py-qt5-help/pkg-plist                        |   2 +
+ devel/py-qt5-location/Makefile                     |  34 +++
+ devel/py-qt5-location/pkg-descr                    |   4 +
+ devel/py-qt5-location/pkg-plist                    |  43 ++++
+ devel/py-qt5-qscintilla2/Makefile                  |  23 ++-
+ devel/py-qt5-remoteobjects/Makefile                |  34 +++
+ devel/py-qt5-remoteobjects/pkg-descr               |   4 +
+ devel/py-qt5-remoteobjects/pkg-plist               |  10 +
+ devel/py-qt5-sip/Makefile                          |  24 +++
+ devel/py-qt5-sip/distinfo                          |   3 +
+ devel/py-qt5-sip/files/LICENSE                     |  48 +++++
+ devel/py-qt5-sip/pkg-descr                         |   3 +
+ devel/py-qt5-test/Makefile                         |   4 +-
+ devel/py-qt5/Makefile                              |  16 +-
+ devel/py-qt5/distinfo                              |   6 +-
+ devel/py-qtbuilder/Makefile                        |  19 ++
+ devel/py-qtbuilder/distinfo                        |   3 +
+ devel/py-qtbuilder/pkg-descr                       |   3 +
+ devel/py-qtconsole/Makefile                        |   1 +
+ devel/py-sip/distinfo                              |   6 +-
+ devel/py-spyder/Makefile                           |   2 +-
+ devel/qscintilla2-qt5/distinfo                     |   6 +-
+ devel/ruby-build/Makefile                          |   2 +-
+ devel/ruby-build/distinfo                          |   6 +-
+ devel/rubygem-slack-messenger/Makefile             |   2 +-
+ devel/rubygem-slack-messenger/distinfo             |   6 +-
+ devel/sbt/Makefile                                 |   4 +-
+ devel/sbt/distinfo                                 |   6 +-
+ devel/sbt/files/patch-bin_sbt                      |  16 +-
+ devel/tortoisehg/Makefile                          |   2 +-
+ devel/vitables/Makefile                            |   2 +-
+ emulators/fs-uae-launcher/Makefile                 |   2 +-
+ emulators/wine-devel/Makefile                      |   8 +-
+ ftp/vsftpd-ext/Makefile                            |   1 +
+ ftp/vsftpd-ext/files/patch-charconv.h              |  12 ++
+ games/anki/Makefile                                |   2 +-
+ games/chessx/Makefile                              |   6 +-
+ games/chessx/distinfo                              |   6 +-
+ games/chessx/files/patch-chessx.pro                |  36 +++-
+ games/py-mnemosyne/Makefile                        |   2 +-
+ graphics/libansilove/Makefile                      |   3 +-
+ graphics/libansilove/distinfo                      |   6 +-
+ graphics/py-python-poppler-qt5/Makefile            |   2 +-
+ graphics/py-qt5-svg/Makefile                       |   4 +-
+ graphics/py-visvis/Makefile                        |   1 +
+ graphics/qgis-ltr/Makefile                         |   1 +
+ graphics/qgis/Makefile                             |   1 +
+ graphics/qtqr/Makefile                             |   2 +-
+ graphics/rapid-photo-downloader/Makefile           |   1 +
+ lang/crystal/Makefile                              |  16 +-
+ lang/crystal/distinfo                              |  16 +-
+ lang/crystal/pkg-plist                             | 140 ++++++++++---
+ lang/py-qt5-qml/Makefile                           |   4 +-
+ mail/cyrus-imapd32/Makefile                        |   2 +-
+ mail/cyrus-imapd32/distinfo                        |   6 +-
+ mail/postfix-current/Makefile                      |   2 +-
+ mail/postfix-current/distinfo                      |   6 +-
+ math/convertall/Makefile                           |   1 +
+ math/octave/Makefile                               |   2 +-
+ math/rpcalc/Makefile                               |   2 +-
+ misc/orange3/Makefile                              |   2 +-
+ misc/py-QSpectrumAnalyzer/Makefile                 |   2 +-
+ misc/py-qt5-demo/Makefile                          |  10 +-
+ misc/urh/Makefile                                  |   1 +
+ multimedia/intel-media-sdk/Makefile                |   5 +-
+ multimedia/intel-media-sdk/distinfo                |   8 +-
+ multimedia/intel-media-sdk/pkg-plist               |   6 +-
+ multimedia/openshot/Makefile                       |   1 +
+ multimedia/py-openlp/Makefile                      |   2 +-
+ multimedia/py-qt5-multimedia/Makefile              |   6 +-
+ multimedia/py-qt5-multimedia/pkg-plist             |  42 +++-
+ multimedia/py-qt5-multimediawidgets/Makefile       |   4 +-
+ multimedia/py-qt5-multimediawidgets/pkg-plist      |   1 +
+ net-mgmt/bandwhich/Makefile                        |   3 +-
+ net-mgmt/bandwhich/distinfo                        |   6 +-
+ net-mgmt/nagstamon/Makefile                        |   2 +-
+ net-p2p/c-lightning/Makefile                       |  13 +-
+ net-p2p/c-lightning/distinfo                       |  14 +-
+ net-p2p/c-lightning/files/patch-plugins_keysend.c  |  11 -
+ net-p2p/c-lightning/pkg-plist                      |  24 ++-
+ net/Makefile                                       |   1 +
+ net/croc/Makefile                                  |   6 +-
+ net/croc/distinfo                                  |  10 +-
+ net/frr7/Makefile                                  |   2 +-
+ net/frr7/files/frr.in                              |  10 +-
+ net/k6/Makefile                                    |   4 +-
+ net/k6/distinfo                                    |   6 +-
+ net/py-qt5-network/Makefile                        |   6 +-
+ net/py-qt5-network/pkg-plist                       |   1 +
+ net/py-qt5-networkauth/Makefile                    |  33 +++
+ net/py-qt5-networkauth/pkg-descr                   |   4 +
+ net/py-qt5-networkauth/pkg-plist                   |  12 ++
+ print/py-frescobaldi/Makefile                      |   2 +-
+ print/py-qt5-printsupport/Makefile                 |   3 +-
+ science/code_saturne/Makefile                      |   1 +
+ science/py-veusz/Makefile                          |   2 +-
+ security/nmap/Makefile                             |   8 +-
+ security/nmap/distinfo                             |   6 +-
+ security/nmap/files/patch-Makefile.in              |   4 +-
+ security/nmap/files/patch-configure                |   6 +-
+ .../nmap/files/patch-libdnet-stripped_configure    |   8 +-
+ security/nmap/files/patch-libpcap_Makefile.in      |  10 +-
+ security/nmap/files/patch-nmap.cc                  |   8 +-
+ security/nmap/files/patch-nping_EchoServer.cc      |   6 +-
+ security/nmap/files/patch-output.cc                |   4 +-
+ security/nmap/files/patch-tcpip.cc                 |   4 +-
+ security/nmap/pkg-plist                            |   5 +
+ sysutils/angrysearch/Makefile                      |   2 +-
+ sysutils/onefetch/Makefile                         | 108 ++++++----
+ sysutils/onefetch/distinfo                         | 208 ++++++++++++-------
+ sysutils/openzfs-kmod/Makefile                     |   4 +-
+ sysutils/openzfs-kmod/distinfo                     |   6 +-
+ sysutils/openzfs/Makefile                          |   4 +-
+ sysutils/openzfs/distinfo                          |   6 +-
+ sysutils/openzfs/pkg-plist                         |   2 +
+ textproc/py-qt5-xml/Makefile                       |   6 +-
+ textproc/py-qt5-xmlpatterns/Makefile               |   4 +-
+ textproc/retext/Makefile                           |   2 +-
+ www/gitlab-ce/Makefile                             |   4 +-
+ www/gitlab-ce/files/patch-Gemfile                  |  11 +-
+ www/minio/Makefile                                 |   8 +-
+ www/minio/distinfo                                 |  14 +-
+ www/onionshare/Makefile                            |   2 +-
+ www/py-beautifulsoup/Makefile                      |   2 +-
+ www/py-beautifulsoup/distinfo                      |   6 +-
+ www/py-qt5-webchannel/Makefile                     |   3 +-
+ www/py-qt5-webengine/Makefile                      |   7 +-
+ www/py-qt5-webengine/distinfo                      |   6 +-
+ www/py-qt5-webengine/pkg-plist                     |   3 +
+ www/py-qt5-webkit/Makefile                         |   6 +-
+ www/py-qt5-webkitwidgets/Makefile                  |   4 +-
+ www/py-qt5-websockets/Makefile                     |   8 +-
+ www/qutebrowser/Makefile                           |   1 +
+ x11-toolkits/Makefile                              |   1 +
+ x11-toolkits/py-qt5-chart/Makefile                 |   7 +-
+ x11-toolkits/py-qt5-chart/distinfo                 |   6 +-
+ x11-toolkits/py-qt5-gui/Makefile                   |   6 +-
+ x11-toolkits/py-qt5-gui/pkg-plist                  |   2 +
+ x11-toolkits/py-qt5-quick/Makefile                 |  11 +-
+ x11-toolkits/py-qt5-quick/pkg-plist                |   3 +-
+ x11-toolkits/py-qt5-quick3d/Makefile               |  34 +++
+ x11-toolkits/py-qt5-quick3d/pkg-descr              |   4 +
+ x11-toolkits/py-qt5-quick3d/pkg-plist              |   7 +
+ x11-toolkits/py-qt5-quickwidgets/Makefile          |   6 +-
+ x11-toolkits/py-qt5-widgets/Makefile               |   6 +-
+ x11/mate-base/Makefile                             |   2 +-
+ x11/mate-panel/Makefile                            |   2 +-
+ x11/mate-panel/distinfo                            |   6 +-
+ x11/mate-panel/pkg-plist                           |  56 ++++-
+ x11/mate/Makefile                                  |   2 +-
+ x11/py-qt5-opengl/Makefile                         |   4 +-
+ x11/waybar/Makefile                                |  14 +-
+ x11/waybar/distinfo                                |   4 +
+ 196 files changed, 1444 insertions(+), 620 deletions(-)
+ create mode 100644 comms/py-qt5-sensors/Makefile
+ create mode 100644 comms/py-qt5-sensors/pkg-descr
+ create mode 100644 comms/py-qt5-sensors/pkg-plist
+ delete mode 100644 converters/yj/files/patch-go.mod
+ delete mode 100644 converters/yj/files/patch-go.sum
+ create mode 100644 converters/yj/files/patch-toml_encoder.go
+ create mode 100644 deskutils/notification-daemon/files/org.freedesktop.Notifications.service.in
+ create mode 100644 devel/bmake/files/extrapatch-unit-tests_Makefile
+ create mode 100644 devel/py-qt5-location/Makefile
+ create mode 100644 devel/py-qt5-location/pkg-descr
+ create mode 100644 devel/py-qt5-location/pkg-plist
+ create mode 100644 devel/py-qt5-remoteobjects/Makefile
+ create mode 100644 devel/py-qt5-remoteobjects/pkg-descr
+ create mode 100644 devel/py-qt5-remoteobjects/pkg-plist
+ create mode 100644 devel/py-qt5-sip/Makefile
+ create mode 100644 devel/py-qt5-sip/distinfo
+ create mode 100644 devel/py-qt5-sip/files/LICENSE
+ create mode 100644 devel/py-qt5-sip/pkg-descr
+ create mode 100644 devel/py-qtbuilder/Makefile
+ create mode 100644 devel/py-qtbuilder/distinfo
+ create mode 100644 devel/py-qtbuilder/pkg-descr
+ create mode 100644 ftp/vsftpd-ext/files/patch-charconv.h
+ delete mode 100644 net-p2p/c-lightning/files/patch-plugins_keysend.c
+ create mode 100644 net/py-qt5-networkauth/Makefile
+ create mode 100644 net/py-qt5-networkauth/pkg-descr
+ create mode 100644 net/py-qt5-networkauth/pkg-plist
+ create mode 100644 x11-toolkits/py-qt5-quick3d/Makefile
+ create mode 100644 x11-toolkits/py-qt5-quick3d/pkg-descr
+ create mode 100644 x11-toolkits/py-qt5-quick3d/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    9c193228dac0..06bb1999b8d0  master -> master        
+remote:    01a5b2b7d287..9c193228dac0  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   9c193228dac0..06bb1999b8d0  master -> master
+==== END: master ====
