@@ -1,0 +1,105 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch and 'origin/hardened/current/master' have diverged,
+and have 1 and 10 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Merge made by the 'recursive' strategy.
+ ObsoleteFiles.inc                                  |   7 ++
+ bin/df/df.1                                        |  62 +++++++++---
+ bin/hostname/hostname.1                            |  21 +++-
+ bin/kenv/kenv.1                                    |  40 +++++++-
+ bin/pkill/pkill.1                                  | 107 ++++++++++++++++++++-
+ bin/pwait/pwait.1                                  |  52 +++++++++-
+ stand/lua/Makefile                                 |  10 +-
+ stand/lua/drawer.lua                               |  57 ++++++++++-
+ stand/lua/{logo-beastie.lua => gfx-beastie.lua}    |  54 +++++------
+ .../lua/{logo-beastiebw.lua => gfx-beastiebw.lua}  |  52 +++++-----
+ stand/lua/{logo-fbsdbw.lua => gfx-fbsdbw.lua}      |  42 ++++----
+ stand/lua/{logo-orb.lua => gfx-orb.lua}            |  48 +++++----
+ stand/lua/{logo-orbbw.lua => gfx-orbbw.lua}        |  46 ++++-----
+ tools/tools/cxgbtool/Makefile                      |   1 +
+ usr.bin/procstat/procstat.1                        |  47 ++++++++-
+ 15 files changed, 491 insertions(+), 155 deletions(-)
+ rename stand/lua/{logo-beastie.lua => gfx-beastie.lua} (59%)
+ rename stand/lua/{logo-beastiebw.lua => gfx-beastiebw.lua} (65%)
+ rename stand/lua/{logo-fbsdbw.lua => gfx-fbsdbw.lua} (74%)
+ rename stand/lua/{logo-orb.lua => gfx-orb.lua} (60%)
+ rename stand/lua/{logo-orbbw.lua => gfx-orbbw.lua} (68%)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/sysctl.h
+Auto-merging sys/kern/kern_sysctl.c
+Merge made by the 'recursive' strategy.
+ sbin/devfs/devfs.rules                |  4 ++++
+ sbin/sysctl/sysctl.c                  | 35 +++++++++++++++++-----------
+ sys/arm64/arm64/trap.c                | 21 +++++++++--------
+ sys/dev/re/if_re.c                    |  2 ++
+ sys/dev/rl/if_rlreg.h                 |  1 +
+ sys/kern/kern_cons.c                  | 24 ++++---------------
+ sys/kern/kern_descrip.c               | 14 +++++++++--
+ sys/kern/kern_sysctl.c                | 44 +++++++++++++++++++++--------------
+ sys/kern/vfs_cache.c                  | 15 ++++++------
+ sys/riscv/riscv/trap.c                |  4 +++-
+ sys/sys/filedesc.h                    |  1 +
+ sys/sys/sysctl.h                      |  3 ++-
+ sys/ufs/ufs/ufs_vnops.c               |  2 +-
+ usr.bin/truss/syscalls.c              |  3 +++
+ usr.sbin/crunch/crunchgen/crunchgen.c |  2 ++
+ 15 files changed, 101 insertions(+), 74 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    24d7695e274c..e404ba82877d  hardened/current/master -> hardened/current/master        
+remote:    fd8e9b8d173c..4407b795711d  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   24d7695e274c..e404ba82877d  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
