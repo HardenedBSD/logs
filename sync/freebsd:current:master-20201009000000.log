@@ -1,0 +1,117 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 339c1042d0e7..03bca33993c3
+Fast-forward
+ .gitignore                             | 16 ---------
+ Makefile                               | 10 ------
+ UPDATING                               | 13 +++++++
+ sys/amd64/conf/LINT                    |  5 +++
+ sys/amd64/conf/LINT-NOINET             |  8 +++++
+ sys/amd64/conf/LINT-NOINET6            |  6 ++++
+ sys/amd64/conf/LINT-NOIP               | 21 +++++++++++
+ sys/amd64/conf/Makefile                |  6 ----
+ sys/arm/conf/LINT                      |  4 +++
+ sys/arm/conf/Makefile                  |  5 ---
+ sys/arm64/conf/LINT                    |  4 +++
+ sys/arm64/conf/Makefile                |  5 ---
+ sys/conf/makeLINT.mk                   | 66 ----------------------------------
+ sys/conf/makeLINT.sed                  |  7 ----
+ sys/i386/conf/LINT                     |  5 +++
+ sys/i386/conf/LINT-NOINET              |  8 +++++
+ sys/i386/conf/LINT-NOINET6             |  6 ++++
+ sys/i386/conf/LINT-NOIP                | 20 +++++++++++
+ sys/i386/conf/Makefile                 |  6 ----
+ sys/kern/kern_sig.c                    |  3 ++
+ sys/kern/vfs_lookup.c                  | 11 +++++-
+ sys/kern/vfs_vnops.c                   | 11 ++++--
+ sys/powerpc/conf/LINT                  |  9 +++++
+ sys/powerpc/conf/LINT64                |  5 +++
+ sys/powerpc/conf/Makefile              |  5 ---
+ sys/powerpc/powerpc/trap.c             | 13 +++++++
+ sys/ufs/ffs/ffs_vfsops.c               |  2 ++
+ sys/vm/vm_page.h                       |  2 +-
+ usr.sbin/bsdinstall/scripts/bootconfig | 24 +++++++++++++
+ 29 files changed, 175 insertions(+), 131 deletions(-)
+ create mode 100644 sys/amd64/conf/LINT
+ create mode 100644 sys/amd64/conf/LINT-NOINET
+ create mode 100644 sys/amd64/conf/LINT-NOINET6
+ create mode 100644 sys/amd64/conf/LINT-NOIP
+ delete mode 100644 sys/amd64/conf/Makefile
+ create mode 100644 sys/arm/conf/LINT
+ delete mode 100644 sys/arm/conf/Makefile
+ create mode 100644 sys/arm64/conf/LINT
+ delete mode 100644 sys/arm64/conf/Makefile
+ delete mode 100644 sys/conf/makeLINT.mk
+ delete mode 100644 sys/conf/makeLINT.sed
+ create mode 100644 sys/i386/conf/LINT
+ create mode 100644 sys/i386/conf/LINT-NOINET
+ create mode 100644 sys/i386/conf/LINT-NOINET6
+ create mode 100644 sys/i386/conf/LINT-NOIP
+ delete mode 100644 sys/i386/conf/Makefile
+ create mode 100644 sys/powerpc/conf/LINT
+ create mode 100644 sys/powerpc/conf/LINT64
+ delete mode 100644 sys/powerpc/conf/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    339c1042d0e7..03bca33993c3  freebsd/current/master -> freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   339c1042d0e7..03bca33993c3  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
