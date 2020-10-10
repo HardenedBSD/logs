@@ -1,0 +1,244 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 22 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating caa969ba3985..b9dc15f25543
+Fast-forward
+ .gitignore                                         |   16 -
+ Makefile                                           |   10 -
+ Makefile.libcompat                                 |    2 +-
+ UPDATING                                           |   13 +
+ sys/amd64/amd64/machdep.c                          |    9 +
+ sys/amd64/conf/LINT                                |    5 +
+ sys/amd64/conf/LINT-NOINET                         |    8 +
+ sys/amd64/conf/LINT-NOINET6                        |    6 +
+ sys/amd64/conf/LINT-NOIP                           |   21 +
+ sys/amd64/conf/Makefile                            |    6 -
+ sys/arm/arm/machdep.c                              |    9 +
+ sys/arm/conf/LINT                                  |    4 +
+ sys/arm/conf/Makefile                              |    5 -
+ sys/arm64/arm64/machdep.c                          |    9 +
+ sys/arm64/conf/LINT                                |    4 +
+ sys/arm64/conf/Makefile                            |    5 -
+ sys/conf/files.i386                                |    2 -
+ sys/conf/makeLINT.mk                               |   66 -
+ sys/conf/makeLINT.sed                              |    7 -
+ sys/contrib/dev/acpica/changes.txt                 |   78 +-
+ sys/contrib/dev/acpica/common/ahpredef.c           |    5 +
+ sys/contrib/dev/acpica/common/ahuuids.c            |    8 +-
+ sys/contrib/dev/acpica/common/dmtbinfo1.c          |    2 +-
+ sys/contrib/dev/acpica/compiler/aslcompiler.l      |    6 +-
+ sys/contrib/dev/acpica/compiler/aslload.c          |    9 +-
+ sys/contrib/dev/acpica/compiler/aslmessages.c      |    3 +
+ sys/contrib/dev/acpica/compiler/aslmessages.h      |    3 +
+ sys/contrib/dev/acpica/compiler/aslparseop.c       |   26 +
+ sys/contrib/dev/acpica/compiler/aslprepkg.c        |   17 +-
+ sys/contrib/dev/acpica/compiler/aslutils.c         |    8 +-
+ sys/contrib/dev/acpica/compiler/aslxref.c          |   11 +-
+ .../dev/acpica/components/debugger/dbexec.c        |   42 +-
+ .../dev/acpica/components/debugger/dbinput.c       |   12 +-
+ .../dev/acpica/components/debugger/dbmethod.c      |  183 ++-
+ .../dev/acpica/components/disassembler/dmbuffer.c  |    4 +
+ .../dev/acpica/components/disassembler/dmcstyle.c  |    2 +-
+ .../dev/acpica/components/events/evrgnini.c        |   11 +-
+ .../dev/acpica/components/executer/exregion.c      |   70 +-
+ .../dev/acpica/components/namespace/nsalloc.c      |    2 +-
+ .../dev/acpica/components/namespace/nsarguments.c  |    4 +-
+ .../dev/acpica/components/namespace/nsxfobj.c      |    3 +-
+ sys/contrib/dev/acpica/components/parser/psparse.c |    4 +-
+ .../dev/acpica/components/utilities/utpredef.c     |    4 +-
+ .../dev/acpica/components/utilities/utstrsuppt.c   |   30 +-
+ sys/contrib/dev/acpica/include/acconfig.h          |    2 +-
+ sys/contrib/dev/acpica/include/acdebug.h           |    6 +
+ sys/contrib/dev/acpica/include/acexcep.h           |    4 +-
+ sys/contrib/dev/acpica/include/acpixf.h            |    2 +-
+ sys/contrib/dev/acpica/include/acpredef.h          |   23 +-
+ sys/contrib/dev/acpica/include/actbl1.h            |   16 +-
+ sys/contrib/dev/acpica/include/actypes.h           |   16 +-
+ sys/contrib/dev/acpica/include/acuuid.h            |    8 +-
+ sys/dev/syscons/apm/apm_saver.c                    |   95 --
+ sys/i386/bios/apm.c                                | 1526 --------------------
+ sys/i386/bios/apm.h                                |   52 -
+ sys/i386/conf/GENERIC                              |    3 -
+ sys/i386/conf/LINT                                 |    5 +
+ sys/i386/conf/LINT-NOINET                          |    8 +
+ sys/i386/conf/LINT-NOINET6                         |    6 +
+ sys/i386/conf/LINT-NOIP                            |   20 +
+ sys/i386/conf/Makefile                             |    6 -
+ sys/i386/conf/NOTES                                |    8 -
+ sys/i386/include/clock.h                           |    1 -
+ sys/kern/kern_sig.c                                |    3 +
+ sys/kern/subr_module.c                             |  252 ++++
+ sys/kern/vfs_lookup.c                              |   11 +-
+ sys/kern/vfs_vnops.c                               |   11 +-
+ sys/modules/Makefile                               |    2 -
+ sys/modules/apm/Makefile                           |   12 -
+ sys/modules/syscons/Makefile                       |    7 +-
+ sys/modules/syscons/apm/Makefile                   |    8 -
+ sys/powerpc/conf/LINT                              |    9 +
+ sys/powerpc/conf/LINT64                            |    5 +
+ sys/powerpc/conf/Makefile                          |    5 -
+ sys/powerpc/powerpc/trap.c                         |   13 +
+ sys/riscv/riscv/machdep.c                          |    9 +
+ sys/sys/linker.h                                   |    1 +
+ sys/ufs/ffs/ffs_vfsops.c                           |    2 +
+ sys/vm/vm_page.h                                   |    2 +-
+ sys/x86/isa/clock.c                                |   20 -
+ usr.sbin/bsdinstall/scripts/bootconfig             |   24 +
+ 81 files changed, 982 insertions(+), 1975 deletions(-)
+ create mode 100644 sys/amd64/conf/LINT
+ create mode 100644 sys/amd64/conf/LINT-NOINET
+ create mode 100644 sys/amd64/conf/LINT-NOINET6
+ create mode 100644 sys/amd64/conf/LINT-NOIP
+ delete mode 100644 sys/amd64/conf/Makefile
+ create mode 100644 sys/arm/conf/LINT
+ delete mode 100644 sys/arm/conf/Makefile
+ create mode 100644 sys/arm64/conf/LINT
+ delete mode 100644 sys/arm64/conf/Makefile
+ delete mode 100644 sys/conf/makeLINT.mk
+ delete mode 100644 sys/conf/makeLINT.sed
+ delete mode 100644 sys/dev/syscons/apm/apm_saver.c
+ delete mode 100644 sys/i386/bios/apm.c
+ delete mode 100644 sys/i386/bios/apm.h
+ create mode 100644 sys/i386/conf/LINT
+ create mode 100644 sys/i386/conf/LINT-NOINET
+ create mode 100644 sys/i386/conf/LINT-NOINET6
+ create mode 100644 sys/i386/conf/LINT-NOIP
+ delete mode 100644 sys/i386/conf/Makefile
+ delete mode 100644 sys/modules/apm/Makefile
+ delete mode 100644 sys/modules/syscons/apm/Makefile
+ create mode 100644 sys/powerpc/conf/LINT
+ create mode 100644 sys/powerpc/conf/LINT64
+ delete mode 100644 sys/powerpc/conf/Makefile
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ libexec/rtld-elf/rtld.1                   |   2 +-
+ sbin/devd/zfs.conf                        |  24 ++---
+ sbin/devmatch/devmatch.8                  |   4 +-
+ sbin/fsck/fsck.8                          |   2 +-
+ sbin/ifconfig/ifconfig.8                  |   2 +-
+ sbin/mount_msdosfs/mount_msdosfs.8        |   2 +-
+ share/man/man4/acpi_ibm.4                 |   6 +-
+ share/man/man4/man4.i386/glxiic.4         |  17 ++--
+ share/man/man4/man4.powerpc/smu.4         |  40 ++++----
+ share/man/man4/ng_checksum.4              |  12 ++-
+ stand/defaults/loader.conf.5              |   1 -
+ stand/forth/beastie.4th.8                 |  16 +--
+ stand/forth/brand.4th.8                   |   9 +-
+ sys/dev/iommu/busdma_iommu.c              |  24 +++--
+ sys/dev/iommu/iommu.h                     |   1 +
+ sys/dev/iscsi/iscsi_ioctl.h               |   3 +-
+ sys/net/if_ethersubr.c                    |   7 ++
+ sys/netinet/in.h                          |   4 +
+ sys/netinet/in_pcb.h                      |   7 ++
+ sys/netinet/ip_output.c                   |  41 ++++++++
+ sys/netinet/tcp_output.c                  |   3 +-
+ sys/netinet/tcp_sack.c                    |   5 +-
+ sys/netinet/tcp_subr.c                    |   7 ++
+ sys/netinet/tcp_var.h                     |   8 +-
+ sys/netinet6/in6.h                        |   4 +
+ sys/netinet6/ip6_output.c                 |  46 +++++++++
+ sys/riscv/conf/LINT                       |   4 +
+ sys/riscv/conf/NOTES                      |  96 ++++++++++++++++++
+ tools/tools/ether_reflect/ether_reflect.1 |  26 +++--
+ tools/tools/vimage/vimage.8               |  39 ++++----
+ usr.bin/chat/chat.8                       |   3 +-
+ usr.bin/col/col.c                         |  40 +++++---
+ usr.bin/col/tests/Makefile                |  10 +-
+ usr.bin/col/tests/col_test.sh             |  80 +++++++++++++++
+ usr.bin/col/tests/hlf.in                  |   2 +
+ usr.bin/col/tests/hlf2.in                 |   1 +
+ usr.bin/col/tests/nl.in                   |   2 +
+ usr.bin/col/tests/nl2.in                  |   2 +
+ usr.bin/col/tests/nl3.in                  |   4 +
+ usr.bin/col/tests/rlf3.in                 |   1 +
+ usr.bin/cpuset/cpuset.c                   |   2 +-
+ usr.bin/du/du.1                           |   8 +-
+ usr.bin/iscsictl/Makefile                 |   2 +-
+ usr.bin/iscsictl/iscsi.conf.5             |  10 ++
+ usr.bin/iscsictl/iscsictl.c               |   5 +
+ usr.bin/iscsictl/iscsictl.h               |   1 +
+ usr.bin/iscsictl/parse.y                  |  50 +++++++++-
+ usr.bin/iscsictl/token.l                  |  23 +++++
+ usr.bin/netstat/inet.c                    |  58 ++++++++++-
+ usr.bin/netstat/main.c                    |  10 +-
+ usr.bin/netstat/netstat.1                 |   6 +-
+ usr.bin/netstat/netstat.h                 |   3 +-
+ usr.bin/setchannel/setchannel.1           |   7 +-
+ usr.bin/tftp/tftp.1                       |  20 ++--
+ usr.sbin/ctladm/ctladm.8                  | 161 ++++++++++++++++--------------
+ usr.sbin/extattrctl/extattrctl.8          |   2 +-
+ usr.sbin/i2c/i2c.8                        |  27 ++---
+ usr.sbin/iscsid/iscsid.c                  |  20 ++++
+ usr.sbin/mountd/exports.5                 |  30 +++---
+ usr.sbin/nfsuserd/nfsuserd.8              |  34 ++++---
+ usr.sbin/pmcstudy/pmcstudy.8              |   4 +-
+ usr.sbin/syslogd/syslogd.c                |   8 +-
+ usr.sbin/traceroute6/traceroute6.8        |   6 +-
+ 63 files changed, 833 insertions(+), 271 deletions(-)
+ create mode 100644 sys/riscv/conf/LINT
+ create mode 100644 sys/riscv/conf/NOTES
+ create mode 100644 usr.bin/col/tests/hlf.in
+ create mode 100644 usr.bin/col/tests/hlf2.in
+ create mode 100644 usr.bin/col/tests/nl.in
+ create mode 100644 usr.bin/col/tests/nl2.in
+ create mode 100644 usr.bin/col/tests/nl3.in
+ create mode 100644 usr.bin/col/tests/rlf3.in
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    b9dc15f25543..a63e9b292dca  hardened/current/master -> hardened/current/master        
+remote:    783eb7340f24..cb042890795a  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   b9dc15f25543..a63e9b292dca  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

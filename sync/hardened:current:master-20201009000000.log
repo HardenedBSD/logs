@@ -1,0 +1,155 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/riscv/riscv/machdep.c
+Removing sys/powerpc/conf/Makefile
+Removing sys/modules/syscons/apm/Makefile
+Removing sys/modules/apm/Makefile
+Auto-merging sys/modules/Makefile
+CONFLICT (content): Merge conflict in sys/modules/Makefile
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/i386/conf/NOTES
+Removing sys/i386/conf/Makefile
+Removing sys/i386/bios/apm.h
+Removing sys/i386/bios/apm.c
+Removing sys/dev/syscons/apm/apm_saver.c
+Removing sys/conf/makeLINT.sed
+Removing sys/conf/makeLINT.mk
+Auto-merging sys/conf/files.i386
+Removing sys/arm64/conf/Makefile
+Auto-merging sys/arm64/arm64/machdep.c
+Removing sys/arm/conf/Makefile
+Auto-merging sys/arm/arm/machdep.c
+Removing sys/amd64/conf/Makefile
+Auto-merging sys/amd64/amd64/machdep.c
+Auto-merging Makefile.libcompat
+Auto-merging Makefile
+Auto-merging .gitignore
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/modules/Makefile
+index dfc09e08c5cc,9882f32bb9ce..000000000000
+--- a/sys/modules/Makefile
++++ b/sys/modules/Makefile
+@@@ -40,7 -40,7 +40,11 @@@ SUBDIR=	
+  	${_amdtemp} \
+  	amr \
+  	${_an} \
+++<<<<<<< HEAD
+ +	${_apm} \
+++=======
++ 	${_aout} \
+++>>>>>>> freebsd/current/master
+  	${_arcmsr} \
+  	${_allwinner} \
+  	${_armv8crypto} \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   .gitignore
+	modified:   Makefile
+	modified:   Makefile.libcompat
+	modified:   UPDATING
+	modified:   sys/amd64/amd64/machdep.c
+	new file:   sys/amd64/conf/LINT
+	new file:   sys/amd64/conf/LINT-NOINET
+	new file:   sys/amd64/conf/LINT-NOINET6
+	new file:   sys/amd64/conf/LINT-NOIP
+	deleted:    sys/amd64/conf/Makefile
+	modified:   sys/arm/arm/machdep.c
+	new file:   sys/arm/conf/LINT
+	deleted:    sys/arm/conf/Makefile
+	modified:   sys/arm64/arm64/machdep.c
+	new file:   sys/arm64/conf/LINT
+	deleted:    sys/arm64/conf/Makefile
+	modified:   sys/conf/files.i386
+	deleted:    sys/conf/makeLINT.mk
+	deleted:    sys/conf/makeLINT.sed
+	deleted:    sys/dev/syscons/apm/apm_saver.c
+	deleted:    sys/i386/bios/apm.c
+	deleted:    sys/i386/bios/apm.h
+	modified:   sys/i386/conf/GENERIC
+	new file:   sys/i386/conf/LINT
+	new file:   sys/i386/conf/LINT-NOINET
+	new file:   sys/i386/conf/LINT-NOINET6
+	new file:   sys/i386/conf/LINT-NOIP
+	deleted:    sys/i386/conf/Makefile
+	modified:   sys/i386/conf/NOTES
+	modified:   sys/i386/include/clock.h
+	modified:   sys/kern/kern_sig.c
+	modified:   sys/kern/subr_module.c
+	modified:   sys/kern/vfs_lookup.c
+	modified:   sys/kern/vfs_vnops.c
+	deleted:    sys/modules/apm/Makefile
+	modified:   sys/modules/syscons/Makefile
+	deleted:    sys/modules/syscons/apm/Makefile
+	new file:   sys/powerpc/conf/LINT
+	new file:   sys/powerpc/conf/LINT64
+	deleted:    sys/powerpc/conf/Makefile
+	modified:   sys/powerpc/powerpc/trap.c
+	modified:   sys/riscv/riscv/machdep.c
+	modified:   sys/sys/linker.h
+	modified:   sys/ufs/ffs/ffs_vfsops.c
+	modified:   sys/vm/vm_page.h
+	modified:   sys/x86/isa/clock.c
+	modified:   usr.sbin/bsdinstall/scripts/bootconfig
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/modules/Makefile
+
+HEAD is now at caa969ba3985 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at caa969ba3985 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
