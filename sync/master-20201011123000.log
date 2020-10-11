@@ -1,0 +1,207 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 34 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 0df09ed8fc42..c417ae4fb806
+Fast-forward
+ Mk/bsd.port.mk                                     |   2 +-
+ audio/forked-daapd/Makefile                        |  50 +-
+ audio/forked-daapd/distinfo                        |   5 +-
+ audio/forked-daapd/files/patch-dmap_common.h       |  11 -
+ audio/forked-daapd/files/patch-ffmpeg4             |  43 --
+ audio/forked-daapd/pkg-plist                       |  56 ++
+ audio/jamulus/Makefile                             |   3 +-
+ audio/jamulus/distinfo                             |   6 +-
+ converters/pdf2djvu/Makefile                       |   2 +-
+ databases/kbibtex/Makefile                         |   2 +-
+ deskutils/calibre/Makefile                         |   2 +-
+ deskutils/cfiles/Makefile                          |   2 +-
+ deskutils/lumina-pdf/Makefile                      |   2 +-
+ deskutils/recoll/Makefile                          |   2 +-
+ deskutils/xfce4-tumbler/Makefile                   |   2 +-
+ devel/cmake-doc/Makefile                           |   2 +-
+ devel/cmake-gui/Makefile                           |   2 +-
+ devel/cmake/Makefile                               |   2 +-
+ devel/cmake/distinfo                               |   6 +-
+ .../cmake/files/patch-Modules_FindwxWidgets.cmake  |  11 +
+ devel/efl/Makefile                                 |   2 +-
+ devel/kf5-kfilemetadata/Makefile                   |   2 +-
+ devel/shards/Makefile                              |   6 +-
+ devel/shards/distinfo                              |   6 +-
+ editors/calligra/Makefile                          |   2 +-
+ editors/kile/Makefile                              |   2 +-
+ editors/libreoffice/Makefile                       |   2 +-
+ editors/openoffice-devel/Makefile                  |   2 +-
+ editors/texstudio/Makefile                         |   2 +-
+ editors/texworks/Makefile                          |   2 +-
+ emulators/wine-devel/Makefile                      |   5 +-
+ emulators/wine-devel/distinfo                      |   8 +-
+ .../files/patch-dlls_kernel32_Makefile.in          |  12 +-
+ emulators/wine-devel/files/patch-tools-makedep     |  32 -
+ emulators/wine-devel/pkg-plist                     |  10 +
+ emulators/wine-mono-devel/Makefile                 |   2 +-
+ emulators/wine-mono-devel/distinfo                 |   6 +-
+ graphics/atril/Makefile                            |   2 +-
+ graphics/diff-pdf/Makefile                         |   2 +-
+ graphics/diffpdf/Makefile                          |   2 +-
+ graphics/dspdfviewer/Makefile                      |   2 +-
+ graphics/engauge-digitizer/Makefile                |   2 +-
+ graphics/epdfview/Makefile                         |   2 +-
+ graphics/evince/Makefile                           |   2 +-
+ graphics/gdal/Makefile                             |   2 +-
+ graphics/geeqie/Makefile                           |   2 +-
+ graphics/gegl/Makefile                             |   2 +-
+ graphics/gimp-app/Makefile                         |   2 +-
+ graphics/graphviz/Makefile                         |   2 +-
+ graphics/impressive/Makefile                       |   1 +
+ graphics/inkscape/Makefile                         |   2 +-
+ graphics/jp2a/Makefile                             |  14 +-
+ graphics/jp2a/distinfo                             |   6 +-
+ graphics/jpeg-turbo/Makefile                       |   5 +-
+ graphics/jpeg-turbo/distinfo                       |   6 +-
+ graphics/krita/Makefile                            |   2 +-
+ graphics/mirtk/Makefile                            |  19 +-
+ graphics/mirtk/distinfo                            |   6 +-
+ graphics/mirtk/pkg-plist                           |   8 +-
+ graphics/okular/Makefile                           |   2 +-
+ graphics/openfx-arena/Makefile                     |   2 +-
+ graphics/osg/Makefile                              |   2 +-
+ graphics/pdf2svg/Makefile                          |   2 +-
+ graphics/pdfpc/Makefile                            |   2 +-
+ graphics/poppler/Makefile                          |   4 +-
+ graphics/poppler/distinfo                          |   6 +-
+ graphics/pqiv/Makefile                             |   2 +-
+ graphics/qcomicbook/Makefile                       |   2 +-
+ graphics/vips/Makefile                             |   2 +-
+ graphics/xournal/Makefile                          |   2 +-
+ graphics/xournalpp/Makefile                        |   2 +-
+ graphics/yacreader/Makefile                        |   1 +
+ graphics/zathura-pdf-mupdf/Makefile                |   2 +-
+ graphics/zathura-pdf-poppler/Makefile              |   2 +-
+ lang/crystal/Makefile                              |   2 +
+ lang/sbcl/Makefile                                 |   1 +
+ .../files/patch-src_compiler_x86-64_parms.lisp     |  13 +
+ mail/claws-mail-pdf_viewer/Makefile                |   2 +-
+ mail/swaks/Makefile                                |   2 +-
+ mail/swaks/distinfo                                |   6 +-
+ mail/textmail/Makefile                             |   2 +-
+ math/labplot/Makefile                              |   1 +
+ misc/rubygem-rabbit/Makefile                       |   2 +-
+ misc/tellico/Makefile                              |   1 +
+ multimedia/libmtp/Makefile                         |   2 +-
+ multimedia/libmtp/distinfo                         |   6 +-
+ multimedia/obs-streamfx/Makefile                   |   7 +-
+ multimedia/obs-streamfx/distinfo                   |   6 +-
+ multimedia/obs-streamfx/files/patch-CMakeLists.txt |  31 +-
+ .../files/patch-source_util_util-curl.hpp          |  10 +
+ multimedia/obs-streamfx/pkg-plist                  |   5 +
+ multimedia/obs-studio/Makefile                     |   3 +-
+ multimedia/obs-studio/distinfo                     |   6 +-
+ multimedia/py-tvnamer/Makefile                     |   8 +-
+ multimedia/py-tvnamer/distinfo                     |   6 +-
+ net-mgmt/collectd5/Makefile                        |   3 +-
+ net-mgmt/collectd5/distinfo                        |   4 +-
+ net/kitinerary/Makefile                            |   2 +-
+ net/ocserv/Makefile                                |  12 +-
+ net/ocserv/distinfo                                |   6 +-
+ net/ocserv/files/patch-configure.ac                |   8 +-
+ net/ocserv/files/patch-doc_sample.config           |  20 +-
+ net/ocserv/pkg-plist                               |   1 +
+ net/traefik/Makefile                               |  40 +-
+ net/traefik/distinfo                               |   8 +-
+ net/traefik/files/traefik.in                       |   2 +-
+ net/traefik/pkg-message                            |  13 +
+ print/cups-filters/Makefile                        |   1 +
+ print/deforaos-pdfviewer/Makefile                  |   2 +-
+ print/ghostscript9-agpl-base/Makefile              |   2 +-
+ print/pdf-tools/Makefile                           |   2 +-
+ print/py-frescobaldi/Makefile                      |   2 +-
+ print/qpdfview/Makefile                            |   2 +-
+ print/scribus-devel/Makefile                       |   2 +-
+ print/tex-luatex/Makefile                          |   2 +-
+ print/tex-xetex/Makefile                           |   2 +-
+ print/texlive-base/Makefile                        |   2 +-
+ security/Makefile                                  |   1 +
+ security/ffuf/Makefile                             |  21 +
+ security/ffuf/distinfo                             |   3 +
+ security/ffuf/pkg-descr                            |   3 +
+ security/nmap/Makefile                             |   2 +-
+ security/nmap/distinfo                             |   6 +-
+ sysutils/pot/Makefile                              |   2 +-
+ sysutils/py-dict-toolbox/Makefile                  |   3 +-
+ sysutils/racktables/Makefile                       |   2 +-
+ sysutils/racktables/distinfo                       |   6 +-
+ sysutils/smartmontools/Makefile                    |   2 +-
+ sysutils/smartmontools/files/patch-drivedb.h       | 845 +++++++++++++++++++++
+ sysutils/tracker-miners/Makefile                   |   1 +
+ textproc/pdfgrep/Makefile                          |   2 +-
+ textproc/pdfsandwich/Makefile                      |   2 +-
+ textproc/py-pdftotext/Makefile                     |   2 +-
+ www/deno/Makefile                                  |   8 +-
+ www/deno/distinfo                                  |   6 +-
+ www/gohugo/Makefile                                |  26 +-
+ www/gohugo/distinfo                                |  50 +-
+ www/hotcrp/Makefile                                |   2 +-
+ www/py-freenit/Makefile                            |   2 +-
+ www/py-freenit/distinfo                            |   6 +-
+ x11-toolkits/rubygem-poppler/Makefile              |   2 +-
+ x11/eaglemode/Makefile                             |   2 +-
+ x11/gnome-shell/Makefile                           |   2 +-
+ x11/gnome-shell/pkg-plist                          |   1 +
+ x11/rubygem-gnome/Makefile                         |   2 +-
+ 145 files changed, 1308 insertions(+), 408 deletions(-)
+ delete mode 100644 audio/forked-daapd/files/patch-dmap_common.h
+ delete mode 100644 audio/forked-daapd/files/patch-ffmpeg4
+ create mode 100644 devel/cmake/files/patch-Modules_FindwxWidgets.cmake
+ delete mode 100644 emulators/wine-devel/files/patch-tools-makedep
+ create mode 100644 lang/sbcl/files/patch-src_compiler_x86-64_parms.lisp
+ create mode 100644 multimedia/obs-streamfx/files/patch-source_util_util-curl.hpp
+ create mode 100644 security/ffuf/Makefile
+ create mode 100644 security/ffuf/distinfo
+ create mode 100644 security/ffuf/pkg-descr
+ create mode 100644 sysutils/smartmontools/files/patch-drivedb.h
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
