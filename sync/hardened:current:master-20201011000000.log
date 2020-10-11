@@ -1,0 +1,291 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/sysent.h
+Auto-merging sys/sys/elf_common.h
+CONFLICT (content): Merge conflict in sys/sys/elf_common.h
+Auto-merging sys/riscv/riscv/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/riscv/riscv/elf_machdep.c
+Auto-merging sys/powerpc/powerpc/elf64_machdep.c
+CONFLICT (content): Merge conflict in sys/powerpc/powerpc/elf64_machdep.c
+Auto-merging sys/powerpc/powerpc/elf32_machdep.c
+CONFLICT (content): Merge conflict in sys/powerpc/powerpc/elf32_machdep.c
+Auto-merging sys/mips/mips/freebsd32_machdep.c
+Auto-merging sys/mips/mips/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/mips/mips/elf_machdep.c
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging sys/i386/i386/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/i386/i386/elf_machdep.c
+Auto-merging sys/conf/options
+Auto-merging sys/conf/files
+Auto-merging sys/conf/NOTES
+Auto-merging sys/compat/ia32/ia32_sysvec.c
+Auto-merging sys/arm64/arm64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm64/arm64/elf_machdep.c
+Auto-merging sys/arm/arm/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm/arm/elf_machdep.c
+Auto-merging sys/amd64/amd64/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/amd64/amd64/elf_machdep.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/amd64/amd64/elf_machdep.c
+index 4e31bc9bb0d0,a3fb1184bb05..000000000000
+--- a/sys/amd64/amd64/elf_machdep.c
++++ b/sys/amd64/amd64/elf_machdep.c
+@@@ -74,8 -71,8 +74,13 @@@ struct sysentvec elf64_freebsd_sysvec_l
+  	.sv_setregs	= exec_setregs,
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_LP64 | SV_SHP |
+ +			    SV_TIMEKEEP,
+++=======
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_ASLR | SV_LP64 | SV_SHP |
++ 			    SV_TIMEKEEP | SV_RNG_SEED_VER,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+diff --cc sys/arm/arm/elf_machdep.c
+index 1497af32133d,16d152771b91..000000000000
+--- a/sys/arm/arm/elf_machdep.c
++++ b/sys/arm/arm/elf_machdep.c
+@@@ -89,9 -86,9 +89,13 @@@ struct sysentvec elf32_freebsd_sysvec 
+  	.sv_maxssiz	= NULL,
+  	.sv_flags	=
+  #if __ARM_ARCH >= 6
+++<<<<<<< HEAD
+ +			  SV_SHP | SV_TIMEKEEP |
+++=======
++ 			  SV_ASLR | SV_SHP | SV_TIMEKEEP | SV_RNG_SEED_VER |
+++>>>>>>> freebsd/current/master
+  #endif
+ -			  SV_ABI_FREEBSD | SV_ILP32 | SV_ASLR,
+ +			  SV_ABI_FREEBSD | SV_ILP32,
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+diff --cc sys/arm64/arm64/elf_machdep.c
+index 887502721b42,cd12d40c37df..000000000000
+--- a/sys/arm64/arm64/elf_machdep.c
++++ b/sys/arm64/arm64/elf_machdep.c
+@@@ -83,7 -80,8 +83,12 @@@ static struct sysentvec elf64_freebsd_s
+  	.sv_setregs	= exec_setregs,
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_SHP | SV_TIMEKEEP | SV_ABI_FREEBSD | SV_LP64,
+++=======
++ 	.sv_flags	= SV_SHP | SV_TIMEKEEP | SV_ABI_FREEBSD | SV_LP64 |
++ 	    SV_ASLR | SV_RNG_SEED_VER,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+diff --cc sys/i386/i386/elf_machdep.c
+index 1f68793beef4,0d870748967e..000000000000
+--- a/sys/i386/i386/elf_machdep.c
++++ b/sys/i386/i386/elf_machdep.c
+@@@ -75,8 -73,8 +75,13 @@@ struct sysentvec elf32_freebsd_sysvec 
+  	.sv_setregs	= exec_setregs,
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_IA32 | SV_ILP32 |
+ +			    SV_SHP | SV_TIMEKEEP,
+++=======
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_ASLR | SV_IA32 | SV_ILP32 |
++ 			    SV_SHP | SV_TIMEKEEP | SV_RNG_SEED_VER,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+diff --cc sys/mips/mips/elf_machdep.c
+index 606270ee4357,9e27e5e7f2a4..000000000000
+--- a/sys/mips/mips/elf_machdep.c
++++ b/sys/mips/mips/elf_machdep.c
+@@@ -80,10 -77,11 +80,17 @@@ static struct sysentvec elf_freebsd_sys
+  	.sv_setregs	= exec_setregs,
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_ASLR | SV_RNG_SEED_VER |
+  #ifdef __mips_n64
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_LP64,
+ +#else
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_ILP32,
+++=======
++ 	    SV_LP64,
++ #else
++ 	    SV_ILP32,
+++>>>>>>> freebsd/current/master
+  #endif
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+diff --cc sys/powerpc/powerpc/elf32_machdep.c
+index ab3a3cb9381d,04150f02bb9c..000000000000
+--- a/sys/powerpc/powerpc/elf32_machdep.c
++++ b/sys/powerpc/powerpc/elf32_machdep.c
+@@@ -123,8 -120,8 +123,13 @@@ struct sysentvec elf32_freebsd_sysvec 
+  	.sv_fixlimit	= NULL,
+  #endif
+  	.sv_maxssiz	= NULL,
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_ILP32 | SV_SHP |
+ +			    SV_TIMEKEEP,
+++=======
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_ILP32 | SV_SHP | SV_ASLR |
++ 			    SV_TIMEKEEP | SV_RNG_SEED_VER,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_shared_page_base = FREEBSD32_SHAREDPAGE,
+diff --cc sys/powerpc/powerpc/elf64_machdep.c
+index 7759058d92b2,1bca857d9ca5..000000000000
+--- a/sys/powerpc/powerpc/elf64_machdep.c
++++ b/sys/powerpc/powerpc/elf64_machdep.c
+@@@ -84,8 -81,8 +84,13 @@@ struct sysentvec elf64_freebsd_sysvec_v
+  	.sv_setregs	= exec_setregs_funcdesc,
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_LP64 | SV_SHP |
+ +			    SV_TIMEKEEP,
+++=======
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_LP64 | SV_SHP | SV_ASLR |
++ 			    SV_TIMEKEEP | SV_RNG_SEED_VER,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+diff --cc sys/riscv/riscv/elf_machdep.c
+index 0c4b68b27cbc,06d117128ef7..000000000000
+--- a/sys/riscv/riscv/elf_machdep.c
++++ b/sys/riscv/riscv/elf_machdep.c
+@@@ -87,7 -84,8 +87,12 @@@ struct sysentvec elf64_freebsd_sysvec 
+  	.sv_setregs	= exec_setregs,
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+++<<<<<<< HEAD
+ +	.sv_flags	= SV_ABI_FREEBSD | SV_LP64 | SV_SHP,
+++=======
++ 	.sv_flags	= SV_ABI_FREEBSD | SV_LP64 | SV_SHP | SV_ASLR |
++ 	    SV_RNG_SEED_VER,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+diff --cc sys/sys/elf_common.h
+index a2818645e1c7,8166d352955c..000000000000
+--- a/sys/sys/elf_common.h
++++ b/sys/sys/elf_common.h
+@@@ -967,7 -967,7 +967,11 @@@ typedef struct 
+  #define	AT_ENVC		30	/* Environment count */
+  #define	AT_ENVV		31	/* Environment vector */
+  #define	AT_PS_STRINGS	32	/* struct ps_strings */
+++<<<<<<< HEAD
+ +#define	AT_PAXFLAGS 	33
+++=======
++ #define	AT_FXRNG	33	/* Pointer to root RNG seed version. */
+++>>>>>>> freebsd/current/master
+  
+  #define	AT_COUNT	34	/* Count of defined aux entry types. */
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libc/gen/arc4random.c
+	modified:   lib/libc/gen/arc4random.h
+	modified:   lib/libc/gen/auxv.c
+	modified:   sys/arm64/arm64/elf32_machdep.c
+	modified:   sys/compat/ia32/ia32_sysvec.c
+	modified:   sys/conf/NOTES
+	modified:   sys/conf/files
+	modified:   sys/conf/options
+	new file:   sys/dev/random/fenestrasX/fx_brng.c
+	new file:   sys/dev/random/fenestrasX/fx_brng.h
+	new file:   sys/dev/random/fenestrasX/fx_hash.h
+	new file:   sys/dev/random/fenestrasX/fx_main.c
+	new file:   sys/dev/random/fenestrasX/fx_pool.c
+	new file:   sys/dev/random/fenestrasX/fx_pool.h
+	new file:   sys/dev/random/fenestrasX/fx_priv.h
+	new file:   sys/dev/random/fenestrasX/fx_pub.h
+	new file:   sys/dev/random/fenestrasX/fx_rng.c
+	new file:   sys/dev/random/fenestrasX/fx_rng.h
+	modified:   sys/dev/random/randomdev.c
+	modified:   sys/kern/imgact_elf.c
+	modified:   sys/kern/kern_sharedpage.c
+	modified:   sys/libkern/arc4random.c
+	modified:   sys/mips/mips/freebsd32_machdep.c
+	modified:   sys/netinet/ip_mroute.c
+	modified:   sys/sys/libkern.h
+	modified:   sys/sys/sysent.h
+	modified:   sys/sys/vdso.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/amd64/amd64/elf_machdep.c
+	both modified:   sys/arm/arm/elf_machdep.c
+	both modified:   sys/arm64/arm64/elf_machdep.c
+	both modified:   sys/i386/i386/elf_machdep.c
+	both modified:   sys/mips/mips/elf_machdep.c
+	both modified:   sys/powerpc/powerpc/elf32_machdep.c
+	both modified:   sys/powerpc/powerpc/elf64_machdep.c
+	both modified:   sys/riscv/riscv/elf_machdep.c
+	both modified:   sys/sys/elf_common.h
+
+HEAD is now at fc8f84d1d652 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at fc8f84d1d652 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
