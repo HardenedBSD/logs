@@ -47,3 +47,155 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging multimedia/obs-studio/Makefile
+Removing audio/forked-daapd/files/patch-ffmpeg4
+Removing audio/forked-daapd/files/patch-dmap_common.h
+Auto-merging audio/forked-daapd/Makefile
+CONFLICT (content): Merge conflict in audio/forked-daapd/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc audio/forked-daapd/Makefile
+index 6926666219a1,0a925d828668..000000000000
+--- a/audio/forked-daapd/Makefile
++++ b/audio/forked-daapd/Makefile
+@@@ -21,19 -24,16 +24,22 @@@ LIB_DEPENDS=	libantlr3c.so:devel/libant
+  		libgcrypt.so:security/libgcrypt \
+  		libinotify.so:devel/libinotify \
+  		libmxml.so:textproc/mxml \
+- 		libunistring.so:devel/libunistring
+- 
+- USE_GITHUB=	yes
+- GH_ACCOUNT=	ejurgensen
++ 		libplist.so:devel/libplist \
++ 		libsodium.so:security/libsodium \
++ 		libunistring.so:devel/libunistring \
++ 		libwebsockets.so:net/libwebsockets
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		autoreconf gettext gmake gperf iconv libtool localbase pathfix pkgconfig sqlite
+++=======
++ USES=		gnome gmake gperf iconv:wchar_t libtool localbase pathfix \
++ 		pkgconfig sqlite tar:xz
++ USE_GNOME=	libxml2
+++>>>>>>> freebsd/master
+  
+  GNU_CONFIGURE=	yes
+- INSTALL_TARGET=	install-strip
+- USE_LDCONFIG=	${LOCALBASE}/lib/forked-daapd
+- CONFIGURE_ARGS+=--localstatedir=/var
+  
+  USE_RC_SUBR=	${PORTNAME}
+  SUB_FILES=	pkg-message
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/forked-daapd/distinfo
+	deleted:    audio/forked-daapd/files/patch-dmap_common.h
+	deleted:    audio/forked-daapd/files/patch-ffmpeg4
+	modified:   audio/forked-daapd/pkg-plist
+	modified:   audio/jamulus/Makefile
+	modified:   audio/jamulus/distinfo
+	modified:   devel/shards/Makefile
+	modified:   devel/shards/distinfo
+	modified:   emulators/wine-mono-devel/Makefile
+	modified:   emulators/wine-mono-devel/distinfo
+	modified:   graphics/jp2a/Makefile
+	modified:   graphics/jp2a/distinfo
+	modified:   graphics/jpeg-turbo/Makefile
+	modified:   graphics/jpeg-turbo/distinfo
+	modified:   graphics/mirtk/Makefile
+	modified:   graphics/mirtk/distinfo
+	modified:   graphics/mirtk/pkg-plist
+	modified:   lang/crystal/Makefile
+	modified:   mail/swaks/Makefile
+	modified:   mail/swaks/distinfo
+	modified:   multimedia/obs-streamfx/Makefile
+	modified:   multimedia/obs-streamfx/distinfo
+	modified:   multimedia/obs-streamfx/files/patch-CMakeLists.txt
+	new file:   multimedia/obs-streamfx/files/patch-source_util_util-curl.hpp
+	modified:   multimedia/obs-streamfx/pkg-plist
+	modified:   multimedia/obs-studio/Makefile
+	modified:   multimedia/obs-studio/distinfo
+	modified:   multimedia/py-tvnamer/Makefile
+	modified:   multimedia/py-tvnamer/distinfo
+	modified:   net-mgmt/collectd5/Makefile
+	modified:   net-mgmt/collectd5/distinfo
+	modified:   net/ocserv/Makefile
+	modified:   net/ocserv/distinfo
+	modified:   net/ocserv/files/patch-configure.ac
+	modified:   net/ocserv/files/patch-doc_sample.config
+	modified:   net/ocserv/pkg-plist
+	modified:   net/traefik/Makefile
+	modified:   net/traefik/distinfo
+	modified:   net/traefik/files/traefik.in
+	modified:   net/traefik/pkg-message
+	modified:   sysutils/pot/Makefile
+	modified:   sysutils/py-dict-toolbox/Makefile
+	modified:   sysutils/racktables/Makefile
+	modified:   sysutils/racktables/distinfo
+	modified:   www/deno/Makefile
+	modified:   www/deno/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   audio/forked-daapd/Makefile
+
+
+It took 3.47 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 0df09ed8fc42 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 0df09ed8fc42 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
