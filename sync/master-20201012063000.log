@@ -47,3 +47,229 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing graphics/mesa-dri/files/patch-src_util_u__thread.h
+Removing graphics/mesa-dri/files/patch-src_util_os__time.c
+Removing graphics/mesa-dri/files/patch-src_util_futex.h
+Removing graphics/mesa-dri/files/patch-src_mesa_main_macros.h
+Removing graphics/mesa-dri/files/patch-src_mapi_glapi_gen_gl__gentable.py
+Removing graphics/mesa-dri/files/patch-src_intel_vulkan_anv__queue.c
+Removing graphics/mesa-dri/files/patch-src_intel_vulkan_anv__gem.c
+Removing graphics/mesa-dri/files/patch-src_intel_vulkan_anv__allocator.c
+Removing graphics/mesa-dri/files/patch-src_intel_tools_error2aub.c
+Removing graphics/mesa-dri/files/patch-src_intel_tools_aubinator__error__decode.c
+Removing graphics/mesa-dri/files/patch-src_intel_tools_aub__mem.c
+Removing graphics/mesa-dri/files/patch-src_intel_compiler_brw__fs__bank__conflicts.cpp
+Removing graphics/mesa-dri/files/patch-src_gallium_targets_xvmc_meson.build
+Removing graphics/mesa-dri/files/patch-src_gallium_state__trackers_xvmc_meson.build
+Removing graphics/mesa-dri/files/patch-src_gallium_state__trackers_clover_util_range.hpp
+Removing graphics/mesa-dri/files/patch-src_gallium_state__trackers_clover_llvm_metadata.hpp
+Removing graphics/mesa-dri/files/patch-src_gallium_state__trackers_clover_llvm_invocation.cpp
+Removing graphics/mesa-dri/files/patch-src_gallium_include_pipe_p__config.h
+Removing graphics/mesa-dri/files/patch-src_gallium_auxiliary_pipe-loader_pipe__loader__drm.c
+Removing graphics/mesa-dri/files/patch-src_amd_vulkan_winsys_amdgpu_radv__amdgpu__cs.c
+Removing graphics/mesa-dri/files/patch-include_GL_internal_dri__interface.h
+Removing graphics/mesa-dri/files/patch-i386
+Removing graphics/mesa-dri/files/patch-eda36feb.c
+Removing graphics/mesa-dri/files/patch-compat-include-guards
+Removing graphics/mesa-dri/files/patch-bd4380c6.c
+Removing graphics/mesa-dri/files/patch-b7f97598.c
+Removing graphics/mesa-dri/files/patch-a134ac5e.c
+Removing graphics/mesa-dri/files/patch-75e5720e.c
+Removing graphics/mesa-dri/files/extra-src_mesa_drivers_dri_i965_intel__screen.c
+Removing devel/gvfs/files/patch-client_Makefile.in
+Removing audio/ardour6/files/patch-wscript
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   6 +
+ UPDATING                                           |   8 ++
+ audio/ardour6/Makefile                             |  10 +-
+ audio/ardour6/files/patch-wscript                  |  25 ----
+ devel/gvfs/Makefile                                | 115 +++++++---------
+ devel/gvfs/distinfo                                |   6 +-
+ devel/gvfs/files/patch-client_Makefile.in          |  11 --
+ devel/gvfs/pkg-plist                               |  98 ++++----------
+ devel/libclc/Makefile                              |   5 +-
+ devel/libgdata/Makefile                            |   9 +-
+ devel/libgdata/distinfo                            |   6 +-
+ devel/libgdata/pkg-plist                           | 146 +--------------------
+ graphics/Makefile                                  |   4 +-
+ graphics/dssim/Makefile                            |  46 +++----
+ graphics/dssim/distinfo                            |  94 ++++++-------
+ graphics/libosmesa/Makefile                        |  23 ++--
+ graphics/mesa-dri/Makefile                         |  45 ++-----
+ graphics/mesa-dri/Makefile.common                  |  34 +++--
+ graphics/mesa-dri/distinfo                         |   6 +-
+ .../files/extra-src_gallium_auxiliary_meson.build  |  18 +++
+ .../extra-src_gallium_auxiliary_vl_vl__stubs.c     |  17 +++
+ ...extra-src_mesa_drivers_dri_i965_intel__screen.c |  37 ------
+ graphics/mesa-dri/files/patch-75e5720e.c           |  69 ----------
+ graphics/mesa-dri/files/patch-a134ac5e.c           |  40 ------
+ graphics/mesa-dri/files/patch-b7f97598.c           |  40 ------
+ graphics/mesa-dri/files/patch-bd4380c6.c           |  28 ----
+ .../mesa-dri/files/patch-compat-include-guards     |  64 ---------
+ graphics/mesa-dri/files/patch-eda36feb.c           |  36 -----
+ graphics/mesa-dri/files/patch-i386                 |  53 --------
+ .../patch-include_GL_internal_dri__interface.h     |  19 ---
+ graphics/mesa-dri/files/patch-meson.build          |  94 +++++--------
+ .../files/patch-src_amd_vulkan_radv__device.c      |  24 ++--
+ ...src_amd_vulkan_winsys_amdgpu_radv__amdgpu__cs.c |  14 --
+ ...llium_auxiliary_pipe-loader_pipe__loader__drm.c | 118 -----------------
+ .../patch-src_gallium_include_pipe_p__config.h     |  15 ---
+ ...lium_state__trackers_clover_llvm_invocation.cpp |  30 -----
+ ...allium_state__trackers_clover_llvm_metadata.hpp |  13 --
+ ...c_gallium_state__trackers_clover_util_range.hpp |  31 -----
+ ...ch-src_gallium_state__trackers_xvmc_meson.build |  19 ---
+ .../patch-src_gallium_targets_xvmc_meson.build     |  11 --
+ ...src_intel_compiler_brw__fs__bank__conflicts.cpp |  18 ---
+ .../files/patch-src_intel_tools_aub__mem.c         |  39 ------
+ ...atch-src_intel_tools_aubinator__error__decode.c |  14 --
+ .../files/patch-src_intel_tools_error2aub.c        |  14 --
+ .../files/patch-src_intel_vulkan_anv__allocator.c  |  57 --------
+ .../files/patch-src_intel_vulkan_anv__device.c     |  51 +------
+ .../files/patch-src_intel_vulkan_anv__gem.c        |  14 --
+ .../files/patch-src_intel_vulkan_anv__queue.c      |  18 ---
+ .../files/patch-src_mapi_glapi_gen_gl__gentable.py |  11 --
+ .../mesa-dri/files/patch-src_mesa_main_macros.h    |  13 --
+ graphics/mesa-dri/files/patch-src_util_futex.h     |  52 --------
+ graphics/mesa-dri/files/patch-src_util_os__file.c  |  50 +++++++
+ graphics/mesa-dri/files/patch-src_util_os__misc.c  |  26 ++++
+ graphics/mesa-dri/files/patch-src_util_os__time.c  |  13 --
+ .../mesa-dri/files/patch-src_util_u__process.c     |  29 ++++
+ graphics/mesa-dri/files/patch-src_util_u__thread.h |  42 ------
+ graphics/mesa-dri/files/pkg-message.in             |   9 ++
+ graphics/mesa-dri/pkg-plist                        |  14 --
+ graphics/mesa-gallium-va/Makefile                  |  44 +++++++
+ graphics/mesa-gallium-va/pkg-descr                 |   9 ++
+ graphics/mesa-gallium-va/pkg-plist                 |   3 +
+ graphics/mesa-gallium-vdpau/Makefile               |  45 +++++++
+ graphics/mesa-gallium-vdpau/pkg-descr              |   9 ++
+ graphics/mesa-gallium-vdpau/pkg-plist              |  13 ++
+ .../{libxatracker => mesa-gallium-xa}/Makefile     |  27 ++--
+ .../{libxatracker => mesa-gallium-xa}/pkg-descr    |   0
+ .../{libxatracker => mesa-gallium-xa}/pkg-plist    |   0
+ graphics/mesa-libs/Makefile                        |  33 ++---
+ graphics/mesa-libs/pkg-plist                       |   2 -
+ lang/clover/Makefile                               |  28 ++--
+ net-im/py-python-telegram-bot/Makefile             |   2 +-
+ net-im/py-python-telegram-bot/distinfo             |   6 +-
+ net/istgt/files/patch-src_istgt__lu.h              |  18 +++
+ science/py-phonopy/Makefile                        |   2 +-
+ science/py-phonopy/distinfo                        |   6 +-
+ security/heaan/files/patch-TimeUtils.h             |  10 ++
+ security/libp11/Makefile                           |   3 +-
+ security/libp11/distinfo                           |   6 +-
+ security/libp11/pkg-plist                          |   2 +-
+ sysutils/terragrunt/Makefile                       |   3 +-
+ sysutils/terragrunt/distinfo                       |   6 +-
+ www/py-requests/Makefile                           |   1 +
+ www/py-requests/files/patch-setup.py               |  35 +++--
+ www/uwsgi/Makefile                                 |   2 +
+ x11-drivers/xf86-video-vmware/Makefile             |   2 +-
+ 85 files changed, 673 insertions(+), 1615 deletions(-)
+ delete mode 100644 audio/ardour6/files/patch-wscript
+ delete mode 100644 devel/gvfs/files/patch-client_Makefile.in
+ create mode 100644 graphics/mesa-dri/files/extra-src_gallium_auxiliary_meson.build
+ create mode 100644 graphics/mesa-dri/files/extra-src_gallium_auxiliary_vl_vl__stubs.c
+ delete mode 100644 graphics/mesa-dri/files/extra-src_mesa_drivers_dri_i965_intel__screen.c
+ delete mode 100644 graphics/mesa-dri/files/patch-75e5720e.c
+ delete mode 100644 graphics/mesa-dri/files/patch-a134ac5e.c
+ delete mode 100644 graphics/mesa-dri/files/patch-b7f97598.c
+ delete mode 100644 graphics/mesa-dri/files/patch-bd4380c6.c
+ delete mode 100644 graphics/mesa-dri/files/patch-compat-include-guards
+ delete mode 100644 graphics/mesa-dri/files/patch-eda36feb.c
+ delete mode 100644 graphics/mesa-dri/files/patch-i386
+ delete mode 100644 graphics/mesa-dri/files/patch-include_GL_internal_dri__interface.h
+ delete mode 100644 graphics/mesa-dri/files/patch-src_amd_vulkan_winsys_amdgpu_radv__amdgpu__cs.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_auxiliary_pipe-loader_pipe__loader__drm.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_include_pipe_p__config.h
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_state__trackers_clover_llvm_invocation.cpp
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_state__trackers_clover_llvm_metadata.hpp
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_state__trackers_clover_util_range.hpp
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_state__trackers_xvmc_meson.build
+ delete mode 100644 graphics/mesa-dri/files/patch-src_gallium_targets_xvmc_meson.build
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_compiler_brw__fs__bank__conflicts.cpp
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_tools_aub__mem.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_tools_aubinator__error__decode.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_tools_error2aub.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_vulkan_anv__allocator.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_vulkan_anv__gem.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_intel_vulkan_anv__queue.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_mapi_glapi_gen_gl__gentable.py
+ delete mode 100644 graphics/mesa-dri/files/patch-src_mesa_main_macros.h
+ delete mode 100644 graphics/mesa-dri/files/patch-src_util_futex.h
+ create mode 100644 graphics/mesa-dri/files/patch-src_util_os__file.c
+ create mode 100644 graphics/mesa-dri/files/patch-src_util_os__misc.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_util_os__time.c
+ create mode 100644 graphics/mesa-dri/files/patch-src_util_u__process.c
+ delete mode 100644 graphics/mesa-dri/files/patch-src_util_u__thread.h
+ create mode 100644 graphics/mesa-dri/files/pkg-message.in
+ create mode 100644 graphics/mesa-gallium-va/Makefile
+ create mode 100644 graphics/mesa-gallium-va/pkg-descr
+ create mode 100644 graphics/mesa-gallium-va/pkg-plist
+ create mode 100644 graphics/mesa-gallium-vdpau/Makefile
+ create mode 100644 graphics/mesa-gallium-vdpau/pkg-descr
+ create mode 100644 graphics/mesa-gallium-vdpau/pkg-plist
+ rename graphics/{libxatracker => mesa-gallium-xa}/Makefile (65%)
+ rename graphics/{libxatracker => mesa-gallium-xa}/pkg-descr (100%)
+ rename graphics/{libxatracker => mesa-gallium-xa}/pkg-plist (100%)
+ create mode 100644 net/istgt/files/patch-src_istgt__lu.h
+ create mode 100644 security/heaan/files/patch-TimeUtils.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    07e0ffd2b3d9..d5252ba45b0f  master -> master        
+remote:    9cedfe0cf464..07e0ffd2b3d9  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   07e0ffd2b3d9..d5252ba45b0f  master -> master
+==== END: master ====
