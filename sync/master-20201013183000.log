@@ -47,3 +47,203 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing graphics/libopenraw/files/patch-gnome_include_libopenraw-gnome_Makefile.in
+Removing graphics/gdal/files/patch-frmts-jpeg2000-jpeg2000dataset.cpp
+Removing graphics/gdal/files/patch-configure
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    1 -
+ audio/abgate-lv2/Makefile                          |    5 +-
+ audio/abgate-lv2/distinfo                          |    4 +-
+ databases/py-mycli/Makefile                        |    3 +-
+ .../patch-mycli-packages-completion_engine.py      |   19 +
+ databases/py-mycli/files/patch-setup.py            |   11 +
+ databases/py-mycli/pkg-descr                       |    2 +-
+ databases/py-pgcli/Makefile                        |    3 +-
+ databases/py-pgcli/files/patch-setup.py            |   11 +
+ databases/py-pgcli/pkg-descr                       |    2 +-
+ databases/py-python-binary-memcached/Makefile      |    2 +-
+ databases/py-python-binary-memcached/distinfo      |    6 +-
+ databases/py-sqlparse/Makefile                     |    2 +-
+ databases/py-sqlparse/distinfo                     |    6 +-
+ devel/Makefile                                     |    2 +
+ devel/llvm-cheri/Makefile                          |  374 +++
+ devel/llvm-cheri/Makefile.snapshot                 |   11 +
+ devel/llvm-cheri/distinfo                          |    3 +
+ devel/llvm-cheri/files/gen-Makefile.snapshot.sh    |   48 +
+ devel/llvm-cheri/files/llvm-wrapper.sh.in          |   11 +
+ .../files/patch-utils_llvm-build_llvmbuild_main.py |   21 +
+ devel/llvm-cheri/files/xtoolchain.mk.in            |    8 +
+ devel/llvm-cheri/pkg-descr                         |    8 +
+ devel/llvm-cheri/pkg-plist                         | 2838 ++++++++++++++++++++
+ devel/p5-Carp-Assert-More/Makefile                 |    2 +-
+ devel/p5-Carp-Assert-More/distinfo                 |    6 +-
+ devel/p5-Class-NamedParms/Makefile                 |    7 +-
+ devel/p5-Class-NamedParms/distinfo                 |    5 +-
+ devel/p5-Class-NamedParms/pkg-plist                |    2 +-
+ devel/p5-SVN-Look/Makefile                         |    6 +-
+ devel/p5-SVN-Look/distinfo                         |    5 +-
+ devel/p5-Test-Dependencies/Makefile                |    2 +-
+ devel/p5-Test-Dependencies/distinfo                |    6 +-
+ devel/p5-Tie-FileLRUCache/Makefile                 |    7 +-
+ devel/p5-Tie-FileLRUCache/distinfo                 |    5 +-
+ devel/p5-Tie-RefHash/Makefile                      |    5 +-
+ devel/p5-Tie-RefHash/distinfo                      |    5 +-
+ devel/p5-Tie-RefHash/pkg-plist                     |    2 +-
+ devel/py-attrs/Makefile                            |    4 +-
+ devel/py-attrs/distinfo                            |    6 +-
+ devel/py-attrs/pkg-descr                           |    2 +-
+ devel/py-behave/Makefile                           |   25 +
+ devel/py-behave/distinfo                           |    3 +
+ devel/py-behave/pkg-descr                          |    9 +
+ devel/py-colorlog/Makefile                         |    2 +-
+ devel/py-colorlog/distinfo                         |    6 +-
+ devel/py-sniffio/Makefile                          |    4 +-
+ devel/py-sniffio/distinfo                          |    6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |    2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |    6 +-
+ devel/rubygem-aws-sdk-costexplorer/Makefile        |    2 +-
+ devel/rubygem-aws-sdk-costexplorer/distinfo        |    6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |    6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |    2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |    6 +-
+ devel/rubygem-google-api-client/Makefile           |    2 +-
+ devel/rubygem-google-api-client/distinfo           |    6 +-
+ german/mythes/Makefile                             |    2 +-
+ german/mythes/distinfo                             |    6 +-
+ graphics/gdal/Makefile                             |    3 +-
+ graphics/gdal/distinfo                             |    6 +-
+ ...tch-apps_GNUmakefile => patch-apps-GNUmakefile} |    4 +-
+ graphics/gdal/files/patch-configure                |   23 -
+ .../patch-frmts-jpeg2000-jpeg2000_vsil_io.cpp      |   29 +-
+ .../files/patch-frmts-jpeg2000-jpeg2000dataset.cpp |   22 -
+ graphics/libopenraw/Makefile                       |   80 +-
+ graphics/libopenraw/distinfo                       |  120 +-
+ ...atch-gnome_include_libopenraw-gnome_Makefile.in |   12 -
+ graphics/libopenraw/pkg-plist                      |   45 +-
+ graphics/p5-Geo-GDAL/Makefile                      |    2 +-
+ graphics/p5-Geo-GDAL/distinfo                      |    6 +-
+ graphics/py-gdal/Makefile                          |    2 +-
+ graphics/py-gdal/distinfo                          |    6 +-
+ lang/gcc11-devel/Makefile                          |    2 +-
+ lang/gcc11-devel/distinfo                          |    6 +-
+ mail/mailscanner/Makefile                          |    2 +-
+ mail/mailscanner/files/pkg-install.in              |   14 +-
+ mail/mailscanner/pkg-plist                         |    1 +
+ misc/py-tqdm/Makefile                              |    2 +-
+ misc/py-tqdm/distinfo                              |    6 +-
+ net/p5-Net-Amazon-S3/Makefile                      |    2 +-
+ net/p5-Net-Amazon-S3/distinfo                      |    6 +-
+ net/p5-Net-Amazon-S3/pkg-plist                     |    2 +
+ net/py-avahi/Makefile                              |    2 +-
+ net/rubygem-fog-gridscale/Makefile                 |    7 +-
+ polish/hunspell/Makefile                           |    2 +-
+ polish/hunspell/distinfo                           |    6 +-
+ sysutils/p5-File-Listing/Makefile                  |    2 +-
+ sysutils/p5-File-Listing/distinfo                  |    6 +-
+ textproc/Makefile                                  |    1 +
+ textproc/p5-XML-MyXML/Makefile                     |    2 +-
+ textproc/p5-XML-MyXML/distinfo                     |    6 +-
+ textproc/p5-XML-MyXML/pkg-plist                    |    2 +
+ textproc/py-parse-type/Makefile                    |   28 +
+ textproc/py-parse-type/distinfo                    |    3 +
+ textproc/py-parse-type/pkg-descr                   |   11 +
+ www/py-google-cloud-datastore/Makefile             |    2 +-
+ www/py-google-cloud-datastore/distinfo             |    6 +-
+ www/py-httpx/Makefile                              |    2 +-
+ www/py-httpx/distinfo                              |    6 +-
+ www/searx/Makefile                                 |    2 +-
+ x11-fonts/twemoji-color-font-ttf/Makefile          |    2 +-
+ x11-fonts/twemoji-color-font-ttf/distinfo          |    6 +-
+ x11/libinput/Makefile                              |    2 +-
+ x11/libinput/distinfo                              |    6 +-
+ x11/xcb-proto/Makefile                             |    9 +-
+ x11/xcb-proto/distinfo                             |   14 +-
+ x11/xkeyboard-config/Makefile                      |    2 +-
+ x11/xkeyboard-config/distinfo                      |    6 +-
+ x11/xkeyboard-config/pkg-plist                     |    1 +
+ 111 files changed, 3845 insertions(+), 283 deletions(-)
+ create mode 100644 databases/py-mycli/files/patch-mycli-packages-completion_engine.py
+ create mode 100644 databases/py-mycli/files/patch-setup.py
+ create mode 100644 databases/py-pgcli/files/patch-setup.py
+ create mode 100644 devel/llvm-cheri/Makefile
+ create mode 100644 devel/llvm-cheri/Makefile.snapshot
+ create mode 100644 devel/llvm-cheri/distinfo
+ create mode 100644 devel/llvm-cheri/files/gen-Makefile.snapshot.sh
+ create mode 100644 devel/llvm-cheri/files/llvm-wrapper.sh.in
+ create mode 100644 devel/llvm-cheri/files/patch-utils_llvm-build_llvmbuild_main.py
+ create mode 100644 devel/llvm-cheri/files/xtoolchain.mk.in
+ create mode 100644 devel/llvm-cheri/pkg-descr
+ create mode 100644 devel/llvm-cheri/pkg-plist
+ create mode 100644 devel/py-behave/Makefile
+ create mode 100644 devel/py-behave/distinfo
+ create mode 100644 devel/py-behave/pkg-descr
+ rename graphics/gdal/files/{patch-apps_GNUmakefile => patch-apps-GNUmakefile} (78%)
+ delete mode 100644 graphics/gdal/files/patch-configure
+ delete mode 100644 graphics/gdal/files/patch-frmts-jpeg2000-jpeg2000dataset.cpp
+ delete mode 100644 graphics/libopenraw/files/patch-gnome_include_libopenraw-gnome_Makefile.in
+ create mode 100644 textproc/py-parse-type/Makefile
+ create mode 100644 textproc/py-parse-type/distinfo
+ create mode 100644 textproc/py-parse-type/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    54f92486a6e4..448ec28b11ff  master -> master        
+remote:    752e91380c9f..54f92486a6e4  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   54f92486a6e4..448ec28b11ff  master -> master
+==== END: master ====
