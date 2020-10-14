@@ -47,3 +47,135 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging sysutils/lsof/Makefile
+CONFLICT (content): Merge conflict in sysutils/lsof/Makefile
+Removing math/libmesh/files/patch-contrib_netcdf_4.4.1.1_configure.ac
+Removing math/libmesh/files/patch-Makefile.am
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc sysutils/lsof/Makefile
+index f5993fed324a,a1dc423f27ca..000000000000
+--- a/sysutils/lsof/Makefile
++++ b/sysutils/lsof/Makefile
+@@@ -18,9 -18,7 +18,13 @@@ LICENSE_NAME=	lso
+  LICENSE_FILE=	${FILESDIR}/LICENSE
+  LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +USES=		shebangfix tar:bzip2
+++=======
++ USES=		compiler shebangfix tar:bzip2
+++>>>>>>> freebsd/master
+  
+  HAS_CONFIGURE=	yes
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/fabla2-lv2/Makefile
+	modified:   audio/protracker/Makefile
+	modified:   audio/protracker/distinfo
+	modified:   audio/sorcer-lv2/Makefile
+	modified:   audio/sorcer-lv2/distinfo
+	modified:   audio/sorcer-lv2/pkg-descr
+	modified:   benchmarks/ali/Makefile
+	modified:   benchmarks/ali/distinfo
+	modified:   devel/gvfs/Makefile
+	modified:   devel/gvfs/pkg-plist
+	modified:   devel/py-monty/Makefile
+	modified:   devel/py-monty/distinfo
+	modified:   devel/py-oci/Makefile
+	modified:   devel/py-oci/distinfo
+	modified:   graphics/ogre3d/pkg-descr
+	modified:   lang/rust-bootstrap/Makefile
+	modified:   lang/rust-bootstrap/distinfo
+	modified:   lang/rust-nightly/Makefile
+	modified:   lang/rust-nightly/distinfo
+	modified:   lang/rust/Makefile
+	modified:   math/libmesh/Makefile
+	modified:   math/libmesh/distinfo
+	deleted:    math/libmesh/files/patch-Makefile.am
+	deleted:    math/libmesh/files/patch-contrib_netcdf_4.4.1.1_configure.ac
+	modified:   math/libmesh/pkg-plist
+	modified:   net/croc/Makefile
+	modified:   net/croc/distinfo
+	modified:   net/nifmon/files/patch-Makefile
+	modified:   net/rsync-bpc/Makefile
+	modified:   net/rsync-bpc/distinfo
+	modified:   net/storj/Makefile
+	modified:   net/storj/Makefile.deps
+	modified:   net/storj/distinfo
+	modified:   science/coordgenlibs/Makefile
+	modified:   science/coordgenlibs/distinfo
+	modified:   science/coordgenlibs/pkg-plist
+	modified:   science/maeparser/Makefile
+	modified:   science/maeparser/distinfo
+	modified:   science/maeparser/pkg-plist
+	modified:   science/nwchem-data/Makefile
+	modified:   science/nwchem-data/distinfo
+	modified:   textproc/ugrep/Makefile
+	modified:   textproc/ugrep/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sysutils/lsof/Makefile
+
+
+It took 3.13 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at dca9e2e5e0c8 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.96 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at dca9e2e5e0c8 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
