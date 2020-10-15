@@ -47,3 +47,162 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging lang/gcc7/Makefile
+CONFLICT (content): Merge conflict in lang/gcc7/Makefile
+Auto-merging editors/emacs/Makefile
+Auto-merging editors/emacs-devel/Makefile
+Auto-merging databases/postgis23/Makefile
+CONFLICT (content): Merge conflict in databases/postgis23/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc databases/postgis23/Makefile
+index 361a8b45f56f,ade08e0a9ac0..000000000000
+--- a/databases/postgis23/Makefile
++++ b/databases/postgis23/Makefile
+@@@ -13,7 -13,8 +13,12 @@@ COMMENT=	Geographic objects support fo
+  LICENSE=	GPLv2
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ DEPRECATED=	Upstream no longer maintained
++ EXPIRATION_DATE=	2020-11-15
+++>>>>>>> freebsd/master
+  
+  LIB_DEPENDS=	libproj.so:graphics/proj \
+  		libgeos.so:graphics/geos \
+diff --cc lang/gcc7/Makefile
+index de842b99312c,1b4b2c0cb1a7..000000000000
+--- a/lang/gcc7/Makefile
++++ b/lang/gcc7/Makefile
+@@@ -37,12 -37,9 +37,15 @@@ SSP_UNSAFE=	ye
+  CFLAGS:=	${CFLAGS:N-mretpoline}
+  CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off retpoline:off
+ +
+ +OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
+++=======
++ OPTIONS_DEFINE=		BOOTSTRAP
+++>>>>>>> freebsd/master
+  OPTIONS_DEFAULT=	BOOTSTRAP
+  BOOTSTRAP_DESC=		Build using a full bootstrap
+- GRAPHITE_DESC=		Support for Graphite loop optimizations
+  
+  .include <bsd.port.pre.mk>
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   databases/postgis24/Makefile
+	modified:   deskutils/gnome-contacts/Makefile
+	modified:   devel/fatal/Makefile
+	modified:   devel/fatal/distinfo
+	modified:   devel/fbthrift/Makefile
+	modified:   devel/fbthrift/distinfo
+	modified:   devel/fbthrift/pkg-plist
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/folly/files/patch-CMake_folly-deps.cmake
+	modified:   devel/folly/pkg-plist
+	modified:   editors/emacs-devel/Makefile
+	modified:   editors/emacs-devel/distinfo
+	modified:   editors/emacs-devel/pkg-plist
+	modified:   editors/emacs/Makefile
+	modified:   graphics/ogre3d19/pkg-descr
+	modified:   mail/alpine/Makefile
+	modified:   mail/alpine/distinfo
+	modified:   mail/horde-imp/Makefile
+	modified:   mail/horde-imp/distinfo
+	modified:   mail/thunderbird/Makefile
+	modified:   mail/thunderbird/distinfo
+	modified:   net-p2p/monero-cli/Makefile
+	modified:   net-p2p/monero-cli/distinfo
+	modified:   net/fbzmq/Makefile
+	modified:   net/fbzmq/distinfo
+	modified:   net/grpcui/Makefile
+	modified:   net/grpcui/distinfo
+	modified:   net/hblock/Makefile
+	modified:   net/hblock/distinfo
+	modified:   net/mvfst/Makefile
+	modified:   net/mvfst/distinfo
+	modified:   net/mvfst/pkg-plist
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   net/wangle/Makefile
+	modified:   net/wangle/distinfo
+	modified:   science/nwchem/Makefile
+	modified:   science/nwchem/distinfo
+	modified:   science/nwchem/pkg-descr
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/fizz/pkg-plist
+	modified:   textproc/google-translate-cli/Makefile
+	modified:   textproc/google-translate-cli/distinfo
+	modified:   www/proxygen/Makefile
+	modified:   www/proxygen/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   databases/postgis23/Makefile
+	both modified:   lang/gcc7/Makefile
+
+
+It took 3.22 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1817b062271b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.28 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1817b062271b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
