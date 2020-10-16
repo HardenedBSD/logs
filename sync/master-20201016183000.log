@@ -47,3 +47,624 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11/xterm/Makefile
+Removing x11-toolkits/py-gtk2/pkg-plist
+Removing x11-toolkits/py-gtk2/pkg-descr
+Removing x11-toolkits/py-gtk2/files/patch-doc_Makefile.in
+Removing x11-toolkits/py-gtk2/files/patch-configure
+Removing x11-toolkits/py-gtk2/files/patch-Makefile.in
+Removing x11-toolkits/py-gtk2/distinfo
+Removing x11-toolkits/py-gtk2/Makefile
+Auto-merging www/node12/Makefile
+Auto-merging www/node/Makefile
+Auto-merging www/nginx/Makefile
+Auto-merging www/gitea/Makefile
+Removing sysutils/dmidecode/files/patch-dmidecode.c
+Auto-merging sysutils/dmidecode/Makefile
+CONFLICT (content): Merge conflict in sysutils/dmidecode/Makefile
+Auto-merging news/fidogate/Makefile
+Removing net/py-mpi4py/files/mpi2.cfg
+Auto-merging multimedia/mpc-qt/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging lang/gcc7/Makefile
+CONFLICT (content): Merge conflict in lang/gcc7/Makefile
+Auto-merging games/gtkradiant/Makefile
+Removing emulators/mgba/files/patch-src_platform_qt_CoreManager.cpp
+Auto-merging editors/emacs/Makefile
+Auto-merging editors/emacs-devel/Makefile
+Removing devel/geany-plugin-geanypy/pkg-plist
+Removing devel/geany-plugin-geanypy/pkg-descr
+Removing devel/geany-plugin-geanypy/Makefile
+Removing databases/xapian-bindings12/pkg-plist
+Auto-merging databases/rocksdb/Makefile
+Auto-merging databases/postgis23/Makefile
+CONFLICT (content): Merge conflict in databases/postgis23/Makefile
+Auto-merging databases/mysql57-server/Makefile
+Removing comms/chirp/pkg-descr
+Removing comms/chirp/files/patch-setup.py
+Removing comms/chirp/files/patch-chirp_platform.py
+Removing comms/chirp/distinfo
+Removing comms/chirp/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc databases/postgis23/Makefile
+index 361a8b45f56f,ade08e0a9ac0..000000000000
+--- a/databases/postgis23/Makefile
++++ b/databases/postgis23/Makefile
+@@@ -13,7 -13,8 +13,12 @@@ COMMENT=	Geographic objects support fo
+  LICENSE=	GPLv2
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ DEPRECATED=	Upstream no longer maintained
++ EXPIRATION_DATE=	2020-11-15
+++>>>>>>> freebsd/master
+  
+  LIB_DEPENDS=	libproj.so:graphics/proj \
+  		libgeos.so:graphics/geos \
+diff --cc lang/gcc7/Makefile
+index de842b99312c,1b4b2c0cb1a7..000000000000
+--- a/lang/gcc7/Makefile
++++ b/lang/gcc7/Makefile
+@@@ -37,12 -37,9 +37,15 @@@ SSP_UNSAFE=	ye
+  CFLAGS:=	${CFLAGS:N-mretpoline}
+  CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off retpoline:off
+ +
+ +OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
+++=======
++ OPTIONS_DEFINE=		BOOTSTRAP
+++>>>>>>> freebsd/master
+  OPTIONS_DEFAULT=	BOOTSTRAP
+  BOOTSTRAP_DESC=		Build using a full bootstrap
+- GRAPHITE_DESC=		Support for Graphite loop optimizations
+  
+  .include <bsd.port.pre.mk>
+  
+diff --cc sysutils/dmidecode/Makefile
+index 58b888bc86f6,546636bda615..000000000000
+--- a/sysutils/dmidecode/Makefile
++++ b/sysutils/dmidecode/Makefile
+@@@ -16,10 -16,6 +16,13 @@@ ONLY_FOR_ARCHS=	amd64 i38
+  
+  USES=		tar:xz
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +MAKE_ENV=	DOCSDIR="${DOCSDIR}"
+ +
+++=======
+++>>>>>>> freebsd/master
+  SUB_FILES=	dmidecode
+  
+  OPTIONS_DEFINE=	DOCS
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/gnome.mk
+	modified:   Mk/Uses/kde.mk
+	modified:   Mk/Uses/lua.mk
+	modified:   Mk/bsd.default-versions.mk
+	modified:   archivers/kf5-karchive/distinfo
+	modified:   archivers/py-pyliblzma/Makefile
+	modified:   archivers/xarchiver/Makefile
+	modified:   archivers/xarchiver/pkg-plist
+	modified:   biology/py-biopython/Makefile
+	modified:   biology/py-biopython/distinfo
+	modified:   cad/verilator/Makefile
+	modified:   cad/verilator/distinfo
+	modified:   comms/Makefile
+	deleted:    comms/chirp/Makefile
+	deleted:    comms/chirp/distinfo
+	deleted:    comms/chirp/files/patch-chirp_platform.py
+	deleted:    comms/chirp/files/patch-setup.py
+	deleted:    comms/chirp/pkg-descr
+	modified:   databases/mysql56-server/Makefile
+	renamed:    databases/mysql56-server/pkg-message -> databases/mysql56-server/files/pkg-message.in
+	modified:   databases/mysql57-server/Makefile
+	renamed:    databases/mysql57-server/pkg-message -> databases/mysql57-server/files/pkg-message.in
+	modified:   databases/mysql80-server/Makefile
+	renamed:    databases/mysql80-server/pkg-message -> databases/mysql80-server/files/pkg-message.in
+	modified:   databases/postgis24/Makefile
+	modified:   databases/postgresql-rum/Makefile
+	modified:   databases/postgresql-rum/distinfo
+	modified:   databases/py-htsql/Makefile
+	modified:   databases/py-sqlalchemy13/Makefile
+	modified:   databases/py-sqlalchemy13/distinfo
+	modified:   databases/py-swift/Makefile
+	modified:   databases/rocksdb/Makefile
+	modified:   databases/rocksdb/distinfo
+	modified:   databases/xapian-bindings12/Makefile
+	deleted:    databases/xapian-bindings12/pkg-plist
+	modified:   deskutils/foliate/Makefile
+	modified:   deskutils/foliate/distinfo
+	modified:   deskutils/gnome-contacts/Makefile
+	modified:   deskutils/plasma5-sddm-kcm/Makefile
+	modified:   devel/Makefile
+	modified:   devel/R-cran-tibble/Makefile
+	modified:   devel/R-cran-tibble/distinfo
+	modified:   devel/aws-c-common/Makefile
+	modified:   devel/aws-c-common/distinfo
+	modified:   devel/aws-c-common/pkg-plist
+	modified:   devel/aws-c-event-stream/Makefile
+	modified:   devel/aws-sdk-cpp/Makefile
+	modified:   devel/aws-sdk-cpp/distinfo
+	modified:   devel/aws-sdk-cpp/pkg-plist
+	modified:   devel/awscli/Makefile
+	modified:   devel/awscli/distinfo
+	modified:   devel/bpython/Makefile
+	modified:   devel/bpython/distinfo
+	modified:   devel/bzr-fastimport/Makefile
+	modified:   devel/fatal/Makefile
+	modified:   devel/fatal/distinfo
+	modified:   devel/fbthrift/Makefile
+	modified:   devel/fbthrift/distinfo
+	modified:   devel/fbthrift/pkg-plist
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/folly/files/patch-CMake_folly-deps.cmake
+	modified:   devel/folly/pkg-plist
+	deleted:    devel/geany-plugin-geanypy/Makefile
+	deleted:    devel/geany-plugin-geanypy/pkg-descr
+	deleted:    devel/geany-plugin-geanypy/pkg-plist
+	modified:   devel/geany-plugins/files/bsd.geany-plugins.mk
+	modified:   devel/gitaly/Makefile
+	modified:   devel/gitaly/distinfo
+	modified:   devel/kf5-extra-cmake-modules/distinfo
+	modified:   devel/kf5-extra-cmake-modules/pkg-plist
+	modified:   devel/kf5-kapidox/Makefile
+	modified:   devel/kf5-kapidox/distinfo
+	modified:   devel/kf5-kapidox/pkg-plist
+	modified:   devel/kf5-kauth/distinfo
+	modified:   devel/kf5-kbookmarks/distinfo
+	modified:   devel/kf5-kcmutils/distinfo
+	modified:   devel/kf5-kconfig/distinfo
+	modified:   devel/kf5-kcoreaddons/distinfo
+	modified:   devel/kf5-kcoreaddons/pkg-plist
+	modified:   devel/kf5-kcrash/distinfo
+	modified:   devel/kf5-kdbusaddons/distinfo
+	modified:   devel/kf5-kdeclarative/Makefile
+	modified:   devel/kf5-kdeclarative/distinfo
+	modified:   devel/kf5-kdeclarative/pkg-plist
+	modified:   devel/kf5-kdoctools/distinfo
+	modified:   devel/kf5-kfilemetadata/distinfo
+	modified:   devel/kf5-ki18n/distinfo
+	modified:   devel/kf5-kidletime/distinfo
+	modified:   devel/kf5-kio/Makefile
+	modified:   devel/kf5-kio/distinfo
+	modified:   devel/kf5-kitemmodels/distinfo
+	modified:   devel/kf5-knewstuff/distinfo
+	modified:   devel/kf5-knotifications/distinfo
+	modified:   devel/kf5-knotifyconfig/distinfo
+	modified:   devel/kf5-kpackage/distinfo
+	modified:   devel/kf5-kparts/distinfo
+	modified:   devel/kf5-kparts/pkg-plist
+	modified:   devel/kf5-kpeople/distinfo
+	modified:   devel/kf5-kpty/distinfo
+	modified:   devel/kf5-kservice/distinfo
+	modified:   devel/kf5-ktexteditor/distinfo
+	modified:   devel/kf5-kunitconversion/distinfo
+	modified:   devel/kf5-solid/distinfo
+	modified:   devel/kf5-threadweaver/distinfo
+	modified:   devel/libphonenumber/Makefile
+	modified:   devel/libphonenumber/distinfo
+	modified:   devel/p5-Devel-PPPort/Makefile
+	modified:   devel/p5-Devel-PPPort/distinfo
+	modified:   devel/p5-Pod-Usage/Makefile
+	modified:   devel/p5-Pod-Usage/distinfo
+	new file:   devel/p5-Pod-Usage/files/patch-Makefile.PL
+	modified:   devel/pecl-ds/Makefile
+	modified:   devel/pecl-ds/distinfo
+	modified:   devel/py-ToscaWidgets/Makefile
+	modified:   devel/py-azure-appconfiguration/Makefile
+	modified:   devel/py-azure-appconfiguration/distinfo
+	modified:   devel/py-azure-mgmt-compute/Makefile
+	modified:   devel/py-azure-mgmt-compute/distinfo
+	modified:   devel/py-azure-mgmt-containerregistry/Makefile
+	modified:   devel/py-azure-mgmt-containerregistry/distinfo
+	modified:   devel/py-blessed/Makefile
+	modified:   devel/py-blessed/distinfo
+	modified:   devel/py-botocore/Makefile
+	modified:   devel/py-botocore/distinfo
+	modified:   devel/py-bullet3/Makefile
+	modified:   devel/py-bullet3/distinfo
+	modified:   devel/py-calendar/Makefile
+	modified:   devel/py-distorm/Makefile
+	modified:   devel/py-fabric1/Makefile
+	modified:   devel/py-fsspec/Makefile
+	modified:   devel/py-fsspec/distinfo
+	modified:   devel/py-hypothesis/Makefile
+	modified:   devel/py-hypothesis/distinfo
+	new file:   devel/py-kaptan/files/patch-setup.py
+	modified:   devel/py-libcst/Makefile
+	modified:   devel/py-libcst/distinfo
+	modified:   devel/py-meliae/Makefile
+	modified:   devel/py-oslo.service/Makefile
+	modified:   devel/py-oslo.service1/Makefile
+	modified:   devel/py-prompt_toolkit/Makefile
+	modified:   devel/py-prompt_toolkit/distinfo
+	modified:   devel/py-py/Makefile
+	modified:   devel/py-py/distinfo
+	modified:   devel/py-rcsparse/Makefile
+	modified:   devel/py-repoze.who-testutil/Makefile
+	modified:   devel/py-twext/Makefile
+	modified:   devel/py-twilio/Makefile
+	modified:   devel/py-twilio/distinfo
+	modified:   devel/pygobject3-common/Makefile
+	new file:   devel/pygobject3-common/files/patch-python39
+	modified:   devel/pyrex/Makefile
+	modified:   devel/ruby-gems/Makefile
+	modified:   devel/ruby-gems/distinfo
+	modified:   devel/rubygem-amazing_print/Makefile
+	modified:   devel/rubygem-amazing_print/distinfo
+	modified:   devel/rubygem-aws-sdk-core2/Makefile
+	modified:   devel/rubygem-aws-sdk-core2/distinfo
+	modified:   devel/rubygem-aws-sdk-resources2/Makefile
+	modified:   devel/rubygem-aws-sdk-resources2/distinfo
+	modified:   devel/rubygem-aws-sdk2/Makefile
+	modified:   devel/rubygem-aws-sdk2/distinfo
+	modified:   devel/rubygem-device_detector/Makefile
+	modified:   devel/rubygem-device_detector/distinfo
+	modified:   devel/rubygem-faraday_middleware-aws-sigv4/Makefile
+	modified:   devel/rubygem-rubocop-ast/Makefile
+	modified:   devel/rubygem-rubocop-ast/distinfo
+	modified:   devel/tbb/files/patch-build-BSD.inc
+	modified:   devel/tbb/files/patch-build_FreeBSD.gcc.inc
+	modified:   dns/kf5-kdnssd/distinfo
+	modified:   editors/emacs-devel/Makefile
+	modified:   editors/emacs-devel/distinfo
+	modified:   editors/emacs-devel/pkg-plist
+	modified:   editors/emacs/Makefile
+	modified:   emulators/mgba/Makefile
+	modified:   emulators/mgba/distinfo
+	deleted:    emulators/mgba/files/patch-src_platform_qt_CoreManager.cpp
+	modified:   emulators/mgba/pkg-plist
+	modified:   finance/electrum/Makefile
+	modified:   finance/electrum/distinfo
+	modified:   ftp/curl/Makefile
+	modified:   ftp/curl/distinfo
+	modified:   ftp/curl/pkg-plist
+	modified:   games/gtkradiant/Makefile
+	new file:   games/gtkradiant/files/patch-tools__quake2__q2map__qrad.c
+	new file:   games/gtkradiant/files/patch-tools__quake2__qdata_heretic2__sprites.c
+	new file:   games/gtkradiant/files/patch-tools__quake3__q3data__q3data.c
+	new file:   games/gtkradiant/files/patch-tools__quake3__q3map2__q3map2.h
+	modified:   games/mrboom/Makefile
+	modified:   games/mrboom/distinfo
+	modified:   games/mrboom/files/patch-Makefile
+	modified:   graphics/R-cran-rgdal/Makefile
+	modified:   graphics/R-cran-rgdal/distinfo
+	modified:   graphics/embree/Makefile
+	modified:   graphics/embree/distinfo
+	modified:   graphics/kf5-kimageformats/distinfo
+	modified:   graphics/kf5-kplotting/distinfo
+	modified:   graphics/kf5-kquickcharts/distinfo
+	modified:   graphics/kf5-prison/Makefile
+	modified:   graphics/kf5-prison/distinfo
+	modified:   graphics/kf5-prison/pkg-plist
+	modified:   graphics/krita/Makefile
+	modified:   graphics/krita/distinfo
+	modified:   graphics/krita/pkg-plist
+	modified:   graphics/ogre3d19/pkg-descr
+	modified:   graphics/photoqt/Makefile
+	modified:   graphics/photoqt/pkg-descr
+	modified:   graphics/qt-avif-image-plugin/Makefile
+	modified:   graphics/qt-avif-image-plugin/distinfo
+	modified:   japanese/py-tegaki/Makefile
+	modified:   lang/Makefile
+	modified:   lang/chibi-scheme/Makefile
+	modified:   lang/chibi-scheme/files/patch-Makefile
+	modified:   lang/chibi-scheme/files/patch-Makefile.detect
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/go-devel/Makefile
+	modified:   lang/go-devel/distinfo
+	modified:   lang/go/Makefile
+	modified:   lang/go/distinfo
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   lang/intel-compute-runtime/files/patch-rtld
+	modified:   lang/kf5-kross/distinfo
+	modified:   lang/lua53/Makefile
+	modified:   lang/lua53/distinfo
+	renamed:    lang/lua53/files/patch-src__Makefile -> lang/lua53/files/patch-src_Makefile
+	modified:   lang/lua53/pkg-plist
+	new file:   lang/lua54/Makefile
+	new file:   lang/lua54/distinfo
+	new file:   lang/lua54/files/extra-patch-libedit-dl
+	new file:   lang/lua54/files/lua-5.4.pc.in
+	new file:   lang/lua54/files/patch-src_Makefile
+	new file:   lang/lua54/pkg-descr
+	new file:   lang/lua54/pkg-plist
+	modified:   mail/alpine/Makefile
+	modified:   mail/alpine/distinfo
+	modified:   mail/horde-imp/Makefile
+	modified:   mail/horde-imp/distinfo
+	modified:   mail/phpmailer6/Makefile
+	modified:   mail/phpmailer6/distinfo
+	modified:   mail/thunderbird/Makefile
+	modified:   mail/thunderbird/distinfo
+	modified:   math/moab/Makefile
+	modified:   math/moab/distinfo
+	modified:   math/py-cvxpy/Makefile
+	modified:   math/py-cvxpy/distinfo
+	modified:   misc/kf5-purpose/distinfo
+	modified:   misc/kf5-purpose/pkg-plist
+	modified:   misc/py-cinder/Makefile
+	modified:   misc/py-progressbar231/Makefile
+	modified:   multimedia/kf5-kmediaplayer/distinfo
+	modified:   multimedia/libvpx/Makefile
+	modified:   multimedia/mpc-qt/Makefile
+	modified:   multimedia/mpc-qt/distinfo
+	modified:   multimedia/mpc-qt/pkg-plist
+	modified:   multimedia/plexmediaserver-plexpass/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/distinfo
+	modified:   multimedia/plexmediaserver/Makefile
+	modified:   multimedia/plexmediaserver/distinfo
+	modified:   multimedia/py-kaa-imlib2/Makefile
+	modified:   multimedia/py-kaa-metadata/Makefile
+	modified:   net-im/libtelepathy/Makefile
+	modified:   net-im/openfire/Makefile
+	modified:   net-im/openfire/distinfo
+	modified:   net-im/openfire/pkg-plist
+	modified:   net-mgmt/netdata/Makefile
+	modified:   net-mgmt/netdata/distinfo
+	modified:   net-p2p/monero-cli/Makefile
+	modified:   net-p2p/monero-cli/distinfo
+	modified:   net/fbzmq/Makefile
+	modified:   net/fbzmq/distinfo
+	modified:   net/grpcui/Makefile
+	modified:   net/grpcui/distinfo
+	modified:   net/hblock/Makefile
+	modified:   net/hblock/distinfo
+	modified:   net/kf5-kcalendarcore/distinfo
+	modified:   net/kf5-kcontacts/distinfo
+	modified:   net/kf5-kdav/distinfo
+	modified:   net/kf5-kdav/pkg-plist
+	modified:   net/kf5-kholidays/distinfo
+	modified:   net/kf5-kxmlrpcclient/distinfo
+	modified:   net/kf5-syndication/distinfo
+	modified:   net/mvfst/Makefile
+	modified:   net/mvfst/distinfo
+	modified:   net/mvfst/pkg-plist
+	modified:   net/openmpi/Makefile
+	modified:   net/openmpi3/Makefile
+	modified:   net/py-httpstat/Makefile
+	modified:   net/py-httpstat/distinfo
+	modified:   net/py-mpi4py/Makefile
+	modified:   net/py-mpi4py/files/mpi.cfg
+	deleted:    net/py-mpi4py/files/mpi2.cfg
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   net/rubygem-google-cloud-env/Makefile
+	modified:   net/rubygem-google-cloud-env/distinfo
+	modified:   net/wangle/Makefile
+	modified:   net/wangle/distinfo
+	modified:   news/fidogate/Makefile
+	modified:   news/fidogate/distinfo
+	modified:   news/fidogate/pkg-plist
+	modified:   science/nwchem/Makefile
+	modified:   science/nwchem/distinfo
+	modified:   science/nwchem/pkg-descr
+	modified:   science/py-moltemplate/Makefile
+	modified:   science/py-moltemplate/distinfo
+	modified:   science/smoldyn/Makefile
+	modified:   science/smoldyn/distinfo
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/fizz/pkg-plist
+	modified:   security/kf5-kdesu/distinfo
+	modified:   security/libpwquality/Makefile
+	modified:   security/libpwquality/distinfo
+	modified:   security/libpwquality/pkg-plist
+	modified:   security/py-mcrypt/Makefile
+	modified:   sysutils/bfs/Makefile
+	modified:   sysutils/bfs/distinfo
+	modified:   sysutils/dmidecode/distinfo
+	modified:   sysutils/dmidecode/files/patch-Makefile
+	deleted:    sysutils/dmidecode/files/patch-dmidecode.c
+	modified:   sysutils/go-wtf/Makefile
+	modified:   sysutils/go-wtf/distinfo
+	modified:   sysutils/kf5-baloo/distinfo
+	modified:   sysutils/kf5-baloo/pkg-plist
+	modified:   sysutils/kf5-kwallet/distinfo
+	modified:   sysutils/lizardfs/Makefile
+	modified:   sysutils/openzfs-kmod/Makefile
+	modified:   sysutils/openzfs-kmod/distinfo
+	modified:   sysutils/openzfs/Makefile
+	modified:   sysutils/openzfs/distinfo
+	modified:   sysutils/openzfs/pkg-plist
+	modified:   sysutils/plasma5-discover/Makefile
+	modified:   sysutils/plasma5-libksysguard/Makefile
+	modified:   sysutils/plasma5-systemsettings/Makefile
+	modified:   sysutils/py-azure-cli-core/Makefile
+	modified:   sysutils/py-azure-cli-core/distinfo
+	modified:   sysutils/py-azure-cli/Makefile
+	modified:   sysutils/py-azure-cli/distinfo
+	modified:   sysutils/py-tmuxp/Makefile
+	modified:   sysutils/py-tmuxp/distinfo
+	modified:   textproc/Makefile
+	modified:   textproc/google-translate-cli/Makefile
+	modified:   textproc/google-translate-cli/distinfo
+	modified:   textproc/kf5-kcodecs/distinfo
+	modified:   textproc/kf5-sonnet/distinfo
+	modified:   textproc/kf5-syntax-highlighting/distinfo
+	new file:   textproc/py-elementpath/Makefile
+	new file:   textproc/py-elementpath/distinfo
+	new file:   textproc/py-elementpath/pkg-descr
+	modified:   textproc/py-sphinx-autodoc-typehints/Makefile
+	modified:   textproc/py-sphinx-autodoc-typehints/distinfo
+	new file:   textproc/py-ttp/Makefile
+	new file:   textproc/py-ttp/distinfo
+	new file:   textproc/py-ttp/files/patch-ttp-match-ip.py
+	new file:   textproc/py-ttp/files/patch-ttp-returners-terminal_returner.py
+	new file:   textproc/py-ttp/files/patch-ttp-utils-loaders.py
+	new file:   textproc/py-ttp/pkg-descr
+	modified:   textproc/rubygem-rouge/Makefile
+	modified:   textproc/rubygem-rouge/distinfo
+	modified:   www/gitea/Makefile
+	modified:   www/gitea/distinfo
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/gitlab-ce/distinfo
+	modified:   www/gitlab-ce/pkg-plist
+	modified:   www/kf5-kdewebkit/distinfo
+	modified:   www/kf5-khtml/distinfo
+	modified:   www/kf5-kjs/distinfo
+	modified:   www/kf5-kjsembed/distinfo
+	modified:   www/miniflux/Makefile
+	modified:   www/miniflux/distinfo
+	modified:   www/minio-client/Makefile
+	modified:   www/nginx/Makefile
+	modified:   www/nginx/Makefile.extmod
+	modified:   www/nginx/Makefile.options.desc
+	modified:   www/nginx/distinfo
+	new file:   www/nginx/files/extra-patch-ngx_dynamic_healthcheck-config
+	modified:   www/nginx/pkg-plist
+	modified:   www/node/Makefile
+	modified:   www/node/distinfo
+	modified:   www/node12/Makefile
+	modified:   www/node12/distinfo
+	modified:   www/node12/files/patch-deps_openssl_openssl-cl__no__asm.gypi
+	modified:   www/node12/files/patch-deps_openssl_openssl__no__asm.gypi
+	modified:   www/node12/pkg-plist
+	modified:   www/proxygen/Makefile
+	modified:   www/proxygen/distinfo
+	modified:   www/py-beautifulsoup32/Makefile
+	modified:   www/py-evernote/Makefile
+	modified:   www/py-pastedeploy/Makefile
+	modified:   www/py-pastescript/Makefile
+	modified:   www/py-pylons/Makefile
+	modified:   www/py-pyramid/Makefile
+	modified:   www/py-requestbuilder/Makefile
+	modified:   www/rubygem-webmock/Makefile
+	modified:   www/rubygem-webmock/distinfo
+	modified:   www/tomcat-devel/Makefile
+	modified:   www/tomcat-devel/distinfo
+	modified:   www/tomcat85/Makefile
+	modified:   www/tomcat85/distinfo
+	modified:   www/tomcat9/Makefile
+	modified:   www/tomcat9/distinfo
+	modified:   x11-fonts/libertinus/Makefile
+	modified:   x11-fonts/libertinus/distinfo
+	modified:   x11-themes/kf5-breeze-icons/Makefile
+	modified:   x11-themes/kf5-breeze-icons/distinfo
+	new file:   x11-themes/kf5-breeze-icons/files/patch-CMakeLists.txt
+	modified:   x11-themes/kf5-breeze-icons/pkg-plist
+	modified:   x11-themes/kf5-kemoticons/distinfo
+	modified:   x11-themes/kf5-kiconthemes/distinfo
+	modified:   x11-themes/kf5-oxygen-icons5/distinfo
+	modified:   x11-themes/kf5-qqc2-desktop-style/distinfo
+	modified:   x11-themes/plasma5-breeze-gtk/Makefile
+	modified:   x11-themes/plasma5-breeze/Makefile
+	modified:   x11-themes/plasma5-kde-gtk-config/Makefile
+	modified:   x11-toolkits/Makefile
+	modified:   x11-toolkits/kf5-attica/distinfo
+	modified:   x11-toolkits/kf5-kcompletion/distinfo
+	modified:   x11-toolkits/kf5-kconfigwidgets/distinfo
+	modified:   x11-toolkits/kf5-kdesignerplugin/distinfo
+	modified:   x11-toolkits/kf5-kguiaddons/distinfo
+	modified:   x11-toolkits/kf5-kirigami2/distinfo
+	modified:   x11-toolkits/kf5-kirigami2/pkg-plist
+	modified:   x11-toolkits/kf5-kitemviews/distinfo
+	modified:   x11-toolkits/kf5-kjobwidgets/distinfo
+	modified:   x11-toolkits/kf5-ktextwidgets/distinfo
+	modified:   x11-toolkits/kf5-kwidgetsaddons/distinfo
+	modified:   x11-toolkits/kf5-kxmlgui/distinfo
+	modified:   x11-toolkits/py-SquareMap/Makefile
+	deleted:    x11-toolkits/py-gtk2/Makefile
+	deleted:    x11-toolkits/py-gtk2/distinfo
+	deleted:    x11-toolkits/py-gtk2/files/patch-Makefile.in
+	deleted:    x11-toolkits/py-gtk2/files/patch-configure
+	deleted:    x11-toolkits/py-gtk2/files/patch-doc_Makefile.in
+	deleted:    x11-toolkits/py-gtk2/pkg-descr
+	deleted:    x11-toolkits/py-gtk2/pkg-plist
+	modified:   x11-wm/plasma5-kwin/Makefile
+	modified:   x11/kf5-frameworkintegration/distinfo
+	modified:   x11/kf5-kactivities-stats/distinfo
+	modified:   x11/kf5-kactivities/distinfo
+	modified:   x11/kf5-kded/distinfo
+	modified:   x11/kf5-kdelibs4support/distinfo
+	modified:   x11/kf5-kglobalaccel/distinfo
+	modified:   x11/kf5-kinit/distinfo
+	modified:   x11/kf5-krunner/distinfo
+	modified:   x11/kf5-kwayland/distinfo
+	modified:   x11/kf5-kwindowsystem/distinfo
+	modified:   x11/kf5-plasma-framework/distinfo
+	modified:   x11/kf5-plasma-framework/pkg-plist
+	modified:   x11/plasma5-kscreen/Makefile
+	modified:   x11/plasma5-kwayland-server/Makefile
+	modified:   x11/plasma5-plasma-workspace/Makefile
+	modified:   x11/slurp/Makefile
+	modified:   x11/slurp/distinfo
+	modified:   x11/xterm/Makefile
+	modified:   x11/xterm/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   databases/postgis23/Makefile
+	both modified:   lang/gcc7/Makefile
+	both modified:   sysutils/dmidecode/Makefile
+
+
+It took 3.08 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 1817b062271b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.07 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 1817b062271b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
