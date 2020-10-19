@@ -47,3 +47,148 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Removing games/jfsw/files/patch-src-game.c
+Removing games/jfsw/files/patch-jfbuild-kenbuild-game.c
+Removing games/jfsw/files/patch-jfbuild-kenbuild-bstub.c
+Removing games/jfsw/files/patch-Makefile
+Merge made by the 'recursive' strategy.
+ Mk/Scripts/sed_checked.sh                          |    0
+ UPDATING                                           |   10 +
+ astro/josm/Makefile                                |    2 +-
+ astro/josm/distinfo                                |    6 +-
+ comms/uhd/Makefile                                 |   39 +-
+ comms/uhd/distinfo                                 |    6 +-
+ comms/uhd/pkg-descr                                |    6 +-
+ comms/uhd/pkg-plist                                | 1461 ++++++++++++++------
+ databases/mysql56-server/Makefile                  |    4 +-
+ databases/mysql56-server/distinfo                  |    6 +-
+ devel/llvm10/Makefile                              |    2 +-
+ devel/llvm10/files/patch-lib_Support_Unix_Path.inc |   19 +
+ devel/py-lxml/Makefile                             |    2 +-
+ devel/py-lxml/distinfo                             |    6 +-
+ devel/py-pytest-trio/Makefile                      |    3 +-
+ devel/py-pytest-trio/distinfo                      |    6 +-
+ devel/universal-ctags/Makefile                     |   14 +-
+ devel/universal-ctags/distinfo                     |    6 +-
+ devel/universal-ctags/pkg-plist                    |    9 +
+ dns/bind-tools/pkg-plist-devel                     |   10 +-
+ dns/bind9-devel/Makefile                           |    4 +-
+ dns/bind9-devel/distinfo                           |    6 +-
+ .../files/extrapatch-bind-min-override-ttl         |   14 +-
+ dns/bind9-devel/pkg-plist                          |   11 +-
+ emulators/qemu-user-static/Makefile                |    4 +-
+ emulators/qemu-user-static/distinfo                |    6 +-
+ games/jfsw/Makefile                                |   14 +-
+ games/jfsw/distinfo                                |   18 +-
+ games/jfsw/files/patch-Makefile                    |   36 -
+ games/jfsw/files/patch-jfbuild-kenbuild-bstub.c    |   17 -
+ games/jfsw/files/patch-jfbuild-kenbuild-game.c     |   17 -
+ games/jfsw/files/patch-src-game.c                  |   17 -
+ graphics/py-pyglet/Makefile                        |    7 +-
+ graphics/py-pyglet/distinfo                        |    6 +-
+ lang/perl5-devel/Makefile                          |    2 +-
+ lang/perl5-devel/distinfo                          |    6 +-
+ lang/perl5-devel/files/patch-Configure             |    8 +-
+ ...cpan_ExtUtils-MakeMaker_lib_ExtUtils_MM__Any.pm |    4 +-
+ .../patch-cpan_ExtUtils-MakeMaker_t_INST__PREFIX.t |    8 +-
+ .../files/patch-t_porting_customized.dat           |   18 +-
+ lang/perl5-devel/pkg-plist                         |   13 +
+ lang/perl5-devel/version.mk                        |    2 +-
+ mail/sendmail/files/site.config.m4.dane            |    1 +
+ security/krb5-devel/Makefile                       |    4 +-
+ security/krb5-devel/distinfo                       |    6 +-
+ security/libressl-devel/Makefile                   |    3 +-
+ security/libressl-devel/distinfo                   |    6 +-
+ security/libressl-devel/pkg-plist                  |   23 +
+ security/libressl/Makefile                         |    2 +-
+ security/libressl/distinfo                         |    6 +-
+ security/libressl/pkg-plist                        |   77 +-
+ sysutils/cfengine-devel/Makefile                   |    6 +-
+ sysutils/cfengine-devel/distinfo                   |   10 +-
+ sysutils/cfengine-masterfiles-devel/Makefile       |    4 +-
+ sysutils/cfengine-masterfiles-devel/distinfo       |    6 +-
+ sysutils/nut-devel/Makefile                        |    5 +-
+ sysutils/nut-devel/distinfo                        |    6 +-
+ sysutils/rundeck3/Makefile                         |    6 +-
+ sysutils/rundeck3/distinfo                         |    6 +-
+ www/mod_http2/pkg-descr                            |   12 +-
+ www/mod_http2/pkg-message                          |    3 +
+ www/node/Makefile                                  |    2 +-
+ www/node/distinfo                                  |    6 +-
+ www/py-aiohttp/Makefile                            |    5 +-
+ www/py-multidict/Makefile                          |    6 +-
+ www/py-multidict/distinfo                          |    6 +-
+ www/py-yarl/Makefile                               |    4 +-
+ www/py-yarl/distinfo                               |    6 +-
+ 68 files changed, 1371 insertions(+), 711 deletions(-)
+ mode change 100644 => 100755 Mk/Scripts/sed_checked.sh
+ create mode 100644 devel/llvm10/files/patch-lib_Support_Unix_Path.inc
+ create mode 100644 devel/universal-ctags/pkg-plist
+ delete mode 100644 games/jfsw/files/patch-Makefile
+ delete mode 100644 games/jfsw/files/patch-jfbuild-kenbuild-bstub.c
+ delete mode 100644 games/jfsw/files/patch-jfbuild-kenbuild-game.c
+ delete mode 100644 games/jfsw/files/patch-src-game.c
+ create mode 100644 mail/sendmail/files/site.config.m4.dane
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    a816d02ad0c6..dcf9d73a159c  master -> master        
+remote:    2e950130a24c..a816d02ad0c6  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   a816d02ad0c6..dcf9d73a159c  master -> master
+==== END: master ====
