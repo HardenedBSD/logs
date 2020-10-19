@@ -1,0 +1,128 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/login/motd.template
+CONFLICT (content): Merge conflict in usr.bin/login/motd.template
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/conf/kmod.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc usr.bin/login/motd.template
+index 585581f804b0,ea98a3266c3a..000000000000
+--- a/usr.bin/login/motd.template
++++ b/usr.bin/login/motd.template
+@@@ -1,18 -1,20 +1,38 @@@
+ +HardenedBSD ?.?.?  (UNKNOWN)
+  
+ -Welcome to FreeBSD!
+ ++------------------------------------------------------------------------------+
+ +|                                                                              |
+ +|                            Welcome to HardenedBSD!                           |
+ +|                                                                              |
+ +|       _    _               _                     _ ____   _____ _____        |
+ +|      | |  | |             | |                   | |  _ \ / ____|  __ \       |
+ +|      | |__| | __ _ _ __ __| | ___ _ __   ___  __| | |_) | (___ | |  | |      |
+ +|      |  __  |/ _` | '__/ _` |/ _ \ '_ \ / _ \/ _` |  _ < \___ \| |  | |      |
+ +|      | |  | | (_| | | | (_| |  __/ | | |  __/ (_| | |_) |____) | |__| |      |
+ +|      |_|  |_|\__,_|_|  \__,_|\___|_| |_|\___|\__,_|____/|_____/|_____/       |
+ +|                                                                              |
+ ++------------------------------------------------------------------------------+
+ +|  keywords: sysctl, hbsdcontrol, git, github.com/hardenedbsd hardenedbsd.org  |
+ ++------------------------------------------------------------------------------+
+ +                Edit /etc/motd to change this login announcement.               
+  
+++<<<<<<< HEAD
+++=======
++ Release Notes, Errata: https://www.FreeBSD.org/releases/
++ Security Advisories:   https://www.FreeBSD.org/security/
++ FreeBSD Handbook:      https://www.FreeBSD.org/handbook/
++ FreeBSD FAQ:           https://www.FreeBSD.org/faq/
++ Questions List: https://lists.FreeBSD.org/mailman/listinfo/freebsd-questions/
++ FreeBSD Forums:        https://forums.FreeBSD.org/
++ 
++ Documents installed with the system are in the /usr/local/share/doc/freebsd/
++ directory, or can be installed later with:  pkg install en-freebsd-doc
++ For other languages, replace "en" with a language code like de or fr.
++ 
++ Show the version of FreeBSD installed:  freebsd-version ; uname -a
++ Please include that output and any error messages when posting questions.
++ Introduction to manual pages:  man man
++ FreeBSD directory layout:      man hier
++ 
++ To change this login announcement, see motd(5).
+++>>>>>>> freebsd/current/master
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libbe/Makefile
+	modified:   lib/libbe/be.h
+	modified:   lib/libbe/be_access.c
+	modified:   lib/libbe/be_info.c
+	modified:   lib/libbe/libbe.3
+	modified:   share/man/man5/motd.5
+	modified:   sys/conf/kmod.mk
+	modified:   sys/net80211/ieee80211_freebsd.c
+	modified:   sys/net80211/ieee80211_freebsd.h
+	modified:   sys/net80211/ieee80211_ioctl.c
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	modified:   usr.sbin/pkg/config.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   usr.bin/login/motd.template
+
+HEAD is now at b4fc9f4c56e3 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at b4fc9f4c56e3 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
