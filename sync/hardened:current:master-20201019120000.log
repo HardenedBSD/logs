@@ -1,0 +1,98 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 9 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating b4fc9f4c56e3..0130c58198bc
+Fast-forward
+ lib/libbe/Makefile                       | 35 +++++++++++++++++++++++++++++
+ lib/libbe/be.h                           |  6 ++---
+ lib/libbe/be_access.c                    |  6 ++---
+ lib/libbe/be_info.c                      |  2 +-
+ lib/libbe/libbe.3                        | 35 +++++++++++++++++++++++++----
+ share/man/man5/motd.5                    | 12 ++++++++--
+ sys/conf/kmod.mk                         |  1 -
+ sys/net80211/ieee80211_freebsd.c         | 38 +++++++++++++++++++++++++++++++-
+ sys/net80211/ieee80211_freebsd.h         | 13 +++++++++++
+ sys/net80211/ieee80211_ioctl.c           | 18 ++++++---------
+ tools/build/mk/OptionalObsoleteFiles.inc | 35 +++++++++++++++++++++++++++++
+ usr.bin/login/motd.template              |  7 ++++--
+ usr.sbin/pkg/config.c                    | 16 +++++++-------
+ 13 files changed, 188 insertions(+), 36 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sys/amd64/vmm/intel/vmx.c          |  36 +++++++++++-
+ sys/amd64/vmm/intel/vmx.h          |   1 -
+ sys/amd64/vmm/intel/vmx_genassym.c |   5 --
+ sys/amd64/vmm/intel/vmx_support.S  |  52 -----------------
+ sys/arm64/arm64/copyinout.S        |  20 +++----
+ sys/arm64/arm64/support.S          |  93 ++++++++++--------------------
+ sys/dev/iommu/iommu.h              |   3 +
+ sys/dev/iommu/iommu_gas.c          |  64 +++++++++++++++++++++
+ sys/dev/iommu/iommu_msi.h          |  46 +++++++++++++++
+ sys/kern/msi_if.m                  |   8 +++
+ sys/kern/subr_intr.c               |  46 +++++++++++++++
+ sys/kern/vfs_cache.c               | 112 ++++++++++++++++++++++++-------------
+ sys/sys/intr.h                     |   2 +
+ usr.sbin/efibootmgr/efibootmgr.c   |  13 +++--
+ 14 files changed, 324 insertions(+), 177 deletions(-)
+ create mode 100644 sys/dev/iommu/iommu_msi.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    0130c58198bc..a2d2ea5fffd6  hardened/current/master -> hardened/current/master        
+remote:    540621addf7b..2ea649d97304  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   0130c58198bc..a2d2ea5fffd6  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
