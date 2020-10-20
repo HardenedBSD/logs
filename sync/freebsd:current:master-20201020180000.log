@@ -1,0 +1,268 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating ac1907161e6b..bc5509ea4934
+Fast-forward
+ secure/lib/libcrypto/Makefile                      |   2 +-
+ secure/lib/libcrypto/engines/padlock/Makefile      |   2 +-
+ share/man/man4/Makefile                            |   2 +
+ share/man/man4/ossl.4                              | 105 ++++++
+ sys/amd64/conf/NOTES                               |   1 +
+ sys/arm64/conf/GENERIC                             |   1 +
+ sys/compat/linprocfs/linprocfs.c                   |  23 +-
+ sys/compat/linux/linux_stats.c                     |   9 +-
+ sys/compat/linux/linux_util.c                      |  19 ++
+ sys/compat/linux/linux_util.h                      |   1 +
+ sys/conf/files.amd64                               |   3 +
+ sys/conf/files.i386                                |   3 +
+ sys/conf/files.x86                                 |   4 +
+ sys/conf/kern.post.mk                              |  21 +-
+ sys/conf/kern.pre.mk                               |  31 --
+ .../crypto/openssl}/aarch64/aesv8-armx.S           |   0
+ .../crypto/openssl}/aarch64/arm64cpuid.S           |   0
+ .../crypto/openssl}/aarch64/armv8-mont.S           |   0
+ .../crypto/openssl}/aarch64/chacha-armv8.S         |   0
+ .../crypto/openssl}/aarch64/ecp_nistz256-armv8.S   |   0
+ .../crypto/openssl}/aarch64/ghashv8-armx.S         |   0
+ .../crypto/openssl}/aarch64/keccak1600-armv8.S     |   0
+ .../crypto/openssl}/aarch64/poly1305-armv8.S       |   0
+ .../crypto/openssl}/aarch64/sha1-armv8.S           |   0
+ .../crypto/openssl}/aarch64/sha256-armv8.S         |   0
+ .../crypto/openssl}/aarch64/sha512-armv8.S         |   0
+ .../crypto/openssl}/aarch64/vpaes-armv8.S          |   0
+ .../crypto/openssl}/amd64/aesni-gcm-x86_64.S       |   0
+ .../crypto/openssl}/amd64/aesni-mb-x86_64.S        |   0
+ .../crypto/openssl}/amd64/aesni-sha1-x86_64.S      |   0
+ .../crypto/openssl}/amd64/aesni-sha256-x86_64.S    |   0
+ .../crypto/openssl}/amd64/aesni-x86_64.S           |   0
+ .../crypto/openssl}/amd64/chacha-x86_64.S          |   0
+ .../crypto/openssl}/amd64/cmll-x86_64.S            |   0
+ .../crypto/openssl}/amd64/e_padlock-x86_64.S       |   0
+ .../crypto/openssl}/amd64/ecp_nistz256-x86_64.S    |   0
+ .../crypto/openssl}/amd64/ghash-x86_64.S           |   0
+ .../crypto/openssl}/amd64/keccak1600-x86_64.S      |   0
+ .../crypto/openssl}/amd64/md5-x86_64.S             |   0
+ .../crypto/openssl}/amd64/poly1305-x86_64.S        |   0
+ .../crypto/openssl}/amd64/rc4-md5-x86_64.S         |   0
+ .../crypto/openssl}/amd64/rc4-x86_64.S             |   0
+ .../crypto/openssl}/amd64/rsaz-avx2.S              |   0
+ .../crypto/openssl}/amd64/rsaz-x86_64.S            |   0
+ .../crypto/openssl}/amd64/sha1-mb-x86_64.S         |   0
+ .../crypto/openssl}/amd64/sha1-x86_64.S            |   0
+ .../crypto/openssl}/amd64/sha256-mb-x86_64.S       |   0
+ .../crypto/openssl}/amd64/sha256-x86_64.S          |   0
+ .../crypto/openssl}/amd64/sha512-x86_64.S          |   0
+ .../crypto/openssl}/amd64/vpaes-x86_64.S           |   0
+ .../crypto/openssl}/amd64/wp-x86_64.S              |   0
+ .../crypto/openssl}/amd64/x25519-x86_64.S          |   0
+ .../crypto/openssl}/amd64/x86_64-gf2m.S            |   0
+ .../crypto/openssl}/amd64/x86_64-mont.S            |   0
+ .../crypto/openssl}/amd64/x86_64-mont5.S           |   0
+ .../crypto/openssl}/amd64/x86_64cpuid.S            |   0
+ .../crypto/openssl}/arm/aes-armv4.S                |   0
+ .../crypto/openssl}/arm/aesv8-armx.S               |   0
+ .../crypto/openssl}/arm/armv4-gf2m.S               |   0
+ .../crypto/openssl}/arm/armv4-mont.S               |   0
+ .../crypto/openssl}/arm/armv4cpuid.S               |   0
+ .../crypto/openssl}/arm/bsaes-armv7.S              |   0
+ .../crypto/openssl}/arm/chacha-armv4.S             |   0
+ .../crypto/openssl}/arm/ecp_nistz256-armv4.S       |   0
+ .../crypto/openssl}/arm/ghash-armv4.S              |   0
+ .../crypto/openssl}/arm/ghashv8-armx.S             |   0
+ .../crypto/openssl}/arm/keccak1600-armv4.S         |   0
+ .../crypto/openssl}/arm/poly1305-armv4.S           |   0
+ .../crypto/openssl}/arm/sha1-armv4-large.S         |   0
+ .../crypto/openssl}/arm/sha256-armv4.S             |   0
+ .../crypto/openssl}/arm/sha512-armv4.S             |   0
+ .../crypto/openssl}/i386/aesni-x86.S               |   0
+ .../libcrypto => sys/crypto/openssl}/i386/bf-586.S |   0
+ .../libcrypto => sys/crypto/openssl}/i386/bn-586.S |   0
+ .../crypto/openssl}/i386/cast-586.S                |   0
+ .../crypto/openssl}/i386/chacha-x86.S              |   0
+ .../crypto/openssl}/i386/cmll-x86.S                |   0
+ .../libcrypto => sys/crypto/openssl}/i386/co-586.S |   0
+ .../crypto/openssl}/i386/crypt586.S                |   0
+ .../crypto/openssl}/i386/des-586.S                 |   0
+ .../crypto/openssl}/i386/e_padlock-x86.S           |   0
+ .../crypto/openssl}/i386/ecp_nistz256-x86.S        |   0
+ .../crypto/openssl}/i386/ghash-x86.S               |   0
+ .../crypto/openssl}/i386/md5-586.S                 |   0
+ .../crypto/openssl}/i386/poly1305-x86.S            |   0
+ .../crypto/openssl}/i386/rc4-586.S                 |   0
+ .../crypto/openssl}/i386/rc5-586.S                 |   0
+ .../crypto/openssl}/i386/rmd-586.S                 |   0
+ .../crypto/openssl}/i386/sha1-586.S                |   0
+ .../crypto/openssl}/i386/sha256-586.S              |   0
+ .../crypto/openssl}/i386/sha512-586.S              |   0
+ .../crypto/openssl}/i386/vpaes-x86.S               |   0
+ .../libcrypto => sys/crypto/openssl}/i386/wp-mmx.S |   0
+ .../crypto/openssl}/i386/x86-gf2m.S                |   0
+ .../crypto/openssl}/i386/x86-mont.S                |   0
+ .../crypto/openssl}/i386/x86cpuid.S                |   0
+ sys/crypto/openssl/ossl.c                          | 369 +++++++++++++++++++++
+ sys/crypto/openssl/ossl.h                          |  51 +++
+ sys/crypto/openssl/ossl_hash.h                     | 146 ++++++++
+ sys/crypto/openssl/ossl_sha.h                      |  68 ++++
+ sys/crypto/openssl/ossl_sha1.c                     |  77 +++++
+ sys/crypto/openssl/ossl_sha256.c                   | 121 +++++++
+ sys/crypto/openssl/ossl_sha512.c                   | 258 ++++++++++++++
+ sys/dev/md/embedfs.S                               |  46 +++
+ sys/geom/geom_ctl.c                                |  10 -
+ sys/i386/conf/NOTES                                |   1 +
+ sys/modules/Makefile                               |   2 +
+ sys/modules/ossl/Makefile                          |  26 ++
+ 108 files changed, 1333 insertions(+), 69 deletions(-)
+ create mode 100644 share/man/man4/ossl.4
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/aesv8-armx.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/arm64cpuid.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/armv8-mont.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/chacha-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/ecp_nistz256-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/ghashv8-armx.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/keccak1600-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/poly1305-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/sha1-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/sha256-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/sha512-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/aarch64/vpaes-armv8.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/aesni-gcm-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/aesni-mb-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/aesni-sha1-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/aesni-sha256-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/aesni-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/chacha-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/cmll-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/e_padlock-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/ecp_nistz256-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/ghash-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/keccak1600-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/md5-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/poly1305-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/rc4-md5-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/rc4-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/rsaz-avx2.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/rsaz-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/sha1-mb-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/sha1-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/sha256-mb-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/sha256-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/sha512-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/vpaes-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/wp-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/x25519-x86_64.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/x86_64-gf2m.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/x86_64-mont.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/x86_64-mont5.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/amd64/x86_64cpuid.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/aes-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/aesv8-armx.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/armv4-gf2m.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/armv4-mont.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/armv4cpuid.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/bsaes-armv7.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/chacha-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/ecp_nistz256-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/ghash-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/ghashv8-armx.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/keccak1600-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/poly1305-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/sha1-armv4-large.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/sha256-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/arm/sha512-armv4.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/aesni-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/bf-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/bn-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/cast-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/chacha-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/cmll-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/co-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/crypt586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/des-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/e_padlock-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/ecp_nistz256-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/ghash-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/md5-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/poly1305-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/rc4-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/rc5-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/rmd-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/sha1-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/sha256-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/sha512-586.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/vpaes-x86.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/wp-mmx.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/x86-gf2m.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/x86-mont.S (100%)
+ rename {secure/lib/libcrypto => sys/crypto/openssl}/i386/x86cpuid.S (100%)
+ create mode 100644 sys/crypto/openssl/ossl.c
+ create mode 100644 sys/crypto/openssl/ossl.h
+ create mode 100644 sys/crypto/openssl/ossl_hash.h
+ create mode 100644 sys/crypto/openssl/ossl_sha.h
+ create mode 100644 sys/crypto/openssl/ossl_sha1.c
+ create mode 100644 sys/crypto/openssl/ossl_sha256.c
+ create mode 100644 sys/crypto/openssl/ossl_sha512.c
+ create mode 100644 sys/dev/md/embedfs.S
+ create mode 100644 sys/modules/ossl/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ac1907161e6b..bc5509ea4934  freebsd/current/master -> freebsd/current/master
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ac1907161e6b..bc5509ea4934  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
