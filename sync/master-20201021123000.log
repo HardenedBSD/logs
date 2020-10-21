@@ -47,3 +47,125 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing devel/got/files/patch-regress_cmdline_rm.sh
+Removing devel/got/files/patch-regress_cmdline_import.sh
+Removing devel/got/files/openbsd-compat/dirname.c
+Removing devel/got/files/openbsd-compat/basename.c
+Merge made by the 'recursive' strategy.
+ devel/got/Makefile                                 |  2 +-
+ devel/got/distinfo                                 |  6 +-
+ devel/got/files/openbsd-compat/Makefile            |  4 +-
+ devel/got/files/openbsd-compat/basename.c          | 65 --------------------
+ devel/got/files/openbsd-compat/dirname.c           | 71 ----------------------
+ devel/got/files/openbsd-compat/openbsd-compat.h    | 11 ----
+ devel/got/files/patch-regress_cmdline_Makefile     |  6 +-
+ devel/got/files/patch-regress_cmdline_common.sh    |  9 ---
+ devel/got/files/patch-regress_cmdline_import.sh    | 38 ------------
+ devel/got/files/patch-regress_cmdline_rm.sh        | 20 ------
+ devel/sbt/Makefile                                 |  2 +-
+ devel/sbt/distinfo                                 |  6 +-
+ games/crispy-doom/Makefile                         |  1 +
+ lang/duktape-lib/Makefile                          | 20 +++---
+ lang/duktape-lib/distinfo                          |  6 +-
+ .../duktape-lib/files/patch-Makefile.sharedlibrary | 47 ++++++++++++++
+ lang/duktape/Makefile                              |  3 +-
+ lang/duktape/distinfo                              |  6 +-
+ lang/duktape/files/patch-Makefile.cmdline          | 12 ++++
+ net-im/purple-slack/files/patch-Makefile           | 11 ++++
+ net/openbgpd6/Makefile                             |  3 +-
+ net/openbgpd6/distinfo                             |  6 +-
+ net/openbgpd6/files/patch-Makefile.am              | 16 ++---
+ .../files/patch-src__bgpctl__output_json.c         | 11 ++++
+ net/openbgpd6/files/patch-src_bgpctl_output.c      | 11 ++++
+ net/openbgpd6/files/patch-src_bgpd_bgpd.c          | 11 ++++
+ net/openbgpd6/files/patch-src_bgpd_bgpd.h          | 23 +++++++
+ net/openbgpd6/files/patch-src_bgpd_rde.c           | 15 +++++
+ net/openbgpd6/files/patch-src_bgpd_session.c       | 18 ++++++
+ net/openbgpd6/files/patch-src_bgpd_session.h       | 20 ++++++
+ ports-mgmt/pkg-devel/Makefile                      |  4 +-
+ ports-mgmt/pkg-devel/distinfo                      |  6 +-
+ security/helib/Makefile                            |  1 +
+ security/helib/files/patch-CMakeLists.txt          | 29 +++++++++
+ www/Makefile                                       |  3 +-
+ www/edbrowse/Makefile                              |  2 +-
+ www/unit-python/Makefile                           | 26 ++++++++
+ www/unit-ruby/Makefile                             | 25 ++++++++
+ www/varnish-modules/Makefile                       |  2 +
+ 39 files changed, 310 insertions(+), 268 deletions(-)
+ delete mode 100644 devel/got/files/openbsd-compat/basename.c
+ delete mode 100644 devel/got/files/openbsd-compat/dirname.c
+ delete mode 100644 devel/got/files/patch-regress_cmdline_import.sh
+ delete mode 100644 devel/got/files/patch-regress_cmdline_rm.sh
+ create mode 100644 lang/duktape-lib/files/patch-Makefile.sharedlibrary
+ create mode 100644 lang/duktape/files/patch-Makefile.cmdline
+ create mode 100644 net-im/purple-slack/files/patch-Makefile
+ create mode 100644 net/openbgpd6/files/patch-src__bgpctl__output_json.c
+ create mode 100644 net/openbgpd6/files/patch-src_bgpctl_output.c
+ create mode 100644 net/openbgpd6/files/patch-src_bgpd_bgpd.c
+ create mode 100644 net/openbgpd6/files/patch-src_bgpd_bgpd.h
+ create mode 100644 net/openbgpd6/files/patch-src_bgpd_rde.c
+ create mode 100644 net/openbgpd6/files/patch-src_bgpd_session.c
+ create mode 100644 net/openbgpd6/files/patch-src_bgpd_session.h
+ create mode 100644 security/helib/files/patch-CMakeLists.txt
+ create mode 100644 www/unit-python/Makefile
+ create mode 100644 www/unit-ruby/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    9371a2bcd021..adb52f5d5012  master -> master        
+remote:    5ad4b8f09386..9371a2bcd021  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   9371a2bcd021..adb52f5d5012  master -> master
+==== END: master ====
