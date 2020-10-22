@@ -47,3 +47,420 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/py-unit/Makefile
+Auto-merging security/Makefile
+Auto-merging net/Makefile
+Auto-merging net-im/pidgin-sipe/Makefile
+CONFLICT (content): Merge conflict in net-im/pidgin-sipe/Makefile
+Removing misc/iio-oscilloscope/files/patch-plugins_lidar.c
+Removing misc/iio-oscilloscope/files/patch-osc.c
+Removing misc/far2l/files/patch-cmake_modules_FindLibSSH.cmake
+Removing misc/far2l/files/patch-WinPort_src_APIFSNotify.cpp
+Auto-merging lang/gcc48/Makefile
+Auto-merging graphics/mupdf/Makefile
+Auto-merging databases/postgis23/Makefile
+CONFLICT (content): Merge conflict in databases/postgis23/Makefile
+Removing cad/iverilog/files/patch-d49d26a5.c
+Removing cad/iverilog/files/patch-bison
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc databases/postgis23/Makefile
+index a4ae7c427bf8,e3afdd4b488d..000000000000
+--- a/databases/postgis23/Makefile
++++ b/databases/postgis23/Makefile
+@@@ -13,8 -13,7 +13,12 @@@ COMMENT=	Geographic objects support fo
+  LICENSE=	GPLv2
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+++=======
++ BROKEN=		Does not build with graphics/gdal default (pgsql conflicts)
+++>>>>>>> freebsd/master
+  DEPRECATED=	Upstream no longer maintained
+  EXPIRATION_DATE=	2020-11-15
+  
+diff --cc net-im/pidgin-sipe/Makefile
+index 307cf623a976,68432ed804d5..000000000000
+--- a/net-im/pidgin-sipe/Makefile
++++ b/net-im/pidgin-sipe/Makefile
+@@@ -25,9 -25,7 +25,13 @@@ LIB_DEPENDS=	libnss3.so:security/nss 
+  		libfarstream-0.2.so:net-im/farstream
+  RUN_DEPENDS=	pidgin:net-im/pidgin
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		gmake gnome libtool localbase pkgconfig tar:bzip2 ssl
+++=======
++ USES=		compiler:c11 gmake gnome libtool localbase pkgconfig tar:bzip2 ssl
+++>>>>>>> freebsd/master
+  USE_GNOME=	gtk20 intltool libxml2
+  USE_GSTREAMER1=	yes
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   CHANGES
+	new file:   Keywords/rmempty.ucl
+	modified:   Keywords/shell.ucl
+	modified:   MOVED
+	modified:   Mk/Uses/php.mk
+	modified:   Mk/bsd.ocaml.mk
+	modified:   UPDATING
+	modified:   archivers/Makefile
+	new file:   archivers/php80-bz2/Makefile
+	new file:   archivers/php80-phar/Makefile
+	new file:   archivers/php80-phar/files/patch-config.m4
+	new file:   archivers/php80-zip/Makefile
+	new file:   archivers/php80-zlib/Makefile
+	new file:   archivers/php80-zlib/files/patch-zlib.c
+	modified:   audio/mixertui/Makefile
+	modified:   audio/mixertui/distinfo
+	modified:   cad/iverilog/Makefile
+	modified:   cad/iverilog/distinfo
+	deleted:    cad/iverilog/files/patch-bison
+	deleted:    cad/iverilog/files/patch-d49d26a5.c
+	modified:   cad/iverilog/pkg-plist
+	modified:   converters/Makefile
+	new file:   converters/php80-iconv/Makefile
+	new file:   converters/php80-mbstring/Makefile
+	new file:   converters/php80-mbstring/files/patch-config.m4
+	modified:   databases/Makefile
+	new file:   databases/php80-dba/Makefile
+	new file:   databases/php80-dba/files/patch-config.m4
+	new file:   databases/php80-mysqli/Makefile
+	new file:   databases/php80-mysqli/files/patch-mysqli__api.c
+	new file:   databases/php80-mysqli/files/patch-php_mysqli_structs.h
+	new file:   databases/php80-odbc/Makefile
+	new file:   databases/php80-odbc/files/patch-config.m4
+	new file:   databases/php80-pdo/Makefile
+	new file:   databases/php80-pdo_dblib/Makefile
+	new file:   databases/php80-pdo_firebird/Makefile
+	new file:   databases/php80-pdo_mysql/Makefile
+	new file:   databases/php80-pdo_odbc/Makefile
+	new file:   databases/php80-pdo_pgsql/Makefile
+	new file:   databases/php80-pdo_sqlite/Makefile
+	new file:   databases/php80-pgsql/Makefile
+	new file:   databases/php80-sqlite3/Makefile
+	modified:   devel/Makefile
+	modified:   devel/R-cran-broom/Makefile
+	modified:   devel/R-cran-broom/distinfo
+	modified:   devel/R-cran-pkgmaker/Makefile
+	modified:   devel/R-cran-pkgmaker/distinfo
+	modified:   devel/avarice/Makefile
+	modified:   devel/bazel/Makefile
+	modified:   devel/bazel/distinfo
+	modified:   devel/binaryen/Makefile
+	modified:   devel/binaryen/distinfo
+	modified:   devel/binaryen/pkg-plist
+	new file:   devel/glab/Makefile
+	new file:   devel/glab/distinfo
+	new file:   devel/glab/files/patch-vendor_github.com_muesli_termenv_termenv__unix.go
+	new file:   devel/glab/pkg-descr
+	new file:   devel/php80-ffi/Makefile
+	new file:   devel/php80-gettext/Makefile
+	new file:   devel/php80-intl/Makefile
+	new file:   devel/php80-pcntl/Makefile
+	new file:   devel/php80-readline/Makefile
+	new file:   devel/php80-readline/files/patch-config.m4
+	new file:   devel/php80-readline/files/patch-readline_cli.c
+	new file:   devel/php80-shmop/Makefile
+	new file:   devel/php80-sysvmsg/Makefile
+	new file:   devel/php80-sysvsem/Makefile
+	new file:   devel/php80-sysvshm/Makefile
+	new file:   devel/php80-tokenizer/Makefile
+	modified:   devel/plan9port/Makefile
+	modified:   devel/redo/Makefile
+	new file:   devel/rubygem-jsonpath/Makefile
+	new file:   devel/rubygem-jsonpath/distinfo
+	new file:   devel/rubygem-jsonpath/pkg-descr
+	modified:   devel/rubygem-reline/Makefile
+	modified:   devel/rubygem-reline/distinfo
+	new file:   devel/rubygem-to_regexp/Makefile
+	new file:   devel/rubygem-to_regexp/distinfo
+	new file:   devel/rubygem-to_regexp/pkg-descr
+	modified:   devel/sonarqube-community/Makefile
+	modified:   devel/sonarqube-community/distinfo
+	modified:   emulators/i386-wine-devel/Makefile.amd64
+	modified:   emulators/i386-wine/Makefile.amd64
+	modified:   emulators/open-vm-tools/Makefile
+	modified:   emulators/open-vm-tools/files/vmware-guestd.in
+	modified:   emulators/qemu50/Makefile
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   ftp/Makefile
+	new file:   ftp/php80-curl/Makefile
+	new file:   ftp/php80-ftp/Makefile
+	modified:   games/bsdtris/Makefile
+	modified:   games/bsdtris/pkg-plist
+	modified:   games/darkplaces/Makefile
+	modified:   games/devilutionX/Makefile
+	modified:   games/devilutionX/distinfo
+	modified:   games/devilutionX/files/patch-CMakeLists.txt
+	modified:   games/devilutionX/files/patch-Packaging_fedora_devilutionx.desktop
+	modified:   games/doomlegacy/Makefile
+	modified:   games/doomlegacy/distinfo
+	modified:   games/gnome-nibbles/Makefile
+	modified:   games/gnome-nibbles/distinfo
+	modified:   games/gnome-nibbles/pkg-plist
+	modified:   graphics/Makefile
+	modified:   graphics/drm-fbsd11.2-kmod/pkg-descr
+	modified:   graphics/dspdfviewer/Makefile
+	modified:   graphics/gdal/Makefile
+	modified:   graphics/graphite2/Makefile
+	modified:   graphics/graphite2/distinfo
+	modified:   graphics/jp2a/Makefile
+	modified:   graphics/libkdcraw/Makefile
+	modified:   graphics/libkdcraw/pkg-descr
+	modified:   graphics/linux-c7-libdrm/Makefile
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   graphics/mupdf/Makefile
+	modified:   graphics/mupdf/distinfo
+	modified:   graphics/mupdf/files/patch-Makefile
+	modified:   graphics/mupdf/pkg-plist
+	new file:   graphics/php80-exif/Makefile
+	new file:   graphics/php80-gd/Makefile
+	new file:   graphics/php80-gd/files/patch-gd.c
+	new file:   graphics/waifu2x-ncnn-vulkan/files/patch-src_ncnn_CMakeLists.txt
+	new file:   graphics/waifu2x-ncnn-vulkan/files/patch-src_ncnn_src_layer_interp.cpp
+	modified:   lang/Makefile
+	modified:   lang/gcc11-devel/Makefile
+	modified:   lang/gcc11-devel/distinfo
+	modified:   lang/gcc48/Makefile
+	modified:   lang/php72/pkg-plist
+	modified:   lang/php73/pkg-plist
+	modified:   lang/php74/pkg-plist
+	new file:   lang/php80-extensions/Makefile
+	new file:   lang/php80-extensions/pkg-descr
+	new file:   lang/php80/Makefile
+	new file:   lang/php80/Makefile.ext
+	new file:   lang/php80/distinfo
+	new file:   lang/php80/files/patch-build_Makefile.global
+	new file:   lang/php80/files/patch-configure.ac
+	new file:   lang/php80/files/patch-ext_mysqli_mysqli__api.c
+	new file:   lang/php80/files/patch-ext_mysqli_mysqli__nonapi.c
+	new file:   lang/php80/files/patch-ext_mysqli_mysqli__prop.c
+	new file:   lang/php80/files/patch-ext_mysqli_php__mysqli__structs.h
+	new file:   lang/php80/files/patch-sapi_apache2handler_config.m4
+	new file:   lang/php80/files/patch-sapi_fpm_config.m4
+	new file:   lang/php80/files/patch-sapi_fpm_www.conf.in
+	new file:   lang/php80/files/php-fpm.in
+	new file:   lang/php80/pkg-descr
+	new file:   lang/php80/pkg-message.mod
+	new file:   lang/php80/pkg-plist
+	new file:   lang/php80/pkg-plist.mod
+	modified:   mail/Makefile
+	modified:   mail/mailagent/Makefile
+	modified:   mail/mailagent/files/pkg-message.in
+	modified:   mail/mailagent/pkg-plist
+	new file:   mail/php80-imap/Makefile
+	new file:   mail/php80-imap/files/patch-config.m4
+	modified:   mail/qsheff/Makefile
+	modified:   mail/qsheff/pkg-plist
+	modified:   mail/ssmtp/Makefile
+	modified:   mail/ssmtp/files/patch-configure
+	modified:   mail/ssmtp/files/patch-md5auth-hmac_md5.c
+	new file:   mail/ssmtp/files/patch-ssmtp.8
+	modified:   mail/ssmtp/files/patch-ssmtp.c
+	modified:   mail/ssmtp/files/patch-ssmtp.conf
+	new file:   mail/ssmtp/files/patch-ssmtp.conf.5
+	modified:   mail/ssmtp/files/pkg-message.in
+	modified:   mail/ssmtp/pkg-descr
+	modified:   mail/ssmtp/pkg-plist
+	modified:   math/Makefile
+	modified:   math/R-cran-RcppArmadillo/Makefile
+	modified:   math/R-cran-RcppArmadillo/distinfo
+	modified:   math/R-cran-labeling/Makefile
+	modified:   math/R-cran-labeling/distinfo
+	new file:   math/php80-bcmath/Makefile
+	new file:   math/php80-gmp/Makefile
+	new file:   math/vtk8/files/patch-Rendering_FreeType_vtkFreeTypeTools.cxx
+	modified:   misc/Makefile
+	modified:   misc/far2l/Makefile
+	modified:   misc/far2l/distinfo
+	deleted:    misc/far2l/files/patch-WinPort_src_APIFSNotify.cpp
+	deleted:    misc/far2l/files/patch-cmake_modules_FindLibSSH.cmake
+	modified:   misc/far2l/files/patch-cmake_modules_FindLibsmbclient.cmake
+	modified:   misc/far2l/pkg-descr
+	modified:   misc/far2l/pkg-plist
+	modified:   misc/iio-oscilloscope/Makefile
+	deleted:    misc/iio-oscilloscope/files/patch-osc.c
+	deleted:    misc/iio-oscilloscope/files/patch-plugins_lidar.c
+	new file:   misc/php80-calendar/Makefile
+	modified:   misc/zoneinfo/Makefile
+	modified:   misc/zoneinfo/distinfo
+	modified:   net-mgmt/Makefile
+	modified:   net-mgmt/icinga2/Makefile
+	modified:   net-mgmt/icinga2/distinfo
+	modified:   net-mgmt/icinga2/pkg-plist
+	new file:   net-mgmt/php80-snmp/Makefile
+	modified:   net-mgmt/unifi6/Makefile
+	modified:   net-mgmt/unifi6/distinfo
+	modified:   net-p2p/monero-cli/Makefile
+	modified:   net-p2p/monero-cli/distinfo
+	modified:   net/Makefile
+	modified:   net/croc/Makefile
+	modified:   net/croc/distinfo
+	modified:   net/dhcpd-pools/Makefile
+	new file:   net/php80-ldap/Makefile
+	new file:   net/php80-soap/Makefile
+	new file:   net/php80-sockets/Makefile
+	new file:   print/ghostscript9-agpl-base/files/patch-git_41ef9a0
+	new file:   print/ghostscript9-base/files/patch-git_41ef9a0_backport
+	modified:   security/Makefile
+	new file:   security/php80-filter/Makefile
+	new file:   security/php80-openssl/Makefile
+	new file:   security/php80-sodium/Makefile
+	modified:   security/py-fail2ban/Makefile
+	modified:   security/py-fail2ban/distinfo
+	modified:   security/u2f-devd/Makefile
+	modified:   security/u2f-devd/files/u2f.conf
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/Makefile
+	modified:   sysutils/ebsnvme-id/Makefile
+	modified:   sysutils/lxtask/Makefile
+	modified:   sysutils/lxtask/distinfo
+	modified:   sysutils/lxtask/files/patch-src__main.c
+	modified:   sysutils/lxtask/files/patch-src__types.h
+	modified:   sysutils/lxtask/files/patch-src__xfce-taskmanager-linux.c
+	modified:   sysutils/lxtask/pkg-plist
+	modified:   sysutils/nut-devel/Makefile
+	new file:   sysutils/nut-devel/files/patch-drivers_main.c
+	modified:   sysutils/p5-BSD-Jail-Object/files/patch-Object.pm
+	new file:   sysutils/php80-fileinfo/Makefile
+	new file:   sysutils/php80-fileinfo/files/patch-config.m4
+	new file:   sysutils/php80-posix/Makefile
+	new file:   sysutils/php80-posix/files/patch-posix.c
+	modified:   sysutils/py-distro/Makefile
+	modified:   sysutils/py-distro/distinfo
+	modified:   sysutils/py-salt/Makefile
+	modified:   sysutils/py-salt/distinfo
+	modified:   sysutils/py-salt/files/patch-salt_loader.py
+	modified:   sysutils/terragrunt/Makefile
+	modified:   sysutils/terragrunt/distinfo
+	modified:   sysutils/vector/Makefile
+	modified:   sysutils/vector/distinfo
+	modified:   sysutils/vector/files/patch-dynamic-linking
+	modified:   textproc/Makefile
+	modified:   textproc/R-cran-rmarkdown/Makefile
+	modified:   textproc/R-cran-rmarkdown/distinfo
+	new file:   textproc/php80-ctype/Makefile
+	new file:   textproc/php80-dom/Makefile
+	new file:   textproc/php80-enchant/Makefile
+	new file:   textproc/php80-enchant/files/patch-enchant.c
+	new file:   textproc/php80-pspell/Makefile
+	new file:   textproc/php80-simplexml/Makefile
+	new file:   textproc/php80-simplexml/files/patch-config.m4
+	new file:   textproc/php80-xml/Makefile
+	new file:   textproc/php80-xml/files/patch-compat.c
+	new file:   textproc/php80-xmlreader/Makefile
+	new file:   textproc/php80-xmlwriter/Makefile
+	new file:   textproc/php80-xsl/Makefile
+	new file:   textproc/php80-xsl/files/patch-php_xsl.h
+	new file:   textproc/rubygem-terser/Makefile
+	new file:   textproc/rubygem-terser/distinfo
+	new file:   textproc/rubygem-terser/pkg-descr
+	modified:   www/Makefile
+	modified:   www/caddy/Makefile
+	modified:   www/caddy/distinfo
+	modified:   www/falkon/pkg-message
+	modified:   www/gohugo/Makefile
+	modified:   www/gohugo/distinfo
+	modified:   www/kanboard/Makefile
+	modified:   www/kanboard/distinfo
+	modified:   www/kanboard/pkg-plist
+	modified:   www/logswan/Makefile
+	modified:   www/logswan/distinfo
+	new file:   www/mod_php80/Makefile
+	new file:   www/php80-opcache/Makefile
+	new file:   www/php80-session/Makefile
+	new file:   www/php80-tidy/Makefile
+	deleted:    www/py-unit/Makefile
+	new file:   www/rubygem-rack21/Makefile
+	new file:   www/rubygem-rack21/distinfo
+	new file:   www/rubygem-rack21/pkg-descr
+	modified:   www/squidguard/Makefile
+	modified:   www/trafficserver/pkg-plist
+	modified:   www/tt-rss/Makefile
+	modified:   www/tt-rss/distinfo
+	modified:   www/tt-rss/pkg-plist
+	modified:   www/unit-perl/Makefile
+	modified:   www/unit-php/Makefile
+	modified:   www/unit-python/Makefile
+	modified:   www/unit-ruby/Makefile
+	modified:   x11-fonts/fonttosfnt/Makefile
+	modified:   x11-fonts/fonttosfnt/distinfo
+	modified:   x11-fonts/jetbrains-mono/Makefile
+	modified:   x11-fonts/jetbrains-mono/distinfo
+	modified:   x11-toolkits/gtk-layer-shell/Makefile
+	modified:   x11-toolkits/gtk-layer-shell/distinfo
+	modified:   x11-toolkits/gtk-layer-shell/pkg-plist
+	modified:   x11-wm/wmakerconf/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   databases/postgis23/Makefile
+	both modified:   net-im/pidgin-sipe/Makefile
+
+
+It took 3.20 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at adb52f5d5012 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.04 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at adb52f5d5012 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
