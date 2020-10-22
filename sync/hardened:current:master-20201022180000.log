@@ -1,0 +1,226 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 1abc61889b11..4055c7d50ec5
+Fast-forward
+ ObsoleteFiles.inc                                  |  78 ++
+ include/paths.h                                    |   5 +-
+ sys/hardenedbsd/hbsd_pax_aslr.c                    |  35 +
+ sys/sys/pax.h                                      |   1 +
+ sys/vm/vm_map.c                                    |   2 +
+ sys/vm/vm_map.h                                    |   1 +
+ sys/vm/vm_mmap.c                                   |   8 +-
+ usr.bin/calendar/Makefile                          |  96 +--
+ usr.bin/calendar/calendars/calendar.all            |  14 +-
+ usr.bin/calendar/calendars/calendar.australia      |  72 --
+ usr.bin/calendar/calendars/calendar.birthday       | 350 ---------
+ usr.bin/calendar/calendars/calendar.brazilian      |  13 -
+ usr.bin/calendar/calendars/calendar.christian      |  36 -
+ usr.bin/calendar/calendars/calendar.computer       |  76 --
+ usr.bin/calendar/calendars/calendar.dutch          |  79 --
+ usr.bin/calendar/calendars/calendar.french         |  12 -
+ usr.bin/calendar/calendars/calendar.german         |  12 -
+ usr.bin/calendar/calendars/calendar.history        | 740 ------------------
+ usr.bin/calendar/calendars/calendar.holiday        | 563 --------------
+ usr.bin/calendar/calendars/calendar.hungarian      |  12 -
+ usr.bin/calendar/calendars/calendar.judaic         | 824 ---------------------
+ usr.bin/calendar/calendars/calendar.lotr           |  48 --
+ usr.bin/calendar/calendars/calendar.music          | 537 --------------
+ usr.bin/calendar/calendars/calendar.newzealand     |  25 -
+ usr.bin/calendar/calendars/calendar.russian        |  12 -
+ usr.bin/calendar/calendars/calendar.southafrica    |  23 -
+ usr.bin/calendar/calendars/calendar.ukrainian      |  12 -
+ usr.bin/calendar/calendars/calendar.usholiday      |  41 -
+ usr.bin/calendar/calendars/calendar.world          |  19 -
+ .../calendars/de_AT.ISO_8859-15/calendar.feiertag  |  62 --
+ .../calendars/de_DE.ISO8859-1/calendar.all         |  17 -
+ .../calendars/de_DE.ISO8859-1/calendar.feiertag    |  56 --
+ .../calendars/de_DE.ISO8859-1/calendar.geschichte  | 198 -----
+ .../calendars/de_DE.ISO8859-1/calendar.kirche      |  32 -
+ .../calendars/de_DE.ISO8859-1/calendar.literatur   |  54 --
+ .../calendars/de_DE.ISO8859-1/calendar.musik       |  66 --
+ .../de_DE.ISO8859-1/calendar.wissenschaft          |  19 -
+ .../calendars/fr_FR.ISO8859-1/calendar.all         |  14 -
+ .../calendars/fr_FR.ISO8859-1/calendar.fetes       | 630 ----------------
+ .../calendars/fr_FR.ISO8859-1/calendar.french      |  12 -
+ .../calendars/fr_FR.ISO8859-1/calendar.jferies     |  46 --
+ .../calendars/fr_FR.ISO8859-1/calendar.proverbes   | 354 ---------
+ .../calendars/hr_HR.ISO8859-2/calendar.all         |  12 -
+ .../calendars/hr_HR.ISO8859-2/calendar.praznici    |  44 --
+ .../calendars/hu_HU.ISO8859-2/calendar.all         |  13 -
+ .../calendars/hu_HU.ISO8859-2/calendar.nevnapok    | 386 ----------
+ .../calendars/hu_HU.ISO8859-2/calendar.unnepek     |  53 --
+ .../calendars/pt_BR.ISO8859-1/calendar.all         |  15 -
+ .../pt_BR.ISO8859-1/calendar.commemorative         | 191 -----
+ .../calendars/pt_BR.ISO8859-1/calendar.holidays    |  25 -
+ .../pt_BR.ISO8859-1/calendar.mcommemorative        |  22 -
+ .../calendar/calendars/pt_BR.UTF-8/calendar.all    |  16 -
+ .../calendars/pt_BR.UTF-8/calendar.commemorative   | 189 -----
+ .../calendars/pt_BR.UTF-8/calendar.holidays        |  25 -
+ .../calendars/pt_BR.UTF-8/calendar.mcommemorative  |  22 -
+ .../calendar/calendars/ru_RU.KOI8-R/calendar.all   |  16 -
+ .../calendars/ru_RU.KOI8-R/calendar.common         | 105 ---
+ .../calendars/ru_RU.KOI8-R/calendar.holiday        |  25 -
+ .../calendars/ru_RU.KOI8-R/calendar.military       |  28 -
+ .../calendars/ru_RU.KOI8-R/calendar.orthodox       |  36 -
+ .../calendar/calendars/ru_RU.KOI8-R/calendar.pagan |  42 --
+ .../calendar/calendars/ru_RU.UTF-8/calendar.all    |  16 -
+ .../calendar/calendars/ru_RU.UTF-8/calendar.common | 105 ---
+ .../calendars/ru_RU.UTF-8/calendar.holiday         |  25 -
+ .../calendars/ru_RU.UTF-8/calendar.military        |  28 -
+ .../calendars/ru_RU.UTF-8/calendar.orthodox        |  36 -
+ .../calendar/calendars/ru_RU.UTF-8/calendar.pagan  |  42 --
+ .../calendar/calendars/uk_UA.KOI8-U/calendar.all   |  14 -
+ .../calendars/uk_UA.KOI8-U/calendar.holiday        |  22 -
+ .../calendar/calendars/uk_UA.KOI8-U/calendar.misc  |  18 -
+ .../calendars/uk_UA.KOI8-U/calendar.orthodox       |  35 -
+ usr.bin/calendar/io.c                              |   2 +-
+ usr.bin/calendar/pathnames.h                       |   1 +
+ 73 files changed, 131 insertions(+), 6784 deletions(-)
+ delete mode 100644 usr.bin/calendar/calendars/calendar.australia
+ delete mode 100644 usr.bin/calendar/calendars/calendar.birthday
+ delete mode 100644 usr.bin/calendar/calendars/calendar.brazilian
+ delete mode 100644 usr.bin/calendar/calendars/calendar.christian
+ delete mode 100644 usr.bin/calendar/calendars/calendar.computer
+ delete mode 100644 usr.bin/calendar/calendars/calendar.dutch
+ delete mode 100644 usr.bin/calendar/calendars/calendar.french
+ delete mode 100644 usr.bin/calendar/calendars/calendar.german
+ delete mode 100644 usr.bin/calendar/calendars/calendar.history
+ delete mode 100644 usr.bin/calendar/calendars/calendar.holiday
+ delete mode 100644 usr.bin/calendar/calendars/calendar.hungarian
+ delete mode 100644 usr.bin/calendar/calendars/calendar.judaic
+ delete mode 100644 usr.bin/calendar/calendars/calendar.lotr
+ delete mode 100644 usr.bin/calendar/calendars/calendar.music
+ delete mode 100644 usr.bin/calendar/calendars/calendar.newzealand
+ delete mode 100644 usr.bin/calendar/calendars/calendar.russian
+ delete mode 100644 usr.bin/calendar/calendars/calendar.southafrica
+ delete mode 100644 usr.bin/calendar/calendars/calendar.ukrainian
+ delete mode 100644 usr.bin/calendar/calendars/calendar.usholiday
+ delete mode 100644 usr.bin/calendar/calendars/calendar.world
+ delete mode 100644 usr.bin/calendar/calendars/de_AT.ISO_8859-15/calendar.feiertag
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.feiertag
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.geschichte
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.kirche
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.literatur
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.musik
+ delete mode 100644 usr.bin/calendar/calendars/de_DE.ISO8859-1/calendar.wissenschaft
+ delete mode 100644 usr.bin/calendar/calendars/fr_FR.ISO8859-1/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/fr_FR.ISO8859-1/calendar.fetes
+ delete mode 100644 usr.bin/calendar/calendars/fr_FR.ISO8859-1/calendar.french
+ delete mode 100644 usr.bin/calendar/calendars/fr_FR.ISO8859-1/calendar.jferies
+ delete mode 100644 usr.bin/calendar/calendars/fr_FR.ISO8859-1/calendar.proverbes
+ delete mode 100644 usr.bin/calendar/calendars/hr_HR.ISO8859-2/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/hr_HR.ISO8859-2/calendar.praznici
+ delete mode 100644 usr.bin/calendar/calendars/hu_HU.ISO8859-2/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/hu_HU.ISO8859-2/calendar.nevnapok
+ delete mode 100644 usr.bin/calendar/calendars/hu_HU.ISO8859-2/calendar.unnepek
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.ISO8859-1/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.ISO8859-1/calendar.commemorative
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.ISO8859-1/calendar.holidays
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.ISO8859-1/calendar.mcommemorative
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.UTF-8/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.UTF-8/calendar.commemorative
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.UTF-8/calendar.holidays
+ delete mode 100644 usr.bin/calendar/calendars/pt_BR.UTF-8/calendar.mcommemorative
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.KOI8-R/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.KOI8-R/calendar.common
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.KOI8-R/calendar.holiday
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.KOI8-R/calendar.military
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.KOI8-R/calendar.orthodox
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.KOI8-R/calendar.pagan
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.UTF-8/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.UTF-8/calendar.common
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.UTF-8/calendar.holiday
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.UTF-8/calendar.military
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.UTF-8/calendar.orthodox
+ delete mode 100644 usr.bin/calendar/calendars/ru_RU.UTF-8/calendar.pagan
+ delete mode 100644 usr.bin/calendar/calendars/uk_UA.KOI8-U/calendar.all
+ delete mode 100644 usr.bin/calendar/calendars/uk_UA.KOI8-U/calendar.holiday
+ delete mode 100644 usr.bin/calendar/calendars/uk_UA.KOI8-U/calendar.misc
+ delete mode 100644 usr.bin/calendar/calendars/uk_UA.KOI8-U/calendar.orthodox
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/vfs_syscalls.c
+Merge made by the 'recursive' strategy.
+ share/man/man9/pfil.9         |  2 +-
+ share/man/man9/socket.9       |  2 +-
+ stand/libsa/zfs/zfs.c         | 22 ++++------------------
+ sys/arm64/arm64/uma_machdep.c |  5 ++---
+ sys/crypto/ccp/ccp.c          |  1 +
+ sys/dev/iscsi/iscsi.c         |  1 +
+ sys/dev/iscsi/iscsi.h         |  3 +--
+ sys/dev/iscsi/iscsi_ioctl.h   |  3 ++-
+ sys/dev/iscsi/iscsi_proto.h   |  6 +++++-
+ sys/dev/netmap/netmap_mem2.c  |  1 -
+ sys/kern/vfs_cache.c          | 35 +++++++++++++++++++++++++++++++++--
+ sys/kern/vfs_subr.c           | 12 ++++++++++++
+ sys/kern/vfs_syscalls.c       |  4 ++--
+ sys/kern/vnode_if.src         |  1 +
+ sys/net/if_vxlan.c            |  4 ++--
+ sys/sys/namei.h               |  7 +++++--
+ sys/sys/vnode.h               | 11 +++++++++++
+ usr.sbin/iscsid/iscsid.c      |  2 ++
+ usr.sbin/iscsid/iscsid.h      |  1 +
+ usr.sbin/iscsid/login.c       |  6 ++++++
+ usr.sbin/nfsd/pnfsserver.4    | 16 ++++++++--------
+ usr.sbin/nfsd/stablerestart.5 | 29 ++++++++++++++---------------
+ 22 files changed, 115 insertions(+), 59 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4055c7d50ec5..aee478c238e7  hardened/current/master -> hardened/current/master
+remote:    73576d16dfa2..44cf9eb23ade  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4055c7d50ec5..aee478c238e7  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
