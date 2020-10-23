@@ -47,3 +47,532 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/chromium/files/patch-ui_gfx_x_gen__xproto.py
+Removing www/chromium/files/patch-ui_gfx_x_BUILD.gn
+Removing www/chromium/files/patch-third__party_swiftshader_third__party_llvm-10.0_configs_linux_include_llvm_Config_llvm-config.h
+Removing www/chromium/files/patch-services_tracing_public_cpp_BUILD.gn
+Removing www/chromium/files/patch-services_service__manager_zygote_zygote__linux.cc
+Removing www/chromium/files/patch-content_renderer_BUILD.gn
+Removing www/chromium/files/patch-content_public_common_BUILD.gn
+Removing www/chromium/files/patch-content_child_BUILD.gn
+Removing www/chromium/files/patch-content_browser_scheduler_responsiveness_watcher.cc
+Removing www/chromium/files/patch-content_browser_BUILD.gn
+Removing www/chromium/files/patch-components_viz_service_display__embedder_skia__output__device__dawn.cc
+Removing www/chromium/files/patch-components_autofill_core_browser_autofill__experiments.cc
+Removing www/chromium/files/patch-chrome_browser_ui_input__method_input__method__engine__base.cc
+Removing www/chromium/files/patch-chrome_browser_extensions_api_input__ime_input__ime__api.h
+Removing www/chromium/files/patch-base_stl__util.h
+Removing www/chromium/files/patch-base_allocator_allocator__shim.cc
+Auto-merging www/chromium/Makefile
+Auto-merging net/asterisk13/Makefile
+Auto-merging net/Makefile
+Auto-merging java/openjdk13/Makefile
+Auto-merging games/gtkradiant/Makefile
+CONFLICT (content): Merge conflict in games/gtkradiant/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc games/gtkradiant/Makefile
+index 25aed306929c,98b05076cea5..000000000000
+--- a/games/gtkradiant/Makefile
++++ b/games/gtkradiant/Makefile
+@@@ -20,9 -20,7 +20,13 @@@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11
+  		libmhash.so:security/mhash \
+  		libpng.so:graphics/png
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		compiler:c++11-lang gnome pkgconfig python:build scons:python2 zip
+++=======
++ USES=		compiler:c++11-lang gnome pkgconfig python:build scons zip
+++>>>>>>> freebsd/master
+  USE_GNOME=	gtk20 libxml2
+  MAKE_ARGS=	${MAKE_ENV} BUILD=release
+  SSP_UNSAFE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Mk/Uses/php.mk
+	modified:   audio/asterisk-espeak/Makefile
+	modified:   audio/asterisk-flite/Makefile
+	modified:   audio/mpz/Makefile
+	modified:   audio/mpz/distinfo
+	modified:   audio/mpz/files/patch-mpz.pro
+	new file:   audio/mpz/pkg-plist
+	modified:   cad/sweethome3d/Makefile
+	modified:   cad/sweethome3d/files/sweethome3d.sh.in
+	modified:   devel/abseil/Makefile
+	modified:   devel/abseil/distinfo
+	modified:   devel/gitaly/Makefile
+	modified:   devel/gitaly/distinfo
+	modified:   devel/gitaly/files/patch-Makefile
+	modified:   devel/gitaly/files/patch-ruby_Gemfile
+	modified:   devel/gitaly/pkg-plist
+	modified:   devel/gitlab-shell/Makefile
+	modified:   devel/gitlab-shell/distinfo
+	modified:   devel/gitlab-shell/pkg-plist
+	renamed:    devel/llvm10/files/patch-tools_clang_lib_Basic_Targets.cpp -> devel/llvm10/files/clang/patch-tools_clang_lib_Basic_Targets.cpp
+	modified:   devel/php-composer/Makefile
+	modified:   devel/php-composer/distinfo
+	modified:   devel/rubygem-gitlab-labkit/Makefile
+	modified:   devel/rubygem-gitlab-labkit/distinfo
+	modified:   devel/rubygem-grape-path-helpers/Makefile
+	modified:   devel/rubygem-grape-path-helpers/distinfo
+	modified:   devel/rubygem-prometheus-client-mmap/Makefile
+	modified:   devel/rubygem-prometheus-client-mmap/distinfo
+	modified:   devel/rubygem-recursive-open-struct/Makefile
+	modified:   devel/rubygem-recursive-open-struct/distinfo
+	new file:   games/freecell-solver/files/patch-xxHash-wrapper_xxHash-0.7.2_xxh3.h
+	modified:   games/gtkradiant/files/patch-SConscript
+	modified:   games/gtkradiant/files/patch-SConstruct
+	modified:   games/gtkradiant/files/patch-makeversion.py
+	modified:   graphics/ansilove/Makefile
+	modified:   graphics/ansilove/distinfo
+	new file:   graphics/ansilove/files/patch-CMakeLists.txt
+	modified:   graphics/libansilove/Makefile
+	modified:   graphics/libansilove/distinfo
+	new file:   graphics/libansilove/files/patch-CMakeLists.txt
+	new file:   graphics/opencv/files/patch-modules_core_include_opencv2_core_cv__cpu__dispatch.h
+	modified:   java/openjdk13/Makefile
+	modified:   java/openjdk13/distinfo
+	modified:   java/openjdk15/Makefile
+	modified:   java/openjdk15/distinfo
+	modified:   lang/php80/Makefile
+	modified:   mail/rubygem-gitlab-mail_room/Makefile
+	modified:   mail/rubygem-gitlab-mail_room/distinfo
+	modified:   net/Makefile
+	modified:   net/asterisk-g72x/Makefile
+	modified:   net/asterisk13/Makefile
+	modified:   net/asterisk13/distinfo
+	modified:   net/asterisk16/Makefile
+	modified:   net/asterisk16/distinfo
+	new file:   net/asterisk18/Makefile
+	new file:   net/asterisk18/distinfo
+	new file:   net/asterisk18/files/asterisk.in
+	new file:   net/asterisk18/files/patch-Makefile
+	new file:   net/asterisk18/files/patch-agi_Makefile
+	new file:   net/asterisk18/files/patch-channels_chan__dahdi.c
+	new file:   net/asterisk18/files/patch-channels_sip_include_sip.h
+	new file:   net/asterisk18/files/patch-configure
+	new file:   net/asterisk18/files/patch-contrib_Makefile
+	new file:   net/asterisk18/files/patch-main_Makefile
+	new file:   net/asterisk18/files/patch-main_asterisk.exports.in
+	new file:   net/asterisk18/files/patch-main_http.c
+	new file:   net/asterisk18/files/patch-main_lock.c
+	new file:   net/asterisk18/files/patch-third-party_pjproject_Makefile
+	new file:   net/asterisk18/files/patch-third-party_pjproject_Makefile.rules
+	new file:   net/asterisk18/pkg-descr
+	new file:   net/asterisk18/pkg-message
+	new file:   net/asterisk18/pkg-plist
+	modified:   net/croc/Makefile
+	modified:   net/croc/distinfo
+	modified:   net/ooni-mini/Makefile
+	modified:   net/ooni-mini/distinfo
+	modified:   net/ooni-probe-cli/Makefile
+	modified:   net/ooni-probe-cli/distinfo
+	modified:   net/rubygem-gitaly/Makefile
+	modified:   net/rubygem-gitaly/distinfo
+	modified:   net/storj/Makefile
+	modified:   net/storj/Makefile.deps
+	modified:   net/storj/distinfo
+	modified:   net/storj/pkg-plist
+	modified:   sysutils/py-salt/Makefile
+	modified:   textproc/rubygem-charlock_holmes/Makefile
+	modified:   textproc/rubygem-charlock_holmes/distinfo
+	modified:   textproc/rubygem-github-linguist/Makefile
+	modified:   textproc/rubygem-github-linguist/distinfo
+	modified:   textproc/xfce4-dict-plugin/Makefile
+	modified:   textproc/xfce4-dict-plugin/distinfo
+	modified:   textproc/xfce4-dict-plugin/pkg-plist
+	modified:   www/awstats/Makefile
+	modified:   www/awstats/distinfo
+	modified:   www/awstats/pkg-plist
+	modified:   www/chromium/Makefile
+	modified:   www/chromium/distinfo
+	modified:   www/chromium/files/patch-BUILD.gn
+	modified:   www/chromium/files/patch-base_BUILD.gn
+	deleted:    www/chromium/files/patch-base_allocator_allocator__shim.cc
+	modified:   www/chromium/files/patch-base_allocator_partition__allocator_page__allocator__internals__posix.h
+	new file:   www/chromium/files/patch-base_allocator_partition__allocator_partition__alloc__constants.h
+	modified:   www/chromium/files/patch-base_allocator_partition__allocator_partition__alloc__unittest.cc
+	modified:   www/chromium/files/patch-base_base__switches.cc
+	modified:   www/chromium/files/patch-base_base__switches.h
+	modified:   www/chromium/files/patch-base_files_file__path__watcher__unittest.cc
+	modified:   www/chromium/files/patch-base_files_file__util.h
+	modified:   www/chromium/files/patch-base_files_file__util__posix.cc
+	modified:   www/chromium/files/patch-base_files_file__util__unittest.cc
+	modified:   www/chromium/files/patch-base_linux__util.cc
+	modified:   www/chromium/files/patch-base_memory_madv__free__discardable__memory__posix.cc
+	modified:   www/chromium/files/patch-base_posix_unix__domain__socket.cc
+	modified:   www/chromium/files/patch-base_process_internal__linux.cc
+	modified:   www/chromium/files/patch-base_process_internal__linux.h
+	modified:   www/chromium/files/patch-base_process_launch__posix.cc
+	modified:   www/chromium/files/patch-base_process_process__handle.cc
+	modified:   www/chromium/files/patch-base_process_process__metrics.h
+	modified:   www/chromium/files/patch-base_process_process__metrics__freebsd.cc
+	modified:   www/chromium/files/patch-base_profiler_stack__copier__signal.cc
+	modified:   www/chromium/files/patch-base_profiler_stack__sampling__profiler__test__util.cc
+	deleted:    www/chromium/files/patch-base_stl__util.h
+	modified:   www/chromium/files/patch-base_system_sys__info.h
+	modified:   www/chromium/files/patch-base_test_BUILD.gn
+	modified:   www/chromium/files/patch-base_test_launcher_test__launcher.cc
+	modified:   www/chromium/files/patch-base_test_test__suite.cc
+	modified:   www/chromium/files/patch-base_trace__event_process__memory__dump.cc
+	modified:   www/chromium/files/patch-build_config_BUILDCONFIG.gn
+	modified:   www/chromium/files/patch-build_config_compiler_BUILD.gn
+	modified:   www/chromium/files/patch-cc_BUILD.gn
+	modified:   www/chromium/files/patch-cc_test_layer__tree__test.cc
+	modified:   www/chromium/files/patch-cc_trees_property__tree.cc
+	modified:   www/chromium/files/patch-chrome_app_chrome__main.cc
+	modified:   www/chromium/files/patch-chrome_app_chrome__main__delegate.cc
+	modified:   www/chromium/files/patch-chrome_app_generated__resources.grd
+	modified:   www/chromium/files/patch-chrome_app_settings__strings.grdp
+	modified:   www/chromium/files/patch-chrome_browser_BUILD.gn
+	modified:   www/chromium/files/patch-chrome_browser_about__flags.cc
+	modified:   www/chromium/files/patch-chrome_browser_after__startup__task__utils.cc
+	modified:   www/chromium/files/patch-chrome_browser_browser__resources.grd
+	modified:   www/chromium/files/patch-chrome_browser_chrome__browser__interface__binders.cc
+	modified:   www/chromium/files/patch-chrome_browser_chrome__browser__main.cc
+	modified:   www/chromium/files/patch-chrome_browser_chrome__browser__main__linux.cc
+	modified:   www/chromium/files/patch-chrome_browser_chrome__browser__main__posix.cc
+	modified:   www/chromium/files/patch-chrome_browser_chrome__content__browser__client.cc
+	modified:   www/chromium/files/patch-chrome_browser_chrome__content__browser__client.h
+	modified:   www/chromium/files/patch-chrome_browser_dev__ui__browser__resources.grd
+	modified:   www/chromium/files/patch-chrome_browser_device__identity_device__oauth2__token__service__factory.cc
+	modified:   www/chromium/files/patch-chrome_browser_download_chrome__download__manager__delegate.cc
+	modified:   www/chromium/files/patch-chrome_browser_download_download__item__model.cc
+	modified:   www/chromium/files/patch-chrome_browser_download_download__prefs.cc
+	modified:   www/chromium/files/patch-chrome_browser_download_download__prefs.h
+	modified:   www/chromium/files/patch-chrome_browser_download_download__shelf__context__menu.cc
+	modified:   www/chromium/files/patch-chrome_browser_extensions_BUILD.gn
+	renamed:    www/chromium/files/patch-chrome_browser_extensions_api_erp_chrome_desktop_report_request_helper.cc -> www/chromium/files/patch-chrome_browser_extensions_api_enterprise__reporting__private_chrome__desktop__report__request__helper.cc
+	deleted:    www/chromium/files/patch-chrome_browser_extensions_api_input__ime_input__ime__api.h
+	modified:   www/chromium/files/patch-chrome_browser_extensions_api_settings__private_prefs__util.cc
+	modified:   www/chromium/files/patch-chrome_browser_extensions_browser__context__keyed__service__factories.cc
+	modified:   www/chromium/files/patch-chrome_browser_flag__descriptions.cc
+	modified:   www/chromium/files/patch-chrome_browser_flag__descriptions.h
+	modified:   www/chromium/files/patch-chrome_browser_media__galleries_media__file__system__registry.cc
+	modified:   www/chromium/files/patch-chrome_browser_media_router_discovery_discovery__network__list__posix.cc
+	modified:   www/chromium/files/patch-chrome_browser_media_router_providers_wired__display_wired__display__media__route__provider.cc
+	modified:   www/chromium/files/patch-chrome_browser_media_webrtc_webrtc__event__log__uploader.cc
+	modified:   www/chromium/files/patch-chrome_browser_media_webrtc_webrtc__logging__controller.cc
+	modified:   www/chromium/files/patch-chrome_browser_memory__details.cc
+	modified:   www/chromium/files/patch-chrome_browser_memory__details__linux.cc
+	modified:   www/chromium/files/patch-chrome_browser_metrics_chrome__browser__main__extra__parts__metrics.cc
+	modified:   www/chromium/files/patch-chrome_browser_metrics_chrome__metrics__service__client.cc
+	modified:   www/chromium/files/patch-chrome_browser_metrics_process__memory__metrics__emitter.cc
+	modified:   www/chromium/files/patch-chrome_browser_native__file__system_chrome__native__file__system__permission__context.cc
+	modified:   www/chromium/files/patch-chrome_browser_net_system__network__context__manager.cc
+	modified:   www/chromium/files/patch-chrome_browser_password__manager_chrome__password__manager__client.cc
+	modified:   www/chromium/files/patch-chrome_browser_password__manager_password__store__factory.cc
+	modified:   www/chromium/files/patch-chrome_browser_pdf_pdf__extension__test.cc
+	new file:   www/chromium/files/patch-chrome_browser_policy_chrome__browser__cloud__management__controller.cc
+	modified:   www/chromium/files/patch-chrome_browser_policy_configuration__policy__handler__list__factory.cc
+	modified:   www/chromium/files/patch-chrome_browser_prefs_browser__prefs.cc
+	renamed:    www/chromium/files/patch-chrome_browser_prefs_pref__service__incognito__whitelist.cc -> www/chromium/files/patch-chrome_browser_prefs_pref__service__incognito__allowlist.cc
+	modified:   www/chromium/files/patch-chrome_browser_process__singleton__posix.cc
+	modified:   www/chromium/files/patch-chrome_browser_profiles_chrome__browser__main__extra__parts__profiles.cc
+	modified:   www/chromium/files/patch-chrome_browser_profiles_profile__attributes__entry.cc
+	modified:   www/chromium/files/patch-chrome_browser_renderer__context__menu_render__view__context__menu.cc
+	modified:   www/chromium/files/patch-chrome_browser_sync_chrome__sync__client.cc
+	modified:   www/chromium/files/patch-chrome_browser_sync_test_integration_single__client__wallet__sync__test.cc
+	modified:   www/chromium/files/patch-chrome_browser_task__manager_sampling_task__group.cc
+	modified:   www/chromium/files/patch-chrome_browser_task__manager_sampling_task__manager__impl.cc
+	modified:   www/chromium/files/patch-chrome_browser_tracing_crash__service__uploader.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_BUILD.gn
+	modified:   www/chromium/files/patch-chrome_browser_ui_browser__command__controller.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_browser__view__prefs.cc
+	deleted:    www/chromium/files/patch-chrome_browser_ui_input__method_input__method__engine__base.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_startup_startup__browser__creator.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_tab__helpers.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_test_test__browser__ui.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_views_accelerator__table.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_views_bookmarks_bookmark__bar__view__test.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_views_download_download__item__view.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_views_frame_browser__view.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_views_tabs_tab__drag__controller.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_webui_about__ui.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_webui_chrome__web__ui__controller__factory.cc
+	modified:   www/chromium/files/patch-chrome_browser_ui_webui_settings_settings__localized__strings__provider.cc
+	modified:   www/chromium/files/patch-chrome_common_BUILD.gn
+	modified:   www/chromium/files/patch-chrome_common_chrome__features.cc
+	modified:   www/chromium/files/patch-chrome_common_chrome__features.h
+	modified:   www/chromium/files/patch-chrome_common_chrome__paths.cc
+	modified:   www/chromium/files/patch-chrome_common_chrome__paths.h
+	modified:   www/chromium/files/patch-chrome_common_chrome__switches.cc
+	modified:   www/chromium/files/patch-chrome_common_extensions_api_api__sources.gni
+	modified:   www/chromium/files/patch-chrome_common_features.gni
+	modified:   www/chromium/files/patch-chrome_common_media_cdm__host__file__path.cc
+	modified:   www/chromium/files/patch-chrome_common_pref__names.cc
+	modified:   www/chromium/files/patch-chrome_common_pref__names.h
+	modified:   www/chromium/files/patch-chrome_common_webui__url__constants.cc
+	modified:   www/chromium/files/patch-chrome_common_webui__url__constants.h
+	modified:   www/chromium/files/patch-chrome_renderer_chrome__content__renderer__client.cc
+	modified:   www/chromium/files/patch-chrome_test_BUILD.gn
+	modified:   www/chromium/files/patch-chrome_test_base_chrome__test__launcher.cc
+	modified:   www/chromium/files/patch-chrome_test_base_interactive__ui__tests__main.cc
+	modified:   www/chromium/files/patch-chrome_test_base_testing__browser__process.h
+	modified:   www/chromium/files/patch-chrome_test_chromedriver_chrome__launcher.cc
+	modified:   www/chromium/files/patch-chrome_test_chromedriver_chrome_chrome__finder.cc
+	modified:   www/chromium/files/patch-chromecast_browser_cast__browser__main__parts.cc
+	modified:   www/chromium/files/patch-chromecast_browser_cast__content__browser__client.cc
+	modified:   www/chromium/files/patch-chromecast_external__mojo_public_cpp_external__mojo__broker.cc
+	modified:   www/chromium/files/patch-chromecast_renderer_cast__content__renderer__client.cc
+	modified:   www/chromium/files/patch-components_BUILD.gn
+	modified:   www/chromium/files/patch-components_autofill_content_renderer_password__form__conversion__utils.cc
+	deleted:    www/chromium/files/patch-components_autofill_core_browser_autofill__experiments.cc
+	modified:   www/chromium/files/patch-components_autofill_core_browser_autofill__external__delegate.cc
+	modified:   www/chromium/files/patch-components_autofill_core_browser_personal__data__manager.cc
+	modified:   www/chromium/files/patch-components_autofill_core_common_autofill__payments__features.cc
+	modified:   www/chromium/files/patch-components_feature__engagement_public_event__constants.cc
+	modified:   www/chromium/files/patch-components_feature__engagement_public_event__constants.h
+	modified:   www/chromium/files/patch-components_feature__engagement_public_feature__constants.cc
+	modified:   www/chromium/files/patch-components_feature__engagement_public_feature__constants.h
+	modified:   www/chromium/files/patch-components_feature__engagement_public_feature__list.cc
+	modified:   www/chromium/files/patch-components_feature__engagement_public_feature__list.h
+	modified:   www/chromium/files/patch-components_flags__ui_flags__state.cc
+	modified:   www/chromium/files/patch-components_metrics_BUILD.gn
+	modified:   www/chromium/files/patch-components_metrics_metrics__log.cc
+	modified:   www/chromium/files/patch-components_neterror_resources_neterror.js
+	modified:   www/chromium/files/patch-components_network__session__configurator_browser_network__session__configurator.cc
+	modified:   www/chromium/files/patch-components_policy_core_common_cloud_cloud__policy__util.cc
+	modified:   www/chromium/files/patch-components_policy_resources_policy__templates.json
+	modified:   www/chromium/files/patch-components_url__formatter_spoof__checks_idn__spoof__checker.cc
+	deleted:    www/chromium/files/patch-components_viz_service_display__embedder_skia__output__device__dawn.cc
+	modified:   www/chromium/files/patch-components_viz_test_fake__output__surface.h
+	modified:   www/chromium/files/patch-content_app_content__main__runner__impl.cc
+	deleted:    www/chromium/files/patch-content_browser_BUILD.gn
+	modified:   www/chromium/files/patch-content_browser_browser__main__loop.cc
+	modified:   www/chromium/files/patch-content_browser_child__process__launcher__helper__linux.cc
+	modified:   www/chromium/files/patch-content_browser_compositor_viz__process__transport__factory.cc
+	modified:   www/chromium/files/patch-content_browser_devtools_protocol_system__info__handler.cc
+	modified:   www/chromium/files/patch-content_browser_gpu_gpu__process__host.cc
+	modified:   www/chromium/files/patch-content_browser_renderer__host_render__process__host__impl.cc
+	modified:   www/chromium/files/patch-content_browser_renderer__host_render__view__host__impl.cc
+	modified:   www/chromium/files/patch-content_browser_renderer__host_render__widget__host__view__aura.cc
+	modified:   www/chromium/files/patch-content_browser_renderer__host_render__widget__host__view__event__handler.cc
+	deleted:    www/chromium/files/patch-content_browser_scheduler_responsiveness_watcher.cc
+	modified:   www/chromium/files/patch-content_browser_utility__process__host.cc
+	modified:   www/chromium/files/patch-content_browser_utility__process__host__receiver__bindings.cc
+	modified:   www/chromium/files/patch-content_browser_webui_shared__resources__data__source.cc
+	renamed:    www/chromium/files/patch-services_service__manager_zygote_host_zygote__host__impl__linux.cc -> www/chromium/files/patch-content_browser_zygote__host_zygote__host__impl__linux.cc
+	renamed:    www/chromium/files/patch-services_service__manager_zygote_host_zygote__host__impl__linux.h -> www/chromium/files/patch-content_browser_zygote__host_zygote__host__impl__linux.h
+	deleted:    www/chromium/files/patch-content_child_BUILD.gn
+	modified:   www/chromium/files/patch-content_common_BUILD.gn
+	modified:   www/chromium/files/patch-content_gpu_BUILD.gn
+	modified:   www/chromium/files/patch-content_gpu_gpu__main.cc
+	modified:   www/chromium/files/patch-content_gpu_gpu__sandbox__hook__linux.cc
+	modified:   www/chromium/files/patch-content_public_app_content__main__delegate.cc
+	modified:   www/chromium/files/patch-content_public_app_content__main__delegate.h
+	renamed:    www/chromium/files/patch-services_service__manager_zygote_zygote__host__linux.h -> www/chromium/files/patch-content_public_browser_zygote__host_zygote__host__linux.h
+	deleted:    www/chromium/files/patch-content_public_common_BUILD.gn
+	modified:   www/chromium/files/patch-content_public_common_common__param__traits__macros.h
+	modified:   www/chromium/files/patch-content_public_common_content__features.cc
+	modified:   www/chromium/files/patch-content_public_common_content__switches.cc
+	modified:   www/chromium/files/patch-content_public_common_content__switches.h
+	renamed:    www/chromium/files/patch-services_service__manager_zygote_common_zygote__features.gni -> www/chromium/files/patch-content_public_common_zygote_features.gni
+	modified:   www/chromium/files/patch-content_public_test_browser__test__base.cc
+	deleted:    www/chromium/files/patch-content_renderer_BUILD.gn
+	modified:   www/chromium/files/patch-content_renderer_render__thread__impl.cc
+	modified:   www/chromium/files/patch-content_renderer_renderer__blink__platform__impl.cc
+	modified:   www/chromium/files/patch-content_renderer_renderer__blink__platform__impl.h
+	modified:   www/chromium/files/patch-content_shell_BUILD.gn
+	modified:   www/chromium/files/patch-content_shell_browser_shell__browser__context.cc
+	modified:   www/chromium/files/patch-content_shell_browser_shell__browser__main__parts.cc
+	modified:   www/chromium/files/patch-content_shell_browser_web__test_web__test__browser__main__runner.cc
+	modified:   www/chromium/files/patch-content_shell_renderer_web__test_test__runner.cc
+	modified:   www/chromium/files/patch-content_test_BUILD.gn
+	modified:   www/chromium/files/patch-content_utility_BUILD.gn
+	new file:   www/chromium/files/patch-content_zygote_zygote__linux.cc
+	renamed:    www/chromium/files/patch-services_service__manager_zygote_zygote__main__linux.cc -> www/chromium/files/patch-content_zygote_zygote__main__linux.cc
+	modified:   www/chromium/files/patch-extensions_common_api___permission__features.json
+	modified:   www/chromium/files/patch-extensions_shell_BUILD.gn
+	modified:   www/chromium/files/patch-gpu_command__buffer_service_external__vk__image__backing.cc
+	modified:   www/chromium/files/patch-gpu_command__buffer_service_external__vk__image__backing.h
+	modified:   www/chromium/files/patch-gpu_command__buffer_service_external__vk__image__gl__representation.cc
+	modified:   www/chromium/files/patch-gpu_command__buffer_tests_gl__copy__texture__CHROMIUM__unittest.cc
+	modified:   www/chromium/files/patch-gpu_command__buffer_tests_gl__test__utils.cc
+	modified:   www/chromium/files/patch-gpu_config_gpu__control__list.cc
+	modified:   www/chromium/files/patch-gpu_ipc_service_gpu__init.cc
+	modified:   www/chromium/files/patch-gpu_ipc_service_gpu__watchdog__thread.cc
+	modified:   www/chromium/files/patch-gpu_ipc_service_gpu__watchdog__thread.h
+	modified:   www/chromium/files/patch-gpu_vulkan_vulkan__function__pointers.cc
+	modified:   www/chromium/files/patch-gpu_vulkan_vulkan__function__pointers.h
+	modified:   www/chromium/files/patch-headless_BUILD.gn
+	new file:   www/chromium/files/patch-headless_lib_browser_headless__browser__main__parts.h
+	new file:   www/chromium/files/patch-headless_lib_browser_headless__browser__main__parts__linux.cc
+	modified:   www/chromium/files/patch-headless_lib_browser_headless__request__context__manager.cc
+	modified:   www/chromium/files/patch-headless_lib_headless__content__main__delegate.cc
+	modified:   www/chromium/files/patch-ipc_ipc__channel.h
+	modified:   www/chromium/files/patch-ipc_ipc__message__utils.cc
+	modified:   www/chromium/files/patch-media_audio_audio__input__device.cc
+	modified:   www/chromium/files/patch-media_base_media__switches.cc
+	modified:   www/chromium/files/patch-media_base_video__frame.cc
+	modified:   www/chromium/files/patch-media_base_video__frame.h
+	modified:   www/chromium/files/patch-media_capture_video_fake__video__capture__device__factory.cc
+	modified:   www/chromium/files/patch-media_formats_common_offset__byte__queue.cc
+	modified:   www/chromium/files/patch-media_media__options.gni
+	modified:   www/chromium/files/patch-media_video_fake__gpu__memory__buffer.cc
+	modified:   www/chromium/files/patch-media_video_gpu__memory__buffer__video__frame__pool.cc
+	modified:   www/chromium/files/patch-mojo_public_c_system_thunks.cc
+	modified:   www/chromium/files/patch-net_BUILD.gn
+	modified:   www/chromium/files/patch-net_base_address__tracker__linux.cc
+	new file:   www/chromium/files/patch-net_cert_test__root__certs.h
+	modified:   www/chromium/files/patch-net_proxy__resolution_configured__proxy__resolution__service.cc
+	modified:   www/chromium/files/patch-net_socket_udp__socket__posix.h
+	modified:   www/chromium/files/patch-net_traffic__annotation_network__traffic__annotation.h
+	modified:   www/chromium/files/patch-net_url__request_url__request__context__builder.cc
+	modified:   www/chromium/files/patch-pdf_pdfium_pdfium__engine.cc
+	new file:   www/chromium/files/patch-printing_print__settings.h
+	modified:   www/chromium/files/patch-remoting_host_evaluate__capability.cc
+	modified:   www/chromium/files/patch-sandbox_linux_BUILD.gn
+	modified:   www/chromium/files/patch-services_network_BUILD.gn
+	modified:   www/chromium/files/patch-services_network_network__context.cc
+	modified:   www/chromium/files/patch-services_network_network__service.cc
+	modified:   www/chromium/files/patch-services_network_network__service.h
+	modified:   www/chromium/files/patch-services_resource__coordinator_public_cpp_memory__instrumentation_os__metrics.h
+	modified:   www/chromium/files/patch-services_resource__coordinator_public_cpp_memory__instrumentation_os__metrics__linux.cc
+	new file:   www/chromium/files/patch-services_service__manager_sandbox_switches.cc
+	new file:   www/chromium/files/patch-services_service__manager_sandbox_switches.h
+	deleted:    www/chromium/files/patch-services_service__manager_zygote_zygote__linux.cc
+	deleted:    www/chromium/files/patch-services_tracing_public_cpp_BUILD.gn
+	modified:   www/chromium/files/patch-third__party_angle_src_libANGLE_Display.cpp
+	modified:   www/chromium/files/patch-third__party_angle_src_libANGLE_renderer_driver__utils.h
+	modified:   www/chromium/files/patch-third__party_angle_third__party_vulkan-loader_src_loader_loader.c
+	new file:   www/chromium/files/patch-third__party_blink_public_common_privacy__budget_identifiable__token.h
+	modified:   www/chromium/files/patch-third__party_blink_renderer_controller_blink__initializer.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_core_exported_web__frame__test.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_core_html_canvas_canvas__async__blob__creator.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_core_layout_layout__view.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_modules_mediastream_processed__local__audio__source.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_platform_fonts_font__cache.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_platform_fonts_font__cache.h
+	modified:   www/chromium/files/patch-third__party_blink_renderer_platform_graphics_video__frame__submitter.cc
+	modified:   www/chromium/files/patch-third__party_blink_renderer_platform_wtf_stack__util.cc
+	modified:   www/chromium/files/patch-third__party_crashpad_crashpad_client_crashpad__client__posix.cc
+	modified:   www/chromium/files/patch-third__party_crashpad_crashpad_util_misc_uuid.cc
+	modified:   www/chromium/files/patch-third__party_crashpad_crashpad_util_posix_close__multiple.cc
+	modified:   www/chromium/files/patch-third__party_crashpad_crashpad_util_posix_drop__privileges.cc
+	modified:   www/chromium/files/patch-third__party_crashpad_crashpad_util_posix_signals.cc
+	modified:   www/chromium/files/patch-third__party_googletest_src_googletest_include_gtest_internal_gtest-port.h
+	modified:   www/chromium/files/patch-third__party_googletest_src_googletest_src_gtest.cc
+	modified:   www/chromium/files/patch-third__party_leveldatabase_env__chromium.cc
+	modified:   www/chromium/files/patch-third__party_pdfium_core_fxge_fx__ge__linux.cpp
+	modified:   www/chromium/files/patch-third__party_pdfium_fxjs_cjs__publicmethods.cpp
+	modified:   www/chromium/files/patch-third__party_pdfium_fxjs_fx__date__helpers.cpp
+	modified:   www/chromium/files/patch-third__party_perfetto_include_perfetto_base_build__config.h
+	modified:   www/chromium/files/patch-third__party_perfetto_include_perfetto_base_thread__utils.h
+	modified:   www/chromium/files/patch-third__party_perfetto_src_base_unix__socket.cc
+	modified:   www/chromium/files/patch-third__party_perfetto_src_tracing_core_tracing__service__impl.cc
+	deleted:    www/chromium/files/patch-third__party_swiftshader_third__party_llvm-10.0_configs_linux_include_llvm_Config_llvm-config.h
+	modified:   www/chromium/files/patch-third__party_webrtc_rtc__base_platform__thread__types.cc
+	new file:   www/chromium/files/patch-tools_gn_src_gn_version.h
+	modified:   www/chromium/files/patch-tools_perf_chrome__telemetry__build_BUILD.gn
+	modified:   www/chromium/files/patch-ui_base_ime_init_input__method__initializer.cc
+	modified:   www/chromium/files/patch-ui_base_resource_resource__bundle.cc
+	modified:   www/chromium/files/patch-ui_base_ui__base__features.cc
+	modified:   www/chromium/files/patch-ui_base_webui_web__ui__util.cc
+	modified:   www/chromium/files/patch-ui_compositor_compositor.cc
+	modified:   www/chromium/files/patch-ui_compositor_compositor.h
+	modified:   www/chromium/files/patch-ui_events_devices_x11_device__data__manager__x11.cc
+	modified:   www/chromium/files/patch-ui_gfx_BUILD.gn
+	modified:   www/chromium/files/patch-ui_gfx_codec_jpeg__codec.cc
+	modified:   www/chromium/files/patch-ui_gfx_linux_client__native__pixmap__dmabuf.cc
+	modified:   www/chromium/files/patch-ui_gfx_native__widget__types.h
+	modified:   www/chromium/files/patch-ui_gfx_render__text.cc
+	deleted:    www/chromium/files/patch-ui_gfx_x_BUILD.gn
+	deleted:    www/chromium/files/patch-ui_gfx_x_gen__xproto.py
+	modified:   www/chromium/files/patch-ui_gl_BUILD.gn
+	modified:   www/chromium/files/patch-ui_gl_generate__bindings.py
+	renamed:    www/chromium/files/patch-ui_gtk_print__dialog__gtk.cc -> www/chromium/files/patch-ui_gtk_printing_print__dialog__gtk.cc
+	modified:   www/chromium/files/patch-ui_views_bubble_bubble__dialog__delegate__view.cc
+	modified:   www/chromium/files/patch-ui_views_controls_label.cc
+	modified:   www/chromium/files/patch-ui_views_controls_textfield_textfield.cc
+	modified:   www/chromium/files/patch-v8_BUILD.gn
+	modified:   www/chromium/files/patch-v8_src_api_api.cc
+	modified:   www/chromium/files/patch-v8_src_base_cpu.cc
+	modified:   www/chromium/files/patch-weblayer_BUILD.gn
+	modified:   www/chromium/files/patch-weblayer_app_content__main__delegate__impl.cc
+	modified:   www/chromium/files/patch-weblayer_browser_browser__main__parts__impl.cc
+	modified:   www/chromium/files/patch-weblayer_browser_content__browser__client__impl.cc
+	modified:   www/chromium/files/patch-weblayer_browser_content__browser__client__impl.h
+	modified:   www/chromium/files/sndio_input.cc
+	modified:   www/chromium/pkg-plist
+	modified:   www/gitlab-ce/Makefile
+	modified:   www/gitlab-ce/distinfo
+	modified:   www/gitlab-ce/files/patch-Gemfile
+	modified:   www/gitlab-ce/files/patch-config_gitlab.yml.example
+	modified:   www/gitlab-ce/pkg-message
+	modified:   www/gitlab-ce/pkg-plist
+	modified:   www/gitlab-pages/Makefile
+	modified:   www/gitlab-pages/distinfo
+	modified:   www/gitlab-workhorse/Makefile
+	modified:   www/gitlab-workhorse/distinfo
+	modified:   www/rubygem-kubeclient/Makefile
+	modified:   www/rubygem-kubeclient/distinfo
+	modified:   www/unit-perl/Makefile
+	modified:   www/unit-php/Makefile
+	modified:   www/unit-python/Makefile
+	modified:   www/unit-ruby/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   games/gtkradiant/Makefile
+
+
+It took 3.13 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 291eade9ff5d Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 291eade9ff5d Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
