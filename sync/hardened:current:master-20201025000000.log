@@ -1,0 +1,205 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 18 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 7193752e3d39..fa03f7e7cc8f
+Fast-forward
+ Makefile.inc1                                      |   1 +
+ bin/pwd/pwd.1                                      |  22 +-
+ contrib/less/NEWS                                  |  25 ++
+ contrib/less/README                                |  12 +-
+ contrib/less/brac.c                                |   2 +-
+ contrib/less/ch.c                                  |   6 +-
+ contrib/less/charset.c                             |   4 +-
+ contrib/less/charset.h                             |   2 +-
+ contrib/less/cmd.h                                 |   2 +-
+ contrib/less/cmdbuf.c                              |   7 +-
+ contrib/less/command.c                             |  10 +-
+ contrib/less/compose.uni                           |  28 +-
+ contrib/less/cvt.c                                 |   2 +-
+ contrib/less/decode.c                              |   2 +-
+ contrib/less/edit.c                                |   3 +-
+ contrib/less/filename.c                            |   4 +-
+ contrib/less/fmt.uni                               |   3 +-
+ contrib/less/forwback.c                            |   7 +-
+ contrib/less/funcs.h                               |   7 +-
+ contrib/less/help.c                                |   2 +-
+ contrib/less/ifile.c                               |   2 +-
+ contrib/less/input.c                               |   2 +-
+ contrib/less/jump.c                                |   4 +-
+ contrib/less/less.h                                |   2 +-
+ contrib/less/less.nro                              | 167 ++++-----
+ contrib/less/lessecho.c                            |   2 +-
+ contrib/less/lessecho.nro                          |   4 +-
+ contrib/less/lesskey.c                             |   2 +-
+ contrib/less/lesskey.h                             |   2 +-
+ contrib/less/lesskey.nro                           | 389 ++++++++++----------
+ contrib/less/lglob.h                               |   4 +-
+ contrib/less/line.c                                |   6 +-
+ contrib/less/linenum.c                             |   2 +-
+ contrib/less/lsystem.c                             |   2 +-
+ contrib/less/main.c                                |   5 +-
+ contrib/less/mark.c                                |   2 +-
+ contrib/less/mkutable                              |  34 +-
+ contrib/less/optfunc.c                             |   4 +-
+ contrib/less/option.c                              |  25 +-
+ contrib/less/option.h                              |   2 +-
+ contrib/less/opttbl.c                              |   2 +-
+ contrib/less/os.c                                  |   2 +-
+ contrib/less/output.c                              |   6 +-
+ contrib/less/pattern.c                             |   2 +-
+ contrib/less/pattern.h                             |   2 +-
+ contrib/less/pckeys.h                              |   2 +-
+ contrib/less/position.c                            |   2 +-
+ contrib/less/position.h                            |   2 +-
+ contrib/less/prompt.c                              |   2 +-
+ contrib/less/screen.c                              |  59 ++--
+ contrib/less/scrsize.c                             |   2 +-
+ contrib/less/search.c                              |   2 +-
+ contrib/less/signal.c                              |   2 +-
+ contrib/less/tags.c                                |  17 +-
+ contrib/less/ttyin.c                               |   4 +-
+ contrib/less/ubin.uni                              |   2 +-
+ contrib/less/version.c                             |  18 +-
+ contrib/less/wide.uni                              |  42 ++-
+ contrib/mandoc/msec.in                             |   1 +
+ etc/mtree/BSD.usr.dist                             |   6 +-
+ lib/Makefile                                       |   5 +
+ lib/flua/Makefile                                  |   5 +
+ lib/flua/libjail/Makefile                          |  16 +
+ lib/flua/libjail/jail.3lua                         | 210 +++++++++++
+ lib/flua/libjail/lua_jail.c                        | 391 +++++++++++++++++++++
+ sbin/ping/ping.8                                   |   7 +-
+ sbin/ping/ping.c                                   |  22 +-
+ sbin/ping6/ping6.8                                 |   8 +-
+ sbin/ping6/ping6.c                                 |  16 +-
+ sbin/sysctl/sysctl.c                               | 250 +++++++------
+ share/examples/Makefile                            |   4 +
+ share/examples/flua/libjail.lua                    |  60 ++++
+ share/man/Makefile                                 |   2 +-
+ share/man/man3lua/Makefile                         |   7 +
+ share/man/man3lua/intro.3lua                       |  65 ++++
+ sys/conf/files                                     |   4 +-
+ .../openzfs/module/os/freebsd/spl/spl_kstat.c      |   8 +-
+ sys/dev/iommu/iommu_gas.c                          |  25 ++
+ sys/dev/iommu/iommu_msi.h                          |   1 +
+ sys/dev/iscsi/iscsi_ioctl.h                        |   3 +-
+ sys/geom/geom_io.c                                 |   4 +-
+ sys/kern/kern_sysctl.c                             |   8 +
+ sys/kern/msi_if.m                                  |  23 +-
+ sys/kern/subr_devstat.c                            |  11 +
+ sys/kern/subr_intr.c                               |  16 +-
+ sys/netinet/cc/cc_cubic.c                          |  68 ++--
+ sys/netinet/cc/cc_dctcp.c                          |   6 +-
+ sys/netinet/cc/cc_htcp.c                           |   6 +
+ sys/netinet/cc/cc_newreno.c                        |   8 +-
+ sys/netinet/tcp_input.c                            |   6 -
+ sys/riscv/include/db_machdep.h                     |   2 +-
+ sys/riscv/include/riscvreg.h                       |  32 +-
+ sys/riscv/riscv/db_trace.c                         |   6 +-
+ sys/riscv/riscv/intr_machdep.c                     |   4 +-
+ sys/riscv/riscv/trap.c                             |  48 +--
+ sys/sys/devicestat.h                               |   1 +
+ usr.bin/getent/getent.1                            |  25 +-
+ usr.bin/iscsictl/iscsi.conf.5                      |   7 +
+ usr.bin/iscsictl/iscsictl.c                        |   5 +
+ usr.bin/iscsictl/iscsictl.h                        |   1 +
+ usr.bin/iscsictl/parse.y                           |  25 ++
+ usr.bin/iscsictl/token.l                           |   1 +
+ usr.bin/man/man.1                                  |   1 +
+ usr.bin/man/man.sh                                 |   2 +-
+ usr.sbin/ctld/ctl.conf.5                           |   7 +
+ usr.sbin/ctld/ctld.c                               |  27 ++
+ usr.sbin/ctld/ctld.h                               |   1 +
+ usr.sbin/ctld/parse.y                              |  24 +-
+ usr.sbin/ctld/token.l                              |   1 +
+ usr.sbin/ctld/uclparse.c                           |  13 +
+ usr.sbin/iscsid/iscsid.c                           |  19 +
+ 111 files changed, 1863 insertions(+), 644 deletions(-)
+ create mode 100644 lib/flua/Makefile
+ create mode 100644 lib/flua/libjail/Makefile
+ create mode 100644 lib/flua/libjail/jail.3lua
+ create mode 100644 lib/flua/libjail/lua_jail.c
+ create mode 100644 share/examples/flua/libjail.lua
+ create mode 100644 share/man/man3lua/Makefile
+ create mode 100644 share/man/man3lua/intro.3lua
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ include/stdbool.h                       |   3 -
+ include/stdlib.h                        |   2 +-
+ lib/msun/src/math.h                     |   4 +-
+ sbin/fsck_ffs/setup.c                   |   2 +-
+ sbin/fsirand/fsirand.c                  |   6 +
+ sbin/growfs/growfs.c                    |   6 +
+ sbin/tunefs/tunefs.c                    |  41 ++--
+ sys/cddl/dev/dtrace/riscv/dtrace_subr.c |   6 +-
+ sys/dev/bxe/ecore_sp.h                  |   3 -
+ sys/i386/i386/in_cksum.c                |   4 +-
+ sys/i386/include/in_cksum.h             |   4 +-
+ sys/sys/cdefs.h                         |  40 ++--
+ sys/sys/types.h                         |   3 -
+ sys/ufs/ffs/ffs_subr.c                  |  10 +-
+ sys/ufs/ffs/ffs_vfsops.c                |   4 -
+ sys/ufs/ffs/fs.h                        |   1 +
+ usr.bin/sockstat/sockstat.c             |   2 +-
+ usr.sbin/mountd/mountd.8                |  15 +-
+ usr.sbin/mountd/mountd.c                | 325 ++++++++++++++++++--------------
+ 19 files changed, 269 insertions(+), 212 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    fa03f7e7cc8f..8970ba1473a1  hardened/current/master -> hardened/current/master        
+remote:    f3b414d3f3aa..bae4112fd32c  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   fa03f7e7cc8f..8970ba1473a1  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

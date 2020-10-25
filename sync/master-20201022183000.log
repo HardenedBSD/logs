@@ -1,0 +1,747 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 166 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating adb52f5d5012..6da3993a168b
+Fast-forward
+ CHANGES                                            |   18 +-
+ Keywords/rmempty.ucl                               |   11 +
+ Keywords/shell.ucl                                 |   51 +-
+ MOVED                                              |    1 +
+ Mk/Uses/kde.mk                                     |    2 +-
+ Mk/Uses/php.mk                                     |   18 +-
+ Mk/bsd.ocaml.mk                                    |    7 +-
+ UPDATING                                           |    6 +
+ archivers/Makefile                                 |    4 +
+ archivers/php80-bz2/Makefile                       |   11 +
+ archivers/php80-phar/Makefile                      |   11 +
+ archivers/php80-phar/files/patch-config.m4         |   41 +
+ archivers/php80-zip/Makefile                       |   11 +
+ archivers/php80-zlib/Makefile                      |   11 +
+ archivers/php80-zlib/files/patch-zlib.c            |   10 +
+ astro/geographiclib/Makefile                       |   35 +-
+ astro/geographiclib/distinfo                       |    4 +-
+ astro/geographiclib/pkg-plist                      |    2 +
+ astro/py-spacetrack/Makefile                       |    6 +
+ audio/mixertui/Makefile                            |    4 +-
+ audio/mixertui/distinfo                            |    6 +-
+ audio/plasma5-plasma-pa/distinfo                   |    6 +-
+ cad/iverilog/Makefile                              |    4 +-
+ cad/iverilog/distinfo                              |    6 +-
+ cad/iverilog/files/patch-bison                     |   58 -
+ cad/iverilog/files/patch-d49d26a5.c                |   37 -
+ cad/iverilog/pkg-plist                             |    6 +-
+ converters/Makefile                                |    2 +
+ converters/php80-iconv/Makefile                    |   11 +
+ converters/php80-mbstring/Makefile                 |   11 +
+ converters/php80-mbstring/files/patch-config.m4    |   44 +
+ databases/Makefile                                 |   12 +
+ databases/php80-dba/Makefile                       |   11 +
+ databases/php80-dba/files/patch-config.m4          |   50 +
+ databases/php80-mysqli/Makefile                    |   11 +
+ databases/php80-mysqli/files/patch-mysqli__api.c   |   12 +
+ .../php80-mysqli/files/patch-php_mysqli_structs.h  |   20 +
+ databases/php80-odbc/Makefile                      |   11 +
+ databases/php80-odbc/files/patch-config.m4         |  111 ++
+ databases/php80-pdo/Makefile                       |   11 +
+ databases/php80-pdo_dblib/Makefile                 |   11 +
+ databases/php80-pdo_firebird/Makefile              |   11 +
+ databases/php80-pdo_mysql/Makefile                 |   11 +
+ databases/php80-pdo_odbc/Makefile                  |   11 +
+ databases/php80-pdo_pgsql/Makefile                 |   11 +
+ databases/php80-pdo_sqlite/Makefile                |   11 +
+ databases/php80-pgsql/Makefile                     |   11 +
+ databases/php80-sqlite3/Makefile                   |   11 +
+ databases/postgis23/Makefile                       |    1 +
+ databases/py-fakeredis/Makefile                    |    2 +-
+ databases/py-fakeredis/distinfo                    |    6 +-
+ deskutils/plasma5-milou/distinfo                   |    6 +-
+ deskutils/plasma5-sddm-kcm/distinfo                |    6 +-
+ devel/Makefile                                     |   17 +
+ devel/R-cran-broom/Makefile                        |    2 +-
+ devel/R-cran-broom/distinfo                        |    6 +-
+ devel/R-cran-pkgmaker/Makefile                     |    8 +-
+ devel/R-cran-pkgmaker/distinfo                     |    6 +-
+ devel/avarice/Makefile                             |    2 +-
+ devel/bazel/Makefile                               |    4 +-
+ devel/bazel/distinfo                               |    6 +-
+ devel/binaryen/Makefile                            |    3 +-
+ devel/binaryen/distinfo                            |    6 +-
+ devel/binaryen/pkg-plist                           |    1 -
+ devel/dulwich/Makefile                             |    2 +-
+ devel/dulwich/distinfo                             |    6 +-
+ devel/glab/Makefile                                |   98 ++
+ devel/glab/distinfo                                |  117 ++
+ ...ndor_github.com_muesli_termenv_termenv__unix.go |   20 +
+ devel/glab/pkg-descr                               |    6 +
+ devel/p5-App-perlbrew/Makefile                     |    6 +-
+ devel/p5-App-perlbrew/distinfo                     |    6 +-
+ devel/p5-Return-Type/Makefile                      |    2 +-
+ devel/p5-Return-Type/distinfo                      |    6 +-
+ devel/php80-ffi/Makefile                           |   11 +
+ devel/php80-gettext/Makefile                       |   11 +
+ devel/php80-intl/Makefile                          |   16 +
+ devel/php80-pcntl/Makefile                         |   11 +
+ devel/php80-readline/Makefile                      |   11 +
+ devel/php80-readline/files/patch-config.m4         |   33 +
+ devel/php80-readline/files/patch-readline_cli.c    |   13 +
+ devel/php80-shmop/Makefile                         |   11 +
+ devel/php80-sysvmsg/Makefile                       |   11 +
+ devel/php80-sysvsem/Makefile                       |   11 +
+ devel/php80-sysvshm/Makefile                       |   11 +
+ devel/php80-tokenizer/Makefile                     |   11 +
+ devel/plan9port/Makefile                           |    9 +-
+ devel/plasma5-khotkeys/distinfo                    |    6 +-
+ devel/plasma5-kwrited/distinfo                     |    6 +-
+ devel/plasma5-plasma-sdk/distinfo                  |    6 +-
+ devel/py-beniget/Makefile                          |   23 +
+ devel/py-beniget/distinfo                          |    3 +
+ devel/py-beniget/pkg-descr                         |    4 +
+ devel/py-black/Makefile                            |   21 +-
+ devel/py-black/distinfo                            |    6 +-
+ devel/py-click/Makefile                            |    3 +-
+ devel/py-click/distinfo                            |    6 +-
+ devel/py-cloudpickle/Makefile                      |    2 +-
+ devel/py-cloudpickle/distinfo                      |    6 +-
+ devel/py-datapackage/Makefile                      |   31 +
+ devel/py-datapackage/distinfo                      |    3 +
+ devel/py-datapackage/pkg-descr                     |    4 +
+ devel/py-ddtrace/Makefile                          |    4 +-
+ devel/py-ddtrace/distinfo                          |    6 +-
+ devel/py-deepmerge/Makefile                        |   22 +
+ devel/py-deepmerge/distinfo                        |    3 +
+ devel/py-deepmerge/pkg-descr                       |    3 +
+ devel/py-distributed/Makefile                      |    6 +-
+ devel/py-distributed/distinfo                      |    6 +-
+ devel/py-gast/Makefile                             |    9 +-
+ devel/py-gast/distinfo                             |    6 +-
+ devel/py-jsonpointer/Makefile                      |    8 +-
+ devel/py-jsonpointer/distinfo                      |    5 +-
+ devel/py-libtaxii/Makefile                         |    2 +-
+ devel/py-libtaxii/distinfo                         |    6 +-
+ devel/py-memory-profiler/Makefile                  |    4 +-
+ devel/py-memory-profiler/distinfo                  |    6 +-
+ devel/py-os-brick/Makefile                         |   14 +-
+ devel/py-os-brick/distinfo                         |    6 +-
+ devel/py-os-win/Makefile                           |    2 +-
+ devel/py-os-win/distinfo                           |    6 +-
+ devel/py-oslo.messaging/Makefile                   |    2 +-
+ devel/py-oslo.messaging/distinfo                   |    6 +-
+ devel/py-oslo.service/Makefile                     |    4 +-
+ devel/py-oslo.service/distinfo                     |    6 +-
+ devel/py-pbr/Makefile                              |    7 +-
+ devel/py-pbr/distinfo                              |    6 +-
+ devel/py-ruamel.yaml/Makefile                      |    6 +-
+ devel/py-ruamel.yaml/distinfo                      |    6 +-
+ devel/py-semver/Makefile                           |    2 +-
+ devel/py-semver/distinfo                           |    6 +-
+ devel/py-setuptools_scm/Makefile                   |    2 +-
+ devel/py-setuptools_scm/distinfo                   |    6 +-
+ devel/py-vcver/Makefile                            |   22 +
+ devel/py-vcver/distinfo                            |    3 +
+ devel/py-vcver/pkg-descr                           |    4 +
+ devel/redo/Makefile                                |    2 +
+ devel/rubygem-aws-sdk-backup/Makefile              |    2 +-
+ devel/rubygem-aws-sdk-backup/distinfo              |    6 +-
+ devel/rubygem-aws-sdk-cloudfront/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-cloudfront/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |    2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |    6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |    2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |    6 +-
+ devel/rubygem-aws-sdk-s3/Makefile                  |    2 +-
+ devel/rubygem-aws-sdk-s3/distinfo                  |    6 +-
+ devel/rubygem-aws-sdk-servicecatalog/Makefile      |    2 +-
+ devel/rubygem-aws-sdk-servicecatalog/distinfo      |    6 +-
+ devel/rubygem-aws-sdk-ssm/Makefile                 |    2 +-
+ devel/rubygem-aws-sdk-ssm/distinfo                 |    6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |    2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |    6 +-
+ devel/rubygem-gemdiff/Makefile                     |    5 +-
+ devel/rubygem-gemdiff/distinfo                     |    6 +-
+ devel/rubygem-google-api-client/Makefile           |    2 +-
+ devel/rubygem-google-api-client/distinfo           |    6 +-
+ devel/rubygem-jsonpath/Makefile                    |   25 +
+ devel/rubygem-jsonpath/distinfo                    |    3 +
+ devel/rubygem-jsonpath/pkg-descr                   |    7 +
+ devel/rubygem-reline/Makefile                      |    2 +-
+ devel/rubygem-reline/distinfo                      |    6 +-
+ devel/rubygem-to_regexp/Makefile                   |   20 +
+ devel/rubygem-to_regexp/distinfo                   |    3 +
+ devel/rubygem-to_regexp/pkg-descr                  |    3 +
+ devel/rubygem-xdg/Makefile                         |    2 +-
+ devel/rubygem-xdg/distinfo                         |    6 +-
+ devel/sonarqube-community/Makefile                 |    4 +-
+ devel/sonarqube-community/distinfo                 |    6 +-
+ emulators/i386-wine-devel/Makefile.amd64           |    4 +-
+ emulators/i386-wine/Makefile.amd64                 |    4 +-
+ emulators/open-vm-tools/Makefile                   |    1 +
+ emulators/open-vm-tools/files/vmware-guestd.in     |    2 +-
+ emulators/qemu50/Makefile                          |    2 +-
+ emulators/rpcs3/Makefile                           |    4 +-
+ emulators/rpcs3/distinfo                           |    6 +-
+ emulators/yuzu/Makefile                            |    6 +-
+ emulators/yuzu/distinfo                            |    6 +-
+ ftp/Makefile                                       |    2 +
+ ftp/php80-curl/Makefile                            |   11 +
+ ftp/php80-ftp/Makefile                             |   15 +
+ games/bsdtris/Makefile                             |    2 +
+ games/bsdtris/pkg-plist                            |    8 +-
+ games/darkplaces/Makefile                          |    2 +-
+ games/devilutionX/Makefile                         |    7 +-
+ games/devilutionX/distinfo                         |    6 +-
+ games/devilutionX/files/patch-CMakeLists.txt       |   32 +-
+ .../patch-Packaging_fedora_devilutionx.desktop     |    6 +-
+ games/doomlegacy/Makefile                          |    2 +-
+ games/doomlegacy/distinfo                          |   10 +-
+ games/gnome-nibbles/Makefile                       |   13 +-
+ games/gnome-nibbles/distinfo                       |    6 +-
+ games/gnome-nibbles/pkg-plist                      |  222 ++--
+ graphics/Makefile                                  |    2 +
+ graphics/drm-fbsd11.2-kmod/pkg-descr               |    2 +-
+ graphics/dspdfviewer/Makefile                      |    3 +-
+ graphics/graphite2/Makefile                        |   11 +-
+ graphics/graphite2/distinfo                        |    6 +-
+ graphics/jp2a/Makefile                             |    1 +
+ graphics/libkdcraw/Makefile                        |    8 +-
+ graphics/libkdcraw/pkg-descr                       |    2 +-
+ graphics/linux-c7-libdrm/Makefile                  |    4 +-
+ graphics/mesa-devel/Makefile                       |    5 +-
+ graphics/mesa-devel/distinfo                       |    6 +-
+ graphics/mupdf/Makefile                            |    7 +-
+ graphics/mupdf/distinfo                            |    6 +-
+ graphics/mupdf/files/patch-Makefile                |   10 +-
+ graphics/mupdf/pkg-plist                           |    4 +
+ graphics/php80-exif/Makefile                       |   11 +
+ graphics/php80-gd/Makefile                         |   13 +
+ graphics/php80-gd/files/patch-gd.c                 |   11 +
+ graphics/poppler-data/Makefile                     |    3 +-
+ graphics/poppler-data/distinfo                     |    6 +-
+ graphics/poppler-data/pkg-plist                    |   30 +
+ .../files/patch-src_ncnn_CMakeLists.txt            |   11 +
+ .../files/patch-src_ncnn_src_layer_interp.cpp      |   15 +
+ lang/Makefile                                      |    2 +
+ lang/cython/Makefile                               |    2 +-
+ lang/cython/distinfo                               |    6 +-
+ lang/ferite/Makefile                               |    5 +-
+ lang/gcc11-devel/Makefile                          |    2 +-
+ lang/gcc11-devel/distinfo                          |    6 +-
+ lang/gcc48/Makefile                                |    4 +-
+ lang/php72/pkg-plist                               |    2 +-
+ lang/php73/pkg-plist                               |    2 +-
+ lang/php74/pkg-plist                               |    2 +-
+ lang/php80-extensions/Makefile                     |  110 ++
+ lang/php80-extensions/pkg-descr                    |    7 +
+ lang/php80/Makefile                                |  189 ++++
+ lang/php80/Makefile.ext                            |  559 +++++++++
+ lang/php80/distinfo                                |    3 +
+ lang/php80/files/patch-build_Makefile.global       |   19 +
+ lang/php80/files/patch-configure.ac                |   45 +
+ lang/php80/files/patch-ext_mysqli_mysqli__api.c    |   12 +
+ lang/php80/files/patch-ext_mysqli_mysqli__nonapi.c |   12 +
+ lang/php80/files/patch-ext_mysqli_mysqli__prop.c   |   12 +
+ .../files/patch-ext_mysqli_php__mysqli__structs.h  |   11 +
+ .../files/patch-sapi_apache2handler_config.m4      |   11 +
+ lang/php80/files/patch-sapi_fpm_config.m4          |   11 +
+ lang/php80/files/patch-sapi_fpm_www.conf.in        |   17 +
+ lang/php80/files/php-fpm.in                        |   69 ++
+ lang/php80/pkg-descr                               |    8 +
+ lang/php80/pkg-message.mod                         |   19 +
+ lang/php80/pkg-plist                               |  295 +++++
+ lang/php80/pkg-plist.mod                           |    3 +
+ mail/Makefile                                      |    1 +
+ mail/mailagent/Makefile                            |    5 +-
+ mail/mailagent/files/pkg-message.in                |    4 +-
+ mail/mailagent/pkg-plist                           |    4 +-
+ mail/php80-imap/Makefile                           |   11 +
+ mail/php80-imap/files/patch-config.m4              |   47 +
+ mail/qsheff/Makefile                               |    2 +-
+ mail/qsheff/pkg-plist                              |    3 -
+ mail/ssmtp/Makefile                                |   54 +-
+ mail/ssmtp/files/patch-configure                   |   18 +-
+ mail/ssmtp/files/patch-md5auth-hmac_md5.c          |    4 +-
+ mail/ssmtp/files/patch-ssmtp.8                     |   23 +
+ mail/ssmtp/files/patch-ssmtp.c                     |   93 +-
+ mail/ssmtp/files/patch-ssmtp.conf                  |   11 +-
+ mail/ssmtp/files/patch-ssmtp.conf.5                |   20 +
+ mail/ssmtp/files/pkg-message.in                    |   15 +-
+ mail/ssmtp/pkg-descr                               |    2 +-
+ mail/ssmtp/pkg-plist                               |    8 +-
+ math/Makefile                                      |    2 +
+ math/R-cran-RcppArmadillo/Makefile                 |    2 +-
+ math/R-cran-RcppArmadillo/distinfo                 |    6 +-
+ math/R-cran-labeling/Makefile                      |    3 +-
+ math/R-cran-labeling/distinfo                      |    5 +-
+ math/php80-bcmath/Makefile                         |   11 +
+ math/php80-gmp/Makefile                            |   11 +
+ .../patch-Rendering_FreeType_vtkFreeTypeTools.cxx  |   11 +
+ misc/Makefile                                      |    1 +
+ misc/far2l/Makefile                                |   18 +-
+ misc/far2l/distinfo                                |    6 +-
+ misc/far2l/files/patch-WinPort_src_APIFSNotify.cpp |   10 -
+ .../files/patch-cmake_modules_FindLibSSH.cmake     |   26 -
+ .../patch-cmake_modules_FindLibsmbclient.cmake     |   22 +-
+ misc/far2l/pkg-descr                               |    9 +-
+ misc/far2l/pkg-plist                               |    8 +-
+ misc/iio-oscilloscope/Makefile                     |    2 +-
+ misc/iio-oscilloscope/files/patch-osc.c            |   11 -
+ misc/iio-oscilloscope/files/patch-plugins_lidar.c  |   11 -
+ misc/php80-calendar/Makefile                       |   11 +
+ misc/zoneinfo/Makefile                             |    2 +-
+ misc/zoneinfo/distinfo                             |    6 +-
+ net-im/pidgin-sipe/Makefile                        |    2 +-
+ net-mgmt/Makefile                                  |    1 +
+ net-mgmt/icinga2/Makefile                          |    2 +-
+ net-mgmt/icinga2/distinfo                          |    6 +-
+ net-mgmt/icinga2/pkg-plist                         |    4 +-
+ net-mgmt/php80-snmp/Makefile                       |   11 +
+ net-mgmt/unifi6/Makefile                           |    3 +-
+ net-mgmt/unifi6/distinfo                           |   10 +-
+ net-p2p/monero-cli/Makefile                        |    2 +-
+ net-p2p/monero-cli/distinfo                        |    6 +-
+ net/Makefile                                       |    4 +
+ net/croc/Makefile                                  |    6 +-
+ net/croc/distinfo                                  |   14 +-
+ net/dhcpd-pools/Makefile                           |    1 +
+ net/php80-ldap/Makefile                            |   11 +
+ net/php80-soap/Makefile                            |   11 +
+ net/php80-sockets/Makefile                         |   11 +
+ net/py-errbot/Makefile                             |   33 +
+ net/py-errbot/distinfo                             |    3 +
+ net/py-errbot/files/patch-setup.py                 |   10 +
+ net/py-errbot/pkg-descr                            |    5 +
+ net/py-eventlet/Makefile                           |   14 +-
+ net/py-eventlet/distinfo                           |    6 +-
+ net/wmnd/Makefile                                  |    5 +-
+ net/wmnd/distinfo                                  |    5 +-
+ print/freetype2/Makefile                           |    3 +-
+ print/freetype2/distinfo                           |    6 +-
+ print/freetype2/pkg-plist                          |    9 +-
+ .../ghostscript9-agpl-base/files/patch-git_41ef9a0 |   51 +
+ .../files/patch-git_41ef9a0_backport               |   29 +
+ security/Makefile                                  |    3 +
+ security/php80-filter/Makefile                     |   11 +
+ security/php80-openssl/Makefile                    |   11 +
+ security/php80-sodium/Makefile                     |   11 +
+ security/plasma5-kscreenlocker/distinfo            |    6 +-
+ security/plasma5-ksshaskpass/distinfo              |    6 +-
+ security/plasma5-kwallet-pam/distinfo              |    6 +-
+ security/py-fail2ban/Makefile                      |    6 +-
+ security/py-fail2ban/distinfo                      |    6 +-
+ security/py-google-auth/Makefile                   |    6 +-
+ security/py-google-auth/distinfo                   |    6 +-
+ security/u2f-devd/Makefile                         |    1 +
+ security/u2f-devd/files/u2f.conf                   |   16 +
+ security/vuxml/vuln.xml                            |  112 ++
+ sysutils/Makefile                                  |    2 +
+ sysutils/ebsnvme-id/Makefile                       |    2 +-
+ sysutils/lxtask/Makefile                           |   13 +-
+ sysutils/lxtask/distinfo                           |    5 +-
+ sysutils/lxtask/files/patch-src__main.c            |   17 +-
+ sysutils/lxtask/files/patch-src__types.h           |    8 +-
+ .../files/patch-src__xfce-taskmanager-linux.c      |  123 +-
+ sysutils/lxtask/pkg-plist                          |   19 +
+ sysutils/nut-devel/Makefile                        |    1 +
+ sysutils/nut-devel/files/patch-drivers_main.c      |   44 +
+ sysutils/p5-BSD-Jail-Object/files/patch-Object.pm  |   36 +-
+ sysutils/php80-fileinfo/Makefile                   |   11 +
+ sysutils/php80-fileinfo/files/patch-config.m4      |   21 +
+ sysutils/php80-posix/Makefile                      |   11 +
+ sysutils/php80-posix/files/patch-posix.c           |   38 +
+ sysutils/plasma5-discover/distinfo                 |    6 +-
+ sysutils/plasma5-drkonqi/distinfo                  |    6 +-
+ sysutils/plasma5-kde-cli-tools/distinfo            |    6 +-
+ sysutils/plasma5-kinfocenter/distinfo              |    6 +-
+ sysutils/plasma5-kmenuedit/distinfo                |    6 +-
+ sysutils/plasma5-ksysguard/distinfo                |    6 +-
+ sysutils/plasma5-ksysguard/pkg-plist               |    2 +
+ sysutils/plasma5-libksysguard/distinfo             |    6 +-
+ sysutils/plasma5-libksysguard/pkg-plist            |   16 +-
+ sysutils/plasma5-plasma-disks/distinfo             |    6 +-
+ sysutils/plasma5-plasma-disks/pkg-plist            |    3 +
+ sysutils/plasma5-polkit-kde-agent-1/distinfo       |    6 +-
+ sysutils/plasma5-powerdevil/distinfo               |    6 +-
+ sysutils/plasma5-systemsettings/Makefile           |    3 +-
+ sysutils/plasma5-systemsettings/distinfo           |    6 +-
+ sysutils/py-distro/Makefile                        |    3 +-
+ sysutils/py-distro/distinfo                        |    6 +-
+ sysutils/py-python-consul2/Makefile                |    2 +-
+ sysutils/py-python-consul2/distinfo                |    6 +-
+ sysutils/py-salt/Makefile                          |   16 +-
+ sysutils/py-salt/distinfo                          |    8 +-
+ sysutils/py-salt/files/patch-salt_loader.py        |   22 +-
+ sysutils/terragrunt/Makefile                       |    2 +-
+ sysutils/terragrunt/distinfo                       |    6 +-
+ sysutils/vector/Makefile                           |  612 +++++-----
+ sysutils/vector/distinfo                           | 1190 +++++++++++---------
+ sysutils/vector/files/patch-dynamic-linking        |   50 +-
+ textproc/Makefile                                  |   10 +
+ textproc/R-cran-rmarkdown/Makefile                 |    4 +-
+ textproc/R-cran-rmarkdown/distinfo                 |    6 +-
+ textproc/php80-ctype/Makefile                      |   11 +
+ textproc/php80-dom/Makefile                        |   11 +
+ textproc/php80-enchant/Makefile                    |   11 +
+ textproc/php80-enchant/files/patch-enchant.c       |   11 +
+ textproc/php80-pspell/Makefile                     |   11 +
+ textproc/php80-simplexml/Makefile                  |   11 +
+ textproc/php80-simplexml/files/patch-config.m4     |   42 +
+ textproc/php80-xml/Makefile                        |   11 +
+ textproc/php80-xml/files/patch-compat.c            |   13 +
+ textproc/php80-xmlreader/Makefile                  |   11 +
+ textproc/php80-xmlwriter/Makefile                  |   11 +
+ textproc/php80-xsl/Makefile                        |   11 +
+ textproc/php80-xsl/files/patch-php_xsl.h           |   11 +
+ textproc/py-pdfminer.six/Makefile                  |   18 +-
+ textproc/py-pdfminer.six/distinfo                  |    6 +-
+ .../py-pdfminer.six/files/patch-tools_dumppdf.py   |   14 -
+ .../py-pdfminer.six/files/patch-tools_pdf2txt.py   |   14 -
+ textproc/py-tablib/Makefile                        |   33 +-
+ textproc/py-tablib/distinfo                        |    6 +-
+ textproc/py-tablib/files/pkg-message.in            |    8 -
+ textproc/py-tablib/pkg-descr                       |    2 +-
+ textproc/rubygem-terser/Makefile                   |   21 +
+ textproc/rubygem-terser/distinfo                   |    3 +
+ textproc/rubygem-terser/pkg-descr                  |    3 +
+ textproc/translate-toolkit/Makefile                |   15 +-
+ www/Makefile                                       |    5 +
+ www/caddy/Makefile                                 |    2 +-
+ www/caddy/distinfo                                 |    6 +-
+ www/falkon/pkg-message                             |    5 -
+ www/gohugo/Makefile                                |    4 +-
+ www/gohugo/distinfo                                |    6 +-
+ www/kanboard/Makefile                              |   10 +-
+ www/kanboard/distinfo                              |    6 +-
+ www/kanboard/pkg-plist                             |  259 ++---
+ www/logswan/Makefile                               |    2 +-
+ www/logswan/distinfo                               |    6 +-
+ www/mod_php80/Makefile                             |   15 +
+ www/php80-opcache/Makefile                         |   13 +
+ www/php80-session/Makefile                         |   11 +
+ www/php80-tidy/Makefile                            |   11 +
+ www/plasma5-plasma-browser-integration/distinfo    |    6 +-
+ www/py-aiohttp/Makefile                            |   11 +-
+ www/py-aiohttp/distinfo                            |    6 +-
+ www/py-aiohttp/files/patch-pytest.ini              |   11 -
+ www/py-aiohttp/files/patch-setup.py                |   13 +-
+ www/py-cheroot/Makefile                            |    7 +-
+ www/py-cheroot/distinfo                            |    6 +-
+ www/py-djangorestframework/Makefile                |    4 +-
+ www/py-djangorestframework/distinfo                |    6 +-
+ www/py-google-cloud-storage/Makefile               |    2 +-
+ www/py-google-cloud-storage/distinfo               |    6 +-
+ www/py-unit/Makefile                               |   26 -
+ www/py-uvicorn/Makefile                            |    2 +-
+ www/py-uvicorn/distinfo                            |    6 +-
+ www/py-wagtail/Makefile                            |   10 +-
+ www/py-wagtail/distinfo                            |    6 +-
+ www/py-wagtail/files/patch-setup.py                |   14 +-
+ www/rubygem-jekyll-seo-tag/Makefile                |    4 +-
+ www/rubygem-jekyll-seo-tag/distinfo                |    6 +-
+ www/rubygem-rack21/Makefile                        |   29 +
+ www/rubygem-rack21/distinfo                        |    3 +
+ www/rubygem-rack21/pkg-descr                       |    6 +
+ www/squidguard/Makefile                            |    2 +-
+ www/trafficserver/pkg-plist                        |    2 +-
+ www/tt-rss/Makefile                                |    7 +-
+ www/tt-rss/distinfo                                |    6 +-
+ www/tt-rss/pkg-plist                               |    8 +
+ www/unit-perl/Makefile                             |   16 +-
+ www/unit-php/Makefile                              |   14 +-
+ www/unit-python/Makefile                           |   17 +-
+ www/unit-ruby/Makefile                             |   17 +-
+ x11-fonts/fonttosfnt/Makefile                      |    2 +-
+ x11-fonts/fonttosfnt/distinfo                      |    6 +-
+ x11-fonts/jetbrains-mono/Makefile                  |   13 +-
+ x11-fonts/jetbrains-mono/distinfo                  |    6 +-
+ x11-themes/plasma5-breeze-gtk/distinfo             |    6 +-
+ x11-themes/plasma5-breeze/distinfo                 |    6 +-
+ x11-themes/plasma5-kde-gtk-config/distinfo         |    6 +-
+ x11-themes/plasma5-oxygen/distinfo                 |    6 +-
+ x11-themes/plasma5-oxygen/pkg-plist                |   36 +
+ .../plasma5-plasma-workspace-wallpapers/distinfo   |    6 +-
+ x11-toolkits/gtk-layer-shell/Makefile              |    2 +-
+ x11-toolkits/gtk-layer-shell/distinfo              |    6 +-
+ x11-toolkits/gtk-layer-shell/pkg-plist             |    2 +-
+ x11-toolkits/plasma5-kdeplasma-addons/distinfo     |    6 +-
+ x11-toolkits/plasma5-kdeplasma-addons/pkg-plist    |    1 +
+ x11-wm/plasma5-kdecoration/distinfo                |    6 +-
+ x11-wm/plasma5-kwin/distinfo                       |    6 +-
+ x11-wm/wmakerconf/Makefile                         |    2 +-
+ x11/plasma5-kactivitymanagerd/distinfo             |    6 +-
+ x11/plasma5-kgamma5/distinfo                       |    6 +-
+ x11/plasma5-kscreen/distinfo                       |    6 +-
+ x11/plasma5-kwayland-integration/distinfo          |    6 +-
+ x11/plasma5-kwayland-server/distinfo               |    6 +-
+ x11/plasma5-libkscreen/distinfo                    |    6 +-
+ x11/plasma5-plasma-desktop/distinfo                |    6 +-
+ x11/plasma5-plasma-desktop/pkg-plist               |    1 +
+ x11/plasma5-plasma-integration/distinfo            |    6 +-
+ x11/plasma5-plasma-workspace/Makefile              |    3 +-
+ x11/plasma5-plasma-workspace/distinfo              |    6 +-
+ x11/plasma5-plasma-workspace/pkg-plist             |    2 +
+ 475 files changed, 6056 insertions(+), 2309 deletions(-)
+ create mode 100644 Keywords/rmempty.ucl
+ create mode 100644 archivers/php80-bz2/Makefile
+ create mode 100644 archivers/php80-phar/Makefile
+ create mode 100644 archivers/php80-phar/files/patch-config.m4
+ create mode 100644 archivers/php80-zip/Makefile
+ create mode 100644 archivers/php80-zlib/Makefile
+ create mode 100644 archivers/php80-zlib/files/patch-zlib.c
+ delete mode 100644 cad/iverilog/files/patch-bison
+ delete mode 100644 cad/iverilog/files/patch-d49d26a5.c
+ create mode 100644 converters/php80-iconv/Makefile
+ create mode 100644 converters/php80-mbstring/Makefile
+ create mode 100644 converters/php80-mbstring/files/patch-config.m4
+ create mode 100644 databases/php80-dba/Makefile
+ create mode 100644 databases/php80-dba/files/patch-config.m4
+ create mode 100644 databases/php80-mysqli/Makefile
+ create mode 100644 databases/php80-mysqli/files/patch-mysqli__api.c
+ create mode 100644 databases/php80-mysqli/files/patch-php_mysqli_structs.h
+ create mode 100644 databases/php80-odbc/Makefile
+ create mode 100644 databases/php80-odbc/files/patch-config.m4
+ create mode 100644 databases/php80-pdo/Makefile
+ create mode 100644 databases/php80-pdo_dblib/Makefile
+ create mode 100644 databases/php80-pdo_firebird/Makefile
+ create mode 100644 databases/php80-pdo_mysql/Makefile
+ create mode 100644 databases/php80-pdo_odbc/Makefile
+ create mode 100644 databases/php80-pdo_pgsql/Makefile
+ create mode 100644 databases/php80-pdo_sqlite/Makefile
+ create mode 100644 databases/php80-pgsql/Makefile
+ create mode 100644 databases/php80-sqlite3/Makefile
+ create mode 100644 devel/glab/Makefile
+ create mode 100644 devel/glab/distinfo
+ create mode 100644 devel/glab/files/patch-vendor_github.com_muesli_termenv_termenv__unix.go
+ create mode 100644 devel/glab/pkg-descr
+ create mode 100644 devel/php80-ffi/Makefile
+ create mode 100644 devel/php80-gettext/Makefile
+ create mode 100644 devel/php80-intl/Makefile
+ create mode 100644 devel/php80-pcntl/Makefile
+ create mode 100644 devel/php80-readline/Makefile
+ create mode 100644 devel/php80-readline/files/patch-config.m4
+ create mode 100644 devel/php80-readline/files/patch-readline_cli.c
+ create mode 100644 devel/php80-shmop/Makefile
+ create mode 100644 devel/php80-sysvmsg/Makefile
+ create mode 100644 devel/php80-sysvsem/Makefile
+ create mode 100644 devel/php80-sysvshm/Makefile
+ create mode 100644 devel/php80-tokenizer/Makefile
+ create mode 100644 devel/py-beniget/Makefile
+ create mode 100644 devel/py-beniget/distinfo
+ create mode 100644 devel/py-beniget/pkg-descr
+ create mode 100644 devel/py-datapackage/Makefile
+ create mode 100644 devel/py-datapackage/distinfo
+ create mode 100644 devel/py-datapackage/pkg-descr
+ create mode 100644 devel/py-deepmerge/Makefile
+ create mode 100644 devel/py-deepmerge/distinfo
+ create mode 100644 devel/py-deepmerge/pkg-descr
+ create mode 100644 devel/py-vcver/Makefile
+ create mode 100644 devel/py-vcver/distinfo
+ create mode 100644 devel/py-vcver/pkg-descr
+ create mode 100644 devel/rubygem-jsonpath/Makefile
+ create mode 100644 devel/rubygem-jsonpath/distinfo
+ create mode 100644 devel/rubygem-jsonpath/pkg-descr
+ create mode 100644 devel/rubygem-to_regexp/Makefile
+ create mode 100644 devel/rubygem-to_regexp/distinfo
+ create mode 100644 devel/rubygem-to_regexp/pkg-descr
+ create mode 100644 ftp/php80-curl/Makefile
+ create mode 100644 ftp/php80-ftp/Makefile
+ create mode 100644 graphics/php80-exif/Makefile
+ create mode 100644 graphics/php80-gd/Makefile
+ create mode 100644 graphics/php80-gd/files/patch-gd.c
+ create mode 100644 graphics/waifu2x-ncnn-vulkan/files/patch-src_ncnn_CMakeLists.txt
+ create mode 100644 graphics/waifu2x-ncnn-vulkan/files/patch-src_ncnn_src_layer_interp.cpp
+ create mode 100644 lang/php80-extensions/Makefile
+ create mode 100644 lang/php80-extensions/pkg-descr
+ create mode 100644 lang/php80/Makefile
+ create mode 100644 lang/php80/Makefile.ext
+ create mode 100644 lang/php80/distinfo
+ create mode 100644 lang/php80/files/patch-build_Makefile.global
+ create mode 100644 lang/php80/files/patch-configure.ac
+ create mode 100644 lang/php80/files/patch-ext_mysqli_mysqli__api.c
+ create mode 100644 lang/php80/files/patch-ext_mysqli_mysqli__nonapi.c
+ create mode 100644 lang/php80/files/patch-ext_mysqli_mysqli__prop.c
+ create mode 100644 lang/php80/files/patch-ext_mysqli_php__mysqli__structs.h
+ create mode 100644 lang/php80/files/patch-sapi_apache2handler_config.m4
+ create mode 100644 lang/php80/files/patch-sapi_fpm_config.m4
+ create mode 100644 lang/php80/files/patch-sapi_fpm_www.conf.in
+ create mode 100644 lang/php80/files/php-fpm.in
+ create mode 100644 lang/php80/pkg-descr
+ create mode 100644 lang/php80/pkg-message.mod
+ create mode 100644 lang/php80/pkg-plist
+ create mode 100644 lang/php80/pkg-plist.mod
+ create mode 100644 mail/php80-imap/Makefile
+ create mode 100644 mail/php80-imap/files/patch-config.m4
+ create mode 100644 mail/ssmtp/files/patch-ssmtp.8
+ create mode 100644 mail/ssmtp/files/patch-ssmtp.conf.5
+ create mode 100644 math/php80-bcmath/Makefile
+ create mode 100644 math/php80-gmp/Makefile
+ create mode 100644 math/vtk8/files/patch-Rendering_FreeType_vtkFreeTypeTools.cxx
+ delete mode 100644 misc/far2l/files/patch-WinPort_src_APIFSNotify.cpp
+ delete mode 100644 misc/far2l/files/patch-cmake_modules_FindLibSSH.cmake
+ delete mode 100644 misc/iio-oscilloscope/files/patch-osc.c
+ delete mode 100644 misc/iio-oscilloscope/files/patch-plugins_lidar.c
+ create mode 100644 misc/php80-calendar/Makefile
+ create mode 100644 net-mgmt/php80-snmp/Makefile
+ create mode 100644 net/php80-ldap/Makefile
+ create mode 100644 net/php80-soap/Makefile
+ create mode 100644 net/php80-sockets/Makefile
+ create mode 100644 net/py-errbot/Makefile
+ create mode 100644 net/py-errbot/distinfo
+ create mode 100644 net/py-errbot/files/patch-setup.py
+ create mode 100644 net/py-errbot/pkg-descr
+ create mode 100644 print/ghostscript9-agpl-base/files/patch-git_41ef9a0
+ create mode 100644 print/ghostscript9-base/files/patch-git_41ef9a0_backport
+ create mode 100644 security/php80-filter/Makefile
+ create mode 100644 security/php80-openssl/Makefile
+ create mode 100644 security/php80-sodium/Makefile
+ create mode 100644 sysutils/nut-devel/files/patch-drivers_main.c
+ create mode 100644 sysutils/php80-fileinfo/Makefile
+ create mode 100644 sysutils/php80-fileinfo/files/patch-config.m4
+ create mode 100644 sysutils/php80-posix/Makefile
+ create mode 100644 sysutils/php80-posix/files/patch-posix.c
+ create mode 100644 textproc/php80-ctype/Makefile
+ create mode 100644 textproc/php80-dom/Makefile
+ create mode 100644 textproc/php80-enchant/Makefile
+ create mode 100644 textproc/php80-enchant/files/patch-enchant.c
+ create mode 100644 textproc/php80-pspell/Makefile
+ create mode 100644 textproc/php80-simplexml/Makefile
+ create mode 100644 textproc/php80-simplexml/files/patch-config.m4
+ create mode 100644 textproc/php80-xml/Makefile
+ create mode 100644 textproc/php80-xml/files/patch-compat.c
+ create mode 100644 textproc/php80-xmlreader/Makefile
+ create mode 100644 textproc/php80-xmlwriter/Makefile
+ create mode 100644 textproc/php80-xsl/Makefile
+ create mode 100644 textproc/php80-xsl/files/patch-php_xsl.h
+ delete mode 100644 textproc/py-pdfminer.six/files/patch-tools_dumppdf.py
+ delete mode 100644 textproc/py-pdfminer.six/files/patch-tools_pdf2txt.py
+ delete mode 100644 textproc/py-tablib/files/pkg-message.in
+ create mode 100644 textproc/rubygem-terser/Makefile
+ create mode 100644 textproc/rubygem-terser/distinfo
+ create mode 100644 textproc/rubygem-terser/pkg-descr
+ create mode 100644 www/mod_php80/Makefile
+ create mode 100644 www/php80-opcache/Makefile
+ create mode 100644 www/php80-session/Makefile
+ create mode 100644 www/php80-tidy/Makefile
+ delete mode 100644 www/py-aiohttp/files/patch-pytest.ini
+ delete mode 100644 www/py-unit/Makefile
+ create mode 100644 www/rubygem-rack21/Makefile
+ create mode 100644 www/rubygem-rack21/distinfo
+ create mode 100644 www/rubygem-rack21/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Merge made by the 'recursive' strategy.
+ databases/foundationdb/Makefile                    |   2 +-
+ databases/foundationdb/distinfo                    |   6 +-
+ net/librdkafka/Makefile                            |   2 +-
+ net/librdkafka/distinfo                            |   6 +-
+ www/Makefile                                       |   1 +
+ www/unit-java/Makefile                             | 100 +++++++++++++++++++++
+ www/unit-java/distinfo                             |  31 +++++++
+ .../files/patch-auto-modules-java_get_jar          |  11 +++
+ www/unit/Makefile                                  |   2 +-
+ 9 files changed, 152 insertions(+), 9 deletions(-)
+ create mode 100644 www/unit-java/Makefile
+ create mode 100644 www/unit-java/distinfo
+ create mode 100644 www/unit-java/files/patch-auto-modules-java_get_jar
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6da3993a168b..fa2531d382c5  master -> master        
+remote:    adb52f5d5012..6da3993a168b  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6da3993a168b..fa2531d382c5  master -> master
+==== END: master ====
