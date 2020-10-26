@@ -1,0 +1,210 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing usr.bin/calendar/calendars/calendar.croatian
+CONFLICT (modify/delete): usr.bin/calendar/calendars/calendar.all deleted in freebsd/current/master and modified in HEAD. Version HEAD of usr.bin/calendar/calendars/calendar.all left in tree.
+Auto-merging usr.bin/calendar/Makefile
+CONFLICT (content): Merge conflict in usr.bin/calendar/Makefile
+Auto-merging ObsoleteFiles.inc
+CONFLICT (content): Merge conflict in ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc ObsoleteFiles.inc
+index e95d9dec25df,88e94661dee4..000000000000
+--- a/ObsoleteFiles.inc
++++ b/ObsoleteFiles.inc
+@@@ -36,8 -36,8 +36,13 @@@
+  #   xargs -n1 | sort | uniq -d;
+  # done
+  
+++<<<<<<< HEAD
+ +# 20201022: Calendars HardenedBSD doesn't care about
+ +
+++=======
++ # 20201025: Remove cal data files
++ OLD_FILES+=usr/share/calendar/calendar.all
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/calendar.australia
+  OLD_FILES+=usr/share/calendar/calendar.birthday
+  OLD_FILES+=usr/share/calendar/calendar.brazilian
+@@@ -60,7 -60,6 +65,10 @@@ OLD_FILES+=usr/share/calendar/calendar.
+  OLD_FILES+=usr/share/calendar/calendar.usholiday
+  OLD_FILES+=usr/share/calendar/calendar.world
+  OLD_FILES+=usr/share/calendar/de_AT.ISO_8859-15/calendar.feiertag
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/de_AT.ISO_8859-15
+++=======
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/de_DE.ISO8859-1/calendar.all
+  OLD_FILES+=usr/share/calendar/de_DE.ISO8859-1/calendar.feiertag
+  OLD_FILES+=usr/share/calendar/de_DE.ISO8859-1/calendar.geschichte
+@@@ -68,51 -67,40 +76,77 @@@ OLD_FILES+=usr/share/calendar/de_DE.ISO
+  OLD_FILES+=usr/share/calendar/de_DE.ISO8859-1/calendar.literatur
+  OLD_FILES+=usr/share/calendar/de_DE.ISO8859-1/calendar.musik
+  OLD_FILES+=usr/share/calendar/de_DE.ISO8859-1/calendar.wissenschaft
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/de_DE.ISO8859-1
+ +OLD_FILES+=usr/share/calendar/de_DE.ISO8859-15
+++=======
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/fr_FR.ISO8859-1/calendar.all
+  OLD_FILES+=usr/share/calendar/fr_FR.ISO8859-1/calendar.fetes
+  OLD_FILES+=usr/share/calendar/fr_FR.ISO8859-1/calendar.french
+  OLD_FILES+=usr/share/calendar/fr_FR.ISO8859-1/calendar.jferies
+  OLD_FILES+=usr/share/calendar/fr_FR.ISO8859-1/calendar.proverbes
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/fr_FR.ISO8859-1
+ +OLD_FILES+=usr/share/calendar/fr_FR.ISO8859-15
+ +OLD_FILES+=usr/share/calendar/hr_HR.ISO8859-2/calendar.all
+ +OLD_FILES+=usr/share/calendar/hr_HR.ISO8859-2/calendar.praznici
+ +OLD_DIRS+=usr/share/calendar/hr_HR.ISO8859-2
+ +OLD_FILES+=usr/share/calendar/hu_HU.ISO8859-2/calendar.all
+ +OLD_FILES+=usr/share/calendar/hu_HU.ISO8859-2/calendar.nevnapok
+ +OLD_FILES+=usr/share/calendar/hu_HU.ISO8859-2/calendar.unnepek
+ +OLD_DIRS+=usr/share/calendar/hu_HU.ISO8859-2
+++=======
++ OLD_FILES+=usr/share/calendar/hr_HR.ISO8859-2/calendar.all
++ OLD_FILES+=usr/share/calendar/hr_HR.ISO8859-2/calendar.praznici
++ OLD_FILES+=usr/share/calendar/hu_HU.ISO8859-2/calendar.all
++ OLD_FILES+=usr/share/calendar/hu_HU.ISO8859-2/calendar.nevnapok
++ OLD_FILES+=usr/share/calendar/hu_HU.ISO8859-2/calendar.unnepek
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/pt_BR.ISO8859-1/calendar.all
+  OLD_FILES+=usr/share/calendar/pt_BR.ISO8859-1/calendar.commemorative
+  OLD_FILES+=usr/share/calendar/pt_BR.ISO8859-1/calendar.holidays
+  OLD_FILES+=usr/share/calendar/pt_BR.ISO8859-1/calendar.mcommemorative
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/pt_BR.ISO8859-1
+++=======
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/pt_BR.UTF-8/calendar.all
+  OLD_FILES+=usr/share/calendar/pt_BR.UTF-8/calendar.commemorative
+  OLD_FILES+=usr/share/calendar/pt_BR.UTF-8/calendar.holidays
+  OLD_FILES+=usr/share/calendar/pt_BR.UTF-8/calendar.mcommemorative
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/pt_BR.UTF-8
+++=======
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/ru_RU.KOI8-R/calendar.all
+  OLD_FILES+=usr/share/calendar/ru_RU.KOI8-R/calendar.common
+  OLD_FILES+=usr/share/calendar/ru_RU.KOI8-R/calendar.holiday
+  OLD_FILES+=usr/share/calendar/ru_RU.KOI8-R/calendar.military
+  OLD_FILES+=usr/share/calendar/ru_RU.KOI8-R/calendar.orthodox
+  OLD_FILES+=usr/share/calendar/ru_RU.KOI8-R/calendar.pagan
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/ru_RU.KOI8-R
+++=======
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/ru_RU.UTF-8/calendar.all
+  OLD_FILES+=usr/share/calendar/ru_RU.UTF-8/calendar.common
+  OLD_FILES+=usr/share/calendar/ru_RU.UTF-8/calendar.holiday
+  OLD_FILES+=usr/share/calendar/ru_RU.UTF-8/calendar.military
+  OLD_FILES+=usr/share/calendar/ru_RU.UTF-8/calendar.orthodox
+  OLD_FILES+=usr/share/calendar/ru_RU.UTF-8/calendar.pagan
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/ru_RU.UTF-8
+++=======
+++>>>>>>> freebsd/current/master
+  OLD_FILES+=usr/share/calendar/uk_UA.KOI8-U/calendar.all
+  OLD_FILES+=usr/share/calendar/uk_UA.KOI8-U/calendar.holiday
+  OLD_FILES+=usr/share/calendar/uk_UA.KOI8-U/calendar.misc
+  OLD_FILES+=usr/share/calendar/uk_UA.KOI8-U/calendar.orthodox
+++<<<<<<< HEAD
+ +OLD_DIRS+=usr/share/calendar/uk_UA.KOI8-U
+++=======
+++>>>>>>> freebsd/current/master
+  
+  # 20201004: logo files renamed to type-agnostic gfx-*.lua
+  OLD_FILES+=boot/lua/logo-beastie.lua
+diff --cc usr.bin/calendar/Makefile
+index f89a942245e3,d7937b8cf804..000000000000
+--- a/usr.bin/calendar/Makefile
++++ b/usr.bin/calendar/Makefile
+@@@ -13,8 -13,7 +13,12 @@@ CFLAGS+=	-DWITH_ICON
+  .endif
+  
+  FILESGROUPS+=	CALS
+++<<<<<<< HEAD
+ +CALS=	calendars/calendar.all \
+ +	calendars/calendar.freebsd
+++=======
++ CALS=	calendars/calendar.freebsd
+++>>>>>>> freebsd/current/master
+  CALSDIR=	${SHAREDIR}/calendar
+  
+  HAS_TESTS=
+* Unmerged path usr.bin/calendar/calendars/calendar.all
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   UPDATING
+	modified:   lib/libc/sys/write.2
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_vfsops.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_znode.c
+	modified:   sys/kern/subr_disk.c
+	modified:   usr.bin/calendar/calendar.1
+	deleted:    usr.bin/calendar/calendars/calendar.croatian
+	modified:   usr.bin/calendar/calendars/calendar.freebsd
+	modified:   usr.bin/calendar/io.c
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	both modified:   ObsoleteFiles.inc
+	both modified:   usr.bin/calendar/Makefile
+	deleted by them: usr.bin/calendar/calendars/calendar.all
+
+HEAD is now at f3ff8060c93b Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at f3ff8060c93b Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
