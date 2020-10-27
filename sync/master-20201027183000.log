@@ -47,3 +47,505 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/nginx-devel/files/extra-patch-openresty-set-misc-nginx-module-config
+Removing www/nginx-devel/files/extra-patch-ngx_http_auth_digest_module.c
+Auto-merging www/firefox/Makefile
+Removing security/cargo-audit/files/patch-Cargo.toml
+Auto-merging security/Makefile
+Auto-merging lang/spidermonkey24/Makefile
+CONFLICT (content): Merge conflict in lang/spidermonkey24/Makefile
+Removing lang/sbcl/files/patch-src_runtime_x86-64-bsd-os.c
+Removing lang/sbcl/files/patch-src_compiler_x86-64_parms.lisp
+Auto-merging lang/sbcl/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Removing editors/nvi-devel/pkg-plist
+Removing editors/nvi-devel/pkg-descr
+Removing editors/nvi-devel/files/patch-configure
+Removing editors/nvi-devel/files/patch-config.h.in
+Removing editors/nvi-devel/files/patch-common_exf.c
+Removing editors/nvi-devel/files/patch-common__db.h
+Removing editors/nvi-devel/files/extra-patch-expandtab
+Removing editors/nvi-devel/distinfo
+CONFLICT (modify/delete): editors/nvi-devel/Makefile deleted in freebsd/master and modified in HEAD. Version HEAD of editors/nvi-devel/Makefile left in tree.
+Removing devel/py-PEAK-Rules/pkg-descr
+Removing devel/py-PEAK-Rules/distinfo
+Removing devel/py-PEAK-Rules/Makefile
+Auto-merging devel/arm-elf-binutils/Makefile
+Removing converters/zbase32/pkg-descr
+Removing converters/zbase32/distinfo
+Removing converters/zbase32/Makefile
+Removing audio/gvolwheel/files/patch-src_trayicon.h
+Removing audio/gvolwheel/files/patch-src_trayicon.c
+Removing audio/gvolwheel/files/patch-src_main.c
+Removing audio/gvolwheel/files/patch-src_conf.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/spidermonkey24/Makefile
+index 7cca8e6322b0,8472e48fe901..000000000000
+--- a/lang/spidermonkey24/Makefile
++++ b/lang/spidermonkey24/Makefile
+@@@ -15,10 -15,6 +15,13 @@@ COMMENT=		Standalone JavaScript based f
+  BUILD_DEPENDS=		zip:archivers/zip
+  LIB_DEPENDS=		libnspr4.so:devel/nspr
+  
+++<<<<<<< HEAD
+ +CONFLICTS=		njs-[0-9]*
+ +
+ +USE_HARDENING=		pie:off relro:off
+ +
+++=======
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=		yes
+  USES=			compiler:c++11-lib gmake pathfix perl5 python:2.7,build \
+  			readline tar:bzip2
+* Unmerged path editors/nvi-devel/Makefile
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   GIDs
+	modified:   MOVED
+	modified:   Mk/Uses/kde.mk
+	modified:   Mk/Uses/php.mk
+	modified:   UIDs
+	modified:   archivers/rpm4/Makefile
+	modified:   archivers/rpm4/pkg-plist
+	new file:   audio/ardour6/files/patch-libs_fst_wscript
+	modified:   audio/geonkick-lv2/Makefile
+	modified:   audio/geonkick-lv2/distinfo
+	modified:   audio/gvolwheel/Makefile
+	modified:   audio/gvolwheel/distinfo
+	renamed:    audio/gvolwheel/files/patch-Makefile.in -> audio/gvolwheel/files/patch-Makefile.am
+	deleted:    audio/gvolwheel/files/patch-src_conf.h
+	deleted:    audio/gvolwheel/files/patch-src_main.c
+	modified:   audio/gvolwheel/files/patch-src_oss.c
+	modified:   audio/gvolwheel/files/patch-src_oss.h
+	deleted:    audio/gvolwheel/files/patch-src_trayicon.c
+	deleted:    audio/gvolwheel/files/patch-src_trayicon.h
+	modified:   audio/gvolwheel/pkg-descr
+	renamed:    audio/gvolwheel/files/pkg-message.in -> audio/gvolwheel/pkg-message
+	modified:   audio/infamous-plugins-lv2/Makefile
+	modified:   audio/ncspot/Makefile
+	modified:   audio/ncspot/distinfo
+	modified:   audio/plasma5-plasma-pa/distinfo
+	modified:   audio/praat/Makefile
+	modified:   audio/praat/distinfo
+	modified:   audio/spotifyd/Makefile
+	modified:   benchmarks/bombardier/Makefile
+	modified:   benchmarks/bombardier/distinfo
+	modified:   comms/gammu/Makefile
+	modified:   comms/gammu/distinfo
+	modified:   converters/Makefile
+	modified:   converters/cl-babel-sbcl/Makefile
+	deleted:    converters/zbase32/Makefile
+	deleted:    converters/zbase32/distinfo
+	deleted:    converters/zbase32/pkg-descr
+	modified:   databases/galera26/Makefile
+	modified:   databases/galera26/distinfo
+	modified:   deskutils/just/Makefile
+	modified:   deskutils/just/distinfo
+	modified:   deskutils/plasma5-milou/distinfo
+	modified:   deskutils/plasma5-sddm-kcm/Makefile
+	modified:   deskutils/plasma5-sddm-kcm/distinfo
+	modified:   deskutils/syncthingtray/Makefile
+	modified:   devel/Makefile
+	modified:   devel/arm-elf-binutils/Makefile
+	modified:   devel/arm-elf-binutils/distinfo
+	modified:   devel/cl-alexandria-sbcl/Makefile
+	modified:   devel/cl-infix-sbcl/Makefile
+	modified:   devel/cl-port-sbcl/Makefile
+	modified:   devel/cl-split-sequence-sbcl/Makefile
+	modified:   devel/cl-trivial-features-sbcl/Makefile
+	modified:   devel/cl-trivial-gray-streams-sbcl/Makefile
+	modified:   devel/fatal/Makefile
+	modified:   devel/fatal/distinfo
+	modified:   devel/fbthrift/Makefile
+	modified:   devel/fbthrift/distinfo
+	modified:   devel/fbthrift/pkg-plist
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/folly/pkg-plist
+	modified:   devel/jrtplib/Makefile
+	modified:   devel/jrtplib/distinfo
+	modified:   devel/jrtplib/pkg-descr
+	modified:   devel/lfcbase/Makefile
+	modified:   devel/lfcbase/distinfo
+	modified:   devel/llvm10/Makefile
+	modified:   devel/llvm10/files/openmp/patch-ea99c09
+	modified:   devel/plasma5-khotkeys/distinfo
+	modified:   devel/plasma5-kwrited/distinfo
+	modified:   devel/plasma5-plasma-sdk/distinfo
+	modified:   devel/pmd/Makefile
+	modified:   devel/pmd/distinfo
+	modified:   devel/pmd/pkg-plist
+	deleted:    devel/py-PEAK-Rules/Makefile
+	deleted:    devel/py-PEAK-Rules/distinfo
+	deleted:    devel/py-PEAK-Rules/pkg-descr
+	modified:   devel/py-nbformat/Makefile
+	modified:   devel/py-nbformat/distinfo
+	modified:   devel/py-sysctl/Makefile
+	modified:   devel/py-sysctl/distinfo
+	modified:   devel/pycharm-pro/Makefile
+	modified:   devel/pycharm-pro/distinfo
+	modified:   devel/tokei/Makefile
+	modified:   dns/ddclient/Makefile
+	modified:   dns/ddclient/distinfo
+	modified:   dns/ddclient/pkg-descr
+	modified:   editors/Makefile
+	modified:   editors/jedit/Makefile
+	modified:   editors/jedit/distinfo
+	modified:   editors/jedit/files/jedit.sh.in
+	modified:   editors/jedit/pkg-plist
+	modified:   editors/kak-lsp/Makefile
+	modified:   editors/libreoffice6/Makefile
+	modified:   editors/libreoffice6/Makefile.common
+	modified:   editors/libreoffice6/distinfo
+	deleted:    editors/nvi-devel/distinfo
+	deleted:    editors/nvi-devel/files/extra-patch-expandtab
+	deleted:    editors/nvi-devel/files/patch-common__db.h
+	deleted:    editors/nvi-devel/files/patch-common_exf.c
+	deleted:    editors/nvi-devel/files/patch-config.h.in
+	deleted:    editors/nvi-devel/files/patch-configure
+	deleted:    editors/nvi-devel/pkg-descr
+	deleted:    editors/nvi-devel/pkg-plist
+	modified:   editors/parinfer-rust/Makefile
+	modified:   editors/tea/Makefile
+	modified:   editors/tea/distinfo
+	modified:   editors/with-editor/Makefile
+	modified:   editors/with-editor/distinfo
+	modified:   emulators/jzintv/Makefile
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/virtualbox-ose-additions/Makefile
+	new file:   emulators/virtualbox-ose/files/patch-src_VBox_Additions_common_crOpenGL_dri__glx.h
+	new file:   emulators/virtualbox-ose/files/patch-src_VBox_Additions_common_crOpenGL_fakedri__drv.h
+	new file:   emulators/virtualbox-ose/files/patch-src_VBox_Additions_common_crOpenGL_glx.c
+	new file:   emulators/virtualbox-ose/files/patch-src_VBox_Additions_common_crOpenGL_glx__c__exports.c
+	new file:   emulators/virtualbox-ose/files/patch-src_VBox_Additions_common_crOpenGL_glx__proto.h
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	modified:   games/Makefile
+	modified:   games/OpenDiablo2/Makefile
+	modified:   games/OpenDiablo2/distinfo
+	modified:   games/crispy-doom/Makefile
+	modified:   games/crispy-doom/distinfo
+	modified:   games/freecell-solver/Makefile
+	modified:   games/freecell-solver/distinfo
+	new file:   games/openbve/Makefile
+	new file:   games/openbve/distinfo
+	new file:   games/openbve/files/patch-makefile
+	new file:   games/openbve/files/patch-source_OpenBVE_Properties_AssemblyInfo.sh
+	new file:   games/openbve/files/patch-source_OpenBVE_System_Program.cs
+	new file:   games/openbve/pkg-descr
+	new file:   games/openbve/pkg-message
+	new file:   games/openbve/pkg-plist
+	modified:   graphics/alembic/Makefile
+	modified:   graphics/alembic/distinfo
+	modified:   graphics/jpeg/Makefile
+	modified:   graphics/libkipi/Makefile
+	modified:   graphics/libkipi/pkg-descr
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   graphics/mtpaint/Makefile
+	modified:   graphics/pecl-qrencode/Makefile
+	modified:   graphics/pecl-qrencode/distinfo
+	modified:   graphics/php-facedetect/Makefile
+	modified:   graphics/qgis/Makefile
+	modified:   graphics/qgis/distinfo
+	modified:   graphics/qgis/pkg-plist
+	modified:   graphics/svgbob/Makefile
+	modified:   irc/konversation/Makefile
+	modified:   irc/konversation/distinfo
+	modified:   irc/konversation/pkg-plist
+	modified:   irc/polari/Makefile
+	modified:   lang/cjs/Makefile
+	modified:   lang/gcc10-devel/Makefile
+	modified:   lang/gcc10-devel/distinfo
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   lang/php80-extensions/Makefile
+	modified:   lang/sbcl/Makefile
+	modified:   lang/sbcl/distinfo
+	deleted:    lang/sbcl/files/patch-src_compiler_x86-64_parms.lisp
+	deleted:    lang/sbcl/files/patch-src_runtime_x86-64-bsd-os.c
+	modified:   lang/spidermonkey17/Makefile
+	modified:   lang/spidermonkey185/Makefile
+	modified:   mail/nextcloud-mail/Makefile
+	modified:   mail/nextcloud-mail/distinfo
+	modified:   mail/postfix-current/Makefile
+	modified:   mail/postfix-current/distinfo
+	modified:   math/ecos/Makefile
+	modified:   math/ecos/distinfo
+	modified:   math/ecos/pkg-descr
+	modified:   math/maxima/Makefile
+	modified:   math/pecl-stats2/Makefile
+	modified:   math/py-cypari2/Makefile
+	new file:   math/py-cypari2/files/patch-cypari2_gen.pyx
+	new file:   math/py-cypari2/files/patch-cypari2_paridecl.pxd
+	new file:   math/vtk6/files/patch-Rendering_FreeType_vtkFreeTypeTools.cxx
+	new file:   math/vtk6/files/patch-Rendering_FreeType_vtkFreeTypeUtilities.cxx
+	modified:   misc/cloc/Makefile
+	modified:   misc/cloc/distinfo
+	modified:   misc/py-xgboost/Makefile
+	modified:   misc/py-xgboost/distinfo
+	modified:   misc/py-xgboost/files/patch-CMakeLists.txt
+	modified:   misc/py-xgboost/files/patch-xgboost_libpath.py
+	modified:   misc/xgboost/Makefile
+	modified:   misc/xgboost/distinfo
+	modified:   multimedia/libass/Makefile
+	modified:   multimedia/libass/distinfo
+	modified:   multimedia/libass/pkg-plist
+	modified:   multimedia/plexmediaserver-plexpass/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/distinfo
+	modified:   net-im/pecl-stomp2/Makefile
+	modified:   net-mgmt/Makefile
+	new file:   net-mgmt/bosun/Makefile
+	new file:   net-mgmt/bosun/distinfo
+	new file:   net-mgmt/bosun/files/bosun.in
+	new file:   net-mgmt/bosun/pkg-descr
+	new file:   net-mgmt/bosun/pkg-plist
+	modified:   net-mgmt/prometheus2/Makefile
+	modified:   net-mgmt/prometheus2/distinfo
+	modified:   net/asterisk-chan_sccp/Makefile
+	modified:   net/asterisk-chan_sccp/distinfo
+	new file:   net/asterisk-chan_sccp/files/patch-a61c6d2cec
+	modified:   net/asterisk-chan_sccp/files/patch-src_define.h
+	modified:   net/fbzmq/Makefile
+	modified:   net/fbzmq/distinfo
+	modified:   net/p5-AddressBook/Makefile
+	modified:   net/p5-Amazon-SQS-Simple/Makefile
+	modified:   net/pecl-rdkafka/Makefile
+	modified:   net/pecl-rdkafka/distinfo
+	modified:   net/py-urllib3/Makefile
+	modified:   net/py-urllib3/distinfo
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   net/samba410/Makefile
+	modified:   net/samba411/Makefile
+	modified:   net/wangle/Makefile
+	modified:   net/wangle/distinfo
+	modified:   net/zsync/Makefile
+	modified:   news/Makefile
+	new file:   news/rntrack/Makefile
+	new file:   news/rntrack/distinfo
+	new file:   news/rntrack/pkg-descr
+	new file:   news/rntrack/pkg-plist
+	modified:   news/sabnzbdplus/Makefile
+	modified:   news/sabnzbdplus/distinfo
+	modified:   news/sabnzbdplus/pkg-plist
+	modified:   print/pecl-pdflib/Makefile
+	modified:   security/Makefile
+	modified:   security/aws-iam-authenticator/Makefile
+	modified:   security/aws-iam-authenticator/distinfo
+	modified:   security/cargo-audit/Makefile
+	modified:   security/cargo-audit/distinfo
+	deleted:    security/cargo-audit/files/patch-Cargo.toml
+	modified:   security/cl-md5-sbcl/Makefile
+	modified:   security/cloak/Makefile
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/fizz/pkg-plist
+	modified:   security/libsecret/Makefile
+	modified:   security/libsecret/distinfo
+	modified:   security/libsecret/pkg-plist
+	modified:   security/modsecurity3/Makefile
+	modified:   security/modsecurity3/pkg-plist
+	modified:   security/pecl-scrypt/Makefile
+	modified:   security/pecl-ssh2/Makefile
+	modified:   security/pecl-ssh2/distinfo
+	modified:   security/plasma5-kscreenlocker/distinfo
+	modified:   security/plasma5-ksshaskpass/distinfo
+	modified:   security/plasma5-kwallet-pam/distinfo
+	new file:   security/rustscan/Makefile
+	new file:   security/rustscan/distinfo
+	new file:   security/rustscan/files/patch-cargo-crates_rlimit-0.4.0_src_lib.rs
+	new file:   security/rustscan/pkg-descr
+	modified:   security/titus/Makefile
+	new file:   security/titus/files/patch-dh.cpp
+	new file:   security/titus/files/patch-rsa__client.cpp
+	modified:   shells/ion/Makefile
+	modified:   sysutils/Makefile
+	modified:   sysutils/beats7/Makefile
+	modified:   sysutils/beats7/distinfo
+	modified:   sysutils/eksctl/Makefile
+	modified:   sysutils/eksctl/distinfo
+	modified:   sysutils/exa/Makefile
+	modified:   sysutils/fd/Makefile
+	modified:   sysutils/flowgger/Makefile
+	modified:   sysutils/flowgger/distinfo
+	modified:   sysutils/fusefs-sandboxfs/Makefile
+	modified:   sysutils/helm/Makefile
+	modified:   sysutils/helm/distinfo
+	modified:   sysutils/kops/Makefile
+	modified:   sysutils/kops/distinfo
+	modified:   sysutils/kubectl/Makefile
+	modified:   sysutils/kubectl/distinfo
+	modified:   sysutils/logstash7/Makefile
+	modified:   sysutils/logstash7/distinfo
+	modified:   sysutils/lxtask/Makefile
+	modified:   sysutils/lxtask/distinfo
+	modified:   sysutils/lxtask/files/patch-src__main.c
+	modified:   sysutils/lxtask/files/patch-src__types.h
+	modified:   sysutils/lxtask/files/patch-src__xfce-taskmanager-linux.c
+	modified:   sysutils/lxtask/pkg-plist
+	modified:   sysutils/minikube/Makefile
+	modified:   sysutils/minikube/distinfo
+	modified:   sysutils/nut-devel/Makefile
+	modified:   sysutils/nut-devel/distinfo
+	modified:   sysutils/openzfs-kmod/Makefile
+	modified:   sysutils/openzfs-kmod/distinfo
+	modified:   sysutils/openzfs/Makefile
+	modified:   sysutils/openzfs/distinfo
+	modified:   sysutils/openzfs/pkg-plist
+	modified:   sysutils/plasma5-discover/Makefile
+	modified:   sysutils/plasma5-discover/distinfo
+	modified:   sysutils/plasma5-drkonqi/distinfo
+	modified:   sysutils/plasma5-kde-cli-tools/distinfo
+	modified:   sysutils/plasma5-kinfocenter/distinfo
+	modified:   sysutils/plasma5-kmenuedit/distinfo
+	modified:   sysutils/plasma5-ksysguard/distinfo
+	modified:   sysutils/plasma5-libksysguard/Makefile
+	modified:   sysutils/plasma5-libksysguard/distinfo
+	modified:   sysutils/plasma5-plasma-disks/distinfo
+	modified:   sysutils/plasma5-polkit-kde-agent-1/distinfo
+	modified:   sysutils/plasma5-powerdevil/distinfo
+	modified:   sysutils/plasma5-systemsettings/Makefile
+	modified:   sysutils/plasma5-systemsettings/distinfo
+	modified:   sysutils/plasma5-systemsettings/pkg-plist
+	modified:   sysutils/py-mqttwarn/Makefile
+	modified:   sysutils/py-salt/Makefile
+	modified:   sysutils/rubygem-bundler/Makefile
+	modified:   sysutils/rubygem-bundler1/Makefile
+	new file:   sysutils/terraform-switcher/Makefile
+	new file:   sysutils/terraform-switcher/distinfo
+	new file:   sysutils/terraform-switcher/pkg-descr
+	modified:   textproc/Makefile
+	modified:   textproc/cl-meta-sbcl/Makefile
+	modified:   textproc/cl-ppcre-sbcl/Makefile
+	modified:   textproc/elasticsearch7/Makefile
+	modified:   textproc/elasticsearch7/distinfo
+	modified:   textproc/kibana7/Makefile
+	modified:   textproc/kibana7/distinfo
+	modified:   textproc/pecl-xdiff2/Makefile
+	modified:   textproc/pecl-xdiff2/distinfo
+	modified:   textproc/pecl-yaml/Makefile
+	modified:   textproc/pecl-yaml/distinfo
+	new file:   textproc/rubygem-jekyll-archives/Makefile
+	new file:   textproc/rubygem-jekyll-archives/distinfo
+	new file:   textproc/rubygem-jekyll-archives/pkg-descr
+	modified:   textproc/rubygem-jekyll-assets/Makefile
+	new file:   textproc/rubygem-jekyll-email-protect/Makefile
+	new file:   textproc/rubygem-jekyll-email-protect/distinfo
+	new file:   textproc/rubygem-jekyll-email-protect/pkg-descr
+	modified:   textproc/sd/Makefile
+	modified:   textproc/sonic/Makefile
+	modified:   textproc/xsv-rs/Makefile
+	modified:   www/cl-lml-sbcl/Makefile
+	modified:   www/coppermine/Makefile
+	modified:   www/coppermine/distinfo
+	modified:   www/firefox/Makefile
+	modified:   www/firefox/distinfo
+	modified:   www/miniserve/Makefile
+	modified:   www/miniserve/distinfo
+	modified:   www/nginx-devel/Makefile
+	modified:   www/nginx-devel/distinfo
+	deleted:    www/nginx-devel/files/extra-patch-ngx_http_auth_digest_module.c
+	deleted:    www/nginx-devel/files/extra-patch-openresty-set-misc-nginx-module-config
+	modified:   www/plasma5-plasma-browser-integration/distinfo
+	modified:   www/proxygen/Makefile
+	modified:   www/proxygen/distinfo
+	modified:   www/zola/Makefile
+	modified:   x11-themes/plasma5-breeze-gtk/distinfo
+	modified:   x11-themes/plasma5-breeze/Makefile
+	modified:   x11-themes/plasma5-breeze/distinfo
+	modified:   x11-themes/plasma5-kde-gtk-config/Makefile
+	modified:   x11-themes/plasma5-kde-gtk-config/distinfo
+	modified:   x11-themes/plasma5-oxygen/distinfo
+	modified:   x11-themes/plasma5-plasma-workspace-wallpapers/distinfo
+	modified:   x11-toolkits/plasma5-kdeplasma-addons/distinfo
+	modified:   x11-toolkits/redkite/Makefile
+	modified:   x11-toolkits/redkite/distinfo
+	modified:   x11-toolkits/redkite/pkg-plist
+	modified:   x11-wm/plasma5-kdecoration/distinfo
+	modified:   x11-wm/plasma5-kwin/Makefile
+	modified:   x11-wm/plasma5-kwin/distinfo
+	modified:   x11-wm/stumpwm/Makefile
+	modified:   x11/alacritty/Makefile
+	modified:   x11/cl-clx-sbcl/Makefile
+	modified:   x11/plasma5-kactivitymanagerd/distinfo
+	modified:   x11/plasma5-kgamma5/distinfo
+	modified:   x11/plasma5-kscreen/Makefile
+	modified:   x11/plasma5-kscreen/distinfo
+	modified:   x11/plasma5-kwayland-integration/distinfo
+	modified:   x11/plasma5-kwayland-server/Makefile
+	modified:   x11/plasma5-kwayland-server/distinfo
+	modified:   x11/plasma5-libkscreen/distinfo
+	modified:   x11/plasma5-plasma-desktop/distinfo
+	modified:   x11/plasma5-plasma-integration/distinfo
+	modified:   x11/plasma5-plasma-workspace/Makefile
+	modified:   x11/plasma5-plasma-workspace/distinfo
+	modified:   x11/plasma5-plasma-workspace/pkg-plist
+	modified:   x11/yad/Makefile
+	modified:   x11/yad/distinfo
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by them: editors/nvi-devel/Makefile
+	both modified:   lang/spidermonkey24/Makefile
+
+
+It took 3.37 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 62a6e8302ee3 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 62a6e8302ee3 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
