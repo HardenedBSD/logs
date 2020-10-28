@@ -1,0 +1,144 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating fd630743333c..d3d5c5f26058
+Fast-forward
+ contrib/unbound/Makefile.in                        |   55 +-
+ contrib/unbound/README.md                          |    2 +-
+ contrib/unbound/acx_nlnetlabs.m4                   |   37 +-
+ contrib/unbound/config.guess                       |   40 +-
+ contrib/unbound/config.h.in                        |   33 +-
+ contrib/unbound/config.sub                         |   16 +-
+ contrib/unbound/configure                          |  131 +-
+ contrib/unbound/configure.ac                       |   50 +-
+ contrib/unbound/contrib/aaaa-filter-iterator.patch |  164 +--
+ contrib/unbound/contrib/unbound.service.in         |    6 +-
+ contrib/unbound/contrib/unbound_munin_             |    4 +-
+ contrib/unbound/daemon/daemon.c                    |   26 +-
+ contrib/unbound/daemon/remote.c                    |   43 +-
+ contrib/unbound/daemon/stats.c                     |    8 +
+ contrib/unbound/daemon/unbound.c                   |    2 +-
+ contrib/unbound/daemon/worker.c                    |   32 +-
+ contrib/unbound/dnstap/dnstap.c                    |   14 +-
+ contrib/unbound/dnstap/dnstap.h                    |    3 +-
+ contrib/unbound/dnstap/dtstream.c                  |  152 ++-
+ contrib/unbound/dnstap/dtstream.h                  |   15 +-
+ contrib/unbound/dnstap/unbound-dnstap-socket.c     |   70 +-
+ contrib/unbound/doc/Changelog                      |  130 ++
+ contrib/unbound/doc/README                         |    2 +-
+ contrib/unbound/doc/example.conf.in                |   85 +-
+ contrib/unbound/doc/libunbound.3.in                |    4 +-
+ contrib/unbound/doc/unbound-anchor.8.in            |    2 +-
+ contrib/unbound/doc/unbound-checkconf.8.in         |    2 +-
+ contrib/unbound/doc/unbound-control.8.in           |   15 +-
+ contrib/unbound/doc/unbound-host.1.in              |    2 +-
+ contrib/unbound/doc/unbound.8.in                   |    4 +-
+ contrib/unbound/doc/unbound.conf.5.in              |  178 +--
+ contrib/unbound/dynlibmod/dynlibmod.c              |    5 +
+ contrib/unbound/iterator/iterator.c                |    2 +-
+ contrib/unbound/libunbound/context.c               |    3 +
+ contrib/unbound/libunbound/libunbound.c            |   16 +
+ contrib/unbound/libunbound/libworker.c             |    2 +-
+ contrib/unbound/libunbound/unbound.h               |    6 +
+ contrib/unbound/services/cache/dns.c               |    5 +-
+ contrib/unbound/services/listen_dnsport.c          | 1295 ++++++++++++++++----
+ contrib/unbound/services/listen_dnsport.h          |   70 +-
+ contrib/unbound/services/mesh.c                    |   12 +
+ contrib/unbound/services/mesh.h                    |    2 +
+ contrib/unbound/services/outside_network.c         |   35 +-
+ contrib/unbound/services/rpz.c                     |   14 +-
+ contrib/unbound/sldns/parseutil.c                  |   99 +-
+ contrib/unbound/sldns/parseutil.h                  |    5 +-
+ contrib/unbound/sldns/rrdef.h                      |    3 +-
+ contrib/unbound/smallapp/unbound-checkconf.c       |    2 -
+ contrib/unbound/smallapp/unbound-control.c         |   29 +-
+ contrib/unbound/util/config_file.c                 |   45 +-
+ contrib/unbound/util/config_file.h                 |   29 +-
+ contrib/unbound/util/configlexer.lex               |   11 +
+ contrib/unbound/util/configparser.y                |  100 +-
+ contrib/unbound/util/edns.c                        |   81 ++
+ contrib/unbound/util/edns.h                        |   57 +
+ contrib/unbound/util/fptr_wlist.c                  |    3 +
+ contrib/unbound/util/iana_ports.inc                |    2 +
+ contrib/unbound/util/mini_event.h                  |    4 +
+ contrib/unbound/util/module.h                      |    2 +
+ contrib/unbound/util/net_help.c                    |   59 +-
+ contrib/unbound/util/net_help.h                    |    6 +
+ contrib/unbound/util/netevent.c                    |  610 ++++++++-
+ contrib/unbound/util/netevent.h                    |  143 ++-
+ contrib/unbound/validator/val_anchor.c             |   33 -
+ contrib/unbound/validator/val_anchor.h             |    2 -
+ contrib/unbound/validator/val_neg.c                |  102 --
+ contrib/unbound/validator/val_neg.h                |   20 -
+ contrib/unbound/validator/val_nsec.c               |   83 --
+ contrib/unbound/validator/val_nsec.h               |   13 -
+ contrib/unbound/validator/validator.c              |  382 +-----
+ contrib/unbound/validator/validator.h              |   23 -
+ share/misc/bsd-family-tree                         |   11 +-
+ usr.sbin/unbound/config.h                          |   80 +-
+ 73 files changed, 3322 insertions(+), 1511 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    fd630743333c..d3d5c5f26058  freebsd/current/master -> freebsd/current/master
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   fd630743333c..d3d5c5f26058  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
