@@ -47,3 +47,129 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/titus/files/patch-rsa__client.cpp
+Removing security/titus/files/patch-dh.cpp
+Merge made by the 'recursive' strategy.
+ ...tch-thirdparty_google__analytics_ganalytics.cpp |  11 ++
+ lang/rust-bootstrap/Makefile                       |   8 +-
+ lang/rust-bootstrap/distinfo                       |  26 ++--
+ .../files/patch-vendor_openssl-sys_build_main.rs   |  19 +++
+ net/geoipupdate/Makefile                           |   6 +-
+ net/geoipupdate/distinfo                           |  12 +-
+ news/rntrack/Makefile                              |  26 ++--
+ security/nss/Makefile                              |   1 +
+ security/nss/files/patch-bug1672703                | 137 +++++++++++++++++++++
+ security/titus/Makefile                            |   7 +-
+ security/titus/distinfo                            |   5 +-
+ security/titus/files/patch-dh.cpp                  |  15 ---
+ security/titus/files/patch-rsa__client.cpp         |  50 --------
+ security/vuxml/vuln.xml                            |  28 +++++
+ sysutils/bsdisks/Makefile                          |   4 +-
+ sysutils/bsdisks/distinfo                          |   6 +-
+ sysutils/seatd/Makefile                            |   8 +-
+ textproc/py-toronado/Makefile                      |   6 +-
+ textproc/rubygem-jekyll-redirect-from/Makefile     |   2 +-
+ www/deno/Makefile                                  |  44 ++++---
+ www/deno/distinfo                                  |  84 +++++++------
+ www/deno/files/extrapatch-clang10                  |   4 +-
+ .../files/patch-cargo-crates_rusty__v8_build.rs    |   4 +-
+ ...ch-cargo-crates_rusty__v8_build_config_BUILD.gn |   4 +-
+ ...go-crates_rusty__v8_build_config_BUILDCONFIG.gn |   4 +-
+ ...crates_rusty__v8_build_config_compiler_BUILD.gn |   4 +-
+ ...es_rusty__v8_build_config_compiler_compiler.gni |   4 +-
+ ...argo-crates_rusty__v8_build_config_features.gni |   4 +-
+ ...es_rusty__v8_build_config_freetype_freetype.gni |   4 +-
+ ...go-crates_rusty__v8_build_config_linux_BUILD.gn |   4 +-
+ ...ates_rusty__v8_build_config_linux_pkg-config.py |   4 +-
+ ...cargo-crates_rusty__v8_build_config_sysroot.gni |   4 +-
+ ...go-crates_rusty__v8_build_detect__host__arch.py |   4 +-
+ ...cargo-crates_rusty__v8_build_gn__run__binary.py |   4 +-
+ ...h-cargo-crates_rusty__v8_build_linux_chrome.map |   4 +-
+ ...go-crates_rusty__v8_build_linux_libpci_BUILD.gn |   4 +-
+ ...crates_rusty__v8_build_linux_unbundle_libusb.gn |   4 +-
+ ...__v8_build_linux_unbundle_replace__gn__files.py |   4 +-
+ ...es_rusty__v8_build_toolchain_gcc__toolchain.gni |   4 +-
+ ...y__v8_build_toolchain_get__concurrent__links.py |   4 +-
+ ...crates_rusty__v8_build_toolchain_linux_BUILD.gn |   4 +-
+ ...sty__v8_buildtools_third__party_libc++_BUILD.gn |   4 +-
+ .../files/patch-cargo-crates_rusty__v8_v8_BUILD.gn |   4 +-
+ ...ch-cargo-crates_rusty__v8_v8_include_v8config.h |   4 +-
+ .../patch-cargo-crates_rusty__v8_v8_src_api_api.cc |   4 +-
+ ...patch-cargo-crates_rusty__v8_v8_src_base_cpu.cc |   4 +-
+ ...ty__v8_v8_src_base_platform_platform-freebsd.cc |   4 +-
+ ...usty__v8_v8_src_base_platform_platform-posix.cc |   4 +-
+ ...tch-crates_rusty__v8_third__party_zlib_BUILD.gn |   4 +-
+ ...tes_rusty__v8_third__party_zlib_cpu__features.c |   4 +-
+ www/nginx-devel/Makefile                           |   1 +
+ www/nginx-devel/files/extra-patch-ktls             | 128 ++++++++++---------
+ x11-toolkits/wlroots/Makefile                      |  16 +--
+ x11-toolkits/wlroots/pkg-message                   |  11 ++
+ x11-wm/cage/Makefile                               |   2 +-
+ x11-wm/sway/Makefile                               |   2 +-
+ x11-wm/wayfire/Makefile                            |   2 +-
+ 57 files changed, 489 insertions(+), 294 deletions(-)
+ create mode 100644 audio/musescore/files/patch-thirdparty_google__analytics_ganalytics.cpp
+ create mode 100644 lang/rust/files/patch-vendor_openssl-sys_build_main.rs
+ create mode 100644 security/nss/files/patch-bug1672703
+ delete mode 100644 security/titus/files/patch-dh.cpp
+ delete mode 100644 security/titus/files/patch-rsa__client.cpp
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    0442c5e24769..fff399c66f7b  master -> master        
+remote:    710b99994c9e..0442c5e24769  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   0442c5e24769..fff399c66f7b  master -> master
+==== END: master ====
