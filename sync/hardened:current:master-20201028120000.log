@@ -1,0 +1,192 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/kern/kern_racct.c
+Merge made by the 'recursive' strategy.
+ .cirrus.yml                                        |  10 +-
+ .clang-format                                      |  21 ++-
+ lib/geom/mountver/geom_mountver.c                  |   1 -
+ lib/geom/mountver/gmountver.8                      |   1 -
+ lib/googletest/tests/Makefile.inc                  |  12 ++
+ lib/libc/posix1e/acl_add_flag_np.3                 |   1 -
+ lib/libc/posix1e/acl_branding.c                    |   1 -
+ lib/libc/posix1e/acl_clear_flags_np.3              |   1 -
+ lib/libc/posix1e/acl_compat.c                      |   1 -
+ lib/libc/posix1e/acl_delete_flag_np.3              |   1 -
+ lib/libc/posix1e/acl_flag.c                        |   1 -
+ lib/libc/posix1e/acl_from_text_nfs4.c              |   1 -
+ lib/libc/posix1e/acl_get_brand_np.3                |   1 -
+ lib/libc/posix1e/acl_get_entry_type_np.3           |   1 -
+ lib/libc/posix1e/acl_get_flag_np.3                 |   1 -
+ lib/libc/posix1e/acl_get_flagset_np.3              |   1 -
+ lib/libc/posix1e/acl_is_trivial_np.3               |   1 -
+ lib/libc/posix1e/acl_set_entry_type_np.3           |   1 -
+ lib/libc/posix1e/acl_set_flagset_np.3              |   1 -
+ lib/libc/posix1e/acl_strip_np.3                    |   1 -
+ lib/libc/posix1e/acl_support_nfs4.c                |   1 -
+ lib/libc/posix1e/acl_to_text_nfs4.c                |   1 -
+ lib/libc/sys/getloginclass.2                       |   1 -
+ sbin/mdconfig/tests/mdconfig_test.sh               |   1 -
+ share/man/man4/cfumass.4                           |   1 -
+ share/man/man4/iscsi.4                             |   1 -
+ share/man/man4/rctl.4                              |   1 -
+ share/man/man5/autofs.5                            |   1 -
+ share/man/man7/development.7                       |   1 -
+ sys/amd64/linux/linux_ptrace.c                     |   1 -
+ sys/cam/ctl/ctl_frontend_iscsi.c                   |   1 -
+ sys/cam/ctl/ctl_frontend_iscsi.h                   |   1 -
+ sys/cddl/compat/opensolaris/kern/opensolaris_acl.c |   1 -
+ sys/compat/linux/linux_errno.inc                   | 206 +++++++++++----------
+ .../openzfs/module/os/freebsd/spl/spl_acl.c        |   1 -
+ sys/dev/iscsi/icl.c                                |   1 -
+ sys/dev/iscsi/icl.h                                |   1 -
+ sys/dev/iscsi/icl_conn_if.m                        |   1 -
+ sys/dev/iscsi/icl_soft.c                           |   1 -
+ sys/dev/iscsi/icl_soft_proxy.c                     |   1 -
+ sys/dev/iscsi/icl_wrappers.h                       |   1 -
+ sys/dev/iscsi/iscsi.c                              |   1 -
+ sys/dev/iscsi/iscsi.h                              |   1 -
+ sys/dev/iscsi/iscsi_ioctl.h                        |   1 -
+ sys/dev/iscsi/iscsi_proto.h                        |   1 -
+ sys/dev/usb/storage/cfumass.c                      |   1 -
+ sys/fs/autofs/autofs.c                             |   1 -
+ sys/fs/autofs/autofs.h                             |   1 -
+ sys/fs/autofs/autofs_ioctl.h                       |   1 -
+ sys/fs/autofs/autofs_vfsops.c                      |   1 -
+ sys/fs/autofs/autofs_vnops.c                       |   1 -
+ sys/kern/kern_loginclass.c                         |   1 -
+ sys/kern/kern_racct.c                              |   1 -
+ sys/kern/kern_rctl.c                               |   1 -
+ sys/kern/subr_acl_nfs4.c                           |   1 -
+ sys/kern/subr_syscall.c                            |  21 ++-
+ sys/sys/loginclass.h                               |   1 -
+ sys/sys/racct.h                                    |   1 -
+ sys/sys/rctl.h                                     |   1 -
+ sys/ufs/ffs/ffs_suspend.c                          |   1 -
+ tests/sys/acl/00.sh                                |   1 -
+ tests/sys/acl/01.sh                                |   1 -
+ tests/sys/acl/02.sh                                |   1 -
+ tests/sys/acl/03.sh                                |   1 -
+ tests/sys/acl/04.sh                                |   1 -
+ tests/sys/acl/aclfuzzer.sh                         |   1 -
+ tests/sys/acl/mktrivial.sh                         |   1 -
+ tests/sys/acl/tools-crossfs.test                   |   1 -
+ tests/sys/acl/tools-nfs4-psarc.test                |   1 -
+ tests/sys/acl/tools-nfs4-trivial.test              |   1 -
+ tests/sys/acl/tools-nfs4.test                      |   1 -
+ tests/sys/acl/tools-posix.test                     |   1 -
+ tools/regression/iscsi/iscsi-test.sh               |   1 -
+ tools/tools/fetchbench/fetchbench                  |   1 -
+ usr.bin/calendar/calendar.1                        |  21 ++-
+ usr.bin/calendar/io.c                              |  73 ++++++--
+ usr.bin/iscsictl/iscsictl.8                        |   1 -
+ usr.bin/iscsictl/iscsictl.c                        |   1 -
+ usr.bin/iscsictl/iscsictl.h                        |   1 -
+ usr.bin/iscsictl/parse.y                           |   1 -
+ usr.bin/iscsictl/token.l                           |   1 -
+ usr.bin/rctl/rctl.8                                |   1 -
+ usr.bin/rctl/rctl.c                                |   1 -
+ usr.sbin/autofs/auto_master.5                      |   1 -
+ usr.sbin/autofs/automount.8                        |   1 -
+ usr.sbin/autofs/automount.c                        |   1 -
+ usr.sbin/autofs/automountd.8                       |   1 -
+ usr.sbin/autofs/automountd.c                       |   1 -
+ usr.sbin/autofs/autounmountd.8                     |   1 -
+ usr.sbin/autofs/autounmountd.c                     |   1 -
+ usr.sbin/autofs/common.c                           |   1 -
+ usr.sbin/autofs/common.h                           |   1 -
+ usr.sbin/autofs/defined.c                          |   1 -
+ usr.sbin/autofs/log.c                              |   1 -
+ usr.sbin/autofs/token.l                            |   1 -
+ usr.sbin/ctld/chap.c                               |   1 -
+ usr.sbin/ctld/ctld.8                               |   1 -
+ usr.sbin/ctld/ctld.c                               |   1 -
+ usr.sbin/ctld/ctld.h                               |   1 -
+ usr.sbin/ctld/discovery.c                          |   1 -
+ usr.sbin/ctld/keys.c                               |   1 -
+ usr.sbin/ctld/log.c                                |   1 -
+ usr.sbin/ctld/login.c                              |   1 -
+ usr.sbin/ctld/parse.y                              |   1 -
+ usr.sbin/ctld/pdu.c                                |   1 -
+ usr.sbin/ctld/token.l                              |   1 -
+ usr.sbin/fstyp/fstyp.8                             |   1 -
+ usr.sbin/fstyp/fstyp.c                             |   1 -
+ usr.sbin/fstyp/fstyp.h                             |   1 -
+ usr.sbin/iscsid/chap.c                             |   1 -
+ usr.sbin/iscsid/discovery.c                        |   1 -
+ usr.sbin/iscsid/iscsid.8                           |   1 -
+ usr.sbin/iscsid/iscsid.c                           |   1 -
+ usr.sbin/iscsid/iscsid.h                           |   1 -
+ usr.sbin/iscsid/keys.c                             |   1 -
+ usr.sbin/iscsid/log.c                              |   1 -
+ usr.sbin/iscsid/login.c                            |   1 -
+ usr.sbin/iscsid/pdu.c                              |   1 -
+ usr.sbin/uefisign/child.c                          |   1 -
+ usr.sbin/uefisign/magic.h                          |   1 -
+ usr.sbin/uefisign/pe.c                             |   1 -
+ usr.sbin/uefisign/uefisign.8                       |   1 -
+ usr.sbin/uefisign/uefisign.c                       |   1 -
+ usr.sbin/uefisign/uefisign.h                       |   1 -
+ 124 files changed, 224 insertions(+), 257 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    dd6f4d9bdb79..bdea3708d7a2  hardened/current/master -> hardened/current/master        
+remote:    edd2ee2f9f7e..5e562dae0b42  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   dd6f4d9bdb79..bdea3708d7a2  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
