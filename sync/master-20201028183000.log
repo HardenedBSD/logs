@@ -47,3 +47,182 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging lang/gcc7/Makefile
+CONFLICT (content): Merge conflict in lang/gcc7/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/gcc7/Makefile
+index aeadd299d4f6,5934286a841d..000000000000
+--- a/lang/gcc7/Makefile
++++ b/lang/gcc7/Makefile
+@@@ -37,12 -38,6 +38,15 @@@ SSP_UNSAFE=	ye
+  CFLAGS:=	${CFLAGS:N-mretpoline}
+  CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off retpoline:off
+ +
+ +OPTIONS_DEFINE=		BOOTSTRAP
+ +OPTIONS_DEFAULT=	BOOTSTRAP
+ +BOOTSTRAP_DESC=		Build using a full bootstrap
+ +
+++=======
+++>>>>>>> freebsd/master
+  .include <bsd.port.pre.mk>
+  
+  .if ${ARCH} == amd64
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   deskutils/calendar/Makefile
+	new file:   deskutils/calendar/files/patch-calendar.1
+	modified:   deskutils/calendar/files/patch-io.c
+	modified:   devel/Makefile
+	modified:   devel/jenkins/Makefile
+	modified:   devel/jenkins/distinfo
+	modified:   devel/llvm10/Makefile
+	modified:   devel/py-oci/Makefile
+	modified:   devel/py-oci/distinfo
+	new file:   devel/sd-mux/Makefile
+	new file:   devel/sd-mux/distinfo
+	new file:   devel/sd-mux/files/patch-src_CMakeLists.txt
+	new file:   devel/sd-mux/pkg-descr
+	modified:   games/linux-steam-utils/Makefile
+	modified:   games/linux-steam-utils/distinfo
+	modified:   graphics/photoflow/Makefile
+	modified:   java/Makefile
+	new file:   java/openjfx14/Makefile
+	new file:   java/openjfx14/distinfo
+	new file:   java/openjfx14/files/gstsndio.c
+	new file:   java/openjfx14/files/gstsndio.h
+	new file:   java/openjfx14/files/patch-build.gradle
+	new file:   java/openjfx14/files/patch-buildSrc_bsd.gradle
+	new file:   java/openjfx14/files/patch-modules_javafx.base_src_main_java_com_sun_javafx_PlatformUtil.java
+	new file:   java/openjfx14/files/patch-modules_javafx.controls_src_main_java_com_sun_javafx_scene_TextInputControlBehavior.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_glass_ui_Platform.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_glass_utils_NativeLibLoader.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_font_LogicalFont.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_font_PrismFontFactory.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_tk_Toolkit.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_tk_quantum_GlassSystemMenu.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_tk_quantum_WindowStage.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_prism_impl_PrismSettings.java
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-font_fontpath__linux.c
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-font_freetype.c
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-font_pango.c
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_GlassApplication.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_glass__evloop.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_glass__window.h
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_launcher.c
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_wrapped.c
+	new file:   java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-prism-es2_PrismES2Defs.h
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_java_com_sun_media_jfxmediaimpl_HostUtils.java
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_java_com_sun_media_jfxmediaimpl_NativeMediaManager.java
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_native_gstreamer_gstreamer-lite_gstreamer_gst_gst__private.h
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_native_gstreamer_projects_build_linux_common_config.h
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_native_jfxmedia_platform_gstreamer_GstAudioSpectrum.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_native_jfxmedia_platform_gstreamer_GstPipelineFactory.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.media_src_main_native_jfxmedia_projects_bsd_Makefile
+	new file:   java/openjfx14/files/patch-modules_javafx.swing_src_main_java_javafx_embed_swing_JFXPanel.java
+	new file:   java/openjfx14/files/patch-modules_javafx.swing_src_main_java_javafx_embed_swing_SwingNode.java
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_JavaScriptCore_assembler_ARM64Assembler.h
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_JavaScriptCore_offlineasm_arm64.rb
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_PlatformJava.cmake
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_MemoryPressureHandler.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_MemoryPressureHandler.h
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_Platform.h
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_PlatformJava.cmake
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_RAMSize.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_generic_MemoryFootprintGeneric.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_linux_MemoryPressureHandlerLinux.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_unicode_java_UnicodeJava.h
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_unix_MemoryPressureHandlerUnix.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WebCore_css_StyleResolver.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_bmalloc_bmalloc_AvailableMemory.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_bmalloc_bmalloc_AvailableMemory.h
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_bmalloc_bmalloc_bmalloc.h
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_cmake_OptionsJava.cmake
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_cmake_WebKitCommon.cmake
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_cmake_WebKitCompilerFlags.cmake
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Tools_DumpRenderTree_TestRunner.cpp
+	new file:   java/openjfx14/files/patch-modules_javafx.web_src_main_native_Tools_DumpRenderTree_java_CMakeLists.txt
+	new file:   java/openjfx14/files/sndiosink.c
+	new file:   java/openjfx14/files/sndiosink.h
+	new file:   java/openjfx14/pkg-descr
+	new file:   java/openjfx14/pkg-plist
+	modified:   lang/gcc7/pkg-plist
+	modified:   net-mgmt/prometheus-collectd-exporter/Makefile
+	modified:   net-mgmt/prometheus-collectd-exporter/distinfo
+	modified:   net/unison232/Makefile
+	modified:   x11-toolkits/Makefile
+	new file:   x11-toolkits/gtkd/Makefile
+	new file:   x11-toolkits/gtkd/distinfo
+	new file:   x11-toolkits/gtkd/pkg-descr
+	new file:   x11-toolkits/gtkd/pkg-plist
+	modified:   x11/Makefile
+	new file:   x11/tilix/Makefile
+	new file:   x11/tilix/distinfo
+	new file:   x11/tilix/pkg-descr
+	new file:   x11/tilix/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lang/gcc7/Makefile
+
+
+It took 3.19 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at fff399c66f7b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.96 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at fff399c66f7b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
