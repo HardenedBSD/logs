@@ -1,0 +1,218 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 19 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating fff399c66f7b..09d9ee024d45
+Fast-forward
+ databases/freetds-devel/Makefile                   |    2 +-
+ databases/freetds-devel/distinfo                   |    6 +-
+ deskutils/calendar/Makefile                        |    2 +-
+ deskutils/calendar/files/patch-calendar.1          |   77 ++
+ deskutils/calendar/files/patch-io.c                |  122 ++-
+ devel/Makefile                                     |    1 +
+ devel/jenkins/Makefile                             |    2 +-
+ devel/jenkins/distinfo                             |    6 +-
+ devel/llvm10/Makefile                              |    2 +-
+ devel/llvm10/files/patch-lib_Support_Unix_Path.inc |    2 +-
+ devel/py-oci/Makefile                              |    2 +-
+ devel/py-oci/distinfo                              |    6 +-
+ devel/sd-mux/Makefile                              |   23 +
+ devel/sd-mux/distinfo                              |    3 +
+ devel/sd-mux/files/patch-src_CMakeLists.txt        |   12 +
+ devel/sd-mux/pkg-descr                             |    4 +
+ games/linux-steam-utils/Makefile                   |    2 +-
+ games/linux-steam-utils/distinfo                   |    6 +-
+ graphics/photoflow/Makefile                        |   12 +-
+ java/Makefile                                      |    1 +
+ java/openjfx14/Makefile                            |  165 +++
+ java/openjfx14/distinfo                            |   15 +
+ java/openjfx14/files/gstsndio.c                    |  396 +++++++
+ java/openjfx14/files/gstsndio.h                    |   78 ++
+ java/openjfx14/files/patch-build.gradle            |  303 ++++++
+ java/openjfx14/files/patch-buildSrc_bsd.gradle     |  332 ++++++
+ ..._src_main_java_com_sun_javafx_PlatformUtil.java |   37 +
+ ..._sun_javafx_scene_TextInputControlBehavior.java |   36 +
+ ...cs_src_main_java_com_sun_glass_ui_Platform.java |   20 +
+ ...n_java_com_sun_glass_utils_NativeLibLoader.java |   20 +
+ ..._main_java_com_sun_javafx_font_LogicalFont.java |   11 +
+ ..._java_com_sun_javafx_font_PrismFontFactory.java |   45 +
+ ...cs_src_main_java_com_sun_javafx_tk_Toolkit.java |   11 +
+ ..._com_sun_javafx_tk_quantum_GlassSystemMenu.java |   35 +
+ ...java_com_sun_javafx_tk_quantum_WindowStage.java |   11 +
+ ...main_java_com_sun_prism_impl_PrismSettings.java |   29 +
+ ...graphics_src_main_native-font_fontpath__linux.c |   11 +
+ ...javafx.graphics_src_main_native-font_freetype.c |   15 +
+ ...es_javafx.graphics_src_main_native-font_pango.c |   15 +
+ ..._src_main_native-glass_gtk_GlassApplication.cpp |   10 +
+ ...ics_src_main_native-glass_gtk_glass__evloop.cpp |   11 +
+ ...phics_src_main_native-glass_gtk_glass__window.h |   16 +
+ ...x.graphics_src_main_native-glass_gtk_launcher.c |   10 +
+ ...fx.graphics_src_main_native-glass_gtk_wrapped.c |   10 +
+ ...aphics_src_main_native-prism-es2_PrismES2Defs.h |   11 +
+ ..._java_com_sun_media_jfxmediaimpl_HostUtils.java |   13 +
+ ..._sun_media_jfxmediaimpl_NativeMediaManager.java |   11 +
+ ...mer_gstreamer-lite_gstreamer_gst_gst__private.h |   86 ++
+ ..._gstreamer_projects_build_linux_common_config.h |   11 +
+ ...fxmedia_platform_gstreamer_GstAudioSpectrum.cpp |   11 +
+ ...media_platform_gstreamer_GstPipelineFactory.cpp |   11 +
+ ..._src_main_native_jfxmedia_projects_bsd_Makefile |   42 +
+ ..._src_main_java_javafx_embed_swing_JFXPanel.java |   20 +
+ ...src_main_java_javafx_embed_swing_SwingNode.java |   11 +
+ ...ource_JavaScriptCore_assembler_ARM64Assembler.h |   11 +
+ ...ative_Source_JavaScriptCore_offlineasm_arm64.rb |   11 +
+ ...x.web_src_main_native_Source_PlatformJava.cmake |    8 +
+ ...native_Source_WTF_wtf_MemoryPressureHandler.cpp |   11 +
+ ...n_native_Source_WTF_wtf_MemoryPressureHandler.h |   20 +
+ ...x.web_src_main_native_Source_WTF_wtf_Platform.h |   15 +
+ ...c_main_native_Source_WTF_wtf_PlatformJava.cmake |   14 +
+ ....web_src_main_native_Source_WTF_wtf_RAMSize.cpp |   28 +
+ ...urce_WTF_wtf_generic_MemoryFootprintGeneric.cpp |   22 +
+ ...ce_WTF_wtf_linux_MemoryPressureHandlerLinux.cpp |   54 +
+ ...ative_Source_WTF_wtf_unicode_java_UnicodeJava.h |   24 +
+ ...urce_WTF_wtf_unix_MemoryPressureHandlerUnix.cpp |  168 +++
+ ...ain_native_Source_WebCore_css_StyleResolver.cpp |   11 +
+ ...tive_Source_bmalloc_bmalloc_AvailableMemory.cpp |   45 +
+ ...native_Source_bmalloc_bmalloc_AvailableMemory.h |   20 +
+ ...rc_main_native_Source_bmalloc_bmalloc_bmalloc.h |   11 +
+ ..._src_main_native_Source_cmake_OptionsJava.cmake |   21 +
+ ...src_main_native_Source_cmake_WebKitCommon.cmake |   12 +
+ ...n_native_Source_cmake_WebKitCompilerFlags.cmake |   13 +
+ ...main_native_Tools_DumpRenderTree_TestRunner.cpp |   18 +
+ ...native_Tools_DumpRenderTree_java_CMakeLists.txt |   12 +
+ java/openjfx14/files/sndiosink.c                   |  226 ++++
+ java/openjfx14/files/sndiosink.h                   |   57 +
+ java/openjfx14/pkg-descr                           |    6 +
+ java/openjfx14/pkg-plist                           |   34 +
+ lang/gcc7/Makefile                                 |   11 +-
+ lang/gcc7/pkg-plist                                |    3 -
+ net-mgmt/prometheus-collectd-exporter/Makefile     |    3 +-
+ net-mgmt/prometheus-collectd-exporter/distinfo     |    6 +-
+ net/unison232/Makefile                             |    2 +-
+ x11-toolkits/Makefile                              |    1 +
+ x11-toolkits/gtkd/Makefile                         |   27 +
+ x11-toolkits/gtkd/distinfo                         |    3 +
+ x11-toolkits/gtkd/pkg-descr                        |    6 +
+ x11-toolkits/gtkd/pkg-plist                        | 1128 ++++++++++++++++++++
+ x11/Makefile                                       |    1 +
+ x11/tilix/Makefile                                 |   29 +
+ x11/tilix/distinfo                                 |    5 +
+ x11/tilix/pkg-descr                                |   21 +
+ x11/tilix/pkg-plist                                |   31 +
+ 94 files changed, 4256 insertions(+), 55 deletions(-)
+ create mode 100644 deskutils/calendar/files/patch-calendar.1
+ create mode 100644 devel/sd-mux/Makefile
+ create mode 100644 devel/sd-mux/distinfo
+ create mode 100644 devel/sd-mux/files/patch-src_CMakeLists.txt
+ create mode 100644 devel/sd-mux/pkg-descr
+ create mode 100644 java/openjfx14/Makefile
+ create mode 100644 java/openjfx14/distinfo
+ create mode 100644 java/openjfx14/files/gstsndio.c
+ create mode 100644 java/openjfx14/files/gstsndio.h
+ create mode 100644 java/openjfx14/files/patch-build.gradle
+ create mode 100644 java/openjfx14/files/patch-buildSrc_bsd.gradle
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.base_src_main_java_com_sun_javafx_PlatformUtil.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.controls_src_main_java_com_sun_javafx_scene_TextInputControlBehavior.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_glass_ui_Platform.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_glass_utils_NativeLibLoader.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_font_LogicalFont.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_font_PrismFontFactory.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_tk_Toolkit.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_tk_quantum_GlassSystemMenu.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_javafx_tk_quantum_WindowStage.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_java_com_sun_prism_impl_PrismSettings.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-font_fontpath__linux.c
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-font_freetype.c
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-font_pango.c
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_GlassApplication.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_glass__evloop.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_glass__window.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_launcher.c
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-glass_gtk_wrapped.c
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.graphics_src_main_native-prism-es2_PrismES2Defs.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_java_com_sun_media_jfxmediaimpl_HostUtils.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_java_com_sun_media_jfxmediaimpl_NativeMediaManager.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_native_gstreamer_gstreamer-lite_gstreamer_gst_gst__private.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_native_gstreamer_projects_build_linux_common_config.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_native_jfxmedia_platform_gstreamer_GstAudioSpectrum.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_native_jfxmedia_platform_gstreamer_GstPipelineFactory.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.media_src_main_native_jfxmedia_projects_bsd_Makefile
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.swing_src_main_java_javafx_embed_swing_JFXPanel.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.swing_src_main_java_javafx_embed_swing_SwingNode.java
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_JavaScriptCore_assembler_ARM64Assembler.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_JavaScriptCore_offlineasm_arm64.rb
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_PlatformJava.cmake
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_MemoryPressureHandler.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_MemoryPressureHandler.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_Platform.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_PlatformJava.cmake
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_RAMSize.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_generic_MemoryFootprintGeneric.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_linux_MemoryPressureHandlerLinux.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_unicode_java_UnicodeJava.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WTF_wtf_unix_MemoryPressureHandlerUnix.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_WebCore_css_StyleResolver.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_bmalloc_bmalloc_AvailableMemory.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_bmalloc_bmalloc_AvailableMemory.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_bmalloc_bmalloc_bmalloc.h
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_cmake_OptionsJava.cmake
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_cmake_WebKitCommon.cmake
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Source_cmake_WebKitCompilerFlags.cmake
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Tools_DumpRenderTree_TestRunner.cpp
+ create mode 100644 java/openjfx14/files/patch-modules_javafx.web_src_main_native_Tools_DumpRenderTree_java_CMakeLists.txt
+ create mode 100644 java/openjfx14/files/sndiosink.c
+ create mode 100644 java/openjfx14/files/sndiosink.h
+ create mode 100644 java/openjfx14/pkg-descr
+ create mode 100644 java/openjfx14/pkg-plist
+ create mode 100644 x11-toolkits/gtkd/Makefile
+ create mode 100644 x11-toolkits/gtkd/distinfo
+ create mode 100644 x11-toolkits/gtkd/pkg-descr
+ create mode 100644 x11-toolkits/gtkd/pkg-plist
+ create mode 100644 x11/tilix/Makefile
+ create mode 100644 x11/tilix/distinfo
+ create mode 100644 x11/tilix/pkg-descr
+ create mode 100644 x11/tilix/pkg-plist
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
