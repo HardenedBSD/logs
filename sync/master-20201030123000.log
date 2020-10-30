@@ -47,3 +47,146 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging java/openjdk8/Makefile
+Removing deskutils/calendar/files/patch-calendar.h
+Removing biology/hyphy/files/patch-src_core_matrix.cpp
+Removing audio/libmusicbrainz5/files/patch-src_c-int-source-funcs.inc
+Merge made by the 'recursive' strategy.
+ astro/mkgmap/Makefile                              |   2 +-
+ astro/mkgmap/distinfo                              |   6 +-
+ audio/fasttracker2/Makefile                        |   2 +-
+ audio/fasttracker2/distinfo                        |   6 +-
+ audio/libmusicbrainz5/Makefile                     |   9 +-
+ audio/libmusicbrainz5/distinfo                     |   5 +-
+ ...atch => patch-include_musicbrainz5_HTTPFetch.h} |  21 ++-
+ .../libmusicbrainz5/files/patch-src_CMakeLists.txt |  12 +-
+ .../files/patch-src_c-int-source-funcs.inc         |  11 --
+ audio/libmusicbrainz5/pkg-plist                    |   2 +
+ audio/yoshimi/Makefile                             |   3 +-
+ audio/yoshimi/distinfo                             |   6 +-
+ biology/hyphy/Makefile                             |   2 +-
+ biology/hyphy/distinfo                             |   6 +-
+ biology/hyphy/files/patch-src_core_matrix.cpp      |  11 --
+ biology/hyphy/pkg-plist                            |   2 +-
+ deskutils/calendar/Makefile                        |   4 +-
+ deskutils/calendar/distinfo                        |   6 +-
+ deskutils/calendar/files/patch-calendar.h          |  11 --
+ deskutils/calendar/files/patch-io.c                | 199 ++++++++++++++++++++-
+ deskutils/calendar/files/patch-pathnames.h         |  15 +-
+ devel/R-cran-R6/Makefile                           |   3 +-
+ devel/R-cran-R6/distinfo                           |   6 +-
+ devel/gwenhywfar-fox16/pkg-plist                   |   2 +-
+ devel/gwenhywfar-gtk2/pkg-plist                    |   2 +-
+ devel/gwenhywfar-gtk3/pkg-plist                    |   2 +-
+ devel/gwenhywfar-qt5/pkg-plist                     |   2 +-
+ devel/gwenhywfar/Makefile                          |  27 ++-
+ devel/gwenhywfar/distinfo                          |   6 +-
+ devel/gwenhywfar/files/patch-configure             |  52 ++----
+ devel/gwenhywfar/pkg-descr                         |   2 +-
+ devel/gwenhywfar/pkg-plist                         |  10 +-
+ devel/jna/Makefile                                 |   6 +
+ dns/libmicrodns/Makefile                           |   2 +-
+ finance/aqbanking/Makefile                         |   7 +-
+ finance/aqbanking/distinfo                         |   6 +-
+ finance/aqbanking/pkg-descr                        |   2 +-
+ finance/aqbanking/pkg-plist                        |   4 +-
+ games/widelands/files/patch-CMakeLists.txt         |   2 +-
+ graphics/gimp-lqr-plugin/Makefile                  |   2 +
+ graphics/krita/Makefile                            |   2 +-
+ graphics/krita/distinfo                            |   6 +-
+ java/openjdk8/Makefile                             |   1 +
+ security/dropbear/Makefile                         |   3 +-
+ security/dropbear/distinfo                         |   6 +-
+ security/py-ssh-audit/Makefile                     |   2 +-
+ security/py-ssh-audit/distinfo                     |   6 +-
+ sysutils/auto-admin/Makefile                       |   2 +-
+ sysutils/auto-admin/distinfo                       |   6 +-
+ sysutils/auto-admin/pkg-plist                      |   1 +
+ sysutils/desktop-installer/Makefile                |   4 +-
+ sysutils/desktop-installer/distinfo                |   6 +-
+ sysutils/desktop-installer/pkg-plist               |   1 +
+ sysutils/munin-common/distinfo                     |   6 +-
+ sysutils/munin-common/munin.mk                     |   2 +-
+ sysutils/munin-node/Makefile                       |   3 +
+ sysutils/tmux/Makefile                             |   2 +-
+ sysutils/tmux/distinfo                             |   6 +-
+ www/Makefile                                       |   1 +
+ www/py-httpretty/Makefile                          |  18 ++
+ www/py-httpretty/distinfo                          |   3 +
+ www/py-httpretty/pkg-descr                         |   4 +
+ www/youtube_dlc/Makefile                           |   2 +-
+ www/youtube_dlc/distinfo                           |   6 +-
+ x11-fonts/xorg-fonts-100dpi/Makefile               |   8 +-
+ x11-fonts/xorg-fonts-75dpi/Makefile                |   8 +-
+ x11-fonts/xorg-fonts-cyrillic/Makefile             |   8 +-
+ x11-fonts/xorg-fonts-miscbitmaps/Makefile          |   7 +-
+ x11-fonts/xorg-fonts-truetype/Makefile             |   8 +-
+ x11-fonts/xorg-fonts-type1/Makefile                |   8 +-
+ 70 files changed, 403 insertions(+), 229 deletions(-)
+ rename audio/libmusicbrainz5/files/{patch-musicbrainz5-httpfetch-h.patch => patch-include_musicbrainz5_HTTPFetch.h} (82%)
+ delete mode 100644 audio/libmusicbrainz5/files/patch-src_c-int-source-funcs.inc
+ delete mode 100644 biology/hyphy/files/patch-src_core_matrix.cpp
+ delete mode 100644 deskutils/calendar/files/patch-calendar.h
+ create mode 100644 www/py-httpretty/Makefile
+ create mode 100644 www/py-httpretty/distinfo
+ create mode 100644 www/py-httpretty/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    7e63b8fad22a..19aba165ecf8  master -> master        
+remote:    548cf6cf79f6..7e63b8fad22a  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   7e63b8fad22a..19aba165ecf8  master -> master
+==== END: master ====
