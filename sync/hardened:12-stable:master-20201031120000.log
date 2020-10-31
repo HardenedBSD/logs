@@ -1,0 +1,106 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging share/man/man5/Makefile
+Merge made by the 'recursive' strategy.
+ share/man/man4/smbios.4          |    2 +-
+ share/man/man5/Makefile          |    1 +
+ share/man/man5/elf.5             |   61 +-
+ share/man/man5/smbfs.5           |   79 +++
+ share/man/man5/unionfs.5         |    2 +-
+ share/man/man9/socket.9          |    2 +-
+ sys/arm/mv/mv_ap806_clock.c      |   30 +-
+ sys/arm/mv/mv_ap806_gicp.c       |   92 ++-
+ sys/arm/mv/mv_ap806_sei.c        |  419 +++++++++++
+ sys/arm/mv/mv_cp110_clock.c      |   24 +-
+ sys/arm/mv/mv_cp110_icu.c        |   90 ++-
+ sys/arm/mv/mv_cp110_icu_bus.c    |   78 +++
+ sys/arm/mv/mv_thermal.c          |   75 +-
+ sys/arm/mv/mvebu_pinctrl.c       |   30 +-
+ sys/arm64/conf/GENERIC           |    1 +
+ sys/arm64/rockchip/rk805.c       |   11 +-
+ sys/arm64/rockchip/rk_iodomain.c |   21 +-
+ sys/arm64/rockchip/rk_pcie.c     | 1411 ++++++++++++++++++++++++++++++++++++++
+ sys/arm64/rockchip/rk_pcie_phy.c |  369 ++++++++++
+ sys/arm64/rockchip/rk_pinctrl.c  |   45 +-
+ sys/conf/files.arm64             |   12 +-
+ sys/dev/pci/pci_dw.c             |  697 +++++++++++++++++++
+ sys/dev/pci/pci_dw.h             |  158 +++++
+ sys/dev/pci/pci_dw_if.m          |   73 ++
+ sys/dev/pci/pci_dw_mv.c          |  328 +++++++++
+ 25 files changed, 3953 insertions(+), 158 deletions(-)
+ create mode 100644 share/man/man5/smbfs.5
+ create mode 100644 sys/arm/mv/mv_ap806_sei.c
+ create mode 100644 sys/arm/mv/mv_cp110_icu_bus.c
+ create mode 100644 sys/arm64/rockchip/rk_pcie.c
+ create mode 100644 sys/arm64/rockchip/rk_pcie_phy.c
+ create mode 100644 sys/dev/pci/pci_dw.c
+ create mode 100644 sys/dev/pci/pci_dw.h
+ create mode 100644 sys/dev/pci/pci_dw_if.m
+ create mode 100644 sys/dev/pci/pci_dw_mv.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ac906fd58700..10459b85d157  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    bdf94c26ac55..a168bae547cc  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ac906fd58700..10459b85d157  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
