@@ -1,0 +1,270 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 72 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 19aba165ecf8..778629596f62
+Fast-forward
+ MOVED                                              |   1 +
+ UPDATING                                           |  12 +
+ audio/faust/Makefile                               |   2 +
+ audio/geonkick-lv2/Makefile                        |   2 +-
+ audio/geonkick-lv2/distinfo                        |   6 +-
+ .../files/patch-plugin_lv2_CMakeLists.txt          |  11 +-
+ .../files/patch-plugin_vst_CMakeLists.txt          |  11 +
+ audio/geonkick-lv2/pkg-plist                       |  22 +
+ benchmarks/ali/Makefile                            |   2 +-
+ benchmarks/ali/distinfo                            |   6 +-
+ cad/horizon-eda/Makefile                           |   5 +-
+ cad/horizon-eda/distinfo                           |   8 +-
+ cad/horizon-eda/files/patch-Makefile               |   8 +-
+ cad/py-cq-editor/Makefile                          |   5 +-
+ comms/gqrx/Makefile                                |   2 +-
+ comms/gqrx/distinfo                                |   6 +-
+ databases/pecl-mongodb/Makefile                    |   4 +
+ databases/phpmyadmin/Makefile                      |   2 +-
+ databases/phpmyadmin/distinfo                      |   6 +-
+ deskutils/calendar/Makefile                        |   4 +-
+ deskutils/calendar/distinfo                        |   6 +-
+ deskutils/calendar/files/patch-dates.c             |  35 ++
+ .../calendar/files/patch-tests_regress.s5.out      |   7 +
+ deskutils/gnome-contacts/Makefile                  |   3 +-
+ deskutils/just/Makefile                            |   2 +-
+ deskutils/just/distinfo                            |   6 +-
+ devel/Makefile                                     |   1 -
+ devel/libgdata/Makefile                            |   3 +-
+ devel/libphonenumber/Makefile                      |   2 +-
+ devel/libphonenumber/distinfo                      |   6 +-
+ .../patch-src_phonenumbers_phonenumberutil.cc      |  13 +
+ devel/libsigc++12/Makefile                         |  26 --
+ devel/libsigc++12/distinfo                         |   2 -
+ devel/libsigc++12/files/patch-tests_bind__test.cc  |  30 --
+ devel/libsigc++12/pkg-descr                        |   9 -
+ devel/libsigc++12/pkg-plist                        |  34 --
+ devel/liteide/Makefile                             |   7 +-
+ devel/liteide/distinfo                             |  14 +-
+ ...src_plugins_liteeditor_liteeditorwidgetbase.cpp |  10 -
+ .../files/patch-src_utils_dlvclient_dlvclient.cpp  |  12 -
+ devel/liteide/pkg-plist                            |   3 +
+ devel/ncurses/Makefile                             |   2 +-
+ devel/ncurses/distinfo                             |   6 +-
+ devel/pecl-swoole/Makefile                         |   2 +-
+ devel/pecl-swoole/distinfo                         |   6 +-
+ .../files/patch-thirdparty_hiredis_test.c          |  10 -
+ devel/py-importlib-resources/Makefile              |   2 +-
+ devel/py-importlib-resources/distinfo              |   6 +-
+ devel/py-pycodeexport/Makefile                     |   3 +-
+ devel/py-pycodeexport/distinfo                     |   6 +-
+ devel/py-zipp/Makefile                             |   2 +-
+ devel/py-zipp/distinfo                             |   6 +-
+ devel/taskctl/Makefile                             |   2 +-
+ devel/taskctl/distinfo                             |   6 +-
+ dns/flamethrower/Makefile                          |   8 +-
+ dns/flamethrower/distinfo                          |   6 +-
+ dns/libmicrodns/Makefile                           |   9 +-
+ dns/libmicrodns/distinfo                           |   6 +-
+ emulators/dosbox-staging/Makefile                  |   2 +-
+ emulators/dosbox-staging/distinfo                  |   6 +-
+ emulators/mgba/Makefile                            |  16 +-
+ emulators/mgba/distinfo                            |   6 +-
+ emulators/mgba/files/patch-version.cmake           |  11 +
+ emulators/mgba/pkg-plist                           |   2 +-
+ emulators/rpcs3/Makefile                           |   4 +-
+ emulators/rpcs3/distinfo                           |   6 +-
+ emulators/yuzu/Makefile                            |   9 +-
+ emulators/yuzu/distinfo                            |  10 +-
+ emulators/yuzu/files/patch-fmt                     |  15 +
+ emulators/yuzu/files/patch-openssl                 |  67 ---
+ games/iagno/Makefile                               |  11 +-
+ games/iagno/distinfo                               |   6 +-
+ games/iagno/pkg-plist                              | 492 +++++++++++----------
+ graphics/cogl/Makefile                             |   2 +-
+ graphics/mesa-devel/Makefile                       |   5 +-
+ graphics/mesa-devel/distinfo                       |   6 +-
+ graphics/mesa-devel/files/patch-revert             |  45 ++
+ graphics/qgis/Makefile                             |   1 +
+ java/jgraphx/Makefile                              |   2 +-
+ java/jgraphx/distinfo                              |   6 +-
+ lang/gcc48/Makefile                                |  15 +-
+ lang/gcc48/pkg-plist                               |   3 -
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ lang/intel-compute-runtime/Makefile                |   3 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ lang/intel-compute-runtime/files/patch-includes    |   4 +-
+ mail/evolution/Makefile                            |   3 +-
+ mail/geary/Makefile                                |   3 +-
+ math/lean/Makefile                                 |   2 +-
+ math/lean/distinfo                                 |   6 +-
+ math/mfem/Makefile                                 |   2 +-
+ math/mfem/distinfo                                 |   6 +-
+ math/mfem/files/patch-general_zstr.hpp             |  11 -
+ math/mfem/pkg-descr                                |   2 +-
+ math/mfem/pkg-plist                                |  25 +-
+ math/onednn/Makefile                               |   2 +-
+ math/onednn/distinfo                               |   6 +-
+ misc/concourse/Makefile                            |   2 +-
+ misc/concourse/distinfo                            |   6 +-
+ misc/py-progressbar2/Makefile                      |   2 +-
+ misc/py-progressbar2/distinfo                      |   6 +-
+ multimedia/ffmpeg/Makefile                         |   4 +-
+ multimedia/ffmpeg/distinfo                         |   4 +-
+ multimedia/gmmlib/Makefile                         |   2 +-
+ multimedia/gmmlib/distinfo                         |   6 +-
+ multimedia/gmmlib/pkg-plist                        |   2 +-
+ multimedia/gstreamer1-plugins-svt-vp9/Makefile     |   2 +-
+ multimedia/gstreamer1-plugins-svt-vp9/distinfo     |   6 +-
+ multimedia/svt-vp9/Makefile                        |   2 +-
+ multimedia/svt-vp9/distinfo                        |   6 +-
+ multimedia/svt-vp9/pkg-plist                       |   1 -
+ net-im/ekiga/Makefile                              |   4 +-
+ net-im/folks/Makefile                              |   3 +-
+ net-im/py-sleekxmpp/Makefile                       |   3 +
+ net-p2p/retroshare/Makefile                        |   2 +
+ net/google-cloud-sdk/Makefile                      |   2 +-
+ net/google-cloud-sdk/distinfo                      |   6 +-
+ net/kitinerary/Makefile                            |   5 +-
+ net/libjson-rpc-cpp/Makefile                       |   2 +
+ net/py-wsdd/Makefile                               |   3 +-
+ net/py-wsdd/distinfo                               |   6 +-
+ net/samba411/Makefile                              |   2 +-
+ net/samba411/distinfo                              |   6 +-
+ net/samba412/Makefile                              |   2 +-
+ net/samba412/distinfo                              |   6 +-
+ net/samba413/Makefile                              |   4 +-
+ net/samba413/distinfo                              |   6 +-
+ .../files/patch-source3_torture_cmd__vfs.c         |  14 +-
+ net/samba413/files/patch-source3_wscript__build    |  30 +-
+ net/samba413/pkg-plist                             |   2 +-
+ science/jmol/Makefile                              |   2 +-
+ science/jmol/distinfo                              |   6 +-
+ science/libcint/Makefile                           |   2 +-
+ science/libcint/distinfo                           |   6 +-
+ science/py-gsd/Makefile                            |   2 +-
+ science/py-gsd/distinfo                            |   6 +-
+ science/qbox/Makefile                              |   2 +-
+ science/qbox/distinfo                              |   6 +-
+ security/gcr/Makefile                              |  11 +-
+ security/gcr/distinfo                              |   6 +-
+ security/gcr/pkg-plist                             | 124 +++---
+ security/gnome-keyring/Makefile                    |   3 +-
+ security/openvpn-devel/Makefile                    |   2 +-
+ security/openvpn-devel/distinfo                    |   6 +-
+ security/openvpn/Makefile                          |  79 ++--
+ security/openvpn/distinfo                          |   6 +-
+ .../files/extra-tunnelblick-openvpn_xorpatch       | 234 +++++-----
+ security/openvpn/files/patch-configure             |  11 -
+ ...ch-git-098edbb1f5a2e1360fd6a4ae0642b63bec12e992 | 136 ------
+ ...ch-git-38b46e6bf65489c2c5d75da1c02a3a1c33e6da88 |  61 ---
+ ...ch-git-b89e48b015e581a4a0f5c306e2ab20da34c862ea | 214 ---------
+ ...ch-git-cab48ad43eaba51c54fa23e55b0b2eb436dd921f |  40 --
+ ...ch-git-fc0297143494e0a0f08564d90dbb210669d0abf5 |  28 --
+ .../openvpn/files/patch-src_openvpn_ssl__openssl.c |  69 ---
+ security/openvpn/pkg-plist                         |   6 +-
+ security/seahorse/Makefile                         |   3 +-
+ security/tailscale/Makefile                        |  15 +-
+ security/tailscale/distinfo                        |  32 +-
+ security/vuxml/vuln.xml                            |  26 ++
+ sysutils/conan/Makefile                            |   2 +-
+ sysutils/conan/distinfo                            |   6 +-
+ sysutils/ctop/Makefile                             |  67 ++-
+ sysutils/ctop/distinfo                             | 128 ++++--
+ ...m_docker_docker_pkg_mount_mountinfo__freebsd.go |  11 -
+ sysutils/doctl/Makefile                            |   2 +-
+ sysutils/doctl/distinfo                            |   6 +-
+ textproc/py-pyphen/Makefile                        |   2 +-
+ textproc/py-pyphen/distinfo                        |   6 +-
+ www/cpp-httplib/Makefile                           |   2 +-
+ www/cpp-httplib/distinfo                           |   6 +-
+ www/epiphany/Makefile                              |   4 +-
+ www/gobuffalo/Makefile                             |   2 +-
+ www/gobuffalo/distinfo                             |   6 +-
+ www/libmicrohttpd/Makefile                         |  24 +-
+ www/libmicrohttpd/distinfo                         |   6 +-
+ www/libmicrohttpd/pkg-plist                        |   4 +-
+ www/midori/Makefile                                |   4 +-
+ www/py-drf-yasg/Makefile                           |  16 +-
+ www/py-drf-yasg/distinfo                           |   6 +-
+ www/youtube_dlc/Makefile                           |   2 +-
+ www/youtube_dlc/distinfo                           |   6 +-
+ x11-fm/sushi/Makefile                              |   3 +-
+ x11-servers/xwayland-devel/Makefile                |   4 +-
+ x11-servers/xwayland-devel/distinfo                |   6 +-
+ x11-toolkits/libhandy/Makefile                     |   2 +-
+ x11-toolkits/libhandy/distinfo                     |   6 +-
+ x11-toolkits/libhandy/pkg-plist                    |   3 +
+ x11-wm/icewm/Makefile                              |   3 +-
+ x11-wm/icewm/distinfo                              |   6 +-
+ x11-wm/icewm/pkg-plist                             |   8 +
+ x11-wm/mutter/Makefile                             |   2 +-
+ x11/gnome-shell/Makefile                           |   4 +-
+ 193 files changed, 1259 insertions(+), 1690 deletions(-)
+ create mode 100644 audio/geonkick-lv2/files/patch-plugin_vst_CMakeLists.txt
+ create mode 100644 deskutils/calendar/files/patch-dates.c
+ create mode 100644 deskutils/calendar/files/patch-tests_regress.s5.out
+ create mode 100644 devel/libphonenumber/files/patch-src_phonenumbers_phonenumberutil.cc
+ delete mode 100644 devel/libsigc++12/Makefile
+ delete mode 100644 devel/libsigc++12/distinfo
+ delete mode 100644 devel/libsigc++12/files/patch-tests_bind__test.cc
+ delete mode 100644 devel/libsigc++12/pkg-descr
+ delete mode 100644 devel/libsigc++12/pkg-plist
+ delete mode 100644 devel/liteide/files/patch-src_plugins_liteeditor_liteeditorwidgetbase.cpp
+ delete mode 100644 devel/liteide/files/patch-src_utils_dlvclient_dlvclient.cpp
+ delete mode 100644 devel/pecl-swoole/files/patch-thirdparty_hiredis_test.c
+ create mode 100644 emulators/mgba/files/patch-version.cmake
+ create mode 100644 emulators/yuzu/files/patch-fmt
+ delete mode 100644 emulators/yuzu/files/patch-openssl
+ create mode 100644 graphics/mesa-devel/files/patch-revert
+ delete mode 100644 math/mfem/files/patch-general_zstr.hpp
+ delete mode 100644 security/openvpn/files/patch-configure
+ delete mode 100644 security/openvpn/files/patch-git-098edbb1f5a2e1360fd6a4ae0642b63bec12e992
+ delete mode 100644 security/openvpn/files/patch-git-38b46e6bf65489c2c5d75da1c02a3a1c33e6da88
+ delete mode 100644 security/openvpn/files/patch-git-b89e48b015e581a4a0f5c306e2ab20da34c862ea
+ delete mode 100644 security/openvpn/files/patch-git-cab48ad43eaba51c54fa23e55b0b2eb436dd921f
+ delete mode 100644 security/openvpn/files/patch-git-fc0297143494e0a0f08564d90dbb210669d0abf5
+ delete mode 100644 security/openvpn/files/patch-src_openvpn_ssl__openssl.c
+ delete mode 100644 sysutils/ctop/files/patch-vendor_github.com_docker_docker_pkg_mount_mountinfo__freebsd.go
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
