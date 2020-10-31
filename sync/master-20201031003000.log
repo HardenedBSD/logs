@@ -47,3 +47,197 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/ctop/files/patch-vendor_github.com_docker_docker_pkg_mount_mountinfo__freebsd.go
+Removing security/openvpn/files/patch-src_openvpn_ssl__openssl.c
+Removing security/openvpn/files/patch-git-fc0297143494e0a0f08564d90dbb210669d0abf5
+Removing security/openvpn/files/patch-git-cab48ad43eaba51c54fa23e55b0b2eb436dd921f
+Removing security/openvpn/files/patch-git-b89e48b015e581a4a0f5c306e2ab20da34c862ea
+Removing security/openvpn/files/patch-git-38b46e6bf65489c2c5d75da1c02a3a1c33e6da88
+Removing security/openvpn/files/patch-git-098edbb1f5a2e1360fd6a4ae0642b63bec12e992
+Removing security/openvpn/files/patch-configure
+Auto-merging security/openvpn/Makefile
+CONFLICT (content): Merge conflict in security/openvpn/Makefile
+Auto-merging multimedia/ffmpeg/Makefile
+Auto-merging lang/gcc48/Makefile
+Removing emulators/yuzu/files/patch-openssl
+Removing devel/liteide/files/patch-src_utils_dlvclient_dlvclient.cpp
+Removing devel/liteide/files/patch-src_plugins_liteeditor_liteeditorwidgetbase.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc security/openvpn/Makefile
+index 365c3c1a9632,2d47712fedeb..000000000000
+--- a/security/openvpn/Makefile
++++ b/security/openvpn/Makefile
+@@@ -15,13 -15,10 +15,16 @@@ COMMENT?=		Secure IP/Ethernet tunnel da
+  LICENSE=		GPLv2
+  LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
+  
+- USES=			cpe libtool pkgconfig shebangfix tar:xz
+- 
+- CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
++ USES=			cpe libtool localbase:ldflags pkgconfig shebangfix tar:xz
++ IGNORE_SSL=		libressl libressl-devel
++ USE_RC_SUBR=		openvpn
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=		cfi safestack
+ +
+ +GNU_CONFIGURE=		yes
+++=======
+++>>>>>>> freebsd/master
+  SHEBANG_FILES=		sample/sample-scripts/verify-cn \
+  			sample/sample-scripts/auth-pam.pl \
+  			sample/sample-scripts/ucn.pl
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   UPDATING
+	modified:   audio/geonkick-lv2/Makefile
+	modified:   audio/geonkick-lv2/distinfo
+	modified:   audio/geonkick-lv2/files/patch-plugin_lv2_CMakeLists.txt
+	new file:   audio/geonkick-lv2/files/patch-plugin_vst_CMakeLists.txt
+	modified:   audio/geonkick-lv2/pkg-plist
+	modified:   cad/horizon-eda/Makefile
+	modified:   cad/horizon-eda/distinfo
+	modified:   cad/horizon-eda/files/patch-Makefile
+	modified:   comms/gqrx/Makefile
+	modified:   comms/gqrx/distinfo
+	modified:   databases/phpmyadmin/Makefile
+	modified:   databases/phpmyadmin/distinfo
+	modified:   deskutils/calendar/Makefile
+	modified:   deskutils/calendar/distinfo
+	new file:   deskutils/calendar/files/patch-dates.c
+	new file:   deskutils/calendar/files/patch-tests_regress.s5.out
+	modified:   devel/libphonenumber/Makefile
+	modified:   devel/libphonenumber/distinfo
+	new file:   devel/libphonenumber/files/patch-src_phonenumbers_phonenumberutil.cc
+	modified:   devel/liteide/Makefile
+	modified:   devel/liteide/distinfo
+	deleted:    devel/liteide/files/patch-src_plugins_liteeditor_liteeditorwidgetbase.cpp
+	deleted:    devel/liteide/files/patch-src_utils_dlvclient_dlvclient.cpp
+	modified:   devel/liteide/pkg-plist
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/distinfo
+	modified:   devel/py-importlib-resources/Makefile
+	modified:   devel/py-importlib-resources/distinfo
+	modified:   devel/py-pycodeexport/Makefile
+	modified:   devel/py-pycodeexport/distinfo
+	modified:   devel/py-zipp/Makefile
+	modified:   devel/py-zipp/distinfo
+	modified:   dns/libmicrodns/Makefile
+	modified:   dns/libmicrodns/distinfo
+	modified:   emulators/mgba/Makefile
+	modified:   emulators/mgba/distinfo
+	new file:   emulators/mgba/files/patch-version.cmake
+	modified:   emulators/mgba/pkg-plist
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/yuzu/Makefile
+	modified:   emulators/yuzu/distinfo
+	new file:   emulators/yuzu/files/patch-fmt
+	deleted:    emulators/yuzu/files/patch-openssl
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   graphics/qgis/Makefile
+	modified:   lang/gcc48/Makefile
+	modified:   lang/gcc48/pkg-plist
+	modified:   lang/intel-compute-runtime/Makefile
+	modified:   lang/intel-compute-runtime/distinfo
+	modified:   lang/intel-compute-runtime/files/patch-includes
+	modified:   multimedia/ffmpeg/Makefile
+	modified:   multimedia/ffmpeg/distinfo
+	modified:   multimedia/gmmlib/Makefile
+	modified:   multimedia/gmmlib/distinfo
+	modified:   multimedia/gmmlib/pkg-plist
+	modified:   multimedia/gstreamer1-plugins-svt-vp9/Makefile
+	modified:   multimedia/gstreamer1-plugins-svt-vp9/distinfo
+	modified:   multimedia/svt-vp9/Makefile
+	modified:   multimedia/svt-vp9/distinfo
+	modified:   multimedia/svt-vp9/pkg-plist
+	modified:   net-im/py-sleekxmpp/Makefile
+	modified:   net/kitinerary/Makefile
+	modified:   security/openvpn-devel/Makefile
+	modified:   security/openvpn-devel/distinfo
+	modified:   security/openvpn/distinfo
+	modified:   security/openvpn/files/extra-tunnelblick-openvpn_xorpatch
+	deleted:    security/openvpn/files/patch-configure
+	deleted:    security/openvpn/files/patch-git-098edbb1f5a2e1360fd6a4ae0642b63bec12e992
+	deleted:    security/openvpn/files/patch-git-38b46e6bf65489c2c5d75da1c02a3a1c33e6da88
+	deleted:    security/openvpn/files/patch-git-b89e48b015e581a4a0f5c306e2ab20da34c862ea
+	deleted:    security/openvpn/files/patch-git-cab48ad43eaba51c54fa23e55b0b2eb436dd921f
+	deleted:    security/openvpn/files/patch-git-fc0297143494e0a0f08564d90dbb210669d0abf5
+	deleted:    security/openvpn/files/patch-src_openvpn_ssl__openssl.c
+	modified:   security/openvpn/pkg-plist
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/ctop/Makefile
+	modified:   sysutils/ctop/distinfo
+	deleted:    sysutils/ctop/files/patch-vendor_github.com_docker_docker_pkg_mount_mountinfo__freebsd.go
+	modified:   www/gobuffalo/Makefile
+	modified:   www/gobuffalo/distinfo
+	modified:   x11-servers/xwayland-devel/Makefile
+	modified:   x11-servers/xwayland-devel/distinfo
+	modified:   x11-wm/icewm/Makefile
+	modified:   x11-wm/icewm/distinfo
+	modified:   x11-wm/icewm/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   security/openvpn/Makefile
+
+
+It took 3.18 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 19aba165ecf8 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.94 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 19aba165ecf8 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
