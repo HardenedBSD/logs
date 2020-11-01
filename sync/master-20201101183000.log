@@ -47,3 +47,242 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/fluxbg/pkg-descr
+Removing x11/fluxbg/files/pkg-message.in
+Removing x11/fluxbg/distinfo
+Removing x11/fluxbg/Makefile
+Removing x11/decurs/pkg-plist
+Removing x11/decurs/pkg-descr
+Removing x11/decurs/files/patch-src_cppstring.cc
+Removing x11/decurs/files/decurs.exec
+Removing x11/decurs/distinfo
+Removing x11/decurs/Makefile
+Removing x11-toolkits/gtkmm20/pkg-plist
+Removing x11-toolkits/gtkmm20/pkg-descr
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_treeviewcolumn.h
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_treeview.h
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_scrolledwindow.cc
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_scale.cc
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_private_scrolledwindow_p.h
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_private_notebook_p.h
+Removing x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_notebook.cc
+Removing x11-toolkits/gtkmm20/files/patch-glib_glibmm_class.cc
+Removing x11-toolkits/gtkmm20/distinfo
+Removing x11-toolkits/gtkmm20/Makefile
+Removing www/radicale2/pkg-plist
+Removing www/radicale2/pkg-message
+Removing www/radicale2/pkg-descr
+Removing www/radicale2/files/radicale.in
+Removing www/radicale2/distinfo
+Removing www/radicale2/Makefile
+Auto-merging dns/powerdns-recursor/Makefile
+Removing devel/pccts/pkg-plist
+Removing devel/pccts/pkg-descr
+Removing devel/pccts/distinfo
+Removing devel/pccts/Makefile
+Removing devel/gitg0/pkg-plist
+Removing devel/gitg0/pkg-descr
+Removing devel/gitg0/distinfo
+Removing devel/gitg0/Makefile
+Auto-merging devel/binutils/Makefile
+Removing databases/php74-mysqli/files/patch-mysqli.c
+Removing databases/php73-mysqli/files/patch-php_mysqli_structs.h
+Removing databases/php73-mysqli/files/patch-mysqli.c
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   6 +
+ Mk/Uses/gnome.mk                                   |   5 +-
+ benchmarks/stress-ng/Makefile                      |   2 +-
+ benchmarks/stress-ng/distinfo                      |   6 +-
+ databases/php73-mysqli/files/patch-mysqli.c        |  11 -
+ .../php73-mysqli/files/patch-php_mysqli_structs.h  |  19 -
+ databases/php74-mysqli/files/patch-mysqli.c        |  11 -
+ deskutils/calendar/Makefile                        |   2 +-
+ deskutils/calendar/distinfo                        |   6 +-
+ deskutils/calendar/files/patch-io.c                |  30 +-
+ deskutils/calendar/files/patch-pathnames.h         |   3 +-
+ devel/Makefile                                     |   2 -
+ devel/allegro-devel/Makefile                       |   2 +
+ devel/binutils/Makefile                            |   2 +-
+ devel/binutils/files/patch-powerpc64le.patch       |  12 +
+ devel/binutils/pkg-plist-powerpc64le               | 221 +++++++++
+ devel/gitg0/Makefile                               |  46 --
+ devel/gitg0/distinfo                               |   2 -
+ devel/gitg0/pkg-descr                              |   9 -
+ devel/gitg0/pkg-plist                              |  65 ---
+ devel/luafilesystem/Makefile                       |   2 +-
+ devel/nuitka/Makefile                              |   2 +-
+ devel/nuitka/distinfo                              |   6 +-
+ devel/pccts/Makefile                               |  55 ---
+ devel/pccts/distinfo                               |   2 -
+ devel/pccts/pkg-descr                              |  15 -
+ devel/pccts/pkg-plist                              |  98 ----
+ devel/py-flynt/Makefile                            |   5 +-
+ devel/py-flynt/distinfo                            |   6 +-
+ devel/py-xcaplib/Makefile                          |   2 +-
+ devel/py-xcaplib/distinfo                          |   6 +-
+ devel/rubygem-reline/Makefile                      |   2 +-
+ devel/rubygem-reline/distinfo                      |   6 +-
+ dns/powerdns-recursor/Makefile                     |   7 +-
+ dns/powerdns-recursor/distinfo                     |   6 +-
+ ftp/curl/Makefile                                  |  10 +-
+ games/Makefile                                     |   1 +
+ games/dMagnetic/Makefile                           |   2 +-
+ games/dMagnetic/distinfo                           |   6 +-
+ games/neo-cowsay/Makefile                          |  45 ++
+ games/neo-cowsay/distinfo                          |  19 +
+ games/neo-cowsay/pkg-descr                         |   5 +
+ lang/php73/Makefile                                |   2 +-
+ lang/php73/distinfo                                |   6 +-
+ lang/php74/Makefile                                |   2 +-
+ lang/php74/distinfo                                |   6 +-
+ lang/php80/Makefile                                |   6 +-
+ lang/php80/distinfo                                |   6 +-
+ mail/fetchmail/Makefile                            |   2 +-
+ mail/fetchmail/files/fetchmail.in                  |   2 +-
+ net/evans/Makefile                                 |  22 +-
+ net/evans/distinfo                                 |  42 +-
+ security/py-xmlsec/Makefile                        |   8 +-
+ sysutils/py-ansible-lint/Makefile                  |   3 +-
+ sysutils/py-ansible-lint/distinfo                  |   6 +-
+ sysutils/py-ansible-runner/Makefile                |   3 +
+ www/Makefile                                       |   1 -
+ www/radicale2/Makefile                             |  58 ---
+ www/radicale2/distinfo                             |   3 -
+ www/radicale2/files/radicale.in                    |  45 --
+ www/radicale2/pkg-descr                            |  15 -
+ www/radicale2/pkg-message                          |  10 -
+ www/radicale2/pkg-plist                            |   5 -
+ x11-fm/thunar/Makefile                             |   3 +-
+ x11-fm/thunar/distinfo                             |   6 +-
+ x11-fm/thunar/pkg-plist                            |   1 +
+ x11-toolkits/Makefile                              |   1 -
+ x11-toolkits/gtkmm20/Makefile                      |  42 --
+ x11-toolkits/gtkmm20/distinfo                      |   2 -
+ .../gtkmm20/files/patch-glib_glibmm_class.cc       |  93 ----
+ .../gtkmm20/files/patch-gtk_gtkmm_notebook.cc      |  21 -
+ .../files/patch-gtk_gtkmm_private_notebook_p.h     |  11 -
+ .../patch-gtk_gtkmm_private_scrolledwindow_p.h     |  11 -
+ .../gtkmm20/files/patch-gtk_gtkmm_scale.cc         |  10 -
+ .../files/patch-gtk_gtkmm_scrolledwindow.cc        |  21 -
+ .../gtkmm20/files/patch-gtk_gtkmm_treeview.h       |  19 -
+ .../gtkmm20/files/patch-gtk_gtkmm_treeviewcolumn.h |  20 -
+ x11-toolkits/gtkmm20/pkg-descr                     |   3 -
+ x11-toolkits/gtkmm20/pkg-plist                     | 492 ---------------------
+ x11-wm/xfce4-wm/Makefile                           |   2 +-
+ x11-wm/xfce4-wm/distinfo                           |   6 +-
+ x11/Makefile                                       |   2 -
+ x11/decurs/Makefile                                |  37 --
+ x11/decurs/distinfo                                |   2 -
+ x11/decurs/files/decurs.exec                       |   4 -
+ x11/decurs/files/patch-src_cppstring.cc            |  10 -
+ x11/decurs/pkg-descr                               |   5 -
+ x11/decurs/pkg-plist                               |  13 -
+ x11/fluxbg/Makefile                                |  31 --
+ x11/fluxbg/distinfo                                |   2 -
+ x11/fluxbg/files/pkg-message.in                    |   8 -
+ x11/fluxbg/pkg-descr                               |   6 -
+ 92 files changed, 453 insertions(+), 1454 deletions(-)
+ delete mode 100644 databases/php73-mysqli/files/patch-mysqli.c
+ delete mode 100644 databases/php73-mysqli/files/patch-php_mysqli_structs.h
+ delete mode 100644 databases/php74-mysqli/files/patch-mysqli.c
+ create mode 100644 devel/binutils/files/patch-powerpc64le.patch
+ create mode 100644 devel/binutils/pkg-plist-powerpc64le
+ delete mode 100644 devel/gitg0/Makefile
+ delete mode 100644 devel/gitg0/distinfo
+ delete mode 100644 devel/gitg0/pkg-descr
+ delete mode 100644 devel/gitg0/pkg-plist
+ delete mode 100644 devel/pccts/Makefile
+ delete mode 100644 devel/pccts/distinfo
+ delete mode 100644 devel/pccts/pkg-descr
+ delete mode 100644 devel/pccts/pkg-plist
+ create mode 100644 games/neo-cowsay/Makefile
+ create mode 100644 games/neo-cowsay/distinfo
+ create mode 100644 games/neo-cowsay/pkg-descr
+ delete mode 100644 www/radicale2/Makefile
+ delete mode 100644 www/radicale2/distinfo
+ delete mode 100644 www/radicale2/files/radicale.in
+ delete mode 100644 www/radicale2/pkg-descr
+ delete mode 100644 www/radicale2/pkg-message
+ delete mode 100644 www/radicale2/pkg-plist
+ delete mode 100644 x11-toolkits/gtkmm20/Makefile
+ delete mode 100644 x11-toolkits/gtkmm20/distinfo
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-glib_glibmm_class.cc
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_notebook.cc
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_private_notebook_p.h
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_private_scrolledwindow_p.h
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_scale.cc
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_scrolledwindow.cc
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_treeview.h
+ delete mode 100644 x11-toolkits/gtkmm20/files/patch-gtk_gtkmm_treeviewcolumn.h
+ delete mode 100644 x11-toolkits/gtkmm20/pkg-descr
+ delete mode 100644 x11-toolkits/gtkmm20/pkg-plist
+ delete mode 100644 x11/decurs/Makefile
+ delete mode 100644 x11/decurs/distinfo
+ delete mode 100644 x11/decurs/files/decurs.exec
+ delete mode 100644 x11/decurs/files/patch-src_cppstring.cc
+ delete mode 100644 x11/decurs/pkg-descr
+ delete mode 100644 x11/decurs/pkg-plist
+ delete mode 100644 x11/fluxbg/Makefile
+ delete mode 100644 x11/fluxbg/distinfo
+ delete mode 100644 x11/fluxbg/files/pkg-message.in
+ delete mode 100644 x11/fluxbg/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    2643b190c25c..a86bf8b14ace  master -> master        
+remote:    1fc5bc0e6faf..2643b190c25c  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   2643b190c25c..a86bf8b14ace  master -> master
+==== END: master ====
