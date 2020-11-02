@@ -1,0 +1,92 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/arm64/arm64/pmap.c
+Auto-merging Makefile.inc1
+Auto-merging Makefile
+Merge made by the 'recursive' strategy.
+ Makefile                                   |   4 +-
+ Makefile.inc1                              |  43 ++++++-
+ lib/libc/gen/sysctl.c                      |  55 +++++----
+ lib/libmemstat/memstat.h                   |   7 ++
+ lib/libmemstat/memstat_malloc.c            | 131 ++++++++++++++++++++-
+ release/Makefile.vm                        |   6 +-
+ release/tools/basic-ci.conf                |  35 ++++++
+ sbin/ifconfig/ifmedia.c                    |   5 +-
+ share/man/man9/malloc.9                    |  18 ++-
+ sys/amd64/amd64/uma_machdep.c              |   5 -
+ sys/arm64/arm64/pmap.c                     | 178 +++++++++++++++++++++++++++++
+ sys/arm64/arm64/uma_machdep.c              |   4 -
+ sys/arm64/include/pmap.h                   |   6 +
+ sys/compat/linux/linux_ioctl.c             |  94 +++++----------
+ sys/compat/linux/linux_ioctl.h             |  13 ++-
+ sys/contrib/openzfs/module/zstd/zfs_zstd.c |   7 ++
+ sys/kern/kern_malloc.c                     |  54 ++++++---
+ sys/mips/mips/uma_machdep.c                |   5 -
+ sys/powerpc/powerpc/uma_machdep.c          |  11 +-
+ sys/riscv/riscv/uma_machdep.c              |   6 -
+ usr.bin/vmstat/vmstat.c                    |  10 +-
+ 21 files changed, 537 insertions(+), 160 deletions(-)
+ create mode 100644 release/tools/basic-ci.conf
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    690121cede4b..859e48c64e81  hardened/current/master -> hardened/current/master        
+remote:    e384356b8d00..4ce89d7edaf6  github/freebsd/current/master -> github/freebsd/current/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   690121cede4b..859e48c64e81  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
