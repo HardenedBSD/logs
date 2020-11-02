@@ -47,3 +47,241 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node12/Makefile
+Auto-merging www/node10/Makefile
+Auto-merging www/node/Makefile
+CONFLICT (content): Merge conflict in www/node/Makefile
+Removing dns/opendnssec2/files/patch-signer_src_daemon_signercommands.h
+Removing dns/opendnssec2/files/patch-enforcer_src_signconf_signconf__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_policy_policy__resalt__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_policy_policy__purge__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_policy_policy__list__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_policy_policy__import__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_policy_policy__export__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_zonelist__import__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_zonelist__export__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_zone__set__policy__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_zone__list__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_zone__del__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_zone__add__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_rollover__list__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__rollover__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__list__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__import__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__export__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__submit__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__seen__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__retract__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__gone__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_keystate_key__purge__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_hsmkey_key__generate__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_hsmkey_backup__hsmkeys__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_enforcer_update__repositorylist__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_enforcer_update__conf__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_enforcer_update__all__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_enforcer_repositorylist__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_enforcer_enforce__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_verbosity__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_time__leap__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_queue__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_help__cmd.h
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_enforcercommands.h
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_enforcercommands.c
+Removing dns/opendnssec2/files/patch-enforcer_src_daemon_ctrl__cmd.h
+Removing devel/libvirt/files/patch-tests_meson.build
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc www/node/Makefile
+index effcf9890ad5,a02bac5e02fa..000000000000
+--- a/www/node/Makefile
++++ b/www/node/Makefile
+@@@ -79,11 -79,7 +80,15 @@@ LIB_DEPENDS+=	libbrotlidec.so:archivers
+  
+  .include <bsd.port.options.mk>
+  
+++<<<<<<< HEAD
+ +.if empty(PORT_OPTIONS:MBUNDLED_SSL) && defined(LIBRESSL_IS_OPENSSL) && empty(SSL_DEFAULT:Mopenssl*)
+ +IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
+ +.endif
+ +
+ +.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+++=======
++ .if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
+++>>>>>>> freebsd/master
+  EXTRA_PATCHES=		${PATCHDIR}/extra-patch-common.gypi
+  .endif
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   deskutils/nextcloudclient/Makefile
+	modified:   deskutils/nextcloudclient/distinfo
+	modified:   devel/Makefile
+	modified:   devel/libvirt/Makefile
+	modified:   devel/libvirt/distinfo
+	deleted:    devel/libvirt/files/patch-tests_meson.build
+	modified:   devel/libvirt/pkg-plist
+	modified:   devel/py-libvirt/Makefile
+	modified:   devel/py-libvirt/distinfo
+	modified:   devel/sbt/Makefile
+	modified:   devel/sbt/distinfo
+	new file:   devel/wasi-compiler-rt11/Makefile
+	new file:   devel/wasi-compiler-rt11/distinfo
+	new file:   devel/wasi-compiler-rt11/pkg-descr
+	new file:   devel/wasi-libc/Makefile
+	new file:   devel/wasi-libc/distinfo
+	new file:   devel/wasi-libc/files/patch-Makefile
+	new file:   devel/wasi-libc/files/stdarg.h
+	new file:   devel/wasi-libc/files/stddef.h
+	new file:   devel/wasi-libc/pkg-descr
+	new file:   devel/wasi-libc/pkg-plist
+	new file:   devel/wasi-libcxx/Makefile
+	new file:   devel/wasi-libcxx/distinfo
+	new file:   devel/wasi-libcxx/pkg-descr
+	new file:   devel/wasi-libcxx/pkg-plist
+	modified:   dns/Makefile
+	modified:   dns/opendnssec2/Makefile
+	modified:   dns/opendnssec2/distinfo
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_ctrl__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_enforcercommands.c
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_enforcercommands.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_help__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_queue__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_time__leap__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_daemon_verbosity__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_enforcer_enforce__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_enforcer_repositorylist__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_enforcer_update__all__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_enforcer_update__conf__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_enforcer_update__repositorylist__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_hsmkey_backup__hsmkeys__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_hsmkey_key__generate__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_key__purge__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__gone__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__retract__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__seen__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__submit__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__export__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__import__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__list__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__rollover__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_rollover__list__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_zone__add__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_zone__del__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_zone__list__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_zone__set__policy__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_zonelist__export__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_keystate_zonelist__import__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_policy_policy__export__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_policy_policy__import__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_policy_policy__list__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_policy_policy__purge__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_policy_policy__resalt__cmd.h
+	deleted:    dns/opendnssec2/files/patch-enforcer_src_signconf_signconf__cmd.h
+	deleted:    dns/opendnssec2/files/patch-signer_src_daemon_signercommands.h
+	new file:   dns/py-dnspython2/Makefile
+	new file:   dns/py-dnspython2/distinfo
+	new file:   dns/py-dnspython2/pkg-descr
+	modified:   sysutils/Makefile
+	new file:   sysutils/jail_exporter/Makefile
+	new file:   sysutils/jail_exporter/Makefile.crates
+	new file:   sysutils/jail_exporter/distinfo
+	new file:   sysutils/jail_exporter/files/jail_exporter.in
+	new file:   sysutils/jail_exporter/pkg-descr
+	new file:   sysutils/jail_exporter/pkg-plist
+	modified:   textproc/mdbook/Makefile
+	modified:   textproc/mdbook/distinfo
+	modified:   textproc/nuspell/Makefile
+	modified:   textproc/nuspell/distinfo
+	modified:   textproc/nuspell/pkg-plist
+	modified:   www/ffsend/Makefile
+	modified:   www/ffsend/distinfo
+	modified:   www/node10/Makefile
+	new file:   www/node10/files/extra-patch-common.gypi
+	modified:   www/node12/Makefile
+	modified:   www/rt50/pkg-plist
+	modified:   x11-fonts/xorg-fonts-100dpi/Makefile
+	modified:   x11-fonts/xorg-fonts-75dpi/Makefile
+	modified:   x11-fonts/xorg-fonts-cyrillic/Makefile
+	modified:   x11-fonts/xorg-fonts-miscbitmaps/Makefile
+	modified:   x11-fonts/xorg-fonts-truetype/Makefile
+	modified:   x11-fonts/xorg-fonts-type1/Makefile
+	modified:   x11-toolkits/gtk-layer-shell/Makefile
+	modified:   x11-toolkits/gtk-layer-shell/distinfo
+	modified:   x11-toolkits/gtk-layer-shell/pkg-plist
+	modified:   x11-wm/wmii-devel/Makefile
+	new file:   x11-wm/wmii-devel/files/patch-cmd_wmii9menu.c
+	new file:   x11-wm/wmii-devel/files/patch-cmd_wmii_dat.h
+	new file:   x11-wm/wmii-devel/files/patch-cmd_wmii_event.c
+	new file:   x11-wm/wmii-devel/files/patch-cmd_wmiir.c
+	new file:   x11-wm/wmii-devel/files/patch-include_ixp__local.h
+	new file:   x11-wm/wmii-devel/files/patch-include_util.h
+	new file:   x11-wm/wmii-devel/files/patch-include_x11.h
+	modified:   x11-wm/wmii/Makefile
+	new file:   x11-wm/wmii/files/patch-cmd_util.c
+	new file:   x11-wm/wmii/files/patch-cmd_wmii_area.c
+	new file:   x11-wm/wmii/files/patch-cmd_wmii_dat.h
+	new file:   x11-wm/wmii/files/patch-cmd_wmii_x11.h
+	new file:   x11-wm/wmii/files/patch-include_util.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   www/node/Makefile
+
+
+It took 3.20 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 982497bdb1fc Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 982497bdb1fc Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
