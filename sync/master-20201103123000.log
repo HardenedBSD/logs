@@ -1,0 +1,669 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Error while trying to create PPROF_DATA_PATH
+Error while trying to create PPROF_DATA_PATH: mkdir /usr/local/sbin/data: permission denied
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 982497bdb1fc Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge github/master branch ====
+Updating 982497bdb1fc..180e4129237a
+Fast-forward
+ MOVED                                              |    2 +
+ Mk/bsd.port.mk                                     |    4 +
+ archivers/rubygem-libarchive/Makefile              |    2 +-
+ archivers/unarchiver/Makefile                      |    2 +-
+ audio/musicpd/Makefile                             |    1 +
+ audio/ncmpcpp/Makefile                             |    2 +-
+ comms/gqrx/Makefile                                |    3 +-
+ comms/gqrx/distinfo                                |    6 +-
+ comms/gqrx/files/patch-gqrx.pro                    |    6 +-
+ converters/cocot/Makefile                          |    2 +-
+ databases/Makefile                                 |    1 -
+ databases/cassandra4/Makefile                      |    2 +-
+ databases/cassandra4/distinfo                      |   10 +-
+ databases/cassandra4/files/patch-build.xml         |   26 +-
+ .../files/patch-doc_gen-nodetool-docs.py           |   20 -
+ .../patch-doc_source___templates_indexcontent.html |   17 +
+ .../files/patch-doc_source___util_cql.py           |   10 +
+ ...rc_java_org_apache_cassandra_config_Config.java |    4 +-
+ ...org_apache_cassandra_service_StartupChecks.java |    4 +-
+ ...a_org_apache_cassandra_utils_NativeLibrary.java |    4 +-
+ databases/cassandra4/pkg-descr                     |    2 +-
+ databases/cassandra4/pkg-plist                     |    2 +-
+ databases/couchdb2/Makefile                        |    2 +-
+ databases/couchdb3/Makefile                        |    1 +
+ databases/evolution-data-server/Makefile           |    1 +
+ databases/firebird25-server/Makefile               |    2 +-
+ databases/kbibtex/Makefile                         |    2 +-
+ databases/kdb/Makefile                             |    2 +-
+ databases/mysql-q4m/Makefile                       |    2 +-
+ databases/mysql80-client/Makefile                  |    2 +-
+ databases/mysql80-server/Makefile                  |    2 +-
+ databases/mysql80-server/files/patch-icu68         |   17 +
+ databases/p5-SQL-Statement/Makefile                |    2 +-
+ databases/p5-SQL-Statement/distinfo                |    6 +-
+ databases/postgresql10-server/Makefile             |    2 +-
+ databases/postgresql10-server/files/patch-icu68    |  254 +++
+ databases/postgresql11-server/Makefile             |    2 +-
+ databases/postgresql11-server/files/patch-icu68    |   17 +
+ databases/postgresql12-server/Makefile             |    2 +-
+ databases/postgresql12-server/files/patch-icu68    |   17 +
+ databases/postgresql13-server/Makefile             |    2 +-
+ databases/postgresql13-server/files/patch-icu68    |   17 +
+ databases/postgresql96-server/Makefile             |    2 +-
+ databases/postgresql96-server/files/patch-icu68    |  278 +++
+ databases/py-sqlparse020/Makefile                  |   22 -
+ databases/py-sqlparse020/distinfo                  |    3 -
+ databases/py-sqlparse020/pkg-descr                 |    7 -
+ databases/sqlite3/Makefile                         |    1 +
+ databases/tarantool/Makefile                       |    1 +
+ deskutils/calibre/Makefile                         |    2 +-
+ deskutils/calibre/files/patch-icu68                |   97 +
+ deskutils/nextcloudclient/Makefile                 |    4 +-
+ deskutils/nextcloudclient/distinfo                 |    6 +-
+ deskutils/osmo/Makefile                            |    2 +-
+ deskutils/peaclock/Makefile                        |    1 +
+ devel/Makefile                                     |    4 +-
+ devel/R-cran-generics/Makefile                     |    5 +-
+ devel/R-cran-generics/distinfo                     |    6 +-
+ devel/binutils/files/patch-powerpc64le.patch       |  151 +-
+ devel/boost-libs/Makefile                          |    2 +-
+ devel/dee/Makefile                                 |    2 +-
+ devel/git-merge-changelog/Makefile                 |    2 +-
+ devel/gitaly/Makefile                              |    4 +-
+ devel/gitaly/distinfo                              |    6 +-
+ devel/icu-le-hb/Makefile                           |    2 +-
+ devel/icu-le-hb/files/patch-icu68                  |   53 +
+ devel/icu/Makefile                                 |    2 +-
+ devel/icu/distinfo                                 |    6 +-
+ devel/icu/pkg-plist                                |    1 +
+ devel/kiwix-lib/Makefile                           |    1 +
+ devel/libical/Makefile                             |    1 +
+ devel/libical/files/patch-icu68                    |   29 +
+ devel/libphonenumber/Makefile                      |    1 +
+ devel/libvirt/Makefile                             |    4 +-
+ devel/libvirt/distinfo                             |    6 +-
+ devel/libvirt/files/patch-tests_meson.build        |   16 -
+ devel/libvirt/pkg-plist                            |    2 +
+ devel/libzim/Makefile                              |    1 +
+ devel/mingw32-libffi/Makefile                      |    2 +-
+ devel/mingw32-libyaml/Makefile                     |    2 +-
+ devel/mingw32-openssl/Makefile                     |    2 +-
+ devel/mingw32-zlib/Makefile                        |    2 +-
+ devel/objecthash/Makefile                          |    2 +-
+ devel/p5-Data-ObjectDriver/Makefile                |    2 +-
+ devel/p5-Data-ObjectDriver/distinfo                |    6 +-
+ devel/p5-Data-ObjectDriver/pkg-plist               |    2 +
+ devel/p5-DateTime-Format-ISO8601/Makefile          |    2 +-
+ devel/p5-DateTime-Format-ISO8601/distinfo          |    6 +-
+ devel/pecl-grpc/Makefile                           |    2 +-
+ devel/pecl-grpc/distinfo                           |    6 +-
+ .../patch-src_core_tsi_ssl__transport__security.cc |    4 +-
+ .../files/patch-src_php_ext_grpc_channel.c         |   20 +
+ .../patch-src_php_ext_grpc_completion__queue.h     |   13 +
+ .../files/patch-src_php_ext_grpc_php__grpc.h       |   17 +
+ devel/php72-intl/Makefile                          |    1 +
+ devel/php72-intl/files/patch-icu68                 |  201 ++
+ devel/php73-intl/Makefile                          |    1 +
+ devel/php73-intl/files/patch-icu68                 |  213 +++
+ devel/php74-intl/Makefile                          |    1 +
+ devel/php74-intl/files/patch-icu68                 |  213 +++
+ devel/php80-intl/Makefile                          |    1 +
+ devel/php80-intl/files/patch-icu68                 |  222 +++
+ devel/py-grpcio-tools/Makefile                     |    2 +-
+ devel/py-grpcio-tools/distinfo                     |    6 +-
+ devel/py-grpcio/Makefile                           |    2 +-
+ devel/py-grpcio/distinfo                           |    6 +-
+ devel/py-libvirt/Makefile                          |    2 +-
+ devel/py-libvirt/distinfo                          |    6 +-
+ devel/py-pyicu/Makefile                            |    1 +
+ devel/py-pyicu/files/patch-icu68                   |   97 +
+ devel/py-twext/Makefile                            |   44 -
+ devel/py-twext/distinfo                            |    3 -
+ devel/py-twext/pkg-descr                           |    4 -
+ devel/qt5-core/Makefile                            |    2 +-
+ devel/rubygem-locale/Makefile                      |    2 +-
+ devel/sbt/Makefile                                 |    2 +-
+ devel/sbt/distinfo                                 |    6 +-
+ devel/simgear/Makefile                             |    8 +-
+ devel/simgear/distinfo                             |    6 +-
+ devel/simgear/pkg-plist                            |    6 +-
+ devel/sonarqube-community/Makefile                 |    8 +-
+ devel/sonarqube-community/distinfo                 |   14 +-
+ devel/sonarqube-community/pkg-plist                | 1984 ++++++++++----------
+ devel/svn_load_dirs/Makefile                       |    2 +-
+ devel/ticcutils/Makefile                           |    2 +-
+ devel/wasi-compiler-rt11/Makefile                  |   55 +
+ devel/wasi-compiler-rt11/distinfo                  |    3 +
+ devel/wasi-compiler-rt11/pkg-descr                 |    7 +
+ devel/wasi-libc/Makefile                           |   51 +
+ devel/wasi-libc/distinfo                           |    5 +
+ devel/wasi-libc/files/patch-Makefile               |   13 +
+ devel/wasi-libc/files/stdarg.h                     |   35 +
+ devel/wasi-libc/files/stddef.h                     |  121 ++
+ devel/wasi-libc/pkg-descr                          |    8 +
+ devel/wasi-libc/pkg-plist                          |  219 +++
+ devel/wasi-libcxx/Makefile                         |   86 +
+ devel/wasi-libcxx/distinfo                         |    3 +
+ devel/wasi-libcxx/pkg-descr                        |    7 +
+ devel/wasi-libcxx/pkg-plist                        |  182 ++
+ dns/Makefile                                       |    1 +
+ dns/libpsl/Makefile                                |    1 +
+ dns/opendnssec2/Makefile                           |    5 +-
+ dns/opendnssec2/distinfo                           |    6 +-
+ .../files/patch-enforcer_src_daemon_ctrl__cmd.h    |   10 -
+ .../patch-enforcer_src_daemon_enforcercommands.c   |   11 -
+ .../patch-enforcer_src_daemon_enforcercommands.h   |   11 -
+ .../files/patch-enforcer_src_daemon_help__cmd.h    |   10 -
+ .../files/patch-enforcer_src_daemon_queue__cmd.h   |   12 -
+ .../patch-enforcer_src_daemon_time__leap__cmd.h    |   10 -
+ .../patch-enforcer_src_daemon_verbosity__cmd.h     |   10 -
+ .../patch-enforcer_src_enforcer_enforce__cmd.h     |   10 -
+ ...tch-enforcer_src_enforcer_repositorylist__cmd.h |   10 -
+ .../patch-enforcer_src_enforcer_update__all__cmd.h |   10 -
+ ...patch-enforcer_src_enforcer_update__conf__cmd.h |   10 -
+ ...rcer_src_enforcer_update__repositorylist__cmd.h |   10 -
+ ...atch-enforcer_src_hsmkey_backup__hsmkeys__cmd.h |   10 -
+ .../patch-enforcer_src_hsmkey_key__generate__cmd.h |   10 -
+ .../patch-enforcer_src_keystate_key__purge__cmd.h  |   11 -
+ ...enforcer_src_keystate_keystate__ds__gone__cmd.h |   10 -
+ ...orcer_src_keystate_keystate__ds__retract__cmd.h |   10 -
+ ...enforcer_src_keystate_keystate__ds__seen__cmd.h |   10 -
+ ...forcer_src_keystate_keystate__ds__submit__cmd.h |   10 -
+ ...h-enforcer_src_keystate_keystate__export__cmd.h |   10 -
+ ...h-enforcer_src_keystate_keystate__import__cmd.h |   11 -
+ ...tch-enforcer_src_keystate_keystate__list__cmd.h |   11 -
+ ...enforcer_src_keystate_keystate__rollover__cmd.h |   10 -
+ ...tch-enforcer_src_keystate_rollover__list__cmd.h |   10 -
+ .../patch-enforcer_src_keystate_zone__add__cmd.h   |   10 -
+ .../patch-enforcer_src_keystate_zone__del__cmd.h   |   10 -
+ .../patch-enforcer_src_keystate_zone__list__cmd.h  |   10 -
+ ...-enforcer_src_keystate_zone__set__policy__cmd.h |   10 -
+ ...h-enforcer_src_keystate_zonelist__export__cmd.h |   10 -
+ ...h-enforcer_src_keystate_zonelist__import__cmd.h |   10 -
+ ...patch-enforcer_src_policy_policy__export__cmd.h |   10 -
+ ...patch-enforcer_src_policy_policy__import__cmd.h |   10 -
+ .../patch-enforcer_src_policy_policy__list__cmd.h  |   10 -
+ .../patch-enforcer_src_policy_policy__purge__cmd.h |   10 -
+ ...patch-enforcer_src_policy_policy__resalt__cmd.h |   10 -
+ .../patch-enforcer_src_signconf_signconf__cmd.h    |   10 -
+ .../files/patch-signer_src_daemon_signercommands.h |   11 -
+ dns/py-dnspython2/Makefile                         |   37 +
+ dns/py-dnspython2/distinfo                         |    3 +
+ dns/py-dnspython2/pkg-descr                        |   10 +
+ editors/editorconfig-core-c/Makefile               |    2 +-
+ editors/emacs-devel/Makefile                       |   12 +-
+ editors/emacs-devel/distinfo                       |    6 +-
+ editors/emacs-devel/pkg-plist                      |    2 +
+ editors/libreoffice/Makefile                       |    2 +-
+ editors/libreoffice/files/patch-icu68              |   17 +
+ editors/libreoffice6/Makefile                      |    2 +-
+ editors/libreoffice6/files/patch-icu68             |   31 +
+ editors/poedit/Makefile                            |    2 +-
+ editors/vim/Makefile                               |    2 +-
+ editors/vim/distinfo                               |    6 +-
+ emulators/rpcs3/Makefile                           |    6 +-
+ emulators/rpcs3/distinfo                           |   10 +-
+ emulators/yuzu/Makefile                            |    4 +-
+ emulators/yuzu/distinfo                            |    6 +-
+ finance/gnucash/Makefile                           |    1 +
+ games/0ad/Makefile                                 |    2 +-
+ games/0ad/files/patch-icu68                        |   17 +
+ games/an/Makefile                                  |    2 +-
+ games/easyrpg-player/Makefile                      |    1 +
+ games/flightgear-data/Makefile                     |    2 +-
+ games/flightgear-data/distinfo                     |    6 +-
+ games/flightgear/Makefile                          |    9 +-
+ games/flightgear/distinfo                          |    6 +-
+ games/liblcf/Makefile                              |    1 +
+ games/openrct2/Makefile                            |    1 +
+ games/openttd/Makefile                             |    1 +
+ games/openttd/files/patch-icu68                    |   17 +
+ games/unnethack/Makefile                           |    2 +-
+ games/widelands/Makefile                           |    1 +
+ graphics/dcmtk/Makefile                            |    2 +-
+ graphics/imv/Makefile                              |    2 +-
+ graphics/libcdr01/Makefile                         |    1 +
+ graphics/libcdr01/files/patch-icu68                |   17 +
+ graphics/libfreehand/Makefile                      |    2 +-
+ graphics/libzmf/Makefile                           |    2 +-
+ graphics/maim/Makefile                             |    2 +-
+ graphics/mesa-devel/Makefile                       |    5 +-
+ graphics/mesa-devel/distinfo                       |    6 +-
+ graphics/openfx-arena/Makefile                     |    2 +-
+ graphics/osg/Makefile                              |    2 +-
+ graphics/pecl-qrencode/pkg-descr                   |    2 +-
+ graphics/tesseract/Makefile                        |    2 +-
+ irc/znc-push/Makefile                              |    1 +
+ irc/znc/Makefile                                   |    1 +
+ japanese/p5-Encode-EUCJPMS/Makefile                |    2 +-
+ japanese/p5-Unicode-Japanese/Makefile              |    2 +-
+ java/openjfx14/Makefile                            |    1 +
+ java/openjfx14/files/patch-icu68                   |  167 ++
+ java/openjfx8-devel/Makefile                       |    2 +-
+ lang/gcc9-devel/Makefile                           |    2 +-
+ lang/gcc9-devel/distinfo                           |    6 +-
+ lang/gnustep-base/Makefile                         |    2 +-
+ lang/gnustep-base/files/patch-icu68                |  185 ++
+ lang/hermes/Makefile                               |    1 +
+ lang/nim/Makefile                                  |   17 +-
+ lang/nim/distinfo                                  |    6 +-
+ lang/nim/files/patch-compiler_docgen.nim           |   11 -
+ lang/nim/files/patch-config-nim.cfg                |   13 +-
+ lang/nim/files/patch-koch.nim                      |   11 +
+ lang/nim/pkg-plist                                 |  172 +-
+ lang/parrot/Makefile                               |    2 +-
+ lang/spidermonkey52/Makefile                       |    2 +-
+ lang/spidermonkey60/Makefile                       |    2 +-
+ lang/spidermonkey78/Makefile                       |    2 +-
+ mail/cyrus-imapd30/Makefile                        |    1 +
+ mail/cyrus-imapd32/Makefile                        |    1 +
+ mail/dovecot-fts-xapian/Makefile                   |    2 +-
+ mail/dovecot-fts-xapian/distinfo                   |    6 +-
+ .../files/patch-src_fts-backend-xapian.cpp         |   13 +
+ mail/dovecot/Makefile                              |    1 +
+ mail/evolution-ews/Makefile                        |    1 +
+ mail/evolution/Makefile                            |    2 +-
+ mail/exim/Makefile                                 |    2 +-
+ mail/libvmime/Makefile                             |    2 +-
+ mail/postfix-current/Makefile                      |    2 +-
+ mail/postfix/Makefile                              |    2 +-
+ mail/rspamd-devel/Makefile                         |    1 +
+ mail/rspamd/Makefile                               |    1 +
+ mail/rubygem-tmail/Makefile                        |    2 +-
+ mail/sendmail-devel/Makefile                       |    1 +
+ mail/sendmail/Makefile                             |    2 +-
+ mail/thunderbird/Makefile                          |    1 +
+ math/R/Makefile                                    |    1 +
+ math/libqalculate/Makefile                         |    1 +
+ math/octave-forge-io/Makefile                      |    2 +-
+ math/octave-forge-io/distinfo                      |    6 +-
+ math/openturns/Makefile                            |   15 +-
+ math/openturns/distinfo                            |    6 +-
+ math/openturns/pkg-descr                           |    2 +-
+ math/openturns/pkg-plist                           |   48 +-
+ math/p5-Graph/Makefile                             |    2 +-
+ math/p5-Graph/distinfo                             |    6 +-
+ math/p5-Graph/pkg-plist                            |    6 -
+ math/py-roman/Makefile                             |    2 +-
+ math/py-roman/distinfo                             |    6 +-
+ math/py-rpy2/Makefile                              |    1 +
+ math/sage/Makefile                                 |    1 +
+ misc/R-cran-xfun/Makefile                          |    2 +-
+ misc/R-cran-xfun/distinfo                          |    6 +-
+ misc/imerge/Makefile                               |    2 +-
+ misc/inplace/Makefile                              |    2 +-
+ misc/openhab2-addons/Makefile                      |    2 +-
+ misc/openhab2-addons/distinfo                      |    6 +-
+ misc/openhab2/Makefile                             |    2 +-
+ misc/openhab2/distinfo                             |    6 +-
+ misc/sword/Makefile                                |    2 +-
+ misc/xiphos/Makefile                               |    1 +
+ multimedia/aegisub/Makefile                        |    2 +-
+ multimedia/shotcut/Makefile                        |    2 +-
+ multimedia/shotcut/distinfo                        |    6 +-
+ .../files/patch-src_spatialmedia_constants.h       |   19 -
+ multimedia/shotcut/pkg-plist                       |   17 +-
+ multimedia/subtitlecomposer/Makefile               |    2 +-
+ net-im/dino/Makefile                               |    1 +
+ net-mgmt/cacti-spine/Makefile                      |    2 +-
+ net-mgmt/cacti-spine/distinfo                      |    6 +-
+ net/Makefile                                       |    1 +
+ net/freerdp/Makefile                               |    2 +-
+ net/nats-server/Makefile                           |    2 +-
+ net/nats-server/distinfo                           |    6 +-
+ net/nats-streaming-server/Makefile                 |    2 +-
+ net/nats-streaming-server/distinfo                 |    6 +-
+ net/openldap24-server/Makefile                     |    2 +-
+ net/py-whois/Makefile                              |   21 +
+ net/py-whois/distinfo                              |    3 +
+ net/py-whois/pkg-descr                             |   14 +
+ net/samba412/Makefile                              |    2 +-
+ net/samba413/Makefile                              |    2 +-
+ net/webalizer-geodb/Makefile                       |    2 +-
+ net/webalizer-geodb/distinfo                       |    6 +-
+ net/yaz/Makefile                                   |    1 +
+ net/zebra-server/Makefile                          |    2 +-
+ news/tin/Makefile                                  |    2 +-
+ print/harfbuzz-icu/Makefile                        |    2 +-
+ print/libmspub01/Makefile                          |    2 +-
+ print/scribus-devel/Makefile                       |    2 +-
+ print/tex-xetex/Makefile                           |    2 +-
+ print/texlive-base/Makefile                        |    2 +-
+ science/dlib-cpp/Makefile                          |    6 +-
+ science/dlib-cpp/pkg-plist                         |    3 +-
+ science/py-tensorflow/Makefile                     |    2 +-
+ security/certificate-transparency/Makefile         |    2 +-
+ security/p5-Crypt-RIPEMD160/Makefile               |    2 +-
+ security/p5-Crypt-RIPEMD160/distinfo               |    5 +-
+ security/vuxml/vuln.xml                            |   95 +
+ shells/fd/Makefile                                 |    2 +-
+ shells/zsh/Makefile                                |    6 +-
+ sysutils/Makefile                                  |    2 +
+ sysutils/bpytop/Makefile                           |    2 +-
+ sysutils/bpytop/distinfo                           |    6 +-
+ sysutils/chaoskube/Makefile                        |   91 +
+ sysutils/chaoskube/distinfo                        |  117 ++
+ sysutils/chaoskube/pkg-descr                       |   18 +
+ sysutils/fluent-bit/Makefile                       |   12 +-
+ sysutils/fluent-bit/distinfo                       |    6 +-
+ .../files/extra-patch-lib_luajit__src__lj_prng.c   |   11 +
+ sysutils/fusefs-bindfs/Makefile                    |    2 +-
+ sysutils/fusefs-bindfs/distinfo                    |    6 +-
+ sysutils/gdisk/Makefile                            |    2 +-
+ sysutils/jail_exporter/Makefile                    |   37 +
+ sysutils/jail_exporter/Makefile.crates             |  200 ++
+ sysutils/jail_exporter/distinfo                    |  403 ++++
+ sysutils/jail_exporter/files/jail_exporter.in      |   57 +
+ sysutils/jail_exporter/pkg-descr                   |    4 +
+ sysutils/jail_exporter/pkg-plist                   |    4 +
+ sysutils/libchk/Makefile                           |    2 +-
+ sysutils/ltfs/Makefile                             |    2 +-
+ sysutils/ltfs/files/patch-icu68                    |   17 +
+ sysutils/openzfs-kmod/Makefile                     |    4 +-
+ sysutils/openzfs-kmod/distinfo                     |    6 +-
+ sysutils/openzfs/Makefile                          |    4 +-
+ sysutils/openzfs/distinfo                          |    6 +-
+ sysutils/osquery/Makefile                          |    2 +-
+ sysutils/py-liquidctl/Makefile                     |    2 +-
+ sysutils/py-liquidctl/distinfo                     |    6 +-
+ sysutils/tracker-miners/Makefile                   |    2 +-
+ sysutils/tracker/Makefile                          |    1 +
+ sysutils/unstow/Makefile                           |    2 +-
+ sysutils/zfs-snapshot-clean/Makefile               |    2 +-
+ textproc/CLDR/Makefile                             |    2 +-
+ textproc/CLDR/distinfo                             |    6 +-
+ textproc/CLDR/pkg-plist                            |   70 +-
+ textproc/R-cran-stringi/Makefile                   |    1 +
+ textproc/dwdiff/Makefile                           |    1 +
+ textproc/dwdiff/files/patch-icu68                  |   26 +
+ textproc/gitlab-elasticsearch-indexer/Makefile     |    2 +-
+ textproc/hs-pandoc-citeproc/Makefile               |    2 +
+ .../hs-pandoc-citeproc/files/extra-patch-icu68     |   21 +
+ textproc/libe-book/Makefile                        |    2 +-
+ textproc/libe-book/files/patch-icu68               |   20 +
+ textproc/libfolia/Makefile                         |    2 +-
+ textproc/libqxp/Makefile                           |    2 +-
+ textproc/libvisio01/Makefile                       |    2 +-
+ textproc/mdbook/Makefile                           |    7 +-
+ textproc/mdbook/distinfo                           |    6 +-
+ textproc/nuspell/Makefile                          |    5 +-
+ textproc/nuspell/distinfo                          |    6 +-
+ textproc/nuspell/pkg-plist                         |    2 +-
+ textproc/p5-Pod-Simple/Makefile                    |    2 +-
+ textproc/p5-Pod-Simple/distinfo                    |    6 +-
+ textproc/p5-YAML-Syck/Makefile                     |    2 +-
+ textproc/p5-YAML-Syck/distinfo                     |    6 +-
+ textproc/peco/Makefile                             |    2 +-
+ textproc/raptor2/Makefile                          |    2 +-
+ textproc/ruby-htree/Makefile                       |    2 +-
+ textproc/ruby-rd-mode.el/Makefile                  |    2 +-
+ textproc/ruby-rdtool/Makefile                      |    2 +-
+ textproc/rubygem-charlock_holmes/Makefile          |    2 +-
+ textproc/rubygem-js_regex/Makefile                 |    8 +-
+ textproc/rubygem-js_regex/distinfo                 |    6 +-
+ textproc/rubygem-regexp_parser/Makefile            |    2 +-
+ textproc/rubygem-regexp_parser/distinfo            |    6 +-
+ textproc/ucto/Makefile                             |    2 +-
+ textproc/xalan-c/Makefile                          |    1 +
+ textproc/zorba/Makefile                            |    2 +-
+ textproc/zorba/files/patch-icu68                   |   67 +
+ www/chromium/Makefile                              |    2 +-
+ www/cliqz/Makefile                                 |    2 +-
+ www/epiphany/Makefile                              |    2 +-
+ www/ffsend/Makefile                                |   82 +-
+ www/ffsend/distinfo                                |  160 +-
+ www/firefox-esr/Makefile                           |    1 +
+ www/firefox/Makefile                               |    1 +
+ www/gitlab-ce/Makefile                             |    4 +-
+ www/gitlab-ce/distinfo                             |    6 +-
+ www/gitlab-ce/pkg-plist                            |    1 +
+ www/iridium/Makefile                               |    1 +
+ www/node/Makefile                                  |    8 +-
+ www/node10/Makefile                                |    4 +
+ www/node10/files/extra-patch-common.gypi           |   13 +
+ www/node10/files/patch-icu68                       |  109 ++
+ www/node12/Makefile                                |    4 +-
+ www/node14/Makefile                                |    1 +
+ www/p5-HTML-CalendarMonthSimple/Makefile           |    3 +-
+ www/p5-HTML-CalendarMonthSimple/distinfo           |    5 +-
+ www/py-django22/Makefile                           |    2 +-
+ www/py-django22/distinfo                           |    6 +-
+ www/py-django30/Makefile                           |    2 +-
+ www/py-django30/distinfo                           |    6 +-
+ www/py-django31/Makefile                           |    2 +-
+ www/py-django31/distinfo                           |    6 +-
+ www/qt5-webkit/Makefile                            |    2 +-
+ www/qt5-webkit/files/patch-icu68                   |  170 ++
+ www/rt50/pkg-plist                                 |    2 +-
+ www/webkit2-gtk3/Makefile                          |    1 +
+ www/webkit2-gtk3/files/patch-icu68                 |  173 ++
+ x11-fonts/xorg-fonts-100dpi/Makefile               |   14 +-
+ x11-fonts/xorg-fonts-75dpi/Makefile                |   14 +-
+ x11-fonts/xorg-fonts-cyrillic/Makefile             |   12 +-
+ x11-fonts/xorg-fonts-miscbitmaps/Makefile          |   28 +-
+ x11-fonts/xorg-fonts-truetype/Makefile             |   12 +-
+ x11-fonts/xorg-fonts-type1/Makefile                |   14 +-
+ x11-toolkits/gnustep-gui/Makefile                  |    2 +-
+ x11-toolkits/gnustep-gui/files/patch-icu68         |   29 +
+ x11-toolkits/gtk-layer-shell/Makefile              |    2 +-
+ x11-toolkits/gtk-layer-shell/distinfo              |    6 +-
+ x11-toolkits/gtk-layer-shell/pkg-plist             |    2 +-
+ x11-toolkits/tepl/Makefile                         |    1 +
+ x11-toolkits/vte3/Makefile                         |    1 +
+ x11-wm/wmii-devel/Makefile                         |    2 +-
+ x11-wm/wmii-devel/files/patch-cmd_wmii9menu.c      |   10 +
+ x11-wm/wmii-devel/files/patch-cmd_wmii_dat.h       |   35 +
+ x11-wm/wmii-devel/files/patch-cmd_wmii_event.c     |   11 +
+ x11-wm/wmii-devel/files/patch-cmd_wmiir.c          |   10 +
+ x11-wm/wmii-devel/files/patch-include_ixp__local.h |   15 +
+ x11-wm/wmii-devel/files/patch-include_util.h       |   22 +
+ x11-wm/wmii-devel/files/patch-include_x11.h        |   24 +
+ x11-wm/wmii/Makefile                               |    6 +-
+ x11-wm/wmii/files/patch-cmd_util.c                 |   13 +
+ x11-wm/wmii/files/patch-cmd_wmii_area.c            |   33 +
+ x11-wm/wmii/files/patch-cmd_wmii_dat.h             |   97 +
+ x11-wm/wmii/files/patch-cmd_wmii_x11.h             |   13 +
+ x11-wm/wmii/files/patch-include_util.h             |   15 +
+ x11/Makefile                                       |    1 +
+ x11/gnome-shell/Makefile                           |    2 +-
+ x11/mate-dock-applet/Makefile                      |   38 +
+ x11/mate-dock-applet/distinfo                      |    3 +
+ x11/mate-dock-applet/pkg-descr                     |   19 +
+ x11/mate-dock-applet/pkg-plist                     |   54 +
+ x11/slop/Makefile                                  |    2 +-
+ 464 files changed, 7367 insertions(+), 2215 deletions(-)
+ delete mode 100644 databases/cassandra4/files/patch-doc_gen-nodetool-docs.py
+ create mode 100644 databases/cassandra4/files/patch-doc_source___templates_indexcontent.html
+ create mode 100644 databases/cassandra4/files/patch-doc_source___util_cql.py
+ create mode 100644 databases/mysql80-server/files/patch-icu68
+ create mode 100644 databases/postgresql10-server/files/patch-icu68
+ create mode 100644 databases/postgresql11-server/files/patch-icu68
+ create mode 100644 databases/postgresql12-server/files/patch-icu68
+ create mode 100644 databases/postgresql13-server/files/patch-icu68
+ create mode 100644 databases/postgresql96-server/files/patch-icu68
+ delete mode 100644 databases/py-sqlparse020/Makefile
+ delete mode 100644 databases/py-sqlparse020/distinfo
+ delete mode 100644 databases/py-sqlparse020/pkg-descr
+ create mode 100644 deskutils/calibre/files/patch-icu68
+ create mode 100644 devel/icu-le-hb/files/patch-icu68
+ create mode 100644 devel/libical/files/patch-icu68
+ delete mode 100644 devel/libvirt/files/patch-tests_meson.build
+ create mode 100644 devel/pecl-grpc/files/patch-src_php_ext_grpc_channel.c
+ create mode 100644 devel/pecl-grpc/files/patch-src_php_ext_grpc_completion__queue.h
+ create mode 100644 devel/pecl-grpc/files/patch-src_php_ext_grpc_php__grpc.h
+ create mode 100644 devel/php72-intl/files/patch-icu68
+ create mode 100644 devel/php73-intl/files/patch-icu68
+ create mode 100644 devel/php74-intl/files/patch-icu68
+ create mode 100644 devel/php80-intl/files/patch-icu68
+ create mode 100644 devel/py-pyicu/files/patch-icu68
+ delete mode 100644 devel/py-twext/Makefile
+ delete mode 100644 devel/py-twext/distinfo
+ delete mode 100644 devel/py-twext/pkg-descr
+ create mode 100644 devel/wasi-compiler-rt11/Makefile
+ create mode 100644 devel/wasi-compiler-rt11/distinfo
+ create mode 100644 devel/wasi-compiler-rt11/pkg-descr
+ create mode 100644 devel/wasi-libc/Makefile
+ create mode 100644 devel/wasi-libc/distinfo
+ create mode 100644 devel/wasi-libc/files/patch-Makefile
+ create mode 100644 devel/wasi-libc/files/stdarg.h
+ create mode 100644 devel/wasi-libc/files/stddef.h
+ create mode 100644 devel/wasi-libc/pkg-descr
+ create mode 100644 devel/wasi-libc/pkg-plist
+ create mode 100644 devel/wasi-libcxx/Makefile
+ create mode 100644 devel/wasi-libcxx/distinfo
+ create mode 100644 devel/wasi-libcxx/pkg-descr
+ create mode 100644 devel/wasi-libcxx/pkg-plist
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_ctrl__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_enforcercommands.c
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_enforcercommands.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_help__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_queue__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_time__leap__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_daemon_verbosity__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_enforcer_enforce__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_enforcer_repositorylist__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_enforcer_update__all__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_enforcer_update__conf__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_enforcer_update__repositorylist__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_hsmkey_backup__hsmkeys__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_hsmkey_key__generate__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_key__purge__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__gone__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__retract__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__seen__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__ds__submit__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__export__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__import__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__list__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_keystate__rollover__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_rollover__list__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_zone__add__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_zone__del__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_zone__list__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_zone__set__policy__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_zonelist__export__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_keystate_zonelist__import__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_policy_policy__export__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_policy_policy__import__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_policy_policy__list__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_policy_policy__purge__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_policy_policy__resalt__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-enforcer_src_signconf_signconf__cmd.h
+ delete mode 100644 dns/opendnssec2/files/patch-signer_src_daemon_signercommands.h
+ create mode 100644 dns/py-dnspython2/Makefile
+ create mode 100644 dns/py-dnspython2/distinfo
+ create mode 100644 dns/py-dnspython2/pkg-descr
+ create mode 100644 editors/libreoffice/files/patch-icu68
+ create mode 100644 editors/libreoffice6/files/patch-icu68
+ create mode 100644 games/0ad/files/patch-icu68
+ create mode 100644 games/openttd/files/patch-icu68
+ create mode 100644 graphics/libcdr01/files/patch-icu68
+ create mode 100644 java/openjfx14/files/patch-icu68
+ create mode 100644 lang/gnustep-base/files/patch-icu68
+ delete mode 100644 lang/nim/files/patch-compiler_docgen.nim
+ create mode 100644 lang/nim/files/patch-koch.nim
+ create mode 100644 mail/dovecot-fts-xapian/files/patch-src_fts-backend-xapian.cpp
+ delete mode 100644 multimedia/shotcut/files/patch-src_spatialmedia_constants.h
+ create mode 100644 net/py-whois/Makefile
+ create mode 100644 net/py-whois/distinfo
+ create mode 100644 net/py-whois/pkg-descr
+ create mode 100644 sysutils/chaoskube/Makefile
+ create mode 100644 sysutils/chaoskube/distinfo
+ create mode 100644 sysutils/chaoskube/pkg-descr
+ create mode 100644 sysutils/fluent-bit/files/extra-patch-lib_luajit__src__lj_prng.c
+ create mode 100644 sysutils/jail_exporter/Makefile
+ create mode 100644 sysutils/jail_exporter/Makefile.crates
+ create mode 100644 sysutils/jail_exporter/distinfo
+ create mode 100644 sysutils/jail_exporter/files/jail_exporter.in
+ create mode 100644 sysutils/jail_exporter/pkg-descr
+ create mode 100644 sysutils/jail_exporter/pkg-plist
+ create mode 100644 sysutils/ltfs/files/patch-icu68
+ create mode 100644 textproc/dwdiff/files/patch-icu68
+ create mode 100644 textproc/hs-pandoc-citeproc/files/extra-patch-icu68
+ create mode 100644 textproc/libe-book/files/patch-icu68
+ create mode 100644 textproc/zorba/files/patch-icu68
+ create mode 100644 www/node10/files/extra-patch-common.gypi
+ create mode 100644 www/node10/files/patch-icu68
+ create mode 100644 www/qt5-webkit/files/patch-icu68
+ create mode 100644 www/webkit2-gtk3/files/patch-icu68
+ create mode 100644 x11-toolkits/gnustep-gui/files/patch-icu68
+ create mode 100644 x11-wm/wmii-devel/files/patch-cmd_wmii9menu.c
+ create mode 100644 x11-wm/wmii-devel/files/patch-cmd_wmii_dat.h
+ create mode 100644 x11-wm/wmii-devel/files/patch-cmd_wmii_event.c
+ create mode 100644 x11-wm/wmii-devel/files/patch-cmd_wmiir.c
+ create mode 100644 x11-wm/wmii-devel/files/patch-include_ixp__local.h
+ create mode 100644 x11-wm/wmii-devel/files/patch-include_util.h
+ create mode 100644 x11-wm/wmii-devel/files/patch-include_x11.h
+ create mode 100644 x11-wm/wmii/files/patch-cmd_util.c
+ create mode 100644 x11-wm/wmii/files/patch-cmd_wmii_area.c
+ create mode 100644 x11-wm/wmii/files/patch-cmd_wmii_dat.h
+ create mode 100644 x11-wm/wmii/files/patch-cmd_wmii_x11.h
+ create mode 100644 x11-wm/wmii/files/patch-include_util.h
+ create mode 100644 x11/mate-dock-applet/Makefile
+ create mode 100644 x11/mate-dock-applet/distinfo
+ create mode 100644 x11/mate-dock-applet/pkg-descr
+ create mode 100644 x11/mate-dock-applet/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Error while trying to create PPROF_DATA_PATH
+Error while trying to create PPROF_DATA_PATH: mkdir /usr/local/sbin/data: permission denied
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 82 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.31 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 180e4129237a HBSD: Resolve merge conflicts
+==== END: master ====
