@@ -1,0 +1,185 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch and 'origin/hardened/current/master' have diverged,
+and have 1 and 27 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Merge made by the 'recursive' strategy.
+ contrib/elftoolchain/libelftc/_libelftc.h         |    1 +
+ contrib/elftoolchain/libelftc/libelftc_dem_gnu3.c |   10 +-
+ contrib/elftoolchain/libelftc/libelftc_vstr.c     |    6 +-
+ contrib/libcxxrt/libelftc_dem_gnu3.c              | 1205 +++++++++-----
+ lib/libsysdecode/errno.c                          |    1 -
+ sbin/savecore/savecore.c                          |   14 +-
+ share/man/man4/acpi_video.4                       |    9 +
+ share/man/man5/src.conf.5                         | 1780 +++++++++++++++------
+ share/man/man7/build.7                            |    3 +-
+ share/man/man7/ports.7                            |    2 +-
+ share/man/man9/refcount.9                         |   41 +-
+ share/mk/src.opts.mk                              |    1 +
+ sys/amd64/linux/linux_machdep.c                   |    2 +-
+ sys/arm64/arm64/bus_machdep.c                     |   52 +-
+ sys/arm64/arm64/pmap.c                            |   51 +-
+ sys/arm64/include/pmap.h                          |    4 +-
+ sys/cam/mmc/mmc_da.c                              |   30 +-
+ sys/compat/linux/linux.h                          |   10 +-
+ sys/compat/linux/linux_emul.h                     |    2 -
+ sys/compat/linux/linux_errno.inc                  |    2 +-
+ sys/compat/linux/linux_socket.c                   |   48 +-
+ sys/crypto/chacha20/chacha-sw.c                   |    2 +-
+ sys/crypto/des/des.h                              |    2 +-
+ sys/crypto/rijndael/rijndael-api-fst.c            |  124 +-
+ sys/crypto/rijndael/rijndael.h                    |   12 +-
+ sys/crypto/rijndael/rijndael_local.h              |    6 +-
+ sys/crypto/sha1.c                                 |   24 +-
+ sys/crypto/sha1.h                                 |   16 +-
+ sys/crypto/skein/skein_port.h                     |    6 +-
+ sys/dev/cxgbe/tom/t4_ddp.c                        |    2 +-
+ sys/kern/init_main.c                              |    2 +-
+ sys/kern/kern_exec.c                              |    3 +-
+ sys/kern/sysv_shm.c                               |   36 +-
+ sys/kern/vfs_aio.c                                |    5 +-
+ sys/modules/linux_common/Makefile                 |    1 -
+ sys/net80211/_ieee80211.h                         |    2 +-
+ sys/opencrypto/crypto.c                           |   18 +-
+ sys/opencrypto/cryptodeflate.c                    |   16 +-
+ sys/opencrypto/cryptodev.c                        |   60 +-
+ sys/opencrypto/cryptodev.h                        |   40 +-
+ sys/opencrypto/cryptosoft.c                       |    4 +-
+ sys/opencrypto/deflate.h                          |    2 +-
+ sys/opencrypto/rmd160.c                           |   12 +-
+ sys/opencrypto/rmd160.h                           |    8 +-
+ sys/opencrypto/xform_auth.h                       |   10 +-
+ sys/opencrypto/xform_comp.h                       |    4 +-
+ sys/opencrypto/xform_deflate.c                    |   18 +-
+ sys/opencrypto/xform_enc.h                        |   14 +-
+ sys/opencrypto/xform_null.c                       |    8 +-
+ sys/opencrypto/xform_rijndael.c                   |    2 +-
+ sys/opencrypto/xform_sha1.c                       |    4 +-
+ sys/opencrypto/xform_sha2.c                       |   16 +-
+ sys/sys/refcount.h                                |   54 +-
+ sys/vm/vm_glue.c                                  |    5 +-
+ sys/vm/vm_map.c                                   |   64 +-
+ sys/vm/vm_map.h                                   |    2 +-
+ tools/build/options/WITHOUT_LLVM_CXXFILT          |    2 +
+ tools/build/options/WITH_LLVM_CXXFILT             |    2 +
+ tools/tools/crypto/cryptocheck.c                  |   38 +-
+ usr.bin/Makefile                                  |    2 +
+ usr.bin/calendar/calendar.1                       |   20 +-
+ usr.bin/clang/Makefile                            |    5 +-
+ usr.bin/clang/llvm-cxxfilt/Makefile               |    7 +
+ usr.sbin/jls/jls.c                                |   10 +-
+ usr.sbin/pmcstat/pmcstat.c                        |    2 +-
+ 65 files changed, 2716 insertions(+), 1250 deletions(-)
+ create mode 100644 tools/build/options/WITHOUT_LLVM_CXXFILT
+ create mode 100644 tools/build/options/WITH_LLVM_CXXFILT
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/amd64/amd64/pmap.c
+Auto-merging sys/amd64/amd64/machdep.c
+Merge made by the 'recursive' strategy.
+ contrib/libcxxrt/libelftc_dem_gnu3.c               |  18 +--
+ sys/amd64/amd64/machdep.c                          |   8 +-
+ sys/amd64/amd64/mp_machdep.c                       |  19 +--
+ sys/amd64/amd64/pmap.c                             |   9 +-
+ sys/amd64/include/intr_machdep.h                   |   5 +
+ sys/compat/linux/linux_errno.c                     |   6 +
+ sys/compat/linux/linux_errno.h                     |   2 +
+ sys/compat/linux/linux_errno.inc                   | 167 +++++++++++++++++++++
+ .../include/os/freebsd/zfs/sys/zfs_vfsops_os.h     | 118 ++++++++++++---
+ .../include/os/freebsd/zfs/sys/zfs_znode_impl.h    |  10 +-
+ .../include/os/linux/zfs/sys/zfs_znode_impl.h      |  10 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_dir.c        |   7 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_vfsops.c     |  48 +++---
+ .../openzfs/module/os/freebsd/zfs/zfs_vnops.c      |  20 +--
+ .../openzfs/module/os/freebsd/zfs/zfs_znode.c      |   2 +-
+ .../openzfs/module/os/linux/zfs/zfs_vfsops.c       |  18 +--
+ sys/contrib/openzfs/module/zfs/zfs_ioctl.c         |  10 +-
+ sys/dev/atkbdc/atkbdc.c                            |   1 +
+ sys/dev/usb/controller/dwc3.c                      |   1 +
+ sys/kern/kern_rmlock.c                             |  51 +++++--
+ sys/modules/dtb/rockchip/Makefile                  |   1 +
+ sys/sys/_rmlock.h                                  |   1 +
+ sys/sys/param.h                                    |   2 +-
+ sys/sys/rmlock.h                                   |  25 ++-
+ usr.bin/calendar/calendar.1                        |   8 +-
+ usr.bin/calendar/calendar.h                        |   4 +-
+ usr.bin/calendar/dates.c                           |   4 +-
+ usr.bin/calendar/events.c                          |  32 ++--
+ usr.bin/calendar/io.c                              |  58 +++----
+ usr.bin/calendar/tests/Makefile                    |  10 +-
+ usr.bin/calendar/tests/calendar.comment            |  10 ++
+ usr.bin/calendar/tests/calendar.cond               |  83 ++++++++++
+ usr.bin/calendar/tests/comment.sh                  |  14 ++
+ usr.bin/calendar/tests/comment_test.sh             |   6 +
+ usr.bin/calendar/tests/cond.sh                     |  14 ++
+ usr.bin/calendar/tests/cond_test.sh                |   6 +
+ usr.bin/calendar/tests/regress.comment.out         |   8 +
+ usr.bin/calendar/tests/regress.cond.out            |  10 ++
+ 38 files changed, 649 insertions(+), 177 deletions(-)
+ create mode 100644 usr.bin/calendar/tests/calendar.comment
+ create mode 100644 usr.bin/calendar/tests/calendar.cond
+ create mode 100755 usr.bin/calendar/tests/comment.sh
+ create mode 100755 usr.bin/calendar/tests/comment_test.sh
+ create mode 100755 usr.bin/calendar/tests/cond.sh
+ create mode 100755 usr.bin/calendar/tests/cond_test.sh
+ create mode 100644 usr.bin/calendar/tests/regress.comment.out
+ create mode 100644 usr.bin/calendar/tests/regress.cond.out
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ce47de1d7a0a..fbe6ade5c89e  hardened/current/master -> hardened/current/master        
+remote:    25fc94b8d9d1..b4f0bcce13a1  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ce47de1d7a0a..fbe6ade5c89e  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
