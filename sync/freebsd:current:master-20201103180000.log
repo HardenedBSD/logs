@@ -1,0 +1,105 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is ahead of 'origin/freebsd/current/master' by 6 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: No route to host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at bccdcf07274c Fix rookie mistake - it's nitems(), not sizeof().
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating bccdcf07274c..8b08f8964e70
+Fast-forward
+ lib/libsysdecode/errno.c                 |   1 -
+ sbin/savecore/savecore.c                 |  14 ++--
+ share/man/man5/src.conf.5                |   4 +-
+ share/man/man7/build.7                   |   3 +-
+ share/man/man7/ports.7                   |   2 +-
+ share/mk/src.opts.mk                     |   1 +
+ sys/cam/mmc/mmc_da.c                     |  30 ++++----
+ sys/compat/linux/linux.h                 |  10 ++-
+ sys/compat/linux/linux_emul.h            |   2 -
+ sys/compat/linux/linux_errno.inc         |   2 +-
+ sys/compat/linux/linux_socket.c          |  48 ++++++++----
+ sys/crypto/chacha20/chacha-sw.c          |   2 +-
+ sys/crypto/des/des.h                     |   2 +-
+ sys/crypto/rijndael/rijndael-api-fst.c   | 124 +++++++++++++++----------------
+ sys/crypto/rijndael/rijndael.h           |  12 +--
+ sys/crypto/rijndael/rijndael_local.h     |   6 +-
+ sys/crypto/sha1.c                        |  12 +--
+ sys/crypto/sha1.h                        |  16 ++--
+ sys/crypto/skein/skein_port.h            |   6 +-
+ sys/kern/sysv_shm.c                      |  36 ++++-----
+ sys/modules/linux_common/Makefile        |   1 -
+ sys/opencrypto/crypto.c                  |  18 ++---
+ sys/opencrypto/cryptodeflate.c           |  16 ++--
+ sys/opencrypto/cryptodev.c               |  60 +++++++--------
+ sys/opencrypto/cryptodev.h               |  40 +++++-----
+ sys/opencrypto/cryptosoft.c              |   4 +-
+ sys/opencrypto/deflate.h                 |   2 +-
+ sys/opencrypto/rmd160.c                  |  12 +--
+ sys/opencrypto/rmd160.h                  |   8 +-
+ sys/opencrypto/xform_auth.h              |  10 +--
+ sys/opencrypto/xform_comp.h              |   4 +-
+ sys/opencrypto/xform_deflate.c           |  20 ++---
+ sys/opencrypto/xform_enc.h               |  14 ++--
+ sys/opencrypto/xform_null.c              |   8 +-
+ sys/opencrypto/xform_rijndael.c          |   2 +-
+ sys/opencrypto/xform_sha1.c              |   4 +-
+ sys/opencrypto/xform_sha2.c              |  16 ++--
+ tools/build/options/WITHOUT_LLVM_CXXFILT |   2 +
+ tools/build/options/WITH_LLVM_CXXFILT    |   2 +
+ usr.bin/Makefile                         |   2 +
+ usr.bin/calendar/calendar.1              |  20 +++--
+ usr.bin/clang/Makefile                   |   5 +-
+ usr.bin/clang/llvm-cxxfilt/Makefile      |   7 ++
+ 43 files changed, 328 insertions(+), 282 deletions(-)
+ create mode 100644 tools/build/options/WITHOUT_LLVM_CXXFILT
+ create mode 100644 tools/build/options/WITH_LLVM_CXXFILT
+ssh: connect to host git-01.md.hardenedbsd.org port 22: No route to host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/master
+Your branch is ahead of 'origin/freebsd/current/master' by 16 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 8b08f8964e70 Consistently use C99 fixed-width types in the in-kernel crypto code.
+==== END: freebsd/current/master ====
