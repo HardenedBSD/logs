@@ -1,0 +1,113 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/mount.h
+Auto-merging sys/kern/vfs_mount.c
+Auto-merging sys/conf/files.i386
+Removing sys/amd64/linux/linux_dummy.c
+Merge made by the 'recursive' strategy.
+ contrib/bsnmp/snmpd/snmpmod.3                      |   2 +-
+ lib/libpmc/libpmc.c                                |  20 +
+ lib/libpmcstat/libpmcstat_image.c                  |  25 ++
+ sys/amd64/linux/linux_dummy.c                      | 188 --------
+ sys/amd64/linux/linux_dummy_machdep.c              |  74 ++++
+ sys/amd64/linux32/linux32_dummy.c                  | 115 -----
+ sys/arm/arm/syscall.c                              |  14 +-
+ sys/arm/include/proc.h                             |   1 -
+ sys/arm64/linux/linux_dummy_machdep.c              |  63 +++
+ sys/{arm64 => compat}/linux/linux_dummy.c          |  24 +-
+ sys/conf/files.amd64                               |   2 +
+ sys/conf/files.i386                                |   4 +-
+ sys/dev/acpica/acpi.c                              |   3 +
+ sys/dev/hwpmc/hwpmc_e500.c                         | 367 ++++------------
+ sys/dev/hwpmc/hwpmc_mpc7xxx.c                      | 429 ++++--------------
+ sys/dev/hwpmc/hwpmc_power8.c                       | 319 ++++++++++++++
+ sys/dev/hwpmc/hwpmc_powerpc.c                      | 410 ++++++++++++++++++
+ sys/dev/hwpmc/hwpmc_powerpc.h                      |  60 ++-
+ sys/dev/hwpmc/hwpmc_ppc970.c                       | 481 ++++-----------------
+ sys/dev/hwpmc/pmc_events.h                         |  38 ++
+ sys/dev/nvme/nvme.c                                |   5 -
+ sys/dev/nvme/nvme_private.h                        |   5 +-
+ sys/dev/xen/control/control.c                      |   3 +
+ .../linux/{linux_dummy.c => linux_dummy_machdep.c} | 127 +-----
+ sys/kern/vfs_mount.c                               |  64 +++
+ sys/modules/hwpmc/Makefile                         |   3 +-
+ sys/modules/linux/Makefile                         |   6 +
+ sys/modules/linux64/Makefile                       |   8 +-
+ sys/modules/linux_common/Makefile                  |   2 +-
+ sys/powerpc/include/pmc_mdep.h                     |   1 +
+ sys/powerpc/include/spr.h                          |  14 +-
+ sys/sys/mount.h                                    |   4 +
+ sys/sys/pmc.h                                      |   6 +-
+ sys/x86/linux/linux_dummy_x86.c                    |  69 +++
+ usr.sbin/bhyve/pci_virtio_block.c                  |   2 +-
+ 35 files changed, 1463 insertions(+), 1495 deletions(-)
+ delete mode 100644 sys/amd64/linux/linux_dummy.c
+ create mode 100644 sys/amd64/linux/linux_dummy_machdep.c
+ create mode 100644 sys/arm64/linux/linux_dummy_machdep.c
+ rename sys/{arm64 => compat}/linux/linux_dummy.c (90%)
+ create mode 100644 sys/dev/hwpmc/hwpmc_power8.c
+ rename sys/i386/linux/{linux_dummy.c => linux_dummy_machdep.c} (52%)
+ create mode 100644 sys/x86/linux/linux_dummy_x86.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d606236ea559..958102868e27  hardened/current/master -> hardened/current/master        
+remote:    07913cee6bfd..1280af460f70  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d606236ea559..958102868e27  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
