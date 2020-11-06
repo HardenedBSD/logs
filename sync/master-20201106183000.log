@@ -47,3 +47,166 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/nginx/Makefile
+Removing misc/mnn/files/patch-express_CMakeLists.txt
+Auto-merging lang/gcc48/Makefile
+Auto-merging devel/git/Makefile
+Merge made by the 'recursive' strategy.
+ audio/Makefile                                     |   1 +
+ audio/cyanrip/Makefile                             |  27 +++
+ audio/cyanrip/distinfo                             |   3 +
+ audio/cyanrip/pkg-descr                            |   5 +
+ audio/cyanrip/pkg-message                          |  14 ++
+ databases/Makefile                                 |   1 +
+ databases/puppetdb-terminus6/Makefile              |   2 +-
+ databases/puppetdb-terminus6/distinfo              |   6 +-
+ databases/puppetdb6/Makefile                       |   2 +-
+ databases/puppetdb6/distinfo                       |   6 +-
+ databases/xtrabackup8/Makefile                     |  50 +++++
+ databases/xtrabackup8/distinfo                     |   3 +
+ .../files/patch-cmake-install_layout.cmake         |  11 +
+ .../xtrabackup8/files/patch-cmake_os_FreeBSD.cmake |  23 ++
+ databases/xtrabackup8/files/patch-sql_binlog.cc    |  24 +++
+ ...h-storage_innobase_xtrabackup_xbcloud__osenv.sh |  15 ++
+ databases/xtrabackup8/pkg-descr                    |   6 +
+ databases/xtrabackup8/pkg-plist                    |  47 ++++
+ deskutils/calendar/Makefile                        |   2 +-
+ deskutils/calendar/distinfo                        |   6 +-
+ deskutils/calendar/files/patch-calendar.1          |  46 +++-
+ deskutils/calendar/files/patch-calendar.h          |  28 +++
+ deskutils/calendar/files/patch-dates.c             |  20 +-
+ deskutils/calendar/files/patch-events.c            |  65 +++++-
+ deskutils/calendar/files/patch-io.c                | 237 +++++++++++++++------
+ deskutils/calendar/files/patch-parsedata.c         |  23 ++
+ deskutils/calendar/files/patch-tests_Makefile      |  21 ++
+ devel/git/Makefile                                 |   2 +
+ lang/gcc48/Makefile                                |   4 +-
+ lang/intel-compute-runtime/Makefile                |   2 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ lang/libobjc2/Makefile                             |   2 +-
+ lang/py-textX/Makefile                             |   2 +-
+ lang/py-textX/distinfo                             |   6 +-
+ mail/rspamd-devel/Makefile                         |   2 +-
+ mail/rspamd-devel/files/pkg-message.in             |   3 +
+ mail/rspamd-devel/files/rspamd.in                  |  10 +-
+ mail/rspamd/Makefile                               |   2 +-
+ mail/rspamd/files/pkg-message.in                   |   3 +
+ mail/rspamd/files/rspamd.in                        |  10 +-
+ math/nanoflann/Makefile                            |   2 +-
+ math/nanoflann/distinfo                            |   6 +-
+ math/onednn/Makefile                               |  27 ++-
+ math/onednn/files/patch-CMakeLists.txt             |   2 +-
+ math/onednn/files/patch-cmake_platform.cmake       |  24 ++-
+ misc/mnn/Makefile                                  |   3 +-
+ misc/mnn/distinfo                                  |   6 +-
+ misc/mnn/files/patch-express_CMakeLists.txt        |  10 -
+ multimedia/intel-media-sdk/Makefile                |   2 +-
+ multimedia/intel-media-sdk/distinfo                |   6 +-
+ net/waypipe/Makefile                               |   7 +-
+ net/waypipe/distinfo                               |   6 +-
+ security/openfortivpn/Makefile                     |   2 +-
+ security/openfortivpn/distinfo                     |   6 +-
+ security/zeek/Makefile                             |  22 +-
+ security/zeek/files/pkg-message.in                 |  39 +++-
+ security/zeek/files/zeek.in                        |  88 +++++---
+ security/zeek/pkg-plist                            |  15 +-
+ sysutils/puppetserver5/Makefile                    |   2 +-
+ sysutils/puppetserver5/distinfo                    |   6 +-
+ sysutils/puppetserver6/Makefile                    |   2 +-
+ sysutils/puppetserver6/distinfo                    |   6 +-
+ sysutils/rubygem-bolt/Makefile                     |   2 +-
+ sysutils/rubygem-bolt/distinfo                     |   6 +-
+ sysutils/rubygem-bolt/files/patch-bolt.gemspec     |  20 +-
+ sysutils/rubygem-puppetserver-ca/Makefile          |   7 +-
+ sysutils/rubygem-puppetserver-ca/distinfo          |   6 +-
+ .../patch-lib_puppetserver_ca_config_puppet.rb     |  17 +-
+ www/cadaver/Makefile                               |   4 +-
+ www/neon/Makefile                                  |  49 +++--
+ www/neon/distinfo                                  |   6 +-
+ www/neon/pkg-plist                                 |   2 +-
+ www/nginx-devel/Makefile                           |   2 +-
+ www/nginx-devel/Makefile.extmod                    |   2 +-
+ www/nginx-devel/distinfo                           |   6 +-
+ www/nginx/Makefile                                 |   2 +-
+ www/nginx/Makefile.extmod                          |   6 +-
+ www/nginx/distinfo                                 |  14 +-
+ x11-themes/qt5-style-plugins/Makefile              |   2 +-
+ .../files/patch-fix_build_against_qt5.15           |  23 +-
+ x11/xnotify/Makefile                               |   1 +
+ 81 files changed, 877 insertions(+), 337 deletions(-)
+ create mode 100644 audio/cyanrip/Makefile
+ create mode 100644 audio/cyanrip/distinfo
+ create mode 100644 audio/cyanrip/pkg-descr
+ create mode 100644 audio/cyanrip/pkg-message
+ create mode 100644 databases/xtrabackup8/Makefile
+ create mode 100644 databases/xtrabackup8/distinfo
+ create mode 100644 databases/xtrabackup8/files/patch-cmake-install_layout.cmake
+ create mode 100644 databases/xtrabackup8/files/patch-cmake_os_FreeBSD.cmake
+ create mode 100644 databases/xtrabackup8/files/patch-sql_binlog.cc
+ create mode 100644 databases/xtrabackup8/files/patch-storage_innobase_xtrabackup_xbcloud__osenv.sh
+ create mode 100644 databases/xtrabackup8/pkg-descr
+ create mode 100644 databases/xtrabackup8/pkg-plist
+ create mode 100644 deskutils/calendar/files/patch-calendar.h
+ create mode 100644 deskutils/calendar/files/patch-parsedata.c
+ create mode 100644 deskutils/calendar/files/patch-tests_Makefile
+ delete mode 100644 misc/mnn/files/patch-express_CMakeLists.txt
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    ba556b70ac6d..99f4a236fb1d  master -> master        
+remote:    764e04130c37..ba556b70ac6d  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   ba556b70ac6d..99f4a236fb1d  master -> master
+==== END: master ====
