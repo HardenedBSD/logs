@@ -1,0 +1,191 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 1a998b4c99ce..eb8d69b14ae0
+Fast-forward
+ sys/ufs/ffs/ffs_vnops.c | 31 ++++++++++++++++++++-----------
+ sys/ufs/ufs/extattr.h   |  2 +-
+ 2 files changed, 21 insertions(+), 12 deletions(-)
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Merge made by the 'recursive' strategy.
+ contrib/elftoolchain/elfcopy/sections.c           |   45 +
+ contrib/elftoolchain/libelf/Version.map           |    9 +-
+ contrib/elftoolchain/libelf/_libelf.h             |    1 +
+ contrib/elftoolchain/libelf/_libelf_config.h      |    4 +
+ contrib/elftoolchain/libelf/gelf.3                |    6 +-
+ contrib/elftoolchain/libelf/gelf.h                |    2 +
+ contrib/elftoolchain/libelf/gelf_chdr.c           |   82 ++
+ contrib/elftoolchain/libelf/gelf_getchdr.3        |  117 ++
+ contrib/elftoolchain/libelf/gelf_mips64el.c       |    1 -
+ contrib/elftoolchain/libelf/libelf.h              |    5 +
+ contrib/elftoolchain/libelf/libelf_chdr.c         |  104 ++
+ contrib/elftoolchain/libelf/libelf_convert.m4     |    2 +-
+ contrib/elftoolchain/libelftc/_libelftc.h         |    1 +
+ contrib/elftoolchain/libelftc/libelftc_dem_gnu3.c |   10 +-
+ contrib/elftoolchain/libelftc/libelftc_vstr.c     |    6 +-
+ contrib/elftoolchain/readelf/readelf.1            |   10 +-
+ contrib/elftoolchain/readelf/readelf.c            |  387 +++++--
+ contrib/elftoolchain/strings/strings.c            |   96 +-
+ contrib/libcxxrt/libelftc_dem_gnu3.c              | 1189 ++++++++++++++-------
+ lib/libc/tests/gen/makecontext_test.c             |    1 -
+ lib/libdevctl/devctl.3                            |    1 -
+ lib/libdevctl/devctl.c                            |    1 -
+ lib/libdevctl/devctl.h                            |    1 -
+ lib/libelf/Makefile                               |    2 +
+ lib/libkvm/kvm_aarch64.h                          |    1 -
+ lib/libkvm/kvm_amd64.h                            |    1 -
+ lib/libkvm/kvm_arm.h                              |    1 -
+ lib/libkvm/kvm_i386.h                             |    1 -
+ lib/libkvm/kvm_mips.h                             |    1 -
+ lib/libkvm/kvm_native.3                           |    1 -
+ lib/libkvm/kvm_riscv.h                            |    1 -
+ lib/libkvm/kvm_sparc64.h                          |    1 -
+ lib/libsysdecode/errno.c                          |    1 -
+ lib/libsysdecode/signal.c                         |    1 -
+ lib/libsysdecode/syscallnames.c                   |    1 -
+ lib/libsysdecode/sysdecode.3                      |    1 -
+ lib/libsysdecode/sysdecode.h                      |    1 -
+ lib/libsysdecode/sysdecode_abi_to_freebsd_errno.3 |    1 -
+ lib/libsysdecode/sysdecode_cap_rights.3           |    1 -
+ lib/libsysdecode/sysdecode_enum.3                 |    1 -
+ lib/libsysdecode/sysdecode_fcntl_arg.3            |    1 -
+ lib/libsysdecode/sysdecode_ioctlname.3            |    1 -
+ lib/libsysdecode/sysdecode_kevent.3               |    1 -
+ lib/libsysdecode/sysdecode_mask.3                 |    1 -
+ lib/libsysdecode/sysdecode_quotactl_cmd.3         |    1 -
+ lib/libsysdecode/sysdecode_sigcode.3              |    1 -
+ lib/libsysdecode/sysdecode_socket_protocol.3      |    1 -
+ lib/libsysdecode/sysdecode_sockopt_name.3         |    1 -
+ lib/libsysdecode/sysdecode_syscallnames.3         |    1 -
+ lib/libsysdecode/sysdecode_utrace.3               |    1 -
+ lib/libutil/kinfo_getvmobject.3                   |    1 -
+ sbin/hastd/refcnt.h                               |    1 -
+ share/man/man3/sigevent.3                         |    1 -
+ share/man/man4/ktr.4                              |    1 -
+ share/man/man4/witness.4                          |    1 -
+ share/man/man9/BUS_GET_CPUS.9                     |    1 -
+ share/man/man9/BUS_RESCAN.9                       |    1 -
+ share/man/man9/atomic.9                           |    1 -
+ share/man/man9/bus_map_resource.9                 |    1 -
+ share/man/man9/critical_enter.9                   |    1 -
+ share/man/man9/ithread.9                          |    1 -
+ share/man/man9/ktr.9                              |    1 -
+ share/man/man9/runqueue.9                         |    1 -
+ share/man/man9/scheduler.9                        |    1 -
+ share/man/man9/sleepqueue.9                       |    1 -
+ share/man/man9/swi.9                              |    1 -
+ stand/efi/libefi/devpath.c                        |    1 -
+ stand/i386/cdboot/cdboot.S                        |    1 -
+ stand/i386/libi386/pxe.c                          |    2 +-
+ stand/i386/libi386/pxe.h                          |    1 -
+ stand/i386/pxeldr/pxeldr.S                        |    1 -
+ sys/amd64/include/intr_machdep.h                  |    1 -
+ sys/arm/arm/ptrace_machdep.c                      |    1 -
+ sys/arm64/arm64/bus_machdep.c                     |   52 +-
+ sys/dev/acpica/acpi_isab.c                        |    1 -
+ sys/dev/acpica/acpi_pcivar.h                      |    1 -
+ sys/dev/pci/vga_pci.c                             |    1 -
+ sys/dev/rc/rc.c                                   |    2 +-
+ sys/dev/rc/rcreg.h                                |    2 +-
+ sys/i386/pci/pci_pir.c                            |    2 +-
+ sys/kern/kern_ktr.c                               |    1 -
+ sys/kern/kern_rwlock.c                            |    1 -
+ sys/kern/subr_lock.c                              |    1 -
+ sys/kern/subr_sleepqueue.c                        |    1 -
+ sys/kern/subr_smp.c                               |    1 -
+ sys/net80211/_ieee80211.h                         |    2 +-
+ sys/sys/_rwlock.h                                 |    1 -
+ sys/sys/elf_common.h                              |    1 +
+ sys/sys/refcount.h                                |    1 -
+ sys/sys/rwlock.h                                  |    1 -
+ sys/sys/sleepqueue.h                              |    1 -
+ sys/sys/turnstile.h                               |    1 -
+ sys/x86/acpica/madt.c                             |    1 -
+ sys/x86/include/apicvar.h                         |    1 -
+ sys/x86/include/intr_machdep.h                    |    1 -
+ sys/x86/isa/atpic.c                               |    1 -
+ sys/x86/isa/elcr.c                                |    1 -
+ sys/x86/x86/intr_machdep.c                        |    1 -
+ sys/x86/x86/io_apic.c                             |    1 -
+ sys/x86/x86/local_apic.c                          |    2 +-
+ sys/x86/x86/mptable.c                             |    2 +-
+ sys/x86/x86/mptable_pci.c                         |    1 -
+ sys/x86/xen/pvcpu_enum.c                          |    2 +-
+ tests/sys/capsicum/ioctls_test.c                  |    1 -
+ tests/sys/kern/ptrace_test.c                      |    1 -
+ tools/tools/decioctl/decioctl.c                   |    1 -
+ usr.bin/elfctl/elfctl.c                           |    4 +
+ usr.bin/readelf/Makefile                          |    2 +-
+ usr.sbin/bhyve/gdb.c                              |    1 -
+ usr.sbin/bhyve/gdb.h                              |    1 -
+ usr.sbin/devctl/devctl.8                          |    1 -
+ usr.sbin/devctl/devctl.c                          |    1 -
+ 112 files changed, 1637 insertions(+), 597 deletions(-)
+ create mode 100644 contrib/elftoolchain/libelf/gelf_chdr.c
+ create mode 100644 contrib/elftoolchain/libelf/gelf_getchdr.3
+ create mode 100644 contrib/elftoolchain/libelf/libelf_chdr.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    eb8d69b14ae0..61f9c50ad846  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    80677fb5ccf1..d52b27420f21  github/freebsd/12-stable/master -> github/freebsd/12-stable/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   eb8d69b14ae0..61f9c50ad846  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
