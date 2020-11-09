@@ -1,0 +1,160 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is ahead of 'origin/freebsd/12-stable/master' by 9 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating 4fd6f26aada0..51ec3220dc67
+Fast-forward
+ share/man/man4/Makefile                    |    2 +
+ share/man/man4/qat.4                       |   99 +
+ sys/amd64/conf/NOTES                       |    4 +
+ sys/conf/files.amd64                       |    9 +
+ sys/contrib/dev/qat/LICENSE                |   11 +
+ sys/contrib/dev/qat/mmp_firmware_c2xxx.bin |  Bin 0 -> 108160 bytes
+ sys/contrib/dev/qat/mof_firmware_c2xxx.bin |  Bin 0 -> 154300 bytes
+ sys/contrib/dev/qat/qat_895xcc.bin         |  Bin 0 -> 813280 bytes
+ sys/contrib/dev/qat/qat_895xcc_mmp.bin     |  Bin 0 -> 114176 bytes
+ sys/contrib/dev/qat/qat_c3xxx.bin          |  Bin 0 -> 531100 bytes
+ sys/contrib/dev/qat/qat_c3xxx_mmp.bin      |  Bin 0 -> 120964 bytes
+ sys/contrib/dev/qat/qat_c62x.bin           |  Bin 0 -> 796500 bytes
+ sys/contrib/dev/qat/qat_c62x_mmp.bin       |  Bin 0 -> 121604 bytes
+ sys/contrib/dev/qat/qat_d15xx.bin          |  Bin 0 -> 796500 bytes
+ sys/contrib/dev/qat/qat_d15xx_mmp.bin      |  Bin 0 -> 120964 bytes
+ sys/dev/qat/qat.c                          | 2239 ++++++++++++++++++
+ sys/dev/qat/qat_ae.c                       | 3456 ++++++++++++++++++++++++++++
+ sys/dev/qat/qat_aevar.h                    |   73 +
+ sys/dev/qat/qat_c2xxx.c                    |  217 ++
+ sys/dev/qat/qat_c2xxxreg.h                 |  177 ++
+ sys/dev/qat/qat_c3xxx.c                    |  298 +++
+ sys/dev/qat/qat_c3xxxreg.h                 |  178 ++
+ sys/dev/qat/qat_c62x.c                     |  314 +++
+ sys/dev/qat/qat_c62xreg.h                  |  201 ++
+ sys/dev/qat/qat_d15xx.c                    |  314 +++
+ sys/dev/qat/qat_d15xxreg.h                 |  201 ++
+ sys/dev/qat/qat_dh895xcc.c                 |  271 +++
+ sys/dev/qat/qat_dh895xccreg.h              |  119 +
+ sys/dev/qat/qat_hw15.c                     |  948 ++++++++
+ sys/dev/qat/qat_hw15reg.h                  |  635 +++++
+ sys/dev/qat/qat_hw15var.h                  |  106 +
+ sys/dev/qat/qat_hw17.c                     |  654 ++++++
+ sys/dev/qat/qat_hw17reg.h                  | 2460 ++++++++++++++++++++
+ sys/dev/qat/qat_hw17var.h                  |   81 +
+ sys/dev/qat/qatreg.h                       | 1582 +++++++++++++
+ sys/dev/qat/qatvar.h                       | 1076 +++++++++
+ sys/modules/Makefile                       |    4 +
+ sys/modules/qat/Makefile                   |   19 +
+ sys/modules/qatfw/Makefile                 |    9 +
+ sys/modules/qatfw/qat_c2xxx/Makefile       |   11 +
+ sys/modules/qatfw/qat_c3xxx/Makefile       |   11 +
+ sys/modules/qatfw/qat_c62x/Makefile        |   11 +
+ sys/modules/qatfw/qat_d15xx/Makefile       |   11 +
+ sys/modules/qatfw/qat_dh895xcc/Makefile    |   11 +
+ sys/opencrypto/crypto.c                    |   47 +
+ sys/opencrypto/cryptodev.h                 |    8 +
+ tests/sys/opencrypto/cryptotest.py         |    5 +-
+ usr.sbin/syslogd/syslogd.c                 |    8 +-
+ 48 files changed, 15876 insertions(+), 4 deletions(-)
+ create mode 100644 share/man/man4/qat.4
+ create mode 100644 sys/contrib/dev/qat/LICENSE
+ create mode 100644 sys/contrib/dev/qat/mmp_firmware_c2xxx.bin
+ create mode 100644 sys/contrib/dev/qat/mof_firmware_c2xxx.bin
+ create mode 100644 sys/contrib/dev/qat/qat_895xcc.bin
+ create mode 100644 sys/contrib/dev/qat/qat_895xcc_mmp.bin
+ create mode 100644 sys/contrib/dev/qat/qat_c3xxx.bin
+ create mode 100644 sys/contrib/dev/qat/qat_c3xxx_mmp.bin
+ create mode 100644 sys/contrib/dev/qat/qat_c62x.bin
+ create mode 100644 sys/contrib/dev/qat/qat_c62x_mmp.bin
+ create mode 100644 sys/contrib/dev/qat/qat_d15xx.bin
+ create mode 100644 sys/contrib/dev/qat/qat_d15xx_mmp.bin
+ create mode 100644 sys/dev/qat/qat.c
+ create mode 100644 sys/dev/qat/qat_ae.c
+ create mode 100644 sys/dev/qat/qat_aevar.h
+ create mode 100644 sys/dev/qat/qat_c2xxx.c
+ create mode 100644 sys/dev/qat/qat_c2xxxreg.h
+ create mode 100644 sys/dev/qat/qat_c3xxx.c
+ create mode 100644 sys/dev/qat/qat_c3xxxreg.h
+ create mode 100644 sys/dev/qat/qat_c62x.c
+ create mode 100644 sys/dev/qat/qat_c62xreg.h
+ create mode 100644 sys/dev/qat/qat_d15xx.c
+ create mode 100644 sys/dev/qat/qat_d15xxreg.h
+ create mode 100644 sys/dev/qat/qat_dh895xcc.c
+ create mode 100644 sys/dev/qat/qat_dh895xccreg.h
+ create mode 100644 sys/dev/qat/qat_hw15.c
+ create mode 100644 sys/dev/qat/qat_hw15reg.h
+ create mode 100644 sys/dev/qat/qat_hw15var.h
+ create mode 100644 sys/dev/qat/qat_hw17.c
+ create mode 100644 sys/dev/qat/qat_hw17reg.h
+ create mode 100644 sys/dev/qat/qat_hw17var.h
+ create mode 100644 sys/dev/qat/qatreg.h
+ create mode 100644 sys/dev/qat/qatvar.h
+ create mode 100644 sys/modules/qat/Makefile
+ create mode 100644 sys/modules/qatfw/Makefile
+ create mode 100644 sys/modules/qatfw/qat_c2xxx/Makefile
+ create mode 100644 sys/modules/qatfw/qat_c3xxx/Makefile
+ create mode 100644 sys/modules/qatfw/qat_c62x/Makefile
+ create mode 100644 sys/modules/qatfw/qat_d15xx/Makefile
+ create mode 100644 sys/modules/qatfw/qat_dh895xcc/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    1fa96e94b48c..51ec3220dc67  freebsd/12-stable/master -> freebsd/12-stable/master        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   1fa96e94b48c..51ec3220dc67  freebsd/12-stable/master -> freebsd/12-stable/master
+==== END: freebsd/12-stable/master ====
