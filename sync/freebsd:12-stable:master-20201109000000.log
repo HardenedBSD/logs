@@ -1,0 +1,96 @@
+==== BEGIN: freebsd/12-stable/master ====
+current branch: freebsd/12-stable/master
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/master'
+Your branch is ahead of 'origin/freebsd/12-stable/master' by 1 commit.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=1&verb=git-upload-pack": read tcp 172.16.1.72:16070->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at f6aadfadbc43 MFC r367042: mergemaster: Clarify installed and updated versions
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating f6aadfadbc43..6ea054052b25
+Fast-forward
+ include/stdlib.h             |  13 +-
+ lib/libc/stdlib/Makefile.inc |   2 +-
+ lib/libc/stdlib/Symbol.map   |   4 +
+ lib/libc/stdlib/ptsname.3    |  31 ++-
+ lib/libc/stdlib/ptsname.c    |  48 +++-
+ sbin/ifconfig/ifmedia.c      |   5 +-
+ share/man/man4/arcmsr.4      |   4 +-
+ sys/cam/cam_ccb.h            |   2 +
+ sys/dev/ahci/ahci.c          |  14 +-
+ sys/dev/arcmsr/arcmsr.c      | 599 ++++++++++++++++++++++++-------------------
+ sys/dev/arcmsr/arcmsr.h      | 177 +++++++++----
+ sys/dev/siis/siis.c          |   2 +
+ sys/kern/subr_disk.c         |   4 +-
+ sys/sys/param.h              |   2 +-
+ 14 files changed, 565 insertions(+), 342 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=2&verb=git-receive-pack": read tcp 172.16.1.72:44051->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/12-stable/master
+Your branch is ahead of 'origin/freebsd/12-stable/master' by 7 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 6ea054052b25 Bump __FreeBSD_version after ptsname_r addition.
+==== END: freebsd/12-stable/master ====
