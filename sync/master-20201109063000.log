@@ -1,0 +1,337 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 144 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+write: Broken pipe
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at dca40129c6ef Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge github/master branch ====
+Removing multimedia/swfdec-gnome/pkg-plist
+Removing multimedia/swfdec-gnome/pkg-descr
+Removing multimedia/swfdec-gnome/distinfo
+Removing multimedia/swfdec-gnome/Makefile
+Removing multimedia/py-openlp/pkg-plist
+Removing multimedia/py-openlp/pkg-descr
+Removing multimedia/py-openlp/distinfo
+Removing multimedia/py-openlp/Makefile
+Removing multimedia/p5-GStreamer/pkg-plist
+Removing multimedia/p5-GStreamer/pkg-descr
+Removing multimedia/p5-GStreamer/distinfo
+Removing multimedia/p5-GStreamer/Makefile
+Removing mail/mutt/files/patch-threadcomplete
+Removing mail/mutt/files/patch-muttlib.c
+Removing mail/mutt/files/extra-patch-forcebase64
+Removing graphics/swfdec/pkg-plist
+Removing graphics/swfdec/pkg-descr
+Removing graphics/swfdec/files/swfdec_playback_oss.c
+Removing graphics/swfdec/files/patch-swfdec-gtk_Makefile.in
+Removing graphics/swfdec/files/patch-configure
+Removing graphics/swfdec/distinfo
+Removing graphics/swfdec/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   4 +
+ audio/gmusicbrowser/Makefile                       |   6 +-
+ audio/gmusicbrowser/pkg-descr                      |   2 +-
+ databases/pgbarman/Makefile                        |   2 +-
+ databases/pgbarman/distinfo                        |   6 +-
+ devel/py-pathspec/Makefile                         |   2 +-
+ devel/py-pathspec/distinfo                         |   6 +-
+ graphics/Makefile                                  |   1 -
+ graphics/swfdec/Makefile                           |  48 --
+ graphics/swfdec/distinfo                           |   2 -
+ graphics/swfdec/files/patch-configure              |  24 -
+ graphics/swfdec/files/patch-swfdec-gtk_Makefile.in |  10 -
+ graphics/swfdec/files/swfdec_playback_oss.c        | 265 ----------
+ graphics/swfdec/pkg-descr                          |   6 -
+ graphics/swfdec/pkg-plist                          |  81 ----
+ lang/tcl87/Makefile                                |   2 +-
+ lang/zig/Makefile                                  |   7 +-
+ lang/zig/distinfo                                  |   6 +-
+ lang/zig/pkg-plist                                 | 538 +++++++++++++++------
+ mail/mutt/Makefile                                 |  22 +-
+ mail/mutt/distinfo                                 |  10 +-
+ mail/mutt/files/extra-patch-forcebase64            |  37 --
+ mail/mutt/files/extra-patch-ifdef                  |  12 +-
+ mail/mutt/files/extra-patch-maildir-mtime          |   4 +-
+ mail/mutt/files/extra-patch-reverse_reply          |  20 +-
+ mail/mutt/files/extra-patch-smartdate              |   6 +-
+ mail/mutt/files/extra-smime-sender                 |  10 +-
+ mail/mutt/files/patch-browser.c                    |  32 +-
+ mail/mutt/files/patch-date-conditional             |  10 +-
+ mail/mutt/files/patch-dgc-deepif                   |   6 +-
+ mail/mutt/files/patch-muttlib.c                    |  25 -
+ mail/mutt/files/patch-threadcomplete               |  37 --
+ mail/mutt/pkg-plist                                |   2 +
+ mail/postfix/Makefile                              |   6 +-
+ mail/postfix/distinfo                              |   6 +-
+ mail/rainloop/Makefile                             |   2 +-
+ math/Makefile                                      |   1 +
+ math/py-benford_py/Makefile                        |  21 +
+ math/py-benford_py/distinfo                        |   3 +
+ math/py-benford_py/pkg-descr                       |   4 +
+ multimedia/Makefile                                |   3 -
+ multimedia/gst123/Makefile                         |  17 +-
+ multimedia/gstreamer-plugins/Makefile.common       |   5 -
+ multimedia/mlt/Makefile                            |   7 +-
+ multimedia/p5-GStreamer/Makefile                   |  34 --
+ multimedia/p5-GStreamer/distinfo                   |   2 -
+ multimedia/p5-GStreamer/pkg-descr                  |   3 -
+ multimedia/p5-GStreamer/pkg-plist                  | 152 ------
+ multimedia/py-openlp/Makefile                      |  63 ---
+ multimedia/py-openlp/distinfo                      |   3 -
+ multimedia/py-openlp/pkg-descr                     |   5 -
+ multimedia/py-openlp/pkg-plist                     |  37 --
+ multimedia/swfdec-gnome/Makefile                   |  27 --
+ multimedia/swfdec-gnome/distinfo                   |   2 -
+ multimedia/swfdec-gnome/pkg-descr                  |   6 -
+ multimedia/swfdec-gnome/pkg-plist                  |  80 ---
+ security/vuxml/vuln.xml                            |  29 ++
+ sysutils/py-ansible-lint/Makefile                  |   2 +-
+ sysutils/py-ansible-lint/distinfo                  |   6 +-
+ sysutils/py-hcloud/Makefile                        |   2 +-
+ sysutils/py-hcloud/distinfo                        |   6 +-
+ sysutils/syslog-ng/Makefile                        | 234 ++++++++-
+ sysutils/syslog-ng/distinfo                        |   3 +
+ sysutils/syslog-ng/files/patch-configure           |  29 ++
+ .../files/patch-modules_afsocket_socket-options.c  |  20 +
+ sysutils/syslog-ng/files/pkg-message.in            |  41 ++
+ sysutils/syslog-ng/files/syslog-ng.conf.sample     | 185 +++++++
+ sysutils/syslog-ng/files/syslog-ng.in              |  58 +++
+ sysutils/syslog-ng/pkg-descr                       |  17 +
+ sysutils/syslog-ng/pkg-plist                       | 391 +++++++++++++++
+ sysutils/syslog-ng324/Makefile                     |   3 +
+ sysutils/syslog-ng325/Makefile                     |   4 +-
+ sysutils/syslog-ng326/Makefile                     |   4 +-
+ sysutils/syslog-ng328/Makefile                     |   3 +
+ sysutils/syslog-ng329/Makefile                     |   3 +
+ textproc/raptor2/Makefile                          |   2 +-
+ textproc/raptor2/files/patch-CVE-2017-18926        |  40 ++
+ www/miniflux/Makefile                              |  15 +-
+ www/miniflux/distinfo                              |  30 +-
+ x11-toolkits/tk87/pkg-descr                        |   2 +-
+ x11-toolkits/wxgtk28/Makefile                      |  18 +-
+ x11-toolkits/wxgtk28/pkg-plist                     |   3 -
+ x11/xfce4-goodies/Makefile                         |   5 +-
+ 83 files changed, 1614 insertions(+), 1281 deletions(-)
+ delete mode 100644 graphics/swfdec/Makefile
+ delete mode 100644 graphics/swfdec/distinfo
+ delete mode 100644 graphics/swfdec/files/patch-configure
+ delete mode 100644 graphics/swfdec/files/patch-swfdec-gtk_Makefile.in
+ delete mode 100644 graphics/swfdec/files/swfdec_playback_oss.c
+ delete mode 100644 graphics/swfdec/pkg-descr
+ delete mode 100644 graphics/swfdec/pkg-plist
+ delete mode 100644 mail/mutt/files/extra-patch-forcebase64
+ delete mode 100644 mail/mutt/files/patch-muttlib.c
+ delete mode 100644 mail/mutt/files/patch-threadcomplete
+ create mode 100644 math/py-benford_py/Makefile
+ create mode 100644 math/py-benford_py/distinfo
+ create mode 100644 math/py-benford_py/pkg-descr
+ delete mode 100644 multimedia/p5-GStreamer/Makefile
+ delete mode 100644 multimedia/p5-GStreamer/distinfo
+ delete mode 100644 multimedia/p5-GStreamer/pkg-descr
+ delete mode 100644 multimedia/p5-GStreamer/pkg-plist
+ delete mode 100644 multimedia/py-openlp/Makefile
+ delete mode 100644 multimedia/py-openlp/distinfo
+ delete mode 100644 multimedia/py-openlp/pkg-descr
+ delete mode 100644 multimedia/py-openlp/pkg-plist
+ delete mode 100644 multimedia/swfdec-gnome/Makefile
+ delete mode 100644 multimedia/swfdec-gnome/distinfo
+ delete mode 100644 multimedia/swfdec-gnome/pkg-descr
+ delete mode 100644 multimedia/swfdec-gnome/pkg-plist
+ create mode 100644 sysutils/syslog-ng/distinfo
+ create mode 100644 sysutils/syslog-ng/files/patch-configure
+ create mode 100644 sysutils/syslog-ng/files/patch-modules_afsocket_socket-options.c
+ create mode 100644 sysutils/syslog-ng/files/pkg-message.in
+ create mode 100644 sysutils/syslog-ng/files/syslog-ng.conf.sample
+ create mode 100644 sysutils/syslog-ng/files/syslog-ng.in
+ create mode 100644 sysutils/syslog-ng/pkg-descr
+ create mode 100644 sysutils/syslog-ng/pkg-plist
+ create mode 100644 textproc/raptor2/files/patch-CVE-2017-18926
+write: Broken pipe
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 172 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 2.90 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 348fb7b32fa6 Merge remote-tracking branch 'github/master'
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 172 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+write: Broken pipe
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 348fb7b32fa6 Merge remote-tracking branch 'github/master'
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox/Makefile
+Removing graphics/azpainter/files/patch-translation_zh__CN
+Removing graphics/azpainter/files/patch-translation_be
+Removing graphics/azpainter/files/git-2564ee5
+Removing editors/openoffice-4/files/patch-vcl_source_glyphs_graphite__layout.cxx
+Removing editors/openoffice-4/files/patch-solenv_inc_unxfbsd.mk
+Removing editors/openoffice-4/files/patch-solenv_gbuild_platform_freebsd.mk
+Removing editors/openoffice-4/files/patch-scaddins_source_analysis_analysishelper.hxx
+Removing editors/openoffice-4/files/patch-r1728872
+Removing editors/openoffice-4/files/patch-openoffice4_powerpc64
+Removing editors/openoffice-4/files/patch-openjdk8
+Removing editors/openoffice-4/files/patch-nss
+Removing editors/openoffice-4/files/patch-lingucomponent_source_spellcheck_spell_sspellimp.cxx
+Removing editors/openoffice-4/files/patch-l10ntools_source_inireader.cxx
+Removing editors/openoffice-4/files/patch-icu_makefile.mk
+Removing editors/openoffice-4/files/patch-gmake43
+Removing editors/openoffice-4/files/patch-clang40
+Removing editors/openoffice-4/files/patch-bridges_source_cpp__uno_gcc3__freebsd__x86-64_uno2cpp.cxx
+Removing editors/openoffice-4/files/patch-boost_boost__1__55__0.patch
+Removing editors/openoffice-4/files/patch-boost1.67
+Removing editors/openoffice-4/files/patch-basebmp_inc_basebmp_packedpixeliterator.hxx
+Merge made by the 'recursive' strategy.
+ devel/Makefile                                     |    1 +
+ devel/rubygem-bootsnap14/Makefile                  |   20 +
+ devel/rubygem-bootsnap14/distinfo                  |    3 +
+ devel/rubygem-bootsnap14/pkg-descr                 |    5 +
+ editors/openoffice-4/Makefile                      |   21 +-
+ editors/openoffice-4/distinfo                      |   10 +-
+ ...tch-basebmp_inc_basebmp_packedpixeliterator.hxx |   20 -
+ editors/openoffice-4/files/patch-boost1.67         |   36 -
+ .../files/patch-boost_boost__1__55__0.patch        |   39 -
+ ...urce_cpp__uno_gcc3__freebsd__x86-64_uno2cpp.cxx |   12 -
+ editors/openoffice-4/files/patch-clang40           |   39 -
+ .../{patch-configure.in => patch-configure.ac}     |    4 +-
+ editors/openoffice-4/files/patch-gmake43           |   11 -
+ editors/openoffice-4/files/patch-icu_makefile.mk   |   14 -
+ .../files/patch-l10ntools_source_inireader.cxx     |   10 -
+ ...component_source_spellcheck_spell_sspellimp.cxx |   14 -
+ editors/openoffice-4/files/patch-nss               |   69 -
+ editors/openoffice-4/files/patch-openjdk8          | 1808 ---------
+ .../openoffice-4/files/patch-openoffice4_powerpc64 | 3967 --------------------
+ editors/openoffice-4/files/patch-r1728872          |   98 -
+ ...tch-scaddins_source_analysis_analysishelper.hxx |   11 -
+ .../files/patch-solenv_gbuild_platform_freebsd.mk  |   23 -
+ .../openoffice-4/files/patch-solenv_inc_unxfbsd.mk |   19 -
+ .../patch-vcl_source_glyphs_graphite__layout.cxx   |   14 -
+ graphics/azpainter/Makefile                        |   27 +-
+ graphics/azpainter/distinfo                        |    6 +-
+ graphics/azpainter/files/git-2564ee5               |  136 -
+ graphics/azpainter/files/patch-Makefile.in         |   28 +
+ ...> patch-desktop_applications_azpainter.desktop} |    8 +-
+ graphics/azpainter/files/patch-translation_be      |  308 --
+ graphics/azpainter/files/patch-translation_zh__CN  |   33 -
+ graphics/azpainter/pkg-descr                       |    2 +-
+ graphics/azpainter/pkg-plist                       |    2 +
+ graphics/libprojectm/Makefile                      |    3 +-
+ graphics/libprojectm/distinfo                      |   12 +-
+ math/lis/Makefile                                  |    2 +-
+ math/lis/distinfo                                  |    6 +-
+ math/py-benford_py/Makefile                        |    5 +-
+ math/py-benford_py/pkg-descr                       |    2 +-
+ misc/libsolv/Makefile                              |    3 +-
+ misc/libsolv/distinfo                              |    6 +-
+ print/texlive-base/Makefile                        |  106 +-
+ www/authelia/Makefile                              |    2 +-
+ www/authelia/distinfo                              |    6 +-
+ www/firefox/Makefile                               |    3 +-
+ www/firefox/distinfo                               |    6 +-
+ www/gitlab-ce/Makefile                             |    4 +-
+ 47 files changed, 177 insertions(+), 6807 deletions(-)
+ create mode 100644 devel/rubygem-bootsnap14/Makefile
+ create mode 100644 devel/rubygem-bootsnap14/distinfo
+ create mode 100644 devel/rubygem-bootsnap14/pkg-descr
+ delete mode 100644 editors/openoffice-4/files/patch-basebmp_inc_basebmp_packedpixeliterator.hxx
+ delete mode 100644 editors/openoffice-4/files/patch-boost1.67
+ delete mode 100644 editors/openoffice-4/files/patch-boost_boost__1__55__0.patch
+ delete mode 100644 editors/openoffice-4/files/patch-bridges_source_cpp__uno_gcc3__freebsd__x86-64_uno2cpp.cxx
+ delete mode 100644 editors/openoffice-4/files/patch-clang40
+ rename editors/openoffice-4/files/{patch-configure.in => patch-configure.ac} (96%)
+ delete mode 100644 editors/openoffice-4/files/patch-gmake43
+ delete mode 100644 editors/openoffice-4/files/patch-icu_makefile.mk
+ delete mode 100644 editors/openoffice-4/files/patch-l10ntools_source_inireader.cxx
+ delete mode 100644 editors/openoffice-4/files/patch-lingucomponent_source_spellcheck_spell_sspellimp.cxx
+ delete mode 100644 editors/openoffice-4/files/patch-nss
+ delete mode 100644 editors/openoffice-4/files/patch-openjdk8
+ delete mode 100644 editors/openoffice-4/files/patch-openoffice4_powerpc64
+ delete mode 100644 editors/openoffice-4/files/patch-r1728872
+ delete mode 100644 editors/openoffice-4/files/patch-scaddins_source_analysis_analysishelper.hxx
+ delete mode 100644 editors/openoffice-4/files/patch-solenv_gbuild_platform_freebsd.mk
+ delete mode 100644 editors/openoffice-4/files/patch-solenv_inc_unxfbsd.mk
+ delete mode 100644 editors/openoffice-4/files/patch-vcl_source_glyphs_graphite__layout.cxx
+ delete mode 100644 graphics/azpainter/files/git-2564ee5
+ create mode 100644 graphics/azpainter/files/patch-Makefile.in
+ rename graphics/azpainter/files/{patch-desktop_azpainter.desktop => patch-desktop_applications_azpainter.desktop} (67%)
+ delete mode 100644 graphics/azpainter/files/patch-translation_be
+ delete mode 100644 graphics/azpainter/files/patch-translation_zh__CN
+write: Broken pipe
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 185 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.52 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c8651e31cadc Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
