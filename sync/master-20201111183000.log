@@ -47,3 +47,225 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Auto-merging sysutils/lsof/Makefile
+Auto-merging security/Makefile
+Auto-merging java/openjdk8/Makefile
+Auto-merging irc/weechat/Makefile
+Merge made by the 'recursive' strategy.
+ GIDs                                               |   2 +-
+ Mk/Uses/kde.mk                                     |   2 +-
+ UIDs                                               |   2 +-
+ audio/lingot/Makefile                              |   2 +-
+ audio/mixertui/files/patch-Makefile                |  11 +
+ audio/plasma5-plasma-pa/distinfo                   |   6 +-
+ audio/plasma5-plasma-pa/pkg-plist                  |   2 +
+ audio/zrythm/Makefile                              |   3 +-
+ audio/zrythm/distinfo                              |   6 +-
+ audio/zrythm/pkg-plist                             |   9 +-
+ cad/iverilog/Makefile                              |   2 +-
+ deskutils/plasma5-milou/distinfo                   |   6 +-
+ deskutils/plasma5-milou/pkg-plist                  |   2 +
+ deskutils/plasma5-sddm-kcm/distinfo                |   6 +-
+ deskutils/plasma5-sddm-kcm/pkg-plist               |   1 +
+ devel/plasma5-khotkeys/distinfo                    |   6 +-
+ devel/plasma5-khotkeys/pkg-plist                   |   1 +
+ devel/plasma5-kwrited/distinfo                     |   6 +-
+ devel/plasma5-plasma-sdk/distinfo                  |   6 +-
+ devel/plasma5-plasma-sdk/pkg-plist                 |   8 +
+ devel/py-spyder/Makefile                           |   2 +-
+ games/py-cbeams/Makefile                           |   2 +-
+ games/py-cbeams/distinfo                           |   6 +-
+ graphics/drm-current-kmod/Makefile                 |   1 +
+ graphics/drm-current-kmod/pkg-plist                |  27 ++
+ irc/weechat/Makefile                               |   2 +-
+ irc/weechat/distinfo                               |   6 +-
+ java/openjdk8/Makefile                             |   5 +-
+ java/openjdk8/distinfo                             |   6 +-
+ mail/mailsync/Makefile                             |  12 +-
+ mail/nextcloud-mail/Makefile                       |   2 +-
+ mail/nextcloud-mail/distinfo                       |   6 +-
+ mail/nextcloud-mail/pkg-plist                      |   3 +
+ misc/thefuck/Makefile                              |   2 +-
+ misc/thefuck/distinfo                              |   6 +-
+ ports-mgmt/portmaster/Makefile                     |   2 +-
+ ports-mgmt/portmaster/files/patch-portmaster       |  80 +++-
+ ports-mgmt/poudriere-devel/Makefile                |   6 +-
+ .../files/patch-src_share_poudriere_jail.sh        |  11 +
+ ports-mgmt/poudriere/Makefile                      |   2 +-
+ ports-mgmt/poudriere/distinfo                      |   6 +-
+ security/Makefile                                  |   1 +
+ security/plasma5-kscreenlocker/distinfo            |   6 +-
+ security/plasma5-kscreenlocker/pkg-plist           |   3 +
+ security/plasma5-ksshaskpass/distinfo              |   6 +-
+ security/plasma5-kwallet-pam/distinfo              |   6 +-
+ security/py-ssh-audit/Makefile                     |  11 +-
+ security/spectre-meltdown-checker/Makefile         |  23 ++
+ security/spectre-meltdown-checker/distinfo         |   3 +
+ security/spectre-meltdown-checker/pkg-descr        |  24 ++
+ sysutils/Makefile                                  |   1 +
+ sysutils/datadog/Makefile                          | 401 +++++++++++++++++++
+ sysutils/datadog/distinfo                          | 445 +++++++++++++++++++++
+ sysutils/datadog/files/datadog-agent.in            |  85 ++++
+ sysutils/datadog/files/datadog-process-agent.in    |  65 +++
+ sysutils/datadog/files/datadog-trace-agent.in      |  65 +++
+ .../files/patch-cmd_agent_common_common__nix.go    |  10 +
+ ...kg_collector_corechecks_system_file__handles.go |  10 +
+ ...tor_corechecks_system_file__handles__freebsd.go |  70 ++++
+ ...rechecks_system_file__handles__freebsd__test.go |  41 ++
+ .../files/patch-pkg_metadata_v5_v5__other.go       |  20 +
+ .../files/patch-rtloader_common_rtloader__mem.h    |  11 +
+ .../files/patch-rtloader_rtloader_CMakeLists.txt   |  15 +
+ .../datadog/files/patch-rtloader_rtloader_api.cpp  |  12 +
+ sysutils/datadog/files/pkg-message.in              |  23 ++
+ sysutils/datadog/pkg-descr                         |   7 +
+ sysutils/datadog/pkg-plist                         |  74 ++++
+ sysutils/lsof/Makefile                             |   2 +-
+ sysutils/lsof/files/patch-dialects-freebsd-dlsof.h |  24 +-
+ sysutils/plasma5-discover/distinfo                 |   6 +-
+ sysutils/plasma5-discover/pkg-plist                |   3 +
+ sysutils/plasma5-drkonqi/distinfo                  |   6 +-
+ sysutils/plasma5-drkonqi/pkg-plist                 |   1 +
+ sysutils/plasma5-kde-cli-tools/distinfo            |   6 +-
+ sysutils/plasma5-kde-cli-tools/pkg-plist           |   8 +
+ sysutils/plasma5-kinfocenter/distinfo              |   6 +-
+ sysutils/plasma5-kinfocenter/pkg-plist             |  14 +
+ sysutils/plasma5-kmenuedit/distinfo                |   6 +-
+ sysutils/plasma5-kmenuedit/pkg-plist               |   1 +
+ sysutils/plasma5-ksysguard/distinfo                |   6 +-
+ sysutils/plasma5-ksysguard/pkg-plist               |   3 +
+ sysutils/plasma5-libksysguard/distinfo             |   6 +-
+ sysutils/plasma5-libksysguard/pkg-plist            |  14 +
+ sysutils/plasma5-plasma-disks/distinfo             |   6 +-
+ sysutils/plasma5-polkit-kde-agent-1/distinfo       |   6 +-
+ sysutils/plasma5-polkit-kde-agent-1/pkg-plist      |   1 +
+ sysutils/plasma5-powerdevil/distinfo               |   6 +-
+ sysutils/plasma5-powerdevil/pkg-plist              |   5 +
+ sysutils/plasma5-systemsettings/distinfo           |   6 +-
+ sysutils/plasma5-systemsettings/pkg-plist          |   1 +
+ textproc/txt2tags/Makefile                         |   2 +-
+ www/nextcloud-groupfolders/Makefile                |   2 +-
+ www/nextcloud-groupfolders/distinfo                |   6 +-
+ www/nextcloud-groupfolders/pkg-plist               |   8 +-
+ www/node/Makefile                                  |   3 +-
+ www/node/distinfo                                  |   6 +-
+ www/plasma5-plasma-browser-integration/distinfo    |   6 +-
+ www/plasma5-plasma-browser-integration/pkg-plist   |   4 +
+ x11-fonts/py-QtAwesome/Makefile                    |   2 +-
+ x11-themes/plasma5-breeze-gtk/distinfo             |   6 +-
+ x11-themes/plasma5-breeze/distinfo                 |   6 +-
+ x11-themes/plasma5-breeze/pkg-plist                |   2 +
+ x11-themes/plasma5-kde-gtk-config/distinfo         |   6 +-
+ x11-themes/plasma5-oxygen/distinfo                 |   6 +-
+ x11-themes/plasma5-oxygen/pkg-plist                |   4 +
+ .../plasma5-plasma-workspace-wallpapers/distinfo   |   6 +-
+ x11-toolkits/plasma5-kdeplasma-addons/distinfo     |   6 +-
+ x11-toolkits/plasma5-kdeplasma-addons/pkg-plist    |  31 ++
+ x11-wm/plasma5-kdecoration/distinfo                |   6 +-
+ x11-wm/plasma5-kwin/distinfo                       |   6 +-
+ x11-wm/plasma5-kwin/pkg-plist                      |  15 +
+ x11/Makefile                                       |   1 +
+ x11/plasma5-kactivitymanagerd/distinfo             |   6 +-
+ x11/plasma5-kactivitymanagerd/pkg-plist            |   1 +
+ x11/plasma5-kgamma5/distinfo                       |   6 +-
+ x11/plasma5-kgamma5/pkg-plist                      |   1 +
+ x11/plasma5-kscreen/distinfo                       |   6 +-
+ x11/plasma5-kscreen/pkg-plist                      |   3 +
+ x11/plasma5-kwayland-integration/distinfo          |   6 +-
+ x11/plasma5-kwayland-server/distinfo               |   6 +-
+ x11/plasma5-libkscreen/distinfo                    |   6 +-
+ x11/plasma5-plasma-desktop/distinfo                |   6 +-
+ x11/plasma5-plasma-desktop/pkg-plist               |  48 +++
+ x11/plasma5-plasma-integration/distinfo            |   6 +-
+ x11/plasma5-plasma-workspace/distinfo              |   6 +-
+ x11/plasma5-plasma-workspace/pkg-plist             |  78 ++++
+ x11/xdo/Makefile                                   |  23 ++
+ x11/xdo/distinfo                                   |   3 +
+ x11/xdo/files/patch-Makefile                       |  24 ++
+ x11/xdo/pkg-descr                                  |   6 +
+ 130 files changed, 2056 insertions(+), 190 deletions(-)
+ create mode 100644 audio/mixertui/files/patch-Makefile
+ create mode 100644 ports-mgmt/poudriere-devel/files/patch-src_share_poudriere_jail.sh
+ create mode 100644 security/spectre-meltdown-checker/Makefile
+ create mode 100644 security/spectre-meltdown-checker/distinfo
+ create mode 100644 security/spectre-meltdown-checker/pkg-descr
+ create mode 100644 sysutils/datadog/Makefile
+ create mode 100644 sysutils/datadog/distinfo
+ create mode 100644 sysutils/datadog/files/datadog-agent.in
+ create mode 100644 sysutils/datadog/files/datadog-process-agent.in
+ create mode 100644 sysutils/datadog/files/datadog-trace-agent.in
+ create mode 100644 sysutils/datadog/files/patch-cmd_agent_common_common__nix.go
+ create mode 100644 sysutils/datadog/files/patch-pkg_collector_corechecks_system_file__handles.go
+ create mode 100644 sysutils/datadog/files/patch-pkg_collector_corechecks_system_file__handles__freebsd.go
+ create mode 100644 sysutils/datadog/files/patch-pkg_collector_corechecks_system_file__handles__freebsd__test.go
+ create mode 100644 sysutils/datadog/files/patch-pkg_metadata_v5_v5__other.go
+ create mode 100644 sysutils/datadog/files/patch-rtloader_common_rtloader__mem.h
+ create mode 100644 sysutils/datadog/files/patch-rtloader_rtloader_CMakeLists.txt
+ create mode 100644 sysutils/datadog/files/patch-rtloader_rtloader_api.cpp
+ create mode 100644 sysutils/datadog/files/pkg-message.in
+ create mode 100644 sysutils/datadog/pkg-descr
+ create mode 100644 sysutils/datadog/pkg-plist
+ create mode 100644 x11/xdo/Makefile
+ create mode 100644 x11/xdo/distinfo
+ create mode 100644 x11/xdo/files/patch-Makefile
+ create mode 100644 x11/xdo/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    82a6e87edd77..2500212d1366  master -> master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   82a6e87edd77..2500212d1366  master -> master
+==== END: master ====
