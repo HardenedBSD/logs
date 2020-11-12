@@ -47,3 +47,156 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing emulators/wine-devel/files/extrapatch-server-file.c
+Removing audio/lame/files/lame_patents.txt
+Merge made by the 'recursive' strategy.
+ CHANGES                                            |  11 ++
+ LEGAL                                              |   3 -
+ UPDATING                                           |  17 ++
+ archivers/bzip/Makefile                            |   1 -
+ audio/din/Makefile                                 |   2 +-
+ audio/din/distinfo                                 |   6 +-
+ audio/lame/Makefile                                |  12 +-
+ audio/lame/files/lame_patents.txt                  |  27 ---
+ databases/mariadb103-server/Makefile               |   7 +-
+ databases/mariadb103-server/distinfo               |   6 +-
+ databases/mariadb104-server/Makefile               |   6 +-
+ databases/mariadb104-server/distinfo               |   6 +-
+ databases/mariadb105-server/Makefile               |   2 +-
+ databases/mariadb105-server/distinfo               |   6 +-
+ databases/postgresql10-server/Makefile             |   4 +-
+ databases/postgresql10-server/distinfo             |   6 +-
+ databases/postgresql11-server/Makefile             |   4 +-
+ databases/postgresql11-server/distinfo             |   6 +-
+ databases/postgresql12-server/Makefile             |   4 +-
+ databases/postgresql12-server/distinfo             |   6 +-
+ databases/postgresql12-server/pkg-plist-server     |   1 +
+ databases/postgresql13-server/Makefile             |   4 +-
+ databases/postgresql13-server/distinfo             |   6 +-
+ databases/postgresql96-server/Makefile             |   4 +-
+ databases/postgresql96-server/distinfo             |   6 +-
+ databases/xtrabackup8/Makefile                     |   4 +-
+ deskutils/freeplane/Makefile                       |   2 +-
+ deskutils/freeplane/distinfo                       |   6 +-
+ deskutils/freeplane/pkg-plist                      |   2 +-
+ deskutils/ultralist/Makefile                       |  44 ++++-
+ deskutils/ultralist/distinfo                       |  76 +++++++-
+ deskutils/ultralist/files/patch-ultralist_app.go   |  11 ++
+ deskutils/ultralist/pkg-descr                      |   2 +-
+ devel/gh/Makefile                                  |  18 +-
+ devel/gh/distinfo                                  |  34 ++--
+ devel/git-delta/Makefile                           | 115 +++++++-----
+ devel/git-delta/distinfo                           | 206 ++++++++++++---------
+ devel/simgear/Makefile                             |   2 +-
+ devel/simgear/distinfo                             |   6 +-
+ devel/simgear/pkg-plist                            |   4 +-
+ emulators/fuse-roms/Makefile                       |  11 +-
+ emulators/wine-devel/Makefile                      |   5 +-
+ emulators/wine-devel/distinfo                      |  10 +-
+ .../files/extrapatch-dlls-ntdll-unix-file.c        |  12 +-
+ .../wine-devel/files/extrapatch-server-file.c      |  30 ---
+ emulators/wine-devel/pkg-plist                     |  15 +-
+ games/flightgear-data/Makefile                     |   2 +-
+ games/flightgear-data/distinfo                     |   6 +-
+ games/flightgear/Makefile                          |   2 +-
+ games/flightgear/distinfo                          |   6 +-
+ graphics/autopano-sift-c/Makefile                  |   2 -
+ mail/cclient/Makefile                              |   2 +-
+ mail/cclient/files/patch-src_c-client_c-client.h   |  26 +++
+ mail/mailsync/Makefile                             |  12 +-
+ mail/sid-milter/Makefile                           |   2 -
+ math/py-pdal/Makefile                              |   2 +-
+ math/py-pdal/distinfo                              |   6 +-
+ sysutils/exfat-utils/Makefile                      |  12 +-
+ sysutils/fusefs-exfat/Makefile                     |  12 +-
+ textproc/ibus-typing-booster/Makefile              |   2 +-
+ textproc/ibus-typing-booster/distinfo              |   6 +-
+ textproc/ibus-typing-booster/pkg-plist             |   3 +
+ www/lua-resty-core/Makefile                        |   3 +-
+ www/lua-resty-core/pkg-plist                       |   1 +
+ www/p5-Mojolicious/Makefile                        |   2 +-
+ www/p5-Mojolicious/distinfo                        |   6 +-
+ www/p5-Mojolicious/pkg-plist                       |   2 +
+ www/py-meld3/Makefile                              |   7 +-
+ www/py-meld3/distinfo                              |   6 +-
+ www/py-meld3/pkg-descr                             |   2 +-
+ x11-fonts/font-adobe-100dpi/Makefile               |   5 +
+ x11-fonts/font-adobe-75dpi/Makefile                |   5 +
+ x11-fonts/font-adobe-utopia-100dpi/Makefile        |   4 +
+ x11-fonts/font-adobe-utopia-75dpi/Makefile         |   4 +
+ x11-fonts/font-adobe-utopia-type1/Makefile         |   4 +
+ x11/Makefile                                       |   1 +
+ x11/evtest/Makefile                                |  32 ++++
+ x11/evtest/distinfo                                |   3 +
+ x11/evtest/files/patch-evtest.c                    |  44 +++++
+ x11/evtest/pkg-descr                               |   5 +
+ 80 files changed, 628 insertions(+), 389 deletions(-)
+ delete mode 100644 audio/lame/files/lame_patents.txt
+ create mode 100644 deskutils/ultralist/files/patch-ultralist_app.go
+ delete mode 100644 emulators/wine-devel/files/extrapatch-server-file.c
+ create mode 100644 mail/cclient/files/patch-src_c-client_c-client.h
+ create mode 100644 x11/evtest/Makefile
+ create mode 100644 x11/evtest/distinfo
+ create mode 100644 x11/evtest/files/patch-evtest.c
+ create mode 100644 x11/evtest/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6d4f09608d76..68c4c3652243  master -> master        
+remote:    99f2611b5bd2..6d4f09608d76  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6d4f09608d76..68c4c3652243  master -> master
+==== END: master ====
