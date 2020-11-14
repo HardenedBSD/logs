@@ -47,3 +47,213 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/nut/files/patch-drivers_usbhid-ups.c
+Removing sysutils/nut/files/patch-drivers_tripplite__usb.c
+Removing sysutils/nut/files/patch-drivers_riello__usb.c
+Removing sysutils/nut/files/patch-drivers_nutdrv__qx.c
+Removing sysutils/nut/files/patch-drivers_libusb.h
+Removing sysutils/nut/files/patch-drivers_libusb.c
+Removing sysutils/nut/files/patch-drivers_libshut.c
+Removing sysutils/nut/files/patch-drivers_blazer__usb.c
+Auto-merging sysutils/nut/Makefile
+Removing sysutils/nut-devel/files/patch-drivers_usbhid-ups.c
+Removing sysutils/nut-devel/files/patch-drivers_tripplite__usb.c
+Removing sysutils/nut-devel/files/patch-drivers_riello__usb.c
+Removing sysutils/nut-devel/files/patch-drivers_nutdrv__qx.c
+Removing sysutils/nut-devel/files/patch-drivers_libusb.h
+Removing sysutils/nut-devel/files/patch-drivers_libusb.c
+Removing sysutils/nut-devel/files/patch-drivers_libshut.c
+Removing sysutils/nut-devel/files/patch-drivers_blazer__usb.c
+Removing multimedia/lives/files/patch-lives-plugins_weed-plugins_gdk_Makefile.am
+Removing multimedia/lives/files/patch-lives-plugins_weed-plugins_Makefile.am
+Removing multimedia/lives/files/patch-configure.ac
+Removing multimedia/lives/files/patch-Makefile.am
+Merge made by the 'recursive' strategy.
+ benchmarks/fio/Makefile                            |   2 +-
+ benchmarks/fio/distinfo                            |   6 +-
+ cad/netgen/Makefile                                |   2 +-
+ cad/netgen/distinfo                                |   6 +-
+ cad/netgen/pkg-plist                               |   1 +
+ devel/psvn/Makefile                                |   2 +-
+ lang/rust-nightly/Makefile                         |   2 +-
+ lang/rust-nightly/distinfo                         |   6 +-
+ mail/cyrus-imapd32/Makefile                        |  17 +-
+ .../files/patch-tools__translatesieve              |  12 +
+ mail/cyrus-imapd32/pkg-plist                       |   7 +-
+ math/R-cran-recipes/Makefile                       |   2 +-
+ math/R-cran-recipes/distinfo                       |   6 +-
+ math/octave-forge-sockets/Makefile                 |   5 +-
+ math/octave-forge-sockets/distinfo                 |   5 +-
+ math/py-quadprog/Makefile                          |   2 +-
+ math/py-quadprog/distinfo                          |   6 +-
+ misc/py-eemeter/Makefile                           |   6 +-
+ misc/py-eemeter/distinfo                           |   6 +-
+ misc/valentina/Makefile                            |   4 +-
+ misc/valentina/distinfo                            |   6 +-
+ multimedia/lives/Makefile                          | 195 ++++++----
+ multimedia/lives/distinfo                          |   6 +-
+ multimedia/lives/files/patch-Makefile.am           |  11 -
+ multimedia/lives/files/patch-configure.ac          |  53 ---
+ multimedia/lives/files/patch-jack1                 |  96 +++++
+ .../patch-lives-plugins_weed-plugins_Makefile.am   |  12 -
+ ...atch-lives-plugins_weed-plugins_gdk_Makefile.am |  13 -
+ multimedia/lives/pkg-plist                         | 104 +++---
+ net-im/cordless/Makefile                           |   9 +-
+ net-im/cordless/distinfo                           |  14 +-
+ net-im/dino/Makefile                               |   4 +-
+ net-im/dino/distinfo                               |   6 +-
+ science/py-gpaw/Makefile                           |  12 +-
+ science/py-gpaw/distinfo                           |   6 +-
+ security/highwayhash/Makefile                      |   4 +-
+ security/highwayhash/distinfo                      |   6 +-
+ .../files/patch-highwayhash_arch__specific.cc      |  18 +-
+ security/krb5-devel/Makefile                       |   4 +-
+ security/krb5-devel/distinfo                       |   6 +-
+ sysutils/Makefile                                  |   2 +
+ sysutils/cfengine-devel/Makefile                   |   6 +-
+ sysutils/cfengine-devel/distinfo                   |  10 +-
+ sysutils/cfengine-masterfiles-devel/Makefile       |   4 +-
+ sysutils/cfengine-masterfiles-devel/distinfo       |   6 +-
+ sysutils/cfengine-masterfiles/Makefile             |   4 +-
+ sysutils/cfengine-masterfiles312/Makefile          |   3 +
+ sysutils/cfengine-masterfiles313/Makefile          |   3 +
+ sysutils/cfengine-masterfiles314/Makefile          |   3 +
+ sysutils/cfengine-masterfiles316/Makefile          |  35 ++
+ sysutils/cfengine-masterfiles316/distinfo          |   3 +
+ sysutils/cfengine-masterfiles316/pkg-descr         |  10 +
+ sysutils/cfengine-masterfiles316/pkg-plist         | 100 ++++++
+ sysutils/cfengine/Makefile                         |   4 +-
+ sysutils/cfengine312/Makefile                      |   3 +
+ sysutils/cfengine313/Makefile                      |   3 +
+ sysutils/cfengine314/Makefile                      |   3 +
+ sysutils/cfengine316/Makefile                      |  71 ++++
+ sysutils/cfengine316/distinfo                      |   3 +
+ sysutils/cfengine316/files/cf-execd.in             |  28 ++
+ sysutils/cfengine316/files/cf-monitord.in          |  28 ++
+ sysutils/cfengine316/files/cf-serverd.in           |  28 ++
+ sysutils/cfengine316/pkg-descr                     |  10 +
+ sysutils/cfengine316/pkg-plist                     | 394 +++++++++++++++++++++
+ sysutils/dnf/Makefile                              |   2 +-
+ sysutils/dnf/distinfo                              |   6 +-
+ sysutils/nut-devel/Makefile                        |   5 +-
+ sysutils/nut-devel/distinfo                        |   6 +-
+ .../nut-devel/files/patch-drivers_blazer__usb.c    |  79 -----
+ sysutils/nut-devel/files/patch-drivers_libshut.c   |  23 --
+ sysutils/nut-devel/files/patch-drivers_libusb.c    |  65 ----
+ sysutils/nut-devel/files/patch-drivers_libusb.h    |  27 --
+ sysutils/nut-devel/files/patch-drivers_main.h      |  10 +
+ .../nut-devel/files/patch-drivers_nutdrv__qx.c     |  79 -----
+ .../nut-devel/files/patch-drivers_riello__usb.c    |  53 ---
+ .../nut-devel/files/patch-drivers_tripplite__usb.c |  20 --
+ .../nut-devel/files/patch-drivers_usbhid-ups.c     |  74 ----
+ sysutils/nut/Makefile                              |   2 +-
+ sysutils/nut/files/patch-drivers_blazer__usb.c     |  79 -----
+ sysutils/nut/files/patch-drivers_libshut.c         |  23 --
+ sysutils/nut/files/patch-drivers_libusb.c          |  65 ----
+ sysutils/nut/files/patch-drivers_libusb.h          |  27 --
+ sysutils/nut/files/patch-drivers_main.h            |  10 +
+ sysutils/nut/files/patch-drivers_nutdrv__qx.c      |  79 -----
+ sysutils/nut/files/patch-drivers_riello__usb.c     |  53 ---
+ sysutils/nut/files/patch-drivers_tripplite__usb.c  |  20 --
+ sysutils/nut/files/patch-drivers_usbhid-ups.c      |  74 ----
+ sysutils/u-boot-sopine-spi/Makefile                |   1 +
+ www/neon/Makefile                                  |   5 +-
+ www/tokyopromenade/Makefile                        |   2 +-
+ 90 files changed, 1172 insertions(+), 1171 deletions(-)
+ create mode 100644 mail/cyrus-imapd32/files/patch-tools__translatesieve
+ delete mode 100644 multimedia/lives/files/patch-Makefile.am
+ delete mode 100644 multimedia/lives/files/patch-configure.ac
+ create mode 100644 multimedia/lives/files/patch-jack1
+ delete mode 100644 multimedia/lives/files/patch-lives-plugins_weed-plugins_Makefile.am
+ delete mode 100644 multimedia/lives/files/patch-lives-plugins_weed-plugins_gdk_Makefile.am
+ create mode 100644 sysutils/cfengine-masterfiles316/Makefile
+ create mode 100644 sysutils/cfengine-masterfiles316/distinfo
+ create mode 100644 sysutils/cfengine-masterfiles316/pkg-descr
+ create mode 100644 sysutils/cfengine-masterfiles316/pkg-plist
+ create mode 100644 sysutils/cfengine316/Makefile
+ create mode 100644 sysutils/cfengine316/distinfo
+ create mode 100644 sysutils/cfengine316/files/cf-execd.in
+ create mode 100644 sysutils/cfengine316/files/cf-monitord.in
+ create mode 100644 sysutils/cfengine316/files/cf-serverd.in
+ create mode 100644 sysutils/cfengine316/pkg-descr
+ create mode 100644 sysutils/cfengine316/pkg-plist
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_blazer__usb.c
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_libshut.c
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_libusb.c
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_libusb.h
+ create mode 100644 sysutils/nut-devel/files/patch-drivers_main.h
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_nutdrv__qx.c
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_riello__usb.c
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_tripplite__usb.c
+ delete mode 100644 sysutils/nut-devel/files/patch-drivers_usbhid-ups.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_blazer__usb.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_libshut.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_libusb.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_libusb.h
+ create mode 100644 sysutils/nut/files/patch-drivers_main.h
+ delete mode 100644 sysutils/nut/files/patch-drivers_nutdrv__qx.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_riello__usb.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_tripplite__usb.c
+ delete mode 100644 sysutils/nut/files/patch-drivers_usbhid-ups.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    274aa81fee78..20d81e63f5bd  master -> master        
+remote:    2face4cc317f..274aa81fee78  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   274aa81fee78..20d81e63f5bd  master -> master
+==== END: master ====
