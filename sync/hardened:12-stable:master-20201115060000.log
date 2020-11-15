@@ -1,0 +1,151 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging stand/lua/drawer.lua
+Auto-merging stand/lua/Makefile
+CONFLICT (content): Merge conflict in stand/lua/Makefile
+Auto-merging ObsoleteFiles.inc
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc stand/lua/Makefile
+index 7bcb512eee60,fe6fd6f63c8e..000000000000
+--- a/stand/lua/Makefile
++++ b/stand/lua/Makefile
+@@@ -20,13 -20,11 +20,21 @@@ FILES=	cli.lua 
+  	drawer.lua \
+  	hook.lua \
+  	loader.lua \
+++<<<<<<< HEAD
+ +	logo-beastie.lua \
+ +	logo-beastiebw.lua \
+ +	logo-fbsdbw.lua \
+ +	logo-hardenedbsd.lua \
+ +	logo-hardenedbsdbw.lua \
+ +	logo-orb.lua \
+ +	logo-orbbw.lua \
+++=======
++ 	gfx-beastie.lua \
++ 	gfx-beastiebw.lua \
++ 	gfx-fbsdbw.lua \
++ 	gfx-orb.lua \
++ 	gfx-orbbw.lua \
+++>>>>>>> freebsd/12-stable/master
+  	menu.lua \
+  	password.lua \
+  	screen.lua
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   ObsoleteFiles.inc
+	modified:   contrib/lua/Makefile
+	modified:   contrib/lua/README
+	modified:   contrib/lua/doc/contents.html
+	modified:   contrib/lua/doc/manual.html
+	modified:   contrib/lua/doc/readme.html
+	modified:   contrib/lua/src/Makefile
+	modified:   contrib/lua/src/lapi.c
+	modified:   contrib/lua/src/lauxlib.c
+	modified:   contrib/lua/src/lcode.c
+	modified:   contrib/lua/src/ldebug.c
+	modified:   contrib/lua/src/liolib.c
+	modified:   contrib/lua/src/llex.c
+	modified:   contrib/lua/src/lobject.c
+	modified:   contrib/lua/src/lparser.c
+	modified:   contrib/lua/src/lua.h
+	modified:   contrib/lua/src/lundump.c
+	modified:   lib/libbe/Makefile
+	modified:   lib/libbe/be.h
+	modified:   lib/libbe/be_access.c
+	modified:   lib/libbe/be_info.c
+	modified:   lib/libbe/libbe.3
+	modified:   lib/libc/stdlib/bsearch.c
+	modified:   release/packages/runtime.ucl
+	modified:   sbin/devmatch/devmatch.c
+	modified:   share/man/man4/bpf.4
+	modified:   stand/lua/drawer.lua
+	renamed:    stand/lua/logo-beastie.lua -> stand/lua/gfx-beastie.lua
+	renamed:    stand/lua/logo-beastiebw.lua -> stand/lua/gfx-beastiebw.lua
+	renamed:    stand/lua/logo-fbsdbw.lua -> stand/lua/gfx-fbsdbw.lua
+	renamed:    stand/lua/logo-orb.lua -> stand/lua/gfx-orb.lua
+	renamed:    stand/lua/logo-orbbw.lua -> stand/lua/gfx-orbbw.lua
+	modified:   sys/dev/acpi_support/acpi_wmi.c
+	modified:   sys/dev/acpica/acpi_dock.c
+	modified:   sys/dev/acpica/acpivar.h
+	modified:   sys/dev/ichiic/ig4_pci.c
+	modified:   sys/dev/iicbus/iicbus.h
+	modified:   sys/dev/vt/vt_core.c
+	modified:   sys/kern/imgact_binmisc.c
+	modified:   sys/kern/kern_umtx.c
+	modified:   sys/kern/subr_epoch.c
+	modified:   sys/kern/subr_rtc.c
+	modified:   sys/sys/imgact_binmisc.h
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	modified:   usr.bin/diff/diff.c
+	modified:   usr.sbin/binmiscctl/Makefile
+	modified:   usr.sbin/binmiscctl/binmiscctl.c
+	modified:   usr.sbin/ngctl/dot.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   stand/lua/Makefile
+
+HEAD is now at a5c1250e0e66 HBSD: Add HARDENEDBSD-NODEBUG kernel
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a5c1250e0e66 HBSD: Add HARDENEDBSD-NODEBUG kernel
+==== END: hardened/12-stable/master ====
