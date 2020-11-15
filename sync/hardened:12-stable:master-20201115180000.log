@@ -1,0 +1,121 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 25 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating a5c1250e0e66..b61aedd17e38
+Fast-forward
+ Makefile.inc1                                      |   4 +
+ ObsoleteFiles.inc                                  |   7 +
+ contrib/llvm-project/lld/ELF/InputSection.h        |   3 +-
+ contrib/lua/Makefile                               |   2 +-
+ contrib/lua/README                                 |   2 +-
+ contrib/lua/doc/contents.html                      |  37 +-
+ contrib/lua/doc/manual.html                        |   6 +-
+ contrib/lua/doc/readme.html                        |   8 +-
+ contrib/lua/src/Makefile                           |   2 +-
+ contrib/lua/src/lapi.c                             |  12 +-
+ contrib/lua/src/lauxlib.c                          |   9 +-
+ contrib/lua/src/lcode.c                            |   2 +-
+ contrib/lua/src/ldebug.c                           |   7 +-
+ contrib/lua/src/liolib.c                           |   2 +
+ contrib/lua/src/llex.c                             |  31 +-
+ contrib/lua/src/lobject.c                          |   2 +-
+ contrib/lua/src/lparser.c                          |   3 +
+ contrib/lua/src/lua.h                              |   7 +-
+ contrib/lua/src/lundump.c                          |  24 +-
+ lib/libbe/Makefile                                 |  35 ++
+ lib/libbe/be.h                                     |   6 +-
+ lib/libbe/be_access.c                              |   6 +-
+ lib/libbe/be_info.c                                |   2 +-
+ lib/libbe/libbe.3                                  |  35 +-
+ lib/libc/stdlib/bsearch.c                          |   2 +-
+ release/packages/runtime.ucl                       |   2 +-
+ sbin/devmatch/devmatch.c                           |   5 +
+ share/man/man4/bpf.4                               | 159 ++++++---
+ share/man/man7/ports.7                             |   7 +-
+ stand/lua/Makefile                                 |  10 +-
+ stand/lua/drawer.lua                               |  57 +++-
+ stand/lua/{logo-beastie.lua => gfx-beastie.lua}    |  54 ++-
+ .../lua/{logo-beastiebw.lua => gfx-beastiebw.lua}  |  52 ++-
+ stand/lua/{logo-fbsdbw.lua => gfx-fbsdbw.lua}      |  42 ++-
+ stand/lua/{logo-orb.lua => gfx-orb.lua}            |  48 ++-
+ stand/lua/{logo-orbbw.lua => gfx-orbbw.lua}        |  46 ++-
+ sys/dev/acpi_support/acpi_wmi.c                    |   1 +
+ sys/dev/acpica/acpi_dock.c                         |   3 +
+ sys/dev/acpica/acpivar.h                           |  14 +
+ sys/dev/ichiic/ig4_pci.c                           |  28 ++
+ sys/dev/iicbus/iicbus.h                            |   6 +
+ sys/dev/vt/vt_core.c                               |  15 +-
+ sys/kern/imgact_binmisc.c                          | 202 ++++++-----
+ sys/kern/kern_umtx.c                               |   6 +-
+ sys/kern/subr_epoch.c                              | 110 +++++-
+ sys/kern/subr_rtc.c                                |   4 +-
+ sys/net/if_bridge.c                                | 377 ++++++++++++---------
+ sys/sys/imgact_binmisc.h                           |   7 +
+ tools/build/mk/OptionalObsoleteFiles.inc           |  35 ++
+ usr.bin/diff/diff.c                                |  13 +-
+ usr.sbin/binmiscctl/Makefile                       |   2 +-
+ usr.sbin/binmiscctl/binmiscctl.c                   |  22 +-
+ usr.sbin/ngctl/dot.c                               |  72 ++--
+ 53 files changed, 1087 insertions(+), 568 deletions(-)
+ rename stand/lua/{logo-beastie.lua => gfx-beastie.lua} (59%)
+ rename stand/lua/{logo-beastiebw.lua => gfx-beastiebw.lua} (65%)
+ rename stand/lua/{logo-fbsdbw.lua => gfx-fbsdbw.lua} (74%)
+ rename stand/lua/{logo-orb.lua => gfx-orb.lua} (60%)
+ rename stand/lua/{logo-orbbw.lua => gfx-orbbw.lua} (68%)
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: hardened/12-stable/master ====
