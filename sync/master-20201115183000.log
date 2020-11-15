@@ -1,0 +1,226 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 67 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 9ab8e1e0d2b2..3eb2b53dd173
+Fast-forward
+ astro/opencpn/Makefile                             |   6 +
+ comms/uartlirc/Makefile                            |   1 +
+ converters/wkhtmltopdf/Makefile                    |   1 -
+ ...webkit__Source__JavaScriptCore__wtf__Platform.h |  12 +
+ databases/Makefile                                 |   1 +
+ databases/courier-authlib-sqlite/Makefile          |  12 +
+ databases/libgda5-postgresql/Makefile              |   2 +-
+ databases/libgda5-ui/pkg-plist                     |   5 +
+ databases/libgda5/Makefile                         |   4 +-
+ databases/libgda5/distinfo                         |   6 +-
+ databases/libgda5/files/patch-fix-crash            |  21 -
+ ...ibgda_sqlite_virtual_gda-vprovider-data-model.c |  19 -
+ databases/tarantool/Makefile                       |   1 +
+ devel/Makefile                                     |   2 +
+ devel/R-cran-lubridate/Makefile                    |   2 +-
+ devel/R-cran-lubridate/distinfo                    |   6 +-
+ devel/bitkeeper/Makefile                           |   2 +
+ devel/gnome-builder/Makefile                       |   6 +-
+ devel/gnome-builder/distinfo                       |   6 +-
+ devel/gnome-builder/pkg-plist                      | 557 +++++++++++----------
+ devel/google-perftools/Makefile                    |   2 +
+ devel/gradle-completion/Makefile                   |  32 ++
+ devel/gradle-completion/distinfo                   |   3 +
+ devel/gradle-completion/pkg-descr                  |  12 +
+ devel/gradle/Makefile                              |   2 +-
+ devel/gradle/distinfo                              |   6 +-
+ devel/packr/Makefile                               |   4 +-
+ devel/packr/distinfo                               |  10 +-
+ devel/pcre/Makefile                                |   2 +-
+ devel/performance/Makefile                         |   1 +
+ devel/py-doctest-ignore-unicode/Makefile           |  19 +
+ devel/py-doctest-ignore-unicode/distinfo           |   3 +
+ devel/py-doctest-ignore-unicode/pkg-descr          |   4 +
+ devel/py-hypothesmith/Makefile                     |   2 +-
+ devel/py-hypothesmith/distinfo                     |   6 +-
+ devel/py-tables/Makefile                           |   4 +-
+ devel/sope2/Makefile                               |   1 +
+ devel/sope4/Makefile                               |   1 +
+ devel/tinygo/Makefile                              |   3 +-
+ devel/tinygo/files/patch-Makefile                  |  22 +-
+ dns/dnsutl/Makefile                                |   1 +
+ editors/apel/Makefile                              |   6 +-
+ editors/apel/distinfo                              |   6 +-
+ editors/apel/pkg-plist                             |   1 -
+ editors/flim/Makefile                              |  10 +-
+ editors/flim/distinfo                              |   6 +-
+ editors/flim/files/patch-mime-en.texi              |  11 -
+ editors/flim/files/patch-mime-ja.texi              |  11 -
+ editors/flim/pkg-plist                             |  21 -
+ editors/semi/Makefile                              |  12 +-
+ editors/semi/distinfo                              |   6 +-
+ editors/semi/files/patch-mime-ui-ja.texi           |  10 -
+ editors/semi/pkg-plist                             |   4 -
+ games/minecraft-server/Makefile                    |   4 +-
+ games/minecraft-server/distinfo                    |   6 +-
+ graphics/gthumb/Makefile                           |   3 +-
+ graphics/gthumb/distinfo                           |   6 +-
+ graphics/gthumb/pkg-plist                          | 125 +++--
+ graphics/krita/Makefile                            |   2 +-
+ graphics/urho3d/Makefile                           |   2 +
+ irc/ircd-hybrid/Makefile                           |   2 +-
+ irc/ircd-hybrid/distinfo                           |   6 +-
+ .../files/patch-ltsmaster_driver_targetmachine.cpp |  27 +
+ ...er_runtime_druntime_src_core_sys_posix_setjmp.d |  27 +
+ ..._runtime_druntime_src_core_sys_posix_ucontext.d |  41 ++
+ ...untime_phobos_std_internal_math_gammafunction.d |  22 +
+ lang/rust-nightly/Makefile                         |   2 +-
+ lang/rust-nightly/distinfo                         |  26 +-
+ lang/see/Makefile                                  |   2 +
+ lang/siod/Makefile                                 |   1 +
+ mail/dovecot-fts-xapian/Makefile                   |   5 +-
+ mail/dovecot-fts-xapian/distinfo                   |   6 +-
+ .../files/patch-src_fts-backend-xapian.cpp         |  13 -
+ mail/wanderlust/Makefile                           |   6 +-
+ mail/wanderlust/distinfo                           |   6 +-
+ mail/wanderlust/pkg-plist                          |   9 -
+ math/apron/Makefile                                |   2 +
+ math/labplot/Makefile                              |   3 +-
+ math/labplot/distinfo                              |   6 +-
+ math/labplot/files/patch-git_4255438c              |  76 ---
+ math/labplot/pkg-plist                             |   4 +-
+ math/ogdf/Makefile                                 |   3 +
+ misc/dynomite/Makefile                             |   2 +
+ multimedia/ffmpeg/Makefile                         |   6 +-
+ multimedia/libxine/Makefile                        |   4 +
+ multimedia/mencoder/Makefile                       |   4 +-
+ net-im/toxic/Makefile                              |   2 +-
+ net-im/toxic/distinfo                              |   6 +-
+ net-mgmt/net-snmp/Makefile                         |   1 +
+ ...gent_mibgroup_hardware_memory_memory__freebsd.c |  11 +
+ net-p2p/xmrig/Makefile                             |   2 +-
+ net-p2p/xmrig/distinfo                             |   6 +-
+ net/ntopng/files/patch-configure.seed              |   9 +
+ ports-mgmt/modules2tuple/Makefile                  |   2 +-
+ ports-mgmt/modules2tuple/distinfo                  |   6 +-
+ security/botan2/Makefile                           |   2 +-
+ security/botan2/distinfo                           |   6 +-
+ security/botan2/files/patch-fix-link-paths         |  36 ++
+ security/courier-authlib/Makefile                  |  14 +-
+ security/courier-authlib/Makefile.dep              |   3 +
+ security/courier-authlib/Makefile.opt              |   4 +-
+ security/courier-authlib/files/patch-configure     |  71 ++-
+ security/courier-authlib/pkg-descr-sqlite          |   5 +
+ security/courier-authlib/pkg-plist-sqlite          |   7 +
+ security/ossec-hids-local/Makefile                 |   2 +
+ security/radamsa/Makefile                          |   6 +-
+ security/wazuh-agent/Makefile                      |   3 +-
+ sysutils/consolehm/Makefile                        |   2 +
+ sysutils/ctop/Makefile                             |   2 +-
+ sysutils/ctop/distinfo                             |   6 +-
+ sysutils/gnome-control-center/Makefile             |   8 +-
+ sysutils/gnome-control-center/distinfo             |   6 +-
+ sysutils/gnome-control-center/pkg-plist            |   1 +
+ sysutils/py-azure-cli-core/Makefile                |   2 +-
+ sysutils/py-azure-cli-core/distinfo                |   6 +-
+ sysutils/py-azure-cli/Makefile                     |   2 +-
+ sysutils/py-azure-cli/distinfo                     |   6 +-
+ sysutils/rovclock/Makefile                         |   2 +
+ sysutils/tracker/Makefile                          |   5 +
+ textproc/elasticsearch6/Makefile                   |   1 +
+ textproc/elasticsearch6/files/elasticsearch.in     |   6 +-
+ textproc/gspell/Makefile                           |   8 +-
+ textproc/gspell/distinfo                           |   6 +-
+ textproc/py-sphinx/Makefile                        |   2 +-
+ textproc/py-sphinx/distinfo                        |   6 +-
+ www/gobuffalo/Makefile                             |   2 +-
+ www/gobuffalo/distinfo                             |   6 +-
+ www/pecl-solr/Makefile                             |   3 +-
+ www/pecl-solr/distinfo                             |   6 +-
+ www/pecl-solr/files/patch-src_php7_solr__types.h   |  11 -
+ www/py-multidict/Makefile                          |   2 +-
+ www/py-multidict/distinfo                          |   6 +-
+ www/w3m/Makefile                                   |  12 +-
+ www/w3m/distinfo                                   |   6 +-
+ .../files/patch-scripts_w3mman_w3mman2html.cgi.in  |  11 -
+ www/webkit2-gtk3/Makefile                          |   2 +-
+ .../files/patch-Source-cmake-OptionsCommon.cmake   |  11 +
+ x11-toolkits/tepl/Makefile                         |   3 +-
+ x11-toolkits/tepl/distinfo                         |   6 +-
+ x11-toolkits/tepl/pkg-plist                        |   2 +
+ x11-wm/xfce4-wm/Makefile                           |   1 +
+ x11-wm/xfce4-wm/files/patch-XKillClient-XError     |  24 +
+ x11/gnome-desktop/Makefile                         |   2 +-
+ x11/gnome-desktop/distinfo                         |   6 +-
+ x11/gnome-desktop/pkg-plist                        |   2 +-
+ x11/mlterm/Makefile                                |   2 +-
+ x11/mlterm/distinfo                                |   6 +-
+ 147 files changed, 1020 insertions(+), 768 deletions(-)
+ create mode 100644 converters/wkhtmltopdf/files/patch-src__3rdparty__webkit__Source__JavaScriptCore__wtf__Platform.h
+ create mode 100644 databases/courier-authlib-sqlite/Makefile
+ delete mode 100644 databases/libgda5/files/patch-fix-crash
+ delete mode 100644 databases/libgda5/files/patch-libgda_sqlite_virtual_gda-vprovider-data-model.c
+ create mode 100644 devel/gradle-completion/Makefile
+ create mode 100644 devel/gradle-completion/distinfo
+ create mode 100644 devel/gradle-completion/pkg-descr
+ create mode 100644 devel/py-doctest-ignore-unicode/Makefile
+ create mode 100644 devel/py-doctest-ignore-unicode/distinfo
+ create mode 100644 devel/py-doctest-ignore-unicode/pkg-descr
+ delete mode 100644 editors/flim/files/patch-mime-en.texi
+ delete mode 100644 editors/flim/files/patch-mime-ja.texi
+ delete mode 100644 editors/semi/files/patch-mime-ui-ja.texi
+ create mode 100644 lang/ldc/files/patch-ltsmaster_driver_targetmachine.cpp
+ create mode 100644 lang/ldc/files/patch-ltsmaster_runtime_druntime_src_core_sys_posix_setjmp.d
+ create mode 100644 lang/ldc/files/patch-ltsmaster_runtime_druntime_src_core_sys_posix_ucontext.d
+ create mode 100644 lang/ldc/files/patch-ltsmaster_runtime_phobos_std_internal_math_gammafunction.d
+ delete mode 100644 mail/dovecot-fts-xapian/files/patch-src_fts-backend-xapian.cpp
+ delete mode 100644 math/labplot/files/patch-git_4255438c
+ create mode 100644 net-mgmt/net-snmp/files/patch-agent_mibgroup_hardware_memory_memory__freebsd.c
+ create mode 100644 security/botan2/files/patch-fix-link-paths
+ create mode 100644 security/courier-authlib/pkg-descr-sqlite
+ create mode 100644 security/courier-authlib/pkg-plist-sqlite
+ delete mode 100644 www/pecl-solr/files/patch-src_php7_solr__types.h
+ delete mode 100644 www/w3m/files/patch-scripts_w3mman_w3mman2html.cgi.in
+ create mode 100644 www/webkit2-gtk3/files/patch-Source-cmake-OptionsCommon.cmake
+ create mode 100644 x11-wm/xfce4-wm/files/patch-XKillClient-XError
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
