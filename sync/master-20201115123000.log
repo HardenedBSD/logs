@@ -47,3 +47,247 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/w3m/files/patch-scripts_w3mman_w3mman2html.cgi.in
+Auto-merging www/w3m/Makefile
+Removing www/pecl-solr/files/patch-src_php7_solr__types.h
+Auto-merging sysutils/tracker/Makefile
+Auto-merging multimedia/ffmpeg/Makefile
+Removing math/labplot/files/patch-git_4255438c
+Removing mail/dovecot-fts-xapian/files/patch-src_fts-backend-xapian.cpp
+Removing editors/semi/files/patch-mime-ui-ja.texi
+Removing editors/flim/files/patch-mime-ja.texi
+Removing editors/flim/files/patch-mime-en.texi
+Auto-merging devel/pcre/Makefile
+CONFLICT (content): Merge conflict in devel/pcre/Makefile
+Auto-merging databases/tarantool/Makefile
+Removing databases/libgda5/files/patch-libgda_sqlite_virtual_gda-vprovider-data-model.c
+Removing databases/libgda5/files/patch-fix-crash
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/pcre/Makefile
+index f9b74ae0e4d5,d992fe0d6307..000000000000
+--- a/devel/pcre/Makefile
++++ b/devel/pcre/Makefile
+@@@ -84,7 -83,7 +84,11 @@@ CONFIGURE_ARGS+=	--with-parens-nest-lim
+  CONFIGURE_ARGS+=	--with-posix-malloc-threshold=${WITH_POSIX_MALLOC_THRESHOLD}
+  .endif
+  
+++<<<<<<< HEAD
+ +.if ${ARCH} != "sparc64" && empty(ARCH:Mmips64*) && defined(JIT)
+++=======
++ .if ${ARCH} != "sparc64" && empty(ARCH:Mmips64*) && empty(ARCH:Mriscv64*)
+++>>>>>>> freebsd/master
+  CONFIGURE_ARGS+=	--enable-jit
+  .else
+  CONFIGURE_ARGS+=	--disable-jit
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   astro/opencpn/Makefile
+	modified:   comms/uartlirc/Makefile
+	modified:   converters/wkhtmltopdf/Makefile
+	new file:   converters/wkhtmltopdf/files/patch-src__3rdparty__webkit__Source__JavaScriptCore__wtf__Platform.h
+	modified:   databases/Makefile
+	new file:   databases/courier-authlib-sqlite/Makefile
+	modified:   databases/libgda5-postgresql/Makefile
+	modified:   databases/libgda5-ui/pkg-plist
+	modified:   databases/libgda5/Makefile
+	modified:   databases/libgda5/distinfo
+	deleted:    databases/libgda5/files/patch-fix-crash
+	deleted:    databases/libgda5/files/patch-libgda_sqlite_virtual_gda-vprovider-data-model.c
+	modified:   databases/tarantool/Makefile
+	modified:   devel/Makefile
+	modified:   devel/R-cran-lubridate/Makefile
+	modified:   devel/R-cran-lubridate/distinfo
+	modified:   devel/bitkeeper/Makefile
+	modified:   devel/gnome-builder/Makefile
+	modified:   devel/gnome-builder/distinfo
+	modified:   devel/gnome-builder/pkg-plist
+	modified:   devel/google-perftools/Makefile
+	new file:   devel/gradle-completion/Makefile
+	new file:   devel/gradle-completion/distinfo
+	new file:   devel/gradle-completion/pkg-descr
+	modified:   devel/gradle/Makefile
+	modified:   devel/gradle/distinfo
+	modified:   devel/packr/Makefile
+	modified:   devel/packr/distinfo
+	modified:   devel/performance/Makefile
+	new file:   devel/py-doctest-ignore-unicode/Makefile
+	new file:   devel/py-doctest-ignore-unicode/distinfo
+	new file:   devel/py-doctest-ignore-unicode/pkg-descr
+	modified:   devel/py-hypothesmith/Makefile
+	modified:   devel/py-hypothesmith/distinfo
+	modified:   devel/py-tables/Makefile
+	modified:   devel/sope2/Makefile
+	modified:   devel/sope4/Makefile
+	modified:   devel/tinygo/Makefile
+	modified:   devel/tinygo/files/patch-Makefile
+	modified:   dns/dnsutl/Makefile
+	modified:   editors/apel/Makefile
+	modified:   editors/apel/distinfo
+	modified:   editors/apel/pkg-plist
+	modified:   editors/flim/Makefile
+	modified:   editors/flim/distinfo
+	deleted:    editors/flim/files/patch-mime-en.texi
+	deleted:    editors/flim/files/patch-mime-ja.texi
+	modified:   editors/flim/pkg-plist
+	modified:   editors/semi/Makefile
+	modified:   editors/semi/distinfo
+	deleted:    editors/semi/files/patch-mime-ui-ja.texi
+	modified:   editors/semi/pkg-plist
+	modified:   games/minecraft-server/Makefile
+	modified:   games/minecraft-server/distinfo
+	modified:   graphics/gthumb/Makefile
+	modified:   graphics/gthumb/distinfo
+	modified:   graphics/gthumb/pkg-plist
+	modified:   graphics/krita/Makefile
+	modified:   graphics/urho3d/Makefile
+	modified:   irc/ircd-hybrid/Makefile
+	modified:   irc/ircd-hybrid/distinfo
+	new file:   lang/ldc/files/patch-ltsmaster_driver_targetmachine.cpp
+	new file:   lang/ldc/files/patch-ltsmaster_runtime_druntime_src_core_sys_posix_setjmp.d
+	new file:   lang/ldc/files/patch-ltsmaster_runtime_druntime_src_core_sys_posix_ucontext.d
+	new file:   lang/ldc/files/patch-ltsmaster_runtime_phobos_std_internal_math_gammafunction.d
+	modified:   lang/rust-nightly/Makefile
+	modified:   lang/rust-nightly/distinfo
+	modified:   lang/see/Makefile
+	modified:   lang/siod/Makefile
+	modified:   mail/dovecot-fts-xapian/Makefile
+	modified:   mail/dovecot-fts-xapian/distinfo
+	deleted:    mail/dovecot-fts-xapian/files/patch-src_fts-backend-xapian.cpp
+	modified:   mail/wanderlust/Makefile
+	modified:   mail/wanderlust/distinfo
+	modified:   mail/wanderlust/pkg-plist
+	modified:   math/apron/Makefile
+	modified:   math/labplot/Makefile
+	modified:   math/labplot/distinfo
+	deleted:    math/labplot/files/patch-git_4255438c
+	modified:   math/labplot/pkg-plist
+	modified:   math/ogdf/Makefile
+	modified:   misc/dynomite/Makefile
+	modified:   multimedia/ffmpeg/Makefile
+	modified:   multimedia/libxine/Makefile
+	modified:   multimedia/mencoder/Makefile
+	modified:   net-im/toxic/Makefile
+	modified:   net-im/toxic/distinfo
+	modified:   net-mgmt/net-snmp/Makefile
+	new file:   net-mgmt/net-snmp/files/patch-agent_mibgroup_hardware_memory_memory__freebsd.c
+	modified:   net-p2p/xmrig/Makefile
+	modified:   net-p2p/xmrig/distinfo
+	modified:   net/ntopng/files/patch-configure.seed
+	modified:   ports-mgmt/modules2tuple/Makefile
+	modified:   ports-mgmt/modules2tuple/distinfo
+	modified:   security/botan2/Makefile
+	modified:   security/botan2/distinfo
+	new file:   security/botan2/files/patch-fix-link-paths
+	modified:   security/courier-authlib/Makefile
+	modified:   security/courier-authlib/Makefile.dep
+	modified:   security/courier-authlib/Makefile.opt
+	modified:   security/courier-authlib/files/patch-configure
+	new file:   security/courier-authlib/pkg-descr-sqlite
+	new file:   security/courier-authlib/pkg-plist-sqlite
+	modified:   security/ossec-hids-local/Makefile
+	modified:   security/radamsa/Makefile
+	modified:   security/wazuh-agent/Makefile
+	modified:   sysutils/consolehm/Makefile
+	modified:   sysutils/ctop/Makefile
+	modified:   sysutils/ctop/distinfo
+	modified:   sysutils/gnome-control-center/Makefile
+	modified:   sysutils/gnome-control-center/distinfo
+	modified:   sysutils/gnome-control-center/pkg-plist
+	modified:   sysutils/py-azure-cli-core/Makefile
+	modified:   sysutils/py-azure-cli-core/distinfo
+	modified:   sysutils/py-azure-cli/Makefile
+	modified:   sysutils/py-azure-cli/distinfo
+	modified:   sysutils/rovclock/Makefile
+	modified:   sysutils/tracker/Makefile
+	modified:   textproc/elasticsearch6/Makefile
+	modified:   textproc/elasticsearch6/files/elasticsearch.in
+	modified:   textproc/gspell/Makefile
+	modified:   textproc/gspell/distinfo
+	modified:   textproc/py-sphinx/Makefile
+	modified:   textproc/py-sphinx/distinfo
+	modified:   www/gobuffalo/Makefile
+	modified:   www/gobuffalo/distinfo
+	modified:   www/pecl-solr/Makefile
+	modified:   www/pecl-solr/distinfo
+	deleted:    www/pecl-solr/files/patch-src_php7_solr__types.h
+	modified:   www/py-multidict/Makefile
+	modified:   www/py-multidict/distinfo
+	modified:   www/w3m/Makefile
+	modified:   www/w3m/distinfo
+	deleted:    www/w3m/files/patch-scripts_w3mman_w3mman2html.cgi.in
+	modified:   www/webkit2-gtk3/Makefile
+	new file:   www/webkit2-gtk3/files/patch-Source-cmake-OptionsCommon.cmake
+	modified:   x11-toolkits/tepl/Makefile
+	modified:   x11-toolkits/tepl/distinfo
+	modified:   x11-toolkits/tepl/pkg-plist
+	modified:   x11-wm/xfce4-wm/Makefile
+	new file:   x11-wm/xfce4-wm/files/patch-XKillClient-XError
+	modified:   x11/gnome-desktop/Makefile
+	modified:   x11/gnome-desktop/distinfo
+	modified:   x11/gnome-desktop/pkg-plist
+	modified:   x11/mlterm/Makefile
+	modified:   x11/mlterm/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/pcre/Makefile
+
+
+It took 3.34 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 9ab8e1e0d2b2 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.29 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 9ab8e1e0d2b2 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
