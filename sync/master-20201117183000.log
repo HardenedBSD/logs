@@ -47,3 +47,248 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/sssd/files/patch-src_external_pac__responder.m4
+Removing security/sssd/files/patch-src__util__sss_ldap.c
+Removing security/sssd/files/patch-src__util__signal.c
+Removing security/sssd/files/patch-src-monitor-monitor.c
+Removing net-mgmt/cnagios4/pkg-plist
+Removing net-mgmt/cnagios4/pkg-descr
+Removing net-mgmt/cnagios4/files/patch-Makefile.in
+Removing net-mgmt/cnagios4/distinfo
+Removing net-mgmt/cnagios4/Makefile
+Removing math/hs-penrose/files/patch-hmatrix-0.20.0.0_hmatrix.cabal
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ audio/lsp-plugins-lv2/Makefile                     |   4 +-
+ cad/verilator/Makefile                             |   2 +-
+ cad/verilator/distinfo                             |   6 +-
+ converters/bsdconv/Makefile                        |   3 +-
+ converters/bsdconv/distinfo                        |   6 +-
+ converters/bsdconv/pkg-plist                       | 196 ++++++++---------
+ converters/php-bsdconv/Makefile                    |   2 +-
+ converters/php-bsdconv/distinfo                    |   6 +-
+ databases/cassandra3/Makefile                      |  74 ++++---
+ databases/cassandra3/distinfo                      |  10 +-
+ databases/cassandra3/files/patch-bin_cassandra     |   6 +-
+ databases/cassandra3/files/patch-build.xml         |  32 ++-
+ databases/cassandra3/files/patch-doc_Makefile      |  11 +-
+ .../patch-doc_source___templates_indexcontent.html |  17 ++
+ .../files/patch-doc_source___util_cql.py           |  10 +
+ .../files/patch-pylib_cassandra-cqlsh-tests.sh     |  44 ++++
+ databases/cassandra3/pkg-plist                     |  11 +-
+ databases/cego/Makefile                            |   2 +-
+ databases/cego/distinfo                            |   6 +-
+ devel/Makefile                                     |   1 +
+ devel/libibuddy/Makefile                           |  22 ++
+ devel/libibuddy/distinfo                           |   3 +
+ devel/libibuddy/pkg-descr                          |   9 +
+ graphics/exifprobe/Makefile                        |   2 +
+ lang/rexx-imc/Makefile                             |   4 +-
+ lang/rexx-imc/files/patch-Makefile.REXXimc         |   9 +
+ math/blacs/Makefile                                |   5 +
+ math/cadabra2/Makefile                             |   2 +-
+ math/cadabra2/distinfo                             |   6 +-
+ math/cadabra2/pkg-plist                            |   2 +
+ math/coinmumps/Makefile                            |  10 +-
+ math/gotoblas/Makefile                             |   4 +
+ math/hs-penrose/Makefile                           |   4 +-
+ math/hs-penrose/distinfo                           |   6 +-
+ .../files/patch-hmatrix-0.20.0.0_hmatrix.cabal     |  10 -
+ math/ipopt/Makefile                                |   7 +
+ math/mumps4/Makefile                               |   5 +
+ math/py-CyLP/Makefile                              |   5 +-
+ math/py-CyLP/distinfo                              |   6 +-
+ math/scalapack/Makefile                            |   5 +
+ math/sdpa/Makefile                                 |   9 +-
+ multimedia/mpvpaper/Makefile                       |   2 +-
+ net-mgmt/cnagios/Makefile                          |  14 +-
+ net-mgmt/cnagios/distinfo                          |   5 +-
+ net-mgmt/cnagios/pkg-descr                         |   9 +
+ net-mgmt/cnagios4/Makefile                         |  36 ----
+ net-mgmt/cnagios4/distinfo                         |   3 -
+ net-mgmt/cnagios4/files/patch-Makefile.in          |  47 -----
+ net-mgmt/cnagios4/pkg-descr                        |   8 -
+ net-mgmt/cnagios4/pkg-plist                        |   5 -
+ science/berkeleygw/Makefile                        |   8 +-
+ science/dftbplus/Makefile                          |  10 +-
+ science/dlpoly-classic/Makefile                    |   8 +-
+ science/elk/Makefile                               |  13 +-
+ science/elk/files/make.inc.in                      |   2 +-
+ science/hdf/Makefile                               |  14 +-
+ science/latte/Makefile                             |   8 +
+ science/mbdyn/Makefile                             |  10 +-
+ science/mdynamix/Makefile                          |   8 +
+ science/octopus/Makefile                           |  10 +-
+ science/siesta/Makefile                            |   9 +-
+ security/sssd/Makefile                             |  66 +++---
+ security/sssd/distinfo                             |   5 +-
+ security/sssd/files/patch-Makefile.am              | 233 ++++++++++++++++++---
+ security/sssd/files/patch-configure.ac             |  25 +--
+ security/sssd/files/patch-src-monitor-monitor.c    |  26 ---
+ security/sssd/files/patch-src__confdb__confdb.c    |   4 +-
+ .../sssd/files/patch-src__external__inotify.m4     |   4 +-
+ security/sssd/files/patch-src__external__krb5.m4   |   8 +-
+ security/sssd/files/patch-src__external__ldap.m4   |  24 +++
+ .../files/patch-src__external__pac_responder.m4    |  13 ++
+ ...rc__lib__winbind_idmap_sss__winbind_idmap_sss.h |  13 ++
+ .../files/patch-src__providers__ad__ad_common.c    |  31 +++
+ .../sssd/files/patch-src__providers__ad__ad_pac.h  |  13 ++
+ .../files/patch-src__providers__data_provider_fo.c |  26 +++
+ .../files/patch-src__providers__ipa__ipa_common.c  |  30 +++
+ ...c__providers__ipa__ipa_deskprofile_rules_util.c |  13 ++
+ ...ers__krb5__krb5_delayed_online_authentication.c |   8 +-
+ .../files/patch-src__providers__ldap__ldap_auth.c  | 152 ++++++++++----
+ .../files/patch-src__providers__ldap__ldap_child.c |  22 ++
+ .../patch-src__providers__ldap__sdap_access.c      |  42 ++--
+ ...patch-src__providers__ldap__sdap_async_groups.c |  22 ++
+ ...h-src__providers__ldap__sdap_async_initgroups.c |  41 ++++
+ ...rc__providers__ldap__sdap_async_initgroups_ad.c |  22 ++
+ ...rc__providers__ldap__sdap_async_sudo_hostinfo.c |  30 +++
+ .../patch-src__providers__ldap__sdap_async_users.c |  48 +++++
+ .../files/patch-src__resolv__async_resolv_utils.c  |  30 +++
+ security/sssd/files/patch-src__sbus__sbus_codegen  |  10 +
+ .../sssd/files/patch-src__sss_client__common.c     |  63 +++---
+ .../sssd/files/patch-src__sss_client__nss_group.c  |   6 +-
+ .../sssd/files/patch-src__sss_client__pam_sss.c    |  16 ++
+ .../files/patch-src__sss_client__sss_nss.exports   |  11 +-
+ .../files/patch-src__tests__cmocka__test_authtok.c |  12 ++
+ .../files/patch-src__tests__cmocka__test_pam_srv.c |  13 ++
+ ...atch-src__tests__cwrap__test_responder_common.c |  18 ++
+ .../files/patch-src__tests__cwrap__test_server.c   |  12 ++
+ .../sssd/files/patch-src__tests__dlopen-tests.c    |  22 ++
+ ...__util__crypto__libcrypto__crypto_sha512crypt.c |  13 +-
+ ...patch-src__util__crypto__nss__nss_sha512crypt.c |   4 +-
+ security/sssd/files/patch-src__util__find_uid.c    |  12 +-
+ security/sssd/files/patch-src__util__nss_dl_load.c |  30 +++
+ security/sssd/files/patch-src__util__server.c      |   8 +-
+ security/sssd/files/patch-src__util__signal.c      |  71 -------
+ security/sssd/files/patch-src__util__sss_endian.h  |  23 ++
+ security/sssd/files/patch-src__util__sss_krb5.c    |  12 ++
+ security/sssd/files/patch-src__util__sss_ldap.c    |  21 --
+ security/sssd/files/patch-src__util__sss_sockets.c |  45 ++++
+ security/sssd/files/patch-src__util__util.c        |  22 ++
+ security/sssd/files/patch-src__util__util.h        |  21 +-
+ .../files/patch-src_external_pac__responder.m4     |  25 ---
+ security/sssd/files/pkg-message.in                 |   8 +-
+ security/sssd/files/sssd.in                        |   3 +-
+ security/sssd/pkg-plist                            | 143 +++++++++----
+ textproc/py-sphinx/Makefile                        |   2 +-
+ textproc/py-sphinx/distinfo                        |   6 +-
+ www/py-freenit/Makefile                            |   2 +-
+ www/py-freenit/distinfo                            |   6 +-
+ www/ufdbguard/Makefile                             |  47 ++---
+ www/ufdbguard/distinfo                             |   6 +-
+ www/ufdbguard/files/patch-src_mtserver_Makefile.in |   6 +-
+ www/youtube_dl/Makefile                            |   2 +-
+ www/youtube_dl/distinfo                            |   6 +-
+ .../pangolin/files/patch-src_utils_file__utils.cpp |  10 +
+ x11-wm/i3-gaps/Makefile                            |  25 +--
+ x11-wm/i3-gaps/distinfo                            |   6 +-
+ x11-wm/i3-gaps/pkg-plist                           |  47 +++--
+ 127 files changed, 1778 insertions(+), 802 deletions(-)
+ create mode 100644 databases/cassandra3/files/patch-doc_source___templates_indexcontent.html
+ create mode 100644 databases/cassandra3/files/patch-doc_source___util_cql.py
+ create mode 100644 databases/cassandra3/files/patch-pylib_cassandra-cqlsh-tests.sh
+ create mode 100644 devel/libibuddy/Makefile
+ create mode 100644 devel/libibuddy/distinfo
+ create mode 100644 devel/libibuddy/pkg-descr
+ delete mode 100644 math/hs-penrose/files/patch-hmatrix-0.20.0.0_hmatrix.cabal
+ delete mode 100644 net-mgmt/cnagios4/Makefile
+ delete mode 100644 net-mgmt/cnagios4/distinfo
+ delete mode 100644 net-mgmt/cnagios4/files/patch-Makefile.in
+ delete mode 100644 net-mgmt/cnagios4/pkg-descr
+ delete mode 100644 net-mgmt/cnagios4/pkg-plist
+ delete mode 100644 security/sssd/files/patch-src-monitor-monitor.c
+ create mode 100644 security/sssd/files/patch-src__external__ldap.m4
+ create mode 100644 security/sssd/files/patch-src__external__pac_responder.m4
+ create mode 100644 security/sssd/files/patch-src__lib__winbind_idmap_sss__winbind_idmap_sss.h
+ create mode 100644 security/sssd/files/patch-src__providers__ad__ad_common.c
+ create mode 100644 security/sssd/files/patch-src__providers__ad__ad_pac.h
+ create mode 100644 security/sssd/files/patch-src__providers__data_provider_fo.c
+ create mode 100644 security/sssd/files/patch-src__providers__ipa__ipa_common.c
+ create mode 100644 security/sssd/files/patch-src__providers__ipa__ipa_deskprofile_rules_util.c
+ create mode 100644 security/sssd/files/patch-src__providers__ldap__ldap_child.c
+ create mode 100644 security/sssd/files/patch-src__providers__ldap__sdap_async_groups.c
+ create mode 100644 security/sssd/files/patch-src__providers__ldap__sdap_async_initgroups.c
+ create mode 100644 security/sssd/files/patch-src__providers__ldap__sdap_async_initgroups_ad.c
+ create mode 100644 security/sssd/files/patch-src__providers__ldap__sdap_async_sudo_hostinfo.c
+ create mode 100644 security/sssd/files/patch-src__providers__ldap__sdap_async_users.c
+ create mode 100644 security/sssd/files/patch-src__resolv__async_resolv_utils.c
+ create mode 100644 security/sssd/files/patch-src__sbus__sbus_codegen
+ create mode 100644 security/sssd/files/patch-src__sss_client__pam_sss.c
+ create mode 100644 security/sssd/files/patch-src__tests__cmocka__test_authtok.c
+ create mode 100644 security/sssd/files/patch-src__tests__cmocka__test_pam_srv.c
+ create mode 100644 security/sssd/files/patch-src__tests__cwrap__test_responder_common.c
+ create mode 100644 security/sssd/files/patch-src__tests__cwrap__test_server.c
+ create mode 100644 security/sssd/files/patch-src__tests__dlopen-tests.c
+ create mode 100644 security/sssd/files/patch-src__util__nss_dl_load.c
+ delete mode 100644 security/sssd/files/patch-src__util__signal.c
+ create mode 100644 security/sssd/files/patch-src__util__sss_endian.h
+ create mode 100644 security/sssd/files/patch-src__util__sss_krb5.c
+ delete mode 100644 security/sssd/files/patch-src__util__sss_ldap.c
+ create mode 100644 security/sssd/files/patch-src__util__sss_sockets.c
+ create mode 100644 security/sssd/files/patch-src__util__util.c
+ delete mode 100644 security/sssd/files/patch-src_external_pac__responder.m4
+ create mode 100644 x11-toolkits/pangolin/files/patch-src_utils_file__utils.cpp
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d0ffeeabd5a8..c0be988afae7  master -> master        
+remote:    db97b7a78c2b..d0ffeeabd5a8  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d0ffeeabd5a8..c0be988afae7  master -> master
+==== END: master ====
