@@ -1,0 +1,359 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 21 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 17b095c73867..aefe410c59c3
+Fast-forward
+ MOVED                                              |   1 +
+ Mk/bsd.gstreamer.mk                                |   4 +-
+ biology/ncbi-blast+/Makefile                       |   4 +-
+ biology/ncbi-blast+/distinfo                       |   6 +-
+ .../files/patch-src_build-system_configure         |  18 +-
+ biology/ncbi-blast+/pkg-plist                      |  27 +-
+ databases/cego/Makefile                            |   2 +-
+ databases/cego/distinfo                            |   6 +-
+ devel/Makefile                                     |   1 -
+ devel/py-utils/Makefile                            |  29 -
+ devel/py-utils/distinfo                            |   2 -
+ devel/py-utils/pkg-descr                           |  16 -
+ ftp/wget/Makefile                                  |  35 +-
+ games/dose-response/Makefile                       |   3 +-
+ games/lordsawar/Makefile                           |  15 +-
+ games/lordsawar/distinfo                           |   6 +-
+ games/lordsawar/files/patch-create-lw-file         |  11 +
+ games/lordsawar/files/patch-src_MapRenderer.cpp    |  11 -
+ games/lordsawar/files/patch-src__LocationList.h    |  17 -
+ games/lordsawar/files/patch-src__setlist.h         |  26 -
+ ...-src__armyproto.cpp => patch-src_armyproto.cpp} |  10 +-
+ games/lordsawar/files/patch-src_bigmap.cpp         |  42 -
+ games/lordsawar/files/patch-src_game-parameters.h  |  10 -
+ .../files/patch-src_gui_stack-army-button.cpp      |  11 -
+ games/lordsawar/pkg-plist                          |  45 +-
+ graphics/cimg/Makefile                             |   2 +-
+ graphics/cimg/distinfo                             |   6 +-
+ graphics/hugin/Makefile                            |   3 +-
+ graphics/librasterlite/Makefile                    |   3 +-
+ graphics/librasterlite2/Makefile                   |   3 +-
+ graphics/libreatlas/Makefile                       |   3 +-
+ graphics/mapcache/Makefile                         |   2 +-
+ graphics/proj/Makefile                             |   4 +-
+ multimedia/gstreamermm/Makefile                    |  15 +-
+ multimedia/gstreamermm/distinfo                    |   5 +-
+ multimedia/gstreamermm/pkg-plist                   | 604 +++++++-------
+ security/openssh-portable/Makefile                 |  11 +-
+ security/openssh-portable/distinfo                 |  10 +-
+ security/openssh-portable/files/extra-patch-hpn    |  53 +-
+ security/openssh-portable/files/extra-patch-sctp   | 873 ---------------------
+ security/openssh-portable/files/patch-auth2.c      |  37 +-
+ security/openssh-portable/files/patch-configure.ac |  11 -
+ security/openssh-portable/files/patch-serverloop.c |  47 +-
+ security/openssh-portable/files/patch-ssh-agent.c  |  30 +-
+ security/openssh-portable/files/patch-ssh_config.5 |  17 +-
+ security/openssh-portable/files/patch-sshconnect.c |  13 -
+ sysutils/cbsd/Makefile                             |   2 +-
+ sysutils/cbsd/distinfo                             |   6 +-
+ sysutils/goaccess/Makefile                         |   3 +-
+ sysutils/goaccess/distinfo                         |   6 +-
+ sysutils/goaccess/files/patch-src_parser.c         |  10 -
+ sysutils/goaccess/pkg-plist                        |   2 +
+ textproc/expat2/Makefile                           |  18 +-
+ textproc/expat2/distinfo                           |   6 +-
+ textproc/expat2/pkg-plist                          |   2 +-
+ www/minio/Makefile                                 |   6 +-
+ www/minio/distinfo                                 |  10 +-
+ www/youtube_dl/Makefile                            |   2 +-
+ www/youtube_dl/distinfo                            |   6 +-
+ x11-themes/matcha-gtk-themes/Makefile              |   2 +-
+ x11-themes/matcha-gtk-themes/distinfo              |   6 +-
+ 61 files changed, 592 insertions(+), 1605 deletions(-)
+ delete mode 100644 devel/py-utils/Makefile
+ delete mode 100644 devel/py-utils/distinfo
+ delete mode 100644 devel/py-utils/pkg-descr
+ create mode 100644 games/lordsawar/files/patch-create-lw-file
+ delete mode 100644 games/lordsawar/files/patch-src_MapRenderer.cpp
+ delete mode 100644 games/lordsawar/files/patch-src__LocationList.h
+ delete mode 100644 games/lordsawar/files/patch-src__setlist.h
+ rename games/lordsawar/files/{patch-src__armyproto.cpp => patch-src_armyproto.cpp} (53%)
+ delete mode 100644 games/lordsawar/files/patch-src_bigmap.cpp
+ delete mode 100644 games/lordsawar/files/patch-src_game-parameters.h
+ delete mode 100644 games/lordsawar/files/patch-src_gui_stack-army-button.cpp
+ delete mode 100644 security/openssh-portable/files/extra-patch-sctp
+ delete mode 100644 security/openssh-portable/files/patch-configure.ac
+ delete mode 100644 security/openssh-portable/files/patch-sshconnect.c
+ delete mode 100644 sysutils/goaccess/files/patch-src_parser.c
+==== merge branches ====
+==== merge github/master branch ====
+Updating aefe410c59c3..db97b7a78c2b
+Fast-forward
+ astro/merkaartor/Makefile                          |   2 +-
+ astro/qmapshack/Makefile                           |   2 +-
+ astro/siril/Makefile                               |   1 +
+ astro/siril/files/patch-Makefile.am                |  11 -
+ astro/siril/files/patch-meson.build                |  10 +
+ astro/siril/pkg-descr                              |   2 +-
+ cad/sumo/Makefile                                  |   2 +-
+ converters/osm2pgsql/Makefile                      |   1 +
+ databases/grass7/Makefile                          |   1 +
+ databases/postgis24/Makefile                       |   2 +-
+ databases/postgis25/Makefile                       |   1 +
+ databases/postgis30/Makefile                       |   1 +
+ databases/py-python-arango/Makefile                |   8 +-
+ databases/py-python-arango/distinfo                |   6 +-
+ databases/spatialite-tools/Makefile                |   1 +
+ databases/spatialite/Makefile                      |   1 +
+ databases/timescaledb/Makefile                     |  11 +-
+ devel/libght/Makefile                              |   2 +-
+ devel/pcre2/Makefile                               |   5 +-
+ devel/py-oci/Makefile                              |   2 +-
+ devel/py-oci/distinfo                              |   6 +-
+ devel/rubygem-racc/Makefile                        |   2 +-
+ devel/rubygem-racc/distinfo                        |   6 +-
+ devel/xbyak/Makefile                               |   2 +-
+ devel/xbyak/distinfo                               |   6 +-
+ editors/libreoffice/files/patch-powerpc            |  14 +-
+ emulators/citra/Makefile                           |   6 +-
+ emulators/citra/distinfo                           |  10 +-
+ emulators/rpcs3/Makefile                           |   4 +-
+ emulators/rpcs3/distinfo                           |   6 +-
+ graphics/R-cran-rgdal/Makefile                     |   1 +
+ graphics/blender/Makefile                          |   9 +-
+ graphics/gdal/Makefile                             |   1 +
+ graphics/libgeotiff/Makefile                       |   1 +
+ graphics/librasterlite/Makefile                    |   2 +-
+ graphics/librasterlite2/Makefile                   |   2 +-
+ graphics/libreatlas/Makefile                       |   2 +-
+ graphics/mapserver/Makefile                        |   1 +
+ graphics/mesa-devel/Makefile                       |   4 +-
+ graphics/mesa-devel/distinfo                       |   6 +-
+ graphics/openorienteering-mapper/Makefile          |   1 +
+ graphics/openshadinglanguage/Makefile              |   9 +-
+ graphics/proj/Makefile                             |  23 +-
+ graphics/proj/distinfo                             |   8 +-
+ graphics/proj/files/pkg-message.in                 |  35 ++
+ graphics/proj/pkg-plist                            | 305 ++++++++++++++-
+ graphics/py-cartopy/Makefile                       |   1 +
+ graphics/py-pyproj/Makefile                        |   1 +
+ graphics/qgis-ltr/Makefile                         |   1 +
+ graphics/qgis/Makefile                             |   1 +
+ lang/fpc/Makefile                                  |   2 +-
+ lang/gcc9-devel/Makefile                           |   7 +-
+ lang/gcc9-devel/distinfo                           |   6 +-
+ mail/getmail6/Makefile                             |   2 +-
+ mail/getmail6/distinfo                             |   6 +-
+ mail/notmuch-emacs/Makefile                        |   2 +-
+ mail/notmuch/Makefile                              |   2 +-
+ mail/notmuch/distinfo                              |   6 +-
+ mail/thunderbird/Makefile                          |   4 +-
+ mail/thunderbird/distinfo                          |   6 +-
+ math/PDL/Makefile                                  |   2 +-
+ math/R-cran-sf/Makefile                            |   1 +
+ math/octave-forge-octproj/Makefile                 |   1 +
+ math/saga/Makefile                                 |   1 +
+ net-im/chatterino2/Makefile                        |   3 +-
+ .../files/patch-src_providers_ffz_FfzEmotes.cpp    |  11 +
+ net-mgmt/ipv6calc/Makefile                         |   3 +-
+ net-mgmt/ipv6calc/distinfo                         |   6 +-
+ net-p2p/bitcoin-daemon/Makefile                    |   2 +-
+ net-p2p/bitcoin/files/bitcoind.in                  |   3 +-
+ net/openbgpd/Makefile                              |   2 +
+ net/remmina-plugins/Makefile                       |   4 +-
+ net/remmina-plugins/distinfo                       |   6 +-
+ net/remmina/Makefile                               |   4 +-
+ net/remmina/distinfo                               |   6 +-
+ net/remmina/files/patch-27f84d1c.c                 |  23 --
+ net/remmina/pkg-plist                              |  15 +-
+ net/rubygem-serverengine/Makefile                  |   2 +-
+ net/rubygem-serverengine/distinfo                  |   6 +-
+ science/cdo/Makefile                               |   1 +
+ science/gnudatalanguage/Makefile                   |   2 +-
+ science/rubygem-rgeo-proj4/Makefile                |   1 +
+ security/openssh-portable/Makefile                 |  21 +-
+ .../openssh-portable/files/extra-patch-blacklistd  | 428 +++++++++++++++++++++
+ sysutils/duplicity/Makefile                        |   4 +-
+ sysutils/duplicity/distinfo                        |   6 +-
+ sysutils/fluent-bit/Makefile                       |   3 +-
+ .../files/patch-lib_flb__libco_settings.h          |  11 +
+ .../patch-lib_monkey_deps_flb__libco_settings.h    |  11 +
+ .../fluent-bit/files/patch-src_flb__scheduler.c    |  11 +
+ 90 files changed, 1013 insertions(+), 178 deletions(-)
+ delete mode 100644 astro/siril/files/patch-Makefile.am
+ create mode 100644 astro/siril/files/patch-meson.build
+ create mode 100644 graphics/proj/files/pkg-message.in
+ create mode 100644 net-im/chatterino2/files/patch-src_providers_ffz_FfzEmotes.cpp
+ delete mode 100644 net/remmina/files/patch-27f84d1c.c
+ create mode 100644 security/openssh-portable/files/extra-patch-blacklistd
+ create mode 100644 sysutils/fluent-bit/files/patch-lib_flb__libco_settings.h
+ create mode 100644 sysutils/fluent-bit/files/patch-lib_monkey_deps_flb__libco_settings.h
+ create mode 100644 sysutils/fluent-bit/files/patch-src_flb__scheduler.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    aefe410c59c3..db97b7a78c2b  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    17b095c73867..db97b7a78c2b  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   aefe410c59c3..db97b7a78c2b  master -> master
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/gnupg/files/patch-doc_Makefile.in
+Auto-merging security/gnupg/Makefile
+Removing net/3proxy/files/patch-Makefile.unix
+Auto-merging editors/libreoffice/Makefile
+Merge made by the 'recursive' strategy.
+ deskutils/virt-manager/Makefile                    |  3 +-
+ deskutils/virt-manager/distinfo                    |  6 +--
+ devel/py-asn1crypto/Makefile                       |  2 +-
+ devel/py-asn1crypto/distinfo                       |  6 +--
+ devel/sonarqube-community/Makefile                 |  4 +-
+ devel/sonarqube-community/distinfo                 |  6 +--
+ editors/libreoffice/Makefile                       |  2 +-
+ editors/py-pynvim/Makefile                         |  2 +-
+ editors/py-pynvim/distinfo                         |  6 +--
+ graphics/darktable/Makefile                        |  4 +-
+ .../patch-src_external_OpenCL_CL_cl__platform.h    | 13 +++++
+ lang/erlang-runtime23/Makefile                     |  2 +-
+ lang/erlang-runtime23/distinfo                     |  6 +--
+ math/R-cran-raster/Makefile                        |  2 +-
+ math/R-cran-raster/distinfo                        |  6 +--
+ net/3proxy/Makefile                                | 10 ++--
+ net/3proxy/distinfo                                |  6 +--
+ net/3proxy/files/patch-Makefile.FreeBSD            | 15 ++++++
+ net/3proxy/files/patch-Makefile.unix               | 26 ----------
+ net/3proxy/files/patch-cfg_3proxy.cfg.sample       |  4 +-
+ net/3proxy/files/patch-man                         | 60 +++++++++++-----------
+ net/3proxy/pkg-plist                               |  2 -
+ security/gnupg/Makefile                            |  4 +-
+ security/gnupg/distinfo                            |  6 +--
+ security/gnupg/files/patch-doc_Makefile.in         | 16 ------
+ security/gnupg/pkg-plist                           |  3 +-
+ security/wolfssl/Makefile                          |  6 +--
+ security/wolfssl/distinfo                          |  4 +-
+ sysutils/go-btfs/Makefile                          | 22 ++++----
+ sysutils/go-btfs/distinfo                          | 16 +++---
+ sysutils/quickjail/Makefile                        |  2 +-
+ textproc/sigil/Makefile                            |  2 +-
+ textproc/sigil/distinfo                            |  6 +--
+ textproc/sigil/pkg-plist                           |  4 ++
+ www/nextcloud-circles/Makefile                     |  2 +-
+ www/nextcloud-circles/distinfo                     |  6 +--
+ www/nextcloud-circles/pkg-plist                    | 58 ++++-----------------
+ www/nextcloud-deck/Makefile                        |  2 +-
+ www/nextcloud-deck/distinfo                        |  6 +--
+ www/nextcloud-deck/pkg-plist                       | 18 ++++---
+ www/rubygem-roda/Makefile                          |  2 +-
+ www/rubygem-roda/distinfo                          |  6 +--
+ www/uwsgi/Makefile                                 |  2 +-
+ www/uwsgi/distinfo                                 |  6 +--
+ 44 files changed, 174 insertions(+), 218 deletions(-)
+ create mode 100644 graphics/darktable/files/patch-src_external_OpenCL_CL_cl__platform.h
+ create mode 100644 net/3proxy/files/patch-Makefile.FreeBSD
+ delete mode 100644 net/3proxy/files/patch-Makefile.unix
+ delete mode 100644 security/gnupg/files/patch-doc_Makefile.in
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    db97b7a78c2b..d0ffeeabd5a8  master -> master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   db97b7a78c2b..d0ffeeabd5a8  master -> master
+==== END: master ====

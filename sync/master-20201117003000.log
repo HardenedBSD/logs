@@ -1,0 +1,214 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: Could not resolve hostname git-01.md.hardenedbsd.org: Name does not resolve
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 17b095c73867 HBSD: Resolve merge conflicts
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+ssh: Could not resolve hostname git-01.md.hardenedbsd.org: Name does not resolve
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 17b095c73867 HBSD: Resolve merge conflicts
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: Could not resolve hostname git-01.md.hardenedbsd.org: Name does not resolve
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 17b095c73867 HBSD: Resolve merge conflicts
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/goaccess/files/patch-src_parser.c
+Removing security/openssh-portable/files/patch-sshconnect.c
+Removing security/openssh-portable/files/patch-configure.ac
+Removing security/openssh-portable/files/extra-patch-sctp
+Auto-merging security/openssh-portable/Makefile
+Auto-merging graphics/cimg/Makefile
+Removing games/lordsawar/files/patch-src_gui_stack-army-button.cpp
+Removing games/lordsawar/files/patch-src_game-parameters.h
+Removing games/lordsawar/files/patch-src_bigmap.cpp
+Removing games/lordsawar/files/patch-src__setlist.h
+Removing games/lordsawar/files/patch-src__LocationList.h
+Removing games/lordsawar/files/patch-src_MapRenderer.cpp
+Auto-merging ftp/wget/Makefile
+CONFLICT (content): Merge conflict in ftp/wget/Makefile
+Removing devel/py-utils/pkg-descr
+Removing devel/py-utils/distinfo
+Removing devel/py-utils/Makefile
+Auto-merging biology/ncbi-blast+/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ftp/wget/Makefile
+index 22e5e392f9ee,e09b902f9846..000000000000
+--- a/ftp/wget/Makefile
++++ b/ftp/wget/Makefile
+@@@ -20,12 -21,11 +21,17 @@@ CPE_VENDOR=	gn
+  GNU_CONFIGURE=	yes
+  OPTIONS_SUB=	yes
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	cfi safestack
+ +
+ +OPTIONS_RADIO=	SSL
+++=======
++ OPTIONS_RADIO=	SSL PCRE
+++>>>>>>> freebsd/master
+  OPTIONS_RADIO_SSL=GNUTLS OPENSSL
+- OPTIONS_DEFINE=	DOCS IDN IPV6 MANPAGES METALINK NLS PCRE PSL
+- OPTIONS_DEFAULT=IDN MANPAGES OPENSSL
++ OPTIONS_RADIO_PCRE=PCRE1 PCRE2
++ OPTIONS_DEFINE=	DOCS IDN IPV6 MANPAGES METALINK NLS PSL NTLM
++ OPTIONS_DEFAULT=IDN MANPAGES OPENSSL NLS
+  
+  DOCS_DESC=	Install info page
+  DOCS_CONFIGURE_ENV=	MAKEINFO="${MAKEINFO}"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/bsd.gstreamer.mk
+	modified:   biology/ncbi-blast+/Makefile
+	modified:   biology/ncbi-blast+/distinfo
+	modified:   biology/ncbi-blast+/files/patch-src_build-system_configure
+	modified:   biology/ncbi-blast+/pkg-plist
+	modified:   databases/cego/Makefile
+	modified:   databases/cego/distinfo
+	modified:   devel/Makefile
+	deleted:    devel/py-utils/Makefile
+	deleted:    devel/py-utils/distinfo
+	deleted:    devel/py-utils/pkg-descr
+	modified:   games/dose-response/Makefile
+	modified:   games/lordsawar/Makefile
+	modified:   games/lordsawar/distinfo
+	new file:   games/lordsawar/files/patch-create-lw-file
+	deleted:    games/lordsawar/files/patch-src_MapRenderer.cpp
+	deleted:    games/lordsawar/files/patch-src__LocationList.h
+	deleted:    games/lordsawar/files/patch-src__setlist.h
+	renamed:    games/lordsawar/files/patch-src__armyproto.cpp -> games/lordsawar/files/patch-src_armyproto.cpp
+	deleted:    games/lordsawar/files/patch-src_bigmap.cpp
+	deleted:    games/lordsawar/files/patch-src_game-parameters.h
+	deleted:    games/lordsawar/files/patch-src_gui_stack-army-button.cpp
+	modified:   games/lordsawar/pkg-plist
+	modified:   graphics/cimg/Makefile
+	modified:   graphics/cimg/distinfo
+	modified:   graphics/hugin/Makefile
+	modified:   graphics/librasterlite/Makefile
+	modified:   graphics/librasterlite2/Makefile
+	modified:   graphics/libreatlas/Makefile
+	modified:   graphics/mapcache/Makefile
+	modified:   graphics/proj/Makefile
+	modified:   multimedia/gstreamermm/Makefile
+	modified:   multimedia/gstreamermm/distinfo
+	modified:   multimedia/gstreamermm/pkg-plist
+	modified:   security/openssh-portable/Makefile
+	modified:   security/openssh-portable/distinfo
+	modified:   security/openssh-portable/files/extra-patch-hpn
+	deleted:    security/openssh-portable/files/extra-patch-sctp
+	modified:   security/openssh-portable/files/patch-auth2.c
+	deleted:    security/openssh-portable/files/patch-configure.ac
+	modified:   security/openssh-portable/files/patch-serverloop.c
+	modified:   security/openssh-portable/files/patch-ssh-agent.c
+	modified:   security/openssh-portable/files/patch-ssh_config.5
+	deleted:    security/openssh-portable/files/patch-sshconnect.c
+	modified:   sysutils/cbsd/Makefile
+	modified:   sysutils/cbsd/distinfo
+	modified:   sysutils/goaccess/Makefile
+	modified:   sysutils/goaccess/distinfo
+	deleted:    sysutils/goaccess/files/patch-src_parser.c
+	modified:   sysutils/goaccess/pkg-plist
+	modified:   textproc/expat2/Makefile
+	modified:   textproc/expat2/distinfo
+	modified:   textproc/expat2/pkg-plist
+	modified:   www/minio/Makefile
+	modified:   www/minio/distinfo
+	modified:   www/youtube_dl/Makefile
+	modified:   www/youtube_dl/distinfo
+	modified:   x11-themes/matcha-gtk-themes/Makefile
+	modified:   x11-themes/matcha-gtk-themes/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ftp/wget/Makefile
+
+
+It took 3.28 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 17b095c73867 HBSD: Resolve merge conflicts
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.40 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 17b095c73867 HBSD: Resolve merge conflicts
+==== END: master ====
