@@ -1,0 +1,161 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 905b1e72ec2d..10dd999b1bce
+Fast-forward
+ cddl/contrib/opensolaris/common/ctf/ctf_create.c  |  23 +-
+ lib/libc/sys/_umtx_op.2                           |  23 +-
+ lib/libkvm/kvm_proc.c                             |   1 +
+ lib/libprocstat/libprocstat.c                     |  20 +-
+ lib/libthr/tests/Makefile                         |   2 +
+ lib/libthr/tests/umtx_op_test.c                   | 108 ++++
+ lib/msun/powerpc/fenv.h                           |   2 +-
+ sbin/nvmecontrol/firmware.c                       |  16 +-
+ sbin/nvmecontrol/modules/wdc/wdc.c                |  16 +-
+ share/man/man4/unix.4                             |  37 +-
+ share/man/man4/uplcom.4                           |   4 +
+ sys/amd64/linux/linux_proto.h                     |  10 +-
+ sys/amd64/linux/linux_sysent.c                    |   4 +-
+ sys/amd64/linux/linux_systrace_args.c             |  52 +-
+ sys/amd64/linux/syscalls.master                   |  14 +-
+ sys/amd64/linux32/linux32_proto.h                 |  10 +-
+ sys/amd64/linux32/linux32_sysent.c                |   4 +-
+ sys/amd64/linux32/linux32_systrace_args.c         |  52 +-
+ sys/amd64/linux32/syscalls.master                 |  14 +-
+ sys/arm/allwinner/clkng/ccu_a64.c                 |   2 +
+ sys/arm/allwinner/clkng/ccu_de2.c                 |  98 +++-
+ sys/arm64/arm64/gic_v3_acpi.c                     |  18 +-
+ sys/arm64/linux/linux_proto.h                     |  10 +-
+ sys/arm64/linux/linux_sysent.c                    |   4 +-
+ sys/arm64/linux/linux_systrace_args.c             |  52 +-
+ sys/arm64/linux/syscalls.master                   |  14 +-
+ sys/cddl/contrib/opensolaris/common/lz4/lz4.c     |   4 +-
+ sys/cddl/contrib/opensolaris/common/lz4/lz4.h     |   5 +
+ sys/compat/cloudabi/cloudabi_file.c               |   2 +-
+ sys/compat/freebsd32/freebsd32.h                  |  21 +
+ sys/compat/freebsd32/freebsd32_misc.c             |   9 +
+ sys/compat/linprocfs/linprocfs.c                  | 206 +++++--
+ sys/compat/linux/linux_dummy.c                    |   2 -
+ sys/compat/linux/linux_file.c                     | 116 +++-
+ sys/compat/linux/linux_file.h                     |   7 +
+ sys/compat/linux/linux_fork.c                     |  18 +-
+ sys/compat/linux/linux_socket.c                   |  13 +
+ sys/contrib/vchiq/interface/compat/vchi_bsd.c     |  18 +-
+ sys/contrib/vchiq/interface/compat/vchi_bsd.h     |  12 +-
+ sys/contrib/vchiq/interface/vchiq_arm/vchiq_arm.c |   8 +-
+ sys/dev/extres/syscon/syscon.c                    |  15 +
+ sys/dev/extres/syscon/syscon.h                    |   1 +
+ sys/dev/usb/serial/uplcom.c                       |   1 +
+ sys/dev/usb/usbdevs                               |   1 +
+ sys/fs/fuse/fuse_internal.c                       |   2 +-
+ sys/fs/fuse/fuse_vnops.c                          |   4 +-
+ sys/fs/unionfs/union_subr.c                       |   2 +-
+ sys/i386/linux/linux_proto.h                      |  10 +-
+ sys/i386/linux/linux_sysent.c                     |   4 +-
+ sys/i386/linux/linux_systrace_args.c              |  52 +-
+ sys/i386/linux/syscalls.master                    |  14 +-
+ sys/kern/imgact_elf.c                             |   6 +-
+ sys/kern/init_main.c                              |   1 +
+ sys/kern/kern_cpuset.c                            |   4 +-
+ sys/kern/kern_descrip.c                           | 326 +++++++----
+ sys/kern/kern_exec.c                              |   1 +
+ sys/kern/kern_exit.c                              |   1 +
+ sys/kern/kern_fork.c                              |  19 +-
+ sys/kern/kern_proc.c                              |   9 +-
+ sys/kern/kern_thread.c                            |  20 +-
+ sys/kern/kern_umtx.c                              | 652 +++++++++-------------
+ sys/kern/subr_vmem.c                              |  12 +-
+ sys/kern/uipc_mqueue.c                            |   6 +-
+ sys/kern/uipc_sem.c                               |   6 +-
+ sys/kern/uipc_shm.c                               |   6 +-
+ sys/kern/uipc_usrreq.c                            |  61 +-
+ sys/kern/vfs_syscalls.c                           |  57 +-
+ sys/powerpc/aim/mmu_oea64.c                       |  11 +-
+ sys/powerpc/aim/mmu_radix.c                       |  11 +-
+ sys/powerpc/include/pmap.h                        |   1 +
+ sys/powerpc/powerpc/exec_machdep.c                |   7 +-
+ sys/powerpc/powerpc/pmap_dispatch.c               |   7 +
+ sys/sys/cpuset.h                                  |   8 +-
+ sys/sys/filedesc.h                                |  69 ++-
+ sys/sys/param.h                                   |   2 +-
+ sys/sys/proc.h                                    |   5 +-
+ sys/sys/socket.h                                  |  19 +-
+ sys/sys/syscallsubr.h                             |   6 +
+ sys/sys/umtx.h                                    |  17 +
+ sys/sys/user.h                                    |   3 +-
+ usr.bin/chpass/chpass.1                           |  66 ++-
+ usr.sbin/bhyve/Makefile                           |   1 +
+ usr.sbin/bhyve/bhyve.8                            |  11 +-
+ usr.sbin/bhyve/pci_lpc.c                          |  23 +
+ usr.sbin/bhyve/pctestdev.c                        | 270 +++++++++
+ usr.sbin/bhyve/pctestdev.h                        |  43 ++
+ 86 files changed, 2113 insertions(+), 811 deletions(-)
+ create mode 100644 lib/libthr/tests/umtx_op_test.c
+ create mode 100644 usr.sbin/bhyve/pctestdev.c
+ create mode 100644 usr.sbin/bhyve/pctestdev.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    905b1e72ec2d..10dd999b1bce  freebsd/current/master -> freebsd/current/master        
+remote:    d7a57b9fbb2c..fac0d06cf240  github/hardened/12-stable/master -> github/hardened/12-stable/master
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   905b1e72ec2d..10dd999b1bce  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
