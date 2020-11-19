@@ -1,0 +1,232 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 16 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=1&verb=git-upload-pack": read tcp 172.16.1.72:59338->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at e9f59fd7e1d9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.sbin/pkg/Makefile
+Auto-merging sys/vm/vm_phys.c
+Auto-merging sys/sys/jail.h
+CONFLICT (content): Merge conflict in sys/sys/jail.h
+Auto-merging sys/kern/kern_prot.c
+Auto-merging sys/kern/kern_priv.c
+Auto-merging sys/kern/kern_jail.c
+CONFLICT (content): Merge conflict in sys/kern/kern_jail.c
+Auto-merging sys/conf/options
+Auto-merging sys/conf/files.i386
+CONFLICT (content): Merge conflict in sys/conf/files.i386
+Auto-merging sys/conf/files
+Auto-merging sys/arm/arm/machdep.c
+Auto-merging sys/amd64/amd64/pmap.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/conf/files.i386
+index 559c8dd8d1f1,e668f9ff02d9..000000000000
+--- a/sys/conf/files.i386
++++ b/sys/conf/files.i386
+@@@ -211,7 -211,7 +211,11 @@@ i386/pci/pci_cfgreg.c		optional pc
+  i386/pci/pci_pir.c		optional pci
+  isa/syscons_isa.c		optional sc
+  isa/vga_isa.c			optional vga
+++<<<<<<< HEAD
+ +kern/kern_clocksource.c		standard
+++=======
++ kern/imgact_aout.c		optional compat_aout
+++>>>>>>> freebsd/current/master
+  kern/subr_sfbuf.c		standard
+  libkern/divdi3.c		standard
+  libkern/ffsll.c			standard
+diff --cc sys/kern/kern_jail.c
+index 49916afcb383,1bad2d7488c1..000000000000
+--- a/sys/kern/kern_jail.c
++++ b/sys/kern/kern_jail.c
+@@@ -201,14 -199,14 +201,22 @@@ static struct bool_flags pr_flag_allow[
+  	{"allow.read_msgbuf", "allow.noread_msgbuf", PR_ALLOW_READ_MSGBUF},
+  	{"allow.unprivileged_proc_debug", "allow.nounprivileged_proc_debug",
+  	 PR_ALLOW_UNPRIV_DEBUG},
+++<<<<<<< HEAD
+ +	{"allow.extattr", "allow.noextattr", PR_ALLOW_EXTATTR},
+++=======
++ 	{"allow.suser", "allow.nosuser", PR_ALLOW_SUSER},
+++>>>>>>> freebsd/current/master
+  };
+  const size_t pr_flag_allow_size = sizeof(pr_flag_allow);
+  
+  #define	JAIL_DEFAULT_ALLOW		(PR_ALLOW_SET_HOSTNAME | \
+  					 PR_ALLOW_RESERVED_PORTS | \
+  					 PR_ALLOW_UNPRIV_DEBUG | \
+++<<<<<<< HEAD
+ +					 PR_ALLOW_EXTATTR)
+++=======
++ 					 PR_ALLOW_SUSER)
+++>>>>>>> freebsd/current/master
+  #define	JAIL_DEFAULT_ENFORCE_STATFS	2
+  #define	JAIL_DEFAULT_DEVFS_RSNUM	0
+  static unsigned jail_default_allow = JAIL_DEFAULT_ALLOW;
+@@@ -3843,8 -3817,8 +3851,13 @@@ SYSCTL_JAIL_PARAM(_allow, read_msgbuf, 
+      "B", "Jail may read the kernel message buffer");
+  SYSCTL_JAIL_PARAM(_allow, unprivileged_proc_debug, CTLTYPE_INT | CTLFLAG_RW,
+      "B", "Unprivileged processes may use process debugging facilities");
+++<<<<<<< HEAD
+ +SYSCTL_JAIL_PARAM(_allow, extattr, CTLTYPE_INT | CTLFLAG_RW,
+ +    "B", "Jails may set system-level filesystem extended attributes");
+++=======
++ SYSCTL_JAIL_PARAM(_allow, suser, CTLTYPE_INT | CTLFLAG_RW,
++     "B", "Processes in jail with uid 0 have privilege");
+++>>>>>>> freebsd/current/master
+  
+  SYSCTL_JAIL_PARAM_SUBNODE(allow, mount, "Jail mount/unmount permission flags");
+  SYSCTL_JAIL_PARAM(_allow_mount, , CTLTYPE_INT | CTLFLAG_RW,
+diff --cc sys/sys/jail.h
+index a663403db30c,2a6ee07ecc47..000000000000
+--- a/sys/sys/jail.h
++++ b/sys/sys/jail.h
+@@@ -237,10 -232,10 +237,15 @@@ struct prison_racct 
+  #define	PR_ALLOW_MLOCK			0x00000080
+  #define	PR_ALLOW_READ_MSGBUF		0x00000100
+  #define	PR_ALLOW_UNPRIV_DEBUG		0x00000200
++ #define	PR_ALLOW_SUSER			0x00000400
+  #define	PR_ALLOW_RESERVED_PORTS		0x00008000
+  #define	PR_ALLOW_KMEM_ACCESS		0x00010000	/* reserved, not used yet */
+++<<<<<<< HEAD
+ +#define	PR_ALLOW_EXTATTR		0x00020000
+ +#define	PR_ALLOW_ALL_STATIC		0x000383ff
+++=======
++ #define	PR_ALLOW_ALL_STATIC		0x000187ff
+++>>>>>>> freebsd/current/master
+  
+  /*
+   * PR_ALLOW_DIFFERENCES determines which flags are able to be
+On branch hardened/current/master
+Your branch is behind 'origin/hardened/current/master' by 16 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/elftoolchain/elfcopy/archive.c
+	modified:   contrib/elftoolchain/elfcopy/elfcopy.h
+	modified:   contrib/elftoolchain/elfcopy/main.c
+	modified:   contrib/llvm-project/llvm/lib/Support/Unix/Threading.inc
+	modified:   lib/libc/string/memchr.c
+	modified:   lib/libc/string/memmem.c
+	modified:   lib/libc/string/strstr.c
+	modified:   lib/libutil/Makefile
+	new file:   lib/libutil/getlocalbase.3
+	new file:   lib/libutil/getlocalbase.c
+	modified:   lib/libutil/libutil.h
+	modified:   lib/msun/tests/fenv_test.c
+	modified:   lib/msun/tests/lrint_test.c
+	modified:   sbin/nvmecontrol/comnd.c
+	modified:   sbin/nvmecontrol/nvmecontrol.c
+	modified:   sbin/savecore/Makefile
+	modified:   sbin/savecore/savecore.8
+	modified:   sbin/savecore/savecore.c
+	modified:   sys/amd64/amd64/mp_machdep.c
+	modified:   sys/amd64/amd64/pmap.c
+	modified:   sys/arm/arm/machdep.c
+	modified:   sys/arm/include/machdep.h
+	modified:   sys/conf/files
+	modified:   sys/conf/files.amd64
+	modified:   sys/conf/files.arm
+	modified:   sys/conf/files.arm64
+	modified:   sys/conf/files.mips
+	modified:   sys/conf/files.powerpc
+	modified:   sys/conf/files.riscv
+	modified:   sys/conf/options
+	modified:   sys/conf/options.arm
+	modified:   sys/dev/mem/memdev.c
+	modified:   sys/dev/usb/net/if_iphethvar.h
+	modified:   sys/fs/msdosfs/msdosfs_vfsops.c
+	modified:   sys/kern/kern_et.c
+	modified:   sys/kern/kern_priv.c
+	modified:   sys/kern/kern_prot.c
+	modified:   sys/kern/kern_timeout.c
+	modified:   sys/kern/subr_smp.c
+	modified:   sys/mips/cavium/octeon_pmc.c
+	modified:   sys/powerpc/aim/mmu_oea64.c
+	modified:   sys/powerpc/aim/mmu_radix.c
+	modified:   sys/sys/file.h
+	modified:   sys/sys/ucred.h
+	new file:   sys/vm/_vm_phys.h
+	modified:   sys/vm/uma_core.c
+	modified:   sys/vm/vm_kern.c
+	modified:   sys/vm/vm_page.c
+	modified:   sys/vm/vm_page.h
+	modified:   sys/vm/vm_pagequeue.h
+	modified:   sys/vm/vm_phys.c
+	modified:   sys/vm/vm_phys.h
+	modified:   sys/vm/vm_reserv.c
+	modified:   usr.sbin/jail/jail.8
+	modified:   usr.sbin/mailwrapper/mailwrapper.c
+	modified:   usr.sbin/mergemaster/mergemaster.sh
+	modified:   usr.sbin/pkg/Makefile
+	modified:   usr.sbin/pkg/config.c
+	modified:   usr.sbin/pkg/pkg.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/conf/files.i386
+	both modified:   sys/kern/kern_jail.c
+	both modified:   sys/sys/jail.h
+
+HEAD is now at e9f59fd7e1d9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is behind 'origin/hardened/current/master' by 16 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+HEAD is now at e9f59fd7e1d9 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
