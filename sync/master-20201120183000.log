@@ -47,3 +47,159 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing mail/neomutt/files/patch-sidebar_functions.c
+Auto-merging mail/neomutt/Makefile
+Merge made by the 'recursive' strategy.
+ CHANGES                                            |  16 +++
+ Mk/Uses/gnome.mk                                   |   2 +-
+ Mk/bsd.default-versions.mk                         |   8 +-
+ audio/Makefile                                     |   1 +
+ audio/abx/Makefile                                 |  28 +++++
+ audio/abx/distinfo                                 |   3 +
+ audio/abx/pkg-descr                                |   8 ++
+ cad/cura/Makefile                                  |   2 +-
+ cad/cura/distinfo                                  |   6 +-
+ comms/fldigi/Makefile                              |   3 +-
+ comms/fldigi/files/patch-src_Makefile.am           |  11 ++
+ deskutils/nextcloudclient/Makefile                 |   6 +-
+ devel/libunit/Makefile                             |   4 +-
+ devel/qtcreator/Makefile                           |   2 +-
+ devel/qtcreator/distinfo                           |   6 +-
+ devel/qtcreator/pkg-plist                          |   4 +-
+ devel/rubygem-jsonpath/Makefile                    |   5 +-
+ devel/rubygem-jsonpath/distinfo                    |   6 +-
+ graphics/Makefile                                  |   1 +
+ graphics/jpeg-xl/Makefile                          |  75 ++++++++++++
+ graphics/jpeg-xl/distinfo                          |  13 ++
+ graphics/jpeg-xl/files/patch-private-libs          |  25 ++++
+ graphics/jpeg-xl/pkg-descr                         |   9 ++
+ graphics/jpeg-xl/pkg-plist                         |  31 +++++
+ graphics/pdfpc/Makefile                            |   2 +-
+ graphics/pdfpc/distinfo                            |   6 +-
+ lang/gcc11-devel/Makefile                          |   9 +-
+ lang/gcc11-devel/distinfo                          |   6 +-
+ lang/intel-compute-runtime/Makefile                |   3 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ lang/intel-compute-runtime/files/patch-unix        |  20 ----
+ mail/neomutt/Makefile                              |   3 +-
+ mail/neomutt/distinfo                              |   6 +-
+ mail/neomutt/files/patch-sidebar_functions.c       |  20 ----
+ mail/neomutt/pkg-plist                             |   3 +
+ math/barvinok/Makefile                             |   2 +-
+ math/barvinok/distinfo                             |   6 +-
+ math/barvinok/pkg-plist                            |   2 +-
+ misc/perkeep/Makefile                              |   4 +-
+ misc/perkeep/distinfo                              |   6 +-
+ net-im/Makefile                                    |   2 +
+ net-im/libquotient/Makefile                        |  25 ++++
+ net-im/libquotient/distinfo                        |   3 +
+ net-im/libquotient/pkg-descr                       |   5 +
+ net-im/libquotient/pkg-plist                       | 133 +++++++++++++++++++++
+ net-im/neochat/Makefile                            |  34 ++++++
+ net-im/neochat/distinfo                            |   3 +
+ net-im/neochat/files/patch-CMakeLists.txt          |  11 ++
+ net-im/neochat/pkg-descr                           |   5 +
+ net-im/neochat/pkg-plist                           |   5 +
+ net-im/quaternion/Makefile                         |   8 +-
+ net-im/quaternion/distinfo                         |   6 +-
+ net-im/quaternion/files/patch-CMakeLists.txt       |  15 +++
+ ...t-423538250ec302f23755c5e9dc13f17dfc2b70c8.diff |  12 ++
+ net-im/quaternion/pkg-plist                        |   9 +-
+ net-p2p/openethereum/Makefile                      |   7 +-
+ ...parity-rocksdb-sys-0.5.6_rocksdb_util_channel.h |  11 ++
+ net/clash/Makefile                                 |  22 ++--
+ net/clash/distinfo                                 |  42 +++----
+ net/py-pytradfri/Makefile                          |   2 +-
+ net/py-pytradfri/distinfo                          |   6 +-
+ sysutils/conan/Makefile                            |   2 +-
+ sysutils/conan/distinfo                            |   6 +-
+ www/cpp-httplib/Makefile                           |   2 +-
+ www/cpp-httplib/distinfo                           |   6 +-
+ www/minio/Makefile                                 |   7 +-
+ www/minio/distinfo                                 |  12 +-
+ x11-toolkits/swt/files/patch-build.sh              |  28 ++---
+ 68 files changed, 623 insertions(+), 185 deletions(-)
+ create mode 100644 audio/abx/Makefile
+ create mode 100644 audio/abx/distinfo
+ create mode 100644 audio/abx/pkg-descr
+ create mode 100644 comms/fldigi/files/patch-src_Makefile.am
+ create mode 100644 graphics/jpeg-xl/Makefile
+ create mode 100644 graphics/jpeg-xl/distinfo
+ create mode 100644 graphics/jpeg-xl/files/patch-private-libs
+ create mode 100644 graphics/jpeg-xl/pkg-descr
+ create mode 100644 graphics/jpeg-xl/pkg-plist
+ delete mode 100644 mail/neomutt/files/patch-sidebar_functions.c
+ create mode 100644 net-im/libquotient/Makefile
+ create mode 100644 net-im/libquotient/distinfo
+ create mode 100644 net-im/libquotient/pkg-descr
+ create mode 100644 net-im/libquotient/pkg-plist
+ create mode 100644 net-im/neochat/Makefile
+ create mode 100644 net-im/neochat/distinfo
+ create mode 100644 net-im/neochat/files/patch-CMakeLists.txt
+ create mode 100644 net-im/neochat/pkg-descr
+ create mode 100644 net-im/neochat/pkg-plist
+ create mode 100644 net-im/quaternion/files/patch-CMakeLists.txt
+ create mode 100644 net-im/quaternion/files/patch-git-423538250ec302f23755c5e9dc13f17dfc2b70c8.diff
+ create mode 100644 net-p2p/openethereum/files/patch-cargo-crates_parity-rocksdb-sys-0.5.6_rocksdb_util_channel.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    eb2283f202e7..d06f1d8cde2e  master -> master        
+remote:    c080ce97a937..eb2283f202e7  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   eb2283f202e7..d06f1d8cde2e  master -> master
+==== END: master ====
