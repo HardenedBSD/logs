@@ -1,0 +1,100 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ share/man/man4/ena.4                             |   4 +-
+ share/man/man4/ng_tag.4                          |  18 +-
+ stand/kshim/bsd_kernel.h                         |   7 +-
+ sys/compat/linuxkpi/common/include/asm/types.h   |   4 +-
+ sys/compat/linuxkpi/common/include/linux/types.h |   4 +-
+ sys/contrib/ena-com/ena_com.c                    | 471 ++++++++++++-----------
+ sys/contrib/ena-com/ena_com.h                    |  37 +-
+ sys/contrib/ena-com/ena_defs/ena_admin_defs.h    | 152 +++++---
+ sys/contrib/ena-com/ena_defs/ena_common_defs.h   |   2 +-
+ sys/contrib/ena-com/ena_defs/ena_eth_io_defs.h   |   2 +-
+ sys/contrib/ena-com/ena_defs/ena_gen_info.h      |   6 +-
+ sys/contrib/ena-com/ena_defs/ena_regs_defs.h     |   2 +-
+ sys/contrib/ena-com/ena_eth_com.c                | 129 ++++---
+ sys/contrib/ena-com/ena_eth_com.h                |  19 +-
+ sys/contrib/ena-com/ena_plat.h                   |  77 ++--
+ sys/dev/ena/ena.c                                | 179 ++++++---
+ sys/dev/ena/ena.h                                |  32 +-
+ sys/dev/ena/ena_datapath.c                       |  90 ++---
+ sys/dev/ena/ena_datapath.h                       |   2 +-
+ sys/dev/ena/ena_netmap.c                         |  61 +--
+ sys/dev/ena/ena_netmap.h                         |   2 +-
+ sys/dev/ena/ena_sysctl.c                         |  99 ++++-
+ sys/dev/ena/ena_sysctl.h                         |   2 +-
+ sys/dev/usb/usb.h                                |   4 +-
+ sys/dev/usb/usb_pf.h                             |   6 +-
+ sys/dev/usb/usbdi.h                              |   6 +-
+ sys/dev/usb/usbhid.h                             |   6 +-
+ sys/kern/vfs_subr.c                              |   8 +-
+ sys/modules/ena/Makefile                         |   4 +-
+ sys/modules/linuxkpi/Makefile                    |   2 +-
+ sys/net/ieee8023ad_lacp.c                        |   9 +-
+ sys/net/ieee8023ad_lacp.h                        |   6 +-
+ sys/net/if_lagg.c                                |   8 +-
+ 33 files changed, 898 insertions(+), 562 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    438e6ec5480a..e9f59fd7e1d9  hardened/current/master -> hardened/current/master        
+remote:    7b82af2e8801..dc46513e5507  github/freebsd/current/master -> github/freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   438e6ec5480a..e9f59fd7e1d9  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
