@@ -69,3 +69,145 @@ new files yourself (see 'git help status').
 nothing to commit, working tree clean
 HEAD is now at c860a61f935e Merge remote-tracking branch 'freebsd/master'
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=1&verb=git-upload-pack": dial tcp 127.0.0.1:3000: connect: connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at c860a61f935e Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/syslog-ng/files/patch-modules_afsocket_socket-options.c
+Auto-merging security/openssh-portable/Makefile
+CONFLICT (content): Merge conflict in security/openssh-portable/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc security/openssh-portable/Makefile
+index 09fd056bf9a3,082ee450370c..000000000000
+--- a/security/openssh-portable/Makefile
++++ b/security/openssh-portable/Makefile
+@@@ -19,14 -19,12 +19,18 @@@ LICENSE_PERMS=	dist-mirror dist-sell pk
+  
+  CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=		safestack
+ +
+ +USES=			alias autoreconf ncurses ssl
+++=======
++ USES=			alias autoreconf localbase ncurses pkgconfig ssl
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=		yes
+- CONFIGURE_ENV=		ac_cv_func_strnvis=no
+- CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
+- 			--without-zlib-version-check --with-ssl-engine \
+- 			--with-mantype=man
++ CONFIGURE_ARGS=		--prefix=${PREFIX} \
++ 			--with-ssl-engine \
++ 			--with-mantype=man \
++ 			--with-Werror
+  
+  ETCOLD=			${PREFIX}/etc
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/zrythm/Makefile
+	modified:   audio/zrythm/distinfo
+	modified:   audio/zrythm/pkg-plist
+	modified:   devel/Makefile
+	modified:   devel/git-cola/Makefile
+	modified:   devel/git-cola/distinfo
+	modified:   devel/git-cola/pkg-plist
+	new file:   devel/libunit/Makefile
+	new file:   devel/libunit/distinfo
+	new file:   devel/libunit/pkg-descr
+	modified:   math/cglm/Makefile
+	modified:   math/cglm/distinfo
+	modified:   math/cglm/pkg-plist
+	modified:   math/lis/Makefile
+	modified:   math/lis/distinfo
+	modified:   math/py-numpoly/Makefile
+	modified:   math/py-numpoly/distinfo
+	modified:   math/py-uncertainties/Makefile
+	modified:   math/py-uncertainties/distinfo
+	modified:   science/jmol/Makefile
+	modified:   science/jmol/distinfo
+	modified:   science/jmol/pkg-plist-jsmol
+	modified:   science/kim-api/Makefile
+	modified:   science/kim-api/distinfo
+	modified:   science/kim-api/pkg-plist
+	new file:   security/openssh-portable/files/extra-patch-gssapi-sshconnect2.c
+	new file:   security/openssh-portable/files/extra-patch-libfido2-configure.ac
+	modified:   security/openssh-portable/files/patch-session.c
+	modified:   sysutils/fwup/Makefile
+	modified:   sysutils/fwup/distinfo
+	modified:   sysutils/syslog-ng/Makefile
+	modified:   sysutils/syslog-ng/distinfo
+	deleted:    sysutils/syslog-ng/files/patch-modules_afsocket_socket-options.c
+	modified:   sysutils/syslog-ng/files/syslog-ng.conf.sample
+	new file:   sysutils/syslog-ng/files/syslog-ng.conf.sample.11
+	modified:   sysutils/syslog-ng/pkg-plist
+	modified:   www/novnc/Makefile
+	modified:   www/unit/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   security/openssh-portable/Makefile
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at c860a61f935e Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.14 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c860a61f935e Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
