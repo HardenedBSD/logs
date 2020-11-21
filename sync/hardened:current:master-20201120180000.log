@@ -1,0 +1,522 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 63 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 94eadb648ceb..2f0a6d54cfb5
+Fast-forward
+ contrib/bmake/ChangeLog                            |   75 +
+ contrib/bmake/FILES                                |   28 +-
+ contrib/bmake/Makefile                             |    8 +-
+ contrib/bmake/Makefile.config.in                   |    4 +-
+ contrib/bmake/VERSION                              |    2 +-
+ contrib/bmake/arch.c                               |  557 +-
+ contrib/bmake/bmake.1                              |   19 +-
+ contrib/bmake/bmake.cat1                           |   13 +-
+ contrib/bmake/boot-strap                           |    6 +-
+ contrib/bmake/buf.c                                |   17 +-
+ contrib/bmake/buf.h                                |   11 +-
+ contrib/bmake/compat.c                             |   99 +-
+ contrib/bmake/cond.c                               |  547 +-
+ contrib/bmake/configure                            |   30 +-
+ contrib/bmake/configure.in                         |   15 +-
+ contrib/bmake/dir.c                                |  244 +-
+ contrib/bmake/dir.h                                |   14 +-
+ contrib/bmake/filemon/filemon_dev.c                |    4 +-
+ contrib/bmake/filemon/filemon_ktrace.c             |    4 +-
+ contrib/bmake/for.c                                |   68 +-
+ contrib/bmake/hash.c                               |   18 +-
+ contrib/bmake/hash.h                               |    7 +-
+ contrib/bmake/job.c                                |  544 +-
+ contrib/bmake/job.h                                |   24 +-
+ contrib/bmake/lst.c                                |  144 +-
+ contrib/bmake/lst.h                                |    6 +-
+ contrib/bmake/main.c                               | 1412 ++--
+ contrib/bmake/make-bootstrap.sh.in                 |    3 +-
+ contrib/bmake/make.1                               |   19 +-
+ contrib/bmake/make.c                               |  345 +-
+ contrib/bmake/make.h                               |  274 +-
+ contrib/bmake/make_malloc.h                        |    4 +-
+ contrib/bmake/meta.c                               |  118 +-
+ contrib/bmake/metachar.h                           |    4 +-
+ contrib/bmake/missing/sys/cdefs.h                  |  186 +
+ contrib/bmake/mk/ChangeLog                         |    7 +
+ contrib/bmake/mk/install-mk                        |    4 +-
+ contrib/bmake/mk/meta.autodep.mk                   |    5 +-
+ contrib/bmake/mk/meta2deps.sh                      |    4 +-
+ contrib/bmake/nonints.h                            |   63 +-
+ contrib/bmake/parse.c                              |  706 +-
+ contrib/bmake/str.c                                |   60 +-
+ contrib/bmake/suff.c                               |  545 +-
+ contrib/bmake/targ.c                               |  166 +-
+ contrib/bmake/unit-tests/Makefile                  |   79 +-
+ contrib/bmake/unit-tests/archive-suffix.mk         |    6 +-
+ contrib/bmake/unit-tests/archive.mk                |   30 +-
+ contrib/bmake/unit-tests/cmd-errors-lint.exp       |    9 +
+ contrib/bmake/unit-tests/cmd-errors-lint.mk        |   32 +
+ contrib/bmake/unit-tests/cmd-errors.exp            |    9 +
+ contrib/bmake/unit-tests/cmd-errors.mk             |   30 +
+ contrib/bmake/unit-tests/cmd-interrupt.mk          |    4 +-
+ contrib/bmake/unit-tests/cmdline-undefined.exp     |   17 +
+ contrib/bmake/unit-tests/cmdline-undefined.mk      |   40 +
+ contrib/bmake/unit-tests/cmdline.mk                |   11 +-
+ contrib/bmake/unit-tests/comment.mk                |   12 +-
+ contrib/bmake/unit-tests/cond-cmp-numeric-eq.exp   |    6 +-
+ contrib/bmake/unit-tests/cond-cmp-numeric-eq.mk    |   15 +-
+ contrib/bmake/unit-tests/cond-cmp-numeric.exp      |    4 +
+ contrib/bmake/unit-tests/cond-cmp-numeric.mk       |   14 +-
+ contrib/bmake/unit-tests/cond-cmp-string.exp       |    8 +-
+ contrib/bmake/unit-tests/cond-cmp-string.mk        |   30 +-
+ contrib/bmake/unit-tests/cond-cmp-unary.exp        |    1 +
+ contrib/bmake/unit-tests/cond-cmp-unary.mk         |   17 +-
+ contrib/bmake/unit-tests/cond-func-commands.mk     |    5 +-
+ contrib/bmake/unit-tests/cond-func-defined.exp     |    5 +
+ contrib/bmake/unit-tests/cond-func-defined.mk      |   21 +-
+ contrib/bmake/unit-tests/cond-func-empty.exp       |    6 +-
+ contrib/bmake/unit-tests/cond-func-empty.mk        |   43 +-
+ contrib/bmake/unit-tests/cond-func.exp             |   18 +-
+ contrib/bmake/unit-tests/cond-func.mk              |   72 +-
+ contrib/bmake/unit-tests/cond-late.mk              |   12 +-
+ contrib/bmake/unit-tests/cond-op-and-lint.exp      |    4 +
+ contrib/bmake/unit-tests/cond-op-and-lint.mk       |   13 +
+ contrib/bmake/unit-tests/cond-op-not.exp           |    5 +
+ contrib/bmake/unit-tests/cond-op-not.mk            |   41 +-
+ contrib/bmake/unit-tests/cond-op-or-lint.exp       |    4 +
+ contrib/bmake/unit-tests/cond-op-or-lint.mk        |   13 +
+ contrib/bmake/unit-tests/cond-op-parentheses.exp   |    1 +
+ contrib/bmake/unit-tests/cond-op-parentheses.mk    |   13 +-
+ contrib/bmake/unit-tests/cond-op.exp               |   17 +-
+ contrib/bmake/unit-tests/cond-op.mk                |   35 +-
+ contrib/bmake/unit-tests/cond-short.mk             |   21 +-
+ contrib/bmake/unit-tests/cond-token-number.exp     |   10 +-
+ contrib/bmake/unit-tests/cond-token-number.mk      |   28 +-
+ contrib/bmake/unit-tests/cond-token-plain.mk       |   13 +-
+ contrib/bmake/unit-tests/cond-token-string.exp     |    9 +-
+ contrib/bmake/unit-tests/cond-token-string.mk      |   33 +-
+ contrib/bmake/unit-tests/cond-token-var.exp        |    8 +-
+ contrib/bmake/unit-tests/cond-token-var.mk         |   22 +-
+ contrib/bmake/unit-tests/cond-undef-lint.exp       |    2 +-
+ contrib/bmake/unit-tests/cond-undef-lint.mk        |    6 +-
+ contrib/bmake/unit-tests/cond1.exp                 |    4 +-
+ contrib/bmake/unit-tests/cond1.mk                  |    7 +-
+ contrib/bmake/unit-tests/dep-double-colon.mk       |    7 +-
+ contrib/bmake/unit-tests/dep-exclam.mk             |    9 +-
+ contrib/bmake/unit-tests/depsrc-ignore.mk          |   11 +-
+ contrib/bmake/unit-tests/depsrc-make.mk            |    4 +-
+ contrib/bmake/unit-tests/depsrc-optional.exp       |   20 +-
+ contrib/bmake/unit-tests/depsrc-optional.mk        |   15 +-
+ contrib/bmake/unit-tests/depsrc-precious.mk        |   12 +-
+ contrib/bmake/unit-tests/depsrc-usebefore.mk       |    6 +-
+ contrib/bmake/unit-tests/depsrc.mk                 |    4 +-
+ contrib/bmake/unit-tests/deptgt-begin.exp          |    3 +
+ contrib/bmake/unit-tests/deptgt-begin.mk           |   36 +-
+ contrib/bmake/unit-tests/deptgt-error.mk           |    5 +-
+ contrib/bmake/unit-tests/deptgt-ignore.mk          |    5 +-
+ contrib/bmake/unit-tests/deptgt-interrupt.mk       |    6 +-
+ contrib/bmake/unit-tests/deptgt-main.mk            |    6 +-
+ contrib/bmake/unit-tests/deptgt-makeflags.exp      |    1 +
+ contrib/bmake/unit-tests/deptgt-makeflags.mk       |   54 +-
+ contrib/bmake/unit-tests/deptgt-silent.exp         |    2 +
+ contrib/bmake/unit-tests/deptgt-silent.mk          |    9 +-
+ contrib/bmake/unit-tests/deptgt.exp                |    8 +
+ contrib/bmake/unit-tests/deptgt.mk                 |   12 +-
+ contrib/bmake/unit-tests/dir.mk                    |    5 +-
+ contrib/bmake/unit-tests/directive-elif.exp        |   18 +-
+ contrib/bmake/unit-tests/directive-elif.mk         |   68 +-
+ contrib/bmake/unit-tests/directive-else.exp        |   13 +-
+ contrib/bmake/unit-tests/directive-else.mk         |   16 +-
+ contrib/bmake/unit-tests/directive-endif.mk        |   21 +-
+ contrib/bmake/unit-tests/directive-export-env.mk   |    6 +-
+ contrib/bmake/unit-tests/directive-export-gmake.mk |    6 +-
+ .../bmake/unit-tests/directive-export-literal.mk   |    6 +-
+ contrib/bmake/unit-tests/directive-export.exp      |    5 +-
+ contrib/bmake/unit-tests/directive-export.mk       |    8 +-
+ contrib/bmake/unit-tests/directive-for.exp         |   36 +-
+ contrib/bmake/unit-tests/directive-for.mk          |   12 +-
+ contrib/bmake/unit-tests/directive-if-nested.exp   |    2 +
+ contrib/bmake/unit-tests/directive-if-nested.mk    |   25 +
+ contrib/bmake/unit-tests/directive-if.exp          |   16 +-
+ contrib/bmake/unit-tests/directive-if.mk           |   77 +-
+ contrib/bmake/unit-tests/directive-ifdef.exp       |    1 +
+ contrib/bmake/unit-tests/directive-ifdef.mk        |   12 +-
+ contrib/bmake/unit-tests/directive-ifmake.exp      |   13 +-
+ contrib/bmake/unit-tests/directive-ifmake.mk       |   55 +-
+ contrib/bmake/unit-tests/directive-include.exp     |    5 +-
+ contrib/bmake/unit-tests/directive-include.mk      |    7 +-
+ contrib/bmake/unit-tests/directive-info.exp        |   15 +-
+ contrib/bmake/unit-tests/directive-info.mk         |   21 +-
+ contrib/bmake/unit-tests/directive-sinclude.mk     |    6 +-
+ contrib/bmake/unit-tests/directive-undef.exp       |    5 +-
+ contrib/bmake/unit-tests/directive-undef.mk        |    6 +-
+ contrib/bmake/unit-tests/directive-unexport-env.mk |    6 +-
+ contrib/bmake/unit-tests/directive-unexport.exp    |    5 +-
+ contrib/bmake/unit-tests/directive-unexport.mk     |    6 +-
+ contrib/bmake/unit-tests/directive-warning.exp     |   12 +-
+ contrib/bmake/unit-tests/directive-warning.mk      |   11 +-
+ contrib/bmake/unit-tests/directive.exp             |   13 +-
+ contrib/bmake/unit-tests/directive.mk              |   29 +-
+ contrib/bmake/unit-tests/directives.exp            |   42 -
+ contrib/bmake/unit-tests/directives.mk             |  163 -
+ contrib/bmake/unit-tests/dollar.exp                |    2 +-
+ contrib/bmake/unit-tests/dollar.mk                 |    6 +-
+ contrib/bmake/unit-tests/envfirst.mk               |    4 +-
+ contrib/bmake/unit-tests/error.exp                 |    6 +-
+ contrib/bmake/unit-tests/error.mk                  |   10 +-
+ contrib/bmake/unit-tests/escape.mk                 |    6 +-
+ contrib/bmake/unit-tests/forloop.exp               |   28 +-
+ contrib/bmake/unit-tests/forloop.mk                |   16 +-
+ contrib/bmake/unit-tests/forsubst.mk               |   14 +-
+ contrib/bmake/unit-tests/gnode-submake.exp         |   11 +
+ contrib/bmake/unit-tests/gnode-submake.mk          |   42 +
+ contrib/bmake/unit-tests/include-sub.mk            |    4 +-
+ contrib/bmake/unit-tests/job-flags.exp             |   12 +
+ contrib/bmake/unit-tests/job-flags.mk              |   32 +
+ contrib/bmake/unit-tests/moderrs.mk                |    4 +-
+ contrib/bmake/unit-tests/modmisc.mk                |   12 +-
+ contrib/bmake/unit-tests/modts.mk                  |    5 +-
+ contrib/bmake/unit-tests/modword.mk                |    3 +-
+ contrib/bmake/unit-tests/objdir-writable.exp       |    5 +
+ contrib/bmake/unit-tests/objdir-writable.mk        |   31 +
+ contrib/bmake/unit-tests/opt-chdir.exp             |    5 +
+ contrib/bmake/unit-tests/opt-chdir.mk              |   29 +-
+ contrib/bmake/unit-tests/opt-debug-jobs.exp        |    4 +-
+ contrib/bmake/unit-tests/opt-debug-jobs.mk         |    9 +-
+ contrib/bmake/unit-tests/opt-ignore.mk             |    3 +-
+ contrib/bmake/unit-tests/opt-keep-going.mk         |    3 +-
+ contrib/bmake/unit-tests/opt-no-action.mk          |    4 +-
+ contrib/bmake/unit-tests/opt-query.mk              |    4 +-
+ contrib/bmake/unit-tests/opt-touch-jobs.exp        |    4 +
+ contrib/bmake/unit-tests/opt-touch-jobs.mk         |   30 +
+ contrib/bmake/unit-tests/opt-touch.exp             |    3 +
+ contrib/bmake/unit-tests/opt-touch.mk              |   21 +-
+ contrib/bmake/unit-tests/opt-var-expanded.mk       |    4 +-
+ contrib/bmake/unit-tests/opt-var-literal.mk        |    4 +-
+ .../bmake/unit-tests/opt-warnings-as-errors.exp    |    4 +-
+ contrib/bmake/unit-tests/opt-warnings-as-errors.mk |    4 +-
+ contrib/bmake/unit-tests/opt.exp                   |   21 +
+ contrib/bmake/unit-tests/opt.mk                    |   28 +-
+ contrib/bmake/unit-tests/order.mk                  |    4 +-
+ contrib/bmake/unit-tests/recursive.exp             |    4 +-
+ contrib/bmake/unit-tests/recursive.mk              |    4 +-
+ contrib/bmake/unit-tests/sh-leading-at.exp         |    1 +
+ contrib/bmake/unit-tests/sh-leading-at.mk          |   10 +-
+ contrib/bmake/unit-tests/sh-leading-hyphen.mk      |    7 +-
+ contrib/bmake/unit-tests/sh-leading-plus.mk        |    4 +-
+ contrib/bmake/unit-tests/sh-meta-chars.mk          |    8 +-
+ contrib/bmake/unit-tests/suff-self.exp             |    3 +
+ contrib/bmake/unit-tests/suff-self.mk              |   11 +
+ contrib/bmake/unit-tests/use-inference.mk          |    5 +-
+ contrib/bmake/unit-tests/var-class-local.exp       |    3 +
+ contrib/bmake/unit-tests/var-class-local.mk        |   16 +-
+ contrib/bmake/unit-tests/var-op-assign.exp         |    4 +-
+ contrib/bmake/unit-tests/var-op-assign.mk          |   19 +-
+ contrib/bmake/unit-tests/var-op-expand.exp         |    9 +
+ contrib/bmake/unit-tests/var-op-expand.mk          |   20 +-
+ contrib/bmake/unit-tests/var-op-shell.exp          |    6 +
+ contrib/bmake/unit-tests/var-op-shell.mk           |   81 +-
+ contrib/bmake/unit-tests/var-op-sunsh.mk           |    4 +-
+ contrib/bmake/unit-tests/vardebug.exp              |    2 +-
+ contrib/bmake/unit-tests/varmisc.mk                |    6 +-
+ contrib/bmake/unit-tests/varmod-defined.exp        |   22 +
+ contrib/bmake/unit-tests/varmod-defined.mk         |   18 +-
+ contrib/bmake/unit-tests/varmod-exclam-shell.mk    |   23 +-
+ contrib/bmake/unit-tests/varmod-ifelse.exp         |    8 +
+ contrib/bmake/unit-tests/varmod-ifelse.mk          |   38 +-
+ contrib/bmake/unit-tests/varmod-loop.exp           |    8 +
+ contrib/bmake/unit-tests/varmod-loop.mk            |   49 +-
+ contrib/bmake/unit-tests/varmod-match.mk           |    7 +-
+ contrib/bmake/unit-tests/varmod-order-shuffle.mk   |    4 +-
+ contrib/bmake/unit-tests/varmod-shell.exp          |    2 +
+ contrib/bmake/unit-tests/varmod-shell.mk           |   28 +-
+ contrib/bmake/unit-tests/varmod-subst.exp          |   45 +-
+ contrib/bmake/unit-tests/varmod-subst.mk           |   68 +-
+ contrib/bmake/unit-tests/varmod-to-abs.exp         |    4 +
+ contrib/bmake/unit-tests/varmod-to-abs.mk          |   21 +-
+ contrib/bmake/unit-tests/varmod-to-lower.mk        |    4 +-
+ contrib/bmake/unit-tests/varmod-to-separator.mk    |    8 +-
+ contrib/bmake/unit-tests/varmod-undefined.mk       |    3 +-
+ contrib/bmake/unit-tests/varmod.exp                |    2 +
+ contrib/bmake/unit-tests/varmod.mk                 |   11 +-
+ contrib/bmake/unit-tests/varname-dot-shell.exp     |    2 +-
+ contrib/bmake/unit-tests/varname-empty.exp         |    2 +-
+ contrib/bmake/unit-tests/varname-makefile.exp      |    1 +
+ contrib/bmake/unit-tests/varname-makefile.mk       |    9 +-
+ contrib/bmake/unit-tests/varname-vpath.exp         |   11 +
+ contrib/bmake/unit-tests/varname-vpath.mk          |   42 +-
+ contrib/bmake/unit-tests/varname.exp               |   25 +-
+ contrib/bmake/unit-tests/varname.mk                |   42 +-
+ contrib/bmake/unit-tests/varparse-errors.exp       |    1 +
+ contrib/bmake/unit-tests/varparse-errors.mk        |   35 +
+ contrib/bmake/unit-tests/varparse-undef-partial.mk |   12 +-
+ contrib/bmake/unit-tests/varshell.exp              |   10 -
+ contrib/bmake/unit-tests/varshell.mk               |   20 -
+ contrib/bmake/util.c                               |   22 +-
+ contrib/bmake/var.c                                |  740 +-
+ contrib/elftoolchain/addr2line/addr2line.c         |   48 +-
+ contrib/openpam/CREDITS                            |    1 +
+ contrib/openpam/lib/libpam/openpam_ttyconv.c       |   12 +-
+ lib/libc/string/memmem.c                           |   12 +-
+ lib/libc/string/strstr.c                           |    8 +-
+ libexec/rc/rc.d/zfs                                |    1 -
+ release/arm64/PINE64-LTS.conf                      |    4 +-
+ release/arm64/PINE64.conf                          |    4 +-
+ release/arm64/PINEBOOK.conf                        |    4 +-
+ sbin/camcontrol/camcontrol.8                       |    9 -
+ sbin/savecore/Makefile                             |    4 +-
+ sbin/savecore/savecore.8                           |    6 +-
+ sbin/savecore/savecore.c                           |  219 +-
+ share/man/man4/Makefile                            |    1 +
+ share/man/man4/ddb.4                               |   12 +-
+ share/man/man4/disk.4                              |  210 +
+ share/man/man4/isp.4                               |   57 +-
+ share/man/man4/ispfw.4                             |   12 +-
+ share/man/man7/intro.7                             |   26 +-
+ sys/amd64/amd64/mp_machdep.c                       |    2 +-
+ sys/amd64/amd64/pmap.c                             |    6 +-
+ sys/arm/allwinner/if_awg.c                         | 1079 +--
+ sys/arm/arm/machdep.c                              |   21 -
+ sys/arm/include/machdep.h                          |    1 -
+ sys/arm64/arm64/gic_v3_acpi.c                      |   47 +
+ sys/cam/cam_xpt.c                                  |    4 +-
+ sys/conf/files                                     |    1 +
+ sys/conf/files.amd64                               |    1 -
+ sys/conf/files.arm                                 |    2 -
+ sys/conf/files.arm64                               |    1 -
+ sys/conf/files.mips                                |    1 -
+ sys/conf/files.powerpc                             |    1 -
+ sys/conf/files.riscv                               |    1 -
+ sys/conf/options                                   |    1 -
+ sys/conf/options.arm                               |    2 -
+ sys/dev/atkbdc/atkbdc.c                            |    2 +
+ sys/dev/atkbdc/atkbdcreg.h                         |    1 +
+ sys/dev/atkbdc/psm.c                               |    5 +-
+ sys/dev/dwc/if_dwc.c                               | 1502 ++--
+ sys/dev/dwc/if_dwc.h                               |    4 +
+ sys/dev/isp/isp.c                                  | 5041 ++----------
+ sys/dev/isp/isp_freebsd.c                          | 1686 ++--
+ sys/dev/isp/isp_freebsd.h                          |  102 +-
+ sys/dev/isp/isp_library.c                          | 1343 +--
+ sys/dev/isp/isp_library.h                          |   42 +-
+ sys/dev/isp/isp_pci.c                              |  983 +--
+ sys/dev/isp/isp_target.c                           |  857 +-
+ sys/dev/isp/ispmbox.h                              | 1026 +--
+ sys/dev/isp/ispreg.h                               |  959 +--
+ sys/dev/isp/ispvar.h                               |  188 +-
+ sys/dev/ispfw/asm_1040.h                           | 1476 ----
+ sys/dev/ispfw/asm_1080.h                           | 2002 -----
+ sys/dev/ispfw/asm_12160.h                          | 1796 ----
+ sys/dev/ispfw/asm_2100.h                           | 8149 -------------------
+ sys/dev/ispfw/asm_2200.h                           | 5327 ------------
+ sys/dev/ispfw/asm_2300.h                           | 7870 ------------------
+ sys/dev/ispfw/asm_2322.h                           | 8544 --------------------
+ sys/dev/ispfw/ispfw.c                              |  108 -
+ sys/dev/mem/memdev.c                               |    2 +-
+ sys/dev/sound/pcm/dsp.c                            |    2 +
+ sys/fs/msdosfs/msdosfs_vfsops.c                    |   49 +-
+ sys/fs/msdosfs/msdosfs_vnops.c                     |    4 +-
+ sys/kern/kern_et.c                                 |    4 -
+ sys/kern/kern_prot.c                               |    1 +
+ sys/kern/kern_shutdown.c                           |    7 +
+ sys/kern/kern_thread.c                             |  140 +-
+ sys/kern/kern_timeout.c                            |   26 +-
+ sys/kern/subr_intr.c                               |    3 -
+ sys/kern/subr_smp.c                                |   15 +
+ sys/kern/sys_pipe.c                                |   56 +-
+ sys/modules/ispfw/Makefile                         |    7 -
+ sys/modules/ispfw/isp_1000/Makefile                |   36 -
+ sys/modules/ispfw/isp_1040/Makefile                |   36 -
+ sys/modules/ispfw/isp_1080/Makefile                |   36 -
+ sys/modules/ispfw/isp_12160/Makefile               |   36 -
+ sys/modules/ispfw/isp_2100/Makefile                |   36 -
+ sys/modules/ispfw/isp_2200/Makefile                |   36 -
+ sys/modules/ispfw/isp_2300/Makefile                |   36 -
+ sys/modules/ispfw/isp_2322/Makefile                |   36 -
+ sys/net/ifq.h                                      |   16 +-
+ sys/netinet/tcp_timewait.c                         |   23 +-
+ sys/netpfil/pf/pf.c                                |    2 +-
+ sys/powerpc/aim/mmu_oea64.c                        |    2 +-
+ sys/powerpc/aim/mmu_radix.c                        |    2 +-
+ sys/riscv/riscv/machdep.c                          |    4 +
+ sys/security/mac/mac_framework.c                   |    6 +
+ sys/security/mac/mac_framework.h                   |   25 +-
+ sys/security/mac/mac_pipe.c                        |    2 +-
+ sys/sys/pipe.h                                     |   12 +-
+ sys/sys/ucred.h                                    |    3 +-
+ sys/vm/_vm_phys.h                                  |   73 +
+ sys/vm/uma_core.c                                  |    2 +-
+ sys/vm/vm_kern.c                                   |   16 +-
+ sys/vm/vm_page.c                                   |   13 +-
+ sys/vm/vm_page.h                                   |   17 +
+ sys/vm/vm_pagequeue.h                              |    2 +-
+ sys/vm/vm_phys.c                                   |   18 -
+ sys/vm/vm_phys.h                                   |   52 +-
+ sys/vm/vm_reserv.c                                 |    4 +-
+ tests/sys/netpfil/pf/Makefile                      |    1 +
+ tests/sys/netpfil/pf/src_track.sh                  |   66 +
+ usr.bin/bmake/Makefile                             |    8 +-
+ usr.bin/bmake/Makefile.config                      |    2 +-
+ usr.bin/bmake/config.h                             |    4 +-
+ usr.bin/bmake/unit-tests/Makefile                  |   79 +-
+ usr.bin/fstat/fstat.1                              |   93 +-
+ usr.bin/grep/grep.1                                |   65 +-
+ usr.bin/grep/zgrep.sh                              |    8 +-
+ usr.sbin/bhyve/bhyverun.c                          |   20 +-
+ 356 files changed, 10381 insertions(+), 52018 deletions(-)
+ create mode 100644 contrib/bmake/missing/sys/cdefs.h
+ create mode 100644 contrib/bmake/unit-tests/cmd-errors-lint.exp
+ create mode 100644 contrib/bmake/unit-tests/cmd-errors-lint.mk
+ create mode 100644 contrib/bmake/unit-tests/cmd-errors.exp
+ create mode 100644 contrib/bmake/unit-tests/cmd-errors.mk
+ create mode 100644 contrib/bmake/unit-tests/cmdline-undefined.exp
+ create mode 100644 contrib/bmake/unit-tests/cmdline-undefined.mk
+ create mode 100644 contrib/bmake/unit-tests/cond-op-and-lint.exp
+ create mode 100644 contrib/bmake/unit-tests/cond-op-and-lint.mk
+ create mode 100644 contrib/bmake/unit-tests/cond-op-or-lint.exp
+ create mode 100644 contrib/bmake/unit-tests/cond-op-or-lint.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-if-nested.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-if-nested.mk
+ delete mode 100644 contrib/bmake/unit-tests/directives.exp
+ delete mode 100644 contrib/bmake/unit-tests/directives.mk
+ create mode 100644 contrib/bmake/unit-tests/gnode-submake.exp
+ create mode 100644 contrib/bmake/unit-tests/gnode-submake.mk
+ create mode 100644 contrib/bmake/unit-tests/job-flags.exp
+ create mode 100644 contrib/bmake/unit-tests/job-flags.mk
+ create mode 100644 contrib/bmake/unit-tests/objdir-writable.exp
+ create mode 100644 contrib/bmake/unit-tests/objdir-writable.mk
+ create mode 100644 contrib/bmake/unit-tests/opt-touch-jobs.exp
+ create mode 100644 contrib/bmake/unit-tests/opt-touch-jobs.mk
+ create mode 100644 contrib/bmake/unit-tests/suff-self.exp
+ create mode 100644 contrib/bmake/unit-tests/suff-self.mk
+ create mode 100644 contrib/bmake/unit-tests/varparse-errors.exp
+ create mode 100644 contrib/bmake/unit-tests/varparse-errors.mk
+ delete mode 100644 contrib/bmake/unit-tests/varshell.exp
+ delete mode 100644 contrib/bmake/unit-tests/varshell.mk
+ create mode 100644 share/man/man4/disk.4
+ delete mode 100644 sys/dev/ispfw/asm_1040.h
+ delete mode 100644 sys/dev/ispfw/asm_1080.h
+ delete mode 100644 sys/dev/ispfw/asm_12160.h
+ delete mode 100644 sys/dev/ispfw/asm_2100.h
+ delete mode 100644 sys/dev/ispfw/asm_2200.h
+ delete mode 100644 sys/dev/ispfw/asm_2300.h
+ delete mode 100644 sys/dev/ispfw/asm_2322.h
+ delete mode 100644 sys/modules/ispfw/isp_1000/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_1040/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_1080/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_12160/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_2100/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_2200/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_2300/Makefile
+ delete mode 100644 sys/modules/ispfw/isp_2322/Makefile
+ create mode 100644 sys/vm/_vm_phys.h
+ create mode 100755 tests/sys/netpfil/pf/src_track.sh
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging Makefile.inc1
+CONFLICT (content): Merge conflict in Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc Makefile.inc1
+index 23666c9114c9,175caeaef0bc..000000000000
+--- a/Makefile.inc1
++++ b/Makefile.inc1
+@@@ -1592,9 -1594,13 +1596,17 @@@ KERNCONF=${KERNFAST
+  .endif
+  .endif
+  .if ${TARGET_ARCH} == "powerpc64"
+++<<<<<<< HEAD
+ +KERNCONF?=	HARDENEDBSD64
+++=======
++ KERNCONF?=	GENERIC64
++ .elif ${TARGET_ARCH} == "powerpc64le"
++ KERNCONF?=	GENERIC64LE
++ .elif ${TARGET_ARCH} == "powerpcspe"
++ KERNCONF?=	MPC85XXSPE
+++>>>>>>> freebsd/current/master
+  .else
+ -KERNCONF?=	GENERIC
+ +KERNCONF?=	HARDENEDBSD
+  .endif
+  INSTKERNNAME?=	kernel
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   cddl/contrib/opensolaris/common/ctf/ctf_create.c
+	modified:   sbin/devmatch/devmatch.8
+	modified:   sbin/mount_nfs/mount_nfs.8
+	modified:   share/man/man7/build.7
+	modified:   sys/dev/isp/isp.c
+	modified:   sys/dev/isp/isp_freebsd.c
+	modified:   sys/dev/isp/isp_freebsd.h
+	modified:   sys/dev/isp/isp_library.c
+	modified:   sys/dev/isp/isp_library.h
+	modified:   sys/dev/isp/isp_pci.c
+	modified:   sys/dev/isp/isp_target.c
+	modified:   sys/dev/isp/ispvar.h
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/powerpc/powerpc/trap.c
+	modified:   usr.bin/iscsictl/iscsi.conf.5
+	modified:   usr.sbin/bsnmpd/modules/snmp_wlan/snmp_wlan.3
+	modified:   usr.sbin/crashinfo/crashinfo.8
+	modified:   usr.sbin/mountd/exports.5
+	modified:   usr.sbin/moused/moused.8
+	modified:   usr.sbin/syslogd/syslog.conf.5
+	modified:   usr.sbin/wpa/hostapd/hostapd.conf.5
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   Makefile.inc1
+
+HEAD is now at 2f0a6d54cfb5 HBSD: resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 2f0a6d54cfb5 HBSD: resolve merge conflict
+==== END: hardened/current/master ====
