@@ -1,0 +1,89 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 1f1caa1b1859..7ac76d462ffa
+Fast-forward
+ sys/compat/freebsd32/freebsd32.h      |  21 --
+ sys/compat/freebsd32/freebsd32_misc.c |   8 -
+ sys/dev/isp/isp.c                     |   3 +-
+ sys/kern/kern_descrip.c               |  20 +-
+ sys/kern/kern_umtx.c                  | 272 ++++++++++++++++++----
+ sys/sys/syscallsubr.h                 |   3 -
+ sys/sys/umtx.h                        |  23 +-
+ tests/sys/kern/Makefile               |   2 +
+ tests/sys/kern/fdgrowtable_test.c     | 267 +++++++++++++++++++++
+ tools/tools/netmap/Makefile           |   4 +-
+ tools/tools/netmap/bridge.c           |  37 +--
+ tools/tools/netmap/lb.c               | 177 +++++++++-----
+ tools/tools/netmap/nmreplay.c         |  55 ++---
+ tools/tools/netmap/pkt-gen.c          | 215 +++++++++--------
+ tools/tools/netmap/pkt_hash.c         |   1 +
+ usr.sbin/valectl/Makefile             |   2 +
+ usr.sbin/valectl/valectl.c            | 427 +++++++++++++++++++++++-----------
+ 17 files changed, 1109 insertions(+), 428 deletions(-)
+ create mode 100644 tests/sys/kern/fdgrowtable_test.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    1f1caa1b1859..7ac76d462ffa  freebsd/current/master -> freebsd/current/master        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   1f1caa1b1859..7ac76d462ffa  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
