@@ -1,0 +1,163 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Updating 002f98d537f7..c5440b35a7c8
+Fast-forward
+ .arcconfig                                         |   1 +
+ audio/hpsjam/Makefile                              |   2 +-
+ audio/hpsjam/distinfo                              |   6 +-
+ audio/jamulus/Makefile                             |   2 +-
+ audio/jamulus/distinfo                             |   6 +-
+ benchmarks/spp/Makefile                            |   4 +-
+ benchmarks/spp/distinfo                            |   6 +-
+ devel/Makefile                                     |   1 +
+ devel/binutils/Makefile                            |   2 +-
+ devel/php80-intl/files/patch-icu68                 | 222 ---------------------
+ devel/py-addict/Makefile                           |   2 +-
+ devel/py-addict/distinfo                           |   6 +-
+ devel/py-jenkins-job-builder/Makefile              |   2 +-
+ devel/py-jenkins-job-builder/distinfo              |   6 +-
+ devel/py-pytest-datadir/Makefile                   |  27 +++
+ devel/py-pytest-datadir/distinfo                   |   3 +
+ devel/py-pytest-datadir/pkg-descr                  |   4 +
+ games/gcompris-qt/Makefile                         |   2 +-
+ games/gcompris-qt/distinfo                         |   6 +-
+ games/gcompris-qt/pkg-plist                        |  11 +-
+ graphics/gthumb/pkg-plist                          |   4 +-
+ graphics/tiled/Makefile                            |   7 +-
+ graphics/tiled/distinfo                            |   6 +-
+ graphics/tiled/pkg-plist                           |   4 +
+ irc/irssi/Makefile                                 |  81 ++++----
+ irc/irssi/distinfo                                 |   6 +-
+ irc/irssi/files/patch-Makefile.in                  |  22 --
+ irc/irssi/files/patch-configure.ac                 |  15 --
+ irc/irssi/files/patch-meson.build                  |  22 ++
+ irc/irssi/files/patch-perl-Makefile                |  22 --
+ irc/irssi/pkg-plist                                |  10 +-
+ lang/php80/Makefile                                |   2 +-
+ lang/php80/distinfo                                |   6 +-
+ lang/rust-bootstrap/Makefile                       |   2 +-
+ mail/mutt/Makefile                                 |   2 +-
+ mail/mutt/distinfo                                 |   6 +-
+ multimedia/minitube/Makefile                       |   6 +-
+ multimedia/minitube/distinfo                       |  14 +-
+ multimedia/mpv/Makefile                            |  38 ++--
+ multimedia/mpv/distinfo                            |  10 +-
+ multimedia/mpv/pkg-plist                           |   4 +-
+ net-im/signal-cli/Makefile                         |  13 +-
+ net-im/signal-cli/distinfo                         |  14 +-
+ net-im/signal-cli/pkg-plist                        |   4 +-
+ net/fb303/Makefile                                 |  16 +-
+ net/fb303/distinfo                                 |   6 +-
+ ...ild_fbcode__builder_CMake_FBThriftLibrary.cmake |   2 +-
+ net/fb303/files/patch-fb303_thrift_CMakeLists.txt  |  22 --
+ net/fb303/pkg-plist                                |   4 +-
+ net/geoipupdate/Makefile                           |  23 ++-
+ net/geoipupdate/distinfo                           |  18 +-
+ net/geoipupdate/files/patch-Makefile               |  13 +-
+ net/hblock/Makefile                                |  17 +-
+ net/hblock/distinfo                                |   6 +-
+ net/netatalk3/Makefile                             |   2 +-
+ net/netatalk3/files/patch-etc_afpd_volume.c        |  20 ++
+ net/netatalk3/files/patch-libatalk_vfs_extattr.c   |  19 ++
+ sysutils/atf-master/Makefile                       |   2 +-
+ sysutils/atf-master/distinfo                       |   6 +-
+ sysutils/rpi-firmware/Makefile                     |   4 +-
+ sysutils/rpi-firmware/distinfo                     |   6 +-
+ sysutils/rpi-firmware/pkg-plist                    |   4 +-
+ sysutils/u-boot-a64-olinuxino/Makefile             |   2 +
+ sysutils/u-boot-a64-olinuxino/pkg-descr            |   2 +-
+ sysutils/u-boot-firefly-rk3399/Makefile            |   2 +
+ sysutils/u-boot-firefly-rk3399/pkg-descr           |   4 +-
+ sysutils/u-boot-master/Makefile                    |   4 +-
+ sysutils/u-boot-nanopi-a64/Makefile                |   2 +
+ sysutils/u-boot-nanopi-a64/pkg-descr               |   2 +-
+ sysutils/u-boot-nanopi-neo2/Makefile               |   2 +
+ sysutils/u-boot-nanopi-neo2/pkg-descr              |   2 +-
+ sysutils/u-boot-orangepi-pc2/Makefile              |   2 +
+ sysutils/u-boot-orangepi-pc2/pkg-descr             |   2 +-
+ sysutils/u-boot-pine64-lts/Makefile                |   2 +
+ sysutils/u-boot-pine64-lts/pkg-descr               |   2 +-
+ sysutils/u-boot-pine64/Makefile                    |   2 +
+ sysutils/u-boot-pine64/pkg-descr                   |   2 +-
+ sysutils/u-boot-pinebook/Makefile                  |   2 +
+ sysutils/u-boot-pinebook/pkg-descr                 |   2 +-
+ sysutils/u-boot-pinebookpro/Makefile               |   2 +
+ sysutils/u-boot-rock64/Makefile                    |   2 +
+ sysutils/u-boot-rockpro64/Makefile                 |   2 +
+ sysutils/u-boot-sopine-spi/Makefile                |   2 +
+ sysutils/u-boot-sopine/Makefile                    |   2 +
+ sysutils/u-boot-sopine/pkg-descr                   |   2 +-
+ www/unit-java/Makefile                             |   8 +-
+ 86 files changed, 371 insertions(+), 518 deletions(-)
+ delete mode 100644 devel/php80-intl/files/patch-icu68
+ create mode 100644 devel/py-pytest-datadir/Makefile
+ create mode 100644 devel/py-pytest-datadir/distinfo
+ create mode 100644 devel/py-pytest-datadir/pkg-descr
+ delete mode 100644 irc/irssi/files/patch-Makefile.in
+ delete mode 100644 irc/irssi/files/patch-configure.ac
+ create mode 100644 irc/irssi/files/patch-meson.build
+ delete mode 100644 irc/irssi/files/patch-perl-Makefile
+ delete mode 100644 net/fb303/files/patch-fb303_thrift_CMakeLists.txt
+ create mode 100644 net/netatalk3/files/patch-etc_afpd_volume.c
+ create mode 100644 net/netatalk3/files/patch-libatalk_vfs_extattr.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: From github.com:HardenedBSD/hardenedbsd-ports        
+remote:    002f98d537f7..c5440b35a7c8  master     -> github/master        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    5fd244bdeb5c..c5440b35a7c8  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   002f98d537f7..c5440b35a7c8  master -> master
+==== END: master ====
