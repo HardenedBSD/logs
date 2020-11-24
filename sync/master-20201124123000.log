@@ -47,3 +47,262 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/rubygem-passenger/Makefile
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Auto-merging security/suricata/Makefile
+Removing security/opensc/files/patch-src_libopensc_reader-tr03119.c
+Auto-merging security/gnupg/Makefile
+Auto-merging graphics/cimg/Makefile
+Removing archivers/py-lzma/files/patch-setup.py
+Merge made by the 'recursive' strategy.
+ Mk/Uses/cargo.mk                                   |   2 +-
+ archivers/py-lzma/Makefile                         |   2 +-
+ archivers/py-lzma/distinfo                         |   6 +-
+ archivers/py-lzma/files/patch-setup.py             |  19 ----
+ audio/ncspot/Makefile                              |   1 +
+ audio/spotify-tui/Makefile                         |   2 +-
+ audio/spotifyd/Makefile                            |   2 +-
+ benchmarks/hyperfine/Makefile                      |   2 +-
+ benchmarks/inferno/Makefile                        |   1 +
+ databases/ods2sql/Makefile                         |   1 +
+ databases/pgbadger/Makefile                        |   2 +-
+ databases/pgbadger/distinfo                        |   6 +-
+ deskutils/just/Makefile                            |   1 +
+ devel/bingrep/Makefile                             |   2 +-
+ devel/cargo-c/Makefile                             |   1 +
+ devel/cargo-generate/Makefile                      |   2 +-
+ devel/desed/Makefile                               |   2 +-
+ devel/dtool/Makefile                               |   2 +-
+ devel/gbump/Makefile                               |   2 +-
+ devel/git-absorb/Makefile                          |   2 +-
+ devel/git-delta/Makefile                           |   1 +
+ devel/gitui/Makefile                               |   2 +-
+ devel/grcov/Makefile                               |   1 +
+ devel/interactive_rebase_tool/Makefile             |   2 +-
+ devel/jenkins/Makefile                             |   2 +-
+ devel/jenkins/distinfo                             |   6 +-
+ devel/pijul/Makefile                               |   2 +-
+ devel/py-bitarray/Makefile                         |  13 ++-
+ devel/py-bitarray/distinfo                         |   5 +-
+ devel/py-maturin/Makefile                          |   1 +
+ devel/racer/Makefile                               |   1 +
+ devel/rubygem-rice/Makefile                        |   3 +-
+ devel/rubygem-rice/distinfo                        |   6 +-
+ devel/rust-analyzer/Makefile                       |   2 +-
+ devel/rust-bindgen/Makefile                        |   2 +-
+ devel/rust-cbindgen/Makefile                       |   2 +-
+ devel/sccache/Makefile                             |   2 +-
+ devel/sentry-cli/Makefile                          |   2 +-
+ devel/tokei/Makefile                               |   2 +-
+ dns/dog/Makefile                                   |   1 +
+ dns/doh-proxy/Makefile                             |   2 +-
+ dns/encrypted-dns-server/Makefile                  |   1 +
+ editors/kak-lsp/Makefile                           |   2 +-
+ editors/kibi/Makefile                              |   2 +-
+ editors/parinfer-rust/Makefile                     |   2 +-
+ editors/xi-core/Makefile                           |   2 +-
+ editors/xi-term/Makefile                           |   1 +
+ games/abstreet/Makefile                            |   2 +-
+ games/anki/Makefile                                |   1 +
+ games/dose-response/Makefile                       |   2 +-
+ games/genact/Makefile                              |   2 +-
+ games/jaggedalliance2/Makefile                     |   2 +-
+ games/veloren/Makefile                             |   2 +-
+ games/veloren/files/patch-packed_simd              |  92 +++++++++++++++++
+ graphics/cimg/Makefile                             |   2 +-
+ graphics/cimg/distinfo                             |   6 +-
+ graphics/dssim/Makefile                            |   2 +-
+ graphics/gifski/Makefile                           |   1 +
+ graphics/ikona/Makefile                            |   2 +-
+ graphics/libopenraw/Makefile                       |   1 +
+ graphics/librsvg2-rust/Makefile                    |   2 +-
+ graphics/pastel/Makefile                           |   2 +-
+ graphics/rx/Makefile                               |   2 +-
+ graphics/svgbob/Makefile                           |   2 +-
+ graphics/viu/Makefile                              |   1 +
+ irc/irssi/pkg-message                              |   5 +
+ java/icedtea-web/Makefile                          |   2 +-
+ lang/rust/Makefile                                 |  18 ++--
+ lang/rust/distinfo                                 | 102 +++++++++---------
+ ...stc__target_src_spec_i686__unknown__freebsd.rs} |   4 +-
+ ...uild.rs => patch-compiler_rustc__llvm_build.rs} |   4 +-
+ ...mpiler_rustc__target_src_abi_call_powerpc64.rs} |   4 +-
+ ...target_src_spec_powerpc64__unknown__freebsd.rs} |   4 +-
+ ...> patch-compiler_rustc__target_src_spec_mod.rs} |   4 +-
+ ...rget_src_spec_powerpc64le__unknown__freebsd.rs} |   0
+ lang/spidermonkey78/Makefile                       |   1 +
+ mail/rubygem-tmail/Makefile                        |   4 +
+ mail/thunderbird/Makefile                          |   2 +-
+ mail/thunderbird/files/patch-bug1667736            | 112 ++++++++++++++++++++
+ misc/broot/Makefile                                |   1 +
+ misc/ruut/Makefile                                 |   2 +-
+ multimedia/librav1e/Makefile                       |   2 +-
+ multimedia/librespot/Makefile                      |   2 +-
+ multimedia/rav1e/Makefile                          |   2 +-
+ multimedia/termplay/Makefile                       |   2 +-
+ net-im/fractal/Makefile                            |   2 +-
+ net-mgmt/bandwhich/Makefile                        |   1 +
+ net-p2p/openethereum/Makefile                      |   1 +
+ net/findomain/Makefile                             |   2 +-
+ net/gsocket/Makefile                               |   7 +-
+ net/gsocket/distinfo                               |   6 +-
+ net/hblock/Makefile                                |   5 +-
+ net/proby/Makefile                                 |   2 +-
+ net/py-dpkt/Makefile                               |   3 +-
+ net/py-dpkt/distinfo                               |   6 +-
+ net/quiche/Makefile                                |   2 +-
+ net/rabbiteer/Makefile                             |   2 +-
+ net/routinator/Makefile                            |   1 +
+ security/acmed/Makefile                            |   1 +
+ security/cargo-audit/Makefile                      |   1 +
+ security/cloak/Makefile                            |   2 +-
+ security/gnupg/Makefile                            |   2 +-
+ security/gnupg/distinfo                            |   6 +-
+ security/lego/Makefile                             |   2 +-
+ security/lego/distinfo                             |   6 +-
+ security/opensc/Makefile                           |   2 +-
+ security/opensc/distinfo                           |   6 +-
+ .../files/patch-src_libopensc_reader-tr03119.c     |  11 --
+ security/opensc/pkg-plist                          |  12 ++-
+ security/ruby-bitwarden/Makefile                   |   4 +
+ security/rustscan/Makefile                         |   1 +
+ security/sequoia/Makefile                          |   2 +-
+ security/suricata/Makefile                         |   1 +
+ shells/ion/Makefile                                |   2 +-
+ shells/starship/Makefile                           |   1 +
+ sysutils/bacula9-server/Makefile                   |  11 +-
+ sysutils/bacula9-server/pkg-plist                  |   1 -
+ sysutils/diskonaut/Makefile                        |   2 +-
+ sysutils/dua-cli/Makefile                          |   1 +
+ sysutils/exa/Makefile                              |   2 +-
+ sysutils/fd/Makefile                               |   2 +-
+ sysutils/flowgger/Makefile                         |   1 +
+ sysutils/fselect/Makefile                          |   2 +-
+ sysutils/fusefs-sandboxfs/Makefile                 |   2 +-
+ sysutils/goaccess/Makefile                         |   2 +-
+ sysutils/goaccess/distinfo                         |   6 +-
+ sysutils/hexyl/Makefile                            |   2 +-
+ sysutils/jail_exporter/Makefile                    |   1 +
+ sysutils/lsd/Makefile                              |   2 +-
+ sysutils/onefetch/Makefile                         |   2 +-
+ sysutils/potnet/Makefile                           |   2 +-
+ sysutils/puppet5/Makefile                          |   2 +
+ sysutils/rsfetch/Makefile                          |   2 +-
+ sysutils/tealdeer/Makefile                         |   2 +-
+ sysutils/vector/Makefile                           |   1 +
+ sysutils/zoxide/Makefile                           |   2 +-
+ textproc/angle-grinder/Makefile                    |   2 +-
+ textproc/bat/Makefile                              |   2 +-
+ textproc/mdbook/Makefile                           |   1 +
+ textproc/ripgrep/Makefile                          |   2 +-
+ textproc/ripgrep/files/patch-packed_simd           | 114 +++++++++++++++++++++
+ textproc/sd/Makefile                               |   2 +-
+ textproc/sonic/Makefile                            |   2 +-
+ textproc/xsv-rs/Makefile                           |   2 +-
+ www/castor/Makefile                                |   1 +
+ www/cliqz/Makefile                                 |   2 +-
+ www/cliqz/files/patch-bug1667736                   | 106 +++++++++++++++++++
+ www/deno/Makefile                                  |   1 +
+ www/ffsend/Makefile                                |   1 +
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox-esr/files/patch-bug1667736             | 112 ++++++++++++++++++++
+ www/firefox/Makefile                               |   2 +-
+ www/firefox/files/patch-bug1667736                 | 112 ++++++++++++++++++++
+ www/geckodriver/Makefile                           |   2 +-
+ www/jwt-cli/Makefile                               |   2 +-
+ www/miniserve/Makefile                             |   1 +
+ www/monolith/Makefile                              |   2 +-
+ www/newsboat/Makefile                              |   2 +-
+ www/nginx-devel/Makefile                           |   4 +-
+ www/nginx-devel/Makefile.extmod                    |   6 +-
+ www/nginx-devel/distinfo                           |  18 ++--
+ .../files/extra-patch-nginx-link-function-config   |  11 +-
+ .../files/extra-patch-ngx_link_func_module.c       |   4 +-
+ .../files/extra-patch-passenger-build-nginx.rb     |   4 +-
+ .../files/extra-patch-passenger-disable-telemetry  |   4 +-
+ www/rubygem-passenger/Makefile                     |   3 +-
+ www/rubygem-passenger/distinfo                     |   6 +-
+ www/websocat/Makefile                              |   2 +-
+ www/zola/Makefile                                  |   2 +-
+ x11/admiral/Makefile                               |   2 +-
+ x11/alacritty/Makefile                             |   2 +-
+ x11/squeekboard/Makefile                           |   1 +
+ 172 files changed, 945 insertions(+), 284 deletions(-)
+ delete mode 100644 archivers/py-lzma/files/patch-setup.py
+ create mode 100644 games/veloren/files/patch-packed_simd
+ create mode 100644 irc/irssi/pkg-message
+ rename lang/rust/files/{patch-src_librustc__target_spec_i686__unknown__freebsd.rs => patch-compiler_rustc__target_src_spec_i686__unknown__freebsd.rs} (73%)
+ rename lang/rust/files/powerpc64-elfv1/{patch-src_librustc__llvm_build.rs => patch-compiler_rustc__llvm_build.rs} (86%)
+ rename lang/rust/files/powerpc64-elfv2/{patch-src_librustc__target_abi_call_powerpc64.rs => patch-compiler_rustc__target_src_abi_call_powerpc64.rs} (62%)
+ rename lang/rust/files/powerpc64-elfv2/{patch-src_librustc__target_spec_powerpc64__unknown__freebsd.rs => patch-compiler_rustc__target_src_spec_powerpc64__unknown__freebsd.rs} (73%)
+ rename lang/rust/files/powerpc64le/{patch-src_librustc__target_spec_mod.rs => patch-compiler_rustc__target_src_spec_mod.rs} (69%)
+ rename lang/rust/files/powerpc64le/{patch-src_librustc__target_spec_powerpc64le__unknown__freebsd.rs => patch-compiler_rustc__target_src_spec_powerpc64le__unknown__freebsd.rs} (100%)
+ create mode 100644 mail/thunderbird/files/patch-bug1667736
+ delete mode 100644 security/opensc/files/patch-src_libopensc_reader-tr03119.c
+ create mode 100644 textproc/ripgrep/files/patch-packed_simd
+ create mode 100644 www/cliqz/files/patch-bug1667736
+ create mode 100644 www/firefox-esr/files/patch-bug1667736
+ create mode 100644 www/firefox/files/patch-bug1667736
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    7ca1e8dfedb5..c31e1803d669  master -> master        
+remote:    f7eba400c45f..7ca1e8dfedb5  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   7ca1e8dfedb5..c31e1803d669  master -> master
+==== END: master ====
