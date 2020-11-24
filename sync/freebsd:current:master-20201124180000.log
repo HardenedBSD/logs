@@ -1,0 +1,221 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating d641b8b5198f..ba17bfd8717f
+Fast-forward
+ lib/libfetch/common.c                          |    4 +-
+ lib/libfetch/fetch.3                           |    8 +-
+ release/arm/BANANAPI.conf                      |   26 -
+ release/arm/BEAGLEBONE.conf                    |   31 -
+ release/arm/CUBIEBOARD.conf                    |   26 -
+ release/arm/CUBIEBOARD2.conf                   |   26 -
+ release/arm/CUBOX-HUMMINGBOARD.conf            |   26 -
+ release/arm/GENERICSD.conf                     |   53 +
+ release/arm/PANDABOARD.conf                    |   31 -
+ release/arm/RPI2.conf                          |   50 -
+ release/arm/WANDBOARD.conf                     |   26 -
+ sbin/ping/ping.c                               |  110 +-
+ share/man/man4/Makefile                        |    1 +
+ share/man/man4/rtsx.4                          |  121 +
+ share/mk/bsd.init.mk                           |    8 +-
+ share/mk/dirdeps-options.mk                    |   39 +-
+ share/mk/dirdeps-targets.mk                    |   54 +-
+ share/mk/dirdeps.mk                            |  182 +-
+ share/mk/gendirdeps.mk                         |   47 +-
+ share/mk/local.autodep.mk                      |    3 +
+ share/mk/local.dirdeps.mk                      |    2 -
+ share/mk/local.gendirdeps.mk                   |    3 +
+ share/mk/local.meta.sys.mk                     |    5 +-
+ share/mk/meta.autodep.mk                       |   16 +-
+ share/mk/meta.stage.mk                         |   38 +-
+ share/mk/meta.subdir.mk                        |   10 +-
+ share/mk/meta.sys.mk                           |   24 +-
+ share/mk/meta2deps.py                          |   68 +-
+ share/mk/meta2deps.sh                          |   49 +-
+ sys/amd64/conf/GENERIC                         |    1 +
+ sys/arm/amlogic/aml8726/aml8726_ccm.c          |  228 --
+ sys/arm/amlogic/aml8726/aml8726_ccm.h          |  320 --
+ sys/arm/amlogic/aml8726/aml8726_clkmsr.c       |  298 --
+ sys/arm/amlogic/aml8726/aml8726_clkmsr.h       |   34 -
+ sys/arm/amlogic/aml8726/aml8726_fb.c           |  469 ---
+ sys/arm/amlogic/aml8726/aml8726_fb.h           |  162 -
+ sys/arm/amlogic/aml8726/aml8726_gpio.c         |  370 ---
+ sys/arm/amlogic/aml8726/aml8726_i2c.c          |  282 --
+ sys/arm/amlogic/aml8726/aml8726_identsoc.c     |  142 -
+ sys/arm/amlogic/aml8726/aml8726_if_dwc.c       |   98 -
+ sys/arm/amlogic/aml8726/aml8726_l2cache.c      |   92 -
+ sys/arm/amlogic/aml8726/aml8726_machdep.c      |  196 --
+ sys/arm/amlogic/aml8726/aml8726_machdep.h      |   41 -
+ sys/arm/amlogic/aml8726/aml8726_mmc.c          | 1114 -------
+ sys/arm/amlogic/aml8726/aml8726_mmc.h          |  122 -
+ sys/arm/amlogic/aml8726/aml8726_mp.c           |  625 ----
+ sys/arm/amlogic/aml8726/aml8726_pic.c          |  277 --
+ sys/arm/amlogic/aml8726/aml8726_pinctrl.c      |  430 ---
+ sys/arm/amlogic/aml8726/aml8726_pinctrl.h      | 1082 -------
+ sys/arm/amlogic/aml8726/aml8726_rng.c          |  152 -
+ sys/arm/amlogic/aml8726/aml8726_rtc.c          |  488 ---
+ sys/arm/amlogic/aml8726/aml8726_sdxc-m8.c      | 1395 ---------
+ sys/arm/amlogic/aml8726/aml8726_sdxc-m8.h      |  223 --
+ sys/arm/amlogic/aml8726/aml8726_soc.h          |   58 -
+ sys/arm/amlogic/aml8726/aml8726_timer.c        |  396 ---
+ sys/arm/amlogic/aml8726/aml8726_uart.h         |  107 -
+ sys/arm/amlogic/aml8726/aml8726_uart_console.c |  180 --
+ sys/arm/amlogic/aml8726/aml8726_usb_phy-m3.c   |  428 ---
+ sys/arm/amlogic/aml8726/aml8726_usb_phy-m6.c   |  418 ---
+ sys/arm/amlogic/aml8726/aml8726_wdt.c          |  305 --
+ sys/arm/amlogic/aml8726/files.aml8726          |   29 -
+ sys/arm/amlogic/aml8726/std.aml8726            |   25 -
+ sys/arm/amlogic/aml8726/uart_dev_aml8726.c     |  771 -----
+ sys/arm/rockchip/files.rk30xx                  |   11 -
+ sys/arm/rockchip/rk30xx_gpio.c                 |  630 ----
+ sys/arm/rockchip/rk30xx_grf.c                  |  131 -
+ sys/arm/rockchip/rk30xx_grf.h                  |  143 -
+ sys/arm/rockchip/rk30xx_machdep.c              |  105 -
+ sys/arm/rockchip/rk30xx_mp.c                   |  176 --
+ sys/arm/rockchip/rk30xx_mp.h                   |   38 -
+ sys/arm/rockchip/rk30xx_pmu.c                  |  131 -
+ sys/arm/rockchip/rk30xx_pmu.h                  |   62 -
+ sys/arm/rockchip/rk30xx_wdog.c                 |  202 --
+ sys/arm/rockchip/rk30xx_wdog.h                 |   36 -
+ sys/arm/rockchip/std.rk30xx                    |    8 -
+ sys/cam/mmc/mmc_da.c                           |    4 +-
+ sys/conf/NOTES                                 |    3 +-
+ sys/conf/files                                 |    2 +
+ sys/dev/ata/ata-pci.c                          |    6 +-
+ sys/dev/isp/isp.c                              |   23 +-
+ sys/dev/isp/ispmbox.h                          |    6 +-
+ sys/dev/rtsx/rtsx.c                            | 3893 ++++++++++++++++++++++++
+ sys/dev/rtsx/rtsxreg.h                         |  778 +++++
+ sys/i386/conf/GENERIC                          |    1 +
+ sys/modules/Makefile                           |    1 +
+ sys/modules/rtsx/Makefile                      |    9 +
+ tests/sys/netpfil/pf/ioctl/validation.c        |   38 +
+ 87 files changed, 5319 insertions(+), 13563 deletions(-)
+ delete mode 100644 release/arm/BANANAPI.conf
+ delete mode 100644 release/arm/BEAGLEBONE.conf
+ delete mode 100644 release/arm/CUBIEBOARD.conf
+ delete mode 100644 release/arm/CUBIEBOARD2.conf
+ delete mode 100644 release/arm/CUBOX-HUMMINGBOARD.conf
+ delete mode 100644 release/arm/PANDABOARD.conf
+ delete mode 100644 release/arm/RPI2.conf
+ delete mode 100644 release/arm/WANDBOARD.conf
+ create mode 100644 share/man/man4/rtsx.4
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_ccm.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_ccm.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_clkmsr.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_clkmsr.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_fb.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_fb.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_gpio.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_i2c.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_identsoc.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_if_dwc.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_l2cache.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_machdep.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_machdep.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_mmc.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_mmc.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_mp.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_pic.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_pinctrl.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_pinctrl.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_rng.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_rtc.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_sdxc-m8.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_sdxc-m8.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_soc.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_timer.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_uart.h
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_uart_console.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_usb_phy-m3.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_usb_phy-m6.c
+ delete mode 100644 sys/arm/amlogic/aml8726/aml8726_wdt.c
+ delete mode 100644 sys/arm/amlogic/aml8726/files.aml8726
+ delete mode 100644 sys/arm/amlogic/aml8726/std.aml8726
+ delete mode 100644 sys/arm/amlogic/aml8726/uart_dev_aml8726.c
+ delete mode 100644 sys/arm/rockchip/files.rk30xx
+ delete mode 100644 sys/arm/rockchip/rk30xx_gpio.c
+ delete mode 100644 sys/arm/rockchip/rk30xx_grf.c
+ delete mode 100644 sys/arm/rockchip/rk30xx_grf.h
+ delete mode 100644 sys/arm/rockchip/rk30xx_machdep.c
+ delete mode 100644 sys/arm/rockchip/rk30xx_mp.c
+ delete mode 100644 sys/arm/rockchip/rk30xx_mp.h
+ delete mode 100644 sys/arm/rockchip/rk30xx_pmu.c
+ delete mode 100644 sys/arm/rockchip/rk30xx_pmu.h
+ delete mode 100644 sys/arm/rockchip/rk30xx_wdog.c
+ delete mode 100644 sys/arm/rockchip/rk30xx_wdog.h
+ delete mode 100644 sys/arm/rockchip/std.rk30xx
+ create mode 100644 sys/dev/rtsx/rtsx.c
+ create mode 100644 sys/dev/rtsx/rtsxreg.h
+ create mode 100644 sys/modules/rtsx/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d641b8b5198f..ba17bfd8717f  freebsd/current/master -> freebsd/current/master        
+remote:    ce9f6be429b6..a86cdd5c6679  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d641b8b5198f..ba17bfd8717f  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
