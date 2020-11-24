@@ -47,3 +47,226 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Removing security/snoopy/files/patch-tests-bin-snoopy-test-threads.c
+Auto-merging security/snoopy/Makefile
+Auto-merging security/openssh-portable/Makefile
+Removing devel/py-yappi/files/run_tests.py
+Merge made by the 'recursive' strategy.
+ audio/gsequencer/Makefile                          |   2 +-
+ audio/gsequencer/distinfo                          |   6 +-
+ audio/id3lib/Makefile                              |   7 -
+ audio/id3lib/files/patch-CVE-2007-4460             |   8 +-
+ audio/id3lib/files/patch-configure                 |  11 +-
+ audio/id3lib/files/patch-examples-demo_convert.cpp |  11 +
+ audio/id3lib/files/patch-examples-demo_copy.cpp    |  11 +
+ audio/id3lib/files/patch-examples-demo_info.cpp    |  11 +
+ audio/id3lib/files/patch-examples-demo_tag.cpp     |  11 +
+ ...e_id3_globals.h => patch-include-id3-globals.h} |   0
+ .../files/patch-include-id3-id3lib_strings.h       |  10 +
+ audio/id3lib/files/patch-include-id3-writers.h     |  10 +
+ ...tch-io_helpers.cpp => patch-src-io_helpers.cpp} |   6 +-
+ ...-src_mp3__parse.cpp => patch-src-mp3_parse.cpp} |   0
+ audio/mp3asm/Makefile                              |  15 +-
+ audio/mp3asm/files/patch-configure                 |  18 +
+ audio/mp3asm/files/patch-src-frame.c               | 272 ++++++++++++++
+ audio/mp3asm/files/patch-src-mp3asm.c              |  70 ++++
+ audio/mp3asm/files/patch-src-mp3asm.h              |  19 +
+ audio/mp3asm/files/patch-src-parse.c               | 158 ++++++++
+ audio/mp3asm/files/patch-src-stream.c              | 149 ++++++++
+ audio/mp3asm/files/patch-src-tag.c                 |  11 +
+ audio/mp3asm/files/patch-src-utils.c               | 322 ++++++++++++++++
+ databases/rubygem-redis/Makefile                   |   2 +-
+ databases/rubygem-redis/distinfo                   |   6 +-
+ databases/tiledb/Makefile                          |   2 +-
+ databases/tiledb/distinfo                          |   6 +-
+ devel/Makefile                                     |   1 +
+ devel/check/Makefile                               |  10 -
+ devel/check/files/patch-Makefile.in                |  29 ++
+ devel/check/files/patch-doc-Makefile.in            |  17 +
+ devel/grcov/Makefile                               | 204 ++++++-----
+ devel/grcov/distinfo                               | 406 +++++++++++----------
+ devel/intel-graphics-compiler/Makefile             |   4 +-
+ devel/intel-graphics-compiler/distinfo             |  10 +-
+ devel/intel-graphics-compiler/files/patch-revert   | 353 ++++++++++++++++++
+ devel/pecl-protobuf/Makefile                       |   2 +
+ devel/py-inflect/Makefile                          |   2 +-
+ devel/py-inflect/distinfo                          |   6 +-
+ devel/py-inflect/pkg-descr                         |   2 +-
+ devel/py-lark-parser/Makefile                      |   2 +-
+ devel/py-lark-parser/distinfo                      |   6 +-
+ devel/py-pip-licenses/Makefile                     |   4 +-
+ devel/py-yappi/Makefile                            |   4 +-
+ devel/py-yappi/distinfo                            |   6 +-
+ devel/py-yappi/files/run_tests.py                  |  31 --
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-appmesh/Makefile             |   2 +-
+ devel/rubygem-aws-sdk-appmesh/distinfo             |   6 +-
+ devel/rubygem-aws-sdk-codegurureviewer/Makefile    |   2 +-
+ devel/rubygem-aws-sdk-codegurureviewer/distinfo    |   6 +-
+ devel/rubygem-aws-sdk-cognitoidentity/Makefile     |   2 +-
+ devel/rubygem-aws-sdk-cognitoidentity/distinfo     |   6 +-
+ devel/rubygem-aws-sdk-core2/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-core2/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-costexplorer/Makefile        |   2 +-
+ devel/rubygem-aws-sdk-costexplorer/distinfo        |   6 +-
+ devel/rubygem-aws-sdk-directoryservice/Makefile    |   2 +-
+ devel/rubygem-aws-sdk-directoryservice/distinfo    |   6 +-
+ devel/rubygem-aws-sdk-docdb/Makefile               |   4 +-
+ devel/rubygem-aws-sdk-docdb/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-kafka/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-kafka/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-kinesisanalyticsv2/Makefile  |   2 +-
+ devel/rubygem-aws-sdk-kinesisanalyticsv2/distinfo  |   6 +-
+ devel/rubygem-aws-sdk-lex/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-lex/distinfo                 |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ devel/rubygem-aws-sdk-networkfirewall/Makefile     |  22 ++
+ devel/rubygem-aws-sdk-networkfirewall/distinfo     |   3 +
+ devel/rubygem-aws-sdk-networkfirewall/pkg-descr    |   4 +
+ devel/rubygem-aws-sdk-redshift/Makefile            |   2 +-
+ devel/rubygem-aws-sdk-redshift/distinfo            |   6 +-
+ devel/rubygem-aws-sdk-resources/Makefile           |   3 +-
+ devel/rubygem-aws-sdk-resources/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-resources2/Makefile          |   2 +-
+ devel/rubygem-aws-sdk-resources2/distinfo          |   6 +-
+ devel/rubygem-aws-sdk-s3/Makefile                  |   2 +-
+ devel/rubygem-aws-sdk-s3/distinfo                  |   6 +-
+ devel/rubygem-aws-sdk2/Makefile                    |   2 +-
+ devel/rubygem-aws-sdk2/distinfo                    |   6 +-
+ graphics/gifski/Makefile                           |  38 +-
+ graphics/gifski/distinfo                           |  76 ++--
+ graphics/gmic/Makefile                             |   2 +-
+ graphics/gmic/distinfo                             |   6 +-
+ graphics/mozjpeg/Makefile                          |   1 +
+ graphics/openjpeg/Makefile                         |   3 -
+ graphics/openjpeg/files/patch-CMakeLists.txt       |  37 ++
+ ...arget_src_spec_powerpc64le__unknown__freebsd.rs |   2 +-
+ math/gretl/Makefile                                |   4 +-
+ math/gretl/distinfo                                |   6 +-
+ math/gretl/pkg-plist                               |  11 +-
+ net-im/neochat/Makefile                            |   3 +-
+ net-im/neochat/distinfo                            |   6 +-
+ security/libfido2/Makefile                         |  11 +-
+ security/libfido2/files/patch-CMakeLists.txt       |  10 +-
+ .../files/patch-openbsd-compat-openbsd-compat.h    |   9 -
+ security/openssh-portable/Makefile                 |   4 +-
+ .../files/extra-patch-gssapi-kexgssc.c             |  14 +
+ .../files/extra-patch-gssapi-kexgsss.c             |  14 +
+ security/py-fail2ban/Makefile                      |  10 +-
+ security/py-fail2ban/distinfo                      |  10 +-
+ security/snoopy/Makefile                           |   2 +-
+ security/snoopy/distinfo                           |   6 +-
+ .../files/patch-tests-bin-snoopy-test-threads.c    |  11 -
+ sysutils/Makefile                                  |   2 +
+ sysutils/atf-sun50i_h6/Makefile                    |   8 +
+ sysutils/atf-sun50i_h6/pkg-descr                   |   7 +
+ sysutils/u-boot-master/Makefile                    |   5 +
+ sysutils/u-boot-pine-h64/Makefile                  |  10 +
+ sysutils/u-boot-pine-h64/pkg-descr                 |   9 +
+ textproc/py-furo/Makefile                          |   2 +-
+ textproc/py-furo/distinfo                          |   6 +-
+ www/node/Makefile                                  |   2 +-
+ www/node/distinfo                                  |   6 +-
+ www/rubygem-async-http/Makefile                    |   2 +-
+ www/rubygem-async-http/distinfo                    |   6 +-
+ x11/waybar/Makefile                                |   3 +-
+ x11/waybar/distinfo                                |   2 +
+ 123 files changed, 2190 insertions(+), 605 deletions(-)
+ create mode 100644 audio/id3lib/files/patch-examples-demo_convert.cpp
+ create mode 100644 audio/id3lib/files/patch-examples-demo_copy.cpp
+ create mode 100644 audio/id3lib/files/patch-examples-demo_info.cpp
+ create mode 100644 audio/id3lib/files/patch-examples-demo_tag.cpp
+ rename audio/id3lib/files/{patch-include_id3_globals.h => patch-include-id3-globals.h} (100%)
+ create mode 100644 audio/id3lib/files/patch-include-id3-id3lib_strings.h
+ create mode 100644 audio/id3lib/files/patch-include-id3-writers.h
+ rename audio/id3lib/files/{patch-io_helpers.cpp => patch-src-io_helpers.cpp} (72%)
+ rename audio/id3lib/files/{patch-src_mp3__parse.cpp => patch-src-mp3_parse.cpp} (100%)
+ create mode 100644 audio/mp3asm/files/patch-configure
+ create mode 100644 audio/mp3asm/files/patch-src-frame.c
+ create mode 100644 audio/mp3asm/files/patch-src-mp3asm.c
+ create mode 100644 audio/mp3asm/files/patch-src-mp3asm.h
+ create mode 100644 audio/mp3asm/files/patch-src-parse.c
+ create mode 100644 audio/mp3asm/files/patch-src-stream.c
+ create mode 100644 audio/mp3asm/files/patch-src-tag.c
+ create mode 100644 devel/check/files/patch-Makefile.in
+ create mode 100644 devel/check/files/patch-doc-Makefile.in
+ create mode 100644 devel/intel-graphics-compiler/files/patch-revert
+ delete mode 100644 devel/py-yappi/files/run_tests.py
+ create mode 100644 devel/rubygem-aws-sdk-networkfirewall/Makefile
+ create mode 100644 devel/rubygem-aws-sdk-networkfirewall/distinfo
+ create mode 100644 devel/rubygem-aws-sdk-networkfirewall/pkg-descr
+ create mode 100644 graphics/openjpeg/files/patch-CMakeLists.txt
+ create mode 100644 security/openssh-portable/files/extra-patch-gssapi-kexgssc.c
+ create mode 100644 security/openssh-portable/files/extra-patch-gssapi-kexgsss.c
+ delete mode 100644 security/snoopy/files/patch-tests-bin-snoopy-test-threads.c
+ create mode 100644 sysutils/atf-sun50i_h6/Makefile
+ create mode 100644 sysutils/atf-sun50i_h6/pkg-descr
+ create mode 100644 sysutils/u-boot-pine-h64/Makefile
+ create mode 100644 sysutils/u-boot-pine-h64/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    c31e1803d669..148873d54328  master -> master        
+remote:    7ca1e8dfedb5..c31e1803d669  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   c31e1803d669..148873d54328  master -> master
+==== END: master ====
