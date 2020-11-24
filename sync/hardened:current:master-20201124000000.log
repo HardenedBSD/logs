@@ -1,0 +1,106 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 8 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 38b6f6855930..c92e42ecf80a
+Fast-forward
+ bin/getfacl/getfacl.c              | 26 ++++++------
+ sbin/devd/devd.conf.5              | 12 +++---
+ sys/amd64/linux/linux_sysvec.c     |  3 ++
+ sys/amd64/linux32/linux32_sysvec.c |  3 ++
+ sys/arm64/linux/linux_sysvec.c     |  3 ++
+ sys/compat/linux/linux_common.c    | 15 +------
+ sys/compat/linux/linux_emul.c      | 82 ++++++++++++++++++--------------------
+ sys/compat/linux/linux_emul.h      |  6 +--
+ sys/i386/linux/linux_sysvec.c      | 17 ++------
+ sys/kern/init_main.c               |  5 +++
+ sys/kern/kern_dtrace.c             | 47 ++++++----------------
+ sys/kern/kern_exec.c               |  2 +
+ sys/kern/kern_exit.c               |  7 ++++
+ sys/kern/kern_kthread.c            |  5 +++
+ sys/kern/kern_proc.c               |  7 ++++
+ sys/kern/kern_thr.c                |  3 ++
+ sys/kern/kern_thread.c             | 10 ++++-
+ sys/sys/dtrace_bsd.h               |  5 +++
+ sys/sys/proc.h                     |  1 +
+ sys/sys/sysent.h                   |  3 ++
+ 20 files changed, 133 insertions(+), 129 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Merge made by the 'recursive' strategy.
+ sbin/ping6/ping6.c        |  3 ++-
+ sys/dev/isp/isp.c         | 25 ++++++++++----------
+ sys/dev/isp/isp_freebsd.c | 59 ++++++++++++++++++++++++++++++++++++++---------
+ sys/dev/isp/isp_library.c | 39 +++++++------------------------
+ sys/dev/isp/isp_library.h | 18 ++++++++++++++-
+ sys/dev/isp/ispmbox.h     | 15 ++++++------
+ sys/dev/isp/ispvar.h      | 11 +++++----
+ sys/kern/kern_lock.c      |  2 +-
+ sys/kern/kern_mutex.c     | 16 ++++++-------
+ sys/kern/kern_rwlock.c    | 11 +++++----
+ sys/kern/kern_sx.c        | 16 ++++++-------
+ 11 files changed, 124 insertions(+), 91 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    c92e42ecf80a..3f91ec02b9ac  hardened/current/master -> hardened/current/master        
+remote:    c91c076a57ec..ec9da780f1f2  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   c92e42ecf80a..3f91ec02b9ac  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
