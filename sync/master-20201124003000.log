@@ -47,3 +47,190 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/remmina/pkg-message
+Auto-merging net/remmina/Makefile
+Removing net/remmina-plugins/distinfo
+Removing net/remmina-plugins/bsd.plugin.mk
+Removing net/remmina-plugins/Makefile
+Removing net/remmina-plugin-xdmcp/pkg-plist
+Removing net/remmina-plugin-xdmcp/Makefile
+Removing net/remmina-plugin-www/pkg-plist
+Removing net/remmina-plugin-www/Makefile
+Removing net/remmina-plugin-vnc/pkg-plist
+Removing net/remmina-plugin-vnc/Makefile
+Removing net/remmina-plugin-st/pkg-plist
+Removing net/remmina-plugin-st/Makefile
+Removing net/remmina-plugin-spice/pkg-plist
+Removing net/remmina-plugin-spice/Makefile
+Removing net/remmina-plugin-secret/pkg-plist
+Removing net/remmina-plugin-secret/Makefile
+Removing net/remmina-plugin-rdp/pkg-plist
+Removing net/remmina-plugin-rdp/Makefile
+Removing net/remmina-plugin-nx/pkg-plist
+Removing net/remmina-plugin-nx/Makefile
+Removing net/remmina-plugin-exec/pkg-plist
+Removing net/remmina-plugin-exec/Makefile
+Auto-merging net/Makefile
+Removing math/openblas/files/patch-cpuid__arm64.c
+Removing devel/luafilesystem/files/patch-Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |  12 +-
+ devel/Makefile                                     |   1 +
+ devel/grcov/Makefile                               | 143 ++++++++++++
+ devel/grcov/distinfo                               | 239 +++++++++++++++++++++
+ devel/grcov/pkg-descr                              |   6 +
+ devel/luafilesystem/Makefile                       |   5 +-
+ devel/luafilesystem/distinfo                       |   6 +-
+ devel/luafilesystem/files/patch-Makefile           |  24 ---
+ devel/luafilesystem/files/patch-config             |  26 +--
+ emulators/citra/Makefile                           |   4 +-
+ emulators/citra/distinfo                           |   6 +-
+ emulators/rpcs3/Makefile                           |   4 +-
+ emulators/rpcs3/distinfo                           |   6 +-
+ emulators/yuzu/Makefile                            |   4 +-
+ emulators/yuzu/distinfo                            |   6 +-
+ graphics/mesa-devel/Makefile                       |   4 +-
+ graphics/mesa-devel/distinfo                       |   6 +-
+ lang/gcc10-devel/Makefile                          |   4 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ math/openblas/Makefile                             |   2 +-
+ math/openblas/distinfo                             |   6 +-
+ math/openblas/files/patch-cpuid__arm64.c           |  11 -
+ net/Makefile                                       |  10 -
+ net/remmina-plugin-exec/Makefile                   |  13 --
+ net/remmina-plugin-exec/pkg-plist                  |   2 -
+ net/remmina-plugin-nx/Makefile                     |  16 --
+ net/remmina-plugin-nx/pkg-plist                    |   2 -
+ net/remmina-plugin-rdp/Makefile                    |  16 --
+ net/remmina-plugin-rdp/pkg-plist                   |   3 -
+ net/remmina-plugin-secret/Makefile                 |  15 --
+ net/remmina-plugin-secret/pkg-plist                |   1 -
+ net/remmina-plugin-spice/Makefile                  |  13 --
+ net/remmina-plugin-spice/pkg-plist                 |   3 -
+ net/remmina-plugin-st/Makefile                     |  18 --
+ net/remmina-plugin-st/pkg-plist                    |   1 -
+ net/remmina-plugin-vnc/Makefile                    |  17 --
+ net/remmina-plugin-vnc/pkg-plist                   |   3 -
+ net/remmina-plugin-www/Makefile                    |  15 --
+ net/remmina-plugin-www/pkg-plist                   |   3 -
+ net/remmina-plugin-xdmcp/Makefile                  |  15 --
+ net/remmina-plugin-xdmcp/pkg-plist                 |   3 -
+ net/remmina-plugins/Makefile                       |  50 -----
+ net/remmina-plugins/bsd.plugin.mk                  |  82 -------
+ net/remmina-plugins/distinfo                       |   3 -
+ net/remmina/Makefile                               | 105 ++++++++-
+ net/remmina/pkg-descr                              |  19 +-
+ .../pkg-descr => remmina/pkg-descr-lite}           |   6 +
+ net/remmina/pkg-message                            |  13 --
+ net/remmina/pkg-plist                              |  22 ++
+ security/krb5-devel/Makefile                       |   6 +-
+ security/krb5-devel/distinfo                       |   6 +-
+ sysutils/cfengine-devel/Makefile                   |   4 +-
+ sysutils/cfengine-devel/distinfo                   |   6 +-
+ sysutils/cfengine-masterfiles-devel/Makefile       |   4 +-
+ sysutils/cfengine-masterfiles-devel/distinfo       |   6 +-
+ sysutils/nut-devel/Makefile                        |   5 +-
+ sysutils/nut-devel/distinfo                        |   6 +-
+ www/youtube_dl/Makefile                            |   2 +-
+ www/youtube_dl/distinfo                            |   6 +-
+ x11-wm/chamfer/Makefile                            |   4 +-
+ x11-wm/chamfer/distinfo                            |   6 +-
+ x11-wm/phoc/Makefile                               |   4 +-
+ x11-wm/phoc/distinfo                               |   6 +-
+ x11/squeekboard/Makefile                           |   6 +-
+ x11/squeekboard/distinfo                           |  10 +-
+ x11/swaylock-effects/Makefile                      |   1 +
+ x11/swaylock-effects/distinfo                      |   2 +
+ 67 files changed, 627 insertions(+), 463 deletions(-)
+ create mode 100644 devel/grcov/Makefile
+ create mode 100644 devel/grcov/distinfo
+ create mode 100644 devel/grcov/pkg-descr
+ delete mode 100644 devel/luafilesystem/files/patch-Makefile
+ delete mode 100644 math/openblas/files/patch-cpuid__arm64.c
+ delete mode 100644 net/remmina-plugin-exec/Makefile
+ delete mode 100644 net/remmina-plugin-exec/pkg-plist
+ delete mode 100644 net/remmina-plugin-nx/Makefile
+ delete mode 100644 net/remmina-plugin-nx/pkg-plist
+ delete mode 100644 net/remmina-plugin-rdp/Makefile
+ delete mode 100644 net/remmina-plugin-rdp/pkg-plist
+ delete mode 100644 net/remmina-plugin-secret/Makefile
+ delete mode 100644 net/remmina-plugin-secret/pkg-plist
+ delete mode 100644 net/remmina-plugin-spice/Makefile
+ delete mode 100644 net/remmina-plugin-spice/pkg-plist
+ delete mode 100644 net/remmina-plugin-st/Makefile
+ delete mode 100644 net/remmina-plugin-st/pkg-plist
+ delete mode 100644 net/remmina-plugin-vnc/Makefile
+ delete mode 100644 net/remmina-plugin-vnc/pkg-plist
+ delete mode 100644 net/remmina-plugin-www/Makefile
+ delete mode 100644 net/remmina-plugin-www/pkg-plist
+ delete mode 100644 net/remmina-plugin-xdmcp/Makefile
+ delete mode 100644 net/remmina-plugin-xdmcp/pkg-plist
+ delete mode 100644 net/remmina-plugins/Makefile
+ delete mode 100644 net/remmina-plugins/bsd.plugin.mk
+ delete mode 100644 net/remmina-plugins/distinfo
+ rename net/{remmina-plugins/pkg-descr => remmina/pkg-descr-lite} (58%)
+ delete mode 100644 net/remmina/pkg-message
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    9402b112272b..f7eba400c45f  master -> master        
+remote:    d0dd5aa908f8..9402b112272b  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   9402b112272b..f7eba400c45f  master -> master
+==== END: master ====
