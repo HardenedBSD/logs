@@ -1,0 +1,145 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/amd64/include/vmparam.h
+Auto-merging share/man/man4/Makefile
+Removing sbin/ping6/tests/ping6_test.sh
+Removing sbin/ping6/tests/Makefile
+Removing sbin/ping6/ping6.8
+Removing sbin/ping6/Makefile.depend
+Removing sbin/ping6/Makefile
+Auto-merging rescue/rescue/Makefile
+Auto-merging ObsoleteFiles.inc
+Merge made by the 'recursive' strategy.
+ ObsoleteFiles.inc                                  |  10 +
+ UPDATING                                           |   4 +
+ etc/mtree/BSD.tests.dist                           |   2 -
+ rescue/rescue/Makefile                             |   1 -
+ sbin/Makefile                                      |   1 -
+ sbin/ping/Makefile                                 |   8 +-
+ sbin/ping/main.c                                   | 191 +++++++
+ sbin/ping/main.h                                   |  36 ++
+ sbin/ping/ping.8                                   | 432 ++++++++++++----
+ sbin/ping/ping.c                                   |  31 +-
+ sbin/ping/ping.h                                   |  36 ++
+ sbin/{ping6 => ping}/ping6.c                       |  42 +-
+ sbin/ping/ping6.h                                  |  36 ++
+ sbin/ping/tests/Makefile                           |   1 +
+ .../tests/ping_6_c1_s8_t1.out}                     |   0
+ sbin/ping/tests/ping_test.sh                       |  17 +-
+ sbin/ping6/Makefile                                |  27 -
+ sbin/ping6/Makefile.depend                         |  22 -
+ sbin/ping6/ping6.8                                 | 567 ---------------------
+ sbin/ping6/tests/Makefile                          |   8 -
+ sbin/ping6/tests/ping6_test.sh                     |  53 --
+ share/doc/legal/Makefile                           |   1 +
+ share/doc/legal/Makefile.armv7                     |   3 +
+ share/doc/legal/imx/Makefile                       |   7 +
+ share/man/man4/Makefile                            |   1 +
+ share/man/man4/ktls.4                              | 264 ++++++++++
+ share/man/man4/tcp.4                               |  87 +---
+ stand/efi/loader/copy.c                            |   8 +-
+ sys/amd64/amd64/genassym.c                         |   1 +
+ sys/amd64/amd64/locore.S                           |   3 +-
+ sys/amd64/include/vmparam.h                        |   8 +
+ sys/arm/freescale/imx/files.imx6                   |  31 +-
+ sys/arm/freescale/imx/imx6_sdma.c                  |   2 +-
+ sys/conf/ldscript.amd64                            |   2 +-
+ sys/contrib/dev/imx/LICENSE                        |  47 ++
+ sys/contrib/dev/imx/sdma-imx6q.bin.uu              | 100 ++++
+ sys/dev/isp/isp.c                                  |  12 +
+ sys/dev/isp/isp_freebsd.c                          |  27 -
+ sys/dev/isp/isp_library.c                          |  80 +--
+ sys/dev/isp/isp_library.h                          |   2 -
+ sys/dev/isp/isp_target.c                           |  14 +-
+ sys/dev/isp/isp_target.h                           |   4 -
+ sys/dev/isp/ispmbox.h                              |   2 +-
+ sys/dev/isp/ispvar.h                               |   1 -
+ sys/kern/sys_pipe.c                                |  16 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           |   3 -
+ 46 files changed, 1174 insertions(+), 1077 deletions(-)
+ create mode 100644 sbin/ping/main.c
+ create mode 100644 sbin/ping/main.h
+ create mode 100644 sbin/ping/ping.h
+ rename sbin/{ping6 => ping}/ping6.c (98%)
+ create mode 100644 sbin/ping/ping6.h
+ rename sbin/{ping6/tests/ping6_c1_s8_t1.out => ping/tests/ping_6_c1_s8_t1.out} (100%)
+ delete mode 100644 sbin/ping6/Makefile
+ delete mode 100644 sbin/ping6/Makefile.depend
+ delete mode 100644 sbin/ping6/ping6.8
+ delete mode 100644 sbin/ping6/tests/Makefile
+ delete mode 100644 sbin/ping6/tests/ping6_test.sh
+ create mode 100644 share/doc/legal/Makefile.armv7
+ create mode 100644 share/doc/legal/imx/Makefile
+ create mode 100644 share/man/man4/ktls.4
+ create mode 100644 sys/contrib/dev/imx/LICENSE
+ create mode 100644 sys/contrib/dev/imx/sdma-imx6q.bin.uu
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    10227c1f7bdd..b77da70405f3  hardened/current/master -> hardened/current/master        
+remote:    6930ba5e9cf2..0b1064b00fa3  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Gitea: Internal Server Error        
+remote: Failed to Update: hardenedbsd/hardenedbsd Error: CommitRepoAction: NotifyWatchers: insert new actioner: Error 1366: Incorrect string value: '\xC4\x8Dan \...' for column 'content' at row 1        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   10227c1f7bdd..b77da70405f3  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
