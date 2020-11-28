@@ -1,0 +1,209 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 21c5c4014c5a..f607bd657331
+Fast-forward
+ lib/libc/gen/Symbol.map                            |    1 +
+ lib/libc/gen/_pthread_stubs.c                      |    9 +
+ lib/libc/include/libc_private.h                    |    1 +
+ lib/libthr/thread/thr_init.c                       |    1 +
+ sys/arm/arm/cpufunc.c                              |    3 -
+ sys/arm/arm/identcpu-v4.c                          |  341 --
+ sys/arm/arm/intr.c                                 |  204 -
+ sys/arm/arm/locore-v4.S                            |  494 ---
+ sys/arm/arm/locore.S                               |    4 -
+ sys/arm/arm/pmap-v4.c                              | 4420 --------------------
+ sys/arm/arm/swtch-v4.S                             |  376 --
+ sys/arm/arm/trap-v4.c                              |  717 ----
+ sys/arm/include/atomic-v4.h                        |  660 ---
+ sys/arm/include/atomic.h                           |    4 -
+ sys/arm/include/cpu-v4.h                           |  183 -
+ sys/arm/include/cpu.h                              |    4 -
+ sys/arm/include/pmap-v4.h                          |  381 --
+ sys/arm/include/pmap.h                             |    4 -
+ sys/arm/include/pte-v4.h                           |  350 --
+ sys/cam/ata/ata_da.c                               |    4 +-
+ sys/cam/cam_compat.c                               |    2 +-
+ sys/cam/cam_periph.c                               |   16 +-
+ sys/cam/cam_xpt.c                                  |    2 +-
+ sys/cam/ctl/ctl_backend_block.c                    |   58 +-
+ sys/cam/mmc/mmc_da.c                               |    2 +-
+ sys/cam/nvme/nvme_da.c                             |    4 +-
+ sys/cam/scsi/scsi_cd.c                             |    4 +-
+ sys/cam/scsi/scsi_da.c                             |    6 +-
+ sys/cam/scsi/scsi_pass.c                           |    8 +-
+ sys/cam/scsi/scsi_sa.c                             |    6 +-
+ sys/cam/scsi/scsi_sg.c                             |    4 +-
+ sys/cam/scsi/scsi_target.c                         |    4 +-
+ sys/compat/linprocfs/linprocfs.c                   |    4 +-
+ sys/compat/linux/linux_ioctl.c                     |    2 +-
+ sys/conf/files.arm                                 |   19 +-
+ sys/conf/options                                   |    2 +-
+ .../openzfs/module/os/freebsd/zfs/vdev_geom.c      |    2 +-
+ .../openzfs/module/os/freebsd/zfs/zvol_os.c        |    4 +-
+ sys/dev/ahci/ahci.c                                |   15 +-
+ sys/dev/ahci/ahci.h                                |   10 +-
+ sys/dev/ahci/ahciem.c                              |    2 +-
+ sys/dev/ata/ata-all.c                              |    2 +-
+ sys/dev/ata/ata-all.h                              |    2 +-
+ sys/dev/ata/ata-dma.c                              |    2 +-
+ sys/dev/firewire/sbp.c                             |    2 +-
+ sys/dev/flash/cqspi.c                              |    4 +-
+ sys/dev/isci/scil/sci_controller_constants.h       |    2 +-
+ sys/dev/iscsi/iscsi.c                              |    2 +-
+ sys/dev/md/md.c                                    |    5 +-
+ sys/dev/mfi/mfi.c                                  |    2 +-
+ sys/dev/mpr/mpr.c                                  |    4 +-
+ sys/dev/mps/mps.c                                  |    4 +-
+ sys/dev/mpt/mpt.c                                  |    2 +-
+ sys/dev/mpt/mpt.h                                  |    2 +-
+ sys/dev/mrsas/mrsas.c                              |    8 +-
+ sys/dev/mvs/mvs.c                                  |   14 +-
+ sys/dev/mvs/mvs.h                                  |    3 +-
+ sys/dev/nvme/nvme.h                                |    2 +-
+ sys/dev/nvme/nvme_ctrlr.c                          |    4 +-
+ sys/dev/pms/freebsd/driver/ini/src/agdef.h         |    2 +-
+ sys/dev/pms/freebsd/driver/ini/src/agtiapi.c       |    4 +-
+ sys/dev/sdhci/sdhci.c                              |   16 +-
+ sys/dev/siis/siis.c                                |   15 +-
+ sys/dev/siis/siis.h                                |   19 +-
+ sys/dev/sym/sym_conf.h                             |    4 +-
+ sys/dev/usb/storage/umass.c                        |    2 +-
+ sys/dev/virtio/block/virtio_blk.c                  |    8 +-
+ sys/dev/virtio/scsi/virtio_scsi.c                  |    2 +-
+ sys/dev/xen/blkback/blkback.c                      |    3 +-
+ sys/dev/xen/blkfront/blkfront.c                    |    4 +-
+ sys/fs/cd9660/cd9660_vfsops.c                      |    4 +-
+ sys/fs/ext2fs/ext2_vfsops.c                        |    6 +-
+ sys/fs/fuse/fuse_vfsops.c                          |    2 +-
+ sys/fs/msdosfs/msdosfs_vfsops.c                    |    4 +-
+ sys/fs/udf/udf_vfsops.c                            |    4 +-
+ sys/geom/cache/g_cache.c                           |    2 +-
+ sys/geom/eli/g_eli_integrity.c                     |   24 +-
+ sys/geom/geom_dev.c                                |    6 +-
+ sys/geom/geom_io.c                                 |    4 +-
+ sys/geom/journal/g_journal.c                       |    2 +-
+ sys/geom/journal/g_journal.h                       |    2 +-
+ sys/geom/mirror/g_mirror.c                         |    4 +-
+ sys/geom/nop/g_nop.c                               |    2 +-
+ sys/geom/part/g_part_apm.c                         |    4 +-
+ sys/geom/part/g_part_gpt.c                         |   12 +-
+ sys/geom/part/g_part_ldm.c                         |    6 +-
+ sys/geom/raid/md_ddf.c                             |   12 +-
+ sys/geom/raid/md_promise.c                         |    2 +-
+ sys/geom/raid3/g_raid3.c                           |   10 +-
+ sys/geom/shsec/g_shsec.c                           |   15 +-
+ sys/geom/stripe/g_stripe.c                         |   19 +-
+ sys/geom/uzip/g_uzip.c                             |    6 +-
+ sys/geom/vinum/geom_vinum_var.h                    |    2 +-
+ sys/geom/virstor/g_virstor.c                       |    6 +-
+ sys/geom/virstor/g_virstor.h                       |    4 +-
+ sys/kern/kern_mib.c                                |   25 +-
+ sys/kern/kern_physio.c                             |   21 +-
+ sys/kern/kern_sendfile.c                           |    4 +-
+ sys/kern/subr_param.c                              |   24 +-
+ sys/kern/vfs_aio.c                                 |   19 +-
+ sys/kern/vfs_bio.c                                 |   89 +-
+ sys/kern/vfs_cluster.c                             |    2 +
+ sys/kern/vfs_default.c                             |    4 +-
+ sys/mips/ingenic/jz4780_mmc.c                      |    2 +-
+ sys/net/if.c                                       |    4 +-
+ sys/net/route.h                                    |    3 +-
+ sys/net/route/nhgrp_ctl.c                          |    9 +
+ sys/net/route/route_var.h                          |    1 +
+ sys/powerpc/mambo/mambo_disk.c                     |    2 +-
+ sys/powerpc/mpc85xx/fsl_sata.c                     |    2 +-
+ sys/sys/aio.h                                      |    2 +-
+ sys/sys/buf.h                                      |   10 +-
+ sys/sys/param.h                                    |    2 +-
+ sys/sys/systm.h                                    |    2 +
+ sys/ufs/ffs/ffs_vfsops.c                           |    4 +-
+ sys/vm/swap_pager.c                                |    8 +-
+ sys/vm/vm_fault.c                                  |    1 -
+ sys/vm/vm_init.c                                   |    4 +-
+ sys/vm/vm_map.h                                    |    2 +-
+ sys/vm/vm_pager.c                                  |    9 +-
+ sys/vm/vm_pager.h                                  |    6 +
+ sys/vm/vnode_pager.c                               |   15 +-
+ 122 files changed, 435 insertions(+), 8487 deletions(-)
+ delete mode 100644 sys/arm/arm/identcpu-v4.c
+ delete mode 100644 sys/arm/arm/intr.c
+ delete mode 100644 sys/arm/arm/locore-v4.S
+ delete mode 100644 sys/arm/arm/pmap-v4.c
+ delete mode 100644 sys/arm/arm/swtch-v4.S
+ delete mode 100644 sys/arm/arm/trap-v4.c
+ delete mode 100644 sys/arm/include/atomic-v4.h
+ delete mode 100644 sys/arm/include/cpu-v4.h
+ delete mode 100644 sys/arm/include/pmap-v4.h
+ delete mode 100644 sys/arm/include/pte-v4.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    21c5c4014c5a..f607bd657331  freebsd/current/master -> freebsd/current/master        
+remote:    d455069d3258..c77d9fe2096d  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   21c5c4014c5a..f607bd657331  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
