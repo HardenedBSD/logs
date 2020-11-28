@@ -1,0 +1,85 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating d94e1f5124e3..21c5c4014c5a
+Fast-forward
+ sys/amd64/include/vmm.h         |  34 ++++----
+ sys/amd64/vmm/amd/svm.c         |  75 ++++++++++------
+ sys/amd64/vmm/intel/vmx.c       |  98 ++++++++++++---------
+ sys/amd64/vmm/intel/vmx.h       |   4 +-
+ sys/amd64/vmm/vmm.c             | 185 +++++++++++++++++++++-------------------
+ sys/amd64/vmm/vmm_util.c        |   6 ++
+ sys/amd64/vmm/vmm_util.h        |   1 +
+ sys/kern/kern_cpuset.c          |  21 +++--
+ usr.sbin/bhyve/pci_virtio_rnd.c |   5 +-
+ usr.sbin/bhyve/pci_xhci.c       |  21 ++---
+ usr.sbin/bhyve/snapshot.c       |   3 +-
+ 11 files changed, 260 insertions(+), 193 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Unable to get Owner: 5 for Deploy Key: 2:github-sync@sync-01.md.hardenedbsd.org in hardenedbsd/hardenedbsd.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/master
+Your branch is ahead of 'origin/freebsd/current/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 21c5c4014c5a Suspend I/O on ahci-cd devices during a snapshot.
+==== END: freebsd/current/master ====
