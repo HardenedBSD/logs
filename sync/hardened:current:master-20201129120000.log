@@ -1,0 +1,195 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Removing sys/arm/versatile/versatile_common.c
+Removing sys/arm/mv/std.mv
+Removing sys/arm/freescale/imx/imx_common.c
+Removing sys/arm/conf/YYHD18
+Removing sys/arm/conf/VSATV102
+Removing sys/arm/conf/SAM9G20EK.hints
+Removing sys/arm/conf/EA3250.hints
+Removing sys/arm/conf/ARNDALE-OCTA
+Removing sys/arm/conf/ARNDALE
+Auto-merging sys/arm/arm/machdep.c
+Auto-merging sys/arm/arm/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm/arm/elf_machdep.c
+Removing sys/arm/arm/cpufunc_asm_sheeva.S
+Removing sys/arm/arm/cpufunc_asm_armv5_ec.S
+Removing sys/arm/arm/cpufunc_asm_armv4.S
+Removing sys/arm/arm/cpufunc_asm_arm9.S
+Removing sys/arm/annapurna/alpine/alpine_common.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc sys/arm/arm/elf_machdep.c
+index febbb4cf2398,0d4ef2018b5c..000000000000
+--- a/sys/arm/arm/elf_machdep.c
++++ b/sys/arm/arm/elf_machdep.c
+@@@ -88,10 -85,8 +88,15 @@@ struct sysentvec elf32_freebsd_sysvec 
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+  	.sv_flags	=
+++<<<<<<< HEAD
+ +#if __ARM_ARCH >= 6
+ +			  SV_SHP | SV_TIMEKEEP | SV_RNG_SEED_VER |
+ +#endif
+ +			  SV_ABI_FREEBSD | SV_ILP32,
+++=======
++ 			  SV_ASLR | SV_SHP | SV_TIMEKEEP | SV_RNG_SEED_VER |
++ 			  SV_ABI_FREEBSD | SV_ILP32 | SV_ASLR,
+++>>>>>>> freebsd/current/master
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+  	.sv_syscallnames = syscallnames,
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   sbin/hastd/hastd.c
+	modified:   share/man/man7/security.7
+	modified:   sys/amd64/vmm/vmm.c
+	modified:   sys/arm/allwinner/aw_gpio.c
+	modified:   sys/arm/allwinner/files.allwinner
+	deleted:    sys/arm/annapurna/alpine/alpine_common.c
+	modified:   sys/arm/annapurna/alpine/files.alpine
+	modified:   sys/arm/arm/bcopyinout.S
+	modified:   sys/arm/arm/bcopyinout_xscale.S
+	modified:   sys/arm/arm/bus_space_base.c
+	modified:   sys/arm/arm/copystr.S
+	modified:   sys/arm/arm/cpufunc.c
+	deleted:    sys/arm/arm/cpufunc_asm_arm9.S
+	deleted:    sys/arm/arm/cpufunc_asm_armv4.S
+	deleted:    sys/arm/arm/cpufunc_asm_armv5_ec.S
+	deleted:    sys/arm/arm/cpufunc_asm_sheeva.S
+	modified:   sys/arm/arm/cpuinfo.c
+	modified:   sys/arm/arm/db_interface.c
+	modified:   sys/arm/arm/debug_monitor.c
+	modified:   sys/arm/arm/disassem.c
+	modified:   sys/arm/arm/exception.S
+	modified:   sys/arm/arm/fiq.c
+	modified:   sys/arm/arm/fusu.S
+	modified:   sys/arm/arm/genassym.c
+	modified:   sys/arm/arm/in_cksum_arm.S
+	modified:   sys/arm/arm/machdep.c
+	modified:   sys/arm/arm/machdep_intr.c
+	modified:   sys/arm/arm/machdep_kdb.c
+	modified:   sys/arm/arm/mem.c
+	modified:   sys/arm/arm/minidump_machdep.c
+	modified:   sys/arm/arm/mp_machdep.c
+	modified:   sys/arm/arm/nexus.c
+	modified:   sys/arm/arm/stdatomic.c
+	modified:   sys/arm/arm/support.S
+	modified:   sys/arm/arm/sys_machdep.c
+	modified:   sys/arm/arm/vm_machdep.c
+	deleted:    sys/arm/conf/ARNDALE
+	deleted:    sys/arm/conf/ARNDALE-OCTA
+	deleted:    sys/arm/conf/EA3250.hints
+	deleted:    sys/arm/conf/SAM9G20EK.hints
+	deleted:    sys/arm/conf/VSATV102
+	deleted:    sys/arm/conf/YYHD18
+	modified:   sys/arm/freescale/imx/files.imx5
+	deleted:    sys/arm/freescale/imx/imx_common.c
+	modified:   sys/arm/include/_align.h
+	modified:   sys/arm/include/armreg.h
+	modified:   sys/arm/include/asmacros.h
+	modified:   sys/arm/include/atomic-v6.h
+	modified:   sys/arm/include/bus.h
+	modified:   sys/arm/include/bus_dma.h
+	modified:   sys/arm/include/cpu-v6.h
+	modified:   sys/arm/include/cpufunc.h
+	modified:   sys/arm/include/cpuinfo.h
+	modified:   sys/arm/include/db_machdep.h
+	modified:   sys/arm/include/debug_monitor.h
+	modified:   sys/arm/include/fdt.h
+	modified:   sys/arm/include/frame.h
+	modified:   sys/arm/include/intr.h
+	modified:   sys/arm/include/kdb.h
+	modified:   sys/arm/include/machdep.h
+	modified:   sys/arm/include/md_var.h
+	modified:   sys/arm/include/pcpu.h
+	modified:   sys/arm/include/proc.h
+	modified:   sys/arm/include/sf_buf.h
+	modified:   sys/arm/include/sysarch.h
+	modified:   sys/arm/include/sysreg.h
+	modified:   sys/arm/include/vm.h
+	modified:   sys/arm/mv/gpio.c
+	modified:   sys/arm/mv/mpic.c
+	modified:   sys/arm/mv/mv_common.c
+	modified:   sys/arm/mv/mv_pci.c
+	deleted:    sys/arm/mv/std.mv
+	modified:   sys/arm/versatile/files.versatile
+	deleted:    sys/arm/versatile/versatile_common.c
+	modified:   sys/conf/files.arm
+	modified:   sys/dev/pci/pci_host_generic_acpi.c
+	modified:   sys/kern/vfs_aio.c
+	modified:   sys/net/route.h
+	modified:   sys/net/route/nhgrp_ctl.c
+	modified:   sys/net/route/nhop_ctl.c
+	modified:   sys/net/route/route_ctl.c
+	modified:   sys/net/route/route_ctl.h
+	modified:   sys/net/route/route_helpers.c
+	modified:   sys/net/route/route_var.h
+	modified:   sys/netinet/in_fib.c
+	modified:   sys/netinet/in_fib.h
+	modified:   sys/netinet6/in6_fib.c
+	modified:   sys/netinet6/in6_fib.h
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/arm/arm/elf_machdep.c
+
+HEAD is now at dc70852e8219 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at dc70852e8219 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
