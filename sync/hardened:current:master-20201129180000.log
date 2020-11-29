@@ -1,0 +1,319 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 15 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating dc70852e8219..f9320f26153d
+Fast-forward
+ sbin/hastd/hastd.c                       |   1 +
+ share/man/man7/security.7                |   6 +-
+ sys/amd64/vmm/vmm.c                      |   6 +-
+ sys/arm/allwinner/aw_gpio.c              |  11 -
+ sys/arm/allwinner/files.allwinner        |   2 +-
+ sys/arm/annapurna/alpine/alpine_common.c |  72 ----
+ sys/arm/annapurna/alpine/files.alpine    |   1 -
+ sys/arm/arm/bcopyinout.S                 |   9 -
+ sys/arm/arm/bcopyinout_xscale.S          | 139 --------
+ sys/arm/arm/bus_space_base.c             |   3 -
+ sys/arm/arm/copystr.S                    |   8 -
+ sys/arm/arm/cpufunc.c                    | 182 -----------
+ sys/arm/arm/cpufunc_asm_arm9.S           |  69 ----
+ sys/arm/arm/cpufunc_asm_armv4.S          |  74 -----
+ sys/arm/arm/cpufunc_asm_armv5_ec.S       | 217 ------------
+ sys/arm/arm/cpufunc_asm_sheeva.S         | 424 ------------------------
+ sys/arm/arm/cpuinfo.c                    |  11 -
+ sys/arm/arm/db_interface.c               |   3 +-
+ sys/arm/arm/debug_monitor.c              |   1 -
+ sys/arm/arm/disassem.c                   |   2 -
+ sys/arm/arm/elf_machdep.c                |   8 -
+ sys/arm/arm/exception.S                  |  85 -----
+ sys/arm/arm/fiq.c                        |   8 -
+ sys/arm/arm/fusu.S                       |  24 --
+ sys/arm/arm/genassym.c                   |  34 --
+ sys/arm/arm/in_cksum_arm.S               |  17 +-
+ sys/arm/arm/machdep.c                    | 353 --------------------
+ sys/arm/arm/machdep_intr.c               |   4 -
+ sys/arm/arm/machdep_kdb.c                |   3 -
+ sys/arm/arm/mem.c                        |   2 -
+ sys/arm/arm/minidump_machdep.c           |   4 -
+ sys/arm/arm/mp_machdep.c                 |   2 +-
+ sys/arm/arm/nexus.c                      |  37 ---
+ sys/arm/arm/stdatomic.c                  | 453 +------------------------
+ sys/arm/arm/support.S                    | 545 -------------------------------
+ sys/arm/arm/sys_machdep.c                |  21 --
+ sys/arm/arm/vm_machdep.c                 |  44 +--
+ sys/arm/conf/ARNDALE                     |  28 --
+ sys/arm/conf/ARNDALE-OCTA                |  28 --
+ sys/arm/conf/EA3250.hints                |   4 -
+ sys/arm/conf/SAM9G20EK.hints             |  10 -
+ sys/arm/conf/VSATV102                    |  31 --
+ sys/arm/conf/YYHD18                      |  26 --
+ sys/arm/freescale/imx/files.imx5         |   1 -
+ sys/arm/freescale/imx/imx_common.c       |  72 ----
+ sys/arm/include/_align.h                 |   4 -
+ sys/arm/include/armreg.h                 |  27 --
+ sys/arm/include/asmacros.h               |   6 -
+ sys/arm/include/atomic-v6.h              |   4 +-
+ sys/arm/include/bus.h                    |   4 -
+ sys/arm/include/bus_dma.h                |  24 --
+ sys/arm/include/cpu-v6.h                 |   4 -
+ sys/arm/include/cpufunc.h                | 160 ---------
+ sys/arm/include/cpuinfo.h                |   2 -
+ sys/arm/include/db_machdep.h             |   4 -
+ sys/arm/include/debug_monitor.h          |  30 --
+ sys/arm/include/fdt.h                    |  10 -
+ sys/arm/include/frame.h                  |   2 -
+ sys/arm/include/intr.h                   |  38 ---
+ sys/arm/include/kdb.h                    |  12 -
+ sys/arm/include/machdep.h                |   7 -
+ sys/arm/include/md_var.h                 |   6 -
+ sys/arm/include/pcpu.h                   |   9 -
+ sys/arm/include/proc.h                   |   5 -
+ sys/arm/include/sf_buf.h                 |   8 -
+ sys/arm/include/sysarch.h                |  21 --
+ sys/arm/include/sysreg.h                 |  12 +-
+ sys/arm/include/vm.h                     |   6 -
+ sys/arm/mv/gpio.c                        |   2 -
+ sys/arm/mv/mpic.c                        |   2 -
+ sys/arm/mv/mv_common.c                   |  33 --
+ sys/arm/mv/mv_pci.c                      |   4 -
+ sys/arm/mv/std.mv                        |   7 -
+ sys/arm/versatile/files.versatile        |   1 -
+ sys/arm/versatile/versatile_common.c     |  72 ----
+ sys/conf/files.arm                       |   4 -
+ sys/dev/pci/pci_host_generic_acpi.c      |   9 +-
+ sys/kern/vfs_aio.c                       |   7 +-
+ sys/net/route.h                          |   1 +
+ sys/net/route/nhgrp_ctl.c                |  26 ++
+ sys/net/route/nhop_ctl.c                 |  28 ++
+ sys/net/route/route_ctl.c                |  37 +--
+ sys/net/route/route_ctl.h                |  19 +-
+ sys/net/route/route_helpers.c            |  16 +-
+ sys/net/route/route_var.h                |   3 +
+ sys/netinet/in_fib.c                     | 122 ++++---
+ sys/netinet/in_fib.h                     |   5 +
+ sys/netinet6/in6_fib.c                   | 126 ++++---
+ sys/netinet6/in6_fib.h                   |   5 +
+ 89 files changed, 288 insertions(+), 3731 deletions(-)
+ delete mode 100644 sys/arm/annapurna/alpine/alpine_common.c
+ delete mode 100644 sys/arm/arm/cpufunc_asm_arm9.S
+ delete mode 100644 sys/arm/arm/cpufunc_asm_armv4.S
+ delete mode 100644 sys/arm/arm/cpufunc_asm_armv5_ec.S
+ delete mode 100644 sys/arm/arm/cpufunc_asm_sheeva.S
+ delete mode 100644 sys/arm/conf/ARNDALE
+ delete mode 100644 sys/arm/conf/ARNDALE-OCTA
+ delete mode 100644 sys/arm/conf/EA3250.hints
+ delete mode 100644 sys/arm/conf/SAM9G20EK.hints
+ delete mode 100644 sys/arm/conf/VSATV102
+ delete mode 100644 sys/arm/conf/YYHD18
+ delete mode 100644 sys/arm/freescale/imx/imx_common.c
+ delete mode 100644 sys/arm/mv/std.mv
+ delete mode 100644 sys/arm/versatile/versatile_common.c
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/netinet/ip_input.c
+Removing sys/net/radix_mpath.h
+Removing sys/net/radix_mpath.c
+Auto-merging sys/modules/Makefile
+Auto-merging sys/conf/options
+Auto-merging sys/arm/arm/machdep.c
+Merge made by the 'recursive' strategy.
+ sbin/ifconfig/Makefile                             |    2 +
+ sbin/ifconfig/ifwg.c                               |  618 ++
+ sys/arm/arm/bcopy_page.S                           |  140 -
+ sys/arm/arm/bcopyinout.S                           |  503 --
+ sys/arm/arm/in_cksum_arm.S                         |   49 -
+ sys/arm/arm/machdep.c                              |    7 +-
+ sys/arm/arm/mp_machdep.c                           |    1 +
+ sys/arm/arm/support.S                              |  298 -
+ sys/arm/conf/NOTES                                 |    1 -
+ sys/arm/conf/std.armv6                             |    1 -
+ sys/arm/conf/std.armv7                             |    1 -
+ sys/arm/include/pcpu.h                             |    3 +-
+ sys/conf/options                                   |    1 -
+ sys/conf/options.arm                               |   15 -
+ sys/dev/if_wg/include/crypto/blake2s.h             |   56 +
+ sys/dev/if_wg/include/crypto/curve25519.h          |   74 +
+ sys/dev/if_wg/include/crypto/zinc.h                |   15 +
+ sys/dev/if_wg/include/sys/if_wg_session.h          |   89 +
+ sys/dev/if_wg/include/sys/if_wg_session_vars.h     |  322 +
+ sys/dev/if_wg/include/sys/simd-x86_64.h            |   74 +
+ sys/dev/if_wg/include/sys/support.h                |  342 +
+ sys/dev/if_wg/include/sys/wg_cookie.h              |  174 +
+ sys/dev/if_wg/include/sys/wg_module.h              |  123 +
+ sys/dev/if_wg/include/sys/wg_noise.h               |  286 +
+ sys/dev/if_wg/include/zinc/blake2s.h               |   50 +
+ sys/dev/if_wg/include/zinc/chacha20.h              |   68 +
+ sys/dev/if_wg/include/zinc/chacha20poly1305.h      |   48 +
+ sys/dev/if_wg/include/zinc/curve25519.h            |   28 +
+ sys/dev/if_wg/include/zinc/poly1305.h              |   29 +
+ sys/dev/if_wg/module/blake2s.c                     |  256 +
+ sys/dev/if_wg/module/blake2s.h                     |   58 +
+ sys/dev/if_wg/module/chacha20-x86_64.S             | 2834 +++++++
+ .../crypto/zinc/chacha20/chacha20-arm-glue.c       |   98 +
+ .../module/crypto/zinc/chacha20/chacha20-arm.pl    | 1227 +++
+ .../module/crypto/zinc/chacha20/chacha20-arm64.pl  | 1163 +++
+ .../crypto/zinc/chacha20/chacha20-mips-glue.c      |   27 +
+ .../module/crypto/zinc/chacha20/chacha20-mips.S    |  424 +
+ .../crypto/zinc/chacha20/chacha20-unrolled-arm.S   |  461 ++
+ .../crypto/zinc/chacha20/chacha20-x86_64-glue.c    |  132 +
+ .../module/crypto/zinc/chacha20/chacha20-x86_64.pl | 4106 ++++++++++
+ .../if_wg/module/crypto/zinc/chacha20/chacha20.c   |  238 +
+ .../if_wg/module/crypto/zinc/chacha20poly1305.c    |  196 +
+ .../crypto/zinc/poly1305/poly1305-arm-glue.c       |  140 +
+ .../module/crypto/zinc/poly1305/poly1305-arm.pl    | 1276 +++
+ .../module/crypto/zinc/poly1305/poly1305-arm64.pl  |  974 +++
+ .../module/crypto/zinc/poly1305/poly1305-donna32.c |  205 +
+ .../module/crypto/zinc/poly1305/poly1305-donna64.c |  182 +
+ .../crypto/zinc/poly1305/poly1305-mips-glue.c      |   37 +
+ .../module/crypto/zinc/poly1305/poly1305-mips.S    |  407 +
+ .../module/crypto/zinc/poly1305/poly1305-mips64.pl |  467 ++
+ .../crypto/zinc/poly1305/poly1305-x86_64-glue.c    |  171 +
+ .../module/crypto/zinc/poly1305/poly1305-x86_64.pl | 4266 ++++++++++
+ .../if_wg/module/crypto/zinc/poly1305/poly1305.c   |  163 +
+ .../if_wg/module/crypto/zinc/selftest/blake2s.c    | 2090 +++++
+ .../if_wg/module/crypto/zinc/selftest/chacha20.c   | 2703 +++++++
+ .../module/crypto/zinc/selftest/chacha20poly1305.c | 8443 ++++++++++++++++++++
+ .../if_wg/module/crypto/zinc/selftest/curve25519.c | 1315 +++
+ .../if_wg/module/crypto/zinc/selftest/poly1305.c   | 1110 +++
+ sys/dev/if_wg/module/crypto/zinc/selftest/run.h    |   43 +
+ sys/dev/if_wg/module/curve25519.c                  |  866 ++
+ sys/dev/if_wg/module/if_wg_session.c               | 1947 +++++
+ sys/dev/if_wg/module/module.c                      |  847 ++
+ sys/dev/if_wg/module/poly1305-x86_64.S             | 3021 +++++++
+ sys/dev/if_wg/module/wg_cookie.c                   |  399 +
+ sys/dev/if_wg/module/wg_noise.c                    |  958 +++
+ sys/kern/subr_gtaskqueue.c                         |   13 +
+ sys/modules/Makefile                               |    1 +
+ sys/modules/if_wg/Makefile                         |   41 +
+ sys/net/iflib_clone.c                              |    1 -
+ sys/net/radix_mpath.c                              |  276 -
+ sys/net/radix_mpath.h                              |   81 -
+ sys/net/route.c                                    |   85 -
+ sys/net/route/route_ctl.c                          |    4 -
+ sys/net/route/route_ifaddrs.c                      |    1 -
+ sys/net/rtsock.c                                   |    3 -
+ sys/netinet/ip_input.c                             |    4 -
+ sys/netinet6/nd6.c                                 |    6 +-
+ sys/sys/gtaskqueue.h                               |    1 +
+ sys/sys/param.h                                    |    8 +-
+ usr.bin/iconv/iconv.1                              |    7 +
+ 80 files changed, 45726 insertions(+), 1474 deletions(-)
+ create mode 100644 sbin/ifconfig/ifwg.c
+ create mode 100644 sys/dev/if_wg/include/crypto/blake2s.h
+ create mode 100644 sys/dev/if_wg/include/crypto/curve25519.h
+ create mode 100644 sys/dev/if_wg/include/crypto/zinc.h
+ create mode 100644 sys/dev/if_wg/include/sys/if_wg_session.h
+ create mode 100644 sys/dev/if_wg/include/sys/if_wg_session_vars.h
+ create mode 100644 sys/dev/if_wg/include/sys/simd-x86_64.h
+ create mode 100644 sys/dev/if_wg/include/sys/support.h
+ create mode 100644 sys/dev/if_wg/include/sys/wg_cookie.h
+ create mode 100644 sys/dev/if_wg/include/sys/wg_module.h
+ create mode 100644 sys/dev/if_wg/include/sys/wg_noise.h
+ create mode 100644 sys/dev/if_wg/include/zinc/blake2s.h
+ create mode 100644 sys/dev/if_wg/include/zinc/chacha20.h
+ create mode 100644 sys/dev/if_wg/include/zinc/chacha20poly1305.h
+ create mode 100644 sys/dev/if_wg/include/zinc/curve25519.h
+ create mode 100644 sys/dev/if_wg/include/zinc/poly1305.h
+ create mode 100644 sys/dev/if_wg/module/blake2s.c
+ create mode 100644 sys/dev/if_wg/module/blake2s.h
+ create mode 100644 sys/dev/if_wg/module/chacha20-x86_64.S
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-arm-glue.c
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-arm.pl
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-arm64.pl
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-mips-glue.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-mips.S
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-unrolled-arm.S
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-x86_64-glue.c
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20-x86_64.pl
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20/chacha20.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/chacha20poly1305.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-arm-glue.c
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-arm.pl
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-arm64.pl
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-donna32.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-donna64.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-mips-glue.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-mips.S
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-mips64.pl
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-x86_64-glue.c
+ create mode 100755 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305-x86_64.pl
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/poly1305/poly1305.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/selftest/blake2s.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/selftest/chacha20.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/selftest/chacha20poly1305.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/selftest/curve25519.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/selftest/poly1305.c
+ create mode 100644 sys/dev/if_wg/module/crypto/zinc/selftest/run.h
+ create mode 100644 sys/dev/if_wg/module/curve25519.c
+ create mode 100644 sys/dev/if_wg/module/if_wg_session.c
+ create mode 100644 sys/dev/if_wg/module/module.c
+ create mode 100644 sys/dev/if_wg/module/poly1305-x86_64.S
+ create mode 100644 sys/dev/if_wg/module/wg_cookie.c
+ create mode 100644 sys/dev/if_wg/module/wg_noise.c
+ create mode 100644 sys/modules/if_wg/Makefile
+ delete mode 100644 sys/net/radix_mpath.c
+ delete mode 100644 sys/net/radix_mpath.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f9320f26153d..b8b7264c1bec  hardened/current/master -> hardened/current/master        
+remote:    1ef17ab8158d..c5a1b0313c98  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f9320f26153d..b8b7264c1bec  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
