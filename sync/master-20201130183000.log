@@ -47,3 +47,147 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging irc/irssi/Makefile
+Removing devel/opencl/files/patch-cl__platform.h
+Removing devel/ocl-icd/files/patch-ocl__icd__loader.c
+Removing devel/ocl-icd/files/patch-icd__generator.rb
+Merge made by the 'recursive' strategy.
+ benchmarks/clpeak/Makefile                         |  11 +-
+ benchmarks/clpeak/distinfo                         |   8 +-
+ biology/igv/Makefile                               |   2 +-
+ cad/opencascade/Makefile                           |   2 +-
+ deskutils/py-paperless/Makefile                    |   5 +-
+ deskutils/py-paperless/distinfo                    |   4 +-
+ devel/jetbrains-clion/Makefile                     |   2 +-
+ devel/jetbrains-clion/distinfo                     |   6 +-
+ devel/jetbrains-clion/pkg-plist                    |  11 +-
+ devel/kf5-solid/Makefile                           |   8 ++
+ devel/ocl-icd/Makefile                             |  14 +--
+ devel/ocl-icd/distinfo                             |   6 +-
+ devel/ocl-icd/files/patch-icd__generator.rb        |  11 --
+ devel/ocl-icd/files/patch-ocl__icd__loader.c       |  11 --
+ devel/ocl-icd/pkg-descr                            |   2 +-
+ devel/opencl/Makefile                              |  34 ++----
+ devel/opencl/distinfo                              |  12 +-
+ devel/opencl/files/patch-cl__platform.h            |  13 --
+ devel/opencl/pkg-descr                             |   2 +-
+ devel/opencl/pkg-plist                             |   5 +-
+ devel/py-anyconfig/Makefile                        |   2 +-
+ devel/py-anyconfig/distinfo                        |   6 +-
+ games/devilutionX/Makefile                         |   2 +-
+ irc/irssi/Makefile                                 |   6 +-
+ lang/clover/Makefile                               |   1 +
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ lang/pocl/Makefile                                 |   7 +-
+ lang/pocl/distinfo                                 |   6 +-
+ lang/pocl/pkg-plist                                |   2 +-
+ lang/racket-minimal/Makefile                       |   2 +-
+ lang/racket-minimal/distinfo                       |   6 +-
+ lang/racket-minimal/pkg-plist                      |   7 ++
+ net-im/toxic/Makefile                              |   4 +-
+ net-im/toxic/distinfo                              |   6 +-
+ net/Makefile                                       |   1 +
+ net/haproxy-devel/Makefile                         |   4 +-
+ net/haproxy-devel/distinfo                         |   6 +-
+ net/haproxy/Makefile                               |   2 +-
+ net/haproxy/distinfo                               |   6 +-
+ net/haproxy23/Makefile                             |  64 ++++++++++
+ net/haproxy23/distinfo                             |   3 +
+ net/haproxy23/files/haproxy.in                     | 133 +++++++++++++++++++++
+ net/haproxy23/files/patch-include-haproxy-atomic.h |  11 ++
+ net/haproxy23/pkg-descr                            |   6 +
+ net/haproxy23/pkg-plist                            |  98 +++++++++++++++
+ net/py-pytradfri/Makefile                          |   2 +-
+ net/py-pytradfri/distinfo                          |   6 +-
+ security/libressl-devel/Makefile                   |   2 +-
+ security/libressl-devel/distinfo                   |   6 +-
+ security/libressl-devel/pkg-plist                  |  18 ---
+ textproc/libxml2/Makefile                          |  12 +-
+ textproc/libxml2/files/patch-CVE-2019-20388        |  33 +++++
+ textproc/libxml2/files/patch-CVE-2020-24977        |  36 ++++++
+ textproc/libxml2/files/patch-CVE-2020-7595         |  32 +++++
+ textproc/libxml2/files/patch-Python-39-support     |  92 ++++++++++++++
+ www/nextcloud-groupfolders/Makefile                |   2 +-
+ www/nextcloud-groupfolders/distinfo                |   6 +-
+ www/nextcloud-groupfolders/pkg-plist               |   1 +
+ www/p5-Dancer/Makefile                             |   2 +-
+ www/p5-Dancer/distinfo                             |   6 +-
+ 61 files changed, 651 insertions(+), 173 deletions(-)
+ delete mode 100644 devel/ocl-icd/files/patch-icd__generator.rb
+ delete mode 100644 devel/ocl-icd/files/patch-ocl__icd__loader.c
+ delete mode 100644 devel/opencl/files/patch-cl__platform.h
+ create mode 100644 net/haproxy23/Makefile
+ create mode 100644 net/haproxy23/distinfo
+ create mode 100644 net/haproxy23/files/haproxy.in
+ create mode 100644 net/haproxy23/files/patch-include-haproxy-atomic.h
+ create mode 100644 net/haproxy23/pkg-descr
+ create mode 100644 net/haproxy23/pkg-plist
+ create mode 100644 textproc/libxml2/files/patch-CVE-2019-20388
+ create mode 100644 textproc/libxml2/files/patch-CVE-2020-24977
+ create mode 100644 textproc/libxml2/files/patch-CVE-2020-7595
+ create mode 100644 textproc/libxml2/files/patch-Python-39-support
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    8c9f479c3b9a..8996101de827  master -> master        
+remote:    29aa547ae42e..8c9f479c3b9a  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   8c9f479c3b9a..8996101de827  master -> master
+==== END: master ====
