@@ -1,0 +1,107 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 12799dc65c5d..b299245f0828
+Fast-forward
+ libexec/rtld-elf/rtld.c                  |  2 +
+ share/man/man4/ktls.4                    |  6 +-
+ stand/ficl/words.c                       |  2 +-
+ sys/arm64/arm64/db_trace.c               | 14 ++---
+ sys/arm64/arm64/stack_machdep.c          |  6 +-
+ sys/arm64/arm64/unwind.c                 |  8 +--
+ sys/arm64/include/csan.h                 |  6 +-
+ sys/arm64/include/param.h                |  2 +-
+ sys/arm64/include/stack.h                |  6 +-
+ sys/cddl/dev/dtrace/aarch64/dtrace_isa.c |  8 +--
+ sys/cddl/dev/dtrace/amd64/dtrace_isa.c   | 17 ++----
+ sys/cddl/dev/dtrace/i386/dtrace_isa.c    | 15 ++---
+ sys/cddl/dev/dtrace/riscv/dtrace_isa.c   |  8 +--
+ sys/ddb/db_ps.c                          |  3 +-
+ sys/dev/acpica/acpi.c                    |  2 +-
+ sys/dev/usb/quirk/usb_quirk.c            |  2 +
+ sys/dev/usb/quirk/usb_quirk.h            |  1 +
+ sys/dev/usb/storage/umass.c              |  6 ++
+ sys/kern/vfs_aio.c                       |  4 +-
+ sys/mips/mips/stack_machdep.c            | 94 ++++++++++++++++++++------------
+ sys/net/if.c                             |  5 --
+ sys/net/if_epair.c                       | 10 +---
+ sys/riscv/riscv/stack_machdep.c          |  5 +-
+ sys/sys/link_elf.h                       |  5 +-
+ sys/sys/proc.h                           |  7 +++
+ sys/x86/x86/stack_machdep.c              |  4 +-
+ tests/sys/netpfil/pf/names.sh            |  1 -
+ tests/sys/netpfil/pf/nat.sh              |  4 --
+ tests/sys/netpfil/pf/synproxy.sh         |  1 -
+ usr.sbin/rtsold/rtsol.c                  | 24 ++++++--
+ 30 files changed, 151 insertions(+), 127 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    12799dc65c5d..b299245f0828  freebsd/current/master -> freebsd/current/master        
+remote:    bdf89c0edb55..2ab1386b6891  github/freebsd/12.2-releng/master -> github/freebsd/12.2-releng/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   12799dc65c5d..b299245f0828  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
