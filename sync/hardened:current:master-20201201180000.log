@@ -1,0 +1,178 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 9 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 76e41146c8bd..e1dbc531226a
+Fast-forward
+ contrib/libarchive/COPYING                         |   1 -
+ contrib/libarchive/NEWS                            |   4 +
+ contrib/libarchive/libarchive/archive.h            |  11 +-
+ contrib/libarchive/libarchive/archive_acl.c        |  10 +-
+ .../libarchive/libarchive/archive_check_magic.c    |   2 +-
+ contrib/libarchive/libarchive/archive_cryptor.c    |  23 ++++
+ .../libarchive/archive_cryptor_private.h           |   9 ++
+ .../libarchive/libarchive/archive_digest_private.h |   4 +
+ contrib/libarchive/libarchive/archive_entry.c      |  79 ++++++++++++-
+ contrib/libarchive/libarchive/archive_entry.h      |  15 ++-
+ .../libarchive/libarchive/archive_entry_private.h  |  16 +++
+ contrib/libarchive/libarchive/archive_ppmd7.c      |   2 +-
+ .../libarchive/archive_read_disk_entry_from_file.c |  22 ++--
+ .../libarchive/libarchive/archive_read_filter.3    |  12 +-
+ .../libarchive/archive_read_set_format.c           |   9 ++
+ .../archive_read_support_filter_by_code.c          |  83 +++++++++++++
+ .../archive_read_support_format_by_code.c          |  15 +++
+ .../libarchive/archive_read_support_format_cab.c   |   2 +-
+ .../libarchive/archive_read_support_format_empty.c |   2 +-
+ .../libarchive/archive_read_support_format_mtree.c | 116 ++++++++++++++++--
+ .../libarchive/archive_read_support_format_rar.c   |  14 ++-
+ .../libarchive/archive_read_support_format_rar5.c  |   7 +-
+ .../libarchive/archive_read_support_format_warc.c  |  16 +++
+ .../libarchive/archive_read_support_format_zip.c   | 129 ++++++++++++++++++++-
+ contrib/libarchive/libarchive/archive_string.c     |  52 ++++++---
+ contrib/libarchive/libarchive/archive_string.h     |   2 +-
+ contrib/libarchive/libarchive/archive_util.c       |   5 +
+ contrib/libarchive/libarchive/archive_write.c      |  42 +++++--
+ .../libarchive/archive_write_add_filter_xz.c       |   4 +-
+ .../libarchive/archive_write_disk_posix.c          |  16 +++
+ contrib/libarchive/libarchive/archive_write_open.3 |  37 +++++-
+ .../libarchive/libarchive/archive_write_open_fd.c  |  10 +-
+ .../libarchive/archive_write_open_file.c           |  10 +-
+ .../libarchive/archive_write_open_filename.c       |  21 +++-
+ .../libarchive/archive_write_open_memory.c         |  10 +-
+ .../libarchive/libarchive/archive_write_private.h  |   1 +
+ .../libarchive/archive_write_set_format_7zip.c     |   4 +-
+ .../libarchive/archive_write_set_format_cpio.c     |   4 +-
+ .../archive_write_set_format_cpio_newc.c           |   2 +-
+ .../libarchive/archive_write_set_format_iso9660.c  |   3 +-
+ .../libarchive/archive_write_set_format_mtree.c    |  49 +++-----
+ .../libarchive/archive_write_set_format_xar.c      |   4 +-
+ .../libarchive/archive_write_set_format_zip.c      |   5 +
+ .../test/test_archive_read_next_header_empty.c     |  26 ++++-
+ .../libarchive/test/test_archive_read_support.c    |  47 ++++++++
+ .../test/test_archive_string_conversion.c          |  79 ++++++++++++-
+ contrib/libarchive/libarchive/test/test_entry.c    |  89 +++++++++++++-
+ .../test/test_read_disk_directory_traversals.c     |   2 +
+ .../libarchive/test/test_read_format_mtree.c       |  74 +++++++++++-
+ .../test/test_read_format_mtree.mtree.uu           |  22 +++-
+ .../libarchive/test/test_read_format_raw.c         |   5 +-
+ .../libarchive/test/test_read_format_zip.c         |  32 +++++
+ .../test/test_read_format_zip_7z_lzma.zip.uu       |  45 +++++++
+ .../libarchive/test/test_read_set_format.c         |  25 ----
+ .../libarchive/test/test_write_disk_secure.c       |  34 +++++-
+ .../libarchive/test/test_write_format_cpio.c       |  20 ++++
+ .../libarchive/test/test_write_format_warc.c       |  28 +++--
+ contrib/libarchive/test_utils/test_common.h        |   4 +
+ contrib/libarchive/test_utils/test_main.c          |  13 +++
+ lib/libarchive/Makefile                            |   1 +
+ lib/libarchive/config_freebsd.h                    |   1 +
+ lib/libarchive/tests/Makefile                      |   1 +
+ sys/dev/nvme/nvme.h                                |  41 +++----
+ sys/kern/subr_vmem.c                               |   6 +-
+ sys/net/if.c                                       |  16 ++-
+ usr.bin/bsdcat/Makefile                            |   2 +-
+ usr.bin/cpio/Makefile                              |   2 +-
+ usr.bin/tar/Makefile                               |   2 +-
+ 68 files changed, 1275 insertions(+), 226 deletions(-)
+ create mode 100644 contrib/libarchive/libarchive/archive_read_support_filter_by_code.c
+ create mode 100644 contrib/libarchive/libarchive/test/test_read_format_zip_7z_lzma.zip.uu
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/sys/proc.h
+Auto-merging sys/ddb/db_ps.c
+Auto-merging libexec/rtld-elf/rtld.c
+Merge made by the 'recursive' strategy.
+ libexec/rtld-elf/rtld.c                  |  2 +
+ share/man/man4/ktls.4                    |  6 +-
+ stand/ficl/words.c                       |  2 +-
+ sys/arm64/arm64/db_trace.c               | 14 ++---
+ sys/arm64/arm64/stack_machdep.c          |  6 +-
+ sys/arm64/arm64/unwind.c                 |  8 +--
+ sys/arm64/include/csan.h                 |  6 +-
+ sys/arm64/include/param.h                |  2 +-
+ sys/arm64/include/stack.h                |  6 +-
+ sys/cddl/dev/dtrace/aarch64/dtrace_isa.c |  8 +--
+ sys/cddl/dev/dtrace/amd64/dtrace_isa.c   | 17 ++----
+ sys/cddl/dev/dtrace/i386/dtrace_isa.c    | 15 ++---
+ sys/cddl/dev/dtrace/riscv/dtrace_isa.c   |  8 +--
+ sys/ddb/db_ps.c                          |  3 +-
+ sys/dev/acpica/acpi.c                    |  2 +-
+ sys/dev/usb/quirk/usb_quirk.c            |  2 +
+ sys/dev/usb/quirk/usb_quirk.h            |  1 +
+ sys/dev/usb/storage/umass.c              |  6 ++
+ sys/kern/vfs_aio.c                       |  4 +-
+ sys/mips/mips/stack_machdep.c            | 94 ++++++++++++++++++++------------
+ sys/net/if.c                             |  5 --
+ sys/net/if_epair.c                       | 10 +---
+ sys/riscv/riscv/stack_machdep.c          |  5 +-
+ sys/sys/link_elf.h                       |  5 +-
+ sys/sys/proc.h                           |  7 +++
+ sys/x86/x86/stack_machdep.c              |  4 +-
+ tests/sys/netpfil/pf/names.sh            |  1 -
+ tests/sys/netpfil/pf/nat.sh              |  4 --
+ tests/sys/netpfil/pf/synproxy.sh         |  1 -
+ usr.sbin/rtsold/rtsol.c                  | 24 ++++++--
+ 30 files changed, 151 insertions(+), 127 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e1dbc531226a..9e046798e3a2  hardened/current/master -> hardened/current/master
+remote:    12799dc65c5d..b299245f0828  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e1dbc531226a..9e046798e3a2  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
