@@ -1,0 +1,128 @@
+==== BEGIN: hardened/12.2-releng/master ====
+current branch: hardened/12.2-releng/master
+mergeable branch: origin/freebsd/12.2-releng/master
+==== change branch ====
+Switched to branch 'hardened/12.2-releng/master'
+Your branch is up to date with 'origin/hardened/12.2-releng/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+* hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge origin/freebsd/12.2-releng/master branch ====
+Auto-merging sys/kern/kern_exec.c
+Auto-merging sys/conf/newvers.sh
+CONFLICT (content): Merge conflict in sys/conf/newvers.sh
+Auto-merging sys/compat/freebsd32/freebsd32_misc.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at origin/freebsd/12.2-releng/master branch ====
+diff --cc sys/conf/newvers.sh
+index 774608f29959,98c30a869a7e..000000000000
+--- a/sys/conf/newvers.sh
++++ b/sys/conf/newvers.sh
+@@@ -49,8 -49,10 +49,15 @@@
+  
+  TYPE="FreeBSD"
+  REVISION="12.2"
+++<<<<<<< HEAD
+ +BRANCH=${BRANCH_OVERRIDE:-RELEASE}
+ +BRANCH="${BRANCH}-HBSD"
+++=======
++ BRANCH="RELEASE-p1"
++ if [ -n "${BRANCH_OVERRIDE}" ]; then
++ 	BRANCH=${BRANCH_OVERRIDE}
++ fi
+++>>>>>>> origin/freebsd/12.2-releng/master
+  RELEASE="${REVISION}-${BRANCH}"
+  VERSION="${TYPE} ${RELEASE}"
+  
+On branch hardened/12.2-releng/master
+Your branch is up to date with 'origin/hardened/12.2-releng/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   UPDATING
+	modified:   contrib/tzdata/Makefile
+	modified:   contrib/tzdata/NEWS
+	modified:   contrib/tzdata/README
+	modified:   contrib/tzdata/africa
+	modified:   contrib/tzdata/antarctica
+	modified:   contrib/tzdata/asia
+	modified:   contrib/tzdata/australasia
+	modified:   contrib/tzdata/backzone
+	modified:   contrib/tzdata/europe
+	modified:   contrib/tzdata/leap-seconds.list
+	modified:   contrib/tzdata/leapseconds
+	modified:   contrib/tzdata/leapseconds.awk
+	modified:   contrib/tzdata/northamerica
+	modified:   contrib/tzdata/southamerica
+	modified:   contrib/tzdata/theory.html
+	modified:   contrib/tzdata/version
+	modified:   contrib/tzdata/ziguard.awk
+	modified:   contrib/tzdata/zishrink.awk
+	modified:   contrib/tzdata/zoneinfo2tdf.pl
+	modified:   sbin/ipfw/dummynet.c
+	modified:   sbin/ipfw/ipfw2.c
+	modified:   sbin/ipfw/nat64lsn.c
+	modified:   sbin/ipfw/tables.c
+	modified:   sys/amd64/linux/linux_machdep.c
+	modified:   sys/amd64/linux32/linux32_machdep.c
+	modified:   sys/arm64/linux/linux_machdep.c
+	modified:   sys/compat/freebsd32/freebsd32_misc.c
+	modified:   sys/i386/linux/linux_machdep.c
+	modified:   sys/kern/kern_exec.c
+	modified:   sys/kern/kern_timeout.c
+	modified:   sys/kern/subr_syscall.c
+	modified:   sys/netinet6/icmp6.c
+	modified:   usr.sbin/rtsold/rtsol.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/conf/newvers.sh
+
+HEAD is now at dfce3b8d4b56 Merge commit '1511b0036954f00cf1914f3e06e5781819f31553' into hardened/12.2-releng/master
+==== merge failed and clean up after ====
+On branch hardened/12.2-releng/master
+Your branch is up to date with 'origin/hardened/12.2-releng/master'.
+
+nothing to commit, working tree clean
+HEAD is now at dfce3b8d4b56 Merge commit '1511b0036954f00cf1914f3e06e5781819f31553' into hardened/12.2-releng/master
+==== END: hardened/12.2-releng/master ====
