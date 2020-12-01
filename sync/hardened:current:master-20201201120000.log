@@ -1,0 +1,266 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/arm/arm/elf_machdep.c
+CONFLICT (content): Merge conflict in sys/arm/arm/elf_machdep.c
+Auto-merging contrib/libarchive/libarchive/archive_write_disk_posix.c
+CONFLICT (content): Merge conflict in contrib/libarchive/libarchive/archive_write_disk_posix.c
+Auto-merging contrib/libarchive/libarchive/archive_read_disk_entry_from_file.c
+CONFLICT (content): Merge conflict in contrib/libarchive/libarchive/archive_read_disk_entry_from_file.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc contrib/libarchive/libarchive/archive_read_disk_entry_from_file.c
+index e452ede0d60e,9c9cf38ee9f1..000000000000
+--- a/contrib/libarchive/libarchive/archive_read_disk_entry_from_file.c
++++ b/contrib/libarchive/libarchive/archive_read_disk_entry_from_file.c
+@@@ -103,8 -103,10 +103,15 @@@ __FBSDID("$FreeBSD")
+  
+  static int setup_mac_metadata(struct archive_read_disk *,
+      struct archive_entry *, int *fd);
+++<<<<<<< HEAD
+ +static int setup_xattrs_namespace(struct archive_read_disk *,
+ +    struct archive_entry *, int *, int);
+++=======
++ #ifdef ARCHIVE_XATTR_FREEBSD
++ static int setup_xattrs_namespace(struct archive_read_disk *,
++     struct archive_entry *, int *, int);
++ #endif
+++>>>>>>> freebsd/current/master
+  static int setup_xattrs(struct archive_read_disk *,
+      struct archive_entry *, int *fd);
+  static int setup_sparse(struct archive_read_disk *,
+@@@ -763,11 -765,15 +770,23 @@@ setup_xattrs_namespace(struct archive_r
+  		size_t len = 255 & (int)*p;
+  		char *name;
+  
+++<<<<<<< HEAD
+ +		switch (namespace) {
+ +		case EXTATTR_NAMESPACE_SYSTEM:
+ +			strcpy(buff, "system.");
+ +			break;
+ +		default:
+++=======
++ 		if (namespace == EXTATTR_NAMESPACE_SYSTEM) {
++ 			if (!strcmp(p + 1, "nfs4.acl") ||
++ 			    !strcmp(p + 1, "posix1e.acl_access") ||
++ 			    !strcmp(p + 1, "posix1e.acl_default")) {
++ 				p += 1 + len;
++ 				continue;
++ 			}
++ 			strcpy(buff, "system.");
++ 		} else {
+++>>>>>>> freebsd/current/master
+  			strcpy(buff, "user.");
+  		}
+  		name = buff + strlen(buff);
+@@@ -786,28 -792,24 +805,43 @@@ setup_xattrs(struct archive_read_disk *
+      struct archive_entry *entry, int *fd)
+  {
+  	int namespaces[2];
+++<<<<<<< HEAD
+ +	int i, res, worstres;
+++=======
++ 	int i, res;
+++>>>>>>> freebsd/current/master
+  
+  	namespaces[0] = EXTATTR_NAMESPACE_USER;
+  	namespaces[1] = EXTATTR_NAMESPACE_SYSTEM;
+  
+++<<<<<<< HEAD
+ +	worstres = ARCHIVE_OK;
+ +
+++=======
+++>>>>>>> freebsd/current/master
+  	for (i = 0; i < 2; i++) {
+  		res = setup_xattrs_namespace(a, entry, fd,
+  		    namespaces[i]);
+  		switch (res) {
+  			case (ARCHIVE_OK):
+++<<<<<<< HEAD
+ +				break;
+ +			case (ARCHIVE_WARN):
+ +				worstres = ARCHIVE_WARN;
+++=======
++ 			case (ARCHIVE_WARN):
+++>>>>>>> freebsd/current/master
+  				break;
+  			default:
+  				return (res);
+  		}
+  	}
+  
+++<<<<<<< HEAD
+ +	return (worstres);
+++=======
++ 	return (ARCHIVE_OK);
+++>>>>>>> freebsd/current/master
+  }
+  
+  #else
+diff --cc contrib/libarchive/libarchive/archive_write_disk_posix.c
+index 1d1f7383df71,a6da9cdabfb1..000000000000
+--- a/contrib/libarchive/libarchive/archive_write_disk_posix.c
++++ b/contrib/libarchive/libarchive/archive_write_disk_posix.c
+@@@ -4420,6 -4432,10 +4432,13 @@@ set_xattrs(struct archive_write_disk *a
+  			} else if (strncmp(name, "system.", 7) == 0) {
+  				name += 7;
+  				namespace = EXTATTR_NAMESPACE_SYSTEM;
+++<<<<<<< HEAD
+++=======
++ 				if (!strcmp(name, "nfs4.acl") ||
++ 				    !strcmp(name, "posix1e.acl_access") ||
++ 				    !strcmp(name, "posix1e.acl_default"))
++ 					continue;
+++>>>>>>> freebsd/current/master
+  			} else {
+  				/* Other namespaces are unsupported */
+  				archive_strcat(&errlist, name);
+diff --cc sys/arm/arm/elf_machdep.c
+index 5832e3b1eaeb,d32dbb5baf90..000000000000
+--- a/sys/arm/arm/elf_machdep.c
++++ b/sys/arm/arm/elf_machdep.c
+@@@ -88,7 -85,7 +88,11 @@@ struct sysentvec elf32_freebsd_sysvec 
+  	.sv_fixlimit	= NULL,
+  	.sv_maxssiz	= NULL,
+  	.sv_flags	=
+++<<<<<<< HEAD
+ +			  SV_SHP | SV_TIMEKEEP | SV_RNG_SEED_VER |
+++=======
++ 			  SV_ASLR | SV_SHP | SV_TIMEKEEP | SV_RNG_SEED_VER |
+++>>>>>>> freebsd/current/master
+  			  SV_ABI_FREEBSD | SV_ILP32,
+  	.sv_set_syscall_retval = cpu_set_syscall_retval,
+  	.sv_fetch_syscall_args = cpu_fetch_syscall_args,
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/libarchive/COPYING
+	modified:   contrib/libarchive/NEWS
+	modified:   contrib/libarchive/libarchive/archive.h
+	modified:   contrib/libarchive/libarchive/archive_acl.c
+	modified:   contrib/libarchive/libarchive/archive_check_magic.c
+	modified:   contrib/libarchive/libarchive/archive_cryptor.c
+	modified:   contrib/libarchive/libarchive/archive_cryptor_private.h
+	modified:   contrib/libarchive/libarchive/archive_digest_private.h
+	modified:   contrib/libarchive/libarchive/archive_entry.c
+	modified:   contrib/libarchive/libarchive/archive_entry.h
+	modified:   contrib/libarchive/libarchive/archive_entry_private.h
+	modified:   contrib/libarchive/libarchive/archive_ppmd7.c
+	modified:   contrib/libarchive/libarchive/archive_read_filter.3
+	modified:   contrib/libarchive/libarchive/archive_read_set_format.c
+	new file:   contrib/libarchive/libarchive/archive_read_support_filter_by_code.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_by_code.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_cab.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_empty.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_mtree.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_rar.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_rar5.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_warc.c
+	modified:   contrib/libarchive/libarchive/archive_read_support_format_zip.c
+	modified:   contrib/libarchive/libarchive/archive_string.c
+	modified:   contrib/libarchive/libarchive/archive_string.h
+	modified:   contrib/libarchive/libarchive/archive_util.c
+	modified:   contrib/libarchive/libarchive/archive_write.c
+	modified:   contrib/libarchive/libarchive/archive_write_add_filter_xz.c
+	modified:   contrib/libarchive/libarchive/archive_write_open.3
+	modified:   contrib/libarchive/libarchive/archive_write_open_fd.c
+	modified:   contrib/libarchive/libarchive/archive_write_open_file.c
+	modified:   contrib/libarchive/libarchive/archive_write_open_filename.c
+	modified:   contrib/libarchive/libarchive/archive_write_open_memory.c
+	modified:   contrib/libarchive/libarchive/archive_write_private.h
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_7zip.c
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_cpio.c
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_cpio_newc.c
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_iso9660.c
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_mtree.c
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_xar.c
+	modified:   contrib/libarchive/libarchive/archive_write_set_format_zip.c
+	modified:   contrib/libarchive/libarchive/test/test_archive_read_next_header_empty.c
+	modified:   contrib/libarchive/libarchive/test/test_archive_read_support.c
+	modified:   contrib/libarchive/libarchive/test/test_archive_string_conversion.c
+	modified:   contrib/libarchive/libarchive/test/test_entry.c
+	modified:   contrib/libarchive/libarchive/test/test_read_disk_directory_traversals.c
+	modified:   contrib/libarchive/libarchive/test/test_read_format_mtree.c
+	modified:   contrib/libarchive/libarchive/test/test_read_format_mtree.mtree.uu
+	modified:   contrib/libarchive/libarchive/test/test_read_format_raw.c
+	modified:   contrib/libarchive/libarchive/test/test_read_format_zip.c
+	new file:   contrib/libarchive/libarchive/test/test_read_format_zip_7z_lzma.zip.uu
+	modified:   contrib/libarchive/libarchive/test/test_read_set_format.c
+	modified:   contrib/libarchive/libarchive/test/test_write_disk_secure.c
+	modified:   contrib/libarchive/libarchive/test/test_write_format_cpio.c
+	modified:   contrib/libarchive/libarchive/test/test_write_format_warc.c
+	modified:   contrib/libarchive/test_utils/test_common.h
+	modified:   contrib/libarchive/test_utils/test_main.c
+	modified:   lib/libarchive/Makefile
+	modified:   lib/libarchive/config_freebsd.h
+	modified:   lib/libarchive/tests/Makefile
+	modified:   sys/dev/nvme/nvme.h
+	modified:   sys/kern/subr_vmem.c
+	modified:   sys/net/if.c
+	modified:   usr.bin/bsdcat/Makefile
+	modified:   usr.bin/cpio/Makefile
+	modified:   usr.bin/tar/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   contrib/libarchive/libarchive/archive_read_disk_entry_from_file.c
+	both modified:   contrib/libarchive/libarchive/archive_write_disk_posix.c
+	both modified:   sys/arm/arm/elf_machdep.c
+
+HEAD is now at 76e41146c8bd Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 76e41146c8bd Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
