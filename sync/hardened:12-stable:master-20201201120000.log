@@ -1,0 +1,129 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging sys/modules/Makefile
+Auto-merging sys/conf/files
+Merge made by the 'recursive' strategy.
+ .../lib/libzfs/common/libzfs_sendrecv.c            |  43 +-
+ sbin/ifconfig/ifconfig.8                           |   8 +-
+ sbin/ifconfig/iflagg.c                             |  31 +-
+ sbin/ping/ping.c                                   | 106 ++--
+ share/man/man4/lagg.4                              |  11 +-
+ .../contrib/opensolaris/uts/common/sys/fs/zfs.h    |  14 +-
+ sys/conf/files                                     |   1 +
+ sys/dev/ata/ata-pci.c                              |   6 +-
+ sys/dev/mlx4/mlx4_ib/mlx4_ib_main.c                |   9 +-
+ sys/dev/mlx5/cq.h                                  |   8 +-
+ sys/dev/mlx5/driver.h                              |  43 +-
+ sys/dev/mlx5/mlx5_core/mlx5_cmd.c                  |  54 +-
+ sys/dev/mlx5/mlx5_core/mlx5_cq.c                   | 182 ++++---
+ sys/dev/mlx5/mlx5_core/mlx5_eq.c                   |   3 +-
+ sys/dev/mlx5/mlx5_core/mlx5_mr.c                   |  11 +-
+ sys/dev/mlx5/mlx5_core/mlx5_qp.c                   |   9 +-
+ sys/dev/mlx5/mlx5_en/en.h                          |   6 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c                |  22 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_rl.c                  |   2 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_rx.c                  |   2 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_tx.c                  |   2 +-
+ sys/dev/mlx5/mlx5_ib/mlx5_ib.h                     |   3 +
+ sys/dev/mlx5/mlx5_ib/mlx5_ib_cq.c                  |   5 +-
+ sys/dev/mlx5/mlx5_ib/mlx5_ib_main.c                |   2 +-
+ sys/dev/mlx5/mlx5_ib/mlx5_ib_mr.c                  |  11 +-
+ sys/dev/mlx5/mlx5_ib/mlx5_ib_qp.c                  |   4 +-
+ sys/dev/mlx5/qp.h                                  |   3 +-
+ sys/dev/sound/usb/uaudio.c                         |  25 +-
+ sys/dev/usb/controller/xhci.c                      |  15 +
+ sys/dev/usb/quirk/usb_quirk.c                      |   2 +
+ sys/dev/usb/usbdevs                                |   2 +
+ sys/kern/uipc_mbufhash.c                           | 113 +++--
+ sys/modules/Makefile                               |   1 +
+ sys/modules/if_infiniband/Makefile                 |  12 +
+ sys/net/ieee8023ad_lacp.c                          |   1 +
+ sys/net/if_ethersubr.c                             |   6 +-
+ sys/net/if_infiniband.c                            | 551 +++++++++++++++++++++
+ sys/net/if_lagg.c                                  | 273 ++++++++--
+ sys/net/if_lagg.h                                  |  37 +-
+ sys/net/if_types.h                                 |   1 +
+ sys/net/infiniband.h                               |  80 +++
+ sys/netpfil/pf/pf_ioctl.c                          |   4 +-
+ sys/ofed/drivers/infiniband/ulp/ipoib/ipoib.h      |  13 +-
+ sys/ofed/drivers/infiniband/ulp/ipoib/ipoib_cm.c   |  28 +-
+ sys/ofed/drivers/infiniband/ulp/ipoib/ipoib_ib.c   |  10 +-
+ sys/ofed/drivers/infiniband/ulp/ipoib/ipoib_main.c | 352 +------------
+ sys/sys/mbuf.h                                     |   6 +-
+ tests/sys/netpfil/pf/ioctl/validation.c            |  38 ++
+ 48 files changed, 1469 insertions(+), 702 deletions(-)
+ create mode 100644 sys/modules/if_infiniband/Makefile
+ create mode 100644 sys/net/if_infiniband.c
+ create mode 100644 sys/net/infiniband.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    37b0e480a8e2..560e000e28d3  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    7309cf9169db..e2d39c4d6c1b  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   37b0e480a8e2..560e000e28d3  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
