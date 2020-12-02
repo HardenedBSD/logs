@@ -1,0 +1,585 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/master
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/master branch ====
+Auto-merging usr.bin/Makefile
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 35e42630c54f,34df02c632f1..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -132,109292 -452,1038 +132,109690 @@@ When set, it enforces these options
+  .It
+  .Va WITHOUT_GCC_BOOTSTRAP
+  .It
+ -.Va WITHOUT_LLD_BOOTSTRAP
+ -.El
+ -.It Va WITHOUT_CRYPT
+ -Set to not build any crypto code.
+ -When set, it enforces these options:
+ -.Pp
+ -.Bl -item -compact
+ +.Va WITHOUT_GH_BC
+  .It
+ -.Va WITHOUT_DMAGENT
+ +.Va WITHOUT_GNUCXX
+  .It
+ -.Va WITHOUT_KERBEROS
+ +.Va WITHOUT_GNU_GREP_COMPAT
+ +.It
+ +.Va WITHOUT_GPL_DTC
+  .It
+ +.Va WITHOUT_HESIOD
+ +.It
+++<<<<<<< HEAD
+ +.Va WITHOUT_INSTALL_AS_USER
+++=======
++ .Va WITHOUT_KERBEROS_SUPPORT
++ .It
++ .Va WITHOUT_LDNS
+++>>>>>>> freebsd/12-stable/master
+  .It
+ -.Va WITHOUT_LDNS_UTILS
+ +.Va WITHOUT_KERNEL_RETPOLINE
+  .It
+ -.Va WITHOUT_OPENSSH
+ +.Va WITHOUT_LIB32
+  .It
+ -.Va WITHOUT_OPENSSL
+ +.Va WITHOUT_LIBRESSL
+  .It
+ -.Va WITHOUT_PKGBOOTSTRAP
+ +.Va WITHOUT_LIBSOFT
+  .It
+ -.Va WITHOUT_SVN
+ +.Va WITHOUT_LLVM_ASSERTIONS
+  .It
+ -.Va WITHOUT_SVNLITE
+ +.Va WITHOUT_LLVM_TARGET_BPF
+  .It
+ -.Va WITHOUT_UNBOUND
+ +.Va WITHOUT_LOADER_EFI_SECUREBOOT
+  .It
+ -.Va WITHOUT_WIRELESS
+ -.El
+ -.Pp
+ -When set, these options are also in effect:
+ -.Pp
+ -.Bl -inset -compact
+ -.It Va WITHOUT_GSSAPI
+ -(unless
+ -.Va WITH_GSSAPI
+ -is set explicitly)
+ -.El
+ -.It Va WITH_CTF
+ -Set to compile with CTF (Compact C Type Format) data.
+ -CTF data encapsulates a reduced form of debugging information
+ -similar to DWARF and the venerable stabs and is required for DTrace.
+ -.It Va WITHOUT_CTM
+ -Set to not build
+ -.Xr ctm 1
+ -and related utilities.
+ -.It Va WITHOUT_CUSE
+ -Set to not build CUSE-related programs and libraries.
+ -.It Va WITHOUT_CXGBETOOL
+ -Set to not build
+ -.Xr cxgbetool 8
+ -.Pp
+ -This is a default setting on
+ -arm/arm, arm/armv6, arm/armv7, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpcspe, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_CXGBETOOL
+ -Set to build
+ -.Xr cxgbetool 8
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm64/aarch64, i386/i386, powerpc/powerpc64 and sparc64/sparc64.
+ -.It Va WITHOUT_CXX
+ -Set to not build
+ -.Xr c++ 1
+ -and related libraries.
+ -It will also prevent building of
+ -.Xr gperf 1
+ -and
+ -.Xr devd 8 .
+ -When set, it enforces these options:
+ -.Pp
+ -.Bl -item -compact
+ +.Va WITHOUT_LOADER_FIREWIRE
+  .It
+ -.Va WITHOUT_CLANG
+ +.Va WITHOUT_LOADER_FORCE_LE
+  .It
+ -.Va WITHOUT_CLANG_EXTRAS
+ +.Va WITHOUT_LOADER_OFW
+  .It
+ -.Va WITHOUT_CLANG_FORMAT
+ +.Va WITHOUT_LOADER_UBOOT
+  .It
+ -.Va WITHOUT_CLANG_FULL
+ +.Va WITHOUT_LOADER_VERIEXEC
+  .It
+ -.Va WITHOUT_DTRACE_TESTS
+ +.Va WITHOUT_LOADER_VERIEXEC_PASS_MANIFEST
+  .It
+ -.Va WITHOUT_GNUCXX
+ +.Va WITHOUT_LOADER_VERIEXEC_VECTX
+  .It
+ -.Va WITHOUT_LLVM_COV
+ +.Va WITHOUT_META_MODE
+  .It
+ -.Va WITHOUT_TESTS
+ -.El
+ -.It Va WITHOUT_DEBUG_FILES
+ -Set to avoid building or installing standalone debug files for each
+ -executable binary and shared library.
+ -.It Va WITHOUT_DIALOG
+ -Set to not build
+ -.Xr dialog 1 ,
+ -.Xr dialog 3 ,
+ -.Xr dpv 1 ,
+ -and
+ -.Xr dpv 3 .
+ -When set, it enforces these options:
+ -.Pp
+ -.Bl -item -compact
+ +.Va WITHOUT_NAND
+  .It
+ -.Va WITHOUT_BSDINSTALL
+ -.El
+ -.It Va WITHOUT_DICT
+ -Set to not build the Webster dictionary files.
+ -.It Va WITH_DIRDEPS_BUILD
+ -This is an experimental build system.
+ -For details see
+ -http://www.crufty.net/sjg/docs/freebsd-meta-mode.htm.
+ -Build commands can be seen from the top-level with:
+ -.Dl make show-valid-targets
+ -The build is driven by dirdeps.mk using
+ -.Va DIRDEPS
+ -stored in
+ -Makefile.depend files found in each directory.
+ -.Pp
+ -The build can be started from anywhere, and behaves the same.
+ -The initial instance of
+ -.Xr make 1
+ -recursively reads
+ -.Va DIRDEPS
+ -from
+ -.Pa Makefile.depend ,
+ -computing a graph of tree dependencies from the current origin.
+ -Setting
+ -.Va NO_DIRDEPS
+ -skips checking dirdep dependencies and will only build in the current
+ -and child directories.
+ -.Va NO_DIRDEPS_BELOW
+ -skips building any dirdeps and only build the current directory.
+ -.Pp
+ -This also utilizes the
+ -.Va WITH_META_MODE
+ -logic for incremental builds.
+ -.Pp
+ -The build hides commands executed unless
+ -.Va NO_SILENT
+ -is defined.
+ -.Pp
+ -Note that there is currently no mass install feature for this.
+ -.Pp
+ -When set, it enforces these options:
+ -.Pp
+ -.Bl -item -compact
+ +.Va WITHOUT_OFED
+ +.It
+ +.Va WITHOUT_OFED_EXTRA
+ +.It
+ +.Va WITHOUT_OPENLDAP
+ +.It
+ +.Va WITHOUT_OPENNTPD
+ +.It
+ +.Va WITHOUT_PORTSNAP
+ +.It
+ +.Va WITHOUT_RATELIMIT
+ +.It
+ +.Va WITHOUT_REPRODUCIBLE_BUILD
+ +.It
+ +.Va WITHOUT_RPCBIND_WARMSTART_SUPPORT
+ +.It
+ +.Va WITHOUT_SORT_THREADS
+ +.It
+ +.Va WITHOUT_SPECTREV1_FIX
+  .It
+ -.Va WITH_INSTALL_AS_USER
+ -.El
+ -.Pp
+ -When set, these options are also in effect:
+ -.Pp
+ -.Bl -inset -compact
+ -.It Va WITH_META_MODE
+ -(unless
+ -.Va WITHOUT_META_MODE
+ -is set explicitly)
+ -.It Va WITH_STAGING
+ -(unless
+  .Va WITHOUT_STAGING
+ -is set explicitly)
+ -.It Va WITH_STAGING_MAN
+ -(unless
+ +.It
+  .Va WITHOUT_STAGING_MAN
+ -is set explicitly)
+ -.It Va WITH_STAGING_PROG
+ -(unless
+ +.It
+  .Va WITHOUT_STAGING_PROG
+ -is set explicitly)
+ -.It Va WITH_SYSROOT
+ -(unless
+ +.It
+ +.Va WITHOUT_STALE_STAGED
+ +.It
+ +.Va WITHOUT_SVN
+ +.It
+  .Va WITHOUT_SYSROOT
+ -is set explicitly)
+ +.It
+ +.Va WITHOUT_VERIEXEC
+ +.It
+ +.Va WITHOUT_ZONEINFO_LEAPSECONDS_SUPPORT
+ +.It
+ +.Va WITH_ACPI
+ +.It
+ +.Va WITH_AMD
+ +.It
+ +.Va WITH_APM
+ +.It
+ +.Va WITH_ASSERT_DEBUG
+ +.It
+ +.Va WITH_AT
+ +.It
+ +.Va WITH_ATM
+ +.It
+ +.Va WITH_AUDIT
+ +.It
+ +.Va WITH_AUTHPF
+ +.It
+ +.Va WITH_AUTOFS
+ +.It
+ +.Va WITH_AUTO_OBJ
+ +.It
+ +.Va WITH_BHYVE
+ +.It
+ +.Va WITH_BINUTILS
+ +.It
+ +.Va WITH_BINUTILS_BOOTSTRAP
+ +.It
+ +.Va WITH_BLACKLIST
+ +.It
+ +.Va WITH_BLACKLIST_SUPPORT
+ +.It
+ +.Va WITH_BLUETOOTH
+ +.It
+ +.Va WITH_BOOT
+ +.It
+ +.Va WITH_BOOTPARAMD
+ +.It
+ +.Va WITH_BOOTPD
+ +.It
+ +.Va WITH_BSDINSTALL
+ +.It
+ +.Va WITH_BSD_CPIO
+ +.It
+ +.Va WITH_BSNMP
+ +.It
+ +.Va WITH_BZIP2
+ +.It
+ +.Va WITH_BZIP2_SUPPORT
+ +.It
+ +.Va WITH_CALENDAR
+ +.It
+ +.Va WITH_CAPSICUM
+ +.It
+ +.Va WITH_CAROOT
+ +.It
+ +.Va WITH_CASPER
+ +.It
+ +.Va WITH_CCD
+ +.It
+ +.Va WITH_CDDL
+ +.It
+ +.Va WITH_CFI
+ +.It
+ +.Va WITH_CLANG
+ +.It
+ +.Va WITH_CLANG_BOOTSTRAP
+ +.It
+ +.Va WITH_CLANG_EXTRAS
+ +.It
+ +.Va WITH_CLANG_FULL
+ +.It
+ +.Va WITH_CLANG_IS_CC
+ +.It
+ +.Va WITH_CPP
+ +.It
+ +.Va WITH_CROSS_COMPILER
+ +.It
+ +.Va WITH_CRYPT
+ +.It
+ +.Va WITH_CTM
+ +.It
+ +.Va WITH_CUSE
+ +.It
+ +.Va WITH_CXGBETOOL
+ +.It
+ +.Va WITH_CXX
+ +.It
+ +.Va WITH_DEBUG_FILES
+ +.It
+ +.Va WITH_DIALOG
+ +.It
+ +.Va WITH_DICT
+ +.It
+ +.Va WITH_DMAGENT
+ +.It
+ +.Va WITH_DOCCOMPRESS
+ +.It
+ +.Va WITH_DYNAMICROOT
+ +.It
+ +.Va WITH_ED_CRYPTO
+ +.It
+ +.Va WITH_EE
+ +.It
+ +.Va WITH_EFI
+ +.It
+ +.Va WITH_ELFTOOLCHAIN_BOOTSTRAP
+ +.It
+ +.Va WITH_EXAMPLES
+ +.It
+ +.Va WITH_FDT
+ +.It
+ +.Va WITH_FILE
+ +.It
+ +.Va WITH_FINGER
+ +.It
+ +.Va WITH_FLOPPY
+ +.It
+ +.Va WITH_FMTREE
+ +.It
+ +.Va WITH_FORMAT_EXTENSIONS
+ +.It
+ +.Va WITH_FORTH
+ +.It
+ +.Va WITH_FP_LIBC
+ +.It
+ +.Va WITH_FTP
+ +.It
+ +.Va WITH_GAMES
+ +.It
+ +.Va WITH_GCOV
+ +.It
+ +.Va WITH_GDB
+ +.It
+ +.Va WITH_GDB_LIBEXEC
+ +.It
+ +.Va WITH_GNU_DIFF
+ +.It
+ +.Va WITH_GNU_GREP
+ +.It
+ +.Va WITH_GOOGLETEST
+ +.It
+ +.Va WITH_GPIO
+ +.It
+ +.Va WITH_GSSAPI
+ +.It
+ +.Va WITH_HAST
+ +.It
+ +.Va WITH_HBSDCONTROL
+ +.It
+ +.Va WITH_HBSD_UPDATE
+ +.It
+ +.Va WITH_HTML
+ +.It
+ +.Va WITH_HYPERV
+ +.It
+ +.Va WITH_ICONV
+ +.It
+ +.Va WITH_INCLUDES
+ +.It
+ +.Va WITH_INET
+ +.It
+ +.Va WITH_INET6
+ +.It
+ +.Va WITH_INET6_SUPPORT
+ +.It
+ +.Va WITH_INETD
+ +.It
+ +.Va WITH_INET_SUPPORT
+ +.It
+ +.Va WITH_INSTALLLIB
+ +.It
+ +.Va WITH_IPFILTER
+ +.It
+ +.Va WITH_IPFW
+ +.It
+ +.Va WITH_IPSEC_SUPPORT
+ +.It
+ +.Va WITH_ISCSI
+ +.It
+ +.Va WITH_JAIL
+ +.It
+ +.Va WITH_KDUMP
+ +.It
+ +.Va WITH_KERBEROS
+ +.It
+ +.Va WITH_KERBEROS_SUPPORT
+ +.It
+ +.Va WITH_KERNEL_SYMBOLS
+ +.It
+ +.Va WITH_KVM
+ +.It
+ +.Va WITH_KVM_SUPPORT
+ +.It
+ +.Va WITH_LDNS
+ +.It
+ +.Va WITH_LDNS_UTILS
+ +.It
+ +.Va WITH_LEGACY_CONSOLE
+ +.It
+ +.Va WITH_LIBCPLUSPLUS
+ +.It
+ +.Va WITH_LIBPTHREAD
+ +.It
+ +.Va WITH_LIBTHR
+ +.It
+ +.Va WITH_LLD
+ +.It
+ +.Va WITH_LLDB
+ +.It
+ +.Va WITH_LLD_BOOTSTRAP
+ +.It
+ +.Va WITH_LLD_IS_LD
+ +.It
+ +.Va WITH_LLVM_AR_IS_AR
+ +.It
+ +.Va WITH_LLVM_COV
+ +.It
+ +.Va WITH_LLVM_LIBUNWIND
+ +.It
+ +.Va WITH_LLVM_NM_IS_NM
+ +.It
+ +.Va WITH_LLVM_OBJDUMP_IS_OBJDUMP
+ +.It
+ +.Va WITH_LLVM_TARGET_AARCH64
+ +.It
+ +.Va WITH_LLVM_TARGET_ALL
+ +.It
+ +.Va WITH_LLVM_TARGET_ARM
+ +.It
+ +.Va WITH_LLVM_TARGET_MIPS
+ +.It
+ +.Va WITH_LLVM_TARGET_POWERPC
+ +.It
+ +.Va WITH_LLVM_TARGET_RISCV
+ +.It
+ +.Va WITH_LLVM_TARGET_SPARC
+ +.It
+ +.Va WITH_LLVM_TARGET_X86
+ +.It
+ +.Va WITH_LOADER_GELI
+ +.It
+ +.Va WITH_LOADER_LUA
+ +.It
+ +.Va WITH_LOADER_ZFS
+ +.It
+ +.Va WITH_LOCALES
+ +.It
+ +.Va WITH_LOCATE
+ +.It
+ +.Va WITH_LPR
+ +.It
+ +.Va WITH_LS_COLORS
+ +.It
+ +.Va WITH_LZMA_SUPPORT
+ +.It
+ +.Va WITH_MAIL
+ +.It
+ +.Va WITH_MAILWRAPPER
+ +.It
+ +.Va WITH_MAKE
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/elftoolchain/elfcopy/archive.c
+	modified:   contrib/elftoolchain/elfcopy/elfcopy.h
+	modified:   contrib/elftoolchain/elfcopy/main.c
+	modified:   share/mk/src.opts.mk
+	modified:   tools/build/mk/OptionalObsoleteFiles.inc
+	new file:   tools/build/options/WITHOUT_LLVM_CXXFILT
+	new file:   tools/build/options/WITH_LLVM_CXXFILT
+	modified:   usr.bin/Makefile
+	modified:   usr.bin/clang/Makefile
+	modified:   usr.bin/clang/llvm-cxxfilt/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+
+HEAD is now at fbf63d25226b Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at fbf63d25226b Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
