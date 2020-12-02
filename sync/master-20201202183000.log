@@ -47,3 +47,141 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing multimedia/libv4l/files/patch-utils_media-ctl_media-ctl.c
+Removing multimedia/libv4l/files/patch-utils_ir-ctl_bpf__encoder.c
+Removing multimedia/libv4l/files/patch-utils_common_v4l2-tpg.h
+Removing multimedia/libv4l/files/patch-utils_common_keymap.h
+Removing multimedia/libv4l/files/patch-utils_common_ir-encode.c
+Removing multimedia/libv4l/files/patch-lib_libv4lconvert_rgbyuv.c
+Removing multimedia/libv4l/files/patch-afb12361.c
+Removing devel/intel-graphics-compiler/files/patch-clang
+Merge made by the 'recursive' strategy.
+ databases/Makefile                                 |   1 +
+ databases/memcached/Makefile                       |  10 +-
+ databases/py-aesqlapius/Makefile                   |  25 ++
+ databases/py-aesqlapius/distinfo                   |   3 +
+ databases/py-aesqlapius/pkg-descr                  |  19 ++
+ devel/bmake/Makefile                               |   2 +-
+ devel/bmake/distinfo                               |   6 +-
+ devel/bmake/files/patch-unit-tests_Makefile        |  26 +-
+ devel/intel-graphics-compiler/Makefile             |  10 +-
+ devel/intel-graphics-compiler/distinfo             |   4 +
+ devel/intel-graphics-compiler/files/patch-clang    |  20 --
+ devel/level-zero/Makefile                          |   2 +-
+ devel/level-zero/distinfo                          |   6 +-
+ devel/level-zero/files/patch-rtld                  |   4 +-
+ devel/level-zero/pkg-plist                         |   9 +-
+ devel/shfmt/Makefile                               |   2 +-
+ devel/shfmt/distinfo                               |   6 +-
+ devel/urjtag/Makefile                              |   9 +-
+ lang/erlang-runtime23/Makefile                     |   4 +-
+ lang/erlang/Makefile                               |   5 +-
+ lang/intel-compute-runtime/Makefile                |   2 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ lang/perl5.28/Makefile                             |   3 +-
+ lang/perl5.30/Makefile                             |   4 +-
+ lang/php74/Makefile                                |   6 +-
+ multimedia/libv4l/Makefile                         |  39 +--
+ multimedia/libv4l/distinfo                         |  12 +-
+ multimedia/libv4l/files/patch-afb12361.c           |  68 -----
+ .../files/patch-lib_include_libdvbv5_descriptors.h |   2 +-
+ .../libv4l/files/patch-lib_libv4lconvert_rgbyuv.c  |  11 -
+ .../libv4l/files/patch-utils_common_ir-encode.c    | 322 ---------------------
+ .../libv4l/files/patch-utils_common_keymap.h       |  32 --
+ .../libv4l/files/patch-utils_common_v4l2-tpg.h     |  12 -
+ .../libv4l/files/patch-utils_ir-ctl_bpf__encoder.c |  50 ----
+ ...sg2ctl.pl => patch-utils_libcecutil_cec-gen.pl} |   8 +-
+ .../libv4l/files/patch-utils_media-ctl_media-ctl.c |  11 -
+ ...tch-utils_v4l2-compliance_v4l2-test-buffers.cpp |  36 +--
+ .../patch-utils_v4l2-ctl_v4l2-ctl-overlay.cpp      |  18 +-
+ multimedia/libv4l/pkg-descr                        |   2 +-
+ multimedia/v4l-utils/pkg-descr                     |   2 +-
+ multimedia/v4l_compat/Makefile                     |   2 +-
+ multimedia/v4l_compat/pkg-descr                    |   4 +-
+ multimedia/webcamd/Makefile                        |   4 +-
+ multimedia/webcamd/distinfo                        |  10 +-
+ net/radsecproxy/Makefile                           |   5 +-
+ net/radsecproxy/distinfo                           |   6 +-
+ shells/ksh2020/Makefile                            |   1 +
+ .../files/patch-src_cmd_ksh93_edit_pcomplete.c     |  12 +
+ sysutils/intel-pcm/Makefile                        |   1 -
+ sysutils/rubygem-vagrant_cloud/Makefile            |   3 +
+ textproc/lookatme/Makefile                         |   2 +-
+ x11-servers/xwayland-devel/Makefile                |   4 +-
+ x11-servers/xwayland-devel/distinfo                |   6 +-
+ 53 files changed, 215 insertions(+), 664 deletions(-)
+ create mode 100644 databases/py-aesqlapius/Makefile
+ create mode 100644 databases/py-aesqlapius/distinfo
+ create mode 100644 databases/py-aesqlapius/pkg-descr
+ delete mode 100644 devel/intel-graphics-compiler/files/patch-clang
+ delete mode 100644 multimedia/libv4l/files/patch-afb12361.c
+ delete mode 100644 multimedia/libv4l/files/patch-lib_libv4lconvert_rgbyuv.c
+ delete mode 100644 multimedia/libv4l/files/patch-utils_common_ir-encode.c
+ delete mode 100644 multimedia/libv4l/files/patch-utils_common_keymap.h
+ delete mode 100644 multimedia/libv4l/files/patch-utils_common_v4l2-tpg.h
+ delete mode 100644 multimedia/libv4l/files/patch-utils_ir-ctl_bpf__encoder.c
+ rename multimedia/libv4l/files/{patch-utils_cec-ctl_msg2ctl.pl => patch-utils_libcecutil_cec-gen.pl} (56%)
+ delete mode 100644 multimedia/libv4l/files/patch-utils_media-ctl_media-ctl.c
+ create mode 100644 shells/ksh2020/files/patch-src_cmd_ksh93_edit_pcomplete.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    a1b17e0e6a4f..734237b1c310  master -> master        
+remote:    09788524dee8..a1b17e0e6a4f  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   a1b17e0e6a4f..734237b1c310  master -> master
+==== END: master ====
