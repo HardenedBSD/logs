@@ -47,3 +47,188 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/rubygem-redmine_acts_as_taggable_on/pkg-descr
+Removing www/rubygem-redmine_acts_as_taggable_on/distinfo
+Removing www/rubygem-redmine_acts_as_taggable_on/Makefile
+Removing www/rubygem-gitlab-grack/pkg-descr
+Removing www/rubygem-gitlab-grack/distinfo
+Removing www/rubygem-gitlab-grack/Makefile
+Removing www/rubygem-dashing/pkg-descr
+Removing www/rubygem-dashing/files/patch-gemspec
+Removing www/rubygem-dashing/distinfo
+Removing www/rubygem-dashing/Makefile
+Removing www/chromium/files/patch-third__party_blink_renderer_modules_webcodecs_video__encoder.cc
+Auto-merging www/chromium/Makefile
+Auto-merging editors/nano/Makefile
+Removing databases/db6/pkg-plist
+Removing databases/db6/pkg-descr
+Removing databases/db6/files/patch-src_dbinc_mutex__int.h
+Removing databases/db6/files/patch-src_dbinc_db.in
+Removing databases/db6/files/patch-lang_sql_upgrade61.sh
+Removing databases/db6/distinfo
+Removing databases/db6/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   4 +
+ Mk/Uses/bdb.mk                                     |  13 +-
+ cad/qflow/Makefile                                 |   3 +-
+ cad/qflow/distinfo                                 |   6 +-
+ comms/fldigi/Makefile                              |   3 +-
+ comms/fldigi/distinfo                              |   6 +-
+ databases/Makefile                                 |   1 -
+ databases/db6/Makefile                             | 120 ----
+ databases/db6/distinfo                             |   3 -
+ databases/db6/files/patch-lang_sql_upgrade61.sh    |  27 -
+ databases/db6/files/patch-src_dbinc_db.in          |  15 -
+ databases/db6/files/patch-src_dbinc_mutex__int.h   |  34 -
+ databases/db6/pkg-descr                            |  14 -
+ databases/db6/pkg-plist                            |  99 ---
+ deskutils/egroupware/Makefile                      |   4 +-
+ deskutils/egroupware/distinfo                      |   6 +-
+ devel/avr-gcc/Makefile                             |   1 +
+ devel/etcd34/Makefile                              |   2 +-
+ devel/etcd34/distinfo                              |   6 +-
+ devel/gcc-msp430-ti-toolchain/Makefile             |   1 +
+ devel/isl/Makefile                                 |   2 +-
+ devel/isl/distinfo                                 |   6 +-
+ devel/isl/pkg-plist                                |   6 +-
+ devel/php74-intl/Makefile                          |   1 -
+ devel/simavr/Makefile                              |   2 +-
+ editors/nano/Makefile                              |   2 +-
+ editors/nano/distinfo                              |   6 +-
+ emulators/wine-devel/Makefile                      |   3 +-
+ emulators/wine-gecko-devel/Makefile                |   2 +-
+ emulators/wine-gecko-devel/distinfo                |   6 +-
+ graphics/libosmesa/Makefile                        |   1 -
+ graphics/mesa-dri/Makefile                         |   7 +-
+ graphics/mesa-dri/Makefile.common                  |   2 +-
+ graphics/mesa-dri/distinfo                         |   6 +-
+ .../mesa-dri/files/patch-src_loader_meson.build    |  11 +
+ graphics/mesa-gallium-va/Makefile                  |  28 +-
+ graphics/mesa-gallium-va/pkg-plist                 |  20 +
+ graphics/mesa-gallium-vdpau/Makefile               |  29 +-
+ graphics/mesa-gallium-vdpau/pkg-plist              |  23 +
+ graphics/mesa-gallium-xa/Makefile                  |   1 -
+ graphics/mesa-libs/Makefile                        |   4 +-
+ lang/clover/Makefile                               |   1 -
+ lang/go/Makefile                                   |   2 +-
+ lang/go/distinfo                                   |   6 +-
+ lang/php74/Makefile                                |   2 +-
+ lang/php74/distinfo                                |   6 +-
+ lang/php80/Makefile                                |   4 +-
+ lang/php80/distinfo                                |   6 +-
+ math/barvinok/Makefile                             |   1 +
+ math/cloog/Makefile                                |   1 +
+ math/sage/Makefile                                 |   2 +-
+ misc/py-onnx-tf/Makefile                           |   2 +-
+ misc/py-onnx-tf/distinfo                           |   6 +-
+ multimedia/minitube/Makefile                       |  10 +-
+ multimedia/minitube/distinfo                       |  22 +-
+ science/quantum-espresso/Makefile                  |   2 +-
+ science/quantum-espresso/distinfo                  |   6 +-
+ .../files/patch-install_extlibs__makefile          |  12 +-
+ science/quantum-espresso/pkg-plist                 |   2 -
+ sysutils/nss_ndb/Makefile                          |   8 +-
+ www/Makefile                                       |   4 +-
+ www/chromium/Makefile                              |   2 +-
+ www/chromium/distinfo                              |  10 +-
+ ...nk_renderer_modules_webcodecs_video__encoder.cc |  20 -
+ www/cpp-httplib/Makefile                           |   2 +-
+ www/cpp-httplib/distinfo                           |   6 +-
+ www/lychee/Makefile                                | 378 +++++++++++
+ www/lychee/distinfo                                | 711 +++++++++++++++++++++
+ www/lychee/pkg-descr                               |   5 +
+ www/rubygem-dashing/Makefile                       |  36 --
+ www/rubygem-dashing/distinfo                       |   3 -
+ www/rubygem-dashing/files/patch-gemspec            |  22 -
+ www/rubygem-dashing/pkg-descr                      |   4 -
+ www/rubygem-gitlab-grack/Makefile                  |  27 -
+ www/rubygem-gitlab-grack/distinfo                  |   2 -
+ www/rubygem-gitlab-grack/pkg-descr                 |   3 -
+ www/rubygem-redmine_acts_as_taggable_on/Makefile   |  25 -
+ www/rubygem-redmine_acts_as_taggable_on/distinfo   |   3 -
+ www/rubygem-redmine_acts_as_taggable_on/pkg-descr  |   3 -
+ 79 files changed, 1297 insertions(+), 606 deletions(-)
+ delete mode 100644 databases/db6/Makefile
+ delete mode 100644 databases/db6/distinfo
+ delete mode 100644 databases/db6/files/patch-lang_sql_upgrade61.sh
+ delete mode 100644 databases/db6/files/patch-src_dbinc_db.in
+ delete mode 100644 databases/db6/files/patch-src_dbinc_mutex__int.h
+ delete mode 100644 databases/db6/pkg-descr
+ delete mode 100644 databases/db6/pkg-plist
+ create mode 100644 graphics/mesa-dri/files/patch-src_loader_meson.build
+ delete mode 100644 www/chromium/files/patch-third__party_blink_renderer_modules_webcodecs_video__encoder.cc
+ create mode 100644 www/lychee/Makefile
+ create mode 100644 www/lychee/distinfo
+ create mode 100644 www/lychee/pkg-descr
+ delete mode 100644 www/rubygem-dashing/Makefile
+ delete mode 100644 www/rubygem-dashing/distinfo
+ delete mode 100644 www/rubygem-dashing/files/patch-gemspec
+ delete mode 100644 www/rubygem-dashing/pkg-descr
+ delete mode 100644 www/rubygem-gitlab-grack/Makefile
+ delete mode 100644 www/rubygem-gitlab-grack/distinfo
+ delete mode 100644 www/rubygem-gitlab-grack/pkg-descr
+ delete mode 100644 www/rubygem-redmine_acts_as_taggable_on/Makefile
+ delete mode 100644 www/rubygem-redmine_acts_as_taggable_on/distinfo
+ delete mode 100644 www/rubygem-redmine_acts_as_taggable_on/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d303f83ea0db..2cf70f17f9ff  master -> master        
+remote:    9b1369e01fa2..d303f83ea0db  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d303f83ea0db..2cf70f17f9ff  master -> master
+==== END: master ====
