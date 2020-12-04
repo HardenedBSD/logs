@@ -1,0 +1,116 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                                     |    2 +-
+ gnu/lib/Makefile                                  |    3 +-
+ stand/kshim/bsd_kernel.h                          |   26 +-
+ sys/arm/rockchip/files.rk32xx                     |   31 +
+ sys/arm/rockchip/rk32xx_machdep.c                 |  126 +++
+ sys/arm/rockchip/rk32xx_mp.c                      |  174 ++++
+ sys/arm/rockchip/rk32xx_mp.h                      |   36 +
+ sys/arm/rockchip/std.rk32xx                       |    8 +
+ sys/arm64/rockchip/clk/rk3288_cru.c               | 1026 +++++++++++++++++++++
+ sys/arm64/rockchip/clk/rk_clk_pll.c               |  243 +++++
+ sys/arm64/rockchip/clk/rk_clk_pll.h               |    2 +
+ sys/arm64/rockchip/clk/rk_cru.c                   |    4 +
+ sys/arm64/rockchip/clk/rk_cru.h                   |    1 +
+ sys/arm64/rockchip/rk_pmu.c                       |   77 ++
+ sys/arm64/rockchip/rk_pwm.c                       |    1 +
+ sys/arm64/rockchip/rk_tsadc.c                     |    3 +-
+ sys/arm64/rockchip/rk_usbphy.c                    |  307 ++++++
+ sys/compat/linuxkpi/common/include/linux/list.h   |    5 +-
+ sys/compat/linuxkpi/common/include/linux/rbtree.h |    3 +
+ sys/dev/iicbus/pmic/act8846.c                     |  258 ++++++
+ sys/dev/iicbus/pmic/act8846.h                     |   67 ++
+ sys/dev/iicbus/pmic/act8846_reg.h                 |   83 ++
+ sys/dev/iicbus/pmic/act8846_regulator.c           |  506 ++++++++++
+ sys/dev/iicbus/pmic/fan53555.c                    |  477 ++++++++++
+ sys/dev/iicbus/rtc/hym8563.c                      |  314 +++++++
+ sys/netinet/tcp_input.c                           |  130 ++-
+ sys/netinet/tcp_var.h                             |    8 +-
+ tools/build/make.py                               |    3 +
+ usr.sbin/crunch/crunchgen/crunched_main.c         |    4 +-
+ 29 files changed, 3913 insertions(+), 15 deletions(-)
+ create mode 100644 sys/arm/rockchip/files.rk32xx
+ create mode 100644 sys/arm/rockchip/rk32xx_machdep.c
+ create mode 100644 sys/arm/rockchip/rk32xx_mp.c
+ create mode 100644 sys/arm/rockchip/rk32xx_mp.h
+ create mode 100644 sys/arm/rockchip/std.rk32xx
+ create mode 100644 sys/arm64/rockchip/clk/rk3288_cru.c
+ create mode 100644 sys/arm64/rockchip/rk_pmu.c
+ create mode 100644 sys/arm64/rockchip/rk_usbphy.c
+ create mode 100644 sys/dev/iicbus/pmic/act8846.c
+ create mode 100644 sys/dev/iicbus/pmic/act8846.h
+ create mode 100644 sys/dev/iicbus/pmic/act8846_reg.h
+ create mode 100644 sys/dev/iicbus/pmic/act8846_regulator.c
+ create mode 100644 sys/dev/iicbus/pmic/fan53555.c
+ create mode 100644 sys/dev/iicbus/rtc/hym8563.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    5b391542c7d7..0a8df85ca065  hardened/current/master -> hardened/current/master        
+remote:    ccc7c37f7f1e..b346f06c239e  github/freebsd/current/master -> github/freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   5b391542c7d7..0a8df85ca065  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
