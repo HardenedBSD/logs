@@ -47,3 +47,338 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing math/gfan/pkg-message
+Removing graphics/geeqie/files/patch-src_layout__util.c
+Removing graphics/geeqie/files/patch-options.h
+Removing graphics/geeqie/files/patch-options.c
+Removing graphics/geeqie-devel/pkg-plist
+Removing graphics/geeqie-devel/pkg-descr
+Removing graphics/geeqie-devel/files/patch-configure.ac
+Removing graphics/geeqie-devel/files/patch-Makefile.am
+Removing graphics/geeqie-devel/distinfo
+Removing graphics/geeqie-devel/Makefile
+Removing deskutils/xfce4-notifyd/files/patch-common_xfce-notify-log.c
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ databases/Makefile                                 |   2 +
+ databases/puppetdb-terminus5/Makefile              |   2 +-
+ databases/puppetdb-terminus6/Makefile              |   2 +-
+ databases/puppetdb-terminus7/Makefile              |  28 +++
+ databases/puppetdb-terminus7/distinfo              |   3 +
+ databases/puppetdb-terminus7/files/patch-Makefile  |  62 +++++++
+ databases/puppetdb-terminus7/pkg-descr             |   3 +
+ databases/puppetdb-terminus7/pkg-plist             |  17 ++
+ databases/puppetdb5/Makefile                       |   2 +-
+ databases/puppetdb6/Makefile                       |   2 +-
+ databases/puppetdb7/Makefile                       |  50 ++++++
+ databases/puppetdb7/distinfo                       |   3 +
+ databases/puppetdb7/files/patch-Makefile           |  37 ++++
+ databases/puppetdb7/files/patch-ext_bin_puppetdb   |  15 ++
+ databases/puppetdb7/files/patch-ext_cli_ssl-setup  |  11 ++
+ .../files/patch-ext_config_conf.d_config.ini       |  15 ++
+ .../files/patch-ext_config_conf.d_jetty.ini        |   8 +
+ .../puppetdb7/files/patch-ext_config_logback.xml   |  29 ++++
+ .../files/patch-ext_config_request-logging.xml     |  14 ++
+ databases/puppetdb7/files/pkg-message.in           |  12 ++
+ databases/puppetdb7/files/puppetdb.in              |  91 ++++++++++
+ databases/puppetdb7/pkg-descr                      |   3 +
+ databases/puppetdb7/pkg-plist                      |  22 +++
+ deskutils/xfce4-notifyd/Makefile                   |   1 +
+ .../files/patch-common_xfce-notify-log.c           |  41 -----
+ devel/dconf-editor/Makefile                        |   2 +-
+ devel/dconf-editor/distinfo                        |   6 +-
+ devel/leatherman/Makefile                          |   2 +-
+ devel/leatherman/distinfo                          |   6 +-
+ devel/libphonenumber/Makefile                      |   2 +-
+ devel/libphonenumber/distinfo                      |   6 +-
+ devel/py-pop-config/Makefile                       |   4 +-
+ devel/py-pop-config/distinfo                       |   6 +-
+ devel/py-pop/Makefile                              |   4 +-
+ devel/py-pop/distinfo                              |   6 +-
+ devel/py-tiamat/Makefile                           |   5 +-
+ devel/py-tiamat/distinfo                           |   6 +-
+ games/gnome-2048/Makefile                          |   2 +-
+ games/gnome-2048/distinfo                          |   6 +-
+ games/gnome-klotski/Makefile                       |   3 +-
+ games/gnome-klotski/distinfo                       |   6 +-
+ games/gnome-tetravex/Makefile                      |   3 +-
+ games/gnome-tetravex/distinfo                      |   6 +-
+ graphics/Makefile                                  |   1 -
+ graphics/geeqie-devel/Makefile                     |  95 -----------
+ graphics/geeqie-devel/distinfo                     |   3 -
+ graphics/geeqie-devel/files/patch-Makefile.am      |  22 ---
+ graphics/geeqie-devel/files/patch-configure.ac     |  29 ----
+ graphics/geeqie-devel/pkg-descr                    |  15 --
+ graphics/geeqie-devel/pkg-plist                    |  66 --------
+ graphics/geeqie/Makefile                           |  23 ++-
+ graphics/geeqie/distinfo                           |   6 +-
+ graphics/geeqie/files/patch-Makefile.am            |   2 +-
+ graphics/geeqie/files/patch-configure.ac           |   6 +-
+ graphics/geeqie/files/patch-options.c              |  12 --
+ graphics/geeqie/files/patch-options.h              |  13 --
+ graphics/geeqie/files/patch-src_layout__util.c     |  11 --
+ graphics/geeqie/pkg-plist                          |   2 +
+ lang/tcl86/Makefile                                |   2 +
+ math/gfan/Makefile                                 |  19 +--
+ .../gfan/files/patch-src_app__doesidealcontain.cpp |  15 ++
+ math/gfan/files/patch-src_app__fiberpolytope.cpp   |  11 ++
+ math/gfan/files/patch-src_app__groebnerfan.cpp     |  20 +++
+ math/gfan/files/patch-src_app__main.cpp            |  11 ++
+ math/gfan/files/patch-src_app__resultantfan.cpp    |  24 +++
+ math/gfan/files/patch-src_app__secondaryfan.cpp    |  11 ++
+ .../files/patch-src_app__tropicalintersection.cpp  |  11 ++
+ .../gfan/files/patch-src_app__tropicaltraverse.cpp |  13 ++
+ math/gfan/files/patch-src_bergman.cpp              | 117 +++++++++++++
+ math/gfan/files/patch-src_breadthfirstsearch.cpp   |  29 ++++
+ math/gfan/files/patch-src_buchberger.cpp           |  44 +++++
+ .../gfan/files/patch-src_codimoneconnectedness.cpp |  10 ++
+ math/gfan/files/patch-src_enumeration.cpp          |  11 ++
+ math/gfan/files/patch-src_ep__xfig.cpp             |  17 ++
+ math/gfan/files/patch-src_field__rationals.cpp     |  11 ++
+ .../files/patch-src_gfanlib__polyhedralfan.cpp     |  38 +++++
+ .../files/patch-src_gfanlib__symmetriccomplex.cpp  |  11 ++
+ math/gfan/files/patch-src_gfanlib__zfan.cpp        |  16 ++
+ math/gfan/files/patch-src_halfopencone.cpp         | 172 +++++++++++++++++++
+ math/gfan/files/patch-src_linalg.cpp               |  11 ++
+ math/gfan/files/patch-src_log.h                    |  11 ++
+ math/gfan/files/patch-src_lp__soplexcdd.cpp        |  20 +++
+ math/gfan/files/patch-src_padic.cpp                |  28 +++
+ math/gfan/files/patch-src_polyhedralcone.cpp       |  11 ++
+ math/gfan/files/patch-src_polyhedralfan.cpp        |  65 +++++++
+ math/gfan/files/patch-src_reversesearch.cpp        |  33 ++++
+ math/gfan/files/patch-src_singular.cpp             |  28 +++
+ math/gfan/files/patch-src_symmetriccomplex.cpp     |  11 ++
+ math/gfan/files/patch-src_symmetry.cpp             |  11 ++
+ .../patch-src_traverser__stableintersection.cpp    |  20 +++
+ math/gfan/files/patch-src_traverser__tropical.cpp  |  75 ++++++++
+ math/gfan/files/patch-src_triangulation2.h         |  20 +++
+ math/gfan/files/patch-src_tropical.cpp             |  11 ++
+ math/gfan/files/patch-src_tropical2.cpp            |  88 ++++++++++
+ .../gfan/files/patch-src_tropical__weildivisor.cpp |  11 ++
+ math/gfan/files/patch-src_tropicalbasis.cpp        | 112 ++++++++++++
+ math/gfan/files/patch-src_tropicalcurve.cpp        | 188 +++++++++++++++++++++
+ math/gfan/files/patch-src_tropicaltraverse.cpp     |  56 ++++++
+ math/gfan/files/patch-src_wallideal.cpp            |  11 ++
+ math/gfan/pkg-descr                                |  17 +-
+ math/gfan/pkg-message                              |  16 --
+ math/gfan/pkg-plist                                |  74 ++++----
+ misc/gnome-devel-docs/Makefile                     |   2 +-
+ misc/gnome-devel-docs/distinfo                     |   6 +-
+ misc/gnome-user-docs/Makefile                      |   2 +-
+ misc/gnome-user-docs/distinfo                      |   6 +-
+ multimedia/emby-server/Makefile                    |   5 +-
+ multimedia/emby-server/distinfo                    |   6 +-
+ multimedia/emby-server/pkg-plist                   |  60 +++++--
+ multimedia/libva-intel-media-driver/Makefile       |   1 +
+ multimedia/libva/Makefile                          |   7 +-
+ multimedia/libva/distinfo                          |  16 +-
+ multimedia/libva/pkg-plist                         |  10 +-
+ net-mgmt/zabbix52-agent/Makefile                   |   2 +-
+ net-mgmt/zabbix52-server/Makefile                  |   4 +
+ security/openssl-devel/Makefile                    |   5 +-
+ security/vuxml/vuln.xml                            |   2 +-
+ sysutils/Makefile                                  |   2 +
+ sysutils/choria/Makefile                           |  89 +++++-----
+ sysutils/choria/distinfo                           | 176 ++++++++++---------
+ ...om_nats-io_nats-server_v2_server_disk__avail.go |  11 ++
+ sysutils/puppet5/Makefile                          |   2 +-
+ sysutils/puppet5/pkg-descr                         |   2 +-
+ sysutils/puppet6/Makefile                          |   2 +-
+ sysutils/puppet6/pkg-descr                         |   2 +-
+ sysutils/puppet7/Makefile                          | 122 +++++++++++++
+ sysutils/puppet7/distinfo                          |   3 +
+ ...atch-lib_puppet_provider_service_daemontools.rb |  20 +++
+ sysutils/puppet7/files/pkg-message.in              |  11 ++
+ sysutils/puppet7/files/puppet.in                   |  49 ++++++
+ sysutils/puppet7/pkg-descr                         |   7 +
+ sysutils/puppet7/pkg-plist                         |  37 ++++
+ sysutils/puppetserver5/Makefile                    |   2 +-
+ sysutils/puppetserver6/Makefile                    |   4 +-
+ sysutils/puppetserver6/pkg-plist                   |   1 +
+ sysutils/puppetserver7/Makefile                    |  99 +++++++++++
+ sysutils/puppetserver7/distinfo                    |   5 +
+ .../files/patch-ext__bin__puppetserver             |  15 ++
+ .../puppetserver7/files/patch-ext__cli__foreground |  19 +++
+ .../files/patch-ext__cli_defaults__cli-defaults.sh |  12 ++
+ .../files/patch-ext__config__conf.d__global.conf   |   9 +
+ .../patch-ext__config__conf.d__puppetserver.conf   |  55 ++++++
+ .../patch-ext__config__conf.d__webserver.conf      |   9 +
+ .../files/patch-ext__config__logback.xml           |  17 ++
+ .../files/patch-ext__config__request-logging.xml   |  15 ++
+ .../files/patch-ext__ezbake-functions.sh           |  11 ++
+ sysutils/puppetserver7/files/patch-ffi.rb          |  19 +++
+ sysutils/puppetserver7/files/pkg-message.in        |  17 ++
+ sysutils/puppetserver7/files/puppetserver.in       |  97 +++++++++++
+ sysutils/puppetserver7/pkg-descr                   |  13 ++
+ sysutils/puppetserver7/pkg-plist                   |  30 ++++
+ sysutils/restic/Makefile                           |  36 ++--
+ sysutils/restic/distinfo                           |  64 ++++---
+ sysutils/rubygem-puppetserver-ca/Makefile          |   1 +
+ .../patch-lib_puppetserver_ca_config_puppet.rb     |   2 +-
+ .../patch-lib_puppetserver_ca_utils_config.rb      |  27 +++
+ sysutils/rubygem-r10k/Makefile                     |   2 +-
+ sysutils/rubygem-r10k/distinfo                     |   6 +-
+ sysutils/terragrunt/Makefile                       |  44 +++--
+ sysutils/terragrunt/distinfo                       |  90 +++++-----
+ textproc/yelp-xsl/Makefile                         |   2 +-
+ textproc/yelp-xsl/distinfo                         |   6 +-
+ www/youtube_dl/Makefile                            |   2 +-
+ www/youtube_dl/distinfo                            |   6 +-
+ x11/yelp/Makefile                                  |   2 +-
+ x11/yelp/distinfo                                  |   6 +-
+ 167 files changed, 3059 insertions(+), 759 deletions(-)
+ create mode 100644 databases/puppetdb-terminus7/Makefile
+ create mode 100644 databases/puppetdb-terminus7/distinfo
+ create mode 100644 databases/puppetdb-terminus7/files/patch-Makefile
+ create mode 100644 databases/puppetdb-terminus7/pkg-descr
+ create mode 100644 databases/puppetdb-terminus7/pkg-plist
+ create mode 100644 databases/puppetdb7/Makefile
+ create mode 100644 databases/puppetdb7/distinfo
+ create mode 100644 databases/puppetdb7/files/patch-Makefile
+ create mode 100644 databases/puppetdb7/files/patch-ext_bin_puppetdb
+ create mode 100644 databases/puppetdb7/files/patch-ext_cli_ssl-setup
+ create mode 100644 databases/puppetdb7/files/patch-ext_config_conf.d_config.ini
+ create mode 100644 databases/puppetdb7/files/patch-ext_config_conf.d_jetty.ini
+ create mode 100644 databases/puppetdb7/files/patch-ext_config_logback.xml
+ create mode 100644 databases/puppetdb7/files/patch-ext_config_request-logging.xml
+ create mode 100644 databases/puppetdb7/files/pkg-message.in
+ create mode 100644 databases/puppetdb7/files/puppetdb.in
+ create mode 100644 databases/puppetdb7/pkg-descr
+ create mode 100644 databases/puppetdb7/pkg-plist
+ delete mode 100644 deskutils/xfce4-notifyd/files/patch-common_xfce-notify-log.c
+ delete mode 100644 graphics/geeqie-devel/Makefile
+ delete mode 100644 graphics/geeqie-devel/distinfo
+ delete mode 100644 graphics/geeqie-devel/files/patch-Makefile.am
+ delete mode 100644 graphics/geeqie-devel/files/patch-configure.ac
+ delete mode 100644 graphics/geeqie-devel/pkg-descr
+ delete mode 100644 graphics/geeqie-devel/pkg-plist
+ delete mode 100644 graphics/geeqie/files/patch-options.c
+ delete mode 100644 graphics/geeqie/files/patch-options.h
+ delete mode 100644 graphics/geeqie/files/patch-src_layout__util.c
+ create mode 100644 math/gfan/files/patch-src_app__doesidealcontain.cpp
+ create mode 100644 math/gfan/files/patch-src_app__fiberpolytope.cpp
+ create mode 100644 math/gfan/files/patch-src_app__groebnerfan.cpp
+ create mode 100644 math/gfan/files/patch-src_app__main.cpp
+ create mode 100644 math/gfan/files/patch-src_app__resultantfan.cpp
+ create mode 100644 math/gfan/files/patch-src_app__secondaryfan.cpp
+ create mode 100644 math/gfan/files/patch-src_app__tropicalintersection.cpp
+ create mode 100644 math/gfan/files/patch-src_app__tropicaltraverse.cpp
+ create mode 100644 math/gfan/files/patch-src_bergman.cpp
+ create mode 100644 math/gfan/files/patch-src_breadthfirstsearch.cpp
+ create mode 100644 math/gfan/files/patch-src_buchberger.cpp
+ create mode 100644 math/gfan/files/patch-src_codimoneconnectedness.cpp
+ create mode 100644 math/gfan/files/patch-src_enumeration.cpp
+ create mode 100644 math/gfan/files/patch-src_ep__xfig.cpp
+ create mode 100644 math/gfan/files/patch-src_field__rationals.cpp
+ create mode 100644 math/gfan/files/patch-src_gfanlib__polyhedralfan.cpp
+ create mode 100644 math/gfan/files/patch-src_gfanlib__symmetriccomplex.cpp
+ create mode 100644 math/gfan/files/patch-src_gfanlib__zfan.cpp
+ create mode 100644 math/gfan/files/patch-src_halfopencone.cpp
+ create mode 100644 math/gfan/files/patch-src_linalg.cpp
+ create mode 100644 math/gfan/files/patch-src_log.h
+ create mode 100644 math/gfan/files/patch-src_lp__soplexcdd.cpp
+ create mode 100644 math/gfan/files/patch-src_padic.cpp
+ create mode 100644 math/gfan/files/patch-src_polyhedralcone.cpp
+ create mode 100644 math/gfan/files/patch-src_polyhedralfan.cpp
+ create mode 100644 math/gfan/files/patch-src_reversesearch.cpp
+ create mode 100644 math/gfan/files/patch-src_singular.cpp
+ create mode 100644 math/gfan/files/patch-src_symmetriccomplex.cpp
+ create mode 100644 math/gfan/files/patch-src_symmetry.cpp
+ create mode 100644 math/gfan/files/patch-src_traverser__stableintersection.cpp
+ create mode 100644 math/gfan/files/patch-src_traverser__tropical.cpp
+ create mode 100644 math/gfan/files/patch-src_triangulation2.h
+ create mode 100644 math/gfan/files/patch-src_tropical.cpp
+ create mode 100644 math/gfan/files/patch-src_tropical2.cpp
+ create mode 100644 math/gfan/files/patch-src_tropical__weildivisor.cpp
+ create mode 100644 math/gfan/files/patch-src_tropicalbasis.cpp
+ create mode 100644 math/gfan/files/patch-src_tropicalcurve.cpp
+ create mode 100644 math/gfan/files/patch-src_tropicaltraverse.cpp
+ create mode 100644 math/gfan/files/patch-src_wallideal.cpp
+ delete mode 100644 math/gfan/pkg-message
+ create mode 100644 sysutils/choria/files/patch-vendor_github.com_nats-io_nats-server_v2_server_disk__avail.go
+ create mode 100644 sysutils/puppet7/Makefile
+ create mode 100644 sysutils/puppet7/distinfo
+ create mode 100644 sysutils/puppet7/files/patch-lib_puppet_provider_service_daemontools.rb
+ create mode 100644 sysutils/puppet7/files/pkg-message.in
+ create mode 100644 sysutils/puppet7/files/puppet.in
+ create mode 100644 sysutils/puppet7/pkg-descr
+ create mode 100644 sysutils/puppet7/pkg-plist
+ create mode 100644 sysutils/puppetserver7/Makefile
+ create mode 100644 sysutils/puppetserver7/distinfo
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__bin__puppetserver
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__cli__foreground
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__cli_defaults__cli-defaults.sh
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__config__conf.d__global.conf
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__config__conf.d__puppetserver.conf
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__config__conf.d__webserver.conf
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__config__logback.xml
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__config__request-logging.xml
+ create mode 100644 sysutils/puppetserver7/files/patch-ext__ezbake-functions.sh
+ create mode 100644 sysutils/puppetserver7/files/patch-ffi.rb
+ create mode 100644 sysutils/puppetserver7/files/pkg-message.in
+ create mode 100644 sysutils/puppetserver7/files/puppetserver.in
+ create mode 100644 sysutils/puppetserver7/pkg-descr
+ create mode 100644 sysutils/puppetserver7/pkg-plist
+ create mode 100644 sysutils/rubygem-puppetserver-ca/files/patch-lib_puppetserver_ca_utils_config.rb
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    3d739ac09563..370ad305964a  master -> master
+remote:    d305c412b207..3d739ac09563  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   3d739ac09563..370ad305964a  master -> master
+==== END: master ====
