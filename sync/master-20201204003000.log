@@ -47,3 +47,125 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging java/openjdk8/Makefile
+CONFLICT (content): Merge conflict in java/openjdk8/Makefile
+Auto-merging java/openjdk11/Makefile
+Removing comms/flrig/files/patch-configure
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc java/openjdk8/Makefile
+index 5ff1af4a714b,afb9ab66e8e6..000000000000
+--- a/java/openjdk8/Makefile
++++ b/java/openjdk8/Makefile
+@@@ -11,9 -11,7 +11,13 @@@ COMMENT?=	Java Development Kit ${JDK_MA
+  
+  LICENSE=	GPLv2
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:java
+ +
+ +ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64
+++=======
++ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
+++>>>>>>> freebsd/master
+  
+  BUILD_DEPENDS=	zip:archivers/zip \
+  		autoconf>0:devel/autoconf \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   comms/flrig/Makefile
+	modified:   comms/flrig/distinfo
+	deleted:    comms/flrig/files/patch-configure
+	modified:   emulators/qemu-user-static-devel/Makefile
+	modified:   emulators/qemu-user-static-devel/distinfo
+	modified:   emulators/qemu-user-static/Makefile
+	modified:   emulators/qemu-user-static/distinfo
+	modified:   games/opensfx/Makefile
+	modified:   java/bootstrap-openjdk11/Makefile
+	modified:   java/bootstrap-openjdk11/distinfo
+	modified:   java/bootstrap-openjdk11/pkg-plist
+	modified:   java/openjdk11/Makefile
+	modified:   java/openjdk11/files/patch-make_autoconf_flags-cflags.m4
+	new file:   java/openjdk11/files/patch-src_hotspot_os__cpu_bsd__ppc_bytes__bsd__ppc.inline.hpp
+	new file:   java/openjdk11/files/patch-src_jdk.hotspot.agent_bsd_native_libsaproc_BsdDebuggerLocal.c
+	new file:   java/openjdk11/files/patch-src_utils_hsdis_Makefile
+	new file:   java/openjdk8/files/patch-hotspot_make_bsd_makefiles_ppc64.make
+	new file:   java/openjdk8/files/patch-hotspot_src_os__cpu_bsd__ppc_vm_bytes__bsd__ppc.inline.hpp
+	modified:   lang/gravity/Makefile
+	modified:   lang/gravity/distinfo
+	modified:   math/py-spot/Makefile
+	modified:   math/py-spot/distinfo
+	modified:   math/py-spot/pkg-plist
+	modified:   math/spot/Makefile
+	modified:   math/spot/distinfo
+	modified:   misc/openhantek/Makefile
+	modified:   misc/openhantek/distinfo
+	modified:   misc/urh/Makefile
+	modified:   misc/urh/distinfo
+	modified:   multimedia/libva-intel-media-driver/Makefile
+	modified:   multimedia/libva-intel-media-driver/distinfo
+	modified:   security/1password-client/Makefile
+	modified:   security/1password-client/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   java/openjdk8/Makefile
+
+
+It took 3.49 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 2cf70f17f9ff Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.97 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 2cf70f17f9ff Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
