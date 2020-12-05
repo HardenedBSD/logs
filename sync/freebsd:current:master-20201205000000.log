@@ -1,0 +1,129 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 0252bfaea893..b76de27e061f
+Fast-forward
+ contrib/netbsd-tests/lib/libc/regex/data/meta.in |   2 +-
+ lib/libc/powerpc/SYS.h                           |   6 +-
+ lib/libc/powerpc64/SYS.h                         |   6 +-
+ lib/libc/powerpc64/sys/cerror.S                  |   1 +
+ lib/libc/regex/engine.c                          | 115 +++++++++++++++++++----
+ lib/libc/regex/regcomp.c                         |  36 +++++--
+ lib/libc/regex/regex2.h                          |   5 +-
+ lib/libregex/tests/gnuext.in                     |  26 ++---
+ lib/libthr/arch/i386/i386/_umtx_op_err.S         |   5 +-
+ lib/msun/i387/e_logf.S                           |   1 +
+ lib/msun/i387/e_remainderl.S                     |   1 +
+ lib/msun/i387/e_sqrtl.S                          |   1 +
+ lib/msun/i387/s_llrintl.S                        |   1 +
+ lib/msun/i387/s_logbl.S                          |   1 +
+ lib/msun/i387/s_lrintl.S                         |   1 +
+ lib/msun/i387/s_remquol.S                        |   1 +
+ lib/msun/i387/s_rintl.S                          |   1 +
+ libexec/rtld-elf/aarch64/rtld_start.S            |   9 --
+ libexec/rtld-elf/powerpc/rtld_start.S            |   6 ++
+ libexec/rtld-elf/powerpc64/rtld_start.S          |   2 +
+ share/mk/src.opts.mk                             |   1 -
+ stand/libsa/powerpc/_setjmp.S                    |   2 +
+ stand/powerpc/kboot/host_syscall.S               |  13 +++
+ stand/powerpc/uboot/start.S                      |   1 +
+ sys/arm64/include/asm.h                          |   5 +-
+ sys/arm64/linux/linux_locore.asm                 |   4 +
+ sys/arm64/linux/linux_support.s                  |   5 +
+ sys/crypto/des/arch/i386/des_enc.S               |  12 +--
+ sys/i386/bios/smapi_bios.S                       |   1 +
+ sys/i386/include/asm.h                           |  19 +++-
+ sys/powerpc/aim/locore.S                         |   1 +
+ sys/powerpc/aim/locore64.S                       |   3 +
+ sys/powerpc/aim/trap_subr64.S                    |   1 +
+ sys/powerpc/booke/locore.S                       |  10 ++
+ sys/powerpc/booke/trap_subr.S                    |   3 +
+ sys/powerpc/include/asm.h                        |  16 +++-
+ sys/powerpc/mambo/mambocall.S                    |   2 +-
+ sys/powerpc/ofw/ofwcall32.S                      |   3 +-
+ sys/powerpc/ofw/ofwcall64.S                      |   3 +-
+ sys/powerpc/powernv/opalcall.S                   |   2 +-
+ sys/powerpc/powerpc/cpu_subr64.S                 |   1 +
+ sys/powerpc/powerpc/setjmp.S                     |   2 +
+ sys/powerpc/powerpc/support.S                    |  27 +++++-
+ sys/powerpc/powerpc/swtch32.S                    |   4 +
+ sys/powerpc/powerpc/swtch64.S                    |   4 +
+ sys/powerpc/ps3/ps3-hvcall.S                     |  91 +++++++++++++++++-
+ sys/powerpc/pseries/phyp-hvcall.S                |   3 +-
+ tools/build/options/WITHOUT_GNU_GREP_COMPAT      |   3 -
+ tools/build/options/WITH_GNU_GREP_COMPAT         |   4 -
+ usr.bin/grep/Makefile                            |   3 -
+ usr.bin/grep/grep.c                              |   7 +-
+ 51 files changed, 391 insertions(+), 92 deletions(-)
+ delete mode 100644 tools/build/options/WITHOUT_GNU_GREP_COMPAT
+ delete mode 100644 tools/build/options/WITH_GNU_GREP_COMPAT
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    0252bfaea893..b76de27e061f  freebsd/current/master -> freebsd/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   0252bfaea893..b76de27e061f  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
