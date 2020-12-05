@@ -1,0 +1,145 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging usr.bin/grep/Makefile
+Removing tools/build/options/WITH_GNU_GREP_COMPAT
+Removing tools/build/options/WITHOUT_GNU_GREP_COMPAT
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/mk/src.opts.mk
+index f0ef5edd11ed,5a8d51d5a7f3..000000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -209,12 -208,8 +209,15 @@@ __DEFAULT_NO_OPTIONS = 
+      CLANG_FORMAT \
+      DTRACE_TESTS \
+      EXPERIMENTAL \
+++<<<<<<< HEAD
+ +    FREEBSD_UPDATE \
+ +    GNU_GREP_COMPAT \
+++=======
+++>>>>>>> freebsd/current/master
+      HESIOD \
+ +    LIB32 \
+      LIBSOFT \
+ +    HTTPD \
+      LOADER_FIREWIRE \
+      LOADER_VERBOSE \
+      LOADER_VERIEXEC_PASS_MANIFEST \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/netbsd-tests/lib/libc/regex/data/meta.in
+	modified:   lib/libc/powerpc/SYS.h
+	modified:   lib/libc/powerpc64/SYS.h
+	modified:   lib/libc/powerpc64/sys/cerror.S
+	modified:   lib/libc/regex/engine.c
+	modified:   lib/libc/regex/regcomp.c
+	modified:   lib/libc/regex/regex2.h
+	modified:   lib/libregex/tests/gnuext.in
+	modified:   lib/libthr/arch/i386/i386/_umtx_op_err.S
+	modified:   lib/msun/i387/e_logf.S
+	modified:   lib/msun/i387/e_remainderl.S
+	modified:   lib/msun/i387/e_sqrtl.S
+	modified:   lib/msun/i387/s_llrintl.S
+	modified:   lib/msun/i387/s_logbl.S
+	modified:   lib/msun/i387/s_lrintl.S
+	modified:   lib/msun/i387/s_remquol.S
+	modified:   lib/msun/i387/s_rintl.S
+	modified:   libexec/rtld-elf/aarch64/rtld_start.S
+	modified:   libexec/rtld-elf/powerpc/rtld_start.S
+	modified:   libexec/rtld-elf/powerpc64/rtld_start.S
+	modified:   stand/libsa/powerpc/_setjmp.S
+	modified:   stand/powerpc/kboot/host_syscall.S
+	modified:   stand/powerpc/uboot/start.S
+	modified:   sys/arm64/include/asm.h
+	modified:   sys/arm64/linux/linux_locore.asm
+	modified:   sys/arm64/linux/linux_support.s
+	modified:   sys/crypto/des/arch/i386/des_enc.S
+	modified:   sys/i386/bios/smapi_bios.S
+	modified:   sys/i386/include/asm.h
+	modified:   sys/powerpc/aim/locore.S
+	modified:   sys/powerpc/aim/locore64.S
+	modified:   sys/powerpc/aim/trap_subr64.S
+	modified:   sys/powerpc/booke/locore.S
+	modified:   sys/powerpc/booke/trap_subr.S
+	modified:   sys/powerpc/include/asm.h
+	modified:   sys/powerpc/mambo/mambocall.S
+	modified:   sys/powerpc/ofw/ofwcall32.S
+	modified:   sys/powerpc/ofw/ofwcall64.S
+	modified:   sys/powerpc/powernv/opalcall.S
+	modified:   sys/powerpc/powerpc/cpu_subr64.S
+	modified:   sys/powerpc/powerpc/setjmp.S
+	modified:   sys/powerpc/powerpc/support.S
+	modified:   sys/powerpc/powerpc/swtch32.S
+	modified:   sys/powerpc/powerpc/swtch64.S
+	modified:   sys/powerpc/ps3/ps3-hvcall.S
+	modified:   sys/powerpc/pseries/phyp-hvcall.S
+	deleted:    tools/build/options/WITHOUT_GNU_GREP_COMPAT
+	deleted:    tools/build/options/WITH_GNU_GREP_COMPAT
+	modified:   usr.bin/grep/Makefile
+	modified:   usr.bin/grep/grep.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/mk/src.opts.mk
+
+HEAD is now at 29acd5b0e161 Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 29acd5b0e161 Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
