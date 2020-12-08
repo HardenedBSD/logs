@@ -1,0 +1,142 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/master
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/master branch ====
+Auto-merging sys/conf/files
+Auto-merging share/mk/src.opts.mk
+CONFLICT (content): Merge conflict in share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Auto-merging share/man/man4/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/master branch ====
+diff --cc share/man/man5/src.conf.5
+index 179f83351d2a,816da440a1a9..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -691,15 -659,6 +691,12 @@@ Set to not build games
+  .It Va WITH_GDB
+  Set to build
+  .Xr gdb 1 .
+++<<<<<<< HEAD
+ +.Pp
+ +This is a default setting on
+ +amd64/amd64, arm/armv6, arm/armv7, mips/mips, mips/mips64, powerpc/powerpc and powerpc/powerpc64.
+++=======
+++>>>>>>> freebsd/current/master
+  .It Va WITHOUT_GH_BC
+  Set to not build and install the enhanced
+  .Xr bc 1
+diff --cc share/mk/src.opts.mk
+index 76acf460b1ec,bfeaa27b1a5f..000000000000
+--- a/share/mk/src.opts.mk
++++ b/share/mk/src.opts.mk
+@@@ -103,9 -103,9 +104,8 @@@ __DEFAULT_YES_OPTIONS = 
+      FMTREE \
+      FORTH \
+      FP_LIBC \
+ -    FREEBSD_UPDATE \
+      FTP \
+      GAMES \
+-     GDB \
+      GH_BC \
+      GNU_DIFF \
+      GNU_GREP \
+@@@ -204,15 -203,13 +204,20 @@@
+  __DEFAULT_NO_OPTIONS = \
+      BEARSSL \
+      BHYVE_SNAPSHOT \
+++<<<<<<< HEAD
+ +    BSD_GREP \
+ +    DEVD_PIE \
+++=======
++     CLANG_EXTRAS \
+++>>>>>>> freebsd/current/master
+      CLANG_FORMAT \
+      DTRACE_TESTS \
+      EXPERIMENTAL \
++     GDB \
+      HESIOD \
+ +    LIB32 \
+      LIBSOFT \
+ +    HTTPD \
+      LOADER_FIREWIRE \
+      LOADER_VERBOSE \
+      LOADER_VERIEXEC_PASS_MANIFEST \
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   share/man/man4/Makefile
+	new file:   share/man/man4/ng_macfilter.4
+	modified:   sys/arm64/arm64/genassym.c
+	modified:   sys/arm64/arm64/locore.S
+	modified:   sys/conf/files
+	modified:   sys/modules/netgraph/Makefile
+	new file:   sys/modules/netgraph/macfilter/Makefile
+	new file:   sys/netgraph/ng_macfilter.c
+	new file:   sys/netgraph/ng_macfilter.h
+	modified:   tests/sys/Makefile
+	new file:   tests/sys/netgraph/Makefile
+	new file:   tests/sys/netgraph/ng_macfilter_test.sh
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+	both modified:   share/mk/src.opts.mk
+
+HEAD is now at a99ae8b932db Merge branch 'freebsd/current/master' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at a99ae8b932db Merge branch 'freebsd/current/master' into hardened/current/master
+==== END: hardened/current/master ====
