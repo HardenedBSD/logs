@@ -47,3 +47,138 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/slurm-wlm/files/patch-src_scancel_scancel.h
+Removing sysutils/slurm-wlm/files/patch-src_scancel_scancel.c
+Removing sysutils/slurm-wlm/files/patch-src_plugins_select_cons__tres_job__test.c
+Removing net/openntpd/files/patch-src_parse.y
+Removing net/openntpd/files/patch-src_ntpd.h
+Removing net/openntpd/files/patch-src_ntp__dns.c
+Removing net/openntpd/files/patch-src_ntp.c
+Removing net/openntpd/files/patch-src_client.c
+Auto-merging net/openntpd/Makefile
+Merge made by the 'recursive' strategy.
+ benchmarks/ali/Makefile                            |   4 +-
+ benchmarks/ali/distinfo                            |  10 +-
+ devel/cxxtools/Makefile                            |   1 +
+ devel/dyncall/Makefile                             |   2 +
+ devel/eastl/Makefile                               |   2 +-
+ devel/gn/Makefile                                  |   2 +
+ devel/google-perftools/Makefile                    |   1 +
+ devel/intel-graphics-compiler/Makefile             |   4 +-
+ devel/intel-graphics-compiler/distinfo             |   8 +-
+ devel/intel-graphics-compiler/files/patch-revert   |  17 +-
+ devel/libffi/files/patch-src_riscv_ffi.c           |  12 +
+ finance/skrooge/Makefile                           |   2 +-
+ finance/skrooge/distinfo                           |   6 +-
+ irc/ircd-hybrid/Makefile                           |   2 +-
+ irc/ircd-hybrid/distinfo                           |   6 +-
+ irc/ircd-hybrid/pkg-plist                          |  19 +-
+ lang/erlang-runtime22/Makefile                     |   3 +-
+ lang/erlang-runtime22/distinfo                     |   6 +-
+ lang/erlang-runtime23/Makefile                     |   3 +-
+ lang/erlang-runtime23/distinfo                     |   6 +-
+ lang/intel-compute-runtime/Makefile                |   1 +
+ lang/python-doc-html/distinfo                      |  18 +-
+ lang/python39/Makefile                             |   1 -
+ lang/python39/Makefile.version                     |   2 +-
+ lang/python39/distinfo                             |   6 +-
+ lang/python39/pkg-plist                            |   5 +-
+ net/openntpd/Makefile                              |   3 +-
+ net/openntpd/distinfo                              |   6 +-
+ net/openntpd/files/patch-src_client.c              |  92 -----
+ net/openntpd/files/patch-src_ntp.c                 |  93 ------
+ net/openntpd/files/patch-src_ntp__dns.c            |  11 -
+ net/openntpd/files/patch-src_ntpd.conf.5           |  15 +-
+ net/openntpd/files/patch-src_ntpd.h                |  17 -
+ net/openntpd/files/patch-src_parse.y               |  10 -
+ security/openssl/Makefile                          |   3 +-
+ security/openssl/distinfo                          |   6 +-
+ security/vuls/Makefile                             | 238 ++++++++-----
+ security/vuls/distinfo                             | 370 +++++++++++++--------
+ ...s_configtest.go => patch-subcmds_configtest.go} |  15 +-
+ ...-commands_report.go => patch-subcmds_report.go} |  16 +-
+ ...atch-commands_scan.go => patch-subcmds_scan.go} |  17 +-
+ ...{patch-commands_tui.go => patch-subcmds_tui.go} |   6 +-
+ security/vuxml/vuln.xml                            |  34 ++
+ sysutils/slurm-wlm/Makefile                        |   6 +-
+ ...patch-src_plugins_select_cons__tres_job__test.c |  26 --
+ .../slurm-wlm/files/patch-src_scancel_scancel.c    |  10 -
+ .../slurm-wlm/files/patch-src_scancel_scancel.h    |  11 -
+ x11-servers/xwayland-devel/Makefile                |   4 +-
+ x11-servers/xwayland-devel/distinfo                |   6 +-
+ 49 files changed, 561 insertions(+), 603 deletions(-)
+ create mode 100644 devel/libffi/files/patch-src_riscv_ffi.c
+ delete mode 100644 net/openntpd/files/patch-src_client.c
+ delete mode 100644 net/openntpd/files/patch-src_ntp.c
+ delete mode 100644 net/openntpd/files/patch-src_ntp__dns.c
+ delete mode 100644 net/openntpd/files/patch-src_ntpd.h
+ delete mode 100644 net/openntpd/files/patch-src_parse.y
+ rename security/vuls/files/{patch-commands_configtest.go => patch-subcmds_configtest.go} (56%)
+ rename security/vuls/files/{patch-commands_report.go => patch-subcmds_report.go} (60%)
+ rename security/vuls/files/{patch-commands_scan.go => patch-subcmds_scan.go} (58%)
+ rename security/vuls/files/{patch-commands_tui.go => patch-subcmds_tui.go} (74%)
+ delete mode 100644 sysutils/slurm-wlm/files/patch-src_plugins_select_cons__tres_job__test.c
+ delete mode 100644 sysutils/slurm-wlm/files/patch-src_scancel_scancel.c
+ delete mode 100644 sysutils/slurm-wlm/files/patch-src_scancel_scancel.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d0abeda03ca9..065732413834  master -> master
+remote:    2edb2657a46c..d0abeda03ca9  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d0abeda03ca9..065732413834  master -> master
+==== END: master ====
