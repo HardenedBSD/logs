@@ -47,3 +47,165 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/libvncserver/files/patch-common_vncauth.c
+Removing deskutils/calibre/files/patch-icu68
+Merge made by the 'recursive' strategy.
+ audio/teamspeak3-server/Makefile                   |  13 +-
+ audio/teamspeak3-server/distinfo                   |   8 +-
+ audio/teamspeak3-server/pkg-plist                  |  16 +-
+ deskutils/calibre/Makefile                         |   3 +-
+ deskutils/calibre/distinfo                         |   6 +-
+ deskutils/calibre/files/patch-icu68                |  97 ----
+ deskutils/calibre/files/patch-setup_build.py       |  28 +-
+ deskutils/calibre/pkg-plist                        |   6 +-
+ devel/Makefile                                     |   1 +
+ devel/pecl-yac/Makefile                            |   3 +-
+ devel/pecl-yac/distinfo                            |   6 +-
+ devel/py-azure-mgmt-cdn/Makefile                   |   2 +-
+ devel/py-azure-mgmt-cdn/distinfo                   |   6 +-
+ devel/py-azure-mgmt-netapp/Makefile                |   2 +-
+ devel/py-azure-mgmt-netapp/distinfo                |   6 +-
+ devel/py-azure-mgmt-network/Makefile               |   2 +-
+ devel/py-azure-mgmt-network/distinfo               |   6 +-
+ devel/py-azure-mgmt-resource/Makefile              |   2 +-
+ devel/py-azure-mgmt-resource/distinfo              |   6 +-
+ devel/py-azure-mgmt-synapse/Makefile               |   2 +-
+ devel/py-azure-mgmt-synapse/distinfo               |   6 +-
+ devel/tlx/Makefile                                 |  20 +
+ devel/tlx/distinfo                                 |   3 +
+ devel/tlx/pkg-descr                                |  11 +
+ devel/tlx/pkg-plist                                | 191 ++++++++
+ lang/gcc10/files/patch-libcpp_lex.c                |   9 +
+ .../files/patch-vendor_openssl-sys_build_main.rs   |   8 +-
+ mail/greylite/Makefile                             |   4 +-
+ mail/greylite/files/patch-logmsg.c                 |  11 +
+ mail/greylite/files/patch-logmsg.h                 |  13 +
+ mail/thunderbird/Makefile                          |   2 +-
+ mail/thunderbird/distinfo                          |   6 +-
+ misc/Makefile                                      |   1 +
+ misc/thrill/Makefile                               |  31 ++
+ misc/thrill/distinfo                               |  13 +
+ .../files/patch-extlib_tlx_tlx_math_bswap.hpp      |  38 ++
+ misc/thrill/files/patch-thrill_CMakeLists.txt      |  25 +
+ misc/thrill/pkg-descr                              |   5 +
+ misc/thrill/pkg-plist                              | 404 +++++++++++++++
+ multimedia/wlrobs/Makefile                         |  11 +-
+ multimedia/xawtv/Makefile                          |  11 +-
+ multimedia/xawtv/distinfo                          |   6 +-
+ net-mgmt/Makefile                                  |   1 +
+ net-mgmt/rubygem-checkson/Makefile                 |  20 +
+ net-mgmt/rubygem-checkson/distinfo                 |   3 +
+ net-mgmt/rubygem-checkson/pkg-descr                |   3 +
+ net/libvncserver/files/patch-common_vncauth.c      |  22 -
+ net/quiche/Makefile                                |  75 ++-
+ net/quiche/distinfo                                | 134 ++---
+ security/vuxml/vuln.xml                            |  46 ++
+ sysutils/Makefile                                  |   1 +
+ sysutils/datadog-integrations/Makefile             | 125 +++++
+ sysutils/datadog-integrations/distinfo             |   3 +
+ ...ecks__base_datadog__checks_base_____init____.py |  18 +
+ ...dog__checks__base_datadog__checks_base_types.py |  12 +
+ .../files/patch-tls_datadog__checks_tls_tls.py     |  11 +
+ sysutils/datadog-integrations/pkg-descr            |   5 +
+ sysutils/datadog-integrations/pkg-plist            | 544 +++++++++++++++++++++
+ sysutils/py-azure-cli-core/Makefile                |   2 +-
+ sysutils/py-azure-cli-core/distinfo                |   6 +-
+ sysutils/py-azure-cli/Makefile                     |  12 +-
+ sysutils/py-azure-cli/distinfo                     |   6 +-
+ sysutils/xfce4-settings/Makefile                   |  13 +-
+ www/Makefile                                       |   1 +
+ www/py-requests-unixsocket/Makefile                |  27 +
+ www/py-requests-unixsocket/distinfo                |   3 +
+ www/py-requests-unixsocket/pkg-descr               |   3 +
+ x11/py-xdot/Makefile                               |   4 +-
+ x11/py-xdot/distinfo                               |   6 +-
+ 69 files changed, 1848 insertions(+), 308 deletions(-)
+ delete mode 100644 deskutils/calibre/files/patch-icu68
+ create mode 100644 devel/tlx/Makefile
+ create mode 100644 devel/tlx/distinfo
+ create mode 100644 devel/tlx/pkg-descr
+ create mode 100644 devel/tlx/pkg-plist
+ create mode 100644 mail/greylite/files/patch-logmsg.c
+ create mode 100644 mail/greylite/files/patch-logmsg.h
+ create mode 100644 misc/thrill/Makefile
+ create mode 100644 misc/thrill/distinfo
+ create mode 100644 misc/thrill/files/patch-extlib_tlx_tlx_math_bswap.hpp
+ create mode 100644 misc/thrill/files/patch-thrill_CMakeLists.txt
+ create mode 100644 misc/thrill/pkg-descr
+ create mode 100644 misc/thrill/pkg-plist
+ create mode 100644 net-mgmt/rubygem-checkson/Makefile
+ create mode 100644 net-mgmt/rubygem-checkson/distinfo
+ create mode 100644 net-mgmt/rubygem-checkson/pkg-descr
+ delete mode 100644 net/libvncserver/files/patch-common_vncauth.c
+ create mode 100644 sysutils/datadog-integrations/Makefile
+ create mode 100644 sysutils/datadog-integrations/distinfo
+ create mode 100644 sysutils/datadog-integrations/files/patch-datadog__checks__base_datadog__checks_base_____init____.py
+ create mode 100644 sysutils/datadog-integrations/files/patch-datadog__checks__base_datadog__checks_base_types.py
+ create mode 100644 sysutils/datadog-integrations/files/patch-tls_datadog__checks_tls_tls.py
+ create mode 100644 sysutils/datadog-integrations/pkg-descr
+ create mode 100644 sysutils/datadog-integrations/pkg-plist
+ create mode 100644 www/py-requests-unixsocket/Makefile
+ create mode 100644 www/py-requests-unixsocket/distinfo
+ create mode 100644 www/py-requests-unixsocket/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    9c29e83f69d0..b757b917fd9b  master -> master        
+remote:    31a8ddada11e..9c29e83f69d0  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   9c29e83f69d0..b757b917fd9b  master -> master
+==== END: master ====
