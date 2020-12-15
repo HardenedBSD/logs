@@ -1,0 +1,332 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating d551da60d420..ada4c7622039
+Fast-forward
+ Makefile.inc1                                    |    3 +-
+ ObsoleteFiles.inc                                |    4 +
+ RELNOTES                                         |    4 +
+ UPDATING                                         |    4 +
+ gnu/lib/Makefile                                 |    2 +-
+ gnu/usr.bin/Makefile                             |    2 -
+ gnu/usr.bin/binutils/Makefile                    |   13 -
+ gnu/usr.bin/binutils/Makefile.inc                |    6 -
+ gnu/usr.bin/binutils/Makefile.inc0               |   52 -
+ gnu/usr.bin/binutils/doc/Makefile                |   11 -
+ gnu/usr.bin/binutils/doc/Makefile.depend         |   11 -
+ gnu/usr.bin/binutils/libbfd/Makefile             |  109 -
+ gnu/usr.bin/binutils/libbfd/Makefile.amd64       |   29 -
+ gnu/usr.bin/binutils/libbfd/Makefile.arm         |   21 -
+ gnu/usr.bin/binutils/libbfd/Makefile.depend      |   13 -
+ gnu/usr.bin/binutils/libbfd/Makefile.depend.host |   11 -
+ gnu/usr.bin/binutils/libbfd/Makefile.i386        |   21 -
+ gnu/usr.bin/binutils/libbfd/Makefile.mips        |   38 -
+ gnu/usr.bin/binutils/libbfd/Makefile.powerpc     |   19 -
+ gnu/usr.bin/binutils/libbfd/Makefile.powerpc64   |   28 -
+ gnu/usr.bin/binutils/libbfd/Makefile.sparc64     |   23 -
+ gnu/usr.bin/binutils/libbfd/bfd.h                | 5410 ----------------------
+ gnu/usr.bin/binutils/libbfd/config.h.fbsd        |  297 --
+ gnu/usr.bin/binutils/libbfd/elf-fbsd-brand.c     |   30 -
+ gnu/usr.bin/binutils/libbinutils/Makefile        |   33 -
+ gnu/usr.bin/binutils/libbinutils/Makefile.depend |   15 -
+ gnu/usr.bin/binutils/libbinutils/config.h        |  215 -
+ gnu/usr.bin/binutils/libiberty/Makefile          |   42 -
+ gnu/usr.bin/binutils/libiberty/Makefile.depend   |   14 -
+ gnu/usr.bin/binutils/libiberty/config.h          |  449 --
+ gnu/usr.bin/binutils/libopcodes/Makefile         |   22 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.amd64   |    4 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.arm     |    4 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.depend  |   13 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.i386    |    4 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.m68k    |    6 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.mips    |    4 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.powerpc |    4 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.sparc   |    6 -
+ gnu/usr.bin/binutils/libopcodes/Makefile.sparc64 |    4 -
+ gnu/usr.bin/binutils/libopcodes/config.h         |   70 -
+ gnu/usr.bin/binutils/update.sh                   |   47 -
+ gnu/usr.bin/gdb/Makefile                         |    7 -
+ gnu/usr.bin/gdb/Makefile.inc                     |   73 -
+ gnu/usr.bin/gdb/arch/amd64/Makefile              |   24 -
+ gnu/usr.bin/gdb/arch/amd64/config.h              |  550 ---
+ gnu/usr.bin/gdb/arch/amd64/init.c                |  234 -
+ gnu/usr.bin/gdb/arch/arm/Makefile                |   20 -
+ gnu/usr.bin/gdb/arch/arm/armfbsd-nat.c           |  552 ---
+ gnu/usr.bin/gdb/arch/arm/armfbsd-tdep.c          |   68 -
+ gnu/usr.bin/gdb/arch/arm/config.h                |  562 ---
+ gnu/usr.bin/gdb/arch/arm/init.c                  |  228 -
+ gnu/usr.bin/gdb/arch/arm/nm-fbsd.h               |   35 -
+ gnu/usr.bin/gdb/arch/arm/tm-fbsd.h               |   28 -
+ gnu/usr.bin/gdb/arch/arm/xm-fbsd.h               |   22 -
+ gnu/usr.bin/gdb/arch/i386/Makefile               |   23 -
+ gnu/usr.bin/gdb/arch/i386/config.h               |  550 ---
+ gnu/usr.bin/gdb/arch/i386/init.c                 |  236 -
+ gnu/usr.bin/gdb/arch/mips/Makefile               |   16 -
+ gnu/usr.bin/gdb/arch/mips/config.h               |  550 ---
+ gnu/usr.bin/gdb/arch/mips/init.c                 |  233 -
+ gnu/usr.bin/gdb/arch/powerpc/Makefile            |   14 -
+ gnu/usr.bin/gdb/arch/powerpc/config.h            |  550 ---
+ gnu/usr.bin/gdb/arch/powerpc/init.c              |  230 -
+ gnu/usr.bin/gdb/arch/powerpc64/Makefile          |   14 -
+ gnu/usr.bin/gdb/arch/powerpc64/config.h          |  550 ---
+ gnu/usr.bin/gdb/arch/powerpc64/init.c            |  230 -
+ gnu/usr.bin/gdb/arch/sparc64/Makefile            |   14 -
+ gnu/usr.bin/gdb/arch/sparc64/config.h            |  550 ---
+ gnu/usr.bin/gdb/arch/sparc64/init.c              |  232 -
+ gnu/usr.bin/gdb/gdb/Makefile                     |   20 -
+ gnu/usr.bin/gdb/gdb/Makefile.depend              |   25 -
+ gnu/usr.bin/gdb/gdb/gdb.1                        |  376 --
+ gnu/usr.bin/gdb/gdbserver/Makefile               |   26 -
+ gnu/usr.bin/gdb/gdbserver/Makefile.depend        |   18 -
+ gnu/usr.bin/gdb/gdbserver/fbsd-amd64-low.c       |  213 -
+ gnu/usr.bin/gdb/gdbserver/fbsd-arm-low.c         |  146 -
+ gnu/usr.bin/gdb/gdbserver/fbsd-i386-low.c        |  176 -
+ gnu/usr.bin/gdb/gdbserver/fbsd-low.c             | 1265 -----
+ gnu/usr.bin/gdb/gdbserver/fbsd-low.h             |  122 -
+ gnu/usr.bin/gdb/gdbserver/fbsd-powerpc-low.c     |  156 -
+ gnu/usr.bin/gdb/gdbserver/reg-amd64.c            |   99 -
+ gnu/usr.bin/gdb/gdbserver/reg-arm.c              |   68 -
+ gnu/usr.bin/gdb/gdbserver/reg-i386.c             |   63 -
+ gnu/usr.bin/gdb/gdbserver/reg-powerpc.c          |  113 -
+ gnu/usr.bin/gdb/kgdb/Makefile                    |   16 -
+ gnu/usr.bin/gdb/kgdb/Makefile.depend             |   27 -
+ gnu/usr.bin/gdb/kgdb/kgdb.1                      |  150 -
+ gnu/usr.bin/gdb/kgdb/kgdb.h                      |   81 -
+ gnu/usr.bin/gdb/kgdb/kld.c                       |  515 --
+ gnu/usr.bin/gdb/kgdb/kthr.c                      |  252 -
+ gnu/usr.bin/gdb/kgdb/main.c                      |  481 --
+ gnu/usr.bin/gdb/kgdb/trgt.c                      |  395 --
+ gnu/usr.bin/gdb/kgdb/trgt_amd64.c                |  212 -
+ gnu/usr.bin/gdb/kgdb/trgt_arm.c                  |  286 --
+ gnu/usr.bin/gdb/kgdb/trgt_i386.c                 |  418 --
+ gnu/usr.bin/gdb/kgdb/trgt_mips.c                 |  253 -
+ gnu/usr.bin/gdb/kgdb/trgt_powerpc.c              |  214 -
+ gnu/usr.bin/gdb/kgdb/trgt_powerpc64.c            |  211 -
+ gnu/usr.bin/gdb/kgdb/trgt_sparc64.c              |  218 -
+ gnu/usr.bin/gdb/libgdb/Makefile                  |   80 -
+ gnu/usr.bin/gdb/libgdb/Makefile.depend           |   19 -
+ gnu/usr.bin/gdb/libgdb/fbsd-threads.c            | 1799 -------
+ share/mk/src.opts.mk                             |    6 -
+ stand/libsa/zfs/zfsimpl.c                        |    1 +
+ sys/vm/vm_kern.c                                 |   20 +-
+ tools/build/mk/OptionalObsoleteFiles.inc         |    5 -
+ tools/kerneldoc/subsys/Doxyfile-dev_auxio        |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_bktr         |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_bm           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_cs           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_cy           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_de           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_ed           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_ep           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_ex           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_fe           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_hme          |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_nand         |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_pcn          |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_rc           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_rp           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_sf           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_sio          |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_sn           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_tl           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_trm          |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_tx           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_txp          |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_vx           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_wb           |   21 -
+ tools/kerneldoc/subsys/Doxyfile-dev_xe           |   21 -
+ usr.sbin/jls/jls.c                               |    2 +-
+ 133 files changed, 20 insertions(+), 22564 deletions(-)
+ delete mode 100644 gnu/usr.bin/binutils/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/Makefile.inc
+ delete mode 100644 gnu/usr.bin/binutils/Makefile.inc0
+ delete mode 100644 gnu/usr.bin/binutils/doc/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/doc/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.amd64
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.arm
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.depend.host
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.i386
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.mips
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.powerpc
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.powerpc64
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/Makefile.sparc64
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/bfd.h
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/config.h.fbsd
+ delete mode 100644 gnu/usr.bin/binutils/libbfd/elf-fbsd-brand.c
+ delete mode 100644 gnu/usr.bin/binutils/libbinutils/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/libbinutils/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/libbinutils/config.h
+ delete mode 100644 gnu/usr.bin/binutils/libiberty/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/libiberty/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/libiberty/config.h
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.amd64
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.arm
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.depend
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.i386
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.m68k
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.mips
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.powerpc
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.sparc
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/Makefile.sparc64
+ delete mode 100644 gnu/usr.bin/binutils/libopcodes/config.h
+ delete mode 100755 gnu/usr.bin/binutils/update.sh
+ delete mode 100644 gnu/usr.bin/gdb/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/Makefile.inc
+ delete mode 100644 gnu/usr.bin/gdb/arch/amd64/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/amd64/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/amd64/init.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/armfbsd-nat.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/armfbsd-tdep.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/init.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/nm-fbsd.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/tm-fbsd.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/arm/xm-fbsd.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/i386/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/i386/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/i386/init.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/mips/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/mips/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/mips/init.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/powerpc/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/powerpc/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/powerpc/init.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/powerpc64/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/powerpc64/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/powerpc64/init.c
+ delete mode 100644 gnu/usr.bin/gdb/arch/sparc64/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/arch/sparc64/config.h
+ delete mode 100644 gnu/usr.bin/gdb/arch/sparc64/init.c
+ delete mode 100644 gnu/usr.bin/gdb/gdb/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/gdb/Makefile.depend
+ delete mode 100644 gnu/usr.bin/gdb/gdb/gdb.1
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/Makefile.depend
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/fbsd-amd64-low.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/fbsd-arm-low.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/fbsd-i386-low.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/fbsd-low.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/fbsd-low.h
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/fbsd-powerpc-low.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/reg-amd64.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/reg-arm.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/reg-i386.c
+ delete mode 100644 gnu/usr.bin/gdb/gdbserver/reg-powerpc.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/Makefile.depend
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/kgdb.1
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/kgdb.h
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/kld.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/kthr.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/main.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_amd64.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_arm.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_i386.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_mips.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_powerpc.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_powerpc64.c
+ delete mode 100644 gnu/usr.bin/gdb/kgdb/trgt_sparc64.c
+ delete mode 100644 gnu/usr.bin/gdb/libgdb/Makefile
+ delete mode 100644 gnu/usr.bin/gdb/libgdb/Makefile.depend
+ delete mode 100644 gnu/usr.bin/gdb/libgdb/fbsd-threads.c
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_auxio
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_bktr
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_bm
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_cs
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_cy
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_de
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_ed
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_ep
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_ex
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_fe
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_hme
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_nand
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_pcn
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_rc
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_rp
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_sf
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_sio
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_sn
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_tl
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_trm
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_tx
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_txp
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_vx
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_wb
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_xe
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d551da60d420..ada4c7622039  freebsd/current/master -> freebsd/current/master        
+remote:    4b90356be3bc..b1e8f2eb88ba  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d551da60d420..ada4c7622039  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
