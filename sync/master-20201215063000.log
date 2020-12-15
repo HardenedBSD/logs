@@ -47,3 +47,140 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging lang/gcc8-devel/Makefile
+Auto-merging editors/emacs-devel/Makefile
+Removing cad/openfpgaloader/files/patch-CMakeLists.txt
+Removing audio/pianobooster/files/patch-src_MidiDeviceFluidSynth.cpp
+Removing audio/pianobooster/files/patch-src_MidiDevice.cpp
+Merge made by the 'recursive' strategy.
+ MOVED                                              |  1 -
+ audio/jamulus/Makefile                             |  2 +-
+ audio/jamulus/distinfo                             |  6 +--
+ audio/pianobooster/Makefile                        |  5 ++-
+ audio/pianobooster/distinfo                        |  6 +--
+ audio/pianobooster/files/patch-src_MidiDevice.cpp  | 22 -----------
+ .../files/patch-src_MidiDeviceFluidSynth.cpp       | 33 ----------------
+ audio/pianobooster/pkg-descr                       |  2 +-
+ audio/pianobooster/pkg-plist                       |  2 -
+ cad/openfpgaloader/Makefile                        | 11 ++++--
+ cad/openfpgaloader/distinfo                        |  6 +--
+ cad/openfpgaloader/files/patch-CMakeLists.txt      | 13 ------
+ devel/Makefile                                     |  1 +
+ devel/gitleaks/Makefile                            |  7 ++--
+ devel/gitleaks/distinfo                            | 10 ++---
+ devel/tailor/Makefile                              | 31 +++++++++++++++
+ devel/tailor/distinfo                              |  3 ++
+ devel/tailor/pkg-descr                             |  5 +++
+ devel/tlx/Makefile                                 |  3 +-
+ editors/emacs-devel/Makefile                       |  4 +-
+ editors/emacs-devel/distinfo                       |  6 +--
+ editors/emacs-devel/pkg-plist                      |  6 +++
+ games/ezquake/Makefile                             |  1 -
+ lang/gcc8-devel/Makefile                           |  2 +-
+ lang/gcc8-devel/distinfo                           |  6 +--
+ mail/postfix-current/Makefile                      |  2 +-
+ mail/postfix-current/distinfo                      |  6 +--
+ math/mathmod/Makefile                              |  2 +-
+ math/mathmod/distinfo                              |  6 +--
+ math/openlibm/Makefile                             |  4 --
+ science/qbox/Makefile                              |  2 +-
+ science/qbox/distinfo                              |  6 +--
+ sysutils/bareos-client/Makefile                    |  3 +-
+ sysutils/bareos-server/Makefile                    | 12 ++++--
+ sysutils/bareos-server/distinfo                    |  6 +--
+ .../patch-core-cmake_BareosCheckIncludes.cmake     | 46 +++++++++++-----------
+ sysutils/bareos-server/pkg-plist                   |  5 +++
+ sysutils/bareos-server/pkg-plist.client            |  1 +
+ sysutils/bareos18-client/Makefile                  |  6 +++
+ sysutils/bareos18-server/Makefile                  | 24 +++++++++--
+ sysutils/bareos18-server/distinfo                  |  6 +--
+ .../files/patch-core-CMakeLists.txt                | 38 +++++++++---------
+ .../patch-core-cmake_BareosCheckIncludes.cmake     | 34 ++++++++++++++++
+ .../patch-core-cmake_BareosFindAllLibraries.cmake  | 31 ++++++++++++++-
+ ...patch-core-cmake_BareosInstallConfigFiles.cmake | 30 +++++++++-----
+ .../files/patch-core-src-plugins-filed_gfapi-fd.cc | 24 +++++++++++
+ sysutils/bareos18-server/pkg-plist                 | 31 +++++++++++----
+ sysutils/bareos18-server/pkg-plist.client          |  3 ++
+ sysutils/ttyd/Makefile                             |  2 +-
+ sysutils/ttyd/distinfo                             |  6 +--
+ www/bareos-webui/Makefile                          |  2 +-
+ www/bareos-webui/distinfo                          |  6 +--
+ www/bareos18-webui/Makefile                        |  2 +-
+ www/bareos18-webui/distinfo                        |  6 +--
+ www/tomcat-devel/Makefile                          |  6 +--
+ www/tomcat-devel/distinfo                          |  6 +--
+ www/tomcat85/Makefile                              |  2 +-
+ www/tomcat85/distinfo                              |  6 +--
+ www/tomcat9/Makefile                               |  2 +-
+ www/tomcat9/distinfo                               |  6 +--
+ 60 files changed, 348 insertions(+), 226 deletions(-)
+ delete mode 100644 audio/pianobooster/files/patch-src_MidiDevice.cpp
+ delete mode 100644 audio/pianobooster/files/patch-src_MidiDeviceFluidSynth.cpp
+ delete mode 100644 cad/openfpgaloader/files/patch-CMakeLists.txt
+ create mode 100644 devel/tailor/Makefile
+ create mode 100644 devel/tailor/distinfo
+ create mode 100644 devel/tailor/pkg-descr
+ create mode 100644 sysutils/bareos18-server/files/patch-core-cmake_BareosCheckIncludes.cmake
+ create mode 100644 sysutils/bareos18-server/files/patch-core-src-plugins-filed_gfapi-fd.cc
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6293272b3fe1..353c350f971c  master -> master        
+remote:    d45237572165..6293272b3fe1  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6293272b3fe1..353c350f971c  master -> master
+==== END: master ====
