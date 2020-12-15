@@ -47,3 +47,202 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Merge made by the 'recursive' strategy.
+ .gitauthors                                        |   1 +
+ Mk/Uses/pyqt.mk                                    |   8 +-
+ audio/cadence/Makefile                             |   2 +-
+ audio/carla/Makefile                               |   2 +-
+ audio/picard/Makefile                              |   1 +
+ biology/py-ete3/Makefile                           |   2 +-
+ cad/cura/Makefile                                  |   1 +
+ cad/py-cq-editor/Makefile                          |   2 +-
+ cad/py-pyfda/Makefile                              |   2 +-
+ cad/uranium/Makefile                               |   1 +
+ comms/gnuradio/Makefile                            |   2 +-
+ comms/nanovna-saver/Makefile                       |   1 +
+ databases/postgresql13-server/Makefile             |   2 +-
+ .../files/patch-disable-llvm-jit-inlining-with-tls |  24 ++++
+ deskutils/calibre/Makefile                         |   1 +
+ deskutils/treeline/Makefile                        |   2 +-
+ devel/eric6/Makefile                               |   2 +-
+ devel/git-cola/Makefile                            |   1 +
+ devel/libsavitar/Makefile                          |   2 +-
+ devel/py-qt5-qscintilla2/Makefile                  |   1 +
+ devel/py-qt5-sip/distinfo                          |   6 +-
+ devel/py-qt5/distinfo                              |   6 +-
+ devel/py-qtbuilder/distinfo                        |   6 +-
+ devel/py-qtconsole/Makefile                        |   2 +-
+ devel/py-sip/distinfo                              |   6 +-
+ devel/py-spyder/Makefile                           |   2 +-
+ devel/qscintilla2-qt5/Makefile                     |   1 +
+ devel/rust-bindgen/Makefile                        |  67 +++++------
+ devel/rust-bindgen/distinfo                        | 130 ++++++++++-----------
+ devel/tortoisehg/Makefile                          |   1 +
+ devel/vitables/Makefile                            |   2 +-
+ dns/knot2/Makefile                                 |   5 +-
+ dns/knot2/distinfo                                 |   6 +-
+ emulators/fs-uae-launcher/Makefile                 |   1 +
+ games/anki/Makefile                                |   2 +-
+ games/libretro-beetle_bsnes/Makefile               |   4 +-
+ games/libretro-beetle_bsnes/distinfo               |   6 +-
+ games/libretro-scummvm/Makefile                    |   4 +-
+ games/libretro-scummvm/distinfo                    |   6 +-
+ games/py-mnemosyne/Makefile                        |   1 +
+ graphics/jogamp-jogl/Makefile                      |   2 +-
+ graphics/jogamp-jogl/files/patch-freebsd           |  94 ++++++++++++++-
+ graphics/jogamp-jogl/files/patch-gluegen2          |  39 +++++--
+ .../patch-gluegen_make_gluegen-cpptasks-base.xml   |  64 ++++++++++
+ .../files/patch-jogl__make__build-common.xml       |   6 +-
+ graphics/py-python-poppler-qt5/Makefile            |   2 +-
+ graphics/py-visvis/Makefile                        |   2 +-
+ graphics/qgis-ltr/Makefile                         |   2 +-
+ graphics/qgis/Makefile                             |   2 +-
+ graphics/qtqr/Makefile                             |   2 +-
+ graphics/rapid-photo-downloader/Makefile           |   2 +-
+ graphics/xaos/Makefile                             |   4 +-
+ graphics/xaos/distinfo                             |   6 +-
+ lang/zig/Makefile                                  |   7 +-
+ lang/zig/distinfo                                  |   6 +-
+ lang/zig/pkg-plist                                 |  15 ++-
+ math/asymptote/Makefile                            |   2 +-
+ math/convertall/Makefile                           |   2 +-
+ math/rpcalc/Makefile                               |   2 +-
+ misc/orange3/Makefile                              |   2 +-
+ misc/py-QSpectrumAnalyzer/Makefile                 |   2 +-
+ misc/urh/Makefile                                  |   1 +
+ multimedia/kodi/Makefile                           |   3 +-
+ .../patch-cmake_scripts_freebsd_ArchSetup.cmake    |  11 ++
+ .../kodi/files/patch-xbmc_utils_EndianSwap.h       |  11 ++
+ multimedia/openshot/Makefile                       |   2 +-
+ multimedia/plexmediaserver-plexpass/Makefile       |   4 +-
+ multimedia/plexmediaserver-plexpass/distinfo       |   6 +-
+ multimedia/plexmediaserver/Makefile                |   4 +-
+ multimedia/plexmediaserver/distinfo                |   6 +-
+ net-im/scudcloud/Makefile                          |   2 +-
+ net-mgmt/nagstamon/Makefile                        |   2 +-
+ net/libarcus/Makefile                              |   2 +-
+ print/py-frescobaldi/Makefile                      |   2 +-
+ science/code_saturne/Makefile                      |   2 +-
+ science/py-veusz/Makefile                          |   2 +-
+ security/opensaml/Makefile                         |   2 +-
+ security/opensaml/distinfo                         |   6 +-
+ security/opensaml/pkg-plist                        |   4 +-
+ security/samhain/Makefile                          |  29 +++--
+ security/samhain/distinfo                          |   6 +-
+ security/samhain/pkg-descr                         |   2 +-
+ security/samhain/pkg-plist                         |   1 -
+ security/shibboleth-sp/Makefile                    |   2 +-
+ security/shibboleth-sp/distinfo                    |   6 +-
+ security/shibboleth-sp/pkg-plist                   |   8 +-
+ security/zeek/Makefile                             |   3 +-
+ security/zeek/distinfo                             |   6 +-
+ sysutils/Makefile                                  |   2 +
+ sysutils/angrysearch/Makefile                      |   2 +-
+ sysutils/libg15/Makefile                           |  20 ++++
+ sysutils/libg15/distinfo                           |   3 +
+ sysutils/libg15/pkg-descr                          |   4 +
+ sysutils/libg15/pkg-plist                          |   5 +
+ sysutils/libg15render/Makefile                     |  22 ++++
+ sysutils/libg15render/distinfo                     |   3 +
+ sysutils/libg15render/pkg-descr                    |   3 +
+ sysutils/libg15render/pkg-plist                    |   6 +
+ sysutils/minirsyslogd/Makefile                     |   3 +
+ sysutils/minirsyslogd/files/minirsyslogd.in        |  24 ++++
+ sysutils/nomad/Makefile                            |   2 +-
+ sysutils/nomad/distinfo                            |   6 +-
+ sysutils/nomad/files/nomad.in                      |   4 +-
+ sysutils/tmate/Makefile                            |   1 +
+ sysutils/tmate/pkg-message                         |  20 ++++
+ textproc/pugixml/Makefile                          |   8 +-
+ textproc/pugixml/distinfo                          |   6 +-
+ textproc/pugixml/pkg-plist                         |   6 +-
+ textproc/retext/Makefile                           |   2 +-
+ www/lychee/files/patch-Cargo.lock                  |  26 +++++
+ www/lychee/files/patch-Cargo.toml                  |   9 ++
+ www/onionshare/Makefile                            |   2 +-
+ www/py-qt5-webengine/distinfo                      |   6 +-
+ www/qutebrowser/Makefile                           |   2 +-
+ x11-toolkits/py-qt5-chart/distinfo                 |   6 +-
+ x11-wm/river/Makefile                              |  11 +-
+ x11-wm/river/distinfo                              |  16 ++-
+ 117 files changed, 674 insertions(+), 280 deletions(-)
+ create mode 100644 databases/postgresql13-server/files/patch-disable-llvm-jit-inlining-with-tls
+ create mode 100644 graphics/jogamp-jogl/files/patch-gluegen_make_gluegen-cpptasks-base.xml
+ create mode 100644 multimedia/kodi/files/patch-cmake_scripts_freebsd_ArchSetup.cmake
+ create mode 100644 multimedia/kodi/files/patch-xbmc_utils_EndianSwap.h
+ create mode 100644 sysutils/libg15/Makefile
+ create mode 100644 sysutils/libg15/distinfo
+ create mode 100644 sysutils/libg15/pkg-descr
+ create mode 100644 sysutils/libg15/pkg-plist
+ create mode 100644 sysutils/libg15render/Makefile
+ create mode 100644 sysutils/libg15render/distinfo
+ create mode 100644 sysutils/libg15render/pkg-descr
+ create mode 100644 sysutils/libg15render/pkg-plist
+ create mode 100644 sysutils/minirsyslogd/files/minirsyslogd.in
+ create mode 100644 sysutils/tmate/pkg-message
+ create mode 100644 www/lychee/files/patch-Cargo.lock
+ create mode 100644 www/lychee/files/patch-Cargo.toml
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    9494b4f5559c..64d38444e4a6  master -> master        
+remote:    353c350f971c..9494b4f5559c  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   9494b4f5559c..64d38444e4a6  master -> master
+==== END: master ====
