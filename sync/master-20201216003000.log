@@ -47,3 +47,145 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing multimedia/mythtv/files/patch-libs_libmythtv_videodev2.h
+Removing multimedia/mythtv/files/patch-libs_libmythtv_DVD_dvdringbuffer.h
+Removing multimedia/mythtv/files/patch-libs_libmythmetadata_imagemetadata.cpp
+Removing multimedia/mythtv/files/patch-external_libmythdvdnav_dvdnav_dvdnav_dvdnav.h
+Removing multimedia/mythtv/files/patch-external_FFmpeg_libavformat_rtsp.c
+Removing multimedia/mythtv/files/patch-configure
+Removing multimedia/mythtv/files/patch-CVE-2016-10191
+Merge made by the 'recursive' strategy.
+ audio/mythplugin-mythmusic/Makefile                |    5 +-
+ audio/mythplugin-mythmusic/distinfo                |    6 +-
+ audio/mythplugin-mythmusic/pkg-plist               |    1 +
+ devel/jenkins/Makefile                             |    2 +-
+ devel/jenkins/distinfo                             |    6 +-
+ devel/jetbrains-webstorm/Makefile                  |    9 +-
+ devel/jetbrains-webstorm/distinfo                  |    6 +-
+ devel/jetbrains-webstorm/files/pkg-message.in      |    6 +-
+ devel/jetbrains-webstorm/pkg-plist                 |  383 +++++---
+ devel/py-pip/Makefile                              |    1 -
+ devel/py-pybind11/Makefile                         |    5 +-
+ devel/py-pybind11/distinfo                         |    8 +-
+ devel/py-transaction/Makefile                      |    2 +-
+ devel/py-transaction/distinfo                      |    6 +-
+ games/blockattack/Makefile                         |    3 +-
+ games/mvdsv/Makefile                               |    2 +-
+ games/mvdsv/distinfo                               |    6 +-
+ games/qwdtools/Makefile                            |    3 +-
+ games/rlvm/Makefile                                |    5 +-
+ graphics/qt5-wayland/files/patch-libglvnd          |   38 +
+ lang/gcc10-devel/Makefile                          |    2 +-
+ lang/gcc10-devel/distinfo                          |    6 +-
+ multimedia/mythtv-frontend/Makefile                |    3 +-
+ multimedia/mythtv-frontend/pkg-plist               |  123 ++-
+ multimedia/mythtv/Makefile                         |  127 ++-
+ multimedia/mythtv/distinfo                         |    8 +-
+ multimedia/mythtv/files/audio.h                    |  101 ++
+ multimedia/mythtv/files/ca.h                       |  155 +++
+ multimedia/mythtv/files/dmx.h                      |  330 +++++++
+ multimedia/mythtv/files/frontend.h                 | 1011 ++++++++++++++++++++
+ multimedia/mythtv/files/net.h                      |   68 ++
+ multimedia/mythtv/files/osd.h                      |  181 ++++
+ multimedia/mythtv/files/patch-CVE-2016-10191       |   35 -
+ multimedia/mythtv/files/patch-configure            |   44 -
+ .../files/patch-external_FFmpeg_libavformat_rtsp.c |   48 -
+ ...h-external_libmythdvdnav_dvdnav_dvdnav_dvdnav.h |   16 -
+ .../patch-libs_libmythmetadata_imagemetadata.cpp   |   18 -
+ .../files/patch-libs_libmythtv_DVD_dvdringbuffer.h |   11 -
+ .../mythtv/files/patch-libs_libmythtv_videodev2.h  |   32 -
+ multimedia/mythtv/files/version.h                  |   30 +
+ multimedia/mythtv/files/video.h                    |  220 +++++
+ multimedia/mythtv/pkg-plist                        |  220 ++---
+ security/zeek/Makefile                             |    1 +
+ security/zeek/files/pkg-message.in                 |   17 +-
+ security/zeek/pkg-plist                            |    1 -
+ sysutils/pies/Makefile                             |    5 +-
+ sysutils/pies/distinfo                             |    6 +-
+ sysutils/pies/pkg-plist                            |    2 +-
+ www/mythplugin-mythweb/Makefile                    |    6 +-
+ www/mythplugin-mythweb/distinfo                    |    6 +-
+ www/mythplugin-mythweb/pkg-plist                   |    2 -
+ www/p5-HTML5-DOM/Makefile                          |    2 +-
+ www/p5-HTML5-DOM/distinfo                          |    6 +-
+ x11/polybar/Makefile                               |    2 +-
+ x11/polybar/distinfo                               |    6 +-
+ 55 files changed, 2697 insertions(+), 657 deletions(-)
+ create mode 100644 graphics/qt5-wayland/files/patch-libglvnd
+ create mode 100644 multimedia/mythtv/files/audio.h
+ create mode 100644 multimedia/mythtv/files/ca.h
+ create mode 100644 multimedia/mythtv/files/dmx.h
+ create mode 100644 multimedia/mythtv/files/frontend.h
+ create mode 100644 multimedia/mythtv/files/net.h
+ create mode 100644 multimedia/mythtv/files/osd.h
+ delete mode 100644 multimedia/mythtv/files/patch-CVE-2016-10191
+ delete mode 100644 multimedia/mythtv/files/patch-configure
+ delete mode 100644 multimedia/mythtv/files/patch-external_FFmpeg_libavformat_rtsp.c
+ delete mode 100644 multimedia/mythtv/files/patch-external_libmythdvdnav_dvdnav_dvdnav_dvdnav.h
+ delete mode 100644 multimedia/mythtv/files/patch-libs_libmythmetadata_imagemetadata.cpp
+ delete mode 100644 multimedia/mythtv/files/patch-libs_libmythtv_DVD_dvdringbuffer.h
+ delete mode 100644 multimedia/mythtv/files/patch-libs_libmythtv_videodev2.h
+ create mode 100644 multimedia/mythtv/files/version.h
+ create mode 100644 multimedia/mythtv/files/video.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    64d38444e4a6..f9342c90128f  master -> master        
+remote:    9494b4f5559c..64d38444e4a6  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   64d38444e4a6..f9342c90128f  master -> master
+==== END: master ====
