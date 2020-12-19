@@ -1,0 +1,269 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch and 'origin/master' have diverged,
+and have 2 and 9 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Removing net/iplog/pkg-plist
+Removing net/iplog/pkg-install
+Removing net/iplog/pkg-descr
+Removing net/iplog/pkg-deinstall
+Removing net/iplog/files/pkg-message.in
+Removing net/iplog/files/patch-src_iplog_pcap.c
+Removing net/iplog/files/patch-src_iplog.h
+Removing net/iplog/files/patch-src-iplog_options.c
+Removing net/iplog/files/patch-iplog.conf.5
+Removing net/iplog/files/patch-iplog.8
+Removing net/iplog/files/patch-example-iplog.conf
+Removing net/iplog/files/iplog.in
+Removing net/iplog/distinfo
+Removing net/iplog/Makefile
+Removing games/gemrb/pkg-plist
+Removing games/gemrb/pkg-descr
+Removing games/gemrb/files/pkg-message.in
+Removing games/gemrb/distinfo
+Removing games/gemrb/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    2 +
+ games/Makefile                                     |    2 +-
+ games/gemrb/Makefile                               |   43 -
+ games/gemrb/distinfo                               |    3 -
+ games/gemrb/files/pkg-message.in                   |   14 -
+ games/gemrb/pkg-descr                              |    5 -
+ games/gemrb/pkg-plist                              | 2244 --------------------
+ games/libretro-xrick/Makefile                      |   29 +
+ games/libretro-xrick/distinfo                      |    3 +
+ games/libretro-xrick/files/patch-Makefile.libretro |   11 +
+ games/libretro-xrick/pkg-descr                     |    3 +
+ graphics/blender/Makefile                          |    8 +-
+ graphics/jogamp-jogl/Makefile                      |    2 +-
+ graphics/jogamp-jogl/files/patch-freebsd           |   87 +-
+ graphics/jogamp-jogl/files/patch-gluegen2          |   27 +-
+ .../patch-gluegen_make_gluegen-cpptasks-base.xml   |   52 +-
+ misc/Makefile                                      |    1 +
+ misc/gedkeeper/Makefile                            |   55 +
+ misc/gedkeeper/distinfo                            |    3 +
+ .../files/patch-projects_GKTests_TestUtils.cs      |   14 +
+ misc/gedkeeper/pkg-descr                           |   14 +
+ misc/gedkeeper/pkg-plist                           |  460 ++++
+ net-im/nextcloud-talk/Makefile                     |    2 +-
+ net-im/nextcloud-talk/distinfo                     |    6 +-
+ net-im/nextcloud-talk/pkg-plist                    |    8 +-
+ net/Makefile                                       |    1 -
+ net/iplog/Makefile                                 |   38 -
+ net/iplog/distinfo                                 |    2 -
+ net/iplog/files/iplog.in                           |   31 -
+ net/iplog/files/patch-example-iplog.conf           |   24 -
+ net/iplog/files/patch-iplog.8                      |   11 -
+ net/iplog/files/patch-iplog.conf.5                 |   11 -
+ net/iplog/files/patch-src-iplog_options.c          |  111 -
+ net/iplog/files/patch-src_iplog.h                  |   11 -
+ net/iplog/files/patch-src_iplog_pcap.c             |   24 -
+ net/iplog/files/pkg-message.in                     |    9 -
+ net/iplog/pkg-deinstall                            |   18 -
+ net/iplog/pkg-descr                                |    7 -
+ net/iplog/pkg-install                              |   23 -
+ net/iplog/pkg-plist                                |    4 -
+ net/zerotier/Makefile                              |    5 +-
+ net/zerotier/distinfo                              |   10 +-
+ security/Makefile                                  |    1 +
+ security/bitwarden_rs/Makefile                     |  373 ++++
+ security/bitwarden_rs/distinfo                     |  679 ++++++
+ security/bitwarden_rs/pkg-descr                    |    6 +
+ 46 files changed, 1792 insertions(+), 2705 deletions(-)
+ delete mode 100644 games/gemrb/Makefile
+ delete mode 100644 games/gemrb/distinfo
+ delete mode 100644 games/gemrb/files/pkg-message.in
+ delete mode 100644 games/gemrb/pkg-descr
+ delete mode 100644 games/gemrb/pkg-plist
+ create mode 100644 games/libretro-xrick/Makefile
+ create mode 100644 games/libretro-xrick/distinfo
+ create mode 100644 games/libretro-xrick/files/patch-Makefile.libretro
+ create mode 100644 games/libretro-xrick/pkg-descr
+ create mode 100644 misc/gedkeeper/Makefile
+ create mode 100644 misc/gedkeeper/distinfo
+ create mode 100644 misc/gedkeeper/files/patch-projects_GKTests_TestUtils.cs
+ create mode 100644 misc/gedkeeper/pkg-descr
+ create mode 100644 misc/gedkeeper/pkg-plist
+ delete mode 100644 net/iplog/Makefile
+ delete mode 100644 net/iplog/distinfo
+ delete mode 100644 net/iplog/files/iplog.in
+ delete mode 100644 net/iplog/files/patch-example-iplog.conf
+ delete mode 100644 net/iplog/files/patch-iplog.8
+ delete mode 100644 net/iplog/files/patch-iplog.conf.5
+ delete mode 100644 net/iplog/files/patch-src-iplog_options.c
+ delete mode 100644 net/iplog/files/patch-src_iplog.h
+ delete mode 100644 net/iplog/files/patch-src_iplog_pcap.c
+ delete mode 100644 net/iplog/files/pkg-message.in
+ delete mode 100644 net/iplog/pkg-deinstall
+ delete mode 100644 net/iplog/pkg-descr
+ delete mode 100644 net/iplog/pkg-install
+ delete mode 100644 net/iplog/pkg-plist
+ create mode 100644 security/bitwarden_rs/Makefile
+ create mode 100644 security/bitwarden_rs/distinfo
+ create mode 100644 security/bitwarden_rs/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    933a57b8aa6c..8939df8293b2  master -> master        
+remote:    19347b9299d0..933a57b8aa6c  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   933a57b8aa6c..8939df8293b2  master -> master
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net/wireshark/Makefile
+Merge made by the 'recursive' strategy.
+ deskutils/taskwarrior/Makefile                     |  8 +++----
+ deskutils/taskwarrior/distinfo                     |  6 ++---
+ devel/Makefile                                     |  2 ++
+ devel/p5-Config-Perl-V/Makefile                    |  4 ++--
+ devel/p5-Config-Perl-V/distinfo                    |  6 ++---
+ devel/py-babi_grammars/Makefile                    | 15 ++++++++++++
+ devel/py-babi_grammars/distinfo                    |  3 +++
+ devel/py-babi_grammars/pkg-descr                   |  3 +++
+ devel/py-importlib-metadata/Makefile               |  2 +-
+ devel/py-importlib-metadata/distinfo               |  6 ++---
+ devel/py-onigurumacffi/Makefile                    | 19 +++++++++++++++
+ devel/py-onigurumacffi/distinfo                    |  3 +++
+ devel/py-onigurumacffi/pkg-descr                   |  3 +++
+ devel/py-pyinstaller/Makefile                      |  3 ---
+ .../files/patch-bootloader_src_main.c              |  9 ++++----
+ devel/py-pytest-randomly/Makefile                  |  2 +-
+ devel/py-pytest-randomly/distinfo                  |  6 ++---
+ editors/Makefile                                   |  1 +
+ editors/py-babi/Makefile                           | 27 ++++++++++++++++++++++
+ editors/py-babi/distinfo                           |  3 +++
+ editors/py-babi/pkg-descr                          |  3 +++
+ games/eureka/files/patch-src_sys__endian.h         | 11 +++++++++
+ graphics/py-s2/Makefile                            | 10 +++++++-
+ lang/fsharp/Makefile                               |  3 +--
+ net/wireshark/Makefile                             |  4 ++--
+ net/wireshark/distinfo                             |  6 ++---
+ net/wireshark/pkg-plist                            |  4 ++--
+ sysutils/bareos16-client-static/Makefile           |  1 -
+ www/minio/Makefile                                 |  4 ++--
+ www/minio/distinfo                                 |  6 ++---
+ www/minio/files/minio.in                           | 26 +++++++++++++--------
+ x11-toolkits/gtk-sharp30/Makefile                  |  4 ++--
+ 32 files changed, 158 insertions(+), 55 deletions(-)
+ create mode 100644 devel/py-babi_grammars/Makefile
+ create mode 100644 devel/py-babi_grammars/distinfo
+ create mode 100644 devel/py-babi_grammars/pkg-descr
+ create mode 100644 devel/py-onigurumacffi/Makefile
+ create mode 100644 devel/py-onigurumacffi/distinfo
+ create mode 100644 devel/py-onigurumacffi/pkg-descr
+ create mode 100644 editors/py-babi/Makefile
+ create mode 100644 editors/py-babi/distinfo
+ create mode 100644 editors/py-babi/pkg-descr
+ create mode 100644 games/eureka/files/patch-src_sys__endian.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    8939df8293b2..9e9fe2d678d7  master -> master
+remote:    933a57b8aa6c..8939df8293b2  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   8939df8293b2..9e9fe2d678d7  master -> master
+==== END: master ====

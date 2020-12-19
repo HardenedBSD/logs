@@ -1,0 +1,164 @@
+==== BEGIN: freebsd/current/master ====
+current branch: freebsd/current/master
+mergeable branch: freebsd/master
+==== change branch ====
+Switched to branch 'freebsd/current/master'
+Your branch is up to date with 'origin/freebsd/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Updating 188e59845a5b..b1e4826f3c94
+Fast-forward
+ include/string.h                                   |   2 +-
+ share/man/man9/VFS_QUOTACTL.9                      |   4 +-
+ share/man/man9/iflibtxrx.9                         |   4 +-
+ stand/efi/loader/copy.c                            |   4 +-
+ stand/lua/cli.lua                                  |  67 ++
+ stand/lua/cli.lua.8                                |   8 +-
+ stand/lua/config.lua                               |   7 +
+ stand/lua/config.lua.8                             |  11 +-
+ sys/arm/samsung/exynos/chrome_ec.c                 | 301 -------
+ sys/arm/samsung/exynos/chrome_ec_spi.c             | 228 -----
+ sys/arm/samsung/exynos/chrome_kb.c                 | 915 ---------------------
+ sys/arm/samsung/exynos/chrome_kb.h                 | 118 ---
+ sys/arm/samsung/exynos/exynos5_combiner.c          | 415 ----------
+ sys/arm/samsung/exynos/exynos5_combiner.h          |  29 -
+ sys/arm/samsung/exynos/exynos5_common.h            |  40 -
+ sys/arm/samsung/exynos/exynos5_ehci.c              | 397 ---------
+ sys/arm/samsung/exynos/exynos5_fimd.c              | 412 ----------
+ sys/arm/samsung/exynos/exynos5_i2c.c               | 479 -----------
+ sys/arm/samsung/exynos/exynos5_machdep.c           |  96 ---
+ sys/arm/samsung/exynos/exynos5_mct.c               | 137 ---
+ sys/arm/samsung/exynos/exynos5_mp.c                | 136 ---
+ sys/arm/samsung/exynos/exynos5_mp.h                |  34 -
+ sys/arm/samsung/exynos/exynos5_pad.c               | 854 -------------------
+ sys/arm/samsung/exynos/exynos5_pad.h               |  29 -
+ sys/arm/samsung/exynos/exynos5_pmu.c               | 179 ----
+ sys/arm/samsung/exynos/exynos5_pmu.h               |  30 -
+ sys/arm/samsung/exynos/exynos5_spi.c               | 234 ------
+ sys/arm/samsung/exynos/exynos5_usb_phy.c           | 271 ------
+ sys/arm/samsung/exynos/exynos5_xhci.c              | 313 -------
+ sys/arm/samsung/exynos/exynos_uart.c               | 388 ---------
+ sys/arm/samsung/exynos/exynos_uart.h               | 126 ---
+ sys/arm/samsung/exynos/files.exynos5               |  23 -
+ sys/arm/samsung/exynos/std.exynos5250              |   7 -
+ sys/arm/samsung/exynos/std.exynos5420              |   7 -
+ sys/compat/linuxkpi/common/include/linux/err.h     |  14 +-
+ sys/conf/kern.pre.mk                               |   5 +-
+ sys/conf/kmod.mk                                   |  18 +-
+ sys/dev/spibus/ofw_spibus.c                        |  14 +
+ sys/dev/spibus/spibus.c                            |  29 +
+ sys/dev/spibus/spibusvar.h                         |   1 +
+ sys/dev/usb/controller/ehci.c                      |   3 +-
+ sys/dev/usb/controller/ohci.c                      |   3 +-
+ sys/dev/usb/controller/uhci.c                      |   3 +-
+ sys/dev/usb/controller/xhci.c                      |   3 +-
+ sys/dev/usb/usb_transfer.h                         |   4 +-
+ sys/fs/nfs/nfs_commonsubs.c                        |  14 +-
+ .../samsung/exynos/chrome_ec.h => kern/firmw.S}    |  33 +-
+ sys/kern/kern_descrip.c                            | 126 +--
+ sys/kern/tty.c                                     |  11 +-
+ sys/netgraph/ng_socket.c                           |  11 +-
+ sys/security/audit/audit.h                         |   2 +-
+ sys/security/audit/audit_arg.c                     |  10 +-
+ sys/tools/fw_stub.awk                              |   4 +-
+ tests/sys/net/if_clone_test.sh                     |  16 -
+ tools/boot/lua-lint.sh                             |   3 +-
+ tools/tools/git/hooks/prepare-commit-msg           |  64 ++
+ usr.bin/kyua/Makefile                              |   8 +-
+ usr.sbin/bhyve/pci_virtio_net.c                    |  19 +
+ usr.sbin/unbound/config.h                          |   6 +-
+ 59 files changed, 388 insertions(+), 6341 deletions(-)
+ delete mode 100644 sys/arm/samsung/exynos/chrome_ec.c
+ delete mode 100644 sys/arm/samsung/exynos/chrome_ec_spi.c
+ delete mode 100644 sys/arm/samsung/exynos/chrome_kb.c
+ delete mode 100644 sys/arm/samsung/exynos/chrome_kb.h
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_combiner.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_combiner.h
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_common.h
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_ehci.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_fimd.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_i2c.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_machdep.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_mct.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_mp.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_mp.h
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_pad.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_pad.h
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_pmu.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_pmu.h
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_spi.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_usb_phy.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos5_xhci.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos_uart.c
+ delete mode 100644 sys/arm/samsung/exynos/exynos_uart.h
+ delete mode 100644 sys/arm/samsung/exynos/files.exynos5
+ delete mode 100644 sys/arm/samsung/exynos/std.exynos5250
+ delete mode 100644 sys/arm/samsung/exynos/std.exynos5420
+ rename sys/{arm/samsung/exynos/chrome_ec.h => kern/firmw.S} (59%)
+ create mode 100755 tools/tools/git/hooks/prepare-commit-msg
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    188e59845a5b..b1e4826f3c94  freebsd/current/master -> freebsd/current/master        
+remote:    debc6b615aac..eede82ce6b9b  github/freebsd/12-stable/master -> github/freebsd/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/master        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   188e59845a5b..b1e4826f3c94  freebsd/current/master -> freebsd/current/master
+==== END: freebsd/current/master ====
