@@ -1,0 +1,299 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 10 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating ad6a9fe98527..aa35163fbc7d
+Fast-forward
+ MOVED                                              |   1 +
+ UPDATING                                           |  10 +
+ databases/Makefile                                 |   1 +
+ databases/postgis24/Makefile                       |   2 +-
+ databases/postgis25/Makefile                       |   2 +-
+ databases/postgis30/Makefile                       |   2 +-
+ databases/postgis31/Makefile                       |  85 ++++
+ databases/postgis31/distinfo                       |   3 +
+ databases/postgis31/pkg-descr                      |  15 +
+ databases/postgis31/pkg-plist                      | 535 +++++++++++++++++++++
+ devel/Makefile                                     |   1 +
+ devel/rubygem-scanf/Makefile                       |  16 +
+ devel/rubygem-scanf/distinfo                       |   3 +
+ devel/rubygem-scanf/pkg-descr                      |   9 +
+ lang/kotlin/Makefile                               |   2 +-
+ lang/kotlin/distinfo                               |   6 +-
+ lang/kotlin/pkg-plist                              |   2 +
+ net-im/ejabberd/Makefile                           |  55 ++-
+ net-im/ejabberd/distinfo                           |  88 ++--
+ textproc/py-pygments/Makefile                      |   3 +-
+ textproc/py-pygments/distinfo                      |   6 +-
+ www/Makefile                                       |   1 -
+ www/nginx/Makefile                                 |   2 +-
+ www/nginx/Makefile.extmod                          |   4 +-
+ www/nginx/distinfo                                 |  10 +-
+ www/qt5-webengine/Makefile                         |  14 +-
+ www/qt5-webengine/distinfo                         |   6 +-
+ www/qt5-webengine/files/patch-clang                |  47 --
+ www/qt5-webengine/files/patch-configure.pri        |  31 +-
+ .../files/patch-mkspecs_features_functions.prf     |  23 +-
+ .../files/patch-src_3rdparty_chromium_BUILD.gn     |  28 +-
+ .../patch-src_3rdparty_chromium_base_BUILD.gn      |  73 ++-
+ ...src_3rdparty_chromium_base_debug_elf__reader.cc |  16 +-
+ ...dparty_chromium_base_debug_proc__maps__linux.cc | 132 ++++-
+ ...arty_chromium_base_debug_stack__trace__posix.cc |  30 +-
+ ...arty_chromium_base_files_file__path__watcher.cc |  12 +-
+ ...hromium_base_files_file__path__watcher__stub.cc |  31 +-
+ ...ch-src_3rdparty_chromium_base_i18n_icu__util.cc |  16 +-
+ ...patch-src_3rdparty_chromium_base_linux__util.cc |  30 +-
+ ...rty_chromium_base_memory_discardable__memory.cc |  63 +++
+ ...ium_base_memory_discardable__memory__internal.h |  19 +
+ ...dparty_chromium_base_process_internal__linux.cc |  95 +++-
+ ...rdparty_chromium_base_process_internal__linux.h |  25 +-
+ ...rdparty_chromium_base_process_process__linux.cc |  19 +-
+ ...chromium_base_profiler_stack__copier__signal.cc |  16 +-
+ ...romium_base_profiler_thread__delegate__posix.cc |  54 +--
+ ...-src_3rdparty_chromium_base_system_sys__info.cc |  11 +
+ ...arty_chromium_base_system_sys__info__freebsd.cc |  22 +-
+ ...ium_base_trace__event_malloc__dump__provider.cc |  16 +-
+ ...rdparty_chromium_build_config_compiler_BUILD.gn |  50 +-
+ ...rty_chromium_build_config_compiler_compiler.gni |  13 +-
+ ...c_3rdparty_chromium_build_config_linux_BUILD.gn |   8 +-
+ ...-src_3rdparty_chromium_build_config_sysroot.gni |  13 +-
+ ...rdparty_chromium_build_linux_unbundle_libxml.gn |  53 --
+ ...rty_chromium_build_toolchain_gcc__toolchain.gni |  13 +-
+ .../files/patch-src_3rdparty_chromium_cc_BUILD.gn  |  22 +-
+ ...party_chromium_chrome_app_chromium__strings.grd |  12 +-
+ ...ty_chromium_chrome_app_generated__resources.grd |  12 +-
+ ...chromium_chrome_app_google__chrome__strings.grd |  12 +-
+ ...ources_safe__browsing_gen__file__type__proto.py |  19 -
+ ...rdparty_chromium_chrome_common_chrome__paths.cc |   8 +-
+ ...rc_3rdparty_chromium_chrome_common_features.gni |  11 +-
+ ..._chromium_components_crash_content_app_BUILD.gn |  52 --
+ ...romium_components_crash_content_app_crashpad.cc |  43 --
+ ...party_chromium_components_os__crypt_os__crypt.h |   8 +-
+ ...romium_components_safe__browsing_db_v4__rice.cc |  39 --
+ ...ponents_safe__browsing_db_v4__rice__unittest.cc |  33 --
+ ...-src_3rdparty_chromium_content_browser_BUILD.gn |  12 +
+ ...chromium_content_browser_browser__main__loop.cc |  40 +-
+ ...wser_child__process__launcher__helper__linux.cc |  34 +-
+ ..._compositor_gpu__process__transport__factory.cc |  11 -
+ ...ftware__browser__compositor__output__surface.cc |  20 -
+ ...oftware__browser__compositor__output__surface.h |  20 -
+ ..._compositor_viz__process__transport__factory.cc |  11 +
+ ...omium_content_browser_media_media__internals.cc |  12 +-
+ ...omium_content_browser_utility__process__host.cc |   6 +-
+ ...r_utility__process__host__receiver__bindings.cc |  20 +
+ ...chromium_content_browser_v8__snapshot__files.cc |  11 +
+ ...rowser_webui_shared__resources__data__source.cc |  10 +-
+ ...ch-src_3rdparty_chromium_content_child_BUILD.gn |  16 +
+ ...atch-src_3rdparty_chromium_content_gpu_BUILD.gn |  11 +-
+ ...m_content_public_app_content__main__delegate.cc |  10 +-
+ ...um_content_public_app_content__main__delegate.h |  18 +-
+ ...rdparty_chromium_content_public_common_BUILD.gn |  11 +
+ ...ium_content_public_common_content__constants.cc |  11 +
+ ...mium_content_public_common_content__constants.h |  11 +
+ ...src_3rdparty_chromium_content_renderer_BUILD.gn |  18 +
+ ..._renderer_media_audio_audio__device__factory.cc |  12 +-
+ ...romium_content_renderer_render__thread__impl.cc |  12 +-
+ ...ch-src_3rdparty_chromium_content_shell_BUILD.gn |  27 +-
+ ...-src_3rdparty_chromium_content_utility_BUILD.gn |  11 +
+ ...src_3rdparty_chromium_device_bluetooth_BUILD.gn |   6 +-
+ ...__buffer_common_gpu__memory__buffer__support.cc |  17 +-
+ ..._buffer_service_external__vk__image__backing.cc |  81 ++--
+ ...__buffer_service_external__vk__image__backing.h |  12 +-
+ ...vice_external__vk__image__gl__representation.cc |  23 +-
+ ..._gpu_ipc_common_gpu__memory__buffer__support.cc |  17 +-
+ ..._3rdparty_chromium_gpu_ipc_service_gpu__init.cc |  62 ++-
+ ...romium_gpu_ipc_service_gpu__watchdog__thread.cc |  32 +-
+ ...hromium_gpu_ipc_service_gpu__watchdog__thread.h |  14 +-
+ ...romium_gpu_vulkan_vulkan__function__pointers.cc |  16 +-
+ ...hromium_gpu_vulkan_vulkan__function__pointers.h |  41 +-
+ .../patch-src_3rdparty_chromium_headless_BUILD.gn  |  56 +++
+ ...b_browser_headless__content__browser__client.cc |  17 +-
+ ...adless_lib_headless__content__main__delegate.cc |  24 +-
+ ...c_3rdparty_chromium_ipc_ipc__channel__common.cc |  13 +-
+ .../patch-src_3rdparty_chromium_media_BUILD.gn     |  14 +-
+ ...rdparty_chromium_media_audio_audio__features.cc |  11 +
+ ...3rdparty_chromium_media_base_media__switches.cc |  11 +
+ ...atch-src_3rdparty_chromium_media_base_status.cc |  12 +
+ ...ty_chromium_media_blink_webmediaplayer__impl.cc |  15 +
+ ..._media_gpu_chromeos_libyuv__image__processor.cc |  38 --
+ ...edia_gpu_linux_platform__video__frame__utils.cc |  45 --
+ ...media_mojo_mojom_video__frame__mojom__traits.cc |  16 +-
+ ...media_mojo_services_gpu__mojo__media__client.cc |  12 +-
+ .../files/patch-src_3rdparty_chromium_net_BUILD.gn |  11 +-
+ ...atch-src_3rdparty_chromium_net_base_features.cc |  11 +
+ ..._chromium_net_base_network__change__notifier.cc |  38 +-
+ ...y_chromium_net_base_network__change__notifier.h |  29 --
+ ...tion_configured__proxy__resolution__service.cc} |  10 +-
+ ..._url__request_url__request__context__builder.cc |  17 +-
+ ...atch-src_3rdparty_chromium_sandbox_features.gni |  19 +-
+ ...y_chromium_services_network_network__context.cc |   8 +-
+ ...y_chromium_services_network_network__service.cc |  18 +-
+ ..._manager_embedder_set__process__title__linux.cc |  19 -
+ ...blic_cpp_perfetto_trace__event__data__source.cc |  11 -
+ ..._abseil-cpp_base_internal_unscaledcycleclock.cc |  20 -
+ ...c_3rdparty_chromium_third__party_angle_BUILD.gn |  19 +-
+ ...ium_third__party_angle_src_libANGLE_Display.cpp |  40 +-
+ ...y_angle_src_libANGLE_renderer_driver__utils.cpp |  52 ++
+ ...rer_bindings_scripts_bind__gen_style__format.py |  12 +
+ ...blink_renderer_controller_blink__initializer.cc |  34 ++
+ ...rer_controller_memory__usage__monitor__posix.cc |  11 +
+ ...erer_controller_memory__usage__monitor__posix.h |  47 ++
+ ...er_platform_graphics_video__frame__submitter.cc |  11 +
+ ...third__party_pdfium_core_fxge_fx__ge__linux.cpp |   4 +-
+ ...locator_partition__allocator_page__allocator.cc |  11 -
+ ...__allocator_page__allocator__internals__posix.h |  35 +-
+ ...ium_xfa_fgas_font_cfx__fontsourceenum__file.cpp |   4 +-
+ ..._perfetto_include_perfetto_base_build__config.h |  35 +-
+ ...perfetto_include_perfetto_base_thread__utils.h} |  14 +-
+ ...um_third__party_perfetto_src_base_subprocess.cc |  24 +
+ ...party_perfetto_src_base_thread__task__runner.cc |  20 +
+ ..._third__party_perfetto_src_base_unix__socket.cc |  24 +-
+ ...etto_src_tracing_core_tracing__service__impl.cc |  12 +-
+ ...rfetto_src_tracing_core_virtual__destructors.cc |  29 --
+ ...third__party_skia_include_private_GrTypesPriv.h |  12 -
+ ...hird__party_webrtc_common__audio_wav__header.cc |  30 --
+ ...romium_third__party_webrtc_rtc__base_network.cc |  38 +-
+ ...ty_webrtc_rtc__base_physical__socket__server.cc |  36 +-
+ ...rty_chromium_third__party_zlib_cpu__features.c} |  43 +-
+ ...um_tools_perf_chrome__telemetry__build_BUILD.gn |  10 +-
+ ...mium_tools_variations_fieldtrial__to__struct.py |  18 +-
+ ...rdparty_chromium_ui_base_resource_data__pack.cc |  30 +-
+ ...3rdparty_chromium_ui_base_ui__base__features.cc |  21 +-
+ ...ty_chromium_ui_base_x_x11__shm__image__pool.cc} |  16 +-
+ ...positor_host_host__context__factory__private.cc |  11 -
+ ...um_ui_events_keycodes_dom_keycode__converter.cc |  10 +-
+ ...c_3rdparty_chromium_ui_gfx_codec_jpeg__codec.cc |  24 +-
+ ..._3rdparty_chromium_ui_gfx_gpu__memory__buffer.h |  10 +-
+ ...um_ui_gfx_mojom_buffer__types__mojom__traits.cc |  61 +--
+ ...ium_ui_gfx_mojom_buffer__types__mojom__traits.h |  29 --
+ ...x_mojom_native__handle__types__mojom__traits.cc |  56 +++
+ ...fx_mojom_native__handle__types__mojom__traits.h |  36 ++
+ ...romium_ui_views_controls_textfield_textfield.cc |  28 +-
+ ...c_3rdparty_chromium_ui_webui_resources_js_cr.js |  16 +-
+ ...romium_v8_src_base_platform_platform-freebsd.cc |  65 +--
+ .../files/patch-src_3rdparty_gn_build_gen.py       |   2 +-
+ .../files/patch-src_buildtools_config_linking.pri  |  30 ++
+ .../files/patch-src_buildtools_config_support.pri  |  57 ++-
+ .../files/patch-src_buildtools_configure.json      |  52 ++
+ ...g_linux.pri => patch-src_core_config_linux.pri} |   9 +-
+ .../files/patch-src_core_core__module.pro          |  36 +-
+ www/qt5-webengine/files/patch-src_pdf_pdfcore.pro  |  18 -
+ ...ne__convert__dict_qwebengine__convert__dict.pro |  11 -
+ www/rubygem-rack21/Makefile                        |  29 --
+ www/rubygem-rack21/distinfo                        |   3 -
+ www/rubygem-rack21/pkg-descr                       |   6 -
+ 178 files changed, 2829 insertions(+), 1767 deletions(-)
+ create mode 100644 databases/postgis31/Makefile
+ create mode 100644 databases/postgis31/distinfo
+ create mode 100644 databases/postgis31/pkg-descr
+ create mode 100644 databases/postgis31/pkg-plist
+ create mode 100644 devel/rubygem-scanf/Makefile
+ create mode 100644 devel/rubygem-scanf/distinfo
+ create mode 100644 devel/rubygem-scanf/pkg-descr
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_base_memory_discardable__memory.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_base_memory_discardable__memory__internal.h
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_base_system_sys__info.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_build_linux_unbundle_libxml.gn
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_chrome_browser_resources_safe__browsing_gen__file__type__proto.py
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_components_crash_content_app_BUILD.gn
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_components_crash_content_app_crashpad.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_components_safe__browsing_db_v4__rice.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_components_safe__browsing_db_v4__rice__unittest.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_BUILD.gn
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_compositor_gpu__process__transport__factory.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_compositor_software__browser__compositor__output__surface.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_compositor_software__browser__compositor__output__surface.h
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_compositor_viz__process__transport__factory.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_utility__process__host__receiver__bindings.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_browser_v8__snapshot__files.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_child_BUILD.gn
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_public_common_BUILD.gn
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_public_common_content__constants.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_public_common_content__constants.h
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_renderer_BUILD.gn
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_content_utility_BUILD.gn
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_headless_BUILD.gn
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_media_audio_audio__features.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_media_base_media__switches.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_media_base_status.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_media_blink_webmediaplayer__impl.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_media_gpu_chromeos_libyuv__image__processor.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_media_gpu_linux_platform__video__frame__utils.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_net_base_features.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_net_base_network__change__notifier.h
+ rename www/qt5-webengine/files/{patch-src_3rdparty_chromium_net_proxy__resolution_proxy__resolution__service.cc => patch-src_3rdparty_chromium_net_proxy__resolution_configured__proxy__resolution__service.cc} (71%)
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_services_service__manager_embedder_set__process__title__linux.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_services_tracing_public_cpp_perfetto_trace__event__data__source.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_abseil-cpp_base_internal_unscaledcycleclock.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_angle_src_libANGLE_renderer_driver__utils.cpp
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_blink_renderer_bindings_scripts_bind__gen_style__format.py
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_blink_renderer_controller_blink__initializer.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_blink_renderer_controller_memory__usage__monitor__posix.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_blink_renderer_controller_memory__usage__monitor__posix.h
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_blink_renderer_platform_graphics_video__frame__submitter.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_pdfium_third__party_base_allocator_partition__allocator_page__allocator.cc
+ rename www/qt5-webengine/files/{patch-src_3rdparty_chromium_third__party_perfetto_include_perfetto_ext_base_thread__utils.h => patch-src_3rdparty_chromium_third__party_perfetto_include_perfetto_base_thread__utils.h} (66%)
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_perfetto_src_base_subprocess.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_perfetto_src_base_thread__task__runner.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_perfetto_src_tracing_core_virtual__destructors.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_skia_include_private_GrTypesPriv.h
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_third__party_webrtc_common__audio_wav__header.cc
+ rename www/qt5-webengine/files/{patch-src_3rdparty_chromium_third__party_zlib_arm__features.c => patch-src_3rdparty_chromium_third__party_zlib_cpu__features.c} (58%)
+ rename www/qt5-webengine/files/{patch-src_3rdparty_chromium_ui_base_x_x11__shm__image__pool__base.cc => patch-src_3rdparty_chromium_ui_base_x_x11__shm__image__pool.cc} (70%)
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_ui_compositor_host_host__context__factory__private.cc
+ delete mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_ui_gfx_mojom_buffer__types__mojom__traits.h
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_ui_gfx_mojom_native__handle__types__mojom__traits.cc
+ create mode 100644 www/qt5-webengine/files/patch-src_3rdparty_chromium_ui_gfx_mojom_native__handle__types__mojom__traits.h
+ create mode 100644 www/qt5-webengine/files/patch-src_buildtools_config_linking.pri
+ create mode 100644 www/qt5-webengine/files/patch-src_buildtools_configure.json
+ rename www/qt5-webengine/files/{patch-src_buildtools_config_linux.pri => patch-src_core_config_linux.pri} (63%)
+ delete mode 100644 www/qt5-webengine/files/patch-src_pdf_pdfcore.pro
+ delete mode 100644 www/qt5-webengine/files/patch-src_tools_qwebengine__convert__dict_qwebengine__convert__dict.pro
+ delete mode 100644 www/rubygem-rack21/Makefile
+ delete mode 100644 www/rubygem-rack21/distinfo
+ delete mode 100644 www/rubygem-rack21/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
