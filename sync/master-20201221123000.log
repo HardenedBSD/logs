@@ -47,3 +47,169 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/sudo/files/patch-fix_build_without_sendmail
+Auto-merging security/sudo/Makefile
+Auto-merging net/wireshark/Makefile
+Removing net/openldap24-server/files/patch-libressl
+Merge made by the 'recursive' strategy.
+ audio/Makefile                                     |  1 +
+ audio/komposter/Makefile                           | 44 +++++++++++++++
+ audio/komposter/distinfo                           |  3 +
+ audio/komposter/files/patch-Makefile.am            | 11 ++++
+ audio/komposter/pkg-descr                          | 14 +++++
+ audio/komposter/pkg-plist                          | 27 +++++++++
+ databases/geoserver-mysql-plugin/Makefile          |  4 +-
+ databases/geoserver-mysql-plugin/distinfo          |  6 +-
+ devel/Makefile                                     |  1 +
+ devel/gh/Makefile                                  |  2 +-
+ devel/gh/distinfo                                  |  6 +-
+ devel/gh/pkg-plist                                 | 12 ++--
+ devel/php-composer/Makefile                        |  4 +-
+ devel/php-composer/distinfo                        |  6 +-
+ devel/php-composer2/Makefile                       | 41 ++++++++++++++
+ devel/php-composer2/distinfo                       |  3 +
+ devel/php-composer2/pkg-descr                      |  5 ++
+ devel/rubygem-oci/Makefile                         |  2 +-
+ devel/rubygem-oci/distinfo                         |  6 +-
+ graphics/geoserver/Makefile                        |  6 +-
+ graphics/geoserver/distinfo                        |  6 +-
+ graphics/geoserver/pkg-plist                       |  6 +-
+ mail/roundcube-contextmenu/Makefile                |  2 +-
+ mail/roundcube-contextmenu/distinfo                |  6 +-
+ math/saga/Makefile                                 |  4 +-
+ math/saga/distinfo                                 |  6 +-
+ multimedia/kodi-devel/Makefile                     |  2 +-
+ .../patch-cmake_scripts_freebsd_ArchSetup.cmake    | 11 ++++
+ .../kodi-devel/files/patch-xbmc_utils_EndianSwap.h | 11 ++++
+ multimedia/makemkv/Makefile                        |  2 +-
+ multimedia/makemkv/distinfo                        | 10 ++--
+ net-p2p/xmrig/Makefile                             |  2 +-
+ net-p2p/xmrig/distinfo                             |  6 +-
+ net/freeswitch/Makefile                            |  6 +-
+ net/hblock/Makefile                                |  4 +-
+ net/hblock/distinfo                                |  6 +-
+ net/openldap24-server/files/patch-libressl         | 65 ----------------------
+ net/wireshark/Makefile                             |  2 +-
+ net/wireshark/distinfo                             |  6 +-
+ net/wireshark/pkg-plist                            |  4 +-
+ .../tfel-edf/files/patch-cmake_modules_tfel.cmake  |  4 +-
+ .../patch-mtest_src_AsterSmallStrainBehaviour.cxx  | 10 ++++
+ security/sudo/Makefile                             |  3 +-
+ security/sudo/distinfo                             |  6 +-
+ .../sudo/files/patch-fix_build_without_sendmail    | 45 ---------------
+ sysutils/Makefile                                  |  1 +
+ sysutils/basu/Makefile                             | 26 +++++++++
+ sysutils/basu/distinfo                             |  3 +
+ sysutils/basu/pkg-descr                            |  5 ++
+ sysutils/basu/pkg-plist                            |  9 +++
+ sysutils/cbsd/Makefile                             |  2 +-
+ sysutils/cbsd/distinfo                             |  6 +-
+ sysutils/e2fsprogs/Makefile                        |  2 +-
+ sysutils/e2fsprogs/pkg-install                     |  2 +-
+ sysutils/roct/Makefile                             |  2 +-
+ sysutils/xfce4-diskperf-plugin/Makefile            |  3 +-
+ sysutils/xfce4-diskperf-plugin/distinfo            |  6 +-
+ sysutils/xfce4-diskperf-plugin/pkg-plist           |  4 ++
+ sysutils/xfce4-mount-plugin/Makefile               |  3 +-
+ sysutils/xfce4-mount-plugin/distinfo               |  6 +-
+ sysutils/xfce4-mount-plugin/pkg-plist              | 14 +++++
+ sysutils/xfce4-systemload-plugin/Makefile          |  2 +-
+ sysutils/xfce4-systemload-plugin/distinfo          |  6 +-
+ sysutils/xfce4-systemload-plugin/pkg-plist         |  4 ++
+ x11-wm/sway/Makefile                               | 14 ++++-
+ x11-wm/sway/distinfo                               |  8 +++
+ x11/Makefile                                       |  2 +
+ x11/mako/Makefile                                  | 47 ++++++++++++++++
+ x11/mako/distinfo                                  | 13 +++++
+ x11/mako/pkg-descr                                 |  4 ++
+ x11/xdg-desktop-portal-wlr/Makefile                | 32 +++++++++++
+ x11/xdg-desktop-portal-wlr/distinfo                |  9 +++
+ x11/xdg-desktop-portal-wlr/pkg-descr               |  3 +
+ x11/xsnow/Makefile                                 |  2 +-
+ x11/xsnow/distinfo                                 |  6 +-
+ 75 files changed, 476 insertions(+), 209 deletions(-)
+ create mode 100644 audio/komposter/Makefile
+ create mode 100644 audio/komposter/distinfo
+ create mode 100644 audio/komposter/files/patch-Makefile.am
+ create mode 100644 audio/komposter/pkg-descr
+ create mode 100644 audio/komposter/pkg-plist
+ create mode 100644 devel/php-composer2/Makefile
+ create mode 100644 devel/php-composer2/distinfo
+ create mode 100644 devel/php-composer2/pkg-descr
+ create mode 100644 multimedia/kodi-devel/files/patch-cmake_scripts_freebsd_ArchSetup.cmake
+ create mode 100644 multimedia/kodi-devel/files/patch-xbmc_utils_EndianSwap.h
+ delete mode 100644 net/openldap24-server/files/patch-libressl
+ create mode 100644 science/tfel-edf/files/patch-mtest_src_AsterSmallStrainBehaviour.cxx
+ delete mode 100644 security/sudo/files/patch-fix_build_without_sendmail
+ create mode 100644 sysutils/basu/Makefile
+ create mode 100644 sysutils/basu/distinfo
+ create mode 100644 sysutils/basu/pkg-descr
+ create mode 100644 sysutils/basu/pkg-plist
+ create mode 100644 x11/mako/Makefile
+ create mode 100644 x11/mako/distinfo
+ create mode 100644 x11/mako/pkg-descr
+ create mode 100644 x11/xdg-desktop-portal-wlr/Makefile
+ create mode 100644 x11/xdg-desktop-portal-wlr/distinfo
+ create mode 100644 x11/xdg-desktop-portal-wlr/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    e4a8e058309a..d56a334d4d48  master -> master        
+remote:    b6f66ee9c093..e4a8e058309a  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   e4a8e058309a..d56a334d4d48  master -> master
+==== END: master ====
