@@ -71,3 +71,145 @@ new files yourself (see 'git help status').
 nothing to commit, working tree clean
 HEAD is now at 7bffc07de335 Merge remote-tracking branch 'freebsd/master'
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 56 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=1&verb=git-upload-pack": dial tcp 127.0.0.1:3000: connect: connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 7bffc07de335 Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11/sterm/Makefile
+Auto-merging lang/python38/Makefile
+Merge made by the 'recursive' strategy.
+ devel/gitaly/Makefile                              |   19 +-
+ devel/gitaly/distinfo                              |   32 +-
+ devel/gitaly/pkg-plist                             |    2 -
+ devel/gitlab-shell/Makefile                        |    4 +-
+ devel/gitlab-shell/distinfo                        |    6 +-
+ devel/gitlab-shell/pkg-plist                       |    1 +
+ devel/py-sentry-sdk/Makefile                       |    2 +-
+ devel/py-sentry-sdk/distinfo                       |    6 +-
+ devel/py-testfixtures/Makefile                     |    2 +-
+ devel/py-testfixtures/distinfo                     |    6 +-
+ devel/rubygem-gitlab-labkit/Makefile               |    3 +-
+ devel/rubygem-gitlab-labkit/distinfo               |    6 +-
+ emulators/wine-devel/Makefile                      |    2 +-
+ emulators/wine-devel/distinfo                      |   10 +-
+ emulators/wine-devel/pkg-plist                     |   30 +
+ lang/ghc/files/extra-patch-aclocal.m4              |    7 +-
+ lang/python-doc-html/distinfo                      |   18 +-
+ lang/python38/Makefile                             |    1 -
+ lang/python38/Makefile.version                     |    2 +-
+ lang/python38/distinfo                             |    6 +-
+ lang/python38/pkg-plist                            |  156 +-
+ mail/rubygem-gitlab-mail_room/Makefile             |    2 +-
+ mail/rubygem-gitlab-mail_room/distinfo             |    6 +-
+ net-im/py-slixmpp/Makefile                         |    2 +-
+ net-im/py-slixmpp/distinfo                         |    6 +-
+ net-im/scli/Makefile                               |    3 +-
+ net-im/scli/distinfo                               |    6 +-
+ net/gitlab-agent/Makefile                          |    2 +-
+ net/rubygem-gitaly/Makefile                        |    2 +-
+ net/rubygem-gitaly/distinfo                        |    6 +-
+ science/Makefile                                   |    1 +
+ science/py-jupyter_jsmol/Makefile                  |   43 +
+ science/py-jupyter_jsmol/distinfo                  |    3 +
+ science/py-jupyter_jsmol/pkg-descr                 |    3 +
+ science/py-jupyter_jsmol/pkg-message               |    8 +
+ science/py-jupyter_jsmol/pkg-plist                 | 1346 ++++++++++++++++
+ security/vuxml/vuln.xml                            |   61 +
+ security/zeek/Makefile                             |    3 +-
+ textproc/dasel/Makefile                            |    4 +-
+ textproc/dasel/distinfo                            |   10 +-
+ textproc/gitlab-elasticsearch-indexer/Makefile     |    6 +-
+ textproc/gitlab-elasticsearch-indexer/distinfo     |    6 +-
+ www/gitlab-ce/Makefile                             |   41 +-
+ www/gitlab-ce/distinfo                             |    6 +-
+ www/gitlab-ce/files/patch-Gemfile                  |   20 +-
+ .../files/patch-config_gitlab.yml.example          |   10 +-
+ .../files/patch-config_initializers_1__settings.rb |    4 +-
+ www/gitlab-ce/pkg-message                          |    4 +-
+ www/gitlab-ce/pkg-plist                            | 1683 ++++++++++++++++----
+ www/gitlab-pages/Makefile                          |   16 +-
+ www/gitlab-pages/distinfo                          |   26 +-
+ www/gitlab-workhorse/Makefile                      |   41 +-
+ www/gitlab-workhorse/distinfo                      |   76 +-
+ www/lighttpd/Makefile                              |    2 +-
+ www/orangehrm/Makefile                             |    2 +-
+ www/orangehrm/distinfo                             |    6 +-
+ x11-fonts/iosevka/Makefile                         |    2 +-
+ x11-fonts/iosevka/distinfo                         |  230 +--
+ x11-wm/enlightenment/Makefile                      |    4 +
+ x11/sterm/Makefile                                 |    4 +-
+ x11/sterm/distinfo                                 |   10 +-
+ 61 files changed, 3293 insertions(+), 744 deletions(-)
+ create mode 100644 science/py-jupyter_jsmol/Makefile
+ create mode 100644 science/py-jupyter_jsmol/distinfo
+ create mode 100644 science/py-jupyter_jsmol/pkg-descr
+ create mode 100644 science/py-jupyter_jsmol/pkg-message
+ create mode 100644 science/py-jupyter_jsmol/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=2&verb=git-receive-pack": dial tcp 127.0.0.1:3000: connect: connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 83 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.37 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c8051a90a648 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
