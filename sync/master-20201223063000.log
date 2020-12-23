@@ -47,3 +47,200 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+Auto-merging net/asterisk13/Makefile
+Removing cad/lepton-eda/files/patch-version.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/distinfo
+index 3af98e88e5e9,4be850e77dab..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1602434338
+ +SHA256 (HardenedBSD-pkg-4130f228a564871590077747da5a3fa0d413a3cc_GL0.tar.gz) = 7d7757155f6705c7e4268ea718c3870718daa4c5e7b0fab98d0993dfd5536c16
+ +SIZE (HardenedBSD-pkg-4130f228a564871590077747da5a3fa0d413a3cc_GL0.tar.gz) = 3826611
+++=======
++ TIMESTAMP = 1608662315
++ SHA256 (freebsd-pkg-1.16.0_GH0.tar.gz) = cf392816f1f48ee975c1057880fa854939cb7cf01bd75e41b6cc0445d3c637d9
++ SIZE (freebsd-pkg-1.16.0_GH0.tar.gz) = 3833121
+++>>>>>>> freebsd/master
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   audio/bjumblr-lv2/Makefile
+	modified:   audio/bjumblr-lv2/distinfo
+	modified:   cad/lepton-eda/Makefile
+	modified:   cad/lepton-eda/distinfo
+	deleted:    cad/lepton-eda/files/patch-version.h
+	modified:   cad/lepton-eda/pkg-plist
+	modified:   chinese/fcitx-rime/Makefile
+	modified:   chinese/librime/Makefile
+	modified:   converters/R-cran-jsonlite/Makefile
+	modified:   converters/R-cran-jsonlite/distinfo
+	modified:   devel/R-cran-rlang/Makefile
+	modified:   devel/R-cran-rlang/distinfo
+	modified:   devel/fatal/Makefile
+	modified:   devel/fatal/distinfo
+	modified:   devel/fbthrift/Makefile
+	modified:   devel/fbthrift/distinfo
+	modified:   devel/fbthrift/pkg-plist
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/folly/pkg-plist
+	modified:   devel/git-lfs/Makefile
+	modified:   devel/git-lfs/distinfo
+	modified:   devel/kokkos/Makefile
+	modified:   devel/kokkos/distinfo
+	modified:   devel/kokkos/pkg-plist
+	modified:   devel/p5-Time-Moment-Role-TimeZone/Makefile
+	modified:   devel/p5-Time-Moment-Role-TimeZone/distinfo
+	modified:   devel/rubygem-irb/Makefile
+	modified:   devel/rubygem-irb/distinfo
+	modified:   devel/rust-analyzer/Makefile
+	modified:   devel/rust-analyzer/distinfo
+	modified:   emulators/nemu/Makefile
+	modified:   emulators/nemu/distinfo
+	modified:   graphics/gegl/Makefile
+	modified:   graphics/gegl/distinfo
+	modified:   graphics/gegl/pkg-plist
+	modified:   graphics/qgis-ltr/Makefile
+	modified:   graphics/qgis-ltr/distinfo
+	modified:   graphics/qgis/Makefile
+	modified:   graphics/qgis/distinfo
+	modified:   graphics/qgis/pkg-plist
+	modified:   java/bootstrap-openjdk11/Makefile
+	modified:   lang/halide/Makefile
+	modified:   lang/halide/distinfo
+	modified:   math/R-cran-lme4/Makefile
+	modified:   math/R-cran-lme4/distinfo
+	modified:   math/gnome-calculator/Makefile
+	modified:   math/py-permutation/Makefile
+	modified:   math/py-permutation/distinfo
+	modified:   misc/py-toil/Makefile
+	modified:   misc/py-toil/distinfo
+	modified:   misc/snakemake/Makefile
+	modified:   misc/snakemake/distinfo
+	modified:   multimedia/gstreamer1-transcoder/Makefile
+	modified:   multimedia/gstreamer1-transcoder/pkg-plist
+	modified:   net-im/Makefile
+	new file:   net-im/zkgroup/Makefile
+	new file:   net-im/zkgroup/distinfo
+	new file:   net-im/zkgroup/files/patch-cargo-crates_jni-0.16.0_build.rs
+	new file:   net-im/zkgroup/pkg-descr
+	modified:   net/asterisk13/Makefile
+	modified:   net/asterisk13/distinfo
+	modified:   net/asterisk16/Makefile
+	modified:   net/asterisk16/distinfo
+	modified:   net/asterisk18/Makefile
+	modified:   net/asterisk18/distinfo
+	modified:   net/fbzmq/Makefile
+	modified:   net/fbzmq/distinfo
+	modified:   net/py-cloudscraper/Makefile
+	modified:   net/py-cloudscraper/distinfo
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   net/storj/Makefile
+	modified:   net/storj/Makefile.deps
+	modified:   net/storj/distinfo
+	modified:   net/uhttpmock/Makefile
+	modified:   net/wangle/Makefile
+	modified:   net/wangle/distinfo
+	modified:   ports-mgmt/pkg/Makefile
+	modified:   ports-mgmt/pkg/pkg-plist
+	modified:   science/lammps/Makefile
+	modified:   science/py-kliff/Makefile
+	modified:   science/py-kliff/distinfo
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/gcr/Makefile
+	modified:   security/gcr/pkg-plist
+	modified:   security/ngrok/Makefile
+	modified:   security/vuxml/vuln.xml
+	modified:   www/deno/Makefile
+	modified:   www/deno/distinfo
+	modified:   www/proxygen/Makefile
+	modified:   www/proxygen/distinfo
+	modified:   www/py-pywikibot/Makefile
+	modified:   www/py-pywikibot/distinfo
+	modified:   www/wt/Makefile
+	modified:   www/wt/distinfo
+	modified:   www/wt/pkg-plist
+	modified:   www/wt3/Makefile
+	modified:   www/wt3/distinfo
+	modified:   www/wt3/pkg-plist
+	modified:   x11-toolkits/gtk20/Makefile
+	modified:   x11-toolkits/gtk20/distinfo
+	modified:   x11-wm/compiz/pkg-descr
+	modified:   x11/Makefile
+	modified:   x11/babl/Makefile
+	modified:   x11/babl/distinfo
+	modified:   x11/babl/pkg-plist
+	new file:   x11/wmfocus/Makefile
+	new file:   x11/wmfocus/distinfo
+	new file:   x11/wmfocus/pkg-descr
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/distinfo
+
+
+It took 3.30 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at c8051a90a648 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c8051a90a648 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
