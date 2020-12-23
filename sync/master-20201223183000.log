@@ -56,3 +56,210 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/nginx/Makefile
+Removing net/syncthing/files/patch-vendor_golang.org_x_net_ipv6_zsys__freebsd__arm64.go
+Removing net/syncthing/files/patch-vendor_golang.org_x_net_ipv4_zsys__freebsd__arm64.go
+Removing net/concourse-fly/files/patch-vendor_github.com_creack_pty_ztypes__freebsd__arm64.go
+Auto-merging multimedia/mpv/Makefile
+Auto-merging multimedia/ffmpeg/Makefile
+Removing devel/vulkan-headers/distinfo
+Removing deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+Removing deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_zsysnum__freebsd__arm64.go
+Removing deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_zsyscall__freebsd__arm64.go
+Removing deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_zerrors__freebsd__arm64.go
+Removing deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_syscall__freebsd__arm64.go
+Removing deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_asm__freebsd__arm64.s
+Merge made by the 'recursive' strategy.
+ MOVED                                              |    4 +
+ audio/spectrogram/Makefile                         |    5 +-
+ audio/spectrogram/distinfo                         |    6 +-
+ benchmarks/mangohud/Makefile                       |    4 +-
+ ...dor_golang.org_x_sys_unix_asm__freebsd__arm64.s |   32 -
+ ...olang.org_x_sys_unix_syscall__freebsd__arm64.go |   55 -
+ ...olang.org_x_sys_unix_zerrors__freebsd__arm64.go | 1797 -----------------
+ ...lang.org_x_sys_unix_zsyscall__freebsd__arm64.go | 2018 --------------------
+ ...olang.org_x_sys_unix_zsysnum__freebsd__arm64.go |  398 ----
+ ...golang.org_x_sys_unix_ztypes__freebsd__arm64.go |  605 ------
+ devel/Makefile                                     |    4 -
+ devel/android-tools-adb/Makefile                   |    2 +-
+ ...github.com_creack_pty_ztypes__freebsd__arm64.go |    4 +-
+ devel/spirv-tools/Makefile                         |    2 +-
+ devel/vulkan-headers/distinfo                      |    3 -
+ editors/mousepad/Makefile                          |    2 +-
+ editors/mousepad/distinfo                          |    6 +-
+ emulators/rpcs3/Makefile                           |    2 +-
+ games/hitori/Makefile                              |    3 +-
+ games/homura/Makefile                              |    2 +-
+ games/retroarch/Makefile                           |    2 +-
+ games/stratagus/Makefile                           |   12 +-
+ games/vkquake/Makefile                             |    2 +-
+ graphics/Makefile                                  |    4 +
+ {devel => graphics}/glslang/Makefile               |    4 +-
+ {devel => graphics}/glslang/distinfo               |    0
+ {devel => graphics}/glslang/pkg-descr              |    0
+ {devel => graphics}/glslang/pkg-plist              |    0
+ graphics/libplacebo/Makefile                       |    4 +-
+ graphics/mesa-devel/Makefile                       |    2 +-
+ graphics/piglit/Makefile                           |    2 +-
+ graphics/shaderc/Makefile                          |    4 +-
+ graphics/vkd3d/Makefile                            |    6 +-
+ {devel => graphics}/vulkan-headers/Makefile        |    6 +-
+ graphics/vulkan-headers/distinfo                   |    3 +
+ .../files/patch-include_vulkan_vulkan.hpp          |    0
+ {devel => graphics}/vulkan-headers/pkg-descr       |    0
+ {devel => graphics}/vulkan-headers/pkg-plist       |    0
+ graphics/vulkan-loader/Makefile                    |    6 +-
+ graphics/vulkan-loader/distinfo                    |    6 +-
+ graphics/vulkan-loader/pkg-plist                   |    2 +-
+ {devel => graphics}/vulkan-tools/Makefile          |    8 +-
+ {devel => graphics}/vulkan-tools/distinfo          |    0
+ .../vulkan-tools/files/patch-cube_CMakeLists.txt   |    0
+ .../vulkan-tools/files/patch-cube_cube.cpp         |    0
+ .../files/patch-vulkaninfo_vulkaninfo.h            |    0
+ {devel => graphics}/vulkan-tools/pkg-descr         |    0
+ {devel => graphics}/vulkan-tools/pkg-plist         |    0
+ .../vulkan-validation-layers/Makefile              |    8 +-
+ .../vulkan-validation-layers/distinfo              |    0
+ .../files/patch-layers_vk__loader__platform.h      |    0
+ .../vulkan-validation-layers/pkg-descr             |    0
+ .../vulkan-validation-layers/pkg-plist             |    0
+ graphics/waifu2x-ncnn-vulkan/Makefile              |    4 +-
+ lang/gcc11-devel/Makefile                          |    3 +-
+ math/xfce4-calculator-plugin/Makefile              |    3 +-
+ math/xfce4-calculator-plugin/distinfo              |    6 +-
+ math/xfce4-calculator-plugin/pkg-plist             |   14 +
+ misc/ncnn/Makefile                                 |    4 +-
+ multimedia/dav1d/Makefile                          |    2 +-
+ multimedia/ffmpeg/Makefile                         |    4 +-
+ multimedia/gstreamer1-plugins/Makefile.common      |    2 +-
+ multimedia/mpv/Makefile                            |    2 +-
+ multimedia/pipewire/Makefile                       |    2 +-
+ ...github.com_creack_pty_ztypes__freebsd__arm64.go |   16 -
+ ...r_golang.org_x_net_ipv4_zsys__freebsd__arm64.go |   96 -
+ ...r_golang.org_x_net_ipv6_zsys__freebsd__arm64.go |  125 --
+ science/code_saturne/Makefile                      |   11 +-
+ science/code_saturne/distinfo                      |    6 +-
+ science/code_saturne/pkg-plist                     |   15 +
+ sysutils/rubygem-chef-config/Makefile              |    8 +-
+ sysutils/rubygem-chef-config/distinfo              |    6 +-
+ sysutils/rubygem-chef-utils/Makefile               |    2 +-
+ sysutils/rubygem-chef-utils/distinfo               |    6 +-
+ sysutils/xfce4-genmon-plugin/Makefile              |    2 +-
+ sysutils/xfce4-genmon-plugin/distinfo              |    6 +-
+ sysutils/xfce4-genmon-plugin/pkg-plist             |    7 +-
+ textproc/goldendict/Makefile                       |    3 -
+ www/lighttpd/files/patch-src_mod__webdav.c         |   11 +
+ www/nginx/Makefile                                 |    2 +-
+ www/nginx/Makefile.extmod                          |    7 +-
+ www/nginx/distinfo                                 |   10 +-
+ www/nginx/files/extra-patch-nchan-store-private.h  |    4 +-
+ ...ra-patch-nchan-store-redis-redis_lua_commands.h |   12 +
+ x11-drivers/xf86-video-intel/Makefile              |    5 +-
+ x11-drivers/xf86-video-intel/distinfo              |    6 +-
+ x11-toolkits/qt5-gui/Makefile                      |    4 +-
+ x11-wm/chamfer/Makefile                            |    2 +-
+ x11-wm/gamescope/Makefile                          |    4 +-
+ x11/waybar/Makefile                                |    8 +-
+ x11/waybar/distinfo                                |   12 +-
+ x11/xfce4-screenshooter-plugin/Makefile            |    2 +-
+ x11/xfce4-screenshooter-plugin/distinfo            |    6 +-
+ x11/xfce4-screenshooter-plugin/pkg-plist           |   10 +-
+ x11/xfce4-terminal/Makefile                        |    2 +-
+ x11/xfce4-terminal/distinfo                        |    6 +-
+ x11/xfce4-terminal/pkg-plist                       |   14 +-
+ 97 files changed, 224 insertions(+), 5293 deletions(-)
+ delete mode 100644 deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_asm__freebsd__arm64.s
+ delete mode 100644 deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_syscall__freebsd__arm64.go
+ delete mode 100644 deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_zerrors__freebsd__arm64.go
+ delete mode 100644 deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_zsyscall__freebsd__arm64.go
+ delete mode 100644 deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_zsysnum__freebsd__arm64.go
+ delete mode 100644 deskutils/ultralist/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+ delete mode 100644 devel/vulkan-headers/distinfo
+ rename {devel => graphics}/glslang/Makefile (84%)
+ rename {devel => graphics}/glslang/distinfo (100%)
+ rename {devel => graphics}/glslang/pkg-descr (100%)
+ rename {devel => graphics}/glslang/pkg-plist (100%)
+ rename {devel => graphics}/vulkan-headers/Makefile (74%)
+ create mode 100644 graphics/vulkan-headers/distinfo
+ rename {devel => graphics}/vulkan-headers/files/patch-include_vulkan_vulkan.hpp (100%)
+ rename {devel => graphics}/vulkan-headers/pkg-descr (100%)
+ rename {devel => graphics}/vulkan-headers/pkg-plist (100%)
+ rename {devel => graphics}/vulkan-tools/Makefile (92%)
+ rename {devel => graphics}/vulkan-tools/distinfo (100%)
+ rename {devel => graphics}/vulkan-tools/files/patch-cube_CMakeLists.txt (100%)
+ rename {devel => graphics}/vulkan-tools/files/patch-cube_cube.cpp (100%)
+ rename {devel => graphics}/vulkan-tools/files/patch-vulkaninfo_vulkaninfo.h (100%)
+ rename {devel => graphics}/vulkan-tools/pkg-descr (100%)
+ rename {devel => graphics}/vulkan-tools/pkg-plist (100%)
+ rename {devel => graphics}/vulkan-validation-layers/Makefile (81%)
+ rename {devel => graphics}/vulkan-validation-layers/distinfo (100%)
+ rename {devel => graphics}/vulkan-validation-layers/files/patch-layers_vk__loader__platform.h (100%)
+ rename {devel => graphics}/vulkan-validation-layers/pkg-descr (100%)
+ rename {devel => graphics}/vulkan-validation-layers/pkg-plist (100%)
+ delete mode 100644 net/concourse-fly/files/patch-vendor_github.com_creack_pty_ztypes__freebsd__arm64.go
+ delete mode 100644 net/syncthing/files/patch-vendor_golang.org_x_net_ipv4_zsys__freebsd__arm64.go
+ delete mode 100644 net/syncthing/files/patch-vendor_golang.org_x_net_ipv6_zsys__freebsd__arm64.go
+ create mode 100644 www/lighttpd/files/patch-src_mod__webdav.c
+ create mode 100644 www/nginx/files/extra-patch-nchan-store-redis-redis_lua_commands.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    46c376eaff50..91c44df2029f  master -> master        
+remote:    9ba54bfac2dc..46c376eaff50  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   46c376eaff50..91c44df2029f  master -> master
+==== END: master ====
