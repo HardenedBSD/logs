@@ -47,3 +47,154 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11/xterm/Makefile
+Removing x11/wayland-logout/files/patch-wayland-logout.sh
+Auto-merging lang/swi-pl/Makefile
+CONFLICT (content): Merge conflict in lang/swi-pl/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/swi-pl/Makefile
+index 50b443fa6228,bb7a38bec780..000000000000
+--- a/lang/swi-pl/Makefile
++++ b/lang/swi-pl/Makefile
+@@@ -24,12 -22,31 +22,38 @@@ LIB_DEPENDS=	libgmp.so:math/gmp 
+  		libossp-uuid.so:misc/ossp-uuid \
+  		libyaml.so:textproc/libyaml
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		compiler:c11 libedit cmake jpeg libarchive pathfix pkgconfig \
+ +		readline shebangfix ssl xorg
+++=======
++ USES=		compiler:c11 libedit cmake libarchive pathfix pkgconfig \
++ 		readline shebangfix ssl
+++>>>>>>> freebsd/master
+  USE_XORG=	ice sm x11 xext xft xinerama xpm xt
+  
++ OPTIONS_DEFINE=		TCMALLOC EXAMPLES XPCE
++ OPTIONS_DEFAULT=	XPCE TCMALLOC
++ OPTIONS_SUB=    	yes
++ 
++ CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DBUILD_TESTING=OFF -DINSTALL_DOCUMENTATION=OFF
++ 
++ TCMALLOC_DESC=		Use tcmalloc instead of default malloc
++ TCMALLOC_CMAKE_ON=	-DUSE_TCMALLOC=ON
++ TCMALLOC_CMAKE_OFF=	-DUSE_TCMALLOC=OFF
++ TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
++ 
++ XPCE_DESC=		Install XPCE graphical support
++ XPCE_CMAKE_ON=		-DSWIPL_PACKAGES_X=ON
++ XPCE_CMAKE_OFF=		-DSWIPL_PACKAGES_X=OFF
++ XPCE_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
++ 			libfreetype.so:print/freetype2 \
++ 			libjpeg.so:graphics/jpeg-turbo
++ XCPE_USES=		jpeg xorg
++ 
++ .include <bsd.port.options.mk>
++ 
+  SHEBANG_FILES=	library/dialect/sicstus/swipl-lfr.pl
+  SHEBANG_LANG=	swipl
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   databases/mroonga/Makefile
+	modified:   databases/mroonga/distinfo
+	modified:   databases/redisdesktopmanager/Makefile
+	modified:   databases/redisdesktopmanager/distinfo
+	modified:   devel/gitlab-runner/Makefile
+	modified:   devel/gitlab-runner/distinfo
+	modified:   devel/libreadline-java/Makefile
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/distinfo
+	modified:   devel/statcvs/Makefile
+	modified:   devel/statsvn/Makefile
+	modified:   games/3omns/Makefile
+	modified:   games/3omns/pkg-descr
+	modified:   java/apache-commons-lang/Makefile
+	modified:   java/eclipse-ecj/Makefile
+	modified:   java/jasmin/Makefile
+	modified:   java/jcalendar/Makefile
+	modified:   lang/swi-pl/distinfo
+	modified:   lang/swi-pl/pkg-plist
+	modified:   misc/osinfo-db/Makefile
+	modified:   misc/osinfo-db/distinfo
+	modified:   misc/osinfo-db/pkg-plist
+	modified:   print/harfbuzz/Makefile
+	modified:   print/harfbuzz/distinfo
+	modified:   print/harfbuzz/pkg-plist
+	modified:   science/wannier90/Makefile
+	modified:   security/nss/Makefile
+	new file:   security/nss/files/patch-3.60.1
+	modified:   security/teleport/Makefile
+	modified:   security/teleport/distinfo
+	modified:   x11-wm/river/Makefile
+	modified:   x11-wm/river/distinfo
+	modified:   x11/wayland-logout/Makefile
+	modified:   x11/wayland-logout/distinfo
+	deleted:    x11/wayland-logout/files/patch-wayland-logout.sh
+	modified:   x11/xterm/Makefile
+	modified:   x11/xterm/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lang/swi-pl/Makefile
+
+
+It took 3.15 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at c2e1fbc62a8b Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.30 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at c2e1fbc62a8b Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
