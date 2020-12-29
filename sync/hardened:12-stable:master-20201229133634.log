@@ -1,0 +1,650 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/main
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/main branch ====
+Auto-merging usr.bin/grep/Makefile
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+CONFLICT (content): Merge conflict in share/man/man5/src.conf.5
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/12-stable/main branch ====
+diff --cc share/man/man5/src.conf.5
+index 602465c3d0ae,0e36281c78df..000000000000
+--- a/share/man/man5/src.conf.5
++++ b/share/man/man5/src.conf.5
+@@@ -635,108134 -707,181 +635,108218 @@@ When set, it enforces these options
+  .Pp
+  .Bl -item -compact
+  .It
+ -.Va WITHOUT_SVNLITE
+ -.El
+ -.It Va WITHOUT_FINGER
+ -Set to not build or install
+ -.Xr finger 1
+ -and
+ -.Xr fingerd 8 .
+ -.It Va WITHOUT_FLOPPY
+ -Set to not build or install programs
+ -for operating floppy disk driver.
+ -.It Va WITHOUT_FMTREE
+ -Set to not build and install
+ -.Pa /usr/sbin/fmtree .
+ -.It Va WITHOUT_FORMAT_EXTENSIONS
+ -Set to not enable
+ -.Fl fformat-extensions
+ -when compiling the kernel.
+ -Also disables all format checking.
+ -.It Va WITHOUT_FORTH
+ -Set to build bootloaders without Forth support.
+ -.It Va WITHOUT_FP_LIBC
+ -Set to build
+ -.Nm libc
+ -without floating-point support.
+ -.It Va WITHOUT_FREEBSD_UPDATE
+ -Set to not build
+ -.Xr freebsd-update 8 .
+ -.It Va WITHOUT_FTP
+ -Set to not build or install
+ -.Xr ftp 1
+ -and
+ -.Xr ftpd 8 .
+ -.It Va WITHOUT_GAMES
+ -Set to not build games.
+ -.It Va WITHOUT_GCC
+ -Set to not build and install gcc and g++ as part of the normal build process.
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm/arm, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_GCC
+ -Set to build and install gcc and g++.
+ -.Pp
+ -This is a default setting on
+ -mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe and sparc64/sparc64.
+ -.It Va WITHOUT_GCC_BOOTSTRAP
+ -Set to not build gcc and g++ as part of the bootstrap process.
+ -You must enable either gcc or clang bootstrap to be able to build the system,
+ -unless an alternative compiler is provided via
+ -XCC.
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm/arm, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_GCC_BOOTSTRAP
+ -Set to build gcc and g++ as part of the bootstrap process.
+ -.Pp
+ -This is a default setting on
+ -mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe and sparc64/sparc64.
+ -.It Va WITHOUT_GCOV
+ -Set to not build the
+ -.Xr gcov 1
+ -tool.
+ -.It Va WITHOUT_GDB
+ -Set to not build
+ -.Xr gdb 1 .
+ -.Pp
+ -This is a default setting on
+ -arm64/aarch64, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_GDB
+ -Set to build
+ -.Xr gdb 1 .
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm/arm, arm/armv6, arm/armv7, i386/i386, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe and sparc64/sparc64.
+ -.It Va WITHOUT_GDB_LIBEXEC
+ -Set to install
+ -.Xr gdb 1
+ -into
+ -.Pa /usr/bin .
+ -.Pp
+ -This is a default setting on
+ -sparc64/sparc64.
+ -.It Va WITH_GDB_LIBEXEC
+ -Set to install
+ -.Xr gdb 1
+ -into
+ -.Pa /usr/libexec .
+ -This permits
+ -.Xr gdb 1
+ -to be used as a fallback for
+ -.Xr crashinfo 8
+ -if a newer version is not installed.
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm/arm, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_GH_BC
+ -Set this option to install the enhanced
+ -.Xr bc 1
+ -and
+ -.Xr dc 1
+ -programs instead of the traditional FreeBSD versions.
+ -.It Va WITHOUT_GNUCXX
+ -Do not build the GNU C++ stack (g++, libstdc++).
+ -This is the default on platforms where clang is the system compiler.
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm/arm, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_GNUCXX
+ -Build the GNU C++ stack (g++, libstdc++).
+ -This is the default on platforms where gcc is the system compiler.
+ -.Pp
+ -This is a default setting on
+ -mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe and sparc64/sparc64.
+ -.It Va WITHOUT_GNU_DIFF
+ -Set to not build GNU
+ -.Xr diff 1
+ -and
+ -.Xr diff3 1 .
+ -.It Va WITHOUT_GNU_GREP
+ -Set to not build GNU
+ -.Xr grep 1 .
+ -.It Va WITHOUT_GNU_GREP_COMPAT
+ -Set this option to omit the gnu extensions to grep from being included in
+ -BSD grep.
+ -.It Va WITHOUT_GOOGLETEST
+ -Set to neither build nor install
+ -.Lb libgmock ,
+ -.Lb libgtest ,
+ -and dependent tests.
+ -.It Va WITHOUT_GPIO
+ -Set to not build
+ -.Xr gpioctl 8
+ -as part of the base system.
+ -.It Va WITHOUT_GPL_DTC
+ -Set to build the BSD licensed version of the device tree compiler rather
+ -than the GPLed one from elinux.org.
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64, arm/arm, arm/armv6, arm/armv7, arm64/aarch64, i386/i386, riscv/riscv64 and riscv/riscv64sf.
+ -.It Va WITH_GPL_DTC
+ -Set to build the GPL'd version of the device tree compiler from elinux.org,
+ -instead of the BSD licensed one.
+ -.Pp
+ -This is a default setting on
+ -mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe and sparc64/sparc64.
+ -.It Va WITHOUT_GSSAPI
+ -Set to not build libgssapi.
+ -.It Va WITHOUT_HAST
+ -Set to not build
+ -.Xr hastd 8
+ -and related utilities.
+ -.It Va WITH_HESIOD
+ -Set to build Hesiod support.
+ -.It Va WITHOUT_HTML
+ -Set to not build HTML docs.
+ -.It Va WITHOUT_HYPERV
+ -Set to not build or install HyperV utilities.
+ -.Pp
+ -This is a default setting on
+ -arm/arm, arm/armv6, arm/armv7, arm64/aarch64, mips/mipsel, mips/mips, mips/mips64el, mips/mips64, mips/mipsn32, mips/mipselhf, mips/mipshf, mips/mips64elhf, mips/mips64hf, powerpc/powerpc, powerpc/powerpc64, powerpc/powerpcspe, riscv/riscv64, riscv/riscv64sf and sparc64/sparc64.
+ -.It Va WITH_HYPERV
+ -Set to build or install HyperV utilities.
+ -.Pp
+ -This is a default setting on
+ -amd64/amd64 and i386/i386.
+ -.It Va WITHOUT_ICONV
+ -Set to not build iconv as part of libc.
+ -.It Va WITHOUT_INCLUDES
+ -Set to not install header files.
+ -This option used to be spelled
+ -.Va NO_INCS .
+ -.Bf -symbolic
+ -The option does not work for build targets.
+ -.Ef
+++<<<<<<< HEAD
+ +.Va WITHOUT_BEARSSL
+ +.It
+ +.Va WITHOUT_BIND_NOW
+ +.It
+ +.Va WITHOUT_BSD_CRTBEGIN
+ +.It
+ +.Va WITHOUT_BSD_GREP
+ +.It
+ +.Va WITHOUT_BSD_GREP_FASTMATCH
+ +.It
+ +.Va WITHOUT_CCACHE_BUILD
+ +.It
+ +.Va WITHOUT_CLANG_FORMAT
+ +.It
+ +.Va WITHOUT_CTF
+ +.It
+ +.Va WITHOUT_DEVD_PIE
+ +.It
+ +.Va WITHOUT_DIRDEPS_BUILD
+ +.It
+ +.Va WITHOUT_DIRDEPS_CACHE
+ +.It
+ +.Va WITHOUT_DTRACE_TESTS
+ +.It
+ +.Va WITHOUT_EXTRA_TCP_STACKS
+ +.It
+ +.Va WITHOUT_FREEBSD_UPDATE
+ +.It
+ +.Va WITHOUT_GCC
+ +.It
+ +.Va WITHOUT_GCC_BOOTSTRAP
+ +.It
+ +.Va WITHOUT_GH_BC
+ +.It
+ +.Va WITHOUT_GNUCXX
+ +.It
+ +.Va WITHOUT_GNU_GREP_COMPAT
+ +.It
+ +.Va WITHOUT_GPL_DTC
+ +.It
+ +.Va WITHOUT_HESIOD
+ +.It
+ +.Va WITHOUT_INSTALL_AS_USER
+ +.It
+ +.Va WITHOUT_KERNEL_RETPOLINE
+ +.It
+ +.Va WITHOUT_LIB32
+ +.It
+ +.Va WITHOUT_LIBRESSL
+ +.It
+ +.Va WITHOUT_LIBSOFT
+ +.It
+ +.Va WITHOUT_LLVM_ASSERTIONS
+ +.It
+ +.Va WITHOUT_LLVM_CXXFILT
+ +.It
+ +.Va WITHOUT_LLVM_TARGET_BPF
+ +.It
+ +.Va WITHOUT_LOADER_EFI_SECUREBOOT
+ +.It
+ +.Va WITHOUT_LOADER_FIREWIRE
+ +.It
+ +.Va WITHOUT_LOADER_FORCE_LE
+ +.It
+ +.Va WITHOUT_LOADER_OFW
+ +.It
+ +.Va WITHOUT_LOADER_UBOOT
+ +.It
+ +.Va WITHOUT_LOADER_VERIEXEC
+ +.It
+ +.Va WITHOUT_LOADER_VERIEXEC_PASS_MANIFEST
+ +.It
+ +.Va WITHOUT_LOADER_VERIEXEC_VECTX
+ +.It
+ +.Va WITHOUT_META_MODE
+ +.It
+ +.Va WITHOUT_NAND
+ +.It
+ +.Va WITHOUT_OFED
+ +.It
+ +.Va WITHOUT_OFED_EXTRA
+ +.It
+ +.Va WITHOUT_OPENLDAP
+ +.It
+ +.Va WITHOUT_OPENNTPD
+ +.It
+ +.Va WITHOUT_PORTSNAP
+ +.It
+ +.Va WITHOUT_RATELIMIT
+ +.It
+ +.Va WITHOUT_REPRODUCIBLE_BUILD
+ +.It
+ +.Va WITHOUT_RPCBIND_WARMSTART_SUPPORT
+ +.It
+ +.Va WITHOUT_SORT_THREADS
+ +.It
+ +.Va WITHOUT_SPECTREV1_FIX
+ +.It
+ +.Va WITHOUT_STAGING
+ +.It
+ +.Va WITHOUT_STAGING_MAN
+ +.It
+ +.Va WITHOUT_STAGING_PROG
+ +.It
+ +.Va WITHOUT_STALE_STAGED
+ +.It
+ +.Va WITHOUT_SVN
+ +.It
+ +.Va WITHOUT_SYSROOT
+ +.It
+ +.Va WITHOUT_VERIEXEC
+ +.It
+ +.Va WITHOUT_ZONEINFO_LEAPSECONDS_SUPPORT
+ +.It
+ +.Va WITH_ACCT
+ +.It
+ +.Va WITH_AMD
+ +.It
+ +.Va WITH_APM
+ +.It
+ +.Va WITH_ASSERT_DEBUG
+ +.It
+ +.Va WITH_AT
+ +.It
+ +.Va WITH_ATM
+ +.It
+ +.Va WITH_AUDIT
+ +.It
+ +.Va WITH_AUTHPF
+ +.It
+ +.Va WITH_AUTOFS
+ +.It
+ +.Va WITH_AUTO_OBJ
+ +.It
+ +.Va WITH_BHYVE
+ +.It
+ +.Va WITH_BINUTILS
+ +.It
+ +.Va WITH_BINUTILS_BOOTSTRAP
+ +.It
+ +.Va WITH_BLACKLIST
+ +.It
+ +.Va WITH_BLACKLIST_SUPPORT
+ +.It
+ +.Va WITH_BLUETOOTH
+ +.It
+ +.Va WITH_BOOT
+ +.It
+ +.Va WITH_BOOTPARAMD
+ +.It
+ +.Va WITH_BOOTPD
+ +.It
+ +.Va WITH_BSDINSTALL
+ +.It
+ +.Va WITH_BSD_CPIO
+ +.It
+ +.Va WITH_BSNMP
+ +.It
+ +.Va WITH_BZIP2
+ +.It
+ +.Va WITH_BZIP2_SUPPORT
+ +.It
+ +.Va WITH_CALENDAR
+ +.It
+ +.Va WITH_CAPSICUM
+ +.It
+ +.Va WITH_CAROOT
+ +.It
+ +.Va WITH_CASPER
+ +.It
+ +.Va WITH_CCD
+ +.It
+ +.Va WITH_CDDL
+ +.It
+ +.Va WITH_CFI
+ +.It
+ +.Va WITH_CLANG
+ +.It
+ +.Va WITH_CLANG_BOOTSTRAP
+ +.It
+ +.Va WITH_CLANG_EXTRAS
+ +.It
+ +.Va WITH_CLANG_FULL
+ +.It
+ +.Va WITH_CLANG_IS_CC
+ +.It
+ +.Va WITH_CPP
+ +.It
+ +.Va WITH_CROSS_COMPILER
+ +.It
+ +.Va WITH_CRYPT
+ +.It
+ +.Va WITH_CTM
+ +.It
+ +.Va WITH_CUSE
+ +.It
+ +.Va WITH_CXGBETOOL
+ +.It
+ +.Va WITH_CXX
+ +.It
+ +.Va WITH_DEBUG_FILES
+ +.It
+ +.Va WITH_DIALOG
+ +.It
+ +.Va WITH_DICT
+ +.It
+ +.Va WITH_DMAGENT
+ +.It
+ +.Va WITH_DOCCOMPRESS
+ +.It
+ +.Va WITH_DYNAMICROOT
+ +.It
+ +.Va WITH_ED_CRYPTO
+ +.It
+ +.Va WITH_EE
+ +.It
+ +.Va WITH_EFI
+ +.It
+ +.Va WITH_ELFTOOLCHAIN_BOOTSTRAP
+ +.It
+ +.Va WITH_EXAMPLES
+ +.It
+ +.Va WITH_FDT
+ +.It
+ +.Va WITH_FILE
+ +.It
+ +.Va WITH_FINGER
+ +.It
+ +.Va WITH_FLOPPY
+ +.It
+ +.Va WITH_FMTREE
+ +.It
+ +.Va WITH_FORMAT_EXTENSIONS
+ +.It
+ +.Va WITH_FORTH
+ +.It
+ +.Va WITH_FP_LIBC
+ +.It
+ +.Va WITH_FTP
+ +.It
+ +.Va WITH_GAMES
+ +.It
+ +.Va WITH_GCOV
+ +.It
+ +.Va WITH_GDB
+ +.It
+ +.Va WITH_GDB_LIBEXEC
+ +.It
+ +.Va WITH_GNU_DIFF
+ +.It
+ +.Va WITH_GNU_GREP
+ +.It
+ +.Va WITH_GOOGLETEST
+ +.It
+ +.Va WITH_GPIO
+ +.It
+ +.Va WITH_GSSAPI
+ +.It
+ +.Va WITH_HAST
+ +.It
+ +.Va WITH_HBSDCONTROL
+ +.It
+ +.Va WITH_HBSD_UPDATE
+ +.It
+ +.Va WITH_HTML
+ +.It
+ +.Va WITH_HYPERV
+ +.It
+ +.Va WITH_ICONV
+ +.It
+ +.Va WITH_INCLUDES
+ +.It
+ +.Va WITH_INET
+ +.It
+ +.Va WITH_INET6
+ +.It
+ +.Va WITH_INET6_SUPPORT
+ +.It
+ +.Va WITH_INETD
+ +.It
+ +.Va WITH_INET_SUPPORT
+ +.It
+ +.Va WITH_INSTALLLIB
+ +.It
+ +.Va WITH_IPFILTER
+ +.It
+ +.Va WITH_IPFW
+ +.It
+ +.Va WITH_IPSEC_SUPPORT
+ +.It
+ +.Va WITH_ISCSI
+ +.It
+ +.Va WITH_JAIL
+ +.It
+ +.Va WITH_KDUMP
+ +.It
+ +.Va WITH_KERBEROS
+ +.It
+ +.Va WITH_KERBEROS_SUPPORT
+ +.It
+ +.Va WITH_KERNEL_SYMBOLS
+ +.It
+ +.Va WITH_KVM
+ +.It
+ +.Va WITH_KVM_SUPPORT
+ +.It
+ +.Va WITH_LDNS
+ +.It
+ +.Va WITH_LDNS_UTILS
+ +.It
+ +.Va WITH_LEGACY_CONSOLE
+ +.It
+ +.Va WITH_LIBCPLUSPLUS
+ +.It
+ +.Va WITH_LIBPTHREAD
+ +.It
+ +.Va WITH_LIBTHR
+ +.It
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/netbsd-tests/lib/libc/regex/README
+	modified:   contrib/netbsd-tests/lib/libc/regex/data/meta.in
+	modified:   contrib/netbsd-tests/lib/libc/regex/data/subexp.in
+	modified:   contrib/netbsd-tests/lib/libc/regex/main.c
+	modified:   include/regex.h
+	modified:   lib/libc/regex/engine.c
+	modified:   lib/libc/regex/regcomp.c
+	modified:   lib/libc/regex/regex.3
+	modified:   lib/libc/regex/regex2.h
+	modified:   lib/libc/sys/_umtx_op.2
+	modified:   lib/libregex/tests/gnuext.in
+	modified:   lib/libregex/tests/libregex_test.sh
+	modified:   lib/libsysdecode/flags.c
+	modified:   lib/libsysdecode/mktables
+	modified:   lib/libsysdecode/sysdecode.h
+	modified:   lib/libusb/libusb20_desc.c
+	modified:   libexec/rc/rc.d/ipfw
+	modified:   sbin/devd/devd.conf.5
+	modified:   sbin/rcorder/rcorder.c
+	modified:   share/man/man9/bhnd.9
+	modified:   share/man/man9/bhnd_erom.9
+	modified:   share/man/man9/disk.9
+	modified:   share/man/man9/driver.9
+	modified:   share/man/man9/epoch.9
+	modified:   share/man/man9/fail.9
+	modified:   share/man/man9/ofw_bus_is_compatible.9
+	modified:   share/man/man9/ofw_bus_status_okay.9
+	modified:   share/mk/src.opts.mk
+	modified:   stand/common/interp_lua.c
+	modified:   stand/i386/libi386/Makefile
+	modified:   stand/kshim/bsd_kernel.h
+	modified:   stand/liblua/Makefile
+	new file:   stand/liblua/lpager.c
+	modified:   stand/liblua/lutils.h
+	modified:   stand/lua/cli.lua
+	modified:   stand/lua/cli.lua.8
+	modified:   stand/lua/config.lua
+	modified:   stand/lua/config.lua.8
+	modified:   sys/compat/linuxkpi/common/include/linux/bitops.h
+	modified:   sys/compat/linuxkpi/common/include/linux/scatterlist.h
+	modified:   sys/compat/linuxkpi/common/include/linux/semaphore.h
+	modified:   sys/compat/linuxkpi/common/src/linux_usb.c
+	modified:   sys/dev/usb/usb_device.c
+	modified:   sys/dev/usb/usb_parse.c
+	modified:   sys/dev/usb/usb_request.c
+	modified:   sys/dev/usb/usbdi.h
+	modified:   sys/kern/kern_cpuset.c
+	modified:   sys/net/iflib.c
+	modified:   sys/sys/param.h
+	modified:   tools/tools/locale/etc/final-maps/widths.txt
+	modified:   tools/tools/locale/tools/getwidths.c
+	modified:   usr.bin/grep/Makefile
+	modified:   usr.bin/grep/grep.c
+	modified:   usr.bin/grep/grep.h
+	modified:   usr.bin/grep/queue.c
+	modified:   usr.bin/ident/ident.1
+	modified:   usr.bin/kdump/kdump.c
+	modified:   usr.bin/patch/patch.1
+	modified:   usr.bin/truss/syscalls.c
+	modified:   usr.bin/uname/uname.1
+	modified:   usr.sbin/bluetooth/bluetooth-config/bluetooth-config.8
+	modified:   usr.sbin/bluetooth/hccontrol/hccontrol.8
+	modified:   usr.sbin/bluetooth/hcseriald/hcseriald.8
+	modified:   usr.sbin/bluetooth/sdpd/sdpd.8
+	modified:   usr.sbin/config/config.5
+	modified:   usr.sbin/config/config.8
+	modified:   usr.sbin/crunch/crunchgen/crunched_main.c
+	modified:   usr.sbin/devctl/devctl.8
+	modified:   usr.sbin/freebsd-update/freebsd-update.sh
+	modified:   usr.sbin/jls/jls.c
+	modified:   usr.sbin/mpsutil/mpsutil.8
+	modified:   usr.sbin/nfsd/nfsv4.4
+	modified:   usr.sbin/trim/trim.8
+	modified:   usr.sbin/zonectl/zonectl.8
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   share/man/man5/src.conf.5
+
+HEAD is now at 6d931237c4a1 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== merge failed and clean up after ====
+On branch hardened/12-stable/master
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 6d931237c4a1 Merge branch 'freebsd/12-stable/master' into hardened/12-stable/master
+==== END: hardened/12-stable/master ====
