@@ -1,0 +1,174 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/main
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is behind 'origin/hardened/12-stable/master' by 53 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 6d931237c4a1..a72a4e005507
+Fast-forward
+ contrib/netbsd-tests/lib/libc/regex/README         |    1 +
+ contrib/netbsd-tests/lib/libc/regex/data/meta.in   |    4 +-
+ contrib/netbsd-tests/lib/libc/regex/data/subexp.in |    2 +-
+ contrib/netbsd-tests/lib/libc/regex/main.c         |    5 +-
+ include/regex.h                                    |    1 +
+ lib/libc/regex/engine.c                            |  117 +-
+ lib/libc/regex/regcomp.c                           |  437 ++-
+ lib/libc/regex/regex.3                             |   13 +-
+ lib/libc/regex/regex2.h                            |    4 +
+ lib/libc/sys/_umtx_op.2                            |   75 +-
+ lib/libregex/tests/gnuext.in                       |    4 +
+ lib/libregex/tests/libregex_test.sh                |    4 -
+ lib/libsysdecode/flags.c                           |   14 +
+ lib/libsysdecode/mktables                          |    3 +-
+ lib/libsysdecode/sysdecode.h                       |    1 +
+ lib/libusb/libusb20_desc.c                         |   20 +-
+ libexec/rc/rc.d/ipfw                               |    4 +-
+ sbin/devd/devd.conf.5                              |    3 +
+ sbin/rcorder/rcorder.c                             |    6 +-
+ share/man/man5/src.conf.5                          | 3633 +++++++++++---------
+ share/man/man9/bhnd.9                              |   21 +-
+ share/man/man9/bhnd_erom.9                         |    7 +-
+ share/man/man9/disk.9                              |   16 +-
+ share/man/man9/driver.9                            |   12 +-
+ share/man/man9/epoch.9                             |   11 +-
+ share/man/man9/fail.9                              |   12 +-
+ share/man/man9/ofw_bus_is_compatible.9             |    7 +-
+ share/man/man9/ofw_bus_status_okay.9               |    5 +-
+ share/mk/src.opts.mk                               |    2 +-
+ stand/common/interp_lua.c                          |    1 +
+ stand/i386/libi386/Makefile                        |    4 -
+ stand/kshim/bsd_kernel.h                           |   17 +-
+ stand/liblua/Makefile                              |    2 +-
+ stand/liblua/lpager.c                              |   89 +
+ stand/liblua/lutils.h                              |    1 +
+ stand/lua/cli.lua                                  |  106 +
+ stand/lua/cli.lua.8                                |   44 +-
+ stand/lua/config.lua                               |   48 +-
+ stand/lua/config.lua.8                             |   30 +-
+ sys/compat/linuxkpi/common/include/linux/bitops.h  |    2 +-
+ .../linuxkpi/common/include/linux/scatterlist.h    |    2 +-
+ .../linuxkpi/common/include/linux/semaphore.h      |    2 +-
+ sys/compat/linuxkpi/common/src/linux_usb.c         |    5 -
+ sys/dev/usb/usb_device.c                           |    6 +-
+ sys/dev/usb/usb_parse.c                            |   16 +-
+ sys/dev/usb/usb_request.c                          |   15 +-
+ sys/dev/usb/usbdi.h                                |    4 +-
+ sys/kern/kern_cpuset.c                             |  146 +-
+ sys/net/iflib.c                                    |   91 +-
+ sys/sys/param.h                                    |    2 +-
+ tools/tools/locale/etc/final-maps/widths.txt       |   65 -
+ tools/tools/locale/tools/getwidths.c               |    4 +
+ usr.bin/grep/Makefile                              |    4 +-
+ usr.bin/grep/grep.c                                |    4 +-
+ usr.bin/grep/grep.h                                |    1 +
+ usr.bin/grep/queue.c                               |  127 +-
+ usr.bin/ident/ident.1                              |    2 +-
+ usr.bin/kdump/kdump.c                              |   22 +-
+ usr.bin/patch/patch.1                              |   12 +-
+ usr.bin/truss/syscalls.c                           |   20 +-
+ usr.bin/uname/uname.1                              |    2 +-
+ .../bluetooth/bluetooth-config/bluetooth-config.8  |   18 +-
+ usr.sbin/bluetooth/hccontrol/hccontrol.8           |    9 +-
+ usr.sbin/bluetooth/hcseriald/hcseriald.8           |    2 +-
+ usr.sbin/bluetooth/sdpd/sdpd.8                     |   20 +-
+ usr.sbin/config/config.5                           |   14 +-
+ usr.sbin/config/config.8                           |    7 +-
+ usr.sbin/crunch/crunchgen/crunched_main.c          |    8 +-
+ usr.sbin/devctl/devctl.8                           |   10 +-
+ usr.sbin/freebsd-update/freebsd-update.sh          |   14 +-
+ usr.sbin/jls/jls.c                                 |    2 +-
+ usr.sbin/mpsutil/mpsutil.8                         |    2 +-
+ usr.sbin/nfsd/nfsv4.4                              |   12 +-
+ usr.sbin/trim/trim.8                               |   12 +-
+ usr.sbin/zonectl/zonectl.8                         |    6 -
+ 75 files changed, 3421 insertions(+), 2055 deletions(-)
+ create mode 100644 stand/liblua/lpager.c
+==== merge branches ====
+==== merge freebsd/12-stable/main branch ====
+Merge made by the 'recursive' strategy.
+ share/man/man4/uplcom.4               |  4 ++++
+ sys/dev/usb/serial/uplcom.c           |  1 +
+ sys/dev/usb/usbdevs                   |  1 +
+ sys/dev/vmware/vmci/vmci.c            | 17 +++++++++++++----
+ tools/build/options/WITHOUT_BSD_GREP  |  2 ++
+ tools/build/options/WITHOUT_GNU_DIFF  |  2 --
+ tools/build/options/WITH_GCOV         |  4 ++++
+ tools/build/options/WITH_GNU_DIFF     |  3 +++
+ tools/build/options/WITH_GNU_GREP     |  3 +++
+ tools/build/options/WITH_SENDMAIL     |  4 ++++
+ tools/build/options/WITH_TCP_WRAPPERS |  4 ++++
+ 11 files changed, 39 insertions(+), 6 deletions(-)
+ create mode 100644 tools/build/options/WITHOUT_BSD_GREP
+ create mode 100644 tools/build/options/WITH_GCOV
+ create mode 100644 tools/build/options/WITH_GNU_DIFF
+ create mode 100644 tools/build/options/WITH_GNU_GREP
+ create mode 100644 tools/build/options/WITH_SENDMAIL
+ create mode 100644 tools/build/options/WITH_TCP_WRAPPERS
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    a72a4e005507..2f535154dd94  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    929eb23231d5..6338833c50a7  github/freebsd/12-stable/main -> github/freebsd/12-stable/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   a72a4e005507..2f535154dd94  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
