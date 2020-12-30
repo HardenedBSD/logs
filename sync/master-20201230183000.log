@@ -47,3 +47,165 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net/ceph12/pkg-plist
+Removing net/ceph12/pkg-descr
+Removing net/ceph12/files/patch-src_tools_ceph__kvstore__tool.cc
+Removing net/ceph12/files/patch-src_rocksdb_util_channel.h
+Removing net/ceph12/files/patch-src_rgw_rgw_sync_module_es.cc
+Removing net/ceph12/files/patch-src_rgw_rgw_civetweb.cc
+Removing net/ceph12/files/patch-src_rgw_CMakeLists.txt
+Removing net/ceph12/files/patch-src_objectstore_store_test.cc
+Removing net/ceph12/files/patch-boost-1.67
+Removing net/ceph12/files/file-git_version
+Removing net/ceph12/files/ceph.in
+Removing net/ceph12/distinfo
+Removing net/ceph12/Makefile
+Auto-merging net/Makefile
+Removing math/py-or-tools/files/patch-ortools_util_fp__utils.h
+Merge made by the 'recursive' strategy.
+ GIDs                                               |   2 +-
+ MOVED                                              |   5 +-
+ Mk/Uses/cabal.mk                                   |   8 +-
+ UIDs                                               |   2 +-
+ databases/xrootd/Makefile                          |   4 +-
+ devel/boost_build/Makefile                         |  10 +-
+ devel/boost_build/distinfo                         |   6 +-
+ devel/boost_build/pkg-plist                        |   2 +
+ devel/elm-format/Makefile                          |   1 -
+ devel/stack/Makefile                               |   1 -
+ graphics/ksnip/Makefile                            |   1 +
+ ...adapter_fileDialog_FileDialogAdapterFactory.cpp |  11 +
+ ...n_adapter_fileDialog_FileDialogAdapterFactory.h |  11 +
+ .../files/patch-src_common_platform_HdpiScaler.cpp |  11 +
+ ...atch-src_gui_widgetHider_WidgetHiderFactory.cpp |  11 +
+ lang/elm/Makefile                                  |   2 -
+ math/hs-penrose/Makefile                           |   1 -
+ math/py-or-tools/Makefile                          |  16 +-
+ math/py-or-tools/distinfo                          |   6 +-
+ math/py-or-tools/files/patch-cmake_python.cmake    |  13 +-
+ .../files/patch-ortools_python_setup.py.in         |  25 +-
+ .../files/patch-ortools_util_fp__utils.h           |  11 -
+ .../py-or-tools/files/patch-ortools_util_zvector.h |   4 +-
+ math/py-or-tools/files/patch-tools_setup.py.in     |  20 +-
+ math/py-or-tools/pkg-plist                         |  16 +-
+ net-im/Makefile                                    |   1 +
+ net-im/dendrite/Makefile                           | 201 +++++++++++
+ net-im/dendrite/distinfo                           | 299 ++++++++++++++++
+ net-im/dendrite/files/dendrite.in                  |  34 ++
+ net-im/dendrite/pkg-descr                          |  14 +
+ net-im/dendrite/pkg-plist                          |  39 +++
+ net-im/matterhorn/Makefile                         |   1 -
+ net/Makefile                                       |   1 -
+ net/ceph12/Makefile                                | 152 --------
+ net/ceph12/distinfo                                |  29 --
+ net/ceph12/files/ceph.in                           |  36 --
+ net/ceph12/files/file-git_version                  |   2 -
+ net/ceph12/files/patch-boost-1.67                  | 191 ----------
+ .../files/patch-src_objectstore_store_test.cc      |  39 ---
+ net/ceph12/files/patch-src_rgw_CMakeLists.txt      |  13 -
+ net/ceph12/files/patch-src_rgw_rgw_civetweb.cc     |  36 --
+ .../files/patch-src_rgw_rgw_sync_module_es.cc      |  22 --
+ net/ceph12/files/patch-src_rocksdb_util_channel.h  |  28 --
+ .../files/patch-src_tools_ceph__kvstore__tool.cc   |  27 --
+ net/ceph12/pkg-descr                               |  21 --
+ net/ceph12/pkg-plist                               | 390 ---------------------
+ sysutils/hs-cputype/Makefile                       |   1 -
+ www/Makefile                                       |   1 +
+ www/p5-Mojolicious/Makefile                        |   2 +-
+ www/p5-Mojolicious/distinfo                        |   6 +-
+ www/yarn-node10/Makefile                           |   4 +-
+ www/yarn-node12/Makefile                           |   4 +-
+ www/yarn-node14/Makefile                           |  13 +
+ www/yarn/Makefile                                  |   9 +-
+ www/yarn/distinfo                                  |   6 +-
+ www/yarn/pkg-plist                                 |   1 +
+ x11/conlecterm/Makefile                            |   1 -
+ x11/xkbset/Makefile                                |   6 +-
+ x11/xkbset/distinfo                                |   5 +-
+ 59 files changed, 759 insertions(+), 1076 deletions(-)
+ create mode 100644 graphics/ksnip/files/patch-src_common_adapter_fileDialog_FileDialogAdapterFactory.cpp
+ create mode 100644 graphics/ksnip/files/patch-src_common_adapter_fileDialog_FileDialogAdapterFactory.h
+ create mode 100644 graphics/ksnip/files/patch-src_common_platform_HdpiScaler.cpp
+ create mode 100644 graphics/ksnip/files/patch-src_gui_widgetHider_WidgetHiderFactory.cpp
+ delete mode 100644 math/py-or-tools/files/patch-ortools_util_fp__utils.h
+ create mode 100644 net-im/dendrite/Makefile
+ create mode 100644 net-im/dendrite/distinfo
+ create mode 100644 net-im/dendrite/files/dendrite.in
+ create mode 100644 net-im/dendrite/pkg-descr
+ create mode 100644 net-im/dendrite/pkg-plist
+ delete mode 100644 net/ceph12/Makefile
+ delete mode 100644 net/ceph12/distinfo
+ delete mode 100644 net/ceph12/files/ceph.in
+ delete mode 100644 net/ceph12/files/file-git_version
+ delete mode 100644 net/ceph12/files/patch-boost-1.67
+ delete mode 100644 net/ceph12/files/patch-src_objectstore_store_test.cc
+ delete mode 100644 net/ceph12/files/patch-src_rgw_CMakeLists.txt
+ delete mode 100644 net/ceph12/files/patch-src_rgw_rgw_civetweb.cc
+ delete mode 100644 net/ceph12/files/patch-src_rgw_rgw_sync_module_es.cc
+ delete mode 100644 net/ceph12/files/patch-src_rocksdb_util_channel.h
+ delete mode 100644 net/ceph12/files/patch-src_tools_ceph__kvstore__tool.cc
+ delete mode 100644 net/ceph12/pkg-descr
+ delete mode 100644 net/ceph12/pkg-plist
+ create mode 100644 www/yarn-node14/Makefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    721b6b734d61..49ed53d5b227  master -> master        
+remote:    eb6ed2ce54ac..721b6b734d61  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   721b6b734d61..49ed53d5b227  master -> master
+==== END: master ====
