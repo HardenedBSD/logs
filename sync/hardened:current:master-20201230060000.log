@@ -1,0 +1,92 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+From git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD
+ + eb7575e4fd4f...02749d938ce4 refs/notes/commits -> refs/notes/commits  (forced update)
+Gitea: Internal error
+UpdatePublicKeyInRepo: Post "http://localhost:3000/api/internal/ssh/2/update/3": read tcp 172.16.1.72:22856->172.16.1.72:3000: i/o timeout
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Merge made by the 'recursive' strategy.
+ sys/arm64/conf/GENERIC                       | 12 +++++-
+ sys/arm64/nvidia/tegra210/max77620.c         |  2 +-
+ sys/arm64/nvidia/tegra210/tegra210_clk_per.c |  2 +-
+ sys/dev/xen/balloon/balloon.c                |  3 +-
+ sys/dev/xen/blkback/blkback.c                |  6 +++
+ sys/dev/xen/control/control.c                |  6 +++
+ sys/dev/xen/xenstore/xenstore.c              | 14 +++++--
+ sys/dev/xen/xenstore/xenstore_dev.c          | 15 ++++++++
+ sys/xen/xenbus/xenbus.c                      | 42 ---------------------
+ sys/xen/xenbus/xenbusb.c                     | 17 +++++++++
+ sys/xen/xenbus/xenbusvar.h                   | 56 ----------------------------
+ sys/xen/xenstore/xenstorevar.h               |  9 +++++
+ usr.sbin/ntp/ntpd/leap-seconds               |  8 ++--
+ 13 files changed, 82 insertions(+), 110 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=2&verb=git-receive-pack": read tcp 172.16.1.72:46089->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is ahead of 'origin/hardened/current/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at abe2671e8afd Merge branch 'freebsd/current/main' into hardened/current/master
+==== END: hardened/current/master ====
