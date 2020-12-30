@@ -1,0 +1,96 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is ahead of 'origin/freebsd/current/main' by 5 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 4e4e43dc9e1a..5e78bbb74a1f
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ share/zoneinfo/Makefile          |   2 +-
+ sys/arm/arm/pmu.c                | 209 +---------------------------------
+ sys/arm/arm/pmu_fdt.c            | 239 +++++++++++++++++++++++++++++++++++++++
+ sys/arm64/arm64/locore.S         |  31 -----
+ sys/conf/Makefile.arm64          |  36 +++---
+ sys/conf/files.arm               |   3 +-
+ sys/conf/files.arm64             |   1 +
+ sys/tools/arm_kernel_boothdr.awk | 190 +++++++++++++++++++++++++++++++
+ tools/tools/sysbuild/sysbuild.sh |  11 +-
+ usr.bin/calendar/io.c            |   2 +-
+ 10 files changed, 466 insertions(+), 258 deletions(-)
+ create mode 100644 sys/arm/arm/pmu_fdt.c
+ create mode 100644 sys/tools/arm_kernel_boothdr.awk
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e35a01eec692..5e78bbb74a1f  freebsd/current/main -> freebsd/current/main        
+remote:    0795216ea3ba..83a4af48e7af  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e35a01eec692..5e78bbb74a1f  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
