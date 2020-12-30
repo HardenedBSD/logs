@@ -62,3 +62,154 @@ remote: Processed 1 references in total
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    ec925724d0a8..eb6ed2ce54ac  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/otter-browser/files/patch-src_modules_windows_web_StartPageWidget.cpp
+Removing www/otter-browser/files/patch-src_modules_backends_web_qtwebkit_QtWebKitPluginWidget.cpp
+Removing multimedia/kodi/files/patch-xbmc_windowing_rpi_WinSystemRpi.cpp
+Removing multimedia/kodi/files/patch-xbmc_platform_linux_input_LibInputHandler.cpp
+Auto-merging lang/gcc8-devel/Makefile
+Removing audio/py-gmusicapi/pkg-descr
+Removing audio/py-gmusicapi/distinfo
+Removing audio/py-gmusicapi/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   1 +
+ audio/Makefile                                     |   1 -
+ audio/beets/Makefile                               |   4 +-
+ audio/py-gmusicapi/Makefile                        |  43 --
+ audio/py-gmusicapi/distinfo                        |   3 -
+ audio/py-gmusicapi/pkg-descr                       |  13 -
+ comms/hylafax/files/patch-configure                |   2 +-
+ databases/p5-Memcached-libmemcached/Makefile       |   2 +-
+ deskutils/xfce4-generic-slider/pkg-descr           |   2 +-
+ devel/kodi-platform/Makefile                       |   5 +-
+ devel/kodi-platform/distinfo                       |   6 +-
+ devel/kodi-platform/pkg-plist                      |   4 +-
+ games/DDNet/Makefile                               |   2 +-
+ graphics/tiff/Makefile                             |   2 +-
+ graphics/tiff/distinfo                             |   6 +-
+ graphics/tiff/files/patch-Makefile.in              |   2 +-
+ graphics/tiff/files/patch-tiffcrop.1               |   4 +-
+ graphics/tiff/pkg-plist                            |   5 +-
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ lang/intel-compute-runtime/Makefile                |   2 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ mail/mailfromd/Makefile                            |   4 +-
+ mail/mailfromd/distinfo                            |   6 +-
+ multimedia/kodi-addon-peripheral-joystick/Makefile |   9 +-
+ multimedia/kodi-addon-peripheral-joystick/distinfo |   6 +-
+ .../kodi-addon-peripheral-joystick/pkg-plist       |   9 +-
+ multimedia/kodi-addon-pvr-hts/Makefile             |   9 +-
+ multimedia/kodi-addon-pvr-hts/distinfo             |   6 +-
+ .../files/patch-src_tvheadend_entity_Event.h       |  12 +-
+ multimedia/kodi-addon-pvr-hts/pkg-descr            |   2 +-
+ multimedia/kodi-addon-pvr-hts/pkg-plist            |   4 +-
+ multimedia/kodi-addon-pvr-iptvsimple/Makefile      |  15 +-
+ multimedia/kodi-addon-pvr-iptvsimple/distinfo      |   6 +-
+ multimedia/kodi-addon-pvr-iptvsimple/pkg-plist     |   8 +-
+ multimedia/kodi/Makefile                           | 221 ++++----
+ multimedia/kodi/distinfo                           |  14 +-
+ .../files/patch-xbmc_dbwrappers_mysqldataset.cpp   |   4 +-
+ .../files/patch-xbmc_dbwrappers_mysqldataset.h     |   4 +-
+ ...h-xbmc_platform_linux_input_LibInputHandler.cpp |  11 -
+ .../patch-xbmc_windowing_rpi_WinSystemRpi.cpp      |  26 -
+ multimedia/kodi/pkg-plist                          | 587 ++++++++++++++++-----
+ net/arping/Makefile                                |   1 +
+ security/py-plaso/Makefile                         |   2 +-
+ security/py-plaso/distinfo                         |   6 +-
+ sysutils/beats7/Makefile                           |  71 ++-
+ sysutils/beats7/distinfo                           |   6 +-
+ sysutils/lcdproc/Makefile                          |   2 +-
+ sysutils/logstash7/Makefile                        |  44 +-
+ sysutils/logstash7/distinfo                        |   6 +-
+ sysutils/xfce4-bsdcpufreq-plugin/Makefile          |   4 +-
+ sysutils/xfce4-bsdcpufreq-plugin/distinfo          |   6 +-
+ textproc/elasticsearch7/Makefile                   |  85 ++-
+ textproc/elasticsearch7/distinfo                   |   6 +-
+ textproc/groonga/Makefile                          |   4 +-
+ textproc/groonga/distinfo                          |   6 +-
+ textproc/groonga/pkg-plist                         |   1 +
+ textproc/hs-pandoc/Makefile                        | 116 ++--
+ textproc/hs-pandoc/distinfo                        | 240 +++++----
+ textproc/hs-pandoc/pkg-plist                       |   4 +
+ textproc/kibana7/Makefile                          |   5 +-
+ textproc/kibana7/distinfo                          |   6 +-
+ www/minio/Makefile                                 |   4 +-
+ www/minio/distinfo                                 |   6 +-
+ www/otter-browser/Makefile                         |  16 +-
+ www/otter-browser/distinfo                         |   6 +-
+ ..._backends_web_qtwebkit_QtWebKitPluginWidget.cpp |  10 -
+ ...tch-src_modules_windows_web_StartPageWidget.cpp |  10 -
+ www/otter-browser/pkg-plist                        |  89 ++--
+ x11-wm/herbstluftwm/Makefile                       |  10 +-
+ x11-wm/herbstluftwm/distinfo                       |   6 +-
+ x11-wm/herbstluftwm/pkg-plist                      |   8 +-
+ 72 files changed, 1075 insertions(+), 797 deletions(-)
+ delete mode 100644 audio/py-gmusicapi/Makefile
+ delete mode 100644 audio/py-gmusicapi/distinfo
+ delete mode 100644 audio/py-gmusicapi/pkg-descr
+ delete mode 100644 multimedia/kodi/files/patch-xbmc_platform_linux_input_LibInputHandler.cpp
+ delete mode 100644 multimedia/kodi/files/patch-xbmc_windowing_rpi_WinSystemRpi.cpp
+ delete mode 100644 www/otter-browser/files/patch-src_modules_backends_web_qtwebkit_QtWebKitPluginWidget.cpp
+ delete mode 100644 www/otter-browser/files/patch-src_modules_windows_web_StartPageWidget.cpp
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    eb6ed2ce54ac..721b6b734d61  master -> master
+remote:    ec925724d0a8..eb6ed2ce54ac  github/master -> github/master
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   eb6ed2ce54ac..721b6b734d61  master -> master
+==== END: master ====
