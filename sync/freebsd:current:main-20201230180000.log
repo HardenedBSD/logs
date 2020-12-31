@@ -1,0 +1,76 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 5e78bbb74a1f Split out the FDT arm pmu attachment
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 5e78bbb74a1f..4f250d9436af
+Fast-forward
+ sys/dev/cxgbe/tom/t4_tls.c               |  4 +++
+ sys/modules/ipmi/Makefile                |  2 +-
+ sys/powerpc/aim/aim_machdep.c            |  3 ++-
+ sys/powerpc/aim/mmu_radix.c              | 28 ++++++++++++++++++-
+ sys/powerpc/powernv/opal.h               | 22 +++++++++++++++
+ sys/powerpc/powernv/opal_dev.c           | 20 +++++++++++---
+ sys/powerpc/powernv/opal_sensor.c        |  7 ++---
+ sys/powerpc/powerpc/copyinout.c          | 46 +++++++++++++++++++++++---------
+ sys/powerpc/powerpc/support.S            | 16 +++++------
+ tools/tools/git/hooks/prepare-commit-msg | 10 +++++++
+ usr.bin/sockstat/sockstat.1              |  6 +++--
+ usr.bin/sockstat/sockstat.c              |  8 ++++--
+ usr.sbin/ctld/ctld.c                     |  8 +++---
+ usr.sbin/ctld/ctld.h                     |  2 +-
+ usr.sbin/valectl/valectl.c               |  2 +-
+ 15 files changed, 142 insertions(+), 42 deletions(-)
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/main
+Your branch is ahead of 'origin/freebsd/current/main' by 12 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 4f250d9436af [POWERPC64LE] enable IPMI using OPAL bus
+==== END: freebsd/current/main ====

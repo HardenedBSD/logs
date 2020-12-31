@@ -1,0 +1,190 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing sysutils/synergy/files/patch-src_lib_net_SecureSocket.cpp
+Removing sysutils/synergy/files/patch-src_lib_arch_CMakeLists.txt
+Removing sysutils/synergy/files/patch-CMakeLists.txt
+Auto-merging security/softether/Makefile
+CONFLICT (content): Merge conflict in security/softether/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc security/softether/Makefile
+index 3c90716e14a3,0692fc68f563..000000000000
+--- a/security/softether/Makefile
++++ b/security/softether/Makefile
+@@@ -13,10 -13,7 +13,14 @@@ COMMENT=	SoftEther VPN 4 (RTM version
+  LICENSE=	APACHE20
+  LICENSE_FILE=	${WRKSRC}/LICENSE
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	safestack
+ +
+ +ONLY_FOR_ARCHS=	amd64 i386
+ +ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
+++=======
++ ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+++>>>>>>> freebsd/master
+  
+  USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
+  		readline ssl
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   comms/Makefile
+	new file:   comms/limesuite/Makefile
+	new file:   comms/limesuite/distinfo
+	new file:   comms/limesuite/files/patch-CMakeLists.txt
+	new file:   comms/limesuite/files/patch-Desktop_CMakeLists.txt
+	new file:   comms/limesuite/files/patch-src_ConnectionRemote_ConnectionRemote.cpp
+	new file:   comms/limesuite/files/patch-src_ConnectionSTREAM__UNITE_ConnectionSTREAM__UNITE.cpp
+	new file:   comms/limesuite/files/patch-src_ConnectionSTREAM__UNITE_ConnectionSTREAM__UNITEEntry.cpp
+	new file:   comms/limesuite/files/patch-src_FPGAcontrols__wxgui_FPGAcontrols__wxgui.cpp
+	new file:   comms/limesuite/pkg-descr
+	new file:   comms/limesuite/pkg-plist
+	modified:   devel/rust-cbindgen/Makefile
+	modified:   devel/rust-cbindgen/distinfo
+	modified:   emulators/citra/Makefile
+	modified:   emulators/citra/distinfo
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   emulators/wine-devel/Makefile
+	modified:   emulators/wine-devel/distinfo
+	modified:   games/mrboom/Makefile
+	modified:   games/mrboom/distinfo
+	modified:   games/mrboom/files/patch-Makefile
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   lang/gnu-cobol/Makefile
+	modified:   lang/gnu-cobol/distinfo
+	new file:   mail/thunderbird/files/patch-bug1684180
+	modified:   math/sound-of-sorting/Makefile
+	modified:   multimedia/gmmlib/Makefile
+	modified:   multimedia/gmmlib/distinfo
+	modified:   multimedia/intel-media-sdk/Makefile
+	modified:   multimedia/intel-media-sdk/distinfo
+	new file:   multimedia/libv4l/files/patch-utils_v4l2-ctl_v4l2-ctl-vidcap.cpp
+	modified:   multimedia/libva-intel-media-driver/Makefile
+	modified:   multimedia/libva-intel-media-driver/distinfo
+	modified:   multimedia/vmaf/Makefile
+	modified:   multimedia/vmaf/distinfo
+	modified:   multimedia/vmaf/pkg-plist
+	modified:   sysutils/synergy/Makefile
+	modified:   sysutils/synergy/distinfo
+	deleted:    sysutils/synergy/files/patch-CMakeLists.txt
+	deleted:    sysutils/synergy/files/patch-src_lib_arch_CMakeLists.txt
+	deleted:    sysutils/synergy/files/patch-src_lib_net_SecureSocket.cpp
+	modified:   sysutils/synergy/pkg-plist
+	modified:   sysutils/usbhotkey/Makefile
+	new file:   www/firefox-esr/files/patch-bug1684180
+	modified:   www/youtube_dl/Makefile
+	modified:   www/youtube_dl/distinfo
+	modified:   x11-wm/river/Makefile
+	modified:   x11-wm/river/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   security/softether/Makefile
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 49ed53d5b227 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.37 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 49ed53d5b227 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
