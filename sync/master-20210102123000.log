@@ -6939,3 +6939,264 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/xfce4-wmdock-plugin/pkg-plist
+Removing x11/xfce4-wmdock-plugin/pkg-descr
+Removing x11/xfce4-wmdock-plugin/distinfo
+Removing x11/xfce4-wmdock-plugin/Makefile
+Removing x11/xfce4-quicklauncher-plugin/pkg-plist
+Removing x11/xfce4-quicklauncher-plugin/pkg-descr
+Removing x11/xfce4-quicklauncher-plugin/distinfo
+Removing x11/xfce4-quicklauncher-plugin/Makefile
+Removing x11/libxfce4menu/files/patch-libxfce4kbd-private_xfce-shortcuts-grabber.c
+Removing x11-wm/xfce4-wm/files/patch-Xsync-XError
+Removing x11-wm/xfce4-wm/files/patch-XKillClient-XError
+Removing x11-wm/xfce4-wm/files/patch-XFixes-XError
+Removing x11-toolkits/libxfce4gui/pkg-plist
+Removing x11-toolkits/libxfce4gui/pkg-descr
+Removing x11-toolkits/libxfce4gui/files/patch-libxfcegui4_xfce-exec.c
+Removing x11-toolkits/libxfce4gui/distinfo
+Removing x11-toolkits/libxfce4gui/Makefile
+Removing x11-fm/thunar/files/patch-thunar_thunar-list-model.c
+Removing print/xfce4-print/pkg-plist
+Removing print/xfce4-print/pkg-descr
+Removing print/xfce4-print/distinfo
+Removing print/xfce4-print/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                              |   4 +
+ Mk/Uses/xfce.mk                                    |  27 +--
+ UPDATING                                           |  22 +++
+ archivers/thunar-archive-plugin/Makefile           |   1 +
+ audio/faudio/Makefile                              |   2 +-
+ audio/faudio/distinfo                              |   6 +-
+ audio/faudio/pkg-plist                             |   1 +
+ audio/thunar-media-tags-plugin/Makefile            |   1 +
+ audio/xfce4-pulseaudio-plugin/Makefile             |   4 +-
+ deskutils/orage/Makefile                           |   4 +
+ deskutils/orage/pkg-descr                          |   4 +-
+ deskutils/orage/pkg-plist                          |   2 -
+ deskutils/xfce4-generic-slider/Makefile            |   2 +
+ deskutils/xfce4-notes-plugin/Makefile              |   2 +
+ deskutils/xfce4-notifyd/Makefile                   |   2 +-
+ deskutils/xfce4-tumbler/Makefile                   |  15 +-
+ deskutils/xfce4-tumbler/distinfo                   |   6 +-
+ deskutils/xfce4-tumbler/pkg-plist                  |   5 +
+ deskutils/xfce4-volumed-pulse/Makefile             |   2 +-
+ deskutils/xfce4-volumed/Makefile                   |   4 +
+ deskutils/xfce4-xkb-plugin/Makefile                |   1 +
+ devel/py-backports/Makefile                        |   3 -
+ devel/xfce4-dev-tools/Makefile                     |   6 +-
+ devel/xfce4-dev-tools/distinfo                     |   6 +-
+ devel/xfce4-dev-tools/pkg-plist                    |  13 +-
+ editors/mousepad/Makefile                          |   1 +
+ graphics/Makefile                                  |   1 +
+ graphics/realsr-ncnn-vulkan/Makefile               |  43 ++++
+ graphics/realsr-ncnn-vulkan/distinfo               |   7 +
+ .../files/patch-src_ncnn_CMakeLists.txt            |  11 ++
+ .../files/patch-src_ncnn_src_layer_interp.cpp      |  15 ++
+ graphics/realsr-ncnn-vulkan/pkg-descr              |   4 +
+ graphics/ristretto/Makefile                        |   2 +-
+ mail/xfce4-mailwatch-plugin/Makefile               |   1 +
+ math/xfce4-calculator-plugin/Makefile              |   1 +
+ misc/xfce4-appfinder/Makefile                      |   2 +-
+ misc/xfce4-appfinder/distinfo                      |   6 +-
+ misc/xfce4-appfinder/pkg-plist                     |   9 +
+ misc/xfce4-weather-plugin/Makefile                 |   1 +
+ misc/xfce4-wm-themes/Makefile                      |   2 +-
+ multimedia/xfce4-parole/Makefile                   |   1 +
+ net/cloudquery/Makefile                            |   4 +-
+ net/cloudquery/distinfo                            |  10 +-
+ print/Makefile                                     |   1 -
+ print/xfce4-print/Makefile                         |  57 ------
+ print/xfce4-print/distinfo                         |   2 -
+ print/xfce4-print/pkg-descr                        |   4 -
+ print/xfce4-print/pkg-plist                        | 110 -----------
+ science/xfce4-equake-plugin/Makefile               |   4 +
+ sysutils/catfish/Makefile                          |   4 +-
+ sysutils/catfish/distinfo                          |   6 +-
+ sysutils/catfish/pkg-plist                         |  11 +-
+ sysutils/garcon/Makefile                           |   9 +-
+ sysutils/garcon/distinfo                           |   6 +-
+ sysutils/garcon/pkg-plist                          |   9 +-
+ sysutils/xfburn/Makefile                           |   1 +
+ sysutils/xfce4-battery-plugin/Makefile             |   1 +
+ sysutils/xfce4-bsdcpufreq-plugin/Makefile          |   1 +
+ sysutils/xfce4-cpugraph-plugin/Makefile            |   1 +
+ sysutils/xfce4-diskperf-plugin/Makefile            |   1 +
+ sysutils/xfce4-fsguard-plugin/Makefile             |   1 +
+ sysutils/xfce4-genmon-plugin/Makefile              |   1 +
+ sysutils/xfce4-mount-plugin/Makefile               |   1 +
+ sysutils/xfce4-netload-plugin/Makefile             |   1 +
+ sysutils/xfce4-places-plugin/Makefile              |   1 +
+ sysutils/xfce4-power-manager/Makefile              |   4 +-
+ sysutils/xfce4-power-manager/distinfo              |   6 +-
+ .../files/patch-src_xfpm-backlight-helper.c        |  56 +++---
+ .../files/patch-src_xfpm-dpms.c                    |  22 +--
+ sysutils/xfce4-power-manager/pkg-plist             |  30 +--
+ sysutils/xfce4-settings/Makefile                   |   8 +-
+ sysutils/xfce4-settings/distinfo                   |   6 +-
+ sysutils/xfce4-settings/pkg-plist                  | 147 +++++++++++++-
+ sysutils/xfce4-systemload-plugin/Makefile          |   1 +
+ sysutils/xfce4-wavelan-plugin/Makefile             |   1 +
+ textproc/xfce4-dict-plugin/Makefile                |   1 +
+ www/xfce4-smartbookmark-plugin/Makefile            |   1 +
+ x11-clocks/xfce4-datetime-plugin/Makefile          |   1 +
+ x11-clocks/xfce4-stopwatch-plugin/Makefile         |   1 +
+ .../xfce4-stopwatch-plugin/files/patch-panel416fix |  13 ++
+ x11-clocks/xfce4-time-out-plugin/Makefile          |   1 +
+ x11-clocks/xfce4-timer-plugin/Makefile             |   1 +
+ x11-fm/thunar/Makefile                             |   4 +-
+ x11-fm/thunar/distinfo                             |   6 +-
+ .../thunar/files/patch-thunar_thunar-list-model.c  |  11 --
+ x11-fm/thunar/pkg-plist                            |  12 +-
+ x11-fm/worker/Makefile                             |  15 +-
+ x11-fm/worker/distinfo                             |   6 +-
+ x11-toolkits/Makefile                              |   1 -
+ x11-toolkits/libxfce4gui/Makefile                  |  45 -----
+ x11-toolkits/libxfce4gui/distinfo                  |   2 -
+ .../files/patch-libxfcegui4_xfce-exec.c            |  11 --
+ x11-toolkits/libxfce4gui/pkg-descr                 |   3 -
+ x11-toolkits/libxfce4gui/pkg-plist                 | 125 ------------
+ x11-wm/xfce4-desktop/Makefile                      |   2 +-
+ x11-wm/xfce4-desktop/distinfo                      |   6 +-
+ x11-wm/xfce4-desktop/pkg-plist                     |  15 +-
+ x11-wm/xfce4-panel/Makefile                        |  12 +-
+ x11-wm/xfce4-panel/distinfo                        |   6 +-
+ .../xfce4-panel/files/patch-plugins_pager_pager.c  |  13 +-
+ x11-wm/xfce4-panel/pkg-plist                       |  55 +++---
+ x11-wm/xfce4-session/Makefile                      |   2 +-
+ x11-wm/xfce4-session/distinfo                      |   6 +-
+ x11-wm/xfce4-session/pkg-plist                     |  21 +-
+ x11-wm/xfce4-wm/Makefile                           |   3 +-
+ x11-wm/xfce4-wm/distinfo                           |   6 +-
+ x11-wm/xfce4-wm/files/patch-XFixes-XError          |  44 -----
+ x11-wm/xfce4-wm/files/patch-XKillClient-XError     |  24 ---
+ x11-wm/xfce4-wm/files/patch-Xsync-XError           |  30 ---
+ x11-wm/xfce4-wm/pkg-plist                          |  18 +-
+ x11-wm/xfce4/Makefile                              |  12 +-
+ x11/Makefile                                       |   2 -
+ x11/libexo/Makefile                                |  10 +-
+ x11/libexo/distinfo                                |   6 +-
+ x11/libexo/pkg-message                             |  15 ++
+ x11/libexo/pkg-plist                               | 220 ++++++---------------
+ x11/libxfce4menu/Makefile                          |  18 +-
+ x11/libxfce4menu/distinfo                          |   6 +-
+ ...ch-libxfce4kbd-private_xfce-shortcuts-grabber.c |  74 -------
+ x11/libxfce4menu/pkg-plist                         |  37 ++--
+ x11/libxfce4util/Makefile                          |   2 +-
+ x11/libxfce4util/distinfo                          |   6 +-
+ x11/libxfce4util/pkg-plist                         |   7 +-
+ x11/xfce4-clipman-plugin/Makefile                  |   1 +
+ x11/xfce4-conf/Makefile                            |  15 +-
+ x11/xfce4-conf/distinfo                            |   6 +-
+ x11/xfce4-conf/pkg-plist                           |   9 +-
+ x11/xfce4-dashboard/Makefile                       |   2 +-
+ x11/xfce4-dashboard/distinfo                       |   6 +-
+ x11/xfce4-dashboard/pkg-plist                      |  30 ++-
+ x11/xfce4-embed-plugin/Makefile                    |   4 +
+ x11/xfce4-goodies/Makefile                         |  44 ++---
+ x11/xfce4-quicklauncher-plugin/Makefile            |  30 ---
+ x11/xfce4-quicklauncher-plugin/distinfo            |   2 -
+ x11/xfce4-quicklauncher-plugin/pkg-descr           |   9 -
+ x11/xfce4-quicklauncher-plugin/pkg-plist           |  12 --
+ x11/xfce4-screensaver/Makefile                     |   1 +
+ x11/xfce4-taskmanager/Makefile                     |   1 +
+ x11/xfce4-terminal/Makefile                        |   1 +
+ x11/xfce4-verve-plugin/Makefile                    |   1 +
+ x11/xfce4-whiskermenu-plugin/Makefile              |   1 +
+ x11/xfce4-wmdock-plugin/Makefile                   |  34 ----
+ x11/xfce4-wmdock-plugin/distinfo                   |   2 -
+ x11/xfce4-wmdock-plugin/pkg-descr                  |   5 -
+ x11/xfce4-wmdock-plugin/pkg-plist                  |  28 ---
+ 145 files changed, 745 insertions(+), 1217 deletions(-)
+ create mode 100644 graphics/realsr-ncnn-vulkan/Makefile
+ create mode 100644 graphics/realsr-ncnn-vulkan/distinfo
+ create mode 100644 graphics/realsr-ncnn-vulkan/files/patch-src_ncnn_CMakeLists.txt
+ create mode 100644 graphics/realsr-ncnn-vulkan/files/patch-src_ncnn_src_layer_interp.cpp
+ create mode 100644 graphics/realsr-ncnn-vulkan/pkg-descr
+ delete mode 100644 print/xfce4-print/Makefile
+ delete mode 100644 print/xfce4-print/distinfo
+ delete mode 100644 print/xfce4-print/pkg-descr
+ delete mode 100644 print/xfce4-print/pkg-plist
+ create mode 100644 x11-clocks/xfce4-stopwatch-plugin/files/patch-panel416fix
+ delete mode 100644 x11-fm/thunar/files/patch-thunar_thunar-list-model.c
+ delete mode 100644 x11-toolkits/libxfce4gui/Makefile
+ delete mode 100644 x11-toolkits/libxfce4gui/distinfo
+ delete mode 100644 x11-toolkits/libxfce4gui/files/patch-libxfcegui4_xfce-exec.c
+ delete mode 100644 x11-toolkits/libxfce4gui/pkg-descr
+ delete mode 100644 x11-toolkits/libxfce4gui/pkg-plist
+ delete mode 100644 x11-wm/xfce4-wm/files/patch-XFixes-XError
+ delete mode 100644 x11-wm/xfce4-wm/files/patch-XKillClient-XError
+ delete mode 100644 x11-wm/xfce4-wm/files/patch-Xsync-XError
+ create mode 100644 x11/libexo/pkg-message
+ delete mode 100644 x11/libxfce4menu/files/patch-libxfce4kbd-private_xfce-shortcuts-grabber.c
+ delete mode 100644 x11/xfce4-quicklauncher-plugin/Makefile
+ delete mode 100644 x11/xfce4-quicklauncher-plugin/distinfo
+ delete mode 100644 x11/xfce4-quicklauncher-plugin/pkg-descr
+ delete mode 100644 x11/xfce4-quicklauncher-plugin/pkg-plist
+ delete mode 100644 x11/xfce4-wmdock-plugin/Makefile
+ delete mode 100644 x11/xfce4-wmdock-plugin/distinfo
+ delete mode 100644 x11/xfce4-wmdock-plugin/pkg-descr
+ delete mode 100644 x11/xfce4-wmdock-plugin/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    d0fd6580570c..7e40a9d93380  master -> master        
+remote:    cf670eb247d0..d0fd6580570c  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   d0fd6580570c..7e40a9d93380  master -> master
+==== END: master ====
