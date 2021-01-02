@@ -1,0 +1,196 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 8c45fe5d8ecd..a3479cfd2217
+Fast-forward
+ contrib/pnglite/LICENSE                 |    25 +
+ contrib/pnglite/README.md               |     5 +
+ contrib/pnglite/pnglite.c               |   628 +
+ contrib/pnglite/pnglite.h               |   169 +
+ contrib/terminus/AUTHORS                |     1 +
+ contrib/terminus/OFL.TXT                |    94 +
+ contrib/terminus/ter-u12b.bdf           | 25754 +++++++++++++++
+ contrib/terminus/ter-u12n.bdf           | 25754 +++++++++++++++
+ contrib/terminus/ter-u14b.bdf           | 28462 ++++++++++++++++
+ contrib/terminus/ter-u14n.bdf           | 28462 ++++++++++++++++
+ contrib/terminus/ter-u14v.bdf           | 28462 ++++++++++++++++
+ contrib/terminus/ter-u16b.bdf           | 31170 ++++++++++++++++++
+ contrib/terminus/ter-u16n.bdf           | 31170 ++++++++++++++++++
+ contrib/terminus/ter-u16v.bdf           | 31170 ++++++++++++++++++
+ contrib/terminus/ter-u18b.bdf           | 33878 +++++++++++++++++++
+ contrib/terminus/ter-u18n.bdf           | 33878 +++++++++++++++++++
+ contrib/terminus/ter-u20b.bdf           | 36586 +++++++++++++++++++++
+ contrib/terminus/ter-u20n.bdf           | 36586 +++++++++++++++++++++
+ contrib/terminus/ter-u22b.bdf           | 39294 ++++++++++++++++++++++
+ contrib/terminus/ter-u22n.bdf           | 39294 ++++++++++++++++++++++
+ contrib/terminus/ter-u24b.bdf           | 42002 ++++++++++++++++++++++++
+ contrib/terminus/ter-u24n.bdf           | 42002 ++++++++++++++++++++++++
+ contrib/terminus/ter-u28b.bdf           | 47418 +++++++++++++++++++++++++++
+ contrib/terminus/ter-u28n.bdf           | 47418 +++++++++++++++++++++++++++
+ contrib/terminus/ter-u32b.bdf           | 52834 ++++++++++++++++++++++++++++++
+ contrib/terminus/ter-u32n.bdf           | 52834 ++++++++++++++++++++++++++++++
+ stand/Makefile                          |     2 +
+ stand/common/bootstrap.h                |     5 +
+ stand/common/gfx_fb.c                   |  2641 ++
+ stand/common/gfx_fb.h                   |   274 +
+ stand/common/module.c                   |    89 +-
+ stand/defaults/loader.conf.5            |     4 +-
+ stand/efi/include/efilib.h              |     1 -
+ stand/efi/libefi/Makefile               |     2 +-
+ stand/efi/libefi/efi_console.c          |   484 +-
+ stand/efi/loader/Makefile               |    14 +-
+ stand/efi/loader/bootinfo.c             |    17 +-
+ stand/efi/loader/framebuffer.c          |    15 +-
+ stand/efi/loader/main.c                 |     3 +-
+ stand/ficl.mk                           |     2 +-
+ stand/ficl/Makefile                     |     2 +
+ stand/ficl/loader.c                     |   185 +
+ stand/fonts/INDEX.fonts                 |    66 +
+ stand/fonts/Makefile                    |    81 +
+ stand/forth/beastie.4th                 |     4 +
+ stand/forth/brand-fbsd.4th              |    12 +
+ stand/forth/brand.4th                   |     4 +
+ stand/forth/color.4th                   |    12 +-
+ stand/forth/frames.4th                  |    14 +
+ stand/forth/logo-orb.4th                |    12 +
+ stand/forth/menu.4th                    |    34 +-
+ stand/forth/support.4th                 |    91 +-
+ stand/i386/libi386/Makefile             |     9 +-
+ stand/i386/libi386/bootinfo.c           |    11 +
+ stand/i386/libi386/bootinfo32.c         |     3 +
+ stand/i386/libi386/bootinfo64.c         |     3 +
+ stand/i386/libi386/libi386.h            |     1 +
+ stand/i386/libi386/vbe.c                |  1226 +
+ stand/i386/libi386/vbe.h                |   163 +
+ stand/i386/libi386/vidconsole.c         |   659 +-
+ stand/i386/loader/Makefile              |    13 +-
+ stand/i386/loader/main.c                |    10 +-
+ stand/images/Makefile                   |     9 +
+ stand/images/freebsd-brand-rev.png      |   Bin 0 -> 7709 bytes
+ stand/images/freebsd-brand.png          |   Bin 0 -> 13788 bytes
+ stand/images/freebsd-logo-rev.png       |   Bin 0 -> 43898 bytes
+ stand/liblua/Makefile                   |     2 +
+ stand/liblua/lutils.c                   |   192 +
+ stand/loader.mk                         |     8 +-
+ stand/lua/color.lua                     |     2 +-
+ stand/lua/core.lua                      |    13 +
+ stand/lua/drawer.lua                    |    61 +-
+ stand/lua/gfx-orb.lua                   |     4 +-
+ stand/userboot/userboot/Makefile        |     1 +
+ stand/userboot/userboot/userboot_cons.c |     5 +
+ sys/arm/include/atomic-v6.h             |    27 +-
+ sys/arm64/include/atomic.h              |     4 +-
+ sys/fs/nfsserver/nfs_nfsdport.c         |    33 +-
+ sys/fs/nfsserver/nfs_nfsdsocket.c       |     6 +-
+ sys/sys/font.h                          |     7 +-
+ sys/teken/teken.h                       |     1 +
+ 81 files changed, 741468 insertions(+), 425 deletions(-)
+ create mode 100644 contrib/pnglite/LICENSE
+ create mode 100644 contrib/pnglite/README.md
+ create mode 100644 contrib/pnglite/pnglite.c
+ create mode 100644 contrib/pnglite/pnglite.h
+ create mode 100644 contrib/terminus/AUTHORS
+ create mode 100644 contrib/terminus/OFL.TXT
+ create mode 100644 contrib/terminus/ter-u12b.bdf
+ create mode 100644 contrib/terminus/ter-u12n.bdf
+ create mode 100644 contrib/terminus/ter-u14b.bdf
+ create mode 100644 contrib/terminus/ter-u14n.bdf
+ create mode 100644 contrib/terminus/ter-u14v.bdf
+ create mode 100644 contrib/terminus/ter-u16b.bdf
+ create mode 100644 contrib/terminus/ter-u16n.bdf
+ create mode 100644 contrib/terminus/ter-u16v.bdf
+ create mode 100644 contrib/terminus/ter-u18b.bdf
+ create mode 100644 contrib/terminus/ter-u18n.bdf
+ create mode 100644 contrib/terminus/ter-u20b.bdf
+ create mode 100644 contrib/terminus/ter-u20n.bdf
+ create mode 100644 contrib/terminus/ter-u22b.bdf
+ create mode 100644 contrib/terminus/ter-u22n.bdf
+ create mode 100644 contrib/terminus/ter-u24b.bdf
+ create mode 100644 contrib/terminus/ter-u24n.bdf
+ create mode 100644 contrib/terminus/ter-u28b.bdf
+ create mode 100644 contrib/terminus/ter-u28n.bdf
+ create mode 100644 contrib/terminus/ter-u32b.bdf
+ create mode 100644 contrib/terminus/ter-u32n.bdf
+ create mode 100644 stand/common/gfx_fb.c
+ create mode 100644 stand/common/gfx_fb.h
+ create mode 100644 stand/fonts/INDEX.fonts
+ create mode 100644 stand/fonts/Makefile
+ create mode 100644 stand/i386/libi386/vbe.c
+ create mode 100644 stand/i386/libi386/vbe.h
+ create mode 100644 stand/images/Makefile
+ create mode 100644 stand/images/freebsd-brand-rev.png
+ create mode 100644 stand/images/freebsd-brand.png
+ create mode 100644 stand/images/freebsd-logo-rev.png
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    8c45fe5d8ecd..a3479cfd2217  freebsd/current/main -> freebsd/current/main        
+remote:    303493f40ab0..008bc65c4b7c  github/hardened/current/master -> github/hardened/current/master
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   8c45fe5d8ecd..a3479cfd2217  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
