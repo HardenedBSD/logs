@@ -47,3 +47,349 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/wt3/pkg-plist
+Removing www/wt3/pkg-message
+Removing www/wt3/pkg-descr
+Removing www/wt3/files/patch-CMakeLists.txt
+Removing www/wt3/distinfo
+Removing www/wt3/Makefile
+Removing sysutils/synergy-1/files/patch-CMakeLists.txt
+Auto-merging security/Makefile
+Auto-merging net/dhcpcd/Makefile
+Auto-merging lang/ocaml/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Removing graphics/py-pillow6/pkg-descr
+Removing graphics/py-pillow6/distinfo
+Removing graphics/py-pillow6/Makefile
+Auto-merging graphics/gimp-app/Makefile
+Auto-merging graphics/cimg/Makefile
+Removing emulators/vice/files/patch-src__rs232drv_rs232.h
+Removing emulators/vice/files/patch-man_vice.1
+Auto-merging emulators/vice/Makefile
+CONFLICT (content): Merge conflict in emulators/vice/Makefile
+Removing devel/py-singledispatch/pkg-descr
+Removing devel/py-singledispatch/distinfo
+Removing devel/py-singledispatch/Makefile
+Removing devel/py-futures/pkg-descr
+Removing devel/py-futures/distinfo
+Removing devel/py-futures/Makefile
+Removing devel/py-backports_abc/pkg-descr
+Removing devel/py-backports_abc/distinfo
+Removing devel/py-backports_abc/Makefile
+Removing devel/py-backports.functools_lru_cache/pkg-descr
+Removing devel/py-backports.functools_lru_cache/distinfo
+Removing devel/py-backports.functools_lru_cache/Makefile
+Removing biology/gemma/files/patch-src_fastopenblas.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc emulators/vice/Makefile
+index 384a2a5ae0c1,4e2a9ec2df15..000000000000
+--- a/emulators/vice/Makefile
++++ b/emulators/vice/Makefile
+@@@ -12,9 -12,8 +12,14 @@@ COMMENT=	Emulator for Commodore C64, C1
+  
+  LICENSE=	GPLv2
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +BUILD_DEPENDS=	xa65:devel/xa65
+++=======
++ BUILD_DEPENDS=	xa65:devel/xa65 \
++ 		xdg-open:devel/xdg-utils
+++>>>>>>> freebsd/master
+  LIB_DEPENDS=	libpng.so:graphics/png \
+  		libgif.so:graphics/giflib \
+  		libportaudio.so:audio/portaudio \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   audio/libsidplay2/Makefile
+	new file:   audio/libsidplay2/files/patch-libsidplay_src-xsid_xsid.cpp
+	modified:   audio/py-music21/Makefile
+	modified:   audio/py-music21/distinfo
+	modified:   biology/gemma/Makefile
+	modified:   biology/gemma/distinfo
+	deleted:    biology/gemma/files/patch-src_fastopenblas.h
+	modified:   cad/PrusaSlicer/Makefile
+	modified:   deskutils/dosage/Makefile
+	modified:   devel/Makefile
+	new file:   devel/R-cran-rversions/Makefile
+	new file:   devel/R-cran-rversions/distinfo
+	new file:   devel/R-cran-rversions/pkg-descr
+	modified:   devel/acme/Makefile
+	modified:   devel/arduino-sevseg/Makefile
+	modified:   devel/arduino-sevseg/distinfo
+	modified:   devel/boost-python-libs/Makefile
+	modified:   devel/cil/Makefile
+	modified:   devel/kio-extras/Makefile
+	modified:   devel/mercurial/Makefile
+	modified:   devel/py-arrow/Makefile
+	modified:   devel/py-azure-batch/Makefile
+	modified:   devel/py-azure-batch/distinfo
+	modified:   devel/py-azure-mgmt-compute/Makefile
+	modified:   devel/py-azure-mgmt-compute/distinfo
+	modified:   devel/py-azure-mgmt-containerregistry/Makefile
+	modified:   devel/py-azure-mgmt-containerregistry/distinfo
+	new file:   devel/py-azure-mgmt-databoxedge/Makefile
+	new file:   devel/py-azure-mgmt-databoxedge/distinfo
+	new file:   devel/py-azure-mgmt-databoxedge/pkg-descr
+	modified:   devel/py-azure-mgmt-network/Makefile
+	modified:   devel/py-azure-mgmt-network/distinfo
+	modified:   devel/py-azure-mgmt-security/Makefile
+	modified:   devel/py-azure-mgmt-security/distinfo
+	deleted:    devel/py-backports.functools_lru_cache/Makefile
+	deleted:    devel/py-backports.functools_lru_cache/distinfo
+	deleted:    devel/py-backports.functools_lru_cache/pkg-descr
+	modified:   devel/py-backports/Makefile
+	deleted:    devel/py-backports_abc/Makefile
+	deleted:    devel/py-backports_abc/distinfo
+	deleted:    devel/py-backports_abc/pkg-descr
+	modified:   devel/py-bullet3/Makefile
+	modified:   devel/py-bullet3/distinfo
+	modified:   devel/py-capstone/Makefile
+	modified:   devel/py-cycler/Makefile
+	modified:   devel/py-dateutil/Makefile
+	deleted:    devel/py-futures/Makefile
+	deleted:    devel/py-futures/distinfo
+	deleted:    devel/py-futures/pkg-descr
+	modified:   devel/py-graphene-sqlalchemy/Makefile
+	modified:   devel/py-jaraco.functools2/Makefile
+	modified:   devel/py-jedi/Makefile
+	modified:   devel/py-libioc/Makefile
+	modified:   devel/py-lxml/Makefile
+	modified:   devel/py-numba/Makefile
+	modified:   devel/py-olefile/Makefile
+	modified:   devel/py-polib/Makefile
+	modified:   devel/py-prettytable0/Makefile
+	modified:   devel/py-pyasn1-modules/Makefile
+	modified:   devel/py-pyasn1/Makefile
+	modified:   devel/py-pycerberus/Makefile
+	deleted:    devel/py-singledispatch/Makefile
+	deleted:    devel/py-singledispatch/distinfo
+	deleted:    devel/py-singledispatch/pkg-descr
+	modified:   devel/py-wheel/Makefile
+	modified:   devel/py-wlc/Makefile
+	modified:   devel/py-wlc/distinfo
+	modified:   devel/pydbus-common/Makefile
+	modified:   devel/pygobject3-common/Makefile
+	modified:   devel/synfig/Makefile
+	modified:   devel/thunar-vcs-plugin/Makefile
+	modified:   editors/calligra/Makefile
+	modified:   emulators/Makefile
+	new file:   emulators/libretro-vice/Makefile
+	new file:   emulators/libretro-vice/distinfo
+	new file:   emulators/libretro-vice/files/patch-vice_src_rtc_rtc.h
+	new file:   emulators/libretro-vice/pkg-descr
+	modified:   emulators/vice/distinfo
+	modified:   emulators/vice/files/patch-doc_vice.texi
+	deleted:    emulators/vice/files/patch-man_vice.1
+	new file:   emulators/vice/files/patch-mkdesktopfile.sh
+	deleted:    emulators/vice/files/patch-src__rs232drv_rs232.h
+	modified:   emulators/vice/pkg-plist
+	modified:   finance/frontaccounting/Makefile
+	modified:   finance/frontaccounting/pkg-descr
+	modified:   games/pink-pony/Makefile
+	modified:   graphics/Makefile
+	modified:   graphics/R-cran-ggplot2/Makefile
+	modified:   graphics/R-cran-ggplot2/distinfo
+	modified:   graphics/alembic/Makefile
+	modified:   graphics/ampasCTL/Makefile
+	modified:   graphics/blender/Makefile
+	modified:   graphics/cimg/Makefile
+	modified:   graphics/darktable/Makefile
+	modified:   graphics/enblend/Makefile
+	modified:   graphics/exrtools/Makefile
+	modified:   graphics/fyre/Makefile
+	modified:   graphics/gegl/Makefile
+	modified:   graphics/gimp-app/Makefile
+	modified:   graphics/gimp-gmic-plugin/Makefile
+	modified:   graphics/gmic/Makefile
+	modified:   graphics/gstreamer1-plugins-openexr/Makefile
+	modified:   graphics/hdr_tools/Makefile
+	modified:   graphics/hugin/Makefile
+	modified:   graphics/ilmbase/Makefile
+	modified:   graphics/ilmbase/distinfo
+	modified:   graphics/jpeg-xl/Makefile
+	modified:   graphics/kf5-kimageformats/Makefile
+	modified:   graphics/krita/Makefile
+	modified:   graphics/luminance-qt5/Makefile
+	modified:   graphics/nvidia-texture-tools/Makefile
+	modified:   graphics/openexr/Makefile
+	modified:   graphics/openexr/distinfo
+	new file:   graphics/openexr/files/patch-IlmImf_ImfDwaCompressor.cpp
+	new file:   graphics/openexr/files/patch-IlmImf_ImfTiledMisc.cpp
+	modified:   graphics/openimageio/Makefile
+	modified:   graphics/openshadinglanguage/Makefile
+	modified:   graphics/osgearth/Makefile
+	modified:   graphics/photoflow/Makefile
+	modified:   graphics/pixie/Makefile
+	modified:   graphics/py-cairo/Makefile
+	modified:   graphics/py-openimageio/Makefile
+	modified:   graphics/py-openshadinglanguage/Makefile
+	deleted:    graphics/py-pillow6/Makefile
+	deleted:    graphics/py-pillow6/distinfo
+	deleted:    graphics/py-pillow6/pkg-descr
+	modified:   graphics/py-pyocr/Makefile
+	modified:   graphics/py-pyocr/distinfo
+	modified:   graphics/qt-avif-image-plugin/Makefile
+	modified:   graphics/qt-avif-image-plugin/distinfo
+	modified:   graphics/rawtherapee/Makefile
+	modified:   graphics/simpleviewer/Makefile
+	modified:   graphics/synfigstudio/Makefile
+	modified:   graphics/vigra/Makefile
+	modified:   graphics/vips/Makefile
+	modified:   graphics/yafaray/Makefile
+	modified:   lang/gcc8-devel/Makefile
+	modified:   lang/gcc8-devel/distinfo
+	modified:   lang/ocaml/Makefile
+	modified:   lang/ocaml/files/patch-configure
+	modified:   lang/pypy/Makefile
+	modified:   lang/pypy3/Makefile
+	modified:   math/curv/Makefile
+	modified:   math/py-kiwisolver/Makefile
+	modified:   math/py-numpy/Makefile
+	modified:   misc/openvdb/Makefile
+	modified:   multimedia/dav1d/Makefile
+	modified:   multimedia/dav1d/distinfo
+	modified:   multimedia/kodi/Makefile
+	modified:   multimedia/kodi/files/patch-cmake_scripts_freebsd_ArchSetup.cmake
+	modified:   multimedia/mencoder/Makefile
+	modified:   multimedia/py-librtmp/Makefile
+	modified:   net-mgmt/check_nwc_health/Makefile
+	modified:   net-mgmt/check_nwc_health/distinfo
+	modified:   net/ceph14/Makefile
+	new file:   net/ceph14/files/patch-src_common_crc32c__ppc__asm.S
+	new file:   net/ceph14/files/patch-src_common_crc32c__ppc__fast__zero__asm.S
+	new file:   net/ceph14/files/patch-src_common_ppc-asm.h
+	new file:   net/ceph14/files/patch-src_common_ppc-opcode.h
+	modified:   net/dhcpcd-ui/Makefile
+	modified:   net/dhcpcd-ui/distinfo
+	modified:   net/dhcpcd/Makefile
+	modified:   net/dhcpcd/distinfo
+	modified:   net/libilbc/Makefile
+	modified:   net/libilbc/distinfo
+	modified:   net/libilbc/files/patch-CMakeLists.txt
+	modified:   net/libilbc/pkg-plist
+	modified:   net/py-ldap/Makefile
+	modified:   print/py-fonttools3/Makefile
+	modified:   science/plumed/Makefile
+	modified:   science/plumed/distinfo
+	modified:   science/plumed/pkg-plist
+	modified:   security/Makefile
+	new file:   security/assh/Makefile
+	new file:   security/assh/distinfo
+	new file:   security/assh/pkg-descr
+	modified:   security/py-bcrypt/Makefile
+	modified:   security/py-paramiko/Makefile
+	modified:   security/py-pynacl/Makefile
+	modified:   sysutils/ioc/Makefile
+	modified:   sysutils/mcelog/Makefile
+	modified:   sysutils/mcelog/distinfo
+	modified:   sysutils/py-azure-cli-core/Makefile
+	modified:   sysutils/py-azure-cli-core/distinfo
+	modified:   sysutils/py-azure-cli/Makefile
+	modified:   sysutils/py-azure-cli/distinfo
+	modified:   sysutils/py-salt-2019/Makefile
+	modified:   sysutils/rubygem-chef12/Makefile
+	modified:   sysutils/synergy-1/Makefile
+	modified:   sysutils/synergy-1/distinfo
+	deleted:    sysutils/synergy-1/files/patch-CMakeLists.txt
+	modified:   textproc/pecl-yaml/Makefile
+	modified:   textproc/pecl-yaml/distinfo
+	modified:   textproc/pugixml/Makefile
+	modified:   textproc/pugixml/distinfo
+	modified:   textproc/pugixml/pkg-descr
+	modified:   textproc/py-genshi/Makefile
+	modified:   textproc/py-markdown/Makefile
+	modified:   textproc/py-nltk/Makefile
+	modified:   textproc/py-parso/Makefile
+	modified:   textproc/py-parso/distinfo
+	modified:   textproc/py-sphinxcontrib-adadomain/Makefile
+	modified:   textproc/py-xlrd/Makefile
+	modified:   www/Makefile
+	modified:   www/py-cheroot/Makefile
+	modified:   www/py-pecan/Makefile
+	modified:   www/py-soupsieve/Makefile
+	modified:   www/py-tornado4/Makefile
+	modified:   www/qt5-webkit/files/patch-CMakeLists.txt
+	modified:   www/qt5-webkit/files/patch-Source_WTF_wtf_Platform.h
+	deleted:    www/wt3/Makefile
+	deleted:    www/wt3/distinfo
+	deleted:    www/wt3/files/patch-CMakeLists.txt
+	deleted:    www/wt3/pkg-descr
+	deleted:    www/wt3/pkg-message
+	deleted:    www/wt3/pkg-plist
+	modified:   www/youtube_dl/Makefile
+	modified:   www/youtube_dl/distinfo
+	modified:   x11-fonts/py-ufoLib/Makefile
+	modified:   x11/Makefile
+	new file:   x11/taiga/Makefile
+	new file:   x11/taiga/distinfo
+	new file:   x11/taiga/pkg-descr
+	modified:   x11/xfce4-screenshooter-plugin/Makefile
+	modified:   x11/xfce4-whiskermenu-plugin/Makefile
+	modified:   x11/xfce4-whiskermenu-plugin/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   emulators/vice/Makefile
+
+
+It took 3.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 7e40a9d93380 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.27 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 7e40a9d93380 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
