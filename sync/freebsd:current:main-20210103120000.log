@@ -1,0 +1,200 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 82397d791966..214257da3a56
+Fast-forward
+ ObsoleteFiles.inc                                  | 267 ++++++++++
+ contrib/llvm-project/FREEBSD-Xlist                 |   1 +
+ .../clang/include/clang/AST/DeclTemplate.h         |   0
+ .../llvm-project/clang/include/clang/Basic/Attr.td |   2 +-
+ .../clang/include/clang/Basic/AttrDocs.td          |  26 +
+ .../clang/include/clang/Basic/Builtins.def         |  26 +-
+ .../clang/include/clang/Basic/Builtins.h           |   7 +
+ .../include/clang/Basic/DiagnosticDriverKinds.td   |   2 +-
+ .../clang/include/clang/Format/Format.h            |   0
+ .../Tooling/Refactoring/Extract/SourceExtraction.h |   0
+ .../llvm-project/clang/lib/AST/DeclTemplate.cpp    |   0
+ .../llvm-project/clang/lib/CodeGen/CGBuiltin.cpp   |   6 +-
+ .../llvm-project/clang/lib/CodeGen/CGObjCGNU.cpp   |  13 -
+ .../llvm-project/clang/lib/CodeGen/TargetInfo.cpp  |  16 +-
+ .../clang/lib/Driver/ToolChains/Cuda.cpp           | 113 ++++-
+ .../clang/lib/Driver/ToolChains/Cuda.h             |   3 -
+ .../llvm-project/clang/lib/Format/FormatToken.h    |   6 -
+ .../clang/lib/Format/UnwrappedLineParser.cpp       |   2 -
+ .../clang/lib/Format/WhitespaceManager.cpp         |  10 +-
+ .../lib/Headers/__clang_cuda_complex_builtins.h    |   6 +-
+ .../clang/lib/Headers/cuda_wrappers/new            |   8 +
+ .../clang/lib/Headers/openmp_wrappers/complex      |   2 +
+ .../clang/lib/Headers/openmp_wrappers/complex.h    |   2 +
+ .../llvm-project/clang/lib/Sema/SemaChecking.cpp   |   5 -
+ .../llvm-project/clang/lib/Sema/SemaConcept.cpp    |   0
+ contrib/llvm-project/clang/lib/Sema/SemaDecl.cpp   |  24 +-
+ .../llvm-project/clang/lib/Sema/SemaDeclAttr.cpp   |   6 +-
+ .../llvm-project/clang/lib/Sema/SemaTemplate.cpp   |   3 +-
+ .../clang/lib/Sema/SemaTemplateInstantiateDecl.cpp |  13 +-
+ .../llvm-project/clang/lib/Sema/UsedDeclVisitor.h  |  11 +-
+ .../clang/lib/StaticAnalyzer/Checkers/Yaml.h       |   0
+ .../sanitizer_common_interceptors_ioctl.inc        |   0
+ contrib/llvm-project/lld/COFF/DebugTypes.cpp       |   5 +-
+ contrib/llvm-project/lld/ELF/LinkerScript.cpp      |   7 +-
+ .../lldb/include/lldb/Core/ModuleList.h            |  19 +-
+ .../lldb/include/lldb/Target/Platform.h            |   9 +-
+ .../llvm-project/lldb/source/Core/ModuleList.cpp   |  39 +-
+ .../Plugins/Process/minidump/ProcessMinidump.cpp   | 152 +++++-
+ .../Plugins/Process/minidump/ProcessMinidump.h     |   4 +
+ .../llvm-project/lldb/source/Target/Platform.cpp   |  43 +-
+ contrib/llvm-project/lldb/source/Target/Target.cpp |  98 +++-
+ .../llvm/include/llvm/ADT/ImmutableMap.h           |   2 +-
+ .../llvm/include/llvm/BinaryFormat/ELF.h           |   6 +
+ .../llvm/Transforms/IPO/DeadArgumentElimination.h  |   1 +
+ .../lib/DebugInfo/DWARF/DWARFDebugArangeSet.cpp    |  13 +-
+ .../llvm/lib/DebugInfo/DWARF/DWARFUnitIndex.cpp    |   8 +-
+ .../ExecutionEngine/RuntimeDyld/RuntimeDyld.cpp    |  19 +-
+ contrib/llvm-project/llvm/lib/IR/ConstantFold.cpp  |   2 +-
+ .../llvm-project/llvm/lib/MC/MCObjectFileInfo.cpp  |   2 +
+ .../llvm/lib/MC/MCParser/ELFAsmParser.cpp          |   7 +-
+ .../llvm/lib/MCA/HardwareUnits/LSUnit.cpp          |   2 +
+ contrib/llvm-project/llvm/lib/Support/Host.cpp     |   5 +-
+ .../llvm-project/llvm/lib/Support/Windows/Path.inc |  21 +-
+ .../llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp  |  15 +
+ .../Target/AArch64/AArch64CallingConvention.cpp    |   9 +
+ .../lib/Target/AArch64/AArch64ISelLowering.cpp     |  17 +-
+ .../Target/AArch64/AsmParser/AArch64AsmParser.cpp  |  30 ++
+ .../AArch64/GISel/AArch64InstructionSelector.cpp   | 134 ++---
+ .../Target/AArch64/GISel/AArch64LegalizerInfo.cpp  |  38 +-
+ .../AArch64/GISel/AArch64RegisterBankInfo.cpp      |   1 +
+ .../AArch64/MCTargetDesc/AArch64ELFStreamer.cpp    |   8 +
+ .../AArch64/MCTargetDesc/AArch64TargetStreamer.h   |   4 +
+ .../llvm/lib/Target/AMDGPU/SIPreEmitPeephole.cpp   |  24 +-
+ .../llvm/lib/Target/BPF/BPFISelDAGToDAG.cpp        |   4 +-
+ .../llvm/lib/Target/Sparc/LeonFeatures.td          |   0
+ .../llvm/lib/Target/Sparc/LeonPasses.cpp           |   0
+ .../llvm/lib/Target/Sparc/LeonPasses.h             |   0
+ .../llvm/lib/Target/Sparc/SparcAsmPrinter.cpp      |   2 +-
+ .../llvm/lib/Target/Sparc/SparcSchedule.td         |   0
+ .../lib/Target/WebAssembly/WebAssemblyFastISel.cpp |  17 +-
+ .../lib/Target/WebAssembly/WebAssemblyInstrInfo.td |   4 +-
+ .../Target/WebAssembly/WebAssemblyRegisterInfo.cpp |  10 +-
+ .../llvm/lib/Target/X86/X86EvexToVex.cpp           |   0
+ .../llvm/lib/Target/X86/X86FrameLowering.cpp       | 222 +++++++-
+ .../llvm/lib/Target/X86/X86FrameLowering.h         |   8 +-
+ .../llvm/lib/Target/X86/X86ISelLowering.cpp        |  29 +-
+ .../llvm/lib/Target/X86/X86SchedBroadwell.td       |   0
+ .../llvm/lib/Target/X86/X86SchedSkylakeServer.td   |   0
+ .../lib/Transforms/IPO/DeadArgumentElimination.cpp |  29 +-
+ .../Transforms/InstCombine/InstCombineSelect.cpp   |  20 +-
+ .../Instrumentation/AddressSanitizer.cpp           |  20 +-
+ etc/mtree/BSD.debug.dist                           |   2 +-
+ etc/mtree/BSD.usr.dist                             |   2 +-
+ lib/clang/headers/Makefile                         |   2 +-
+ lib/clang/include/VCSVersion.inc                   |   8 +-
+ lib/clang/include/clang/Basic/Version.inc          |   6 +-
+ lib/clang/include/clang/Config/config.h            |   2 +-
+ lib/clang/include/lld/Common/Version.inc           |   2 +-
+ lib/clang/include/llvm/Config/config.h             |   4 +-
+ lib/clang/include/llvm/Config/llvm-config.h        |   4 +-
+ lib/clang/include/llvm/Support/VCSRevision.h       |   2 +-
+ lib/libcasper/libcasper/libcasper.3                |   5 +-
+ lib/libcasper/services/cap_net/cap_net.c           |  50 +-
+ lib/libcasper/services/cap_net/tests/net_test.c    | 120 +++++
+ lib/libclang_rt/Makefile.inc                       |   2 +-
+ sys/cam/cam_sim.c                                  |  12 +-
+ sys/cam/cam_sim.h                                  |   1 -
+ .../zstd/lib/compress/zstd_compress_internal.h     |   7 +-
+ sys/fs/autofs/autofs_vnops.c                       |   1 +
+ sys/fs/fuse/fuse_vnops.c                           |  30 +-
+ sys/fs/smbfs/smbfs_io.c                            |   2 +
+ sys/fs/tmpfs/tmpfs_subr.c                          |  50 +-
+ sys/kern/kern_sendfile.c                           |   1 +
+ sys/kern/uipc_mqueue.c                             |   1 +
+ sys/vm/uma_core.c                                  |   8 +-
+ tools/build/mk/OptionalObsoleteFiles.inc           | 562 ++++++++++-----------
+ usr.sbin/bhyve/Makefile                            |  11 +-
+ 107 files changed, 1813 insertions(+), 773 deletions(-)
+ mode change 100644 => 100755 contrib/llvm-project/clang/include/clang/AST/DeclTemplate.h
+ mode change 100644 => 100755 contrib/llvm-project/clang/include/clang/Format/Format.h
+ mode change 100755 => 100644 contrib/llvm-project/clang/include/clang/Tooling/Refactoring/Extract/SourceExtraction.h
+ mode change 100644 => 100755 contrib/llvm-project/clang/lib/AST/DeclTemplate.cpp
+ mode change 100644 => 100755 contrib/llvm-project/clang/lib/Sema/SemaConcept.cpp
+ mode change 100755 => 100644 contrib/llvm-project/clang/lib/StaticAnalyzer/Checkers/Yaml.h
+ mode change 100755 => 100644 contrib/llvm-project/compiler-rt/lib/sanitizer_common/sanitizer_common_interceptors_ioctl.inc
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/Sparc/LeonFeatures.td
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/Sparc/LeonPasses.cpp
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/Sparc/LeonPasses.h
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/Sparc/SparcSchedule.td
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/X86/X86EvexToVex.cpp
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/X86/X86SchedBroadwell.td
+ mode change 100755 => 100644 contrib/llvm-project/llvm/lib/Target/X86/X86SchedSkylakeServer.td
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    82397d791966..214257da3a56  freebsd/current/main -> freebsd/current/main        
+remote:    4fe028affdad..bcf0811b3bd8  github/hardened/12-stable/master -> github/hardened/12-stable/master
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   82397d791966..214257da3a56  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
