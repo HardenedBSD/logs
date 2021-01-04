@@ -1,0 +1,123 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating fd340a122259..b2a8d7a9b52d
+Fast-forward
+ Makefile.inc1                        |   4 +-
+ etc/mtree/BSD.root.dist              |   2 +-
+ etc/mtree/BSD.tests.dist             |   2 +-
+ etc/mtree/BSD.usr.dist               |  14 +--
+ include/Makefile                     | 237 ++++++++++++++++++++++-------------
+ lib/atf/libatf-c++/Makefile          |   1 +
+ lib/atf/libatf-c/Makefile            |   1 +
+ lib/libalias/libalias/Makefile       |   1 +
+ lib/libalias/modules/dummy/Makefile  |   5 +-
+ lib/libalias/modules/ftp/Makefile    |   5 +-
+ lib/libalias/modules/irc/Makefile    |   5 +-
+ lib/libalias/modules/nbt/Makefile    |   5 +-
+ lib/libalias/modules/pptp/Makefile   |   5 +-
+ lib/libalias/modules/skinny/Makefile |   5 +-
+ lib/libalias/modules/smedia/Makefile |   5 +-
+ lib/libbe/Makefile                   |   1 +
+ lib/libxo/tests/encoder/Makefile     |   2 +
+ libexec/atf/atf-check/Makefile       |   1 +
+ libexec/atf/atf-sh/Makefile          |   2 +
+ libexec/rc/rc.d/Makefile             |   2 +
+ sbin/bectl/Makefile                  |   1 +
+ share/doc/atf/Makefile               |   1 +
+ share/examples/bhyve/vmrun.sh        |   8 +-
+ share/man/man5/make.conf.5           |  12 +-
+ share/mk/bsd.files.mk                |   2 +
+ share/mk/bsd.incs.mk                 |  28 +++--
+ share/zoneinfo/Makefile              |   1 +
+ stand/mips/beri/loader/Makefile      |   6 +-
+ stand/mips/beri/loader/gfx_fb.c      |  78 ++++++++++++
+ stand/powerpc/kboot/Makefile         |   5 +-
+ stand/powerpc/kboot/gfx_fb.c         |  78 ++++++++++++
+ stand/powerpc/ofw/Makefile           |   5 +-
+ stand/powerpc/ofw/gfx_fb.c           |  78 ++++++++++++
+ sys/arm64/rockchip/clk/rk_clk_mux.c  |   4 +-
+ sys/dev/md/md.c                      |   3 +-
+ sys/dev/neta/if_mvneta.c             |  36 +++---
+ sys/dev/neta/if_mvnetavar.h          |   4 +-
+ sys/dev/nmdm/nmdm.c                  |   4 +-
+ usr.bin/kyua/Makefile                |   6 +
+ usr.sbin/ppp/Makefile                |   1 +
+ usr.sbin/pppctl/Makefile             |   1 +
+ 41 files changed, 506 insertions(+), 161 deletions(-)
+ create mode 100644 stand/mips/beri/loader/gfx_fb.c
+ create mode 100644 stand/powerpc/kboot/gfx_fb.c
+ create mode 100644 stand/powerpc/ofw/gfx_fb.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    fd340a122259..b2a8d7a9b52d  freebsd/current/main -> freebsd/current/main        
+remote:    5c729b71c264..6974646dd551  github/hardened/current/master -> github/hardened/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   fd340a122259..b2a8d7a9b52d  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
