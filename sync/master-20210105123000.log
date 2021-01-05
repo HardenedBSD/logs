@@ -47,3 +47,223 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11/xclip/Makefile
+Removing security/s2n/files/patch-utils_s2n__random.c
+Removing security/s2n/files/patch-cmake_modules_FindLibCrypto.cmake
+Auto-merging security/Makefile
+Removing net/rubygem-grpc/files/patch-src_ruby_ext_grpc_rb__call__credentials.c
+Auto-merging misc/ytree/Makefile
+Removing devel/grpc/files/patch-cmake_cares.cmake
+Removing devel/grpc/files/patch-CMakeLists.txt
+Auto-merging devel/grpc/Makefile
+Removing devel/google-cloud-cpp/files/patch-google_cloud_storage_CMakeLists.txt
+Removing devel/google-cloud-cpp/files/patch-cmake_external_googleapis.cmake
+Removing devel/google-cloud-cpp/files/patch-cmake_GoogleCloudCppCommon.cmake
+Removing devel/google-cloud-cpp/files/patch-cmake_DownloadNlohmannJson.cmake
+Merge made by the 'recursive' strategy.
+ archivers/libarchive/Makefile                      |  15 +-
+ archivers/urbackup-client/Makefile                 |   2 +-
+ archivers/urbackup-server/Makefile                 |   2 +-
+ audio/ardour6/Makefile                             |   7 +-
+ audio/ardour6/distinfo                             |   6 +-
+ audio/ardour6/pkg-plist                            |   2 +
+ audio/ecasound/Makefile                            |   2 +-
+ audio/lilv/Makefile                                |   2 +-
+ audio/lv2/Makefile                                 |   2 +-
+ audio/sratom/Makefile                              |   2 +-
+ audio/suil/Makefile                                |   2 +-
+ converters/pecl-igbinary/Makefile                  |   6 +
+ deskutils/elementary-calendar/Makefile             |   2 +-
+ deskutils/go-for-it/Makefile                       |   2 +-
+ devel/Makefile                                     |   1 +
+ devel/aws-c-common/Makefile                        |   2 +-
+ devel/aws-c-common/distinfo                        |   6 +-
+ devel/aws-c-common/pkg-plist                       |   1 +
+ devel/aws-c-event-stream/Makefile                  |  10 +-
+ devel/aws-c-event-stream/distinfo                  |   6 +-
+ devel/aws-c-event-stream/pkg-plist                 |   5 +-
+ devel/aws-c-io/Makefile                            |  26 ++
+ devel/aws-c-io/distinfo                            |   3 +
+ devel/aws-c-io/pkg-descr                           |   5 +
+ devel/aws-c-io/pkg-plist                           |  25 ++
+ devel/aws-checksums/Makefile                       |   6 +-
+ devel/aws-checksums/distinfo                       |   6 +-
+ devel/aws-checksums/pkg-plist                      |   2 +-
+ devel/google-cloud-cpp/Makefile                    |  40 +-
+ devel/google-cloud-cpp/distinfo                    |  12 +-
+ .../files/patch-cmake_DownloadNlohmannJson.cmake   |  13 -
+ .../files/patch-cmake_GoogleCloudCppCommon.cmake   |  20 -
+ .../files/patch-cmake_external_googleapis.cmake    |  17 -
+ .../patch-google_cloud_storage_CMakeLists.txt      |  12 -
+ devel/google-cloud-cpp/pkg-plist                   | 451 +++++++++++++++++----
+ devel/grpc/Makefile                                |  41 +-
+ devel/grpc/distinfo                                |   8 +-
+ devel/grpc/files/patch-CMakeLists.txt              | 106 -----
+ devel/grpc/files/patch-cmake_cares.cmake           |  12 -
+ ...e_lib_security_credentials_jwt_jwt__verifier.cc |   4 +-
+ .../patch-src_core_tsi_alts_crypt_aes__gcm.cc      |   4 +-
+ .../patch-src_core_tsi_ssl__transport__security.cc |  10 +-
+ devel/grpc/pkg-plist                               |  98 ++---
+ devel/libepoll-shim/Makefile                       |   5 +-
+ devel/libepoll-shim/distinfo                       |   6 +-
+ devel/libepoll-shim/pkg-plist                      |   2 +-
+ devel/notcurses/Makefile                           |   2 +-
+ devel/notcurses/distinfo                           |   6 +-
+ devel/readline/Makefile                            |   2 +-
+ devel/readline/files/patch-rlconf.h                |  11 +
+ devel/sord/Makefile                                |   2 +-
+ emulators/nestopia/Makefile                        |   2 +-
+ emulators/wine/Makefile                            |   8 +-
+ games/automuteus/Makefile                          |   2 +-
+ games/etracer/Makefile                             |   2 +-
+ graphics/py-box2d-py/Makefile                      |   2 +-
+ mail/mpop/Makefile                                 |   2 +-
+ math/py-cmaes/Makefile                             |   2 +-
+ math/py-matplotlib/Makefile                        |  11 +-
+ math/py-matplotlib/distinfo                        |   6 +-
+ math/py-matplotlib/files/patch-setup.cfg           |   4 +-
+ math/py-optuna/Makefile                            |   2 +-
+ misc/Makefile                                      |   1 +
+ misc/colwide/Makefile                              |   2 +-
+ misc/cxxmatrix/Makefile                            |  41 ++
+ misc/cxxmatrix/distinfo                            |   3 +
+ misc/cxxmatrix/pkg-descr                           |  16 +
+ misc/ytree/Makefile                                |   2 +-
+ misc/ytree/distinfo                                |   6 +-
+ multimedia/gtk-youtube-viewer/Makefile             |   2 +-
+ multimedia/livego/Makefile                         |   2 +-
+ net/activemq/Makefile                              |   2 +-
+ net/apache-commons-net/Makefile                    |   2 +-
+ net/cloudquery/Makefile                            |   2 +-
+ net/enet/Makefile                                  |   2 +-
+ net/libilbc/Makefile                               |   2 +-
+ net/libvncserver/Makefile                          |   2 +-
+ net/ns3/Makefile                                   |   2 +-
+ net/radsecproxy/Makefile                           |   2 +-
+ ...patch-src_ruby_ext_grpc_rb__call__credentials.c |  11 -
+ net/rubygem-octokit/Makefile                       |   3 +-
+ net/rubygem-octokit/distinfo                       |   6 +-
+ net/rubygem-octokit/pkg-descr                      |   3 +-
+ net/x2goclient-cli/Makefile                        |   2 +-
+ net/x2goclient/Makefile                            |   2 +-
+ net/yaz/Makefile                                   |   2 +-
+ security/Makefile                                  |   1 +
+ security/assh/Makefile                             |  30 +-
+ security/assh/distinfo                             |  62 +--
+ security/aws-c-cal/Makefile                        |  25 ++
+ security/aws-c-cal/distinfo                        |   3 +
+ security/aws-c-cal/pkg-descr                       |   4 +
+ security/aws-c-cal/pkg-plist                       |  12 +
+ security/s2n/Makefile                              |  20 +-
+ security/s2n/distinfo                              |   6 +-
+ security/s2n/files/patch-CMakeLists.txt            |  94 +----
+ .../files/patch-cmake_modules_FindLibCrypto.cmake  |  11 -
+ security/s2n/files/patch-utils_s2n__random.c       |  26 --
+ security/s2n/pkg-plist                             |  15 +-
+ security/ssb/Makefile                              |   2 +-
+ security/xray-core/Makefile                        |   2 +-
+ sysutils/currtime/Makefile                         |   2 +-
+ sysutils/ttyd/Makefile                             |   2 +-
+ sysutils/tuptime/Makefile                          |   4 +-
+ sysutils/tuptime/distinfo                          |   6 +-
+ sysutils/xfce4-kbdleds-plugin/Makefile             |   4 +
+ www/miniserve/Makefile                             | 185 +++++----
+ www/miniserve/distinfo                             | 370 +++++++++--------
+ x11-themes/papirus-icon-theme/Makefile             |   2 +-
+ x11-themes/papirus-icon-theme/distinfo             |   6 +-
+ x11-wm/icewm/Makefile                              |  25 +-
+ x11-wm/icewm/distinfo                              |   6 +-
+ x11-wm/icewm/files/patch-src_Makefile.in           |  29 ++
+ x11/terminator/Makefile                            |   4 +-
+ x11/terminator/distinfo                            |   6 +-
+ x11/xclip/Makefile                                 |  14 +-
+ x11/xclip/files/patch-xclip-copyfile               |  11 +
+ x11/xclip/files/patch-xclip-pastefile              |   8 +
+ 118 files changed, 1213 insertions(+), 989 deletions(-)
+ create mode 100644 devel/aws-c-io/Makefile
+ create mode 100644 devel/aws-c-io/distinfo
+ create mode 100644 devel/aws-c-io/pkg-descr
+ create mode 100644 devel/aws-c-io/pkg-plist
+ delete mode 100644 devel/google-cloud-cpp/files/patch-cmake_DownloadNlohmannJson.cmake
+ delete mode 100644 devel/google-cloud-cpp/files/patch-cmake_GoogleCloudCppCommon.cmake
+ delete mode 100644 devel/google-cloud-cpp/files/patch-cmake_external_googleapis.cmake
+ delete mode 100644 devel/google-cloud-cpp/files/patch-google_cloud_storage_CMakeLists.txt
+ delete mode 100644 devel/grpc/files/patch-CMakeLists.txt
+ delete mode 100644 devel/grpc/files/patch-cmake_cares.cmake
+ create mode 100644 devel/readline/files/patch-rlconf.h
+ create mode 100644 misc/cxxmatrix/Makefile
+ create mode 100644 misc/cxxmatrix/distinfo
+ create mode 100644 misc/cxxmatrix/pkg-descr
+ delete mode 100644 net/rubygem-grpc/files/patch-src_ruby_ext_grpc_rb__call__credentials.c
+ create mode 100644 security/aws-c-cal/Makefile
+ create mode 100644 security/aws-c-cal/distinfo
+ create mode 100644 security/aws-c-cal/pkg-descr
+ create mode 100644 security/aws-c-cal/pkg-plist
+ delete mode 100644 security/s2n/files/patch-cmake_modules_FindLibCrypto.cmake
+ delete mode 100644 security/s2n/files/patch-utils_s2n__random.c
+ create mode 100644 x11-wm/icewm/files/patch-src_Makefile.in
+ create mode 100644 x11/xclip/files/patch-xclip-copyfile
+ create mode 100644 x11/xclip/files/patch-xclip-pastefile
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    1c053db11780..f55255828a10  master -> master        
+remote:    b2592378c393..1c053db11780  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   1c053db11780..f55255828a10  master -> master
+==== END: master ====
