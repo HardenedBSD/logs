@@ -60,3 +60,236 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/botan2/files/patch-src_build-data_cc_clang.txt
+Removing security/botan2/files/patch-fix-link-paths
+Removing graphics/gimp-lensfun-plugin/files/patch-src_gimplensfun.cpp
+Merge made by the 'recursive' strategy.
+ GIDs                                               |    2 +-
+ MOVED                                              |   13 +-
+ Mk/Uses/python.mk                                  |    7 -
+ UIDs                                               |    2 +-
+ archivers/nfpm/Makefile                            |    2 +-
+ archivers/nfpm/distinfo                            |    6 +-
+ astro/opencpn/Makefile                             |   33 +-
+ astro/opencpn/distinfo                             |    6 +-
+ astro/opencpn/files/patch-CMakeLists.txt           |    6 +-
+ astro/opencpn/files/patch-cmake_TargetSetup.cmake  |   18 +-
+ .../patch-libs_wxcurl_include_wx_curl_thread.h     |   11 +
+ astro/opencpn/files/patch-src_PluginPaths.cpp      |   11 +
+ astro/opencpn/files/patch-src_chart1.cpp           |   86 +-
+ astro/opencpn/files/patch-src_glChartCanvas.cpp    |   11 +
+ astro/opencpn/pkg-plist                            | 1993 ++++++++++----------
+ audio/protracker/Makefile                          |    2 +-
+ audio/protracker/distinfo                          |    6 +-
+ audio/zrythm/Makefile                              |    2 +-
+ audio/zrythm/distinfo                              |    6 +-
+ cad/k40-whisperer/Makefile                         |    2 +-
+ converters/wkhtmltopdf/Makefile                    |    9 +-
+ databases/py-cassandra-driver/Makefile             |    3 +-
+ databases/py-python-swiftclient/Makefile           |    3 +-
+ devel/b2/Makefile                                  |    1 -
+ devel/intel-graphics-compiler/Makefile             |    2 +-
+ devel/intel-graphics-compiler/distinfo             |    6 +-
+ devel/intel-graphics-compiler/files/patch-llvm11   |   24 +-
+ devel/jenkins/Makefile                             |    2 +-
+ devel/jenkins/distinfo                             |    6 +-
+ devel/phabricator/Makefile                         |    1 -
+ devel/py-apscheduler/Makefile                      |    3 +-
+ devel/py-azure-datalake-store/Makefile             |    3 +-
+ devel/py-azure-multiapi-storage/Makefile           |    3 +-
+ devel/py-azure-storage-blob/Makefile               |    3 +-
+ devel/py-b2sdk/Makefile                            |    1 -
+ devel/py-click-threading/Makefile                  |    3 +-
+ devel/py-cloudpickle/Makefile                      |    3 +-
+ devel/py-futurist1/Makefile                        |    3 +-
+ devel/py-grpcio/Makefile                           |    1 -
+ devel/py-marrow.mailer/Makefile                    |    3 +-
+ devel/py-openstacksdk043/Makefile                  |    1 -
+ devel/py-opentracing/Makefile                      |    2 -
+ devel/py-oslo.privsep1/Makefile                    |    1 -
+ devel/py-pebble/Makefile                           |    2 -
+ devel/py-taskflow3/Makefile                        |    1 -
+ devel/py-tenacity/Makefile                         |    3 +-
+ devel/py-tooz1/Makefile                            |    1 -
+ devel/py-trollius/Makefile                         |    2 -
+ devel/py-txaio/Makefile                            |    3 +-
+ devel/youcompleteme/Makefile                       |    3 +-
+ games/automuteus/Makefile                          |   14 +-
+ games/automuteus/distinfo                          |   30 +-
+ games/fretsonfire/Makefile                         |    2 +-
+ games/pysolfc/Makefile                             |    2 +-
+ graphics/gimp-lensfun-plugin/Makefile              |    7 +-
+ graphics/gimp-lensfun-plugin/distinfo              |    5 +-
+ .../files/patch-src_gimplensfun.cpp                |   12 -
+ lang/mono/Makefile                                 |    2 +-
+ lang/mono5.10/Makefile                             |    2 +-
+ math/Makefile                                      |    3 +
+ math/arb/pkg-descr                                 |    2 +-
+ math/cm/Makefile                                   |   29 +
+ math/cm/distinfo                                   |    3 +
+ math/cm/pkg-descr                                  |    7 +
+ math/cm/pkg-plist                                  |   31 +
+ math/lean/Makefile                                 |    3 +-
+ math/lean/distinfo                                 |    6 +-
+ math/mpfrcx/Makefile                               |   33 +
+ math/mpfrcx/distinfo                               |    3 +
+ math/mpfrcx/pkg-descr                              |   10 +
+ math/vinci/Makefile                                |   26 +
+ math/vinci/distinfo                                |    3 +
+ math/vinci/pkg-descr                               |   18 +
+ misc/cs/Makefile                                   |    2 +-
+ misc/free42/Makefile                               |    1 +
+ misc/mmdnn/Makefile                                |    2 +-
+ misc/veles/Makefile                                |    2 +
+ multimedia/livestreamer/Makefile                   |    1 -
+ multimedia/mythtv/Makefile                         |    1 -
+ multimedia/py-subliminal/Makefile                  |    1 -
+ net-im/Makefile                                    |    1 +
+ net-im/nextcloud-spreed-signaling/Makefile         |   53 +
+ net-im/nextcloud-spreed-signaling/distinfo         |   61 +
+ .../files/ncs_signaling.in                         |   30 +
+ .../files/patch-Makefile                           |  111 ++
+ .../files/patch-dependencies.tsv                   |   11 +
+ .../files/patch-src_proxy_main.go                  |   11 +
+ .../files/patch-src_server_main.go                 |   11 +
+ .../patch-src_signaling_backend__server__test.go   |   11 +
+ .../files/patch-src_signaling_clientsession.go     |   11 +
+ .../files/patch-src_signaling_mcu__janus.go        |   11 +
+ .../files/patch-src_signaling_natsclient.go        |   11 +
+ .../patch-src_signaling_natsclient__loopback.go    |   11 +
+ ...tch-src_signaling_natsclient__loopback__test.go |   11 +
+ .../files/patch-src_signaling_room.go              |   11 +
+ net-im/nextcloud-spreed-signaling/pkg-descr        |    3 +
+ net-im/nextcloud-spreed-signaling/pkg-plist        |    5 +
+ net/cloudquery/Makefile                            |    6 +-
+ net/cloudquery/distinfo                            |   14 +-
+ net/py-confluent-kafka/Makefile                    |    3 +-
+ net/py-s3transfer/Makefile                         |    3 +-
+ print/hplip/Makefile                               |    2 +-
+ science/rdkit/Makefile                             |    2 +-
+ security/botan2/Makefile                           |    2 +-
+ security/botan2/distinfo                           |    6 +-
+ security/botan2/files/patch-fix-link-paths         |   36 -
+ .../botan2/files/patch-src_build-data_cc_clang.txt |   11 -
+ security/py-trustme/Makefile                       |    1 -
+ security/ssb/Makefile                              |   10 +-
+ security/ssb/distinfo                              |   18 +-
+ security/theonionbox/Makefile                      |    3 +-
+ sysutils/py-salt-2019/Makefile                     |    1 -
+ sysutils/py-salt/Makefile                          |    1 -
+ textproc/libebml/Makefile                          |    2 +-
+ textproc/libebml/distinfo                          |    6 +-
+ www/Makefile                                       |    1 +
+ www/py-autobahn/Makefile                           |    3 +-
+ www/py-django-pipeline/Makefile                    |    2 -
+ www/py-google-api-core/Makefile                    |    3 +-
+ www/py-hyper/Makefile                              |    3 +-
+ www/py-requests-futures/Makefile                   |    3 +-
+ www/py-requests-unixsocket/Makefile                |    3 +-
+ www/py-weboob/Makefile                             |    1 -
+ www/trac-devel/Makefile                            |   62 +
+ www/trac-devel/distinfo                            |    3 +
+ www/trac-devel/files/patch-trac_util_daemon.py     |   23 +
+ www/trac-devel/files/tracd.in                      |   61 +
+ www/trac-devel/pkg-descr                           |   21 +
+ 128 files changed, 1984 insertions(+), 1296 deletions(-)
+ create mode 100644 astro/opencpn/files/patch-libs_wxcurl_include_wx_curl_thread.h
+ create mode 100644 astro/opencpn/files/patch-src_PluginPaths.cpp
+ create mode 100644 astro/opencpn/files/patch-src_glChartCanvas.cpp
+ delete mode 100644 graphics/gimp-lensfun-plugin/files/patch-src_gimplensfun.cpp
+ create mode 100644 math/cm/Makefile
+ create mode 100644 math/cm/distinfo
+ create mode 100644 math/cm/pkg-descr
+ create mode 100644 math/cm/pkg-plist
+ create mode 100644 math/mpfrcx/Makefile
+ create mode 100644 math/mpfrcx/distinfo
+ create mode 100644 math/mpfrcx/pkg-descr
+ create mode 100644 math/vinci/Makefile
+ create mode 100644 math/vinci/distinfo
+ create mode 100644 math/vinci/pkg-descr
+ create mode 100644 net-im/nextcloud-spreed-signaling/Makefile
+ create mode 100644 net-im/nextcloud-spreed-signaling/distinfo
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/ncs_signaling.in
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-Makefile
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-dependencies.tsv
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_proxy_main.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_server_main.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_backend__server__test.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_clientsession.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_mcu__janus.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_natsclient.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_natsclient__loopback.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_natsclient__loopback__test.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/files/patch-src_signaling_room.go
+ create mode 100644 net-im/nextcloud-spreed-signaling/pkg-descr
+ create mode 100644 net-im/nextcloud-spreed-signaling/pkg-plist
+ delete mode 100644 security/botan2/files/patch-fix-link-paths
+ delete mode 100644 security/botan2/files/patch-src_build-data_cc_clang.txt
+ create mode 100644 www/trac-devel/Makefile
+ create mode 100644 www/trac-devel/distinfo
+ create mode 100644 www/trac-devel/files/patch-trac_util_daemon.py
+ create mode 100644 www/trac-devel/files/tracd.in
+ create mode 100644 www/trac-devel/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    225664af6ef2..a6803f159aeb  master -> master        
+remote:    f55255828a10..225664af6ef2  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   225664af6ef2..a6803f159aeb  master -> master
+==== END: master ====
