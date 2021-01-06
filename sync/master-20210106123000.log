@@ -47,3 +47,208 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing x11/roxterm/files/patch-8155abba.c
+Auto-merging sysutils/busybox/Makefile
+Auto-merging net/tcpdump/Makefile
+Removing net/libpcap/files/patch-nametoaddr.c
+Removing net/libpcap/files/patch-gencode.c
+Removing devel/bossa/files/patch-src_bossac.cpp
+Removing devel/bossa/files/patch-src_WinSerialPort.h
+Removing devel/bossa/files/patch-src_WinSerialPort.cpp
+Removing devel/bossa/files/patch-src_SerialPort.h
+Removing devel/bossa/files/patch-src_PosixSerialPort.h
+Removing devel/bossa/files/patch-src_PosixSerialPort.cpp
+Removing devel/bossa/files/patch-src_Command.cpp
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |  14 ++
+ archivers/libzip/Makefile                          |   2 +-
+ archivers/libzip/distinfo                          |   6 +-
+ archivers/libzip/files/patch-CMakeLists.txt        |  16 +--
+ archivers/libzip/pkg-plist                         |  10 +-
+ audio/libsidplayfp/Makefile                        |   2 +-
+ devel/Makefile                                     |   2 +
+ devel/basu/Makefile                                |   3 +-
+ devel/basu/distinfo                                |   6 +-
+ devel/bossa/Makefile                               |   3 +-
+ devel/bossa/distinfo                               |   6 +-
+ devel/bossa/files/patch-src_Command.cpp            |  20 ---
+ devel/bossa/files/patch-src_PosixSerialPort.cpp    |  47 -------
+ devel/bossa/files/patch-src_PosixSerialPort.h      |  11 --
+ devel/bossa/files/patch-src_SerialPort.h           |  11 --
+ devel/bossa/files/patch-src_WinSerialPort.cpp      |  18 ---
+ devel/bossa/files/patch-src_WinSerialPort.h        |  11 --
+ devel/bossa/files/patch-src_bossac.cpp             |  69 ----------
+ devel/p5-Data-Visitor-Tiny/Makefile                |  20 +++
+ devel/p5-Data-Visitor-Tiny/distinfo                |   3 +
+ devel/p5-Data-Visitor-Tiny/pkg-descr               |   6 +
+ devel/p5-Data-Visitor-Tiny/pkg-plist               |   2 +
+ devel/py-chainmap/Makefile                         |   2 +-
+ devel/py-chainmap/distinfo                         |   6 +-
+ devel/py-pylru/Makefile                            |   2 +-
+ devel/py-pylru/distinfo                            |   6 +-
+ devel/toml11/Makefile                              |  18 +++
+ devel/toml11/distinfo                              |   3 +
+ devel/toml11/pkg-descr                             |   9 ++
+ devel/toml11/pkg-plist                             |  25 ++++
+ emulators/virtualbox-ose-kmod/Makefile             |   2 +-
+ ...Drivers_VBoxNetFlt_freebsd_VBoxNetFlt-freebsd.c |  34 +++++
+ graphics/py-pydotplus/Makefile                     |   2 +-
+ graphics/vulkan-validation-layers/Makefile         |   2 +-
+ graphics/vulkan-validation-layers/distinfo         |   6 +-
+ lang/gcc10-devel/Makefile                          |   4 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ mail/dovecot-fts-xapian/Makefile                   |   1 +
+ mail/dovecot-pigeonhole/Makefile                   |   2 +-
+ mail/dovecot-pigeonhole/distinfo                   |   6 +-
+ mail/dovecot/Makefile                              |   9 +-
+ mail/dovecot/distinfo                              |   6 +-
+ mail/dovecot/pkg-plist                             |  10 +-
+ mail/rspamd-devel/Makefile                         |   5 +-
+ mail/rspamd-devel/distinfo                         |   6 +-
+ mail/rspamd-devel/pkg-plist                        |   7 +-
+ mail/sympa/Makefile                                |   3 +-
+ mail/sympa/distinfo                                |   6 +-
+ misc/dnetc/Makefile                                |  14 +-
+ misc/py-emoji/Makefile                             |   2 +-
+ misc/py-emoji/distinfo                             |   6 +-
+ net-mgmt/netdisco/Makefile                         |   3 +-
+ net-mgmt/netdisco/distinfo                         |   6 +-
+ net-mgmt/netdisco/pkg-plist                        |   7 +
+ net/cloudquery/Makefile                            |   2 +-
+ net/cloudquery/distinfo                            |   6 +-
+ net/libpcap/Makefile                               |   3 +-
+ net/libpcap/distinfo                               |   6 +-
+ net/libpcap/files/patch-gencode.c                  |  33 -----
+ net/libpcap/files/patch-nametoaddr.c               |  21 ---
+ net/libpcap/pkg-plist                              |   1 +
+ net/mobile-broadband-provider-info/Makefile        |   4 +-
+ net/mobile-broadband-provider-info/distinfo        |   6 +-
+ net/tcpdump/Makefile                               |   2 +-
+ net/tcpdump/distinfo                               |   6 +-
+ print/gl2ps/Makefile                               |   2 +-
+ science/lamprop/Makefile                           |  32 +++--
+ science/lamprop/distinfo                           |   6 +-
+ science/lamprop/files/patch-setup.py               |  12 ++
+ security/gvmd/Makefile                             |   5 +-
+ security/p5-Crypt-X509-CRL/Makefile                |   3 +-
+ security/p5-Crypt-X509-CRL/distinfo                |   6 +-
+ security/py-ospd-openvas/Makefile                  |   1 -
+ security/s2n/Makefile                              |   6 +
+ security/vuxml/vuln.xml                            |  36 ++++++
+ sysutils/Makefile                                  |   1 +
+ sysutils/auto-admin/Makefile                       |   2 +-
+ sysutils/auto-admin/distinfo                       |   6 +-
+ sysutils/auto-admin/pkg-plist                      |   5 +
+ sysutils/busybox/Makefile                          |   1 +
+ sysutils/busybox/files/data-.config                |  90 ++++++-------
+ sysutils/busybox/pkg-descr                         |   2 +-
+ sysutils/desktop-installer/Makefile                |   4 +-
+ sysutils/desktop-installer/distinfo                |   6 +-
+ sysutils/graylog/Makefile                          |   9 +-
+ sysutils/graylog/distinfo                          |  10 +-
+ sysutils/graylog/files/pkg-message.in              |  21 ++-
+ sysutils/graylog/pkg-plist                         |   2 +
+ sysutils/spcm/Makefile                             |  25 ++++
+ sysutils/spcm/distinfo                             |   3 +
+ sysutils/spcm/files/patch-install.sh               |  11 ++
+ sysutils/spcm/pkg-descr                            |  13 ++
+ sysutils/spcm/pkg-plist                            | 144 +++++++++++++++++++++
+ sysutils/ttyd/Makefile                             |   2 +-
+ sysutils/ttyd/distinfo                             |   6 +-
+ textproc/docproj/Makefile                          |   4 +-
+ x11-themes/Kvantum/Makefile                        |   2 +-
+ x11-themes/Kvantum/distinfo                        |   6 +-
+ x11-themes/Kvantum/pkg-plist                       |  21 +++
+ x11/roxterm/Makefile                               |   5 +-
+ x11/roxterm/distinfo                               |   6 +-
+ x11/roxterm/files/patch-8155abba.c                 |  13 --
+ x11/roxterm/pkg-plist                              |   2 +-
+ 103 files changed, 669 insertions(+), 466 deletions(-)
+ delete mode 100644 devel/bossa/files/patch-src_Command.cpp
+ delete mode 100644 devel/bossa/files/patch-src_PosixSerialPort.cpp
+ delete mode 100644 devel/bossa/files/patch-src_PosixSerialPort.h
+ delete mode 100644 devel/bossa/files/patch-src_SerialPort.h
+ delete mode 100644 devel/bossa/files/patch-src_WinSerialPort.cpp
+ delete mode 100644 devel/bossa/files/patch-src_WinSerialPort.h
+ delete mode 100644 devel/bossa/files/patch-src_bossac.cpp
+ create mode 100644 devel/p5-Data-Visitor-Tiny/Makefile
+ create mode 100644 devel/p5-Data-Visitor-Tiny/distinfo
+ create mode 100644 devel/p5-Data-Visitor-Tiny/pkg-descr
+ create mode 100644 devel/p5-Data-Visitor-Tiny/pkg-plist
+ create mode 100644 devel/toml11/Makefile
+ create mode 100644 devel/toml11/distinfo
+ create mode 100644 devel/toml11/pkg-descr
+ create mode 100644 devel/toml11/pkg-plist
+ create mode 100644 emulators/virtualbox-ose/files/patch-src_VBox_HostDrivers_VBoxNetFlt_freebsd_VBoxNetFlt-freebsd.c
+ delete mode 100644 net/libpcap/files/patch-gencode.c
+ delete mode 100644 net/libpcap/files/patch-nametoaddr.c
+ create mode 100644 science/lamprop/files/patch-setup.py
+ create mode 100644 sysutils/spcm/Makefile
+ create mode 100644 sysutils/spcm/distinfo
+ create mode 100644 sysutils/spcm/files/patch-install.sh
+ create mode 100644 sysutils/spcm/pkg-descr
+ create mode 100644 sysutils/spcm/pkg-plist
+ delete mode 100644 x11/roxterm/files/patch-8155abba.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    47e650b93ff3..8884f1c0b346  master -> master        
+remote:    253e3804e271..47e650b93ff3  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   47e650b93ff3..8884f1c0b346  master -> master
+==== END: master ====
