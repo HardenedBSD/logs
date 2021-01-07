@@ -1,0 +1,267 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is ahead of 'origin/hardened/current/master' by 3 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging targets/pseudo/bootstrap-tools/Makefile
+CONFLICT (content): Merge conflict in targets/pseudo/bootstrap-tools/Makefile
+Auto-merging sys/netinet6/nd6_rtr.c
+Auto-merging sys/modules/Makefile
+Auto-merging share/mk/bsd.prog.mk
+Auto-merging share/mk/bsd.opts.mk
+Auto-merging share/mk/bsd.lib.mk
+Auto-merging share/man/man5/src.conf.5
+Auto-merging Makefile.libcompat
+Auto-merging Makefile.inc1
+CONFLICT (content): Merge conflict in Makefile.inc1
+Auto-merging Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc Makefile.inc1
+index e5c90e18546e0,c4e656c79cebc..0000000000000
+--- a/Makefile.inc1
++++ b/Makefile.inc1
+@@@ -730,11 -731,10 +730,18 @@@ BSARGS= 	DESTDIR= 
+  		SSP_CFLAGS= \
+  		MK_HTML=no NO_LINT=yes MK_MAN=no MK_MAN_UTILS=yes \
+  		-DNO_PIC MK_PROFILE=no -DNO_SHARED \
+++<<<<<<< HEAD
+ +		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no \
+ +		MK_CLANG_EXTRAS=yes MK_CLANG_FULL=no \
+ +		MK_LLDB=no MK_TESTS=no \
+ +		MK_INCLUDES=yes MK_CFI=no MK_RETPOLINE=no \
+ +		MK_CLANG_FORMAT=no
+++=======
++ 		-DNO_CPU_CFLAGS MK_WERROR=no MK_CTF=no \
++ 		MK_CLANG_EXTRAS=no MK_CLANG_FORMAT=no MK_CLANG_FULL=no \
++ 		MK_LLDB=no MK_RETPOLINE=no MK_TESTS=no \
++ 		MK_INCLUDES=yes
+++>>>>>>> freebsd/current/main
+  
+  BMAKE=		\
+  		${BMAKEENV} ${MAKE} ${WORLD_FLAGS} -f Makefile.inc1 \
+@@@ -752,10 -752,9 +759,16 @@@ TMAKE=		
+  		BWPHASE=${.TARGET:C,^_,,} \
+  		SSP_CFLAGS= \
+  		-DNO_LINT \
+++<<<<<<< HEAD
+ +		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no \
+ +		MK_CLANG_EXTRAS=yes MK_CLANG_FULL=no \
+ +		MK_LLDB=no MK_TESTS=no MK_CFI=no MK_RETPOLINE=no \
+ +		MK_CLANG_FORMAT=no
+++=======
++ 		-DNO_CPU_CFLAGS MK_WERROR=no MK_CTF=no \
++ 		MK_CLANG_EXTRAS=no MK_CLANG_FORMAT=no MK_CLANG_FULL=no \
++ 		MK_LLDB=no MK_RETPOLINE=no MK_TESTS=no
+++>>>>>>> freebsd/current/main
+  
+  # cross-tools stage
+  # TOOLS_PREFIX set in BMAKE
+@@@ -781,8 -780,7 +794,12 @@@ KTMAKE=		
+  		SSP_CFLAGS= \
+  		MK_HTML=no -DNO_LINT MK_MAN=no \
+  		-DNO_PIC MK_PROFILE=no -DNO_SHARED \
+++<<<<<<< HEAD
+ +		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no MK_CFI=no \
+ +		MK_RETPOLINE=no
+++=======
++ 		-DNO_CPU_CFLAGS MK_RETPOLINE=no MK_WERROR=no MK_CTF=no
+++>>>>>>> freebsd/current/main
+  
+  # world stage
+  WMAKEENV=	${CROSSENV} \
+diff --cc targets/pseudo/bootstrap-tools/Makefile
+index 9af606bd7d978,0023f763af83e..0000000000000
+--- a/targets/pseudo/bootstrap-tools/Makefile
++++ b/targets/pseudo/bootstrap-tools/Makefile
+@@@ -42,9 -42,8 +42,14 @@@ BSARGS= 	DESTDIR= 
+  		SSP_CFLAGS= \
+  		MK_HTML=no NO_LINT=yes MK_MAN=no \
+  		-DNO_PIC MK_PROFILE=no -DNO_SHARED \
+++<<<<<<< HEAD
+ +		-DNO_CPU_CFLAGS MK_WARNS=no MK_CTF=no \
+ +		MK_CLANG_EXTRAS=yes MK_CLANG_FULL=no \
+ +		MK_CLANG_FORMAT=no
+++=======
++ 		-DNO_CPU_CFLAGS MK_WERROR=no MK_CTF=no \
++ 		MK_CLANG_EXTRAS=no MK_CLANG_FORMAT=no MK_CLANG_FULL=no \
+++>>>>>>> freebsd/current/main
+  		MK_LLDB=no MK_TESTS=no \
+  		MK_INCLUDES=yes
+  
+On branch hardened/current/master
+Your branch is ahead of 'origin/hardened/current/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile
+	modified:   Makefile.libcompat
+	modified:   bin/cat/cat.c
+	modified:   cddl/lib/libdtrace/Makefile
+	modified:   include/Makefile
+	modified:   lib/googletest/tests/gmock/Makefile
+	modified:   lib/googletest/tests/gmock_main/Makefile
+	modified:   lib/googletest/tests/gtest/Makefile
+	modified:   lib/googletest/tests/gtest_main/Makefile
+	modified:   lib/libalias/libalias/Makefile
+	modified:   lib/libc/tests/ssp/Makefile
+	modified:   lib/libcompiler_rt/Makefile
+	modified:   lib/libgcc_s/Makefile
+	modified:   sbin/fsck_ffs/dir.c
+	modified:   sbin/fsck_ffs/ea.c
+	modified:   sbin/fsck_ffs/fsck.h
+	modified:   sbin/fsck_ffs/fsutil.c
+	modified:   sbin/fsck_ffs/gjournal.c
+	modified:   sbin/fsck_ffs/globs.c
+	modified:   sbin/fsck_ffs/inode.c
+	modified:   sbin/fsck_ffs/main.c
+	modified:   sbin/fsck_ffs/pass1.c
+	modified:   sbin/fsck_ffs/pass1b.c
+	modified:   sbin/fsck_ffs/pass2.c
+	modified:   sbin/fsck_ffs/pass3.c
+	modified:   sbin/fsck_ffs/pass4.c
+	modified:   sbin/fsck_ffs/setup.c
+	modified:   sbin/fsck_ffs/suj.c
+	modified:   sbin/fsdb/fsdb.c
+	modified:   sbin/fsdb/fsdb.h
+	modified:   share/man/man4/uplcom.4
+	modified:   share/man/man5/src.conf.5
+	modified:   share/man/man5/style.Makefile.5
+	modified:   share/man/man7/build.7
+	modified:   share/misc/committers-ports.dot
+	modified:   share/mk/bsd.README
+	modified:   share/mk/bsd.lib.mk
+	modified:   share/mk/bsd.opts.mk
+	modified:   share/mk/bsd.prog.mk
+	modified:   share/mk/bsd.progs.mk
+	modified:   share/mk/bsd.sys.mk
+	modified:   stand/Makefile
+	modified:   stand/defaults/loader.conf.5
+	modified:   stand/i386/libi386/vidconsole.c
+	modified:   sys/arm64/conf/GENERIC
+	modified:   sys/cddl/contrib/opensolaris/uts/common/sys/dtrace.h
+	modified:   sys/conf/files.arm64
+	modified:   sys/crypto/armv8/armv8_crypto.c
+	modified:   sys/crypto/armv8/armv8_crypto.h
+	modified:   sys/crypto/armv8/armv8_crypto_wrap.c
+	modified:   sys/dev/axgbe/if_axgbe_pci.c
+	modified:   sys/dev/bnxt/if_bnxt.c
+	modified:   sys/dev/ice/if_ice_iflib.c
+	modified:   sys/dev/isci/scil/sci_controller_constants.h
+	modified:   sys/dev/ixgbe/if_ix.c
+	modified:   sys/dev/ixgbe/if_ixv.c
+	modified:   sys/dev/ixl/if_iavf.c
+	modified:   sys/dev/ixl/if_ixl.c
+	modified:   sys/dev/mgb/if_mgb.c
+	modified:   sys/dev/usb/controller/xhci_pci.c
+	modified:   sys/dev/usb/serial/uplcom.c
+	modified:   sys/dev/usb/usbdevs
+	modified:   sys/dev/vmware/vmxnet3/if_vmx.c
+	modified:   sys/kern/vfs_vnops.c
+	modified:   sys/modules/Makefile
+	modified:   sys/modules/ipmi/Makefile
+	modified:   sys/net/iflib.c
+	modified:   sys/net/iflib.h
+	modified:   sys/net/route.c
+	modified:   sys/net/route.h
+	modified:   sys/net/route/route_ctl.c
+	modified:   sys/net/route/route_ctl.h
+	modified:   sys/net/route/route_var.h
+	modified:   sys/net/rtsock.c
+	modified:   sys/netinet/in.c
+	modified:   sys/netinet6/in6.c
+	modified:   sys/netinet6/nd6_rtr.c
+	modified:   sys/netpfil/pf/pf_if.c
+	modified:   tools/build/Makefile
+	modified:   tools/build/cross-build/capsicum_stubs.c
+	modified:   tools/build/cross-build/fake_sysctl.c
+	renamed:    tools/build/cross-build/include/linux/sys/sysctl.h -> tools/build/cross-build/fflags.c
+	modified:   tools/build/cross-build/include/common/grp.h
+	modified:   tools/build/cross-build/include/common/pwd.h
+	modified:   tools/build/cross-build/include/common/sys/cdefs.h
+	modified:   tools/build/cross-build/include/common/sys/param.h
+	modified:   tools/build/cross-build/include/common/unistd.h
+	modified:   tools/build/cross-build/include/linux/limits.h
+	modified:   tools/build/cross-build/include/linux/unistd.h
+	modified:   tools/build/cross-build/include/mac/string.h
+	modified:   tools/build/make.py
+	modified:   tools/build/mk/Makefile.boot
+	new file:   tools/build/options/WITHOUT_WERROR
+	modified:   tools/tools/git/hooks/prepare-commit-msg
+	modified:   usr.bin/drill/Makefile
+	modified:   usr.bin/du/tests/du_test.sh
+	modified:   usr.bin/kdump/Makefile
+	modified:   usr.bin/mkimg/mkimg.c
+	modified:   usr.bin/truss/Makefile
+	modified:   usr.sbin/certctl/certctl.8
+	modified:   usr.sbin/makefs/cd9660.h
+	modified:   usr.sbin/makefs/cd9660/cd9660_debug.c
+	modified:   usr.sbin/makefs/cd9660/cd9660_write.c
+	modified:   usr.sbin/makefs/ffs/ffs_subr.c
+	modified:   usr.sbin/makefs/ffs/mkfs.c
+	modified:   usr.sbin/makefs/makefs.h
+	modified:   usr.sbin/unbound/Makefile.inc
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   Makefile.inc1
+	both modified:   targets/pseudo/bootstrap-tools/Makefile
+
+HEAD is now at 127db0f0580be Merge branch 'freebsd/current/main' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is ahead of 'origin/hardened/current/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 127db0f0580be Merge branch 'freebsd/current/main' into hardened/current/master
+==== END: hardened/current/master ====
