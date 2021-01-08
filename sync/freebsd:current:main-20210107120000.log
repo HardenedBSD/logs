@@ -1,0 +1,141 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is ahead of 'origin/freebsd/current/main' by 2 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 74bd207697060..4d64c7243d266
+Fast-forward
+ Makefile                                           |   2 +-
+ Makefile.inc1                                      |  19 +-
+ Makefile.libcompat                                 |   4 +-
+ bin/cat/cat.c                                      |   6 +-
+ cddl/lib/libdtrace/Makefile                        |   7 +
+ include/Makefile                                   | 149 ++++++---------
+ lib/googletest/tests/gmock/Makefile                |   2 +-
+ lib/googletest/tests/gmock_main/Makefile           |   2 +-
+ lib/googletest/tests/gtest/Makefile                |   2 +-
+ lib/googletest/tests/gtest_main/Makefile           |   2 +-
+ lib/libalias/libalias/Makefile                     |   2 +-
+ lib/libc/tests/ssp/Makefile                        |   2 +-
+ lib/libcompiler_rt/Makefile                        |   2 +-
+ lib/libgcc_s/Makefile                              |   2 +-
+ share/man/man4/uplcom.4                            |   4 +-
+ share/man/man5/src.conf.5                          |   6 +-
+ share/man/man5/style.Makefile.5                    |   2 +-
+ share/man/man7/build.7                             |   2 +-
+ share/misc/committers-ports.dot                    |   2 +-
+ share/mk/bsd.README                                |   2 +-
+ share/mk/bsd.lib.mk                                |   4 +-
+ share/mk/bsd.opts.mk                               |   6 +-
+ share/mk/bsd.prog.mk                               |   4 +-
+ share/mk/bsd.progs.mk                              |   2 +-
+ share/mk/bsd.sys.mk                                |   8 +-
+ sys/arm64/conf/GENERIC                             | 201 +++++++++++----------
+ .../contrib/opensolaris/uts/common/sys/dtrace.h    |  14 +-
+ sys/dev/usb/controller/xhci_pci.c                  |   2 +
+ sys/dev/usb/serial/uplcom.c                        |  94 ++++++++--
+ sys/dev/usb/usbdevs                                |   6 +
+ targets/pseudo/bootstrap-tools/Makefile            |   2 +-
+ tools/build/Makefile                               |   8 +-
+ tools/build/cross-build/capsicum_stubs.c           |   7 +-
+ tools/build/cross-build/fake_sysctl.c              |   6 +-
+ .../{include/linux/sys/sysctl.h => fflags.c}       |  34 +++-
+ tools/build/cross-build/include/common/grp.h       |   2 +-
+ tools/build/cross-build/include/common/pwd.h       |   2 +-
+ tools/build/cross-build/include/common/sys/cdefs.h |  24 ---
+ tools/build/cross-build/include/common/sys/param.h |  26 +++
+ tools/build/cross-build/include/common/unistd.h    |   2 +-
+ tools/build/cross-build/include/linux/limits.h     |   4 -
+ tools/build/cross-build/include/linux/unistd.h     |  22 +--
+ tools/build/cross-build/include/mac/string.h       |   2 +-
+ tools/build/make.py                                |  25 ++-
+ tools/build/mk/Makefile.boot                       |  16 +-
+ tools/build/options/WITHOUT_WERROR                 |   4 +
+ tools/tools/git/hooks/prepare-commit-msg           |  10 +-
+ usr.bin/drill/Makefile                             |   2 +-
+ usr.bin/kdump/Makefile                             |   2 -
+ usr.bin/mkimg/mkimg.c                              |   2 +-
+ usr.bin/truss/Makefile                             |   1 -
+ usr.sbin/certctl/certctl.8                         |   4 +-
+ usr.sbin/makefs/cd9660.h                           |   8 +-
+ usr.sbin/makefs/cd9660/cd9660_debug.c              | 137 ++++++--------
+ usr.sbin/makefs/cd9660/cd9660_write.c              |   2 +-
+ usr.sbin/makefs/ffs/ffs_subr.c                     |   2 +-
+ usr.sbin/makefs/ffs/mkfs.c                         |   3 +-
+ usr.sbin/makefs/makefs.h                           |   2 +-
+ usr.sbin/unbound/Makefile.inc                      |   2 +-
+ 59 files changed, 496 insertions(+), 429 deletions(-)
+ rename tools/build/cross-build/{include/linux/sys/sysctl.h => fflags.c} (76%)
+ create mode 100644 tools/build/options/WITHOUT_WERROR
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    710dd05c0efc..4d64c7243d26  freebsd/current/main -> freebsd/current/main        
+remote:    babd628f920d..96db81b9095b  github/hardened/current/master -> github/hardened/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   710dd05c0efc3..4d64c7243d266  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====

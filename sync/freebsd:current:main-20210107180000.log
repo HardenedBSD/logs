@@ -1,0 +1,129 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 4d64c7243d266..5cc52631b3b88
+Fast-forward
+ sbin/fsck_ffs/dir.c                          | 139 ++--
+ sbin/fsck_ffs/ea.c                           |   1 +
+ sbin/fsck_ffs/fsck.h                         |  81 ++-
+ sbin/fsck_ffs/fsutil.c                       | 424 ++++++++++---
+ sbin/fsck_ffs/gjournal.c                     | 411 ++----------
+ sbin/fsck_ffs/globs.c                        |   9 +-
+ sbin/fsck_ffs/inode.c                        | 368 ++++++++---
+ sbin/fsck_ffs/main.c                         |  16 +-
+ sbin/fsck_ffs/pass1.c                        |  61 +-
+ sbin/fsck_ffs/pass1b.c                       |  14 +-
+ sbin/fsck_ffs/pass2.c                        |  35 +-
+ sbin/fsck_ffs/pass3.c                        |   7 +-
+ sbin/fsck_ffs/pass4.c                        |  11 +-
+ sbin/fsck_ffs/setup.c                        |  18 +-
+ sbin/fsck_ffs/suj.c                          | 914 ++++++++-------------------
+ sbin/fsdb/fsdb.c                             |  89 +--
+ sbin/fsdb/fsdb.h                             |   1 +
+ stand/Makefile                               |   4 +-
+ stand/defaults/loader.conf.5                 |   2 +-
+ stand/i386/libi386/vidconsole.c              |   2 +-
+ sys/conf/files.arm64                         |   4 +
+ sys/crypto/armv8/armv8_crypto.c              |  51 +-
+ sys/crypto/armv8/armv8_crypto.h              |   6 +
+ sys/crypto/armv8/armv8_crypto_wrap.c         |  92 +++
+ sys/dev/axgbe/if_axgbe_pci.c                 |   2 +-
+ sys/dev/bnxt/if_bnxt.c                       |   2 +-
+ sys/dev/ice/if_ice_iflib.c                   |   2 +-
+ sys/dev/isci/scil/sci_controller_constants.h |   2 +-
+ sys/dev/ixgbe/if_ix.c                        |   2 +-
+ sys/dev/ixgbe/if_ixv.c                       |   2 +-
+ sys/dev/ixl/if_iavf.c                        |   2 +-
+ sys/dev/ixl/if_ixl.c                         |   2 +-
+ sys/dev/mgb/if_mgb.c                         |   2 +-
+ sys/dev/vmware/vmxnet3/if_vmx.c              |   2 +-
+ sys/kern/vfs_vnops.c                         |   2 +
+ sys/modules/Makefile                         |   2 +-
+ sys/modules/ipmi/Makefile                    |  16 +-
+ sys/net/iflib.c                              |  94 ++-
+ sys/net/iflib.h                              |  17 +
+ sys/net/route.c                              |  17 +-
+ sys/net/route.h                              |   6 +-
+ sys/net/route/route_ctl.c                    |  15 +-
+ sys/net/route/route_ctl.h                    |   1 +
+ sys/net/route/route_var.h                    |   7 +
+ sys/net/rtsock.c                             |  16 +-
+ sys/netinet/in.c                             |  46 +-
+ sys/netinet6/in6.c                           |   2 +-
+ sys/netinet6/nd6_rtr.c                       |  18 +-
+ sys/netpfil/pf/pf_if.c                       |   1 +
+ usr.bin/du/tests/du_test.sh                  |  17 +-
+ 50 files changed, 1557 insertions(+), 1500 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    4d64c7243d26..5cc52631b3b8  freebsd/current/main -> freebsd/current/main        
+remote:    edbfbb14ab95..abba1e7d6c3a  github/hardened/12-stable/master -> github/hardened/12-stable/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   4d64c7243d266..5cc52631b3b88  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
