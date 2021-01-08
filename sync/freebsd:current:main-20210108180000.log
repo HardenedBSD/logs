@@ -1,0 +1,129 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 14a16fd3e7ece..e83fdf8bb3915
+Fast-forward
+ Makefile.inc1                                      |  12 +-
+ lib/libbe/be.c                                     |   3 +-
+ lib/libc/regex/regcomp.c                           |  26 ++--
+ lib/libregex/Makefile                              |   2 +-
+ sbin/fsck_ffs/fsutil.c                             |   6 +-
+ sbin/nvmecontrol/Makefile                          |   1 +
+ sbin/nvmecontrol/logpage.c                         | 103 +++++++++++++++-
+ sbin/nvmecontrol/nvmecontrol.8                     |  23 ++++
+ sbin/nvmecontrol/selftest.c                        | 137 +++++++++++++++++++++
+ share/man/man4/ddb.4                               |  10 +-
+ share/man/man7/security.7                          |   5 +-
+ share/mk/bsd.compat.mk                             |   1 +
+ share/mk/bsd.libnames.mk                           |   2 +-
+ sys/arm64/arm64/db_trace.c                         |   2 +-
+ sys/arm64/arm64/exception.S                        |   2 +-
+ sys/arm64/arm64/gdb_machdep.c                      | 112 +++++++++++++++++
+ sys/arm64/arm64/genassym.c                         |   1 +
+ sys/arm64/arm64/machdep.c                          |   6 +-
+ sys/arm64/arm64/stack_machdep.c                    |   2 +-
+ sys/arm64/arm64/swtch.S                            |   8 +-
+ sys/arm64/arm64/trap.c                             |  22 +---
+ sys/arm64/arm64/vm_machdep.c                       |   6 +-
+ sys/arm64/conf/GENERIC                             |   2 +-
+ sys/arm64/include/db_machdep.h                     |   2 +-
+ sys/arm64/include/gdb_machdep.h                    |  81 ++++++++++++
+ sys/arm64/include/pcb.h                            |   6 +-
+ .../contrib/opensolaris/uts/common/dtrace/dtrace.c |   8 ++
+ sys/compat/linuxkpi/common/src/linux_pci.c         |  20 ++-
+ sys/conf/files.arm64                               |   1 +
+ sys/conf/kmod.mk                                   |   1 +
+ sys/ddb/db_print.c                                 |  24 +++-
+ sys/dev/mlx5/mlx5_en/en.h                          |   8 +-
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c                |   1 -
+ sys/dev/mlx5/mlx5_en/mlx5_en_rl.c                  |   5 -
+ sys/dev/mpr/mpr_user.c                             |  32 ++---
+ sys/dev/mps/mps_user.c                             |  34 ++---
+ sys/dev/nvme/nvme.h                                |  43 +++++++
+ sys/dev/safexcel/safexcel.c                        |  33 ++---
+ sys/dev/safexcel/safexcel_var.h                    |   6 +-
+ sys/dev/vmd/vmd.c                                  |  12 +-
+ sys/i386/conf/GENERIC                              |   1 +
+ sys/i386/conf/NOTES                                |   1 +
+ sys/kern/kern_mbuf.c                               |   2 +-
+ sys/kern/subr_kdb.c                                |  20 +++
+ sys/modules/dtrace/dtrace/Makefile                 |   1 -
+ sys/netinet/igmp.c                                 |   1 +
+ sys/riscv/sifive/sifive_uart.c                     |   2 +-
+ 47 files changed, 681 insertions(+), 158 deletions(-)
+ create mode 100644 sbin/nvmecontrol/selftest.c
+ create mode 100644 sys/arm64/arm64/gdb_machdep.c
+ create mode 100644 sys/arm64/include/gdb_machdep.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    14a16fd3e7ec..e83fdf8bb391  freebsd/current/main -> freebsd/current/main        
+remote:    abba1e7d6c3a..defad7633918  github/hardened/12-stable/master -> github/hardened/12-stable/master
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   14a16fd3e7ece..e83fdf8bb3915  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
