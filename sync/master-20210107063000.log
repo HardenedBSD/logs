@@ -1,0 +1,157 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 428c5301788d Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge github/master branch ====
+Updating 428c5301788d..2bab5de13381
+Fast-forward
+ devel/Makefile                               |   1 +
+ devel/elixir-excoveralls/Makefile            |   2 +-
+ devel/elixir-excoveralls/distinfo            |   6 +-
+ devel/elixir-excoveralls/files/patch-mix.exs |  10 +-
+ devel/elixir-excoveralls/pkg-plist           |   3 +
+ devel/hwloc2/Makefile                        |  50 +++
+ devel/hwloc2/distinfo                        |   3 +
+ devel/hwloc2/pkg-descr                       |  16 +
+ devel/hwloc2/pkg-plist                       | 505 +++++++++++++++++++++++++++
+ devel/pecl-swoole/Makefile                   |   2 +-
+ devel/pecl-swoole/distinfo                   |   6 +-
+ graphics/engauge-digitizer/Makefile          |   4 +-
+ 12 files changed, 593 insertions(+), 15 deletions(-)
+ create mode 100644 devel/hwloc2/Makefile
+ create mode 100644 devel/hwloc2/distinfo
+ create mode 100644 devel/hwloc2/pkg-descr
+ create mode 100644 devel/hwloc2/pkg-plist
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 2bab5de13381 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at 2bab5de13381 Merge remote-tracking branch 'freebsd/master'
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/suricata/Makefile
+Merge made by the 'recursive' strategy.
+ databases/p5-SQL-Abstract-More/Makefile |  2 +-
+ databases/p5-SQL-Abstract-More/distinfo |  6 ++---
+ deskutils/py-todoman/Makefile           |  6 ++---
+ deskutils/py-todoman/distinfo           |  6 ++---
+ devel/p5-Connector/Makefile             |  2 +-
+ devel/p5-Connector/distinfo             |  6 ++---
+ devel/p5-Test-File/Makefile             |  2 +-
+ devel/p5-Test-File/distinfo             |  6 ++---
+ emulators/lisaem/pkg-descr              |  2 +-
+ lang/nickle/Makefile                    |  2 +-
+ lang/nickle/distinfo                    |  6 ++---
+ lang/nickle/pkg-plist                   |  2 +-
+ mail/milter-greylist/Makefile           | 21 ++++++++++-------
+ mail/milter-greylist/distinfo           |  6 ++---
+ math/py-qdldl/Makefile                  |  2 +-
+ news/ifmail/Makefile                    |  5 +++-
+ news/ifmail/files/patch-CONFIG          |  3 ++-
+ print/qpdf/Makefile                     |  2 +-
+ print/qpdf/distinfo                     |  6 ++---
+ print/qpdf/pkg-plist                    |  3 ++-
+ security/maltrail/Makefile              |  2 +-
+ security/maltrail/distinfo              |  6 ++---
+ security/maltrail/pkg-plist             | 42 ++++++++++++++++++++++-----------
+ security/suricata/Makefile              | 18 ++++++--------
+ security/suricata/distinfo              |  6 ++---
+ sysutils/bpytop/Makefile                |  2 +-
+ sysutils/bpytop/distinfo                |  6 ++---
+ sysutils/nix/Makefile                   |  2 +-
+ sysutils/nix/distinfo                   |  6 ++---
+ textproc/docproj/Makefile               | 13 ++++------
+ textproc/p5-PPIx-Regexp/Makefile        |  2 +-
+ textproc/p5-PPIx-Regexp/distinfo        |  6 ++---
+ textproc/py-elementpath/Makefile        |  2 +-
+ textproc/py-elementpath/distinfo        |  6 ++---
+ www/orangehrm/Makefile                  |  2 +-
+ www/orangehrm/distinfo                  |  6 ++---
+ 36 files changed, 120 insertions(+), 103 deletions(-)
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 24 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.71 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at adc5fa47d896 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====

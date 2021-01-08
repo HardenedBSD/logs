@@ -1,0 +1,898 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is ahead of 'origin/hardened/current/master' by 2 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Removing usr.sbin/bluetooth/bt3cfw/bt3cfw.c
+Removing usr.sbin/bluetooth/bt3cfw/Makefile.depend
+Removing usr.sbin/bluetooth/bt3cfw/Makefile
+Removing usr.bin/ldd/sods.c
+Removing usr.bin/ldd/extern.h
+Removing tools/kerneldoc/subsys/Doxyfile-dev_wi
+Auto-merging sys/netinet6/nd6_rtr.c
+Removing sys/netgraph/bluetooth/include/ng_bt3c.h
+Removing sys/netgraph/bluetooth/drivers/bt3c/ng_bt3c_var.h
+Removing sys/netgraph/bluetooth/drivers/bt3c/ng_bt3c_pccard.c
+Removing sys/modules/wi/Makefile
+Removing sys/modules/netgraph/bluetooth/bt3c/Makefile
+Removing sys/modules/cmx/Makefile
+Removing sys/modules/ata/atacard/Makefile
+Auto-merging sys/modules/Makefile
+Auto-merging sys/mips/conf/OCTEON1
+Auto-merging sys/mips/conf/ERL
+Auto-merging sys/kern/subr_module.c
+Removing sys/dev/wi/if_wivar.h
+Removing sys/dev/wi/if_wireg.h
+Removing sys/dev/wi/if_wi_pci.c
+Removing sys/dev/wi/if_wi_pccard.c
+Removing sys/dev/wi/if_wi_macio.c
+Removing sys/dev/wi/if_wi.c
+Removing sys/dev/wi/if_wavelan_ieee.h
+Removing sys/dev/uart/uart_bus_pccard.c
+Removing sys/dev/puc/puc_pccard.c
+Removing sys/dev/pccbb/pccbb_isa.c
+Removing sys/dev/if_ndis/if_ndis_pccard.c
+Removing sys/dev/fdc/fdc_pccard.c
+Removing sys/dev/cmx/cmxvar.h
+Removing sys/dev/cmx/cmxreg.h
+Removing sys/dev/cmx/cmx_pccard.c
+Removing sys/dev/cmx/cmx.c
+Removing sys/dev/ata/ata-card.c
+Removing sys/dev/an/if_an_pccard.c
+Removing sys/contrib/openzfs/module/os/freebsd/zfs/zfs_onexit_os.c
+Auto-merging sys/conf/options
+Auto-merging sys/conf/files
+Auto-merging sys/conf/NOTES
+Removing share/man/man4/wi.4
+Removing share/man/man4/ng_bt3c.4
+Removing share/man/man4/cmx.4
+Auto-merging share/man/man4/Makefile
+CONFLICT (content): Merge conflict in share/man/man4/Makefile
+Removing libexec/rtld-aout/support.c
+Removing libexec/rtld-aout/shlib.c
+Auto-merging etc/mtree/BSD.usr.dist
+CONFLICT (content): Merge conflict in etc/mtree/BSD.usr.dist
+Auto-merging ObsoleteFiles.inc
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc etc/mtree/BSD.usr.dist
+index 30e4e37b47860,375cf3a964479..0000000000000
+--- a/etc/mtree/BSD.usr.dist
++++ b/etc/mtree/BSD.usr.dist
+@@@ -58,6 -58,8 +58,11 @@@
+                  ..
+              ..
+          ..
+++<<<<<<< HEAD
+++=======
++         compat
++         ..
+++>>>>>>> freebsd/current/main
+          dtrace
+          ..
+          engines
+diff --cc share/man/man4/Makefile
+index 3c2ae44c4edec,c72caf0199c9b..0000000000000
+--- a/share/man/man4/Makefile
++++ b/share/man/man4/Makefile
+@@@ -180,8 -178,17 +179,21 @@@ MAN=	aac.4 
+  	gpioths.4 \
+  	gre.4 \
+  	h_ertt.4 \
+++<<<<<<< HEAD
+ +	hardening.4 \
+++=======
++ 	hconf.4 \
++ 	hcons.4 \
++ 	hgame.4 \
++ 	hidbus.4 \
++ 	hidquirk.4 \
++ 	hidraw.4 \
+++>>>>>>> freebsd/current/main
+  	hifn.4 \
++ 	hkbd.4 \
++ 	hms.4 \
++ 	hmt.4 \
++ 	hpen.4 \
+  	hpet.4 \
+  	${_hpt27xx.4} \
+  	${_hptiop.4} \
+On branch hardened/current/master
+Your branch is ahead of 'origin/hardened/current/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   ObsoleteFiles.inc
+	modified:   UPDATING
+	modified:   cddl/lib/libzpool/Makefile
+	modified:   etc/mtree/BSD.include.dist
+	modified:   include/Makefile
+	modified:   lib/libc/sys/aio_fsync.2
+	modified:   lib/libc/sys/fcntl.2
+	modified:   lib/libc/sys/open.2
+	deleted:    libexec/rtld-aout/shlib.c
+	deleted:    libexec/rtld-aout/support.c
+	modified:   sbin/fsck_ffs/dir.c
+	modified:   sbin/fsck_ffs/ea.c
+	modified:   sbin/fsck_ffs/fsck.h
+	modified:   sbin/fsck_ffs/fsutil.c
+	modified:   sbin/fsck_ffs/gjournal.c
+	modified:   sbin/fsck_ffs/globs.c
+	modified:   sbin/fsck_ffs/inode.c
+	modified:   sbin/fsck_ffs/main.c
+	modified:   sbin/fsck_ffs/pass1.c
+	modified:   sbin/fsck_ffs/pass1b.c
+	modified:   sbin/fsck_ffs/pass2.c
+	modified:   sbin/fsck_ffs/pass3.c
+	modified:   sbin/fsck_ffs/pass4.c
+	modified:   sbin/fsck_ffs/setup.c
+	modified:   sbin/fsck_ffs/suj.c
+	modified:   sbin/fsdb/fsdb.c
+	modified:   sbin/fsdb/fsdb.h
+	modified:   share/man/man4/an.4
+	modified:   share/man/man4/ata.4
+	modified:   share/man/man4/atp.4
+	deleted:    share/man/man4/cmx.4
+	modified:   share/man/man4/fdc.4
+	new file:   share/man/man4/hconf.4
+	new file:   share/man/man4/hcons.4
+	new file:   share/man/man4/hgame.4
+	new file:   share/man/man4/hidbus.4
+	new file:   share/man/man4/hidquirk.4
+	new file:   share/man/man4/hidraw.4
+	new file:   share/man/man4/hkbd.4
+	new file:   share/man/man4/hms.4
+	renamed:    usr.sbin/bluetooth/bt3cfw/bt3cfw.8 -> share/man/man4/hmt.4
+	new file:   share/man/man4/hpen.4
+	new file:   share/man/man4/hsctrl.4
+	new file:   share/man/man4/iichid.4
+	modified:   share/man/man4/ndis.4
+	deleted:    share/man/man4/ng_bt3c.4
+	new file:   share/man/man4/ps4dshock.4
+	modified:   share/man/man4/puc.4
+	modified:   share/man/man4/uart.4
+	modified:   share/man/man4/ucycom.4
+	modified:   share/man/man4/ugold.4
+	modified:   share/man/man4/uhid.4
+	modified:   share/man/man4/ukbd.4
+	modified:   share/man/man4/ums.4
+	new file:   share/man/man4/usbhid.4
+	deleted:    share/man/man4/wi.4
+	modified:   share/man/man4/wmt.4
+	modified:   share/man/man4/wsp.4
+	new file:   share/man/man4/xb360gp.4
+	modified:   stand/Makefile
+	modified:   stand/common/gfx_fb.c
+	modified:   stand/defaults/loader.conf.5
+	modified:   stand/fonts/Makefile
+	modified:   stand/i386/libi386/vidconsole.c
+	modified:   sys/amd64/conf/GENERIC
+	modified:   sys/arm/broadcom/bcm2835/bcm2835_ft5406.c
+	modified:   sys/arm/conf/EFIKA_MX
+	modified:   sys/arm/conf/GENERIC
+	modified:   sys/arm/conf/IMX53
+	modified:   sys/arm/conf/IMX6
+	modified:   sys/arm/conf/RPI-B
+	modified:   sys/arm/conf/TEGRA124
+	modified:   sys/arm/conf/VYBRID
+	modified:   sys/arm/ti/ti_adc.c
+	modified:   sys/arm64/conf/GENERIC
+	modified:   sys/arm64/conf/GENERIC-NODEBUG
+	modified:   sys/compat/freebsd32/freebsd32_proto.h
+	modified:   sys/compat/freebsd32/freebsd32_syscall.h
+	modified:   sys/compat/freebsd32/freebsd32_syscalls.c
+	modified:   sys/compat/freebsd32/freebsd32_sysent.c
+	modified:   sys/compat/freebsd32/freebsd32_systrace_args.c
+	modified:   sys/compat/freebsd32/syscalls.master
+	modified:   sys/conf/NOTES
+	modified:   sys/conf/files
+	modified:   sys/conf/files.arm64
+	modified:   sys/conf/files.x86
+	modified:   sys/conf/options
+	modified:   sys/contrib/openzfs/.github/CONTRIBUTING.md
+	new file:   sys/contrib/openzfs/.github/ISSUE_TEMPLATE/bug_report.md
+	new file:   sys/contrib/openzfs/.github/ISSUE_TEMPLATE/config.yml
+	new file:   sys/contrib/openzfs/.github/ISSUE_TEMPLATE/feature_request.md
+	new file:   sys/contrib/openzfs/.github/codecov.yml
+	new file:   sys/contrib/openzfs/.github/no-response.yml
+	new file:   sys/contrib/openzfs/.github/stale.yml
+	new file:   sys/contrib/openzfs/.github/workflows/checkstyle.yaml
+	new file:   sys/contrib/openzfs/.github/workflows/zfs-tests.yml
+	new file:   sys/contrib/openzfs/.github/workflows/zloop.yml
+	modified:   sys/contrib/openzfs/META
+	modified:   sys/contrib/openzfs/Makefile.am
+	modified:   sys/contrib/openzfs/cmd/Makefile.am
+	modified:   sys/contrib/openzfs/cmd/arc_summary/arc_summary2
+	modified:   sys/contrib/openzfs/cmd/arc_summary/arc_summary3
+	modified:   sys/contrib/openzfs/cmd/arcstat/arcstat.in
+	modified:   sys/contrib/openzfs/cmd/dbufstat/dbufstat.in
+	modified:   sys/contrib/openzfs/cmd/mount_zfs/mount_zfs.c
+	modified:   sys/contrib/openzfs/cmd/raidz_test/raidz_bench.c
+	modified:   sys/contrib/openzfs/cmd/raidz_test/raidz_test.c
+	modified:   sys/contrib/openzfs/cmd/raidz_test/raidz_test.h
+	modified:   sys/contrib/openzfs/cmd/zdb/zdb.c
+	modified:   sys/contrib/openzfs/cmd/zed/agents/zfs_agents.c
+	modified:   sys/contrib/openzfs/cmd/zed/agents/zfs_mod.c
+	modified:   sys/contrib/openzfs/cmd/zed/agents/zfs_retire.c
+	modified:   sys/contrib/openzfs/cmd/zed/zed.d/all-syslog.sh
+	modified:   sys/contrib/openzfs/cmd/zed/zed.d/history_event-zfs-list-cacher.sh.in
+	modified:   sys/contrib/openzfs/cmd/zed/zed.d/zed.rc
+	modified:   sys/contrib/openzfs/cmd/zfs/zfs_main.c
+	modified:   sys/contrib/openzfs/cmd/zfs_ids_to_path/zfs_ids_to_path.c
+	modified:   sys/contrib/openzfs/cmd/zgenhostid/zgenhostid.c
+	modified:   sys/contrib/openzfs/cmd/zhack/zhack.c
+	modified:   sys/contrib/openzfs/cmd/zpool/zpool_iter.c
+	modified:   sys/contrib/openzfs/cmd/zpool/zpool_main.c
+	modified:   sys/contrib/openzfs/cmd/zpool/zpool_util.h
+	modified:   sys/contrib/openzfs/cmd/zpool/zpool_vdev.c
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/.gitignore
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/Makefile.am
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/README.md
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/dashboards/README.md
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/dashboards/grafana/ZFS-pool-latency-heatmaps-influxdb.json
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/telegraf.d/README.md
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/telegraf.d/exec_zpool_influxdb.conf
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/telegraf.d/execd_zpool_influxdb.conf
+	new file:   sys/contrib/openzfs/cmd/zpool_influxdb/zpool_influxdb.c
+	modified:   sys/contrib/openzfs/cmd/zstream/zstream_redup.c
+	modified:   sys/contrib/openzfs/cmd/ztest/ztest.c
+	new file:   sys/contrib/openzfs/config/Abigail.am
+	modified:   sys/contrib/openzfs/config/always-python.m4
+	modified:   sys/contrib/openzfs/config/always-pyzfs.m4
+	modified:   sys/contrib/openzfs/config/always-sed.m4
+	modified:   sys/contrib/openzfs/config/deb.am
+	modified:   sys/contrib/openzfs/config/kernel-acl.m4
+	modified:   sys/contrib/openzfs/config/kernel-bio.m4
+	modified:   sys/contrib/openzfs/config/kernel-blk-queue.m4
+	modified:   sys/contrib/openzfs/config/kernel-blkdev.m4
+	modified:   sys/contrib/openzfs/config/kernel-config-defined.m4
+	modified:   sys/contrib/openzfs/config/kernel-fpu.m4
+	modified:   sys/contrib/openzfs/config/kernel-generic_io_acct.m4
+	modified:   sys/contrib/openzfs/config/kernel-get-disk-and-module.m4
+	new file:   sys/contrib/openzfs/config/kernel-hotplug.m4
+	modified:   sys/contrib/openzfs/config/kernel-make-request-fn.m4
+	modified:   sys/contrib/openzfs/config/kernel-objtool.m4
+	modified:   sys/contrib/openzfs/config/kernel-percpu.m4
+	new file:   sys/contrib/openzfs/config/kernel-revalidate-disk-size.m4
+	modified:   sys/contrib/openzfs/config/kernel-rwsem.m4
+	new file:   sys/contrib/openzfs/config/kernel-vfs-iov_iter.m4
+	modified:   sys/contrib/openzfs/config/kernel.m4
+	modified:   sys/contrib/openzfs/config/mount-helper.m4
+	modified:   sys/contrib/openzfs/config/user-dracut.m4
+	modified:   sys/contrib/openzfs/config/user-libexec.m4
+	modified:   sys/contrib/openzfs/config/user-makedev.m4
+	modified:   sys/contrib/openzfs/config/user-systemd.m4
+	modified:   sys/contrib/openzfs/config/user-sysvinit.m4
+	modified:   sys/contrib/openzfs/config/user-udev.m4
+	modified:   sys/contrib/openzfs/config/zfs-build.m4
+	modified:   sys/contrib/openzfs/configure.ac
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/export-zfs.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/module-setup.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/mount-zfs.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/parse-zfs.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/zfs-generator.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/zfs-lib.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/zfs-load-key.sh.in
+	modified:   sys/contrib/openzfs/contrib/dracut/90zfs/zfs-needshutdown.sh.in
+	modified:   sys/contrib/openzfs/contrib/initramfs/hooks/zfsunlock.in
+	modified:   sys/contrib/openzfs/contrib/pam_zfs_key/pam_zfs_key.c
+	modified:   sys/contrib/openzfs/etc/systemd/system/zfs-share.service.in
+	modified:   sys/contrib/openzfs/etc/systemd/system/zfs-volume-wait.service.in
+	modified:   sys/contrib/openzfs/etc/systemd/system/zfs-zed.service.in
+	modified:   sys/contrib/openzfs/include/libzfs.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/ccompile.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/misc.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/mod_os.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/policy.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/sysmacros.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/types.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/uio.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/spl/sys/vnode.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/zfs/sys/Makefile.am
+	modified:   sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_context_os.h
+	renamed:    sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_vnops.h -> sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_vnops_os.h
+	modified:   sys/contrib/openzfs/include/os/freebsd/zfs/sys/zfs_znode_impl.h
+	modified:   sys/contrib/openzfs/include/os/linux/kernel/linux/blkdev_compat.h
+	modified:   sys/contrib/openzfs/include/os/linux/kernel/linux/mod_compat.h
+	modified:   sys/contrib/openzfs/include/os/linux/spl/sys/sysmacros.h
+	modified:   sys/contrib/openzfs/include/os/linux/spl/sys/taskq.h
+	modified:   sys/contrib/openzfs/include/os/linux/spl/sys/uio.h
+	modified:   sys/contrib/openzfs/include/os/linux/spl/sys/vnode.h
+	modified:   sys/contrib/openzfs/include/os/linux/zfs/sys/Makefile.am
+	modified:   sys/contrib/openzfs/include/os/linux/zfs/sys/policy.h
+	modified:   sys/contrib/openzfs/include/os/linux/zfs/sys/trace_acl.h
+	renamed:    sys/contrib/openzfs/include/os/linux/zfs/sys/zfs_vnops.h -> sys/contrib/openzfs/include/os/linux/zfs/sys/zfs_vnops_os.h
+	modified:   sys/contrib/openzfs/include/os/linux/zfs/sys/zfs_znode_impl.h
+	modified:   sys/contrib/openzfs/include/os/linux/zfs/sys/zpl.h
+	modified:   sys/contrib/openzfs/include/sys/Makefile.am
+	modified:   sys/contrib/openzfs/include/sys/arc.h
+	modified:   sys/contrib/openzfs/include/sys/arc_impl.h
+	modified:   sys/contrib/openzfs/include/sys/dbuf.h
+	modified:   sys/contrib/openzfs/include/sys/dmu.h
+	modified:   sys/contrib/openzfs/include/sys/dmu_impl.h
+	modified:   sys/contrib/openzfs/include/sys/dmu_objset.h
+	modified:   sys/contrib/openzfs/include/sys/dmu_zfetch.h
+	modified:   sys/contrib/openzfs/include/sys/dsl_dataset.h
+	modified:   sys/contrib/openzfs/include/sys/dsl_scan.h
+	modified:   sys/contrib/openzfs/include/sys/frame.h
+	modified:   sys/contrib/openzfs/include/sys/fs/zfs.h
+	modified:   sys/contrib/openzfs/include/sys/metaslab.h
+	modified:   sys/contrib/openzfs/include/sys/metaslab_impl.h
+	modified:   sys/contrib/openzfs/include/sys/spa_impl.h
+	modified:   sys/contrib/openzfs/include/sys/txg.h
+	modified:   sys/contrib/openzfs/include/sys/vdev.h
+	new file:   sys/contrib/openzfs/include/sys/vdev_draid.h
+	modified:   sys/contrib/openzfs/include/sys/vdev_impl.h
+	modified:   sys/contrib/openzfs/include/sys/vdev_raidz.h
+	modified:   sys/contrib/openzfs/include/sys/vdev_raidz_impl.h
+	modified:   sys/contrib/openzfs/include/sys/vdev_rebuild.h
+	modified:   sys/contrib/openzfs/include/sys/zfs_context.h
+	new file:   sys/contrib/openzfs/include/sys/zfs_vnops.h
+	modified:   sys/contrib/openzfs/include/sys/zfs_znode.h
+	modified:   sys/contrib/openzfs/include/sys/zio.h
+	modified:   sys/contrib/openzfs/include/sys/zvol_impl.h
+	modified:   sys/contrib/openzfs/include/zfeature_common.h
+	modified:   sys/contrib/openzfs/lib/Makefile.am
+	modified:   sys/contrib/openzfs/lib/libnvpair/Makefile.am
+	new file:   sys/contrib/openzfs/lib/libnvpair/libnvpair.abi
+	new file:   sys/contrib/openzfs/lib/libnvpair/libnvpair.suppr
+	modified:   sys/contrib/openzfs/lib/libspl/include/sys/uio.h
+	modified:   sys/contrib/openzfs/lib/libuutil/Makefile.am
+	new file:   sys/contrib/openzfs/lib/libuutil/libuutil.abi
+	new file:   sys/contrib/openzfs/lib/libuutil/libuutil.suppr
+	modified:   sys/contrib/openzfs/lib/libzfs/Makefile.am
+	new file:   sys/contrib/openzfs/lib/libzfs/libzfs.abi
+	new file:   sys/contrib/openzfs/lib/libzfs/libzfs.suppr
+	modified:   sys/contrib/openzfs/lib/libzfs/libzfs_dataset.c
+	modified:   sys/contrib/openzfs/lib/libzfs/libzfs_import.c
+	modified:   sys/contrib/openzfs/lib/libzfs/libzfs_pool.c
+	modified:   sys/contrib/openzfs/lib/libzfs/libzfs_util.c
+	modified:   sys/contrib/openzfs/lib/libzfs_core/Makefile.am
+	new file:   sys/contrib/openzfs/lib/libzfs_core/libzfs_core.abi
+	new file:   sys/contrib/openzfs/lib/libzfs_core/libzfs_core.suppr
+	modified:   sys/contrib/openzfs/lib/libzfsbootenv/Makefile.am
+	new file:   sys/contrib/openzfs/lib/libzfsbootenv/libzfsbootenv.abi
+	modified:   sys/contrib/openzfs/lib/libzfsbootenv/libzfsbootenv.pc.in
+	new file:   sys/contrib/openzfs/lib/libzfsbootenv/libzfsbootenv.suppr
+	modified:   sys/contrib/openzfs/lib/libzpool/Makefile.am
+	modified:   sys/contrib/openzfs/lib/libzutil/zutil_import.c
+	modified:   sys/contrib/openzfs/man/man1/arcstat.1
+	modified:   sys/contrib/openzfs/man/man1/raidz_test.1
+	modified:   sys/contrib/openzfs/man/man1/ztest.1
+	modified:   sys/contrib/openzfs/man/man5/zfs-module-parameters.5
+	modified:   sys/contrib/openzfs/man/man5/zpool-features.5
+	modified:   sys/contrib/openzfs/man/man8/Makefile.am
+	modified:   sys/contrib/openzfs/man/man8/zfs-allow.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-bookmark.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-clone.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-create.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-destroy.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-diff.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-hold.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-jail.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-list.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-load-key.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-mount.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-program.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-project.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-promote.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-receive.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-rename.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-rollback.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-send.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-set.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-share.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-snapshot.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-upgrade.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-userspace.8
+	modified:   sys/contrib/openzfs/man/man8/zfs-wait.8
+	modified:   sys/contrib/openzfs/man/man8/zgenhostid.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-add.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-attach.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-checkpoint.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-clear.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-create.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-destroy.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-detach.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-events.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-export.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-get.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-history.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-import.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-initialize.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-iostat.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-labelclear.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-list.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-offline.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-reguid.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-remove.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-reopen.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-replace.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-resilver.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-scrub.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-split.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-status.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-sync.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-trim.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-upgrade.8
+	modified:   sys/contrib/openzfs/man/man8/zpool-wait.8
+	new file:   sys/contrib/openzfs/man/man8/zpool_influxdb.8
+	modified:   sys/contrib/openzfs/man/man8/zpoolconcepts.8
+	modified:   sys/contrib/openzfs/man/man8/zpoolprops.8
+	modified:   sys/contrib/openzfs/module/Makefile.bsd
+	modified:   sys/contrib/openzfs/module/icp/algs/modes/gcm.c
+	modified:   sys/contrib/openzfs/module/icp/algs/modes/modes.c
+	modified:   sys/contrib/openzfs/module/icp/asm-x86_64/modes/aesni-gcm-x86_64.S
+	modified:   sys/contrib/openzfs/module/icp/core/kcf_sched.c
+	modified:   sys/contrib/openzfs/module/icp/include/modes/modes.h
+	modified:   sys/contrib/openzfs/module/icp/io/aes.c
+	modified:   sys/contrib/openzfs/module/lua/lapi.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/spl/spl_policy.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/abd_os.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/arc_os.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/sysctl_os.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/vdev_file.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/vdev_geom.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_file_os.c
+	deleted:    sys/contrib/openzfs/module/os/freebsd/zfs/zfs_onexit_os.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_vfsops.c
+	renamed:    sys/contrib/openzfs/module/os/freebsd/zfs/zfs_vnops.c -> sys/contrib/openzfs/module/os/freebsd/zfs/zfs_vnops_os.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zfs_znode.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zio_crypt.c
+	modified:   sys/contrib/openzfs/module/os/freebsd/zfs/zvol_os.c
+	modified:   sys/contrib/openzfs/module/os/linux/spl/spl-taskq.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/Makefile.in
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/abd_os.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/arc_os.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/policy.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/vdev_disk.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/vdev_file.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zfs_ctldir.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zfs_vfsops.c
+	renamed:    sys/contrib/openzfs/module/os/linux/zfs/zfs_vnops.c -> sys/contrib/openzfs/module/os/linux/zfs/zfs_vnops_os.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zfs_znode.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zio_crypt.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zpl_ctldir.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zpl_file.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zpl_inode.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zpl_super.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zpl_xattr.c
+	modified:   sys/contrib/openzfs/module/os/linux/zfs/zvol_os.c
+	modified:   sys/contrib/openzfs/module/zcommon/Makefile.in
+	modified:   sys/contrib/openzfs/module/zcommon/zfeature_common.c
+	modified:   sys/contrib/openzfs/module/zcommon/zfs_fletcher.c
+	modified:   sys/contrib/openzfs/module/zcommon/zfs_namecheck.c
+	modified:   sys/contrib/openzfs/module/zcommon/zfs_prop.c
+	modified:   sys/contrib/openzfs/module/zcommon/zfs_uio.c
+	modified:   sys/contrib/openzfs/module/zfs/Makefile.in
+	modified:   sys/contrib/openzfs/module/zfs/abd.c
+	modified:   sys/contrib/openzfs/module/zfs/aggsum.c
+	modified:   sys/contrib/openzfs/module/zfs/arc.c
+	modified:   sys/contrib/openzfs/module/zfs/dbuf.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_object.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_objset.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_recv.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_redact.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_send.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_tx.c
+	modified:   sys/contrib/openzfs/module/zfs/dmu_zfetch.c
+	modified:   sys/contrib/openzfs/module/zfs/dnode.c
+	modified:   sys/contrib/openzfs/module/zfs/dnode_sync.c
+	modified:   sys/contrib/openzfs/module/zfs/dsl_bookmark.c
+	modified:   sys/contrib/openzfs/module/zfs/dsl_crypt.c
+	modified:   sys/contrib/openzfs/module/zfs/dsl_dataset.c
+	modified:   sys/contrib/openzfs/module/zfs/dsl_pool.c
+	modified:   sys/contrib/openzfs/module/zfs/dsl_scan.c
+	modified:   sys/contrib/openzfs/module/zfs/metaslab.c
+	modified:   sys/contrib/openzfs/module/zfs/mmp.c
+	modified:   sys/contrib/openzfs/module/zfs/multilist.c
+	modified:   sys/contrib/openzfs/module/zfs/spa.c
+	modified:   sys/contrib/openzfs/module/zfs/spa_history.c
+	modified:   sys/contrib/openzfs/module/zfs/spa_misc.c
+	modified:   sys/contrib/openzfs/module/zfs/txg.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev.c
+	new file:   sys/contrib/openzfs/module/zfs/vdev_draid.c
+	new file:   sys/contrib/openzfs/module/zfs/vdev_draid_rand.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_indirect.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_initialize.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_label.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_mirror.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_missing.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_queue.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_raidz.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_raidz_math.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_raidz_math_impl.h
+	modified:   sys/contrib/openzfs/module/zfs/vdev_rebuild.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_removal.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_root.c
+	modified:   sys/contrib/openzfs/module/zfs/vdev_trim.c
+	modified:   sys/contrib/openzfs/module/zfs/zcp.c
+	modified:   sys/contrib/openzfs/module/zfs/zfs_fm.c
+	modified:   sys/contrib/openzfs/module/zfs/zfs_ioctl.c
+	new file:   sys/contrib/openzfs/module/zfs/zfs_vnops.c
+	modified:   sys/contrib/openzfs/module/zfs/zio.c
+	modified:   sys/contrib/openzfs/module/zfs/zio_inject.c
+	modified:   sys/contrib/openzfs/module/zfs/zvol.c
+	modified:   sys/contrib/openzfs/module/zstd/zfs_zstd.c
+	modified:   sys/contrib/openzfs/rpm/generic/zfs-kmod.spec.in
+	modified:   sys/contrib/openzfs/rpm/generic/zfs.spec.in
+	modified:   sys/contrib/openzfs/scripts/Makefile.am
+	modified:   sys/contrib/openzfs/scripts/commitcheck.sh
+	modified:   sys/contrib/openzfs/scripts/common.sh.in
+	modified:   sys/contrib/openzfs/scripts/dkms.mkconf
+	modified:   sys/contrib/openzfs/scripts/zfs-tests.sh
+	modified:   sys/contrib/openzfs/scripts/zfs.sh
+	modified:   sys/contrib/openzfs/scripts/zloop.sh
+	modified:   sys/contrib/openzfs/tests/runfiles/Makefile.am
+	modified:   sys/contrib/openzfs/tests/runfiles/common.run
+	modified:   sys/contrib/openzfs/tests/runfiles/linux.run
+	new file:   sys/contrib/openzfs/tests/runfiles/sanity.run
+	modified:   sys/contrib/openzfs/tests/test-runner/bin/zts-report.py.in
+	modified:   sys/contrib/openzfs/tests/zfs-tests/cmd/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/cmd/btree_test/btree_test.c
+	new file:   sys/contrib/openzfs/tests/zfs-tests/cmd/draid/.gitignore
+	new file:   sys/contrib/openzfs/tests/zfs-tests/cmd/draid/Makefile.am
+	new file:   sys/contrib/openzfs/tests/zfs-tests/cmd/draid/draid.c
+	modified:   sys/contrib/openzfs/tests/zfs-tests/cmd/libzfs_input_check/libzfs_input_check.c
+	modified:   sys/contrib/openzfs/tests/zfs-tests/include/blkdev.shlib
+	modified:   sys/contrib/openzfs/tests/zfs-tests/include/commands.cfg
+	modified:   sys/contrib/openzfs/tests/zfs-tests/include/libtest.shlib
+	modified:   sys/contrib/openzfs/tests/zfs-tests/include/tunables.cfg
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/alloc_class/alloc_class_012_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/checksum/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/checksum/filetest_001_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/checksum/filetest_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zdb/zdb_block_size_histogram.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_copies/zfs_copies_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_create/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_001_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_nomount.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_mount/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount.kshlib
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_013_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_014_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_mountpoints.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_concurrent_shares.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zfs_snapshot/zfs_snapshot_009_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_add/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_003_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_dryrun_output.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_005_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_006_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_007_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_009_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_010_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_011_neg.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_001_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_002_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_003_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_004_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_dryrun_output.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_003_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand_004_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_get/zpool_get.cfg
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/import_cachefile_device_added.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/import_cachefile_device_replaced.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/import_cachefile_shared_device.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/import_paths_changed.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/import_rewind_config_changed.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/import_rewind_device_replaced.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/setup.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import.cfg
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import.kshlib
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_007_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_008_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_010_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_016_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_017_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_missing_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_missing_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_missing_003_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_initialize/zpool_initialize_verify_initialized.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_split/Makefile.am
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_dryrun_output.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_trim/zpool_trim.kshlib
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_trim/zpool_trim_online_offline.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_trim/zpool_trim_start_and_cancel_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/cli_root/zpool_wait/scan/zpool_wait_replace_cancel.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/events/events_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/events/events_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/events/events_common.kshlib
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/fault/auto_offline_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/fault/auto_spare_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/fault/auto_spare_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/fault/auto_spare_ashift.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/fault/auto_spare_multiple.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/fault/auto_spare_shared.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/l2arc/l2arc_arcstats_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/l2arc/l2arc_l2miss_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/l2arc/l2arc_mfuonly_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/cleanup.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc.cfg
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_002_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_003_neg.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_004_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_005_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_006_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_007_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_008_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/persist_l2arc/setup.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/raidz/Makefile.am
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/raidz/raidz_003_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/raidz/raidz_004_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/Makefile.am
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy.kshlib
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_001_pos.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_002_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_draid1.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_draid2.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_draid3.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_draid_spare1.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_draid_spare2.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_draid_spare3.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/redundancy/redundancy_raidz3.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/removal/Makefile.am
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/removal/remove_attach_mirror.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/replacement/attach_rebuild.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/replacement/attach_resilver.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/replacement/detach.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/replacement/rebuild_raidz.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/replacement/replace_rebuild.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/replacement/replace_resilver.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/trim/autotrim_config.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/trim/autotrim_integrity.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/trim/autotrim_trim_integrity.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/trim/trim_config.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/trim/trim_integrity.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/userquota/Makefile.am
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/userquota/userspace_encrypted.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/userquota/userspace_send_encrypted.ksh
+	modified:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/xattr/xattr_004_pos.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/zpool_influxdb/Makefile.am
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/zpool_influxdb/cleanup.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/zpool_influxdb/setup.ksh
+	new file:   sys/contrib/openzfs/tests/zfs-tests/tests/functional/zpool_influxdb/zpool_influxdb.ksh
+	modified:   sys/crypto/armv8/armv8_crypto.c
+	modified:   sys/crypto/armv8/armv8_crypto.h
+	modified:   sys/crypto/armv8/armv8_crypto_wrap.c
+	deleted:    sys/dev/an/if_an_pccard.c
+	deleted:    sys/dev/ata/ata-card.c
+	modified:   sys/dev/atkbdc/psm.c
+	modified:   sys/dev/axgbe/if_axgbe_pci.c
+	modified:   sys/dev/bnxt/if_bnxt.c
+	renamed:    sys/dev/pccard/power_if.m -> sys/dev/cardbus/power_if.m
+	deleted:    sys/dev/cmx/cmx.c
+	deleted:    sys/dev/cmx/cmx_pccard.c
+	deleted:    sys/dev/cmx/cmxreg.h
+	deleted:    sys/dev/cmx/cmxvar.h
+	modified:   sys/dev/cyapa/cyapa.c
+	modified:   sys/dev/evdev/cdev.c
+	modified:   sys/dev/evdev/evdev.c
+	modified:   sys/dev/evdev/evdev.h
+	modified:   sys/dev/evdev/evdev_mt.c
+	modified:   sys/dev/evdev/evdev_private.h
+	modified:   sys/dev/evdev/uinput.c
+	deleted:    sys/dev/fdc/fdc_pccard.c
+	new file:   sys/dev/hid/hconf.c
+	renamed:    libexec/rtld-aout/support.h -> sys/dev/hid/hconf.h
+	new file:   sys/dev/hid/hcons.c
+	new file:   sys/dev/hid/hgame.c
+	renamed:    libexec/rtld-aout/shlib.h -> sys/dev/hid/hgame.h
+	new file:   sys/dev/hid/hid.c
+	new file:   sys/dev/hid/hid.h
+	new file:   sys/dev/hid/hid_if.m
+	new file:   sys/dev/hid/hidbus.c
+	new file:   sys/dev/hid/hidbus.h
+	new file:   sys/dev/hid/hidmap.c
+	new file:   sys/dev/hid/hidmap.h
+	new file:   sys/dev/hid/hidquirk.c
+	new file:   sys/dev/hid/hidquirk.h
+	new file:   sys/dev/hid/hidraw.c
+	new file:   sys/dev/hid/hidraw.h
+	new file:   sys/dev/hid/hidrdesc.h
+	new file:   sys/dev/hid/hkbd.c
+	new file:   sys/dev/hid/hms.c
+	new file:   sys/dev/hid/hmt.c
+	new file:   sys/dev/hid/hpen.c
+	new file:   sys/dev/hid/hsctrl.c
+	new file:   sys/dev/hid/ps4dshock.c
+	new file:   sys/dev/hid/xb360gp.c
+	modified:   sys/dev/ice/if_ice_iflib.c
+	deleted:    sys/dev/if_ndis/if_ndis_pccard.c
+	new file:   sys/dev/iicbus/iichid.c
+	modified:   sys/dev/isci/scil/sci_controller_constants.h
+	modified:   sys/dev/ixgbe/if_ix.c
+	modified:   sys/dev/ixgbe/if_ixv.c
+	modified:   sys/dev/ixl/if_iavf.c
+	modified:   sys/dev/ixl/if_ixl.c
+	modified:   sys/dev/mgb/if_mgb.c
+	deleted:    sys/dev/pccbb/pccbb_isa.c
+	deleted:    sys/dev/puc/puc_pccard.c
+	modified:   sys/dev/sound/usb/uaudio.c
+	deleted:    sys/dev/uart/uart_bus_pccard.c
+	modified:   sys/dev/usb/input/atp.c
+	modified:   sys/dev/usb/input/uep.c
+	modified:   sys/dev/usb/input/uhid.c
+	modified:   sys/dev/usb/input/ukbd.c
+	modified:   sys/dev/usb/input/ums.c
+	modified:   sys/dev/usb/input/usb_rdesc.h
+	new file:   sys/dev/usb/input/usbhid.c
+	modified:   sys/dev/usb/input/wmt.c
+	modified:   sys/dev/usb/input/wsp.c
+	modified:   sys/dev/usb/misc/ugold.c
+	modified:   sys/dev/usb/serial/ucycom.c
+	modified:   sys/dev/usb/usb_hid.c
+	modified:   sys/dev/usb/usb_ioctl.h
+	modified:   sys/dev/usb/usbhid.h
+	modified:   sys/dev/vmware/vmxnet3/if_vmx.c
+	deleted:    sys/dev/wi/if_wavelan_ieee.h
+	deleted:    sys/dev/wi/if_wi.c
+	deleted:    sys/dev/wi/if_wi_macio.c
+	deleted:    sys/dev/wi/if_wi_pccard.c
+	deleted:    sys/dev/wi/if_wi_pci.c
+	deleted:    sys/dev/wi/if_wireg.h
+	deleted:    sys/dev/wi/if_wivar.h
+	modified:   sys/i386/conf/GENERIC
+	modified:   sys/kern/init_sysent.c
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/subr_module.c
+	modified:   sys/kern/syscalls.c
+	modified:   sys/kern/syscalls.master
+	modified:   sys/kern/systrace_args.c
+	modified:   sys/kern/vfs_aio.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/kern/vfs_vnops.c
+	new file:   sys/libkern/strcasestr.c
+	modified:   sys/mips/conf/ERL
+	modified:   sys/mips/conf/JZ4780
+	modified:   sys/mips/conf/OCTEON1
+	modified:   sys/modules/Makefile
+	modified:   sys/modules/an/Makefile
+	modified:   sys/modules/ata/Makefile
+	deleted:    sys/modules/ata/atacard/Makefile
+	deleted:    sys/modules/cmx/Makefile
+	modified:   sys/modules/fdc/Makefile
+	new file:   sys/modules/hid/Makefile
+	new file:   sys/modules/hid/hconf/Makefile
+	new file:   sys/modules/hid/hcons/Makefile
+	new file:   sys/modules/hid/hgame/Makefile
+	new file:   sys/modules/hid/hid/Makefile
+	new file:   sys/modules/hid/hidbus/Makefile
+	new file:   sys/modules/hid/hidmap/Makefile
+	new file:   sys/modules/hid/hidquirk/Makefile
+	new file:   sys/modules/hid/hidraw/Makefile
+	new file:   sys/modules/hid/hkbd/Makefile
+	new file:   sys/modules/hid/hms/Makefile
+	new file:   sys/modules/hid/hmt/Makefile
+	new file:   sys/modules/hid/hpen/Makefile
+	new file:   sys/modules/hid/hsctrl/Makefile
+	new file:   sys/modules/hid/ps4dshock/Makefile
+	new file:   sys/modules/hid/xb360gp/Makefile
+	modified:   sys/modules/i2c/Makefile
+	new file:   sys/modules/i2c/iichid/Makefile
+	modified:   sys/modules/if_ndis/Makefile
+	modified:   sys/modules/ipmi/Makefile
+	modified:   sys/modules/netgraph/bluetooth/Makefile
+	deleted:    sys/modules/netgraph/bluetooth/bt3c/Makefile
+	modified:   sys/modules/puc/Makefile
+	modified:   sys/modules/uart/Makefile
+	modified:   sys/modules/usb/Makefile
+	modified:   sys/modules/usb/uhid/Makefile
+	new file:   sys/modules/usb/usbhid/Makefile
+	deleted:    sys/modules/wi/Makefile
+	modified:   sys/modules/zfs/Makefile
+	modified:   sys/net/iflib.c
+	modified:   sys/net/iflib.h
+	modified:   sys/net/route.c
+	modified:   sys/net/route.h
+	modified:   sys/net/route/route_ctl.c
+	modified:   sys/net/route/route_ctl.h
+	modified:   sys/net/route/route_var.h
+	modified:   sys/net/rtsock.c
+	deleted:    sys/netgraph/bluetooth/drivers/bt3c/ng_bt3c_pccard.c
+	deleted:    sys/netgraph/bluetooth/drivers/bt3c/ng_bt3c_var.h
+	deleted:    sys/netgraph/bluetooth/include/ng_bt3c.h
+	modified:   sys/netinet/in.c
+	modified:   sys/netinet6/in6.c
+	modified:   sys/netinet6/nd6_rtr.c
+	modified:   sys/netpfil/pf/pf_if.c
+	modified:   sys/powerpc/conf/GENERIC
+	modified:   sys/powerpc/conf/GENERIC64
+	modified:   sys/powerpc/conf/GENERIC64LE
+	modified:   sys/powerpc/conf/MPC85XX
+	modified:   sys/powerpc/conf/MPC85XXSPE
+	modified:   sys/powerpc/conf/QORIQ64
+	modified:   sys/sys/aio.h
+	modified:   sys/sys/fcntl.h
+	modified:   sys/sys/libkern.h
+	modified:   sys/sys/param.h
+	modified:   sys/sys/syscall.h
+	modified:   sys/sys/syscall.mk
+	modified:   sys/sys/sysproto.h
+	modified:   sys/sys/vnode.h
+	modified:   sys/ufs/ffs/ffs_vnops.c
+	modified:   tests/sys/aio/aio_test.c
+	deleted:    tools/kerneldoc/subsys/Doxyfile-dev_wi
+	modified:   usr.bin/du/tests/du_test.sh
+	modified:   usr.bin/ldd/Makefile
+	deleted:    usr.bin/ldd/extern.h
+	modified:   usr.bin/ldd/ldd.c
+	deleted:    usr.bin/ldd/sods.c
+	modified:   usr.sbin/bluetooth/Makefile
+	deleted:    usr.sbin/bluetooth/bt3cfw/Makefile
+	deleted:    usr.sbin/bluetooth/bt3cfw/Makefile.depend
+	deleted:    usr.sbin/bluetooth/bt3cfw/bt3cfw.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   etc/mtree/BSD.usr.dist
+	both modified:   share/man/man4/Makefile
+
+HEAD is now at 7f865bf65a340 Merge branch 'hardened/current/master' of git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is ahead of 'origin/hardened/current/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 7f865bf65a340 Merge branch 'hardened/current/master' of git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD into hardened/current/master
+==== END: hardened/current/master ====
