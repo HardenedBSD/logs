@@ -1,0 +1,168 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 10 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 0474fced6738..cdf9c76592b4
+Fast-forward
+ archivers/lib1541img/Makefile                      |     1 +
+ archivers/lib1541img/pkg-plist                     |     3 -
+ audio/aubio/Makefile                               |     2 +-
+ audio/aubio/pkg-plist                              |   276 -
+ audio/jack/Makefile                                |     2 +-
+ audio/jack/pkg-plist                               |     1 -
+ audio/liblo/Makefile                               |     2 +-
+ audio/liblo/pkg-plist                              |     2 +-
+ audio/libmpdclient/Makefile                        |     1 +
+ audio/libmpdclient/pkg-plist                       |   202 +-
+ audio/libsidplayfp/Makefile                        |     1 +
+ audio/libsidplayfp/pkg-plist                       |  2716 ++--
+ audio/lv2/Makefile                                 |     7 +-
+ comms/openzwave-devel/Makefile                     |     1 +
+ comms/openzwave-devel/pkg-plist                    |    16 -
+ comms/qsstv/Makefile                               |     2 +-
+ comms/qsstv/pkg-plist                              |     2 +-
+ comms/rtl-sdr/Makefile                             |     1 +
+ comms/rtl-sdr/pkg-plist                            |     1 -
+ comms/uhd/Makefile                                 |     2 +-
+ comms/uhd/pkg-plist                                |     9 +-
+ databases/libdrizzle/Makefile                      |     2 +-
+ databases/libdrizzle/pkg-plist                     |     4 +-
+ devel/cppunit/Makefile                             |     2 +-
+ devel/cppunit/pkg-plist                            |  2822 ++--
+ devel/doxygen/Makefile                             |    17 +-
+ devel/doxygen/distinfo                             |     6 +-
+ devel/doxygen/files/patch-CMakeLists.txt           |    14 +-
+ devel/doxygen/files/patch-doc-doxygen_manual.tex   |    10 +-
+ devel/doxygen/files/patch-doc_CMakeLists.txt       |     6 +-
+ devel/doxygen/files/patch-md5-Doxyfile             |    14 +-
+ devel/doxygen/files/patch-md5-definition           |     8 +-
+ devel/doxygen/files/patch-md5-dirdef               |     4 +-
+ devel/doxygen/files/patch-md5-dot                  |    70 -
+ devel/doxygen/files/patch-md5-dotgraph             |    23 +
+ devel/doxygen/files/patch-md5-memberdef            |     5 +-
+ devel/doxygen/files/patch-md5-membergroup          |    10 +-
+ devel/doxygen/files/patch-md5-util                 |    17 +-
+ devel/doxygen/files/patch-src_CMakeLists.txt       |    28 +-
+ devel/doxygen/files/patch-src_formula.cpp          |    15 -
+ .../doxygen/files/patch-vhdlparser_CMakeLists.txt  |    12 +-
+ devel/lasi/Makefile                                |     2 +-
+ devel/lasi/pkg-plist                               |     2 -
+ devel/libdbusmenu-qt/Makefile                      |     2 +-
+ devel/libdbusmenu-qt/pkg-plist                     |     6 +-
+ devel/libthai/Makefile                             |     1 +
+ devel/libthai/pkg-plist                            |     2 +-
+ devel/py-game/Makefile                             |     2 +-
+ devel/py-game/distinfo                             |     6 +-
+ devel/py-rtree/Makefile                            |     2 +-
+ devel/py-rtree/distinfo                            |     6 +-
+ devel/qjson/Makefile                               |     2 +-
+ devel/qjson/pkg-plist                              |     1 -
+ devel/tbb/Makefile                                 |     1 +
+ devel/tbb/pkg-plist                                | 14860 +++++++++----------
+ devel/thonny/Makefile                              |    15 +-
+ devel/thonny/distinfo                              |     6 +-
+ dns/ldns/Makefile                                  |     2 +-
+ dns/ldns/pkg-plist                                 |     5 -
+ emulators/open-vm-tools/Makefile                   |     2 +-
+ emulators/open-vm-tools/pkg-plist                  |     3 +-
+ finance/aqbanking/Makefile                         |     6 +
+ finance/ktoblzcheck/Makefile                       |     1 +
+ finance/ktoblzcheck/pkg-plist                      |     2 +-
+ ftp/libfilezilla/pkg-descr                         |     2 +-
+ games/wesnoth/Makefile                             |     2 +-
+ games/wesnoth/distinfo                             |     6 +-
+ games/wesnoth/pkg-plist                            |     1 +
+ graphics/ogre3d/Makefile                           |     2 +-
+ graphics/ogre3d/pkg-plist                          |   164 +-
+ graphics/opensubdiv/Makefile                       |     2 +-
+ graphics/opensubdiv/pkg-plist                      |    30 +-
+ graphics/ptex/Makefile                             |     1 +
+ graphics/ptex/pkg-plist                            |     6 +-
+ lang/ruby25/pkg-plist                              |  3692 +----
+ lang/ruby26/Makefile                               |     6 +
+ lang/ruby26/pkg-plist                              |  3964 +----
+ lang/ruby27/pkg-plist                              |  3818 +----
+ lang/ruby30/pkg-plist                              |  4051 +----
+ mail/emailrelay/Makefile                           |     2 +-
+ mail/emailrelay/pkg-plist                          |     2 +-
+ mail/libcmime/Makefile                             |     6 +-
+ mail/libcmime/pkg-plist                            |    12 +-
+ math/fflas-ffpack/Makefile                         |     2 +-
+ math/fflas-ffpack/pkg-plist                        |     2 -
+ math/hpcombi/Makefile                              |     1 +
+ math/hpcombi/pkg-plist                             |     7 +-
+ math/linbox/Makefile                               |     3 +-
+ math/linbox/pkg-plist                              |   117 +-
+ math/nfft/Makefile                                 |     1 +
+ math/nfft/pkg-plist                                |    52 +-
+ multimedia/webvfx-qt5/Makefile                     |     2 +-
+ multimedia/webvfx-qt5/pkg-plist                    |     6 +-
+ net-im/libaccounts-qt5/Makefile                    |     6 +-
+ net-im/libaccounts-qt5/pkg-plist                   |     5 +-
+ net/mpich/Makefile                                 |    24 +-
+ net/mpich/distinfo                                 |     6 +-
+ net/mpich/files/patch-Makefile.in                  |    26 +
+ net/mpich/files/patch-configure                    |   380 +-
+ net/mpich/files/patch-src_binding_cxx_mpicxx.h.in  |    18 -
+ net/mpich/files/patch-test_mpi_configure           |    13 +-
+ net/mpich/pkg-plist                                |    27 +-
+ net/openmpi/Makefile                               |    11 +-
+ net/openmpi/distinfo                               |     6 +-
+ net/openmpi/pkg-plist                              |    41 +-
+ science/mpqc/Makefile                              |     5 +-
+ science/mpqc/pkg-plist                             |     7 -
+ security/rhash/Makefile                            |     2 +-
+ security/rhash/distinfo                            |     6 +-
+ .../rhash/files/patch-librhash_plug__openssl.c     |    60 -
+ 110 files changed, 11344 insertions(+), 26537 deletions(-)
+ delete mode 100644 devel/doxygen/files/patch-md5-dot
+ create mode 100644 devel/doxygen/files/patch-md5-dotgraph
+ delete mode 100644 devel/doxygen/files/patch-src_formula.cpp
+ create mode 100644 net/mpich/files/patch-Makefile.in
+ delete mode 100644 net/mpich/files/patch-src_binding_cxx_mpicxx.h.in
+ delete mode 100644 security/rhash/files/patch-librhash_plug__openssl.c
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
