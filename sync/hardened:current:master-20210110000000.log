@@ -1,0 +1,102 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/x86/x86/identcpu.c
+Auto-merging sys/sys/proc.h
+Auto-merging sys/kern/kern_sig.c
+Auto-merging sys/kern/kern_prot.c
+Auto-merging sys/kern/kern_proc.c
+Auto-merging sys/kern/imgact_elf.c
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Auto-merging sys/fs/tmpfs/tmpfs.h
+Auto-merging sys/amd64/amd64/pmap.c
+Merge made by the 'recursive' strategy.
+ lib/libc/x86/sys/__vdso_gettc.c                   | 150 ++++++++--
+ lib/libkvm/kvm_proc.c                             |   2 +-
+ sys/amd64/amd64/pmap.c                            | 161 +++++++++--
+ sys/amd64/include/cpufunc.h                       |   9 +
+ sys/compat/linuxkpi/common/include/linux/random.h |   1 +
+ sys/contrib/openzfs/module/zfs/vdev.c             |   1 +
+ sys/fs/tmpfs/tmpfs.h                              |   1 -
+ sys/fs/tmpfs/tmpfs_vfsops.c                       |   5 +-
+ sys/fs/tmpfs/tmpfs_vnops.c                        |   1 +
+ sys/i386/include/cpufunc.h                        |   9 +
+ sys/kern/imgact_elf.c                             |   2 +
+ sys/kern/kern_proc.c                              | 326 +++++++++-------------
+ sys/kern/kern_prot.c                              |  13 +-
+ sys/kern/kern_sig.c                               |  19 +-
+ sys/kern/tty.c                                    |  41 +--
+ sys/sys/proc.h                                    |   6 +-
+ sys/x86/x86/identcpu.c                            |   2 +-
+ sys/x86/x86/tsc.c                                 |  51 +++-
+ tests/sys/aio/aio_test.c                          |   4 +
+ 19 files changed, 514 insertions(+), 290 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e00a65c49d50..7d18ecd13d16  hardened/current/master -> hardened/current/master        
+remote:    9ac59d42c0b4..ac2576b9f7bc  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e00a65c49d501..7d18ecd13d16b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
