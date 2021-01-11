@@ -1,0 +1,169 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging release/packages/Makefile.package
+Merge made by the 'recursive' strategy.
+ libexec/rc/rc.d/os-release                 |    1 +
+ release/packages/Makefile.package          |    4 +-
+ sys/amd64/include/xen/hypercall.h          |    7 +
+ sys/cddl/dev/dtrace/aarch64/dtrace_subr.c  |    3 +-
+ sys/cddl/dev/dtrace/arm/dtrace_subr.c      |    3 +-
+ sys/cddl/dev/dtrace/riscv/dtrace_subr.c    |    3 +-
+ sys/cddl/dev/fbt/aarch64/fbt_isa.c         |    8 +
+ sys/cddl/dev/fbt/fbt.c                     |   11 +
+ sys/dev/cadence/if_cgem.c                  |    2 +-
+ sys/dev/xen/privcmd/privcmd.c              |  252 ++++-
+ sys/i386/include/xen/hypercall.h           |    7 +
+ sys/kern/kern_tc.c                         |   15 +
+ sys/xen/hypervisor.h                       |    1 +
+ sys/xen/interface/arch-arm.h               |   92 +-
+ sys/xen/interface/arch-arm/smccc.h         |   66 ++
+ sys/xen/interface/arch-x86/cpufeatureset.h |  295 ++++++
+ sys/xen/interface/arch-x86/cpuid.h         |   42 +-
+ sys/xen/interface/arch-x86/hvm/.save.h.swp |  Bin 0 -> 16384 bytes
+ sys/xen/interface/arch-x86/hvm/save.h      |  148 +--
+ sys/xen/interface/arch-x86/pmu.h           |   13 +-
+ sys/xen/interface/arch-x86/xen-mca.h       |   73 +-
+ sys/xen/interface/arch-x86/xen-x86_32.h    |   70 +-
+ sys/xen/interface/arch-x86/xen-x86_64.h    |  101 +-
+ sys/xen/interface/arch-x86/xen.h           |   96 +-
+ sys/xen/interface/arch-x86_32.h            |    4 +-
+ sys/xen/interface/arch-x86_64.h            |    4 +-
+ sys/xen/interface/argo.h                   |  255 ++++++
+ sys/xen/interface/device_tree_defs.h       |   42 +
+ sys/xen/interface/dom0_ops.h               |    4 +-
+ sys/xen/interface/domctl.h                 |  521 ++++++-----
+ sys/xen/interface/elfnote.h                |    9 +-
+ sys/xen/interface/errno.h                  |   54 +-
+ sys/xen/interface/event_channel.h          |    7 +-
+ sys/xen/interface/features.h               |   16 +-
+ sys/xen/interface/grant_table.h            |   24 +-
+ sys/xen/interface/hvm/dm_op.h              |  480 ++++++++++
+ sys/xen/interface/hvm/e820.h               |    5 +-
+ sys/xen/interface/hvm/hvm_info_table.h     |   10 +-
+ sys/xen/interface/hvm/hvm_op.h             |  359 +++-----
+ sys/xen/interface/hvm/hvm_vcpu.h           |  144 +++
+ sys/xen/interface/hvm/hvm_xs_strings.h     |    7 +
+ sys/xen/interface/hvm/ioreq.h              |   18 +-
+ sys/xen/interface/hvm/params.h             |  164 +++-
+ sys/xen/interface/hvm/pvdrivers.h          |    6 +-
+ sys/xen/interface/hvm/save.h               |   45 +-
+ sys/xen/interface/hypfs.h                  |  129 +++
+ sys/xen/interface/io/9pfs.h                |   49 +
+ sys/xen/interface/io/blkif.h               |  112 ++-
+ sys/xen/interface/io/cameraif.h            | 1374 ++++++++++++++++++++++++++++
+ sys/xen/interface/io/console.h             |    9 +-
+ sys/xen/interface/io/displif.h             |  872 ++++++++++++++++++
+ sys/xen/interface/io/fsif.h                |    8 +-
+ sys/xen/interface/io/kbdif.h               |  498 +++++++++-
+ sys/xen/interface/io/libxenvchan.h         |    1 +
+ sys/xen/interface/io/netif.h               |  801 ++++++++++++++--
+ sys/xen/interface/io/protocols.h           |    2 +-
+ sys/xen/interface/io/pvcalls.h             |  160 ++++
+ sys/xen/interface/io/ring.h                |  222 ++++-
+ sys/xen/interface/io/sndif.h               | 1091 ++++++++++++++++++++++
+ sys/xen/interface/io/tpmif.h               |    1 +
+ sys/xen/interface/io/usbif.h               |    6 +-
+ sys/xen/interface/io/vscsiif.h             |   77 +-
+ sys/xen/interface/io/xs_wire.h             |   10 +-
+ sys/xen/interface/kexec.h                  |   28 +-
+ sys/xen/interface/memory.h                 |  161 +++-
+ sys/xen/interface/nmi.h                    |    4 +-
+ sys/xen/interface/physdev.h                |   10 +-
+ sys/xen/interface/platform.h               |   10 +-
+ sys/xen/interface/pmu.h                    |   14 +-
+ sys/xen/interface/sched.h                  |   29 +-
+ sys/xen/interface/sysctl.h                 |  604 +++++++++---
+ sys/xen/interface/tmem.h                   |   22 +-
+ sys/xen/interface/trace.h                  |   12 +-
+ sys/xen/interface/vcpu.h                   |   26 +-
+ sys/xen/interface/version.h                |   25 +-
+ sys/xen/interface/vm_event.h               |  196 +++-
+ sys/xen/interface/xen-compat.h             |   15 +-
+ sys/xen/interface/xen.h                    |  223 +++--
+ sys/xen/interface/xenoprof.h               |    6 +-
+ sys/xen/interface/xsm/flask_op.h           |    6 +-
+ sys/xen/privcmd.h                          |   30 +
+ 81 files changed, 9094 insertions(+), 1240 deletions(-)
+ create mode 100644 sys/xen/interface/arch-arm/smccc.h
+ create mode 100644 sys/xen/interface/arch-x86/cpufeatureset.h
+ create mode 100644 sys/xen/interface/arch-x86/hvm/.save.h.swp
+ create mode 100644 sys/xen/interface/argo.h
+ create mode 100644 sys/xen/interface/device_tree_defs.h
+ create mode 100644 sys/xen/interface/hvm/dm_op.h
+ create mode 100644 sys/xen/interface/hvm/hvm_vcpu.h
+ create mode 100644 sys/xen/interface/hypfs.h
+ create mode 100644 sys/xen/interface/io/9pfs.h
+ create mode 100644 sys/xen/interface/io/cameraif.h
+ create mode 100644 sys/xen/interface/io/displif.h
+ create mode 100644 sys/xen/interface/io/pvcalls.h
+ create mode 100644 sys/xen/interface/io/sndif.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    1c519c9c2987..65454bbe9792  hardened/current/master -> hardened/current/master        
+remote:    16079c7233be..2903606b6063  github/freebsd/current/main -> github/freebsd/current/main
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   1c519c9c2987c..65454bbe97922  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
