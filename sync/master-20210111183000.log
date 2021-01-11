@@ -47,3 +47,344 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/sudo/Makefile
+Auto-merging multimedia/dvdauthor/Makefile
+Auto-merging lang/gcc9-devel/Makefile
+Removing devel/aws-sdk-cpp/pkg-plist
+Auto-merging biology/ncbi-blast+/Makefile
+CONFLICT (content): Merge conflict in biology/ncbi-blast+/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc biology/ncbi-blast+/Makefile
+index 3a550466b349,f9dc2ba18175..000000000000
+--- a/biology/ncbi-blast+/Makefile
++++ b/biology/ncbi-blast+/Makefile
+@@@ -32,9 -33,7 +33,13 @@@ LIB_DEPENDS=	libpcre.so:devel/pcre 
+  RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+  		p5-JSON>=0:converters/p5-JSON
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off
+ +
+ +USES=		compiler:openmp gmake shebangfix perl5 python
+++=======
++ USES=		compiler:c++14-lang gmake localbase:ldflags shebangfix perl5 python
+++>>>>>>> freebsd/master
+  USE_LDCONFIG=	yes
+  
+  SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   archivers/py-lz4/Makefile
+	modified:   archivers/py-zstandard/Makefile
+	modified:   audio/py-speechrecognition/Makefile
+	modified:   biology/canu/Makefile
+	modified:   biology/cd-hit/Makefile
+	modified:   biology/fasttree/Makefile
+	modified:   biology/gcta/Makefile
+	modified:   biology/hyphy/Makefile
+	new file:   biology/ncbi-blast+/files/patch-src_objtools_blast_seqdb__reader_test_seqdb__perf.cpp
+	modified:   biology/stacks/Makefile
+	modified:   biology/star/Makefile
+	modified:   biology/star/files/patch-Makefile
+	modified:   databases/Makefile
+	modified:   databases/libmemcached/Makefile
+	new file:   databases/libmswstr/Makefile
+	new file:   databases/libmswstr/distinfo
+	new file:   databases/libmswstr/files/patch-src_mswstr.c
+	new file:   databases/libmswstr/pkg-descr
+	new file:   databases/libmswstr/pkg-plist
+	modified:   databases/mongodb40/Makefile
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_gen-config.sh
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src0.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src1.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src10.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src11.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src12.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src13.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src14.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src15.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src16.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src17.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src18.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src19.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src2.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src20.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src21.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src22.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src23.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src24.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src25.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src26.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src27.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src28.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src29.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src3.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src30.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src31.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src32.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src33.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src4.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src5.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src6.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src7.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src8.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_Unified__cpp__js__src9.cpp
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_build_js-confdefs.h
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_mozjs-45_platform_ppc64le_freebsd_include_js-config.h
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_wiredtiger_dist_filelist
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_wiredtiger_src_checksum_power8_crc32.S
+	new file:   databases/mongodb40/files/powerpc64le/patch-src_third__party_wiredtiger_src_checksum_power8_ppc-asm.h
+	modified:   databases/py-gdbm/Makefile
+	modified:   databases/py-pickleshare/Makefile
+	modified:   databases/py-sqlalchemy10/Makefile
+	modified:   deskutils/egroupware/Makefile
+	modified:   deskutils/egroupware/distinfo
+	modified:   devel/aws-sdk-cpp/Makefile
+	modified:   devel/aws-sdk-cpp/distinfo
+	deleted:    devel/aws-sdk-cpp/pkg-plist
+	modified:   devel/fatal/Makefile
+	modified:   devel/fatal/distinfo
+	modified:   devel/fbthrift/Makefile
+	modified:   devel/fbthrift/distinfo
+	modified:   devel/fbthrift/pkg-plist
+	modified:   devel/folly/Makefile
+	modified:   devel/folly/distinfo
+	modified:   devel/py-apscheduler/Makefile
+	modified:   devel/py-azure-datalake-store/Makefile
+	modified:   devel/py-castellan1/Makefile
+	modified:   devel/py-cliff2/Makefile
+	modified:   devel/py-cmd208/Makefile
+	modified:   devel/py-csv23/Makefile
+	modified:   devel/py-cursive/Makefile
+	modified:   devel/py-entrypoints/Makefile
+	modified:   devel/py-fasteners/Makefile
+	modified:   devel/py-filedepot/Makefile
+	modified:   devel/py-fs2/Makefile
+	modified:   devel/py-futurist1/Makefile
+	modified:   devel/py-gevent/Makefile
+	modified:   devel/py-jaraco.context2/Makefile
+	modified:   devel/py-jaraco.timing/Makefile
+	modified:   devel/py-jaraco.util13/Makefile
+	modified:   devel/py-keystonemiddleware8/Makefile
+	modified:   devel/py-msgpack/Makefile
+	modified:   devel/py-nose/Makefile
+	modified:   devel/py-nose2/Makefile
+	modified:   devel/py-openstacksdk043/Makefile
+	modified:   devel/py-os-brick2/Makefile
+	modified:   devel/py-os-client-config1/Makefile
+	modified:   devel/py-os-win4/Makefile
+	modified:   devel/py-osc-lib1/Makefile
+	modified:   devel/py-oslo.cache1/Makefile
+	modified:   devel/py-oslo.concurrency3/Makefile
+	modified:   devel/py-oslo.config7/Makefile
+	modified:   devel/py-oslo.db6/Makefile
+	modified:   devel/py-oslo.log3/Makefile
+	modified:   devel/py-oslo.middleware3/Makefile
+	modified:   devel/py-oslo.policy2/Makefile
+	modified:   devel/py-oslo.privsep1/Makefile
+	modified:   devel/py-oslo.reports1/Makefile
+	modified:   devel/py-oslo.serialization2/Makefile
+	modified:   devel/py-oslo.service1/Makefile
+	modified:   devel/py-oslo.utils3/Makefile
+	modified:   devel/py-oslo.vmware2/Makefile
+	modified:   devel/py-pycadf/Makefile
+	modified:   devel/py-pycadf2/Makefile
+	modified:   devel/py-pytest-black-multipy/Makefile
+	modified:   devel/py-ratelimiter/Makefile
+	modified:   devel/py-raven/Makefile
+	modified:   devel/py-represent/Makefile
+	modified:   devel/py-responses/Makefile
+	modified:   devel/py-tempora1/Makefile
+	modified:   devel/py-tooz1/Makefile
+	modified:   devel/py-trollius/Makefile
+	modified:   devel/py-txaio/Makefile
+	modified:   devel/py-yg.lockfile/Makefile
+	modified:   devel/raylib/Makefile
+	modified:   devel/raylib/distinfo
+	new file:   devel/raylib/pkg-plist
+	modified:   devel/skalibs/Makefile
+	modified:   devel/skalibs/distinfo
+	modified:   devel/skalibs/pkg-plist
+	modified:   devel/spread-sheet-widget/Makefile
+	modified:   devel/spread-sheet-widget/distinfo
+	modified:   devel/spread-sheet-widget/pkg-plist
+	modified:   games/automuteus/Makefile
+	modified:   games/automuteus/distinfo
+	modified:   graphics/libglvnd/Makefile
+	modified:   irc/py-irc/Makefile
+	modified:   irc/quassel/Makefile
+	modified:   irc/quassel/files/quasselcore.in
+	modified:   lang/execline/Makefile
+	modified:   lang/execline/distinfo
+	modified:   lang/execline/pkg-plist
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   lang/python-tools/Makefile
+	modified:   lang/seed7/Makefile
+	modified:   lang/seed7/distinfo
+	modified:   math/mprime/Makefile
+	modified:   math/mprime/files/patch-commonc.c
+	modified:   math/mprime/files/patch-gwnum_makemsys
+	modified:   math/mprime/files/patch-linux_makebsd
+	modified:   math/py-MutatorMath/Makefile
+	modified:   math/py-matplotlib-scalebar/Makefile
+	modified:   math/py-matplotlib-scalebar/distinfo
+	modified:   math/pynac/Makefile
+	modified:   misc/findutils/Makefile
+	modified:   misc/findutils/distinfo
+	modified:   misc/findutils/files/patch-configure
+	renamed:    misc/findutils/files/patch-gnulib-lib-fdopendir.c -> misc/findutils/files/patch-gl_lib_fdopendir.c
+	modified:   misc/findutils/pkg-descr
+	modified:   multimedia/dvdauthor/Makefile
+	modified:   multimedia/py-periscope/Makefile
+	modified:   net-im/py-python-telegram-bot/Makefile
+	modified:   net-im/qxmpp-qt5/Makefile
+	modified:   net-im/qxmpp-qt5/distinfo
+	modified:   net-im/telegram-desktop/Makefile
+	modified:   net-im/telegram-desktop/files/patch-tg__owt_src_media_sctp_sctp__transport.cc
+	modified:   net-mgmt/cacti-spine/Makefile
+	modified:   net-mgmt/cacti-spine/distinfo
+	modified:   net-mgmt/py-arouteserver/Makefile
+	modified:   net-mgmt/py-snmp_passpersist/Makefile
+	modified:   net/cloudquery/Makefile
+	modified:   net/cloudquery/distinfo
+	modified:   net/fbzmq/Makefile
+	modified:   net/fbzmq/distinfo
+	modified:   net/minissdpd/Makefile
+	modified:   net/minissdpd/distinfo
+	modified:   net/ns3/Makefile
+	modified:   net/ns3/distinfo
+	modified:   net/ns3/pkg-plist
+	modified:   net/openmpi/Makefile
+	modified:   net/py-portend/Makefile
+	modified:   net/py-python-barbicanclient/Makefile
+	modified:   net/py-python-ceilometerclient/Makefile
+	modified:   net/py-python-cinderclient5/Makefile
+	modified:   net/py-python-keystoneclient3/Makefile
+	modified:   net/py-python-novaclient16/Makefile
+	modified:   net/py-s3transfer/Makefile
+	modified:   net/py-zeep/Makefile
+	modified:   net/rsocket-cpp/Makefile
+	modified:   net/rsocket-cpp/distinfo
+	modified:   net/ryu/Makefile
+	modified:   net/wangle/Makefile
+	modified:   net/wangle/distinfo
+	modified:   science/kalzium/Makefile
+	modified:   science/kalzium/distinfo
+	modified:   security/fizz/Makefile
+	modified:   security/fizz/distinfo
+	modified:   security/py-mixbox/Makefile
+	modified:   security/py-oauthlib/Makefile
+	modified:   security/py-xmlsec/Makefile
+	modified:   security/sudo/Makefile
+	modified:   security/sudo/distinfo
+	modified:   security/xray-core/Makefile
+	modified:   security/xray-core/distinfo
+	modified:   sysutils/fluent-bit/Makefile
+	modified:   sysutils/fusefs-gitfs/Makefile
+	modified:   sysutils/parafly/Makefile
+	modified:   sysutils/parafly/distinfo
+	modified:   sysutils/parafly/pkg-descr
+	modified:   sysutils/s6-rc/Makefile
+	modified:   sysutils/s6-rc/distinfo
+	modified:   sysutils/s6-rc/pkg-plist
+	modified:   sysutils/s6/Makefile
+	modified:   sysutils/s6/distinfo
+	modified:   sysutils/s6/pkg-plist
+	modified:   sysutils/synergy/Makefile
+	modified:   textproc/py-humanfriendly/Makefile
+	modified:   textproc/py-m2r/Makefile
+	modified:   textproc/py-sphinx-argparse/Makefile
+	modified:   textproc/py-sphinxcontrib-httpdomain/Makefile
+	modified:   www/gobuffalo/Makefile
+	modified:   www/gobuffalo/distinfo
+	modified:   www/lychee/Makefile
+	modified:   www/lychee/distinfo
+	modified:   www/lychee/files/patch-Cargo.lock
+	modified:   www/lychee/files/patch-Cargo.toml
+	modified:   www/proxygen/Makefile
+	modified:   www/proxygen/distinfo
+	modified:   www/py-beaker/Makefile
+	modified:   www/py-cherrypy/Makefile
+	modified:   www/py-django-allauth/Makefile
+	modified:   www/py-gandi.cli/Makefile
+	modified:   www/py-gunicorn/Makefile
+	modified:   www/py-pywikibot/Makefile
+	modified:   www/py-slimit/Makefile
+	modified:   www/py-websocket-client/Makefile
+	modified:   www/rtv/Makefile
+	modified:   x11-fonts/libertinus/Makefile
+	modified:   x11-fonts/libertinus/distinfo
+	modified:   x11-fonts/py-booleanOperations/Makefile
+	modified:   x11-fonts/py-compreffor/Makefile
+	modified:   x11-fonts/py-cu2qu/Makefile
+	modified:   x11-fonts/py-defcon/Makefile
+	modified:   x11-fonts/py-fontMath/Makefile
+	modified:   x11-fonts/py-fontmake/Makefile
+	modified:   x11-fonts/py-glyphsLib/Makefile
+	modified:   x11-fonts/py-ufo2ft/Makefile
+	modified:   x11-toolkits/py-Pmw/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   biology/ncbi-blast+/Makefile
+
+
+It took 3.05 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at ea77d71018c3 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.03 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at ea77d71018c3 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
