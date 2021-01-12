@@ -1,0 +1,141 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 85d028223bc2..0628f6835702
+Fast-forward
+ stand/efi/libefi/Makefile                          |   1 +
+ stand/efi/libefi/efi_console.c                     |  65 ++++-------
+ stand/efi/loader/Makefile                          |   4 +
+ stand/efi/loader/bootinfo.c                        |  33 +++---
+ stand/efi/loader/framebuffer.c                     |  50 +++++++--
+ stand/efi/loader/framebuffer.h                     |   4 +-
+ sys/amd64/sgx/sgx_linux.c                          |   3 +-
+ .../contrib/opensolaris/uts/common/sys/dtrace.h    |  13 ++-
+ sys/cddl/dev/dtrace/aarch64/dtrace_subr.c          |   6 +
+ sys/cddl/dev/fbt/aarch64/fbt_isa.c                 |  31 ++++-
+ sys/compat/freebsd32/freebsd32_ioctl.c             |   2 +-
+ sys/compat/freebsd32/freebsd32_misc.c              |   2 +-
+ sys/compat/linux/linux_event.c                     |   7 +-
+ sys/compat/linuxkpi/common/include/asm/fpu/api.h   |  68 +++++++++++
+ sys/compat/linuxkpi/common/include/linux/pci.h     |  96 ++++++++++++++++
+ .../linuxkpi/common/include/linux/shrinker.h       |  56 +++++++++
+ sys/compat/linuxkpi/common/src/linux_fpu.c         |  50 +++++++++
+ sys/compat/linuxkpi/common/src/linux_pci.c         |  75 +++++++++++--
+ sys/compat/linuxkpi/common/src/linux_shrinker.c    | 125 +++++++++++++++++++++
+ sys/conf/files                                     |   2 +
+ sys/conf/files.amd64                               |   3 +
+ sys/conf/files.arm64                               |   3 +
+ sys/conf/files.i386                                |   3 +
+ sys/dev/aac/aac_linux.c                            |   3 +-
+ sys/dev/aacraid/aacraid_linux.c                    |   2 +-
+ sys/dev/amr/amr_linux.c                            |   2 +-
+ sys/dev/cxgbe/cxgbei/icl_cxgbei.c                  |   2 +-
+ sys/dev/filemon/filemon_wrapper.c                  |   2 +-
+ sys/dev/ipmi/ipmi_linux.c                          |   3 +-
+ sys/dev/iscsi/icl_soft.c                           |   2 +-
+ sys/dev/iscsi_initiator/iscsi.c                    |   4 +-
+ sys/dev/mfi/mfi_linux.c                            |   2 +-
+ sys/dev/mlx4/mlx4_core/mlx4_main.c                 |   2 +-
+ sys/dev/mlx5/mlx5_core/mlx5_main.c                 |   6 +-
+ sys/dev/mrsas/mrsas_linux.c                        |   2 +-
+ sys/dev/pci/pci.c                                  |  22 ++++
+ sys/dev/pci/pcivar.h                               |   1 +
+ sys/dev/tdfx/tdfx_linux.c                          |   2 +-
+ sys/fs/fdescfs/fdesc_vnops.c                       |   2 +-
+ sys/fs/nfsclient/nfs_clport.c                      |   2 +-
+ sys/fs/nfsserver/nfs_nfsdport.c                    |   2 +-
+ sys/kern/kern_event.c                              |   3 +-
+ sys/kern/tty.c                                     |   2 +-
+ sys/kern/uipc_sem.c                                |   7 +-
+ sys/kern/uipc_usrreq.c                             |   8 +-
+ sys/kern/vfs_cache.c                               |   3 +-
+ sys/kern/vfs_lookup.c                              |  36 +++++-
+ sys/kern/vfs_syscalls.c                            |  34 +++---
+ sys/modules/linuxkpi/Makefile                      |   3 +-
+ sys/netinet/sctp_syscalls.c                        |   4 +-
+ sys/riscv/riscv/pmap.c                             |  18 ++-
+ sys/security/mac/mac_syscalls.c                    |   6 +-
+ sys/security/mac_veriexec/mac_veriexec.c           |   4 +-
+ sys/sys/namei.h                                    |   2 +
+ sys/sys/param.h                                    |   2 +-
+ sys/ufs/ffs/ffs_alloc.c                            |   2 +-
+ 56 files changed, 754 insertions(+), 145 deletions(-)
+ create mode 100644 sys/compat/linuxkpi/common/include/asm/fpu/api.h
+ create mode 100644 sys/compat/linuxkpi/common/include/linux/shrinker.h
+ create mode 100644 sys/compat/linuxkpi/common/src/linux_fpu.c
+ create mode 100644 sys/compat/linuxkpi/common/src/linux_shrinker.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: Auto packing the repository in background for optimum performance.        
+remote: See "git help gc" for manual housekeeping.        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    85d028223bc2..0628f6835702  freebsd/current/main -> freebsd/current/main        
+remote:    22525b359a99..f6aaa4dcc8d2  github/hardened/12-stable/master -> github/hardened/12-stable/master
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   85d028223bc2..0628f6835702  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
