@@ -47,3 +47,205 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/tor-devel/Makefile
+Removing net/py-ipaddress/pkg-descr
+Removing net/py-ipaddress/distinfo
+Removing net/py-ipaddress/Makefile
+Auto-merging net/Makefile
+Auto-merging dns/yadifa/Makefile
+CONFLICT (content): Merge conflict in dns/yadifa/Makefile
+Removing devel/py-typing/pkg-descr
+Removing devel/py-typing/distinfo
+Removing devel/py-typing/Makefile
+Removing databases/timescaledb/files/patch-tsl_src_reorder.c
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc dns/yadifa/Makefile
+index b8ebac681fc0,240cd245e362..000000000000
+--- a/dns/yadifa/Makefile
++++ b/dns/yadifa/Makefile
+@@@ -13,9 -13,7 +13,13 @@@ COMMENT=	Authoritative nameserver with 
+  LICENSE=	BSD3CLAUSE
+  LICENSE_FILE=	${WRKSRC}/COPYING
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+ +
+ +USES=		libtool ssl
+++=======
++ USES=		compiler:c11 libtool ssl
+++>>>>>>> freebsd/master
+  USE_RC_SUBR=	${PORTNAME}d
+  
+  GNU_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/python.mk
+	modified:   audio/gsm/Makefile
+	modified:   audio/noise-suppression-for-voice-lv2/Makefile
+	modified:   biology/iqtree/Makefile
+	new file:   biology/iqtree/files/patch-CMakeLists.txt
+	modified:   cad/kicad/Makefile
+	modified:   cad/libredwg/Makefile
+	modified:   cad/libredwg/distinfo
+	new file:   cad/libredwg/files/patch-examples_load__dwg.py
+	modified:   cad/libredwg/pkg-plist
+	modified:   databases/evolution-data-server/Makefile
+	modified:   databases/evolution-data-server/distinfo
+	modified:   databases/kyotocabinet/Makefile
+	modified:   databases/timescaledb/Makefile
+	deleted:    databases/timescaledb/files/patch-tsl_src_reorder.c
+	modified:   deskutils/xfce4-tumbler/Makefile
+	modified:   devel/Makefile
+	modified:   devel/arcanist-lib/Makefile
+	modified:   devel/arcanist-lib/pkg-plist
+	modified:   devel/arduino-bsd-mk/Makefile
+	modified:   devel/arduino-bsd-mk/distinfo
+	modified:   devel/lab/Makefile
+	modified:   devel/lab/distinfo
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/distinfo
+	modified:   devel/ncurses/pkg-plist
+	modified:   devel/p5-Log-Log4perl-Appender-RabbitMQ/Makefile
+	modified:   devel/p5-Log-Log4perl-Appender-RabbitMQ/distinfo
+	modified:   devel/py-columnize/Makefile
+	modified:   devel/py-mock/Makefile
+	modified:   devel/py-onigurumacffi/Makefile
+	modified:   devel/py-onigurumacffi/distinfo
+	modified:   devel/py-pyee/Makefile
+	modified:   devel/py-pystorm/Makefile
+	modified:   devel/py-qt5-core/Makefile
+	modified:   devel/py-streamparse/Makefile
+	deleted:    devel/py-typing/Makefile
+	deleted:    devel/py-typing/distinfo
+	deleted:    devel/py-typing/pkg-descr
+	modified:   devel/py-vcrpy/Makefile
+	modified:   emulators/libretro-vice/Makefile
+	modified:   emulators/wine-devel/Makefile
+	modified:   emulators/wine-devel/distinfo
+	modified:   finance/py-stripe/Makefile
+	modified:   finance/quickfix/Makefile
+	modified:   finance/quickfix/files/patch-m4_ax__python.m4
+	modified:   games/cdogs-sdl/Makefile
+	modified:   games/cdogs-sdl/distinfo
+	modified:   games/cdogs-sdl/pkg-plist
+	modified:   games/doomsday/Makefile
+	modified:   games/doomsday/distinfo
+	modified:   games/doomsday/pkg-plist
+	modified:   games/homura/Makefile
+	modified:   games/homura/distinfo
+	modified:   games/homura/pkg-descr
+	modified:   games/homura/pkg-message
+	modified:   games/wyrmgus/Makefile
+	modified:   games/wyrmgus/distinfo
+	new file:   games/wyrmgus/files/patch-src_database_data__type.h
+	modified:   games/wyrmsun/Makefile
+	modified:   games/wyrmsun/distinfo
+	modified:   graphics/SciPlot/Makefile
+	modified:   graphics/SciPlot/files/patch-Imakefile
+	modified:   graphics/SciPlot/pkg-descr
+	modified:   graphics/djview4/Makefile
+	modified:   lang/ldc/Makefile
+	modified:   mail/evolution-ews/Makefile
+	modified:   mail/evolution-ews/distinfo
+	modified:   mail/evolution/Makefile
+	modified:   mail/evolution/distinfo
+	modified:   mail/py-validate_email/Makefile
+	modified:   math/pspp/Makefile
+	modified:   math/py-fpylll/Makefile
+	modified:   math/py-fpylll/distinfo
+	modified:   math/py-networkx/Makefile
+	modified:   multimedia/dvdread/Makefile
+	modified:   net-im/scli/Makefile
+	modified:   net-im/scli/distinfo
+	modified:   net/Makefile
+	modified:   net/google-cloud-sdk/Makefile
+	modified:   net/google-cloud-sdk/distinfo
+	modified:   net/mpich/Makefile
+	deleted:    net/py-ipaddress/Makefile
+	deleted:    net/py-ipaddress/distinfo
+	deleted:    net/py-ipaddress/pkg-descr
+	modified:   net/py-pyzmq/Makefile
+	modified:   print/hplip/Makefile
+	modified:   science/abinit/Makefile
+	modified:   security/py-fail2ban/Makefile
+	modified:   security/tor-devel/Makefile
+	modified:   security/tor-devel/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/cinnamon-settings-daemon/Makefile
+	modified:   sysutils/gnome-control-center/Makefile
+	modified:   sysutils/gnome-control-center/distinfo
+	modified:   sysutils/py-docker/Makefile
+	modified:   textproc/py-sphinx/Makefile
+	modified:   textproc/py-sphinx/distinfo
+	modified:   textproc/py-sphinx18/Makefile
+	modified:   www/phpmyfaq/Makefile
+	modified:   www/phpmyfaq/distinfo
+	modified:   www/phpmyfaq/pkg-plist
+	modified:   www/py-autobahn/Makefile
+	modified:   www/py-lektor/Makefile
+	modified:   www/py-webargs/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   dns/yadifa/Makefile
+
+
+It took 3.38 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 7d4092d4c8f8 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.40 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 7d4092d4c8f8 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
