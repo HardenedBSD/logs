@@ -1,0 +1,168 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/vm/vm_mmap.c
+Auto-merging sys/vm/vm_map.h
+Auto-merging sys/vm/vm_map.c
+CONFLICT (content): Merge conflict in sys/vm/vm_map.c
+Auto-merging sys/kern/vfs_syscalls.c
+Auto-merging sys/kern/kern_resource.c
+Auto-merging sys/kern/imgact_elf.c
+CONFLICT (content): Merge conflict in sys/kern/imgact_elf.c
+CONFLICT (modify/delete): sys/i386/linux/imgact_linux.c deleted in HEAD and modified in freebsd/current/main. Version freebsd/current/main of sys/i386/linux/imgact_linux.c left in tree.
+Auto-merging share/mk/src.opts.mk
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc sys/kern/imgact_elf.c
+index d78459bfc0fd,dae11ab92a6c..000000000000
+--- a/sys/kern/imgact_elf.c
++++ b/sys/kern/imgact_elf.c
+@@@ -683,15 -690,9 +683,19 @@@ __elfN(load_section)(struct image_param
+  	 * Remove write access to the page if it was only granted by map_insert
+  	 * to allow copyout.
+  	 */
+ +#ifdef PAX_NOEXEC
+ +	if ((prot & VM_PROT_WRITE) == 0)
+ +		vm_map_protect(map, trunc_page(map_addr), round_page(map_addr +
+ +		    map_len), prot, TRUE);
+ +#else
+  	if ((prot & VM_PROT_WRITE) == 0)
+  		vm_map_protect(map, trunc_page(map_addr), round_page(map_addr +
+++<<<<<<< HEAD
+ +		    map_len), prot, FALSE);
+ +#endif
+++=======
++ 		    map_len), prot, 0, VM_MAP_PROTECT_SET_PROT);
+++>>>>>>> freebsd/current/main
+  
+  	return (0);
+  }
+diff --cc sys/vm/vm_map.c
+index 3670cbd3527f,4bd0b245a881..000000000000
+--- a/sys/vm/vm_map.c
++++ b/sys/vm/vm_map.c
+@@@ -2774,6 -2758,14 +2777,17 @@@ again
+  	in_tran = NULL;
+  	vm_map_lock(map);
+  
+++<<<<<<< HEAD
+++=======
++ 	if ((map->flags & MAP_WXORX) != 0 &&
++ 	    (flags & VM_MAP_PROTECT_SET_PROT) != 0 &&
++ 	    (new_prot & (VM_PROT_WRITE | VM_PROT_EXECUTE)) == (VM_PROT_WRITE |
++ 	    VM_PROT_EXECUTE)) {
++ 		vm_map_unlock(map);
++ 		return (KERN_PROTECTION_FAILURE);
++ 	}
++ 
+++>>>>>>> freebsd/current/main
+  	/*
+  	 * Ensure that we are not concurrently wiring pages.  vm_map_wire() may
+  	 * need to fault pages into the map and will drop the map lock while
+@@@ -2904,18 -2905,12 +2927,18 @@@
+  			continue;
+  
+  		old_prot = entry->protection;
+ +#ifdef PAX_NOEXEC
+ +		ret = pax_mprotect_enforce(curthread->td_proc, map, old_prot, new_prot);
+ +		if (ret != 0) {
+ +			return (ret);
+ +		}
+ +#endif
+  
+- 		if (set_max)
+- 			entry->protection =
+- 			    (entry->max_protection = new_prot) &
+- 			    old_prot;
+- 		else
++ 		if ((flags & VM_MAP_PROTECT_SET_MAXPROT) != 0) {
++ 			entry->max_protection = new_maxprot;
++ 			entry->protection = new_maxprot & old_prot;
++ 		}
++ 		if ((flags & VM_MAP_PROTECT_SET_PROT) != 0)
+  			entry->protection = new_prot;
+  
+  		/*
+* Unmerged path sys/i386/linux/imgact_linux.c
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   share/mk/src.opts.mk
+	modified:   sys/kern/kern_descrip.c
+	modified:   sys/kern/kern_resource.c
+	modified:   sys/kern/link_elf.c
+	modified:   sys/kern/link_elf_obj.c
+	modified:   sys/kern/uipc_usrreq.c
+	modified:   sys/kern/vfs_syscalls.c
+	modified:   sys/sys/filedesc.h
+	modified:   sys/vm/vm_map.h
+	modified:   sys/vm/vm_mmap.c
+	modified:   usr.sbin/wpa/Makefile.crypto
+	modified:   usr.sbin/wpa/hostapd/Makefile
+	modified:   usr.sbin/wpa/wpa_supplicant/Makefile
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+	deleted by us:   sys/i386/linux/imgact_linux.c
+	both modified:   sys/kern/imgact_elf.c
+	both modified:   sys/vm/vm_map.c
+
+HEAD is now at b40e250a4974 Merge branch 'freebsd/current/main' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at b40e250a4974 Merge branch 'freebsd/current/main' into hardened/current/master
+==== END: hardened/current/master ====
