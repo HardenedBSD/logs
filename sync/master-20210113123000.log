@@ -47,3 +47,230 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/kleopatra/files/patch-D26393
+Removing science/v_sim/files/patch-lib_plug-ins_Makefile.in
+Auto-merging mail/mutt/Makefile
+Removing deskutils/nextcloudclient/files/patch-src_gui_generalsettings.cpp
+Removing deskutils/nextcloudclient/files/patch-src_gui_accountsettings.cpp
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |  14 ++
+ databases/Makefile                                 |   1 +
+ databases/p5-AnyEvent-Redis/Makefile               |   2 +-
+ databases/p5-Redis-Fast/Makefile                   |   1 +
+ databases/py-redis/Makefile                        |   1 +
+ databases/py-redis2/Makefile                       |   2 +-
+ databases/py-txredisapi/Makefile                   |   1 +
+ databases/redis-devel/Makefile                     |   7 +-
+ databases/redis-devel/distinfo                     |   6 +-
+ .../redis-devel/files/extra-patch-src-Makefile.lua |   8 +-
+ .../files/extra-patch-src-Makefile.luajit          |   8 +-
+ .../files/extra-patch-src-Makefile.luajit-or       |   8 +-
+ databases/redis/Makefile                           |  92 ++++-----
+ databases/redis/distinfo                           |   6 +-
+ databases/redis/files/extra-patch-src-Makefile.lua |  34 +--
+ .../redis/files/extra-patch-src-Makefile.luajit    |  34 +--
+ .../redis/files/extra-patch-src-Makefile.luajit-or |  32 +--
+ databases/redis/files/patch-deps-hiredis-Makefile  |  25 ++-
+ databases/redis/files/patch-deps-hiredis-net.c     |  61 ++----
+ databases/redis/files/patch-redis.conf             |  10 +-
+ databases/redis/files/patch-src-Makefile           |  14 +-
+ databases/redis/files/patch-src-mkreleasehdr.sh    |   4 +-
+ databases/redis4/Makefile                          |   4 +-
+ databases/redis5/Makefile                          | 129 ++++++++++++
+ databases/redis5/distinfo                          |   3 +
+ .../files/extra-patch-deps_lua_src_lua__cjson.c    |  11 +
+ .../redis5/files/extra-patch-src-Makefile.lua      |  58 ++++++
+ .../redis5/files/extra-patch-src-Makefile.luajit   |  58 ++++++
+ .../files/extra-patch-src-Makefile.luajit-or       |  58 ++++++
+ databases/redis5/files/patch-deps-Makefile         |  20 ++
+ databases/redis5/files/patch-deps-hiredis-Makefile |  41 ++++
+ databases/redis5/files/patch-deps-hiredis-net.c    |  64 ++++++
+ .../redis5/files/patch-deps-linenoise-Makefile     |  15 ++
+ databases/redis5/files/patch-deps_Makefile         |  18 ++
+ .../redis5/files/patch-deps_lua_src_lua__cjson.c   |  12 ++
+ databases/redis5/files/patch-redis.conf            |  38 ++++
+ databases/redis5/files/patch-src-Makefile          |  39 ++++
+ databases/redis5/files/patch-src-mkreleasehdr.sh   |  11 +
+ databases/redis5/files/pkg-message.in              |  11 +
+ databases/redis5/files/redis.in                    |  70 +++++++
+ databases/redis5/files/sentinel.in                 |  42 ++++
+ databases/redis5/pkg-descr                         |  19 ++
+ databases/redis5/pkg-plist                         |  12 ++
+ databases/rubygem-hiredis/Makefile                 |   2 +-
+ deskutils/nextcloudclient/Makefile                 |   4 +-
+ deskutils/nextcloudclient/distinfo                 |   6 +-
+ .../files/patch-src_gui_accountsettings.cpp        |  12 --
+ .../files/patch-src_gui_generalsettings.cpp        |  18 --
+ devel/ghq/Makefile                                 |  26 +--
+ devel/ghq/distinfo                                 |  30 ++-
+ devel/gitblit/Makefile                             |   2 +-
+ devel/py-dj31-django-rq/Makefile                   |   1 +
+ devel/py-django-rq/Makefile                        |   1 +
+ graphics/drm-current-kmod/Makefile                 |   4 +-
+ graphics/drm-current-kmod/distinfo                 |   6 +-
+ graphics/drm-devel-kmod/Makefile                   |   4 +-
+ graphics/drm-devel-kmod/distinfo                   |   6 +-
+ graphics/dssim/Makefile                            |  61 +++---
+ graphics/dssim/distinfo                            | 122 +++++------
+ irc/anope/Makefile                                 |   1 +
+ lang/gcc10-devel/Makefile                          |   2 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ mail/mutt/Makefile                                 | 142 +++++++------
+ mail/mutt/distinfo                                 |   6 +-
+ multimedia/librav1e/Makefile                       |   2 +-
+ multimedia/rav1e/Makefile                          |  77 ++++---
+ multimedia/rav1e/distinfo                          | 152 ++++++++------
+ net-im/jicofo/Makefile                             |   2 +-
+ net-im/rubygem-lita/Makefile                       |   2 +-
+ net-mgmt/resource-agents/Makefile                  |   1 +
+ net/haproxy/Makefile                               |   2 +-
+ net/haproxy/distinfo                               |   6 +-
+ net/haproxy18/Makefile                             |   2 +-
+ net/haproxy18/distinfo                             |   6 +-
+ net/haproxy23/Makefile                             |   2 +-
+ net/haproxy23/distinfo                             |   6 +-
+ net/kea/Makefile                                   |  10 +-
+ net/kea/distinfo                                   |   6 +-
+ net/kea/pkg-plist                                  |   4 +-
+ net/stone/Makefile                                 |   5 -
+ net/stone/files/patch-stone.c                      |  58 ++++++
+ science/afni/Makefile                              |   2 +-
+ science/afni/distinfo                              |   6 +-
+ science/v_sim/Makefile                             |  91 ++++----
+ science/v_sim/distinfo                             |   5 +-
+ .../patch-Documentation_reference_Makefile.am      |  34 +++
+ science/v_sim/files/patch-configure.ac             |  61 ++++++
+ science/v_sim/files/patch-lib_plug-ins_Makefile.in |  10 -
+ .../files/patch-lib_plug-ins_abinit_ab__symmetry.c |  59 ++++++
+ science/v_sim/files/patch-m4_libxc.m4              |  22 ++
+ .../v_sim/files/patch-src_coreTools_atoms__yaml.c  |  22 ++
+ science/v_sim/pkg-descr                            |   2 +-
+ science/v_sim/pkg-plist                            | 228 +++++++-------------
+ security/kleopatra/Makefile                        |   1 +
+ security/kleopatra/files/patch-D26393              |  47 -----
+ security/libkleo/Makefile                          |   1 +
+ security/libkleo/files/patch-BR415168              |  98 +++++++++
+ security/openvas/Makefile                          |   1 +
+ security/openvas8-scanner/Makefile                 |   2 +-
+ security/py-plaso/Makefile                         |   2 +-
+ sysutils/Makefile                                  |   1 +
+ sysutils/fusefs-rar2fs/Makefile                    |   8 +-
+ sysutils/fusefs-rar2fs/distinfo                    |   6 +-
+ sysutils/gomi/Makefile                             |  44 ++++
+ sysutils/gomi/distinfo                             |  33 +++
+ sysutils/gomi/pkg-descr                            |   8 +
+ sysutils/gomplate/Makefile                         | 116 ++++++++++-
+ sysutils/gomplate/distinfo                         | 194 ++++++++++++++++-
+ sysutils/lcdproc/Makefile                          |  16 +-
+ sysutils/lcdproc/pkg-plist                         |  10 +-
+ sysutils/sockaddr/Makefile                         |  25 ++-
+ sysutils/sockaddr/distinfo                         |  30 ++-
+ sysutils/spcm/Makefile                             |   2 +-
+ sysutils/spcm/distinfo                             |   6 +-
+ sysutils/spcm/pkg-plist                            |   2 +
+ www/gitlab-ce/Makefile                             |   2 +-
+ www/kurly/Makefile                                 |   3 +
+ www/phalcon/Makefile                               |   4 +-
+ www/phalcon4/Makefile                              |   4 +-
+ x11-fm/thunar/Makefile                             |   2 +-
+ x11-fm/thunar/distinfo                             |   6 +-
+ x11-fonts/iosevka/Makefile                         |   2 +-
+ x11-fonts/iosevka/distinfo                         | 230 ++++++++++-----------
+ 123 files changed, 2372 insertions(+), 985 deletions(-)
+ create mode 100644 databases/redis5/Makefile
+ create mode 100644 databases/redis5/distinfo
+ create mode 100644 databases/redis5/files/extra-patch-deps_lua_src_lua__cjson.c
+ create mode 100644 databases/redis5/files/extra-patch-src-Makefile.lua
+ create mode 100644 databases/redis5/files/extra-patch-src-Makefile.luajit
+ create mode 100644 databases/redis5/files/extra-patch-src-Makefile.luajit-or
+ create mode 100644 databases/redis5/files/patch-deps-Makefile
+ create mode 100644 databases/redis5/files/patch-deps-hiredis-Makefile
+ create mode 100644 databases/redis5/files/patch-deps-hiredis-net.c
+ create mode 100644 databases/redis5/files/patch-deps-linenoise-Makefile
+ create mode 100644 databases/redis5/files/patch-deps_Makefile
+ create mode 100644 databases/redis5/files/patch-deps_lua_src_lua__cjson.c
+ create mode 100644 databases/redis5/files/patch-redis.conf
+ create mode 100644 databases/redis5/files/patch-src-Makefile
+ create mode 100644 databases/redis5/files/patch-src-mkreleasehdr.sh
+ create mode 100644 databases/redis5/files/pkg-message.in
+ create mode 100644 databases/redis5/files/redis.in
+ create mode 100644 databases/redis5/files/sentinel.in
+ create mode 100644 databases/redis5/pkg-descr
+ create mode 100644 databases/redis5/pkg-plist
+ delete mode 100644 deskutils/nextcloudclient/files/patch-src_gui_accountsettings.cpp
+ delete mode 100644 deskutils/nextcloudclient/files/patch-src_gui_generalsettings.cpp
+ create mode 100644 net/stone/files/patch-stone.c
+ create mode 100644 science/v_sim/files/patch-Documentation_reference_Makefile.am
+ create mode 100644 science/v_sim/files/patch-configure.ac
+ delete mode 100644 science/v_sim/files/patch-lib_plug-ins_Makefile.in
+ create mode 100644 science/v_sim/files/patch-lib_plug-ins_abinit_ab__symmetry.c
+ create mode 100644 science/v_sim/files/patch-m4_libxc.m4
+ create mode 100644 science/v_sim/files/patch-src_coreTools_atoms__yaml.c
+ delete mode 100644 security/kleopatra/files/patch-D26393
+ create mode 100644 security/libkleo/files/patch-BR415168
+ create mode 100644 sysutils/gomi/Makefile
+ create mode 100644 sysutils/gomi/distinfo
+ create mode 100644 sysutils/gomi/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    80c7c2852350..a90cc815c93b  master -> master        
+remote:    efc42a29787c..80c7c2852350  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   80c7c2852350..a90cc815c93b  master -> master
+==== END: master ====
