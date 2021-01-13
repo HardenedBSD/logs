@@ -47,3 +47,204 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging math/oleo/Makefile
+Removing games/chroma/files/patch-sdlshadowdisplay.c
+Removing devel/gcc-arm-embedded/files/patch-src_gdb_gdb_stap-probe.c
+Removing devel/gcc-arm-embedded/files/patch-src_gdb_gdb_gnulib_import_stddef.in.h
+Removing devel/gcc-arm-embedded/files/patch-src_gcc_libcpp_lex.c
+Auto-merging devel/gcc-arm-embedded/Makefile
+Merge made by the 'recursive' strategy.
+ Mk/bsd.default-versions.mk                         |   2 +-
+ cad/calculix-ccx/Makefile                          |   5 +
+ comms/wsjtx/Makefile                               |   7 +
+ databases/grass7/Makefile                          |   5 +-
+ databases/grass7/distinfo                          |   6 +-
+ databases/mariadb105-server/Makefile               |   2 +-
+ databases/mongodb40/Makefile                       |   2 +-
+ databases/mongodb42/Makefile                       |   2 +-
+ databases/mongodb44/Makefile                       |   2 +-
+ databases/percona-toolkit/Makefile                 |   2 +-
+ databases/percona-toolkit/distinfo                 |   6 +-
+ databases/redis-devel/Makefile                     |   5 +-
+ databases/redis-devel/distinfo                     |   6 +-
+ .../redis-devel/files/extra-patch-src-Makefile.lua |  28 +-
+ .../files/extra-patch-src-Makefile.luajit          |  28 +-
+ .../files/extra-patch-src-Makefile.luajit-or       |  28 +-
+ databases/redis-devel/files/patch-deps-Makefile    |  12 +-
+ .../redis-devel/files/patch-deps-hiredis-Makefile  |  27 +-
+ databases/redis-devel/files/patch-deps_Makefile    |  10 +-
+ databases/redis-devel/files/patch-redis.conf       |  18 +-
+ databases/redis/Makefile                           |   2 +-
+ databases/redis4/Makefile                          |   2 +-
+ databases/redis5/Makefile                          |   2 +-
+ deskutils/syncthingtray/Makefile                   |   4 +-
+ deskutils/syncthingtray/distinfo                   |  10 +-
+ devel/Makefile                                     |   4 +
+ devel/gcc-arm-embedded/Makefile                    |  10 +-
+ devel/gcc-arm-embedded/distinfo                    |   6 +-
+ .../files/patch-src_gcc_libcpp_lex.c               |  25 -
+ ...arf2read.c => patch-src_gdb_gdb_dwarf2_macro.c} |   8 +-
+ .../patch-src_gdb_gdb_gnulib_import_stddef.in.h    |  11 -
+ .../files/patch-src_gdb_gdb_stap-probe.c           |  11 -
+ devel/gcc-arm-embedded/pkg-plist                   | 979 ++++++++++-----------
+ devel/jenkins-lts/Makefile                         |   2 +-
+ devel/jenkins-lts/distinfo                         |   6 +-
+ devel/jenkins/Makefile                             |   2 +-
+ devel/jenkins/distinfo                             |   6 +-
+ devel/libegit2/Makefile                            |  48 +
+ devel/libegit2/distinfo                            |   3 +
+ devel/libegit2/files/patch-libgit.el               |  11 +
+ devel/libegit2/files/patch-use-system-libgit2      |  78 ++
+ devel/libegit2/pkg-descr                           |   4 +
+ devel/libegit2/pkg-plist                           |   3 +
+ devel/libopencm3/Makefile                          |   9 +-
+ devel/libopencm3/distinfo                          |   6 +-
+ devel/magit-devel/Makefile                         |  59 ++
+ devel/magit-devel/distinfo                         |   3 +
+ devel/magit-devel/pkg-descr                        |   9 +
+ devel/magit-devel/pkg-message                      |   9 +
+ devel/magit-devel/pkg-plist                        |  96 ++
+ devel/magit/Makefile                               |   2 +
+ devel/please/Makefile                              | 127 +++
+ devel/please/distinfo                              | 155 ++++
+ devel/please/pkg-descr                             |   5 +
+ devel/transient/Makefile                           |  42 +
+ devel/transient/distinfo                           |   3 +
+ devel/transient/pkg-descr                          |  21 +
+ devel/transient/pkg-plist                          |   3 +
+ finance/grisbi/Makefile                            |   3 +-
+ finance/grisbi/distinfo                            |   6 +-
+ finance/grisbi/files/patch-pixmaps__Makefile.in    |   8 +-
+ .../grisbi/files/patch-pixmaps_flags_Makefile.in   |   4 +-
+ finance/grisbi/files/patch-src__Makefile.in        |  10 +-
+ finance/grisbi/pkg-plist                           |  27 +-
+ games/chroma/Makefile                              |   4 +-
+ games/chroma/distinfo                              |   6 +-
+ games/chroma/files/patch-sdlshadowdisplay.c        |  47 -
+ games/libretro-paralleln64/Makefile                |   8 +-
+ graphics/cptutils/Makefile                         |   5 +-
+ graphics/cptutils/distinfo                         |   6 +-
+ graphics/cptutils/files/patch-configure.ac         |  14 +
+ graphics/cptutils/files/patch-src_test_equal-qgs   |  11 +
+ graphics/cptutils/files/patch-src_test_equal-svg   |  11 +
+ mail/dovecot-fts-xapian/Makefile                   |   3 +-
+ mail/dovecot-fts-xapian/distinfo                   |   6 +-
+ mail/milter-greylist/Makefile                      |   6 +-
+ mail/milter-greylist/distinfo                      |   6 +-
+ mail/milter-greylist/files/patch-spf.c             |   9 +
+ math/hs-penrose/Makefile                           |   6 +
+ math/mumps/Makefile                                |   5 +
+ math/octave-forge-optiminterp/Makefile             |  10 +-
+ math/oleo/Makefile                                 |  31 +-
+ math/oleo/files/patch-configure                    |  49 ++
+ math/scilab/Makefile                               |   7 +
+ net/google-cloud-sdk/Makefile                      |   2 +-
+ net/google-cloud-sdk/distinfo                      |   6 +-
+ net/iaxmodem/Makefile                              |   2 +-
+ science/cp2k/Makefile                              |   4 +
+ science/elmerfem/Makefile                          |   6 +
+ science/getdp/Makefile                             |   7 +
+ science/libgridxc/Makefile                         |   6 +
+ science/pnetcdf/Makefile                           |   9 +-
+ security/lynis/Makefile                            |   2 +-
+ security/lynis/distinfo                            |   6 +-
+ security/vuxml/vuln.xml                            |  49 ++
+ sysutils/auto-admin/Makefile                       |   3 +-
+ sysutils/auto-admin/distinfo                       |   6 +-
+ sysutils/auto-admin/pkg-plist                      |   1 +
+ sysutils/desktop-installer/Makefile                |   5 +-
+ sysutils/desktop-installer/distinfo                |   6 +-
+ sysutils/spcm/Makefile                             |   5 +-
+ sysutils/spcm/distinfo                             |   6 +-
+ 102 files changed, 1622 insertions(+), 806 deletions(-)
+ delete mode 100644 devel/gcc-arm-embedded/files/patch-src_gcc_libcpp_lex.c
+ rename devel/gcc-arm-embedded/files/{patch-src_gdb_gdb_dwarf2read.c => patch-src_gdb_gdb_dwarf2_macro.c} (57%)
+ delete mode 100644 devel/gcc-arm-embedded/files/patch-src_gdb_gdb_gnulib_import_stddef.in.h
+ delete mode 100644 devel/gcc-arm-embedded/files/patch-src_gdb_gdb_stap-probe.c
+ create mode 100644 devel/libegit2/Makefile
+ create mode 100644 devel/libegit2/distinfo
+ create mode 100644 devel/libegit2/files/patch-libgit.el
+ create mode 100644 devel/libegit2/files/patch-use-system-libgit2
+ create mode 100644 devel/libegit2/pkg-descr
+ create mode 100644 devel/libegit2/pkg-plist
+ create mode 100644 devel/magit-devel/Makefile
+ create mode 100644 devel/magit-devel/distinfo
+ create mode 100644 devel/magit-devel/pkg-descr
+ create mode 100644 devel/magit-devel/pkg-message
+ create mode 100644 devel/magit-devel/pkg-plist
+ create mode 100644 devel/please/Makefile
+ create mode 100644 devel/please/distinfo
+ create mode 100644 devel/please/pkg-descr
+ create mode 100644 devel/transient/Makefile
+ create mode 100644 devel/transient/distinfo
+ create mode 100644 devel/transient/pkg-descr
+ create mode 100644 devel/transient/pkg-plist
+ delete mode 100644 games/chroma/files/patch-sdlshadowdisplay.c
+ create mode 100644 graphics/cptutils/files/patch-configure.ac
+ create mode 100644 graphics/cptutils/files/patch-src_test_equal-qgs
+ create mode 100644 graphics/cptutils/files/patch-src_test_equal-svg
+ create mode 100644 mail/milter-greylist/files/patch-spf.c
+ create mode 100644 math/oleo/files/patch-configure
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    a90cc815c93b..07608cd4faaf  master -> master        
+remote:    80c7c2852350..a90cc815c93b  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   a90cc815c93b..07608cd4faaf  master -> master
+==== END: master ====
