@@ -1,0 +1,231 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 77 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 7d4092d4c8f8..efc42a29787c
+Fast-forward
+ MOVED                                              |   2 +
+ Mk/Uses/python.mk                                  |   8 -
+ archivers/pecl-rar/Makefile                        |   2 +-
+ audio/gsm/Makefile                                 |   2 +-
+ audio/noise-suppression-for-voice-lv2/Makefile     |   2 +-
+ audio/xmradio/Makefile                             |   2 +-
+ biology/iqtree/Makefile                            |   5 +-
+ biology/iqtree/files/patch-CMakeLists.txt          |  11 +
+ cad/kicad/Makefile                                 |   6 -
+ cad/libredwg/Makefile                              |  23 ++-
+ cad/libredwg/distinfo                              |   6 +-
+ cad/libredwg/files/patch-examples_load__dwg.py     |  20 ++
+ cad/libredwg/pkg-plist                             |  12 +-
+ cad/verilator/Makefile                             |   2 +-
+ cad/verilator/distinfo                             |   6 +-
+ databases/evolution-data-server/Makefile           |   2 +-
+ databases/evolution-data-server/distinfo           |   6 +-
+ databases/kyotocabinet/Makefile                    |   3 +-
+ databases/timescaledb/Makefile                     |   2 +-
+ .../timescaledb/files/patch-tsl_src_reorder.c      |  10 -
+ deskutils/xfce4-tumbler/Makefile                   |   4 +-
+ devel/Makefile                                     |   2 +-
+ devel/arcanist-lib/Makefile                        |   2 +
+ devel/arcanist-lib/pkg-plist                       |   1 +
+ devel/arduino-bsd-mk/Makefile                      |   2 +-
+ devel/arduino-bsd-mk/distinfo                      |   6 +-
+ devel/lab/Makefile                                 | 106 +++++++---
+ devel/lab/distinfo                                 | 202 +++++++++++++------
+ devel/ncurses/Makefile                             |   2 +-
+ devel/ncurses/distinfo                             |   6 +-
+ devel/ncurses/pkg-plist                            |   4 -
+ devel/p5-Log-Log4perl-Appender-RabbitMQ/Makefile   |   4 +-
+ devel/p5-Log-Log4perl-Appender-RabbitMQ/distinfo   |   6 +-
+ devel/pecl-runkit7/Makefile                        |   2 +-
+ devel/py-columnize/Makefile                        |  10 +-
+ devel/py-mock/Makefile                             |   8 +-
+ devel/py-onigurumacffi/Makefile                    |   2 +-
+ devel/py-onigurumacffi/distinfo                    |   6 +-
+ devel/py-pyee/Makefile                             |  11 +-
+ devel/py-pystorm/Makefile                          |  10 +-
+ devel/py-qt5-core/Makefile                         |   7 -
+ devel/py-streamparse/Makefile                      |   9 +-
+ devel/py-typing/Makefile                           |  23 ---
+ devel/py-typing/distinfo                           |   3 -
+ devel/py-typing/pkg-descr                          |   8 -
+ devel/py-vcrpy/Makefile                            |  16 +-
+ devel/systemc/Makefile                             |   9 +-
+ devel/systemc/distinfo                             |   6 +-
+ devel/systemc/pkg-plist                            |   2 +-
+ devel/transwarp/Makefile                           |  32 +++
+ devel/transwarp/distinfo                           |   3 +
+ devel/transwarp/pkg-descr                          |   5 +
+ dns/yadifa/Makefile                                |   2 +-
+ emulators/libretro-vice/Makefile                   |   2 +-
+ emulators/wine-devel/Makefile                      |   2 +-
+ emulators/wine-devel/distinfo                      |  10 +-
+ finance/py-stripe/Makefile                         |  10 +-
+ finance/quickfix/Makefile                          |   6 +-
+ finance/quickfix/files/patch-m4_ax__python.m4      |  18 +-
+ ftp/wget/Makefile                                  |   1 +
+ games/cdogs-sdl/Makefile                           |   4 +-
+ games/cdogs-sdl/distinfo                           |   6 +-
+ games/cdogs-sdl/pkg-plist                          |  22 +-
+ games/doomsday/Makefile                            |   6 +-
+ games/doomsday/distinfo                            |   6 +-
+ games/doomsday/pkg-plist                           |  43 ++--
+ games/homura/Makefile                              |  10 +-
+ games/homura/distinfo                              |   6 +-
+ games/homura/pkg-descr                             |   2 +-
+ games/homura/pkg-message                           |   2 +-
+ games/sauerbraten/Makefile                         |   2 +-
+ games/wyrmgus/Makefile                             |  27 +--
+ games/wyrmgus/distinfo                             |   6 +-
+ .../wyrmgus/files/patch-src_database_data__type.h  |  33 +++
+ games/wyrmsun/Makefile                             |   2 +-
+ games/wyrmsun/distinfo                             |   6 +-
+ graphics/SciPlot/Makefile                          |   2 +-
+ graphics/SciPlot/files/patch-Imakefile             |  14 +-
+ graphics/SciPlot/pkg-descr                         |   2 +-
+ graphics/djview4/Makefile                          |   2 +
+ graphics/gifski/Makefile                           |  49 +++--
+ graphics/gifski/distinfo                           |  98 +++++----
+ lang/ldc/Makefile                                  |   1 +
+ lang/luajit-openresty/Makefile                     |   2 +
+ mail/evolution-ews/Makefile                        |   2 +-
+ mail/evolution-ews/distinfo                        |   6 +-
+ mail/evolution/Makefile                            |   2 +-
+ mail/evolution/distinfo                            |   6 +-
+ mail/py-validate_email/Makefile                    |  14 +-
+ math/gau2grid/Makefile                             |   2 +-
+ math/gau2grid/distinfo                             |   6 +-
+ math/pspp/Makefile                                 |   1 -
+ math/py-fpylll/Makefile                            |   5 +-
+ math/py-fpylll/distinfo                            |   6 +-
+ math/py-gau2grid/Makefile                          |   2 +-
+ math/py-gau2grid/distinfo                          |   6 +-
+ math/py-networkx/Makefile                          |   2 -
+ misc/adios2/Makefile                               |   5 +-
+ misc/adios2/distinfo                               |   6 +-
+ misc/adios2/pkg-plist                              |  32 ++-
+ misc/dahdi-kmod/Makefile                           |   2 +-
+ multimedia/dvdread/Makefile                        |   1 +
+ multimedia/kodi-addon-pvr-hts/Makefile             |   2 +-
+ multimedia/ustreamer/Makefile                      |   7 +-
+ multimedia/ustreamer/distinfo                      |   6 +-
+ multimedia/ustreamer/files/patch-src_tools.h       |  16 --
+ net-im/scli/Makefile                               |  12 +-
+ net-im/scli/distinfo                               |   6 +-
+ net/Makefile                                       |   1 -
+ net/cloudquery/Makefile                            |   2 +-
+ net/cloudquery/distinfo                            |   6 +-
+ net/coturn/Makefile                                |   5 +-
+ net/coturn/distinfo                                |   6 +-
+ net/google-cloud-sdk/Makefile                      |   3 +-
+ net/google-cloud-sdk/distinfo                      |   6 +-
+ net/grpcurl/Makefile                               |  25 ++-
+ net/grpcurl/distinfo                               |  48 +++--
+ net/mpich/Makefile                                 |   2 +
+ net/py-ipaddress/Makefile                          |  21 --
+ net/py-ipaddress/distinfo                          |   3 -
+ net/py-ipaddress/pkg-descr                         |   7 -
+ net/py-pyzmq/Makefile                              |   8 +-
+ net/syncthing/Makefile                             |   2 +-
+ net/syncthing/distinfo                             |   6 +-
+ print/hplip/Makefile                               |  11 +-
+ science/abinit/Makefile                            |   2 +-
+ science/gchemutils/Makefile                        |   7 +-
+ science/kalzium/Makefile                           |  19 +-
+ science/luscus/Makefile                            |   4 +-
+ science/molsketch/Makefile                         |   5 +-
+ science/molsketch/distinfo                         |   6 +-
+ science/molsketch/pkg-plist                        |   5 +-
+ science/openbabel/Makefile                         |  49 +++--
+ science/openbabel/distinfo                         |   6 +-
+ science/openbabel/pkg-plist                        | 222 ++++++++++++---------
+ science/xdrawchem/Makefile                         |  20 +-
+ science/xdrawchem/distinfo                         |   6 +-
+ science/xdrawchem/files/patch-xdrawchem.pro        |  42 ++++
+ science/xdrawchem/pkg-plist                        | 123 +-----------
+ security/py-fail2ban/Makefile                      |   8 +-
+ security/tor-devel/Makefile                        |   2 +-
+ security/tor-devel/distinfo                        |   6 +-
+ security/vuxml/vuln.xml                            |  26 +++
+ sysutils/cinnamon-settings-daemon/Makefile         |   4 +-
+ sysutils/gdisk/Makefile                            |   2 +-
+ sysutils/gnome-control-center/Makefile             |   2 +-
+ sysutils/gnome-control-center/distinfo             |   6 +-
+ sysutils/htop/Makefile                             |   3 +-
+ sysutils/py-docker/Makefile                        |   8 +-
+ textproc/py-sphinx/Makefile                        |   3 +-
+ textproc/py-sphinx/distinfo                        |   6 +-
+ textproc/py-sphinx18/Makefile                      |   1 -
+ www/cpp-httplib/Makefile                           |   2 +-
+ www/cpp-httplib/distinfo                           |   6 +-
+ www/phpmyfaq/Makefile                              |   2 +-
+ www/phpmyfaq/distinfo                              |   6 +-
+ www/phpmyfaq/pkg-plist                             |   3 +
+ www/py-autobahn/Makefile                           |   8 +-
+ www/py-lektor/Makefile                             |   8 +-
+ www/py-webargs/Makefile                            |   8 +-
+ www/uwebsockets/Makefile                           |   2 +-
+ www/uwebsockets/distinfo                           |   6 +-
+ x11-fonts/fontobene/Makefile                       |   2 +-
+ x11/xdialog/Makefile                               |   2 +-
+ 164 files changed, 1048 insertions(+), 972 deletions(-)
+ create mode 100644 biology/iqtree/files/patch-CMakeLists.txt
+ create mode 100644 cad/libredwg/files/patch-examples_load__dwg.py
+ delete mode 100644 databases/timescaledb/files/patch-tsl_src_reorder.c
+ delete mode 100644 devel/py-typing/Makefile
+ delete mode 100644 devel/py-typing/distinfo
+ delete mode 100644 devel/py-typing/pkg-descr
+ create mode 100644 devel/transwarp/Makefile
+ create mode 100644 devel/transwarp/distinfo
+ create mode 100644 devel/transwarp/pkg-descr
+ create mode 100644 games/wyrmgus/files/patch-src_database_data__type.h
+ delete mode 100644 multimedia/ustreamer/files/patch-src_tools.h
+ delete mode 100644 net/py-ipaddress/Makefile
+ delete mode 100644 net/py-ipaddress/distinfo
+ delete mode 100644 net/py-ipaddress/pkg-descr
+ create mode 100644 science/xdrawchem/files/patch-xdrawchem.pro
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
