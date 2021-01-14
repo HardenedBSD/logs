@@ -1,0 +1,513 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 13 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating f27ef49b0cf8..09acf7148b3d
+Fast-forward
+ contrib/bmake/ChangeLog                            |  241 +-
+ contrib/bmake/FILES                                |   64 +-
+ contrib/bmake/LICENSE                              |    4 +-
+ contrib/bmake/PSD.doc/tutorial.ms                  |   10 +-
+ contrib/bmake/VERSION                              |    2 +-
+ contrib/bmake/arch.c                               | 1323 ++---
+ contrib/bmake/bmake.1                              |   18 +-
+ contrib/bmake/bmake.cat1                           |  248 +-
+ contrib/bmake/buf.c                                |  139 +-
+ contrib/bmake/buf.h                                |   28 +-
+ contrib/bmake/compat.c                             |  932 +--
+ contrib/bmake/cond.c                               | 1611 +++---
+ contrib/bmake/dir.c                                | 2047 ++++---
+ contrib/bmake/dir.h                                |   36 +-
+ contrib/bmake/enum.c                               |   11 +-
+ contrib/bmake/enum.h                               |   69 +-
+ contrib/bmake/filemon/filemon.h                    |    6 +-
+ contrib/bmake/filemon/filemon_dev.c                |    6 +-
+ contrib/bmake/filemon/filemon_ktrace.c             |   79 +-
+ contrib/bmake/for.c                                |  633 +-
+ contrib/bmake/hash.c                               |   41 +-
+ contrib/bmake/hash.h                               |   72 +-
+ contrib/bmake/import.sh                            |   87 +
+ contrib/bmake/job.c                                | 3893 +++++++------
+ contrib/bmake/job.h                                |   84 +-
+ contrib/bmake/lst.c                                |  304 +-
+ contrib/bmake/lst.h                                |   88 +-
+ contrib/bmake/main.c                               |  364 +-
+ contrib/bmake/make-conf.h                          |   20 +-
+ contrib/bmake/make.1                               |   18 +-
+ contrib/bmake/make.c                               | 1825 +++---
+ contrib/bmake/make.h                               |  812 +--
+ contrib/bmake/make_malloc.c                        |    7 +-
+ contrib/bmake/make_malloc.h                        |   12 +-
+ contrib/bmake/meta.c                               |  359 +-
+ contrib/bmake/meta.h                               |    4 +-
+ contrib/bmake/metachar.h                           |    4 +-
+ contrib/bmake/mk/ChangeLog                         |   39 +
+ contrib/bmake/mk/dirdeps-options.mk                |    5 +-
+ contrib/bmake/mk/dirdeps-targets.mk                |    7 +-
+ contrib/bmake/mk/dirdeps.mk                        |   25 +-
+ contrib/bmake/mk/init.mk                           |   17 +-
+ contrib/bmake/mk/install-mk                        |    4 +-
+ contrib/bmake/mk/meta.subdir.mk                    |    4 +-
+ contrib/bmake/mk/mkopt.sh                          |    0
+ contrib/bmake/mk/own.mk                            |    6 +-
+ contrib/bmake/mk/sys.mk                            |    6 +-
+ contrib/bmake/nonints.h                            |  278 +-
+ contrib/bmake/os.sh                                |    0
+ contrib/bmake/parse.c                              | 4058 ++++++-------
+ contrib/bmake/pathnames.h                          |   15 +-
+ contrib/bmake/str.c                                |   15 +-
+ contrib/bmake/suff.c                               | 2897 +++++-----
+ contrib/bmake/targ.c                               |  568 +-
+ contrib/bmake/trace.c                              |   16 +-
+ contrib/bmake/trace.h                              |    6 +-
+ contrib/bmake/unit-tests/Makefile                  |  159 +-
+ contrib/bmake/unit-tests/cmd-errors-jobs.exp       |    9 +
+ contrib/bmake/unit-tests/cmd-errors-jobs.mk        |   32 +
+ contrib/bmake/unit-tests/cmd-errors.mk             |    4 +-
+ contrib/bmake/unit-tests/cmdline.mk                |    2 +-
+ contrib/bmake/unit-tests/compat-error.exp          |   15 +
+ contrib/bmake/unit-tests/compat-error.mk           |   37 +
+ contrib/bmake/unit-tests/cond-eof.exp              |    9 +
+ contrib/bmake/unit-tests/cond-eof.mk               |   20 +
+ contrib/bmake/unit-tests/cond-func-empty.mk        |   27 +-
+ contrib/bmake/unit-tests/cond-func-exists.mk       |   11 +-
+ contrib/bmake/unit-tests/cond-func-make-main.exp   |    3 +
+ contrib/bmake/unit-tests/cond-func-make-main.mk    |   62 +
+ contrib/bmake/unit-tests/cond-short.exp            |   12 +-
+ contrib/bmake/unit-tests/cond-short.mk             |   64 +-
+ contrib/bmake/unit-tests/cond-token-string.exp     |    2 +-
+ contrib/bmake/unit-tests/dep-percent.exp           |    5 +-
+ contrib/bmake/unit-tests/depsrc-meta.exp           |    4 +
+ contrib/bmake/unit-tests/depsrc-meta.mk            |   27 +-
+ contrib/bmake/unit-tests/depsrc-optional.exp       |   18 +-
+ contrib/bmake/unit-tests/depsrc.exp                |    3 +
+ contrib/bmake/unit-tests/depsrc.mk                 |   17 +-
+ .../unit-tests/deptgt-begin-fail-indirect.exp      |    6 +
+ .../bmake/unit-tests/deptgt-begin-fail-indirect.mk |   16 +
+ contrib/bmake/unit-tests/deptgt-begin-fail.exp     |    6 +
+ contrib/bmake/unit-tests/deptgt-begin-fail.mk      |   10 +
+ contrib/bmake/unit-tests/deptgt-end-fail-all.exp   |    7 +
+ contrib/bmake/unit-tests/deptgt-end-fail-all.mk    |   19 +
+ .../bmake/unit-tests/deptgt-end-fail-indirect.exp  |    7 +
+ .../bmake/unit-tests/deptgt-end-fail-indirect.mk   |   16 +
+ contrib/bmake/unit-tests/deptgt-end-fail.exp       |  163 +
+ contrib/bmake/unit-tests/deptgt-end-fail.mk        |   69 +
+ contrib/bmake/unit-tests/deptgt-suffixes.exp       |   26 +
+ contrib/bmake/unit-tests/deptgt-suffixes.mk        |   23 +-
+ contrib/bmake/unit-tests/deptgt.exp                |    1 +
+ contrib/bmake/unit-tests/deptgt.mk                 |   10 +-
+ contrib/bmake/unit-tests/directive-elif.exp        |   32 +-
+ contrib/bmake/unit-tests/directive-elif.mk         |  126 +-
+ contrib/bmake/unit-tests/directive-else.exp        |   16 +-
+ contrib/bmake/unit-tests/directive-else.mk         |   15 +-
+ contrib/bmake/unit-tests/directive-endfor.exp      |    4 +
+ contrib/bmake/unit-tests/directive-endfor.mk       |    9 +
+ contrib/bmake/unit-tests/directive-endif.exp       |    9 +-
+ contrib/bmake/unit-tests/directive-endif.mk        |   28 +-
+ contrib/bmake/unit-tests/directive-error.mk        |    6 +-
+ contrib/bmake/unit-tests/directive-export-env.mk   |    4 +-
+ contrib/bmake/unit-tests/directive-export-impl.exp |   56 +
+ contrib/bmake/unit-tests/directive-export-impl.mk  |   62 +
+ .../bmake/unit-tests/directive-export-literal.mk   |    4 +-
+ contrib/bmake/unit-tests/directive-export.exp      |    5 +-
+ contrib/bmake/unit-tests/directive-export.mk       |   16 +-
+ contrib/bmake/unit-tests/directive-for-errors.exp  |   22 +
+ contrib/bmake/unit-tests/directive-for-errors.mk   |   75 +
+ contrib/bmake/unit-tests/directive-for-escape.exp  |   74 +
+ contrib/bmake/unit-tests/directive-for-escape.mk   |   96 +
+ contrib/bmake/unit-tests/directive-for-lines.exp   |   10 +
+ contrib/bmake/unit-tests/directive-for-lines.mk    |   32 +
+ contrib/bmake/unit-tests/directive-for-null.exp    |   10 +
+ contrib/bmake/unit-tests/directive-for-null.mk     |   19 +
+ contrib/bmake/unit-tests/directive-for.exp         |    7 +-
+ contrib/bmake/unit-tests/directive-for.mk          |    9 +-
+ contrib/bmake/unit-tests/directive-if.exp          |    6 +-
+ contrib/bmake/unit-tests/directive-if.mk           |   14 +-
+ contrib/bmake/unit-tests/directive-include.mk      |    5 +-
+ contrib/bmake/unit-tests/directive-info.exp        |   23 +-
+ contrib/bmake/unit-tests/directive-info.mk         |   18 +-
+ .../bmake/unit-tests/directive-misspellings.exp    |   45 +
+ contrib/bmake/unit-tests/directive-misspellings.mk |   79 +
+ contrib/bmake/unit-tests/directive-undef.exp       |    3 +-
+ contrib/bmake/unit-tests/directive-undef.mk        |   85 +-
+ .../bmake/unit-tests/directive-unexport-env.exp    |   19 +-
+ contrib/bmake/unit-tests/directive-unexport-env.mk |   19 +-
+ contrib/bmake/unit-tests/directive-unexport.exp    |   13 +-
+ contrib/bmake/unit-tests/directive-unexport.mk     |   12 +-
+ contrib/bmake/unit-tests/directive-warning.exp     |   16 +-
+ contrib/bmake/unit-tests/directive-warning.mk      |   10 +-
+ contrib/bmake/unit-tests/jobs-error-indirect.exp   |    8 +
+ contrib/bmake/unit-tests/jobs-error-indirect.mk    |   21 +
+ .../bmake/unit-tests/jobs-error-nested-make.exp    |   11 +
+ contrib/bmake/unit-tests/jobs-error-nested-make.mk |   20 +
+ contrib/bmake/unit-tests/jobs-error-nested.exp     |   15 +
+ contrib/bmake/unit-tests/jobs-error-nested.mk      |   20 +
+ contrib/bmake/unit-tests/make-exported.mk          |    2 +-
+ contrib/bmake/unit-tests/meta-cmd-cmp.exp          |   37 +
+ contrib/bmake/unit-tests/meta-cmd-cmp.mk           |   52 +
+ contrib/bmake/unit-tests/modmisc.exp               |    1 -
+ contrib/bmake/unit-tests/modmisc.mk                |   29 +-
+ contrib/bmake/unit-tests/opt-chdir.exp             |    4 +-
+ contrib/bmake/unit-tests/opt-debug-errors.exp      |    5 +-
+ contrib/bmake/unit-tests/opt-debug-graph1.exp      |   36 +
+ contrib/bmake/unit-tests/opt-debug-jobs.exp        |    4 +-
+ contrib/bmake/unit-tests/opt-debug-lint.exp        |    3 +-
+ contrib/bmake/unit-tests/opt-debug-lint.mk         |   15 +-
+ contrib/bmake/unit-tests/opt-file.exp              |   13 +-
+ contrib/bmake/unit-tests/opt-file.mk               |  101 +-
+ contrib/bmake/unit-tests/opt-jobs-no-action.exp    |   61 +
+ contrib/bmake/unit-tests/opt-jobs-no-action.mk     |  102 +
+ .../bmake/unit-tests/opt-keep-going-multiple.exp   |    9 +
+ .../bmake/unit-tests/opt-keep-going-multiple.mk    |   21 +
+ contrib/bmake/unit-tests/opt-keep-going.exp        |    5 +-
+ contrib/bmake/unit-tests/opt-keep-going.mk         |    6 +-
+ .../bmake/unit-tests/opt-no-action-runflags.exp    |   34 +
+ contrib/bmake/unit-tests/opt-no-action-runflags.mk |   32 +
+ contrib/bmake/unit-tests/opt.exp                   |    4 +
+ contrib/bmake/unit-tests/posix.exp                 |    5 +-
+ contrib/bmake/unit-tests/qequals.exp               |    2 -
+ contrib/bmake/unit-tests/qequals.mk                |    8 -
+ contrib/bmake/unit-tests/sh-dots.exp               |   12 +-
+ contrib/bmake/unit-tests/sh-errctl.exp             |   27 +
+ contrib/bmake/unit-tests/sh-errctl.mk              |   26 +
+ contrib/bmake/unit-tests/sh-flags.exp              | 4325 ++++++++++++++
+ contrib/bmake/unit-tests/sh-flags.mk               |  138 +
+ contrib/bmake/unit-tests/sh-jobs.exp               |    7 +-
+ contrib/bmake/unit-tests/sh-jobs.mk                |   34 +-
+ contrib/bmake/unit-tests/sh-meta-chars.mk          |   17 +-
+ contrib/bmake/unit-tests/shell-csh.mk              |    6 +-
+ contrib/bmake/unit-tests/suff-add-later.exp        |    8 +-
+ contrib/bmake/unit-tests/suff-clear-regular.exp    |    5 +-
+ contrib/bmake/unit-tests/suff-clear-regular.mk     |    3 +-
+ contrib/bmake/unit-tests/suff-clear-single.exp     |    5 +-
+ contrib/bmake/unit-tests/suff-incomplete.exp       |   42 +
+ contrib/bmake/unit-tests/suff-incomplete.mk        |   31 +
+ contrib/bmake/unit-tests/suff-lookup.exp           |   21 +-
+ contrib/bmake/unit-tests/suff-main-several.exp     |  141 +
+ contrib/bmake/unit-tests/suff-main-several.mk      |   42 +
+ contrib/bmake/unit-tests/suff-phony.exp            |   13 +
+ contrib/bmake/unit-tests/suff-phony.mk             |   21 +
+ contrib/bmake/unit-tests/suff-rebuild.exp          |   76 +-
+ contrib/bmake/unit-tests/suff-rebuild.mk           |   23 +-
+ contrib/bmake/unit-tests/suff-self.exp             |    5 +-
+ contrib/bmake/unit-tests/suff-transform-debug.exp  |   62 +
+ contrib/bmake/unit-tests/suff-transform-debug.mk   |   12 +
+ .../bmake/unit-tests/suff-transform-endless.exp    |   44 +-
+ contrib/bmake/unit-tests/suff-transform-endless.mk |    9 +-
+ contrib/bmake/unit-tests/suff-transform-expand.exp |    5 +-
+ contrib/bmake/unit-tests/suff-transform-select.exp |   45 +-
+ contrib/bmake/unit-tests/suff-transform-select.mk  |    7 +-
+ contrib/bmake/unit-tests/use-inference.exp         |    5 +-
+ contrib/bmake/unit-tests/use-inference.mk          |    6 +-
+ contrib/bmake/unit-tests/var-op-default.mk         |   72 +-
+ contrib/bmake/unit-tests/var-op-expand.exp         |    9 -
+ contrib/bmake/unit-tests/var-op-expand.mk          |  191 +-
+ contrib/bmake/unit-tests/vardebug.exp              |    2 +-
+ contrib/bmake/unit-tests/varmisc.mk                |   14 +-
+ contrib/bmake/unit-tests/varmod-defined.exp        |   18 +-
+ contrib/bmake/unit-tests/varmod-edge.exp           |   41 +-
+ contrib/bmake/unit-tests/varmod-extension.exp      |    1 +
+ contrib/bmake/unit-tests/varmod-extension.mk       |    4 +-
+ contrib/bmake/unit-tests/varmod-gmtime.exp         |   40 +-
+ contrib/bmake/unit-tests/varmod-gmtime.mk          |  197 +-
+ contrib/bmake/unit-tests/varmod-head.exp           |    1 +
+ contrib/bmake/unit-tests/varmod-head.mk            |    4 +-
+ contrib/bmake/unit-tests/varmod-ifelse.exp         |    4 +
+ contrib/bmake/unit-tests/varmod-ifelse.mk          |   20 +-
+ contrib/bmake/unit-tests/varmod-indirect.exp       |   59 +
+ contrib/bmake/unit-tests/varmod-indirect.mk        |  157 +
+ contrib/bmake/unit-tests/varmod-localtime.exp      |   40 +-
+ contrib/bmake/unit-tests/varmod-localtime.mk       |  196 +-
+ contrib/bmake/unit-tests/varmod-range.exp          |    9 +-
+ contrib/bmake/unit-tests/varmod-root.exp           |    1 +
+ contrib/bmake/unit-tests/varmod-root.mk            |    4 +-
+ contrib/bmake/unit-tests/varmod-subst-regex.exp    |    2 +
+ contrib/bmake/unit-tests/varmod-subst-regex.mk     |    7 +-
+ contrib/bmake/unit-tests/varmod-sysv.exp           |    4 +-
+ contrib/bmake/unit-tests/varmod-sysv.mk            |   16 +-
+ contrib/bmake/unit-tests/varmod-tail.exp           |    1 +
+ contrib/bmake/unit-tests/varmod-tail.mk            |    4 +-
+ contrib/bmake/unit-tests/varmod-to-many-words.mk   |   16 +-
+ contrib/bmake/unit-tests/varmod-to-one-word.mk     |   16 +-
+ contrib/bmake/unit-tests/varmod-to-separator.exp   |    2 -
+ contrib/bmake/unit-tests/varmod.exp                |    2 +-
+ contrib/bmake/unit-tests/varmod.mk                 |    4 +-
+ contrib/bmake/unit-tests/varname-dot-makeflags.exp |    3 +
+ contrib/bmake/unit-tests/varname-dot-makeflags.mk  |   15 +
+ contrib/bmake/unit-tests/varname-dot-shell.exp     |    2 +-
+ .../varname-make_print_var_on_error-jobs.exp       |    5 +-
+ .../varname-make_print_var_on_error-jobs.mk        |   15 +-
+ .../unit-tests/varname-make_print_var_on_error.exp |    3 +-
+ .../unit-tests/varname-make_print_var_on_error.mk  |   15 +-
+ contrib/bmake/unit-tests/varname-makeflags.mk      |   24 +-
+ contrib/bmake/unit-tests/varparse-dynamic.mk       |   12 +-
+ contrib/bmake/unit-tests/varparse-errors.exp       |    6 +-
+ contrib/bmake/unit-tests/varparse-errors.mk        |   18 +-
+ contrib/bmake/util.c                               |   91 +-
+ contrib/bmake/var.c                                | 6056 ++++++++++----------
+ contrib/lua/Makefile                               |   30 +-
+ contrib/lua/README                                 |    2 +-
+ contrib/lua/doc/contents.html                      |   81 +-
+ contrib/lua/doc/lua.1                              |   93 +-
+ contrib/lua/doc/manual.html                        | 3260 +++++++----
+ contrib/lua/doc/readme.html                        |  115 +-
+ contrib/lua/src/Makefile                           |   83 +-
+ contrib/lua/src/lapi.c                             |  706 ++-
+ contrib/lua/src/lapi.h                             |   27 +-
+ contrib/lua/src/lauxlib.c                          |  385 +-
+ contrib/lua/src/lauxlib.h                          |   54 +-
+ contrib/lua/src/lbaselib.c                         |  139 +-
+ contrib/lua/src/lbitlib.c                          |  233 -
+ contrib/lua/src/lcode.c                            | 1141 +++-
+ contrib/lua/src/lcode.h                            |   34 +-
+ contrib/lua/src/lcorolib.c                         |   89 +-
+ contrib/lua/src/lctype.c                           |   43 +-
+ contrib/lua/src/lctype.h                           |   18 +-
+ contrib/lua/src/ldblib.c                           |   94 +-
+ contrib/lua/src/ldebug.c                           |  462 +-
+ contrib/lua/src/ldebug.h                           |   21 +-
+ contrib/lua/src/ldo.c                              |  559 +-
+ contrib/lua/src/ldo.h                              |   38 +-
+ contrib/lua/src/ldump.c                            |  197 +-
+ contrib/lua/src/lfunc.c                            |  223 +-
+ contrib/lua/src/lfunc.h                            |   50 +-
+ contrib/lua/src/lgc.c                              | 1387 +++--
+ contrib/lua/src/lgc.h                              |  128 +-
+ contrib/lua/src/linit.c                            |    7 +-
+ contrib/lua/src/liolib.c                           |  121 +-
+ contrib/lua/src/ljumptab.h                         |  112 +
+ contrib/lua/src/llex.c                             |   74 +-
+ contrib/lua/src/llex.h                             |   12 +-
+ contrib/lua/src/llimits.h                          |  134 +-
+ contrib/lua/src/lmathlib.c                         |  433 +-
+ contrib/lua/src/lmem.c                             |  178 +-
+ contrib/lua/src/lmem.h                             |   72 +-
+ contrib/lua/src/loadlib.c                          |  261 +-
+ contrib/lua/src/lobject.c                          |  340 +-
+ contrib/lua/src/lobject.h                          |  737 ++-
+ contrib/lua/src/lopcodes.c                         |  190 +-
+ contrib/lua/src/lopcodes.h                         |  401 +-
+ contrib/lua/src/lopnames.h                         |  103 +
+ contrib/lua/src/loslib.c                           |   85 +-
+ contrib/lua/src/lparser.c                          |  967 ++--
+ contrib/lua/src/lparser.h                          |   80 +-
+ contrib/lua/src/lprefix.h                          |    4 +-
+ contrib/lua/src/lstate.c                           |  221 +-
+ contrib/lua/src/lstate.h                           |  202 +-
+ contrib/lua/src/lstring.c                          |  135 +-
+ contrib/lua/src/lstring.h                          |   22 +-
+ contrib/lua/src/lstrlib.c                          |  504 +-
+ contrib/lua/src/ltable.c                           |  692 ++-
+ contrib/lua/src/ltable.h                           |   22 +-
+ contrib/lua/src/ltablib.c                          |   52 +-
+ contrib/lua/src/ltm.c                              |  173 +-
+ contrib/lua/src/ltm.h                              |   37 +-
+ contrib/lua/src/lua.c                              |  439 +-
+ contrib/lua/src/lua.h                              |   60 +-
+ contrib/lua/src/luac.c                             |  470 +-
+ contrib/lua/src/luaconf.h.dist                     |  253 +-
+ contrib/lua/src/lualib.h                           |    5 +-
+ contrib/lua/src/lundump.c                          |  266 +-
+ contrib/lua/src/lundump.h                          |    8 +-
+ contrib/lua/src/lutf8lib.c                         |  117 +-
+ contrib/lua/src/lvm.c                              | 1762 ++++--
+ contrib/lua/src/lvm.h                              |   91 +-
+ contrib/lua/src/lzio.c                             |    2 +-
+ contrib/lua/src/lzio.h                             |    2 +-
+ lib/liblua/Makefile                                |    2 +-
+ lib/liblua/luaconf.h                               |  248 +-
+ share/mk/suite.test.mk                             |    8 +-
+ share/mk/sys.mk                                    |    7 +
+ stand/liblua/luaconf.h                             |  244 +-
+ sys/compat/linux/linux_socket.c                    |    5 +-
+ sys/dev/mlx5/mlx5_ib/mlx5_ib_main.c                |   42 +-
+ sys/dev/tpm/tpm.c                                  |  199 -
+ tools/tools/git/hooks/prepare-commit-msg           |    4 +-
+ usr.bin/bmake/Makefile.config                      |    2 +-
+ usr.bin/bmake/unit-tests/Makefile                  |  159 +-
+ 321 files changed, 37415 insertions(+), 21876 deletions(-)
+ create mode 100755 contrib/bmake/import.sh
+ mode change 100644 => 100755 contrib/bmake/mk/install-mk
+ mode change 100755 => 100644 contrib/bmake/mk/mkopt.sh
+ mode change 100755 => 100644 contrib/bmake/os.sh
+ create mode 100644 contrib/bmake/unit-tests/cmd-errors-jobs.exp
+ create mode 100644 contrib/bmake/unit-tests/cmd-errors-jobs.mk
+ create mode 100644 contrib/bmake/unit-tests/compat-error.exp
+ create mode 100644 contrib/bmake/unit-tests/compat-error.mk
+ create mode 100644 contrib/bmake/unit-tests/cond-eof.exp
+ create mode 100644 contrib/bmake/unit-tests/cond-eof.mk
+ create mode 100644 contrib/bmake/unit-tests/cond-func-make-main.exp
+ create mode 100644 contrib/bmake/unit-tests/cond-func-make-main.mk
+ create mode 100644 contrib/bmake/unit-tests/deptgt-begin-fail-indirect.exp
+ create mode 100644 contrib/bmake/unit-tests/deptgt-begin-fail-indirect.mk
+ create mode 100644 contrib/bmake/unit-tests/deptgt-begin-fail.exp
+ create mode 100644 contrib/bmake/unit-tests/deptgt-begin-fail.mk
+ create mode 100644 contrib/bmake/unit-tests/deptgt-end-fail-all.exp
+ create mode 100644 contrib/bmake/unit-tests/deptgt-end-fail-all.mk
+ create mode 100644 contrib/bmake/unit-tests/deptgt-end-fail-indirect.exp
+ create mode 100644 contrib/bmake/unit-tests/deptgt-end-fail-indirect.mk
+ create mode 100644 contrib/bmake/unit-tests/deptgt-end-fail.exp
+ create mode 100644 contrib/bmake/unit-tests/deptgt-end-fail.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-endfor.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-endfor.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-export-impl.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-export-impl.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-for-errors.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-for-errors.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-for-escape.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-for-escape.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-for-lines.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-for-lines.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-for-null.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-for-null.mk
+ create mode 100644 contrib/bmake/unit-tests/directive-misspellings.exp
+ create mode 100644 contrib/bmake/unit-tests/directive-misspellings.mk
+ create mode 100644 contrib/bmake/unit-tests/jobs-error-indirect.exp
+ create mode 100644 contrib/bmake/unit-tests/jobs-error-indirect.mk
+ create mode 100644 contrib/bmake/unit-tests/jobs-error-nested-make.exp
+ create mode 100644 contrib/bmake/unit-tests/jobs-error-nested-make.mk
+ create mode 100644 contrib/bmake/unit-tests/jobs-error-nested.exp
+ create mode 100644 contrib/bmake/unit-tests/jobs-error-nested.mk
+ create mode 100644 contrib/bmake/unit-tests/meta-cmd-cmp.exp
+ create mode 100644 contrib/bmake/unit-tests/meta-cmd-cmp.mk
+ create mode 100644 contrib/bmake/unit-tests/opt-jobs-no-action.exp
+ create mode 100644 contrib/bmake/unit-tests/opt-jobs-no-action.mk
+ create mode 100644 contrib/bmake/unit-tests/opt-keep-going-multiple.exp
+ create mode 100644 contrib/bmake/unit-tests/opt-keep-going-multiple.mk
+ create mode 100644 contrib/bmake/unit-tests/opt-no-action-runflags.exp
+ create mode 100644 contrib/bmake/unit-tests/opt-no-action-runflags.mk
+ delete mode 100644 contrib/bmake/unit-tests/qequals.exp
+ delete mode 100644 contrib/bmake/unit-tests/qequals.mk
+ create mode 100644 contrib/bmake/unit-tests/sh-errctl.exp
+ create mode 100644 contrib/bmake/unit-tests/sh-errctl.mk
+ create mode 100644 contrib/bmake/unit-tests/sh-flags.exp
+ create mode 100644 contrib/bmake/unit-tests/sh-flags.mk
+ create mode 100644 contrib/bmake/unit-tests/suff-incomplete.exp
+ create mode 100644 contrib/bmake/unit-tests/suff-incomplete.mk
+ create mode 100644 contrib/bmake/unit-tests/suff-main-several.exp
+ create mode 100644 contrib/bmake/unit-tests/suff-main-several.mk
+ create mode 100644 contrib/bmake/unit-tests/suff-phony.exp
+ create mode 100644 contrib/bmake/unit-tests/suff-phony.mk
+ create mode 100644 contrib/bmake/unit-tests/suff-transform-debug.exp
+ create mode 100644 contrib/bmake/unit-tests/suff-transform-debug.mk
+ create mode 100644 contrib/bmake/unit-tests/varmod-indirect.exp
+ create mode 100644 contrib/bmake/unit-tests/varmod-indirect.mk
+ create mode 100644 contrib/bmake/unit-tests/varname-dot-makeflags.exp
+ create mode 100644 contrib/bmake/unit-tests/varname-dot-makeflags.mk
+ delete mode 100644 contrib/lua/src/lbitlib.c
+ create mode 100644 contrib/lua/src/ljumptab.h
+ create mode 100644 contrib/lua/src/lopnames.h
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Auto-merging .gitignore
+CONFLICT (content): Merge conflict in .gitignore
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc .gitignore
+index 244a353fabf4,c674e06fda50..000000000000
+--- a/.gitignore
++++ b/.gitignore
+@@@ -1,5 -1,9 +1,14 @@@
+++<<<<<<< HEAD
+ +.clang_complete
+ +.snap
+++=======
++ *.a
++ *.core
++ *.o
++ *.so
++ *.swp
++ *~
+++>>>>>>> freebsd/current/main
+  _.tinderbox.*
+  _.universe-toolchain
+  _.amd64.*
+@@@ -17,6 -21,7 +26,11 @@@ GPAT
+  GRTAGS
+  GTAGS
+  ID
+++<<<<<<< HEAD
+ +.tags
+++=======
++ cscope.files
++ cscope.in.out
+++>>>>>>> freebsd/current/main
+  cscope.out
+- ?cscope.out
++ cscope.po.out
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   lib/libifconfig/Makefile
+	new file:   lib/libifconfig/Symbol.map
+	modified:   sys/amd64/include/cpufunc.h
+	modified:   sys/dev/iwm/if_iwm.c
+	modified:   sys/dev/qat/qat.c
+	modified:   sys/dev/qat/qat_dh895xccreg.h
+	modified:   sys/dev/qat/qatvar.h
+	modified:   sys/fs/tmpfs/tmpfs_vnops.c
+	modified:   sys/netinet/tcp_input.c
+	modified:   sys/netinet/tcp_stacks/bbr.c
+	modified:   sys/netinet/tcp_stacks/rack.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   .gitignore
+
+HEAD is now at 09acf7148b3d HBSD: Resolve merge conflict
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 09acf7148b3d HBSD: Resolve merge conflict
+==== END: hardened/current/master ====
