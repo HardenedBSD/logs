@@ -1,0 +1,421 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/vm/vm_map.c
+CONFLICT (content): Merge conflict in sys/vm/vm_map.c
+Auto-merging share/mk/sys.mk
+Removing contrib/lua/src/lbitlib.c
+Removing contrib/bmake/unit-tests/qequals.mk
+Removing contrib/bmake/unit-tests/qequals.exp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc sys/vm/vm_map.c
+index 3670cbd3527f,b3288fce5114..000000000000
+--- a/sys/vm/vm_map.c
++++ b/sys/vm/vm_map.c
+@@@ -2839,12 -2836,11 +2839,16 @@@ again
+  			return (rv);
+  		}
+  
+++<<<<<<< HEAD
+ +		if (set_max ||
+++=======
++ 		if ((flags & VM_MAP_PROTECT_SET_PROT) == 0 ||
+++>>>>>>> freebsd/current/main
+  		    ((new_prot & ~entry->protection) & VM_PROT_WRITE) == 0 ||
+  		    ENTRY_CHARGED(entry) ||
+ -		    (entry->eflags & MAP_ENTRY_GUARD) != 0)
+ +		    (entry->eflags & MAP_ENTRY_GUARD) != 0) {
+  			continue;
+ +		}
+  
+  		cred = curthread->td_ucred;
+  		obj = entry->object.vm_object;
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   contrib/bmake/ChangeLog
+	modified:   contrib/bmake/FILES
+	modified:   contrib/bmake/LICENSE
+	modified:   contrib/bmake/PSD.doc/tutorial.ms
+	modified:   contrib/bmake/VERSION
+	modified:   contrib/bmake/arch.c
+	modified:   contrib/bmake/bmake.1
+	modified:   contrib/bmake/bmake.cat1
+	modified:   contrib/bmake/buf.c
+	modified:   contrib/bmake/buf.h
+	modified:   contrib/bmake/compat.c
+	modified:   contrib/bmake/cond.c
+	modified:   contrib/bmake/dir.c
+	modified:   contrib/bmake/dir.h
+	modified:   contrib/bmake/enum.c
+	modified:   contrib/bmake/enum.h
+	modified:   contrib/bmake/filemon/filemon.h
+	modified:   contrib/bmake/filemon/filemon_dev.c
+	modified:   contrib/bmake/filemon/filemon_ktrace.c
+	modified:   contrib/bmake/for.c
+	modified:   contrib/bmake/hash.c
+	modified:   contrib/bmake/hash.h
+	new file:   contrib/bmake/import.sh
+	modified:   contrib/bmake/job.c
+	modified:   contrib/bmake/job.h
+	modified:   contrib/bmake/lst.c
+	modified:   contrib/bmake/lst.h
+	modified:   contrib/bmake/main.c
+	modified:   contrib/bmake/make-conf.h
+	modified:   contrib/bmake/make.1
+	modified:   contrib/bmake/make.c
+	modified:   contrib/bmake/make.h
+	modified:   contrib/bmake/make_malloc.c
+	modified:   contrib/bmake/make_malloc.h
+	modified:   contrib/bmake/meta.c
+	modified:   contrib/bmake/meta.h
+	modified:   contrib/bmake/metachar.h
+	modified:   contrib/bmake/mk/ChangeLog
+	modified:   contrib/bmake/mk/dirdeps-options.mk
+	modified:   contrib/bmake/mk/dirdeps-targets.mk
+	modified:   contrib/bmake/mk/dirdeps.mk
+	modified:   contrib/bmake/mk/init.mk
+	modified:   contrib/bmake/mk/install-mk
+	modified:   contrib/bmake/mk/meta.subdir.mk
+	modified:   contrib/bmake/mk/mkopt.sh
+	modified:   contrib/bmake/mk/own.mk
+	modified:   contrib/bmake/mk/sys.mk
+	modified:   contrib/bmake/nonints.h
+	modified:   contrib/bmake/os.sh
+	modified:   contrib/bmake/parse.c
+	modified:   contrib/bmake/pathnames.h
+	modified:   contrib/bmake/str.c
+	modified:   contrib/bmake/suff.c
+	modified:   contrib/bmake/targ.c
+	modified:   contrib/bmake/trace.c
+	modified:   contrib/bmake/trace.h
+	modified:   contrib/bmake/unit-tests/Makefile
+	new file:   contrib/bmake/unit-tests/cmd-errors-jobs.exp
+	new file:   contrib/bmake/unit-tests/cmd-errors-jobs.mk
+	modified:   contrib/bmake/unit-tests/cmd-errors.mk
+	modified:   contrib/bmake/unit-tests/cmdline.mk
+	new file:   contrib/bmake/unit-tests/compat-error.exp
+	new file:   contrib/bmake/unit-tests/compat-error.mk
+	new file:   contrib/bmake/unit-tests/cond-eof.exp
+	new file:   contrib/bmake/unit-tests/cond-eof.mk
+	modified:   contrib/bmake/unit-tests/cond-func-empty.mk
+	modified:   contrib/bmake/unit-tests/cond-func-exists.mk
+	new file:   contrib/bmake/unit-tests/cond-func-make-main.exp
+	new file:   contrib/bmake/unit-tests/cond-func-make-main.mk
+	modified:   contrib/bmake/unit-tests/cond-short.exp
+	modified:   contrib/bmake/unit-tests/cond-short.mk
+	modified:   contrib/bmake/unit-tests/cond-token-string.exp
+	modified:   contrib/bmake/unit-tests/dep-percent.exp
+	modified:   contrib/bmake/unit-tests/depsrc-meta.exp
+	modified:   contrib/bmake/unit-tests/depsrc-meta.mk
+	modified:   contrib/bmake/unit-tests/depsrc-optional.exp
+	modified:   contrib/bmake/unit-tests/depsrc.exp
+	modified:   contrib/bmake/unit-tests/depsrc.mk
+	new file:   contrib/bmake/unit-tests/deptgt-begin-fail-indirect.exp
+	new file:   contrib/bmake/unit-tests/deptgt-begin-fail-indirect.mk
+	new file:   contrib/bmake/unit-tests/deptgt-begin-fail.exp
+	new file:   contrib/bmake/unit-tests/deptgt-begin-fail.mk
+	new file:   contrib/bmake/unit-tests/deptgt-end-fail-all.exp
+	new file:   contrib/bmake/unit-tests/deptgt-end-fail-all.mk
+	new file:   contrib/bmake/unit-tests/deptgt-end-fail-indirect.exp
+	new file:   contrib/bmake/unit-tests/deptgt-end-fail-indirect.mk
+	new file:   contrib/bmake/unit-tests/deptgt-end-fail.exp
+	new file:   contrib/bmake/unit-tests/deptgt-end-fail.mk
+	modified:   contrib/bmake/unit-tests/deptgt-suffixes.exp
+	modified:   contrib/bmake/unit-tests/deptgt-suffixes.mk
+	modified:   contrib/bmake/unit-tests/deptgt.exp
+	modified:   contrib/bmake/unit-tests/deptgt.mk
+	modified:   contrib/bmake/unit-tests/directive-elif.exp
+	modified:   contrib/bmake/unit-tests/directive-elif.mk
+	modified:   contrib/bmake/unit-tests/directive-else.exp
+	modified:   contrib/bmake/unit-tests/directive-else.mk
+	new file:   contrib/bmake/unit-tests/directive-endfor.exp
+	new file:   contrib/bmake/unit-tests/directive-endfor.mk
+	modified:   contrib/bmake/unit-tests/directive-endif.exp
+	modified:   contrib/bmake/unit-tests/directive-endif.mk
+	modified:   contrib/bmake/unit-tests/directive-error.mk
+	modified:   contrib/bmake/unit-tests/directive-export-env.mk
+	new file:   contrib/bmake/unit-tests/directive-export-impl.exp
+	new file:   contrib/bmake/unit-tests/directive-export-impl.mk
+	modified:   contrib/bmake/unit-tests/directive-export-literal.mk
+	modified:   contrib/bmake/unit-tests/directive-export.exp
+	modified:   contrib/bmake/unit-tests/directive-export.mk
+	new file:   contrib/bmake/unit-tests/directive-for-errors.exp
+	new file:   contrib/bmake/unit-tests/directive-for-errors.mk
+	new file:   contrib/bmake/unit-tests/directive-for-escape.exp
+	new file:   contrib/bmake/unit-tests/directive-for-escape.mk
+	new file:   contrib/bmake/unit-tests/directive-for-lines.exp
+	new file:   contrib/bmake/unit-tests/directive-for-lines.mk
+	new file:   contrib/bmake/unit-tests/directive-for-null.exp
+	new file:   contrib/bmake/unit-tests/directive-for-null.mk
+	modified:   contrib/bmake/unit-tests/directive-for.exp
+	modified:   contrib/bmake/unit-tests/directive-for.mk
+	modified:   contrib/bmake/unit-tests/directive-if.exp
+	modified:   contrib/bmake/unit-tests/directive-if.mk
+	modified:   contrib/bmake/unit-tests/directive-include.mk
+	modified:   contrib/bmake/unit-tests/directive-info.exp
+	modified:   contrib/bmake/unit-tests/directive-info.mk
+	new file:   contrib/bmake/unit-tests/directive-misspellings.exp
+	new file:   contrib/bmake/unit-tests/directive-misspellings.mk
+	modified:   contrib/bmake/unit-tests/directive-undef.exp
+	modified:   contrib/bmake/unit-tests/directive-undef.mk
+	modified:   contrib/bmake/unit-tests/directive-unexport-env.exp
+	modified:   contrib/bmake/unit-tests/directive-unexport-env.mk
+	modified:   contrib/bmake/unit-tests/directive-unexport.exp
+	modified:   contrib/bmake/unit-tests/directive-unexport.mk
+	modified:   contrib/bmake/unit-tests/directive-warning.exp
+	modified:   contrib/bmake/unit-tests/directive-warning.mk
+	new file:   contrib/bmake/unit-tests/jobs-error-indirect.exp
+	new file:   contrib/bmake/unit-tests/jobs-error-indirect.mk
+	new file:   contrib/bmake/unit-tests/jobs-error-nested-make.exp
+	new file:   contrib/bmake/unit-tests/jobs-error-nested-make.mk
+	new file:   contrib/bmake/unit-tests/jobs-error-nested.exp
+	new file:   contrib/bmake/unit-tests/jobs-error-nested.mk
+	modified:   contrib/bmake/unit-tests/make-exported.mk
+	new file:   contrib/bmake/unit-tests/meta-cmd-cmp.exp
+	new file:   contrib/bmake/unit-tests/meta-cmd-cmp.mk
+	modified:   contrib/bmake/unit-tests/modmisc.exp
+	modified:   contrib/bmake/unit-tests/modmisc.mk
+	modified:   contrib/bmake/unit-tests/opt-chdir.exp
+	modified:   contrib/bmake/unit-tests/opt-debug-errors.exp
+	modified:   contrib/bmake/unit-tests/opt-debug-graph1.exp
+	modified:   contrib/bmake/unit-tests/opt-debug-jobs.exp
+	modified:   contrib/bmake/unit-tests/opt-debug-lint.exp
+	modified:   contrib/bmake/unit-tests/opt-debug-lint.mk
+	modified:   contrib/bmake/unit-tests/opt-file.exp
+	modified:   contrib/bmake/unit-tests/opt-file.mk
+	new file:   contrib/bmake/unit-tests/opt-jobs-no-action.exp
+	new file:   contrib/bmake/unit-tests/opt-jobs-no-action.mk
+	new file:   contrib/bmake/unit-tests/opt-keep-going-multiple.exp
+	new file:   contrib/bmake/unit-tests/opt-keep-going-multiple.mk
+	modified:   contrib/bmake/unit-tests/opt-keep-going.exp
+	modified:   contrib/bmake/unit-tests/opt-keep-going.mk
+	new file:   contrib/bmake/unit-tests/opt-no-action-runflags.exp
+	new file:   contrib/bmake/unit-tests/opt-no-action-runflags.mk
+	modified:   contrib/bmake/unit-tests/opt.exp
+	modified:   contrib/bmake/unit-tests/posix.exp
+	deleted:    contrib/bmake/unit-tests/qequals.exp
+	deleted:    contrib/bmake/unit-tests/qequals.mk
+	modified:   contrib/bmake/unit-tests/sh-dots.exp
+	new file:   contrib/bmake/unit-tests/sh-errctl.exp
+	new file:   contrib/bmake/unit-tests/sh-errctl.mk
+	new file:   contrib/bmake/unit-tests/sh-flags.exp
+	new file:   contrib/bmake/unit-tests/sh-flags.mk
+	modified:   contrib/bmake/unit-tests/sh-jobs.exp
+	modified:   contrib/bmake/unit-tests/sh-jobs.mk
+	modified:   contrib/bmake/unit-tests/sh-meta-chars.mk
+	modified:   contrib/bmake/unit-tests/shell-csh.mk
+	modified:   contrib/bmake/unit-tests/suff-add-later.exp
+	modified:   contrib/bmake/unit-tests/suff-clear-regular.exp
+	modified:   contrib/bmake/unit-tests/suff-clear-regular.mk
+	modified:   contrib/bmake/unit-tests/suff-clear-single.exp
+	new file:   contrib/bmake/unit-tests/suff-incomplete.exp
+	new file:   contrib/bmake/unit-tests/suff-incomplete.mk
+	modified:   contrib/bmake/unit-tests/suff-lookup.exp
+	new file:   contrib/bmake/unit-tests/suff-main-several.exp
+	new file:   contrib/bmake/unit-tests/suff-main-several.mk
+	new file:   contrib/bmake/unit-tests/suff-phony.exp
+	new file:   contrib/bmake/unit-tests/suff-phony.mk
+	modified:   contrib/bmake/unit-tests/suff-rebuild.exp
+	modified:   contrib/bmake/unit-tests/suff-rebuild.mk
+	modified:   contrib/bmake/unit-tests/suff-self.exp
+	new file:   contrib/bmake/unit-tests/suff-transform-debug.exp
+	new file:   contrib/bmake/unit-tests/suff-transform-debug.mk
+	modified:   contrib/bmake/unit-tests/suff-transform-endless.exp
+	modified:   contrib/bmake/unit-tests/suff-transform-endless.mk
+	modified:   contrib/bmake/unit-tests/suff-transform-expand.exp
+	modified:   contrib/bmake/unit-tests/suff-transform-select.exp
+	modified:   contrib/bmake/unit-tests/suff-transform-select.mk
+	modified:   contrib/bmake/unit-tests/use-inference.exp
+	modified:   contrib/bmake/unit-tests/use-inference.mk
+	modified:   contrib/bmake/unit-tests/var-op-default.mk
+	modified:   contrib/bmake/unit-tests/var-op-expand.exp
+	modified:   contrib/bmake/unit-tests/var-op-expand.mk
+	modified:   contrib/bmake/unit-tests/vardebug.exp
+	modified:   contrib/bmake/unit-tests/varmisc.mk
+	modified:   contrib/bmake/unit-tests/varmod-defined.exp
+	modified:   contrib/bmake/unit-tests/varmod-edge.exp
+	modified:   contrib/bmake/unit-tests/varmod-extension.exp
+	modified:   contrib/bmake/unit-tests/varmod-extension.mk
+	modified:   contrib/bmake/unit-tests/varmod-gmtime.exp
+	modified:   contrib/bmake/unit-tests/varmod-gmtime.mk
+	modified:   contrib/bmake/unit-tests/varmod-head.exp
+	modified:   contrib/bmake/unit-tests/varmod-head.mk
+	modified:   contrib/bmake/unit-tests/varmod-ifelse.exp
+	modified:   contrib/bmake/unit-tests/varmod-ifelse.mk
+	new file:   contrib/bmake/unit-tests/varmod-indirect.exp
+	new file:   contrib/bmake/unit-tests/varmod-indirect.mk
+	modified:   contrib/bmake/unit-tests/varmod-localtime.exp
+	modified:   contrib/bmake/unit-tests/varmod-localtime.mk
+	modified:   contrib/bmake/unit-tests/varmod-range.exp
+	modified:   contrib/bmake/unit-tests/varmod-root.exp
+	modified:   contrib/bmake/unit-tests/varmod-root.mk
+	modified:   contrib/bmake/unit-tests/varmod-subst-regex.exp
+	modified:   contrib/bmake/unit-tests/varmod-subst-regex.mk
+	modified:   contrib/bmake/unit-tests/varmod-sysv.exp
+	modified:   contrib/bmake/unit-tests/varmod-sysv.mk
+	modified:   contrib/bmake/unit-tests/varmod-tail.exp
+	modified:   contrib/bmake/unit-tests/varmod-tail.mk
+	modified:   contrib/bmake/unit-tests/varmod-to-many-words.mk
+	modified:   contrib/bmake/unit-tests/varmod-to-one-word.mk
+	modified:   contrib/bmake/unit-tests/varmod-to-separator.exp
+	modified:   contrib/bmake/unit-tests/varmod.exp
+	modified:   contrib/bmake/unit-tests/varmod.mk
+	new file:   contrib/bmake/unit-tests/varname-dot-makeflags.exp
+	new file:   contrib/bmake/unit-tests/varname-dot-makeflags.mk
+	modified:   contrib/bmake/unit-tests/varname-dot-shell.exp
+	modified:   contrib/bmake/unit-tests/varname-make_print_var_on_error-jobs.exp
+	modified:   contrib/bmake/unit-tests/varname-make_print_var_on_error-jobs.mk
+	modified:   contrib/bmake/unit-tests/varname-make_print_var_on_error.exp
+	modified:   contrib/bmake/unit-tests/varname-make_print_var_on_error.mk
+	modified:   contrib/bmake/unit-tests/varname-makeflags.mk
+	modified:   contrib/bmake/unit-tests/varparse-dynamic.mk
+	modified:   contrib/bmake/unit-tests/varparse-errors.exp
+	modified:   contrib/bmake/unit-tests/varparse-errors.mk
+	modified:   contrib/bmake/util.c
+	modified:   contrib/bmake/var.c
+	modified:   contrib/lua/Makefile
+	modified:   contrib/lua/README
+	modified:   contrib/lua/doc/contents.html
+	modified:   contrib/lua/doc/lua.1
+	modified:   contrib/lua/doc/manual.html
+	modified:   contrib/lua/doc/readme.html
+	modified:   contrib/lua/src/Makefile
+	modified:   contrib/lua/src/lapi.c
+	modified:   contrib/lua/src/lapi.h
+	modified:   contrib/lua/src/lauxlib.c
+	modified:   contrib/lua/src/lauxlib.h
+	modified:   contrib/lua/src/lbaselib.c
+	deleted:    contrib/lua/src/lbitlib.c
+	modified:   contrib/lua/src/lcode.c
+	modified:   contrib/lua/src/lcode.h
+	modified:   contrib/lua/src/lcorolib.c
+	modified:   contrib/lua/src/lctype.c
+	modified:   contrib/lua/src/lctype.h
+	modified:   contrib/lua/src/ldblib.c
+	modified:   contrib/lua/src/ldebug.c
+	modified:   contrib/lua/src/ldebug.h
+	modified:   contrib/lua/src/ldo.c
+	modified:   contrib/lua/src/ldo.h
+	modified:   contrib/lua/src/ldump.c
+	modified:   contrib/lua/src/lfunc.c
+	modified:   contrib/lua/src/lfunc.h
+	modified:   contrib/lua/src/lgc.c
+	modified:   contrib/lua/src/lgc.h
+	modified:   contrib/lua/src/linit.c
+	modified:   contrib/lua/src/liolib.c
+	new file:   contrib/lua/src/ljumptab.h
+	modified:   contrib/lua/src/llex.c
+	modified:   contrib/lua/src/llex.h
+	modified:   contrib/lua/src/llimits.h
+	modified:   contrib/lua/src/lmathlib.c
+	modified:   contrib/lua/src/lmem.c
+	modified:   contrib/lua/src/lmem.h
+	modified:   contrib/lua/src/loadlib.c
+	modified:   contrib/lua/src/lobject.c
+	modified:   contrib/lua/src/lobject.h
+	modified:   contrib/lua/src/lopcodes.c
+	modified:   contrib/lua/src/lopcodes.h
+	new file:   contrib/lua/src/lopnames.h
+	modified:   contrib/lua/src/loslib.c
+	modified:   contrib/lua/src/lparser.c
+	modified:   contrib/lua/src/lparser.h
+	modified:   contrib/lua/src/lprefix.h
+	modified:   contrib/lua/src/lstate.c
+	modified:   contrib/lua/src/lstate.h
+	modified:   contrib/lua/src/lstring.c
+	modified:   contrib/lua/src/lstring.h
+	modified:   contrib/lua/src/lstrlib.c
+	modified:   contrib/lua/src/ltable.c
+	modified:   contrib/lua/src/ltable.h
+	modified:   contrib/lua/src/ltablib.c
+	modified:   contrib/lua/src/ltm.c
+	modified:   contrib/lua/src/ltm.h
+	modified:   contrib/lua/src/lua.c
+	modified:   contrib/lua/src/lua.h
+	modified:   contrib/lua/src/luac.c
+	modified:   contrib/lua/src/luaconf.h.dist
+	modified:   contrib/lua/src/lualib.h
+	modified:   contrib/lua/src/lundump.c
+	modified:   contrib/lua/src/lundump.h
+	modified:   contrib/lua/src/lutf8lib.c
+	modified:   contrib/lua/src/lvm.c
+	modified:   contrib/lua/src/lvm.h
+	modified:   contrib/lua/src/lzio.c
+	modified:   contrib/lua/src/lzio.h
+	modified:   lib/liblua/Makefile
+	modified:   lib/liblua/luaconf.h
+	modified:   share/mk/suite.test.mk
+	modified:   share/mk/sys.mk
+	modified:   stand/liblua/luaconf.h
+	modified:   sys/compat/linux/linux_socket.c
+	modified:   sys/dev/mlx5/mlx5_ib/mlx5_ib_main.c
+	modified:   sys/dev/tpm/tpm.c
+	modified:   tools/tools/git/hooks/prepare-commit-msg
+	modified:   usr.bin/bmake/Makefile.config
+	modified:   usr.bin/bmake/unit-tests/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sys/vm/vm_map.c
+
+HEAD is now at f27ef49b0cf8 Merge branch 'freebsd/current/main' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at f27ef49b0cf8 Merge branch 'freebsd/current/main' into hardened/current/master
+==== END: hardened/current/master ====
