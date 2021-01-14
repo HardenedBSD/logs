@@ -1,0 +1,125 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 14 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 09acf7148b3d..6e3581532013
+Fast-forward
+ .gitignore                    | 10 +++++-
+ lib/libifconfig/Makefile      |  4 +++
+ lib/libifconfig/Symbol.map    | 74 +++++++++++++++++++++++++++++++++++++++++++
+ sys/amd64/include/cpufunc.h   | 17 ++--------
+ sys/dev/iwm/if_iwm.c          |  2 ++
+ sys/dev/qat/qat.c             | 10 ++++++
+ sys/dev/qat/qat_dh895xccreg.h |  2 +-
+ sys/dev/qat/qatvar.h          |  1 +
+ sys/fs/tmpfs/tmpfs_vnops.c    | 45 ++++++++++++++++++++------
+ sys/netinet/tcp_input.c       | 21 ++++++++----
+ sys/netinet/tcp_stacks/bbr.c  |  5 +--
+ sys/netinet/tcp_stacks/rack.c |  5 +--
+ 12 files changed, 160 insertions(+), 36 deletions(-)
+ create mode 100644 lib/libifconfig/Symbol.map
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/conf/options
+Auto-merging sys/conf/NOTES
+Merge made by the 'recursive' strategy.
+ RELNOTES                                     | 16 ++++++++++++++++
+ lib/clang/include/VCSVersion.inc             |  8 ++++----
+ lib/clang/include/llvm/Support/VCSRevision.h |  2 +-
+ share/man/man4/tcp.4                         | 23 ++++++++++++++++++++---
+ share/man/man4/usbhid.4                      |  9 ++++++++-
+ sys/amd64/conf/GENERIC                       |  3 ---
+ sys/amd64/conf/GENERIC-NODEBUG               | 13 +------------
+ sys/arm/conf/GENERIC-NODEBUG                 |  8 +-------
+ sys/arm64/conf/GENERIC-NODEBUG               | 12 +-----------
+ sys/conf/NOTES                               |  3 ---
+ sys/conf/options                             |  1 -
+ sys/conf/std.nodebug                         | 23 +++++++++++++++++++++++
+ sys/dev/evdev/cdev.c                         |  5 +++++
+ sys/dev/hid/hkbd.c                           | 15 +++++++++++++++
+ sys/dev/usb/input/uhid.c                     |  2 --
+ sys/dev/usb/input/ukbd.c                     |  2 --
+ sys/dev/usb/input/ums.c                      |  2 --
+ sys/dev/usb/input/usbhid.c                   | 15 +++++++--------
+ sys/dev/usb/input/wmt.c                      |  4 ----
+ sys/i386/conf/GENERIC                        |  3 ---
+ sys/i386/conf/GENERIC-NODEBUG                |  8 +-------
+ sys/netinet/tcp_input.c                      |  5 +++--
+ sys/netinet/tcp_stacks/bbr.c                 |  5 +++--
+ sys/netinet/tcp_stacks/rack.c                |  5 +++--
+ sys/netinet/tcp_subr.c                       |  5 +++++
+ sys/netinet/tcp_syncache.c                   | 26 +++++++++++++++++++-------
+ sys/netinet/tcp_timewait.c                   |  5 +++--
+ sys/netinet/tcp_var.h                        |  2 ++
+ sys/powerpc/conf/GENERIC-NODEBUG             |  8 +-------
+ sys/riscv/conf/GENERIC-NODEBUG               | 12 +-----------
+ usr.bin/elfctl/elfctl.c                      | 19 +++++++++++++++----
+ usr.sbin/daemon/daemon.8                     |  5 +++--
+ 32 files changed, 161 insertions(+), 113 deletions(-)
+ create mode 100644 sys/conf/std.nodebug
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    6e3581532013..8af3408d02e7  hardened/current/master -> hardened/current/master        
+remote:    6483fc224b1a..8818758a6ea7  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   6e3581532013..8af3408d02e7  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
