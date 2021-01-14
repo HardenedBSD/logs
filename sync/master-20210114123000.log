@@ -47,3 +47,244 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing net-im/matterircd/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+Removing audio/lmms/files/patch-src_gui_editors_AutomationEditor.cpp
+Removing audio/lmms/files/patch-src_gui_LmmsStyle.cpp
+Removing audio/lmms/files/patch-src_gui_AutomationPatternView.cpp
+Removing audio/lmms/files/patch-plugins_Eq_EqSpectrumView.h
+Removing audio/lmms/files/patch-cmake_modules_BashCompletion.cmake
+Merge made by the 'recursive' strategy.
+ UPDATING                                           |  20 +
+ audio/lmms/Makefile                                |  10 +-
+ audio/lmms/distinfo                                |   6 +-
+ .../files/patch-cmake_modules_BashCompletion.cmake |  13 -
+ audio/lmms/files/patch-doc_CMakeLists.txt          |   9 +
+ audio/lmms/files/patch-plugins_Eq_EqSpectrumView.h |  10 -
+ .../files/patch-src_gui_AutomationPatternView.cpp  |  10 -
+ audio/lmms/files/patch-src_gui_LmmsStyle.cpp       |  10 -
+ .../patch-src_gui_editors_AutomationEditor.cpp     |  10 -
+ audio/lmms/pkg-plist                               |   4 +
+ audio/ncspot/Makefile                              | 840 +++++++++++----------
+ audio/ncspot/distinfo                              | 514 +++++++------
+ audio/py-pyaudio/Makefile                          |   2 +-
+ biology/haplohseq/Makefile                         |  36 +
+ biology/haplohseq/distinfo                         |   3 +
+ biology/haplohseq/files/haplohseq-example.in       |  37 +
+ .../haplohseq/files/patch-example_example__run.sh  |  24 +
+ biology/haplohseq/files/patch-makefile             | 105 +++
+ biology/haplohseq/files/patch-scripts_ldmap.py     |   8 +
+ .../files/patch-scripts_simple__phaser.py          |   8 +
+ biology/haplohseq/files/patch-src_FreqPhase.cpp    |  29 +
+ biology/haplohseq/files/patch-src_HaplohSeq.cpp    |  20 +
+ .../files/patch-src_test_InputProcessorTest.cpp    |  11 +
+ biology/haplohseq/files/run-tests                  |  10 +
+ biology/haplohseq/pkg-descr                        |   6 +
+ biology/haplohseq/pkg-plist                        |  11 +
+ biology/py-orange3-single-cell/Makefile            |   2 +-
+ comms/gnuradio/Makefile                            |   4 +-
+ comms/limesuite/Makefile                           |   5 +-
+ databases/cassandra3/Makefile                      |   2 +-
+ databases/cassandra4/Makefile                      |   2 +-
+ databases/py-xapian/Makefile                       |   2 +-
+ deskutils/py-khard/Makefile                        |   2 +-
+ deskutils/py-paperless/Makefile                    |   2 +-
+ devel/bpython/Makefile                             |   2 +-
+ devel/gitaly/Makefile                              |   4 +-
+ devel/gitaly/distinfo                              |   6 +-
+ devel/llvm-cheri/Makefile                          |   2 +-
+ devel/llvm-devel/Makefile                          |   2 +-
+ devel/llvm10/Makefile                              |   2 +-
+ devel/llvm11/Makefile                              |   2 +-
+ devel/llvm80/Makefile                              |   2 +-
+ devel/llvm90/Makefile                              |   2 +-
+ devel/magit-devel/Makefile                         |   4 +-
+ devel/py-boolean.py/Makefile                       |   2 +-
+ devel/py-cysignals/Makefile                        |   2 +-
+ devel/py-easyprocess/Makefile                      |   2 +-
+ devel/py-jira/Makefile                             |   2 +-
+ devel/py-molecule/Makefile                         |   2 +-
+ devel/py-pathtools/Makefile                        |   2 +-
+ devel/py-pip/Makefile                              |   2 +-
+ devel/py-pyinstaller/Makefile                      |   3 +-
+ devel/py-python-gitlab/Makefile                    |   2 +-
+ devel/py-spyder/Makefile                           |   2 +-
+ devel/py-virtualenv/Makefile                       |   2 +-
+ devel/py-virtualenvwrapper/Makefile                |   2 +-
+ devel/py-watchdog/Makefile                         |   2 +-
+ devel/sccache/Makefile                             |  97 ++-
+ devel/sccache/distinfo                             | 190 +++--
+ devel/wasi-compiler-rt11/Makefile                  |   2 +-
+ devel/wasi-compiler-rt11/distinfo                  |   6 +-
+ graphics/colmap/Makefile                           |   3 +-
+ graphics/pdfpc/Makefile                            |   2 +-
+ graphics/py-django-easy-thumbnails/Makefile        |   2 +-
+ graphics/py-sorl-thumbnail/Makefile                |   2 +-
+ mail/getmail6/Makefile                             |   4 +-
+ mail/getmail6/distinfo                             |   6 +-
+ mail/opensmtpd-filter-rspamd/Makefile              |   3 +-
+ mail/opensmtpd-filter-rspamd/distinfo              |   6 +-
+ mail/py-afew/Makefile                              |   4 +-
+ math/ceres-solver/Makefile                         |   3 +-
+ math/py-cypari2/Makefile                           |   2 +-
+ math/py-fpylll/Makefile                            |   2 +-
+ math/py-gmpy2-devel/Makefile                       |   2 +-
+ math/py-pplpy/Makefile                             |   2 +-
+ net-im/matterircd/Makefile                         |   2 +-
+ net-im/matterircd/distinfo                         |   6 +-
+ ...golang.org_x_sys_unix_ztypes__freebsd__arm64.go |  24 -
+ net-p2p/bitcoin-daemon/Makefile                    |   2 +-
+ net-p2p/bitcoin/Makefile                           |   7 +-
+ net-p2p/bitcoin/distinfo                           |   6 +-
+ net/ceph14/Makefile                                |   2 +-
+ net/irrd/Makefile                                  |   2 +-
+ net/py-gntp/Makefile                               |   2 +-
+ net/py-zeep/Makefile                               |   2 +-
+ science/code_saturne/Makefile                      |   2 +-
+ security/py-certbot/Makefile                       |   2 +-
+ security/vuxml/vuln.xml                            |  27 +
+ sysutils/debootstrap/Makefile                      |   2 +-
+ sysutils/debootstrap/files/patch-scripts-gutsy     |  13 +
+ .../debootstrap/files/patch-scripts_debian-common  |  15 +-
+ sysutils/py-pkginfo/Makefile                       |   2 +-
+ textproc/py-cloud_sptheme/Makefile                 |   2 +-
+ textproc/py-docrepr/Makefile                       |   2 +-
+ textproc/py-furo/Makefile                          |   2 +-
+ textproc/py-gfm/Makefile                           |   2 +-
+ textproc/py-hieroglyph/Makefile                    |   2 +-
+ textproc/py-m2r/Makefile                           |   2 +-
+ textproc/py-numpydoc/Makefile                      |   2 +-
+ textproc/py-openstackdocstheme/Makefile            |   2 +-
+ textproc/py-os-api-ref/Makefile                    |   2 +-
+ textproc/py-pallets-sphinx-themes/Makefile         |   2 +-
+ textproc/py-recommonmark/Makefile                  |   2 +-
+ textproc/py-sphinx-argparse/Makefile               |   2 +-
+ textproc/py-sphinx-autoapi/Makefile                |   2 +-
+ textproc/py-sphinx-autodoc-typehints/Makefile      |   4 +-
+ textproc/py-sphinx-intl/Makefile                   |   2 +-
+ textproc/py-sphinx-issues/Makefile                 |   2 +-
+ textproc/py-sphinx-tabs/Makefile                   |   2 +-
+ textproc/py-sphinx_wikipedia/Makefile              |   2 +-
+ textproc/py-sphinxcontrib-adadomain/Makefile       |   2 +-
+ textproc/py-sphinxcontrib-bitbucket/Makefile       |   2 +-
+ textproc/py-sphinxcontrib-fulltoc/Makefile         |   2 +-
+ textproc/py-sphinxcontrib-httpdomain/Makefile      |   2 +-
+ textproc/py-sphinxcontrib-log-cabinet/Makefile     |   2 +-
+ textproc/py-sphinxcontrib-newsfeed/Makefile        |   2 +-
+ textproc/py-sphinxcontrib-programoutput/Makefile   |   2 +-
+ www/Makefile                                       |   1 +
+ www/gitlab-ce/Makefile                             |   6 +-
+ www/gitlab-ce/distinfo                             |   6 +-
+ www/py-beautifulsoup/Makefile                      |   2 +-
+ www/py-cssselect/Makefile                          |   2 +-
+ www/py-dj31-django-auth-ldap/Makefile              |   2 +-
+ www/py-django-auth-ldap/Makefile                   |   2 +-
+ www/py-django-babel/Makefile                       |   2 +-
+ www/py-django-configurations/Makefile              |   2 +-
+ www/py-django-haystack/Makefile                    |   2 +-
+ www/py-django-reversion/Makefile                   |   2 +-
+ www/py-django-simple-captcha/Makefile              |   2 +-
+ www/py-django-treebeard/Makefile                   |   2 +-
+ www/py-django111/Makefile                          |   2 +-
+ www/py-django22/Makefile                           |   2 +-
+ www/py-django30/Makefile                           |   2 +-
+ www/py-django31/Makefile                           |   2 +-
+ www/py-djangoql/Makefile                           |   2 +-
+ www/py-djangoql/distinfo                           |   6 +-
+ www/py-requests-mock/Makefile                      |   2 +-
+ www/py-requests-toolbelt/Makefile                  |   2 +-
+ www/py-ttrv/Makefile                               |  26 +
+ www/py-ttrv/distinfo                               |   3 +
+ www/py-ttrv/files/patch-setup.py                   |  11 +
+ www/py-ttrv/pkg-descr                              |   4 +
+ www/py-webob/Makefile                              |   2 +-
+ www/rtv/Makefile                                   |   3 +
+ www/varnish6/Makefile                              |   2 +-
+ x11/py-pyvirtualdisplay/Makefile                   |   2 +-
+ 146 files changed, 1459 insertions(+), 997 deletions(-)
+ delete mode 100644 audio/lmms/files/patch-cmake_modules_BashCompletion.cmake
+ create mode 100644 audio/lmms/files/patch-doc_CMakeLists.txt
+ delete mode 100644 audio/lmms/files/patch-plugins_Eq_EqSpectrumView.h
+ delete mode 100644 audio/lmms/files/patch-src_gui_AutomationPatternView.cpp
+ delete mode 100644 audio/lmms/files/patch-src_gui_LmmsStyle.cpp
+ delete mode 100644 audio/lmms/files/patch-src_gui_editors_AutomationEditor.cpp
+ create mode 100644 biology/haplohseq/Makefile
+ create mode 100644 biology/haplohseq/distinfo
+ create mode 100644 biology/haplohseq/files/haplohseq-example.in
+ create mode 100644 biology/haplohseq/files/patch-example_example__run.sh
+ create mode 100644 biology/haplohseq/files/patch-makefile
+ create mode 100644 biology/haplohseq/files/patch-scripts_ldmap.py
+ create mode 100644 biology/haplohseq/files/patch-scripts_simple__phaser.py
+ create mode 100644 biology/haplohseq/files/patch-src_FreqPhase.cpp
+ create mode 100644 biology/haplohseq/files/patch-src_HaplohSeq.cpp
+ create mode 100644 biology/haplohseq/files/patch-src_test_InputProcessorTest.cpp
+ create mode 100644 biology/haplohseq/files/run-tests
+ create mode 100644 biology/haplohseq/pkg-descr
+ create mode 100644 biology/haplohseq/pkg-plist
+ delete mode 100644 net-im/matterircd/files/patch-vendor_golang.org_x_sys_unix_ztypes__freebsd__arm64.go
+ create mode 100644 www/py-ttrv/Makefile
+ create mode 100644 www/py-ttrv/distinfo
+ create mode 100644 www/py-ttrv/files/patch-setup.py
+ create mode 100644 www/py-ttrv/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    171a3cebd2b0..3eeffcd1696f  master -> master        
+remote:    31c5582ba0d0..171a3cebd2b0  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   171a3cebd2b0..3eeffcd1696f  master -> master
+==== END: master ====
