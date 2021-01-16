@@ -63,3 +63,130 @@ remote: Processed 1 references in total
 To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
    3e0074300881..77e3fef3a550  master -> master
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging net-mgmt/ipv6calc/Makefile
+Auto-merging lang/gcc9/Makefile
+CONFLICT (content): Merge conflict in lang/gcc9/Makefile
+Removing graphics/frei0r/files/extra-patch-src_filter_facedetect_CMakeLists.txt
+Removing graphics/frei0r/files/extra-patch-src_filter_facebl0r_facebl0r.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc lang/gcc9/Makefile
+index aac1e936a389,47e1b5fce3b9..000000000000
+--- a/lang/gcc9/Makefile
++++ b/lang/gcc9/Makefile
+@@@ -66,8 -64,8 +66,13 @@@ CONFIGURE_ENV+=	UNAME_m="powerpc64
+  . if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+  CONFIGURE_ARGS+=	--with-abi=elfv2
+  . else
+++<<<<<<< HEAD
+ +MAKE_ARGS+=		CFLAGS_FOR_TARGET="-O0" CXXFLAGS_FOR_TARGET="-O0" BOOT_CFLAGS="-O0"
+ +EXTRA_PATCHES+=		${FILESDIR}/extra-patch-libgcc_config_rs6000_t-crtstuff
+++=======
++ MAKE_ARGS+=	CFLAGS_FOR_TARGET="-O0" CXXFLAGS_FOR_TARGET="-O0" BOOT_CFLAGS="-O0"
++ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libgcc_config_rs6000_t-crtstuff
+++>>>>>>> freebsd/master
+  . endif
+  .endif
+  
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   archivers/innoextract/Makefile
+	modified:   archivers/innoextract/distinfo
+	modified:   archivers/makeself/Makefile
+	modified:   archivers/makeself/distinfo
+	modified:   devel/Makefile
+	modified:   devel/R-cran-hms/Makefile
+	modified:   devel/R-cran-hms/distinfo
+	new file:   devel/py-iniconfig/Makefile
+	new file:   devel/py-iniconfig/distinfo
+	new file:   devel/py-iniconfig/pkg-descr
+	modified:   graphics/frei0r/Makefile
+	modified:   graphics/frei0r/distinfo
+	modified:   graphics/frei0r/files/extra-patch-CMakeLists.txt
+	modified:   graphics/frei0r/files/extra-patch-frei0r-plugins
+	deleted:    graphics/frei0r/files/extra-patch-src_filter_facebl0r_facebl0r.cpp
+	deleted:    graphics/frei0r/files/extra-patch-src_filter_facedetect_CMakeLists.txt
+	modified:   graphics/frei0r/pkg-plist
+	modified:   math/R-cran-SQUAREM/Makefile
+	modified:   math/R-cran-SQUAREM/distinfo
+	modified:   math/R-cran-expm/Makefile
+	modified:   math/R-cran-expm/distinfo
+	modified:   net-mgmt/check_ssl_cert/Makefile
+	modified:   net-mgmt/check_ssl_cert/distinfo
+	modified:   net-mgmt/ipv6calc/Makefile
+	modified:   net-mgmt/ipv6calc/distinfo
+	new file:   net-mgmt/ipv6calc/files/patch-databases_lib_libipv6calc__db__wrapper.c
+	new file:   security/py-angr/files/patch-setup.py
+	modified:   security/py-bcrypt/Makefile
+	modified:   security/py-bcrypt/distinfo
+	modified:   textproc/Makefile
+	modified:   textproc/R-cran-htmltools/Makefile
+	modified:   textproc/R-cran-htmltools/distinfo
+	new file:   textproc/py-xmlschema/Makefile
+	new file:   textproc/py-xmlschema/distinfo
+	new file:   textproc/py-xmlschema/pkg-descr
+	modified:   www/R-cran-crosstalk/Makefile
+	modified:   www/R-cran-crosstalk/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lang/gcc9/Makefile
+
+
+It took 3.06 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 77e3fef3a550 Merge remote-tracking branch 'freebsd/master'
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 2.99 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 77e3fef3a550 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
