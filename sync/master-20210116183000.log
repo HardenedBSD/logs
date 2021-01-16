@@ -1,0 +1,193 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 84 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 77e3fef3a550..026ba8a0eafc
+Fast-forward
+ archivers/innoextract/Makefile                     |   3 +-
+ archivers/innoextract/distinfo                     |   6 +-
+ archivers/makeself/Makefile                        |  10 +-
+ archivers/makeself/distinfo                        |   6 +-
+ archivers/upx/Makefile                             |   2 +
+ biology/jellyfish/Makefile                         |   2 +
+ biology/vsearch/Makefile                           |   2 +-
+ cad/cura/Makefile                                  |  27 +-
+ cad/cura/distinfo                                  |   6 +-
+ cad/cura/files/patch-CMakeLists.txt                |  33 +--
+ cad/cura/pkg-plist                                 | 290 ++++++++++-----------
+ converters/libb64/Makefile                         |   2 +
+ databases/R-cran-DBI/Makefile                      |   3 +-
+ databases/R-cran-DBI/distinfo                      |   6 +-
+ databases/mdbtools/Makefile                        |   2 +
+ databases/mdbx/Makefile                            |   2 +
+ devel/Makefile                                     |   1 +
+ devel/R-cran-hms/Makefile                          |   9 +-
+ devel/R-cran-hms/distinfo                          |   6 +-
+ devel/atlas-devel/Makefile                         |   2 +
+ devel/cargo-c/Makefile                             |   3 +-
+ devel/cargo-c/distinfo                             |   6 +-
+ devel/ccache/Makefile                              |   2 +-
+ devel/crc32c/Makefile                              |   2 +-
+ devel/gprbuild/Makefile                            |   2 +-
+ devel/py-iniconfig/Makefile                        |  20 ++
+ devel/py-iniconfig/distinfo                        |   3 +
+ devel/py-iniconfig/pkg-descr                       |  11 +
+ devel/py-pynest2d/Makefile                         |   2 +
+ devel/stringencoders/Makefile                      |   2 +
+ devel/thrift-cpp/Makefile                          |   2 +
+ dns/dnsreflector/Makefile                          |   2 +
+ dns/validns/Makefile                               |   2 +
+ editors/mp/Makefile                                |   3 +-
+ editors/mp/distinfo                                |   6 +-
+ editors/mp/files/patch-config.sh                   | 100 ++++---
+ emulators/mame/Makefile                            |   6 +-
+ emulators/unicorn/Makefile                         |   2 +
+ games/automuteus/Makefile                          |  24 +-
+ games/automuteus/files/automuteus.in               |  10 +-
+ games/devilutionX/Makefile                         |   3 +-
+ games/sudsol/Makefile                              |   2 +
+ graphics/R-cran-pROC/Makefile                      |   3 +-
+ graphics/R-cran-pROC/distinfo                      |   6 +-
+ graphics/frei0r/Makefile                           |   9 +-
+ graphics/frei0r/distinfo                           |   6 +-
+ graphics/frei0r/files/extra-patch-CMakeLists.txt   |  10 +-
+ graphics/frei0r/files/extra-patch-frei0r-plugins   |  17 +-
+ .../extra-patch-src_filter_facebl0r_facebl0r.cpp   |  10 -
+ ...xtra-patch-src_filter_facedetect_CMakeLists.txt |  15 --
+ graphics/frei0r/pkg-plist                          |   3 +
+ graphics/libheif/Makefile                          |   2 +
+ lang/chez-scheme/Makefile                          |   2 +
+ lang/gcc7/Makefile                                 |   2 +-
+ lang/gcc8/Makefile                                 |   2 +-
+ lang/gcc9/Makefile                                 |   6 +-
+ lang/gnu-apl/Makefile                              |   2 +
+ math/R-cran-KFAS/Makefile                          |   2 +-
+ math/R-cran-KFAS/distinfo                          |   6 +-
+ math/R-cran-SQUAREM/Makefile                       |   2 +-
+ math/R-cran-SQUAREM/distinfo                       |   6 +-
+ math/R-cran-expm/Makefile                          |   2 +-
+ math/R-cran-expm/distinfo                          |   6 +-
+ math/dune-typetree/Makefile                        |   5 +-
+ math/dune-typetree/distinfo                        |   6 +-
+ math/libqalculate/Makefile                         |   3 +-
+ math/libqalculate/distinfo                         |   6 +-
+ math/libqalculate/pkg-plist                        |   4 +-
+ math/py-optuna/Makefile                            |   2 +-
+ math/py-optuna/distinfo                            |   6 +-
+ math/qalculate/Makefile                            |   2 +-
+ math/qalculate/distinfo                            |   6 +-
+ math/qalculate/pkg-plist                           |   5 +
+ misc/mbuffer/Makefile                              |   2 +-
+ misc/mbuffer/distinfo                              |   6 +-
+ misc/mbuffer/files/patch-Makefile.in               |  31 ++-
+ misc/mbuffer/files/patch-configure                 | 184 +++++--------
+ misc/tlci/Makefile                                 |   2 +
+ net-im/profanity/Makefile                          |   2 +-
+ net-im/profanity/distinfo                          |   6 +-
+ net-im/profanity/pkg-plist                         |  94 +++++++
+ net-mgmt/check_ssl_cert/Makefile                   |   2 +-
+ net-mgmt/check_ssl_cert/distinfo                   |   6 +-
+ .../glpi-plugins-fusioninventory-server/Makefile   |   9 +-
+ .../glpi-plugins-fusioninventory-server/distinfo   |   6 +-
+ .../glpi-plugins-fusioninventory-server/pkg-plist  |  17 --
+ net-mgmt/ipv6calc/Makefile                         |   2 +-
+ net-mgmt/ipv6calc/distinfo                         |   6 +-
+ .../patch-databases_lib_libipv6calc__db__wrapper.c |  21 ++
+ net-mgmt/pmacct/Makefile                           |   2 +
+ net-mgmt/sendip/Makefile                           |   2 +
+ net-mgmt/tcptrack/Makefile                         |   2 +
+ net/libiscsi/Makefile                              |   2 +
+ net/liboping/Makefile                              |   2 +
+ net/radsecproxy/Makefile                           |   2 +
+ security/libssh/Makefile                           |   2 +
+ security/opensc/Makefile                           |   2 +
+ security/pam_p11/Makefile                          |   2 +
+ security/py-angr/files/patch-setup.py              |  11 +
+ security/py-bcrypt/Makefile                        |   3 +-
+ security/py-bcrypt/distinfo                        |   6 +-
+ security/xray-core/Makefile                        |   2 +-
+ security/xray-core/distinfo                        |   6 +-
+ sysutils/cmockery2/Makefile                        |   2 +
+ sysutils/inotify-tools/Makefile                    |   2 +
+ sysutils/logstash5/Makefile                        |   3 +
+ sysutils/mmc-utils/Makefile                        |   2 +
+ sysutils/powerdxx/Makefile                         |   2 +-
+ sysutils/procenv/Makefile                          |   2 +
+ sysutils/vmdktool/Makefile                         |   2 +
+ textproc/Makefile                                  |   1 +
+ textproc/R-cran-htmltools/Makefile                 |   2 +-
+ textproc/R-cran-htmltools/distinfo                 |   6 +-
+ textproc/elasticsearch5-search-guard/Makefile      |   3 +
+ textproc/elasticsearch5/Makefile                   |   3 +
+ textproc/libnumbertext/Makefile                    |   2 +
+ textproc/py-xmlschema/Makefile                     |  23 ++
+ textproc/py-xmlschema/distinfo                     |   3 +
+ textproc/py-xmlschema/pkg-descr                    |  13 +
+ textproc/scew/Makefile                             |   2 +
+ www/R-cran-crosstalk/Makefile                      |   3 +-
+ www/R-cran-crosstalk/distinfo                      |   6 +-
+ www/R-cran-httpuv/Makefile                         |   2 +-
+ www/R-cran-httpuv/distinfo                         |   6 +-
+ www/cplanet/Makefile                               |   2 +
+ www/unit/Makefile                                  |   2 +
+ www/varnish4/Makefile                              |   2 +
+ www/yaws/Makefile                                  |   2 +
+ x11-fonts/iosevka/Makefile                         |   2 +-
+ x11-fonts/iosevka/distinfo                         | 230 ++++++++--------
+ x11/xsel-conrad/Makefile                           |   2 +
+ 131 files changed, 891 insertions(+), 682 deletions(-)
+ create mode 100644 devel/py-iniconfig/Makefile
+ create mode 100644 devel/py-iniconfig/distinfo
+ create mode 100644 devel/py-iniconfig/pkg-descr
+ delete mode 100644 graphics/frei0r/files/extra-patch-src_filter_facebl0r_facebl0r.cpp
+ delete mode 100644 graphics/frei0r/files/extra-patch-src_filter_facedetect_CMakeLists.txt
+ create mode 100644 net-mgmt/ipv6calc/files/patch-databases_lib_libipv6calc__db__wrapper.c
+ create mode 100644 security/py-angr/files/patch-setup.py
+ create mode 100644 textproc/py-xmlschema/Makefile
+ create mode 100644 textproc/py-xmlschema/distinfo
+ create mode 100644 textproc/py-xmlschema/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
