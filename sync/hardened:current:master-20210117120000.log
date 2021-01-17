@@ -1,0 +1,95 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 7 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating e2e7c482df77..030fe7ec4ba1
+Fast-forward
+ ObsoleteFiles.inc                |   5 ++
+ sbin/route/route.c               |  69 ++++------------
+ share/man/man4/mpt.4             |  12 ++-
+ stand/efi/loader/framebuffer.c   |  37 ++++++++-
+ sys/i386/include/if_wl_wavelan.h | 168 ---------------------------------------
+ 5 files changed, 65 insertions(+), 226 deletions(-)
+ delete mode 100644 sys/i386/include/if_wl_wavelan.h
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging stand/efi/libefi/Makefile
+Merge made by the 'recursive' strategy.
+ share/misc/committers-src.dot                      |   3 +
+ stand/common/reloc_elf.c                           |   5 +-
+ stand/efi/libefi/Makefile                          |   3 -
+ stand/efi/loader/framebuffer.c                     |  49 ++++------
+ .../linuxkpi/common/include/linux/irq_work.h       |  25 ++++-
+ sys/compat/linuxkpi/common/include/linux/llist.h   | 101 +++++++++++++++++++++
+ sys/compat/linuxkpi/common/include/linux/slab.h    |  16 ++++
+ sys/compat/linuxkpi/common/src/linux_slab.c        |  27 ++++++
+ sys/compat/linuxkpi/common/src/linux_work.c        |  48 ++++++++++
+ sys/sys/param.h                                    |   2 +-
+ 10 files changed, 235 insertions(+), 44 deletions(-)
+ create mode 100644 sys/compat/linuxkpi/common/include/linux/llist.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    030fe7ec4ba1..e5ff4b1931d4  hardened/current/master -> hardened/current/master
+remote:    b7ab6832cd98..d002814d6b8e  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   030fe7ec4ba1..e5ff4b1931d4  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
