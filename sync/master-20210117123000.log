@@ -1,0 +1,148 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 34 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 6db325ce1d16..4f5c9563b1f3
+Fast-forward
+ MOVED                                              |   3 +
+ cad/calculix-ccx/Makefile                          |   2 +
+ databases/rocksdb/Makefile                         |   2 +-
+ devel/aws-checksums/Makefile                       |   2 +
+ devel/flang-clang/Makefile                         |   2 +
+ devel/flatbuffers/Makefile                         |   2 +
+ devel/injeqt/Makefile                              |   2 +-
+ devel/libzookeeper/Makefile                        |   2 +
+ devel/unittest-cpp/Makefile                        |   2 +
+ graphics/GraphicsMagick/Makefile                   |   2 +-
+ graphics/drm-current-kmod/Makefile                 |   4 +-
+ graphics/drm-current-kmod/distinfo                 |   6 +-
+ graphics/drm-devel-kmod/Makefile                   |   4 +-
+ graphics/drm-devel-kmod/distinfo                   |   6 +-
+ graphics/enblend/Makefile                          |   2 +
+ graphics/opencollada/Makefile                      |   2 +
+ graphics/opencolorio/Makefile                      |   2 +-
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ lang/gcc9/Makefile                                 |   2 +-
+ math/R-cran-deldir/Makefile                        |   2 +-
+ math/R-cran-deldir/distinfo                        |   6 +-
+ math/bonmin/Makefile                               |   2 +-
+ math/coinmp/Makefile                               |   2 +-
+ math/libpgmath/Makefile                            |   2 +
+ math/libpoly/Makefile                              |   2 +
+ math/openblas/Makefile                             |   2 +
+ math/viennacl/Makefile                             |   2 +
+ multimedia/cmrtlib/Makefile                        |   2 +-
+ net-im/Makefile                                    |   1 -
+ net-im/signal-cli/Makefile                         |   6 +-
+ net-im/signal-cli/distinfo                         |  10 +-
+ net-im/signal-cli/pkg-plist                        |   2 +-
+ net-im/telegram/Makefile                           |  59 --------
+ net-im/telegram/distinfo                           |   7 -
+ net-im/telegram/files/extra-patch-openssl-1.1.0    |  38 -----
+ net-im/telegram/files/patch-Makefile.in            |  11 --
+ net-im/telegram/files/patch-lua-tg.c               |  15 --
+ net-im/telegram/files/patch-tgl_mtproto-utils.c    |  22 ---
+ .../files/patch-tgl_tl-parser_portable__endian.h   |  18 ---
+ net-im/telegram/pkg-descr                          |   3 -
+ net-mgmt/ipv6calc/Makefile                         |   4 +-
+ net-mgmt/ipv6calc/distinfo                         |   6 +-
+ .../patch-databases_lib_libipv6calc__db__wrapper.c |  21 ---
+ science/Makefile                                   |   1 -
+ science/dlpoly-classic/Makefile                    |  77 ----------
+ science/dlpoly-classic/distinfo                    |   2 -
+ science/dlpoly-classic/files/dlpoly-gui.in         |   9 --
+ science/dlpoly-classic/pkg-descr                   |   4 -
+ science/dlpoly-classic/pkg-message                 |  16 --
+ science/dlpoly-classic/pkg-plist                   |  11 --
+ security/2fa/Makefile                              |   9 +-
+ security/2fa/distinfo                              |   6 +-
+ security/Makefile                                  |   2 +-
+ security/age/Makefile                              |   9 +-
+ security/age/distinfo                              |  14 +-
+ security/libretls/Makefile                         |  19 +++
+ security/libretls/distinfo                         |   3 +
+ security/libretls/pkg-descr                        |   8 +
+ security/libretls/pkg-plist                        |  94 ++++++++++++
+ security/py-gtts-token/Makefile                    |  31 ----
+ security/py-gtts-token/distinfo                    |   3 -
+ security/py-gtts-token/pkg-descr                   |   4 -
+ sysutils/usermin/Makefile                          |   2 +-
+ sysutils/usermin/distinfo                          |   6 +-
+ sysutils/usermin/pkg-plist                         | 101 +++++--------
+ sysutils/virtualmin/Makefile                       |   5 +-
+ sysutils/virtualmin/distinfo                       |   6 +-
+ sysutils/virtualmin/pkg-plist                      |  69 ++++++---
+ sysutils/webmin/Makefile                           |   2 +-
+ sysutils/webmin/distinfo                           |   6 +-
+ sysutils/webmin/pkg-plist                          | 162 ++++++++-------------
+ www/minio/Makefile                                 |  10 +-
+ www/minio/distinfo                                 |  18 +--
+ 74 files changed, 388 insertions(+), 623 deletions(-)
+ delete mode 100644 net-im/telegram/Makefile
+ delete mode 100644 net-im/telegram/distinfo
+ delete mode 100644 net-im/telegram/files/extra-patch-openssl-1.1.0
+ delete mode 100644 net-im/telegram/files/patch-Makefile.in
+ delete mode 100644 net-im/telegram/files/patch-lua-tg.c
+ delete mode 100644 net-im/telegram/files/patch-tgl_mtproto-utils.c
+ delete mode 100644 net-im/telegram/files/patch-tgl_tl-parser_portable__endian.h
+ delete mode 100644 net-im/telegram/pkg-descr
+ delete mode 100644 net-mgmt/ipv6calc/files/patch-databases_lib_libipv6calc__db__wrapper.c
+ delete mode 100644 science/dlpoly-classic/Makefile
+ delete mode 100644 science/dlpoly-classic/distinfo
+ delete mode 100644 science/dlpoly-classic/files/dlpoly-gui.in
+ delete mode 100644 science/dlpoly-classic/pkg-descr
+ delete mode 100644 science/dlpoly-classic/pkg-message
+ delete mode 100644 science/dlpoly-classic/pkg-plist
+ create mode 100644 security/libretls/Makefile
+ create mode 100644 security/libretls/distinfo
+ create mode 100644 security/libretls/pkg-descr
+ create mode 100644 security/libretls/pkg-plist
+ delete mode 100644 security/py-gtts-token/Makefile
+ delete mode 100644 security/py-gtts-token/distinfo
+ delete mode 100644 security/py-gtts-token/pkg-descr
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
