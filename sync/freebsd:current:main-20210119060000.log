@@ -1,0 +1,120 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 613fe5321f6c1..47f7345baba01
+Fast-forward
+ sys/amd64/linux/linux_ptrace.c             |    9 +-
+ sys/compat/linux/linux_file.c              |    2 +-
+ sys/conf/files                             |    3 +
+ sys/dev/virtio/balloon/virtio_balloon.c    |   60 +-
+ sys/dev/virtio/balloon/virtio_balloon.h    |   28 +-
+ sys/dev/virtio/block/virtio_blk.c          |  171 +--
+ sys/dev/virtio/block/virtio_blk.h          |   69 +-
+ sys/dev/virtio/console/virtio_console.c    |   51 +-
+ sys/dev/virtio/mmio/virtio_mmio.c          |   23 +-
+ sys/dev/virtio/network/if_vtnet.c          | 1988 ++++++++++++++++------------
+ sys/dev/virtio/network/if_vtnetvar.h       |  140 +-
+ sys/dev/virtio/network/virtio_net.h        |  103 +-
+ sys/dev/virtio/pci/virtio_pci.c            | 1362 +++++++------------
+ sys/dev/virtio/pci/virtio_pci.h            |  174 ++-
+ sys/dev/virtio/pci/virtio_pci_if.m         |   71 +
+ sys/dev/virtio/pci/virtio_pci_legacy.c     |  733 ++++++++++
+ sys/dev/virtio/pci/virtio_pci_legacy_var.h |   78 ++
+ sys/dev/virtio/pci/virtio_pci_modern.c     | 1446 ++++++++++++++++++++
+ sys/dev/virtio/pci/virtio_pci_modern_var.h |  135 ++
+ sys/dev/virtio/pci/virtio_pci_var.h        |   55 +
+ sys/dev/virtio/random/virtio_random.c      |   50 +-
+ sys/dev/virtio/scsi/virtio_scsi.c          |  109 +-
+ sys/dev/virtio/scsi/virtio_scsi.h          |   39 +-
+ sys/dev/virtio/virtio.c                    |  127 +-
+ sys/dev/virtio/virtio.h                    |   13 +-
+ sys/dev/virtio/virtio_bus_if.m             |   11 +
+ sys/dev/virtio/virtio_endian.h             |  106 ++
+ sys/dev/virtio/virtqueue.c                 |  150 ++-
+ sys/dev/virtio/virtqueue.h                 |    6 +-
+ sys/kern/vfs_cache.c                       |   20 +-
+ sys/modules/virtio/pci/Makefile            |    5 +-
+ usr.sbin/bhyve/bhyve.8                     |    6 +-
+ usr.sbin/bhyve/pci_lpc.c                   |    4 +-
+ usr.sbin/bhyve/uart_emul.c                 |    6 +
+ 34 files changed, 5194 insertions(+), 2159 deletions(-)
+ create mode 100644 sys/dev/virtio/pci/virtio_pci_if.m
+ create mode 100644 sys/dev/virtio/pci/virtio_pci_legacy.c
+ create mode 100644 sys/dev/virtio/pci/virtio_pci_legacy_var.h
+ create mode 100644 sys/dev/virtio/pci/virtio_pci_modern.c
+ create mode 100644 sys/dev/virtio/pci/virtio_pci_modern_var.h
+ create mode 100644 sys/dev/virtio/pci/virtio_pci_var.h
+ create mode 100644 sys/dev/virtio/virtio_endian.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    613fe5321f6c..47f7345baba0  freebsd/current/main -> freebsd/current/main        
+remote:    7e540c501647..67d0c357530f  github/hardened/current/master -> github/hardened/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'freebsd/current/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/current/main        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   613fe5321f6c1..47f7345baba01  freebsd/current/main -> freebsd/current/main
+==== END: freebsd/current/main ====
