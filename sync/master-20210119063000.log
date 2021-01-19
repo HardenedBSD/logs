@@ -47,3 +47,462 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/node/Makefile
+Removing www/firefox/files/patch-bug1677715
+Auto-merging www/firefox/Makefile
+Auto-merging www/firefox-esr/Makefile
+Removing security/i2pd/pkg-message
+Auto-merging net/openntpd/Makefile
+Auto-merging net-p2p/amule/Makefile
+Removing lang/rexx-regina/files/patch-Makefile.in
+Auto-merging lang/gcc9-devel/Makefile
+Removing graphics/qt-avif-image-plugin/pkg-descr
+Removing graphics/qt-avif-image-plugin/distinfo
+Removing graphics/qt-avif-image-plugin/Makefile
+Removing games/wyrmgus/files/patch-src_database_data__type.h
+Auto-merging games/tome4/Makefile
+Auto-merging games/pioneer/Makefile
+Auto-merging games/minetest/Makefile
+Auto-merging games/julius/Makefile
+Auto-merging editors/nano/Makefile
+Auto-merging devel/codequery/Makefile
+Auto-merging devel/adacurses/Makefile
+CONFLICT (content): Merge conflict in devel/adacurses/Makefile
+Removing cad/librecad/files/patch-librecad_src_lib_gui_rs__painterqt.cpp
+Removing cad/librecad/files/patch-librecad_src_lib_engine_lc__splinepoints.cpp
+Removing cad/librecad/files/patch-git_6c392e9
+Removing audio/surge-synthesizer-lv2/files/patch-vstgui.surge_vstgui_lib_vstguibase.h
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc devel/adacurses/Makefile
+index 85d35f26be5d,d47d73579519..000000000000
+--- a/devel/adacurses/Makefile
++++ b/devel/adacurses/Makefile
+@@@ -13,9 -13,7 +13,13 @@@ COMMENT=	Ada95 bindings for ncurse
+  LICENSE=	MIT
+  LICENSE_FILE=	${WRKSRC}/README
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off retpoline:off
+ +
+ +USES=		ada gmake pkgconfig ncurses:port tar:tgz
+++=======
++ USES=		ada gmake pkgconfig tar:tgz
+++>>>>>>> freebsd/master
+  GNU_CONFIGURE=	yes
+  CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
+  		--with-ada-objects=${PREFIX}/lib/adacurses \
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   Mk/Uses/pyqt.mk
+	modified:   archivers/star/Makefile
+	modified:   archivers/urbackup-client/Makefile
+	modified:   archivers/urbackup-server/Makefile
+	modified:   audio/Makefile
+	modified:   audio/aubio/Makefile
+	modified:   audio/aubio/distinfo
+	modified:   audio/aubio/files/patch-wscript
+	modified:   audio/aubio/pkg-plist
+	modified:   audio/clementine-player/Makefile
+	new file:   audio/midifile/Makefile
+	new file:   audio/midifile/distinfo
+	new file:   audio/midifile/files/patch-CMakeLists.txt
+	new file:   audio/midifile/pkg-descr
+	new file:   audio/midifile/pkg-plist
+	modified:   audio/py-aubio/Makefile
+	modified:   audio/sfizz/Makefile
+	modified:   audio/surge-synthesizer-lv2/Makefile
+	modified:   audio/surge-synthesizer-lv2/distinfo
+	modified:   audio/surge-synthesizer-lv2/files/patch-CMakeLists.txt
+	modified:   audio/surge-synthesizer-lv2/files/patch-cmake_versiontools.cmake
+	modified:   audio/surge-synthesizer-lv2/files/patch-vstgui.surge_vstgui_lib_platform_linux_x11fileselector.cpp
+	deleted:    audio/surge-synthesizer-lv2/files/patch-vstgui.surge_vstgui_lib_vstguibase.h
+	modified:   audio/surge-synthesizer-lv2/pkg-plist
+	modified:   audio/tagutil/Makefile
+	modified:   audio/webrtc-audio-processing/Makefile
+	modified:   biology/Makefile
+	new file:   biology/bioparser/Makefile
+	new file:   biology/bioparser/distinfo
+	new file:   biology/bioparser/pkg-descr
+	new file:   biology/biosoup/Makefile
+	new file:   biology/biosoup/distinfo
+	new file:   biology/biosoup/pkg-descr
+	new file:   biology/edlib/Makefile
+	new file:   biology/edlib/distinfo
+	new file:   biology/edlib/pkg-descr
+	new file:   biology/edlib/pkg-plist
+	modified:   biology/migrate/Makefile
+	new file:   biology/rampler/Makefile
+	new file:   biology/rampler/distinfo
+	new file:   biology/rampler/files/patch-CMakeLists.txt
+	new file:   biology/rampler/pkg-descr
+	new file:   biology/spoa/Makefile
+	new file:   biology/spoa/distinfo
+	new file:   biology/spoa/files/patch-CMakeLists.txt
+	new file:   biology/spoa/pkg-descr
+	new file:   biology/spoa/pkg-plist
+	modified:   biology/ugene/Makefile
+	modified:   cad/cura/Makefile
+	modified:   cad/librecad/Makefile
+	modified:   cad/librecad/distinfo
+	deleted:    cad/librecad/files/patch-git_6c392e9
+	deleted:    cad/librecad/files/patch-librecad_src_lib_engine_lc__splinepoints.cpp
+	deleted:    cad/librecad/files/patch-librecad_src_lib_gui_rs__painterqt.cpp
+	modified:   cad/librecad/pkg-plist
+	modified:   cad/openscad-devel/Makefile
+	modified:   cad/openscad/Makefile
+	modified:   chinese/fcitx5-chewing/Makefile
+	modified:   chinese/fcitx5-chewing/distinfo
+	modified:   chinese/fcitx5-chinese-addons/Makefile
+	modified:   chinese/fcitx5-chinese-addons/distinfo
+	modified:   chinese/fcitx5-rime/Makefile
+	modified:   chinese/fcitx5-rime/distinfo
+	modified:   chinese/fcitx5-table-extra/Makefile
+	modified:   chinese/fcitx5-table-extra/distinfo
+	modified:   chinese/fcitx5-table-other/Makefile
+	modified:   chinese/fcitx5-table-other/distinfo
+	modified:   chinese/libime-jyutping/Makefile
+	modified:   chinese/libime-jyutping/distinfo
+	modified:   chinese/libime-jyutping/pkg-plist
+	modified:   chinese/libime/Makefile
+	modified:   chinese/libime/distinfo
+	modified:   chinese/libime/pkg-plist
+	modified:   comms/py-qt5-sensors/Makefile
+	modified:   comms/py-qt5-serialport/Makefile
+	modified:   databases/py-qt5-sql/Makefile
+	modified:   databases/sqlitebrowser/Makefile
+	modified:   deskutils/elementary-calendar/Makefile
+	modified:   deskutils/elementary-calendar/files/patch-core_Services_Calendar_EventStore.vala
+	new file:   deskutils/elementary-calendar/files/patch-src_MainWindow.vala
+	modified:   deskutils/noti/Makefile
+	modified:   deskutils/noti/distinfo
+	modified:   deskutils/py-autokey/Makefile
+	modified:   devel/Makefile
+	modified:   devel/awscli/Makefile
+	modified:   devel/awscli/distinfo
+	modified:   devel/codequery/Makefile
+	modified:   devel/codequery/distinfo
+	modified:   devel/critcl/Makefile
+	modified:   devel/eric6/Makefile
+	new file:   devel/goredo/Makefile
+	new file:   devel/goredo/distinfo
+	new file:   devel/goredo/pkg-descr
+	modified:   devel/ipython/Makefile
+	new file:   devel/ipython/files/patch-autocompletion-fix
+	modified:   devel/pecl-swoole/Makefile
+	modified:   devel/pecl-swoole/distinfo
+	modified:   devel/py-botocore/Makefile
+	modified:   devel/py-botocore/distinfo
+	modified:   devel/py-grpcio-tools/Makefile
+	modified:   devel/py-grpcio-tools/distinfo
+	modified:   devel/py-grpcio/Makefile
+	modified:   devel/py-grpcio/distinfo
+	modified:   devel/py-qt5-core/Makefile
+	modified:   devel/py-qt5-dbus/Makefile
+	modified:   devel/py-qt5-designer/Makefile
+	modified:   devel/py-qt5-help/Makefile
+	modified:   devel/py-qt5-location/Makefile
+	modified:   devel/py-qt5-qscintilla2/Makefile
+	modified:   devel/py-qt5-remoteobjects/Makefile
+	modified:   devel/py-qt5-test/Makefile
+	modified:   devel/qscintilla2-qt5/Makefile
+	modified:   devel/qscintilla2-qt5/distinfo
+	modified:   devel/tortoisehg/Makefile
+	modified:   devel/xeus/Makefile
+	modified:   editors/nano/Makefile
+	modified:   editors/nano/distinfo
+	modified:   emulators/qemu-powernv/Makefile
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   finance/kmymoney/Makefile
+	modified:   games/Makefile
+	new file:   games/dobutsu/Makefile
+	new file:   games/dobutsu/distinfo
+	new file:   games/dobutsu/files/patch-dobutsu.c
+	new file:   games/dobutsu/pkg-descr
+	new file:   games/dobutsu/pkg-plist
+	new file:   games/fheroes2/Makefile
+	new file:   games/fheroes2/distinfo
+	new file:   games/fheroes2/files/patch-src_Makefile.bsd
+	new file:   games/fheroes2/pkg-descr
+	modified:   games/iortcw/Makefile
+	modified:   games/julius/Makefile
+	modified:   games/libretro-uae/Makefile
+	modified:   games/linux-ssamtfe/Makefile
+	modified:   games/minetest/Makefile
+	new file:   games/minetest/files/patch-falling
+	modified:   games/pioneer/Makefile
+	modified:   games/regoth/Makefile
+	modified:   games/tome4/Makefile
+	modified:   games/wyrmgus/Makefile
+	modified:   games/wyrmgus/distinfo
+	deleted:    games/wyrmgus/files/patch-src_database_data__type.h
+	modified:   games/wyrmsun/Makefile
+	modified:   games/wyrmsun/distinfo
+	modified:   graphics/Makefile
+	modified:   graphics/drm-current-kmod/Makefile
+	modified:   graphics/drm-current-kmod/distinfo
+	modified:   graphics/drm-devel-kmod/Makefile
+	modified:   graphics/drm-devel-kmod/distinfo
+	modified:   graphics/gdal/Makefile
+	modified:   graphics/kf5-kimageformats/Makefile
+	modified:   graphics/kf5-kimageformats/pkg-plist
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	modified:   graphics/proj/Makefile
+	modified:   graphics/proj/distinfo
+	modified:   graphics/proj/pkg-plist
+	modified:   graphics/py-qt5-svg/Makefile
+	modified:   graphics/qgis-ltr/Makefile
+	modified:   graphics/qgis/Makefile
+	deleted:    graphics/qt-avif-image-plugin/Makefile
+	deleted:    graphics/qt-avif-image-plugin/distinfo
+	deleted:    graphics/qt-avif-image-plugin/pkg-descr
+	modified:   graphics/vips/Makefile
+	modified:   graphics/vips/distinfo
+	modified:   graphics/vips/pkg-plist
+	modified:   graphics/xviewer/Makefile
+	modified:   graphics/xviewer/distinfo
+	modified:   graphics/xviewer/pkg-plist
+	modified:   japanese/fcitx5-anthy/Makefile
+	modified:   japanese/fcitx5-anthy/distinfo
+	modified:   japanese/fcitx5-anthy/pkg-plist
+	modified:   java/sablevm-classpath/Makefile
+	modified:   korean/fcitx5-hangul/Makefile
+	modified:   korean/fcitx5-hangul/distinfo
+	modified:   lang/gcc9-devel/Makefile
+	modified:   lang/gcc9-devel/distinfo
+	modified:   lang/janet/Makefile
+	modified:   lang/janet/distinfo
+	modified:   lang/py-qt5-qml/Makefile
+	modified:   lang/rexx-regina/Makefile
+	modified:   lang/rexx-regina/distinfo
+	deleted:    lang/rexx-regina/files/patch-Makefile.in
+	modified:   lang/rexx-regina/files/patch-builtin.c
+	modified:   lang/rexx-regina/files/patch-configure
+	modified:   lang/rexx-regina/files/patch-files.c
+	modified:   lang/rexx-regina/files/patch-options.c
+	modified:   lang/rexx-regina/files/patch-regutil_inifile.c
+	modified:   lang/rexx-regina/files/patch-regutil_regfilesys.c
+	modified:   lang/rexx-regina/files/patch-regutil_regini.c
+	modified:   lang/rexx-regina/files/patch-regutil_regmacrospace.c
+	modified:   lang/rexx-regina/files/patch-regutil_regscreenux.c
+	modified:   lang/rexx-regina/files/patch-regutil_regtrig.c
+	modified:   lang/rexx-regina/files/patch-regutil_regunicode.c
+	modified:   lang/rexx-regina/files/patch-regutil_regutil.c
+	modified:   lang/rexx-regina/files/patch-rxstack.c
+	new file:   lang/rexx-regina/files/patch-stack.c
+	modified:   lang/rexx-regina/files/patch-strmath.c
+	new file:   lang/rexx-regina/files/patch-threader.c
+	new file:   lang/rexx-regina/files/patch-yaccsrc.c
+	new file:   lang/rexx-regina/files/patch-yaccsrc.y
+	modified:   lang/rexx-regina/pkg-plist
+	modified:   lang/spidermonkey52/Makefile
+	modified:   mail/mimedefang/Makefile
+	modified:   mail/mimedefang/distinfo
+	modified:   mail/mimedefang/pkg-descr
+	modified:   mail/mimedefang/pkg-plist
+	modified:   mail/opendkim/files/patch-miltertest_miltertest.c
+	modified:   mail/opendkim/files/patch-opendkim_opendkim-lua.c
+	modified:   mail/postfix/Makefile
+	modified:   mail/postfix/distinfo
+	modified:   math/amath/Makefile
+	modified:   math/octave/Makefile
+	modified:   math/py-arviz/Makefile
+	modified:   math/py-arviz/distinfo
+	modified:   misc/openmvg/Makefile
+	modified:   misc/openmvg/distinfo
+	modified:   misc/openmvg/files/patch-CMakeLists.txt
+	modified:   misc/openmvg/pkg-plist
+	modified:   misc/py-qt5-demo/Makefile
+	modified:   multimedia/handbrake/Makefile
+	modified:   multimedia/handbrake/files/patch-contrib_ffmpeg_module.defs
+	modified:   multimedia/kvazaar/Makefile
+	modified:   multimedia/musikcube/Makefile
+	modified:   multimedia/py-qt5-multimedia/Makefile
+	modified:   multimedia/py-qt5-multimediawidgets/Makefile
+	modified:   net-im/openfire/Makefile
+	modified:   net-im/openfire/distinfo
+	modified:   net-im/openfire/pkg-plist
+	modified:   net-mgmt/check_ssl_cert/Makefile
+	modified:   net-mgmt/check_ssl_cert/distinfo
+	modified:   net-p2p/amule-devel/Makefile
+	modified:   net-p2p/amule/Makefile
+	modified:   net/ceph14/Makefile
+	modified:   net/libstorj/Makefile
+	modified:   net/megacmd/Makefile
+	modified:   net/openntpd/Makefile
+	modified:   net/py-python-socks/Makefile
+	modified:   net/py-python-socks/distinfo
+	modified:   net/py-qt5-network/Makefile
+	modified:   net/py-qt5-networkauth/Makefile
+	modified:   net/py-s3transfer/Makefile
+	modified:   net/py-s3transfer/distinfo
+	modified:   print/py-qt5-printsupport/Makefile
+	modified:   science/py-ase/Makefile
+	modified:   science/py-ase/distinfo
+	modified:   security/cryptopp/Makefile
+	modified:   security/cryptopp/distinfo
+	modified:   security/cryptopp/files/patch-GNUmakefile
+	modified:   security/cryptopp/files/patch-misc.h
+	modified:   security/cryptopp/pkg-plist
+	modified:   security/gpg-gui/Makefile
+	modified:   security/gpg-gui/distinfo
+	new file:   security/gpg-gui/pkg-plist
+	modified:   security/gvm/Makefile
+	modified:   security/gvm/files/pkg-message.in
+	modified:   security/i2pd/Makefile
+	modified:   security/i2pd/distinfo
+	modified:   security/i2pd/files/i2pd.in
+	new file:   security/i2pd/files/patch-contrib_i2pd.conf
+	new file:   security/i2pd/files/pkg-message.in
+	deleted:    security/i2pd/pkg-message
+	modified:   security/i2pd/pkg-plist
+	modified:   security/libprelude/Makefile
+	modified:   sysutils/doinkd/Makefile
+	modified:   sysutils/doinkd/distinfo
+	modified:   sysutils/duff/pkg-descr
+	modified:   sysutils/mcfly/Makefile
+	modified:   sysutils/mcfly/distinfo
+	modified:   textproc/consul-template/Makefile
+	modified:   textproc/consul-template/files/consul-template.in
+	modified:   textproc/fcitx5-configtool/Makefile
+	modified:   textproc/fcitx5-configtool/distinfo
+	modified:   textproc/fcitx5-configtool/pkg-plist
+	modified:   textproc/fcitx5-gtk/Makefile
+	modified:   textproc/fcitx5-gtk/distinfo
+	modified:   textproc/fcitx5-gtk/pkg-plist
+	modified:   textproc/fcitx5-lua/Makefile
+	modified:   textproc/fcitx5-lua/distinfo
+	modified:   textproc/fcitx5-lua/pkg-plist
+	modified:   textproc/fcitx5-qt/Makefile
+	modified:   textproc/fcitx5-qt/distinfo
+	modified:   textproc/fcitx5-qt/pkg-plist
+	modified:   textproc/fcitx5/Makefile
+	modified:   textproc/fcitx5/distinfo
+	modified:   textproc/fcitx5/pkg-plist
+	modified:   textproc/py-qt5-xml/Makefile
+	modified:   textproc/py-qt5-xmlpatterns/Makefile
+	modified:   www/Makefile
+	modified:   www/cpp-httplib/Makefile
+	modified:   www/cpp-httplib/distinfo
+	modified:   www/firefox-esr/Makefile
+	modified:   www/firefox-esr/distinfo
+	modified:   www/firefox/Makefile
+	modified:   www/firefox/distinfo
+	deleted:    www/firefox/files/patch-bug1677715
+	modified:   www/libmicrohttpd/Makefile
+	modified:   www/libmicrohttpd/distinfo
+	modified:   www/libmicrohttpd/pkg-plist
+	modified:   www/node/Makefile
+	modified:   www/node/distinfo
+	modified:   www/py-boto3/Makefile
+	modified:   www/py-boto3/distinfo
+	modified:   www/py-qt5-webchannel/Makefile
+	modified:   www/py-qt5-webengine/Makefile
+	modified:   www/py-qt5-webkit/Makefile
+	modified:   www/py-qt5-webkitwidgets/Makefile
+	modified:   www/py-qt5-websockets/Makefile
+	new file:   www/py-weboob-qt/Makefile
+	new file:   www/py-weboob-qt/distinfo
+	new file:   www/py-weboob-qt/files/patch-setup.cfg
+	new file:   www/py-weboob-qt/pkg-descr
+	modified:   www/py-weboob/Makefile
+	modified:   www/py-weboob/distinfo
+	modified:   x11-fonts/Makefile
+	new file:   x11-fonts/agave/Makefile
+	new file:   x11-fonts/agave/distinfo
+	new file:   x11-fonts/agave/files/patch-Makefile
+	new file:   x11-fonts/agave/files/patch-build
+	new file:   x11-fonts/agave/pkg-descr
+	new file:   x11-fonts/agave/pkg-plist
+	new file:   x11-fonts/amigafonts/Makefile
+	new file:   x11-fonts/amigafonts/distinfo
+	new file:   x11-fonts/amigafonts/pkg-descr
+	new file:   x11-fonts/amigafonts/pkg-plist
+	modified:   x11-themes/materia-gtk-theme/Makefile
+	modified:   x11-themes/materia-gtk-theme/distinfo
+	modified:   x11-themes/materia-gtk-theme/pkg-plist
+	modified:   x11-toolkits/py-qt5-chart/Makefile
+	modified:   x11-toolkits/py-qt5-quick/Makefile
+	modified:   x11-toolkits/py-qt5-quick3d/Makefile
+	modified:   x11-toolkits/py-qt5-quickwidgets/Makefile
+	modified:   x11-toolkits/py-qt5-widgets/Makefile
+	modified:   x11-wm/river/Makefile
+	modified:   x11-wm/river/distinfo
+	modified:   x11/bgs/Makefile
+	modified:   x11/bgs/distinfo
+	modified:   x11/bgs/files/patch-config.mk
+	modified:   x11/bgs/pkg-descr
+	modified:   x11/py-caffeine-ng/Makefile
+	modified:   x11/py-caffeine-ng/distinfo
+	modified:   x11/py-caffeine-ng/files/patch-caffeine_main.py
+	modified:   x11/py-caffeine-ng/files/patch-setup.py
+	modified:   x11/py-qt5-opengl/Makefile
+	modified:   x11/xcb-imdkit/Makefile
+	modified:   x11/xcb-imdkit/distinfo
+	modified:   x11/xcb-imdkit/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   devel/adacurses/Makefile
+
+
+It took 3.23 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at b98cc63955b9 HBSD: Disable variable auto-init for devel/cmake-gui
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.11 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at b98cc63955b9 HBSD: Disable variable auto-init for devel/cmake-gui
+==== END: master ====
