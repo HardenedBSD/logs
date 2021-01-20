@@ -1,0 +1,131 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 26 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 3340ca77ad20..d21420b72b8c
+Fast-forward
+ devel/arachne-pnr/Makefile                         |   2 +
+ devel/bingrep/Makefile                             |  15 +--
+ devel/bingrep/distinfo                             |  30 +++---
+ devel/libdbusmenu/Makefile                         |   2 +-
+ ...smenu-glib_reference_libdbusmenu-glib-docs.sgml |  13 +++
+ ...busmenu-gtk_reference_libdbusmenu-gtk-docs.sgml |  13 +++
+ devel/libdbusmenu/pkg-plist                        |   2 -
+ dns/libnspsl/Makefile                              |   2 +-
+ dns/libnspsl/distinfo                              |   6 +-
+ editors/editorconfig-core-c/Makefile               |   4 +-
+ editors/editorconfig-core-c/distinfo               |   6 +-
+ editors/editorconfig-core-c/pkg-plist              |   4 +
+ editors/libreoffice/Makefile                       |   4 +
+ ...source-cpp_uno-gcc3_linux_powerpc64-cpp2uno.cxx |  79 +++++++++++++++
+ ...-source-cpp_uno-gcc3_linux_powerpc64-except.cxx | 112 +++++++++++++++++++++
+ ...s-source-cpp_uno-gcc3_linux_powerpc64-share.hxx | 106 +++++++++++++++++++
+ .../patch-cppuhelper_source_exc__thrower.cxx       |  10 ++
+ ...atch-desktop_source_deployment_misc_dp__ucb.cxx |  20 ++++
+ .../patch-include_com_sun_star_uno_Reference.h     |  11 ++
+ .../patch-include_com_sun_star_uno_Reference.hxx   |  20 ++++
+ .../files/powerpc64/patch-include_uno_mapping.hxx  |  10 ++
+ .../powerpc64/patch-ucb_source_ucp_file_bc.cxx     |  10 ++
+ emulators/libretro-vice/Makefile                   |   4 +-
+ games/openrct2/Makefile                            |   4 +-
+ graphics/instant-meshes/Makefile                   |   6 +-
+ graphics/instant-meshes/distinfo                   |  12 +--
+ graphics/instant-meshes/files/patch-CMakeLists.txt |  20 ----
+ graphics/py-glfw/Makefile                          |   2 +-
+ graphics/py-glfw/distinfo                          |   6 +-
+ graphics/qgis-ltr/Makefile                         |  26 +++--
+ graphics/qgis-ltr/distinfo                         |   6 +-
+ lang/erlang-runtime23/Makefile                     |   2 +-
+ lang/erlang-runtime23/distinfo                     |   6 +-
+ lang/gcc10-devel/Makefile                          |   2 +-
+ lang/gcc10-devel/distinfo                          |   6 +-
+ net-im/telegram-cli/files/patch-configure          |  11 ++
+ net/hostapd/Makefile                               |   2 +-
+ net/hostapd/files/patch-src_drivers_driver__bsd.c  |  13 ++-
+ net/ntpsec/Makefile                                |   5 +-
+ net/ntpsec/distinfo                                |   6 +-
+ net/openldap24-server/Makefile                     |   4 +-
+ net/openldap24-server/distinfo                     |   6 +-
+ net/remmina/Makefile                               |   3 +-
+ ports-mgmt/pkg-devel/Makefile                      |   4 +-
+ ports-mgmt/pkg-devel/distinfo                      |   6 +-
+ security/suricata/Makefile                         |  62 ++++--------
+ .../suricata/files/patch-src_suricata-common.h     |   4 +-
+ security/vuxml/vuln.xml                            |  43 ++++++++
+ security/wpa_supplicant/Makefile                   |   2 +-
+ .../files/patch-src_drivers_driver__bsd.c          |  11 +-
+ textproc/gtk-doc/Makefile                          |  26 +++--
+ textproc/gtk-doc/distinfo                          |   6 +-
+ textproc/gtk-doc/files/patch-help_manual_LINGUAS   |  21 ++++
+ textproc/gtk-doc/files/patch-meson.build           |  20 ++++
+ textproc/gtk-doc/pkg-plist                         |   8 ++
+ textproc/libunibreak/Makefile                      |   2 +-
+ textproc/libunibreak/distinfo                      |   6 +-
+ textproc/libunibreak/pkg-plist                     |   3 +-
+ x11/Makefile                                       |   1 +
+ x11/cinnamon/Makefile                              |   1 +
+ x11/cinnamon/pkg-plist                             |   8 +-
+ x11/keybinder/Makefile                             |   2 +-
+ x11/keybinder/files/patch-docs_keybinder-docs.sgml |  13 +++
+ x11/keybinder/pkg-plist                            |   1 -
+ 64 files changed, 691 insertions(+), 192 deletions(-)
+ create mode 100644 devel/libdbusmenu/files/patch-docs_libdbusmenu-glib_reference_libdbusmenu-glib-docs.sgml
+ create mode 100644 devel/libdbusmenu/files/patch-docs_libdbusmenu-gtk_reference_libdbusmenu-gtk-docs.sgml
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-bridges-source-cpp_uno-gcc3_linux_powerpc64-cpp2uno.cxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-bridges-source-cpp_uno-gcc3_linux_powerpc64-except.cxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-bridges-source-cpp_uno-gcc3_linux_powerpc64-share.hxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-cppuhelper_source_exc__thrower.cxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-desktop_source_deployment_misc_dp__ucb.cxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-include_com_sun_star_uno_Reference.h
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-include_com_sun_star_uno_Reference.hxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-include_uno_mapping.hxx
+ create mode 100644 editors/libreoffice/files/powerpc64/patch-ucb_source_ucp_file_bc.cxx
+ create mode 100644 net-im/telegram-cli/files/patch-configure
+ create mode 100644 textproc/gtk-doc/files/patch-help_manual_LINGUAS
+ create mode 100644 textproc/gtk-doc/files/patch-meson.build
+ create mode 100644 x11/keybinder/files/patch-docs_keybinder-docs.sgml
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
