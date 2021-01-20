@@ -1,0 +1,162 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging usr.sbin/Makefile
+Auto-merging usr.bin/Makefile
+Auto-merging sys/kern/subr_prf.c
+Auto-merging sys/conf/newvers.sh
+CONFLICT (content): Merge conflict in sys/conf/newvers.sh
+Auto-merging release/release.sh
+Auto-merging lib/libc/tests/stdlib/Makefile
+CONFLICT (content): Merge conflict in lib/libc/tests/stdlib/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc lib/libc/tests/stdlib/Makefile
+index edf2c1940dcb3,bd85efcb1b950..0000000000000
+--- a/lib/libc/tests/stdlib/Makefile
++++ b/lib/libc/tests/stdlib/Makefile
+@@@ -11,11 -11,8 +11,13 @@@ ATF_TESTS_C+=		qsort_s_tes
+  ATF_TESTS_C+=		set_constraint_handler_s_test
+  ATF_TESTS_C+=		strfmon_test
+  ATF_TESTS_C+=		tsearch_test
+- .if ${COMPILER_FEATURES:Mc++11}
+  ATF_TESTS_CXX+=		cxa_thread_atexit_test
+  ATF_TESTS_CXX+=		cxa_thread_atexit_nothr_test
+++<<<<<<< HEAD
+ +NOPIE=			yes
+ +.endif
+++=======
+++>>>>>>> freebsd/current/main
+  
+  # All architectures on FreeBSD have fenv.h
+  CFLAGS+=	-D__HAVE_FENV
+diff --cc sys/conf/newvers.sh
+index 6289733b3605d,92c275d19fb94..0000000000000
+--- a/sys/conf/newvers.sh
++++ b/sys/conf/newvers.sh
+@@@ -276,18 -281,12 +282,25 @@@ if [ -n "$hg_cmd" ] ; the
+  	fi
+  fi
+  
+ +if [ -n "${HBSD_EXTRA}" ] ; then
+ +	hbsdv=" [${HBSD_EXTRA}]"
+ +else
+ +	hbsdv=" "
+ +fi
+ +
+  [ ${include_metadata} = "if-modified" -a ${modified} = "yes" ] && include_metadata=yes
+  if [ ${include_metadata} != "yes" ]; then
+++<<<<<<< HEAD
+ +	VERINFO="${VERSION}${hbsdv}${svn}${git}${hg} ${i}"
+ +	VERSTR="${VERINFO}\\n"
+ +else
+ +	VERINFO="${VERSION} #${v}${hbsdv}${svn}${git}${hg}: ${t}"
+++=======
++ 	VERINFO="${VERSION}${svn}${git}${gitup}${hg} ${i}"
++ 	VERSTR="${VERINFO}\\n"
++ else
++ 	VERINFO="${VERSION} #${v}${svn}${git}${gitup}${hg}: ${t}"
+++>>>>>>> freebsd/current/main
+  	VERSTR="${VERINFO}\\n    ${u}@${h}:${d}\\n"
+  fi
+  
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   bin/df/df.1
+	modified:   contrib/diff/config.h
+	modified:   include/Makefile
+	modified:   lib/libc/stdlib/getopt.c
+	modified:   lib/libc/stdlib/getopt_long.c
+	modified:   lib/libc/stdlib/merge.c
+	modified:   lib/ofed/libibnetdisc/Makefile
+	modified:   release/release.sh
+	modified:   share/man/man4/ktls.4
+	modified:   stand/common/gfx_fb.c
+	modified:   stand/i386/libi386/vbe.c
+	modified:   sys/arm64/arm64/vm_machdep.c
+	new file:   sys/arm64/conf/GENERIC-MMCCAM-NODEBUG
+	modified:   sys/arm64/include/param.h
+	modified:   sys/arm64/include/vmparam.h
+	modified:   sys/kern/subr_prf.c
+	modified:   sys/kern/uipc_ktls.c
+	modified:   sys/kern/vfs_cache.c
+	modified:   sys/netinet/ip_fw.h
+	modified:   sys/netinet/libalias/alias.c
+	modified:   sys/netinet/libalias/alias.h
+	modified:   sys/netinet/libalias/alias_db.c
+	modified:   sys/netinet/libalias/alias_local.h
+	modified:   sys/netinet/libalias/alias_mod.c
+	modified:   sys/netinet/libalias/alias_proxy.c
+	modified:   sys/netinet/libalias/libalias.3
+	modified:   sys/netipsec/ipsec_output.c
+	modified:   sys/opencrypto/crypto.c
+	modified:   sys/riscv/include/vmparam.h
+	modified:   tools/build/mk/Makefile.boot
+	modified:   usr.bin/Makefile
+	modified:   usr.sbin/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   lib/libc/tests/stdlib/Makefile
+	both modified:   sys/conf/newvers.sh
+
+HEAD is now at 32ce29be8f69e Merge branch 'freebsd/current/main' into hardened/current/master
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at 32ce29be8f69e Merge branch 'freebsd/current/main' into hardened/current/master
+==== END: hardened/current/master ====
