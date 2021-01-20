@@ -1,0 +1,100 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/main
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/main branch ====
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                           |   9 +
+ sbin/pfctl/Makefile                     |   3 -
+ sbin/pfctl/pf_ruleset.c                 | 343 ++++++++++++++++++
+ share/man/man9/VOP_RDWR.9               |   4 +-
+ sys/net/pfvar.h                         | 482 +++++++------------------
+ sys/netpfil/pf/if_pflog.c               |   6 +-
+ sys/netpfil/pf/if_pfsync.c              |   8 +-
+ sys/netpfil/pf/pf.c                     | 310 +++++++++-------
+ sys/netpfil/pf/pf.h                     | 438 +++++++++++++++++++++++
+ sys/netpfil/pf/pf_if.c                  | 241 +++++++++----
+ sys/netpfil/pf/pf_ioctl.c               | 616 +++++++++++++++++++++++---------
+ sys/netpfil/pf/pf_lb.c                  |  44 +--
+ sys/netpfil/pf/pf_norm.c                |  40 +--
+ sys/netpfil/pf/pf_ruleset.c             | 136 +++----
+ sys/netpfil/pf/pf_table.c               |  36 +-
+ tests/sys/netpfil/pf/ioctl/validation.c |   5 +
+ usr.bin/script/script.1                 |  74 +++-
+ usr.sbin/certctl/certctl.8              |   4 +-
+ 18 files changed, 1898 insertions(+), 901 deletions(-)
+ create mode 100644 sbin/pfctl/pf_ruleset.c
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    d7222e7a9b03..3f1713deb976  hardened/12-stable/master -> hardened/12-stable/master
+remote:    7033fd68f7ef..2cc2177bca0e  github/freebsd/12-stable/main -> github/freebsd/12-stable/main
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   d7222e7a9b037..3f1713deb9760  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
