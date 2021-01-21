@@ -1,0 +1,133 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at ac2992bb02802 HBSD: Resolve merge conflicts
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/sys/jail.h
+Auto-merging sys/modules/Makefile
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/i386/linux/linux_sysvec.c
+Auto-merging sys/conf/files
+Auto-merging share/man/man4/Makefile
+Auto-merging release/release.sh
+Auto-merging bin/cat/cat.c
+CONFLICT (content): Merge conflict in bin/cat/cat.c
+Auto-merging Makefile.inc1
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/current/main branch ====
+diff --cc bin/cat/cat.c
+index 40d91b243bd41,5a1fab0c26a06..0000000000000
+--- a/bin/cat/cat.c
++++ b/bin/cat/cat.c
+@@@ -364,8 -428,8 +364,13 @@@ udom_open(const char *path, int flags
+  {
+  	struct addrinfo hints, *res, *res0;
+  	char rpath[PATH_MAX];
+++<<<<<<< HEAD
+ +	int fd = -1;
+ +	int error;
+++=======
++ 	int error, fd, serrno;
++ 	cap_rights_t rights;
+++>>>>>>> freebsd/current/main
+  
+  	/*
+  	 * Construct the unix domain socket address and attempt to connect.
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Makefile.inc1
+	modified:   release/release.sh
+	modified:   share/man/man4/Makefile
+	modified:   share/man/man4/hconf.4
+	modified:   share/man/man7/crypto.7
+	modified:   stand/common/reloc_elf.c
+	modified:   sys/arm64/arm64/trap.c
+	modified:   sys/conf/files
+	modified:   sys/contrib/ipfilter/netinet/mlfk_ipl.c
+	modified:   sys/dev/evdev/cdev.c
+	modified:   sys/dev/hid/hconf.c
+	modified:   sys/dev/hid/hms.c
+	modified:   sys/dev/hid/hmt.c
+	modified:   sys/dev/iscsi/icl_soft.c
+	modified:   sys/dev/pms/freebsd/driver/common/lxcommon.h
+	modified:   sys/dev/pms/freebsd/driver/ini/src/agdef.h
+	modified:   sys/dev/pms/freebsd/driver/ini/src/agtiapi.c
+	modified:   sys/dev/virtio/balloon/virtio_balloon.c
+	modified:   sys/dev/virtio/block/virtio_blk.c
+	modified:   sys/dev/virtio/console/virtio_console.c
+	modified:   sys/dev/virtio/mmio/virtio_mmio.c
+	modified:   sys/dev/virtio/mmio/virtio_mmio.h
+	modified:   sys/dev/virtio/mmio/virtio_mmio_acpi.c
+	modified:   sys/dev/virtio/mmio/virtio_mmio_fdt.c
+	modified:   sys/dev/virtio/network/if_vtnet.c
+	modified:   sys/dev/virtio/random/virtio_random.c
+	modified:   sys/dev/virtio/scsi/virtio_scsi.c
+	modified:   sys/dev/virtio/virtio.h
+	modified:   sys/i386/linux/linux_sysvec.c
+	modified:   sys/kern/kern_jail.c
+	modified:   sys/kern/subr_bus.c
+	modified:   sys/modules/Makefile
+	modified:   sys/modules/hid/hms/Makefile
+	modified:   sys/modules/hid/hmt/Makefile
+	modified:   sys/modules/linux64/Makefile
+	modified:   sys/sys/jail.h
+	modified:   usr.bin/truss/setup.c
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   bin/cat/cat.c
+
+HEAD is now at ac2992bb02802 HBSD: Resolve merge conflicts
+==== merge failed and clean up after ====
+On branch hardened/current/master
+Your branch is up to date with 'origin/hardened/current/master'.
+
+nothing to commit, working tree clean
+HEAD is now at ac2992bb02802 HBSD: Resolve merge conflicts
+==== END: hardened/current/master ====
