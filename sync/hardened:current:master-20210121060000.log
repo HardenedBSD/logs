@@ -1,0 +1,121 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 12 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating ac2992bb02802..ee7761c4d9282
+Fast-forward
+ release/release.sh                           |  2 +-
+ share/man/man4/hconf.4                       |  8 ++--
+ stand/common/reloc_elf.c                     | 35 +++++++++-----
+ sys/arm64/arm64/trap.c                       | 10 +++-
+ sys/dev/evdev/cdev.c                         | 29 +++++++++---
+ sys/dev/hid/hconf.c                          | 57 +++++++++++-----------
+ sys/dev/hid/hms.c                            | 71 +++++++++++++++++++++++++++-
+ sys/dev/hid/hmt.c                            | 10 ++++
+ sys/dev/pms/freebsd/driver/common/lxcommon.h |  2 +-
+ sys/dev/pms/freebsd/driver/ini/src/agdef.h   |  2 +-
+ sys/dev/pms/freebsd/driver/ini/src/agtiapi.c |  3 +-
+ sys/modules/hid/hms/Makefile                 |  1 +
+ sys/modules/hid/hmt/Makefile                 |  1 +
+ 13 files changed, 171 insertions(+), 60 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging sys/sys/jail.h
+Auto-merging sys/modules/Makefile
+Auto-merging sys/kern/kern_jail.c
+Auto-merging sys/i386/linux/linux_sysvec.c
+Auto-merging sys/conf/files
+Auto-merging share/man/man4/Makefile
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+ Makefile.inc1                           |  12 +-
+ share/man/man4/Makefile                 |  32 ++---
+ share/man/man7/crypto.7                 | 230 ++++++++++++++++----------------
+ sys/conf/files                          |   5 +-
+ sys/contrib/ipfilter/netinet/mlfk_ipl.c |  86 +++++-------
+ sys/dev/iscsi/icl_soft.c                |   2 +-
+ sys/dev/virtio/balloon/virtio_balloon.c |   8 +-
+ sys/dev/virtio/block/virtio_blk.c       |   8 +-
+ sys/dev/virtio/console/virtio_console.c |   8 +-
+ sys/dev/virtio/mmio/virtio_mmio.c       |  57 ++++++--
+ sys/dev/virtio/mmio/virtio_mmio.h       |   2 +
+ sys/dev/virtio/mmio/virtio_mmio_acpi.c  |   3 +-
+ sys/dev/virtio/mmio/virtio_mmio_fdt.c   |   3 +-
+ sys/dev/virtio/network/if_vtnet.c       |   8 +-
+ sys/dev/virtio/random/virtio_random.c   |   8 +-
+ sys/dev/virtio/scsi/virtio_scsi.c       |   8 +-
+ sys/dev/virtio/virtio.h                 |  13 +-
+ sys/i386/linux/linux_sysvec.c           |   2 +-
+ sys/kern/kern_jail.c                    | 145 ++++++++++++--------
+ sys/kern/subr_bus.c                     |   6 -
+ sys/modules/Makefile                    |   4 +-
+ sys/modules/linux64/Makefile            |   2 +-
+ sys/sys/jail.h                          |   9 +-
+ usr.bin/truss/setup.c                   |   2 +-
+ 24 files changed, 328 insertions(+), 335 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    ee7761c4d928..df76db9fd604  hardened/current/master -> hardened/current/master
+remote:    e54a1d575180..ff751ee05c93  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   ee7761c4d9282..df76db9fd604b  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
