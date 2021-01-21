@@ -67,3 +67,202 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing devel/libplist/files/patch-configure
+Removing devel/intel-graphics-compiler/files/patch-revert
+Auto-merging devel/intel-graphics-compiler/Makefile
+Removing comms/usbmuxd/files/patch-ppoll
+Removing comms/libimobiledevice/files/patch-src_idevice.c
+Auto-merging audio/forked-daapd/Makefile
+Merge made by the 'recursive' strategy.
+ MOVED                                            |      2 -
+ audio/amarok/Makefile                            |      6 +-
+ audio/clementine-player/Makefile                 |      8 +-
+ audio/forked-daapd/Makefile                      |      3 +-
+ audio/libgpod/Makefile                           |     12 +-
+ audio/rhythmbox/Makefile                         |      6 +-
+ comms/Makefile                                   |      1 +
+ comms/libimobiledevice/Makefile                  |     17 +-
+ comms/libimobiledevice/distinfo                  |      5 +-
+ comms/libimobiledevice/files/patch-configure     |     28 +-
+ comms/libimobiledevice/files/patch-src_idevice.c |     11 -
+ comms/libimobiledevice/pkg-plist                 |     13 +-
+ comms/libusbmuxd/Makefile                        |     14 +-
+ comms/libusbmuxd/distinfo                        |      5 +-
+ comms/libusbmuxd/pkg-plist                       |     13 +-
+ comms/py-libimobiledevice/Makefile               |     43 +
+ comms/usbmuxd/Makefile                           |     20 +-
+ comms/usbmuxd/distinfo                           |      5 +-
+ comms/usbmuxd/files/patch-configure              |     13 +
+ comms/usbmuxd/files/patch-ppoll                  |     25 -
+ comms/usbmuxd/files/patch-src_client.c           |     13 +
+ comms/usbmuxd/files/patch-src_usb.c              |     17 +
+ devel/Makefile                                   |      1 +
+ devel/bazel/Makefile                             |     12 +-
+ devel/bazel/distinfo                             |      6 +-
+ devel/gvfs/Makefile                              |      9 +-
+ devel/intel-graphics-compiler/Makefile           |      1 +
+ devel/intel-graphics-compiler/files/patch-llvm11 |     61 +
+ devel/intel-graphics-compiler/files/patch-revert |    362 -
+ devel/kf5-solid/Makefile                         |      5 +-
+ devel/libjitterentropy/Makefile                  |      2 +-
+ devel/libjitterentropy/distinfo                  |      6 +-
+ devel/libplist/Makefile                          |     19 +-
+ devel/libplist/distinfo                          |      5 +-
+ devel/libplist/files/patch-configure             |     11 -
+ devel/libplist/files/patch-configure.ac          |    106 +
+ devel/libplist/pkg-plist                         |     21 +-
+ devel/ncurses/files/patch-misc_ncurses-config.in |     20 +
+ devel/py-azure-mgmt-appconfiguration/Makefile    |      6 +-
+ devel/py-azure-mgmt-appconfiguration/distinfo    |      6 +-
+ devel/py-azure-mgmt-datamigration/Makefile       |      4 +-
+ devel/py-azure-mgmt-datamigration/distinfo       |      6 +-
+ devel/py-azure-mgmt-resource/Makefile            |      2 +-
+ devel/py-azure-mgmt-resource/distinfo            |      6 +-
+ devel/py-knack/Makefile                          |      2 +-
+ devel/py-knack/distinfo                          |      6 +-
+ devel/py-libplist/Makefile                       |     42 +
+ devel/serd/distinfo                              |      2 +-
+ devel/serd/files/patch-src_serd__config.h        |     33 +
+ devel/serd/files/patch-src_system.c              |     11 +
+ devel/serd/files/patch-wscript                   |     16 +
+ emulators/qemu-utils/Makefile                    |      4 +-
+ emulators/qemu42/Makefile                        |      6 +-
+ graphics/heimer/Makefile                         |     27 +-
+ graphics/heimer/distinfo                         |      6 +-
+ graphics/heimer/pkg-descr                        |     18 +-
+ graphics/heimer/pkg-plist                        |      7 -
+ graphics/xmedcon/Makefile                        |      2 +-
+ graphics/xmedcon/distinfo                        |      6 +-
+ multimedia/kodi/Makefile                         |      3 +-
+ net-im/scli/Makefile                             |      6 +-
+ net-im/scli/distinfo                             |      6 +-
+ net-im/toxic/Makefile                            |      2 +-
+ net-im/toxic/distinfo                            |      6 +-
+ net-p2p/openethereum/Makefile                    |      2 +-
+ net-p2p/openethereum/distinfo                    |      6 +-
+ net/serviio/Makefile                             |      4 +-
+ net/serviio/pkg-plist                            |      1 +
+ security/vuxml/Makefile                          |      3 +
+ security/vuxml/vuln-2003.xml                     |    282 +
+ security/vuxml/vuln-2004.xml                     |  10144 ++
+ security/vuxml/vuln-2005.xml                     |  13102 ++
+ security/vuxml/vuln-2006.xml                     |   8776 ++
+ security/vuxml/vuln-2007.xml                     |   6354 +
+ security/vuxml/vuln-2008.xml                     |   6614 +
+ security/vuxml/vuln-2009.xml                     |   6943 +
+ security/vuxml/vuln-2010.xml                     |   5762 +
+ security/vuxml/vuln-2011.xml                     |   6068 +
+ security/vuxml/vuln-2012.xml                     |   9319 ++
+ security/vuxml/vuln-2013.xml                     |   8107 +
+ security/vuxml/vuln-2014.xml                     |   6739 +
+ security/vuxml/vuln-2015.xml                     |  18935 +++
+ security/vuxml/vuln-2016.xml                     |  20621 +++
+ security/vuxml/vuln-2017.xml                     |  12818 ++
+ security/vuxml/vuln-2018.xml                     |  12633 ++
+ security/vuxml/vuln-2019.xml                     |  11406 ++
+ security/vuxml/vuln.xml                          | 164151 +-------------------
+ security/yubico-piv-tool/Makefile                |      6 +-
+ security/yubico-piv-tool/distinfo                |      6 +-
+ sysutils/fusefs-ifuse/Makefile                   |      9 +-
+ sysutils/py-azure-cli-core/Makefile              |      2 +-
+ sysutils/py-azure-cli-core/distinfo              |      6 +-
+ sysutils/py-azure-cli/Makefile                   |     10 +-
+ sysutils/py-azure-cli/distinfo                   |      6 +-
+ x11-fonts/google-fonts/Makefile                  |     14 +-
+ x11-fonts/google-fonts/distinfo                  |      6 +-
+ x11-fonts/google-fonts/pkg-plist                 |     19 +
+ 97 files changed, 165309 insertions(+), 164733 deletions(-)
+ delete mode 100644 comms/libimobiledevice/files/patch-src_idevice.c
+ create mode 100644 comms/py-libimobiledevice/Makefile
+ create mode 100644 comms/usbmuxd/files/patch-configure
+ delete mode 100644 comms/usbmuxd/files/patch-ppoll
+ create mode 100644 comms/usbmuxd/files/patch-src_client.c
+ create mode 100644 comms/usbmuxd/files/patch-src_usb.c
+ delete mode 100644 devel/intel-graphics-compiler/files/patch-revert
+ delete mode 100644 devel/libplist/files/patch-configure
+ create mode 100644 devel/libplist/files/patch-configure.ac
+ create mode 100644 devel/ncurses/files/patch-misc_ncurses-config.in
+ create mode 100644 devel/py-libplist/Makefile
+ create mode 100644 devel/serd/files/patch-src_serd__config.h
+ create mode 100644 devel/serd/files/patch-src_system.c
+ create mode 100644 devel/serd/files/patch-wscript
+ create mode 100644 security/vuxml/vuln-2003.xml
+ create mode 100644 security/vuxml/vuln-2004.xml
+ create mode 100644 security/vuxml/vuln-2005.xml
+ create mode 100644 security/vuxml/vuln-2006.xml
+ create mode 100644 security/vuxml/vuln-2007.xml
+ create mode 100644 security/vuxml/vuln-2008.xml
+ create mode 100644 security/vuxml/vuln-2009.xml
+ create mode 100644 security/vuxml/vuln-2010.xml
+ create mode 100644 security/vuxml/vuln-2011.xml
+ create mode 100644 security/vuxml/vuln-2012.xml
+ create mode 100644 security/vuxml/vuln-2013.xml
+ create mode 100644 security/vuxml/vuln-2014.xml
+ create mode 100644 security/vuxml/vuln-2015.xml
+ create mode 100644 security/vuxml/vuln-2016.xml
+ create mode 100644 security/vuxml/vuln-2017.xml
+ create mode 100644 security/vuxml/vuln-2018.xml
+ create mode 100644 security/vuxml/vuln-2019.xml
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    f0a12912cbdc..9329c7d96c52  master -> master        
+remote:    3a54863025a7..f0a12912cbdc  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   f0a12912cbdc..9329c7d96c52  master -> master
+==== END: master ====
