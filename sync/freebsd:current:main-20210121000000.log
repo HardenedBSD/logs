@@ -1,0 +1,85 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at e54a1d5751805 pms: handle maximum size IO with any alignment
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating e54a1d5751805..ff751ee05c939
+Fast-forward
+ Makefile.inc1                           |  12 +-
+ share/man/man4/Makefile                 |  32 ++---
+ share/man/man7/crypto.7                 | 230 ++++++++++++++++----------------
+ sys/conf/files                          |   5 +-
+ sys/contrib/ipfilter/netinet/mlfk_ipl.c |  86 +++++-------
+ sys/dev/iscsi/icl_soft.c                |   2 +-
+ sys/dev/virtio/balloon/virtio_balloon.c |   8 +-
+ sys/dev/virtio/block/virtio_blk.c       |   8 +-
+ sys/dev/virtio/console/virtio_console.c |   8 +-
+ sys/dev/virtio/mmio/virtio_mmio.c       |  57 ++++++--
+ sys/dev/virtio/mmio/virtio_mmio.h       |   2 +
+ sys/dev/virtio/mmio/virtio_mmio_acpi.c  |   3 +-
+ sys/dev/virtio/mmio/virtio_mmio_fdt.c   |   3 +-
+ sys/dev/virtio/network/if_vtnet.c       |   8 +-
+ sys/dev/virtio/random/virtio_random.c   |   8 +-
+ sys/dev/virtio/scsi/virtio_scsi.c       |   8 +-
+ sys/dev/virtio/virtio.h                 |  13 +-
+ sys/i386/linux/linux_sysvec.c           |   2 +-
+ sys/kern/kern_jail.c                    | 145 ++++++++++++--------
+ sys/kern/subr_bus.c                     |   6 -
+ sys/modules/Makefile                    |   4 +-
+ sys/modules/linux64/Makefile            |   2 +-
+ sys/sys/jail.h                          |   9 +-
+ usr.bin/truss/setup.c                   |   2 +-
+ 24 files changed, 328 insertions(+), 335 deletions(-)
+ssh: connect to host git-01.md.hardenedbsd.org port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/main
+Your branch is ahead of 'origin/freebsd/current/main' by 14 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at ff751ee05c939 Remove FirstBurstLength limit for software iSCSI.
+==== END: freebsd/current/main ====
