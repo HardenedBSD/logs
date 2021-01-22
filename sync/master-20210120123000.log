@@ -1,0 +1,243 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 10 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 52a569438211..3340ca77ad20
+Fast-forward
+ archivers/rpm4/Makefile    | 2 ++
+ devel/kBuild/Makefile      | 2 ++
+ dns/unbound/Makefile       | 2 ++
+ mail/bogofilter/Makefile   | 2 ++
+ math/hmat-oss/Makefile     | 2 ++
+ net/libusrsctp/Makefile    | 2 ++
+ net/yaz/Makefile           | 2 ++
+ science/PETSc/Makefile     | 2 ++
+ security/libfido2/Makefile | 2 ++
+ sysutils/libg15/Makefile   | 2 ++
+ 10 files changed, 20 insertions(+)
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/suricata/Makefile
+CONFLICT (content): Merge conflict in security/suricata/Makefile
+Auto-merging ports-mgmt/pkg/distinfo
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/distinfo
+Auto-merging ports-mgmt/pkg/Makefile
+CONFLICT (content): Merge conflict in ports-mgmt/pkg/Makefile
+Auto-merging net/remmina/Makefile
+Auto-merging lang/gcc10-devel/Makefile
+Auto-merging games/openrct2/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc ports-mgmt/pkg/Makefile
+index 8b21a4938c8c,0d65933246de..000000000000
+--- a/ports-mgmt/pkg/Makefile
++++ b/ports-mgmt/pkg/Makefile
+@@@ -1,7 -1,7 +1,11 @@@
+  # $FreeBSD$
+  
+  PORTNAME=	pkg
+++<<<<<<< HEAD
+ +DISTVERSION=	1.15.10
+++=======
++ DISTVERSION=	1.16.2
+++>>>>>>> freebsd/master
+  _PKG_VERSION=	${DISTVERSION}
+  CATEGORIES=	ports-mgmt
+  #MASTER_SITES=	\
+diff --cc ports-mgmt/pkg/distinfo
+index 3af98e88e5e9,d7fe25ea31ab..000000000000
+--- a/ports-mgmt/pkg/distinfo
++++ b/ports-mgmt/pkg/distinfo
+@@@ -1,3 -1,3 +1,9 @@@
+++<<<<<<< HEAD
+ +TIMESTAMP = 1602434338
+ +SHA256 (HardenedBSD-pkg-4130f228a564871590077747da5a3fa0d413a3cc_GL0.tar.gz) = 7d7757155f6705c7e4268ea718c3870718daa4c5e7b0fab98d0993dfd5536c16
+ +SIZE (HardenedBSD-pkg-4130f228a564871590077747da5a3fa0d413a3cc_GL0.tar.gz) = 3826611
+++=======
++ TIMESTAMP = 1611153227
++ SHA256 (freebsd-pkg-1.16.2_GH0.tar.gz) = 2cde2ebec66fa82dfb7fed968a494a8a7e87e7e359c9eb81c6b3153b05f68174
++ SIZE (freebsd-pkg-1.16.2_GH0.tar.gz) = 3833683
+++>>>>>>> freebsd/master
+diff --cc security/suricata/Makefile
+index 3064c002c57f,9f4ef515fb5b..000000000000
+--- a/security/suricata/Makefile
++++ b/security/suricata/Makefile
+@@@ -25,13 -26,11 +26,18 @@@ CPE_VENDOR=	openinfosecfoundatio
+  
+  USE_LDCONFIG=	yes
+  USE_RC_SUBR=	${PORTNAME}
+- PLIST_SUB=	PORTVERSION=${DISTVERSION:C/-/_/g}
+  
+  GNU_CONFIGURE=	yes
+++<<<<<<< HEAD
+ +
+ +USE_HARDENING=	pie:configure safestack
+ +
+ +CPE_VENDOR=	openinfosecfoundation
+++=======
++ CONFIGURE_ARGS+=--enable-gccprotect \
++ 		--enable-bundled-htp \
++ 	        --disable-gccmarch-native
+++>>>>>>> freebsd/master
+  
+  INSTALL_TARGET=		install-strip
+  TEST_TARGET=		check
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   devel/bingrep/Makefile
+	modified:   devel/bingrep/distinfo
+	modified:   devel/libdbusmenu/Makefile
+	new file:   devel/libdbusmenu/files/patch-docs_libdbusmenu-glib_reference_libdbusmenu-glib-docs.sgml
+	new file:   devel/libdbusmenu/files/patch-docs_libdbusmenu-gtk_reference_libdbusmenu-gtk-docs.sgml
+	modified:   devel/libdbusmenu/pkg-plist
+	modified:   dns/libnspsl/Makefile
+	modified:   dns/libnspsl/distinfo
+	modified:   editors/editorconfig-core-c/Makefile
+	modified:   editors/editorconfig-core-c/distinfo
+	modified:   editors/editorconfig-core-c/pkg-plist
+	modified:   emulators/libretro-vice/Makefile
+	modified:   games/openrct2/Makefile
+	modified:   graphics/instant-meshes/Makefile
+	modified:   graphics/instant-meshes/distinfo
+	modified:   graphics/instant-meshes/files/patch-CMakeLists.txt
+	modified:   graphics/py-glfw/Makefile
+	modified:   graphics/py-glfw/distinfo
+	modified:   graphics/qgis-ltr/Makefile
+	modified:   graphics/qgis-ltr/distinfo
+	modified:   lang/erlang-runtime23/Makefile
+	modified:   lang/erlang-runtime23/distinfo
+	modified:   lang/gcc10-devel/Makefile
+	modified:   lang/gcc10-devel/distinfo
+	new file:   net-im/telegram-cli/files/patch-configure
+	modified:   net/hostapd/Makefile
+	modified:   net/hostapd/files/patch-src_drivers_driver__bsd.c
+	modified:   net/openldap24-server/Makefile
+	modified:   net/openldap24-server/distinfo
+	modified:   net/remmina/Makefile
+	modified:   ports-mgmt/pkg-devel/Makefile
+	modified:   ports-mgmt/pkg-devel/distinfo
+	modified:   security/suricata/files/patch-src_suricata-common.h
+	modified:   security/wpa_supplicant/Makefile
+	modified:   security/wpa_supplicant/files/patch-src_drivers_driver__bsd.c
+	modified:   textproc/gtk-doc/Makefile
+	modified:   textproc/gtk-doc/distinfo
+	new file:   textproc/gtk-doc/files/patch-help_manual_LINGUAS
+	new file:   textproc/gtk-doc/files/patch-meson.build
+	modified:   textproc/gtk-doc/pkg-plist
+	modified:   textproc/libunibreak/Makefile
+	modified:   textproc/libunibreak/distinfo
+	modified:   textproc/libunibreak/pkg-plist
+	modified:   x11/Makefile
+	modified:   x11/cinnamon/Makefile
+	modified:   x11/cinnamon/pkg-plist
+	modified:   x11/keybinder/Makefile
+	new file:   x11/keybinder/files/patch-docs_keybinder-docs.sgml
+	modified:   x11/keybinder/pkg-plist
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   ports-mgmt/pkg/Makefile
+	both modified:   ports-mgmt/pkg/distinfo
+	both modified:   security/suricata/Makefile
+
+
+It took 3.12 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 3340ca77ad20 HBSD: Disable variable auto-init for science/PETSc
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.26 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 3340ca77ad20 HBSD: Disable variable auto-init for science/PETSc
+==== END: master ====
