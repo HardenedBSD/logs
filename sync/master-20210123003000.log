@@ -47,3 +47,222 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing www/riot-web/pkg-descr
+Removing www/riot-web/distinfo
+Auto-merging security/tor-devel/Makefile
+Auto-merging games/eduke32/Makefile
+CONFLICT (content): Merge conflict in games/eduke32/Makefile
+Auto-merging cad/netgen/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc games/eduke32/Makefile
+index 5ebb668cb6f9,da570616f456..000000000000
+--- a/games/eduke32/Makefile
++++ b/games/eduke32/Makefile
+@@@ -33,9 -34,7 +34,13 @@@ LIB_DEPENDS=	libFLAC.so:audio/flac 
+  		libvpx.so:multimedia/libvpx \
+  		libpng.so:graphics/png
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	stackautoinit:off
+ +
+ +USES=		dos2unix gl gmake gnome localbase pkgconfig sdl tar:xz
+++=======
++ USES=		compiler:c11 dos2unix gl gmake gnome localbase pkgconfig sdl tar:xz
+++>>>>>>> freebsd/master
+  USE_GL=		gl glu
+  USE_GNOME=	gtk20
+  USE_SDL=	sdl2 mixer2
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   MOVED
+	modified:   archivers/nfpm/Makefile
+	modified:   archivers/nfpm/distinfo
+	modified:   audio/dsbmixer/Makefile
+	modified:   audio/dsbmixer/distinfo
+	modified:   audio/dsbmixer/pkg-descr
+	modified:   audio/dsbmixer/pkg-plist
+	modified:   audio/strawberry/Makefile
+	modified:   audio/strawberry/distinfo
+	modified:   cad/graywolf/Makefile
+	modified:   cad/graywolf/distinfo
+	modified:   cad/netgen/Makefile
+	modified:   cad/netgen/distinfo
+	modified:   cad/netgen/pkg-plist
+	modified:   deskutils/mozo/Makefile
+	modified:   deskutils/mozo/pkg-plist
+	modified:   devel/got/Makefile
+	modified:   devel/got/distinfo
+	modified:   devel/grcov/Makefile
+	modified:   devel/grcov/distinfo
+	modified:   devel/py-pyface/Makefile
+	modified:   devel/py-pyface/distinfo
+	modified:   devel/py-pyface/pkg-descr
+	modified:   devel/py-pyfcm/Makefile
+	modified:   devel/py-pyfcm/distinfo
+	modified:   devel/xtl-quant-stack/Makefile
+	modified:   devel/xtl-quant-stack/distinfo
+	modified:   editors/slime/Makefile
+	modified:   editors/slime/distinfo
+	modified:   editors/slime/pkg-plist
+	modified:   emulators/rpcs3/Makefile
+	modified:   emulators/rpcs3/distinfo
+	modified:   games/automuteus/Makefile
+	modified:   games/automuteus/distinfo
+	modified:   games/naev/pkg-descr
+	modified:   graphics/Makefile
+	new file:   graphics/drm-fbsd13-kmod/Makefile
+	new file:   graphics/drm-fbsd13-kmod/distinfo
+	new file:   graphics/drm-fbsd13-kmod/pkg-descr
+	new file:   graphics/drm-fbsd13-kmod/pkg-message
+	new file:   graphics/drm-fbsd13-kmod/pkg-plist
+	modified:   graphics/gpxsee/Makefile
+	modified:   graphics/gpxsee/distinfo
+	modified:   graphics/gpxsee/pkg-plist
+	modified:   graphics/mesa-devel/Makefile
+	modified:   graphics/mesa-devel/distinfo
+	new file:   graphics/py-mayavi/Makefile
+	new file:   graphics/py-mayavi/distinfo
+	new file:   graphics/py-mayavi/files/patch-setup.py
+	new file:   graphics/py-mayavi/files/patch-tvtk_setup.py
+	new file:   graphics/py-mayavi/pkg-descr
+	modified:   graphics/py-plotly/Makefile
+	modified:   graphics/py-plotly/distinfo
+	modified:   graphics/py-traitsui/Makefile
+	modified:   graphics/py-traitsui/distinfo
+	modified:   graphics/py-traitsui/pkg-descr
+	modified:   graphics/xaos/Makefile
+	modified:   graphics/xaos/distinfo
+	modified:   graphics/xaos/pkg-plist
+	modified:   mail/mu4e/Makefile
+	new file:   mail/mu4e/files/patch-mu4e_mu4e-utils.el
+	modified:   math/ess/Makefile
+	new file:   math/ess/files/patch-lisp_ess-r-package.el
+	modified:   math/lean/Makefile
+	modified:   math/lean/distinfo
+	modified:   math/py-pymc3/Makefile
+	modified:   math/py-pymc3/distinfo
+	modified:   math/vtk9/Makefile
+	new file:   math/vtk9/files/PKG-INFO.in
+	modified:   misc/Makefile
+	new file:   misc/py-mffpy/Makefile
+	new file:   misc/py-mffpy/distinfo
+	new file:   misc/py-mffpy/pkg-descr
+	modified:   misc/py-python-utils/Makefile
+	modified:   misc/py-python-utils/distinfo
+	modified:   multimedia/libva-intel-media-driver/Makefile
+	modified:   multimedia/libva-intel-media-driver/distinfo
+	modified:   multimedia/livego/Makefile
+	modified:   multimedia/livego/distinfo
+	modified:   multimedia/plexmediaserver-plexpass/Makefile
+	modified:   multimedia/plexmediaserver-plexpass/distinfo
+	modified:   multimedia/plexmediaserver/Makefile
+	modified:   multimedia/plexmediaserver/distinfo
+	modified:   net/activemq/Makefile
+	modified:   net/activemq/distinfo
+	modified:   net/coturn/Makefile
+	modified:   net/coturn/files/turnserver-service.in
+	modified:   security/nss/Makefile
+	modified:   security/nss/distinfo
+	modified:   security/tor-devel/Makefile
+	modified:   security/tor-devel/distinfo
+	modified:   security/vuxml/vuln.xml
+	modified:   sysutils/doctl/Makefile
+	modified:   sysutils/doctl/distinfo
+	modified:   sysutils/dsbmd/Makefile
+	modified:   sysutils/dsbmd/distinfo
+	modified:   sysutils/dsbmd/pkg-descr
+	modified:   sysutils/facter/Makefile
+	modified:   sysutils/facter/distinfo
+	modified:   sysutils/puppet6/Makefile
+	modified:   sysutils/puppet6/distinfo
+	modified:   sysutils/puppet7/Makefile
+	modified:   sysutils/puppet7/distinfo
+	modified:   sysutils/puppetserver6/Makefile
+	modified:   sysutils/puppetserver6/distinfo
+	modified:   sysutils/puppetserver7/Makefile
+	modified:   sysutils/puppetserver7/distinfo
+	modified:   sysutils/rubygem-facter/Makefile
+	modified:   sysutils/rubygem-facter/distinfo
+	modified:   textproc/rubygem-puppet-strings/Makefile
+	modified:   textproc/rubygem-puppet-strings/distinfo
+	modified:   textproc/unroff/pkg-descr
+	modified:   www/Makefile
+	renamed:    www/riot-web/Makefile -> www/element-web/Makefile
+	new file:   www/element-web/distinfo
+	new file:   www/element-web/files/pkg-message.in
+	new file:   www/element-web/pkg-descr
+	renamed:    www/riot-web/pkg-plist -> www/element-web/pkg-plist
+	modified:   www/kcgi/Makefile
+	modified:   www/kcgi/distinfo
+	modified:   www/kcgi/pkg-plist
+	deleted:    www/riot-web/distinfo
+	deleted:    www/riot-web/pkg-descr
+	modified:   x11-themes/flat-remix-icon-themes/Makefile
+	modified:   x11-themes/flat-remix-icon-themes/distinfo
+	modified:   x11-themes/flat-remix-icon-themes/pkg-plist
+	modified:   x11-wm/river/Makefile
+	modified:   x11-wm/river/distinfo
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   games/eduke32/Makefile
+
+
+It took 3.04 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at 23140bde0ead HBSD: Disable variable auto-init for games/fs2open
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.26 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at 23140bde0ead HBSD: Disable variable auto-init for games/fs2open
+==== END: master ====
