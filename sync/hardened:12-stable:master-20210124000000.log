@@ -1,0 +1,162 @@
+==== BEGIN: hardened/12-stable/master ====
+current branch: hardened/12-stable/master
+mergeable branch: freebsd/12-stable/main
+==== change branch ====
+Switched to branch 'hardened/12-stable/master'
+Your branch is up to date with 'origin/hardened/12-stable/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+* hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/12-stable/main branch ====
+Removing stand/ofw/Makefile.inc
+Removing stand/ofw/Makefile
+Auto-merging stand/lua/drawer.lua
+Auto-merging stand/defs.mk
+Auto-merging stand/defaults/loader.conf
+Auto-merging etc/mtree/BSD.usr.dist
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ Makefile                                     |  11 +
+ contrib/lua/src/luaconf.h.dist               |  10 +-
+ contrib/netbsd-tests/lib/libc/gen/t_cpuset.c |  40 +++
+ etc/mtree/BSD.root.dist                      |   2 +
+ etc/mtree/BSD.usr.dist                       |   4 +
+ lib/libc/regex/regcomp.c                     |  26 +-
+ lib/libc/tests/gen/Makefile                  |   3 +-
+ lib/libc/tests/sys/Makefile                  |   1 +
+ lib/libc/tests/sys/cpuset_test.c             | 493 +++++++++++++++++++++++++++
+ lib/liblua/Makefile                          |   2 +
+ lib/liblua/luaconf.h                         |  10 +-
+ lib/libregex/Makefile                        |   2 +-
+ libexec/flua/Makefile                        |   1 +
+ libexec/flua/linit_flua.c                    |   1 +
+ libexec/flua/modules/lposix.c                |  38 +++
+ libexec/flua/modules/lposix.h                |   1 +
+ sbin/bectl/tests/bectl_test.sh               |   2 +-
+ stand/Makefile                               |   2 +-
+ stand/defaults/loader.conf                   |   1 +
+ stand/defaults/loader.conf.5                 |   9 +-
+ stand/defs.mk                                |   1 +
+ stand/{ofw => }/libofw/Makefile              |   0
+ stand/{ofw => }/libofw/devicename.c          |   0
+ stand/{ofw => }/libofw/libofw.h              |   0
+ stand/{ofw => }/libofw/ofw_console.c         |   0
+ stand/{ofw => }/libofw/ofw_copy.c            |   0
+ stand/{ofw => }/libofw/ofw_disk.c            |   0
+ stand/{ofw => }/libofw/ofw_memory.c          |   0
+ stand/{ofw => }/libofw/ofw_module.c          |   0
+ stand/{ofw => }/libofw/ofw_net.c             |   0
+ stand/{ofw => }/libofw/ofw_reboot.c          |   0
+ stand/{ofw => }/libofw/ofw_time.c            |   0
+ stand/{ofw => }/libofw/openfirm.c            |   0
+ stand/{ofw => }/libofw/openfirm.h            |   0
+ stand/lua/config.lua                         |  24 ++
+ stand/lua/drawer.lua                         |   2 +-
+ stand/ofw/Makefile                           |   5 -
+ stand/ofw/Makefile.inc                       |   3 -
+ stand/powerpc/ofw/Makefile                   |   4 +-
+ stand/sparc64/loader/Makefile                |   4 +-
+ sys/kern/kern_cpuset.c                       |   4 +-
+ sys/kern/kern_descrip.c                      |  17 +-
+ usr.bin/du/tests/du_test.sh                  |  17 +-
+ usr.sbin/certctl/certctl.sh                  |   5 +-
+ 44 files changed, 698 insertions(+), 47 deletions(-)
+ create mode 100644 lib/libc/tests/sys/cpuset_test.c
+ rename stand/{ofw => }/libofw/Makefile (100%)
+ rename stand/{ofw => }/libofw/devicename.c (100%)
+ rename stand/{ofw => }/libofw/libofw.h (100%)
+ rename stand/{ofw => }/libofw/ofw_console.c (100%)
+ rename stand/{ofw => }/libofw/ofw_copy.c (100%)
+ rename stand/{ofw => }/libofw/ofw_disk.c (100%)
+ rename stand/{ofw => }/libofw/ofw_memory.c (100%)
+ rename stand/{ofw => }/libofw/ofw_module.c (100%)
+ rename stand/{ofw => }/libofw/ofw_net.c (100%)
+ rename stand/{ofw => }/libofw/ofw_reboot.c (100%)
+ rename stand/{ofw => }/libofw/ofw_time.c (100%)
+ rename stand/{ofw => }/libofw/openfirm.c (100%)
+ rename stand/{ofw => }/libofw/openfirm.h (100%)
+ delete mode 100644 stand/ofw/Makefile
+ delete mode 100644 stand/ofw/Makefile.inc
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    8839ea0b88cb..c78d50642e52  hardened/12-stable/master -> hardened/12-stable/master        
+remote:    80a5b8512a2c..3c136581b69d  github/freebsd/12-stable/main -> github/freebsd/12-stable/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'hardened/12-stable/master':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...hardened/12-stable/master        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   8839ea0b88cbc..c78d50642e523  hardened/12-stable/master -> hardened/12-stable/master
+==== END: hardened/12-stable/master ====
