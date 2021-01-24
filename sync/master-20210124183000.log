@@ -47,3 +47,169 @@ Banner last updated: 10 Feb 2020 09:32 EST
 
 Everything up-to-date
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Removing security/pinentry/files/patch-fltk_pinwindow.cxx
+Auto-merging security/Makefile
+Removing biology/bedtools/files/patch-src_utils_Contexts_ContextBase.h
+Merge made by the 'recursive' strategy.
+ Tools/scripts/chkversion.pl                        |    33 +-
+ biology/bedtools/Makefile                          |    12 +-
+ biology/bedtools/distinfo                          |     6 +-
+ biology/bedtools/files/patch-Makefile              |    13 +-
+ .../patch-src_utils_BamTools_include_SamHeader.hpp |    23 +
+ .../files/patch-src_utils_Contexts_ContextBase.h   |    11 -
+ .../bedtools/files/patch-src_utils_htslib_Makefile |    15 +-
+ comms/hackrf-devel/Makefile.git_rev                |     3 +
+ comms/hackrf-devel/files/newVersion.sh             |    22 +
+ comms/hackrf/Makefile                              |     2 +-
+ devel/aphpunit/Makefile                            |     2 +-
+ devel/aphpunit/distinfo                            |     6 +-
+ graphics/drm-current-kmod/Makefile                 |     1 +
+ graphics/drm-devel-kmod/Makefile                   |     1 +
+ graphics/drm-fbsd11.2-kmod/Makefile                |     3 +-
+ graphics/drm-fbsd12.0-kmod/Makefile                |     3 +-
+ graphics/drm-kmod/Makefile                         |     7 +-
+ mail/nextcloud-mail/Makefile                       |     1 +
+ mail/thunderbird/Makefile                          |     2 +-
+ mail/thunderbird/distinfo                          |     6 +-
+ math/Makefile                                      |     1 +
+ math/coxeter3/Makefile                             |    37 +
+ math/coxeter3/distinfo                             |     3 +
+ math/coxeter3/files/patch-makefile                 |   106 +
+ math/coxeter3/files/patch-sage.cpp                 |    63 +
+ math/coxeter3/files/patch-sage.h                   |    26 +
+ math/coxeter3/files/patch-test.input               |    12 +
+ math/coxeter3/files/patch-test.output.expected     |    17 +
+ math/coxeter3/pkg-descr                            |    18 +
+ math/coxeter3/pkg-plist                            |   270 +
+ math/pynac/Makefile                                |    12 +-
+ math/pynac/distinfo                                |     6 +-
+ math/pynac/pkg-plist                               |     3 +-
+ math/sage/Makefile                                 |     2 +-
+ math/sage/files/pynac_spkg-configure.m4            |     2 +-
+ multimedia/kodi/Makefile                           |     4 +-
+ net-im/dendrite/Makefile                           |     4 +-
+ net-im/dendrite/distinfo                           |    10 +-
+ net-im/nextcloud-talk/Makefile                     |     1 +
+ security/Makefile                                  |     1 +
+ security/git-remote-gcrypt/Makefile                |     2 +-
+ security/git-remote-gcrypt/distinfo                |     6 +-
+ security/nextcloud-end_to_end_encryption/Makefile  |     1 +
+ security/nextcloud-passman/Makefile                |     1 +
+ security/nextcloud-twofactor_totp/Makefile         |     1 +
+ security/nextcloud-twofactor_u2f/Makefile          |     1 +
+ security/pinentry-efl/Makefile                     |    12 +
+ security/pinentry-qt5/Makefile                     |     2 +-
+ security/pinentry/Makefile                         |    19 +-
+ security/pinentry/distinfo                         |     6 +-
+ security/pinentry/files/patch-fltk_pinwindow.cxx   |    23 -
+ textproc/p5-JSON-Validator/Makefile                |     8 +-
+ textproc/p5-JSON-Validator/distinfo                |     6 +-
+ textproc/p5-JSON-Validator/pkg-plist               |     4 +
+ textproc/ugrep/Makefile                            |     2 +-
+ textproc/ugrep/distinfo                            |     6 +-
+ www/chisel/Makefile                                |     2 +-
+ www/chisel/distinfo                                |     6 +-
+ www/nextcloud-appointments/Makefile                |     1 +
+ www/nextcloud-calendar/Makefile                    |     1 +
+ www/nextcloud-circles/Makefile                     |     1 +
+ www/nextcloud-contacts/Makefile                    |     1 +
+ www/nextcloud-deck/Makefile                        |     1 +
+ www/nextcloud-forms/Makefile                       |     1 +
+ www/nextcloud-groupfolders/Makefile                |     1 +
+ www/nextcloud-notes/Makefile                       |     1 +
+ www/nextcloud-tasks/Makefile                       |     1 +
+ x11-themes/Makefile                                |     1 +
+ x11-themes/flatery-icon-themes/Makefile            |    29 +
+ x11-themes/flatery-icon-themes/distinfo            |     3 +
+ x11-themes/flatery-icon-themes/pkg-descr           |     3 +
+ x11-themes/flatery-icon-themes/pkg-plist           | 56464 +++++++++++++++++++
+ x11/Makefile                                       |     1 +
+ x11/xssstate/Makefile                              |    24 +
+ x11/xssstate/distinfo                              |     3 +
+ x11/xssstate/pkg-descr                             |     5 +
+ 76 files changed, 57284 insertions(+), 136 deletions(-)
+ create mode 100644 biology/bedtools/files/patch-src_utils_BamTools_include_SamHeader.hpp
+ delete mode 100644 biology/bedtools/files/patch-src_utils_Contexts_ContextBase.h
+ create mode 100644 comms/hackrf-devel/Makefile.git_rev
+ create mode 100644 comms/hackrf-devel/files/newVersion.sh
+ create mode 100644 math/coxeter3/Makefile
+ create mode 100644 math/coxeter3/distinfo
+ create mode 100644 math/coxeter3/files/patch-makefile
+ create mode 100644 math/coxeter3/files/patch-sage.cpp
+ create mode 100644 math/coxeter3/files/patch-sage.h
+ create mode 100644 math/coxeter3/files/patch-test.input
+ create mode 100644 math/coxeter3/files/patch-test.output.expected
+ create mode 100644 math/coxeter3/pkg-descr
+ create mode 100644 math/coxeter3/pkg-plist
+ create mode 100644 security/pinentry-efl/Makefile
+ delete mode 100644 security/pinentry/files/patch-fltk_pinwindow.cxx
+ create mode 100644 x11-themes/flatery-icon-themes/Makefile
+ create mode 100644 x11-themes/flatery-icon-themes/distinfo
+ create mode 100644 x11-themes/flatery-icon-themes/pkg-descr
+ create mode 100644 x11-themes/flatery-icon-themes/pkg-plist
+ create mode 100644 x11/xssstate/Makefile
+ create mode 100644 x11/xssstate/distinfo
+ create mode 100644 x11/xssstate/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    6f0f6dcb79e3..96a49fd9b8ae  master -> master        
+remote:    cae1163575f4..6f0f6dcb79e3  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   6f0f6dcb79e3..96a49fd9b8ae  master -> master
+==== END: master ====
