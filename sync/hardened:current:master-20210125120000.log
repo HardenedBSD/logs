@@ -1,0 +1,136 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 17 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+Updating 02d410084064..f2a2fbae881d
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ contrib/tzdata/NEWS                       |   8 ++
+ contrib/tzdata/africa                     |   8 +-
+ contrib/tzdata/leap-seconds.list          |   8 +-
+ contrib/tzdata/leapseconds                |   8 +-
+ contrib/tzdata/version                    |   2 +-
+ share/man/man4/ng_nat.4                   |   8 +-
+ share/man/man5/src.conf.5                 |  12 +-
+ stand/lua/config.lua                      |  90 +++++++++----
+ sys/arm64/arm64/gic_v3.c                  | 210 +++++++++++++++++++++++++++++-
+ sys/arm64/arm64/gic_v3_fdt.c              |  20 +++
+ sys/arm64/arm64/gic_v3_var.h              |   5 +
+ sys/cam/ctl/ctl_frontend_iscsi.c          |   4 +
+ sys/dev/iscsi/iscsi.c                     |   5 +
+ sys/dev/mlx5/mlx5_en/mlx5_en_main.c       |   2 +
+ sys/dev/netmap/netmap.c                   |  78 +++++------
+ sys/dev/netmap/netmap_bdg.c               |   3 +-
+ sys/dev/netmap/netmap_kern.h              |   5 +-
+ sys/dev/netmap/netmap_monitor.c           |   3 +-
+ sys/fs/nfsclient/nfs_clbio.c              |   5 -
+ sys/net/iflib.c                           |  75 ++++++++---
+ sys/netgraph/ng_nat.c                     |   2 +
+ sys/netgraph/ng_nat.h                     |   1 +
+ tools/build/options/WITHOUT_LLD_BOOTSTRAP |   3 +-
+ tools/build/options/WITHOUT_LLD_IS_LD     |   7 +-
+ tools/build/options/WITH_LLD_IS_LD        |   2 +-
+ 25 files changed, 458 insertions(+), 116 deletions(-)
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging tools/build/Makefile
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ lib/libarchive/tests/Makefile | 13 +++++++++----
+ sbin/ifconfig/ifconfig.c      |  2 +-
+ sys/fs/nfs/nfsport.h          |  2 ++
+ sys/sys/queue.h               | 10 ++++++++++
+ tools/build/Makefile          | 18 ++++++++++++++----
+ 5 files changed, 36 insertions(+), 9 deletions(-)
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f2a2fbae881d..36757c4ca8ee  hardened/current/master -> hardened/current/master        
+remote:    064009e79462..94ac312a7168  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f2a2fbae881d..36757c4ca8ee  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
