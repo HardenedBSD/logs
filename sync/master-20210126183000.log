@@ -713,3 +713,183 @@ new files yourself (see 'git help status').
 nothing to commit, working tree clean
 HEAD is now at e673bf735d53 HBSD: games/xrally: resolve merge conflict
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is ahead of 'origin/master' by 282 commits.
+  (use "git push" to publish your local commits)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=1&verb=git-upload-pack": read tcp 172.16.1.72:47387->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at e673bf735d53 HBSD: games/xrally: resolve merge conflict
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging security/sudo/Makefile
+Removing security/gopass/files/patch-vendor_github.com_jroimartin_gocui_keybinding.go
+Removing security/gopass/files/patch-vendor_github.com_jroimartin_gocui_gui.go
+Removing security/gopass/files/patch-vendor_github.com_gdamore_tcell_termbox_compat.go
+Auto-merging misc/mc/Makefile
+Auto-merging lang/gcc11-devel/Makefile
+Auto-merging graphics/libheif/Makefile
+Removing dns/dnsmasq/files/patch-zgit-4
+Removing dns/dnsmasq/files/patch-zgit-3
+Removing dns/dnsmasq/files/patch-zgit-2
+Removing dns/dnsmasq/files/patch-zgit-1
+Auto-merging dns/dnsmasq/Makefile
+Removing devel/caf/files/patch-libcaf__io_src_io_network_ip__endpoint.cpp
+Merge made by the 'recursive' strategy.
+ devel/Makefile                                     |   2 +
+ devel/caf/Makefile                                 |   4 +-
+ devel/caf/distinfo                                 |   6 +-
+ ...atch-libcaf__io_src_io_network_ip__endpoint.cpp |  12 --
+ devel/caf/pkg-plist                                | 155 ++++++++++++--------
+ devel/gsoap/Makefile                               |   2 +-
+ devel/gsoap/distinfo                               |   6 +-
+ devel/py-construct/Makefile                        |   6 +-
+ devel/py-construct/distinfo                        |   6 +-
+ devel/py-distributed/Makefile                      |  12 +-
+ devel/py-jupyter-server/Makefile                   |  36 +++++
+ devel/py-jupyter-server/distinfo                   |   3 +
+ devel/py-jupyter-server/pkg-descr                  |   5 +
+ devel/py-jupyterlab-server/Makefile                |   8 +-
+ devel/py-jupyterlab-server/distinfo                |   6 +-
+ devel/py-jupyterlab/Makefile                       |  17 ++-
+ devel/py-jupyterlab/distinfo                       |   6 +-
+ devel/py-nbclassic/Makefile                        |  24 ++++
+ devel/py-nbclassic/distinfo                        |   3 +
+ devel/py-nbclassic/pkg-descr                       |   8 ++
+ dns/dnsmasq/Makefile                               |   5 +-
+ dns/dnsmasq/distinfo                               |   6 +-
+ dns/dnsmasq/files/patch-zgit-1                     |  65 ---------
+ dns/dnsmasq/files/patch-zgit-2                     |  24 ----
+ dns/dnsmasq/files/patch-zgit-3                     | 103 --------------
+ dns/dnsmasq/files/patch-zgit-4                     |  25 ----
+ dns/flamethrower/Makefile                          |   7 +-
+ graphics/kcolorpicker/Makefile                     |   2 +-
+ graphics/kcolorpicker/distinfo                     |   6 +-
+ graphics/kcolorpicker/pkg-plist                    |   3 +-
+ graphics/libheif/Makefile                          |  28 ++--
+ graphics/libheif/pkg-plist                         |   4 +-
+ graphics/py-mayavi/Makefile                        |   6 +-
+ lang/gcc11-devel/Makefile                          |   2 +-
+ lang/gcc11-devel/distinfo                          |   6 +-
+ misc/mc/Makefile                                   |   1 +
+ misc/soapysdr-rtlsdr/Makefile                      |   2 +-
+ misc/soapysdr-rtlsdr/distinfo                      |   6 +-
+ net/py-pynsq/Makefile                              |   3 +-
+ net/py-shodan/Makefile                             |   2 +-
+ net/py-shodan/distinfo                             |   6 +-
+ science/shelxle/Makefile                           |   2 +-
+ science/shelxle/distinfo                           |   6 +-
+ security/barnyard2/Makefile                        |   2 +-
+ security/barnyard2/files/pkg-message.in            |   9 +-
+ security/gopass/Makefile                           | 104 +++++++++++---
+ security/gopass/distinfo                           | 118 ++++++++++++++-
+ ...ndor_github.com_gdamore_tcell_termbox_compat.go | 158 ---------------------
+ ...patch-vendor_github.com_jroimartin_gocui_gui.go |  15 --
+ ...endor_github.com_jroimartin_gocui_keybinding.go |  23 ---
+ security/gopass/pkg-descr                          |   2 +-
+ security/gopass/pkg-plist                          |  52 +++++++
+ security/sudo/Makefile                             |   2 +-
+ security/sudo/distinfo                             |   6 +-
+ security/vuxml/vuln.xml                            |  35 +++++
+ security/wpa_supplicant/Makefile                   |   6 +-
+ sysutils/gotop/Makefile                            |   9 +-
+ sysutils/gotop/distinfo                            |  16 ++-
+ www/Makefile                                       |   1 +
+ www/mitmproxy/Makefile                             |   4 +-
+ www/pecl-http/Makefile                             |   5 +-
+ www/pecl-http/distinfo                             |   6 +-
+ www/py-notebook/Makefile                           |   6 +-
+ www/py-notebook/distinfo                           |   6 +-
+ www/py-tornado/Makefile                            |   5 +-
+ www/py-tornado/distinfo                            |   6 +-
+ www/py-tornado5/Makefile                           |  31 ++++
+ www/py-tornado5/distinfo                           |   3 +
+ www/py-tornado5/files/patch-setup.py               |  12 ++
+ www/py-tornado5/pkg-descr                          |  15 ++
+ www/py-tornado6/Makefile                           |   3 +
+ x11-toolkits/p5-Gnome2-Canvas/Makefile             |   2 +-
+ x11-toolkits/p5-Gnome2-Canvas/distinfo             |   6 +-
+ x11-toolkits/p5-Gnome2-Canvas/pkg-plist            |   4 +-
+ 74 files changed, 682 insertions(+), 637 deletions(-)
+ delete mode 100644 devel/caf/files/patch-libcaf__io_src_io_network_ip__endpoint.cpp
+ create mode 100644 devel/py-jupyter-server/Makefile
+ create mode 100644 devel/py-jupyter-server/distinfo
+ create mode 100644 devel/py-jupyter-server/pkg-descr
+ create mode 100644 devel/py-nbclassic/Makefile
+ create mode 100644 devel/py-nbclassic/distinfo
+ create mode 100644 devel/py-nbclassic/pkg-descr
+ delete mode 100644 dns/dnsmasq/files/patch-zgit-1
+ delete mode 100644 dns/dnsmasq/files/patch-zgit-2
+ delete mode 100644 dns/dnsmasq/files/patch-zgit-3
+ delete mode 100644 dns/dnsmasq/files/patch-zgit-4
+ delete mode 100644 security/gopass/files/patch-vendor_github.com_gdamore_tcell_termbox_compat.go
+ delete mode 100644 security/gopass/files/patch-vendor_github.com_jroimartin_gocui_gui.go
+ delete mode 100644 security/gopass/files/patch-vendor_github.com_jroimartin_gocui_keybinding.go
+ create mode 100644 security/gopass/pkg-plist
+ create mode 100644 www/py-tornado5/Makefile
+ create mode 100644 www/py-tornado5/distinfo
+ create mode 100644 www/py-tornado5/files/patch-setup.py
+ create mode 100644 www/py-tornado5/pkg-descr
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=2&verb=git-receive-pack": read tcp 172.16.1.72:25055->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 315 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.16 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at fed6682a11b7 Merge remote-tracking branch 'freebsd/master'
+==== END: master ====
