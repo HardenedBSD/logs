@@ -1,0 +1,715 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=1&verb=git-upload-pack": read tcp 172.16.1.72:38175->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== merge branches ====
+==== merge github/master branch ====
+Updating cdc37751364e..e673bf735d53
+Fast-forward
+ Tools/scripts/chkversion.pl                        | 199 +++--
+ astro/py-astlib/Makefile                           |   6 +-
+ astro/py-astlib/distinfo                           |   6 +-
+ astro/py-astlib/pkg-descr                          |   3 +-
+ astro/py-pymetar/Makefile                          |   4 +-
+ astro/py-pymetar/distinfo                          |   6 +-
+ astro/py-pymetar/files/patch-setup.py              |   2 +-
+ audio/p5-Ogg-Vorbis-Header/Makefile                |  13 +-
+ audio/p5-Ogg-Vorbis-Header/distinfo                |   6 +-
+ comms/wsjtx/Makefile                               |   2 +-
+ converters/p5-JSON-PP/Makefile                     |   6 +-
+ converters/p5-JSON-PP/distinfo                     |   6 +-
+ databases/lua-xapian/Makefile                      |   2 +-
+ databases/lua-xapian/distinfo                      |   6 +-
+ databases/mydumper/Makefile                        |   2 +-
+ databases/mydumper/distinfo                        |   6 +-
+ databases/p5-Xapian/Makefile                       |   2 +-
+ databases/p5-Xapian/distinfo                       |   6 +-
+ databases/php-xapian/Makefile                      |   2 +-
+ databases/php-xapian/distinfo                      |   6 +-
+ databases/plpgsql_check/Makefile                   |   2 +-
+ databases/plpgsql_check/distinfo                   |   6 +-
+ databases/py-xapian/Makefile                       |   2 +-
+ databases/py-xapian/distinfo                       |   6 +-
+ databases/ruby-xapian/Makefile                     |   2 +-
+ databases/ruby-xapian/distinfo                     |   6 +-
+ databases/tiledb/Makefile                          |   6 +-
+ databases/xapian-bindings/Makefile                 |   3 +-
+ databases/xapian-core/Makefile                     |   2 +-
+ databases/xapian-core/distinfo                     |   6 +-
+ databases/xapian-core/pkg-plist                    |   3 +-
+ devel/Makefile                                     |  13 +-
+ devel/bpython/Makefile                             |   2 +-
+ devel/fossil/Makefile                              |   4 +-
+ devel/fossil/distinfo                              |   6 +-
+ devel/intel-graphics-compiler/Makefile             |   5 +-
+ devel/intel-graphics-compiler/distinfo             |  10 +-
+ devel/intel-graphics-compiler/files/patch-alloca   |  36 +-
+ devel/ipython5/Makefile                            |   2 +-
+ devel/llvm-devel/Makefile                          |   1 +
+ devel/llvm10/Makefile                              |   1 +
+ devel/llvm11/Makefile                              |   1 +
+ devel/llvm80/Makefile                              |   1 +
+ devel/llvm90/Makefile                              |   1 +
+ devel/ncurses/Makefile                             |  62 +-
+ devel/ncurses/pkg-plist                            | 934 +--------------------
+ devel/p5-Alien-Build/Makefile                      |   2 +-
+ devel/p5-Alien-Build/distinfo                      |   6 +-
+ devel/p5-CPAN-Perl-Releases/Makefile               |   2 +-
+ devel/p5-CPAN-Perl-Releases/distinfo               |   6 +-
+ devel/p5-Config-MVP/Makefile                       |   6 +-
+ devel/p5-Config-MVP/distinfo                       |   6 +-
+ devel/p5-ConfigReader-Simple/Makefile              |   2 +-
+ devel/p5-ConfigReader-Simple/distinfo              |   6 +-
+ devel/p5-Devel-PatchPerl/Makefile                  |   2 +-
+ devel/p5-Devel-PatchPerl/distinfo                  |   6 +-
+ devel/p5-IO-Async/Makefile                         |   2 +-
+ devel/p5-IO-Async/distinfo                         |   6 +-
+ devel/p5-JSON-Parse/Makefile                       |   2 +-
+ devel/p5-JSON-Parse/distinfo                       |   6 +-
+ devel/p5-JSON-Parse/pkg-plist                      |   3 +
+ devel/p5-Log-Report-Optional/Makefile              |   7 +-
+ devel/p5-Log-Report-Optional/distinfo              |   6 +-
+ devel/p5-Log-Report/Makefile                       |   4 +-
+ devel/p5-Log-Report/distinfo                       |   6 +-
+ devel/p5-Module-CoreList/Makefile                  |   2 +-
+ devel/p5-Module-CoreList/distinfo                  |   6 +-
+ devel/p5-Module-ScanDeps/Makefile                  |   2 +-
+ devel/p5-Module-ScanDeps/distinfo                  |   6 +-
+ devel/p5-PAR-Packer/Makefile                       |   2 +-
+ devel/p5-PAR-Packer/distinfo                       |   6 +-
+ devel/p5-PAR/Makefile                              |   2 +-
+ devel/p5-PAR/distinfo                              |   6 +-
+ devel/p5-Path-Tiny/Makefile                        |   2 +-
+ devel/p5-Path-Tiny/distinfo                        |   6 +-
+ devel/p5-Rinci/Makefile                            |   2 +-
+ devel/p5-Rinci/distinfo                            |   6 +-
+ devel/p5-Role-Tiny/Makefile                        |   2 +-
+ devel/p5-Role-Tiny/distinfo                        |   6 +-
+ devel/p5-Syntax-Keyword-Try/Makefile               |   2 +-
+ devel/p5-Syntax-Keyword-Try/distinfo               |   6 +-
+ devel/p5-Test-Data/Makefile                        |   5 +-
+ devel/p5-Test-Data/distinfo                        |   6 +-
+ devel/p5-Test-Manifest/Makefile                    |   5 +-
+ devel/p5-Test-Manifest/distinfo                    |   6 +-
+ devel/py-azure-core/Makefile                       |   2 +-
+ devel/py-azure-core/distinfo                       |   6 +-
+ devel/py-cachetools/Makefile                       |   2 +-
+ devel/py-cachetools/distinfo                       |   6 +-
+ devel/py-colorlog/Makefile                         |   2 +-
+ devel/py-colorlog/distinfo                         |   6 +-
+ devel/py-cursive/Makefile                          |   8 +-
+ devel/py-curtsies/Makefile                         |   4 +-
+ devel/py-curtsies/distinfo                         |   6 +-
+ devel/py-curtsies/files/patch-setup.py             |  11 -
+ devel/py-cwcwidth/Makefile                         |  24 +
+ devel/py-cwcwidth/distinfo                         |   3 +
+ devel/py-cwcwidth/pkg-descr                        |   9 +
+ devel/py-decoratortools/Makefile                   |   3 +-
+ devel/py-deprecated/Makefile                       |   2 +-
+ devel/py-deprecated/distinfo                       |   6 +-
+ devel/py-dj31-django-rq/Makefile                   |   3 +-
+ devel/py-dj31-django-rq/distinfo                   |   6 +-
+ devel/py-google-cloud-iam/Makefile                 |   8 +-
+ devel/py-google-cloud-iam/distinfo                 |   6 +-
+ devel/py-google-crc32c/Makefile                    |   2 +-
+ devel/py-google-crc32c/distinfo                    |   6 +-
+ devel/py-ipykernel5/Makefile                       |   2 +-
+ devel/py-ipykernel5/distinfo                       |   6 +-
+ devel/py-jaraco.classes/Makefile                   |  10 +-
+ devel/py-jaraco.classes/distinfo                   |   6 +-
+ devel/py-jupyter-packaging/Makefile                |  23 +
+ devel/py-jupyter-packaging/distinfo                |   3 +
+ devel/py-jupyter-packaging/pkg-descr               |   4 +
+ devel/py-nbconvert/Makefile                        |   2 +-
+ devel/py-nbformat/Makefile                         |   2 +-
+ devel/py-nbformat/distinfo                         |   6 +-
+ devel/py-openstacksdk/Makefile                     |   2 +-
+ devel/py-openstacksdk/distinfo                     |   6 +-
+ devel/py-osc-lib/Makefile                          |   2 +-
+ devel/py-osc-lib/distinfo                          |   6 +-
+ devel/py-oslo.concurrency/Makefile                 |   2 +-
+ devel/py-oslo.concurrency/distinfo                 |   6 +-
+ devel/py-oslo.messaging/Makefile                   |   2 +-
+ devel/py-oslo.messaging/distinfo                   |   6 +-
+ devel/py-pip-api/Makefile                          |   2 +-
+ devel/py-pip-api/distinfo                          |   6 +-
+ devel/py-pip-licenses/Makefile                     |   2 +-
+ devel/py-pip-licenses/distinfo                     |   6 +-
+ devel/py-pipx/Makefile                             |  10 +-
+ devel/py-pipx/distinfo                             |   6 +-
+ devel/py-prompt-toolkit/Makefile                   |   2 +-
+ devel/py-prompt-toolkit/distinfo                   |   6 +-
+ devel/py-ptpython/Makefile                         |   2 +-
+ devel/py-ptpython/distinfo                         |   6 +-
+ devel/py-pudb/Makefile                             |   2 +-
+ devel/py-pycadf/Makefile                           |   4 +-
+ devel/py-pyperf/Makefile                           |   2 +-
+ devel/py-pyperf/distinfo                           |   6 +-
+ devel/py-pytest-black-multipy/Makefile             |   2 +-
+ devel/py-pytest-black-multipy/distinfo             |   6 +-
+ devel/py-pytest-enabler/Makefile                   |  27 +
+ devel/py-pytest-enabler/distinfo                   |   3 +
+ devel/py-pytest-enabler/pkg-descr                  |   4 +
+ devel/py-pytest-isort/Makefile                     |   2 +-
+ devel/py-pytest-isort/distinfo                     |   6 +-
+ devel/py-readme-renderer/Makefile                  |   2 +-
+ devel/py-smmap/Makefile                            |   2 +-
+ devel/py-smmap/distinfo                            |   6 +-
+ devel/py-userpath/Makefile                         |   2 +-
+ devel/py-userpath/distinfo                         |   6 +-
+ devel/py-vulture/Makefile                          |   2 +-
+ devel/py-vulture/distinfo                          |   6 +-
+ devel/py-xdis/Makefile                             |   2 +-
+ devel/py-xdis/distinfo                             |   6 +-
+ devel/py-xdis/pkg-descr                            |   2 +-
+ devel/py-yaspin/Makefile                           |   2 +-
+ devel/py-yaspin/distinfo                           |   6 +-
+ devel/rubygem-ast/Makefile                         |   2 +-
+ devel/rubygem-ast/distinfo                         |   6 +-
+ devel/rubygem-aws-partitions/Makefile              |   2 +-
+ devel/rubygem-aws-partitions/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-acmpca/Makefile              |   2 +-
+ devel/rubygem-aws-sdk-acmpca/distinfo              |   6 +-
+ devel/rubygem-aws-sdk-appstream/Makefile           |   2 +-
+ devel/rubygem-aws-sdk-appstream/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-auditmanager/Makefile        |   2 +-
+ devel/rubygem-aws-sdk-auditmanager/distinfo        |   6 +-
+ devel/rubygem-aws-sdk-chime/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-chime/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-cognitoidentity/Makefile     |   2 +-
+ devel/rubygem-aws-sdk-cognitoidentity/distinfo     |   6 +-
+ devel/rubygem-aws-sdk-core/Makefile                |   2 +-
+ devel/rubygem-aws-sdk-core/distinfo                |   6 +-
+ devel/rubygem-aws-sdk-dynamodbstreams/Makefile     |   2 +-
+ devel/rubygem-aws-sdk-dynamodbstreams/distinfo     |   6 +-
+ devel/rubygem-aws-sdk-ec2/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ec2/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-ecs/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ecs/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-elasticache/Makefile         |   2 +-
+ devel/rubygem-aws-sdk-elasticache/distinfo         |   6 +-
+ devel/rubygem-aws-sdk-frauddetector/Makefile       |   2 +-
+ devel/rubygem-aws-sdk-frauddetector/distinfo       |   6 +-
+ devel/rubygem-aws-sdk-greengrassv2/Makefile        |   2 +-
+ devel/rubygem-aws-sdk-greengrassv2/distinfo        |   6 +-
+ devel/rubygem-aws-sdk-kafka/Makefile               |   2 +-
+ devel/rubygem-aws-sdk-kafka/distinfo               |   6 +-
+ devel/rubygem-aws-sdk-kms/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-kms/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-lexmodelsv2/Makefile         |  22 +
+ devel/rubygem-aws-sdk-lexmodelsv2/distinfo         |   3 +
+ devel/rubygem-aws-sdk-lexmodelsv2/pkg-descr        |   4 +
+ devel/rubygem-aws-sdk-lexruntimev2/Makefile        |  22 +
+ devel/rubygem-aws-sdk-lexruntimev2/distinfo        |   3 +
+ devel/rubygem-aws-sdk-lexruntimev2/pkg-descr       |   4 +
+ devel/rubygem-aws-sdk-lightsail/Makefile           |   2 +-
+ devel/rubygem-aws-sdk-lightsail/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-personalize/Makefile         |   2 +-
+ devel/rubygem-aws-sdk-personalize/distinfo         |   6 +-
+ devel/rubygem-aws-sdk-pinpoint/Makefile            |   2 +-
+ devel/rubygem-aws-sdk-pinpoint/distinfo            |   6 +-
+ devel/rubygem-aws-sdk-rds/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-rds/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-redshift/Makefile            |   2 +-
+ devel/rubygem-aws-sdk-redshift/distinfo            |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ devel/rubygem-aws-sdk-resources/Makefile           |   4 +-
+ devel/rubygem-aws-sdk-resources/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-s3control/Makefile           |   2 +-
+ devel/rubygem-aws-sdk-s3control/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-sagemaker/Makefile           |   2 +-
+ devel/rubygem-aws-sdk-sagemaker/distinfo           |   6 +-
+ devel/rubygem-aws-sdk-securityhub/Makefile         |   2 +-
+ devel/rubygem-aws-sdk-securityhub/distinfo         |   6 +-
+ devel/rubygem-aws-sdk-sns/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-sns/distinfo                 |   6 +-
+ devel/rubygem-aws-sdk-ssm/Makefile                 |   2 +-
+ devel/rubygem-aws-sdk-ssm/distinfo                 |   6 +-
+ devel/rubygem-capybara/Makefile                    |   4 +-
+ devel/rubygem-capybara/distinfo                    |   6 +-
+ devel/rubygem-concurrent-ruby-ext/Makefile         |   2 +-
+ devel/rubygem-concurrent-ruby-ext/distinfo         |   6 +-
+ devel/rubygem-concurrent-ruby/Makefile             |   2 +-
+ devel/rubygem-concurrent-ruby/distinfo             |   6 +-
+ devel/rubygem-deface/Makefile                      |   4 +-
+ devel/rubygem-deface/distinfo                      |   6 +-
+ devel/rubygem-docile/Makefile                      |   2 +-
+ devel/rubygem-docile/distinfo                      |   6 +-
+ devel/rubygem-dry-types/Makefile                   |   5 +-
+ devel/rubygem-dry-types/distinfo                   |   6 +-
+ devel/rubygem-erb/Makefile                         |   4 +-
+ devel/rubygem-erb/distinfo                         |   6 +-
+ devel/rubygem-fugit/Makefile                       |   2 +-
+ devel/rubygem-fugit/distinfo                       |   6 +-
+ devel/rubygem-gettext/Makefile                     |   2 +-
+ devel/rubygem-gettext/distinfo                     |   6 +-
+ devel/rubygem-google-api-client/Makefile           |  18 +-
+ devel/rubygem-google-api-client/distinfo           |   6 +-
+ devel/rubygem-google-apis-core/Makefile            |  29 +
+ devel/rubygem-google-apis-core/distinfo            |   3 +
+ devel/rubygem-google-apis-core/pkg-descr           |   8 +
+ devel/rubygem-google-apis-discovery_v1/Makefile    |  22 +
+ devel/rubygem-google-apis-discovery_v1/distinfo    |   3 +
+ devel/rubygem-google-apis-discovery_v1/pkg-descr   |  10 +
+ devel/rubygem-google-apis-generator/Makefile       |  28 +
+ devel/rubygem-google-apis-generator/distinfo       |   3 +
+ devel/rubygem-google-apis-generator/pkg-descr      |   5 +
+ .../rubygem-google-apis-iamcredentials_v1/Makefile |  22 +
+ .../rubygem-google-apis-iamcredentials_v1/distinfo |   3 +
+ .../pkg-descr                                      |  10 +
+ devel/rubygem-google-apis-storage_v1/Makefile      |  22 +
+ devel/rubygem-google-apis-storage_v1/distinfo      |   3 +
+ devel/rubygem-google-apis-storage_v1/pkg-descr     |  10 +
+ devel/rubygem-jbuilder-rails5/Makefile             |   2 +-
+ devel/rubygem-jbuilder-rails5/distinfo             |   6 +-
+ devel/rubygem-jbuilder-rails50/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails50/distinfo            |   6 +-
+ devel/rubygem-jbuilder-rails52/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails52/distinfo            |   6 +-
+ devel/rubygem-jbuilder-rails60/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails60/distinfo            |   6 +-
+ devel/rubygem-jbuilder-rails61/Makefile            |   2 +-
+ devel/rubygem-jbuilder-rails61/distinfo            |   6 +-
+ devel/rubygem-jira-ruby/Makefile                   |   2 +-
+ devel/rubygem-jira-ruby/distinfo                   |   6 +-
+ devel/rubygem-listen/Makefile                      |   2 +-
+ devel/rubygem-listen/distinfo                      |   6 +-
+ devel/rubygem-pry-remote/Makefile                  |  25 +
+ devel/rubygem-pry-remote/distinfo                  |   3 +
+ devel/rubygem-pry-remote/pkg-descr                 |   4 +
+ devel/rubygem-ransack/Makefile                     |   4 +-
+ devel/rubygem-ransack/distinfo                     |   6 +-
+ devel/rubygem-rubocop-ast/Makefile                 |   2 +-
+ devel/rubygem-rubocop-ast/distinfo                 |   6 +-
+ devel/rubygem-ruby2_keywords/Makefile              |   3 +-
+ devel/rubygem-ruby2_keywords/distinfo              |   6 +-
+ devel/rubygem-sidekiq/Makefile                     |   2 +-
+ devel/rubygem-sidekiq/distinfo                     |   6 +-
+ devel/rubygem-tins/Makefile                        |   2 +-
+ devel/rubygem-tins/distinfo                        |   6 +-
+ devel/rubygem-tty-progressbar/Makefile             |   9 +-
+ devel/rubygem-tty-progressbar/distinfo             |   6 +-
+ devel/rubygem-tty-progressbar/files/patch-gemspec  |  11 -
+ devel/rubygem-web-console-rails60/Makefile         |   4 +-
+ devel/rubygem-web-console-rails60/distinfo         |   6 +-
+ devel/rubygem-web-console-rails61/Makefile         |   2 +-
+ devel/rubygem-web-console-rails61/distinfo         |   6 +-
+ devel/rubygem-xdg/Makefile                         |   2 +-
+ devel/rubygem-xdg/distinfo                         |   6 +-
+ dns/Makefile                                       |   1 +
+ dns/p5-Mozilla-PublicSuffix/Makefile               |   1 +
+ dns/public_suffix_list/Makefile                    |   4 +-
+ dns/public_suffix_list/distinfo                    |   6 +-
+ dns/py-cloudflare/Makefile                         |   2 +-
+ dns/py-cloudflare/distinfo                         |   6 +-
+ dns/py-localzone/Makefile                          |   2 +-
+ dns/py-localzone/distinfo                          |   6 +-
+ dns/py-publicsuffix/Makefile                       |   2 +-
+ dns/py-publicsuffix2/Makefile                      |   2 +-
+ dns/py-publicsuffixlist/Makefile                   |   2 +-
+ dns/py-publicsuffixlist/distinfo                   |   6 +-
+ dns/rubygem-google-apis-dns_v1/Makefile            |  22 +
+ dns/rubygem-google-apis-dns_v1/distinfo            |   3 +
+ dns/rubygem-google-apis-dns_v1/pkg-descr           |  10 +
+ dns/rubygem-google-cloud-dns/Makefile              |   4 +-
+ dns/rubygem-google-cloud-dns/distinfo              |   6 +-
+ dns/rubygem-public_suffix/Makefile                 |   2 +-
+ dns/rubygem-public_suffix_service/Makefile         |   2 +-
+ ...ox_Runtime_r0drv_freebsd_memobj-r0drv-freebsd.c |  15 +-
+ games/xoids/Makefile                               |   2 +
+ games/xorgramana/Makefile                          |   3 +
+ games/xqf/Makefile                                 |   3 +
+ games/xrally/Makefile                              |   3 +
+ games/xrick/Makefile                               |   3 +
+ games/xrot/Makefile                                |   3 +
+ games/xtic/Makefile                                |   3 +
+ games/xtron/Makefile                               |   3 +
+ german/mythes/Makefile                             |   2 +-
+ german/mythes/distinfo                             |   6 +-
+ graphics/charls/Makefile                           |   4 +-
+ graphics/charls/distinfo                           |   6 +-
+ graphics/charls/pkg-plist                          |   9 +-
+ graphics/py-rasterio/Makefile                      |   3 +-
+ graphics/py-rasterio/distinfo                      |   6 +-
+ graphics/s2/Makefile                               |   1 -
+ mail/p5-Email-MIME-ContentType/Makefile            |   3 +-
+ mail/p5-Email-MIME-ContentType/distinfo            |   6 +-
+ mail/p5-Mail-AuthenticationResults/Makefile        |   2 +-
+ mail/p5-Mail-AuthenticationResults/distinfo        |   6 +-
+ math/hs-penrose/Makefile                           |   2 +-
+ math/p5-Math-Matrix/Makefile                       |   2 +-
+ math/p5-Math-Matrix/distinfo                       |   6 +-
+ math/py-fastcluster/Makefile                       |   2 +-
+ math/py-fastcluster/distinfo                       |   6 +-
+ math/py-fastcluster/pkg-descr                      |   1 -
+ math/py-jax/Makefile                               |   4 +-
+ math/py-jax/distinfo                               |   6 +-
+ math/py-rpy2/Makefile                              |  12 +-
+ math/py-rpy2/distinfo                              |   6 +-
+ math/pynac/Makefile                                |   1 +
+ math/pynac/distinfo                                |   6 +-
+ math/rubygem-matrix/Makefile                       |   7 +-
+ math/rubygem-matrix/distinfo                       |   6 +-
+ math/scilab/Makefile                               |   2 +-
+ misc/help2man/Makefile                             |   4 +-
+ misc/help2man/distinfo                             |   6 +-
+ misc/p5-Locale-SubCountry/Makefile                 |   2 +-
+ misc/p5-Locale-SubCountry/distinfo                 |   6 +-
+ misc/pciids/Makefile                               |   4 +-
+ misc/pciids/distinfo                               |   6 +-
+ misc/py-tqdm/Makefile                              |   2 +-
+ misc/py-tqdm/distinfo                              |   6 +-
+ misc/zoneinfo/Makefile                             |   2 +-
+ misc/zoneinfo/distinfo                             |   6 +-
+ net-mgmt/Makefile                                  |   1 +
+ net-mgmt/nfs-exporter/Makefile                     | 124 +++
+ net-mgmt/nfs-exporter/distinfo                     | 193 +++++
+ net-mgmt/nfs-exporter/files/nfs_exporter.in        |  49 ++
+ net-mgmt/nfs-exporter/pkg-descr                    |   6 +
+ net-mgmt/py-adal/Makefile                          |   8 +-
+ net-mgmt/py-adal/distinfo                          |   6 +-
+ net-mgmt/py-msrest/Makefile                        |   2 +-
+ net-mgmt/py-msrest/distinfo                        |   6 +-
+ net-mgmt/zabbix5-server/Makefile                   |   8 +-
+ net-mgmt/zabbix5-server/distinfo                   |   6 +-
+ net-mgmt/zabbix5-server/pkg-plist.frontend         |  19 +-
+ net-mgmt/zabbix5-server/pkg-plist.java             |   2 +-
+ net-mgmt/zabbix52-server/Makefile                  |   8 +-
+ net-mgmt/zabbix52-server/distinfo                  |   6 +-
+ net-mgmt/zabbix52-server/pkg-plist.frontend        |  21 +-
+ net-mgmt/zabbix52-server/pkg-plist.java            |   2 +-
+ net/drive/Makefile                                 |  16 +-
+ net/drive/distinfo                                 |  32 +-
+ net/libdaq/Makefile                                |   2 +-
+ net/libdaq/distinfo                                |   6 +-
+ net/libngtcp2/Makefile                             |   4 +-
+ net/libngtcp2/distinfo                             |   6 +-
+ net/mDNSResponder/Makefile                         |   2 +-
+ net/mDNSResponder/distinfo                         |   6 +-
+ net/p5-POE-Component-Client-Ping/Makefile          |   4 +-
+ net/p5-POE-Component-Client-Ping/distinfo          |   6 +-
+ net/p5-Test-URI/Makefile                           |   7 +-
+ net/p5-Test-URI/distinfo                           |   6 +-
+ net/p5-URI/Makefile                                |   2 +-
+ net/p5-URI/distinfo                                |   6 +-
+ net/pecl-smbclient/Makefile                        |   2 +-
+ net/pecl-smbclient/distinfo                        |   6 +-
+ net/py-python-barbicanclient/Makefile              |   3 +-
+ net/py-python-barbicanclient/distinfo              |   6 +-
+ net/py-python-ceilometerclient/Makefile            |  10 +-
+ net/py-python-designateclient/Makefile             |   2 +-
+ net/py-python-designateclient/distinfo             |   6 +-
+ net/py-smbprotocol/Makefile                        |   2 +-
+ net/py-smbprotocol/distinfo                        |   6 +-
+ net/rubygem-fog-aws/Makefile                       |   2 +-
+ net/rubygem-fog-aws/distinfo                       |   6 +-
+ net/rubygem-fog-ovirt/Makefile                     |   5 +-
+ net/rubygem-fog-ovirt/distinfo                     |   6 +-
+ net/rubygem-google-cloud-bigtable-v2/Makefile      |   2 +-
+ net/rubygem-google-cloud-bigtable-v2/distinfo      |   6 +-
+ net/rubygem-google-cloud-bigtable/Makefile         |   2 +-
+ net/rubygem-google-cloud-bigtable/distinfo         |   6 +-
+ net/rubygem-google-cloud-logging-v2/Makefile       |   2 +-
+ net/rubygem-google-cloud-logging-v2/distinfo       |   6 +-
+ net/rubygem-google-cloud-pubsub-v1/Makefile        |   2 +-
+ net/rubygem-google-cloud-pubsub-v1/distinfo        |   6 +-
+ net/rubygem-google-cloud-pubsub/Makefile           |   2 +-
+ net/rubygem-google-cloud-pubsub/distinfo           |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ .../Makefile                                       |   2 +-
+ .../distinfo                                       |   6 +-
+ net/rubygem-google-cloud-spanner-v1/Makefile       |   2 +-
+ net/rubygem-google-cloud-spanner-v1/distinfo       |   6 +-
+ net/rubygem-google-cloud-storage/Makefile          |   5 +-
+ net/rubygem-google-cloud-storage/distinfo          |   6 +-
+ net/rubygem-http-parser/Makefile                   |   4 +-
+ net/rubygem-http-parser/distinfo                   |   6 +-
+ net/yami4/Makefile                                 |   3 +
+ polish/hunspell/Makefile                           |   2 +-
+ polish/hunspell/distinfo                           |   6 +-
+ portuguese/hunspell/Makefile                       |   2 +-
+ portuguese/hunspell/distinfo                       |   6 +-
+ print/py-fonttools/Makefile                        |   2 +-
+ print/py-fonttools/distinfo                        |   6 +-
+ print/py-ufolib2/Makefile                          |   2 +-
+ print/py-ufolib2/distinfo                          |   6 +-
+ science/getdp/Makefile                             |   2 +-
+ science/libgridxc/Makefile                         |   2 +-
+ science/p5-Chemistry-Elements/Makefile             |   9 +-
+ science/p5-Chemistry-Elements/distinfo             |   6 +-
+ science/p5-Geo-WebService-Elevation-USGS/Makefile  |   2 +-
+ science/p5-Geo-WebService-Elevation-USGS/distinfo  |   6 +-
+ science/pnetcdf/Makefile                           |  21 +-
+ science/py-asdf/Makefile                           |   3 +-
+ science/py-asdf/distinfo                           |   6 +-
+ science/py-asdf/pkg-descr                          |   2 +-
+ science/py-eccodes/Makefile                        |   2 +-
+ science/py-eccodes/distinfo                        |   6 +-
+ science/py-eccodes/files/patch-gribapi-bindings.py |  14 +-
+ science/py-esda/Makefile                           |   2 +-
+ science/py-esda/distinfo                           |   6 +-
+ science/py-h5py/Makefile                           |  19 +-
+ science/py-h5py/distinfo                           |   6 +-
+ science/py-h5py/files/patch-setup.py               |  23 +
+ science/py-h5py/pkg-descr                          |   1 -
+ science/py-h5py/pkg-plist                          |   9 +-
+ science/py-jupyter_jsmol/Makefile                  |   7 +-
+ science/py-jupyter_jsmol/distinfo                  |   6 +-
+ science/py-pygeometa/Makefile                      |   2 +-
+ science/py-pygeometa/distinfo                      |   6 +-
+ science/py-pyteomics/Makefile                      |   2 +-
+ science/py-pyteomics/distinfo                      |   6 +-
+ science/py-tobler/Makefile                         |   2 +-
+ science/py-tobler/distinfo                         |   6 +-
+ security/libfido2/Makefile                         |   3 +-
+ security/libfido2/distinfo                         |   6 +-
+ security/libfido2/files/patch-CMakeLists.txt       |  13 -
+ .../files/patch-openbsd-compat-openbsd-compat.h    |  11 -
+ security/libfido2/files/patch-src-CMakeLists.txt   |  11 -
+ security/libfido2/files/patch-src-cbor.c           |  15 -
+ security/libfido2/files/patch-src-hid_openbsd.c    |  10 -
+ security/libfido2/pkg-plist                        |  14 +-
+ security/p5-CACertOrg-CA/Makefile                  |  12 +-
+ security/p5-CACertOrg-CA/distinfo                  |   6 +-
+ security/py-authlib/Makefile                       |   2 +-
+ security/py-authlib/distinfo                       |   6 +-
+ security/py-pysaml2/Makefile                       |   5 +-
+ security/py-pysaml2/distinfo                       |   6 +-
+ security/py-pyspnego/Makefile                      |   2 +-
+ security/py-pyspnego/distinfo                      |   6 +-
+ security/py-python3-saml/Makefile                  |   8 +-
+ security/py-python3-saml/distinfo                  |   6 +-
+ security/py-python3-saml/files/patch-setup.py      |  11 +
+ security/py-sshpubkeys/Makefile                    |   2 +-
+ security/py-sshpubkeys/distinfo                    |   6 +-
+ security/rubygem-googleauth/Makefile               |   2 +-
+ security/rubygem-googleauth/distinfo               |   6 +-
+ security/rubygem-sshkit/Makefile                   |   2 +-
+ security/rubygem-sshkit/distinfo                   |   6 +-
+ security/snort3/Makefile                           |   4 +-
+ security/snort3/distinfo                           |   6 +-
+ security/totp-cli/Makefile                         |   4 +-
+ security/totp-cli/distinfo                         |   6 +-
+ security/vuxml/vuln.xml                            |  33 +
+ sysutils/dmidecode/pkg-plist                       |   4 +-
+ sysutils/gdisk/Makefile                            |   3 +-
+ sysutils/gdisk/distinfo                            |   6 +-
+ sysutils/gdisk/files/patch-Makefile.freebsd        |   6 +-
+ sysutils/gdisk/files/patch-gptcurses.cc            |  11 -
+ sysutils/gdisk/files/patch-parttypes.h             |   4 +-
+ sysutils/parallel/Makefile                         |   2 +-
+ sysutils/parallel/distinfo                         |   6 +-
+ sysutils/py-tmuxp/Makefile                         |   2 +-
+ sysutils/py-tmuxp/distinfo                         |   6 +-
+ sysutils/shlock/Makefile                           |   2 +-
+ sysutils/shlock/distinfo                           |   6 +-
+ textproc/libcsv/Makefile                           |  13 +-
+ textproc/libcsv/files/patch-csv.3                  |  30 +-
+ textproc/minify/Makefile                           |   7 +-
+ textproc/minify/distinfo                           |  14 +-
+ textproc/p5-Lingua-Conjunction/Makefile            |  10 +-
+ textproc/p5-Lingua-Conjunction/distinfo            |   5 +-
+ textproc/p5-Lingua-Conjunction/pkg-plist           |   2 +-
+ textproc/p5-PPIx-QuoteLike/Makefile                |   2 +-
+ textproc/p5-PPIx-QuoteLike/distinfo                |   6 +-
+ textproc/p5-Pod-Strip/Makefile                     |   4 +-
+ textproc/p5-Pod-Strip/distinfo                     |   5 +-
+ textproc/p5-Sort-Fields/Makefile                   |   8 +-
+ textproc/p5-Sort-Fields/distinfo                   |   5 +-
+ textproc/p5-Sort-Fields/pkg-descr                  |   7 +-
+ textproc/p5-Sort-Fields/pkg-plist                  |   2 +-
+ textproc/p5-XML-Feed/Makefile                      |   5 +-
+ textproc/p5-XML-Feed/distinfo                      |   6 +-
+ textproc/py-aeidon/Makefile                        |   8 +-
+ textproc/py-aeidon/distinfo                        |   6 +-
+ textproc/py-aeidon/files/patch-setup-aeidon.py     |  41 +
+ textproc/py-aeidon/pkg-descr                       |   2 +-
+ textproc/py-custom_inherit/Makefile                |   2 +-
+ textproc/py-custom_inherit/distinfo                |   6 +-
+ textproc/py-docutils/Makefile                      |   3 +-
+ textproc/py-jupyterlab-pygments/Makefile           |   2 +-
+ textproc/py-myst-parser/Makefile                   |   2 +-
+ textproc/py-myst-parser/distinfo                   |   6 +-
+ textproc/py-parse/Makefile                         |   2 +-
+ textproc/py-parse/distinfo                         |   6 +-
+ textproc/py-sphinx-tabs/Makefile                   |   2 +-
+ textproc/rubygem-commonmarker/Makefile             |   2 +-
+ textproc/rubygem-commonmarker/distinfo             |   6 +-
+ textproc/rubygem-css_parser/Makefile               |   2 +-
+ textproc/rubygem-css_parser/distinfo               |   6 +-
+ textproc/rubygem-loofah/Makefile                   |   2 +-
+ textproc/rubygem-loofah/distinfo                   |   6 +-
+ textproc/sift/Makefile                             |   4 +-
+ textproc/sift/distinfo                             |   6 +-
+ textproc/txt2man/Makefile                          |  14 +-
+ textproc/txt2man/distinfo                          |   6 +-
+ www/libnghttp3/Makefile                            |   4 +-
+ www/libnghttp3/distinfo                            |   6 +-
+ www/p5-Perlanet/Makefile                           |   3 +-
+ www/p5-Perlanet/distinfo                           |   6 +-
+ www/py-cheroot/Makefile                            |   2 +-
+ www/py-cheroot/distinfo                            |   6 +-
+ www/py-flask-migrate/Makefile                      |   3 +-
+ www/py-flask-migrate/distinfo                      |   6 +-
+ www/py-google-api-core/Makefile                    |   2 +-
+ www/py-google-api-core/distinfo                    |   6 +-
+ www/py-httpretty/Makefile                          |   2 +-
+ www/py-httpretty/distinfo                          |   6 +-
+ www/py-hypercorn/Makefile                          |   2 +-
+ www/py-hypercorn/distinfo                          |   6 +-
+ www/py-ws4py/Makefile                              |   2 +-
+ www/rubygem-faraday-net_http/Makefile              |   2 +-
+ www/rubygem-faraday-net_http/distinfo              |   6 +-
+ www/rubygem-net-http-persistent/Makefile           |   2 +-
+ www/rubygem-net-http-persistent/distinfo           |   6 +-
+ www/rubygem-platform-api/Makefile                  |   2 +-
+ www/rubygem-platform-api/distinfo                  |   6 +-
+ www/rubygem-protocol-http2/Makefile                |   2 +-
+ www/rubygem-protocol-http2/distinfo                |   6 +-
+ www/rubygem-protocol-http2/files/patch-gemspec     |  11 -
+ www/rubygem-webdrivers/Makefile                    |   2 +-
+ www/rubygem-webdrivers/distinfo                    |   6 +-
+ www/rubygem-webmock/Makefile                       |   2 +-
+ www/rubygem-webmock/distinfo                       |   6 +-
+ www/tt-rss/Makefile                                |  60 +-
+ www/tt-rss/distinfo                                |   6 +-
+ www/tt-rss/pkg-plist                               |   4 +-
+ www/xapian-omega/Makefile                          |   2 +-
+ www/xapian-omega/distinfo                          |   6 +-
+ x11-drivers/xf86-input-synaptics/Makefile          |   3 +-
+ x11-fonts/Makefile                                 |   1 +
+ x11-fonts/ferrite-core/Makefile                    |  25 +
+ x11-fonts/ferrite-core/distinfo                    |   3 +
+ x11-fonts/ferrite-core/pkg-descr                   |   4 +
+ x11-fonts/ferrite-core/pkg-plist                   |   5 +
+ x11-servers/xorg-server/Makefile                   |   3 +-
+ x11-toolkits/p5-Gnome2-VFS/Makefile                |   9 +-
+ x11-toolkits/p5-Gnome2-VFS/distinfo                |   6 +-
+ x11-toolkits/p5-Gnome2/Makefile                    |   9 +-
+ x11-toolkits/p5-Gnome2/distinfo                    |   6 +-
+ x11-toolkits/p5-Gtk2-GladeXML/Makefile             |   7 +-
+ x11-toolkits/p5-Gtk2-GladeXML/distinfo             |   5 +-
+ 585 files changed, 2414 insertions(+), 2386 deletions(-)
+ delete mode 100644 devel/py-curtsies/files/patch-setup.py
+ create mode 100644 devel/py-cwcwidth/Makefile
+ create mode 100644 devel/py-cwcwidth/distinfo
+ create mode 100644 devel/py-cwcwidth/pkg-descr
+ create mode 100644 devel/py-jupyter-packaging/Makefile
+ create mode 100644 devel/py-jupyter-packaging/distinfo
+ create mode 100644 devel/py-jupyter-packaging/pkg-descr
+ create mode 100644 devel/py-pytest-enabler/Makefile
+ create mode 100644 devel/py-pytest-enabler/distinfo
+ create mode 100644 devel/py-pytest-enabler/pkg-descr
+ create mode 100644 devel/rubygem-aws-sdk-lexmodelsv2/Makefile
+ create mode 100644 devel/rubygem-aws-sdk-lexmodelsv2/distinfo
+ create mode 100644 devel/rubygem-aws-sdk-lexmodelsv2/pkg-descr
+ create mode 100644 devel/rubygem-aws-sdk-lexruntimev2/Makefile
+ create mode 100644 devel/rubygem-aws-sdk-lexruntimev2/distinfo
+ create mode 100644 devel/rubygem-aws-sdk-lexruntimev2/pkg-descr
+ create mode 100644 devel/rubygem-google-apis-core/Makefile
+ create mode 100644 devel/rubygem-google-apis-core/distinfo
+ create mode 100644 devel/rubygem-google-apis-core/pkg-descr
+ create mode 100644 devel/rubygem-google-apis-discovery_v1/Makefile
+ create mode 100644 devel/rubygem-google-apis-discovery_v1/distinfo
+ create mode 100644 devel/rubygem-google-apis-discovery_v1/pkg-descr
+ create mode 100644 devel/rubygem-google-apis-generator/Makefile
+ create mode 100644 devel/rubygem-google-apis-generator/distinfo
+ create mode 100644 devel/rubygem-google-apis-generator/pkg-descr
+ create mode 100644 devel/rubygem-google-apis-iamcredentials_v1/Makefile
+ create mode 100644 devel/rubygem-google-apis-iamcredentials_v1/distinfo
+ create mode 100644 devel/rubygem-google-apis-iamcredentials_v1/pkg-descr
+ create mode 100644 devel/rubygem-google-apis-storage_v1/Makefile
+ create mode 100644 devel/rubygem-google-apis-storage_v1/distinfo
+ create mode 100644 devel/rubygem-google-apis-storage_v1/pkg-descr
+ create mode 100644 devel/rubygem-pry-remote/Makefile
+ create mode 100644 devel/rubygem-pry-remote/distinfo
+ create mode 100644 devel/rubygem-pry-remote/pkg-descr
+ delete mode 100644 devel/rubygem-tty-progressbar/files/patch-gemspec
+ create mode 100644 dns/rubygem-google-apis-dns_v1/Makefile
+ create mode 100644 dns/rubygem-google-apis-dns_v1/distinfo
+ create mode 100644 dns/rubygem-google-apis-dns_v1/pkg-descr
+ create mode 100644 net-mgmt/nfs-exporter/Makefile
+ create mode 100644 net-mgmt/nfs-exporter/distinfo
+ create mode 100644 net-mgmt/nfs-exporter/files/nfs_exporter.in
+ create mode 100644 net-mgmt/nfs-exporter/pkg-descr
+ create mode 100644 science/py-h5py/files/patch-setup.py
+ delete mode 100644 security/libfido2/files/patch-CMakeLists.txt
+ delete mode 100644 security/libfido2/files/patch-openbsd-compat-openbsd-compat.h
+ delete mode 100644 security/libfido2/files/patch-src-CMakeLists.txt
+ delete mode 100644 security/libfido2/files/patch-src-cbor.c
+ delete mode 100644 security/libfido2/files/patch-src-hid_openbsd.c
+ create mode 100644 security/py-python3-saml/files/patch-setup.py
+ delete mode 100644 sysutils/gdisk/files/patch-gptcurses.cc
+ create mode 100644 textproc/py-aeidon/files/patch-setup-aeidon.py
+ delete mode 100644 www/rubygem-protocol-http2/files/patch-gemspec
+ create mode 100644 x11-fonts/ferrite-core/Makefile
+ create mode 100644 x11-fonts/ferrite-core/distinfo
+ create mode 100644 x11-fonts/ferrite-core/pkg-descr
+ create mode 100644 x11-fonts/ferrite-core/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Unable to get repository owner: hardenedbsd/hardenedbsd-ports invalid connection
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is ahead of 'origin/master' by 282 commits.
+  (use "git push" to publish your local commits)
+
+
+It took 3.19 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at e673bf735d53 HBSD: games/xrally: resolve merge conflict
+==== END: master ====
