@@ -252,3 +252,133 @@ new files yourself (see 'git help status').
 nothing to commit, working tree clean
 HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
 ==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=1&verb=git-upload-pack": read tcp 172.16.1.72:23243->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11-servers/xorg-server/Makefile
+Auto-merging games/xrally/Makefile
+CONFLICT (content): Merge conflict in games/xrally/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc games/xrally/Makefile
+index 249a1f8ca674,f8c3160887b3..000000000000
+--- a/games/xrally/Makefile
++++ b/games/xrally/Makefile
+@@@ -11,7 -11,8 +11,12 @@@ DISTNAME=	${PORTNAME}-1.
+  MAINTAINER=	ports@FreeBSD.org
+  COMMENT=	Clone of the classic Rally X arcade game
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ BROKEN_FreeBSD_13=	duplicate symbol: radar
++ BROKEN_FreeBSD_14=	duplicate symbol: radar
+++>>>>>>> freebsd/master
+  
+  WRKSRC=		${WRKDIR}/${PORTNAME}
+  HAS_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Tools/scripts/chkversion.pl
+	modified:   devel/fossil/Makefile
+	modified:   devel/fossil/distinfo
+	modified:   devel/llvm-devel/Makefile
+	modified:   devel/llvm10/Makefile
+	modified:   devel/llvm11/Makefile
+	modified:   devel/llvm80/Makefile
+	modified:   devel/llvm90/Makefile
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/pkg-plist
+	modified:   emulators/virtualbox-ose/files/patch-src_VBox_Runtime_r0drv_freebsd_memobj-r0drv-freebsd.c
+	modified:   games/xoids/Makefile
+	modified:   games/xorgramana/Makefile
+	modified:   games/xqf/Makefile
+	modified:   games/xrick/Makefile
+	modified:   games/xrot/Makefile
+	modified:   games/xtic/Makefile
+	modified:   games/xtron/Makefile
+	modified:   math/pynac/Makefile
+	modified:   math/pynac/distinfo
+	modified:   misc/zoneinfo/Makefile
+	modified:   misc/zoneinfo/distinfo
+	modified:   net/yami4/Makefile
+	modified:   science/py-jupyter_jsmol/Makefile
+	modified:   science/py-jupyter_jsmol/distinfo
+	modified:   textproc/libcsv/Makefile
+	modified:   textproc/libcsv/files/patch-csv.3
+	modified:   textproc/py-custom_inherit/Makefile
+	modified:   textproc/py-custom_inherit/distinfo
+	modified:   textproc/txt2man/Makefile
+	modified:   textproc/txt2man/distinfo
+	modified:   www/tt-rss/Makefile
+	modified:   www/tt-rss/distinfo
+	modified:   www/tt-rss/pkg-plist
+	modified:   x11-drivers/xf86-input-synaptics/Makefile
+	modified:   x11-servers/xorg-server/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   games/xrally/Makefile
+
+
+It took 3.22 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.17 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== END: master ====
