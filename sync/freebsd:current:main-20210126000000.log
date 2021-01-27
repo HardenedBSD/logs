@@ -1,0 +1,110 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 1fc148624f50..25cdacf79b06
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ contrib/sqlite3/configure           |   20 +-
+ contrib/sqlite3/configure.ac        |    2 +-
+ contrib/sqlite3/ltmain.sh           |    0
+ contrib/sqlite3/shell.c             |  700 ++++++++-
+ contrib/sqlite3/sqlite3.c           | 2683 +++++++++++++++++++++++++----------
+ contrib/sqlite3/sqlite3.h           |   81 +-
+ contrib/sqlite3/sqlite3ext.h        |    4 +
+ contrib/sqlite3/sqlite3rc.h         |    2 +-
+ contrib/sqlite3/tea/configure       |   18 +-
+ contrib/sqlite3/tea/configure.ac    |    2 +-
+ contrib/sqlite3/tea/win/makefile.vc |    2 +-
+ sys/amd64/conf/NOTES                |    5 -
+ sys/conf/options.amd64              |    1 -
+ sys/conf/options.i386               |    1 -
+ sys/i386/conf/NOTES                 |    4 -
+ 15 files changed, 2685 insertions(+), 840 deletions(-)
+ mode change 100755 => 100644 contrib/sqlite3/ltmain.sh
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=2&verb=git-receive-pack": read tcp 172.16.1.72:15941->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/main
+Your branch is ahead of 'origin/freebsd/current/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at 25cdacf79b06 Import sqlite 3.34.1 (3340100).
+==== END: freebsd/current/main ====

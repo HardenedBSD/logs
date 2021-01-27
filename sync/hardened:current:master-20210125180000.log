@@ -1,0 +1,295 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is up to date with 'origin/hardened/current/master'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Removing usr.sbin/wpa/wpa_supplicant/ntddndis.h
+Removing usr.sbin/wpa/wpa_supplicant/Packet32.h
+Removing usr.sbin/wpa/wpa_supplicant/Packet32.c
+Removing usr.sbin/wpa/ndis_events/ndis_events.c
+Removing usr.sbin/wpa/ndis_events/ndis_events.8
+Removing usr.sbin/wpa/ndis_events/Makefile.depend
+Removing usr.sbin/wpa/ndis_events/Makefile
+Removing usr.sbin/ndiscvt/windrv_stub.c
+Removing usr.sbin/ndiscvt/ndisgen.sh
+Removing usr.sbin/ndiscvt/ndisgen.8
+Removing usr.sbin/ndiscvt/ndiscvt.c
+Removing usr.sbin/ndiscvt/ndiscvt.8
+Removing usr.sbin/ndiscvt/inf.h
+Removing usr.sbin/ndiscvt/inf.c
+Removing usr.sbin/ndiscvt/inf-token.l
+Removing usr.sbin/ndiscvt/inf-parse.y
+Removing usr.sbin/ndiscvt/Makefile.depend
+Removing usr.sbin/ndiscvt/Makefile
+Removing tools/kerneldoc/subsys/Doxyfile-dev_if_ndis
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/vm/vm_mmap.c
+Removing sys/modules/if_ndis/Makefile
+Auto-merging sys/modules/Makefile
+Auto-merging sys/fs/tmpfs/tmpfs_vnops.c
+Auto-merging sys/fs/tmpfs/tmpfs_subr.c
+Removing sys/dev/if_ndis/if_ndisvar.h
+Removing sys/dev/if_ndis/if_ndis_usb.c
+Removing sys/dev/if_ndis/if_ndis_pci.c
+Removing sys/dev/if_ndis/if_ndis.c
+Auto-merging sys/conf/newvers.sh
+Auto-merging sys/conf/files.i386
+Removing sys/compat/ndis/winx64_wrap.S
+Removing sys/compat/ndis/winx32_wrap.S
+Removing sys/compat/ndis/usbd_var.h
+Removing sys/compat/ndis/subr_usbd.c
+Removing sys/compat/ndis/subr_pe.c
+Removing sys/compat/ndis/subr_ntoskrnl.c
+Removing sys/compat/ndis/subr_ndis.c
+Removing sys/compat/ndis/subr_hal.c
+Removing sys/compat/ndis/resource_var.h
+Removing sys/compat/ndis/pe_var.h
+Removing sys/compat/ndis/ntoskrnl_var.h
+Removing sys/compat/ndis/ndis_var.h
+Removing sys/compat/ndis/kern_windrv.c
+Removing sys/compat/ndis/kern_ndis.c
+Removing sys/compat/ndis/hal_var.h
+Removing sys/compat/ndis/cfg_var.h
+Auto-merging sys/compat/linux/linux_mmap.c
+Auto-merging sys/compat/freebsd32/freebsd32_misc.c
+Removing share/man/man4/ndis.4
+Auto-merging share/man/man4/Makefile
+Auto-merging ObsoleteFiles.inc
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ ObsoleteFiles.inc                                  |    9 +
+ contrib/ipfilter/bpf-ipf.h                         |   12 -
+ contrib/ipfilter/ipf.h                             |    8 -
+ contrib/ipfilter/iplang/iplang_l.l                 |    4 -
+ contrib/ipfilter/ipsend/ipsend.h                   |    4 -
+ contrib/ipfilter/ipsend/ipsopt.c                   |    4 -
+ contrib/ipfilter/kmem.h                            |    4 -
+ contrib/ipfilter/lib/debug.c                       |   23 +-
+ contrib/ipfilter/lib/facpri.h                      |    4 -
+ contrib/ipfilter/lib/inet_addr.c                   |    4 -
+ contrib/ipfilter/lib/kmem.c                        |    4 -
+ contrib/ipfilter/lib/kmem.h                        |    4 -
+ contrib/ipfilter/lib/verbose.c                     |   16 -
+ contrib/ipfilter/md5.c                             |    4 -
+ contrib/ipfilter/md5.h                             |    8 -
+ contrib/ipfilter/opts.h                            |    4 -
+ contrib/wpa/src/utils/build_config.h               |    4 +-
+ sbin/pfctl/pfctl_altq.c                            |   29 -
+ share/man/man4/Makefile                            |    4 -
+ share/man/man4/ndis.4                              |  155 -
+ sys/compat/cloudabi/cloudabi_mem.c                 |   10 +-
+ sys/compat/freebsd32/freebsd32_misc.c              |   20 +-
+ sys/compat/linux/linux_mmap.c                      |    4 +-
+ sys/compat/ndis/cfg_var.h                          |   49 -
+ sys/compat/ndis/hal_var.h                          |   55 -
+ sys/compat/ndis/kern_ndis.c                        | 1447 -------
+ sys/compat/ndis/kern_windrv.c                      | 1170 ------
+ sys/compat/ndis/ndis_var.h                         | 1763 --------
+ sys/compat/ndis/ntoskrnl_var.h                     | 1517 -------
+ sys/compat/ndis/pe_var.h                           |  555 ---
+ sys/compat/ndis/resource_var.h                     |  201 -
+ sys/compat/ndis/subr_hal.c                         |  482 ---
+ sys/compat/ndis/subr_ndis.c                        | 3372 ---------------
+ sys/compat/ndis/subr_ntoskrnl.c                    | 4446 --------------------
+ sys/compat/ndis/subr_pe.c                          |  644 ---
+ sys/compat/ndis/subr_usbd.c                        | 1461 -------
+ sys/compat/ndis/usbd_var.h                         |  224 -
+ sys/compat/ndis/winx32_wrap.S                      |  385 --
+ sys/compat/ndis/winx64_wrap.S                      |  179 -
+ sys/conf/files.amd64                               |    1 -
+ sys/conf/files.i386                                |    1 -
+ sys/conf/files.x86                                 |   10 -
+ sys/conf/newvers.sh                                |    2 +-
+ sys/contrib/ipfilter/netinet/ip_compat.h           |   12 -
+ sys/contrib/ipfilter/netinet/ip_fil.h              |   46 -
+ sys/contrib/ipfilter/netinet/ip_lookup.h           |   12 -
+ sys/contrib/ipfilter/netinet/ip_nat.h              |    8 -
+ sys/contrib/ipfilter/netinet/ip_proxy.h            |    4 -
+ sys/contrib/ipfilter/netinet/ip_scan.h             |    6 -
+ sys/contrib/ipfilter/netinet/ip_state.h            |    4 -
+ .../openzfs/module/os/freebsd/zfs/zfs_vnops_os.c   |    5 +-
+ .../openzfs/module/os/freebsd/zfs/zfs_znode.c      |    2 +-
+ sys/contrib/openzfs/module/zfs/zfs_replay.c        |    5 +
+ sys/dev/if_ndis/if_ndis.c                          | 3423 ---------------
+ sys/dev/if_ndis/if_ndis_pci.c                      |  357 --
+ sys/dev/if_ndis/if_ndis_usb.c                      |  240 --
+ sys/dev/if_ndis/if_ndisvar.h                       |  263 --
+ sys/fs/tmpfs/tmpfs_subr.c                          |    9 +-
+ sys/fs/tmpfs/tmpfs_vnops.c                         |    1 -
+ sys/kern/vfs_cache.c                               |  158 +-
+ sys/modules/Makefile                               |    4 -
+ sys/modules/if_ndis/Makefile                       |   10 -
+ sys/net/altq/altq_cbq.c                            |    2 +-
+ sys/net/altq/altq_codel.c                          |    2 +-
+ sys/net/altq/altq_fairq.c                          |    2 +-
+ sys/net/altq/altq_hfsc.c                           |    2 +-
+ sys/net/altq/altq_priq.c                           |    2 +-
+ sys/net/altq/altq_subr.c                           |   44 +-
+ sys/net/altq/if_altq.h                             |   11 +-
+ sys/sys/_cscan_atomic.h                            |   10 +-
+ sys/sys/atomic_common.h                            |   10 +-
+ sys/sys/syscallsubr.h                              |    4 +-
+ sys/sys/vnode.h                                    |    2 +-
+ sys/vm/vm_mmap.c                                   |   49 +-
+ targets/pseudo/userland/Makefile.depend            |    3 -
+ tests/sys/netpfil/pf/Makefile                      |    3 +-
+ tests/sys/netpfil/pf/altq.sh                       |   49 +
+ tests/sys/netpfil/pf/utils.subr                    |   24 +
+ tools/build/mk/OptionalObsoleteFiles.inc           |    8 -
+ tools/kerneldoc/subsys/Doxyfile-dev_if_ndis        |   21 -
+ usr.bin/diff/diff.c                                |    2 +
+ usr.bin/diff/diff.h                                |    1 +
+ usr.bin/diff/diffreg.c                             |    5 +
+ usr.bin/diff/tests/diff_test.sh                    |   11 +
+ usr.sbin/Makefile.amd64                            |    3 -
+ usr.sbin/Makefile.i386                             |    3 -
+ usr.sbin/acpi/acpidump/acpi.c                      |   18 +-
+ usr.sbin/ndiscvt/Makefile                          |   27 -
+ usr.sbin/ndiscvt/Makefile.depend                   |   19 -
+ usr.sbin/ndiscvt/inf-parse.y                       |  112 -
+ usr.sbin/ndiscvt/inf-token.l                       |  134 -
+ usr.sbin/ndiscvt/inf.c                             |  920 ----
+ usr.sbin/ndiscvt/inf.h                             |   61 -
+ usr.sbin/ndiscvt/ndiscvt.8                         |  283 --
+ usr.sbin/ndiscvt/ndiscvt.c                         |  436 --
+ usr.sbin/ndiscvt/ndisgen.8                         |   86 -
+ usr.sbin/ndiscvt/ndisgen.sh                        |  556 ---
+ usr.sbin/ndiscvt/windrv_stub.c                     |  268 --
+ usr.sbin/wpa/Makefile                              |    1 -
+ usr.sbin/wpa/ndis_events/Makefile                  |    8 -
+ usr.sbin/wpa/ndis_events/Makefile.depend           |   18 -
+ usr.sbin/wpa/ndis_events/ndis_events.8             |  135 -
+ usr.sbin/wpa/ndis_events/ndis_events.c             |  353 --
+ usr.sbin/wpa/wpa_supplicant/Makefile               |    6 +-
+ usr.sbin/wpa/wpa_supplicant/Packet32.c             |  415 --
+ usr.sbin/wpa/wpa_supplicant/Packet32.h             |   69 -
+ usr.sbin/wpa/wpa_supplicant/ntddndis.h             |   31 -
+ 107 files changed, 337 insertions(+), 26767 deletions(-)
+ delete mode 100644 share/man/man4/ndis.4
+ delete mode 100644 sys/compat/ndis/cfg_var.h
+ delete mode 100644 sys/compat/ndis/hal_var.h
+ delete mode 100644 sys/compat/ndis/kern_ndis.c
+ delete mode 100644 sys/compat/ndis/kern_windrv.c
+ delete mode 100644 sys/compat/ndis/ndis_var.h
+ delete mode 100644 sys/compat/ndis/ntoskrnl_var.h
+ delete mode 100644 sys/compat/ndis/pe_var.h
+ delete mode 100644 sys/compat/ndis/resource_var.h
+ delete mode 100644 sys/compat/ndis/subr_hal.c
+ delete mode 100644 sys/compat/ndis/subr_ndis.c
+ delete mode 100644 sys/compat/ndis/subr_ntoskrnl.c
+ delete mode 100644 sys/compat/ndis/subr_pe.c
+ delete mode 100644 sys/compat/ndis/subr_usbd.c
+ delete mode 100644 sys/compat/ndis/usbd_var.h
+ delete mode 100644 sys/compat/ndis/winx32_wrap.S
+ delete mode 100644 sys/compat/ndis/winx64_wrap.S
+ delete mode 100644 sys/dev/if_ndis/if_ndis.c
+ delete mode 100644 sys/dev/if_ndis/if_ndis_pci.c
+ delete mode 100644 sys/dev/if_ndis/if_ndis_usb.c
+ delete mode 100644 sys/dev/if_ndis/if_ndisvar.h
+ delete mode 100644 sys/modules/if_ndis/Makefile
+ create mode 100644 tests/sys/netpfil/pf/altq.sh
+ delete mode 100644 tools/kerneldoc/subsys/Doxyfile-dev_if_ndis
+ delete mode 100644 usr.sbin/ndiscvt/Makefile
+ delete mode 100644 usr.sbin/ndiscvt/Makefile.depend
+ delete mode 100644 usr.sbin/ndiscvt/inf-parse.y
+ delete mode 100644 usr.sbin/ndiscvt/inf-token.l
+ delete mode 100644 usr.sbin/ndiscvt/inf.c
+ delete mode 100644 usr.sbin/ndiscvt/inf.h
+ delete mode 100644 usr.sbin/ndiscvt/ndiscvt.8
+ delete mode 100644 usr.sbin/ndiscvt/ndiscvt.c
+ delete mode 100644 usr.sbin/ndiscvt/ndisgen.8
+ delete mode 100644 usr.sbin/ndiscvt/ndisgen.sh
+ delete mode 100644 usr.sbin/ndiscvt/windrv_stub.c
+ delete mode 100644 usr.sbin/wpa/ndis_events/Makefile
+ delete mode 100644 usr.sbin/wpa/ndis_events/Makefile.depend
+ delete mode 100644 usr.sbin/wpa/ndis_events/ndis_events.8
+ delete mode 100644 usr.sbin/wpa/ndis_events/ndis_events.c
+ delete mode 100644 usr.sbin/wpa/wpa_supplicant/Packet32.c
+ delete mode 100644 usr.sbin/wpa/wpa_supplicant/Packet32.h
+ delete mode 100644 usr.sbin/wpa/wpa_supplicant/ntddndis.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: * Checking 1 branches        
+remote: Checked 1 references in total        
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    36757c4ca8ee..fed2f89f6783  hardened/current/master -> hardened/current/master        
+remote:    94ac312a7168..1fc148624f50  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   36757c4ca8ee..fed2f89f6783  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====

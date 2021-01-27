@@ -1,0 +1,269 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is behind 'origin/master' by 15 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Updating 70948ad9d7fa..845a791e90aa
+Fast-forward
+ Tools/scripts/tindex                               |   8 +-
+ accessibility/redshift/Makefile                    |   2 +-
+ audio/ncmpcpp/Makefile                             |  32 +-
+ audio/ncmpcpp/distinfo                             |   6 +-
+ .../ncmpcpp/files/patch-src_screens_visualizer.cpp |  12 +
+ audio/ncmpcpp/files/patch-src_status.cpp           |   2 +-
+ audio/ncmpcpp/pkg-descr                            |  17 +-
+ audio/somafm-cli/Makefile                          |   2 +-
+ audio/spotify-tui/Makefile                         |   2 +-
+ deskutils/ultralist/Makefile                       |   2 +-
+ devel/cargo-generate/Makefile                      |   2 +-
+ devel/dtool/Makefile                               |   2 +-
+ devel/gh/Makefile                                  |   2 +-
+ devel/git-bug/Makefile                             |   2 +-
+ devel/git-delta/Makefile                           | 177 +++++------
+ devel/git-delta/distinfo                           | 354 +++++++++------------
+ devel/glab/Makefile                                |   2 +-
+ devel/golangci-lint/Makefile                       |   2 +-
+ devel/lemon/Makefile                               |   8 +-
+ devel/lemon/distinfo                               |   5 +-
+ devel/py-oci/Makefile                              |   2 +-
+ devel/py-oci/distinfo                              |   6 +-
+ devel/revive/Makefile                              |   2 +-
+ devel/sentry-cli/Makefile                          |   2 +-
+ dns/bind911/Makefile                               |   2 +-
+ dns/bind911/distinfo                               |   6 +-
+ dns/dog/Makefile                                   |   2 +-
+ editors/kibi/Makefile                              |   2 +-
+ editors/micro/Makefile                             |   2 +-
+ emulators/tiemu3/Makefile                          |  19 +-
+ emulators/tiemu3/files/patch-man_Makefile.in       |   6 +-
+ games/chocolate-doom/Makefile                      |   2 +-
+ games/chocolate-doom/distinfo                      |   6 +-
+ games/minecraft-server/Makefile                    |   4 +-
+ games/minecraft-server/distinfo                    |   6 +-
+ graphics/cbonsai/Makefile                          |   2 +-
+ graphics/frei0r/Makefile                           |   2 +-
+ graphics/pastel/Makefile                           |   2 +-
+ graphics/viu/Makefile                              |   2 +-
+ irc/birch/Makefile                                 |   2 +-
+ irc/komanda-cli/Makefile                           |   2 +-
+ misc/broot/Makefile                                |   2 +-
+ net-im/6cord/Makefile                              |   2 +-
+ net-im/cordless/Makefile                           |   2 +-
+ net-im/tut/Makefile                                |   2 +-
+ net/evans/Makefile                                 |   2 +-
+ net/findomain/Makefile                             |   2 +-
+ net/hblock/Makefile                                |   2 +-
+ net/k6/Makefile                                    |   2 +-
+ security/horcrux/Makefile                          |   2 +-
+ security/snuffleupagus/Makefile                    |   4 +-
+ security/snuffleupagus/distinfo                    |   6 +-
+ security/vuxml/vuln.xml                            |  34 ++
+ sysutils/3mux/Makefile                             |   2 +-
+ sysutils/ansible-iocage/Makefile                   |   2 +-
+ sysutils/ansible-kld/Makefile                      |   2 +-
+ sysutils/ansible-sysrc/Makefile                    |   2 +-
+ sysutils/dua-cli/Makefile                          |   2 +-
+ sysutils/duf/Makefile                              |   2 +-
+ sysutils/fselect/Makefile                          |   2 +-
+ sysutils/glow/Makefile                             |   2 +-
+ sysutils/hostctl/Makefile                          |   2 +-
+ sysutils/inxi/Makefile                             |   2 +-
+ sysutils/onefetch/Makefile                         |   2 +-
+ sysutils/pfetch/Makefile                           |   2 +-
+ sysutils/rsfetch/Makefile                          |   2 +-
+ sysutils/tealdeer/Makefile                         |   2 +-
+ sysutils/ufetch/Makefile                           |   2 +-
+ textproc/angle-grinder/Makefile                    |   2 +-
+ textproc/csvq/Makefile                             |   2 +-
+ textproc/dasel/Makefile                            |   2 +-
+ textproc/git-chglog/Makefile                       |   2 +-
+ textproc/jtc/Makefile                              |   2 +-
+ textproc/py-jc/Makefile                            |   2 +-
+ textproc/qr/Makefile                               |   2 +-
+ textproc/trdsql/Makefile                           |   2 +-
+ www/annie/Makefile                                 |   2 +-
+ www/beehive/Makefile                               |   2 +-
+ www/chisel/Makefile                                |   2 +-
+ www/monolith/Makefile                              |   2 +-
+ www/oneshot/Makefile                               |   2 +-
+ www/py-tuir/Makefile                               |   2 +-
+ x11-fonts/anomaly-mono/Makefile                    |   2 +-
+ x11-fonts/victor-mono-ttf/Makefile                 |   2 +-
+ x11-wm/berry/Makefile                              |   2 +-
+ x11/jgmenu/Makefile                                |   2 +-
+ x11/xmenu/Makefile                                 |   2 +-
+ x11/xob/Makefile                                   |   2 +-
+ 88 files changed, 429 insertions(+), 425 deletions(-)
+ create mode 100644 audio/ncmpcpp/files/patch-src_screens_visualizer.cpp
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Everything up-to-date
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging www/firefox-esr/Makefile
+Auto-merging lang/gcc8-devel/Makefile
+Removing deskutils/calibre/files/patch-src_calibre_gui2_tag__browser_view.py
+Merge made by the 'recursive' strategy.
+ benchmarks/stress-ng/Makefile                      |   4 +-
+ benchmarks/stress-ng/distinfo                      |   6 +-
+ biology/bedtools/Makefile                          |   2 +-
+ deskutils/calibre/Makefile                         |   2 +-
+ deskutils/calibre/distinfo                         |   6 +-
+ .../patch-src_calibre_gui2_tag__browser_view.py    |  14 -
+ deskutils/calibre/pkg-plist                        |   4 +
+ deskutils/osmo/Makefile                            |   6 +-
+ deskutils/osmo/distinfo                            |   6 +-
+ deskutils/osmo/pkg-descr                           |   2 +-
+ deskutils/osmo/pkg-plist                           |  82 ++++++
+ devel/R-cran-repr/Makefile                         |   3 +-
+ devel/R-cran-repr/distinfo                         |   6 +-
+ devel/gh/Makefile                                  |   6 +-
+ devel/gh/distinfo                                  |  14 +-
+ devel/gh/pkg-plist                                 |   3 +
+ devel/p5-Workflow/Makefile                         |   4 +-
+ devel/p5-Workflow/distinfo                         |   6 +-
+ devel/p5-Workflow/pkg-plist                        |   2 -
+ devel/py-twilio/Makefile                           |   2 +-
+ devel/py-twilio/distinfo                           |   6 +-
+ devel/taskctl/Makefile                             |   2 +-
+ devel/taskctl/distinfo                             |   6 +-
+ graphics/opencv-core/Makefile                      |   2 +-
+ graphics/opencv-java/Makefile                      |   2 +-
+ graphics/opencv/Makefile                           |   5 +-
+ graphics/py-opencv/Makefile                        |   2 +-
+ lang/erlang-java/Makefile                          |   2 +-
+ lang/erlang-java/distinfo                          |   6 +-
+ lang/erlang-wx/Makefile                            |   4 +-
+ lang/erlang-wx/distinfo                            |   6 +-
+ lang/erlang/Makefile                               |   4 +-
+ lang/erlang/distinfo                               |   6 +-
+ lang/gcc8-devel/Makefile                           |   2 +-
+ lang/gcc8-devel/distinfo                           |   6 +-
+ lang/intel-compute-runtime/Makefile                |   2 +-
+ lang/intel-compute-runtime/distinfo                |   6 +-
+ math/R-cran-KFAS/Makefile                          |   2 +-
+ math/R-cran-KFAS/distinfo                          |   6 +-
+ math/R-cran-MCMCpack/Makefile                      |   2 +-
+ math/R-cran-MCMCpack/distinfo                      |   6 +-
+ net/nats-streaming-server/Makefile                 |   2 +-
+ net/nats-streaming-server/distinfo                 |   6 +-
+ net/routinator/Makefile                            | 169 +++++------
+ net/routinator/distinfo                            | 324 +++++++++++----------
+ .../files/patch-etc_routinator.conf.example        |  21 ++
+ net/routinator/files/pkg-message.in                |   4 +-
+ net/routinator/files/routinator.in                 |   8 +
+ net/routinator/pkg-plist                           |   3 +
+ print/R-cran-tinytex/Makefile                      |   2 +-
+ print/R-cran-tinytex/distinfo                      |   6 +-
+ textproc/p5-PPIx-Regexp/Makefile                   |   2 +-
+ textproc/p5-PPIx-Regexp/distinfo                   |   6 +-
+ textproc/py-spylls/Makefile                        |   2 +-
+ textproc/py-spylls/distinfo                        |   6 +-
+ www/firefox-esr/Makefile                           |   2 +-
+ www/firefox-esr/distinfo                           |   6 +-
+ 57 files changed, 486 insertions(+), 348 deletions(-)
+ delete mode 100644 deskutils/calibre/files/patch-src_calibre_gui2_tag__browser_view.py
+ create mode 100644 net/routinator/files/patch-etc_routinator.conf.example
+ create mode 100644 net/routinator/pkg-plist
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedbsd-ports.git        
+remote:    845a791e90aa..8baf8b18ddc7  master -> master        
+remote:    70948ad9d7fa..845a791e90aa  github/master -> github/master        
+remote:  ! [remote rejected]           refs/pull/10/head -> refs/pull/10/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/11/head -> refs/pull/11/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/12/head -> refs/pull/12/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/14/head -> refs/pull/14/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/15/head -> refs/pull/15/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/17/head -> refs/pull/17/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/2/head -> refs/pull/2/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/9/head -> refs/pull/9/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedbsd-ports.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports.git
+   845a791e90aa..8baf8b18ddc7  master -> master
+==== END: master ====

@@ -1,0 +1,119 @@
+==== BEGIN: freebsd/12-stable/main ====
+current branch: freebsd/12-stable/main
+mergeable branch: freebsd/stable/12
+==== change branch ====
+Switched to branch 'freebsd/12-stable/main'
+Your branch is up to date with 'origin/freebsd/12-stable/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+* freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+From git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD
+ + eb7575e4fd4f...02749d938ce4 refs/notes/commits -> refs/notes/commits  (forced update)
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/stable/12 branch ====
+Updating e82353f84c58..5071cbacfb34
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ share/man/man4/ddb.4              |  10 +-
+ sys/arm64/arm64/db_trace.c        |   2 +-
+ sys/arm64/arm64/exception.S       |   2 +-
+ sys/arm64/arm64/gdb_machdep.c     | 112 ++++++++++++++++++++++
+ sys/arm64/arm64/genassym.c        |   1 +
+ sys/arm64/arm64/machdep.c         |   6 +-
+ sys/arm64/arm64/stack_machdep.c   |   2 +-
+ sys/arm64/arm64/swtch.S           |   8 +-
+ sys/arm64/arm64/trap.c            |  22 +----
+ sys/arm64/arm64/vm_machdep.c      |   6 +-
+ sys/arm64/include/db_machdep.h    |   2 +-
+ sys/arm64/include/gdb_machdep.h   |  81 ++++++++++++++++
+ sys/arm64/include/pcb.h           |   6 +-
+ sys/conf/files.arm64              |   1 +
+ sys/ddb/db_print.c                |  24 ++++-
+ sys/dev/safexcel/safexcel.c       | 190 +++++++++++++++++++++++---------------
+ sys/dev/safexcel/safexcel_var.h   |  29 ++++--
+ sys/powerpc/powerpc/gdb_machdep.c |   5 +-
+ 18 files changed, 375 insertions(+), 134 deletions(-)
+ create mode 100644 sys/arm64/arm64/gdb_machdep.c
+ create mode 100644 sys/arm64/include/gdb_machdep.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    e82353f84c58..5071cbacfb34  freebsd/12-stable/main -> freebsd/12-stable/main        
+remote:    02d410084064..f2a2fbae881d  github/hardened/current/master -> github/hardened/current/master        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: 
+remote: Create a new pull request for 'freebsd/12-stable/main':        
+remote:   https://git-01.md.hardenedbsd.org/HardenedBSD/HardenedBSD/compare/hardened/current/master...freebsd/12-stable/main        
+remote: 
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   e82353f84c58..5071cbacfb34  freebsd/12-stable/main -> freebsd/12-stable/main
+==== END: freebsd/12-stable/main ====

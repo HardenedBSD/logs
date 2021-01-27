@@ -1,0 +1,124 @@
+==== BEGIN: freebsd/current/main ====
+current branch: freebsd/current/main
+mergeable branch: freebsd/main
+==== change branch ====
+Switched to branch 'freebsd/current/main'
+Your branch is up to date with 'origin/freebsd/current/main'.
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+* freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+  hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+Already up to date.
+==== merge branches ====
+==== merge freebsd/main branch ====
+Updating 25cdacf79b06..e63539f30597
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log.
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+ .../clang/include/clang/AST/ASTContext.h           |  10 +-
+ .../llvm-project/clang/include/clang/AST/Type.h    |  13 +-
+ .../clang/include/clang/AST/TypeProperties.td      |   3 +-
+ .../clang/include/clang/Basic/TypeNodes.td         |   2 +-
+ .../clang/include/clang/Sema/DeclSpec.h            |   9 +
+ .../llvm-project/clang/include/clang/Sema/Sema.h   |   2 +
+ contrib/llvm-project/clang/lib/AST/ASTContext.cpp  |  34 +-
+ contrib/llvm-project/clang/lib/AST/ASTImporter.cpp |   3 +-
+ contrib/llvm-project/clang/lib/AST/Type.cpp        |   9 +-
+ .../llvm-project/clang/lib/CodeGen/CGDebugInfo.cpp |   1 -
+ .../clang/lib/CodeGen/CodeGenFunction.cpp          |   1 -
+ contrib/llvm-project/clang/lib/Sema/SemaExpr.cpp   |   1 -
+ contrib/llvm-project/clang/lib/Sema/SemaLambda.cpp |   3 +-
+ .../clang/lib/Sema/SemaTemplateDeduction.cpp       |   7 +
+ .../clang/lib/Sema/SemaTemplateVariadic.cpp        |   3 +-
+ contrib/llvm-project/clang/lib/Sema/SemaType.cpp   | 119 ++---
+ share/man/man4/Makefile                            |   1 +
+ share/man/man4/ng_vlan_rotate.4                    | 252 ++++++++++
+ sys/arm/mv/mv_ap806_clock.c                        |  34 +-
+ sys/conf/files                                     |   1 +
+ sys/kern/vfs_cache.c                               |   8 +-
+ sys/modules/netgraph/Makefile                      |   3 +-
+ sys/modules/netgraph/vlan_rotate/Makefile          |   6 +
+ sys/netgraph/ng_vlan_rotate.c                      | 510 +++++++++++++++++++++
+ sys/netgraph/ng_vlan_rotate.h                      |  67 +++
+ sys/netinet/tcp_input.c                            |  21 +-
+ 26 files changed, 1005 insertions(+), 118 deletions(-)
+ create mode 100644 share/man/man4/ng_vlan_rotate.4
+ create mode 100644 sys/modules/netgraph/vlan_rotate/Makefile
+ create mode 100644 sys/netgraph/ng_vlan_rotate.c
+ create mode 100644 sys/netgraph/ng_vlan_rotate.h
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd?mode=2&verb=git-receive-pack": read tcp 172.16.1.72:32146->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch freebsd/current/main
+Your branch is ahead of 'origin/freebsd/current/main' by 6 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+HEAD is now at e63539f30597 Fix clang assertion when compiling the devel/onetbb port
+==== END: freebsd/current/main ====

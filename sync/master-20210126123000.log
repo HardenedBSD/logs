@@ -1,0 +1,384 @@
+==== BEGIN: master ====
+current branch: master
+mergeable branch: github/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+From git-01.md.hardenedbsd.org:HardenedBSD/hardenedbsd-ports
+   e8fee2cebb05..cdc37751364e  master     -> origin/master
+Gitea: Internal error
+UpdatePublicKeyInRepo: Post "http://localhost:3000/api/internal/ssh/2/update/18": read tcp 172.16.1.72:25922->172.16.1.72:3000: i/o timeout
+Updating e8fee2cebb05..cdc37751364e
+Fast-forward
+ archivers/zstd/Makefile                            |   3 +-
+ archivers/zstd/distinfo                            |   6 +-
+ archivers/zstd/pkg-plist                           |   1 -
+ astro/astrometry/Makefile                          |   2 +-
+ astro/cfitsio/Makefile                             |   9 +-
+ astro/cfitsio/distinfo                             |   6 +-
+ astro/gnuastro/Makefile                            |   1 +
+ astro/kosmindoormap/Makefile                       |   1 +
+ astro/kstars/Makefile                              |   2 +-
+ astro/libosmpbf/Makefile                           |   1 +
+ astro/merkaartor/Makefile                          |   2 +-
+ astro/oskar/Makefile                               |   1 +
+ astro/p5-Astro-FITS-CFITSIO/Makefile               |   1 +
+ astro/siril/Makefile                               |   2 +-
+ astro/wcslib/Makefile                              |   1 +
+ audio/clementine-player/Makefile                   |   2 +-
+ audio/mixxx/Makefile                               |   2 +-
+ audio/mumble/Makefile                              |   2 +-
+ audio/murmur/Makefile                              |   2 +-
+ audio/strawberry/Makefile                          |   1 +
+ cad/cura-engine/Makefile                           |   1 +
+ cad/verilator/files/patch-src-verilog.y            |  12 +-
+ databases/clickhouse/Makefile                      |   2 +-
+ databases/grass7/Makefile                          |   1 +
+ databases/mysql57-client/Makefile                  |   2 +-
+ databases/mysql57-server/Makefile                  |   2 +-
+ databases/mysql80-client/Makefile                  |   2 +-
+ databases/mysql80-server/Makefile                  |   2 +-
+ devel/bison/Makefile                               |   9 +-
+ devel/bison/distinfo                               |   6 +-
+ devel/bloaty/Makefile                              |   2 +-
+ devel/google-cloud-cpp/Makefile                    |   1 +
+ devel/grpc/Makefile                                |   1 +
+ devel/ignition-msgs/Makefile                       |   2 +-
+ devel/jenkins-lts/Makefile                         |   2 +-
+ devel/jenkins-lts/distinfo                         |   6 +-
+ devel/jenkins/Makefile                             |   2 +-
+ devel/jenkins/distinfo                             |   6 +-
+ devel/jna/Makefile                                 |   2 +-
+ devel/jna/files/patch-native_libffi_configure.ac   |  11 +
+ devel/kpublictransport/Makefile                    |   1 +
+ devel/libphonenumber/Makefile                      |   1 +
+ devel/libunwind/Makefile                           |   7 +-
+ devel/libunwind/distinfo                           |   8 +-
+ devel/libunwind/files/patch-llvm11                 | 387 ------------------
+ devel/protobuf-c/Makefile                          |   2 +-
+ devel/protobuf/Makefile                            |   2 +-
+ devel/protobuf/distinfo                            |   6 +-
+ devel/protobuf/pkg-plist                           |  14 +-
+ devel/py-protobuf/Makefile                         |   7 +-
+ devel/py-protobuf/distinfo                         |   6 +-
+ devel/readline/Makefile                            |  16 +-
+ devel/readline/distinfo                            |  14 +-
+ devel/readline/files/patch-support-shlib-install   |  50 ---
+ devel/readline/files/patch-support-shobj-conf      |  55 ---
+ devel/readline/pkg-plist                           |   4 +-
+ dns/dnsdist/Makefile                               |   1 +
+ dns/knot-resolver/Makefile                         |   1 +
+ dns/powerdns-recursor/Makefile                     |   1 +
+ dns/powerdns/Makefile                              |   1 +
+ editors/xcoral/files/patch-Makefile                |  10 +
+ emulators/riscv-isa-sim/Makefile                   |   2 +-
+ games/cockatrice/Makefile                          |   2 +-
+ games/pink-pony/Makefile                           |   2 +-
+ games/pokerth/Makefile                             |   2 +-
+ .../files/patch-..-vulture-GNUmakefile             |  13 +
+ .../patch-..-vulture-vulture_tileconfig.lexer.l    |  11 +
+ graphics/gdal/Makefile                             |   8 +-
+ graphics/gdal/distinfo                             |   6 +-
+ graphics/gdal/pkg-plist                            |   7 +-
+ graphics/geos/Makefile                             |   2 +-
+ graphics/geos/distinfo                             |   6 +-
+ .../geos/files/patch-tests-geostest-Makefile.in    |   4 +-
+ graphics/geos/files/patch-tests-thread-Makefile.in |   4 +-
+ graphics/geos/pkg-plist                            | 109 ++---
+ graphics/gmt/Makefile                              |   1 +
+ graphics/grads/Makefile                            |   2 +-
+ graphics/luminance-qt5/Makefile                    |   2 +-
+ graphics/opencv/Makefile                           |   2 +-
+ graphics/opendx/Makefile                           |   2 +-
+ graphics/osgearth/Makefile                         |   2 +-
+ graphics/p5-Geo-GDAL/Makefile                      |   6 +-
+ graphics/p5-Geo-GDAL/distinfo                      |   6 +-
+ graphics/py-gdal/Makefile                          |   6 +-
+ graphics/py-gdal/distinfo                          |   6 +-
+ graphics/qgis-ltr/Makefile                         |   1 +
+ graphics/qgis/Makefile                             |   1 +
+ graphics/qtpbfimageplugin/Makefile                 |   2 +-
+ graphics/ufraw/Makefile                            |   2 +-
+ graphics/vips/Makefile                             |   1 +
+ graphics/vulkan-validation-layers/Makefile         |   3 +-
+ graphics/vulkan-validation-layers/distinfo         |   6 +-
+ graphics/waifu2x-converter-cpp/Makefile            |   8 +-
+ graphics/waifu2x-converter-cpp/distinfo            |  12 +-
+ japanese/mozc-server/Makefile                      |   2 +-
+ lang/ptoc/files/patch-main.cxx                     |   6 +-
+ lang/ptoc/files/patch-makefile.bsd                 |  18 +-
+ lang/ptoc/files/patch-parser.y                     |  56 +--
+ lang/ptoc/files/patch-tpexpr.cxx                   |   6 +-
+ lang/ptoc/files/patch-trnod.cxx                    |  46 +--
+ mail/astroid/Makefile                              |   2 +-
+ math/cvc3/files/patch-src-parser-Makefile          |  35 ++
+ math/grace/Makefile                                |   2 +-
+ math/gri/Makefile                                  |   2 +-
+ math/labplot/Makefile                              |   2 +-
+ math/moab/Makefile                                 |   2 +-
+ math/octave-forge-fits/Makefile                    |   2 +-
+ math/octave-forge-netcdf/Makefile                  |   1 +
+ math/or-tools/Makefile                             |   1 +
+ math/p5-NetCDF/Makefile                            |   2 +-
+ math/py-or-tools/Makefile                          |   1 +
+ misc/glow/Makefile                                 |   2 +-
+ misc/mnn/Makefile                                  |   1 +
+ misc/py-onnx/Makefile                              |   1 +
+ multimedia/vlc/Makefile                            |   2 +-
+ net-im/ricochet/Makefile                           |   2 +-
+ net-mgmt/collectd5/Makefile                        |   1 +
+ net-p2p/bitcoin/Makefile                           |   2 +-
+ net-p2p/litecoin/Makefile                          |   2 +-
+ net-p2p/namecoin/Makefile                          |   2 +-
+ net-p2p/qtum/Makefile                              |   1 +
+ net-p2p/xmrig/Makefile                             |   2 +-
+ net-p2p/xmrig/distinfo                             |   6 +-
+ net-p2p/zetacoin/Makefile                          |   2 +-
+ net/eternalterminal/Makefile                       |   2 +-
+ net/libarcus/Makefile                              |   1 +
+ net/mosh/Makefile                                  |   2 +-
+ net/olsrd/files/patch-src-cfgparser-local.mk       |  18 +
+ net/spoofer/Makefile                               |   1 +
+ science/abinit/Makefile                            |   1 +
+ science/cdo/Makefile                               |   2 +-
+ science/eccodes/Makefile                           |   1 +
+ science/gnudatalanguage/Makefile                   |   2 +-
+ science/grib_api/Makefile                          |   2 +-
+ science/healpix/Makefile                           |   2 +-
+ science/kst2/Makefile                              |   2 +-
+ science/minc2/Makefile                             |   2 +-
+ science/netcdf-cxx/Makefile                        |   1 +
+ science/netcdf-fortran/Makefile                    |   4 +-
+ science/netcdf-fortran/distinfo                    |   6 +-
+ science/netcdf-fortran/pkg-plist                   |   2 +
+ science/netcdf/Makefile                            |  18 +-
+ science/netcdf/distinfo                            |   6 +-
+ science/netcdf/pkg-plist                           | 439 ++++++++++++++++++++-
+ science/py-chainer/Makefile                        |   1 +
+ science/py-netCDF4/Makefile                        |   2 +-
+ science/py-pymol/Makefile                          |   1 +
+ science/py-tensorflow/Makefile                     |   2 +-
+ science/rubygem-ruby-netcdf/Makefile               |   2 +-
+ science/v_sim/Makefile                             |   1 +
+ science/vmd/Makefile                               |   2 +-
+ security/vuxml/vuln.xml                            |  31 ++
+ sysutils/apache-mesos/Makefile                     |   2 +-
+ sysutils/bpytop/Makefile                           |   2 +-
+ sysutils/bpytop/distinfo                           |   6 +-
+ sysutils/zbackup/Makefile                          |   2 +-
+ textproc/py-docutils/Makefile                      |   2 +-
+ textproc/py-docutils/distinfo                      |   6 +-
+ textproc/rubygem-cld3/Makefile                     |   1 +
+ www/envoy/Makefile                                 |   2 +-
+ ...LE_src_compiler_preprocessor_ExpressionParser.y |  11 +
+ .../files/patch-Source_WebCore_css_CSSGrammar.y.in |  11 +
+ .../files/patch-Source_WebCore_css_makegrammar.pl  |  31 ++
+ .../files/patch-Source_WebCore_xml_XPathGrammar.y  |  11 +
+ x11-clocks/buici-clock/files/patch-xo_Makefile.in  |   8 +
+ x11-clocks/buici-clock/files/patch-xo_res.cxx      |  11 +
+ x11-clocks/buici-clock/files/patch-xo_res__l.l     |  11 +
+ x11-fonts/fontmatrix/Makefile                      |   6 +-
+ x11-fonts/fontmatrix/distinfo                      |   6 +-
+ 169 files changed, 1032 insertions(+), 830 deletions(-)
+ create mode 100644 devel/jna/files/patch-native_libffi_configure.ac
+ delete mode 100644 devel/libunwind/files/patch-llvm11
+ delete mode 100644 devel/readline/files/patch-support-shlib-install
+ delete mode 100644 devel/readline/files/patch-support-shobj-conf
+ create mode 100644 editors/xcoral/files/patch-Makefile
+ create mode 100644 games/vultures-eye/files/patch-..-vulture-GNUmakefile
+ create mode 100644 games/vultures-eye/files/patch-..-vulture-vulture_tileconfig.lexer.l
+ create mode 100644 math/cvc3/files/patch-src-parser-Makefile
+ create mode 100644 net/olsrd/files/patch-src-cfgparser-local.mk
+ create mode 100644 www/qt5-webkit/files/patch-Source_ThirdParty_ANGLE_src_compiler_preprocessor_ExpressionParser.y
+ create mode 100644 www/qt5-webkit/files/patch-Source_WebCore_css_CSSGrammar.y.in
+ create mode 100644 www/qt5-webkit/files/patch-Source_WebCore_css_makegrammar.pl
+ create mode 100644 www/qt5-webkit/files/patch-Source_WebCore_xml_XPathGrammar.y
+ create mode 100644 x11-clocks/buici-clock/files/patch-xo_res.cxx
+ create mode 100644 x11-clocks/buici-clock/files/patch-xo_res__l.l
+==== merge branches ====
+==== merge github/master branch ====
+Already up to date.
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=2&verb=git-receive-pack": read tcp 172.16.1.72:58851->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.45 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== END: master ====
+==== BEGIN: master ====
+current branch: master
+mergeable branch: freebsd/master
+==== change branch ====
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+==== show current branch ====
+* master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Gitea: Internal Server Error
+Get "http://localhost:3000/api/internal/serv/command/2/hardenedbsd/hardenedbsd-ports?mode=1&verb=git-upload-pack": read tcp 172.16.1.72:23243->172.16.1.72:3000: i/o timeout
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ERROR: git pull failed, try to recover
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== merge branches ====
+==== merge freebsd/master branch ====
+Auto-merging x11-servers/xorg-server/Makefile
+Auto-merging games/xrally/Makefile
+CONFLICT (content): Merge conflict in games/xrally/Makefile
+Automatic merge failed; fix conflicts and then commit the result.
+==== merge failed at freebsd/master branch ====
+diff --cc games/xrally/Makefile
+index 249a1f8ca674,f8c3160887b3..000000000000
+--- a/games/xrally/Makefile
++++ b/games/xrally/Makefile
+@@@ -11,7 -11,8 +11,12 @@@ DISTNAME=	${PORTNAME}-1.
+  MAINTAINER=	ports@FreeBSD.org
+  COMMENT=	Clone of the classic Rally X arcade game
+  
+++<<<<<<< HEAD
+ +USE_HARDENING=	pie:off relro:off
+++=======
++ BROKEN_FreeBSD_13=	duplicate symbol: radar
++ BROKEN_FreeBSD_14=	duplicate symbol: radar
+++>>>>>>> freebsd/master
+  
+  WRKSRC=		${WRKDIR}/${PORTNAME}
+  HAS_CONFIGURE=	yes
+On branch master
+Your branch is up to date with 'origin/master'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+	modified:   Tools/scripts/chkversion.pl
+	modified:   devel/fossil/Makefile
+	modified:   devel/fossil/distinfo
+	modified:   devel/llvm-devel/Makefile
+	modified:   devel/llvm10/Makefile
+	modified:   devel/llvm11/Makefile
+	modified:   devel/llvm80/Makefile
+	modified:   devel/llvm90/Makefile
+	modified:   devel/ncurses/Makefile
+	modified:   devel/ncurses/pkg-plist
+	modified:   emulators/virtualbox-ose/files/patch-src_VBox_Runtime_r0drv_freebsd_memobj-r0drv-freebsd.c
+	modified:   games/xoids/Makefile
+	modified:   games/xorgramana/Makefile
+	modified:   games/xqf/Makefile
+	modified:   games/xrick/Makefile
+	modified:   games/xrot/Makefile
+	modified:   games/xtic/Makefile
+	modified:   games/xtron/Makefile
+	modified:   math/pynac/Makefile
+	modified:   math/pynac/distinfo
+	modified:   misc/zoneinfo/Makefile
+	modified:   misc/zoneinfo/distinfo
+	modified:   net/yami4/Makefile
+	modified:   science/py-jupyter_jsmol/Makefile
+	modified:   science/py-jupyter_jsmol/distinfo
+	modified:   textproc/libcsv/Makefile
+	modified:   textproc/libcsv/files/patch-csv.3
+	modified:   textproc/py-custom_inherit/Makefile
+	modified:   textproc/py-custom_inherit/distinfo
+	modified:   textproc/txt2man/Makefile
+	modified:   textproc/txt2man/distinfo
+	modified:   www/tt-rss/Makefile
+	modified:   www/tt-rss/distinfo
+	modified:   www/tt-rss/pkg-plist
+	modified:   x11-drivers/xf86-input-synaptics/Makefile
+	modified:   x11-servers/xorg-server/Makefile
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   games/xrally/Makefile
+
+
+It took 3.22 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== merge failed and clean up after ====
+On branch master
+Your branch is up to date with 'origin/master'.
+
+
+It took 3.17 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
+nothing to commit, working tree clean
+HEAD is now at cdc37751364e HBSD: devel/bison: resolve merge conflict
+==== END: master ====

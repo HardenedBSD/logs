@@ -1,0 +1,115 @@
+==== BEGIN: hardened/current/master ====
+current branch: hardened/current/master
+mergeable branch: freebsd/current/main
+==== change branch ====
+Switched to branch 'hardened/current/master'
+Your branch is behind 'origin/hardened/current/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+==== show current branch ====
+  freebsd/11-stable/master
+  freebsd/11.2-releng/master
+  freebsd/12-stable/main
+  freebsd/12-stable/master
+  freebsd/12.1-releng/master
+  freebsd/12.2-releng/master
+  freebsd/13-stable/main
+  freebsd/current/main
+  freebsd/current/master
+  hardened/11-stable/master
+  hardened/11.2-releng/master
+  hardened/12-stable/master
+  hardened/12.1-releng/master
+  hardened/12.2-releng/master
+  hardened/13-stable/master
+* hardened/current/master
+==== check for stale changes ====
+==== update to latest origin ====
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+Updating 874036536cf5e..f970659a5f3cc
+Fast-forward
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ sys/sys/pax.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+==== merge branches ====
+==== merge freebsd/current/main branch ====
+Auto-merging usr.sbin/Makefile
+Removing tools/build/options/WITHOUT_LIBTHR
+Removing tools/build/options/WITHOUT_LIBPTHREAD
+Auto-merging tools/build/mk/OptionalObsoleteFiles.inc
+Auto-merging sys/kern/kern_jail.c
+Auto-merging share/mk/src.opts.mk
+Auto-merging share/man/man5/src.conf.5
+Auto-merging lib/Makefile
+Auto-merging Makefile.inc1
+Merge made by the 'recursive' strategy.
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+ Makefile.inc1                            |  6 +-----
+ cddl/lib/Makefile                        |  2 --
+ cddl/usr.bin/Makefile                    |  2 --
+ cddl/usr.sbin/Makefile                   |  2 --
+ lib/Makefile                             |  4 ++--
+ sbin/ggate/Makefile                      |  9 ++-------
+ share/man/man3/Makefile                  |  2 --
+ share/man/man5/src.conf.5                | 18 +-----------------
+ share/mk/src.opts.mk                     |  6 ------
+ sys/kern/kern_jail.c                     | 12 ++----------
+ sys/powerpc/powerpc/gdb_machdep.c        |  5 +----
+ tools/build/mk/OptionalObsoleteFiles.inc |  7 -------
+ tools/build/options/WITHOUT_LIBPTHREAD   |  5 -----
+ tools/build/options/WITHOUT_LIBTHR       |  5 -----
+ usr.bin/elfctl/elfctl.1                  | 15 +++++++++++++--
+ usr.bin/elfctl/elfctl.c                  | 25 ++++++++++++++++++++++---
+ usr.sbin/Makefile                        |  2 --
+ usr.sbin/ngctl/Makefile                  |  2 --
+ 18 files changed, 44 insertions(+), 85 deletions(-)
+ delete mode 100644 tools/build/options/WITHOUT_LIBPTHREAD
+ delete mode 100644 tools/build/options/WITHOUT_LIBTHR
+=============================
+HardenedBSD Master git Server
+=============================
+
+Please note that connections and activity to this server are logged.
+This server, git-01.md.hardenedbsd.org, acts as the source-of-truth
+server for the HardenedBSD repositories.
+
+Banner last updated: 10 Feb 2020 09:32 EST
+
+remote: To github.com:HardenedBSD/hardenedBSD.git        
+remote:    f970659a5f3c..5cf7cd64e00e  hardened/current/master -> hardened/current/master        
+remote:    c0a9a0cb1f37..f302fd1aa673  github/freebsd/current/main -> github/freebsd/current/main        
+remote:  ! [remote rejected]           refs/pull/18/head -> refs/pull/18/head (deny updating a hidden ref)
+remote:  ! [remote rejected]           refs/pull/19/head -> refs/pull/19/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/20/head -> refs/pull/20/head (deny updating a hidden ref)        
+remote:  ! [remote rejected]           refs/pull/21/head -> refs/pull/21/head (deny updating a hidden ref)        
+remote: error: failed to push some refs to 'github.com:HardenedBSD/hardenedBSD.git'        
+remote: . Processing 1 references        
+remote: Processed 1 references in total        
+To git-01.md.hardenedbsd.org:HardenedBSD/HardenedBSD.git
+   f970659a5f3cc..5cf7cd64e00e2  hardened/current/master -> hardened/current/master
+==== END: hardened/current/master ====
